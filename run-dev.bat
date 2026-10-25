@@ -1,0 +1,6 @@
+@echo off
+echo Starting dev server...
+npm run dev
+echo.
+echo Dev server stopped. Press any key to exit...
+pause >nul
