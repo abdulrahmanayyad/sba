@@ -12,6 +12,8 @@ import { JourneySection } from "./journey-section";
 import { BusinessDashboard } from "./business-dashboard";
 import { AnimatedStatistic } from "@/components/site/animated-statistic";
 import { aboutTabs, capabilityStats, divisions, sectorCount, sectorOverviews, whoWeServe } from "./group-data";
+import { FactorySlider } from "./factory-slider";
+import { PortfolioStats } from "./portfolio-stats";
 
 
 export function GroupPage() {
@@ -30,12 +32,10 @@ export function GroupPage() {
         <div className="site-container relative flex min-h-[inherit] flex-col justify-center py-14 sm:py-20">
           <div>
             <p data-hero-reveal className="eyebrow text-brand-orange">{messages.hero.eyebrow}</p>
-            <h1 className="mt-4 max-w-3xl font-head text-[clamp(2rem,7vw,4.5rem)] font-semibold leading-[1.08]">
-              {titleLines.map((line) => (
-                <span data-hero-reveal key={line} className="block">{line}</span>
-              ))}
+            <h1 data-hero-reveal className="mt-4 max-w-4xl font-head text-[clamp(1.65rem,3vw,2.6rem)] font-bold leading-tight">
+              {ar ? messages.hero.titleAr : messages.hero.title}
             </h1>
-            <p data-hero-reveal className="mt-3 font-head text-[clamp(1.1rem,2.4vw,1.75rem)] text-footer-muted">{messages.hero.lead}</p>
+            <p data-hero-reveal className="mt-3 max-w-3xl text-sm sm:text-base leading-relaxed text-footer-muted">{messages.hero.lead}</p>
             <p data-hero-reveal className="mt-5 max-w-xl text-sm leading-7 text-footer-muted sm:text-base">{messages.hero.leadBody}</p>
             <div data-hero-reveal className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button asChild variant="primary" size="lg" data-magnetic className="w-full sm:w-auto"><a href="#divisions">{ar ? "استكشف قطاعاتنا" : "Explore Our Sectors"} <ArrowRight className="size-4 rtl:rotate-180" /></a></Button>
@@ -105,6 +105,12 @@ export function GroupPage() {
           </div>
         </div>
       </section>
+
+      {/* Factory Overview — Sequential walkthrough from Cutting to Packing */}
+      <FactorySlider ar={ar} />
+
+      {/* Our Portfolio — Achievements & Performance Ratios */}
+      <PortfolioStats ar={ar} />
 
       {/* Group statistics — verified figures only */}
       <section className="bg-footer text-footer-foreground section-band">

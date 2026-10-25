@@ -33,10 +33,10 @@
   --radius-2xl: 0;
   --radius-3xl: 0;
   --radius-4xl: 0;
-  --font-head: "Readex Pro", sans-serif;
-  --font-body: "Cairo", sans-serif;
-  --font-sans: "Cairo", sans-serif;
-  --font-mono: "JetBrains Mono", "Cairo", monospace;
+  --font-head: "Nunito", "IBM Plex Sans Arabic", sans-serif;
+  --font-body: "Nunito", "IBM Plex Sans Arabic", sans-serif;
+  --font-sans: "Nunito", "IBM Plex Sans Arabic", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -144,26 +144,45 @@
     border-radius: 0;
   }
 
+  html[dir="rtl"],
+  html[lang="ar"],
+  [dir="rtl"] {
+    font-family: "IBM Plex Sans Arabic", system-ui, sans-serif;
+    --font-head: "IBM Plex Sans Arabic", sans-serif;
+    --font-body: "IBM Plex Sans Arabic", sans-serif;
+    --font-sans: "IBM Plex Sans Arabic", sans-serif;
+  }
+
+  html[dir="ltr"],
+  html[lang="en"],
+  [dir="ltr"] {
+    font-family: "Nunito", system-ui, sans-serif;
+    --font-head: "Nunito", sans-serif;
+    --font-body: "Nunito", sans-serif;
+    --font-sans: "Nunito", sans-serif;
+  }
+
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-body);
-    font-size: 16px;
-    line-height: 1.65;
+    font-size: 15px;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
 
   h1, h2, h3, h4 {
     font-family: var(--font-head);
-    font-weight: 500;
-    letter-spacing: 0;
+    font-weight: 700;
+    letter-spacing: -0.01em;
     text-wrap: balance;
   }
 
   html[dir="rtl"] h1,
   html[dir="rtl"] h2,
   html[dir="rtl"] h3 {
-    line-height: 1.3;
+    line-height: 1.35;
+    letter-spacing: 0;
   }
 
   a {
@@ -226,15 +245,16 @@ html[dir="rtl"] .footer-label {
   &:hover { color: var(--footer-foreground); }
 }
 
-@utility section-band { padding-block: clamp(3.5rem, 9vw, 9rem); }
-@utility section-heading { display: grid; gap: 2rem; }
+@utility section-band { padding-block: clamp(2.5rem, 5vw, 5rem); }
+@utility section-heading { display: grid; gap: 1.5rem; }
 @utility eyebrow {
   font-family: var(--font-mono); font-size: 0.6875rem; line-height: 1.5;
   letter-spacing: 0.18em; text-transform: uppercase; color: var(--brand-green-text);
 }
 @utility section-title {
-  margin-top: 1.25rem; max-width: 60rem; font-family: var(--font-head);
-  font-size: clamp(1.9rem, 5vw, 5.25rem); font-weight: 500; line-height: 1.08; color: var(--foreground);
+  margin-top: 1rem; max-width: 60rem; font-family: var(--font-head);
+  font-size: clamp(1.35rem, 2.5vw, 2.15rem); font-weight: 700; line-height: 1.3; color: var(--foreground);
+  text-wrap: balance;
 }
 @utility section-intro { max-width: 42rem; font-size: 1.125rem; line-height: 1.75; color: var(--muted-foreground); }
 @utility media-frame {
