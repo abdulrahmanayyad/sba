@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Mail, MessageCircle } from "lucide-react";
 
-import hero from "@/assets/group-hero.jpg";
+import heroBg from "@/assets/hero-sustainable.png";
 import { Button } from "@/components/ui/button";
 import { HomeMotion, HomeReveal as Reveal } from "@/components/home/home-motion";
 import { useLanguage } from "@/i18n/language-context";
@@ -25,7 +25,7 @@ export function GroupPage() {
     <HomeMotion key={language} variant="group">
       {/* Hero */}
       <section data-home-hero className="relative min-h-[min(640px,calc(100svh-76px))] overflow-hidden text-footer-foreground">
-        <img data-hero-image src={hero} alt="Garment factory, construction, solar energy, heritage books and a classroom" width={1920} height={1088} className="absolute inset-0 size-full object-cover" />
+        <img data-hero-image src={heroBg} alt={ar ? "بناء مستقبل مستدام معاً" : "Building a Sustainable Future Together"} width={1920} height={1088} fetchPriority="high" className="absolute inset-0 size-full object-cover" />
         <div className="group-hero-overlay absolute inset-0" />
         <div className="site-container relative flex min-h-[inherit] flex-col justify-center py-14 sm:py-20">
           <div>

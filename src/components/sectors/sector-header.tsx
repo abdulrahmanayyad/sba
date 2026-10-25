@@ -56,7 +56,7 @@ export function SectorHeader({
       <header className="glass-menu fixed inset-x-0 top-0 z-50 h-[76px] border-b border-border text-foreground">
         <div className="site-container flex h-full items-center gap-5">
           <Link to="/" aria-label={back} className="inline-flex shrink-0 items-center">
-            <img src={logo} alt="SBA" className="h-8 w-auto" />
+            <img src={logo} alt="SBA" className="h-10 w-auto" />
           </Link>
           <p className={cn("min-w-0 truncate font-head text-sm font-semibold sm:text-base", navigation && "xl:hidden")}>{name}</p>
           <nav aria-label={name} className="mx-auto hidden items-center gap-5 xl:flex">

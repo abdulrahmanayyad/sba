@@ -7,9 +7,12 @@ import { PageTransition } from "@/components/site/page-transition";
 import { AnimatedPanel } from "@/components/site/animated-panel";
 import { useEffect, useRef, useState } from "react";
 
-import hero from "@/assets/group-hero.jpg";
+import hero from "@/assets/hero-sustainable.png";
 import sbaLogoEn from "@/assets/SBA_logo_EN.svg.asset.json";
 import sbaLogoAr from "@/assets/SBA_logo_AR.svg.asset.json";
+
+const SBA_LOGO_AR = "/brand/SBA%20logo%20AR.svg";
+const SBA_LOGO_EN = "/brand/SBA%20logo%20EN.svg";
 import { Button } from "@/components/ui/button";
 import { getMessages, isFallbackLanguage, languages, type Language } from "@/i18n";
 import { LanguageProvider } from "@/i18n/language-context";
@@ -238,18 +241,20 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
     </>
   );
 
+  const currentLogo = isArabic ? SBA_LOGO_AR : SBA_LOGO_EN;
+
   return (
     <LanguageProvider value={{ language, setLanguage: selectLanguage }}>
     <div className="flex min-h-screen flex-col bg-background text-foreground">
       <PageTransition pathname={pathname} rtl={isArabic} />
       <MotionEnhancer key={`${pathname}-${language}`} rtl={isArabic} />
       {sectorSlug ? (
-        <SectorHeader slug={sectorSlug} ar={isArabic} logo={(isArabic ? sbaLogoAr : sbaLogoEn).url} language={<LanguageSwitcher language={language} onChange={selectLanguage} />} />
+        <SectorHeader slug={sectorSlug} ar={isArabic} logo={currentLogo} language={<LanguageSwitcher language={language} onChange={selectLanguage} />} />
       ) : (
       <header className={cn("fixed inset-x-0 top-0 z-50 h-[76px] border-b transition-colors duration-300", scrolled ? "border-border bg-background/96 text-foreground backdrop-blur-sm" : "border-border bg-background text-foreground")}>
         <div className="site-container grid h-full grid-cols-[auto_1fr_auto] items-center gap-5">
           <Link to="/" className="relative z-10 inline-flex items-center leading-none" aria-label={messages.accessibility.home}>
-            <img src={(isArabic ? sbaLogoAr : sbaLogoEn).url} alt={isArabic ? "سامي عياد" : "SBA"} className="h-9 w-auto" />
+            <img src={currentLogo} alt={isArabic ? "سامي بن عياد" : "SBA"} className="h-10 w-auto transition-opacity hover:opacity-90" />
           </Link>
 
           <nav aria-label={messages.accessibility.primaryNavigation} className="hidden items-center justify-center gap-x-5 xl:flex">
@@ -272,7 +277,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
       {menuOpen && (
         <AnimatedPanel modal onClose={() => setMenuOpen(false)} className="glass-menu fixed inset-0 z-[60] flex min-h-dvh flex-col text-foreground xl:hidden" role="dialog" label={messages.accessibility.primaryNavigation}>
           <div className="site-container flex h-[76px] shrink-0 items-center justify-between border-b border-border">
-            <img src={(isArabic ? sbaLogoAr : sbaLogoEn).url} alt="SBA" className="h-9 w-auto" />
+            <img src={currentLogo} alt={isArabic ? "سامي بن عياد" : "SBA"} className="h-10 w-auto" />
             <Button ref={closeButtonRef} variant="icon" size="icon" aria-label={messages.accessibility.closeMenu} onClick={() => setMenuOpen(false)}><X aria-hidden="true" /></Button>
           </div>
           <div className="site-container flex flex-1 flex-col overflow-y-auto py-8">
@@ -296,7 +301,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
         <div className="site-container relative py-14 md:py-20">
           <div className="grid gap-12 border-b border-footer-line pb-14 lg:grid-cols-[1.35fr_2fr] lg:gap-20">
             <div>
-              <img src={(isArabic ? sbaLogoAr : sbaLogoEn).url} alt="SBA" className="h-12 w-auto" />
+              <img src={currentLogo} alt={isArabic ? "سامي بن عياد" : "SBA"} className="h-14 w-auto" />
               <p className="mt-7 max-w-md text-base leading-7 text-footer-muted">{messages.footer.descriptor}</p>
               <p className="mt-6 font-mono text-[10px] uppercase tracking-[0.18em] text-footer-muted">{messages.footer.addressLabel}</p>
               <p className="mt-2 max-w-md text-sm leading-6 text-footer-foreground/90">{messages.footer.address}</p>

@@ -2,8 +2,8 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { useRouter } from "@tanstack/react-router";
 
-import sbaLogoEn from "@/assets/SBA_logo_EN.svg.asset.json";
-import sbaLogoAr from "@/assets/SBA_logo_AR.svg.asset.json";
+const SBA_LOGO_AR = "/brand/SBA%20logo%20AR.svg";
+const SBA_LOGO_EN = "/brand/SBA%20logo%20EN.svg";
 
 /** Green curtain that wipes away with the SBA logo whenever the page path changes. */
 export function PageTransition({ pathname, rtl }: { pathname: string; rtl: boolean }) {
@@ -36,7 +36,7 @@ export function PageTransition({ pathname, rtl }: { pathname: string; rtl: boole
 
   return (
     <div ref={ref} data-page-transition aria-hidden="true" className="pointer-events-none fixed inset-0 z-[80] hidden items-center justify-center bg-brand-green">
-      <img src={(rtl ? sbaLogoAr : sbaLogoEn).url} alt="" className="h-14 w-auto brightness-0 invert" />
+      <img src={rtl ? SBA_LOGO_AR : SBA_LOGO_EN} alt="" className="h-14 w-auto brightness-0 invert" />
     </div>
   );
 }
