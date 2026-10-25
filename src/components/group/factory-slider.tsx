@@ -119,7 +119,8 @@ export function FactorySlider({ ar }: { ar: boolean }) {
     setCurrent((prev) => (prev + 1) % factorySteps.length);
   };
 
-  const active = factorySteps[current];
+  const active = factorySteps[current]!;
+
 
   return (
     <section className="site-container section-band">
