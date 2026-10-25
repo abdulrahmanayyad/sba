@@ -11,16 +11,27 @@ import { filterJzraPhotos, jzraCatalogue, jzraAgeRanges, type JzraAge, type Jzra
 import { useLanguage } from "@/i18n/language-context";
 import { cn } from "@/lib/utils";
 
-export type ProductLine = "jzra" | "tijari" | "azra";
+export type ProductLine = "jzra" | "tijari";
 type Season = "summer" | "winter";
 
-const lineInfo: Record<ProductLine, { name: string; en: string; ar: string }> = {
-  jzra: { name: "JZRA FASHION", en: "Our own fashion label for children", ar: "علامتنا الخاصة لأزياء الأطفال" },
-  tijari: { name: "TIJARI", en: "Commercial & wholesale garment line", ar: "خط الملابس التجارية والجملة" },
-  azra: { name: "AZRA", en: "Product line profile coming soon", ar: "ملف الخط قيد الإعداد" },
+const lineInfo: Record<ProductLine, { name: string; en: string; ar: string; badgeEn: string; badgeAr: string }> = {
+  jzra: {
+    name: "JZRA",
+    badgeEn: "B2C Brand",
+    badgeAr: "علامة B2C",
+    en: "B2C Brand — Children & youth fashion label",
+    ar: "علامة B2C — خط أزياء الأطفال والشباب",
+  },
+  tijari: {
+    name: "TIJARI",
+    badgeEn: "B2B Brand",
+    badgeAr: "علامة B2B",
+    en: "B2B Brand — Commercial & wholesale garment line",
+    ar: "علامة B2B — خط الملابس التجارية والجملة",
+  },
 };
 
-const lineOrder: ProductLine[] = ["jzra", "tijari", "azra"];
+const lineOrder: ProductLine[] = ["jzra", "tijari"];
 
 const subcategoryLabels: Record<string, { en: string; ar: string }> = {
   "Cotton Sets": { en: "Cotton Sets", ar: "أطقم قطنية" },
@@ -198,16 +209,21 @@ export function ProductsPage({ line }: { line: ProductLine }) {
           <p className="mt-3 max-w-xl text-muted-foreground">{ar ? active.ar : active.en}</p>
         </Reveal>
 
-        <div role="tablist" className="mt-8 grid grid-cols-3 gap-px border border-border bg-border">
+        <div role="tablist" className="mt-8 grid grid-cols-2 gap-px border border-border bg-border">
           {lineOrder.map((key) => {
             const info = lineInfo[key];
             const selected = key === line;
             return (
               <Link key={key} to="/products" search={{ line: key }} role="tab" aria-selected={selected}
-                className={cn("bg-background p-3 text-start transition-colors hover:bg-secondary sm:p-5", selected && "bg-secondary")}>
-                <span className={cn("font-mono text-sm uppercase tracking-[0.2em]", selected ? "text-brand-orange-text" : "text-foreground")}>{key}</span>
+                className={cn("bg-background p-4 text-start transition-colors hover:bg-secondary sm:p-6", selected && "bg-secondary")}>
+                <div className="flex items-center gap-2">
+                  <span className={cn("font-mono text-base font-bold uppercase tracking-[0.2em]", selected ? "text-brand-orange-text" : "text-foreground")}>{info.name}</span>
+                  <span className="rounded bg-brand-green/10 px-2 py-0.5 font-mono text-[11px] font-semibold text-brand-green-text">
+                    {ar ? info.badgeAr : info.badgeEn}
+                  </span>
+                </div>
                 <span className="mt-1 hidden text-sm text-muted-foreground sm:block">{ar ? info.ar : info.en}</span>
-                <span className={cn("mt-3 block h-0.5 w-full transition-colors sm:mt-4 sm:w-10", selected ? "bg-primary" : "bg-transparent")} />
+                <span className={cn("mt-3 block h-0.5 w-full transition-colors sm:mt-4 sm:w-12", selected ? "bg-primary" : "bg-transparent")} />
               </Link>
             );
           })}

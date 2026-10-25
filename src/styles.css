@@ -187,8 +187,10 @@
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  font-size: 0.8125rem;
+  font-family: inherit;
+  font-size: 0.875rem;
   font-weight: 600;
+  line-height: 1.25rem;
   color: var(--foreground);
   position: relative;
   transition: color 180ms ease;

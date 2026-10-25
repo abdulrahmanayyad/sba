@@ -31,16 +31,16 @@
     "whatWeDo": "What We Do",
     "ourApproach": "Our Approach",
     "ourValues": "Our Values",
-    "whySba": "Why SAMI BIN AYYAD",
+    "whySba": "Why Sami Bin Ayyad",
     "leadership": "Company Leadership",
     "governance": "Company Governance",
     "policies": "Policies"
   },
   "sectorsMenu": {
-    "construction": "Contracting Sector",
-    "environmental": "Environment Sector",
-    "garment": "Garment Sector",
-    "food": "Natural Products Sector",
+    "construction": "Contracting, Construction & Real Estate Development",
+    "environmental": "Environment & Sustainability",
+    "garment": "Garment Manufacturing & Fashion Development",
+    "food": "Food & Natural Products",
     "research": "Scientific Research & Heritage Editing",
     "education": "Education & Knowledge Development"
   },

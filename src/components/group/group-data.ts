@@ -44,7 +44,7 @@ export const divisions: Division[] = [
   {
     slug: "environmental",
     name: "Environment & Sustainability",
-    nameAr: "قطاع البيئة والاستدامة",
+    nameAr: "البيئة والاستدامة",
     company: "ENVIROTAQA · Environmental & Sustainability Solutions",
     companyAr: "إنفيروتاقة · حلول واستشارات بيئية مستدامة",
     image: enviro,

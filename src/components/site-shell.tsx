@@ -76,7 +76,6 @@ function LanguageSwitcher({
   onChange,
   inverse = false,
   className,
-  dropUp = false,
 }: {
   language: Language;
   onChange: (language: Language) => void;
@@ -84,65 +83,27 @@ function LanguageSwitcher({
   className?: string;
   dropUp?: boolean;
 }) {
-  const [open, setOpen] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-  const messages = getMessages(language);
-
-  useEffect(() => {
-    if (!open) return;
-    const close = (event: MouseEvent) => {
-      if (ref.current && !ref.current.contains(event.target as Node)) setOpen(false);
-    };
-    document.addEventListener("click", close);
-    return () => document.removeEventListener("click", close);
-  }, [open]);
+  const isArabic = language === "AR";
+  const targetLang = isArabic ? "EN" : "AR";
+  const label = isArabic ? "Switch to English" : "التبديل إلى العربية";
 
   return (
-    <div ref={ref} className={cn("relative", className)}>
-      <Button
-        variant={inverse ? "language" : "outline"}
-        size={inverse ? "bare" : "sm"}
-        aria-expanded={open}
-        aria-haspopup="listbox"
-        aria-label={messages.language.label}
-        className={cn(inverse && "hover:text-footer-foreground")}
-        onClick={() => setOpen((value) => !value)}
-      >
-        <Globe aria-hidden="true" className="size-4" />
-        <ChevronDown aria-hidden="true" className={cn("size-3 transition-transform", open && "rotate-180")} />
-      </Button>
-      {open && (
-        <AnimatedPanel onClose={() => setOpen(false)}
-          role="listbox"
-          label={messages.language.label}
-          className={cn(
-            "absolute z-50 w-44 border p-1",
-            dropUp ? "bottom-full mb-3" : "top-full mt-3",
-            inverse ? "glass-dark border-footer-line" : "glass-menu border-border",
-          )}
-        >
-          {languages.map((item) => (
-            <Button variant="ghost" size="bare"
-              key={item}
-              role="option"
-              aria-selected={item === language}
-              className={cn(
-                "flex w-full items-center justify-between px-3 py-2 text-start text-sm",
-                inverse ? "text-footer-foreground hover:bg-footer-line/40" : "text-foreground hover:bg-secondary",
-                item === language && (inverse ? "bg-footer-line/60" : "bg-secondary"),
-              )}
-              onClick={() => {
-                onChange(item);
-                setOpen(false);
-              }}
-            >
-              {messages.language.names[item]}
-              <span className="font-mono text-[10px] uppercase opacity-60">{item}</span>
-            </Button>
-          ))}
-        </AnimatedPanel>
+    <Button
+      variant={inverse ? "language" : "outline"}
+      size={inverse ? "bare" : "sm"}
+      type="button"
+      aria-label={label}
+      title={label}
+      className={cn(
+        "inline-flex items-center gap-1.5 rounded-full px-3 py-1 font-mono text-xs font-semibold tracking-wider transition-colors",
+        inverse ? "text-footer-foreground/80 hover:text-footer-foreground" : "text-foreground hover:bg-secondary",
+        className
       )}
-    </div>
+      onClick={() => onChange(targetLang)}
+    >
+      <Globe aria-hidden="true" className="size-4 shrink-0" />
+      <span>{targetLang}</span>
+    </Button>
   );
 }
 
@@ -213,31 +174,34 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
 
   const primaryLinks = (className: string, onNavigate?: () => void) => (
     <>
-      <Link to="/" className={className} onClick={onNavigate}>{isArabic ? "الرئيسية" : "Home"}</Link>
-      <NavDropdown label={messages.nav.about} className={className}>
+      <Link to="/" className={cn(className, "whitespace-nowrap font-body text-sm font-semibold")} onClick={onNavigate}>{isArabic ? "الرئيسية" : "Home"}</Link>
+      <NavDropdown label={messages.nav.about} className={cn(className, "whitespace-nowrap font-body text-sm font-semibold")}>
         {(close) => aboutKeys.map((key) => (
           <Link key={key} to="/about" hash={key} className={dropdownLink} onClick={() => { close(); onNavigate?.(); }}>
             {messages.aboutMenu[key]}
           </Link>
         ))}
       </NavDropdown>
-      <NavDropdown label={messages.nav.sectors} className={className}>
+      <NavDropdown label={messages.nav.sectors} className={cn(className, "whitespace-nowrap font-body text-sm font-semibold")}>
         {(close) => sectorKeys.map((key) => (
           <Link key={key} to="/sectors/$sector" params={{ sector: key }} className={dropdownLink} onClick={() => { close(); onNavigate?.(); }}>
             {messages.sectorsMenu[key]}
           </Link>
         ))}
       </NavDropdown>
-      <NavDropdown label={messages.nav.products} className={className}>
-        {(close) => (["jzra", "tijari", "azra"] as const).map((key) => (
-          <Link key={key} to="/products" search={{ line: key }} className={dropdownLink} onClick={() => { close(); onNavigate?.(); }}>
-            {key.toUpperCase()}
+      <NavDropdown label={messages.nav.products} className={cn(className, "whitespace-nowrap font-body text-sm font-semibold")}>
+        {(close) => [
+          { key: "jzra", label: isArabic ? "JZRA (علامة B2C)" : "JZRA (B2C Brand)" },
+          { key: "tijari", label: isArabic ? "TIJARI (علامة B2B)" : "TIJARI (B2B Brand)" },
+        ].map((item) => (
+          <Link key={item.key} to="/products" search={{ line: item.key }} className={dropdownLink} onClick={() => { close(); onNavigate?.(); }}>
+            {item.label}
           </Link>
         ))}
       </NavDropdown>
-      <Link to="/partners" className={className} onClick={onNavigate}>{messages.nav.partners}</Link>
-      <Link to="/news" className={className} onClick={onNavigate}>{messages.nav.news}</Link>
-      <Link to="/contact" className={className} onClick={onNavigate}>{messages.nav.joinUs}</Link>
+      <Link to="/partners" className={cn(className, "whitespace-nowrap font-body text-sm font-semibold")} onClick={onNavigate}>{messages.nav.partners}</Link>
+      <Link to="/news" className={cn(className, "whitespace-nowrap font-body text-sm font-semibold")} onClick={onNavigate}>{messages.nav.news}</Link>
+      <Link to="/contact" className={cn(className, "whitespace-nowrap font-body text-sm font-semibold")} onClick={onNavigate}>{messages.nav.joinUs}</Link>
     </>
   );
 
@@ -264,7 +228,6 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
           <div className="hidden items-center gap-4 xl:flex">
             <Button asChild variant="primary" size="lg" data-magnetic><Link to="/contact">{messages.nav.contact}</Link></Button>
             <LanguageSwitcher language={language} onChange={selectLanguage} />
-            {isFallbackLanguage(language) && <p className="absolute top-full mt-1 w-max text-[10px] text-muted-foreground">{messages.language.comingSoon}</p>}
           </div>
 
           <Button variant="icon" size="icon" className="justify-self-end xl:hidden" aria-label={messages.accessibility.openMenu} onClick={() => setMenuOpen(true)}>
@@ -286,7 +249,6 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
             </nav>
             <div className="mt-auto space-y-6 pt-10">
               <LanguageSwitcher language={language} onChange={selectLanguage} dropUp />
-              {isFallbackLanguage(language) && <p className="text-xs text-muted-foreground">{messages.language.comingSoon}</p>}
               <Button asChild variant="primary" size="lg" className="w-full"><Link to="/contact" onClick={() => setMenuOpen(false)}>{messages.nav.contact}</Link></Button>
             </div>
           </div>
@@ -352,7 +314,6 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
             </div>
             <div className="flex flex-wrap gap-2 md:justify-center">
               <LanguageSwitcher language={language} onChange={selectLanguage} inverse />
-              {isFallbackLanguage(language) && <p className="mt-2 text-xs text-footer-muted">{messages.language.comingSoon}</p>}
             </div>
           </div>
 
