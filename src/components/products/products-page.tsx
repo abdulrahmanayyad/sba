@@ -1,17 +1,13 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, RotateCcw, Snowflake, Sun } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, RotateCcw, Snowflake, Sun } from "lucide-react";
 import { useState } from "react";
 
-import summerCasual from "@/assets/jzra-summer-casual.jpg";
-import summerDresses from "@/assets/jzra-summer-dresses.jpg";
-import winterCasual from "@/assets/jzra-winter-casual.jpg";
-import winterDresses from "@/assets/jzra-winter-dresses.jpg";
 import { Reveal } from "@/components/home/reveal";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import productCopy from "@/i18n/products.json";
 import { wholesaleCopy, wholesaleModels } from "@/lib/wholesale";
-import { filterJzraPhotos, jzraAgeRanges, type JzraAge, type JzraAudience, type JzraPhoto } from "@/lib/jzra-catalogue";
+import { filterJzraPhotos, jzraCatalogue, jzraAgeRanges, type JzraAge, type JzraAudience, type JzraPhoto } from "@/lib/jzra-catalogue";
 import { useLanguage } from "@/i18n/language-context";
 import { cn } from "@/lib/utils";
 
@@ -26,124 +22,114 @@ const lineInfo: Record<ProductLine, { name: string; en: string; ar: string }> = 
 
 const lineOrder: ProductLine[] = ["jzra", "tijari", "azra"];
 
+const subcategoryLabels: Record<string, { en: string; ar: string }> = {
+  "Cotton Sets": { en: "Cotton Sets", ar: "أطقم قطنية" },
+  "Jeans Sets": { en: "Jeans Sets", ar: "أطقم جينز" },
+  "Jumpsuite": { en: "Jumpsuit", ar: "جمبسوت" },
+  "Long Suites": { en: "Long Suits", ar: "أطقم طويلة" },
+  "Short Suites": { en: "Short Suits", ar: "أطقم قصيرة" },
+  "Shirts & Blouses": { en: "Shirts & Blouses", ar: "قمصان وبلوزات" },
+  "Blouses": { en: "Blouses", ar: "بلوزات" },
+  "Suites": { en: "Suits", ar: "أطقم" },
+  "T-Shirts": { en: "T-Shirts", ar: "تي شيرت" },
+};
 
-interface Category {
-  key: string;
-  en: string;
-  ar: string;
-  fitEn: string;
-  fitAr: string;
-  bodyEn: string;
-  bodyAr: string;
-  image: string;
-  altEn: string;
-  altAr: string;
-}
+const PAGE_SIZE = 24;
 
-const seasons: Record<Season, { titleEn: string; titleAr: string; bodyEn: string; bodyAr: string; categories: Category[] }> = {
+type SeasonData = {
+  titleEn: string; titleAr: string; bodyEn: string; bodyAr: string;
+  categories: Array<{ key: string; en: string; ar: string; fitEn: string; fitAr: string; bodyEn: string; bodyAr: string; }>;
+};
+
+const seasons: Record<Season, SeasonData> = {
   summer: {
-    titleEn: "Summer Collection",
-    titleAr: "مجموعة الصيف",
+    titleEn: "Summer Collection", titleAr: "مجموعة الصيف",
     bodyEn: "Breathable cotton and linen pieces, cut for play and built to last through warm days.",
     bodyAr: "قطع قطنية وكتانية خفيفة، مصممة للراحة ومتحمّلة لأيام الصيف.",
     categories: [
       {
-        key: "casual",
-        en: "Casual",
-        ar: "كاجوال",
-        fitEn: "Boys & Girls",
-        fitAr: "أولاد وبنات",
+        key: "casual", en: "Casual", ar: "كاجوال", fitEn: "Boys & Girls", fitAr: "أولاد وبنات",
         bodyEn: "Everyday sets: tees, shirts, shorts and lightweight layers.",
         bodyAr: "أطقم يومية: تي شيرتات وقمصان وشورتات وطبقات خفيفة.",
-        image: summerCasual,
-        altEn: "Children's casual summer clothing",
-        altAr: "ملابس كاجوال صيفية للأطفال",
       },
       {
-        key: "dresses",
-        en: "Dresses",
-        ar: "فساتين",
-        fitEn: "Girls",
-        fitAr: "بنات",
+        key: "dresses", en: "Dresses", ar: "فساتين", fitEn: "Girls", fitAr: "بنات",
         bodyEn: "Sundresses and day dresses in soft, breathable fabrics.",
         bodyAr: "فساتين صيفية ونهارية بأقمشة ناعمة وقابلة للتهوية.",
-        image: summerDresses,
-        altEn: "Girls' summer dresses",
-        altAr: "فساتين صيفية للبنات",
       },
     ],
   },
   winter: {
-    titleEn: "Winter Collection",
-    titleAr: "مجموعة الشتاء",
+    titleEn: "Winter Collection", titleAr: "مجموعة الشتاء",
     bodyEn: "Knits, corduroy and warm layering pieces in deep, grounded colours.",
     bodyAr: "تريكو وكوردروي وطبقات دافئة بألوان عميقة وهادئة.",
     categories: [
       {
-        key: "casual",
-        en: "Casual",
-        ar: "كاجوال",
-        fitEn: "Boys & Girls",
-        fitAr: "أولاد وبنات",
+        key: "casual", en: "Casual", ar: "كاجوال", fitEn: "Boys & Girls", fitAr: "أولاد وبنات",
         bodyEn: "Sweaters, jeans, jackets and everyday winter staples.",
         bodyAr: "كنزات وجينزات وجاكيتات وأساسيات الشتاء اليومية.",
-        image: winterCasual,
-        altEn: "Children's casual winter clothing",
-        altAr: "ملابس كاجوال شتوية للأطفال",
       },
       {
-        key: "dresses",
-        en: "Dresses",
-        ar: "فساتين",
-        fitEn: "Girls",
-        fitAr: "بنات",
+        key: "dresses", en: "Dresses", ar: "فساتين", fitEn: "Girls", fitAr: "بنات",
         bodyEn: "Long-sleeve and knit dresses made for cooler days.",
         bodyAr: "فساتين بأكمام طويلة وتريكو مصممة للأيام الباردة.",
-        image: winterDresses,
-        altEn: "Girls' winter dresses",
-        altAr: "فساتين شتوية للبنات",
       },
     ],
   },
 };
 
-const samplePhotos: JzraPhoto[] = (Object.keys(seasons) as Season[]).flatMap((season) =>
-  seasons[season].categories.map((category) => ({
-    id: `${season}-${category.key}`, season,
-    category: category.key === "dresses" ? "dresses" as const : "casual" as const,
-    audiences: category.key === "dresses" ? ["girls" as const] : ["boys" as const, "girls" as const],
-    ages: [], image: category.image, sample: true,
-  })),
-);
+function PhotoGrid({ photos, ar }: { photos: JzraPhoto[]; ar: boolean }) {
+  const [page, setPage] = useState(0);
+  const totalPages = Math.ceil(photos.length / PAGE_SIZE);
+  const visible = photos.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE);
+  const [prevLen, setPrevLen] = useState(photos.length);
+  if (photos.length !== prevLen) { setPrevLen(photos.length); setPage(0); }
 
-function CategoryCard({ category, photo, ar }: { category: Category; photo: JzraPhoto; ar: boolean }) {
   return (
-    <article className="glass-card group flex h-full flex-col overflow-hidden">
-      <div className="overflow-hidden">
-        <img
-          key={photo.image}
-          data-clip-reveal
-          src={photo.image}
-          alt={ar ? category.altAr : category.altEn}
-          loading="lazy"
-          width={1024}
-          height={1024}
-          className="photo-fade aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105 motion-reduce:transition-none"
-        />
+    <div>
+      <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        {visible.map((photo) => (
+          <div key={photo.id} className="group relative overflow-hidden rounded-xl border border-border bg-secondary">
+            <img
+              src={photo.image}
+              alt=""
+              loading="lazy"
+              className="aspect-[3/4] w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            {photo.subcategory && (
+              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/60 to-transparent px-3 py-2">
+                <span className="text-[10px] font-mono uppercase tracking-widest text-white/90">
+                  {subcategoryLabels[photo.subcategory]
+                    ? (ar ? subcategoryLabels[photo.subcategory]!.ar : subcategoryLabels[photo.subcategory]!.en)
+                    : photo.subcategory}
+                </span>
+              </div>
+            )}
+            <div className="absolute top-2 end-2 flex flex-wrap gap-1">
+              {photo.ages.map((a) => (
+                <span key={a} dir="ltr" className="rounded bg-black/50 px-1.5 py-0.5 font-mono text-[9px] text-white/90">{a}</span>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
-      <div className="flex flex-1 flex-col p-5 md:p-6">
-        <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-          <h3 className="font-head text-xl font-semibold leading-snug">{ar ? category.ar : category.en}</h3>
-          <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-brand-orange-text">{ar ? category.fitAr : category.fitEn}</span>
-        </div>
-        <p className="mt-2 text-sm leading-6 text-muted-foreground">{ar ? category.bodyAr : category.bodyEn}</p>
-        <div className="mt-5 flex flex-wrap gap-2 text-xs text-muted-foreground">
-          {photo.sample ? <span>{ar ? productCopy.AR.sample : productCopy.EN.sample}</span> : photo.ages.map((range) => (
-            <span key={range} dir="ltr" className="border border-border px-2.5 py-1 font-mono">{range}</span>
+      {totalPages > 1 && (
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-2">
+          <Button variant="ghost" size="sm" disabled={page === 0} onClick={() => setPage((p) => Math.max(0, p - 1))}>
+            <ChevronLeft className="size-4" />{ar ? "السابق" : "Prev"}
+          </Button>
+          {Array.from({ length: Math.min(totalPages, 10) }, (_, i) => (
+            <Button key={i} variant={page === i ? "default" : "ghost"} size="sm" className="h-8 w-8 p-0" onClick={() => setPage(i)}>
+              {i + 1}
+            </Button>
           ))}
+          {totalPages > 10 && <span className="px-1 text-sm text-muted-foreground">…</span>}
+          <Button variant="ghost" size="sm" disabled={page === totalPages - 1} onClick={() => setPage((p) => Math.min(totalPages - 1, p + 1))}>
+            {ar ? "التالي" : "Next"}<ChevronRight className="size-4" />
+          </Button>
         </div>
-      </div>
-    </article>
+      )}
+    </div>
   );
 }
 
@@ -162,7 +148,9 @@ function WholesaleShowcase({ ar }: { ar: boolean }) {
             <p className="mt-1 text-sm text-muted-foreground">{spec}</p>
             <div className="mt-4 flex items-center justify-between gap-3">
               <span className="bg-brand-orange px-3 py-1 font-mono text-sm text-foreground">{price}</span>
-              <Link to="/contact" search={{ model: code }} className="text-sm text-brand-green-text underline-offset-4 hover:underline">{ar ? wholesaleCopy.request.ar : wholesaleCopy.request.en}</Link>
+              <Link to="/contact" search={{ model: code }} className="text-sm text-brand-green-text underline-offset-4 hover:underline">
+                {ar ? wholesaleCopy.request.ar : wholesaleCopy.request.en}
+              </Link>
             </div>
           </div>
         ))}
@@ -178,11 +166,28 @@ export function ProductsPage({ line }: { line: ProductLine }) {
   const [season, setSeason] = useState<Season>("summer");
   const [age, setAge] = useState<JzraAge | "all">("all");
   const [audience, setAudience] = useState<JzraAudience | "all">("all");
+  const [activeCategory, setActiveCategory] = useState<"casual" | "dresses">("casual");
+  const [subcategory, setSubcategory] = useState<string>("all");
+
   const copy = ar ? productCopy.AR : productCopy.EN;
-  const photos = filterJzraPhotos(samplePhotos, { season, age, audience });
-  const resetFilters = () => { setSeason("summer"); setAge("all"); setAudience("all"); };
   const s = seasons[season];
   const active = lineInfo[line];
+
+  const photos = filterJzraPhotos(jzraCatalogue, { season, age, audience, subcategory }).filter(
+    (p) => p.category === activeCategory,
+  );
+
+  const allForCategory = filterJzraPhotos(jzraCatalogue, { season, age, audience }).filter(
+    (p) => p.category === activeCategory,
+  );
+  const availableSubcategories = Array.from(
+    new Set(allForCategory.map((p) => p.subcategory).filter(Boolean) as string[]),
+  );
+
+  const resetFilters = () => {
+    setSeason("summer"); setAge("all"); setAudience("all");
+    setActiveCategory("casual"); setSubcategory("all");
+  };
 
   return (
     <div className="w-full">
@@ -198,14 +203,8 @@ export function ProductsPage({ line }: { line: ProductLine }) {
             const info = lineInfo[key];
             const selected = key === line;
             return (
-              <Link
-                key={key}
-                to="/products"
-                search={{ line: key }}
-                role="tab"
-                aria-selected={selected}
-                className={cn("bg-background p-3 text-start transition-colors hover:bg-secondary sm:p-5", selected && "bg-secondary")}
-              >
+              <Link key={key} to="/products" search={{ line: key }} role="tab" aria-selected={selected}
+                className={cn("bg-background p-3 text-start transition-colors hover:bg-secondary sm:p-5", selected && "bg-secondary")}>
                 <span className={cn("font-mono text-sm uppercase tracking-[0.2em]", selected ? "text-brand-orange-text" : "text-foreground")}>{key}</span>
                 <span className="mt-1 hidden text-sm text-muted-foreground sm:block">{ar ? info.ar : info.en}</span>
                 <span className={cn("mt-3 block h-0.5 w-full transition-colors sm:mt-4 sm:w-10", selected ? "bg-primary" : "bg-transparent")} />
@@ -224,14 +223,10 @@ export function ProductsPage({ line }: { line: ProductLine }) {
               </div>
               <div className="inline-flex w-full rounded-full border border-border p-1 sm:w-auto" role="group" aria-label={ar ? "الموسم" : "Season"}>
                 {(["summer", "winter"] as Season[]).map((key) => (
-                  <Button
-                    key={key}
-                    variant={season === key ? "default" : "ghost"}
-                    type="button"
-                    aria-pressed={season === key}
-                    onClick={() => setSeason(key)}
-                    className={cn("inline-flex flex-1 items-center justify-center gap-2 rounded-full px-4 py-2.5 text-sm transition-colors sm:flex-none sm:px-5", season === key ? "bg-primary text-primary-foreground" : "hover:bg-secondary")}
-                  >
+                  <Button key={key} variant={season === key ? "default" : "ghost"} type="button" aria-pressed={season === key}
+                    onClick={() => { setSeason(key); setSubcategory("all"); }}
+                    className={cn("inline-flex flex-1 items-center justify-center gap-2 rounded-full px-4 py-2.5 text-sm transition-colors sm:flex-none sm:px-5",
+                      season === key ? "bg-primary text-primary-foreground" : "hover:bg-secondary")}>
                     {key === "summer" ? <Sun className="size-4" /> : <Snowflake className="size-4" />}
                     {key === "summer" ? (ar ? "صيف" : "Summer") : (ar ? "شتاء" : "Winter")}
                   </Button>
@@ -239,20 +234,35 @@ export function ProductsPage({ line }: { line: ProductLine }) {
               </div>
             </div>
 
-            <div className="mt-6 grid items-end gap-4 rounded-3xl border border-border bg-page-alt/60 p-4 sm:grid-cols-[1fr_1fr_auto] sm:p-5">
+            <div className="mt-6 flex gap-2" role="tablist">
+              {s.categories.map((cat) => (
+                <button key={cat.key} role="tab" aria-selected={activeCategory === cat.key}
+                  onClick={() => { setActiveCategory(cat.key as "casual" | "dresses"); setSubcategory("all"); }}
+                  className={cn("rounded-full border px-4 py-2 text-sm font-medium transition-colors",
+                    activeCategory === cat.key
+                      ? "border-primary bg-primary text-primary-foreground"
+                      : "border-border bg-background hover:bg-secondary")}>
+                  {ar ? cat.ar : cat.en}
+                  <span className="ms-1.5 text-[10px] font-normal opacity-70">{ar ? cat.fitAr : cat.fitEn}</span>
+                </button>
+              ))}
+            </div>
+
+            <div className={cn("mt-4 grid items-end gap-4 rounded-3xl border border-border bg-page-alt/60 p-4 sm:p-5",
+              availableSubcategories.length > 0 ? "sm:grid-cols-[1fr_1fr_1fr_auto]" : "sm:grid-cols-[1fr_1fr_auto]")}>
               <div>
                 <label id="jzra-age-label" className="mb-2 block text-sm font-semibold">{copy.age}</label>
-                <Select value={age} onValueChange={(value) => { if (value === "all" || jzraAgeRanges.some(range => range === value)) setAge(value as JzraAge | "all"); }} dir={ar ? "rtl" : "ltr"}>
+                <Select value={age} onValueChange={(v) => { if (v === "all" || jzraAgeRanges.some((r) => r === v)) setAge(v as JzraAge | "all"); }} dir={ar ? "rtl" : "ltr"}>
                   <SelectTrigger aria-labelledby="jzra-age-label" className="h-11 rounded-full px-4 shadow-none"><SelectValue /></SelectTrigger>
                   <SelectContent className="rounded-none">
                     <SelectItem value="all">{copy.allAges}</SelectItem>
-                    {jzraAgeRanges.map(range => <SelectItem key={range} value={range}><span dir="ltr">{range}</span> {copy.years}</SelectItem>)}
+                    {jzraAgeRanges.map((r) => <SelectItem key={r} value={r}><span dir="ltr">{r}</span> {copy.years}</SelectItem>)}
                   </SelectContent>
                 </Select>
               </div>
               <div>
                 <label id="jzra-audience-label" className="mb-2 block text-sm font-semibold">{copy.audience}</label>
-                <Select value={audience} onValueChange={(value) => { if (value === "all" || value === "boys" || value === "girls") setAudience(value); }} dir={ar ? "rtl" : "ltr"}>
+                <Select value={audience} onValueChange={(v) => { if (v === "all" || v === "boys" || v === "girls") setAudience(v as JzraAudience | "all"); }} dir={ar ? "rtl" : "ltr"}>
                   <SelectTrigger aria-labelledby="jzra-audience-label" className="h-11 rounded-full px-4 shadow-none"><SelectValue /></SelectTrigger>
                   <SelectContent className="rounded-none">
                     <SelectItem value="all">{copy.allAudiences}</SelectItem>
@@ -261,17 +271,32 @@ export function ProductsPage({ line }: { line: ProductLine }) {
                   </SelectContent>
                 </Select>
               </div>
-              <Button variant="ghost" className="h-11 w-full justify-center sm:w-auto" onClick={resetFilters} disabled={season === "summer" && age === "all" && audience === "all"}><RotateCcw />{copy.reset}</Button>
+              {availableSubcategories.length > 0 && (
+                <div>
+                  <label id="jzra-sub-label" className="mb-2 block text-sm font-semibold">{ar ? "النوع" : "Type"}</label>
+                  <Select value={subcategory} onValueChange={setSubcategory} dir={ar ? "rtl" : "ltr"}>
+                    <SelectTrigger aria-labelledby="jzra-sub-label" className="h-11 rounded-full px-4 shadow-none"><SelectValue /></SelectTrigger>
+                    <SelectContent className="rounded-none">
+                      <SelectItem value="all">{ar ? "الكل" : "All types"}</SelectItem>
+                      {availableSubcategories.map((sub) => (
+                        <SelectItem key={sub} value={sub}>
+                          {subcategoryLabels[sub] ? (ar ? subcategoryLabels[sub].ar : subcategoryLabels[sub].en) : sub}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+              )}
+              <Button variant="ghost" className="h-11 w-full justify-center sm:w-auto" onClick={resetFilters}
+                disabled={season === "summer" && age === "all" && audience === "all" && activeCategory === "casual" && subcategory === "all"}>
+                <RotateCcw />{copy.reset}
+              </Button>
             </div>
 
             <div aria-live="polite" className="mt-5 text-sm text-muted-foreground">{photos.length} {copy.photos}</div>
+
             {photos.length > 0 ? (
-              <div className="mt-5 grid gap-5 md:grid-cols-2">
-                {photos.map((photo) => {
-                  const category = s.categories.find(item => item.key === photo.category);
-                  return category ? <CategoryCard key={photo.id} category={category} photo={photo} ar={ar} /> : null;
-                })}
-              </div>
+              <div className="mt-5"><PhotoGrid photos={photos} ar={ar} /></div>
             ) : (
               <div className="mt-5 flex min-h-64 flex-col items-center justify-center rounded-3xl border border-border bg-secondary px-6 py-12 text-center">
                 <h3 className="font-head text-xl font-semibold">{copy.empty}</h3>
@@ -280,7 +305,9 @@ export function ProductsPage({ line }: { line: ProductLine }) {
               </div>
             )}
 
-            <Button asChild className="mt-8 w-full sm:mt-10 sm:w-auto"><Link to="/models">{ar ? "استعرض كل الموديلات" : "Browse all models"} <ArrowRight className="size-4 rtl:rotate-180" /></Link></Button>
+            <Button asChild className="mt-8 w-full sm:mt-10 sm:w-auto">
+              <Link to="/models">{ar ? "استعرض كل الموديلات" : "Browse all models"} <ArrowRight className="size-4 rtl:rotate-180" /></Link>
+            </Button>
           </div>
         ) : line === "tijari" ? (
           <WholesaleShowcase ar={ar} />
