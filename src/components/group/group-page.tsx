@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 import { WHATSAPP_URL } from "@/lib/process-steps";
 import { JourneySection } from "./journey-section";
 import { BusinessDashboard } from "./business-dashboard";
+import { AnimatedStatistic } from "@/components/site/animated-statistic";
 import { aboutTabs, divisions, sectorCount, sectorOverviews, whoWeServe } from "./group-data";
 import { FactorySlider } from "./factory-slider";
 import { SectorsShowcase } from "./sectors-showcase";
