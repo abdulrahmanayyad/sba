@@ -1,4 +1,4 @@
-import { ChevronDown, Facebook, Globe, Instagram, Linkedin, Menu, X } from "lucide-react";
+import { ArrowUpRight, ChevronDown, Facebook, Globe, Instagram, Linkedin, Menu, X } from "lucide-react";
 import { Link, useRouterState } from "@tanstack/react-router";
 
 import { SectorHeader } from "@/components/sectors/sector-header";
@@ -215,21 +215,38 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
       {sectorSlug ? (
         <SectorHeader slug={sectorSlug} ar={isArabic} logo={currentLogo} language={<LanguageSwitcher language={language} onChange={selectLanguage} />} />
       ) : (
-      <header className={cn("fixed inset-x-0 top-0 z-50 h-[76px] border-b transition-colors duration-300", scrolled ? "border-border bg-background/96 text-foreground backdrop-blur-sm" : "border-border bg-background text-foreground")}>
-        <div className="site-container grid h-full grid-cols-[auto_1fr_auto] items-center gap-5">
+      <header
+        className={cn(
+          "fixed inset-x-0 top-0 z-50 transition-all duration-500",
+          scrolled
+            ? "border-b border-white/[0.07] bg-background/90 shadow-[0_4px_32px_-8px_rgba(0,0,0,0.3)] backdrop-blur-xl"
+            : "border-b border-transparent bg-transparent"
+        )}
+      >
+        <div className="site-container grid h-[76px] grid-cols-[auto_1fr_auto] items-center gap-5">
+          {/* Logo */}
           <Link to="/" className="relative z-10 inline-flex items-center leading-none" aria-label={messages.accessibility.home}>
-            <img src={currentLogo} alt={isArabic ? "سامي بن عياد" : "SBA"} className="h-10 w-auto transition-opacity hover:opacity-90" />
+            <img src={currentLogo} alt={isArabic ? "سامي بن عياد" : "SBA"} className="h-10 w-auto transition-opacity duration-200 hover:opacity-80" />
           </Link>
 
-          <nav aria-label={messages.accessibility.primaryNavigation} className="hidden items-center justify-center gap-x-5 xl:flex">
-            {primaryLinks(navLink)}
+          {/* Centered nav links */}
+          <nav aria-label={messages.accessibility.primaryNavigation} className="hidden items-center justify-center gap-x-1 xl:flex">
+            {primaryLinks(cn(navLink, "px-3 py-2 rounded-md hover:bg-foreground/5"))}
           </nav>
 
-          <div className="hidden items-center gap-4 xl:flex">
-            <Button asChild variant="primary" size="lg" data-magnetic><Link to="/contact">{messages.nav.contact}</Link></Button>
+          {/* Right: CTA + language */}
+          <div className="hidden items-center gap-3 xl:flex">
             <LanguageSwitcher language={language} onChange={selectLanguage} />
+            <Link
+              to="/contact"
+              className="group inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-bold text-background transition-all duration-300 hover:bg-brand-orange hover:shadow-lg hover:shadow-brand-orange/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/50"
+            >
+              <span>{isArabic ? "ابدأ مشروعك" : "Start a Project"}</span>
+              <ArrowUpRight className="size-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 rtl:rotate-90" />
+            </Link>
           </div>
 
+          {/* Mobile hamburger */}
           <Button variant="icon" size="icon" className="justify-self-end xl:hidden" aria-label={messages.accessibility.openMenu} onClick={() => setMenuOpen(true)}>
             <Menu aria-hidden="true" />
           </Button>

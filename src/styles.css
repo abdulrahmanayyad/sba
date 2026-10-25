@@ -212,10 +212,9 @@
   line-height: 1.25rem;
   color: var(--foreground);
   position: relative;
-  transition: color 180ms ease;
+  transition: color 180ms ease, background-color 180ms ease;
+  border-radius: 6px;
   &:hover { color: var(--brand-green-text); }
-  &::after { content: ""; position: absolute; inset-inline: 0; bottom: -6px; height: 2px; background: var(--brand-green); transform: scaleX(0); transform-origin: var(--underline-origin, left); transition: transform 260ms ease; }
-  &:hover::after, &:focus-visible::after { transform: scaleX(1); }
 }
 
 [dir="rtl"] { --underline-origin: right; }

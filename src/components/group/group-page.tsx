@@ -10,10 +10,9 @@ import { cn } from "@/lib/utils";
 import { WHATSAPP_URL } from "@/lib/process-steps";
 import { JourneySection } from "./journey-section";
 import { BusinessDashboard } from "./business-dashboard";
-import { AnimatedStatistic } from "@/components/site/animated-statistic";
-import { aboutTabs, capabilityStats, divisions, sectorCount, sectorOverviews, whoWeServe } from "./group-data";
+import { aboutTabs, divisions, sectorCount, sectorOverviews, whoWeServe } from "./group-data";
 import { FactorySlider } from "./factory-slider";
-import { PortfolioStats } from "./portfolio-stats";
+import { SectorsShowcase } from "./sectors-showcase";
 
 
 export function GroupPage() {
@@ -59,6 +58,9 @@ export function GroupPage() {
           <Button asChild variant="primary" size="lg" data-magnetic className="mt-8"><a href="#divisions">{ar ? "استكشف قطاعاتنا" : "Explore Our Sectors"} <ArrowRight className="size-4 rtl:rotate-180" /></a></Button>
         </Reveal>
       </section>
+
+      {/* Sectors Showcase — Integra Magna-style tab section */}
+      <SectorsShowcase ar={ar} />
 
       {/* Sectors at a glance — one homepage showcase */}
       <section id="divisions" aria-labelledby="sectors-heading" className="scroll-mt-24 bg-page-alt section-band">
@@ -108,28 +110,6 @@ export function GroupPage() {
 
       {/* Factory Overview — Sequential walkthrough from Cutting to Packing */}
       <FactorySlider ar={ar} />
-
-      {/* Our Portfolio — Achievements & Performance Ratios */}
-      <PortfolioStats ar={ar} />
-
-      {/* Group statistics — verified figures only */}
-      <section className="bg-footer text-footer-foreground section-band">
-        <div className="site-container">
-          <Reveal className="max-w-3xl">
-            <p className="eyebrow text-brand-green">{ar ? "أرقام المجموعة" : "Group Statistics"}</p>
-            <h2 className="section-title text-footer-foreground">{ar ? "قدراتنا في أرقام" : "Our Capabilities in Numbers"}</h2>
-            <p className="section-intro mt-4 text-footer-muted">{ar ? "لمحة عن حجم عملياتنا وخبرتنا التصنيعية." : "A Snapshot of Our Operational Scale and Manufacturing Expertise."}</p>
-          </Reveal>
-          <div data-stagger className="mt-10 grid grid-cols-2 gap-px bg-footer-line sm:grid-cols-3 lg:grid-cols-4">
-            {capabilityStats.map((stat, index) => (
-              <div key={stat.label} className={cn("bg-footer px-5 py-6", index === capabilityStats.length - 1 && "max-lg:col-span-2 max-lg:text-center lg:col-span-2")}>
-                <p className="font-head text-3xl font-semibold text-brand-orange md:text-4xl"><AnimatedStatistic value={stat.value} /></p>
-                <p className="mt-2 text-sm text-footer-muted">{ar ? stat.labelAr : stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       <BusinessDashboard ar={ar} />
 

@@ -278,22 +278,17 @@ export function PortfolioStats({ ar }: { ar: boolean }) {
   const sectionRef = useRef<HTMLElement>(null!);
   const visible = useInView(sectionRef);
 
-  return (
+   return (
     <section
       ref={sectionRef}
       id="our-portfolio"
       aria-labelledby="portfolio-heading"
       className="relative overflow-hidden section-band"
+      style={{ background: "oklch(0.14 0.032 175)" }}
     >
-      {/* Deep rich background */}
-      <div
-        className="pointer-events-none absolute inset-0 -z-10"
-        style={{ background: "oklch(0.14 0.032 175)" }}
-      />
-
       {/* Subtle dot-grid overlay */}
       <div
-        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.035]"
+        className="pointer-events-none absolute inset-0 opacity-[0.035]"
         style={{
           backgroundImage:
             "radial-gradient(circle, rgba(255,255,255,0.9) 1px, transparent 1px)",
@@ -303,11 +298,11 @@ export function PortfolioStats({ ar }: { ar: boolean }) {
 
       {/* Atmospheric glows */}
       <div
-        className="pointer-events-none absolute -top-40 start-1/3 -z-10 h-[520px] w-[520px] rounded-full blur-[130px]"
+        className="pointer-events-none absolute -top-40 start-1/3 h-[520px] w-[520px] rounded-full blur-[130px]"
         style={{ background: "var(--brand-green)", opacity: 0.1 }}
       />
       <div
-        className="pointer-events-none absolute -bottom-40 end-1/4 -z-10 h-[420px] w-[420px] rounded-full blur-[110px]"
+        className="pointer-events-none absolute -bottom-40 end-1/4 h-[420px] w-[420px] rounded-full blur-[110px]"
         style={{ background: "var(--brand-orange)", opacity: 0.08 }}
       />
 
