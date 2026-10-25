@@ -1,0 +1,86 @@
+{
+  "popup": {
+    "quickView": "Quick View",
+    "viewModel": "View Model",
+    "requestModel": "Request This Model",
+    "modelBody": "Your design. Our development. One production-ready product.",
+    "learnMore": "Explore capability"
+  },
+  "hero": {
+    "eyebrow": "PRIVATE LABEL · OEM · CONTRACT MANUFACTURING",
+    "title": "We manufacture what fashion imagines",
+    "body": "An integrated textile and garment manufacturing group supporting brands, importers, distributors and fashion businesses from product development to export.",
+    "contact": "Contact Us",
+    "models": "Explore Models",
+    "scroll": "Scroll"
+  },
+  "scale": {
+    "eyebrow": "Current Manufacturing Scale",
+    "title": "Manufacturing at Scale",
+    "intro": "Our manufacturing network combines dedicated production facilities, specialized machinery, skilled teams and structured production management.",
+    "facility": "Classic Shirt Manufacturing Facility",
+    "facilityBody": "The group operates a dedicated factory specialized in classic shirt manufacturing.",
+    "monthly": "Pieces per month, dedicated line",
+    "machines": "Specialized machines",
+    "note": "Production capacity varies according to garment category, construction, fabric, finishing requirements and order specifications."
+  },
+  "capabilities": {
+    "eyebrow": "What We Do",
+    "title": "One Manufacturing Group. Multiple Capabilities",
+    "intro": "We provide integrated manufacturing solutions for brands, importers, distributors and fashion businesses."
+  },
+  "textile": {
+    "eyebrow": "Textile Manufacturing",
+    "title": "Fabric is where the product begins",
+    "p1": "Our textile facility produces a range of knitted and woven fabrics, including circular and other textile structures according to production requirements and product specifications.",
+    "p2": "The facility also includes in-house dyeing capabilities, allowing greater control over color development, fabric preparation and production coordination.",
+    "integrated": "From Fabric to Finished Product",
+    "integratedTitle": "One integrated structure",
+    "integratedBody": "Our integrated structure allows us to connect textile production directly with garment manufacturing — creating greater flexibility, coordination and control throughout the supply chain."
+  },
+  "development": {
+    "eyebrow": "20,000+ Designs",
+    "title": "Experience Measured in Development",
+    "body": "From a design reference to a production-ready garment, our teams can support the transformation of ideas into commercially viable products.",
+    "statement": "Your design. Our development. One production-ready product.",
+    "action": "Explore Models"
+  },
+  "process": {
+    "eyebrow": "Our Manufacturing Process",
+    "title": "From Idea to Export",
+    "action": "See the full 10-step journey"
+  },
+  "global": {
+    "eyebrow": "International Markets",
+    "title": "Manufacturing without borders",
+    "body": "Our manufacturing network serves customers across African, European, Arab and Gulf markets.",
+    "experience": "International experience:",
+    "markets": "France · Italy · Turkey · Saudi Arabia",
+    "coordinates": "OBOUR 30.2°N 31.5°E · EQUIRECTANGULAR"
+  },
+  "brand": {
+    "eyebrow": "Our Own Brand",
+    "category": "Retail",
+    "title": "Turkish-Inspired Fashion Brand",
+    "markets": "Egypt • Türkiye • Saudi Arabia",
+    "p1": "JZRA is a fashion brand founded in 2024 to offer Turkish-inspired fashion for women, children and men, built as a brand that can scale regionally in markets with high purchasing density. The trademark is officially registered in Egypt and Türkiye, and registration in Saudi Arabia is in progress.",
+    "p2": "The brand already has real market experience: it has taken part in specialized exhibitions, sold through several e-commerce channels, and operated a brand store in Egypt.",
+    "showrooms": "Major retail showrooms, giving us direct retail-market presence alongside our contract manufacturing and B2B production activities."
+  },
+  "why": {
+    "eyebrow": "Why SBA Group",
+    "title": "More than a factory",
+    "body": "International buyers need more than production capacity. They need communication, consistency, flexibility, technical understanding and accountability.",
+    "statement": "Clarity. Discipline. Flexibility. Responsibility. Long-term partnership."
+  },
+  "cta": {
+    "eyebrow": "Contact Us",
+    "title": "Tell us what you want to manufacture",
+    "body": "Whether you are developing a new collection, launching a private label, expanding an existing product line or looking for a long-term manufacturing partner, our team is ready to review your requirements.",
+    "contact": "Contact Us",
+    "whatsapp": "WhatsApp Us",
+    "moq": "MOQ",
+    "moqBody": "Flexible depending on product, fabric and production requirements.",
+    "phone": "PHONE"
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "nav": {
+    "models": "الموديلات",
+    "capabilities": "قدراتنا",
+    "manufacturing": "كيف نصنّع",
+    "facilities": "مصانعنا",
+    "globalPresence": "حضورنا العالمي",
+    "brand": "العلامة التجارية",
+    "more": "المزيد",
+    "about": "نبذة عنا",
+    "sectors": "القطاعات",
+    "products": "منتجاتنا",
+    "partners": "شركاؤنا",
+    "news": "أخبارنا",
+    "joinUs": "انضم إلينا",
+    "clients": "العملاء والمشروعات",
+    "quality": "الجودة",
+    "contact": "تواصل معنا"
+  },
+  "constructionNav": {
+    "about": "نبذة عنا",
+    "whoWeAre": "من نحن",
+    "whatWeDo": "ماذا نفعل",
+    "whyUs": "لماذا نحن",
+    "sectors": "قطاعاتنا",
+    "services": "خدماتنا",
+    "experience": "مشاريعنا"
+  },
+  "aboutMenu": {
+    "whoWeAre": "من نحن",
+    "whatWeDo": "ماذا نفعل",
+    "ourApproach": "نهجنا",
+    "ourValues": "قيمنا",
+    "whySba": "لماذا سامي بن عياد",
+    "leadership": "قيادة الشركة",
+    "governance": "حوكمة الشركة",
+    "policies": "السياسات"
+  },
+  "sectorsMenu": {
+    "construction": "قطاع المقاولات",
+    "environmental": "قطاع البيئة",
+    "garment": "قطاع الملابس",
+    "food": "قطاع المنتجات الطبيعية",
+    "research": "البحث العلمي وتحقيق التراث",
+    "education": "التعليم وتنمية المعرفة"
+  },
+  "hero": {
+    "eyebrow": "نقود التقدم عبر مختلف القطاعات",
+    "title": "نبني القيمة • ونصنع المستقبل",
+    "titleAr": "Building Value • Shaping the Future",
+    "lead": "قيادة التقدم عبر أربعة قطاعات استراتيجية",
+    "leadBody": "نجمع أربعة قطاعات استراتيجية — المقاولات، والبيئة، والملابس، والمنتجات الطبيعية — تحت رؤية مشتركة ترتكز على الابتكار والنمو المستدام وخلق قيمة طويلة الأمد لشركائنا ومجتمعاتنا والأجيال القادمة."
+  },
+  "footer": {
+    "descriptor": "المقاولات · البيئة · الملابس · المنتجات الطبيعية",
+    "sectors": "القطاعات",
+    "company": "المجموعة",
+    "contact": "التواصل",
+    "follow": "تابعنا",
+    "addressLabel": "عنوان الشركة",
+    "address": "شارع عبد المنعم إبراهيم، مبنى رقم 5، الطابق الأول، مكتب رقم 4، بلوك 18034، الحي التاسع، مدينة العبور، محافظة القليوبية، مصر، الرمز البريدي 11828",
+    "registration": "رقم تسجيل الشركة #209627",
+    "copyright": "حقوق النشر © 2026 سامي بن عياد ®. جميع الحقوق محفوظة."
+  },
+  "accessibility": {
+    "home": "الصفحة الرئيسية لمجموعة SBA",
+    "openMenu": "فتح القائمة",
+    "closeMenu": "إغلاق القائمة",
+    "chooseLanguage": "اختر اللغة",
+    "primaryNavigation": "التنقل الرئيسي",
+    "footerNavigation": "روابط التذييل"
+  },
+  "language": {
+    "comingSoon": "الترجمة قريبًا",
+    "label": "اللغة",
+    "names": {
+      "EN": "English",
+      "AR": "العربية",
+      "FR": "Français",
+      "IT": "Italiano",
+      "TR": "Türkçe",
+      "DE": "Deutsch"
+    }
+  },
+  "sectorNav": {
+    "about": "نبذة عنا",
+    "whoWeAre": "من نحن",
+    "whatWeDo": "ماذا نفعل",
+    "whyUs": "لماذا نحن",
+    "services": "خدماتنا",
+    "products": "منتجاتنا",
+    "sectors": "قطاعاتنا",
+    "capabilities": "قدراتنا التصنيعية",
+    "vision": "الرؤية التجارية",
+    "highlights": "مميزات القطاع",
+    "cooperation": "فرص التعاون",
+    "joinUs": "انضم إلينا"
+  }
+}

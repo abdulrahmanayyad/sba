@@ -1,0 +1,99 @@
+{
+  "nav": {
+    "models": "Models",
+    "capabilities": "Capabilities",
+    "manufacturing": "How We Manufacture",
+    "facilities": "Facilities",
+    "globalPresence": "Global Presence",
+    "brand": "The Brand",
+    "more": "More",
+    "about": "About Us",
+    "sectors": "Our Sectors",
+    "products": "Our Products",
+    "partners": "Our Partners",
+    "news": "Our News",
+    "joinUs": "Join Us",
+    "clients": "Clients & Projects",
+    "quality": "Quality",
+    "contact": "Contact Us"
+  },
+  "constructionNav": {
+    "about": "About Us",
+    "whoWeAre": "Who We Are",
+    "whatWeDo": "What We Do",
+    "whyUs": "Why Us",
+    "sectors": "Our Sectors",
+    "services": "Our Services",
+    "experience": "Our Projects"
+  },
+  "aboutMenu": {
+    "whoWeAre": "Who We Are",
+    "whatWeDo": "What We Do",
+    "ourApproach": "Our Approach",
+    "ourValues": "Our Values",
+    "whySba": "Why SAMI BIN AYYAD",
+    "leadership": "Company Leadership",
+    "governance": "Company Governance",
+    "policies": "Policies"
+  },
+  "sectorsMenu": {
+    "construction": "Contracting Sector",
+    "environmental": "Environment Sector",
+    "garment": "Garment Sector",
+    "food": "Natural Products Sector",
+    "research": "Scientific Research & Heritage Editing",
+    "education": "Education & Knowledge Development"
+  },
+  "hero": {
+    "eyebrow": "Driving Progress Across Industries",
+    "title": "Building Value • Shaping the Future",
+    "titleAr": "نبني القيمة ونصنع المستقبل",
+    "lead": "Driving Progress Across Four Strategic Sectors",
+    "leadBody": "We unite four strategic sectors — Contracting, Environment, Garment, and Natural Products — through a shared vision of innovation, sustainable growth, and long-term value creation for our partners, communities, and future generations."
+  },
+  "footer": {
+    "descriptor": "Contracting · Environment · Garment · Natural Products",
+    "sectors": "Sectors",
+    "company": "Company",
+    "contact": "Contact",
+    "follow": "Follow",
+    "addressLabel": "Office Address",
+    "address": "Abdelmonim Ibrahim st. Building 5, 1st Floor, office no. 4, Block 18034, 9th District, El Obour City, Al Qalyoubiayh, Egypt, 11828",
+    "registration": "Company Registration #209627",
+    "copyright": "Copyright © 2026 Sami Bin Ayyad ®. All Rights Reserved."
+  },
+  "accessibility": {
+    "home": "SBA home",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "chooseLanguage": "Choose language",
+    "primaryNavigation": "Primary navigation",
+    "footerNavigation": "Footer navigation"
+  },
+  "language": {
+    "comingSoon": "Translation coming soon",
+    "label": "Language",
+    "names": {
+      "EN": "English",
+      "AR": "العربية",
+      "FR": "Français",
+      "IT": "Italiano",
+      "TR": "Türkçe",
+      "DE": "Deutsch"
+    }
+  },
+  "sectorNav": {
+    "about": "About Us",
+    "whoWeAre": "Who We Are",
+    "whatWeDo": "What We Do",
+    "whyUs": "Why Us",
+    "services": "Our Services",
+    "products": "Our Products",
+    "sectors": "Our Sectors",
+    "capabilities": "Manufacturing Capabilities",
+    "vision": "Commercial Vision",
+    "highlights": "Division Highlights",
+    "cooperation": "Cooperation Opportunities",
+    "joinUs": "Join Us"
+  }
+}
