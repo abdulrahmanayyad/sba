@@ -31,7 +31,7 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
         <Reveal className="max-w-3xl">
           <p className="eyebrow">{ar ? "أداء المجموعة ورؤى الأعمال" : "Group Performance & Business Insights"}</p>
           <h2 id="dash-heading" className="section-title">{ar ? "أعمالنا في أرقام" : "Our Business in Numbers"}</h2>
-          <p className="section-intro mt-4">{ar ? "تعرّف على حجم عملياتنا والمشروعات التي ننفذها والأسواق التي نخدمها والقدرات المتنوعة التي تميّز مجموعة سامي بن عياد." : "Explore the scale of our operations, the projects we deliver, the markets we serve, and the diverse capabilities that define SAMI BIN AYYAD GROUP."}</p>
+          <p className="section-intro mt-4">{ar ? "تعرّف على حجم عملياتنا والمشروعات التي ننفذها والأسواق التي نخدمها والقدرات المتنوعة التي تميّز مجموعة سامي عياد." : "Explore the scale of our operations, the projects we deliver, the markets we serve, and the diverse capabilities that define SAMI BIN AYYAD GROUP."}</p>
         </Reveal>
 
         <div role="radiogroup" aria-label={ar ? "تصفية حسب القطاع" : "Filter by sector"} className="no-scrollbar mt-8 flex gap-2 overflow-x-auto pb-1">

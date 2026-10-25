@@ -18,7 +18,7 @@ export function AboutPage() {
       {/* About */}
       <section id="about" className="site-container section-band scroll-mt-24 grid gap-8 lg:grid-cols-2 lg:items-center lg:gap-12">
         <Reveal><span id="whoWeAre" className="block scroll-mt-24" /><span id="whatWeDo" className="block scroll-mt-24" /><span id="whySba" className="block scroll-mt-24" />
-          <p className="eyebrow">{ar ? "عن مجموعة سامي بن عياد" : "About Sami Bin Ayyad Group"}</p>
+          <p className="eyebrow">{ar ? "عن مجموعة سامي عياد" : "About Sami Bin Ayyad Group"}</p>
           <h2 className="section-title">{ar ? "نبني مستقبلًا أقوى معًا" : "Building a Stronger Future Together"}</h2>
           <div className="no-scrollbar mt-8 -mx-5 flex snap-x gap-2 overflow-x-auto px-5 sm:mx-0 sm:flex-wrap sm:px-0" role="tablist">
             {aboutTabs.map((item, index) => (

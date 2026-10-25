@@ -164,7 +164,34 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     document.documentElement.lang = isArabic ? "ar" : language.toLowerCase();
     document.documentElement.dir = isArabic ? "rtl" : "ltr";
-  }, [isArabic, language]);
+    if (isArabic) {
+      if (pathname === "/") {
+        document.title = "سامي عياد";
+      } else if (pathname === "/about") {
+        document.title = "نبذة عنا — سامي عياد";
+      } else if (pathname === "/contact") {
+        document.title = "تواصل معنا — سامي عياد";
+      } else if (pathname === "/news") {
+        document.title = "أخبارنا — سامي عياد";
+      } else if (pathname === "/partners") {
+        document.title = "شركاؤنا — سامي عياد";
+      } else if (pathname === "/products") {
+        document.title = "منتجاتنا — سامي عياد";
+      } else if (pathname === "/sectors") {
+        document.title = "قطاعاتنا — سامي عياد";
+      } else if (sectorSlug) {
+        const sectorNames: Record<string, string> = {
+          construction: "قطاع المقاولات",
+          environmental: "قطاع البيئة",
+          garment: "قطاع الملابس",
+          food: "قطاع الأغذية والمنتجات الطبيعية",
+          research: "البحث العلمي",
+          education: "التعليم",
+        };
+        document.title = `${sectorNames[sectorSlug] ?? sectorSlug} — سامي عياد`;
+      }
+    }
+  }, [isArabic, language, pathname, sectorSlug]);
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
@@ -222,7 +249,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
       <header className={cn("fixed inset-x-0 top-0 z-50 h-[76px] border-b transition-colors duration-300", scrolled ? "border-border bg-background/96 text-foreground backdrop-blur-sm" : "border-border bg-background text-foreground")}>
         <div className="site-container grid h-full grid-cols-[auto_1fr_auto] items-center gap-5">
           <Link to="/" className="relative z-10 inline-flex items-center leading-none" aria-label={messages.accessibility.home}>
-            <img src={(isArabic ? sbaLogoAr : sbaLogoEn).url} alt="SBA" className="h-9 w-auto" />
+            <img src={(isArabic ? sbaLogoAr : sbaLogoEn).url} alt={isArabic ? "سامي عياد" : "SBA"} className="h-9 w-auto" />
           </Link>
 
           <nav aria-label={messages.accessibility.primaryNavigation} className="hidden items-center justify-center gap-x-5 xl:flex">

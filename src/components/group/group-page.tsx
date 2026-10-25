@@ -49,11 +49,11 @@ export function GroupPage() {
       {/* Corporate introduction */}
       <section className="site-container section-band">
         <Reveal className="mx-auto max-w-3xl text-center">
-          <p className="eyebrow">{ar ? "مجموعة سامي بن عياد" : "Sami Bin Ayyad Group"}</p>
+          <p className="eyebrow">{ar ? "مجموعة سامي عياد" : "Sami Bin Ayyad Group"}</p>
           <h2 className="section-title">{ar ? "نقود التقدم عبر الصناعات" : "Driving Progress Across Industries"}</h2>
           <p className="section-intro mx-auto mt-5">
             {ar
-              ? "تجمع مجموعة سامي بن عياد قدرات أعمال متنوعة في المقاولات والحلول البيئية وتصنيع المنسوجات والملابس والمنتجات الطبيعية. ومن خلال الخبرة التشغيلية والتنفيذ القائم على الجودة والشراكات الاستراتيجية، نعمل على خلق قيمة دائمة عبر الصناعات والأسواق."
+              ? "تجمع مجموعة سامي عياد قدرات أعمال متنوعة في المقاولات والحلول البيئية وتصنيع المنسوجات والملابس والمنتجات الطبيعية. ومن خلال الخبرة التشغيلية والتنفيذ القائم على الجودة والشراكات الاستراتيجية، نعمل على خلق قيمة دائمة عبر الصناعات والأسواق."
               : "SAMI BIN AYYAD GROUP brings together diverse business capabilities across contracting, environmental solutions, textile and garment manufacturing, and natural products. Through operational expertise, quality-driven execution, and strategic partnerships, we work to create lasting value across industries and markets."}
           </p>
           <Button asChild variant="primary" size="lg" data-magnetic className="mt-8"><a href="#divisions">{ar ? "استكشف قطاعاتنا" : "Explore Our Sectors"} <ArrowRight className="size-4 rtl:rotate-180" /></a></Button>
@@ -129,7 +129,7 @@ export function GroupPage() {
 
       <section id="about" className="site-container section-band scroll-mt-24">
         <Reveal className="max-w-3xl">
-          <p className="eyebrow">{ar ? "عن مجموعة سامي بن عياد" : "About Sami Bin Ayyad Group"}</p>
+          <p className="eyebrow">{ar ? "عن مجموعة سامي عياد" : "About Sami Bin Ayyad Group"}</p>
           <h2 className="section-title">{ar ? "نبني مستقبلًا أقوى معًا" : "Building a Stronger Future Together"}</h2>
           <p className="section-intro mt-4">{ar ? aboutTabs[0]?.bodyAr : aboutTabs[0]?.body}</p>
           <Button asChild variant="primary" size="lg" className="mt-8" data-magnetic><Link to="/about">{ar ? "اعرف المزيد" : "Learn more"} <ArrowRight className="size-4 rtl:rotate-180" /></Link></Button>
@@ -143,7 +143,7 @@ export function GroupPage() {
         <Reveal className="max-w-3xl">
           <p className="eyebrow">{ar ? "الشراكات والأسواق" : "Partnerships & Markets"}</p>
           <h2 className="section-title">{ar ? "نربط القدرات بالفرص العالمية" : "Connecting Capabilities with Global Opportunities"}</h2>
-          <p className="section-intro mt-4">{ar ? "تطوّر مجموعة سامي بن عياد علاقات أعمال عبر قطاعات متنوعة، مع التركيز على التصنيع وتنفيذ المشروعات والتجارة الدولية والشراكات التجارية طويلة الأمد." : "SAMI BIN AYYAD GROUP develops business relationships across diverse sectors, with a focus on manufacturing, project execution, international trade, and long-term commercial partnerships."}</p>
+          <p className="section-intro mt-4">{ar ? "تطوّر مجموعة سامي عياد علاقات أعمال عبر قطاعات متنوعة، مع التركيز على التصنيع وتنفيذ المشروعات والتجارة الدولية والشراكات التجارية طويلة الأمد." : "SAMI BIN AYYAD GROUP develops business relationships across diverse sectors, with a focus on manufacturing, project execution, international trade, and long-term commercial partnerships."}</p>
         </Reveal>
         <div data-stagger className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {whoWeServe.map((audience) => (
@@ -161,7 +161,7 @@ export function GroupPage() {
           <div>
             <p className="eyebrow text-brand-green">{ar ? "تواصل معنا" : "Get In Touch"}</p>
             <h2 className="section-title text-footer-foreground">{ar ? "لنبنِ ما هو قادم" : "Let's Build What's Next"}</h2>
-            <p className="section-intro mt-4 text-footer-muted">{ar ? "استكشف فرص التعاون مع مجموعة سامي بن عياد في التصنيع والإنشاءات والحلول البيئية والمنتجات الطبيعية." : "Explore opportunities to collaborate with SAMI BIN AYYAD GROUP across manufacturing, construction, environmental solutions, and natural products."}</p>
+            <p className="section-intro mt-4 text-footer-muted">{ar ? "استكشف فرص التعاون مع مجموعة سامي عياد في التصنيع والإنشاءات والحلول البيئية والمنتجات الطبيعية." : "Explore opportunities to collaborate with SAMI BIN AYYAD GROUP across manufacturing, construction, environmental solutions, and natural products."}</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button asChild variant="primary" size="lg" data-magnetic className="w-full sm:w-auto"><Link to="/contact">{ar ? "تواصل مع فريقنا" : "Contact Our Team"}</Link></Button>
               <Button asChild size="lg" className="glass-dark w-full !text-footer-foreground hover:!bg-footer sm:w-auto"><a href="#divisions">{ar ? "استكشف قطاعاتنا" : "Explore Our Sectors"}</a></Button>
