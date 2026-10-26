@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Mail, MessageCircle } from "lucide-react";
 
-import heroBg from "@/assets/hero-sustainable.png";
+import heroBg from "@/assets/home-hero-st.jpg";
 import { Button } from "@/components/ui/button";
 import { HomeMotion, HomeReveal as Reveal } from "@/components/home/home-motion";
 import { useLanguage } from "@/i18n/language-context";
@@ -11,7 +11,7 @@ import { WHATSAPP_URL } from "@/lib/process-steps";
 import { JourneySection } from "./journey-section";
 import { BusinessDashboard } from "./business-dashboard";
 import { AnimatedStatistic } from "@/components/site/animated-statistic";
-import { aboutTabs, divisions, sectorCount, sectorOverviews, whoWeServe } from "./group-data";
+import { aboutTabs, divisions, sectorOverviews, whoWeServe } from "./group-data";
 import { FactorySlider } from "./factory-slider";
 import { SectorsShowcase } from "./sectors-showcase";
 
@@ -42,7 +42,6 @@ export function GroupPage() {
               <Button asChild size="lg" className="glass-dark w-full !text-footer-foreground hover:!bg-footer sm:w-auto"><Link to="/contact">{ar ? "اطلب عرض سعر" : "Request a Quote"}</Link></Button>
             </div>
           </div>
-          <p className="absolute bottom-12 end-6 hidden font-head text-2xl leading-tight md:block">{ar ? `${sectorCount.ar} قطاعات` : `${sectorCount.en} Sectors`}<br />{ar ? "رؤية واحدة" : "One Vision"}</p>
         </div>
       </section>
 

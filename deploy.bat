@@ -20,7 +20,7 @@ if errorlevel 1 (
 )
 
 echo Pushing to GitHub...
-git push
+git push origin master
 
 echo.
 echo Done. Press any key to exit...
