@@ -65,8 +65,16 @@ export function SectorPage({ sector }: { sector: SectorPageData }) {
               <p className="section-intro mt-4 max-w-2xl">{ar ? section.bodyAr : section.body}</p>
               {sector.slug === "garment" && section.title === "Our Products" && (
                 <div className="mt-6 flex flex-wrap gap-3">
-                  {(["jzra", "tijari", "azra"] as const).map((line) => (
-                    <Button key={line} asChild variant="outline"><Link to="/products" search={{ line }}>{line.toUpperCase()}<ArrowRight aria-hidden="true" className="size-4 rtl:rotate-180" /></Link></Button>
+                  {[
+                    { key: "jzra" as const, label: ar ? "B2C" : "B2C" },
+                    { key: "tijari" as const, label: ar ? "B2B" : "B2B" },
+                  ].map((item) => (
+                    <Button key={item.key} asChild variant="outline">
+                      <Link to="/products" search={{ line: item.key }}>
+                        {item.label}
+                        <ArrowRight aria-hidden="true" className="size-4 rtl:rotate-180" />
+                      </Link>
+                    </Button>
                   ))}
                 </div>
               )}

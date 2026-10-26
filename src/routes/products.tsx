@@ -10,10 +10,10 @@ export const Route = createFileRoute("/products")({
   }),
   head: () => ({
     meta: [
-      { title: "Our Products — JZRA (B2C) & TIJARI (B2B) | SBA" },
-      { name: "description", content: "SBA garment and fashion product lines: JZRA B2C collections and TIJARI B2B commercial lines." },
+      { title: "Our Products — B2C & B2B | SBA" },
+      { name: "description", content: "SBA garment and fashion product lines: B2C collections and B2B commercial lines." },
       { property: "og:title", content: "Our Products — SBA" },
-      { property: "og:description", content: "JZRA seasonal collections and TIJARI wholesale lines." },
+      { property: "og:description", content: "B2C seasonal collections and B2B commercial wholesale lines." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

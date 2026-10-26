@@ -10,10 +10,10 @@ export const Route = createFileRoute("/sectors/$sector")({
   validateSearch: (search: Record<string, unknown>): { tab?: ConstructionTab } => ({
     tab: validTabs.includes(search["tab"] as ConstructionTab) ? (search["tab"] as ConstructionTab) : undefined,
   }),
-  head: ({ params, search }) => {
+  head: ({ params, search }: { params: { sector: string }; search?: { tab?: ConstructionTab } }) => {
     const sector = sectors[params.sector as SectorSlug];
     const name = sector?.name ?? "Sector";
-    const tab = search.tab;
+    const tab = search?.tab;
     const tabTitles: Record<string, string> = {
       about: "About Contracting & Development",
       sectors: "Sectors We Serve — Healthcare, Residential & Commercial",

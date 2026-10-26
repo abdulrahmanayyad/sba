@@ -14,24 +14,16 @@ import { cn } from "@/lib/utils";
 export type ProductLine = "jzra" | "tijari";
 type Season = "summer" | "winter";
 
-const lineInfo: Record<ProductLine, { name: string; en: string; ar: string; badgeEn: string; badgeAr: string }> = {
+const lineInfo: Record<ProductLine, { en: string; ar: string }> = {
   jzra: {
-    name: "JZRA",
-    badgeEn: "B2C Brand",
-    badgeAr: "علامة B2C",
     en: "B2C Brand — Children & youth fashion label",
     ar: "علامة B2C — خط أزياء الأطفال والشباب",
   },
   tijari: {
-    name: "TIJARI",
-    badgeEn: "B2B Brand",
-    badgeAr: "علامة B2B",
     en: "B2B Brand — Commercial & wholesale garment line",
     ar: "علامة B2B — خط الملابس التجارية والجملة",
   },
 };
-
-const lineOrder: ProductLine[] = ["jzra", "tijari"];
 
 const subcategoryLabels: Record<string, { en: string; ar: string }> = {
   "Cotton Sets": { en: "Cotton Sets", ar: "أطقم قطنية" },
@@ -90,39 +82,69 @@ const seasons: Record<Season, SeasonData> = {
 };
 
 function PhotoGrid({ photos, ar }: { photos: JzraPhoto[]; ar: boolean }) {
+  // Deduplicate models by image URL to eliminate any repeated items
+  const uniquePhotos = Array.from(new Map(photos.map((p) => [p.image, p])).values());
+
   const [page, setPage] = useState(0);
-  const totalPages = Math.ceil(photos.length / PAGE_SIZE);
-  const visible = photos.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE);
-  const [prevLen, setPrevLen] = useState(photos.length);
-  if (photos.length !== prevLen) { setPrevLen(photos.length); setPage(0); }
+  const totalPages = Math.ceil(uniquePhotos.length / PAGE_SIZE);
+  const visible = uniquePhotos.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE);
+  const [prevLen, setPrevLen] = useState(uniquePhotos.length);
+  if (uniquePhotos.length !== prevLen) { setPrevLen(uniquePhotos.length); setPage(0); }
 
   return (
     <div>
-      <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        {visible.map((photo) => (
-          <div key={photo.id} className="group relative overflow-hidden rounded-xl border border-border bg-secondary">
-            <img
-              src={photo.image}
-              alt=""
-              loading="lazy"
-              className="aspect-[3/4] w-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-            {photo.subcategory && (
-              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/60 to-transparent px-3 py-2">
-                <span className="text-[10px] font-mono uppercase tracking-widest text-white/90">
-                  {subcategoryLabels[photo.subcategory]
-                    ? (ar ? subcategoryLabels[photo.subcategory]!.ar : subcategoryLabels[photo.subcategory]!.en)
-                    : photo.subcategory}
-                </span>
+      <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        {visible.map((photo, idx) => {
+          const subLabel = photo.subcategory && subcategoryLabels[photo.subcategory]
+            ? (ar ? subcategoryLabels[photo.subcategory]!.ar : subcategoryLabels[photo.subcategory]!.en)
+            : photo.category === "dresses"
+              ? (ar ? "فستان صيفي للأطفال" : "Children's Summer Dress")
+              : (ar ? "طقم كاجوال للأطفال" : "Kids Casual Set");
+
+          const audLabel = photo.audiences.map((a) => (a === "boys" ? (ar ? "أولاد" : "Boys") : (ar ? "بنات" : "Girls"))).join(ar ? " و" : " & ");
+          const ageLabel = photo.ages.join(", ") + (ar ? " سنة" : "Y");
+          const desc = ar
+            ? `${audLabel} · الأعمار: ${ageLabel} · أقمشة قطنية مريحة عالية الجودة`
+            : `${audLabel} · Ages: ${ageLabel} · Premium breathable cotton fabric`;
+
+          const modelCode = `B2C-${photo.season.slice(0, 1).toUpperCase()}${String(idx + 1).padStart(3, "0")}`;
+
+          return (
+            <div key={photo.id} className="glass-card group flex flex-col p-4 sm:p-5 transition-transform duration-300 hover:-translate-y-1">
+              <div className="relative aspect-[3/4] overflow-hidden rounded-xl border border-border bg-secondary">
+                <img
+                  src={photo.image}
+                  alt={subLabel}
+                  loading="lazy"
+                  className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute top-2 end-2 flex flex-wrap gap-1">
+                  {photo.ages.map((a) => (
+                    <span key={a} dir="ltr" className="rounded bg-black/60 px-1.5 py-0.5 font-mono text-[9px] text-white">
+                      {a}
+                    </span>
+                  ))}
+                </div>
               </div>
-            )}
-            <div className="absolute top-2 end-2 flex flex-wrap gap-1">
-              {photo.ages.map((a) => (
-                <span key={a} dir="ltr" className="rounded bg-black/50 px-1.5 py-0.5 font-mono text-[9px] text-white/90">{a}</span>
-              ))}
+
+              {/* Title */}
+              <h3 className="mt-4 font-head font-semibold leading-snug">{subLabel}</h3>
+              {/* Description */}
+              <p className="mt-1 text-sm text-muted-foreground">{desc}</p>
+
+              {/* Action without pricing */}
+              <div className="mt-4 flex items-center justify-between gap-3 border-t border-border/50 pt-3">
+                <Link
+                  to="/contact"
+                  search={{ model: modelCode }}
+                  className="text-sm font-medium text-brand-green-text underline-offset-4 hover:underline"
+                >
+                  {ar ? "طلب استفسار" : "Request Inquiry"}
+                </Link>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
       {totalPages > 1 && (
         <div className="mt-6 flex flex-wrap items-center justify-center gap-2">
@@ -146,20 +168,17 @@ function PhotoGrid({ photos, ar }: { photos: JzraPhoto[]; ar: boolean }) {
 
 function WholesaleShowcase({ ar }: { ar: boolean }) {
   return (
-    <div className="mt-10 sm:mt-14">
-      <Reveal>
-        <p className="eyebrow">{ar ? wholesaleCopy.eyebrow.ar : wholesaleCopy.eyebrow.en}</p>
-        <h2 className="section-title mt-3">{ar ? wholesaleCopy.title.ar : wholesaleCopy.title.en}</h2>
-      </Reveal>
-      <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {wholesaleModels.map(([code, name, spec, price]) => (
-          <div key={code} className="glass-card group flex flex-col p-5 transition-transform duration-300 hover:-translate-y-1">
-            <div className="grid aspect-[3/4] place-items-center border border-border bg-secondary font-mono text-xs text-muted-foreground">{code}</div>
+    <div className="mt-8">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {wholesaleModels.map(([code, name, spec]) => (
+          <div key={code} className="glass-card group flex flex-col p-4 sm:p-5 transition-transform duration-300 hover:-translate-y-1">
+            <div className="grid aspect-[3/4] place-items-center rounded-xl border border-border bg-secondary font-mono text-sm text-muted-foreground">
+              {code}
+            </div>
             <h3 className="mt-4 font-head font-semibold leading-snug">{name}</h3>
             <p className="mt-1 text-sm text-muted-foreground">{spec}</p>
-            <div className="mt-4 flex items-center justify-between gap-3">
-              <span className="bg-brand-orange px-3 py-1 font-mono text-sm text-foreground">{price}</span>
-              <Link to="/contact" search={{ model: code }} className="text-sm text-brand-green-text underline-offset-4 hover:underline">
+            <div className="mt-4 flex items-center justify-between gap-3 border-t border-border/50 pt-3">
+              <Link to="/contact" search={{ model: code }} className="text-sm font-medium text-brand-green-text underline-offset-4 hover:underline">
                 {ar ? wholesaleCopy.request.ar : wholesaleCopy.request.en}
               </Link>
             </div>
@@ -205,37 +224,15 @@ export function ProductsPage({ line }: { line: ProductLine }) {
       <section className="site-container section-band">
         <Reveal>
           <p className="eyebrow">{ar ? "منتجاتنا" : "Our Products"}</p>
-          <h1 className="section-title mt-3">{active.name}</h1>
-          <p className="mt-3 max-w-xl text-muted-foreground">{ar ? active.ar : active.en}</p>
+          <h1 className="section-title mt-3">{ar ? active.ar : active.en}</h1>
         </Reveal>
 
-        <div role="tablist" className="mt-8 grid grid-cols-2 gap-px border border-border bg-border">
-          {lineOrder.map((key) => {
-            const info = lineInfo[key];
-            const selected = key === line;
-            return (
-              <Link key={key} to="/products" search={{ line: key }} role="tab" aria-selected={selected}
-                className={cn("bg-background p-4 text-start transition-colors hover:bg-secondary sm:p-6", selected && "bg-secondary")}>
-                <div className="flex items-center gap-2">
-                  <span className={cn("font-mono text-base font-bold uppercase tracking-[0.2em]", selected ? "text-brand-orange-text" : "text-foreground")}>{info.name}</span>
-                  <span className="rounded bg-brand-green/10 px-2 py-0.5 font-mono text-[11px] font-semibold text-brand-green-text">
-                    {ar ? info.badgeAr : info.badgeEn}
-                  </span>
-                </div>
-                <span className="mt-1 hidden text-sm text-muted-foreground sm:block">{ar ? info.ar : info.en}</span>
-                <span className={cn("mt-3 block h-0.5 w-full transition-colors sm:mt-4 sm:w-12", selected ? "bg-primary" : "bg-transparent")} />
-              </Link>
-            );
-          })}
-        </div>
-
         {line === "jzra" ? (
-          <div className="mt-10 sm:mt-14">
+          <div className="mt-8">
             <div className="flex flex-wrap items-end justify-between gap-5">
               <div className="max-w-xl">
-                <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">JZRA</p>
-                <h2 className="mt-2 font-head text-2xl font-semibold sm:text-3xl">{ar ? s.titleAr : s.titleEn}</h2>
-                <p className="mt-3 text-sm text-muted-foreground sm:text-base">{ar ? s.bodyAr : s.bodyEn}</p>
+                <h2 className="font-head text-2xl font-semibold sm:text-3xl">{ar ? s.titleAr : s.titleEn}</h2>
+                <p className="mt-2 text-sm text-muted-foreground sm:text-base">{ar ? s.bodyAr : s.bodyEn}</p>
               </div>
               <div className="inline-flex w-full rounded-full border border-border p-1 sm:w-auto" role="group" aria-label={ar ? "الموسم" : "Season"}>
                 {(["summer", "winter"] as Season[]).map((key) => (
@@ -267,9 +264,9 @@ export function ProductsPage({ line }: { line: ProductLine }) {
             <div className={cn("mt-4 grid items-end gap-4 rounded-3xl border border-border bg-page-alt/60 p-4 sm:p-5",
               availableSubcategories.length > 0 ? "sm:grid-cols-[1fr_1fr_1fr_auto]" : "sm:grid-cols-[1fr_1fr_auto]")}>
               <div>
-                <label id="jzra-age-label" className="mb-2 block text-sm font-semibold">{copy.age}</label>
+                <label id="b2c-age-label" className="mb-2 block text-sm font-semibold">{copy.age}</label>
                 <Select value={age} onValueChange={(v) => { if (v === "all" || jzraAgeRanges.some((r) => r === v)) setAge(v as JzraAge | "all"); }} dir={ar ? "rtl" : "ltr"}>
-                  <SelectTrigger aria-labelledby="jzra-age-label" className="h-11 rounded-full px-4 shadow-none"><SelectValue /></SelectTrigger>
+                  <SelectTrigger aria-labelledby="b2c-age-label" className="h-11 rounded-full px-4 shadow-none"><SelectValue /></SelectTrigger>
                   <SelectContent className="rounded-none">
                     <SelectItem value="all">{copy.allAges}</SelectItem>
                     {jzraAgeRanges.map((r) => <SelectItem key={r} value={r}><span dir="ltr">{r}</span> {copy.years}</SelectItem>)}
@@ -277,9 +274,9 @@ export function ProductsPage({ line }: { line: ProductLine }) {
                 </Select>
               </div>
               <div>
-                <label id="jzra-audience-label" className="mb-2 block text-sm font-semibold">{copy.audience}</label>
+                <label id="b2c-audience-label" className="mb-2 block text-sm font-semibold">{copy.audience}</label>
                 <Select value={audience} onValueChange={(v) => { if (v === "all" || v === "boys" || v === "girls") setAudience(v as JzraAudience | "all"); }} dir={ar ? "rtl" : "ltr"}>
-                  <SelectTrigger aria-labelledby="jzra-audience-label" className="h-11 rounded-full px-4 shadow-none"><SelectValue /></SelectTrigger>
+                  <SelectTrigger aria-labelledby="b2c-audience-label" className="h-11 rounded-full px-4 shadow-none"><SelectValue /></SelectTrigger>
                   <SelectContent className="rounded-none">
                     <SelectItem value="all">{copy.allAudiences}</SelectItem>
                     <SelectItem value="boys">{copy.boys}</SelectItem>
@@ -289,9 +286,9 @@ export function ProductsPage({ line }: { line: ProductLine }) {
               </div>
               {availableSubcategories.length > 0 && (
                 <div>
-                  <label id="jzra-sub-label" className="mb-2 block text-sm font-semibold">{ar ? "النوع" : "Type"}</label>
+                  <label id="b2c-sub-label" className="mb-2 block text-sm font-semibold">{ar ? "النوع" : "Type"}</label>
                   <Select value={subcategory} onValueChange={setSubcategory} dir={ar ? "rtl" : "ltr"}>
-                    <SelectTrigger aria-labelledby="jzra-sub-label" className="h-11 rounded-full px-4 shadow-none"><SelectValue /></SelectTrigger>
+                    <SelectTrigger aria-labelledby="b2c-sub-label" className="h-11 rounded-full px-4 shadow-none"><SelectValue /></SelectTrigger>
                     <SelectContent className="rounded-none">
                       <SelectItem value="all">{ar ? "الكل" : "All types"}</SelectItem>
                       {availableSubcategories.map((sub) => (
@@ -309,7 +306,7 @@ export function ProductsPage({ line }: { line: ProductLine }) {
               </Button>
             </div>
 
-            <div aria-live="polite" className="mt-5 text-sm text-muted-foreground">{photos.length} {copy.photos}</div>
+            <div aria-live="polite" className="mt-5 text-sm text-muted-foreground">{uniquePhotosCount(photos)} {copy.photos}</div>
 
             {photos.length > 0 ? (
               <div className="mt-5"><PhotoGrid photos={photos} ar={ar} /></div>
@@ -325,18 +322,14 @@ export function ProductsPage({ line }: { line: ProductLine }) {
               <Link to="/models">{ar ? "استعرض كل الموديلات" : "Browse all models"} <ArrowRight className="size-4 rtl:rotate-180" /></Link>
             </Button>
           </div>
-        ) : line === "tijari" ? (
-          <WholesaleShowcase ar={ar} />
         ) : (
-          <div className="mt-10 grid min-h-72 place-items-center rounded-3xl border border-border p-6 text-center sm:mt-14 sm:p-10">
-            <div>
-              <p className="font-mono text-sm uppercase tracking-[0.2em] text-brand-orange-text">{line}</p>
-              <h2 className="mt-3 font-head text-2xl font-semibold">{ar ? "المحتوى قيد الإعداد" : "Collection coming soon"}</h2>
-              <p className="mt-3 text-sm text-muted-foreground">{ar ? "سيتم نشر الصور والتفاصيل فور اعتمادها." : "Photos and details will be published here once approved."}</p>
-            </div>
-          </div>
+          <WholesaleShowcase ar={ar} />
         )}
       </section>
     </div>
   );
+}
+
+function uniquePhotosCount(photos: JzraPhoto[]) {
+  return new Set(photos.map((p) => p.image)).size;
 }

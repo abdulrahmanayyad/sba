@@ -263,15 +263,15 @@ export function SectorsShowcase({ ar }: { ar: boolean }) {
 
             {/* Explore CTA */}
             <div className="mt-2">
-              <Link
-                to={current.href as "/sectors/$sector"}
+              <a
+                href={current.href}
                 className="group inline-flex items-center gap-2 text-sm font-semibold text-brand-orange transition-colors duration-200 hover:text-brand-orange/80 focus-visible:outline-none"
               >
                 <span className="border-b border-brand-orange/40 pb-0.5 transition-colors duration-200 group-hover:border-brand-orange">
                   {ar ? current.ctaAr : current.ctaEn}
                 </span>
                 <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 rtl:rotate-90" />
-              </Link>
+              </a>
             </div>
 
             {/* Bottom stats row */}

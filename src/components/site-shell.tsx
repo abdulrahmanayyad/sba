@@ -190,10 +190,10 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
         ))}
       </NavDropdown>
       <NavDropdown label={messages.nav.products} className={cn(className, "whitespace-nowrap font-body text-sm font-semibold")}>
-        {(close) => [
-          { key: "jzra", label: isArabic ? "B2C Brand" : "B2C Brand" },
-          { key: "tijari", label: isArabic ? "B2B Brand" : "B2B Brand" },
-        ].map((item) => (
+        {(close) => ([
+          { key: "jzra" as const, label: "B2C" },
+          { key: "tijari" as const, label: "B2B" },
+        ] as const).map((item) => (
           <Link key={item.key} to="/products" search={{ line: item.key }} className={dropdownLink} onClick={() => { close(); onNavigate?.(); }}>
             {item.label}
           </Link>

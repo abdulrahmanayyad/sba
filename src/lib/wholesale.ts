@@ -6,11 +6,11 @@ export const wholesaleModels = [
 ] as const;
 
 export const wholesaleCopy = {
-  eyebrow: { en: "B2B Showcase", ar: "عرض الجملة" },
-  title: { en: "Wholesale models, transparent pricing", ar: "موديلات بالجملة بأسعار واضحة" },
-  request: { en: "Request", ar: "اطلب" },
+  eyebrow: { en: "B2B Brand", ar: "علامة B2B" },
+  title: { en: "Commercial & wholesale garment line", ar: "خط الملابس التجارية والجملة" },
+  request: { en: "Inquire", ar: "طلب استفسار" },
   note: {
-    en: "Estimated FOB wholesale prices per piece; final price depends on fabric, quantity and specifications",
-    ar: "أسعار جملة FOB تقديرية للقطعة؛ السعر النهائي يعتمد على القماش والكمية والمواصفات",
+    en: "Technical specifications, fabric blends, and custom order quantities available upon request.",
+    ar: "المواصفات الفنية وأنواع الأقمشة وكميات التوريد متاحة عند الطلب.",
   },
 };
