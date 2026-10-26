@@ -144,50 +144,23 @@ export function GarmentSectorView({ tab = "about" }: GarmentViewProps) {
         </div>
       </section>
 
-      {/* Tabs Bar */}
-      <section className="sticky top-[76px] z-40 border-b border-border bg-background/95 backdrop-blur-md">
-        <div className="site-container">
-          <div className="flex items-center gap-2 overflow-x-auto py-3 no-scrollbar">
-            {(
-              [
-                "about",
-                "services",
-                "clients",
-                "projects",
-                "partners",
-                "capabilities",
-                "join",
-              ] as GarmentTab[]
-            ).map((key) => {
-              const active = activeTab === key;
-              return (
-                <Link
-                  key={key}
-                  to="/sectors/$sector"
-                  params={{ sector: "garment" }}
-                  search={key === "about" ? {} : { tab: key }}
-                  className={cn(
-                    "flex shrink-0 items-center gap-2 rounded-xl px-4 py-2.5 text-xs sm:text-sm font-semibold transition cursor-pointer",
-                    active
-                      ? "bg-brand-orange text-white shadow-sm"
-                      : "text-muted-foreground hover:bg-secondary hover:text-foreground"
-                  )}
-                >
-                  <span>{ar ? tabLabels[key].ar : tabLabels[key].en}</span>
-                </Link>
-              );
-            })}
-          </div>
-        </div>
-      </section>
 
-      {/* Main Tab Content */}
-      <main className="site-container min-h-[50vh]">
-        {activeTab === "about" && <GarmentAboutTab />}
+      {/* Main Content */}
+
+      <main className="site-container min-h-[50vh] space-y-12">
+        {(activeTab === "about" || activeTab === "clients" || activeTab === "partners") && (
+          <div className="space-y-16">
+            <GarmentAboutTab />
+            <div className="border-t border-border/60 pt-12">
+              <GarmentClientsTab />
+            </div>
+            <div className="border-t border-border/60 pt-12">
+              <GarmentPartnersTab />
+            </div>
+          </div>
+        )}
         {activeTab === "services" && <GarmentServicesTab />}
-        {activeTab === "clients" && <GarmentClientsTab />}
         {activeTab === "projects" && <GarmentProjectsTab />}
-        {activeTab === "partners" && <GarmentPartnersTab />}
         {activeTab === "capabilities" && <GarmentCapabilitiesTab />}
         {activeTab === "join" && <GarmentJoinTab />}
       </main>

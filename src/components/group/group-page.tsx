@@ -131,12 +131,32 @@ export function GroupPage() {
           <h2 className="section-title">{ar ? "نربط القدرات بالفرص العالمية" : "Connecting Capabilities with Global Opportunities"}</h2>
           <p className="section-intro mt-4">{ar ? "تطوّر مجموعة سامي عياد علاقات أعمال عبر قطاعات متنوعة، مع التركيز على التصنيع وتنفيذ المشروعات والتجارة الدولية والشراكات التجارية طويلة الأمد." : "SAMI BIN AYYAD GROUP develops business relationships across diverse sectors, with a focus on manufacturing, project execution, international trade, and long-term commercial partnerships."}</p>
         </Reveal>
-        <div data-stagger className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div data-stagger className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {whoWeServe.map((audience) => (
-            <div key={audience.en} className="glass-card p-5 font-head font-semibold">{ar ? audience.ar : audience.en}</div>
+            <div
+              key={audience.en}
+              className="group relative overflow-hidden rounded-3xl border border-white/20 bg-background/80 shadow-lg backdrop-blur-xl transition-all duration-500 hover:shadow-2xl hover:border-brand-green/40 hover:-translate-y-1 flex flex-col"
+            >
+              <div className="relative aspect-[16/10] overflow-hidden">
+                <img
+                  src={audience.image}
+                  alt={ar ? audience.ar : audience.en}
+                  className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
+                <span className="absolute top-3.5 start-3.5 rounded-full bg-black/60 px-3 py-1 text-[11px] font-medium text-white/90 backdrop-blur-md border border-white/20">
+                  {ar ? audience.sectorAr : audience.sectorEn}
+                </span>
+              </div>
+              <div className="p-6 flex-1 flex flex-col justify-center">
+                <h3 className="font-head text-base md:text-lg font-bold text-foreground leading-snug group-hover:text-brand-orange transition-colors">
+                  {ar ? audience.ar : audience.en}
+                </h3>
+              </div>
+            </div>
           ))}
         </div>
-        <Reveal className="mt-10">
+        <Reveal className="mt-12">
           <Button asChild variant="primary" size="lg" data-magnetic><Link to="/contact">{ar ? "ناقش شراكة" : "Discuss a Partnership"} <ArrowRight className="size-4 rtl:rotate-180" /></Link></Button>
         </Reveal>
       </section>

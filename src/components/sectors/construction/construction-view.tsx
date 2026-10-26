@@ -105,35 +105,9 @@ export function ConstructionSectorView({ tab = "about" }: ConstructionViewProps)
         </div>
       </section>
 
-      {/* Contracting Subpage Tab Switcher */}
-      <section className="sticky top-[76px] z-40 border-b border-border bg-background/95 backdrop-blur-md">
-        <div className="site-container">
-          <div className="no-scrollbar -mx-4 flex overflow-x-auto px-4 py-3 sm:mx-0 sm:px-0 sm:gap-2">
-            {(["about", "sectors", "services", "projects"] as ConstructionTab[]).map((tabKey) => {
-              const active = activeTab === tabKey;
-              const info = tabLabels[tabKey];
-              return (
-                <Link
-                  key={tabKey}
-                  to="/sectors/$sector"
-                  params={{ sector: "construction" }}
-                  search={{ tab: tabKey === "about" ? undefined : tabKey }}
-                  className={cn(
-                    "flex shrink-0 items-center gap-2 rounded-full px-5 py-2.5 text-xs font-semibold sm:text-sm transition-all",
-                    active
-                      ? "bg-primary text-primary-foreground shadow-sm"
-                      : "text-foreground/80 hover:bg-secondary hover:text-foreground"
-                  )}
-                >
-                  <span>{ar ? info.ar : info.en}</span>
-                </Link>
-              );
-            })}
-          </div>
-        </div>
-      </section>
 
       {/* Render Active Page Content */}
+
       {activeTab === "about" && <ConstructionAboutView ar={ar} />}
       {activeTab === "sectors" && <ConstructionSectorsView ar={ar} />}
       {activeTab === "services" && <ConstructionServicesView ar={ar} />}

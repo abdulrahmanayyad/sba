@@ -5,10 +5,10 @@ import { BrandsPage } from "@/components/brands/brands-page";
 export const Route = createFileRoute("/brands")({
   head: () => ({
     meta: [
-      { title: "Our Brands — SBA | Sami Bin Ayyad Group" },
-      { name: "description", content: "JZRA — the own garment brand of Sami Bin Ayyad Group for women's and children's wear, sold in Egypt, Türkiye and Saudi Arabia." },
-      { property: "og:title", content: "Our Brands — SBA" },
-      { property: "og:description", content: "JZRA — our own garment brand." },
+      { title: "Our Brands — Sami Bin Ayyad" },
+      { name: "description", content: "Garment and fashion brands of Sami Bin Ayyad Group for B2B and B2C apparel across international markets." },
+      { property: "og:title", content: "Our Brands — Sami Bin Ayyad" },
+      { property: "og:description", content: "Sami Bin Ayyad Group Garment & Fashion Brands." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

@@ -4,10 +4,10 @@ import { GroupPage } from "@/components/group/group-page";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "سامي عياد" },
-      { name: "description", content: "مجموعة سامي عياد — ستة قطاعات، رؤية واحدة: الملابس والمنسوجات، المقاولات، البيئة، البحث العلمي، التعليم، والمنتجات الطبيعية." },
-      { property: "og:title", content: "سامي عياد" },
-      { property: "og:description", content: "مجموعة سامي عياد — ستة قطاعات، رؤية واحدة: من التصنيع إلى المعرفة." },
+      { title: "Sami Bin Ayyad" },
+      { name: "description", content: "SAMI BIN AYYAD GROUP — Six sectors, one vision: Garments, Contracting, Environment, Natural Products, Research & Education." },
+      { property: "og:title", content: "Sami Bin Ayyad" },
+      { property: "og:description", content: "SAMI BIN AYYAD GROUP — Driving progress across strategic sectors." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

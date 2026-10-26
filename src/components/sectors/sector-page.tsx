@@ -66,8 +66,8 @@ export function SectorPage({ sector }: { sector: SectorPageData }) {
               {sector.slug === "garment" && section.title === "Our Products" && (
                 <div className="mt-6 flex flex-wrap gap-3">
                   {[
-                    { key: "jzra" as const, label: ar ? "B2C" : "B2C" },
-                    { key: "tijari" as const, label: ar ? "B2B" : "B2B" },
+                    { key: "b2c" as const, label: ar ? "B2C" : "B2C" },
+                    { key: "b2b" as const, label: ar ? "B2B" : "B2B" },
                   ].map((item) => (
                     <Button key={item.key} asChild variant="outline">
                       <Link to="/products" search={{ line: item.key }}>
@@ -98,18 +98,20 @@ export function SectorPage({ sector }: { sector: SectorPageData }) {
         </section>
       ))}
 
-      {/* Other sectors */}
-      <section className="site-container section-band">
-        <p className="eyebrow">{ar ? "قطاعات أخرى" : "Other sectors"}</p>
-        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-          {sectorOrder.filter((slug) => slug !== sector.slug).map((slug, index) => (
-            <Link key={slug} to="/sectors/$sector" params={{ sector: slug }} className="glass-card p-5 transition-colors hover:border-brand-green">
-              <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-brand-orange-text">0{index + 1}</p>
-              <p className="mt-2 font-head font-semibold">{slugName(slug, ar)}</p>
-            </Link>
-          ))}
-        </div>
-      </section>
+      {/* Other sectors — omit for food sector */}
+      {sector.slug !== "food" && (
+        <section className="site-container section-band">
+          <p className="eyebrow">{ar ? "قطاعات أخرى" : "Other sectors"}</p>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            {sectorOrder.filter((slug) => slug !== sector.slug).map((slug, index) => (
+              <Link key={slug} to="/sectors/$sector" params={{ sector: slug }} className="glass-card p-5 transition-colors hover:border-brand-green">
+                <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-brand-orange-text">0{index + 1}</p>
+                <p className="mt-2 font-head font-semibold">{slugName(slug, ar)}</p>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
     </div>
   );
 }

@@ -5,7 +5,7 @@ import { useRouter } from "@tanstack/react-router";
 const SBA_LOGO_AR = "/brand/SBA%20logo%20AR.svg";
 const SBA_LOGO_EN = "/brand/SBA%20logo%20EN.svg";
 
-/** Green curtain that wipes away with the SBA logo whenever the page path changes. */
+/** Spatial logo zoom aperture transition whenever page path changes */
 export function PageTransition({ pathname, rtl }: { pathname: string; rtl: boolean }) {
   const ref = useRef<HTMLDivElement>(null);
   const router = useRouter();
@@ -13,30 +13,64 @@ export function PageTransition({ pathname, rtl }: { pathname: string; rtl: boole
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    const logo = el.querySelector("img");
+    const logo = el.querySelector(".transition-logo");
     let timeline: gsap.core.Timeline | undefined;
     let active = false;
     let safety: ReturnType<typeof setTimeout> | undefined;
+
     const uncover = () => {
       if (!active) return;
       active = false;
       clearTimeout(safety);
       timeline?.kill();
-      timeline = gsap.timeline().to(el, { scaleX: 0, transformOrigin: rtl ? "left center" : "right center", duration: 0.5, ease: "power4.inOut" }).set(el, { display: "none" });
+      // Zoom through the logo smoothly into the page
+      timeline = gsap.timeline()
+        .to(logo, { scale: 3.5, opacity: 0, duration: 0.45, ease: "power2.inOut" })
+        .to(el, { opacity: 0, duration: 0.35, ease: "power2.out" }, "-=0.25")
+        .set(el, { display: "none" });
     };
+
     const before = router.subscribe("onBeforeNavigate", (event) => {
       if (!event.pathChanged || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-      timeline?.kill(); clearTimeout(safety); active = true;
-      timeline = gsap.timeline().set(el, { display: "flex", scaleX: 1 }).fromTo(logo, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.2 });
-      safety = setTimeout(uncover, 4000);
+      timeline?.kill();
+      clearTimeout(safety);
+      active = true;
+      timeline = gsap.timeline()
+        .set(el, { display: "flex", opacity: 1 })
+        .fromTo(logo, { scale: 0.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.25, ease: "back.out(1.4)" });
+      safety = setTimeout(uncover, 3500);
     });
-    const resolved = router.subscribe("onResolved", () => { if (active) { clearTimeout(safety); safety = setTimeout(uncover, 180); } });
-    return () => { before(); resolved(); clearTimeout(safety); timeline?.kill(); gsap.set(el, { display: "none" }); };
+
+    const resolved = router.subscribe("onResolved", () => {
+      if (active) {
+        clearTimeout(safety);
+        safety = setTimeout(uncover, 120);
+      }
+    });
+
+    return () => {
+      before();
+      resolved();
+      clearTimeout(safety);
+      timeline?.kill();
+      gsap.set(el, { display: "none" });
+    };
   }, [router, rtl]);
 
   return (
-    <div ref={ref} data-page-transition aria-hidden="true" className="pointer-events-none fixed inset-0 z-[80] hidden items-center justify-center bg-brand-green">
-      <img src={rtl ? SBA_LOGO_AR : SBA_LOGO_EN} alt="" className="h-14 w-auto brightness-0 invert" />
+    <div
+      ref={ref}
+      data-page-transition
+      aria-hidden="true"
+      className="pointer-events-none fixed inset-0 z-[120] hidden items-center justify-center bg-background/85 backdrop-blur-xl"
+    >
+      <div className="transition-logo flex flex-col items-center justify-center will-change-transform">
+        <img
+          src={rtl ? SBA_LOGO_AR : SBA_LOGO_EN}
+          alt=""
+          className="h-20 w-auto drop-shadow-2xl"
+        />
+      </div>
     </div>
   );
 }

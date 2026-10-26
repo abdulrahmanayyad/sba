@@ -244,14 +244,17 @@ export function SectorHeader({
                         <ChevronDown aria-hidden="true" className={cn("size-3 transition-transform", aboutOpen && "rotate-180")} />
                       </Button>
                       {aboutOpen && (
-                        <div className="absolute start-0 top-full z-50 w-60 pt-2">
-                          <AnimatedPanel onClose={closeAbout} className="glass-menu border border-border p-2">
+                        <div className="absolute start-0 top-full z-50 w-60 pt-2.5">
+                          <AnimatedPanel
+                            onClose={closeAbout}
+                            className="overflow-hidden rounded-[24px] border border-white/35 bg-background/75 p-2 shadow-[0_20px_50px_rgba(0,0,0,0.18)] backdrop-blur-2xl ring-1 ring-white/20 dark:border-white/15 dark:bg-background/70"
+                          >
                             {aboutLinks.map((item) => (
                               <a
                                 key={item.title}
                                 href={`#${sectionId(item.title)}`}
                                 onClick={closeAbout}
-                                className="block border-b border-border px-3 py-2.5 text-sm last:border-0 hover:bg-secondary"
+                                className="block rounded-[16px] px-3.5 py-2 text-sm font-medium text-foreground transition-all duration-200 hover:bg-brand-orange/15 hover:text-brand-orange hover:translate-x-1 rtl:hover:-translate-x-1"
                               >
                                 {item.label}
                               </a>
@@ -306,9 +309,31 @@ export function SectorHeader({
                 <ChevronDown aria-hidden="true" className={cn("size-3 transition-transform", othersOpen && "rotate-180")} />
               </Button>
               {othersOpen && (
-                <div className="absolute end-0 top-full z-50 w-64 pt-2">
-                  <AnimatedPanel onClose={() => setOthersOpen(false)} className="glass-menu border border-border p-2">
-                    {others}
+                <div className="absolute end-0 top-full z-50 w-64 pt-2.5">
+                  <AnimatedPanel
+                    onClose={() => setOthersOpen(false)}
+                    className="overflow-hidden rounded-[24px] border border-white/35 bg-background/75 p-2 shadow-[0_20px_50px_rgba(0,0,0,0.18)] backdrop-blur-2xl ring-1 ring-white/20 dark:border-white/15 dark:bg-background/70"
+                  >
+                    {visibleSectors
+                      .filter((key) => key !== slug)
+                      .map((key) => {
+                        const item = sectors[key as keyof typeof sectors];
+                        return (
+                          <Link
+                            key={key}
+                            to="/sectors/$sector"
+                            params={{ sector: key }}
+                            search={{}}
+                            className="block rounded-[16px] px-3.5 py-2.5 text-sm font-medium text-foreground transition-all duration-200 hover:bg-brand-orange/15 hover:text-brand-orange hover:translate-x-1 rtl:hover:-translate-x-1"
+                            onClick={() => {
+                              setOthersOpen(false);
+                              setMenuOpen(false);
+                            }}
+                          >
+                            {ar ? item?.nameAr : item?.name}
+                          </Link>
+                        );
+                      })}
                   </AnimatedPanel>
                 </div>
               )}

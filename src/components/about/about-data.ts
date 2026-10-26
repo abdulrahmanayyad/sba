@@ -21,8 +21,8 @@ export const whoWeAreData = {
   titleAr: "مجموعة أعمال متعددة القطاعات تبني قيمة مستدامة",
   paragraphs: [
     {
-      en: "SAMI BIN AYYAD GROUP is a diversified business group established in 2023, developing activities and projects across five strategic sectors: Apparel, Construction, Sustainability, Research, and Education.",
-      ar: "مجموعة سامي بن عياد هي مجموعة أعمال متعددة القطاعات، تأسست عام 2023، وتعمل على تطوير أنشطة ومشروعات ضمن خمسة قطاعات استراتيجية: الملابس، والمقاولات، والاستدامة، والبحث العلمي، والتعليم.",
+      en: "SAMI BIN AYYAD GROUP is a diversified business group established in 2023, developing activities and projects across several strategic sectors: Construction & Contracting, Sustainable Environment, Garment Manufacturing, and Natural Food Products.",
+      ar: "مجموعة سامي بن عياد هي مجموعة أعمال متعددة القطاعات، تأسست عام 2023، وتعمل على تطوير أنشطة ومشروعات ضمن عدة قطاعات استراتيجية: المقاولات، والبيئة المستدامة، وتصنيع الملابس، والمنتجات الطبيعية.",
     },
     {
       en: "Our vision combines practical expertise, continuous development, and innovation through an institutional framework focused on operational efficiency, strategic partnerships, and long-term value creation for clients, partners, and communities.",
@@ -34,8 +34,8 @@ export const whoWeAreData = {
     },
   ],
   stats: [
-    { value: "2023", label: "Established Year", labelAr: "سنة التأسيس" },
-    { value: "5", label: "Strategic Sectors", labelAr: "قطاعات استراتيجية" },
+    { value: "1977", label: "Heritage Roots", labelAr: "جذور متوارثة" },
+    { value: "4+", label: "Strategic Sectors", labelAr: "قطاعات استراتيجية" },
     { value: "100%", label: "Committed to Growth", labelAr: "التزام بالنمو المستدام" },
   ],
 };

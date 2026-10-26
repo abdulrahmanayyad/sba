@@ -59,13 +59,13 @@ export const activities: Record<SectorId, { items: T[]; note?: T }> = {
     { en: "B2B · Wholesale Supply to Retailers and Trade Buyers", ar: "B2B · توريد بالجملة لتجار التجزئة والمشترين" },
     { en: "B2B · Supply to Commercial Stores and Retail Outlets", ar: "B2B · التوريد للمتاجر ومنافذ البيع" },
     { en: "Retail · Retail Garment Sales", ar: "تجزئة · بيع الملابس بالتجزئة" },
-  ], note: { en: "Channel availability is subject to company confirmation.", ar: "إتاحة القنوات رهن تأكيد الشركة." } },
+  ] },
   food: { items: [
     { en: "Natural and Premium Honey Products", ar: "منتجات العسل الطبيعي والفاخر" }, { en: "Olives & Olive Oil", ar: "الزيتون وزيت الزيتون" },
     { en: "Premium Dates and Date Varieties", ar: "التمور الفاخرة وأصنافها" }, { en: "Date Molasses & Date Jam", ar: "دبس التمر ومربى التمر" },
     { en: "Herbs & Spices", ar: "الأعشاب والتوابل" }, { en: "Natural Powdered Beverages", ar: "المشروبات الطبيعية البودرة" },
     { en: "Food Products Sourcing, Trading & Export", ar: "توريد المنتجات الغذائية وتجارتها وتصديرها" },
-  ], note: { en: "Presented under the AZRA brand.", ar: "تحت علامة AZRA." } },
+  ] },
 };
 
 export const matchesFilter = (filter: SectorFilter, sector: SectorId) => filter === "all" || filter === sector;

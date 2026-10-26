@@ -26,13 +26,13 @@
  */
 
 @theme inline {
-  --radius-sm: 0;
-  --radius-md: 0;
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
   --radius-lg: var(--radius);
-  --radius-xl: 0;
-  --radius-2xl: 0;
-  --radius-3xl: 0;
-  --radius-4xl: 0;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.5rem;
+  --radius-4xl: 2rem;
   --font-head: "Nunito", "IBM Plex Sans Arabic", sans-serif;
   --font-body: "Nunito", "IBM Plex Sans Arabic", sans-serif;
   --font-sans: "Nunito", "IBM Plex Sans Arabic", sans-serif;
@@ -86,7 +86,7 @@
 }
 
 :root {
-  --radius: 0;
+  --radius: 0.75rem;
   --brand-green: oklch(0.594 0.112 174.5);
   --brand-green-text: oklch(0.453 0.083 173.8);
   --brand-orange: oklch(0.702 0.174 58.4);
@@ -141,7 +141,6 @@
 @layer base {
   * {
     border-color: var(--color-border);
-    border-radius: 0;
   }
 
   html[dir="rtl"],

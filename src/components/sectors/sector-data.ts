@@ -459,8 +459,13 @@ export const sectorOrder: SectorSlug[] = ["construction", "environmental", "garm
 
 export const sectorSectionCount = (sector: SectorPageData) => sector.sections.length;
 
-export const sectorFullMenu = (sector: SectorPageData): SectorSection[] => [
-  ...sector.sections,
-  { title: "News & Resources", titleAr: "الأخبار والمصادر", body: "Sector news, catalogues, studies and company profiles.", bodyAr: "أخبار القطاع والكتالوجات والدراسات والملفات التعريفية." },
-  contactSection,
-];
+export const sectorFullMenu = (sector: SectorPageData): SectorSection[] => {
+  if (sector.slug === "food") {
+    return [...sector.sections];
+  }
+  return [
+    ...sector.sections,
+    { title: "News & Resources", titleAr: "الأخبار والمصادر", body: "Sector news, catalogues, studies and company profiles.", bodyAr: "أخبار القطاع والكتالوجات والدراسات والملفات التعريفية." },
+    contactSection,
+  ];
+};

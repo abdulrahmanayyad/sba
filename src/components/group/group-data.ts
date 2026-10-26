@@ -219,10 +219,10 @@ export const sectorOverviews: SectorOverview[] = [
   },
   {
     slug: "environmental",
-    headline: "Advancing Sustainable Environmental Solutions",
-    headlineAr: "حلول بيئية متكاملة تحول التحديات إلى فرص مستدامة",
-    subtitle: "Environment & Sustainability Solutions",
-    subtitleAr: "قطاع البيئة والاستدامة",
+    headline: "Sustainable Environment",
+    headlineAr: "البيئة المستدامة",
+    subtitle: "Integrated environmental solutions that turn challenges into sustainable opportunities.",
+    subtitleAr: "حلول بيئية متكاملة تحول التحديات إلى فرص مستدامة",
     description: "Specialized solutions and consulting in environmental impact assessments (EIA/ESIA), waste management and resource recovery, water and wastewater treatment, renewable energy, and HSE compliance.",
     descriptionAr: "حلول واستشارات متخصصة تدعم إدارة الأثر البيئي، وتقييم الأثر البيئي (EIA/ESIA)، وإدارة المخلفات وتحويلها إلى قيمة، ومعالجة المياه، والطاقة المتجددة، والامتثال للسلامة والصحة المهنية.",
     supportingLabel: "Key Areas of Expertise",
@@ -262,10 +262,10 @@ export const sectorOverviews: SectorOverview[] = [
   },
   {
     slug: "food",
-    headline: "From Nature’s Finest to Global Markets",
-    headlineAr: "من خيرات الطبيعة إلى الأسواق العالمية",
-    subtitle: "Food & Natural Products Division",
-    subtitleAr: "قطاع الأغذية والمنتجات الطبيعية",
+    headline: "Food & Natural Products",
+    headlineAr: "الأغذية والمنتجات الطبيعية",
+    subtitle: "From Nature’s Finest to Global Markets",
+    subtitleAr: "من خيرات الطبيعة إلى الأسواق العالمية",
     description: "Sourcing and marketing a diverse portfolio of natural food products: pure honey and bee products, olives and olive oil, premium dates, herbs, spices, and natural powdered juice products.",
     descriptionAr: "توفير وتسويق مجموعة متنوعة من الأغذية الطبيعية عبر شبكة تجارية مرنة: عسل النحل ومنتجاته، والزيتون وزيت الزيتون، والتمور الفاخرة، والأعشاب والتوابل، ومشروبات العصائر البودر الطبيعية.",
     supportingLabel: "Product Categories",
@@ -276,8 +276,6 @@ export const sectorOverviews: SectorOverview[] = [
       { en: "Premium Dates Varieties", ar: "التمور الفاخرة وأصنافها" },
       { en: "Herbs, Spices & Natural Beverages", ar: "الأعشاب والتوابل والعصائر البودر الطبيعية" },
     ],
-    brand: "SAMI BIN AYYAD GROUP · Food & Natural Products",
-    brandAr: "مجموعة سامي بن عياد · قطاع الأغذية والمنتجات الطبيعية",
     cta: "Discover Natural Products",
     ctaAr: "استكشف المنتجات الطبيعية",
     image: food,
@@ -338,15 +336,22 @@ export const chartMetrics = [
   { key: "people", label: "Team size", labelAr: "حجم الفريق", unit: "%" },
 ] as const;
 
-export const whoWeServe = [
-  { en: "Fashion brands & retailers", ar: "علامات الأزياء وتجار التجزئة" },
-  { en: "Government & public projects", ar: "الجهات الحكومية والمشروعات العامة" },
-  { en: "Industrial & factory owners", ar: "المصنعون وأصحاب الصناعات" },
-  { en: "Developers & contractors", ar: "المطورون والمقاولون" },
-  { en: "Schools, academies & learners", ar: "المدارس والأكاديميات والمتعلمون" },
-  { en: "Researchers & publishers", ar: "الباحثون والناشرون" },
-  { en: "Food distributors & importers", ar: "موزعو ومستوردو الأغذية" },
-] as const;
+export interface ClientMarket {
+  en: string;
+  ar: string;
+  sectorEn: string;
+  sectorAr: string;
+  image: string;
+}
+
+export const whoWeServe: ClientMarket[] = [
+  { en: "Developers & Real Estate Leaders", ar: "المطورون وشركات التطوير العقاري", sectorEn: "Contracting & Construction", sectorAr: "المقاولات والإنشاءات", image: construction },
+  { en: "Government & National Infrastructure", ar: "الجهات الحكومية والمشروعات القومية", sectorEn: "General Contracting", sectorAr: "المقاولات العامة والبنية التحتية", image: construction },
+  { en: "Global & Regional Fashion Brands", ar: "علامات الأزياء الإقليمية والعالمية", sectorEn: "Garment Manufacturing", sectorAr: "تصنيع الملابس وتطوير الأزياء", image: apparel },
+  { en: "Wholesale & Apparel Retail Chains", ar: "سلاسل التجزئة وتجار الجملة للملابس", sectorEn: "Garment & Export", sectorAr: "الملابس الجاهزة والتصدير", image: apparel },
+  { en: "Industrial Plants & Environmental Entities", ar: "المصانع والمنشآت الصناعية والبيئية", sectorEn: "Environment & Sustainability", sectorAr: "البيئة والاستدامة", image: enviro },
+  { en: "Natural Food Importers & Retailers", ar: "مستوردو وتجار التجزئة للمنتجات الطبيعية", sectorEn: "Food & Natural Products", sectorAr: "الأغذية والمنتجات الطبيعية", image: food },
+];
 
 export const founders = [
   {
@@ -370,8 +375,8 @@ export const founders = [
     roleAr: "الشريك المؤسس",
     name: "Abdulrahman Sami Bin Ayyad",
     nameAr: "د. عبد الرحمن سامي عياد",
-    bio: "CEO of the JZRA factory and brand, and General Manager for contracts at the group. Founder of Rewaq Academy (2019) and a researcher in heritage editing and scientific research.",
-    bioAr: "الرئيس التنفيذي لمصنع وعلامة JZRA، والمدير العام للتعاقدات بالمجموعة. مؤسس أكاديمية رواق التعليمية (2019)، وباحث في تحقيق التراث والبحث العلمي.",
+    bio: "CEO of the Garment Division and General Manager for contracts at the group. Founder of Rewaq Academy (2019) and a researcher in heritage editing and scientific research.",
+    bioAr: "الرئيس التنفيذي لقطاع الملابس والتصنيع، والمدير العام للتعاقدات بالمجموعة. مؤسس أكاديمية رواق التعليمية (2019)، وباحث في تحقيق التراث والبحث العلمي.",
   },
   {
     role: "Business Developer",
@@ -402,14 +407,14 @@ export const aboutTabs: AboutTab[] = [
   {
     label: "Who We Are",
     labelAr: "من نحن",
-    body: "Sami Bin Ayyad Group is a diversified group operating across textile & garment manufacturing, construction, environment, research and education. From scholarly roots to manufacturing at scale, we build durable value for partners and communities.",
-    bodyAr: "مجموعة سامي عياد مجموعة متنوعة الأنشطة تعمل في تصنيع الأقمشة والملابس والمقاولات والبيئة والبحث العلمي والتعليم. من جذور علمية إلى تصنيع على نطاق واسع، نبني قيمة دائمة لشركائنا ومجتمعاتنا.",
+    body: "Sami Bin Ayyad Group is a diversified group operating across contracting, textile & garment manufacturing, sustainable environment, and natural products. From solid heritage to manufacturing at scale, we build durable value for partners and communities.",
+    bodyAr: "مجموعة سامي بن عياد مجموعة متنوعة الأنشطة تعمل في المقاولات والإنشاءات، وتصنيع الملابس، والبيئة المستدامة، والمنتجات الطبيعية. نبني قيمة دائمة وموثوقة لشركائنا ومجتمعاتنا.",
   },
   {
     label: "Leadership",
     labelAr: "القيادة",
-    body: "The group is led by its founders and a management team with experience across manufacturing, contracting, energy and education. Their profiles appear in the Company Leadership section.",
-    bodyAr: "تقود المجموعة مؤسسوها وفريق إداري بخبرة في التصنيع والمقاولات والطاقة والتعليم. وتظهر ملفاتهم في قسم «قيادة الشركة».",
+    body: "The group is led by its founders and an executive leadership team with deep industry experience across contracting, manufacturing, and sustainability.",
+    bodyAr: "تقود المجموعة نخبة من المؤسسين وقيادات تنفيذية تتمتع بخبرات عميقة في المقاولات والتصنيع والاستدامة.",
   },
   {
     label: "Values & Approach",
@@ -419,17 +424,67 @@ export const aboutTabs: AboutTab[] = [
   },
   {
     label: "Why Sami Bin Ayyad",
-    labelAr: "لماذا سامي عياد",
-    body: "One partner, four integrated sectors: we connect production, construction, sustainability and natural products — so clients benefit from shared expertise, scale and long-term commitment.",
-    bodyAr: "شريك واحد، أربعة قطاعات متكاملة: نربط الإنتاج والإنشاءات والاستدامة والمنتجات الطبيعية — فيستفيد العملاء من خبرة مشتركة وحجم أكبر والتزام طويل الأمد.",
+    labelAr: "لماذا سامي بن عياد",
+    body: "One partner, integrated sectors: connecting construction, production, sustainability and natural products for scale and long-term commitment.",
+    bodyAr: "شريك واحد، قطاعات استراتيجية متكاملة: نربط الإنشاءات والإنتاج والاستدامة والمنتجات الطبيعية — فيستفيد العملاء من خبرة مشتركة وحجم أكبر والتزام طويل الأمد.",
   },
 ];
 
-/** Placeholder milestones — replace with the group's real dates. */
 export const journey = [
-  { year: "2000s", title: "Group founded", titleAr: "تأسيس المجموعة", body: "Sami Bin Ayyad Group begins in contracting and trade.", bodyAr: "انطلاق مجموعة سامي عياد في المقاولات والتجارة." },
-  { year: "2010s", title: "Contracting expands", titleAr: "توسع المقاولات", body: "Major construction and infrastructure projects across Egypt.", bodyAr: "مشروعات إنشائية وبنية تحتية كبرى في مصر." },
-  { year: "2015", title: "Garment manufacturing", titleAr: "تصنيع الملابس", body: "Textile and garment production with the JZRA brand.", bodyAr: "إنتاج المنسوجات والملابس مع علامة جزرة." },
-  { year: "2020", title: "Environmental services", titleAr: "الخدمات البيئية", body: "A dedicated environment sector for sustainable solutions.", bodyAr: "قطاع بيئي متخصص لحلول مستدامة." },
-  { year: "Today", title: "Natural products", titleAr: "المنتجات الطبيعية", body: "Four sectors united by one long-term vision.", bodyAr: "أربعة قطاعات تجمعها رؤية واحدة طويلة المدى." },
+  {
+    year: "1977",
+    title: "Beginning of Contracting Journey",
+    titleAr: "بداية رحلة المقاولات",
+    body: "Launching contracting and civil engineering operations.",
+    bodyAr: "انطلاق أعمال المقاولات والهندسة الإنشائية والتشطيبات.",
+  },
+  {
+    year: "1992",
+    title: "Expansion in Saudi Arabia",
+    titleAr: "التوسع في المقاولات في المملكة العربية السعودية",
+    body: "Extending major contracting projects across the Kingdom of Saudi Arabia.",
+    bodyAr: "توسيع المشروعات الإنشائية الكبرى في المملكة العربية السعودية.",
+  },
+  {
+    year: "2008",
+    title: "Expansion in Egypt",
+    titleAr: "التوسع في المقاولات في جمهورية مصر العربية",
+    body: "Broadening construction and real estate operations across Egypt.",
+    bodyAr: "توسيع أعمال الإنشاءات والمقاولات والتطوير في جمهورية مصر العربية.",
+  },
+  {
+    year: "2013",
+    title: "National Projects Expansion",
+    titleAr: "التوسع في المشاريع القومية",
+    body: "Delivering strategic national healthcare and infrastructure projects.",
+    bodyAr: "المساهمة في تنفيذ مشروعات قومية كبرى ومنشآت طبية وبنية تحتية.",
+  },
+  {
+    year: "2018",
+    title: "Entering Sustainable Environment",
+    titleAr: "دخول مجال البيئة المستدامة",
+    body: "Launching specialized environmental consulting, EIA, and sustainability services.",
+    bodyAr: "تأسيس قطاع الاستشارات والحلول البيئية المتكاملة وتقييم الأثر البيئي.",
+  },
+  {
+    year: "2022",
+    title: "Environmental Projects Expansion",
+    titleAr: "التوسع في المشاريع البيئية",
+    body: "Scaling waste-to-resource recovery, water treatment, and HSE compliance systems.",
+    bodyAr: "توسيع مشروعات معالجة المياه وإدارة المخلفات وحلول الطاقة والامتثال.",
+  },
+  {
+    year: "2023",
+    title: "Entering Apparel & Garment Manufacturing",
+    titleAr: "الدخول في مجال الملابس والتصنيع",
+    body: "Establishing ready-made garment production lines and export operations.",
+    bodyAr: "تأسيس خطوط إنتاج وتصنيع الملابس الجاهزة والبدء في التصدير.",
+  },
+  {
+    year: "2026",
+    title: "Expansion in Apparel & Manufacturing",
+    titleAr: "التوسع في مجال الملابس والتصنيع",
+    body: "Scaling industrial capacity, advanced styling, and global export partnerships.",
+    bodyAr: "توسيع القدرات الصناعية وخطوط الإنتاج وشراكات التصدير العالمية.",
+  },
 ];

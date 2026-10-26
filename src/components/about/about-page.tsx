@@ -1,9 +1,11 @@
+import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import {
   Award,
   BadgeCheck,
   Building2,
   CheckCircle2,
+  ChevronDown,
   Compass,
   FileCheck2,
   Handshake,
@@ -17,6 +19,7 @@ import {
   Shirt,
   Sparkles,
   TrendingUp,
+  User,
   Users2,
   Wheat,
 } from "lucide-react";
@@ -279,22 +282,10 @@ export function AboutPage() {
             </p>
           </Reveal>
 
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2">
             {founders.map((founder, index) => (
               <Reveal key={founder.role} delay={index * 0.08}>
-                <div className="glass-card group flex h-full flex-col justify-between p-6 transition-all duration-300 hover:-translate-y-1 hover:border-brand-green/30">
-                  <div>
-                    <span className="font-mono text-[11px] uppercase tracking-wider text-brand-orange-text">
-                      {ar ? founder.roleAr : founder.role}
-                    </span>
-                    <h3 className="mt-2 font-head text-xl font-semibold">
-                      {ar ? founder.nameAr : founder.name}
-                    </h3>
-                    <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                      {ar ? founder.bioAr : founder.bio}
-                    </p>
-                  </div>
-                </div>
+                <LeaderCard founder={founder} ar={ar} />
               </Reveal>
             ))}
           </div>
@@ -378,5 +369,58 @@ export function AboutPage() {
         </div>
       </section>
     </HomeMotion>
+  );
+}
+
+function LeaderCard({
+  founder,
+  ar,
+}: {
+  founder: typeof founders[number];
+  ar: boolean;
+}) {
+  const [expanded, setExpanded] = useState(false);
+  const bio = ar ? founder.bioAr : founder.bio;
+  const isLong = bio.length > 100;
+  const shortBio = isLong ? bio.slice(0, 100) + "..." : bio;
+
+  return (
+    <div className="glass-card group flex h-full flex-col justify-between rounded-3xl border border-white/20 bg-background/80 p-6 md:p-7 shadow-lg backdrop-blur-xl transition-all duration-300 hover:shadow-xl hover:border-brand-green/40">
+      <div>
+        <div className="flex items-start gap-4">
+          {/* Photo Frame */}
+          <div className="relative size-16 shrink-0 overflow-hidden rounded-2xl border-2 border-brand-green/30 bg-gradient-to-br from-brand-green/15 via-background to-brand-orange/15 shadow-inner flex items-center justify-center text-brand-green-text">
+            <User className="size-8" />
+          </div>
+
+          {/* Beside Photo Frame: Leader Info */}
+          <div className="min-w-0 flex-1">
+            <span className="font-mono text-[10px] uppercase tracking-wider text-brand-orange font-semibold block">
+              {ar ? founder.roleAr : founder.role}
+            </span>
+            <h3 className="mt-1 font-head text-lg md:text-xl font-bold text-foreground leading-snug">
+              {ar ? founder.nameAr : founder.name}
+            </h3>
+          </div>
+        </div>
+
+        {/* Bio area with See More toggle */}
+        <div className="mt-4 border-t border-border/50 pt-3">
+          <p className="text-sm leading-relaxed text-muted-foreground transition-all duration-300">
+            {expanded ? bio : shortBio}
+          </p>
+          {isLong && (
+            <button
+              type="button"
+              onClick={() => setExpanded(!expanded)}
+              className="mt-3 text-xs font-semibold text-brand-orange hover:text-brand-orange/80 inline-flex items-center gap-1 focus-visible:outline-none transition-colors"
+            >
+              <span>{expanded ? (ar ? "عرض أقل" : "See Less") : (ar ? "اقرأ المزيد" : "See More")}</span>
+              <ChevronDown className={cn("size-3.5 transition-transform duration-200", expanded && "rotate-180")} />
+            </button>
+          )}
+        </div>
+      </div>
+    </div>
   );
 }

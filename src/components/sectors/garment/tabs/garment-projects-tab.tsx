@@ -30,7 +30,7 @@ export function GarmentProjectsTab() {
 
   const categories = useMemo(() => [
     { key: "all", labelEn: "All Projects", labelAr: "كافة المشاريع", count: garmentProjectItems.length },
-    { key: "women", labelEn: "Women's Collection", labelAr: "أزياء حريمي ومحتشمة", count: garmentProjectItems.filter(i => i.categoryKey === "women").length },
+    { key: "women", labelEn: "Women's Collection", labelAr: "أزياء حريمي", count: garmentProjectItems.filter(i => i.categoryKey === "women").length },
     { key: "men", labelEn: "Men's Collection", labelAr: "ملابس رجالية وقمصان", count: garmentProjectItems.filter(i => i.categoryKey === "men").length },
     { key: "kids", labelEn: "Children's Collection", labelAr: "ملابس أطفال ومواليد", count: garmentProjectItems.filter(i => i.categoryKey === "kids").length },
     { key: "couple", labelEn: "Couple & Sets", labelAr: "أطقم كابلز متناسقة", count: garmentProjectItems.filter(i => i.categoryKey === "couple").length },
