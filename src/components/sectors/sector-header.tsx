@@ -77,6 +77,7 @@ export function SectorHeader({
     });
 
   const isConstruction = slug === "construction";
+  const isGarment = slug === "garment";
   const activeTab = searchTab || "about";
 
   const navLinkStyle = "nav-link whitespace-nowrap font-body text-sm font-semibold";
@@ -143,6 +144,72 @@ export function SectorHeader({
                   to="/contact"
                   search={{ subject: "join-construction" }}
                   className={navLinkStyle}
+                >
+                  {ar ? "انضم إلينا" : "Join Us"}
+                </Link>
+              </>
+            ) : isGarment ? (
+              /* Custom Garment Navigation */
+              <>
+                <Link
+                  to="/sectors/$sector"
+                  params={{ sector: "garment" }}
+                  search={{ tab: undefined }}
+                  className={cn(navLinkStyle, activeTab === "about" && "text-brand-orange")}
+                >
+                  {ar ? "من نحن" : "About Us"}
+                </Link>
+
+                <Link
+                  to="/sectors/$sector"
+                  params={{ sector: "garment" }}
+                  search={{ tab: "services" }}
+                  className={cn(navLinkStyle, activeTab === "services" && "text-brand-orange")}
+                >
+                  {ar ? "خدماتنا" : "Our Services"}
+                </Link>
+
+                <Link
+                  to="/sectors/$sector"
+                  params={{ sector: "garment" }}
+                  search={{ tab: "clients" }}
+                  className={cn(navLinkStyle, activeTab === "clients" && "text-brand-orange")}
+                >
+                  {ar ? "عملاؤنا" : "Our Clients"}
+                </Link>
+
+                <Link
+                  to="/sectors/$sector"
+                  params={{ sector: "garment" }}
+                  search={{ tab: "projects" }}
+                  className={cn(navLinkStyle, activeTab === "projects" && "text-brand-orange")}
+                >
+                  {ar ? "مشاريعنا" : "Our Projects"}
+                </Link>
+
+                <Link
+                  to="/sectors/$sector"
+                  params={{ sector: "garment" }}
+                  search={{ tab: "partners" }}
+                  className={cn(navLinkStyle, activeTab === "partners" && "text-brand-orange")}
+                >
+                  {ar ? "شركاؤنا" : "Our Partners"}
+                </Link>
+
+                <Link
+                  to="/sectors/$sector"
+                  params={{ sector: "garment" }}
+                  search={{ tab: "capabilities" }}
+                  className={cn(navLinkStyle, activeTab === "capabilities" && "text-brand-orange")}
+                >
+                  {ar ? "قدراتنا" : "Our Capabilities"}
+                </Link>
+
+                <Link
+                  to="/sectors/$sector"
+                  params={{ sector: "garment" }}
+                  search={{ tab: "join" }}
+                  className={cn(navLinkStyle, activeTab === "join" && "text-brand-orange")}
                 >
                   {ar ? "انضم إلينا" : "Join Us"}
                 </Link>

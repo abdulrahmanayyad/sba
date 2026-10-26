@@ -3,26 +3,52 @@ import { createFileRoute, notFound } from "@tanstack/react-router";
 import { SectorPage } from "@/components/sectors/sector-page";
 import { sectors, type SectorSlug } from "@/components/sectors/sector-data";
 import { ConstructionSectorView, type ConstructionTab } from "@/components/sectors/construction/construction-view";
+import { GarmentSectorView, type GarmentTab } from "@/components/sectors/garment/garment-view";
 
-const validTabs: ConstructionTab[] = ["about", "sectors", "services", "projects"];
+const validConstructionTabs: ConstructionTab[] = ["about", "sectors", "services", "projects"];
+const validGarmentTabs: GarmentTab[] = ["about", "services", "clients", "projects", "partners", "capabilities", "join"];
 
 export const Route = createFileRoute("/sectors/$sector")({
-  validateSearch: (search: Record<string, unknown>): { tab?: ConstructionTab } => ({
-    tab: validTabs.includes(search["tab"] as ConstructionTab) ? (search["tab"] as ConstructionTab) : undefined,
-  }),
-  head: ({ params, search }: { params: { sector: string }; search?: { tab?: ConstructionTab } }) => {
+  validateSearch: (search: Record<string, unknown>): { tab?: string } => {
+    const tabStr = search["tab"] as string | undefined;
+    if (typeof tabStr === "string") {
+      if (validConstructionTabs.includes(tabStr as ConstructionTab) || validGarmentTabs.includes(tabStr as GarmentTab)) {
+        return { tab: tabStr };
+      }
+    }
+    return { tab: undefined };
+  },
+  head: ({ params, search }: { params: { sector: string }; search?: { tab?: string } }) => {
     const sector = sectors[params.sector as SectorSlug];
     const name = sector?.name ?? "Sector";
     const tab = search?.tab;
-    const tabTitles: Record<string, string> = {
-      about: "About Contracting & Development",
-      sectors: "Sectors We Serve — Healthcare, Residential & Commercial",
-      services: "Our Contracting & MEP Services",
-      projects: "Our Track Record & Project Portfolio",
-    };
-    const title = params.sector === "construction" && tab && tabTitles[tab]
-      ? `${tabTitles[tab]} — SBA Contracting`
-      : `${name} — SBA | Sami Bin Ayyad Group`;
+
+    let title = `${name} — SBA | Sami Bin Ayyad Group`;
+
+    if (params.sector === "construction" && tab) {
+      const constructionTabTitles: Record<string, string> = {
+        about: "About Contracting & Development",
+        sectors: "Sectors We Serve — Healthcare, Residential & Commercial",
+        services: "Our Contracting & MEP Services",
+        projects: "Our Track Record & Project Portfolio",
+      };
+      if (constructionTabTitles[tab]) {
+        title = `${constructionTabTitles[tab]} — SBA Contracting`;
+      }
+    } else if (params.sector === "garment" && tab) {
+      const garmentTabTitles: Record<string, string> = {
+        about: "About Us — Garment Manufacturing & Fashion Development",
+        services: "Our Services — Ready-Made Garments & FOB",
+        clients: "Our Clients — Global & Regional Fashion Brands",
+        projects: "Our Projects — Garment Portfolio",
+        partners: "Our Partners — Brand Partners Across Categories",
+        capabilities: "Our Capabilities — Advanced Garment Infrastructure",
+        join: "Join Us & Request Quotation",
+      };
+      if (garmentTabTitles[tab]) {
+        title = `${garmentTabTitles[tab]} — SBA Garment`;
+      }
+    }
 
     return {
       meta: [
@@ -45,8 +71,13 @@ function SectorRoute() {
   if (!data) throw notFound();
 
   if (sector === "construction") {
-    return <ConstructionSectorView tab={tab} />;
+    return <ConstructionSectorView tab={tab as ConstructionTab} />;
+  }
+
+  if (sector === "garment") {
+    return <GarmentSectorView tab={tab as GarmentTab} />;
   }
 
   return <SectorPage sector={data} />;
 }
+
