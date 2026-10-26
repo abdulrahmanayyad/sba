@@ -95,12 +95,15 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
                     <span className="flex size-10 items-center justify-center rounded-2xl bg-brand-green/10 text-brand-green-text transition-transform duration-300 group-hover:scale-110">
                       <Icon className="size-5" />
                     </span>
+                    <span className="font-mono text-xs font-bold text-muted-foreground/70 border border-border/60 rounded-full px-2.5 py-0.5">
+                      0{idx + 1}
+                    </span>
                   </div>
-                  {/* Plus on the left of number */}
-                  <div className="font-head text-3xl md:text-4xl font-bold text-brand-orange flex items-center gap-1" dir="ltr">
+                  {/* Milestones-style gradient and font */}
+                  <div className="font-head text-4xl lg:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm flex items-center gap-1" dir="ltr">
                     <AnimatedStatistic value={stat.value} />
                   </div>
-                  <h3 className="mt-2 text-base font-semibold text-foreground">
+                  <h3 className="mt-3 text-base font-bold text-foreground">
                     {ar ? stat.labelAr : stat.labelEn}
                   </h3>
                 </div>

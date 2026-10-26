@@ -26,6 +26,14 @@ export function SectorHeader({
   const [menuOpen, setMenuOpen] = useState(false);
   const [othersOpen, setOthersOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const updateHeader = () => setScrolled(window.scrollY > 24);
+    updateHeader();
+    window.addEventListener("scroll", updateHeader, { passive: true });
+    return () => window.removeEventListener("scroll", updateHeader);
+  }, []);
 
   // Extract search params for tab highlighting
   const searchTab = useRouterState({
@@ -80,22 +88,29 @@ export function SectorHeader({
   const isGarment = slug === "garment";
   const activeTab = searchTab || "about";
 
-  const navLinkStyle = "nav-link whitespace-nowrap font-body text-sm font-semibold";
-  const mobileLinkStyle = "border-b border-border py-3 font-body text-base font-semibold";
+  const navLinkStyle = "nav-link whitespace-nowrap font-body text-sm font-bold";
+  const mobileLinkStyle = "border-b border-border py-3 font-body text-base font-bold";
 
   return (
     <>
-      <header className="glass-menu fixed inset-x-0 top-0 z-50 h-[76px] border-b border-border text-foreground">
-        <div className="site-container flex h-full items-center gap-5">
-          <Link to="/" aria-label={back} className="inline-flex shrink-0 items-center">
-            <img src={logo} alt="SBA" className="h-10 w-auto" />
+      <header className="fixed inset-x-0 top-3 z-50 pointer-events-none flex justify-center px-4 transition-all duration-500">
+        <div
+          className={cn(
+            "pointer-events-auto mx-auto flex h-[62px] w-full max-w-6xl items-center justify-between gap-4 rounded-full px-5 transition-all duration-500",
+            scrolled
+              ? "border border-white/25 bg-background/85 shadow-[0_16px_40px_rgba(0,0,0,0.18)] backdrop-blur-2xl ring-1 ring-white/10"
+              : "border border-white/15 bg-background/70 shadow-[0_10px_30px_rgba(0,0,0,0.08)] backdrop-blur-xl"
+          )}
+        >
+          <Link to="/" aria-label={back} className="relative z-10 inline-flex shrink-0 items-center">
+            <img src={logo} alt="SBA" className="h-9 w-auto transition-transform duration-200 hover:scale-105" />
           </Link>
 
-          <p className={cn("min-w-0 truncate font-head text-sm font-semibold sm:text-base", "xl:hidden")}>
+          <p className={cn("min-w-0 truncate font-head text-sm font-bold sm:text-base", "xl:hidden")}>
             {name}
           </p>
 
-          <nav aria-label={name} className="mx-auto hidden items-center gap-5 xl:flex">
+          <nav aria-label={name} className="mx-auto hidden items-center gap-4 xl:flex">
             {/* Home Link - Exact matching font and size */}
             <Link to="/" className={navLinkStyle}>
               {home}
@@ -148,7 +163,7 @@ export function SectorHeader({
                 </Link>
               </>
             ) : isGarment ? (
-              /* Custom Garment Navigation */
+              /* Custom Garment Navigation without Clients & Partners */
               <>
                 <Link
                   to="/sectors/$sector"
@@ -171,28 +186,10 @@ export function SectorHeader({
                 <Link
                   to="/sectors/$sector"
                   params={{ sector: "garment" }}
-                  search={{ tab: "clients" }}
-                  className={cn(navLinkStyle, activeTab === "clients" && "text-brand-orange")}
-                >
-                  {ar ? "عملاؤنا" : "Our Clients"}
-                </Link>
-
-                <Link
-                  to="/sectors/$sector"
-                  params={{ sector: "garment" }}
                   search={{ tab: "projects" }}
                   className={cn(navLinkStyle, activeTab === "projects" && "text-brand-orange")}
                 >
                   {ar ? "مشاريعنا" : "Our Projects"}
-                </Link>
-
-                <Link
-                  to="/sectors/$sector"
-                  params={{ sector: "garment" }}
-                  search={{ tab: "partners" }}
-                  className={cn(navLinkStyle, activeTab === "partners" && "text-brand-orange")}
-                >
-                  {ar ? "شركاؤنا" : "Our Partners"}
                 </Link>
 
                 <Link
@@ -341,7 +338,8 @@ export function SectorHeader({
           </nav>
 
           <div className="hidden items-center gap-3 xl:flex">
-            <Button asChild variant="primary" size="lg" data-magnetic>
+            {language}
+            <Button asChild variant="primary" size="lg" data-magnetic className="rounded-full">
               {isGarment ? (
                 <Link to="/sectors/$sector" params={{ sector: "garment" }} search={{ tab: "join" }}>
                   {ar ? "اطلب عرض سعر" : "Request a Quote"}
@@ -352,13 +350,12 @@ export function SectorHeader({
                 </Link>
               )}
             </Button>
-            {language}
           </div>
 
           <Button
             variant="icon"
             size="icon"
-            className="ms-auto xl:hidden"
+            className="justify-self-end xl:hidden"
             aria-label="Menu"
             onClick={() => setMenuOpen(true)}
           >
@@ -458,29 +455,11 @@ export function SectorHeader({
                   <Link
                     to="/sectors/$sector"
                     params={{ sector: "garment" }}
-                    search={{ tab: "clients" }}
-                    onClick={() => setMenuOpen(false)}
-                    className={cn(mobileLinkStyle, activeTab === "clients" && "text-brand-orange")}
-                  >
-                    {ar ? "عملاؤنا" : "Our Clients"}
-                  </Link>
-                  <Link
-                    to="/sectors/$sector"
-                    params={{ sector: "garment" }}
                     search={{ tab: "projects" }}
                     onClick={() => setMenuOpen(false)}
                     className={cn(mobileLinkStyle, activeTab === "projects" && "text-brand-orange")}
                   >
                     {ar ? "مشاريعنا" : "Our Projects"}
-                  </Link>
-                  <Link
-                    to="/sectors/$sector"
-                    params={{ sector: "garment" }}
-                    search={{ tab: "partners" }}
-                    onClick={() => setMenuOpen(false)}
-                    className={cn(mobileLinkStyle, activeTab === "partners" && "text-brand-orange")}
-                  >
-                    {ar ? "شركاؤنا" : "Our Partners"}
                   </Link>
                   <Link
                     to="/sectors/$sector"

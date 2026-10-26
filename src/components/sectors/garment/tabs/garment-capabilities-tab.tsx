@@ -41,16 +41,21 @@ export function GarmentCapabilitiesTab() {
         </div>
 
         {/* Stats Grid */}
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {capabilities.stats.map((stat) => (
-            <div key={stat.labelEn} className="relative overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-sm">
-              <div className="font-mono text-3xl font-black text-brand-orange sm:text-4xl">
-                {stat.value}
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {capabilities.stats.map((stat, idx) => (
+            <div key={stat.labelEn} className="relative overflow-hidden rounded-3xl border border-white/20 bg-background/80 p-7 shadow-lg backdrop-blur-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:border-brand-orange/40">
+              <div className="flex items-center justify-between mb-3">
+                <div className="font-head text-4xl lg:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">
+                  {stat.value}
+                </div>
+                <span className="font-mono text-xs font-bold text-muted-foreground/70 border border-border/60 rounded-full px-2.5 py-0.5">
+                  0{idx + 1}
+                </span>
               </div>
               <div className="mt-2 font-head text-lg font-bold text-foreground">
                 {ar ? stat.labelAr : stat.labelEn}
               </div>
-              <p className="mt-1 text-xs text-muted-foreground">
+              <p className="mt-1 text-xs font-medium text-muted-foreground">
                 {ar ? stat.descAr : stat.descEn}
               </p>
             </div>

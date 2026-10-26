@@ -123,25 +123,16 @@ export function SectorsShowcase({ ar }: { ar: boolean }) {
     <section
       id="sectors-showcase"
       aria-label={ar ? "نظرة عامة على القطاعات" : "Sectors Overview"}
-      className="relative overflow-hidden bg-gradient-to-b from-[#0b1720] via-[#0e1d28] to-[#09131a] text-white"
+      className="relative px-4 py-12 text-foreground"
     >
-      {/* Liquid glass atmospheric ambient glow */}
-      <div
-        className="pointer-events-none absolute inset-0 -z-0 opacity-40"
-        style={{
-          background:
-            "radial-gradient(ellipse 65% 55% at 75% 45%, oklch(0.55 0.12 175 / 0.18), transparent), radial-gradient(ellipse 50% 40% at 20% 70%, oklch(0.65 0.18 55 / 0.1), transparent)",
-        }}
-      />
-
-      <div className="site-container relative z-10 py-20 md:py-28">
+      <div className="mx-auto max-w-6xl overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
         <div className="grid gap-10 lg:grid-cols-[minmax(280px,360px)_1fr] lg:gap-16">
 
           {/* ── LEFT: Tab Navigation + CTA ── */}
-          <div className="flex flex-col lg:border-e lg:border-white/10 lg:pe-10">
+          <div className="flex flex-col lg:border-e lg:border-border/60 lg:pe-10">
             {/* Title / Eyebrow */}
             <div className="mb-8">
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3.5 py-1 text-xs font-medium tracking-wide text-white/80 backdrop-blur-md">
+              <span className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
                 <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
                 {ar ? "نظرة عامة على القطاعات" : "Sectors Overview"}
               </span>
@@ -164,16 +155,16 @@ export function SectorsShowcase({ ar }: { ar: boolean }) {
                       "group relative flex items-center justify-between gap-4 rounded-xl px-4 py-4 text-start transition-all duration-300",
                       "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/50",
                       isActive
-                        ? "bg-white/10 shadow-lg shadow-black/20 backdrop-blur-xl text-white border border-white/15"
-                        : "text-white/50 hover:bg-white/[0.04] hover:text-white/85 border border-transparent"
+                        ? "bg-brand-green/10 text-brand-green shadow-sm backdrop-blur-md border border-brand-green/30"
+                        : "text-foreground/75 hover:bg-secondary hover:text-foreground border border-transparent"
                     )}
                   >
                     <span
                       className={cn(
-                        "font-head font-medium transition-all duration-300",
+                        "font-head transition-all duration-300",
                         isActive
-                          ? "text-lg text-white font-semibold"
-                          : "text-base text-white/70"
+                          ? "text-lg text-brand-green font-bold"
+                          : "text-base text-foreground/80 font-semibold"
                       )}
                     >
                       {ar ? tab.labelAr : tab.labelEn}
@@ -184,7 +175,7 @@ export function SectorsShowcase({ ar }: { ar: boolean }) {
                         "flex size-7 shrink-0 items-center justify-center rounded-full border transition-all duration-300",
                         isActive
                           ? "border-brand-orange/80 bg-brand-orange text-white opacity-100 scale-100"
-                          : "border-white/20 text-white/30 opacity-0 group-hover:opacity-60 scale-90"
+                          : "border-border text-foreground/40 opacity-0 group-hover:opacity-80 scale-90"
                       )}
                     >
                       <ArrowUpRight className="size-3.5 rtl:rotate-90" />
@@ -198,7 +189,7 @@ export function SectorsShowcase({ ar }: { ar: boolean }) {
             <div className="mt-10 pt-4">
               <Link
                 to="/contact"
-                className="group inline-flex items-center gap-3 rounded-full bg-brand-green px-6 py-3 font-head text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:bg-brand-orange hover:shadow-brand-orange/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+                className="group inline-flex items-center gap-3 rounded-full bg-brand-green px-6 py-3 font-head text-sm font-bold text-white shadow-lg transition-all duration-300 hover:bg-brand-orange hover:shadow-brand-orange/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
               >
                 <span>{ar ? "تواصل معنا" : "Contact Us"}</span>
                 <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 rtl:rotate-90" />
@@ -213,24 +204,24 @@ export function SectorsShowcase({ ar }: { ar: boolean }) {
             aria-labelledby={`showcase-tab-${current.id}`}
             ref={contentRef}
             className={cn(
-              "flex flex-col justify-between rounded-2xl border border-white/15 bg-white/[0.04] p-8 md:p-12 shadow-2xl backdrop-blur-2xl transition-all duration-300",
+              "flex flex-col justify-between rounded-2xl border border-border/80 bg-secondary/40 p-8 md:p-12 shadow-sm backdrop-blur-xl transition-all duration-300",
               animating ? "opacity-0 translate-y-3" : "opacity-100 translate-y-0"
             )}
             style={{ transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)" }}
           >
             <div className="space-y-5">
               {/* Main Headline */}
-              <h2 className="font-head font-bold leading-tight text-white text-2xl sm:text-3xl md:text-4xl">
+              <h2 className="font-head font-bold leading-tight text-foreground text-2xl sm:text-3xl md:text-4xl">
                 {ar ? current.headlineAr : current.headlineEn}
               </h2>
 
               {/* Subtitle */}
-              <p className="text-base md:text-lg font-medium text-brand-orange">
+              <p className="text-base md:text-lg font-bold text-brand-orange">
                 {ar ? current.subtitleAr : current.subtitleEn}
               </p>
 
               {/* Body */}
-              <p className="max-w-2xl text-sm leading-relaxed text-white/70 sm:text-base">
+              <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground font-medium sm:text-base">
                 {ar ? current.bodyAr : current.bodyEn}
               </p>
 
@@ -239,7 +230,7 @@ export function SectorsShowcase({ ar }: { ar: boolean }) {
                 {(ar ? current.pillsAr : current.pillsEn).map((pill) => (
                   <span
                     key={pill}
-                    className="rounded-full border border-white/12 bg-white/5 px-4 py-1.5 text-xs font-medium text-white/80 backdrop-blur-md transition-colors duration-200 hover:border-brand-orange/50 hover:text-white"
+                    className="rounded-full border border-border/70 bg-background/80 px-4 py-1.5 text-xs font-semibold text-foreground backdrop-blur-md shadow-xs transition-colors duration-200 hover:border-brand-orange/50 hover:text-brand-orange"
                   >
                     {pill}
                   </span>
@@ -248,12 +239,12 @@ export function SectorsShowcase({ ar }: { ar: boolean }) {
             </div>
 
             {/* Explore CTA */}
-            <div className="mt-8 pt-6 border-t border-white/10 flex items-center justify-between">
+            <div className="mt-8 pt-6 border-t border-border/60 flex items-center justify-between">
               <Link
                 to={current.href}
-                className="group inline-flex items-center gap-2 text-sm font-semibold text-white transition-colors duration-200 hover:text-brand-orange focus-visible:outline-none"
+                className="group inline-flex items-center gap-2 text-sm font-bold text-foreground transition-colors duration-200 hover:text-brand-orange focus-visible:outline-none"
               >
-                <span className="border-b border-white/30 pb-0.5 transition-colors duration-200 group-hover:border-brand-orange">
+                <span className="border-b border-border/60 pb-0.5 transition-colors duration-200 group-hover:border-brand-orange">
                   {ar ? current.ctaAr : current.ctaEn}
                 </span>
                 <ArrowUpRight className="size-4 text-brand-orange transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 rtl:rotate-90" />

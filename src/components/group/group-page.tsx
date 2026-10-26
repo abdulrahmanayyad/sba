@@ -47,15 +47,21 @@ export function GroupPage() {
 
       {/* Corporate introduction */}
       <section className="site-container section-band">
-        <Reveal className="mx-auto max-w-3xl text-center">
-          <p className="eyebrow">{ar ? "مجموعة سامي عياد" : "Sami Bin Ayyad Group"}</p>
-          <h2 className="section-title">{ar ? "نقود التقدم عبر الصناعات" : "Driving Progress Across Industries"}</h2>
-          <p className="section-intro mx-auto mt-5">
-            {ar
-              ? "تجمع مجموعة سامي عياد قدرات أعمال متنوعة في المقاولات والحلول البيئية وتصنيع المنسوجات والملابس والمنتجات الطبيعية. ومن خلال الخبرة التشغيلية والتنفيذ القائم على الجودة والشراكات الاستراتيجية، نعمل على خلق قيمة دائمة عبر الصناعات والأسواق."
-              : "SAMI BIN AYYAD GROUP brings together diverse business capabilities across contracting, environmental solutions, textile and garment manufacturing, and natural products. Through operational expertise, quality-driven execution, and strategic partnerships, we work to create lasting value across industries and markets."}
-          </p>
-          <Button asChild variant="primary" size="lg" data-magnetic className="mt-8"><a href="#divisions">{ar ? "استكشف قطاعاتنا" : "Explore Our Sectors"} <ArrowRight className="size-4 rtl:rotate-180" /></a></Button>
+        <Reveal>
+          <div className="group relative mx-auto max-w-4xl overflow-hidden rounded-3xl border border-white/20 bg-background/75 p-8 sm:p-12 shadow-[0_12px_40px_rgba(0,0,0,0.08)] backdrop-blur-2xl transition-all duration-300 hover:scale-[1.01] hover:shadow-[0_20px_60px_rgba(0,0,0,0.12)] hover:border-brand-orange/40 text-center">
+            <p className="eyebrow">{ar ? "مجموعة سامي عياد" : "Sami Bin Ayyad Group"}</p>
+            <h2 className="section-title mt-2">{ar ? "نقود التقدم عبر الصناعات" : "Driving Progress Across Industries"}</h2>
+            <p className="section-intro mx-auto mt-5">
+              {ar
+                ? "تجمع مجموعة سامي عياد قدرات أعمال متنوعة في المقاولات والحلول البيئية وتصنيع المنسوجات والملابس والمنتجات الطبيعية. ومن خلال الخبرة التشغيلية والتنفيذ القائم على الجودة والشراكات الاستراتيجية، نعمل على خلق قيمة دائمة عبر الصناعات والأسواق."
+                : "SAMI BIN AYYAD GROUP brings together diverse business capabilities across contracting, environmental solutions, textile and garment manufacturing, and natural products. Through operational expertise, quality-driven execution, and strategic partnerships, we work to create lasting value across industries and markets."}
+            </p>
+            <Button asChild variant="primary" size="lg" data-magnetic className="mt-8">
+              <a href="#divisions">
+                {ar ? "استكشف قطاعاتنا" : "Explore Our Sectors"} <ArrowRight className="size-4 rtl:rotate-180" />
+              </a>
+            </Button>
+          </div>
         </Reveal>
       </section>
 
@@ -70,23 +76,26 @@ export function GroupPage() {
             <h2 id="sectors-heading" className="section-title">{ar ? "قطاعاتنا في لمحة" : "Our Sectors at a Glance"}</h2>
             <p className="section-intro mt-4">{ar ? "نظرة عامة على قدراتنا وخبراتنا وأنشطة أعمالنا." : "An Overview of Our Capabilities, Experience, and Business Activities."}</p>
           </Reveal>
-          <div className="mt-12 grid gap-14 md:mt-16 md:gap-20">
+          <div className="mt-12 grid gap-10 md:mt-16 md:gap-12">
             {sectorOverviews.map((sector, index) => (
-              <article key={sector.slug} className="grid items-center gap-6 md:grid-cols-2 md:gap-10 lg:gap-14">
-                <Reveal className={cn("overflow-hidden", index % 2 === 1 && "md:order-2")}>
+              <article
+                key={sector.slug}
+                className="grid items-center gap-6 md:grid-cols-2 md:gap-10 lg:gap-14 rounded-3xl border border-white/20 bg-background/80 p-6 sm:p-10 shadow-lg backdrop-blur-2xl transition-all duration-300 hover:shadow-2xl hover:border-brand-orange/40"
+              >
+                <Reveal className={cn("overflow-hidden rounded-2xl shadow-sm", index % 2 === 1 && "md:order-2")}>
                   <img src={sector.image} alt={ar ? sector.headlineAr : sector.headline} loading="lazy" width={944} height={704} className="aspect-[4/3] w-full object-cover transition-transform duration-700 hover:scale-105 motion-reduce:transition-none" />
                 </Reveal>
                 <Reveal delay={0.08} className={cn(index % 2 === 1 && "md:order-1")}>
-                  <span className="font-mono text-xs text-brand-orange-text">{String(index + 1).padStart(2, "0")}</span>
-                  <h3 className="mt-3 font-head text-2xl font-semibold leading-snug md:text-3xl">{ar ? sector.headlineAr : sector.headline}</h3>
-                  <p className="mt-2 font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">{ar ? sector.subtitleAr : sector.subtitle}</p>
+                  <span className="font-mono text-xs font-bold text-brand-orange">{String(index + 1).padStart(2, "0")}</span>
+                  <h3 className="mt-3 font-head text-2xl font-bold leading-snug md:text-3xl">{ar ? sector.headlineAr : sector.headline}</h3>
+                  <p className="mt-2 font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">{ar ? sector.subtitleAr : sector.subtitle}</p>
                   <p className="mt-4 max-w-xl text-sm leading-7 text-muted-foreground sm:text-base">{ar ? sector.descriptionAr : sector.description}</p>
-                  <p className="mt-6 font-mono text-[10px] uppercase tracking-[0.18em] text-brand-green-text">{ar ? sector.supportingLabelAr : sector.supportingLabel}</p>
+                  <p className="mt-6 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-brand-green">{ar ? sector.supportingLabelAr : sector.supportingLabel}</p>
                   {sector.figures && (
                     <div data-stagger className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3">
                       {sector.figures.map((figure) => (
                         <div key={figure.label} className="border-t border-border pt-3">
-                          <p className="font-head text-xl font-semibold text-brand-green-text md:text-2xl"><AnimatedStatistic value={figure.value} /></p>
+                          <p className="font-head text-xl font-bold text-brand-green md:text-2xl"><AnimatedStatistic value={figure.value} /></p>
                           <p className="mt-1 text-xs leading-5 text-muted-foreground">{ar ? figure.labelAr : figure.label}</p>
                         </div>
                       ))}
@@ -95,12 +104,12 @@ export function GroupPage() {
                   {sector.chips && (
                     <div className="mt-3 flex flex-wrap gap-2">
                       {sector.chips.map((chip) => (
-                        <span key={chip.en} className="glass-chip px-3 py-1.5 text-xs">{ar ? chip.ar : chip.en}</span>
+                        <span key={chip.en} className="glass-chip px-3 py-1.5 text-xs font-semibold">{ar ? chip.ar : chip.en}</span>
                       ))}
                     </div>
                   )}
-                  {sector.brand && <p className="mt-5 font-head text-sm font-semibold text-brand-orange-text">{ar ? sector.brandAr : sector.brand}</p>}
-                  <Button asChild variant="outline" className="mt-7"><Link to="/sectors/$sector" params={{ sector: sector.slug }}>{ar ? sector.ctaAr : sector.cta} <ArrowRight className="size-4 rtl:rotate-180" /></Link></Button>
+                  {sector.brand && <p className="mt-5 font-head text-sm font-bold text-brand-orange">{ar ? sector.brandAr : sector.brand}</p>}
+                  <Button asChild variant="outline" className="mt-7 font-bold"><Link to="/sectors/$sector" params={{ sector: sector.slug }}>{ar ? sector.ctaAr : sector.cta} <ArrowRight className="size-4 rtl:rotate-180" /></Link></Button>
                 </Reveal>
               </article>
             ))}
@@ -161,26 +170,26 @@ export function GroupPage() {
         </Reveal>
       </section>
 
-      {/* Final CTA */}
-      <section id="contact" className="bg-footer text-footer-foreground section-band">
-        <div className="site-container grid gap-8 lg:grid-cols-[1.3fr_1fr]">
+      {/* Final CTA — Glassmorphic Island matching Footer */}
+      <section id="contact" className="relative px-4 pb-6 pt-4 text-foreground scroll-mt-24">
+        <div className="mx-auto max-w-6xl overflow-hidden rounded-3xl border border-white/20 bg-background/75 p-8 sm:p-12 shadow-[0_8px_40px_rgba(0,0,0,0.18)] backdrop-blur-2xl grid gap-8 lg:grid-cols-[1.3fr_1fr]">
           <div>
             <p className="eyebrow text-brand-green">{ar ? "تواصل معنا" : "Get In Touch"}</p>
-            <h2 className="section-title text-footer-foreground">{ar ? "لنبنِ ما هو قادم" : "Let's Build What's Next"}</h2>
-            <p className="section-intro mt-4 text-footer-muted">{ar ? "استكشف فرص التعاون مع مجموعة سامي عياد في التصنيع والإنشاءات والحلول البيئية والمنتجات الطبيعية." : "Explore opportunities to collaborate with SAMI BIN AYYAD GROUP across manufacturing, construction, environmental solutions, and natural products."}</p>
+            <h2 className="section-title mt-2 text-foreground">{ar ? "لنبنِ ما هو قادم" : "Let's Build What's Next"}</h2>
+            <p className="section-intro mt-4 text-muted-foreground">{ar ? "استكشف فرص التعاون مع مجموعة سامي عياد في التصنيع والإنشاءات والحلول البيئية والمنتجات الطبيعية." : "Explore opportunities to collaborate with SAMI BIN AYYAD GROUP across manufacturing, construction, environmental solutions, and natural products."}</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button asChild variant="primary" size="lg" data-magnetic className="w-full sm:w-auto"><Link to="/contact">{ar ? "تواصل مع فريقنا" : "Contact Our Team"}</Link></Button>
-              <Button asChild size="lg" className="glass-dark w-full !text-footer-foreground hover:!bg-footer sm:w-auto"><a href="#divisions">{ar ? "استكشف قطاعاتنا" : "Explore Our Sectors"}</a></Button>
-              <Button asChild size="lg" className="bg-brand-green w-full text-footer-foreground hover:bg-brand-green-text sm:w-auto"><a href={WHATSAPP_URL} target="_blank" rel="noreferrer"><MessageCircle className="size-4" /> WhatsApp</a></Button>
+              <Button asChild size="lg" className="glass-dark w-full !text-foreground hover:!bg-secondary sm:w-auto"><a href="#divisions">{ar ? "استكشف قطاعاتنا" : "Explore Our Sectors"}</a></Button>
+              <Button asChild size="lg" className="bg-brand-green w-full text-white hover:bg-brand-green-text sm:w-auto"><a href={WHATSAPP_URL} target="_blank" rel="noreferrer"><MessageCircle className="size-4" /> WhatsApp</a></Button>
             </div>
           </div>
           <div className="min-w-0 self-center">
-            <Button asChild variant="ghost" className="glass-dark group relative h-auto w-full justify-start gap-4 overflow-hidden rounded-lg border border-footer-line p-5 text-start whitespace-normal hover:border-brand-green sm:p-7">
+            <Button asChild variant="ghost" className="group relative h-auto w-full justify-start gap-4 overflow-hidden rounded-2xl border border-border bg-background/60 p-5 text-start whitespace-normal hover:border-brand-green hover:shadow-lg sm:p-7 backdrop-blur-md">
               <a data-email-contact href="mailto:info@sami-trade.com">
-                <span data-email-icon className="flex size-12 shrink-0 items-center justify-center rounded-full bg-footer-line text-brand-green"><Mail aria-hidden="true" className="size-5" /></span>
+                <span data-email-icon className="flex size-12 shrink-0 items-center justify-center rounded-full bg-brand-green/10 text-brand-green"><Mail aria-hidden="true" className="size-5" /></span>
                 <span data-email-copy className="min-w-0 flex-1">
-                  <span className="block font-mono text-[10px] uppercase text-footer-muted">{ar ? "البريد الإلكتروني" : "Email"}</span>
-                  <span dir="ltr" className="mt-2 block break-all font-head text-base font-medium sm:text-lg">info@sami-trade.com</span>
+                  <span className="block font-mono text-[10px] font-bold uppercase text-muted-foreground">{ar ? "البريد الإلكتروني" : "Email"}</span>
+                  <span dir="ltr" className="mt-2 block break-all font-head text-base font-bold text-foreground sm:text-lg">info@sami-trade.com</span>
                 </span>
                 <span data-email-arrow className="shrink-0 text-brand-green"><ArrowRight aria-hidden="true" className="size-5 rtl:rotate-180" /></span>
               </a>

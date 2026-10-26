@@ -174,9 +174,9 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
   };
 
   const navPill =
-    "group relative inline-flex items-center gap-1 rounded-full px-4 py-2 text-sm font-semibold tracking-wide text-foreground/90 transition-all duration-300 hover:bg-white/40 hover:text-brand-orange hover:shadow-sm hover:backdrop-blur-md hover:-translate-y-0.5 active:translate-y-0";
+    "group relative inline-flex items-center gap-1 rounded-full px-4 py-2 text-sm font-bold tracking-wide text-foreground transition-all duration-300 hover:bg-white/40 hover:text-brand-orange hover:shadow-sm hover:backdrop-blur-md hover:-translate-y-0.5 active:translate-y-0";
   const dropdownLink =
-    "block rounded-[16px] px-4 py-2.5 text-sm font-medium text-foreground/90 transition-all duration-200 hover:bg-brand-orange/15 hover:text-brand-orange hover:translate-x-1 rtl:hover:-translate-x-1";
+    "block rounded-[16px] px-4 py-2.5 text-sm font-semibold text-foreground transition-all duration-200 hover:bg-brand-orange/15 hover:text-brand-orange hover:translate-x-1 rtl:hover:-translate-x-1";
 
   const primaryLinks = (className: string, onNavigate?: () => void) => (
     <>
@@ -297,57 +297,45 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
               {/* Brand column */}
               <div>
                 <img src={currentLogo} alt={isArabic ? "سامي بن عياد" : "SBA"} className="h-11 w-auto" />
-                <p className="mt-5 max-w-sm text-sm leading-6 text-footer-muted">{messages.footer.descriptor}</p>
-                <p className="mt-4 font-mono text-[9px] uppercase tracking-[0.18em] text-footer-muted">{messages.footer.addressLabel}</p>
-                <p className="mt-1.5 max-w-sm text-xs leading-5 text-footer-foreground/80">{messages.footer.address}</p>
-                {/* Social links under brand */}
-                <div className="mt-5 flex gap-4">
-                  {socialLinks.map(([name, href]) => (
-                    <a key={name} href={href} target="_blank" rel="noreferrer"
-                      aria-label={name}
-                      className="inline-flex items-center justify-center rounded-full p-1.5 text-footer-muted transition-all duration-200 hover:text-brand-orange hover:scale-110">
-                      {name === "Facebook" && <Facebook aria-hidden="true" className="size-4" />}
-                      {name === "Instagram" && <Instagram aria-hidden="true" className="size-4" />}
-                      {name === "LinkedIn" && <Linkedin aria-hidden="true" className="size-4" />}
-                    </a>
-                  ))}
-                </div>
+                <p className="mt-5 max-w-sm text-sm font-semibold leading-6 text-foreground">{messages.footer.descriptor}</p>
+                <p className="mt-4 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-brand-orange">{messages.footer.addressLabel}</p>
+                <p className="mt-1.5 max-w-sm text-xs font-semibold leading-5 text-foreground/90">{messages.footer.address}</p>
               </div>
 
               {/* Links grid */}
               <div className="grid gap-8 sm:grid-cols-3">
                 <div>
-                  <h2 className="footer-label">{messages.footer.sectors}</h2>
-                  <nav aria-label={messages.accessibility.footerNavigation} className="mt-4 grid gap-2">
+                  <h2 className="font-head text-sm font-bold uppercase tracking-wider text-brand-orange">{messages.footer.sectors}</h2>
+                  <nav aria-label={messages.accessibility.footerNavigation} className="mt-4 grid gap-2.5">
                     {sectorKeys.map((key) => (
-                      <Link key={key} to="/sectors/$sector" params={{ sector: key }} className="footer-link text-xs">{messages.sectorsMenu[key]}</Link>
+                      <Link key={key} to="/sectors/$sector" params={{ sector: key }} className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{messages.sectorsMenu[key]}</Link>
                     ))}
                   </nav>
                 </div>
                 <div>
-                  <h2 className="footer-label">{messages.footer.company}</h2>
-                  <nav className="mt-4 grid gap-2">
-                    <Link to="/about" className="footer-link text-xs">{messages.nav.about}</Link>
-                    <Link to="/models" className="footer-link text-xs">{messages.nav.products}</Link>
-                    <Link to="/partners" className="footer-link text-xs">{messages.nav.partners}</Link>
-                    <Link to="/news" className="footer-link text-xs">{messages.nav.news}</Link>
-                    <Link to="/contact" className="footer-link text-xs">{messages.nav.joinUs}</Link>
+                  <h2 className="font-head text-sm font-bold uppercase tracking-wider text-brand-orange">{messages.footer.company}</h2>
+                  <nav aria-label={messages.accessibility.footerNavigation} className="mt-4 grid gap-2.5">
+                    <Link to="/about" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{messages.nav.about}</Link>
+                    <Link to="/models" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{messages.nav.products}</Link>
+                    <Link to="/partners" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{messages.nav.partners}</Link>
+                    <Link to="/news" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{messages.nav.news}</Link>
+                    <Link to="/contact" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{messages.nav.joinUs}</Link>
                   </nav>
                 </div>
                 <div>
-                  <h2 className="footer-label">{messages.footer.contact}</h2>
-                  <div className="mt-4 grid gap-2 justify-items-start">
-                    <a className="footer-link text-xs" href="tel:+201222238072" dir="ltr">+20 12 222 380 72</a>
-                    <a className="footer-link text-xs" href="tel:+201222238073" dir="ltr">+20 12 222 380 73</a>
-                    <a className="footer-link break-all text-xs" href="mailto:info@sami-trade.com">info@sami-trade.com</a>
+                  <h2 className="font-head text-sm font-bold uppercase tracking-wider text-brand-orange">{messages.footer.contact}</h2>
+                  <div className="mt-4 grid gap-2.5 justify-items-start">
+                    <a className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange" href="tel:+201222238072" dir="ltr">+20 12 222 380 72</a>
+                    <a className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange" href="tel:+201222238073" dir="ltr">+20 12 222 380 73</a>
+                    <a className="break-all text-xs font-bold text-foreground transition-colors hover:text-brand-orange" href="mailto:info@sami-trade.com">info@sami-trade.com</a>
                     {/* Social icons below email */}
                     <div className="mt-3 flex gap-3">
                       {socialLinks.map(([name, href]) => (
                         <a key={name} href={href} target="_blank" rel="noreferrer" aria-label={name}
-                          className="inline-flex items-center justify-center rounded-full p-1 text-footer-muted transition-all duration-200 hover:text-brand-orange hover:scale-110">
-                          {name === "Facebook" && <Facebook aria-hidden="true" className="size-3.5" />}
-                          {name === "Instagram" && <Instagram aria-hidden="true" className="size-3.5" />}
-                          {name === "LinkedIn" && <Linkedin aria-hidden="true" className="size-3.5" />}
+                          className="inline-flex items-center justify-center rounded-full bg-foreground/10 p-1.5 text-foreground transition-all duration-200 hover:bg-brand-orange hover:text-white hover:scale-110">
+                          {name === "Facebook" && <Facebook aria-hidden="true" className="size-4" />}
+                          {name === "Instagram" && <Instagram aria-hidden="true" className="size-4" />}
+                          {name === "LinkedIn" && <Linkedin aria-hidden="true" className="size-4" />}
                         </a>
                       ))}
                     </div>
@@ -357,7 +345,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
             </div>
 
             {/* Bottom bar */}
-            <div className="mt-8 flex flex-col gap-2 border-t border-white/10 pt-5 text-[10px] text-footer-muted md:flex-row md:items-center md:justify-between">
+            <div className="mt-8 flex flex-col gap-2 border-t border-white/10 pt-5 text-[11px] font-bold text-foreground/80 md:flex-row md:items-center md:justify-between">
               <p>{messages.footer.copyright}</p>
               <p className="font-mono uppercase tracking-[0.12em]">{messages.footer.registration}</p>
             </div>
