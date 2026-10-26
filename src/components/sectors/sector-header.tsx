@@ -29,7 +29,7 @@ export function SectorHeader({
 
   // Extract search params for tab highlighting
   const searchTab = useRouterState({
-    select: (state) => (state.location.search as Record<string, string>)?.tab,
+    select: (state) => (state.location.search as Record<string, string>)["tab"],
   });
 
   useEffect(() => {
@@ -64,7 +64,7 @@ export function SectorHeader({
           key={key}
           to="/sectors/$sector"
           params={{ sector: key }}
-          search={{ tab: undefined }}
+          search={{}}
           className="block border-b border-border px-3 py-2.5 text-sm last:border-0 hover:bg-secondary"
           onClick={() => {
             setOthersOpen(false);
@@ -107,7 +107,7 @@ export function SectorHeader({
                 <Link
                   to="/sectors/$sector"
                   params={{ sector: "construction" }}
-                  search={{ tab: undefined }}
+                  search={{}}
                   className={cn(navLinkStyle, activeTab === "about" && "text-brand-green")}
                 >
                   {ar ? "نبذة عنا" : "About Us"}
@@ -142,7 +142,6 @@ export function SectorHeader({
 
                 <Link
                   to="/contact"
-                  search={{ subject: "join-construction" }}
                   className={navLinkStyle}
                 >
                   {ar ? "انضم إلينا" : "Join Us"}
@@ -154,7 +153,7 @@ export function SectorHeader({
                 <Link
                   to="/sectors/$sector"
                   params={{ sector: "garment" }}
-                  search={{ tab: undefined }}
+                  search={{}}
                   className={cn(navLinkStyle, activeTab === "about" && "text-brand-orange")}
                 >
                   {ar ? "من نحن" : "About Us"}
@@ -318,9 +317,15 @@ export function SectorHeader({
 
           <div className="hidden items-center gap-3 xl:flex">
             <Button asChild variant="primary" size="lg" data-magnetic>
-              <Link to="/contact" search={{ subject: isConstruction ? "construction-quote" : "sector-quote" }}>
-                {ar ? "اطلب عرض سعر" : "Request a Quote"}
-              </Link>
+              {isGarment ? (
+                <Link to="/sectors/$sector" params={{ sector: "garment" }} search={{ tab: "join" }}>
+                  {ar ? "اطلب عرض سعر" : "Request a Quote"}
+                </Link>
+              ) : (
+                <Link to="/contact">
+                  {ar ? "اطلب عرض سعر" : "Request a Quote"}
+                </Link>
+              )}
             </Button>
             {language}
           </div>
@@ -364,7 +369,7 @@ export function SectorHeader({
                   <Link
                     to="/sectors/$sector"
                     params={{ sector: "construction" }}
-                    search={{ tab: undefined }}
+                    search={{}}
                     onClick={() => setMenuOpen(false)}
                     className={cn(mobileLinkStyle, activeTab === "about" && "text-brand-green")}
                   >
@@ -399,9 +404,74 @@ export function SectorHeader({
                   </Link>
                   <Link
                     to="/contact"
-                    search={{ subject: "join-construction" }}
                     onClick={() => setMenuOpen(false)}
                     className={mobileLinkStyle}
+                  >
+                    {ar ? "انضم إلينا" : "Join Us"}
+                  </Link>
+                </>
+              ) : isGarment ? (
+                <>
+                  <Link
+                    to="/sectors/$sector"
+                    params={{ sector: "garment" }}
+                    search={{}}
+                    onClick={() => setMenuOpen(false)}
+                    className={cn(mobileLinkStyle, activeTab === "about" && "text-brand-orange")}
+                  >
+                    {ar ? "من نحن" : "About Us"}
+                  </Link>
+                  <Link
+                    to="/sectors/$sector"
+                    params={{ sector: "garment" }}
+                    search={{ tab: "services" }}
+                    onClick={() => setMenuOpen(false)}
+                    className={cn(mobileLinkStyle, activeTab === "services" && "text-brand-orange")}
+                  >
+                    {ar ? "خدماتنا" : "Our Services"}
+                  </Link>
+                  <Link
+                    to="/sectors/$sector"
+                    params={{ sector: "garment" }}
+                    search={{ tab: "clients" }}
+                    onClick={() => setMenuOpen(false)}
+                    className={cn(mobileLinkStyle, activeTab === "clients" && "text-brand-orange")}
+                  >
+                    {ar ? "عملاؤنا" : "Our Clients"}
+                  </Link>
+                  <Link
+                    to="/sectors/$sector"
+                    params={{ sector: "garment" }}
+                    search={{ tab: "projects" }}
+                    onClick={() => setMenuOpen(false)}
+                    className={cn(mobileLinkStyle, activeTab === "projects" && "text-brand-orange")}
+                  >
+                    {ar ? "مشاريعنا" : "Our Projects"}
+                  </Link>
+                  <Link
+                    to="/sectors/$sector"
+                    params={{ sector: "garment" }}
+                    search={{ tab: "partners" }}
+                    onClick={() => setMenuOpen(false)}
+                    className={cn(mobileLinkStyle, activeTab === "partners" && "text-brand-orange")}
+                  >
+                    {ar ? "شركاؤنا" : "Our Partners"}
+                  </Link>
+                  <Link
+                    to="/sectors/$sector"
+                    params={{ sector: "garment" }}
+                    search={{ tab: "capabilities" }}
+                    onClick={() => setMenuOpen(false)}
+                    className={cn(mobileLinkStyle, activeTab === "capabilities" && "text-brand-orange")}
+                  >
+                    {ar ? "قدراتنا" : "Our Capabilities"}
+                  </Link>
+                  <Link
+                    to="/sectors/$sector"
+                    params={{ sector: "garment" }}
+                    search={{ tab: "join" }}
+                    onClick={() => setMenuOpen(false)}
+                    className={cn(mobileLinkStyle, activeTab === "join" && "text-brand-orange")}
                   >
                     {ar ? "انضم إلينا" : "Join Us"}
                   </Link>
@@ -470,7 +540,20 @@ export function SectorHeader({
             <div className="mt-auto space-y-4 pt-10">
               {language}
               <Button asChild variant="primary" size="lg" className="w-full">
-                <Link to="/contact">{ar ? "اطلب عرض سعر" : "Request a Quote"}</Link>
+                {isGarment ? (
+                  <Link
+                    to="/sectors/$sector"
+                    params={{ sector: "garment" }}
+                    search={{ tab: "join" }}
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    {ar ? "اطلب عرض سعر" : "Request a Quote"}
+                  </Link>
+                ) : (
+                  <Link to="/contact" onClick={() => setMenuOpen(false)}>
+                    {ar ? "اطلب عرض سعر" : "Request a Quote"}
+                  </Link>
+                )}
               </Button>
               <Link to="/" className="inline-flex items-center gap-2 text-sm font-semibold text-brand-green-text">
                 <ArrowLeft aria-hidden="true" className="size-4 rtl:rotate-180" /> {back}

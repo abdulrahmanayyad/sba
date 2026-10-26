@@ -9,9 +9,9 @@ const validConstructionTabs: ConstructionTab[] = ["about", "sectors", "services"
 const validGarmentTabs: GarmentTab[] = ["about", "services", "clients", "projects", "partners", "capabilities", "join"];
 
 export const Route = createFileRoute("/sectors/$sector")({
-  validateSearch: (search: Record<string, unknown>): { tab?: string } => {
-    const tabStr = search["tab"] as string | undefined;
-    if (typeof tabStr === "string") {
+  validateSearch: (search: Record<string, unknown>): { tab?: string | undefined } => {
+    const tabStr = search["tab"];
+    if (typeof tabStr === "string" && tabStr) {
       if (validConstructionTabs.includes(tabStr as ConstructionTab) || validGarmentTabs.includes(tabStr as GarmentTab)) {
         return { tab: tabStr };
       }

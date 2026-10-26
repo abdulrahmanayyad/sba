@@ -86,7 +86,7 @@ export function ConstructionSectorView({ tab = "about" }: ConstructionViewProps)
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button asChild variant="primary" size="lg" className="w-full sm:w-auto">
-                <Link to="/contact" search={{ subject: "construction-quote" }}>
+                <Link to="/contact">
                   {ar ? "اطلب عرض سعر" : "Request a Quotation"}
                 </Link>
               </Button>
@@ -96,7 +96,7 @@ export function ConstructionSectorView({ tab = "about" }: ConstructionViewProps)
                 </a>
               </Button>
               <Button asChild variant="outline" size="lg" className="w-full sm:w-auto">
-                <Link to="/contact" search={{ subject: "join-construction" }}>
+                <Link to="/contact">
                   <HardHat className="size-4" /> {ar ? "انضم إلينا" : "Join Us"}
                 </Link>
               </Button>
@@ -154,7 +154,7 @@ export function ConstructionSectorView({ tab = "about" }: ConstructionViewProps)
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Button asChild variant="primary" size="lg">
-                <Link to="/contact" search={{ subject: "construction-project" }}>
+                <Link to="/contact">
                   {ar ? "إرسال طلب مشروع" : "Submit Project Inquiry"} <ArrowRight className="size-4 rtl:rotate-180" />
                 </Link>
               </Button>
@@ -465,7 +465,7 @@ function ConstructionProjectsView({ ar }: { ar: boolean }) {
                           <span className="rounded bg-brand-green/10 px-2 py-0.5 font-mono text-[10px] font-semibold text-brand-green-text">
                             {proj.category}
                           </span>
-                          {proj.year && <span className="font-mono text-[11px] text-muted-foreground">{proj.year}</span>}
+                          {"year" in proj && proj.year && <span className="font-mono text-[11px] text-muted-foreground">{proj.year}</span>}
                         </div>
 
                         <h4 className="mt-3 font-head text-base font-bold text-foreground">{ar ? proj.nameAr : proj.nameEn}</h4>
@@ -473,10 +473,10 @@ function ConstructionProjectsView({ ar }: { ar: boolean }) {
                         <p className="mt-3 text-xs leading-5 text-muted-foreground">{ar ? proj.scopeAr : proj.scopeEn}</p>
                       </div>
 
-                      {proj.value && (
+                      {"value" in proj && proj.value && (
                         <div className="mt-4 border-t border-border/70 pt-3 flex items-center justify-between text-xs">
                           <span className="text-muted-foreground">{ar ? "القيمة المسجلة:" : "Contract Value:"}</span>
-                          <span className="font-mono font-bold text-brand-green-text">{ar ? proj.valueAr : proj.value}</span>
+                          <span className="font-mono font-bold text-brand-green-text">{ar ? ("valueAr" in proj && proj.valueAr ? proj.valueAr : proj.value) : proj.value}</span>
                         </div>
                       )}
                     </div>

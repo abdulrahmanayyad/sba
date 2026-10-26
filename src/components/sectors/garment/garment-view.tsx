@@ -165,7 +165,7 @@ export function GarmentSectorView({ tab = "about" }: GarmentViewProps) {
                   key={key}
                   to="/sectors/$sector"
                   params={{ sector: "garment" }}
-                  search={{ tab: key === "about" ? undefined : key }}
+                  search={key === "about" ? {} : { tab: key }}
                   className={cn(
                     "flex shrink-0 items-center gap-2 rounded-xl px-4 py-2.5 text-xs sm:text-sm font-semibold transition cursor-pointer",
                     active
