@@ -101,10 +101,10 @@ export const sectors: Record<SectorSlug, SectorPageData> = {
         body: "Scalable production capacity: 5,000+ pieces per day, 100,000+ pieces per month across 15+ production lines, 250+ specialized machines, and a skilled workforce of 400+ across operations.",
         bodyAr: "طاقة إنتاجية قابلة للتوسع: أكثر من 5,000 قطعة يوميًا، وأكثر من 100,000 قطعة شهريًا، عبر أكثر من 15 خط إنتاج و250 ماكينة متخصصة وفريق عمل يضم أكثر من 400 عامل ضمن المنظومة.",
         items: [
-          { label: "5,000+ Pieces Per Day", labelAr: "5,000+ قطعة يوميًا" },
-          { label: "100,000+ Pieces Per Month", labelAr: "100,000+ قطعة شهريًا" },
-          { label: "15+ Production Lines", labelAr: "15+ خط إنتاج" },
-          { label: "250+ Machines & 400+ Workers", labelAr: "250+ ماكينة و400+ عامل" },
+          { label: "+5,000 Pieces Per Day", labelAr: "+5,000 قطعة يوميًا" },
+          { label: "+100,000 Pieces Per Month", labelAr: "+100,000 قطعة شهريًا" },
+          { label: "+15 Production Lines", labelAr: "+15 خط إنتاج" },
+          { label: "+250 Machines & +400 Workers", labelAr: "+250 ماكينة و+400 عامل" },
         ],
       },
       {
@@ -197,8 +197,8 @@ export const sectors: Record<SectorSlug, SectorPageData> = {
         body: "57+ documented projects with recorded contract turnover of EGP 400,520,409 between 2013 and 2024 — including annual delivery peaks of EGP 125,950,813 (2016) and EGP 86,220,000 (2023).",
         bodyAr: "أكثر من 57 مشروعًا موثقًا بحجم أعمال مسجل بلغ 400,520,409 جنيهًا مصريًا (2013–2024)، وسجلت الشركة حجم أعمال 125,950,813 جنيهًا في عام 2016، و86,220,000 جنيهًا في عام 2023.",
         items: [
-          { label: "57+ Documented Projects", labelAr: "57+ مشروعًا موثقًا" },
-          { label: "EGP 400.5M+ Turnover (2013–2024)", labelAr: "400.5+ مليون جنيه حجم أعمال مسجل" },
+          { label: "+57 Documented Projects", labelAr: "+57 مشروعًا موثقًا" },
+          { label: "+EGP 400.5M Turnover (2013–2024)", labelAr: "+400.5 مليون جنيه حجم أعمال مسجل" },
           { label: "EGP 125.9M in 2016", labelAr: "125.9 مليون جنيه حجم أعمال 2016" },
           { label: "EGP 86.2M in 2023", labelAr: "86.2 مليون جنيه حجم أعمال 2023" },
         ],

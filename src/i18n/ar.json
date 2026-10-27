@@ -37,22 +37,22 @@
     "policies": "السياسات"
   },
   "sectorsMenu": {
-    "construction": "المقاولات والإنشاءات والتطوير العقاري",
+    "construction": "المقاولات والتطوير العقاري",
     "environmental": "البيئة والاستدامة",
-    "garment": "تصنيع وتطوير الملابس الجاهزة والأزياء",
-    "food": "الأغذية والمنتجات الطبيعية والتمور الفاخرة",
+    "garment": "تصنيع وتطوير الملابس الجاهزة",
+    "food": "الأغذية والمنتجات الطبيعية",
     "research": "البحث العلمي وتحقيق التراث",
     "education": "التعليم وتنمية المعرفة"
   },
   "hero": {
     "eyebrow": "نقود التقدم عبر مختلف القطاعات",
     "title": "نبني القيمة • ونصنع المستقبل",
-    "titleAr": "Building Value • Shaping the Future",
+    "titleAr": "نبني القيمة • ونصنع المستقبل",
     "lead": "قيادة التقدم عبر أربعة قطاعات استراتيجية",
     "leadBody": "نجمع أربعة قطاعات استراتيجية — المقاولات، والبيئة، والملابس، والمنتجات الطبيعية — تحت رؤية مشتركة ترتكز على الابتكار والنمو المستدام وخلق قيمة طويلة الأمد لشركائنا ومجتمعاتنا والأجيال القادمة."
   },
   "footer": {
-    "descriptor": "المقاولات · البيئة · الملابس · المنتجات الطبيعية",
+    "descriptor": "مجموعة سامي بن عياد",
     "sectors": "القطاعات",
     "company": "المجموعة",
     "contact": "التواصل",
@@ -60,6 +60,7 @@
     "addressLabel": "عنوان الشركة",
     "address": "Office No. 212, 2nd Floor, Building No.7, The Science & Innovation Park at The British University in Egypt (BUE), Block No.36, Fifth District, El Sherouk City, Cairo, Egypt 11837",
     "registration": "رقم تسجيل الشركة #209627",
+    "taxNumber": "رقم التسجيل الضريبي 753-702-878",
     "copyright": "حقوق النشر © 2026 Sami Bin Ayyad ®. جميع الحقوق محفوظة."
   },
   "accessibility": {

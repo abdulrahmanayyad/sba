@@ -287,6 +287,9 @@ html[dir="rtl"] .footer-label {
   .section-heading { grid-template-columns: minmax(0, 1.35fr) minmax(18rem, 0.65fr); align-items: end; }
 }
 html[dir="rtl"] .eyebrow { font-family: var(--font-body); letter-spacing: 0; }
+html[lang="en"], html[lang="en"] body, :lang(en) {
+  font-family: "Nunito", sans-serif;
+}
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

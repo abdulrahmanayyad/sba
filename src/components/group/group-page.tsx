@@ -28,19 +28,14 @@ export function GroupPage() {
       {/* Hero */}
       <section data-home-hero className="relative min-h-[min(640px,calc(100svh-76px))] overflow-hidden text-footer-foreground">
         <img data-hero-image src={heroBg} alt={ar ? "بناء مستقبل مستدام معاً" : "Building a Sustainable Future Together"} width={1920} height={1088} fetchPriority="high" className="absolute inset-0 size-full object-cover" />
-        <div className="group-hero-overlay absolute inset-0" />
-        <div className="site-container relative flex min-h-[inherit] flex-col justify-center py-14 sm:py-20">
+        <div className="group-hero-overlay absolute inset-0 bg-black/60 backdrop-blur-[1px]" />
+        <div className="site-container relative flex min-h-[inherit] flex-col justify-center py-14 sm:py-20 z-10">
           <div>
             <p data-hero-reveal className="eyebrow text-brand-orange">{messages.hero.eyebrow}</p>
-            <h1 data-hero-reveal className="mt-4 max-w-4xl font-head text-[clamp(1.65rem,3vw,2.6rem)] font-bold leading-tight">
+            <h1 data-hero-reveal className="mt-4 max-w-4xl font-head text-[clamp(1.85rem,3.5vw,3rem)] font-extrabold leading-tight text-white drop-shadow-md">
               {ar ? messages.hero.titleAr : messages.hero.title}
             </h1>
-            <p data-hero-reveal className="mt-3 max-w-3xl text-sm sm:text-base leading-relaxed text-footer-muted">{messages.hero.lead}</p>
-            <p data-hero-reveal className="mt-5 max-w-xl text-sm leading-7 text-footer-muted sm:text-base">{messages.hero.leadBody}</p>
-            <div data-hero-reveal className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button asChild variant="primary" size="lg" data-magnetic className="w-full sm:w-auto"><a href="#divisions">{ar ? "استكشف قطاعاتنا" : "Explore Our Sectors"} <ArrowRight className="size-4 rtl:rotate-180" /></a></Button>
-              <Button asChild size="lg" className="glass-dark w-full !text-footer-foreground hover:!bg-footer sm:w-auto"><Link to="/contact">{ar ? "اطلب عرض سعر" : "Request a Quote"}</Link></Button>
-            </div>
+            <p data-hero-reveal className="mt-3 max-w-3xl text-base sm:text-lg font-bold leading-relaxed text-footer-foreground/90">{messages.hero.lead}</p>
           </div>
         </div>
       </section>
@@ -51,12 +46,12 @@ export function GroupPage() {
           <div className="group relative mx-auto max-w-4xl overflow-hidden rounded-3xl border border-white/20 bg-background/75 p-8 sm:p-12 shadow-[0_12px_40px_rgba(0,0,0,0.08)] backdrop-blur-2xl transition-all duration-300 hover:scale-[1.01] hover:shadow-[0_20px_60px_rgba(0,0,0,0.12)] hover:border-brand-orange/40 text-center">
             <p className="eyebrow">{ar ? "مجموعة سامي عياد" : "Sami Bin Ayyad Group"}</p>
             <h2 className="section-title mt-2">{ar ? "نقود التقدم عبر الصناعات" : "Driving Progress Across Industries"}</h2>
-            <p className="section-intro mx-auto mt-5">
+            <p className="section-intro mx-auto mt-5 text-justify [text-align-last:center] leading-relaxed max-w-2xl">
               {ar
                 ? "تجمع مجموعة سامي عياد قدرات أعمال متنوعة في المقاولات والحلول البيئية وتصنيع المنسوجات والملابس والمنتجات الطبيعية. ومن خلال الخبرة التشغيلية والتنفيذ القائم على الجودة والشراكات الاستراتيجية، نعمل على خلق قيمة دائمة عبر الصناعات والأسواق."
                 : "SAMI BIN AYYAD GROUP brings together diverse business capabilities across contracting, environmental solutions, textile and garment manufacturing, and natural products. Through operational expertise, quality-driven execution, and strategic partnerships, we work to create lasting value across industries and markets."}
             </p>
-            <Button asChild variant="primary" size="lg" data-magnetic className="mt-8">
+            <Button asChild size="lg" className="mt-8 group relative inline-flex items-center justify-center gap-2 rounded-full !bg-brand-green !text-white px-7 py-3 font-head text-sm font-bold shadow-lg transition-all duration-300 hover:!bg-brand-orange hover:shadow-brand-orange/30 hover:scale-105 active:scale-95">
               <a href="#divisions">
                 {ar ? "استكشف قطاعاتنا" : "Explore Our Sectors"} <ArrowRight className="size-4 rtl:rotate-180" />
               </a>
@@ -95,7 +90,9 @@ export function GroupPage() {
                     <div data-stagger className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3">
                       {sector.figures.map((figure) => (
                         <div key={figure.label} className="border-t border-border pt-3">
-                          <p className="font-head text-xl font-bold text-brand-green md:text-2xl"><AnimatedStatistic value={figure.value} /></p>
+                          <p className="font-head text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm md:text-2xl" dir="ltr">
+                            <AnimatedStatistic value={figure.value} />
+                          </p>
                           <p className="mt-1 text-xs leading-5 text-muted-foreground">{ar ? figure.labelAr : figure.label}</p>
                         </div>
                       ))}
@@ -121,15 +118,6 @@ export function GroupPage() {
       <FactorySlider ar={ar} />
 
       <BusinessDashboard ar={ar} />
-
-      <section id="about" className="site-container section-band scroll-mt-24">
-        <Reveal className="max-w-3xl">
-          <p className="eyebrow">{ar ? "عن مجموعة سامي عياد" : "About Sami Bin Ayyad Group"}</p>
-          <h2 className="section-title">{ar ? "نبني مستقبلًا أقوى معًا" : "Building a Stronger Future Together"}</h2>
-          <p className="section-intro mt-4">{ar ? aboutTabs[0]?.bodyAr : aboutTabs[0]?.body}</p>
-          <Button asChild variant="primary" size="lg" className="mt-8" data-magnetic><Link to="/about">{ar ? "اعرف المزيد" : "Learn more"} <ArrowRight className="size-4 rtl:rotate-180" /></Link></Button>
-        </Reveal>
-      </section>
 
       <JourneySection ar={ar} />
 
@@ -166,7 +154,11 @@ export function GroupPage() {
           ))}
         </div>
         <Reveal className="mt-12">
-          <Button asChild variant="primary" size="lg" data-magnetic><Link to="/contact">{ar ? "ناقش شراكة" : "Discuss a Partnership"} <ArrowRight className="size-4 rtl:rotate-180" /></Link></Button>
+          <Button asChild size="lg" className="group relative inline-flex items-center justify-center gap-2 rounded-full !bg-brand-green !text-white px-7 py-3 font-head text-sm font-bold shadow-lg transition-all duration-300 hover:!bg-brand-orange hover:shadow-brand-orange/30 hover:scale-105 active:scale-95">
+            <Link to="/contact">
+              {ar ? "ناقش شراكة" : "Discuss a Partnership"} <ArrowRight className="size-4 rtl:rotate-180" />
+            </Link>
+          </Button>
         </Reveal>
       </section>
 
@@ -178,9 +170,12 @@ export function GroupPage() {
             <h2 className="section-title mt-2 text-foreground">{ar ? "لنبنِ ما هو قادم" : "Let's Build What's Next"}</h2>
             <p className="section-intro mt-4 text-muted-foreground">{ar ? "استكشف فرص التعاون مع مجموعة سامي عياد في التصنيع والإنشاءات والحلول البيئية والمنتجات الطبيعية." : "Explore opportunities to collaborate with SAMI BIN AYYAD GROUP across manufacturing, construction, environmental solutions, and natural products."}</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button asChild variant="primary" size="lg" data-magnetic className="w-full sm:w-auto"><Link to="/contact">{ar ? "تواصل مع فريقنا" : "Contact Our Team"}</Link></Button>
-              <Button asChild size="lg" className="glass-dark w-full !text-foreground hover:!bg-secondary sm:w-auto"><a href="#divisions">{ar ? "استكشف قطاعاتنا" : "Explore Our Sectors"}</a></Button>
-              <Button asChild size="lg" className="bg-brand-green w-full text-white hover:bg-brand-green-text sm:w-auto"><a href={WHATSAPP_URL} target="_blank" rel="noreferrer"><MessageCircle className="size-4" /> WhatsApp</a></Button>
+              <Button asChild size="lg" className="group relative inline-flex items-center justify-center gap-2 rounded-full !bg-brand-green !text-white px-7 py-3 font-head text-sm font-bold shadow-lg transition-all duration-300 hover:!bg-brand-orange hover:shadow-brand-orange/30 hover:scale-105 active:scale-95 w-full sm:w-auto">
+                <Link to="/contact">{ar ? "تواصل مع فريقنا" : "Contact Our Team"}</Link>
+              </Button>
+              <Button asChild size="lg" className="group relative inline-flex items-center justify-center gap-2 rounded-full !bg-brand-green !text-white px-7 py-3 font-head text-sm font-bold shadow-lg transition-all duration-300 hover:!bg-brand-orange hover:shadow-brand-orange/30 hover:scale-105 active:scale-95 w-full sm:w-auto">
+                <a href={WHATSAPP_URL} target="_blank" rel="noreferrer"><MessageCircle className="size-4" /> WhatsApp</a>
+              </Button>
             </div>
           </div>
           <div className="min-w-0 self-center">
@@ -188,8 +183,8 @@ export function GroupPage() {
               <a data-email-contact href="mailto:info@sami-trade.com">
                 <span data-email-icon className="flex size-12 shrink-0 items-center justify-center rounded-full bg-brand-green/10 text-brand-green"><Mail aria-hidden="true" className="size-5" /></span>
                 <span data-email-copy className="min-w-0 flex-1">
-                  <span className="block font-mono text-[10px] font-bold uppercase text-muted-foreground">{ar ? "البريد الإلكتروني" : "Email"}</span>
-                  <span dir="ltr" className="mt-2 block break-all font-head text-base font-bold text-foreground sm:text-lg">info@sami-trade.com</span>
+                  <span className="block font-head text-sm font-bold text-foreground/80">{ar ? "البريد الإلكتروني" : "Email"}</span>
+                  <span dir="ltr" className="mt-1 block break-all font-head text-base font-bold text-foreground sm:text-lg">info@sami-trade.com</span>
                 </span>
                 <span data-email-arrow className="shrink-0 text-brand-green"><ArrowRight aria-hidden="true" className="size-5 rtl:rotate-180" /></span>
               </a>

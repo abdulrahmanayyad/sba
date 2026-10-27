@@ -403,8 +403,8 @@ export const constructionProjectsData = {
   subtitle: "SAMI BIN AYYAD GROUP Contracting & Real Estate Development’s documented project portfolio reflects experience accumulated over multiple years and across diverse sectors, with projects varying in scope, technical requirements, and contract value.",
   subtitleAr: "يعكس سجل المشروعات الموثق لشركة مجموعة سامي بن عياد للمقاولات والتطوير العقاري خبرة ممتدة عبر عدة سنوات وقطاعات، مع تنوع في طبيعة الأعمال وقيمها التعاقدية من عام 2013 إلى 2024.",
   stats: [
-    { value: "57+", labelEn: "Documented Projects", labelAr: "مشروعًا موثقًا بسجل الأعمال" },
-    { value: "400.5M+", labelEn: "EGP Recorded Volume", labelAr: "جنيه مصري حجم أعمال مسجل (2013-2024)" },
+    { value: "+57", labelEn: "Documented Projects", labelAr: "مشروعًا موثقًا بسجل الأعمال" },
+    { value: "+400.5M", labelEn: "EGP Recorded Volume", labelAr: "جنيه مصري حجم أعمال مسجل (2013-2024)" },
     { value: "125.9M", labelEn: "EGP Peak Volume (2016)", labelAr: "جنيه مصري حجم أعمال عام 2016" },
     { value: "86.2M", labelEn: "EGP Volume in 2023", labelAr: "جنيه مصري حجم أعمال عام 2023" },
   ],

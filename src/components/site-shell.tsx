@@ -227,39 +227,39 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
           language={<LanguageSwitcher language={language} onChange={selectLanguage} />}
         />
       ) : (
-        <header className="fixed inset-x-0 top-3 z-50 pointer-events-none flex justify-center px-4 transition-all duration-500">
+        <header className="fixed inset-x-0 top-3 z-50 pointer-events-none px-4 flex justify-center transition-all duration-300">
           <div
             className={cn(
-              "pointer-events-auto mx-auto flex h-[62px] w-full max-w-6xl items-center justify-between gap-4 rounded-full px-5 transition-all duration-500",
+              "pointer-events-auto mx-auto flex h-[62px] w-full max-w-6xl items-center justify-between gap-4 rounded-full px-5 transition-all duration-300",
               scrolled
                 ? "border border-white/25 bg-background/85 shadow-[0_16px_40px_rgba(0,0,0,0.18)] backdrop-blur-2xl ring-1 ring-white/10"
                 : "border border-white/15 bg-background/70 shadow-[0_10px_30px_rgba(0,0,0,0.08)] backdrop-blur-xl"
             )}
           >
             {/* Logo */}
-            <Link to="/" className="relative z-10 inline-flex items-center leading-none" aria-label={messages.accessibility.home}>
-              <img src={currentLogo} alt={isArabic ? "سامي بن عياد" : "SBA"} className="h-9 w-auto transition-transform duration-200 hover:scale-105" />
+            <Link to="/" className="relative z-10 shrink-0 inline-flex items-center leading-none" aria-label={messages.accessibility.home}>
+              <img src={currentLogo} alt={isArabic ? "سامي بن عياد" : "SBA"} className="h-9 w-auto transition-transform duration-300 hover:scale-105" />
             </Link>
 
-            {/* Centered nav links with interactive glass pills */}
+            {/* Centered nav links */}
             <nav aria-label={messages.accessibility.primaryNavigation} className="hidden items-center justify-center gap-x-1 xl:flex">
               {primaryLinks(navPill)}
             </nav>
 
             {/* Right: CTA + language */}
-            <div className="hidden items-center gap-3 xl:flex">
+            <div className="hidden items-center gap-3 xl:flex shrink-0">
               <LanguageSwitcher language={language} onChange={selectLanguage} />
               <Link
                 to="/contact"
-                className="group inline-flex items-center gap-2 rounded-full bg-brand-green px-5 py-2.5 text-xs font-bold text-white transition-all duration-300 hover:bg-brand-orange hover:shadow-lg hover:shadow-brand-orange/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/50"
+                className="group/cta inline-flex items-center gap-2 rounded-full bg-brand-green px-5 py-2.5 text-xs font-bold text-white transition-all duration-300 hover:bg-brand-orange hover:shadow-lg hover:shadow-brand-orange/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/50 active:scale-95"
               >
                 <span>{isArabic ? "تواصل معنا" : "Contact Us"}</span>
-                <ArrowUpRight className="size-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 rtl:rotate-90" />
+                <ArrowUpRight className="size-3.5 transition-transform duration-300 group-hover/cta:translate-x-1 group-hover/cta:-translate-y-1 rtl:rotate-90 rtl:group-hover/cta:-translate-x-1 rtl:group-hover/cta:-translate-y-1" />
               </Link>
             </div>
 
             {/* Mobile hamburger */}
-            <Button variant="icon" size="icon" className="justify-self-end xl:hidden" aria-label={messages.accessibility.openMenu} onClick={() => setMenuOpen(true)}>
+            <Button variant="icon" size="icon" className="shrink-0 justify-self-end xl:hidden" aria-label={messages.accessibility.openMenu} onClick={() => setMenuOpen(true)}>
               <Menu aria-hidden="true" />
             </Button>
           </div>
@@ -345,9 +345,16 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
             </div>
 
             {/* Bottom bar */}
-            <div className="mt-8 flex flex-col gap-2 border-t border-white/10 pt-5 text-[11px] font-bold text-foreground/80 md:flex-row md:items-center md:justify-between">
+            <div className="mt-8 flex flex-col gap-4 border-t border-white/10 pt-5 text-[11px] font-bold text-foreground/80 md:flex-row md:items-center md:justify-between">
               <p>{messages.footer.copyright}</p>
-              <p className="font-mono uppercase tracking-[0.12em]">{messages.footer.registration}</p>
+              <div className="flex flex-col items-start gap-1.5 md:items-end">
+                <div className="inline-flex w-fit items-center rounded-xl border border-white/20 bg-background/50 px-2.5 py-1 text-[10px] shadow-sm backdrop-blur-md">
+                  <span className="font-mono uppercase tracking-[0.05em] text-foreground/90">{messages.footer.registration}</span>
+                </div>
+                <div className="inline-flex w-fit items-center rounded-xl border border-white/20 bg-background/50 px-2.5 py-1 text-[10px] shadow-sm backdrop-blur-md">
+                  <span className="font-mono uppercase tracking-[0.05em] text-foreground/90">{messages.footer.taxNumber}</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>

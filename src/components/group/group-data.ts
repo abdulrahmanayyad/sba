@@ -35,8 +35,8 @@ export const divisions: Division[] = [
     body: "Delivering integrated solutions across general contracting, construction, real estate development, building upgrades, electromechanical systems, healthcare installations, and specialized oil & gas civil works.",
     bodyAr: "حلول متكاملة في المقاولات العامة والإنشاءات والتطوير العقاري والتشطيبات، مدعومة بسجل مشروعات موثق يغطي القطاعات الطبية والسكنية والتجارية والإدارية والصناعية والبترولية.",
     points: [
-      { en: "57+ documented projects", ar: "أكثر من 57 مشروعًا موثقًا" },
-      { en: "EGP 400.5M+ turnover (2013–2024)", ar: "400.5+ مليون جنيه حجم أعمال مسجل" },
+      { en: "+57 documented projects", ar: "+57 مشروعًا موثقًا" },
+      { en: "+EGP 400.5M turnover (2013–2024)", ar: "+400.5 مليون جنيه حجم أعمال مسجل" },
       { en: "Hospitals, MEP, healthcare fit-out & elevators", ar: "مستشفيات وتجهيزات طبية وأنظمة MEP ومصاعد" },
       { en: "Villas, commercial developments & oil/gas works", ar: "فيلات وتطوير سكني وتجاري ومشروعات بترول وغاز" },
     ],
@@ -71,10 +71,10 @@ export const divisions: Division[] = [
     body: "Integrated ready-made garment manufacturing: product development, diverse production capabilities, manufacturing management, and quality control, specializing in women's, children's, and men's apparel.",
     bodyAr: "حلول متكاملة لتصنيع الملابس الجاهزة تجمع بين تطوير المنتجات والقدرات الإنتاجية المتنوعة وإدارة التصنيع ومراقبة الجودة، مع تخصص في الملابس الحريمي والأطفالي والرجالية.",
     points: [
-      { en: "5,000+ pieces/day · 100,000+/month", ar: "5,000+ قطعة يوميًا · 100,000+ شهريًا" },
-      { en: "15+ lines · 250+ machines · 400+ workers", ar: "15+ خط إنتاج · 250+ ماكينة · 400+ عامل" },
+      { en: "+5,000 pieces/day · +100,000/month", ar: "+5,000 قطعة يوميًا · +100,000 شهريًا" },
+      { en: "+15 lines · +250 machines · +400 workers", ar: "+15 خط إنتاج · +250 ماكينة · +400 عامل" },
       { en: "Dedicated classic shirt factory (30k/mo)", ar: "مصنع مخصص للقمصان الكلاسيك (30 ألف/شهر)" },
-      { en: "Private label, FOB & 20,000+ styles developed", ar: "علامات خاصة، برامج FOB، و20,000+ موديل" },
+      { en: "Private label, FOB & +20,000 styles developed", ar: "علامات خاصة، برامج FOB، و+20,000 موديل" },
     ],
     link: "/apparel",
   },
@@ -159,22 +159,22 @@ export interface Stat {
 }
 
 export const stats: Stat[] = [
-  { value: "20,000+", label: "Garment models developed", labelAr: "موديل ملابس تم تطويرها" },
-  { value: "57+", label: "Construction projects", labelAr: "مشروعًا إنشائيًا" },
-  { value: "400.5M", label: "EGP construction turnover", labelAr: "جنيه حجم أعمال المقاولات" },
+  { value: "+20,000", label: "Garment models developed", labelAr: "موديل ملابس تم تطويرها" },
+  { value: "+57", label: "Construction projects", labelAr: "مشروعًا إنشائيًا" },
+  { value: "+400.5M", label: "EGP construction turnover", labelAr: "جنيه حجم أعمال المقاولات" },
   { value: "4", label: "Strategic sectors", labelAr: "قطاعات استراتيجية" },
   { value: "1977", label: "Group heritage since 1977", labelAr: "جذور المجموعة منذ 1977" },
 ];
 
 /** Verified group-wide figures only — garment figures are attributed to manufacturing operations. */
 export const capabilityStats: Stat[] = [
-  { value: "57+", label: "Documented projects", labelAr: "مشروعًا موثقًا" },
-  { value: "400.5", label: "EGP million+ recorded project value (2013–2024)", labelAr: "مليون جنيه+ قيمة مشروعات مسجلة (2013–2024)" },
-  { value: "5,000+", label: "Garments per day", labelAr: "قطعة ملابس يوميًا" },
-  { value: "100,000+", label: "Garments per month", labelAr: "قطعة ملابس شهريًا" },
-  { value: "15+", label: "Production lines", labelAr: "خط إنتاج" },
-  { value: "250+", label: "Industrial machines", labelAr: "ماكينة صناعية" },
-  { value: "20,000+", label: "Apparel styles developed", labelAr: "موديل ملابس تم تطويره" },
+  { value: "+57", label: "Documented projects", labelAr: "مشروعًا موثقًا" },
+  { value: "+400.5", label: "EGP million+ recorded project value (2013–2024)", labelAr: "+400.5 مليون جنيه قيمة مشروعات مسجلة (2013–2024)" },
+  { value: "+5,000", label: "Garments per day", labelAr: "قطعة ملابس يوميًا" },
+  { value: "+100,000", label: "Garments per month", labelAr: "قطعة ملابس شهريًا" },
+  { value: "+15", label: "Production lines", labelAr: "خط إنتاج" },
+  { value: "+250", label: "Industrial machines", labelAr: "ماكينة صناعية" },
+  { value: "+20,000", label: "Apparel styles developed", labelAr: "موديل ملابس تم تطويره" },
 ];
 
 export interface SectorOverview {
@@ -210,8 +210,8 @@ export const sectorOverviews: SectorOverview[] = [
     supportingLabel: "Key Figures",
     supportingLabelAr: "أرقام رئيسية",
     figures: [
-      { value: "57+", label: "Documented projects", labelAr: "مشروعًا موثقًا" },
-      { value: "400.5", label: "EGP million+ recorded turnover (2013–2024)", labelAr: "مليون جنيه+ حجم أعمال مسجل (2013–2024)" },
+      { value: "+57", label: "Documented projects", labelAr: "مشروعًا موثقًا" },
+      { value: "+400.5", label: "EGP million+ recorded turnover (2013–2024)", labelAr: "+400.5 مليون جنيه حجم أعمال مسجل (2013–2024)" },
     ],
     cta: "Explore Our Projects",
     ctaAr: "استكشف مشروعاتنا",
@@ -250,11 +250,11 @@ export const sectorOverviews: SectorOverview[] = [
     supportingLabel: "Key Figures",
     supportingLabelAr: "أرقام رئيسية",
     figures: [
-      { value: "5,000+", label: "Garments per day", labelAr: "قطعة ملابس يوميًا" },
-      { value: "100,000+", label: "Garments per month", labelAr: "قطعة ملابس شهريًا" },
-      { value: "15+", label: "Production lines", labelAr: "خط إنتاج" },
-      { value: "250+", label: "Specialized machines", labelAr: "ماكينة متخصصة" },
-      { value: "20,000+", label: "Styles developed", labelAr: "موديل تم تطويره" },
+      { value: "+5,000", label: "Garments per day", labelAr: "قطعة ملابس يوميًا" },
+      { value: "+100,000", label: "Garments per month", labelAr: "قطعة ملابس شهريًا" },
+      { value: "+15", label: "Production lines", labelAr: "خط إنتاج" },
+      { value: "+250", label: "Specialized machines", labelAr: "ماكينة متخصصة" },
+      { value: "+20,000", label: "Styles developed", labelAr: "موديل تم تطويره" },
     ],
     cta: "Explore Manufacturing",
     ctaAr: "استكشف التصنيع",
@@ -322,12 +322,12 @@ export interface PerformanceEntry {
 
 // Illustrative placeholder values — to be replaced with verified figures.
 export const performance: PerformanceEntry[] = [
-  { sector: "Garment & Textiles", sectorAr: "الملابس والمنسوجات", figure: "20,000+", figureNote: "models developed · placeholder", figureNoteAr: "موديل تم تطويرها · بيانات مبدئية", work: 82, projects: 64, people: 78 },
-  { sector: "Construction", sectorAr: "المقاولات", figure: "57+", figureNote: "projects · placeholder", figureNoteAr: "مشروعًا · بيانات مبدئية", work: 74, projects: 58, people: 66 },
+  { sector: "Garment & Textiles", sectorAr: "الملابس والمنسوجات", figure: "+20,000", figureNote: "models developed · placeholder", figureNoteAr: "موديل تم تطويرها · بيانات مبدئية", work: 82, projects: 64, people: 78 },
+  { sector: "Construction", sectorAr: "المقاولات", figure: "+57", figureNote: "projects · placeholder", figureNoteAr: "مشروعًا · بيانات مبدئية", work: 74, projects: 58, people: 66 },
   { sector: "Environment", sectorAr: "البيئة", figure: "$10M", figureNote: "max project volume · placeholder", figureNoteAr: "أقصى حجم مشروع · بيانات مبدئية", work: 52, projects: 44, people: 38 },
-  { sector: "Research", sectorAr: "البحث العلمي", figure: "4+", figureNote: "published titles · placeholder", figureNoteAr: "إصدارات منشورة · بيانات مبدئية", work: 40, projects: 34, people: 26 },
+  { sector: "Research", sectorAr: "البحث العلمي", figure: "+4", figureNote: "published titles · placeholder", figureNoteAr: "إصدارات منشورة · بيانات مبدئية", work: 40, projects: 34, people: 26 },
   { sector: "Education", sectorAr: "التعليم", figure: "6", figureNote: "learning areas · placeholder", figureNoteAr: "مجالات تعليمية · بيانات مبدئية", work: 46, projects: 40, people: 42 },
-  { sector: "Food & Natural Products", sectorAr: "الأغذية والمنتجات الطبيعية", figure: "20+", figureNote: "product varieties · placeholder", figureNoteAr: "صنفًا من المنتجات · بيانات مبدئية", work: 44, projects: 36, people: 30 },
+  { sector: "Food & Natural Products", sectorAr: "الأغذية والمنتجات الطبيعية", figure: "+20", figureNote: "product varieties · placeholder", figureNoteAr: "صنفًا من المنتجات · بيانات مبدئية", work: 44, projects: 36, people: 30 },
 ];
 
 export const chartMetrics = [

@@ -382,7 +382,7 @@ function ConstructionProjectsView({ ar }: { ar: boolean }) {
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {data.stats.map((stat, idx) => (
               <div key={idx} className="glass-card rounded-2xl border border-border p-6 text-center">
-                <p className="font-mono text-3xl sm:text-4xl font-bold text-brand-orange-text">{stat.value}</p>
+                <p className="font-mono text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm" dir="ltr">{stat.value}</p>
                 <p className="mt-2 text-xs sm:text-sm font-semibold text-foreground">{ar ? stat.labelAr : stat.labelEn}</p>
               </div>
             ))}

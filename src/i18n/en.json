@@ -37,9 +37,9 @@
     "policies": "Policies"
   },
   "sectorsMenu": {
-    "construction": "Contracting, Construction & Real Estate Development",
+    "construction": "Contracting & Real Estate Development",
     "environmental": "Environment & Sustainability",
-    "garment": "Garment Manufacturing & Fashion Development",
+    "garment": "Garment Manufacturing & Development",
     "food": "Food & Natural Products",
     "research": "Scientific Research & Heritage Editing",
     "education": "Education & Knowledge Development"
@@ -47,12 +47,12 @@
   "hero": {
     "eyebrow": "Driving Progress Across Industries",
     "title": "Building Value • Shaping the Future",
-    "titleAr": "نبني القيمة ونصنع المستقبل",
+    "titleAr": "Building Value • Shaping the Future",
     "lead": "Driving Progress Across Four Strategic Sectors",
     "leadBody": "We unite four strategic sectors — Contracting, Environment, Garment, and Natural Products — through a shared vision of innovation, sustainable growth, and long-term value creation for our partners, communities, and future generations."
   },
   "footer": {
-    "descriptor": "Contracting · Environment · Garment · Natural Products",
+    "descriptor": "Sami Bin Ayyad Group",
     "sectors": "Sectors",
     "company": "Company",
     "contact": "Contact",
@@ -60,6 +60,7 @@
     "addressLabel": "Office Address",
     "address": "Office No. 212, 2nd Floor, Building No.7, The Science & Innovation Park at The British University in Egypt (BUE), Block No.36, Fifth District, El Sherouk City, Cairo, Egypt 11837",
     "registration": "Company Registration #209627",
+    "taxNumber": "Tax Registration #753-702-878",
     "copyright": "Copyright © 2026 Sami Bin Ayyad ®. All Rights Reserved."
   },
   "accessibility": {
