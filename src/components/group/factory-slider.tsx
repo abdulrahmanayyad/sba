@@ -50,8 +50,8 @@ export function FactorySlider({ ar }: { ar: boolean }) {
   return (
     <section className="site-container section-band">
       <Reveal className="mx-auto max-w-3xl text-center">
-        <div className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 px-3.5 py-1 text-xs font-semibold text-brand-green mb-2">
-          <Sparkles className="size-3.5" />
+        <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+          <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
           <span>{ar ? "جولة تصويرية متكاملة" : "Visual Factory Tour"}</span>
         </div>
         <h2 className="section-title mt-1">{ar ? "نظرة عامة على المصنع — Factory Overview" : "Factory Overview"}</h2>

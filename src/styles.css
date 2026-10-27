@@ -150,6 +150,8 @@
     --font-head: "IBM Plex Sans Arabic", sans-serif;
     --font-body: "IBM Plex Sans Arabic", sans-serif;
     --font-sans: "IBM Plex Sans Arabic", sans-serif;
+    text-align: right;
+    direction: rtl;
   }
 
   html[dir="ltr"],
@@ -159,6 +161,20 @@
     --font-head: "Nunito", sans-serif;
     --font-body: "Nunito", sans-serif;
     --font-sans: "Nunito", sans-serif;
+    text-align: left;
+    direction: ltr;
+  }
+
+  /* Prevent letter-spacing from breaking cursive Arabic text ligatures */
+  html[dir="rtl"] [class*="tracking-"],
+  [dir="rtl"] [class*="tracking-"] {
+    letter-spacing: 0 !important;
+  }
+
+  /* Use Arabic sans-serif for Arabic UI elements even if font-mono was specified */
+  html[dir="rtl"] .font-mono:not([dir="ltr"]):not(code):not(pre),
+  [dir="rtl"] .font-mono:not([dir="ltr"]):not(code):not(pre) {
+    font-family: "IBM Plex Sans Arabic", sans-serif;
   }
 
   body {

@@ -298,8 +298,23 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
               <div>
                 <img src={currentLogo} alt={isArabic ? "سامي بن عياد" : "SBA"} className="h-11 w-auto" />
                 <p className="mt-5 max-w-sm text-sm font-semibold leading-6 text-foreground">{messages.footer.descriptor}</p>
-                <p className="mt-4 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-brand-orange">{messages.footer.addressLabel}</p>
+                <p className={cn("mt-4 font-bold text-brand-orange", isArabic ? "font-sans text-xs tracking-normal" : "font-mono text-[10px] uppercase tracking-[0.18em]")}>{messages.footer.addressLabel}</p>
                 <p className="mt-1.5 max-w-sm text-xs font-semibold leading-5 text-foreground/90">{messages.footer.address}</p>
+
+                {/* In Arabic: show reg/tax/copyright under address in brand column */}
+                {isArabic && (
+                  <div className="mt-5 flex flex-col gap-1 border-t border-white/10 pt-4">
+                    <p className="font-sans text-xs font-semibold text-foreground/90 text-right" dir="rtl">
+                      {messages.footer.registration}
+                    </p>
+                    <p className="font-sans text-xs font-semibold text-foreground/90 text-right" dir="rtl">
+                      {messages.footer.taxNumber}
+                    </p>
+                    <p className="mt-1 font-sans text-xs font-medium text-foreground/80 text-right" dir="rtl">
+                      {messages.footer.copyright}
+                    </p>
+                  </div>
+                )}
               </div>
 
               {/* Links grid */}
@@ -344,18 +359,22 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
               </div>
             </div>
 
-            {/* Bottom bar */}
-            <div className="mt-8 flex flex-col gap-4 border-t border-white/10 pt-5 text-[11px] font-bold text-foreground/80 md:flex-row md:items-center md:justify-between">
-              <p>{messages.footer.copyright}</p>
-              <div className="flex flex-col items-start gap-1.5 md:items-end">
-                <div className="inline-flex w-fit items-center rounded-xl border border-white/20 bg-background/50 px-2.5 py-1 text-[10px] shadow-sm backdrop-blur-md">
-                  <span className="font-mono uppercase tracking-[0.05em] text-foreground/90">{messages.footer.registration}</span>
-                </div>
-                <div className="inline-flex w-fit items-center rounded-xl border border-white/20 bg-background/50 px-2.5 py-1 text-[10px] shadow-sm backdrop-blur-md">
-                  <span className="font-mono uppercase tracking-[0.05em] text-foreground/90">{messages.footer.taxNumber}</span>
+            {/* Bottom bar — English only (Arabic shows these under address in brand column) */}
+            {!isArabic && (
+              <div className="mt-8 border-t border-white/10 pt-6">
+                <div className="flex flex-col gap-1 items-start">
+                  <p className="font-mono text-xs font-semibold uppercase tracking-[0.05em] text-foreground/90 text-left" dir="ltr">
+                    {messages.footer.registration}
+                  </p>
+                  <p className="font-mono text-xs font-semibold uppercase tracking-[0.05em] text-foreground/90 text-left" dir="ltr">
+                    {messages.footer.taxNumber}
+                  </p>
+                  <p className="mt-1 text-xs font-medium text-foreground/80 text-left" dir="ltr">
+                    {messages.footer.copyright}
+                  </p>
                 </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </footer>

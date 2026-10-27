@@ -44,13 +44,25 @@ export function GroupPage() {
       <section className="site-container section-band">
         <Reveal>
           <div className="group relative mx-auto max-w-4xl overflow-hidden rounded-3xl border border-white/20 bg-background/75 p-8 sm:p-12 shadow-[0_12px_40px_rgba(0,0,0,0.08)] backdrop-blur-2xl transition-all duration-300 hover:scale-[1.01] hover:shadow-[0_20px_60px_rgba(0,0,0,0.12)] hover:border-brand-orange/40 text-center">
-            <p className="eyebrow">{ar ? "مجموعة سامي عياد" : "Sami Bin Ayyad Group"}</p>
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+              <span>{ar ? "مجموعة سامي بن عياد" : "Sami Bin Ayyad Group"}</span>
+            </div>
             <h2 className="section-title mt-2">{ar ? "نقود التقدم عبر الصناعات" : "Driving Progress Across Industries"}</h2>
-            <p className="section-intro mx-auto mt-5 text-justify [text-align-last:center] leading-relaxed max-w-2xl">
-              {ar
-                ? "تجمع مجموعة سامي عياد قدرات أعمال متنوعة في المقاولات والحلول البيئية وتصنيع المنسوجات والملابس والمنتجات الطبيعية. ومن خلال الخبرة التشغيلية والتنفيذ القائم على الجودة والشراكات الاستراتيجية، نعمل على خلق قيمة دائمة عبر الصناعات والأسواق."
-                : "SAMI BIN AYYAD GROUP brings together diverse business capabilities across contracting, environmental solutions, textile and garment manufacturing, and natural products. Through operational expertise, quality-driven execution, and strategic partnerships, we work to create lasting value across industries and markets."}
-            </p>
+            <div className="section-intro mx-auto mt-6 leading-relaxed max-w-3xl space-y-1">
+              {ar ? (
+                <div className="text-center space-y-1">
+                  <p>تجمع مجموعة سامي بن عياد قدرات أعمال متنوعة في قطاعات المقاولات،</p>
+                  <p>والحلول البيئية، وتصنيع المنسوجات والملابس، والمنتجات الطبيعية.</p>
+                  <p>ومن خلال الخبرة التشغيلية والتنفيذ القائم على الجودة والشراكات الاستراتيجية،</p>
+                  <p>نعمل جاهدين على خلق وتطوير قيمة دائمة ومستدامة عبر مختلف الصناعات والأسواق.</p>
+                </div>
+              ) : (
+                <p className="text-justify [text-align-last:center]">
+                  SAMI BIN AYYAD GROUP brings together diverse business capabilities across contracting, environmental solutions, textile and garment manufacturing, and natural products. Through operational expertise, quality-driven execution, and strategic partnerships, we work to create lasting value across industries and markets.
+                </p>
+              )}
+            </div>
             <Button asChild size="lg" className="mt-8 group relative inline-flex items-center justify-center gap-2 rounded-full !bg-brand-green !text-white px-7 py-3 font-head text-sm font-bold shadow-lg transition-all duration-300 hover:!bg-brand-orange hover:shadow-brand-orange/30 hover:scale-105 active:scale-95">
               <a href="#divisions">
                 {ar ? "استكشف قطاعاتنا" : "Explore Our Sectors"} <ArrowRight className="size-4 rtl:rotate-180" />
@@ -67,7 +79,10 @@ export function GroupPage() {
       <section id="divisions" aria-labelledby="sectors-heading" className="scroll-mt-24 bg-page-alt section-band">
         <div className="site-container">
           <Reveal className="max-w-3xl">
-            <p className="eyebrow">{messages.nav.sectors}</p>
+            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+              <span>{messages.nav.sectors}</span>
+            </div>
             <h2 id="sectors-heading" className="section-title">{ar ? "قطاعاتنا في لمحة" : "Our Sectors at a Glance"}</h2>
             <p className="section-intro mt-4">{ar ? "نظرة عامة على قدراتنا وخبراتنا وأنشطة أعمالنا." : "An Overview of Our Capabilities, Experience, and Business Activities."}</p>
           </Reveal>
@@ -83,19 +98,30 @@ export function GroupPage() {
                 <Reveal delay={0.08} className={cn(index % 2 === 1 && "md:order-1")}>
                   <span className="font-mono text-xs font-bold text-brand-orange">{String(index + 1).padStart(2, "0")}</span>
                   <h3 className="mt-3 font-head text-2xl font-bold leading-snug md:text-3xl">{ar ? sector.headlineAr : sector.headline}</h3>
-                  <p className="mt-2 font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">{ar ? sector.subtitleAr : sector.subtitle}</p>
+                  <p className={cn("mt-2 text-xs font-semibold text-muted-foreground", ar ? "font-sans tracking-normal text-sm" : "font-mono uppercase tracking-[0.14em] text-[11px]")}>{ar ? sector.subtitleAr : sector.subtitle}</p>
                   <p className="mt-4 max-w-xl text-sm leading-7 text-muted-foreground sm:text-base">{ar ? sector.descriptionAr : sector.description}</p>
-                  <p className="mt-6 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-brand-green">{ar ? sector.supportingLabelAr : sector.supportingLabel}</p>
+                  <p className={cn("mt-6 font-bold text-brand-green", ar ? "font-sans tracking-normal text-xs" : "font-mono text-[10px] uppercase tracking-[0.18em]")}>{ar ? sector.supportingLabelAr : sector.supportingLabel}</p>
                   {sector.figures && (
                     <div data-stagger className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3">
-                      {sector.figures.map((figure) => (
-                        <div key={figure.label} className="border-t border-border pt-3">
-                          <p className="font-head text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm md:text-2xl" dir="ltr">
-                            <AnimatedStatistic value={figure.value} />
-                          </p>
-                          <p className="mt-1 text-xs leading-5 text-muted-foreground">{ar ? figure.labelAr : figure.label}</p>
-                        </div>
-                      ))}
+                      {sector.figures.map((figure) => {
+                        const isProminent = sector.slug === "construction" || sector.slug === "garment";
+                        return (
+                          <div key={figure.label} className="border-t border-border pt-3">
+                            <p
+                              className={cn(
+                                "font-head transition-all drop-shadow-sm text-start",
+                                isProminent
+                                  ? "text-2xl sm:text-3xl font-black text-brand-orange tracking-tight"
+                                  : "text-xl sm:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500"
+                              )}
+                              dir="ltr"
+                            >
+                              <AnimatedStatistic value={figure.value} />
+                            </p>
+                            <p className="mt-1 text-xs leading-5 text-muted-foreground font-semibold">{ar ? figure.labelAr : figure.label}</p>
+                          </div>
+                        );
+                      })}
                     </div>
                   )}
                   {sector.chips && (
@@ -106,7 +132,11 @@ export function GroupPage() {
                     </div>
                   )}
                   {sector.brand && <p className="mt-5 font-head text-sm font-bold text-brand-orange">{ar ? sector.brandAr : sector.brand}</p>}
-                  <Button asChild variant="outline" className="mt-7 font-bold"><Link to="/sectors/$sector" params={{ sector: sector.slug }}>{ar ? sector.ctaAr : sector.cta} <ArrowRight className="size-4 rtl:rotate-180" /></Link></Button>
+                  <Button asChild size="default" className="mt-7 group relative inline-flex items-center justify-center gap-2 rounded-full !bg-brand-green !text-white px-6 py-2.5 font-head text-sm font-bold shadow-md transition-all duration-300 hover:!bg-brand-orange hover:shadow-brand-orange/30 hover:scale-105 active:scale-95 cursor-pointer">
+                    <Link to="/sectors/$sector" params={{ sector: sector.slug }}>
+                      {ar ? sector.ctaAr : sector.cta} <ArrowRight className="size-4 rtl:rotate-180 transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1" />
+                    </Link>
+                  </Button>
                 </Reveal>
               </article>
             ))}
@@ -124,9 +154,12 @@ export function GroupPage() {
       {/* Partnerships & Markets */}
       <section className="site-container section-band">
         <Reveal className="max-w-3xl">
-          <p className="eyebrow">{ar ? "الشراكات والأسواق" : "Partnerships & Markets"}</p>
+          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+            <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+            <span>{ar ? "الشراكات والأسواق" : "Partnerships & Markets"}</span>
+          </div>
           <h2 className="section-title">{ar ? "نربط القدرات بالفرص العالمية" : "Connecting Capabilities with Global Opportunities"}</h2>
-          <p className="section-intro mt-4">{ar ? "تطوّر مجموعة سامي عياد علاقات أعمال عبر قطاعات متنوعة، مع التركيز على التصنيع وتنفيذ المشروعات والتجارة الدولية والشراكات التجارية طويلة الأمد." : "SAMI BIN AYYAD GROUP develops business relationships across diverse sectors, with a focus on manufacturing, project execution, international trade, and long-term commercial partnerships."}</p>
+          <p className="section-intro mt-4">{ar ? "تطوّر مجموعة سامي بن عياد علاقات أعمال عبر قطاعات متنوعة، مع التركيز على التصنيع وتنفيذ المشروعات والتجارة الدولية والشراكات التجارية طويلة الأمد." : "SAMI BIN AYYAD GROUP develops business relationships across diverse sectors, with a focus on manufacturing, project execution, international trade, and long-term commercial partnerships."}</p>
         </Reveal>
         <div data-stagger className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {whoWeServe.map((audience) => (

@@ -228,7 +228,15 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
                     </span>
                   </div>
                   {/* Milestones-style gradient and font size */}
-                  <div className="font-head text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm flex items-center gap-1" dir="ltr">
+                  <div
+                    className={cn(
+                      "font-head drop-shadow-sm flex items-center gap-1 text-start",
+                      (stat.sector === "construction" || stat.sector === "garment")
+                        ? "text-2xl sm:text-3xl font-black text-brand-orange tracking-tight"
+                        : "text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500"
+                    )}
+                    dir="ltr"
+                  >
                     <AnimatedStatistic value={stat.value} />
                   </div>
                   <h3 className="mt-3 text-sm sm:text-base font-bold text-foreground">
@@ -628,8 +636,8 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
         {/* What We Do — Separate Sectors, Horizontal Order in Curved Glass Badges */}
         <div className="mt-14">
           <div className="mb-8">
-            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 px-3 py-1 text-xs font-semibold text-brand-green mb-2">
-              <Sparkles className="size-3.5" />
+            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
               <span>{ar ? "محفظة الخدمات والقدرات" : "Services & Capabilities"}</span>
             </div>
             <h3 className="text-2xl sm:text-3xl font-bold font-head">
@@ -660,7 +668,7 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
                         <h4 className="font-head text-lg sm:text-xl font-bold text-foreground">
                           {t(s.name)}
                         </h4>
-                        <span className="font-mono text-xs font-semibold text-brand-orange">
+                        <span className={cn("text-xs font-bold text-brand-orange", ar ? "font-sans" : "font-mono")}>
                           {data.items.length} {ar ? "خدمات ومشروعات رئيسية" : "Specialized Capabilities"}
                         </span>
                       </div>

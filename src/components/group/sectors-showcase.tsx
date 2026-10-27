@@ -40,7 +40,7 @@ const tabs: ShowcaseTab[] = [
     pillsEn: ["General Contracting", "MEP Engineering", "Healthcare Fit-Out", "Real Estate Development", "Civil Works"],
     pillsAr: ["المقاولات العامة", "أنظمة MEP الهندسية", "تجهيزات طبية", "التطوير العقاري", "الأعمال المدنية"],
     href: "/sectors/construction",
-    ctaEn: "Explore Projects",
+    ctaEn: "Explore Our Projects",
     ctaAr: "استكشف المشروعات",
   },
   {
@@ -239,15 +239,13 @@ export function SectorsShowcase({ ar }: { ar: boolean }) {
             </div>
 
             {/* Explore CTA */}
-            <div className="mt-8 pt-6 border-t border-border/60 flex items-center justify-between">
+            <div className="mt-8 pt-6 border-t border-border/60 flex items-center justify-start">
               <Link
                 to={current.href}
-                className="group inline-flex items-center gap-2 text-sm font-bold text-foreground transition-colors duration-200 hover:text-brand-orange focus-visible:outline-none"
+                className="group relative inline-flex items-center justify-center gap-2 rounded-full !bg-brand-green !text-white px-6 py-2.5 font-head text-sm font-bold shadow-lg transition-all duration-300 hover:!bg-brand-orange hover:shadow-brand-orange/30 hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/50 cursor-pointer"
               >
-                <span className="border-b border-border/60 pb-0.5 transition-colors duration-200 group-hover:border-brand-orange">
-                  {ar ? current.ctaAr : current.ctaEn}
-                </span>
-                <ArrowUpRight className="size-4 text-brand-orange transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 rtl:rotate-90" />
+                <span>{ar ? current.ctaAr : current.ctaEn}</span>
+                <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 rtl:rotate-90 rtl:group-hover:-translate-x-0.5" />
               </Link>
             </div>
           </div>

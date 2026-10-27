@@ -29,9 +29,9 @@ export function JourneySection({ ar }: { ar: boolean }) {
     <div>
       <section ref={ref} className="journey-section overflow-hidden bg-page-alt py-16 lg:flex lg:h-screen lg:flex-col lg:justify-center lg:py-0 relative">
         <div className="site-container relative z-10">
-          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 px-3.5 py-1 text-xs font-medium tracking-wide text-muted-foreground backdrop-blur-md mb-2">
+          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
             <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-            {ar ? "رحلتنا وتاريخنا" : "Our Journey & Legacy"}
+            <span>{ar ? "رحلتنا وتاريخنا" : "Our Journey & Legacy"}</span>
           </div>
           <h2 className="section-title max-w-2xl">{ar ? "محطات بنت مسيرة المجموعة" : "Milestones that built the group"}</h2>
           <p className="mt-2 text-sm text-muted-foreground max-w-xl">

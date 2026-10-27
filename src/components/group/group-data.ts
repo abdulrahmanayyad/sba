@@ -169,7 +169,7 @@ export const stats: Stat[] = [
 /** Verified group-wide figures only — garment figures are attributed to manufacturing operations. */
 export const capabilityStats: Stat[] = [
   { value: "+57", label: "Documented projects", labelAr: "مشروعًا موثقًا" },
-  { value: "+400.5", label: "EGP million+ recorded project value (2013–2024)", labelAr: "+400.5 مليون جنيه قيمة مشروعات مسجلة (2013–2024)" },
+  { value: "+400.5", label: "EGP million+ recorded project value (2013–2024)", labelAr: "مليون جنيه قيمة مشروعات مسجلة (2013–2024)" },
   { value: "+5,000", label: "Garments per day", labelAr: "قطعة ملابس يوميًا" },
   { value: "+100,000", label: "Garments per month", labelAr: "قطعة ملابس شهريًا" },
   { value: "+15", label: "Production lines", labelAr: "خط إنتاج" },
@@ -211,7 +211,7 @@ export const sectorOverviews: SectorOverview[] = [
     supportingLabelAr: "أرقام رئيسية",
     figures: [
       { value: "+57", label: "Documented projects", labelAr: "مشروعًا موثقًا" },
-      { value: "+400.5", label: "EGP million+ recorded turnover (2013–2024)", labelAr: "+400.5 مليون جنيه حجم أعمال مسجل (2013–2024)" },
+      { value: "+400.5", label: "EGP million+ recorded turnover (2013–2024)", labelAr: "مليون جنيه حجم أعمال مسجل (2013–2024)" },
     ],
     cta: "Explore Our Projects",
     ctaAr: "استكشف مشروعاتنا",
