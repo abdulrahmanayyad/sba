@@ -102,7 +102,7 @@ export function GarmentSectorView({ tab = "about" }: GarmentViewProps) {
           alt={ar ? garmentHeroData.titleAr : garmentHeroData.title}
           className="absolute inset-0 size-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-footer via-footer/85 to-footer/70" />
+        <div className="absolute inset-0 bg-gradient-to-t from-footer via-footer/80 to-footer/65" />
         <div className="site-container relative py-16 md:py-24">
           <Reveal>
             <div className="flex flex-wrap items-center gap-2 text-xs font-medium text-brand-orange">

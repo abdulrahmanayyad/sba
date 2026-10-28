@@ -64,19 +64,26 @@ export function ConstructionSectorView({ tab = "about" }: ConstructionViewProps)
 
   return (
     <div className="w-full">
-      {/* Sector Hero - Clean, elegant header without large photo/duplicate buttons */}
-      <section className="relative overflow-hidden border-b border-border bg-gradient-to-b from-card/80 via-background/95 to-background text-foreground py-14 md:py-20">
-        <div className="site-container relative">
+      {/* Sector Hero */}
+      <section className="relative text-footer-foreground">
+        <img
+          data-clip-reveal
+          src={constructionHeroData.image}
+          alt={ar ? constructionHeroData.titleAr : constructionHeroData.title}
+          className="absolute inset-0 size-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-footer via-footer/80 to-footer/65" />
+        <div className="site-container relative py-16 md:py-24">
           <Reveal>
             <div className="flex flex-wrap items-center gap-2 text-xs font-medium text-brand-orange">
-              <span className="text-foreground/80">{ar ? tabLabels[activeTab].ar : tabLabels[activeTab].en}</span>
+              <span className="text-white/80">{ar ? tabLabels[activeTab].ar : tabLabels[activeTab].en}</span>
             </div>
 
-            <h1 className="mt-4 max-w-4xl font-head text-[clamp(1.85rem,6vw,3.75rem)] font-bold leading-[1.15] text-foreground">
+            <h1 className="mt-4 max-w-4xl font-head text-[clamp(1.85rem,6vw,3.75rem)] font-bold leading-[1.15] text-white">
               {ar ? constructionHeroData.titleAr : constructionHeroData.title}
             </h1>
 
-            <p className={cn("mt-4 max-w-3xl font-head text-base text-muted-foreground sm:text-xl", ar && "font-body")}>
+            <p className={cn("mt-4 max-w-3xl font-head text-base text-footer-muted sm:text-xl", ar && "font-body")}>
               {ar ? constructionHeroData.subtitleAr : constructionHeroData.subtitle}
             </p>
           </Reveal>
