@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
+import { Button } from "@/components/ui/button";
 import {
   Award,
   BadgeCheck,
@@ -142,15 +143,12 @@ export function AboutPage() {
                 <Reveal key={sector.title} delay={index * 0.08}>
                   <div className="flex h-full flex-col justify-between rounded-2xl border border-white/20 bg-background/60 p-6 backdrop-blur-xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-green/40 hover:shadow-lg">
                     <div>
-                      <div className="flex items-center justify-between">
-                        <span className="flex size-12 items-center justify-center rounded-xl bg-brand-green/10 text-brand-green transition-colors group-hover:bg-brand-green group-hover:text-footer-foreground">
-                          <Icon aria-hidden="true" className="size-6" />
-                        </span>
+                      <div className="flex items-center justify-end">
                         <span className="rounded-full bg-secondary px-2.5 py-1 text-[11px] font-semibold text-muted-foreground">
                           {ar ? sector.tagAr : sector.tag}
                         </span>
                       </div>
-                      <h3 className="mt-5 font-head text-xl font-bold">
+                      <h3 className="mt-3 font-head text-xl font-bold">
                         {ar ? sector.titleAr : sector.title}
                       </h3>
                       <p className="mt-3 text-sm leading-6 text-muted-foreground">
@@ -218,10 +216,7 @@ export function AboutPage() {
                 <Reveal key={item.title} delay={index * 0.05}>
                   <div className="group flex h-full flex-col justify-between rounded-2xl border border-white/20 bg-background/60 p-6 backdrop-blur-xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-green/40 hover:shadow-md">
                     <div>
-                      <span className="flex size-11 items-center justify-center rounded-xl bg-secondary text-brand-green transition-colors duration-300 group-hover:bg-brand-green group-hover:text-footer-foreground">
-                        <Icon aria-hidden="true" className="size-5" />
-                      </span>
-                      <h3 className="mt-4 font-head text-lg font-bold">
+                      <h3 className="font-head text-lg font-bold">
                         {ar ? item.titleAr : item.title}
                       </h3>
                       <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
@@ -268,20 +263,16 @@ export function AboutPage() {
 
             {/* Conclusion card */}
             <Reveal delay={0.45} className="sm:col-span-2 lg:col-span-1">
-              <div className="flex h-full flex-col justify-center rounded-2xl border border-brand-green/30 bg-gradient-to-br from-brand-green/10 via-background/60 to-background/80 p-6 backdrop-blur-xl shadow-sm">
-                <span className="inline-flex size-10 items-center justify-center rounded-xl bg-brand-green text-footer-foreground">
-                  <Sparkles className="size-5" />
-                </span>
-                <p className="mt-4 font-head text-base font-bold leading-snug text-foreground sm:text-lg">
-                  {ar ? whySbaData.conclusionAr : whySbaData.conclusion}
-                </p>
-                <div className="mt-6">
-                  <Link
-                    to="/contact"
-                    className="inline-flex items-center gap-2 text-sm font-bold text-brand-green hover:underline"
-                  >
-                    {ar ? "تواصل معنا لبدء الشراكة ←" : "Connect with Us to Partner →"}
-                  </Link>
+              <div className="flex h-full flex-col justify-center items-center text-center rounded-2xl border border-brand-green/30 bg-gradient-to-br from-brand-green/10 via-background/60 to-background/80 p-6 backdrop-blur-xl shadow-sm transition-all duration-300 hover:scale-[1.01] hover:border-brand-orange/40 hover:shadow-lg">
+                <h3 className="font-head text-lg sm:text-xl font-extrabold text-foreground">
+                  {ar ? "تواصل معنا لبدء الشراكة" : "Connect with Us to Partner"}
+                </h3>
+                <div className="mt-5 w-full">
+                  <Button asChild size="default" className="rounded-full bg-brand-green hover:bg-brand-orange text-white font-head font-bold shadow-md transition-all px-6 py-2.5">
+                    <Link to="/contact">
+                      {ar ? "تواصل معنا" : "Contact Us"}
+                    </Link>
+                  </Button>
                 </div>
               </div>
             </Reveal>
@@ -367,14 +358,9 @@ export function AboutPage() {
               <Reveal key={policy.title} delay={idx * 0.04}>
                 <div className="flex h-full flex-col justify-between rounded-2xl border border-white/20 bg-background/60 p-6 backdrop-blur-xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-green/40 hover:shadow-md">
                   <div>
-                    <div className="flex items-center gap-3">
-                      <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-brand-green/10 text-brand-green">
-                        <FileCheck2 className="size-4" />
-                      </span>
-                      <h3 className="font-head text-base font-bold">
-                        {ar ? policy.titleAr : policy.title}
-                      </h3>
-                    </div>
+                    <h3 className="font-head text-base font-bold">
+                      {ar ? policy.titleAr : policy.title}
+                    </h3>
                     <p className="mt-3 text-sm leading-6 text-muted-foreground">
                       {ar ? policy.bodyAr : policy.body}
                     </p>

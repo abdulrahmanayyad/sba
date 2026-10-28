@@ -112,9 +112,16 @@ function LanguageSwitcher({
 }
 
 export function SiteShell({ children }: { children: React.ReactNode }) {
-  const [language, setLanguage] = useState<Language>("EN");
+  const [language, setLanguage] = useState<Language>(() => {
+    if (typeof window !== "undefined") {
+      const saved = localStorage.getItem("sba_lang");
+      if (saved === "AR" || saved === "EN") return saved;
+    }
+    return "AR";
+  });
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>("top");
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const messages = getMessages(language);
   const isArabic = language === "AR";
@@ -123,11 +130,40 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
   useEffect(() => setMenuOpen(false), [pathname]);
 
   useEffect(() => {
+    if (typeof window !== "undefined") {
+      localStorage.setItem("sba_lang", language);
+    }
+  }, [language]);
+
+  useEffect(() => {
     const updateHeader = () => setScrolled(window.scrollY > 24);
     updateHeader();
     window.addEventListener("scroll", updateHeader, { passive: true });
     return () => window.removeEventListener("scroll", updateHeader);
   }, []);
+
+  useEffect(() => {
+    if (pathname !== "/") {
+      setActiveSection("");
+      return;
+    }
+    const checkActiveSection = () => {
+      const scrollY = window.scrollY + 250;
+      const joinEl = document.getElementById("join");
+      const partnersEl = document.getElementById("partners");
+      
+      if (joinEl && joinEl.offsetTop <= scrollY) {
+        setActiveSection("join");
+      } else if (partnersEl && partnersEl.offsetTop <= scrollY) {
+        setActiveSection("partners");
+      } else {
+        setActiveSection("top");
+      }
+    };
+    checkActiveSection();
+    window.addEventListener("scroll", checkActiveSection, { passive: true });
+    return () => window.removeEventListener("scroll", checkActiveSection);
+  }, [pathname]);
 
   useEffect(() => {
     document.documentElement.lang = isArabic ? "ar" : language.toLowerCase();
@@ -175,27 +211,52 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
 
   const navPill =
     "group relative inline-flex items-center gap-1 rounded-full px-4 py-2 text-sm font-bold tracking-wide text-foreground transition-all duration-300 hover:bg-white/40 hover:text-brand-orange hover:shadow-sm hover:backdrop-blur-md hover:-translate-y-0.5 active:translate-y-0";
+  const navPillActive =
+    "group relative inline-flex items-center gap-1 rounded-full px-4 py-2 text-sm font-bold tracking-wide text-brand-orange bg-white/45 shadow-sm backdrop-blur-md -translate-y-0.5";
   const dropdownLink =
     "block rounded-[16px] px-4 py-2.5 text-sm font-semibold text-foreground transition-all duration-200 hover:bg-brand-orange/15 hover:text-brand-orange hover:translate-x-1 rtl:hover:-translate-x-1";
 
+  const isHomeActive = pathname === "/" && activeSection === "top";
+  const isPartnersActive = pathname === "/partners" || (pathname === "/" && activeSection === "partners");
+  const isJoinActive = pathname.startsWith("/join") || (pathname === "/" && activeSection === "join");
+  const isAboutActive = pathname === "/about";
+  const isSectorsActive = pathname.startsWith("/sectors");
+  const isProductsActive = pathname === "/products" || pathname === "/models";
+  const isNewsActive = pathname === "/news";
+
   const primaryLinks = (className: string, onNavigate?: () => void) => (
     <>
-      <Link to="/" className={cn(className, "whitespace-nowrap")} onClick={onNavigate}>{isArabic ? "الرئيسية" : "Home"}</Link>
-      <NavDropdown label={messages.nav.about} className={cn(className, "whitespace-nowrap")}>
+      <Link
+        to="/"
+        className={cn(className, "whitespace-nowrap", isHomeActive && navPillActive)}
+        onClick={onNavigate}
+      >
+        {isArabic ? "الرئيسية" : "Home"}
+      </Link>
+      <NavDropdown
+        label={messages.nav.about}
+        className={cn(className, "whitespace-nowrap", isAboutActive && navPillActive)}
+      >
         {(close) => aboutKeys.map((key) => (
           <Link key={key} to="/about" hash={key} className={dropdownLink} onClick={() => { close(); onNavigate?.(); }}>
             {messages.aboutMenu[key]}
           </Link>
         ))}
       </NavDropdown>
-      <NavDropdown label={messages.nav.sectors} className={cn(className, "whitespace-nowrap")}>
+      <NavDropdown
+        label={messages.nav.sectors}
+        className={cn(className, "whitespace-nowrap", isSectorsActive && navPillActive)}
+      >
         {(close) => sectorKeys.map((key) => (
           <Link key={key} to="/sectors/$sector" params={{ sector: key }} className={dropdownLink} onClick={() => { close(); onNavigate?.(); }}>
             {messages.sectorsMenu[key]}
           </Link>
         ))}
       </NavDropdown>
-      <NavDropdown label={messages.nav.products} className={cn(className, "whitespace-nowrap")}>
+      <NavDropdown
+        label={messages.nav.products}
+        className={cn(className, "whitespace-nowrap", isProductsActive && navPillActive)}
+      >
         {(close) => ([
           { key: "b2c" as const, label: "B2C" },
           { key: "b2b" as const, label: "B2B" },
@@ -205,9 +266,27 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
           </Link>
         ))}
       </NavDropdown>
-      <Link to="/partners" className={cn(className, "whitespace-nowrap")} onClick={onNavigate}>{messages.nav.partners}</Link>
-      <Link to="/news" className={cn(className, "whitespace-nowrap")} onClick={onNavigate}>{messages.nav.news}</Link>
-      <Link to="/join" className={cn(className, "whitespace-nowrap")} onClick={onNavigate}>{messages.nav.joinUs}</Link>
+      <Link
+        to="/partners"
+        className={cn(className, "whitespace-nowrap", isPartnersActive && navPillActive)}
+        onClick={onNavigate}
+      >
+        {messages.nav.partners}
+      </Link>
+      <Link
+        to="/news"
+        className={cn(className, "whitespace-nowrap", isNewsActive && navPillActive)}
+        onClick={onNavigate}
+      >
+        {messages.nav.news}
+      </Link>
+      <Link
+        to="/join/group"
+        className={cn(className, "whitespace-nowrap", isJoinActive && navPillActive)}
+        onClick={onNavigate}
+      >
+        {messages.nav.joinUs}
+      </Link>
     </>
   );
 
@@ -353,7 +432,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
                     <Link to="/models" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{messages.nav.products}</Link>
                     <Link to="/partners" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{messages.nav.partners}</Link>
                     <Link to="/news" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{messages.nav.news}</Link>
-                    <Link to="/join" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{messages.nav.joinUs}</Link>
+                    <Link to="/join/group" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{messages.nav.joinUs}</Link>
                   </nav>
                 </div>
                 <div>
@@ -393,7 +472,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
                   </p>
                 </div>
                 <div className={cn("text-xs font-semibold text-foreground/90", isArabic ? "text-left font-sans" : "text-right font-sans")}>
-                  {isArabic ? "تم تطوير الموقع بواسطة شركة سامي بن عياد" : "Developed by: Sami Bin Ayyad"}
+                  {isArabic ? "تم تطوير الموقع بواسطة: شركة سامي بن عياد" : "Developed by: Sami Bin Ayyad"}
                 </div>
               </div>
             </div>

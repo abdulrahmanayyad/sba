@@ -296,7 +296,7 @@ Attached Files: ${files.map((f) => f.name).join(", ") || "None"}
             </div>
 
             <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground">
-              <span className="size-2 rounded-full bg-brand-green animate-pulse" />
+              <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
               <span>{referenceId}</span>
             </div>
 

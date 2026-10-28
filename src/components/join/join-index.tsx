@@ -1,30 +1,28 @@
 import { Link } from "@tanstack/react-router";
 import {
   ArrowRight,
-  Building,
-  CheckCircle2,
   HardHat,
   Leaf,
-  Sparkles,
+  Shirt,
   Users,
 } from "lucide-react";
 
 import { Reveal } from "@/components/home/reveal";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/i18n/language-context";
-import { cn } from "@/lib/utils";
 import { joinTracks, type JoinTrackId } from "./join-data";
 
 export function JoinIndexPage() {
   const { language } = useLanguage();
   const ar = language === "AR";
 
-  const trackIds: JoinTrackId[] = ["group", "construction", "sustainability"];
+  const trackIds: JoinTrackId[] = ["group", "construction", "sustainability", "garment"];
 
   const icons: Record<JoinTrackId, React.ReactNode> = {
     group: <Users className="size-6 text-brand-orange" />,
     construction: <HardHat className="size-6 text-brand-orange" />,
-    sustainability: <Leaf className="size-6 text-brand-green" />,
+    sustainability: <Leaf className="size-6 text-brand-orange" />,
+    garment: <Shirt className="size-6 text-brand-orange" />,
   };
 
   return (
@@ -35,7 +33,7 @@ export function JoinIndexPage() {
         <div className="site-container relative w-full py-16 sm:py-24 z-10 text-center max-w-4xl mx-auto">
           <Reveal>
             <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/40 px-4 py-1.5 text-xs font-bold tracking-wide text-white backdrop-blur-md mb-4">
-              <span className="size-2 rounded-full bg-brand-green animate-pulse" />
+              <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
               <span>{ar ? "بوابات التوظيف والشراكات الاستراتيجية" : "Careers & Strategic Partnerships"}</span>
             </div>
 

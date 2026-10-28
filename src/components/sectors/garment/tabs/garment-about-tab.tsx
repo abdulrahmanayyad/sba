@@ -54,54 +54,45 @@ export function GarmentAboutTab() {
           <Reveal>
             <div className="flex items-center gap-3">
               <SectionBadge title={ar ? "من نحن" : "Who We Are"} />
-              <span className="font-mono text-xs font-bold text-muted-foreground/70">01</span>
             </div>
 
             <h2 className="section-title mt-3">
               {ar ? whoWeAre.headingAr : whoWeAre.heading}
             </h2>
 
-            <div className="mt-8 grid gap-8 lg:grid-cols-12 lg:items-center">
-              <div className="space-y-4 text-base leading-relaxed text-muted-foreground lg:col-span-7">
-                <p className="font-semibold text-foreground text-lg leading-relaxed">
-                  {highlightBrand(ar ? whoWeAre.bodyAr : whoWeAre.body)}
-                </p>
-                <p className="">{highlightBrand(ar ? whoWeAre.extendedAr : whoWeAre.extended)}</p>
+            <div className="mt-8 space-y-4 text-base leading-relaxed text-muted-foreground max-w-4xl">
+              <p className="font-semibold text-foreground text-lg leading-relaxed">
+                {highlightBrand(ar ? whoWeAre.bodyAr : whoWeAre.body)}
+              </p>
+              <p>{highlightBrand(ar ? whoWeAre.extendedAr : whoWeAre.extended)}</p>
+            </div>
 
-                <div className="mt-6 grid gap-4 sm:grid-cols-2 pt-2">
-                  <div className="rounded-2xl border border-border bg-card/70 p-5 shadow-sm backdrop-blur-sm">
-                    <div className="flex size-10 items-center justify-center rounded-xl bg-brand-orange/10 text-brand-orange">
-                      <Sparkles className="size-5" />
-                    </div>
-                    <h3 className="mt-3 font-head text-base font-bold text-foreground">
-                      {ar ? whoWeAre.mission.titleAr : whoWeAre.mission.title}
-                    </h3>
-                    <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
-                      {ar ? whoWeAre.mission.descAr : whoWeAre.mission.desc}
-                    </p>
-                  </div>
-
-                  <div className="rounded-2xl border border-border bg-card/70 p-5 shadow-sm backdrop-blur-sm">
-                    <div className="flex size-10 items-center justify-center rounded-xl bg-brand-orange/10 text-brand-orange">
-                      <Globe2 className="size-5" />
-                    </div>
-                    <h3 className="mt-3 font-head text-base font-bold text-foreground">
-                      {ar ? whoWeAre.vision.titleAr : whoWeAre.vision.title}
-                    </h3>
-                    <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
-                      {ar ? whoWeAre.vision.descAr : whoWeAre.vision.desc}
-                    </p>
-                  </div>
+            {/* Dedicated Separate Mission & Vision Cards */}
+            <div className="mt-8 grid gap-6 sm:grid-cols-2 pt-2">
+              <div className="group rounded-2xl border border-border/80 bg-card/70 p-6 shadow-sm backdrop-blur-sm transition-all duration-300 hover:scale-[1.01] hover:border-brand-orange/50 hover:shadow-md">
+                <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3 py-0.5 text-xs font-bold text-brand-orange">
+                  <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+                  <span>{ar ? whoWeAre.mission.titleAr : whoWeAre.mission.title}</span>
                 </div>
+                <h3 className="mt-3 font-head text-lg font-bold text-foreground">
+                  {ar ? whoWeAre.mission.titleAr : whoWeAre.mission.title}
+                </h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                  {ar ? whoWeAre.mission.descAr : whoWeAre.mission.desc}
+                </p>
               </div>
 
-              <div className="overflow-hidden rounded-2xl border border-border shadow-lg lg:col-span-5">
-                <img
-                  src={homeTextile}
-                  alt={ar ? whoWeAre.headingAr : whoWeAre.heading}
-                  loading="lazy"
-                  className="aspect-[4/3] w-full object-cover transition-transform duration-700 hover:scale-105"
-                />
+              <div className="group rounded-2xl border border-border/80 bg-card/70 p-6 shadow-sm backdrop-blur-sm transition-all duration-300 hover:scale-[1.01] hover:border-brand-orange/50 hover:shadow-md">
+                <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3 py-0.5 text-xs font-bold text-brand-orange">
+                  <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+                  <span>{ar ? whoWeAre.vision.titleAr : whoWeAre.vision.title}</span>
+                </div>
+                <h3 className="mt-3 font-head text-lg font-bold text-foreground">
+                  {ar ? whoWeAre.vision.titleAr : whoWeAre.vision.title}
+                </h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                  {ar ? whoWeAre.vision.descAr : whoWeAre.vision.desc}
+                </p>
               </div>
             </div>
           </Reveal>
@@ -114,7 +105,6 @@ export function GarmentAboutTab() {
           <Reveal>
             <div className="flex items-center gap-3">
               <SectionBadge title={ar ? "ماذا نقدم" : "What We Offer"} />
-              <span className="font-mono text-xs font-bold text-muted-foreground/70">02</span>
             </div>
 
             <div className="mt-3 flex flex-col justify-between gap-4 md:flex-row md:items-end">
@@ -164,12 +154,6 @@ export function GarmentAboutTab() {
                           {ar ? item.descAr : item.desc}
                         </p>
                       </div>
-                      <div className="mt-4 pt-3 border-t border-border/60">
-                        <span className="text-xs font-semibold text-brand-orange inline-flex items-center gap-1">
-                          <CheckCircle2 className="size-3.5 text-brand-green-text" />
-                          {ar ? "جاهز للتنفيذ الفوري" : "Production Ready"}
-                        </span>
-                      </div>
                     </div>
                   </div>
                 );
@@ -185,7 +169,6 @@ export function GarmentAboutTab() {
           <Reveal>
             <div className="flex items-center gap-3">
               <SectionBadge title={ar ? "لماذا تختارنا" : "Why Choose Us"} />
-              <span className="font-mono text-xs font-bold text-muted-foreground/70">03</span>
             </div>
 
             <h2 className="section-title mt-3">
@@ -198,10 +181,7 @@ export function GarmentAboutTab() {
             <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {whyChooseUs.points.map((point) => (
                 <div key={point.title} className="rounded-2xl border border-border/70 bg-card/60 p-6 shadow-sm backdrop-blur-md transition hover:border-brand-orange/50 hover:shadow-md">
-                  <div className="flex size-10 items-center justify-center rounded-xl bg-brand-orange/10 text-brand-orange">
-                    <Trophy className="size-5" />
-                  </div>
-                  <h3 className="mt-4 font-head text-base font-bold text-foreground">
+                  <h3 className="font-head text-base font-bold text-foreground">
                     {ar ? point.titleAr : point.title}
                   </h3>
                   <p className="mt-2 text-xs sm:text-sm leading-relaxed text-muted-foreground">
@@ -219,8 +199,7 @@ export function GarmentAboutTab() {
         <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
           <Reveal>
             <div className="flex items-center gap-3">
-              <SectionBadge title={ar ? "قدراتنا الإنتاجية" : "Our Capabilities"} />
-              <span className="font-mono text-xs font-bold text-muted-foreground/70">04</span>
+              <SectionBadge title={ar ? "قدراتنا" : "Our Capabilities"} />
             </div>
 
             <div className="mt-3 flex flex-col justify-between gap-4 md:flex-row md:items-end">
@@ -240,7 +219,7 @@ export function GarmentAboutTab() {
               </Button>
             </div>
 
-            <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {capabilities.stats.map((stat, idx) => (
                 <div key={stat.labelEn} className={cn(
                   "relative overflow-hidden rounded-2xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur-md transition-all duration-300 hover:border-brand-orange/50 hover:shadow-lg",
@@ -248,7 +227,7 @@ export function GarmentAboutTab() {
                 )}>
                   <div className="flex items-center justify-between mb-3">
                     <p className={cn(
-                      "font-head text-3xl sm:text-4xl font-black text-brand-orange drop-shadow-sm tracking-tight",
+                      "font-head text-2xl sm:text-3xl font-black text-brand-orange drop-shadow-sm tracking-tight",
                       ar ? "text-right" : "text-left"
                     )}>
                       <AnimatedStatistic value={stat.value} />
@@ -257,7 +236,7 @@ export function GarmentAboutTab() {
                       0{idx + 1}
                     </span>
                   </div>
-                  <div className="mt-2 font-head text-base font-bold text-foreground">
+                  <div className="mt-2 font-head text-sm font-bold text-foreground">
                     {ar ? stat.labelAr : stat.labelEn}
                   </div>
                   <p className="mt-1 text-xs font-medium text-muted-foreground">
@@ -275,8 +254,7 @@ export function GarmentAboutTab() {
         <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
           <Reveal>
             <div className="flex items-center gap-3">
-              <SectionBadge title={ar ? "إمكانياتنا وبنيتنا الصناعية" : "Our Infrastructure"} />
-              <span className="font-mono text-xs font-bold text-muted-foreground/70">05</span>
+              <SectionBadge title={ar ? "إمكانياتنا" : "Our Infrastructure"} />
             </div>
 
             <h2 className="section-title mt-3">
@@ -301,9 +279,6 @@ export function GarmentAboutTab() {
                       />
                     </div>
                     <div className="p-6">
-                      <div className="flex size-10 items-center justify-center rounded-xl bg-brand-orange/10 text-brand-orange mb-3">
-                        <Factory className="size-5" />
-                      </div>
                       <h3 className="font-head text-base font-bold text-foreground">
                         {ar ? item.titleAr : item.title}
                       </h3>
@@ -324,8 +299,7 @@ export function GarmentAboutTab() {
         <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
           <Reveal>
             <div className="flex items-center gap-3">
-              <SectionBadge title={ar ? "أسواقنا وحضورنا الدولي" : "Our Markets"} />
-              <span className="font-mono text-xs font-bold text-muted-foreground/70">06</span>
+              <SectionBadge title={ar ? "أسواقنا" : "Our Markets"} />
             </div>
 
             <h2 className="section-title mt-3">
@@ -346,7 +320,6 @@ export function GarmentAboutTab() {
                     <h3 className="font-head text-lg font-bold text-foreground">
                       {ar ? reg.nameAr : reg.name}
                     </h3>
-                    <Globe2 className="size-5 text-brand-orange" />
                   </div>
                   <div className="mt-2 rounded-md bg-brand-orange/10 px-2.5 py-1 text-xs font-bold text-brand-orange">
                     {ar ? reg.countriesAr : reg.countries}

@@ -1,8 +1,9 @@
 import groupHero from "@/assets/group-hero.jpg";
 import constructionImg from "@/assets/sector-construction.jpg";
 import sustainableImg from "@/assets/hero-sustainable.png";
+import garmentImg from "@/assets/sector-apparel.jpg";
 
-export type JoinTrackId = "group" | "construction" | "sustainability";
+export type JoinTrackId = "group" | "construction" | "sustainability" | "garment";
 
 export interface ApplicationCategory {
   id: string;
@@ -190,5 +191,54 @@ export const joinTracks: Record<JoinTrackId, JoinTrackConfig> = {
     ],
     targetAudienceEn: ["Environmental Scientists", "EIA Consultants", "Clean Tech Providers", "Recycling Operators", "Academic Researchers"],
     targetAudienceAr: ["علماء وباحثو البيئة", "استشاريو دراسات EIA", "مزودو التكنولوجيا النظيفة", "شركات إعادة التدوير", "المراكز البحثية"],
+  },
+
+  garment: {
+    id: "garment",
+    url: "/join/garment",
+    titleEn: "Join Our Garment Manufacturing Team",
+    titleAr: "انضم إلى قطاع تصنيع الملابس الجاهزة",
+    eyebrowEn: "SAMI BIN AYYAD · Ready-Made Garment Manufacturing",
+    eyebrowAr: "مجموعة سامي بن عياد · قطاع تصنيع الملابس الجاهزة",
+    headlineEn: "Crafting Excellence. Dressing the World.",
+    headlineAr: "إتقان التصنيع. نصنع أزياء الغد.",
+    descriptionEn:
+      "Recruitment and collaboration for fashion brands, international buyers, textile mills, fashion designers, pattern makers, production managers, QA specialists, and trim suppliers.",
+    descriptionAr:
+      "فرص التوظيف والتعاون الصناعي والتجاري مع مصممي الأزياء، مديري خطوط الإنتاج، مسؤولي الجودة، ماركات الأزياء، المستوردين الدوليين، وموردي الأقمشة ومستلزمات الإنتاج.",
+    purposeEn:
+      "Garment-level recruitment, fashion brand partnerships, FOB production contracts, fabric suppliers, and specialized technical roles.",
+    purposeAr:
+      "استقطاب الكفاءات والكوادر الفنية، والشراكات مع العلامات التجارية المحلية والعالمية، وعقود التصنيع والتصدير، وتوريدات خامات ومستلزمات الأزياء.",
+    heroImage: garmentImg,
+    badgeColor: "bg-brand-orange text-white",
+    individualCategories: [
+      { id: "fashion-designer", labelEn: "Fashion & Apparel Designer", labelAr: "مصمم أزياء وتطوير تشكيلات" },
+      { id: "pattern-maker", labelEn: "Pattern Maker & Gerber / Lectra Specialist", labelAr: "متخصص باترون وبرامج كمبيوتر (Gerber / Lectra)" },
+      { id: "production-mgr", labelEn: "Garment Production & Line Manager", labelAr: "مدير إنتاج وخطوط تشغيل ملابس جاهزة" },
+      { id: "qa-qc-garment", labelEn: "Garment QA / QC Quality Inspector", labelAr: "مراقب ومفتش جودة ملابس ومنسوجات" },
+      { id: "merchandiser", labelEn: "Export Merchandiser & Account Manager", labelAr: "ميرشندايزر ومتابع طلبيات تصدير" },
+      { id: "maintenance-tech", labelEn: "Sewing & Industrial Machine Maintenance Tech", labelAr: "فني صيانة ماكينات حياكة وخطوط آلية" },
+      { id: "cutting-master", labelEn: "Automated Cutting Room Master", labelAr: "مسؤول غرفة القص الآلي والتخطيط" },
+    ],
+    organizationCategories: [
+      { id: "fashion-brand", labelEn: "Fashion Brands & Retailers (Private Label / OEM)", labelAr: "العلامات التجارية ومتاجر التجزئة (Private Label)" },
+      { id: "importer-buyer", labelEn: "International Importers, Agents & Buyers", labelAr: "المستوردون والوكلاء التجاريون الدوليون" },
+      { id: "fabric-mill", labelEn: "Fabric & Knitwear Textile Mills", labelAr: "مصانع الغزل والنسيج والأقمشة والتريكو" },
+      { id: "trims-accessories", labelEn: "Zippers, Buttons, Trims & Packaging Suppliers", labelAr: "موردو الإكسسوارات والسحابات والأزرار والتغليف" },
+      { id: "logistics-shipping", labelEn: "Garment Freight Forwarding & Logistics Partners", labelAr: "شركات الشحن والخدمات اللوجستية والتخليص" },
+    ],
+    perksEn: [
+      { title: "High Production Scale", desc: "Over 5,000 pieces per day and 100,000+ pieces monthly across +15 specialized lines." },
+      { title: "Global Compliance", desc: "Strict adherence to international apparel standards, BSCI, and verified quality control gates." },
+      { title: "End-to-End Capabilities", desc: "From sample room and digital pattern grading to automated cutting, assembly, and export." },
+    ],
+    perksAr: [
+      { title: "طاقة إنتاجية متقدمة", desc: "أكثر من 5,000 قطعة يوميًا و100,000 قطعة شهريًا عبر أكثر من 15 خط إنتاج متخصص." },
+      { title: "معايير تصدير دولية", desc: "مطابقة تامة للمواصفات العالمية والتزام صارم بجدول التسليم وفحص الجودة 100%." },
+      { title: "سلسلة قيمة متكاملة", desc: "من غرف العينات والباترون الرقمي إلى القص الآلي، الحياكة، والكي والتغليف النهائي للتصدير." },
+    ],
+    targetAudienceEn: ["Fashion Brands", "Textile Mills", "Apparel Designers", "Production Supervisors", "International Buyers"],
+    targetAudienceAr: ["ماركات الأزياء", "مصانع الأقمشة", "مصممو الباترون والأزياء", "مشرفو الإنتاج", "المستوردون الدوليون"],
   },
 };

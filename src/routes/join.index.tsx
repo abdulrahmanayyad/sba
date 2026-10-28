@@ -1,24 +1,24 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { JoinIndexPage } from "@/components/join/join-index";
+import { JoinPage } from "@/components/join/join-page";
 
 export const Route = createFileRoute("/join/")({
   head: () => ({
     meta: [
-      { title: "Join Us & Strategic Partnerships — SBA | Sami Bin Ayyad Group" },
+      { title: "Join Our Group — Build the Future With Us | SBA" },
       {
         name: "description",
         content:
-          "Explore career, engineering, sustainability, supplier, and strategic partnership opportunities across SAMI BIN AYYAD GROUP.",
+          "We welcome ambitious professionals, strategic partners, investors, and organizations across our business sectors.",
       },
-      { property: "og:title", content: "Join Us & Strategic Partnerships — SBA" },
+      { property: "og:title", content: "Join Our Group — SAMI BIN AYYAD GROUP" },
       {
         property: "og:description",
         content:
-          "Explore three dedicated pathways: Join Our Group, Join Our Construction Team, and Join Our Sustainability Team.",
+          "Build the Future With Us. Careers, Strategic Partnerships, and Investments.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
-  component: JoinIndexPage,
+  component: () => <JoinPage trackId="group" />,
 });

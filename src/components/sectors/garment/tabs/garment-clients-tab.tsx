@@ -1,4 +1,4 @@
-﻿import { useState, useMemo } from "react";
+import { useState, useMemo } from "react";
 import { Link } from "@tanstack/react-router";
 import { Search, ShieldCheck, Trophy, Users, ArrowRight } from "lucide-react";
 
@@ -23,9 +23,10 @@ export function GarmentClientsTab() {
       <Reveal>
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div className="max-w-2xl">
-            <span className="text-xs font-bold uppercase tracking-wider text-brand-orange">
-              {ar ? "عملاؤنا وسجل الثقة" : "Our Clients & Trusted Brands"}
-            </span>
+            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+              <span>{ar ? "عملاؤنا" : "Our Clients"}</span>
+            </div>
             <h2 className="mt-2 font-head text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
               {ar ? "نصنع لكبرى العلامات التجارية والشركات الرائدة" : "Manufacturing for Leading Global & Regional Fashion Labels"}
             </h2>
@@ -82,47 +83,6 @@ export function GarmentClientsTab() {
             <p className="text-base">{ar ? "لم يتم العثور على علامات تطابق البحث." : "No brands found matching your search."}</p>
           </div>
         )}
-
-        {/* Trust Metric Bar */}
-        <div className="mt-16 grid gap-6 rounded-3xl border border-border bg-secondary/50 p-6 sm:grid-cols-3 sm:p-8">
-          <div className="flex items-center gap-4">
-            <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-brand-orange/10 text-brand-orange">
-              <ShieldCheck className="size-6" />
-            </div>
-            <div>
-              <div className="font-head text-xl font-bold text-foreground">100%</div>
-              <p className="text-xs text-muted-foreground">
-                {ar ? "مطابقة للمواصفات الفنية المعتمدة" : "Adherence to Approved Specs"}
-              </p>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-4">
-            <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-brand-orange/10 text-brand-orange">
-              <Trophy className="size-6" />
-            </div>
-            <div>
-              <div className="font-head text-xl font-bold text-foreground">20,000+</div>
-              <p className="text-xs text-muted-foreground">
-                {ar ? "موديل تم تنفيذه وتطويره بنجاح" : "Styles Successfully Executed"}
-              </p>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-4">
-            <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-brand-orange/10 text-brand-orange">
-              <Users className="size-6" />
-            </div>
-            <div>
-              <div className="font-head text-xl font-bold text-foreground">
-                {ar ? "علاقات تصنيع طويلة الأمد" : "Long-Term Partnerships"}
-              </div>
-              <p className="text-xs text-muted-foreground">
-                {ar ? "عقود سنوية وتوريد مستمر" : "Continuous Recurring Production"}
-              </p>
-            </div>
-          </div>
-        </div>
       </Reveal>
     </div>
   );

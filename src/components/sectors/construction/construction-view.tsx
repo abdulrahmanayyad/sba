@@ -54,7 +54,7 @@ export function ConstructionSectorView({ tab = "about" }: ConstructionViewProps)
     },
     services: {
       en: "Our Services",
-      ar: "خدماتنا وتخصصاتنا",
+      ar: "خدماتنا",
       descEn: "General contracting, MEP, fit-out, healthcare systems & maintenance",
       descAr: "المقاولات العامة، التشطيبات، الأنظمة الكهروميكانيكية، وتجهيز المنشآت",
     },
@@ -159,14 +159,14 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
         </Reveal>
       </section>
 
-      {/* 3. Quality Commitment — Compact text-only box */}
+      {/* 3. Quality Commitment — Compact centered text box */}
       <section className="site-container">
-        <div className="mx-auto max-w-3xl overflow-hidden rounded-2xl border border-white/40 bg-background/80 p-5 sm:p-7 shadow-sm backdrop-blur-xl ring-1 ring-black/5">
+        <div className="mx-auto max-w-3xl overflow-hidden rounded-2xl border border-white/40 bg-background/80 p-6 sm:p-8 shadow-sm backdrop-blur-xl ring-1 ring-black/5 text-center flex flex-col items-center justify-center">
           <Reveal>
-            <div className="space-y-3">
+            <div className="space-y-3 flex flex-col items-center text-center">
               <SectionBadge title={ar ? "الجودة والالتزام" : "Quality Assurance"} />
-              <h2 className="section-title mt-2 text-xl sm:text-2xl">{ar ? data.quality.titleAr : data.quality.title}</h2>
-              <p className="text-sm sm:text-base leading-relaxed text-foreground/90">
+              <h2 className="section-title mt-2 text-xl sm:text-2xl text-center">{ar ? data.quality.titleAr : data.quality.title}</h2>
+              <p className="text-sm sm:text-base leading-relaxed text-foreground/90 max-w-2xl mx-auto text-center">
                 {ar ? data.quality.bodyAr : data.quality.body}
               </p>
             </div>
@@ -207,7 +207,7 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
         <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
           <Reveal>
             <div className="text-center max-w-4xl mx-auto">
-              <SectionBadge title={ar ? "منهجية العمل" : "Project Delivery Process"} />
+              <SectionBadge title={ar ? "نهجنا" : "Project Delivery Process"} />
               <h2 className="section-title mt-3 text-center leading-snug">{ar ? data.deliveryProcess.titleAr : data.deliveryProcess.title}</h2>
             </div>
           </Reveal>
@@ -387,6 +387,7 @@ function ConstructionProjectsView({ ar }: { ar: boolean }) {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [activeProject, setActiveProject] = useState<ContractingProject | null>(null);
+  const [visibleCount, setVisibleCount] = useState<number>(5);
 
   const years = ["all", "2023", "2021", "2020", "2019", "2018", "2016", "2015", "2014", "2013"];
 
@@ -411,6 +412,8 @@ function ConstructionProjectsView({ ar }: { ar: boolean }) {
     }
     return true;
   });
+
+  const displayedProjects = filteredProjects.slice(0, visibleCount);
 
   return (
     <div className="w-full space-y-12">
@@ -498,7 +501,10 @@ function ConstructionProjectsView({ ar }: { ar: boolean }) {
                   variant={selectedCategory === cat.id ? "default" : "outline"}
                   size="sm"
                   className={cn("rounded-full text-xs shrink-0", selectedCategory === cat.id && "bg-brand-orange hover:bg-brand-orange/90 text-white")}
-                  onClick={() => setSelectedCategory(cat.id)}
+                  onClick={() => {
+                    setSelectedCategory(cat.id);
+                    setVisibleCount(5);
+                  }}
                 >
                   {ar ? cat.titleAr : cat.titleEn}
                 </Button>
@@ -514,7 +520,10 @@ function ConstructionProjectsView({ ar }: { ar: boolean }) {
                   variant={selectedYear === y ? "default" : "outline"}
                   size="sm"
                   className={cn("rounded-full text-xs shrink-0 font-sans font-medium", selectedYear === y && "bg-brand-green hover:bg-brand-green/90 text-white")}
-                  onClick={() => setSelectedYear(y)}
+                  onClick={() => {
+                    setSelectedYear(y);
+                    setVisibleCount(5);
+                  }}
                 >
                   {y === "all" ? (ar ? "كل السنوات" : "All Years") : y}
                 </Button>
@@ -526,14 +535,14 @@ function ConstructionProjectsView({ ar }: { ar: boolean }) {
           <div className="mt-6 flex items-center justify-between text-xs text-muted-foreground border-b border-border/60 pb-3">
             <span>
               {ar
-                ? `عرض ${filteredProjects.length} مشروع من إجمالي ${contractingProjectsList.length} مشروعًا مسجلاً`
-                : `Showing ${filteredProjects.length} of ${contractingProjectsList.length} documented projects`}
+                ? `عرض ${displayedProjects.length} من أصل ${filteredProjects.length} مشروعًا مطابقًا (إجمالي ${contractingProjectsList.length})`
+                : `Showing ${displayedProjects.length} of ${filteredProjects.length} matching projects (${contractingProjectsList.length} total)`}
             </span>
           </div>
 
           {/* 57 Project Cards Grid */}
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {filteredProjects.map((proj, pIdx) => (
+            {displayedProjects.map((proj, pIdx) => (
               <Reveal key={proj.id} delay={Math.min(pIdx * 0.03, 0.3)}>
                 <div 
                   onClick={() => setActiveProject(proj)}
@@ -613,6 +622,22 @@ function ConstructionProjectsView({ ar }: { ar: boolean }) {
               </Reveal>
             ))}
           </div>
+
+          {/* View More Projects Button */}
+          {filteredProjects.length > visibleCount && (
+            <div className="mt-10 flex justify-center">
+              <Button
+                size="lg"
+                variant="outline"
+                onClick={() => setVisibleCount((prev) => prev + 6)}
+                className="rounded-full border-brand-orange/50 px-8 py-3 font-head font-bold text-foreground hover:bg-brand-orange hover:text-white transition-all shadow-sm"
+              >
+                {ar
+                  ? `رؤية المزيد من المشروعات (${filteredProjects.length - visibleCount} متبقية)`
+                  : `View More Projects (${filteredProjects.length - visibleCount} remaining)`}
+              </Button>
+            </div>
+          )}
 
           {filteredProjects.length === 0 && (
             <div className="mt-12 text-center py-12 border border-dashed border-border rounded-2xl">

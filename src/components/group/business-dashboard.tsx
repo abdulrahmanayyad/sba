@@ -176,8 +176,9 @@ const partnerCountries: PartnerCountry[] = [
 export function BusinessDashboard({ ar }: { ar: boolean }) {
   const [selectedCountry, setSelectedCountry] = useState<PartnerCountry | null>(null);
   const [hoveredCountry, setHoveredCountry] = useState<string | null>(null);
-  const [mapType, setMapType] = useState<"roadmap" | "satellite">("roadmap");
   const [zoom, setZoom] = useState(1);
+
+  const mapType = "roadmap" as const;
 
   const t = (v: { en: string; ar: string }) => (ar ? v.ar : v.en);
 
@@ -255,24 +256,23 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
 
         {/* Geographic Presence & Realistic Google Maps */}
         <div className={cn(card, "mt-8")}>
-          <div className="flex items-center justify-between flex-wrap gap-3 mb-2">
-            <div className="flex items-center gap-3">
-              <span className="flex size-9 items-center justify-center rounded-xl bg-brand-green/10 text-brand-green-text">
-                <Globe className="size-5" />
+          <div className="flex items-center justify-between flex-wrap gap-3 mb-4">
+            <div className="space-y-2">
+              <span className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+                <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+                <span>{ar ? "أسواقنا" : "Our Markets"}</span>
               </span>
-              <div>
-                <h3 className="text-xl font-bold font-head">
-                  {ar ? "أسواقنا وانتشارنا الجغرافي" : "Our Markets & Geographic Reach"}
-                </h3>
-                <p className="text-xs sm:text-sm text-muted-foreground">
-                  {ar ? "خريطة تفاعلية توضح شبكة الأسواق الدولية المعتمدة التي نتعامل معها فقط." : "Interactive map showcasing the verified international partner markets we exclusively operate with."}
-                </p>
-              </div>
+              <h3 className="text-xl font-bold font-head">
+                {ar ? "أسواقنا وحضورنا الدولي" : "Our Markets & International Reach"}
+              </h3>
+              <p className="text-xs sm:text-sm text-muted-foreground">
+                {ar ? "خريطة تفاعلية توضح شبكة الأسواق الدولية المعتمدة التي نتعامل معها." : "Interactive map showcasing the verified international partner markets we exclusively operate with."}
+              </p>
             </div>
 
             {activeCountry && (
-              <span className="inline-flex items-center gap-2 rounded-full border border-brand-orange/40 bg-brand-orange/10 px-3.5 py-1 text-xs font-bold text-brand-orange animate-in fade-in zoom-in-95 duration-200">
-                <span>{activeCountry.flag}</span>
+              <span className="inline-flex items-center gap-2 rounded-full border border-brand-orange/40 bg-brand-orange/10 px-3.5 py-1.5 text-xs font-bold text-brand-orange animate-in fade-in zoom-in-95 duration-200">
+                <span className="text-base">{activeCountry.flag}</span>
                 <span>{ar ? activeCountry.nameAr : activeCountry.nameEn}</span>
                 <span className="text-[10px] text-muted-foreground font-mono">({activeCountry.coords})</span>
               </span>
@@ -282,42 +282,14 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
           <div className="mt-6 grid gap-6 lg:grid-cols-[1.5fr_1fr]">
             {/* Realistic Google Maps Interactive Canvas */}
             <div
-              className={cn(
-                "relative aspect-[16/10] overflow-hidden rounded-2xl border shadow-inner select-none transition-colors duration-500",
-                mapType === "roadmap"
-                  ? "border-[#d0d7de] bg-[#aad3df]"
-                  : "border-slate-800 bg-[#122438]"
-              )}
+              className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-[#d0d7de] bg-[#aad3df] shadow-inner select-none transition-colors duration-500"
               role="region"
               aria-label={ar ? "خريطة Google التفاعلية لأسواقنا" : "Interactive Google Maps of our markets"}
             >
-              {/* Google Maps Top Control: Map vs Satellite */}
-              <div className="absolute start-3 top-3 z-30 flex items-center rounded-lg border border-black/15 bg-white shadow-md overflow-hidden text-xs font-medium text-slate-800">
-                <button
-                  type="button"
-                  onClick={() => setMapType("roadmap")}
-                  className={cn(
-                    "px-3.5 py-1.5 font-bold transition-colors cursor-pointer",
-                    mapType === "roadmap"
-                      ? "bg-slate-100 text-blue-600 font-extrabold shadow-inner"
-                      : "hover:bg-slate-50 text-slate-700"
-                  )}
-                >
-                  {ar ? "خريطة" : "Map"}
-                </button>
-                <span className="w-px h-4 bg-slate-300" />
-                <button
-                  type="button"
-                  onClick={() => setMapType("satellite")}
-                  className={cn(
-                    "px-3.5 py-1.5 font-bold transition-colors cursor-pointer",
-                    mapType === "satellite"
-                      ? "bg-slate-800 text-white font-extrabold shadow-inner"
-                      : "hover:bg-slate-50 text-slate-700"
-                  )}
-                >
-                  {ar ? "قمر صناعي" : "Satellite"}
-                </button>
+              {/* Clean Map Badge indicator */}
+              <div className="absolute start-3 top-3 z-30 flex items-center gap-2 rounded-lg border border-black/15 bg-white/95 px-3 py-1.5 shadow-md text-xs font-bold text-slate-800 backdrop-blur-sm">
+                <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
+                <span>{ar ? "خريطة الأسواق المعتمدة" : "Verified Markets Map"}</span>
               </div>
 
               {/* Realistic Google Maps Vector Geography */}
@@ -642,7 +614,7 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
           <div className="mb-8">
             <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-              <span>{ar ? "محفظة الخدمات والقدرات" : "Services & Capabilities"}</span>
+              <span>{ar ? "ماذا نقدم" : "What We Offer"}</span>
             </div>
             <h3 className="text-2xl sm:text-3xl font-bold font-head">
               {ar ? "ماذا نقدّم" : "What We Do"}

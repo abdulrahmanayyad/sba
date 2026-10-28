@@ -19,22 +19,22 @@ export const environmentalAboutData = {
     titleAr: "ريادة الحلول البيئية المستدامة والطاقة المتجددة",
     paragraphs: [
       {
-        en: "Sami Bin Ayyad is one of the leading environmental services and advisory solutions providers in the environmental research and development, sustainable environmental services, renewable energy and the waste management industry delivering advanced integrated technological environmental solutions to the private and the public sector institutions.",
-        ar: "تعد مجموعة سامي بن عياد إحدى الشركات الرائدة في تقديم الخدمات البيئية والحلول الاستشارية المتقدمة في مجالات البحث والتطوير البيئي، والخدمات البيئية المستدامة، والطاقة المتجددة، وصناعة إدارة المخلفات، مقدمةً حلولاً تكنولوجية متكاملة للمؤسسات في القطاعين العام والخاص.",
+        en: "Sami Bin Ayyad provides integrated environmental and advisory solutions across environmental research and development, sustainability, renewable energy, and waste management.",
+        ar: "تقدم شركة سامي بن عياد حلولاً بيئية واستشارية متكاملة في مجالات البحث والتطوير البيئي، والاستدامة، والطاقة المتجددة، وإدارة المخلفات.",
       },
       {
-        en: "Sami Bin Ayyad strategy comes from it believes in the scientific researches and the development in the environmental and energy sustainability, all types of waste management which will leads the using of the waste as one of the main sources to provide Egypt and the globe with a safe, secure, affordable and sustainable resources.",
-        ar: "تنطلق استراتيجية سامي بن عياد من إيمانها الراسخ بأهمية البحوث العلمية والتطوير في استدامة البيئة والطاقة، وإدارة كافة أنواع المخلفات بما يقود إلى الاستفادة القصوى منها كأحد المصادر الرئيسية لتزويد مصر والعالم بموارد آمنة وموثوقة واقتصادية ومستدامة.",
+        en: "We leverage scientific research and advanced technologies to transform waste into valuable resources, supporting a safer, more affordable, and sustainable future for Egypt and the world.",
+        ar: "نستفيد من البحث العلمي والتقنيات المتقدمة لتحويل المخلفات إلى موارد قيّمة، مما يدعم مستقبلاً أكثر أماناً وتوفيراً واستدامة لمصر والعالم.",
       },
       {
-        en: "Our collaborative approach helps us understand and respond to our clients' needs, and our team of technical experts prides itself on providing pragmatic, high quality advice to ensure projects proceed efficiently and affordably.",
-        ar: "يساعدنا نهجنا التشاركي على الفهم العميق لاحتياجات عملائنا والاستجابة الفعالة لها، حيث يفتخر فريق خبرائنا الفنيين بتقديم استشارات عملية رفيعة المستوى لضمان سير المشروعات بأعلى كفاءة وأفضل جدوى اقتصادية.",
+        en: "Through collaboration and technical expertise, we deliver practical, high-quality, and cost-effective solutions tailored to our clients’ needs.",
+        ar: "من خلال التعاون والخبرة الفنية، نقدم حلولاً عملية وعالية الجودة وفعالة من حيث التكلفة مصممة خصيصاً لتلبية احتياجات عملائنا.",
       },
     ],
   },
   whatWeDo: {
     badgeEn: "What We Do",
-    badgeAr: "ما نقوم به",
+    badgeAr: "ماذا نفعل",
     titleEn: "Scientific Problem-Solving & Comprehensive Core Disciplines",
     titleAr: "حلول علمية للمشكلات البيئية عبر تخصصات متكاملة",
     introEn: "We Solve the Environmental issues throughout the different fields and activities through our staff in the Environmental Research and Development. Our approach and scope of work is focused on solving and helping the different sectors to find the scientific solutions for the environmental issues through a group of our professors and experts in the environmental research and development.",
@@ -51,9 +51,9 @@ export const environmentalAboutData = {
   },
   approach: {
     badgeEn: "Our Approach",
-    badgeAr: "منهجيتنا في العمل",
+    badgeAr: "نهجنا",
     mottoEn: "We Looking After Your Business and Keep Earth Alive",
-    mottoAr: "نرعى أعمالك ونحافظ على كوكب الأرض حياً",
+    mottoAr: "نرعى أعمالك ونحافظ على كوكب الأرض آمنًا",
     descEn: "Our philosophy connects commercial success with ecological balance, delivering pragmatic, science-backed solutions that protect both the client's investment and our shared planet.",
     descAr: "تقوم فلسفتنا على الربط المتناغم بين النجاح التجاري والتوازن البيئي، من خلال تقديم حلول علمية وعملية تحمي استثمارات العملاء وتصون موارد كوكبنا المشترك.",
   },
@@ -91,7 +91,7 @@ export const environmentalAboutData = {
   },
   values: {
     badgeEn: "Our Values",
-    badgeAr: "قيمنا الجوهرية",
+    badgeAr: "قيمنا",
     titleEn: "Guiding Principles for Sustainable Excellence",
     titleAr: "مبادئنا الراسخة للتميز والريادة",
     items: [
@@ -134,8 +134,8 @@ export const environmentalAboutData = {
     ],
   },
   whyUs: {
-    badgeEn: "Why Sami Bin Ayyad",
-    badgeAr: "لماذا سامي بن عياد",
+    badgeEn: "Why Choose Us",
+    badgeAr: "لماذا تختارنا",
     titleEn: "Building Long-Term Relationships on Concrete Excellence",
     titleAr: "شراكات استراتيجية تبني قيمة حقيقية تدوم",
     introEn: "We believe in building high value, meaningful, long-term relationships with our clients through proven technical leadership.",
@@ -143,8 +143,8 @@ export const environmentalAboutData = {
     pillars: [
       {
         number: "01",
-        titleEn: "We Work Hard & Smart, Together",
-        titleAr: "نعمل بجد وذكاء معاً",
+        titleEn: "We Work Hard & Smart",
+        titleAr: "نعمل بجد وذكاء",
         bodyEn: "Harness the combined expertise of a team of specialists and professors in scientific research and development, solving our customers' environmental issues in a professional scientific manner to keep our environment alive.",
         bodyAr: "تسخير الخبرات المتكاملة لنخبة من المتخصصين والأساتذة في البحث والتطوير العلمي، لحل التحديات البيئية بأسلوب علمي رصين يحافظ على البيئة.",
       },

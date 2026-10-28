@@ -1,4 +1,4 @@
-﻿import { useState, useMemo } from "react";
+import { useState, useMemo } from "react";
 import { Link } from "@tanstack/react-router";
 import { Search, Handshake, ShieldCheck, ArrowRight, CheckCircle2 } from "lucide-react";
 
@@ -14,6 +14,7 @@ export function GarmentPartnersTab() {
 
   const [activeCategory, setActiveCategory] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState("");
+  const [visibleCount, setVisibleCount] = useState(4);
 
   const categories = useMemo(() => [
     { key: "all", labelEn: "All Partners", labelAr: "كافة الشركاء", count: garmentPartnerBrands.length },
@@ -46,9 +47,10 @@ export function GarmentPartnersTab() {
       <Reveal>
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div className="max-w-2xl">
-            <span className="text-xs font-bold uppercase tracking-wider text-brand-orange">
-              {ar ? "شركاؤنا وشبكة أعمالنا" : "Our Brand Partners Network"}
-            </span>
+            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+              <span>{ar ? "شركاؤنا" : "Our Partners"}</span>
+            </div>
             <h2 className="mt-2 font-head text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
               {ar ? "شراكات إنتاجية ممتدة عبر كافة تصنيفات الأزياء" : "Enduring Production Partnerships Across Apparel Sectors"}
             </h2>
@@ -65,7 +67,10 @@ export function GarmentPartnersTab() {
             <input
               type="text"
               value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
+              onChange={(e) => {
+                setSearchQuery(e.target.value);
+                setVisibleCount(4);
+              }}
               placeholder={ar ? "ابحث عن اسم الشريك..." : "Search partner brand..."}
               className="w-full rounded-xl border border-border bg-card ps-9 pe-4 py-2.5 text-sm text-foreground focus:border-brand-orange focus:outline-none shadow-sm transition"
             />
@@ -80,7 +85,10 @@ export function GarmentPartnersTab() {
               <button
                 key={cat.key}
                 type="button"
-                onClick={() => setActiveCategory(cat.key)}
+                onClick={() => {
+                  setActiveCategory(cat.key);
+                  setVisibleCount(4);
+                }}
                 className={cn(
                   "flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold transition cursor-pointer",
                   isActive
@@ -106,12 +114,15 @@ export function GarmentPartnersTab() {
         <div className="mt-4 flex items-center justify-between text-xs text-muted-foreground">
           <span>
             {ar
-              ? `عرض ${filteredPartners.length} شريك تجاري`
-              : `Displaying ${filteredPartners.length} partner brands`}
+              ? `عرض ${Math.min(visibleCount, filteredPartners.length)} من أصل ${filteredPartners.length} شريك تجاري`
+              : `Showing ${Math.min(visibleCount, filteredPartners.length)} of ${filteredPartners.length} partner brands`}
           </span>
           {activeCategory !== "all" && (
             <button
-              onClick={() => setActiveCategory("all")}
+              onClick={() => {
+                setActiveCategory("all");
+                setVisibleCount(4);
+              }}
               className="text-brand-orange hover:underline cursor-pointer"
             >
               {ar ? "عرض جميع الفئات" : "Show All Categories"}
@@ -119,39 +130,50 @@ export function GarmentPartnersTab() {
           )}
         </div>
 
-        {/* Partners Slides / Carousel */}
-        <div className="relative mt-8">
-          <div className="flex gap-4 overflow-x-auto pb-4 pt-1 no-scrollbar scroll-smooth">
-            {filteredPartners.map((partner) => (
-              <div
-                key={partner.id}
-                className="group relative flex w-44 sm:w-52 shrink-0 flex-col items-center justify-between rounded-2xl border border-border/80 bg-card p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-brand-orange/50 hover:shadow-md"
-              >
-                <div className="relative flex h-24 w-full items-center justify-center overflow-hidden rounded-xl bg-white p-3">
-                  <img
-                    src={partner.src}
-                    alt={partner.name}
-                    loading="lazy"
-                    className="max-h-full max-w-full object-contain filter transition duration-300 group-hover:scale-105"
-                    onError={(e) => {
-                      const target = e.currentTarget;
-                      target.style.display = "none";
-                    }}
-                  />
-                </div>
-
-                <div className="mt-3 w-full text-center">
-                  <span className="block truncate font-head text-xs font-bold text-foreground group-hover:text-brand-orange transition">
-                    {partner.name}
-                  </span>
-                  <span className="mt-1 block text-[10px] text-muted-foreground">
-                    {ar ? partner.categoryAr : partner.categoryEn}
-                  </span>
-                </div>
+        {/* Partners Grid — 4 at a time with View More */}
+        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {filteredPartners.slice(0, visibleCount).map((partner) => (
+            <div
+              key={partner.id}
+              className="group relative flex flex-col items-center justify-between rounded-2xl border border-border/80 bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-orange/50 hover:shadow-xl"
+            >
+              <div className="relative flex h-28 w-full items-center justify-center overflow-hidden rounded-xl bg-white p-4 shadow-xs">
+                <img
+                  src={partner.src}
+                  alt={partner.name}
+                  loading="lazy"
+                  className="max-h-full max-w-full object-contain filter transition duration-300 group-hover:scale-105"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    target.style.display = "none";
+                  }}
+                />
               </div>
-            ))}
-          </div>
+
+              <div className="mt-4 w-full text-center">
+                <span className="block truncate font-head text-sm font-bold text-foreground group-hover:text-brand-orange transition">
+                  {partner.name}
+                </span>
+                <span className="mt-1 block text-xs text-muted-foreground">
+                  {ar ? partner.categoryAr : partner.categoryEn}
+                </span>
+              </div>
+            </div>
+          ))}
         </div>
+
+        {filteredPartners.length > visibleCount && (
+          <div className="mt-10 text-center">
+            <Button
+              size="lg"
+              variant="outline"
+              onClick={() => setVisibleCount((prev) => prev + 4)}
+              className="rounded-full border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-white px-8 py-3 font-head font-bold shadow-sm transition-all cursor-pointer"
+            >
+              {ar ? "رؤية المزيد من الشركاء" : "View More Partners"}
+            </Button>
+          </div>
+        )}
 
         {filteredPartners.length === 0 && (
           <div className="py-20 text-center">

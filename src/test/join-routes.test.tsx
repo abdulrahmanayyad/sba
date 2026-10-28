@@ -8,8 +8,8 @@ import { joinTracks, type JoinTrackId } from "@/components/join/join-data";
 describe("Join Us Pathways & Routes", () => {
   const router = createRouter({ routeTree, context: { queryClient: new QueryClient() } });
 
-  it("resolves route matches for all 3 dedicated Join Us pages and index", () => {
-    const paths = ["/join", "/join/group", "/join/construction", "/join/sustainability"];
+  it("resolves route matches for all 4 dedicated Join Us pages and index", () => {
+    const paths = ["/join", "/join/group", "/join/construction", "/join/sustainability", "/join/garment"];
 
     for (const path of paths) {
       const matches = router.matchRoutes(path);
@@ -18,14 +18,15 @@ describe("Join Us Pathways & Routes", () => {
     }
   });
 
-  it("validates all required content and headlines for the 3 Join tracks", () => {
+  it("validates all required content and headlines for the 4 Join tracks", () => {
     const expectedHeadlines: Record<JoinTrackId, string> = {
       group: "Build the Future With Us",
       construction: "Engineering Excellence. Building Tomorrow.",
       sustainability: "Innovate for a Better Tomorrow",
+      garment: "Crafting Excellence. Dressing the World.",
     };
 
-    for (const trackId of ["group", "construction", "sustainability"] as JoinTrackId[]) {
+    for (const trackId of ["group", "construction", "sustainability", "garment"] as JoinTrackId[]) {
       const track = joinTracks[trackId];
       expect(track).toBeDefined();
       expect(track.headlineEn).toBe(expectedHeadlines[trackId]);

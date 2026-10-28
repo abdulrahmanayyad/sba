@@ -1,4 +1,4 @@
-﻿import { Link } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import { ArrowRight, CheckCircle2, ChevronRight, Layers, Sparkles, Workflow } from "lucide-react";
 
 import { Reveal } from "@/components/home/reveal";
@@ -30,7 +30,7 @@ export function GarmentServicesTab() {
       <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
         <Reveal>
           <div className="max-w-3xl">
-            <SectionBadge title={ar ? "خدماتنا وتخصصاتنا" : "Our Services & Capabilities"} />
+            <SectionBadge title={ar ? "خدماتنا" : "Our Services"} />
             <h2 className="section-title mt-3">
               {ar ? "حلول تصنيع متكاملة تناسب كل نموذج عمل" : "Tailored Manufacturing Solutions for Every Business Model"}
             </h2>
@@ -47,7 +47,7 @@ export function GarmentServicesTab() {
               return (
                 <div
                   key={service.id}
-                  className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-border bg-card/60 backdrop-blur-md shadow-sm transition duration-300 hover:border-brand-orange/40 hover:shadow-xl"
+                  className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-border bg-card/60 backdrop-blur-md shadow-sm transition-all duration-300 hover:border-brand-orange/40 hover:shadow-xl hover:scale-[1.01]"
                 >
                   <div className="relative aspect-[16/9] w-full overflow-hidden bg-secondary">
                     <img
@@ -56,22 +56,11 @@ export function GarmentServicesTab() {
                       loading="lazy"
                       className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute top-3 start-3">
-                      <span className="rounded-full bg-black/60 px-3 py-1 font-mono text-xs font-bold text-white backdrop-blur-md">
-                        SERVICE // 0{index + 1}
-                      </span>
-                    </div>
                   </div>
 
                   <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
                     <div>
-                      <div className="flex items-center justify-between">
-                        <span className="rounded-full bg-brand-orange/10 px-3 py-1 text-xs font-semibold text-brand-orange">
-                          {ar ? "معتمد ومتاح للإنتاج" : "Full Scope"}
-                        </span>
-                      </div>
-
-                      <h3 className="mt-3 font-head text-2xl font-bold text-foreground">
+                      <h3 className="font-head text-2xl font-bold text-foreground">
                         {ar ? service.titleAr : service.titleEn}
                       </h3>
                       <p className="mt-1 text-sm font-semibold text-brand-orange">
@@ -99,7 +88,7 @@ export function GarmentServicesTab() {
 
                     <div className="mt-8 pt-4 border-t border-border/70 flex items-center justify-between">
                       <Button asChild size="sm" className="bg-brand-green text-white hover:bg-brand-orange transition-colors">
-                        <Link to="/sectors/$sector" params={{ sector: "garment" }} search={{ tab: "join" }}>
+                        <Link to="/join/garment">
                           {ar ? "اطلب عرض سعر لهذه الخدمة" : "Request Quote for This"}
                           <ArrowRight className="size-3.5 ms-2 rtl:rotate-180" />
                         </Link>

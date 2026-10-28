@@ -23,6 +23,7 @@ import { Route as ProductsRouteImport } from './routes/products'
 import { Route as SectorsRouteImport } from './routes/sectors'
 import { Route as JoinIndexRouteImport } from './routes/join.index'
 import { Route as JoinConstructionRouteImport } from './routes/join.construction'
+import { Route as JoinGarmentRouteImport } from './routes/join.garment'
 import { Route as JoinGroupRouteImport } from './routes/join.group'
 import { Route as JoinSustainabilityRouteImport } from './routes/join.sustainability'
 import { Route as ModelsIndexRouteImport } from './routes/models.index'
@@ -100,6 +101,11 @@ const JoinConstructionRoute = JoinConstructionRouteImport.update({
   path: '/construction',
   getParentRoute: () => JoinRoute,
 } as any)
+const JoinGarmentRoute = JoinGarmentRouteImport.update({
+  id: '/garment',
+  path: '/garment',
+  getParentRoute: () => JoinRoute,
+} as any)
 const JoinGroupRoute = JoinGroupRouteImport.update({
   id: '/group',
   path: '/group',
@@ -145,6 +151,7 @@ export interface FileRoutesByFullPath {
   '/products': typeof ProductsRoute
   '/sectors': typeof SectorsRouteWithChildren
   '/join/construction': typeof JoinConstructionRoute
+  '/join/garment': typeof JoinGarmentRoute
   '/join/group': typeof JoinGroupRoute
   '/join/sustainability': typeof JoinSustainabilityRoute
   '/models/$code': typeof ModelsCodeRoute
@@ -164,6 +171,7 @@ export interface FileRoutesByTo {
   '/partners': typeof PartnersRoute
   '/products': typeof ProductsRoute
   '/join/construction': typeof JoinConstructionRoute
+  '/join/garment': typeof JoinGarmentRoute
   '/join/group': typeof JoinGroupRoute
   '/join/sustainability': typeof JoinSustainabilityRoute
   '/models/$code': typeof ModelsCodeRoute
@@ -187,6 +195,7 @@ export interface FileRoutesById {
   '/products': typeof ProductsRoute
   '/sectors': typeof SectorsRouteWithChildren
   '/join/construction': typeof JoinConstructionRoute
+  '/join/garment': typeof JoinGarmentRoute
   '/join/group': typeof JoinGroupRoute
   '/join/sustainability': typeof JoinSustainabilityRoute
   '/models/$code': typeof ModelsCodeRoute
@@ -211,6 +220,7 @@ export interface FileRouteTypes {
     | '/products'
     | '/sectors'
     | '/join/construction'
+    | '/join/garment'
     | '/join/group'
     | '/join/sustainability'
     | '/models/$code'
@@ -230,6 +240,7 @@ export interface FileRouteTypes {
     | '/partners'
     | '/products'
     | '/join/construction'
+    | '/join/garment'
     | '/join/group'
     | '/join/sustainability'
     | '/models/$code'
@@ -252,6 +263,7 @@ export interface FileRouteTypes {
     | '/products'
     | '/sectors'
     | '/join/construction'
+    | '/join/garment'
     | '/join/group'
     | '/join/sustainability'
     | '/models/$code'
@@ -376,6 +388,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof JoinConstructionRouteImport
       parentRoute: typeof JoinRoute
     }
+    '/join/garment': {
+      id: '/join/garment'
+      path: '/garment'
+      fullPath: '/join/garment'
+      preLoaderRoute: typeof JoinGarmentRouteImport
+      parentRoute: typeof JoinRoute
+    }
     '/join/group': {
       id: '/join/group'
       path: '/group'
@@ -423,6 +442,7 @@ declare module '@tanstack/react-router' {
 
 interface JoinRouteChildren {
   JoinConstructionRoute: typeof JoinConstructionRoute
+  JoinGarmentRoute: typeof JoinGarmentRoute
   JoinGroupRoute: typeof JoinGroupRoute
   JoinSustainabilityRoute: typeof JoinSustainabilityRoute
   JoinIndexRoute: typeof JoinIndexRoute
@@ -430,6 +450,7 @@ interface JoinRouteChildren {
 
 const JoinRouteChildren: JoinRouteChildren = {
   JoinConstructionRoute: JoinConstructionRoute,
+  JoinGarmentRoute: JoinGarmentRoute,
   JoinGroupRoute: JoinGroupRoute,
   JoinSustainabilityRoute: JoinSustainabilityRoute,
   JoinIndexRoute: JoinIndexRoute,

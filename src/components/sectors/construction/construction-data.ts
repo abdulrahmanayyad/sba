@@ -180,7 +180,7 @@ export const constructionSectorsData = {
       id: "residential",
       number: "02",
       title: "Residential Development & Luxury Villas",
-      titleAr: "القطاع السكني وتطوير الفلل الفاخرة",
+      titleAr: "القطاع السكني",
       tagline: "Turnkey residential units, private villas, twin houses, and chalets",
       taglineAr: "وحدات سكنية متكاملة، فلل خاصة، توين هاوس، وشاليهات",
       body: "Residential units, villas, twin houses, chalets, and turnkey residential finishing and property development supported by 2D/3D visualization.",

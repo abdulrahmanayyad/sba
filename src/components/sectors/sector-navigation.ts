@@ -27,7 +27,6 @@ export function getSectorNavigation(slug: SectorSlug, ar: boolean) {
       { label: copy.capabilities, title: "Manufacturing Capabilities" },
     ] },
     food: { about: [
-      { label: copy.vision, title: "Commercial Vision" },
       { label: copy.highlights, title: "Division Highlights" },
       { label: copy.cooperation, title: "Cooperation Opportunities" },
     ], links: [{ label: copy.products, title: "Main Product Categories" }] },

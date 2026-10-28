@@ -1,4 +1,4 @@
-﻿import { Link } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import { 
   Building2, 
   ChevronRight, 
@@ -106,11 +106,16 @@ export function GarmentSectorView({ tab = "about" }: GarmentViewProps) {
           <div className="absolute inset-0 bg-gradient-to-t from-footer via-footer/80 to-footer/65" />
           <div className="site-container relative w-full py-16 md:py-24">
             <Reveal>
-              <h1 className="mt-4 max-w-4xl font-head text-[clamp(1.85rem,6vw,3.75rem)] font-bold leading-[1.15] text-white">
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/40 px-4 py-1.5 text-xs font-bold tracking-wide text-white backdrop-blur-md">
+                <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
+                <span>{ar ? garmentHeroData.companyAr : garmentHeroData.company}</span>
+              </div>
+
+              <h1 className="mt-2 max-w-4xl font-head text-[clamp(1.75rem,3.5vw,2.75rem)] font-extrabold leading-tight text-white drop-shadow-md">
                 {ar ? garmentHeroData.titleAr : garmentHeroData.title}
               </h1>
 
-              <p className={cn("mt-4 max-w-3xl font-head text-base text-footer-muted sm:text-xl", ar && "font-body")}>
+              <p className={cn("mt-4 max-w-3xl font-head text-base sm:text-lg font-bold leading-relaxed text-footer-foreground/90", ar && "font-body")}>
                 {ar ? garmentHeroData.subtitleAr : garmentHeroData.subtitle}
               </p>
             </Reveal>

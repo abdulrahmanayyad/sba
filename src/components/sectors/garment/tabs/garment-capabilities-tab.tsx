@@ -3,14 +3,12 @@ import {
   CheckCircle2, 
   Factory, 
   Layers, 
-  ShieldCheck, 
   Shirt, 
   SlidersHorizontal, 
   Workflow, 
   ArrowRight,
   TrendingUp,
   Cpu,
-  Sparkles,
   MessageCircle
 } from "lucide-react";
 
@@ -23,8 +21,6 @@ import { AnimatedStatistic } from "@/components/site/animated-statistic";
 import { WHATSAPP_URL } from "@/lib/process-steps";
 
 import apparelImg from "@/assets/sector-apparel.jpg";
-import homeTextile from "@/assets/home-textile.jpg";
-import jzraCasual from "@/assets/jzra-summer-casual.jpg";
 
 function SectionBadge({ title }: { title: string }) {
   return (
@@ -128,43 +124,31 @@ export function GarmentCapabilitiesTab() {
         </Reveal>
       </div>
 
-      {/* 3. Quality Control & Standards with Visual Image */}
+      {/* 3. Quality Control & Standards */}
       <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
         <Reveal>
-          <div className="grid gap-8 lg:grid-cols-12 lg:items-center">
-            <div className="lg:col-span-7">
-              <SectionBadge title={ar ? "ضمان الجودة" : "Quality Assurance"} />
-              <h3 className="section-title mt-3">
-                {ar ? "الجودة مدمجة في كل خطوة وليست مجرد فحص أخير" : "Quality Built-In At Every Touchpoint"}
-              </h3>
-              <p className="section-intro mt-4">
-                {ar
-                  ? "نعتمد على متابعة الجودة خلال كافة المراحل: بدءًا من فحص الأقمشة والمقاسات والباترونات، مرورًا بالقص والخياطة والتشطيب، وصولًا إلى المظهر النهائي والملصقات والتعبئة. تُحدد معايير الفحص لكل مشروع وفق المواصفات الفنية المعتمدة من العميل."
-                  : "Quality is monitored continuously: from raw textile and pattern audits to automated cutting, in-line sewing checks, steam finishing, labeling, and final carton packing against approved AQL benchmarks."}
-              </p>
+          <div>
+            <SectionBadge title={ar ? "ضمان الجودة" : "Quality Assurance"} />
+            <h3 className="section-title mt-3">
+              {ar ? "الجودة مدمجة في كل خطوة وليست مجرد فحص أخير" : "Quality Built-In At Every Touchpoint"}
+            </h3>
+            <p className="section-intro mt-4 max-w-4xl">
+              {ar
+                ? "نعتمد على متابعة الجودة خلال كافة المراحل: بدءًا من فحص الأقمشة والمقاسات والباترونات، مرورًا بالقص والخياطة والتشطيب، وصولًا إلى المظهر النهائي والملصقات والتعبئة. تُحدد معايير الفحص لكل مشروع وفق المواصفات الفنية المعتمدة من العميل."
+                : "Quality is monitored continuously: from raw textile and pattern audits to automated cutting, in-line sewing checks, steam finishing, labeling, and final carton packing against approved AQL benchmarks."}
+            </p>
 
-              <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                {[
-                  { en: "4-Point Fabric Inspection", ar: "فحص الأقمشة بنظام النقاط الأربعة" },
-                  { en: "In-Line Sewing Tolerances Check", ar: "متابعة دقيقة لحدود السماح بالخياطة" },
-                  { en: "Seam Strength & Wash Tests", ar: "اختبارات قوة الحياكة وثبات الغسيل" },
-                  { en: "100% Pre-Pack Auditing", ar: "فحص شامل لكافة القطع قبل التعبئة" },
-                ].map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-2 rounded-xl border border-border bg-card/60 p-3 text-xs sm:text-sm font-semibold text-foreground backdrop-blur-sm">
-                    <ShieldCheck className="size-4 shrink-0 text-brand-orange" />
-                    <span>{ar ? item.ar : item.en}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="overflow-hidden rounded-2xl border border-border shadow-lg lg:col-span-5">
-              <img
-                src={homeTextile}
-                alt="Quality Assurance"
-                loading="lazy"
-                className="aspect-[4/3] w-full object-cover transition-transform duration-700 hover:scale-105"
-              />
+            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {[
+                { en: "4-Point Fabric Inspection", ar: "فحص الأقمشة بنظام النقاط الأربعة" },
+                { en: "In-Line Sewing Tolerances Check", ar: "متابعة دقيقة لحدود السماح بالخياطة" },
+                { en: "Seam Strength & Wash Tests", ar: "اختبارات قوة الحياكة وثبات الغسيل" },
+                { en: "100% Pre-Pack Auditing", ar: "فحص شامل لكافة القطع قبل التعبئة" },
+              ].map((item, idx) => (
+                <div key={idx} className="flex items-center justify-center text-center rounded-2xl border border-border bg-card/60 p-4 text-xs sm:text-sm font-semibold text-foreground backdrop-blur-sm transition-all duration-300 hover:border-brand-orange/40 hover:-translate-y-0.5 hover:shadow-md">
+                  <span>{ar ? item.ar : item.en}</span>
+                </div>
+              ))}
             </div>
           </div>
         </Reveal>
@@ -255,8 +239,8 @@ export function GarmentCapabilitiesTab() {
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
             <div className="max-w-2xl">
               <span className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground">
-                <Sparkles className="size-3 text-brand-orange" />
-                <span>{ar ? "جاهزون للبدء الفوري" : "Start Production"}</span>
+                <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+                <span>{ar ? "استشارات وطلبات التصنيع" : "Consultation & Manufacturing"}</span>
               </span>
               <h3 className="mt-3 font-head text-2xl sm:text-3xl font-extrabold text-foreground">
                 {ar ? "هل لديك تصميم أو خط إنتاج ترغب في تنفيذه؟" : "Ready to Discuss Your Next Apparel Collection?"}
@@ -270,8 +254,8 @@ export function GarmentCapabilitiesTab() {
 
             <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0">
               <Button asChild size="lg" className="rounded-2xl bg-brand-orange hover:bg-brand-orange/90 text-white font-bold shadow-md w-full sm:w-auto">
-                <Link to="/sectors/$sector" params={{ sector: "garment" }} search={{ tab: "join" }}>
-                  <span>{ar ? "اطلب عرض سعر الآن" : "Request a Quotation"}</span>
+                <Link to="/join/garment">
+                  <span>{ar ? "انضم إلينا / اطلب عرض سعر" : "Join Us / Request a Quote"}</span>
                   <ArrowRight className="size-4 ms-2 rtl:rotate-180" />
                 </Link>
               </Button>

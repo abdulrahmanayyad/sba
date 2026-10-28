@@ -47,7 +47,7 @@ const sectorStatsConfig: Record<SectorSlug, Array<{ value: string; labelEn: stri
     { value: "2023", labelEn: "Group Sustainability Pillar", labelAr: "ركيزة الاستدامة في المجموعة" },
   ],
   food: [
-    { value: "+4", labelEn: "Core Natural Product Lines", labelAr: "تصنيفات منتجات طبيعية رئيسية" },
+    { value: "+6", labelEn: "Core Natural Product Lines", labelAr: "تصنيفات منتجات طبيعية رئيسية" },
     { value: "+15", labelEn: "Honey & Date Varieties", labelAr: "صنفاً من التمور وعسل النحل" },
     { value: "100%", labelEn: "Pure Natural Sourcing", labelAr: "منتجات طبيعية نقية وموثوقة" },
     { value: "+10", labelEn: "Target Regional & Global Markets", labelAr: "أسواق مستهدفة للتوزيع والتصدير" },
@@ -102,14 +102,11 @@ export function SectorPage({ sector }: { sector: SectorPageData }) {
         <div className="absolute inset-0 bg-gradient-to-t from-footer via-footer/80 to-footer/65" />
         <div className="site-container relative w-full py-16 md:py-24">
           <Reveal>
-            <div className="flex flex-wrap items-center gap-2 text-xs font-medium text-brand-orange">
-              {sector.logo ? (
-                <span className="inline-flex rounded-full bg-white px-4 py-2">
-                  <img src={sector.logo.url} alt={sector.logo.alt} className="h-6 w-auto sm:h-8" />
-                </span>
-              ) : (
-                <span className="text-white/80">{highlightBrand(ar ? sector.companyAr : sector.company)}</span>
-              )}
+            <div className="flex flex-wrap items-center gap-2 text-xs font-medium">
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/40 px-3.5 py-1 text-xs font-bold tracking-wide text-white backdrop-blur-md">
+                <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+                <span>{sector.companyAr ? (ar ? sector.companyAr : sector.company) : (ar ? "مجموعة سامي بن عياد" : "SAMI BIN AYYAD GROUP")}</span>
+              </span>
             </div>
 
             <h1 className="mt-4 max-w-4xl font-head text-[clamp(1.85rem,6vw,3.75rem)] font-bold leading-[1.15] text-white">
@@ -124,18 +121,20 @@ export function SectorPage({ sector }: { sector: SectorPageData }) {
               {highlightBrand(intro)}
             </p>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button asChild size="lg" className="bg-brand-green text-white hover:bg-brand-orange w-full sm:w-auto shadow-md">
-                <Link to="/contact">
-                  {ar ? "تواصل معنا" : "Contact Us"}
-                </Link>
-              </Button>
-              <Button asChild size="lg" className="bg-brand-green text-white hover:bg-brand-orange w-full sm:w-auto shadow-md">
-                <a href={WHATSAPP_URL} target="_blank" rel="noreferrer">
-                  <MessageCircle className="size-4 me-1.5" /> WhatsApp
-                </a>
-              </Button>
-            </div>
+            {sector.slug !== "food" && (
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <Button asChild size="lg" className="bg-brand-green text-white hover:bg-brand-orange w-full sm:w-auto shadow-md">
+                  <Link to="/contact">
+                    {ar ? "تواصل معنا" : "Contact Us"}
+                  </Link>
+                </Button>
+                <Button asChild size="lg" className="bg-brand-green text-white hover:bg-brand-orange w-full sm:w-auto shadow-md">
+                  <a href={WHATSAPP_URL} target="_blank" rel="noreferrer">
+                    <MessageCircle className="size-4 me-1.5" /> WhatsApp
+                  </a>
+                </Button>
+              </div>
+            )}
           </Reveal>
         </div>
       </section>

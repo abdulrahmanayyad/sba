@@ -15,6 +15,7 @@ import { aboutTabs, divisions, sectorOverviews, whoWeServe } from "./group-data"
 import { FactorySlider } from "./factory-slider";
 import { SectorsShowcase } from "./sectors-showcase";
 import { JoinShowcase } from "./join-showcase";
+import { PartnersSlider } from "./partners-slider";
 
 
 export function GroupPage() {
@@ -66,6 +67,45 @@ export function GroupPage() {
                 {ar ? "استكشف قطاعاتنا" : "Explore Our Sectors"} <ArrowRight className="size-4 rtl:rotate-180" />
               </a>
             </Button>
+          </div>
+        </Reveal>
+      </section>
+
+      {/* Corporate Vision & Mission Cards */}
+      <section className="site-container -mt-4 mb-8">
+        <Reveal>
+          <div className="grid gap-6 md:grid-cols-2">
+            {/* Vision Card */}
+            <div className="group relative overflow-hidden rounded-3xl border border-white/25 bg-background/80 p-8 shadow-lg backdrop-blur-2xl transition-all duration-300 hover:scale-[1.01] hover:shadow-2xl hover:border-brand-orange/50">
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+                <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+                <span className="font-bold text-brand-orange">{ar ? "رؤيتنا" : "Our Vision"}</span>
+              </div>
+              <h3 className="font-head text-xl sm:text-2xl font-extrabold text-foreground leading-snug">
+                {ar ? "ريادة استثمارية وصناعية تبني قيمة حقيقية تدوم" : "Regional Industrial Leadership & Compounding Value"}
+              </h3>
+              <p className="mt-4 text-sm sm:text-base leading-7 text-muted-foreground">
+                {ar
+                  ? "أن نكون مجموعة رائدة وموثوقة إقليمياً ودولياً في المقاولات والإنشاءات، والحلول البيئية، وصناعة الملابس الجاهزة، والمنتجات الطبيعية، نرتكز على الابتكار والاستدامة لتحقيق أثر تنموي متواصل."
+                  : "To be a leading and trusted regional and international group across contracting, environmental solutions, garment manufacturing, and natural products, driven by innovation, quality, and sustainable development."}
+              </p>
+            </div>
+
+            {/* Mission Card */}
+            <div className="group relative overflow-hidden rounded-3xl border border-white/25 bg-background/80 p-8 shadow-lg backdrop-blur-2xl transition-all duration-300 hover:scale-[1.01] hover:shadow-2xl hover:border-brand-orange/50">
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+                <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+                <span className="font-bold text-brand-orange">{ar ? "رسالتنا" : "Our Mission"}</span>
+              </div>
+              <h3 className="font-head text-xl sm:text-2xl font-extrabold text-foreground leading-snug">
+                {ar ? "حلول متكاملة تبتكر وتلبي تطلعات شركائنا" : "Integrated Solutions Delivering Excellence"}
+              </h3>
+              <p className="mt-4 text-sm sm:text-base leading-7 text-muted-foreground">
+                {ar
+                  ? "تقديم حلول متكاملة وموثوقة تلبي تطلعات عملائنا وشركائنا، والاستثمار المستمر في كوادرنا وتطوير تقنياتنا التشغيلية، مع الالتزام التام بالمسؤولية المجتمعية والبيئية وصون الموارد للأجيال القادمة."
+                  : "Delivering integrated, reliable solutions that exceed partner expectations, continually investing in our people and technology, while upholding corporate and environmental responsibility for generations to come."}
+              </p>
+            </div>
           </div>
         </Reveal>
       </section>
@@ -149,8 +189,8 @@ export function GroupPage() {
 
       <JourneySection ar={ar} />
 
-      {/* Partnerships & Markets */}
-      <section className="site-container section-band">
+      {/* Partnerships & Markets — Interactive Slider */}
+      <section id="partners" className="site-container section-band scroll-mt-24">
         <Reveal className="max-w-3xl">
           <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
             <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
@@ -165,32 +205,11 @@ export function GroupPage() {
             )}
           </p>
         </Reveal>
-        <div data-stagger className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {whoWeServe.map((audience) => (
-            <div
-              key={audience.en}
-              className="group relative overflow-hidden rounded-3xl border border-white/20 bg-background/80 shadow-lg backdrop-blur-xl transition-all duration-500 hover:shadow-2xl hover:border-brand-green/40 hover:-translate-y-1 flex flex-col"
-            >
-              <div className="relative aspect-[16/10] overflow-hidden">
-                <img
-                  src={audience.image}
-                  alt={ar ? audience.ar : audience.en}
-                  className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
-                <span className="absolute top-3.5 start-3.5 rounded-full bg-black/60 px-3 py-1 text-[11px] font-medium text-white/90 backdrop-blur-md border border-white/20">
-                  {ar ? audience.sectorAr : audience.sectorEn}
-                </span>
-              </div>
-              <div className="p-6 flex-1 flex flex-col justify-center">
-                <h3 className="font-head text-base md:text-lg font-bold text-foreground leading-snug group-hover:text-brand-orange transition-colors">
-                  {ar ? audience.ar : audience.en}
-                </h3>
-              </div>
-            </div>
-          ))}
-        </div>
-        <Reveal className="mt-12">
+
+        {/* Interactive Partnerships Slider */}
+        <PartnersSlider ar={ar} />
+
+        <Reveal className="mt-12 text-center sm:text-start">
           <Button asChild size="lg" className="group relative inline-flex items-center justify-center gap-2 rounded-full !bg-brand-green !text-white px-7 py-3 font-head text-sm font-bold shadow-lg transition-all duration-300 hover:!bg-brand-orange hover:shadow-brand-orange/30 hover:scale-105 active:scale-95">
             <Link to="/contact">
               {ar ? "ناقش شراكة" : "Discuss a Partnership"} <ArrowRight className="size-4 rtl:rotate-180" />

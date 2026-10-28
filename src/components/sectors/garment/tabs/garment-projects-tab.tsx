@@ -1,4 +1,4 @@
-﻿import { useState, useMemo } from "react";
+import { useState, useMemo } from "react";
 import { Link } from "@tanstack/react-router";
 import { 
   ArrowRight, 
@@ -75,11 +75,12 @@ export function GarmentProjectsTab() {
       <Reveal>
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div className="max-w-2xl">
-            <span className="text-xs font-bold uppercase tracking-wider text-brand-orange">
-              {ar ? "مشاريعنا وسابقة أعمالنا" : "Our Projects & Fashion Portfolio"}
-            </span>
+            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+              <span>{ar ? "مشاريعنا" : "Our Projects"}</span>
+            </div>
             <h2 className="mt-2 font-head text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              {ar ? "نماذج حقيقية من إبداعاتنا وجودة تصنيعنا" : "Documented Styles Manufactured for Top Brands"}
+              {ar ? "نماذج من إنتاجنا لكبرى العلامات التجارية" : "Styles Manufactured for Top Brands"}
             </h2>
             <p className="mt-4 text-base text-muted-foreground leading-relaxed">
               {ar
