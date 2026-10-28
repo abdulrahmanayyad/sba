@@ -207,7 +207,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
       </NavDropdown>
       <Link to="/partners" className={cn(className, "whitespace-nowrap")} onClick={onNavigate}>{messages.nav.partners}</Link>
       <Link to="/news" className={cn(className, "whitespace-nowrap")} onClick={onNavigate}>{messages.nav.news}</Link>
-      <Link to="/contact" className={cn(className, "whitespace-nowrap")} onClick={onNavigate}>{messages.nav.joinUs}</Link>
+      <Link to="/join" className={cn(className, "whitespace-nowrap")} onClick={onNavigate}>{messages.nav.joinUs}</Link>
     </>
   );
 
@@ -353,7 +353,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
                     <Link to="/models" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{messages.nav.products}</Link>
                     <Link to="/partners" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{messages.nav.partners}</Link>
                     <Link to="/news" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{messages.nav.news}</Link>
-                    <Link to="/contact" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{messages.nav.joinUs}</Link>
+                    <Link to="/join" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{messages.nav.joinUs}</Link>
                   </nav>
                 </div>
                 <div>

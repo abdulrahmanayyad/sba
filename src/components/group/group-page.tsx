@@ -14,6 +14,7 @@ import { AnimatedStatistic } from "@/components/site/animated-statistic";
 import { aboutTabs, divisions, sectorOverviews, whoWeServe } from "./group-data";
 import { FactorySlider } from "./factory-slider";
 import { SectorsShowcase } from "./sectors-showcase";
+import { JoinShowcase } from "./join-showcase";
 
 
 export function GroupPage() {
@@ -197,6 +198,9 @@ export function GroupPage() {
           </Button>
         </Reveal>
       </section>
+
+      {/* Join Us Pathways — 3 Concise Cards linking to dedicated pages */}
+      <JoinShowcase />
 
       {/* Final CTA — Glassmorphic Island matching Footer */}
       <section id="contact" className="relative px-4 pb-6 pt-4 text-foreground scroll-mt-24">

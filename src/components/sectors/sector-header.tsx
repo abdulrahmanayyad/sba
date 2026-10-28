@@ -160,7 +160,7 @@ export function SectorHeader({
                 </Link>
 
                 <Link
-                  to="/contact"
+                  to="/join/construction"
                   className={navPill}
                 >
                   {ar ? "انضم إلينا" : "Join Us"}
@@ -245,7 +245,7 @@ export function SectorHeader({
                 </Link>
 
                 <Link
-                  to="/contact"
+                  to="/join/sustainability"
                   className={navPill}
                 >
                   {ar ? "انضم إلينا" : "Join Us"}
@@ -314,7 +314,7 @@ export function SectorHeader({
                     </a>
                   ))
                 )}
-                <Link to="/contact" className={navLinkStyle}>
+                <Link to="/join" className={navLinkStyle}>
                   {ar ? "انضم إلينا" : "Join Us"}
                 </Link>
               </>
@@ -463,7 +463,7 @@ export function SectorHeader({
                       {ar ? "مشاريعنا" : "Our Projects"}
                     </Link>
                     <Link
-                      to="/contact"
+                      to="/join/construction"
                       onClick={() => setMenuOpen(false)}
                       className={mobileLinkStyle}
                     >
@@ -548,7 +548,7 @@ export function SectorHeader({
                       {ar ? "خدماتنا" : "Our Services"}
                     </Link>
                     <Link
-                      to="/contact"
+                      to="/join/sustainability"
                       onClick={() => setMenuOpen(false)}
                       className={mobileLinkStyle}
                     >
@@ -606,7 +606,7 @@ export function SectorHeader({
                         </a>
                       ))
                     )}
-                    <Link to="/contact" onClick={() => setMenuOpen(false)} className={mobileLinkStyle}>
+                    <Link to="/join" onClick={() => setMenuOpen(false)} className={mobileLinkStyle}>
                       {ar ? "انضم إلينا" : "Join Us"}
                     </Link>
                   </>
