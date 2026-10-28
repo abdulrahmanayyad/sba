@@ -1,4 +1,4 @@
-﻿import apparel from "@/assets/sector-apparel.jpg";
+import apparel from "@/assets/sector-apparel.jpg";
 import construction from "@/assets/sector-construction.jpg";
 import enviro from "@/assets/sector-enviro.jpg";
 import research from "@/assets/sector-research.jpg";
@@ -357,8 +357,8 @@ export const founders = [
   {
     role: "Chairman of the Board",
     roleAr: "رئيس مجلس الإدارة",
-    name: "Sami Bin Ayyad",
-    nameAr: "سامي بن عياد",
+    name: "Sheikh Sami Bin Ayyad",
+    nameAr: "الشيخ سامي بن عياد",
     image: "/Leadership/Sami Bin Ayyad.jpg",
     bio: "A career in contracting, trade and investment spanning five decades — from contracting and finishing in 1977, through gold, wholesale food and heritage publishing, to building today's diversified group.",
     bioAr: "مسيرة مهنية واستثمارية ممتدة منذ عام 1977، بدأت في المقاولات والتشطيبات، ومرّت بتجارة الذهب والجملة الغذائية وتحقيق التراث، وصولًا إلى بناء مجموعة أعمال متنوعة.",
