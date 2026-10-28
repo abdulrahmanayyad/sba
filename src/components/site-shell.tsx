@@ -388,12 +388,12 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
                   <p className="text-xs font-semibold uppercase tracking-[0.05em] text-foreground/90">
                     {messages.footer.taxNumber}
                   </p>
-                  <p className="mt-1 text-xs font-semibold uppercase tracking-[0.05em] text-foreground/90">
+                  <p className="mt-1 text-xs font-medium text-foreground/80">
                     {messages.footer.copyright}
                   </p>
                 </div>
-                <div className={cn("text-xs font-semibold uppercase tracking-[0.05em] text-foreground/90", isArabic ? "text-left font-sans" : "text-right font-mono")}>
-                  {isArabic ? "تم تطوير الموقع بواسطة شركة سامي بن عياد" : "Developed by Sami Bin Ayyad"}
+                <div className={cn("text-xs font-semibold text-foreground/90", isArabic ? "text-left font-sans" : "text-right font-sans")}>
+                  {isArabic ? "تم تطوير الموقع بواسطة شركة سامي بن عياد" : "Developed by: Sami Bin Ayyad"}
                 </div>
               </div>
             </div>

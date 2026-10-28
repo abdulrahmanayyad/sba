@@ -204,9 +204,9 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
           </h2>
           <p className="section-intro mt-4">
             {ar ? (
-              <span>تعرّف على حجم عملياتنا المتكاملة، والمشروعات الموثقة التي ننفذها، والأسواق التي نخدمها عبر قطاعات <strong className="font-bold text-brand-orange">مجموعة سامي بن عياد</strong>.</span>
+              <span>تعرّف على حجم عملياتنا المتكاملة، والمشروعات الموثقة التي ننفذها، والأسواق التي نخدمها عبر قطاعات <span className="text-brand-orange">مجموعة سامي بن عياد</span>.</span>
             ) : (
-              <span>Explore the scale of our integrated operations, documented projects delivered, and markets served across <strong className="font-bold text-brand-orange">SAMI BIN AYYAD GROUP</strong>.</span>
+              <span>Explore the scale of our integrated operations, documented projects delivered, and markets served across <span className="text-brand-orange">SAMI BIN AYYAD GROUP</span>.</span>
             )}
           </p>
         </Reveal>
@@ -627,9 +627,9 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
                 </p>
                 <p className="mt-1 text-[11px] text-muted-foreground leading-relaxed">
                   {ar ? (
-                    <span>تتركز أنشطة استيراد وتصدير وتوريد <strong className="font-bold text-brand-orange">مجموعة سامي بن عياد</strong> في هذه الدول التسع المختارة بدقة وفق معايير الجودة والاتفاقيات الدولية.</span>
+                    <span>تتركز أنشطة استيراد وتصدير وتوريد <span className="text-brand-orange">مجموعة سامي بن عياد</span> في هذه الدول التسع المختارة بدقة وفق معايير الجودة والاتفاقيات الدولية.</span>
                   ) : (
-                    <span><strong className="font-bold text-brand-orange">SAMI BIN AYYAD GROUP</strong> focuses its export, import, and manufacturing partnerships exclusively on these 9 verified global markets.</span>
+                    <span><span className="text-brand-orange">SAMI BIN AYYAD GROUP</span> focuses its export, import, and manufacturing partnerships exclusively on these 9 verified global markets.</span>
                   )}
                 </p>
               </div>

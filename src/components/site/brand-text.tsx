@@ -9,9 +9,9 @@ export function highlightBrand(text: string | React.ReactNode): React.ReactNode 
   return parts.map((part, i) => {
     if (part === "مجموعة سامي بن عياد" || part.toUpperCase() === "SAMI BIN AYYAD GROUP") {
       return (
-        <strong key={i} className="font-bold text-brand-orange">
+        <span key={i} className="text-brand-orange">
           {part}
-        </strong>
+        </span>
       );
     }
     return part;

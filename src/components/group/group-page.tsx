@@ -52,11 +52,11 @@ export function GroupPage() {
             <div className="section-intro mx-auto mt-6 leading-relaxed max-w-3xl space-y-1">
               {ar ? (
                 <p className="leading-relaxed">
-                  تجمع <strong className="font-bold text-brand-orange">مجموعة سامي بن عياد</strong> قدرات أعمال متنوعة في قطاعات المقاولات، والحلول البيئية، وتصنيع المنسوجات والملابس، والمنتجات الطبيعية. ومن خلال الخبرة التشغيلية والتنفيذ القائم على الجودة والشراكات الاستراتيجية، نعمل جاهدين على خلق وتطوير قيمة دائمة ومستدامة عبر مختلف الصناعات والأسواق.
+                  تجمع <span className="text-brand-orange">مجموعة سامي بن عياد</span> قدرات أعمال متنوعة في قطاعات المقاولات، والحلول البيئية، وتصنيع المنسوجات والملابس، والمنتجات الطبيعية. ومن خلال الخبرة التشغيلية والتنفيذ القائم على الجودة والشراكات الاستراتيجية، نعمل جاهدين على خلق وتطوير قيمة دائمة ومستدامة عبر مختلف الصناعات والأسواق.
                 </p>
               ) : (
                 <p className="">
-                  <strong className="font-bold text-brand-orange">SAMI BIN AYYAD GROUP</strong> brings together diverse business capabilities across contracting, environmental solutions, textile and garment manufacturing, and natural products. Through operational expertise, quality-driven execution, and strategic partnerships, we work to create lasting value across industries and markets.
+                  <span className="text-brand-orange">SAMI BIN AYYAD GROUP</span> brings together diverse business capabilities across contracting, environmental solutions, textile and garment manufacturing, and natural products. Through operational expertise, quality-driven execution, and strategic partnerships, we work to create lasting value across industries and markets.
                 </p>
               )}
             </div>
@@ -158,9 +158,9 @@ export function GroupPage() {
           <h2 className="section-title">{ar ? "نربط القدرات بالفرص العالمية" : "Connecting Capabilities with Global Opportunities"}</h2>
           <p className="section-intro mt-4">
             {ar ? (
-              <span>تطوّر <strong className="font-bold text-brand-orange">مجموعة سامي بن عياد</strong> علاقات أعمال عبر قطاعات متنوعة، مع التركيز على التصنيع وتنفيذ المشروعات والتجارة الدولية والشراكات التجارية طويلة الأمد.</span>
+              <span>تطوّر <span className="text-brand-orange">مجموعة سامي بن عياد</span> علاقات أعمال عبر قطاعات متنوعة، مع التركيز على التصنيع وتنفيذ المشروعات والتجارة الدولية والشراكات التجارية طويلة الأمد.</span>
             ) : (
-              <span><strong className="font-bold text-brand-orange">SAMI BIN AYYAD GROUP</strong> develops business relationships across diverse sectors, with a focus on manufacturing, project execution, international trade, and long-term commercial partnerships.</span>
+              <span><span className="text-brand-orange">SAMI BIN AYYAD GROUP</span> develops business relationships across diverse sectors, with a focus on manufacturing, project execution, international trade, and long-term commercial partnerships.</span>
             )}
           </p>
         </Reveal>
