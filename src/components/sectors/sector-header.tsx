@@ -380,13 +380,25 @@ export function SectorHeader({
 
           <div className="hidden items-center gap-3 xl:flex shrink-0">
             {language}
-            <Link
-              to={isGarment ? "/sectors/garment?tab=join" : "/contact"}
-              className="group/cta inline-flex items-center gap-2 rounded-full bg-brand-green px-5 py-2.5 text-xs font-bold text-white transition-all duration-300 hover:bg-brand-orange hover:shadow-lg hover:shadow-brand-orange/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/50 active:scale-95"
-            >
-              <span>{ar ? "تواصل معنا" : "Contact Us"}</span>
-              <ArrowUpRight className="size-3.5 transition-transform duration-300 group-hover/cta:translate-x-1 group-hover/cta:-translate-y-1 rtl:rotate-90 rtl:group-hover/cta:-translate-x-1 rtl:group-hover/cta:-translate-y-1" />
-            </Link>
+            {isGarment ? (
+              <Link
+                to="/sectors/$sector"
+                params={{ sector: "garment" }}
+                search={{ tab: "join" }}
+                className="group/cta inline-flex items-center gap-2 rounded-full bg-brand-green px-5 py-2.5 text-xs font-bold text-white transition-all duration-300 hover:bg-brand-orange hover:shadow-lg hover:shadow-brand-orange/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/50 active:scale-95"
+              >
+                <span>{ar ? "تواصل معنا" : "Contact Us"}</span>
+                <ArrowUpRight className="size-3.5 transition-transform duration-300 group-hover/cta:translate-x-1 group-hover/cta:-translate-y-1 rtl:rotate-90 rtl:group-hover/cta:-translate-x-1 rtl:group-hover/cta:-translate-y-1" />
+              </Link>
+            ) : (
+              <Link
+                to="/contact"
+                className="group/cta inline-flex items-center gap-2 rounded-full bg-brand-green px-5 py-2.5 text-xs font-bold text-white transition-all duration-300 hover:bg-brand-orange hover:shadow-lg hover:shadow-brand-orange/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/50 active:scale-95"
+              >
+                <span>{ar ? "تواصل معنا" : "Contact Us"}</span>
+                <ArrowUpRight className="size-3.5 transition-transform duration-300 group-hover/cta:translate-x-1 group-hover/cta:-translate-y-1 rtl:rotate-90 rtl:group-hover/cta:-translate-x-1 rtl:group-hover/cta:-translate-y-1" />
+              </Link>
+            )}
           </div>
 
           <Button
@@ -638,14 +650,27 @@ export function SectorHeader({
                   <div className="flex size-11 items-center justify-center rounded-2xl bg-white/30 border border-white/30 hover:bg-white/50 text-foreground shrink-0 shadow-sm">
                     {language}
                   </div>
-                  <Link
-                    to={isGarment ? "/sectors/garment?tab=join" : "/contact"}
-                    onClick={() => setMenuOpen(false)}
-                    className="group/cta flex-1 flex items-center justify-center gap-2 rounded-2xl bg-brand-green px-5 py-3 text-xs font-bold text-white transition-all duration-300 hover:bg-brand-orange shadow-md active:scale-95"
-                  >
-                    <span>{ar ? "تواصل معنا" : "Contact Us"}</span>
-                    <ArrowUpRight className="size-3.5 rtl:rotate-90" />
-                  </Link>
+                  {isGarment ? (
+                    <Link
+                      to="/sectors/$sector"
+                      params={{ sector: "garment" }}
+                      search={{ tab: "join" }}
+                      onClick={() => setMenuOpen(false)}
+                      className="group/cta flex-1 flex items-center justify-center gap-2 rounded-2xl bg-brand-green px-5 py-3 text-xs font-bold text-white transition-all duration-300 hover:bg-brand-orange shadow-md active:scale-95"
+                    >
+                      <span>{ar ? "تواصل معنا" : "Contact Us"}</span>
+                      <ArrowUpRight className="size-3.5 rtl:rotate-90" />
+                    </Link>
+                  ) : (
+                    <Link
+                      to="/contact"
+                      onClick={() => setMenuOpen(false)}
+                      className="group/cta flex-1 flex items-center justify-center gap-2 rounded-2xl bg-brand-green px-5 py-3 text-xs font-bold text-white transition-all duration-300 hover:bg-brand-orange shadow-md active:scale-95"
+                    >
+                      <span>{ar ? "تواصل معنا" : "Contact Us"}</span>
+                      <ArrowUpRight className="size-3.5 rtl:rotate-90" />
+                    </Link>
+                  )}
                 </div>
                 <Link to="/" onClick={() => setMenuOpen(false)} className="inline-flex items-center justify-center gap-2 text-xs font-semibold text-brand-green-text hover:underline pt-1">
                   <ArrowLeft aria-hidden="true" className="size-3.5 rtl:rotate-180" /> {back}

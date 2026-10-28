@@ -96,7 +96,8 @@ export function JoinForm({ track }: JoinFormProps) {
 
     const newFiles: File[] = [];
     for (let i = 0; i < selected.length; i++) {
-      const file = selected[i];
+      const file = selected.item(i);
+      if (!file) continue;
       if (file.size > maxBytes) {
         setFileError(
           ar

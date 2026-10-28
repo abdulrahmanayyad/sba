@@ -1,4 +1,4 @@
-﻿import { Link } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import { 
   CheckCircle2, 
   Factory, 
@@ -9,7 +9,9 @@ import {
   Workflow, 
   ArrowRight,
   TrendingUp,
-  Cpu
+  Cpu,
+  Sparkles,
+  MessageCircle
 } from "lucide-react";
 
 import { Reveal } from "@/components/home/reveal";
@@ -18,6 +20,7 @@ import { useLanguage } from "@/i18n/language-context";
 import { garmentProcessSteps, garmentAboutData } from "../garment-data";
 import { cn } from "@/lib/utils";
 import { AnimatedStatistic } from "@/components/site/animated-statistic";
+import { WHATSAPP_URL } from "@/lib/process-steps";
 
 import apparelImg from "@/assets/sector-apparel.jpg";
 import homeTextile from "@/assets/home-textile.jpg";
@@ -35,11 +38,11 @@ function SectionBadge({ title }: { title: string }) {
 export function GarmentCapabilitiesTab() {
   const { language } = useLanguage();
   const ar = language === "AR";
-  const { capabilities, infrastructure, productionVolume } = garmentAboutData;
+  const { capabilities, productionVolume } = garmentAboutData;
 
   return (
     <div className="space-y-12 py-6">
-      {/* Overview & Key Stats */}
+      {/* 1. Overview & Key Stats */}
       <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
         <Reveal>
           <div className="max-w-3xl">
@@ -87,7 +90,7 @@ export function GarmentCapabilitiesTab() {
         </Reveal>
       </div>
 
-      {/* 10-Stage Structured Manufacturing Process */}
+      {/* 2. 10-Stage Structured Manufacturing Process */}
       <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
         <Reveal>
           <div>
@@ -125,7 +128,7 @@ export function GarmentCapabilitiesTab() {
         </Reveal>
       </div>
 
-      {/* Quality Control & Standards with Visual Image */}
+      {/* 3. Quality Control & Standards with Visual Image */}
       <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
         <Reveal>
           <div className="grid gap-8 lg:grid-cols-12 lg:items-center">
@@ -166,8 +169,122 @@ export function GarmentCapabilitiesTab() {
           </div>
         </Reveal>
       </div>
+
+      {/* 4. Production Volume & Classic Shirt Facility */}
+      <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
+        <Reveal>
+          <div className="max-w-3xl">
+            <SectionBadge title={ar ? "الطاقة والقدرة الإنتاجية" : "Production Volume & Scale"} />
+            <h2 className="section-title mt-3">
+              {ar ? productionVolume.headingAr : productionVolume.heading}
+            </h2>
+            <p className="section-intro mt-4">
+              {ar ? productionVolume.introAr : productionVolume.intro}
+            </p>
+          </div>
+
+          {/* Dedicated Classic Shirt Feature Box */}
+          <div className="mt-10 overflow-hidden rounded-3xl border border-border bg-gradient-to-br from-card via-card/70 to-secondary/40 p-6 sm:p-10 shadow-sm backdrop-blur-md">
+            <div className="grid gap-8 lg:grid-cols-12 lg:items-center">
+              <div className="lg:col-span-7">
+                <div className="flex flex-wrap items-center gap-3">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-orange/15 px-3 py-1 font-mono text-xs font-bold text-brand-orange">
+                    <Shirt className="size-3.5" />
+                    {ar ? productionVolume.classicShirtUnit.badgeAr : productionVolume.classicShirtUnit.badge}
+                  </span>
+                  <span className="text-xs font-semibold text-muted-foreground">
+                    {ar ? "مصنع متخصص بمعدات حصرية" : "Dedicated Category Facility"}
+                  </span>
+                </div>
+
+                <h3 className="mt-4 font-head text-2xl font-bold text-foreground sm:text-3xl">
+                  {ar ? productionVolume.classicShirtUnit.titleAr : productionVolume.classicShirtUnit.title}
+                </h3>
+
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
+                  {ar ? productionVolume.classicShirtUnit.descAr : productionVolume.classicShirtUnit.desc}
+                </p>
+
+                <div className="mt-6 grid gap-2.5 sm:grid-cols-2">
+                  {productionVolume.classicShirtUnit.features.map((feat, fIdx) => (
+                    <div key={fIdx} className="flex items-center gap-2 rounded-xl border border-border/70 bg-background/60 p-2.5 text-xs font-semibold text-foreground">
+                      <CheckCircle2 className="size-4 shrink-0 text-brand-orange" />
+                      <span>{ar ? feat.ar : feat.en}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="overflow-hidden rounded-2xl border border-border shadow-md lg:col-span-5">
+                <img
+                  src={apparelImg}
+                  alt={ar ? productionVolume.classicShirtUnit.titleAr : productionVolume.classicShirtUnit.title}
+                  loading="lazy"
+                  className="aspect-[4/3] w-full object-cover transition-transform duration-700 hover:scale-105"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Volume Summary Cards */}
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {productionVolume.volumeSummary.map((item) => (
+              <div
+                key={item.categoryEn}
+                className="rounded-2xl border border-border bg-card/60 p-5 shadow-xs backdrop-blur-md transition hover:border-brand-orange/40 hover:shadow-md"
+              >
+                <div className="flex items-center gap-2 text-xs font-bold text-muted-foreground">
+                  <TrendingUp className="size-4 text-brand-orange" />
+                  <span>{ar ? item.categoryAr : item.categoryEn}</span>
+                </div>
+                <div className="mt-3 font-head text-2xl sm:text-3xl font-black text-brand-orange">
+                  <AnimatedStatistic value={ar ? item.volumeAr : item.volumeEn} />
+                </div>
+                <p className="mt-2 text-xs font-medium text-muted-foreground leading-relaxed">
+                  {ar ? item.notesAr : item.notesEn}
+                </p>
+              </div>
+            ))}
+          </div>
+        </Reveal>
+      </div>
+
+      {/* 5. Direct RFQ & Consultation Callout */}
+      <div className="overflow-hidden rounded-3xl border border-white/40 bg-gradient-to-br from-background/90 via-background/70 to-secondary/50 p-8 sm:p-12 shadow-lg backdrop-blur-2xl ring-1 ring-black/5">
+        <Reveal>
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+            <div className="max-w-2xl">
+              <span className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground">
+                <Sparkles className="size-3 text-brand-orange" />
+                <span>{ar ? "جاهزون للبدء الفوري" : "Start Production"}</span>
+              </span>
+              <h3 className="mt-3 font-head text-2xl sm:text-3xl font-extrabold text-foreground">
+                {ar ? "هل لديك تصميم أو خط إنتاج ترغب في تنفيذه؟" : "Ready to Discuss Your Next Apparel Collection?"}
+              </h3>
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+                {ar
+                  ? "تواصل مباشرة مع فريقنا الفني والتجاري للحصول على دراسة تفصيلية للعينات والمواصفات وجداول التسليم."
+                  : "Connect with our engineering and merchandising team for sample reviews, tech-pack consultations, and competitive quotation structures."}
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0">
+              <Button asChild size="lg" className="rounded-2xl bg-brand-orange hover:bg-brand-orange/90 text-white font-bold shadow-md w-full sm:w-auto">
+                <Link to="/sectors/$sector" params={{ sector: "garment" }} search={{ tab: "join" }}>
+                  <span>{ar ? "اطلب عرض سعر الآن" : "Request a Quotation"}</span>
+                  <ArrowRight className="size-4 ms-2 rtl:rotate-180" />
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="rounded-2xl border-border bg-background/80 hover:bg-secondary font-bold w-full sm:w-auto">
+                <a href={WHATSAPP_URL} target="_blank" rel="noreferrer">
+                  <MessageCircle className="size-4 me-2 text-brand-green" />
+                  <span>WhatsApp</span>
+                </a>
+              </Button>
+            </div>
+          </div>
+        </Reveal>
+      </div>
     </div>
   );
 }
-
-
