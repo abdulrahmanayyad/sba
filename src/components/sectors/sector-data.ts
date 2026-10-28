@@ -1,4 +1,4 @@
-﻿import apparel from "@/assets/sector-apparel.jpg";
+import apparel from "@/assets/sector-apparel.jpg";
 import construction from "@/assets/sector-construction.jpg";
 import enviro from "@/assets/sector-enviro.jpg";
 import food from "@/assets/sector-food.jpg";
@@ -145,7 +145,7 @@ export const sectors: Record<SectorSlug, SectorPageData> = {
     image: construction,
     company: "SAMI BIN AYYAD GROUP Contracting & Real Estate Development",
     companyAr: "شركة مجموعة سامي بن عياد للمقاولات والتطوير العقاري",
-    name: "Contracting, Construction & Real Estate Development",
+    name: "Contracting, & Real Estate Development",
     nameAr: "المقاولات والإنشاءات والتطوير العقاري",
     tagline: "Integrated solutions for construction and property development, spanning structural works, finishing, building systems, and specialized installations.",
     taglineAr: "حلول متكاملة لتنفيذ المشروعات وتطوير المباني، من الأعمال الإنشائية والتشطيبات إلى الأنظمة الهندسية والتجهيزات المتخصصة.",

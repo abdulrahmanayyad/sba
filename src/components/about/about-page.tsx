@@ -1,4 +1,4 @@
-﻿import { useState } from "react";
+import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import {
   Award,
@@ -28,6 +28,7 @@ import { HomeMotion, HomeReveal as Reveal } from "@/components/home/home-motion"
 import { AnimatedStatistic } from "@/components/site/animated-statistic";
 import { useLanguage } from "@/i18n/language-context";
 import { cn } from "@/lib/utils";
+import { highlightBrand } from "@/components/site/brand-text";
 import { divisions, founders } from "@/components/group/group-data";
 import {
   governanceData,
@@ -72,12 +73,12 @@ export function AboutPage() {
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
             <Reveal>
               <SectionBadge title={ar ? "من نحن" : "About Us"} />
-              <h1 className="section-title mt-3">
+              <h1 className="section-title mt-3 text-xl sm:text-2xl lg:text-3xl">
                 {ar ? whoWeAreData.titleAr : whoWeAreData.title}
               </h1>
               <div className="mt-6 space-y-4 text-base leading-8 text-muted-foreground">
                 {whoWeAreData.paragraphs.map((p, idx) => (
-                  <p key={idx}>{ar ? p.ar : p.en}</p>
+                  <p key={idx}>{highlightBrand(ar ? p.ar : p.en)}</p>
                 ))}
               </div>
 
@@ -131,7 +132,7 @@ export function AboutPage() {
           <Reveal className="mx-auto max-w-3xl text-center">
             <SectionBadge title={ar ? "ماذا نفعل" : "What We Do"} />
             <h2 className="section-title mt-3">{ar ? whatWeDoData.titleAr : whatWeDoData.title}</h2>
-            <p className="section-intro mx-auto mt-4">{ar ? whatWeDoData.leadAr : whatWeDoData.lead}</p>
+            <p className="section-intro mx-auto mt-4">{highlightBrand(ar ? whatWeDoData.leadAr : whatWeDoData.lead)}</p>
           </Reveal>
 
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -170,12 +171,12 @@ export function AboutPage() {
           <div className="grid gap-12 lg:grid-cols-12 lg:items-start">
             <Reveal className="lg:col-span-5">
               <SectionBadge title={ar ? "نهجنا" : "Our Approach"} />
-              <h2 className="section-title mt-3">
+              <h2 className="section-title mt-3 text-lg sm:text-xl lg:text-2xl">
                 {ar ? ourApproachData.titleAr : ourApproachData.title}
               </h2>
               <div className="mt-6 space-y-4 text-base leading-7 text-muted-foreground">
                 {ourApproachData.paragraphs.map((p, idx) => (
-                  <p key={idx}>{ar ? p.ar : p.en}</p>
+                  <p key={idx}>{highlightBrand(ar ? p.ar : p.en)}</p>
                 ))}
               </div>
             </Reveal>
@@ -207,7 +208,7 @@ export function AboutPage() {
           <Reveal className="mx-auto max-w-3xl text-center">
             <SectionBadge title={ar ? "قيمنا" : "Our Values"} />
             <h2 className="section-title mt-3">{ar ? ourValuesData.titleAr : ourValuesData.title}</h2>
-            <p className="section-intro mx-auto mt-4">{ar ? ourValuesData.leadAr : ourValuesData.lead}</p>
+            <p className="section-intro mx-auto mt-4">{highlightBrand(ar ? ourValuesData.leadAr : ourValuesData.lead)}</p>
           </Reveal>
 
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -241,7 +242,7 @@ export function AboutPage() {
           <Reveal className="mx-auto max-w-3xl text-center">
             <SectionBadge title={ar ? "لماذا سامي بن عياد" : "Why Sami Bin Ayyad"} />
             <h2 className="section-title mt-3">{ar ? whySbaData.titleAr : whySbaData.title}</h2>
-            <p className="section-intro mx-auto mt-4">{ar ? whySbaData.leadAr : whySbaData.lead}</p>
+            <p className="section-intro mx-auto mt-4">{highlightBrand(ar ? whySbaData.leadAr : whySbaData.lead)}</p>
           </Reveal>
 
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -318,7 +319,7 @@ export function AboutPage() {
           <Reveal className="mx-auto max-w-3xl text-center">
             <SectionBadge title={ar ? "حوكمة الشركة" : "Company Governance"} />
             <h2 className="section-title mt-3">{ar ? governanceData.titleAr : governanceData.title}</h2>
-            <p className="section-intro mx-auto mt-4">{ar ? governanceData.leadAr : governanceData.lead}</p>
+            <p className="section-intro mx-auto mt-4">{highlightBrand(ar ? governanceData.leadAr : governanceData.lead)}</p>
           </Reveal>
 
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -358,7 +359,7 @@ export function AboutPage() {
           <Reveal className="mx-auto max-w-3xl text-center">
             <SectionBadge title={ar ? "سياسات المجموعة" : "Group Policies"} />
             <h2 className="section-title mt-3">{ar ? policiesData.titleAr : policiesData.title}</h2>
-            <p className="section-intro mx-auto mt-4">{ar ? policiesData.leadAr : policiesData.lead}</p>
+            <p className="section-intro mx-auto mt-4">{highlightBrand(ar ? policiesData.leadAr : policiesData.lead)}</p>
           </Reveal>
 
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

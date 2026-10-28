@@ -25,7 +25,7 @@ export interface Division {
 export const divisions: Division[] = [
   {
     slug: "construction",
-    name: "Contracting, Construction & Real Estate Development",
+    name: "Contracting, & Real Estate Development",
     nameAr: "المقاولات والإنشاءات والتطوير العقاري",
     company: "SAMI BIN AYYAD GROUP Contracting & Real Estate Development",
     companyAr: "شركة مجموعة سامي بن عياد للمقاولات والتطوير العقاري",
@@ -201,7 +201,7 @@ export interface SectorOverview {
 export const sectorOverviews: SectorOverview[] = [
   {
     slug: "construction",
-    headline: "Contracting, Construction & Real Estate Development",
+    headline: "Contracting, & Real Estate Development",
     headlineAr: "المقاولات والإنشاءات والتطوير العقاري",
     subtitle: "Integrated Solutions for Construction & Property Development",
     subtitleAr: "حلول متكاملة لتنفيذ المشروعات وتطوير المباني",

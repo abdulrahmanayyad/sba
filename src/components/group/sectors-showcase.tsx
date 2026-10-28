@@ -1,4 +1,4 @@
-﻿import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { cn } from "@/lib/utils";
@@ -29,7 +29,7 @@ const tabs: ShowcaseTab[] = [
     id: "contracting",
     labelEn: "Contracting & Construction",
     labelAr: "المقاولات والإنشاءات",
-    headlineEn: "Contracting, Construction & Real Estate Development",
+    headlineEn: "Contracting, & Real Estate Development",
     headlineAr: "المقاولات والإنشاءات والتطوير العقاري",
     subtitleEn: "Integrated Solutions for Construction & Property Development",
     subtitleAr: "حلول متكاملة لتنفيذ المشروعات وتطوير المباني",

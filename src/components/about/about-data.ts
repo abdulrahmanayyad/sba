@@ -1,4 +1,4 @@
-﻿export interface PillarItem {
+export interface PillarItem {
   title: string;
   titleAr: string;
   body: string;
@@ -102,8 +102,8 @@ export const ourApproachData = {
       ar: "نركز على تحسين الإجراءات، وتعزيز التنسيق بين فرق العمل، ومتابعة الأداء، والاستفادة من النتائج والملاحظات في التطوير المستمر. كما نشجع تبادل المعرفة والخبرات، ونحرص على بناء علاقات مهنية واضحة تقوم على الالتزام والشفافية والمصالح المشتركة.",
     },
     {
-      en: "Sustainability and responsibility are also considered when evaluating growth opportunities, supporting efficient resource utilization and long-term business value.",
-      ar: "ونضع الاستدامة والمسؤولية ضمن اعتباراتنا عند دراسة فرص النمو، بما يدعم الاستخدام الفعال للموارد ويحافظ على القيمة طويلة الأجل للأعمال.",
+      en: "Strategic planning and long-term partnerships.",
+      ar: "تخطيط استراتيجي وشراكات طويلة الأمد",
     },
   ],
   steps: [

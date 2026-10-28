@@ -1,4 +1,4 @@
-﻿import { useState } from "react";
+import { useState } from "react";
 import { Building2, Leaf, Shirt, Wheat, Globe, CheckCircle2, MapPin, Sparkles, Plus, Minus, Layers, X } from "lucide-react";
 
 import { HomeReveal as Reveal } from "@/components/home/home-motion";
@@ -196,16 +196,18 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
       <div className="site-container relative z-10">
         <Reveal className="max-w-3xl">
           <div className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 px-3.5 py-1 text-xs font-medium tracking-wide text-muted-foreground backdrop-blur-md mb-3">
-            <span className="size-1.5 rounded-full bg-brand-green animate-pulse" />
+            <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
             {ar ? "أداء المجموعة ورؤى الأعمال" : "Group Performance & Business Insights"}
           </div>
           <h2 id="dash-heading" className="section-title">
             {ar ? "أعمالنا في أرقام" : "Our Business in Numbers"}
           </h2>
           <p className="section-intro mt-4">
-            {ar
-              ? "تعرّف على حجم عملياتنا المتكاملة، والمشروعات الموثقة التي ننفذها، والأسواق التي نخدمها عبر قطاعات مجموعة سامي بن عياد."
-              : "Explore the scale of our integrated operations, documented projects delivered, and markets served across SAMI BIN AYYAD GROUP."}
+            {ar ? (
+              <span>تعرّف على حجم عملياتنا المتكاملة، والمشروعات الموثقة التي ننفذها، والأسواق التي نخدمها عبر قطاعات <strong className="font-bold text-brand-orange">مجموعة سامي بن عياد</strong>.</span>
+            ) : (
+              <span>Explore the scale of our integrated operations, documented projects delivered, and markets served across <strong className="font-bold text-brand-orange">SAMI BIN AYYAD GROUP</strong>.</span>
+            )}
           </p>
         </Reveal>
 
@@ -624,9 +626,11 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
                   {ar ? "شبكة عمليات وتجارة دولية مغلقة" : "Targeted Commercial Reach"}
                 </p>
                 <p className="mt-1 text-[11px] text-muted-foreground leading-relaxed">
-                  {ar
-                    ? "تتركز أنشطة استيراد وتصدير وتوريد مجموعة سامي بن عياد في هذه الدول التسع المختارة بدقة وفق معايير الجودة والاتفاقيات الدولية."
-                    : "SAMI BIN AYYAD GROUP focuses its export, import, and manufacturing partnerships exclusively on these 9 verified global markets."}
+                  {ar ? (
+                    <span>تتركز أنشطة استيراد وتصدير وتوريد <strong className="font-bold text-brand-orange">مجموعة سامي بن عياد</strong> في هذه الدول التسع المختارة بدقة وفق معايير الجودة والاتفاقيات الدولية.</span>
+                  ) : (
+                    <span><strong className="font-bold text-brand-orange">SAMI BIN AYYAD GROUP</strong> focuses its export, import, and manufacturing partnerships exclusively on these 9 verified global markets.</span>
+                  )}
                 </p>
               </div>
             </div>

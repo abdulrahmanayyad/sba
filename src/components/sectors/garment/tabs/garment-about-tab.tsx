@@ -1,4 +1,4 @@
-﻿import { Link } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import { 
   Building2, 
   CheckCircle2, 
@@ -23,6 +23,7 @@ import { useLanguage } from "@/i18n/language-context";
 import { garmentAboutData } from "../garment-data";
 import { WHATSAPP_URL } from "@/lib/process-steps";
 import { cn } from "@/lib/utils";
+import { highlightBrand } from "@/components/site/brand-text";
 import { AnimatedStatistic } from "@/components/site/animated-statistic";
 
 import homeTextile from "@/assets/home-textile.jpg";
@@ -63,9 +64,9 @@ export function GarmentAboutTab() {
             <div className="mt-8 grid gap-8 lg:grid-cols-12 lg:items-center">
               <div className="space-y-4 text-base leading-relaxed text-muted-foreground lg:col-span-7">
                 <p className="font-semibold text-foreground text-lg leading-relaxed">
-                  {ar ? whoWeAre.bodyAr : whoWeAre.body}
+                  {highlightBrand(ar ? whoWeAre.bodyAr : whoWeAre.body)}
                 </p>
-                <p className="">{ar ? whoWeAre.extendedAr : whoWeAre.extended}</p>
+                <p className="">{highlightBrand(ar ? whoWeAre.extendedAr : whoWeAre.extended)}</p>
 
                 <div className="mt-6 grid gap-4 sm:grid-cols-2 pt-2">
                   <div className="rounded-2xl border border-border bg-card/70 p-5 shadow-sm backdrop-blur-sm">

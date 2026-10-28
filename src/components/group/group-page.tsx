@@ -1,4 +1,4 @@
-﻿import { Link } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import { ArrowRight, Mail, MessageCircle } from "lucide-react";
 
 import heroBg from "@/assets/home-hero-st.jpg";
@@ -46,17 +46,17 @@ export function GroupPage() {
           <div className="group relative mx-auto max-w-4xl overflow-hidden rounded-3xl border border-white/20 bg-background/75 p-8 sm:p-12 shadow-[0_12px_40px_rgba(0,0,0,0.08)] backdrop-blur-2xl transition-all duration-300 hover:scale-[1.01] hover:shadow-[0_20px_60px_rgba(0,0,0,0.12)] hover:border-brand-orange/40 text-center">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-              <span>{ar ? "مجموعة سامي بن عياد" : "Sami Bin Ayyad Group"}</span>
+              <span className="font-bold text-brand-orange">{ar ? "مجموعة سامي بن عياد" : "SAMI BIN AYYAD GROUP"}</span>
             </div>
             <h2 className="section-title mt-2">{ar ? "نقود التقدم عبر الصناعات" : "Driving Progress Across Industries"}</h2>
             <div className="section-intro mx-auto mt-6 leading-relaxed max-w-3xl space-y-1">
               {ar ? (
                 <p className="leading-relaxed">
-                  تجمع مجموعة سامي بن عياد قدرات أعمال متنوعة في قطاعات المقاولات، والحلول البيئية، وتصنيع المنسوجات والملابس، والمنتجات الطبيعية. ومن خلال الخبرة التشغيلية والتنفيذ القائم على الجودة والشراكات الاستراتيجية، نعمل جاهدين على خلق وتطوير قيمة دائمة ومستدامة عبر مختلف الصناعات والأسواق.
+                  تجمع <strong className="font-bold text-brand-orange">مجموعة سامي بن عياد</strong> قدرات أعمال متنوعة في قطاعات المقاولات، والحلول البيئية، وتصنيع المنسوجات والملابس، والمنتجات الطبيعية. ومن خلال الخبرة التشغيلية والتنفيذ القائم على الجودة والشراكات الاستراتيجية، نعمل جاهدين على خلق وتطوير قيمة دائمة ومستدامة عبر مختلف الصناعات والأسواق.
                 </p>
               ) : (
                 <p className="">
-                  SAMI BIN AYYAD GROUP brings together diverse business capabilities across contracting, environmental solutions, textile and garment manufacturing, and natural products. Through operational expertise, quality-driven execution, and strategic partnerships, we work to create lasting value across industries and markets.
+                  <strong className="font-bold text-brand-orange">SAMI BIN AYYAD GROUP</strong> brings together diverse business capabilities across contracting, environmental solutions, textile and garment manufacturing, and natural products. Through operational expertise, quality-driven execution, and strategic partnerships, we work to create lasting value across industries and markets.
                 </p>
               )}
             </div>
@@ -156,7 +156,13 @@ export function GroupPage() {
             <span>{ar ? "الشراكات والأسواق" : "Partnerships & Markets"}</span>
           </div>
           <h2 className="section-title">{ar ? "نربط القدرات بالفرص العالمية" : "Connecting Capabilities with Global Opportunities"}</h2>
-          <p className="section-intro mt-4">{ar ? "تطوّر مجموعة سامي بن عياد علاقات أعمال عبر قطاعات متنوعة، مع التركيز على التصنيع وتنفيذ المشروعات والتجارة الدولية والشراكات التجارية طويلة الأمد." : "SAMI BIN AYYAD GROUP develops business relationships across diverse sectors, with a focus on manufacturing, project execution, international trade, and long-term commercial partnerships."}</p>
+          <p className="section-intro mt-4">
+            {ar ? (
+              <span>تطوّر <strong className="font-bold text-brand-orange">مجموعة سامي بن عياد</strong> علاقات أعمال عبر قطاعات متنوعة، مع التركيز على التصنيع وتنفيذ المشروعات والتجارة الدولية والشراكات التجارية طويلة الأمد.</span>
+            ) : (
+              <span><strong className="font-bold text-brand-orange">SAMI BIN AYYAD GROUP</strong> develops business relationships across diverse sectors, with a focus on manufacturing, project execution, international trade, and long-term commercial partnerships.</span>
+            )}
+          </p>
         </Reveal>
         <div data-stagger className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {whoWeServe.map((audience) => (

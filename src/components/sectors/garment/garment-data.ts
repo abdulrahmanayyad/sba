@@ -1,4 +1,4 @@
-﻿import apparelImg from "@/assets/sector-apparel.jpg";
+import apparelImg from "@/assets/sector-apparel.jpg";
 
 export const garmentHeroData = {
   image: apparelImg,
@@ -129,6 +129,9 @@ export const garmentAboutData = {
       { value: "+5,000", labelEn: "Pieces Per Day", labelAr: "قطعة يوميًا", descEn: "Daily capacity across operating lines", descAr: "طاقة إنتاجية يومية عبر الخطوط التشغيلية" },
       { value: "+100,000", labelEn: "Pieces Per Month", labelAr: "قطعة شهريًا", descEn: "Total monthly production volume", descAr: "إجمالي الطاقة الإنتاجية الشهرية" },
       { value: "+15", labelEn: "Production Lines", labelAr: "خط إنتاج متخصص", descEn: "Configurable for woven & knit apparel", descAr: "مجهزة للملابس المنسوجة والتريكو" },
+      { value: "+250", labelEn: "Advanced Machines", labelAr: "ماكينة متخصصة", descEn: "Sewing and precision finishing equipment", descAr: "ماكينات خياطة وتشطيب متطورة" },
+      { value: "+400", labelEn: "Skilled Workforce", labelAr: "عامل ضمن المنظومة", descEn: "Dedicated craftsmen and operators", descAr: "كوادر فنية مدربة وحرفية عالية" },
+      { value: "30,000", labelEn: "Classic Shirts / Month", labelAr: "قميص كلاسيك شهريًا", descEn: "Dedicated classic shirt facility output", descAr: "طاقة خط القمصان الكلاسيك المتخصص" },
     ],
   },
 

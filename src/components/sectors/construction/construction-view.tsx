@@ -1,12 +1,14 @@
-﻿import { Link } from "@tanstack/react-router";
-import { ArrowRight, CheckCircle2, ChevronRight, FileText, HardHat, Layers, MessageCircle, Phone, ShieldCheck, Sparkles, Trophy, Users } from "lucide-react";
+import { Link } from "@tanstack/react-router";
+import { ArrowRight, Building, Calendar, CheckCircle2, ChevronRight, FileText, HardHat, Layers, MapPin, MessageCircle, Phone, Search, ShieldCheck, Sparkles, Trophy, Users, ZoomIn } from "lucide-react";
 import { useState } from "react";
 
 import { Reveal } from "@/components/home/reveal";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { useLanguage } from "@/i18n/language-context";
 import { WHATSAPP_URL } from "@/lib/process-steps";
 import { cn } from "@/lib/utils";
+import { highlightBrand } from "@/components/site/brand-text";
 import {
   constructionAboutData,
   constructionHeroData,
@@ -14,6 +16,7 @@ import {
   constructionSectorsData,
   constructionServicesData,
 } from "./construction-data";
+import { contractingProjectsList, type ContractingProject } from "./contracting-projects-list";
 import heroSustainable from "@/assets/hero-sustainable.png";
 
 export type ConstructionTab = "about" | "sectors" | "services" | "projects";
@@ -116,7 +119,7 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
             <h2 className="section-title mt-2">{ar ? data.partnerTitleAr : data.partnerTitle}</h2>
             <div className="section-intro mx-auto mt-6 leading-relaxed max-w-3xl space-y-4">
               {data.partnerContent.map((item, idx) => (
-                <p key={idx}>{ar ? item.ar : item.en}</p>
+                <p key={idx}>{highlightBrand(ar ? item.ar : item.en)}</p>
               ))}
             </div>
           </div>
@@ -129,11 +132,11 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
           <div className="grid gap-6 md:grid-cols-2">
             {/* Mission */}
             <div className="group relative overflow-hidden rounded-3xl border border-white/30 bg-background/70 p-8 sm:p-10 shadow-[0_12px_40px_rgba(0,0,0,0.06)] backdrop-blur-2xl transition-all duration-300 hover:scale-[1.02] hover:border-brand-green/60 hover:shadow-xl">
-              <div className="flex items-center gap-3 text-brand-green-text mb-4">
-                <div className="flex size-11 items-center justify-center rounded-2xl bg-brand-green/10 text-brand-green-text">
-                  <Sparkles className="size-5 shrink-0" />
+              <div className="mb-4">
+                <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+                  <span className="size-1.5 rounded-full bg-brand-green animate-pulse" />
+                  <span>{ar ? data.mission.titleAr : data.mission.title}</span>
                 </div>
-                <h3 className="font-head text-xl font-bold text-foreground">{ar ? data.mission.titleAr : data.mission.title}</h3>
               </div>
               <p className="text-sm sm:text-base leading-7 text-foreground/90">
                 {ar ? data.mission.bodyAr : data.mission.body}
@@ -142,11 +145,11 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
 
             {/* Vision */}
             <div className="group relative overflow-hidden rounded-3xl border border-white/30 bg-background/70 p-8 sm:p-10 shadow-[0_12px_40px_rgba(0,0,0,0.06)] backdrop-blur-2xl transition-all duration-300 hover:scale-[1.02] hover:border-brand-orange/60 hover:shadow-xl">
-              <div className="flex items-center gap-3 text-brand-orange-text mb-4">
-                <div className="flex size-11 items-center justify-center rounded-2xl bg-brand-orange/10 text-brand-orange-text">
-                  <Trophy className="size-5 shrink-0" />
+              <div className="mb-4">
+                <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+                  <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+                  <span>{ar ? data.vision.titleAr : data.vision.title}</span>
                 </div>
-                <h3 className="font-head text-xl font-bold text-foreground">{ar ? data.vision.titleAr : data.vision.title}</h3>
               </div>
               <p className="text-sm sm:text-base leading-7 text-foreground/90">
                 {ar ? data.vision.bodyAr : data.vision.body}
@@ -156,31 +159,16 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
         </Reveal>
       </section>
 
-      {/* 3. Quality Commitment — 2-column layout (Text on right in AR, Portrait Image on left in AR; reversed in EN) */}
+      {/* 3. Quality Commitment — Compact text-only box */}
       <section className="site-container">
         <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
           <Reveal>
-            <div className="grid gap-8 md:grid-cols-12 md:items-center">
-              {/* Text Column: Right in AR, Left in EN */}
-              <div className="md:col-span-7 space-y-4">
-                <SectionBadge title={ar ? "الجودة والالتزام" : "Quality Assurance"} />
-                <h2 className="section-title mt-2">{ar ? data.quality.titleAr : data.quality.title}</h2>
-                <p className="section-intro leading-relaxed text-foreground/90">
-                  {ar ? data.quality.bodyAr : data.quality.body}
-                </p>
-              </div>
-
-              {/* Portrait Image Column: Left in AR, Right in EN */}
-              <div className="md:col-span-5 flex justify-center">
-                <div className="w-full max-w-sm overflow-hidden rounded-3xl border border-border shadow-xl">
-                  <img
-                    src={heroSustainable}
-                    alt={ar ? data.quality.titleAr : data.quality.title}
-                    loading="lazy"
-                    className="aspect-[3/4] w-full object-cover transition-transform duration-700 hover:scale-105"
-                  />
-                </div>
-              </div>
+            <div className="max-w-3xl mx-auto space-y-4">
+              <SectionBadge title={ar ? "الجودة والالتزام" : "Quality Assurance"} />
+              <h2 className="section-title mt-2">{ar ? data.quality.titleAr : data.quality.title}</h2>
+              <p className="section-intro leading-relaxed text-foreground/90">
+                {ar ? data.quality.bodyAr : data.quality.body}
+              </p>
             </div>
           </Reveal>
         </div>
@@ -191,7 +179,7 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
         <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
           <Reveal>
             <div className="text-center max-w-3xl mx-auto">
-              <SectionBadge title={ar ? "لماذا سامي بن عياد للمقاولات" : "Why Choose SAMI BIN AYYAD GROUP"} />
+              <SectionBadge title={ar ? "لماذا تختارنا" : "Why Choose Us"} />
               <h2 className="section-title mt-3 text-center">{ar ? data.whyChooseUs.titleAr : data.whyChooseUs.title}</h2>
             </div>
           </Reveal>
@@ -342,7 +330,7 @@ function ConstructionServicesView({ ar }: { ar: boolean }) {
             </div>
           </Reveal>
 
-          <div className="mt-12 grid gap-8 lg:grid-cols-2">
+          <div className="mt-12 grid gap-8">
             {data.services.map((service, idx) => {
               const serviceImgs = [constructionHeroData.image, heroSustainable];
               const cardImg = serviceImgs[idx % serviceImgs.length];
@@ -400,10 +388,34 @@ function ConstructionServicesView({ ar }: { ar: boolean }) {
 /** 4. Our Projects View */
 function ConstructionProjectsView({ ar }: { ar: boolean }) {
   const data = constructionProjectsData;
-  const [activeCategory, setActiveCategory] = useState<string>("all");
+  const [selectedYear, setSelectedYear] = useState<string>("all");
+  const [selectedCategory, setSelectedCategory] = useState<string>("all");
+  const [searchQuery, setSearchQuery] = useState<string>("");
+  const [activeProject, setActiveProject] = useState<ContractingProject | null>(null);
 
-  const filteredCategories =
-    activeCategory === "all" ? data.categories : data.categories.filter((cat) => cat.id === activeCategory);
+  const years = ["all", "2023", "2021", "2020", "2019", "2018", "2016", "2015", "2014", "2013"];
+
+  const categories = [
+    { id: "all", titleEn: "All Sectors", titleAr: "جميع القطاعات" },
+    { id: "healthcare", titleEn: "Healthcare & Medical", titleAr: "المنشآت الطبية والمستشفيات" },
+    { id: "infrastructure", titleEn: "Infrastructure & Energy", titleAr: "البنية التحتية والغاز والبترول" },
+    { id: "residential", titleEn: "Residential & Compounds", titleAr: "المجمعات والفيلات السكنية" },
+    { id: "commercial", titleEn: "Commercial & Administrative", titleAr: "المراكز التجارية والإدارية" },
+  ];
+
+  const filteredProjects = contractingProjectsList.filter((proj) => {
+    if (selectedYear !== "all" && proj.year !== selectedYear) return false;
+    if (selectedCategory !== "all" && proj.category !== selectedCategory) return false;
+    if (searchQuery.trim()) {
+      const q = searchQuery.toLowerCase();
+      const matchName = proj.nameAr.toLowerCase().includes(q) || proj.nameEn.toLowerCase().includes(q);
+      const matchClient = proj.clientAr.toLowerCase().includes(q) || proj.clientEn.toLowerCase().includes(q);
+      const matchDesc = proj.descriptionAr.toLowerCase().includes(q) || proj.descriptionEn.toLowerCase().includes(q);
+      const matchLoc = proj.locationAr.toLowerCase().includes(q) || proj.locationEn.toLowerCase().includes(q);
+      if (!matchName && !matchClient && !matchDesc && !matchLoc) return false;
+    }
+    return true;
+  });
 
   return (
     <div className="w-full space-y-12">
@@ -413,7 +425,7 @@ function ConstructionProjectsView({ ar }: { ar: boolean }) {
           <Reveal>
             <div className="mb-8 text-center max-w-3xl mx-auto">
               <SectionBadge title={ar ? "مؤشرات وأرقام موثقة" : "Documented Track Record"} />
-              <h2 className="section-title mt-2">
+              <h2 className="section-title mt-2 text-lg sm:text-xl">
                 {ar ? "سجل إنجازاتنا بالأرقام والمشروعات المنفذة" : "Our Track Record in Numbers & Executed Projects"}
               </h2>
             </div>
@@ -438,75 +450,236 @@ function ConstructionProjectsView({ ar }: { ar: boolean }) {
       <section className="site-container">
         <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
           <Reveal>
-            <div className="max-w-3xl">
-              <SectionBadge title={ar ? "سجل الأعمال الموثق" : "Project Portfolio"} />
-              <h2 className="section-title mt-3">{ar ? data.titleAr : data.title}</h2>
-              <p className="section-intro mt-4">{ar ? data.subtitleAr : data.subtitle}</p>
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+              <div className="max-w-2xl">
+                <SectionBadge title={ar ? "سجل الأعمال الموثق (57 مشروعًا)" : "Project Portfolio (57 Projects)"} />
+                <h2 className="section-title mt-3">{ar ? data.titleAr : data.title}</h2>
+                <p className="section-intro mt-4">{ar ? data.subtitleAr : data.subtitle}</p>
+              </div>
+
+              {/* Search input */}
+              <div className="relative w-full md:w-72">
+                <Search className="absolute start-3 top-1/2 -translate-y-1/2 size-4 text-muted-foreground" />
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder={ar ? "ابحث بالاسم أو الجهة أو الموقع..." : "Search project, client, location..."}
+                  className="w-full rounded-full border border-border bg-background/90 ps-9 pe-4 py-2 text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand-orange/40"
+                />
+              </div>
             </div>
           </Reveal>
 
-          {/* Filter Chips */}
-          <div className="mt-8 flex flex-wrap gap-2">
-            <Button
-              variant={activeCategory === "all" ? "default" : "outline"}
-              size="sm"
-              onClick={() => setActiveCategory("all")}
-            >
-              {ar ? "جميع المشروعات" : "All Projects"}
-            </Button>
-            {data.categories.map((cat) => (
-              <Button
-                key={cat.id}
-                variant={activeCategory === cat.id ? "default" : "outline"}
-                size="sm"
-                onClick={() => setActiveCategory(cat.id)}
-              >
-                {ar ? cat.titleAr : cat.titleEn}
-              </Button>
-            ))}
+          {/* Filter Chips by Category */}
+          <div className="mt-8 space-y-4">
+            <div className="flex items-center gap-2 overflow-x-auto pb-1">
+              <span className="text-xs font-semibold text-muted-foreground shrink-0">{ar ? "القطاع:" : "Sector:"}</span>
+              {categories.map((cat) => (
+                <Button
+                  key={cat.id}
+                  variant={selectedCategory === cat.id ? "default" : "outline"}
+                  size="sm"
+                  className={cn("rounded-full text-xs shrink-0", selectedCategory === cat.id && "bg-brand-orange hover:bg-brand-orange/90 text-white")}
+                  onClick={() => setSelectedCategory(cat.id)}
+                >
+                  {ar ? cat.titleAr : cat.titleEn}
+                </Button>
+              ))}
+            </div>
+
+            {/* Filter Chips by Year */}
+            <div className="flex items-center gap-2 overflow-x-auto pb-1">
+              <span className="text-xs font-semibold text-muted-foreground shrink-0">{ar ? "السنة:" : "Year:"}</span>
+              {years.map((y) => (
+                <Button
+                  key={y}
+                  variant={selectedYear === y ? "default" : "outline"}
+                  size="sm"
+                  className={cn("rounded-full text-xs shrink-0 font-mono", selectedYear === y && "bg-brand-green hover:bg-brand-green/90 text-white")}
+                  onClick={() => setSelectedYear(y)}
+                >
+                  {y === "all" ? (ar ? "كل السنوات" : "All Years") : y}
+                </Button>
+              ))}
+            </div>
           </div>
 
-          {/* Categories and Project Cards */}
-          <div className="mt-10 space-y-12">
-            {filteredCategories.map((category) => (
-              <div key={category.id}>
-                <div className="border-b border-border pb-3">
-                  <h3 className="font-head text-xl font-bold text-foreground">{ar ? category.titleAr : category.titleEn}</h3>
-                  <p className="mt-1 text-xs text-muted-foreground">{ar ? category.descriptionAr : category.descriptionEn}</p>
-                </div>
+          {/* Result Count */}
+          <div className="mt-6 flex items-center justify-between text-xs text-muted-foreground border-b border-border/60 pb-3">
+            <span>
+              {ar
+                ? `عرض ${filteredProjects.length} مشروع من إجمالي ${contractingProjectsList.length} مشروعًا مسجلاً`
+                : `Showing ${filteredProjects.length} of ${contractingProjectsList.length} documented projects`}
+            </span>
+          </div>
 
-                <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-                  {category.projects.map((proj, pIdx) => (
-                    <Reveal key={pIdx} delay={pIdx * 0.04}>
-                      <div className="flex h-full flex-col justify-between rounded-2xl border border-white/20 bg-background/60 p-5 backdrop-blur-xl shadow-sm transition-all hover:border-brand-green/60">
-                        <div>
-                          <div className="flex items-center justify-between gap-2">
-                            <span className="rounded bg-brand-green/10 px-2 py-0.5 font-mono text-[10px] font-semibold text-brand-green-text">
-                              {proj.category}
-                            </span>
-                            {"year" in proj && proj.year && <span className="font-mono text-[11px] text-muted-foreground">{proj.year}</span>}
-                          </div>
-
-                          <h4 className="mt-3 font-head text-base font-bold text-foreground">{ar ? proj.nameAr : proj.nameEn}</h4>
-                          <p className="mt-1 text-xs font-medium text-brand-orange-text">{ar ? proj.clientAr : proj.clientEn}</p>
-                          <p className="mt-3 text-xs leading-5 text-muted-foreground">{ar ? proj.scopeAr : proj.scopeEn}</p>
-                        </div>
-
-                        {"value" in proj && proj.value && (
-                          <div className="mt-4 border-t border-border/70 pt-3 flex items-center justify-between text-xs">
-                            <span className="text-muted-foreground">{ar ? "القيمة المسجلة:" : "Contract Value:"}</span>
-                            <span className={cn("font-mono font-bold text-brand-green-text", ar ? "text-right" : "text-left")}>{ar ? ("valueAr" in proj && proj.valueAr ? proj.valueAr : proj.value) : proj.value}</span>
-                          </div>
-                        )}
+          {/* 57 Project Cards Grid */}
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {filteredProjects.map((proj, pIdx) => (
+              <Reveal key={proj.id} delay={Math.min(pIdx * 0.03, 0.3)}>
+                <div 
+                  onClick={() => setActiveProject(proj)}
+                  className="group flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-white/30 bg-background/70 shadow-sm backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-brand-orange/50 hover:shadow-xl cursor-pointer"
+                >
+                  <div>
+                    {/* Project Image */}
+                    <div className="relative aspect-[16/10] w-full overflow-hidden bg-muted/40 border-b border-border/60">
+                      <img
+                        src={proj.image}
+                        alt={ar ? proj.nameAr : proj.nameEn}
+                        loading="lazy"
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
+                      
+                      {/* Top Badges */}
+                      <div className="absolute top-3 inset-x-3 flex items-center justify-between">
+                        <span className="font-mono text-xs font-bold px-2.5 py-0.5 rounded-full bg-black/60 text-white backdrop-blur-md border border-white/20">
+                          #{String(proj.id).padStart(2, "0")}
+                        </span>
+                        <span className="font-mono text-xs font-bold px-2.5 py-0.5 rounded-full bg-brand-orange text-white shadow-sm">
+                          {proj.year}
+                        </span>
                       </div>
-                    </Reveal>
-                  ))}
+
+                      {/* Zoom icon hint */}
+                      <div className="absolute bottom-3 end-3 flex items-center gap-1 text-[11px] font-medium text-white/90 bg-black/50 px-2 py-0.5 rounded-md backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity">
+                        <ZoomIn className="size-3" />
+                        <span>{ar ? "عرض الصورة" : "Enlarge"}</span>
+                      </div>
+                    </div>
+
+                    {/* Card Content */}
+                    <div className="p-5 space-y-3">
+                      <h4 className="font-head text-base font-bold text-foreground group-hover:text-brand-orange transition-colors line-clamp-2">
+                        {ar ? proj.nameAr : proj.nameEn}
+                      </h4>
+
+                      {/* Client */}
+                      <div className="flex items-start gap-2 text-xs text-foreground/80">
+                        <Building className="size-3.5 shrink-0 text-brand-green mt-0.5" />
+                        <span className="line-clamp-1"><strong className="text-muted-foreground font-medium">{ar ? "جهة الإسناد: " : "Client: "}</strong>{ar ? proj.clientAr : proj.clientEn}</span>
+                      </div>
+
+                      {/* Location */}
+                      <div className="flex items-start gap-2 text-xs text-foreground/80">
+                        <MapPin className="size-3.5 shrink-0 text-brand-orange mt-0.5" />
+                        <span className="line-clamp-1"><strong className="text-muted-foreground font-medium">{ar ? "الموقع: " : "Location: "}</strong>{ar ? proj.locationAr : proj.locationEn}</span>
+                      </div>
+
+                      {/* Description / Scope */}
+                      <p className="text-xs leading-relaxed text-muted-foreground line-clamp-2 pt-1 border-t border-border/40">
+                        {ar ? proj.descriptionAr : proj.descriptionEn}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Card Footer: Date & Value */}
+                  <div className="border-t border-border/70 p-4 bg-muted/20 flex flex-col gap-1.5 text-xs">
+                    <div className="flex items-center justify-between text-muted-foreground text-[11px]">
+                      <span className="flex items-center gap-1">
+                        <Calendar className="size-3 text-muted-foreground" />
+                        <span>{ar ? "تاريخ التعاقد:" : "Date:"}</span>
+                      </span>
+                      <span className="font-mono">{proj.contractDate}</span>
+                    </div>
+
+                    <div className="flex items-center justify-between pt-1 border-t border-border/40">
+                      <span className="font-semibold text-foreground">{ar ? "القيمة التعاقدية:" : "Contract Value:"}</span>
+                      <span className="font-mono font-bold text-brand-orange drop-shadow-sm">
+                        {ar ? proj.valueAr : proj.valueEn}
+                      </span>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
+
+          {filteredProjects.length === 0 && (
+            <div className="mt-12 text-center py-12 border border-dashed border-border rounded-2xl">
+              <p className="text-sm font-semibold text-muted-foreground">
+                {ar ? "لا توجد مشروعات مطابقة لمعايير البحث الحالية." : "No projects match the selected criteria."}
+              </p>
+              <Button
+                variant="outline"
+                size="sm"
+                className="mt-4"
+                onClick={() => {
+                  setSelectedYear("all");
+                  setSelectedCategory("all");
+                  setSearchQuery("");
+                }}
+              >
+                {ar ? "إعادة تعيين الفلاتر" : "Reset Filters"}
+              </Button>
+            </div>
+          )}
         </div>
       </section>
+
+      {/* Full Project Detail & Image Modal Dialog */}
+      <Dialog open={!!activeProject} onOpenChange={(open) => !open && setActiveProject(null)}>
+        {activeProject && (
+          <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto p-6 rounded-3xl border border-white/30 bg-background/95 backdrop-blur-2xl shadow-2xl">
+            <DialogHeader>
+              <div className="flex items-center gap-2 mb-1">
+                <span className="font-mono text-xs font-bold px-2.5 py-0.5 rounded-full bg-brand-orange text-white">
+                  #{String(activeProject.id).padStart(2, "0")} • {activeProject.year}
+                </span>
+                <span className="text-xs font-semibold text-muted-foreground">
+                  {ar ? activeProject.contractDate : `Contract: ${activeProject.contractDate}`}
+                </span>
+              </div>
+              <DialogTitle className="font-head text-xl font-bold text-foreground">
+                {ar ? activeProject.nameAr : activeProject.nameEn}
+              </DialogTitle>
+            </DialogHeader>
+
+            <div className="mt-4 space-y-5">
+              {/* Image Preview */}
+              <div className="overflow-hidden rounded-2xl border border-border bg-black/10">
+                <img
+                  src={activeProject.image}
+                  alt={ar ? activeProject.nameAr : activeProject.nameEn}
+                  className="w-full max-h-[380px] object-contain mx-auto"
+                />
+              </div>
+
+              {/* Project Meta Details */}
+              <div className="grid gap-3 sm:grid-cols-2 rounded-2xl border border-border/80 bg-muted/30 p-4 text-xs">
+                <div>
+                  <span className="text-muted-foreground font-medium block">{ar ? "جهة الإسناد:" : "Client:"}</span>
+                  <span className="font-semibold text-foreground text-sm">{ar ? activeProject.clientAr : activeProject.clientEn}</span>
+                </div>
+                <div>
+                  <span className="text-muted-foreground font-medium block">{ar ? "موقع المشروع:" : "Location:"}</span>
+                  <span className="font-semibold text-foreground text-sm">{ar ? activeProject.locationAr : activeProject.locationEn}</span>
+                </div>
+                <div>
+                  <span className="text-muted-foreground font-medium block">{ar ? "تاريخ التعاقد:" : "Contract Date:"}</span>
+                  <span className="font-mono font-semibold text-foreground text-sm">{activeProject.contractDate}</span>
+                </div>
+                <div>
+                  <span className="text-muted-foreground font-medium block">{ar ? "القيمة التعاقدية:" : "Contract Value:"}</span>
+                  <span className="font-mono font-bold text-brand-orange text-sm">{ar ? activeProject.valueAr : activeProject.valueEn}</span>
+                </div>
+              </div>
+
+              {/* Description */}
+              <div className="space-y-1.5">
+                <h5 className="font-head text-xs font-bold uppercase tracking-wider text-muted-foreground">
+                  {ar ? "وصف ونطاق المشروع:" : "Project Scope & Description:"}
+                </h5>
+                <p className="text-sm leading-relaxed text-foreground/90 bg-card/60 p-4 rounded-xl border border-border/60">
+                  {ar ? activeProject.descriptionAr : activeProject.descriptionEn}
+                </p>
+              </div>
+            </div>
+          </DialogContent>
+        )}
+      </Dialog>
     </div>
   );
 }

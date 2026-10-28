@@ -1,8 +1,8 @@
-﻿import construction from "@/assets/sector-construction.jpg";
+import construction from "@/assets/sector-construction.jpg";
 
 export const constructionHeroData = {
   image: construction,
-  title: "Contracting, Construction & Real Estate Development",
+  title: "Contracting & Real Estate Development",
   titleAr: "المقاولات والإنشاءات والتطوير العقاري",
   subtitle: "Integrated solutions for project execution, construction, and architectural development.",
   subtitleAr: "حلول متكاملة لتنفيذ المشروعات والإنشاءات والتطوير المعماري",
@@ -82,8 +82,8 @@ export const constructionAboutData = {
     ],
   },
   deliveryProcess: {
-    title: "An Integrated Delivery Methodology Ensuring Clear Planning, Coordinated Execution, and Project Accountability",
-    titleAr: "نعتمد منهجية عمل متكاملة تضمن وضوح التخطيط، وكفاءة التنسيق، والالتزام بمسؤوليات التنفيذ في كل مشروع",
+    title: "A Delivery Methodology Ensuring Clear Planning, Coordination Efficiency, and Accountability",
+    titleAr: "منهجية عمل تضمن وضوح التخطيط، وكفاءة التنسيق، والالتزام بالمسؤوليات",
     steps: [
       {
         number: "01",
@@ -267,8 +267,8 @@ export const constructionSectorsData = {
 };
 
 export const constructionServicesData = {
-  title: "Integrated Solutions. Multiple Disciplines.",
-  titleAr: "حلول متكاملة. تخصصات متعددة.",
+  title: "Integrated Solutions, Multiple Disciplines",
+  titleAr: "حلول متكاملة، تخصصات متعددة",
   subtitle: "SAMI BIN AYYAD GROUP Contracting & Real Estate Development brings engineering discipline, reliable project management, and multidisciplinary capabilities under a single accountable umbrella.",
   subtitleAr: "تقدم شركة مجموعة سامي بن عياد للمقاولات والتطوير العقاري حلول تنفيذ متكاملة تجمع بين الانضباط الهندسي وإدارة المشروعات الدقيقة وتنوع التخصصات تحت مظلة واحدة مسؤولة.",
   services: [
@@ -396,9 +396,9 @@ export const constructionProjectsData = {
   subtitleAr: "يعكس سجل المشروعات الموثق لشركة مجموعة سامي بن عياد للمقاولات والتطوير العقاري خبرة ممتدة عبر عدة سنوات وقطاعات، مع تنوع في طبيعة الأعمال وقيمها التعاقدية من عام 2013 إلى 2024.",
   stats: [
     { value: "+57", labelEn: "Documented Projects", labelAr: "مشروعًا موثقًا بسجل الأعمال" },
-    { value: "+400.5M", labelEn: "EGP Recorded Volume", labelAr: "جنيه مصري حجم أعمال مسجل (2013-2024)" },
-    { value: "125.9M", labelEn: "EGP Peak Volume (2016)", labelAr: "جنيه مصري حجم أعمال عام 2016" },
-    { value: "86.2M", labelEn: "EGP Volume in 2023", labelAr: "جنيه مصري حجم أعمال عام 2023" },
+    { value: "+540M", labelEn: "EGP Recorded Volume", labelAr: "جنيه مصري إجمالي حجم الأعمال المسجل (2013-2024)" },
+    { value: "137M", labelEn: "EGP Peak Project Value", labelAr: "جنيه مصري قيمة أكبر مشروع منفذ" },
+    { value: "2013–2024", labelEn: "Years of Delivery", labelAr: "سنوات من التنفيذ والخبرة الميدانية" },
   ],
   categories: [
     {

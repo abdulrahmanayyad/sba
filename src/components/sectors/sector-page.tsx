@@ -1,4 +1,4 @@
-﻿import { Link } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import { ArrowRight, CheckCircle2, ChevronRight, Layers, MessageCircle, Phone, Send, Sparkles, Trophy } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -6,6 +6,7 @@ import { Reveal } from "@/components/home/reveal";
 import { useLanguage } from "@/i18n/language-context";
 import { WHATSAPP_URL } from "@/lib/process-steps";
 import { cn } from "@/lib/utils";
+import { highlightBrand } from "@/components/site/brand-text";
 import { AnimatedStatistic } from "@/components/site/animated-statistic";
 import { sectorOrder, sectorFullMenu, sectors, type SectorPageData, type SectorSlug } from "./sector-data";
 import { sectionId } from "./sector-navigation";
@@ -107,7 +108,7 @@ export function SectorPage({ sector }: { sector: SectorPageData }) {
                   <img src={sector.logo.url} alt={sector.logo.alt} className="h-6 w-auto sm:h-8" />
                 </span>
               ) : (
-                <span className="text-white/80">{ar ? sector.companyAr : sector.company}</span>
+                <span className="text-white/80">{highlightBrand(ar ? sector.companyAr : sector.company)}</span>
               )}
             </div>
 
@@ -120,7 +121,7 @@ export function SectorPage({ sector }: { sector: SectorPageData }) {
             </p>
 
             <p className="mt-4 max-w-2xl text-sm leading-7 text-footer-foreground/90 sm:text-base">
-              {intro}
+              {highlightBrand(intro)}
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">

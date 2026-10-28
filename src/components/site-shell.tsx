@@ -1,4 +1,4 @@
-﻿import { ArrowUpRight, ChevronDown, Facebook, Globe, Instagram, Linkedin, Menu, X } from "lucide-react";
+import { ArrowUpRight, ChevronDown, Facebook, Globe, Instagram, Linkedin, Menu, X } from "lucide-react";
 import { Link, useRouterState } from "@tanstack/react-router";
 
 import { SectorHeader } from "@/components/sectors/sector-header";
@@ -329,7 +329,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
               {/* Brand column */}
               <div>
                 <img src={currentLogo} alt={isArabic ? "سامي بن عياد" : "SBA"} className="h-11 w-auto" />
-                <p className="mt-5 max-w-sm text-sm font-semibold leading-6 text-foreground">{messages.footer.descriptor}</p>
+                <p className="mt-5 max-w-sm text-sm font-bold leading-6 text-brand-orange">{messages.footer.descriptor}</p>
                 <p className={cn("mt-4 font-bold text-brand-orange", isArabic ? "font-sans text-xs tracking-normal" : "font-mono text-[10px] uppercase tracking-[0.18em]")}>{messages.footer.addressLabel}</p>
                 <p className="mt-1.5 max-w-sm text-xs font-semibold leading-5 text-foreground/90">{messages.footer.address}</p>
 
@@ -366,7 +366,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
                     <div className="mt-3 flex gap-3">
                       {socialLinks.map(([name, href]) => (
                         <a key={name} href={href} target="_blank" rel="noreferrer" aria-label={name}
-                          className="inline-flex items-center justify-center rounded-full bg-foreground/10 p-1.5 text-foreground transition-all duration-200 hover:bg-brand-orange hover:text-white hover:scale-110">
+                          className="inline-flex items-center justify-center rounded-full bg-brand-green/10 p-2 text-brand-green transition-all duration-200 hover:bg-brand-orange/20 hover:text-brand-orange hover:scale-110">
                           {name === "Facebook" && <Facebook aria-hidden="true" className="size-4" />}
                           {name === "Instagram" && <Instagram aria-hidden="true" className="size-4" />}
                           {name === "LinkedIn" && <Linkedin aria-hidden="true" className="size-4" />}
@@ -380,16 +380,21 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
 
             {/* Bottom bar — Shown in both English & Arabic at the end of the footer */}
             <div className="mt-8 border-t border-white/10 pt-6">
-              <div className={cn("flex flex-col gap-1", isArabic ? "items-start text-right font-sans" : "items-start text-left font-mono")}>
-                <p className="text-xs font-semibold uppercase tracking-[0.05em] text-foreground/90">
-                  {messages.footer.registration}
-                </p>
-                <p className="text-xs font-semibold uppercase tracking-[0.05em] text-foreground/90">
-                  {messages.footer.taxNumber}
-                </p>
-                <p className="mt-1 text-xs font-medium text-foreground/80">
-                  {messages.footer.copyright}
-                </p>
+              <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4">
+                <div className={cn("flex flex-col gap-1", isArabic ? "items-start text-right font-sans" : "items-start text-left font-mono")}>
+                  <p className="text-xs font-semibold uppercase tracking-[0.05em] text-foreground/90">
+                    {messages.footer.registration}
+                  </p>
+                  <p className="text-xs font-semibold uppercase tracking-[0.05em] text-foreground/90">
+                    {messages.footer.taxNumber}
+                  </p>
+                  <p className="mt-1 text-xs font-semibold uppercase tracking-[0.05em] text-foreground/90">
+                    {messages.footer.copyright}
+                  </p>
+                </div>
+                <div className={cn("text-xs font-semibold uppercase tracking-[0.05em] text-foreground/90", isArabic ? "text-left font-sans" : "text-right font-mono")}>
+                  {isArabic ? "تم تطوير الموقع بواسطة شركة سامي بن عياد" : "Developed by Sami Bin Ayyad"}
+                </div>
               </div>
             </div>
           </div>
