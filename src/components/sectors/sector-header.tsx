@@ -91,7 +91,8 @@ export function SectorHeader({
   const navPill =
     "group relative inline-flex items-center gap-1 rounded-full px-4 py-2 text-sm font-bold tracking-wide text-foreground transition-all duration-300 hover:bg-white/40 hover:text-brand-orange hover:shadow-sm hover:backdrop-blur-md hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap";
   const navLinkStyle = navPill;
-  const mobileLinkStyle = "border-b border-border py-3 font-body text-base font-bold";
+  const mobileLinkStyle =
+    "rounded-2xl px-3.5 py-2 font-head text-sm font-bold text-foreground transition-all duration-200 hover:bg-white/40 hover:text-brand-orange hover:translate-x-1 rtl:hover:-translate-x-1 block";
 
   return (
     <>
@@ -355,206 +356,243 @@ export function SectorHeader({
             size="icon"
             className="justify-self-end xl:hidden"
             aria-label="Menu"
-            onClick={() => setMenuOpen(true)}
+            onClick={() => setMenuOpen((v) => !v)}
           >
-            <Menu aria-hidden="true" />
+            {menuOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
           </Button>
         </div>
       </header>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu — Floating curved glass dropdown */}
       {menuOpen && (
-        <AnimatedPanel
-          modal
-          onClose={() => setMenuOpen(false)}
-          className="glass-menu fixed inset-0 z-[60] flex min-h-dvh flex-col text-foreground xl:hidden"
-          role="dialog"
-          label={name}
-        >
-          <div className="site-container flex h-[76px] shrink-0 items-center justify-between border-b border-border">
-            <p className="min-w-0 pe-3 font-head text-sm font-semibold leading-snug">{name}</p>
-            <Button variant="icon" size="icon" className="shrink-0" aria-label="Close" onClick={() => setMenuOpen(false)}>
-              <X aria-hidden="true" />
-            </Button>
-          </div>
+        <>
+          {/* Subtle backdrop overlay */}
+          <div
+            className="fixed inset-0 z-40 bg-black/30 backdrop-blur-xs xl:hidden"
+            onClick={() => setMenuOpen(false)}
+            aria-hidden="true"
+          />
 
-          <div className="site-container flex flex-1 flex-col overflow-y-auto py-8">
-            <nav className="grid">
-              <Link to="/" onClick={() => setMenuOpen(false)} className={mobileLinkStyle}>
-                {home}
-              </Link>
+          <AnimatedPanel
+            modal
+            onClose={() => setMenuOpen(false)}
+            className="fixed inset-x-4 top-[74px] z-50 mx-auto max-w-sm overflow-hidden rounded-3xl border border-white/35 bg-background/90 p-5 shadow-[0_20px_50px_rgba(0,0,0,0.22)] backdrop-blur-2xl ring-1 ring-black/5 dark:border-white/15 dark:bg-background/85 xl:hidden max-h-[calc(100vh-90px)] overflow-y-auto"
+            role="dialog"
+            label={name}
+          >
+            <div className="flex flex-col space-y-4">
+              <div className="flex items-center justify-between pb-3 border-b border-border/60">
+                <p className="min-w-0 pe-2 font-head text-sm font-bold truncate text-foreground">{name}</p>
+                <Button
+                  variant="icon"
+                  size="icon"
+                  className="size-8 rounded-full hover:bg-secondary shrink-0"
+                  aria-label="Close"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  <X className="size-4" aria-hidden="true" />
+                </Button>
+              </div>
 
-              {isConstruction ? (
-                <>
-                  <Link
-                    to="/sectors/$sector"
-                    params={{ sector: "construction" }}
-                    search={{}}
-                    onClick={() => setMenuOpen(false)}
-                    className={cn(mobileLinkStyle, activeTab === "about" && "text-brand-green")}
-                  >
-                    {ar ? "نبذة عنا" : "About Us"}
-                  </Link>
-                  <Link
-                    to="/sectors/$sector"
-                    params={{ sector: "construction" }}
-                    search={{ tab: "sectors" }}
-                    onClick={() => setMenuOpen(false)}
-                    className={cn(mobileLinkStyle, activeTab === "sectors" && "text-brand-green")}
-                  >
-                    {ar ? "قطاعاتنا" : "Our Sectors"}
-                  </Link>
-                  <Link
-                    to="/sectors/$sector"
-                    params={{ sector: "construction" }}
-                    search={{ tab: "services" }}
-                    onClick={() => setMenuOpen(false)}
-                    className={cn(mobileLinkStyle, activeTab === "services" && "text-brand-green")}
-                  >
-                    {ar ? "خدماتنا" : "Our Services"}
-                  </Link>
-                  <Link
-                    to="/sectors/$sector"
-                    params={{ sector: "construction" }}
-                    search={{ tab: "projects" }}
-                    onClick={() => setMenuOpen(false)}
-                    className={cn(mobileLinkStyle, activeTab === "projects" && "text-brand-green")}
-                  >
-                    {ar ? "مشاريعنا" : "Our Projects"}
-                  </Link>
-                  <Link
-                    to="/contact"
-                    onClick={() => setMenuOpen(false)}
-                    className={mobileLinkStyle}
-                  >
-                    {ar ? "انضم إلينا" : "Join Us"}
-                  </Link>
-                </>
-              ) : isGarment ? (
-                <>
-                  <Link
-                    to="/sectors/$sector"
-                    params={{ sector: "garment" }}
-                    search={{}}
-                    onClick={() => setMenuOpen(false)}
-                    className={cn(mobileLinkStyle, activeTab === "about" && "text-brand-orange")}
-                  >
-                    {ar ? "من نحن" : "About Us"}
-                  </Link>
-                  <Link
-                    to="/sectors/$sector"
-                    params={{ sector: "garment" }}
-                    search={{ tab: "services" }}
-                    onClick={() => setMenuOpen(false)}
-                    className={cn(mobileLinkStyle, activeTab === "services" && "text-brand-orange")}
-                  >
-                    {ar ? "خدماتنا" : "Our Services"}
-                  </Link>
-                  <Link
-                    to="/sectors/$sector"
-                    params={{ sector: "garment" }}
-                    search={{ tab: "projects" }}
-                    onClick={() => setMenuOpen(false)}
-                    className={cn(mobileLinkStyle, activeTab === "projects" && "text-brand-orange")}
-                  >
-                    {ar ? "مشاريعنا" : "Our Projects"}
-                  </Link>
-                  <Link
-                    to="/sectors/$sector"
-                    params={{ sector: "garment" }}
-                    search={{ tab: "capabilities" }}
-                    onClick={() => setMenuOpen(false)}
-                    className={cn(mobileLinkStyle, activeTab === "capabilities" && "text-brand-orange")}
-                  >
-                    {ar ? "قدراتنا" : "Our Capabilities"}
-                  </Link>
-                  <Link
-                    to="/sectors/$sector"
-                    params={{ sector: "garment" }}
-                    search={{ tab: "join" }}
-                    onClick={() => setMenuOpen(false)}
-                    className={cn(mobileLinkStyle, activeTab === "join" && "text-brand-orange")}
-                  >
-                    {ar ? "انضم إلينا" : "Join Us"}
-                  </Link>
-                </>
-              ) : (
-                <>
-                  {navigation ? (
-                    <>
-                      <Button
-                        variant="ghost"
-                        size="bare"
-                        aria-expanded={aboutOpen}
-                        className="justify-between border-b border-border py-3 font-body text-base font-semibold"
-                        onClick={() => setAboutOpen((value) => !value)}
-                      >
-                        {navigation.label}
-                        <ChevronDown aria-hidden="true" className={cn("size-4 transition-transform", aboutOpen && "rotate-180")} />
-                      </Button>
-                      {aboutOpen && (
-                        <AnimatedPanel onClose={closeAbout} className="border-s border-border ps-4">
-                          {aboutLinks.map((item) => (
-                            <a
-                              key={item.title}
-                              href={`#${sectionId(item.title)}`}
-                              onClick={() => setMenuOpen(false)}
-                              className="block py-2.5 text-sm"
-                            >
-                              {item.label}
-                            </a>
-                          ))}
-                        </AnimatedPanel>
-                      )}
-                      {primaryLinks.map((item) => (
+              <nav className="flex flex-col gap-1">
+                <Link to="/" onClick={() => setMenuOpen(false)} className={mobileLinkStyle}>
+                  {home}
+                </Link>
+
+                {isConstruction ? (
+                  <>
+                    <Link
+                      to="/sectors/$sector"
+                      params={{ sector: "construction" }}
+                      search={{}}
+                      onClick={() => setMenuOpen(false)}
+                      className={cn(mobileLinkStyle, activeTab === "about" && "!text-brand-green bg-white/40")}
+                    >
+                      {ar ? "نبذة عنا" : "About Us"}
+                    </Link>
+                    <Link
+                      to="/sectors/$sector"
+                      params={{ sector: "construction" }}
+                      search={{ tab: "sectors" }}
+                      onClick={() => setMenuOpen(false)}
+                      className={cn(mobileLinkStyle, activeTab === "sectors" && "!text-brand-green bg-white/40")}
+                    >
+                      {ar ? "قطاعاتنا" : "Our Sectors"}
+                    </Link>
+                    <Link
+                      to="/sectors/$sector"
+                      params={{ sector: "construction" }}
+                      search={{ tab: "services" }}
+                      onClick={() => setMenuOpen(false)}
+                      className={cn(mobileLinkStyle, activeTab === "services" && "!text-brand-green bg-white/40")}
+                    >
+                      {ar ? "خدماتنا" : "Our Services"}
+                    </Link>
+                    <Link
+                      to="/sectors/$sector"
+                      params={{ sector: "construction" }}
+                      search={{ tab: "projects" }}
+                      onClick={() => setMenuOpen(false)}
+                      className={cn(mobileLinkStyle, activeTab === "projects" && "!text-brand-green bg-white/40")}
+                    >
+                      {ar ? "مشاريعنا" : "Our Projects"}
+                    </Link>
+                    <Link
+                      to="/contact"
+                      onClick={() => setMenuOpen(false)}
+                      className={mobileLinkStyle}
+                    >
+                      {ar ? "انضم إلينا" : "Join Us"}
+                    </Link>
+                  </>
+                ) : isGarment ? (
+                  <>
+                    <Link
+                      to="/sectors/$sector"
+                      params={{ sector: "garment" }}
+                      search={{}}
+                      onClick={() => setMenuOpen(false)}
+                      className={cn(mobileLinkStyle, activeTab === "about" && "!text-brand-orange bg-white/40")}
+                    >
+                      {ar ? "من نحن" : "About Us"}
+                    </Link>
+                    <Link
+                      to="/sectors/$sector"
+                      params={{ sector: "garment" }}
+                      search={{ tab: "services" }}
+                      onClick={() => setMenuOpen(false)}
+                      className={cn(mobileLinkStyle, activeTab === "services" && "!text-brand-orange bg-white/40")}
+                    >
+                      {ar ? "خدماتنا" : "Our Services"}
+                    </Link>
+                    <Link
+                      to="/sectors/$sector"
+                      params={{ sector: "garment" }}
+                      search={{ tab: "projects" }}
+                      onClick={() => setMenuOpen(false)}
+                      className={cn(mobileLinkStyle, activeTab === "projects" && "!text-brand-orange bg-white/40")}
+                    >
+                      {ar ? "مشاريعنا" : "Our Projects"}
+                    </Link>
+                    <Link
+                      to="/sectors/$sector"
+                      params={{ sector: "garment" }}
+                      search={{ tab: "capabilities" }}
+                      onClick={() => setMenuOpen(false)}
+                      className={cn(mobileLinkStyle, activeTab === "capabilities" && "!text-brand-orange bg-white/40")}
+                    >
+                      {ar ? "قدراتنا" : "Our Capabilities"}
+                    </Link>
+                    <Link
+                      to="/sectors/$sector"
+                      params={{ sector: "garment" }}
+                      search={{ tab: "join" }}
+                      onClick={() => setMenuOpen(false)}
+                      className={cn(mobileLinkStyle, activeTab === "join" && "!text-brand-orange bg-white/40")}
+                    >
+                      {ar ? "انضم إلينا" : "Join Us"}
+                    </Link>
+                  </>
+                ) : (
+                  <>
+                    {navigation ? (
+                      <>
+                        <Button
+                          variant="ghost"
+                          size="bare"
+                          aria-expanded={aboutOpen}
+                          className="justify-between rounded-2xl px-3.5 py-2 font-head text-sm font-bold text-foreground w-full hover:bg-white/40"
+                          onClick={() => setAboutOpen((value) => !value)}
+                        >
+                          {navigation.label}
+                          <ChevronDown aria-hidden="true" className={cn("size-4 transition-transform", aboutOpen && "rotate-180")} />
+                        </Button>
+                        {aboutOpen && (
+                          <div className="border-s-2 border-brand-orange/40 ps-3 my-1 flex flex-col gap-1">
+                            {aboutLinks.map((item) => (
+                              <a
+                                key={item.title}
+                                href={`#${sectionId(item.title)}`}
+                                onClick={() => setMenuOpen(false)}
+                                className="block rounded-xl px-3 py-1.5 text-xs font-medium text-foreground hover:bg-white/30 hover:text-brand-orange"
+                              >
+                                {item.label}
+                              </a>
+                            ))}
+                          </div>
+                        )}
+                        {primaryLinks.map((item) => (
+                          <a
+                            key={item.title}
+                            href={`#${sectionId(item.title)}`}
+                            onClick={() => setMenuOpen(false)}
+                            className={mobileLinkStyle}
+                          >
+                            {item.label}
+                          </a>
+                        ))}
+                      </>
+                    ) : (
+                      sectorFullMenu(sector).slice(0, 5).map((sec) => (
                         <a
-                          key={item.title}
-                          href={`#${sectionId(item.title)}`}
+                          key={sec.title}
+                          href={`#${sectionId(sec.title)}`}
                           onClick={() => setMenuOpen(false)}
                           className={mobileLinkStyle}
                         >
-                          {item.label}
+                          {ar ? sec.titleAr : sec.title}
                         </a>
-                      ))}
-                    </>
-                  ) : (
-                    sectorFullMenu(sector).slice(0, 5).map((sec) => (
-                      <a
-                        key={sec.title}
-                        href={`#${sectionId(sec.title)}`}
-                        onClick={() => setMenuOpen(false)}
-                        className={mobileLinkStyle}
-                      >
-                        {ar ? sec.titleAr : sec.title}
-                      </a>
-                    ))
-                  )}
-                  <Link to="/contact" onClick={() => setMenuOpen(false)} className={mobileLinkStyle}>
-                    {ar ? "انضم إلينا" : "Join Us"}
-                  </Link>
-                </>
-              )}
-            </nav>
+                      ))
+                    )}
+                    <Link to="/contact" onClick={() => setMenuOpen(false)} className={mobileLinkStyle}>
+                      {ar ? "انضم إلينا" : "Join Us"}
+                    </Link>
+                  </>
+                )}
+              </nav>
 
-            <p className="eyebrow mt-8">{ar ? "قطاعات أخرى" : "Other sectors"}</p>
-            <div className="mt-2">{others}</div>
+              {/* Other sectors */}
+              <div className="pt-2 border-t border-border/60">
+                <Button
+                  variant="ghost"
+                  size="bare"
+                  aria-expanded={othersOpen}
+                  className="flex items-center justify-between w-full px-2 py-1 text-xs font-bold text-muted-foreground uppercase tracking-wider hover:text-brand-orange"
+                  onClick={() => setOthersOpen((v) => !v)}
+                >
+                  <span>{ar ? "قطاعات أخرى" : "Other sectors"}</span>
+                  <ChevronDown className={cn("size-3.5 transition-transform", othersOpen && "rotate-180")} />
+                </Button>
+                {othersOpen && (
+                  <div className="mt-2 space-y-1">
+                    {others}
+                  </div>
+                )}
+              </div>
 
-            <div className="mt-auto space-y-4 pt-10">
-              {language}
-              <Link
-                to={isGarment ? "/sectors/garment?tab=join" : "/contact"}
-                onClick={() => setMenuOpen(false)}
-                className="group/cta flex items-center justify-center gap-2 w-full rounded-full bg-brand-green px-5 py-3 text-sm font-bold text-white transition-all duration-300 hover:bg-brand-orange shadow-md active:scale-95"
-              >
-                <span>{ar ? "تواصل معنا" : "Contact Us"}</span>
-                <ArrowUpRight className="size-4 rtl:rotate-90" />
-              </Link>
-              <Link to="/" className="inline-flex items-center gap-2 text-sm font-semibold text-brand-green-text">
-                <ArrowLeft aria-hidden="true" className="size-4 rtl:rotate-180" /> {back}
-              </Link>
+              {/* Bottom Actions: Language & Contact */}
+              <div className="pt-3 border-t border-border/60 space-y-3">
+                <div className="flex items-center justify-between px-1">
+                  <span className="text-xs font-bold text-muted-foreground">
+                    {ar ? "اللغة:" : "Language:"}
+                  </span>
+                  {language}
+                </div>
+                <Link
+                  to={isGarment ? "/sectors/garment?tab=join" : "/contact"}
+                  onClick={() => setMenuOpen(false)}
+                  className="group/cta flex items-center justify-center gap-2 w-full rounded-2xl bg-brand-green px-5 py-2.5 text-xs font-bold text-white transition-all duration-300 hover:bg-brand-orange shadow-md active:scale-95"
+                >
+                  <span>{ar ? "تواصل معنا" : "Contact Us"}</span>
+                  <ArrowUpRight className="size-3.5 rtl:rotate-90" />
+                </Link>
+                <Link to="/" onClick={() => setMenuOpen(false)} className="inline-flex items-center gap-2 text-xs font-semibold text-brand-green-text hover:underline pt-1">
+                  <ArrowLeft aria-hidden="true" className="size-3.5 rtl:rotate-180" /> {back}
+                </Link>
+              </div>
             </div>
-          </div>
-        </AnimatedPanel>
+          </AnimatedPanel>
+        </>
       )}
     </>
   );

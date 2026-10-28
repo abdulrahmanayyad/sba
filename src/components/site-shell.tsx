@@ -259,29 +259,74 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
             </div>
 
             {/* Mobile hamburger */}
-            <Button variant="icon" size="icon" className="shrink-0 justify-self-end xl:hidden" aria-label={messages.accessibility.openMenu} onClick={() => setMenuOpen(true)}>
-              <Menu aria-hidden="true" />
+            <Button
+              variant="icon"
+              size="icon"
+              className="shrink-0 justify-self-end xl:hidden"
+              aria-label={messages.accessibility.openMenu}
+              onClick={() => setMenuOpen((v) => !v)}
+            >
+              {menuOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
             </Button>
           </div>
         </header>
       )}
 
       {menuOpen && (
-        <AnimatedPanel modal onClose={() => setMenuOpen(false)} className="glass-menu fixed inset-0 z-[60] flex min-h-dvh flex-col text-foreground xl:hidden" role="dialog" label={messages.accessibility.primaryNavigation}>
-          <div className="site-container flex h-[76px] shrink-0 items-center justify-between border-b border-border">
-            <img src={currentLogo} alt={isArabic ? "سامي بن عياد" : "SBA"} className="h-10 w-auto" />
-            <Button ref={closeButtonRef} variant="icon" size="icon" aria-label={messages.accessibility.closeMenu} onClick={() => setMenuOpen(false)}><X aria-hidden="true" /></Button>
-          </div>
-          <div className="site-container flex flex-1 flex-col overflow-y-auto py-8">
-            <nav className="grid" aria-label={messages.accessibility.primaryNavigation}>
-              {primaryLinks("border-b border-border py-3 font-head text-[clamp(1.35rem,5vw,2rem)] font-medium leading-tight", () => setMenuOpen(false))}
-            </nav>
-            <div className="mt-auto space-y-6 pt-10">
-              <LanguageSwitcher language={language} onChange={selectLanguage} dropUp />
-              <Button asChild variant="primary" size="lg" className="w-full"><Link to="/contact" onClick={() => setMenuOpen(false)}>{messages.nav.contact}</Link></Button>
+        <>
+          {/* Subtle backdrop overlay */}
+          <div
+            className="fixed inset-0 z-40 bg-black/30 backdrop-blur-xs xl:hidden"
+            onClick={() => setMenuOpen(false)}
+            aria-hidden="true"
+          />
+
+          {/* Floating Curved Glass Dropdown Menu */}
+          <AnimatedPanel
+            modal
+            onClose={() => setMenuOpen(false)}
+            className="fixed inset-x-4 top-[74px] z-50 mx-auto max-w-sm overflow-hidden rounded-3xl border border-white/35 bg-background/90 p-5 shadow-[0_20px_50px_rgba(0,0,0,0.22)] backdrop-blur-2xl ring-1 ring-black/5 dark:border-white/15 dark:bg-background/85 xl:hidden max-h-[calc(100vh-90px)] overflow-y-auto"
+            role="dialog"
+            label={messages.accessibility.primaryNavigation}
+          >
+            <div className="flex flex-col space-y-4">
+              <div className="flex items-center justify-between pb-3 border-b border-border/60">
+                <img src={currentLogo} alt={isArabic ? "سامي بن عياد" : "SBA"} className="h-8 w-auto" />
+                <Button
+                  ref={closeButtonRef}
+                  variant="icon"
+                  size="icon"
+                  className="size-8 rounded-full hover:bg-secondary shrink-0"
+                  aria-label={messages.accessibility.closeMenu}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  <X className="size-4" aria-hidden="true" />
+                </Button>
+              </div>
+
+              <nav className="flex flex-col gap-1 py-1" aria-label={messages.accessibility.primaryNavigation}>
+                {primaryLinks(
+                  "rounded-2xl px-3.5 py-2 font-head text-sm font-bold text-foreground transition-all duration-200 hover:bg-white/40 hover:text-brand-orange hover:translate-x-1 rtl:hover:-translate-x-1",
+                  () => setMenuOpen(false)
+                )}
+              </nav>
+
+              <div className="pt-3 border-t border-border/60 space-y-3">
+                <div className="flex items-center justify-between px-1">
+                  <span className="text-xs font-bold text-muted-foreground">
+                    {isArabic ? "اللغة:" : "Language:"}
+                  </span>
+                  <LanguageSwitcher language={language} onChange={selectLanguage} />
+                </div>
+                <Button asChild size="lg" className="w-full rounded-2xl bg-brand-green text-white hover:bg-brand-orange font-bold shadow-md">
+                  <Link to="/contact" onClick={() => setMenuOpen(false)}>
+                    {messages.nav.contact}
+                  </Link>
+                </Button>
+              </div>
             </div>
-          </div>
-        </AnimatedPanel>
+          </AnimatedPanel>
+        </>
       )}
 
       <main id="top" className="flex min-h-[52vh] flex-1 pt-[76px]">{children}</main>
