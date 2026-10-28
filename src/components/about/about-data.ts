@@ -1,4 +1,4 @@
-export interface PillarItem {
+﻿export interface PillarItem {
   title: string;
   titleAr: string;
   body: string;
@@ -397,3 +397,5 @@ export const policiesData = {
   disclaimer: "These policies provide a general framework of guiding principles. The formal adoption, detailed implementation, and review of individual policies remain subject to the approved procedures of the Group and the relevant entities.",
   disclaimerAr: "تمثل هذه السياسات إطارًا عامًا للمبادئ التي تسترشد بها المجموعة، ويخضع اعتماد السياسات التفصيلية وتطبيقها ومراجعتها للإجراءات المعتمدة لدى المجموعة والكيانات المعنية.",
 };
+
+

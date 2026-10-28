@@ -1,4 +1,4 @@
-import apparel from "@/assets/sector-apparel.jpg";
+﻿import apparel from "@/assets/sector-apparel.jpg";
 import construction from "@/assets/sector-construction.jpg";
 import enviro from "@/assets/sector-enviro.jpg";
 import research from "@/assets/sector-research.jpg";
@@ -502,3 +502,5 @@ export const journey = [
     bodyAr: "توسيع القدرات الصناعية وخطوط الإنتاج وشراكات التصدير العالمية.",
   },
 ];
+
+

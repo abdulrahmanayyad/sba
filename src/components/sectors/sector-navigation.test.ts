@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+﻿import { describe, expect, it } from "vitest";
 import { getSectorNavigation, sectionId } from "./sector-navigation";
 import { sectorFullMenu, sectors } from "./sector-data";
 
@@ -17,3 +17,4 @@ describe("Sector navigation destinations", () => {
     });
   }
 });
+

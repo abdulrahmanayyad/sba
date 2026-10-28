@@ -1,4 +1,4 @@
-import { useEffect, useRef, type ReactNode } from "react";
+﻿import { useEffect, useRef, type ReactNode } from "react";
 import gsap from "gsap";
 
 /** A shared entrance and keyboard boundary for group, sector and language menus. */
@@ -43,3 +43,4 @@ export function AnimatedPanel({ children, className, modal = false, onClose, lab
 
   return <div ref={ref} className={className} role={role} aria-label={label} aria-modal={modal || undefined}>{children}</div>;
 }
+

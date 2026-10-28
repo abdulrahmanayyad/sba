@@ -1,4 +1,4 @@
-// Auto-generated media catalog for Garment Sector
+﻿// Auto-generated media catalog for Garment Sector
 export interface BrandClientLogo {
   id: string;
   name: string;
@@ -5829,3 +5829,5 @@ export const garmentProjectItems: ProjectShowcaseItem[] = [
     "src": "/DATA/Brands Customers/Brands Data/WOMEN/WOMEN-336.jpg"
   }
 ];
+
+

@@ -1,4 +1,4 @@
-import { Reveal } from "@/components/home/reveal";
+﻿import { Reveal } from "@/components/home/reveal";
 import { MediaFrame } from "@/components/site/section";
 import { Button } from "@/components/ui/button";
 import copy from "@/i18n/pages-en.json";
@@ -73,3 +73,5 @@ export function ManufacturePage() {
     </div>
   );
 }
+
+

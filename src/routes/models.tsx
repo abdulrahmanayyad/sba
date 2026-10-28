@@ -1,4 +1,4 @@
-import { Outlet, createFileRoute } from "@tanstack/react-router";
+﻿import { Outlet, createFileRoute } from "@tanstack/react-router";
 
 import { modelsQueryOptions } from "@/lib/models";
 
@@ -10,3 +10,5 @@ export const Route = createFileRoute("/models")({
 function ModelsLayout() {
   return <Outlet />;
 }
+
+

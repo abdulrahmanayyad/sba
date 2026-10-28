@@ -1,4 +1,4 @@
-import "@testing-library/jest-dom/vitest";
+﻿import "@testing-library/jest-dom/vitest";
 
 Object.defineProperty(window, "scrollTo", {
   writable: true,
@@ -18,3 +18,5 @@ Object.defineProperty(window, "matchMedia", {
     dispatchEvent: () => {},
   }),
 });
+
+

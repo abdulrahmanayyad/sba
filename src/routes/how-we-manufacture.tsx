@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+﻿import { createFileRoute } from "@tanstack/react-router";
 
 import { ManufacturePage } from "@/components/manufacture/manufacture-page";
 
@@ -15,3 +15,5 @@ export const Route = createFileRoute("/how-we-manufacture")({
   }),
   component: ManufacturePage,
 });
+
+

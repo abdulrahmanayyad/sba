@@ -1,4 +1,4 @@
-import { ChevronLeft, ChevronRight, Pause, Play, Sparkles } from "lucide-react";
+﻿import { ChevronLeft, ChevronRight, Pause, Play, Sparkles } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 import { Reveal } from "@/components/home/reveal";
@@ -158,3 +158,5 @@ export function FactorySlider({ ar }: { ar: boolean }) {
     </section>
   );
 }
+
+

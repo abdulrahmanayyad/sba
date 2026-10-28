@@ -1,4 +1,4 @@
-import { ArrowUpRight, ChevronDown, Facebook, Globe, Instagram, Linkedin, Menu, X } from "lucide-react";
+﻿import { ArrowUpRight, ChevronDown, Facebook, Globe, Instagram, Linkedin, Menu, X } from "lucide-react";
 import { Link, useRouterState } from "@tanstack/react-router";
 
 import { SectorHeader } from "@/components/sectors/sector-header";
@@ -399,3 +399,5 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
     </LanguageProvider>
   );
 }
+
+

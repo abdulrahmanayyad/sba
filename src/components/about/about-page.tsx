@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import {
   Award,
@@ -75,7 +75,7 @@ export function AboutPage() {
               <h1 className="section-title mt-3">
                 {ar ? whoWeAreData.titleAr : whoWeAreData.title}
               </h1>
-              <div className="mt-6 space-y-4 text-base leading-8 text-muted-foreground text-justify [text-align-last:start]">
+              <div className="mt-6 space-y-4 text-base leading-8 text-muted-foreground">
                 {whoWeAreData.paragraphs.map((p, idx) => (
                   <p key={idx}>{ar ? p.ar : p.en}</p>
                 ))}
@@ -131,7 +131,7 @@ export function AboutPage() {
           <Reveal className="mx-auto max-w-3xl text-center">
             <SectionBadge title={ar ? "ماذا نفعل" : "What We Do"} />
             <h2 className="section-title mt-3">{ar ? whatWeDoData.titleAr : whatWeDoData.title}</h2>
-            <p className="section-intro mx-auto mt-4 text-justify [text-align-last:center]">{ar ? whatWeDoData.leadAr : whatWeDoData.lead}</p>
+            <p className="section-intro mx-auto mt-4">{ar ? whatWeDoData.leadAr : whatWeDoData.lead}</p>
           </Reveal>
 
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -152,7 +152,7 @@ export function AboutPage() {
                       <h3 className="mt-5 font-head text-xl font-bold">
                         {ar ? sector.titleAr : sector.title}
                       </h3>
-                      <p className="mt-3 text-sm leading-6 text-muted-foreground text-justify [text-align-last:start]">
+                      <p className="mt-3 text-sm leading-6 text-muted-foreground">
                         {ar ? sector.bodyAr : sector.body}
                       </p>
                     </div>
@@ -173,7 +173,7 @@ export function AboutPage() {
               <h2 className="section-title mt-3">
                 {ar ? ourApproachData.titleAr : ourApproachData.title}
               </h2>
-              <div className="mt-6 space-y-4 text-base leading-7 text-muted-foreground text-justify [text-align-last:start]">
+              <div className="mt-6 space-y-4 text-base leading-7 text-muted-foreground">
                 {ourApproachData.paragraphs.map((p, idx) => (
                   <p key={idx}>{ar ? p.ar : p.en}</p>
                 ))}
@@ -190,7 +190,7 @@ export function AboutPage() {
                     <h3 className="mt-2 font-head text-lg font-bold">
                       {ar ? step.titleAr : step.title}
                     </h3>
-                    <p className="mt-2 text-sm leading-6 text-muted-foreground text-justify [text-align-last:start]">
+                    <p className="mt-2 text-sm leading-6 text-muted-foreground">
                       {ar ? step.bodyAr : step.body}
                     </p>
                   </div>
@@ -207,7 +207,7 @@ export function AboutPage() {
           <Reveal className="mx-auto max-w-3xl text-center">
             <SectionBadge title={ar ? "قيمنا" : "Our Values"} />
             <h2 className="section-title mt-3">{ar ? ourValuesData.titleAr : ourValuesData.title}</h2>
-            <p className="section-intro mx-auto mt-4 text-justify [text-align-last:center]">{ar ? ourValuesData.leadAr : ourValuesData.lead}</p>
+            <p className="section-intro mx-auto mt-4">{ar ? ourValuesData.leadAr : ourValuesData.lead}</p>
           </Reveal>
 
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -223,7 +223,7 @@ export function AboutPage() {
                       <h3 className="mt-4 font-head text-lg font-bold">
                         {ar ? item.titleAr : item.title}
                       </h3>
-                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground text-justify [text-align-last:start]">
+                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                         {ar ? item.bodyAr : item.body}
                       </p>
                     </div>
@@ -241,7 +241,7 @@ export function AboutPage() {
           <Reveal className="mx-auto max-w-3xl text-center">
             <SectionBadge title={ar ? "لماذا سامي بن عياد" : "Why Sami Bin Ayyad"} />
             <h2 className="section-title mt-3">{ar ? whySbaData.titleAr : whySbaData.title}</h2>
-            <p className="section-intro mx-auto mt-4 text-justify [text-align-last:center]">{ar ? whySbaData.leadAr : whySbaData.lead}</p>
+            <p className="section-intro mx-auto mt-4">{ar ? whySbaData.leadAr : whySbaData.lead}</p>
           </Reveal>
 
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -257,7 +257,7 @@ export function AboutPage() {
                         {ar ? pillar.titleAr : pillar.title}
                       </h3>
                     </div>
-                    <p className="mt-3 text-sm leading-6 text-muted-foreground text-justify [text-align-last:start]">
+                    <p className="mt-3 text-sm leading-6 text-muted-foreground">
                       {ar ? pillar.bodyAr : pillar.body}
                     </p>
                   </div>
@@ -271,7 +271,7 @@ export function AboutPage() {
                 <span className="inline-flex size-10 items-center justify-center rounded-xl bg-brand-green text-footer-foreground">
                   <Sparkles className="size-5" />
                 </span>
-                <p className="mt-4 font-head text-base font-bold leading-snug text-foreground sm:text-lg text-justify [text-align-last:start]">
+                <p className="mt-4 font-head text-base font-bold leading-snug text-foreground sm:text-lg">
                   {ar ? whySbaData.conclusionAr : whySbaData.conclusion}
                 </p>
                 <div className="mt-6">
@@ -294,7 +294,7 @@ export function AboutPage() {
           <Reveal className="mx-auto max-w-3xl text-center">
             <SectionBadge title={ar ? "قيادة الشركة" : "Company Leadership"} />
             <h2 className="section-title mt-3">{ar ? "قيادات تصنع الرؤية" : "The People Behind the Vision"}</h2>
-            <p className="section-intro mx-auto mt-3 text-justify [text-align-last:center]">
+            <p className="section-intro mx-auto mt-3">
               {ar
                 ? "تقود المجموعة نخبة من المؤسسين والقياديين بخبرات متراكمة في إدارة الاستثمارات والتصنيع والخدمات البيئية والتطوير الأكاديمي."
                 : "The group is led by experienced founders bringing decades of leadership across contracting, manufacturing, sustainability, and education."}
@@ -318,7 +318,7 @@ export function AboutPage() {
           <Reveal className="mx-auto max-w-3xl text-center">
             <SectionBadge title={ar ? "حوكمة الشركة" : "Company Governance"} />
             <h2 className="section-title mt-3">{ar ? governanceData.titleAr : governanceData.title}</h2>
-            <p className="section-intro mx-auto mt-4 text-justify [text-align-last:center]">{ar ? governanceData.leadAr : governanceData.lead}</p>
+            <p className="section-intro mx-auto mt-4">{ar ? governanceData.leadAr : governanceData.lead}</p>
           </Reveal>
 
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -335,7 +335,7 @@ export function AboutPage() {
                     <h3 className="mt-4 font-head text-base font-bold">
                       {ar ? principle.titleAr : principle.title}
                     </h3>
-                    <p className="mt-2 text-sm leading-6 text-muted-foreground text-justify [text-align-last:start]">
+                    <p className="mt-2 text-sm leading-6 text-muted-foreground">
                       {ar ? principle.bodyAr : principle.body}
                     </p>
                   </div>
@@ -345,7 +345,7 @@ export function AboutPage() {
           </div>
 
           <Reveal delay={0.4} className="mx-auto mt-10 max-w-3xl">
-            <div className="rounded-2xl border border-white/20 bg-background/60 p-5 text-center text-sm font-medium leading-relaxed text-muted-foreground backdrop-blur-md text-justify [text-align-last:center]">
+            <div className="rounded-2xl border border-white/20 bg-background/60 p-5 text-center text-sm font-medium leading-relaxed text-muted-foreground backdrop-blur-md">
               {ar ? governanceData.conclusionAr : governanceData.conclusion}
             </div>
           </Reveal>
@@ -358,7 +358,7 @@ export function AboutPage() {
           <Reveal className="mx-auto max-w-3xl text-center">
             <SectionBadge title={ar ? "سياسات المجموعة" : "Group Policies"} />
             <h2 className="section-title mt-3">{ar ? policiesData.titleAr : policiesData.title}</h2>
-            <p className="section-intro mx-auto mt-4 text-justify [text-align-last:center]">{ar ? policiesData.leadAr : policiesData.lead}</p>
+            <p className="section-intro mx-auto mt-4">{ar ? policiesData.leadAr : policiesData.lead}</p>
           </Reveal>
 
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -374,7 +374,7 @@ export function AboutPage() {
                         {ar ? policy.titleAr : policy.title}
                       </h3>
                     </div>
-                    <p className="mt-3 text-sm leading-6 text-muted-foreground text-justify [text-align-last:start]">
+                    <p className="mt-3 text-sm leading-6 text-muted-foreground">
                       {ar ? policy.bodyAr : policy.body}
                     </p>
                   </div>
@@ -440,7 +440,7 @@ function LeaderCard({
 
         {/* Bio area with See More toggle */}
         <div className="border-t border-border/50 pt-3">
-          <p className="text-sm leading-relaxed text-muted-foreground transition-all duration-300 text-justify [text-align-last:start]">
+          <p className="text-sm leading-relaxed text-muted-foreground transition-all duration-300">
             {expanded ? bio : shortBio}
           </p>
           {isLong && (
@@ -458,3 +458,5 @@ function LeaderCard({
     </div>
   );
 }
+
+

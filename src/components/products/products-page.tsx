@@ -14,20 +14,20 @@ export type ProductLine = "b2c" | "b2b";
 type Season = "summer" | "winter";
 
 const lineInfo: Record<ProductLine, { en: string; ar: string }> = {
-  b2c: { en: "B2C Brand — Children & youth fashion label", ar: "علامة B2C — خط أزياء الأطفال والشباب" },
-  b2b: { en: "B2B Brand — Fashion Categories & Commercial Lines", ar: "علامة B2B — تصنيفات الأزياء والخطوط التجارية" },
+  b2c: { en: "B2C Brand � Children & youth fashion label", ar: "����� B2C � �� ����� ������� �������" },
+  b2b: { en: "B2B Brand � Fashion Categories & Commercial Lines", ar: "����� B2B � ������� ������� ������� ��������" },
 };
 
 const subcategoryLabels: Record<string, { en: string; ar: string }> = {
-  "Cotton Sets": { en: "Cotton Sets", ar: "أطقم قطنية" },
-  "Jeans Sets": { en: "Jeans Sets", ar: "أطقم جينز" },
-  "Jumpsuite": { en: "Jumpsuit", ar: "جمبسوت" },
-  "Long Suites": { en: "Long Suits", ar: "أطقم طويلة" },
-  "Short Suites": { en: "Short Suits", ar: "أطقم قصيرة" },
-  "Shirts & Blouses": { en: "Shirts & Blouses", ar: "قمصان وبلوزات" },
-  "Blouses": { en: "Blouses", ar: "بلوزات" },
-  "Suites": { en: "Suits", ar: "أطقم" },
-  "T-Shirts": { en: "T-Shirts", ar: "تي شيرت" },
+  "Cotton Sets": { en: "Cotton Sets", ar: "���� �����" },
+  "Jeans Sets": { en: "Jeans Sets", ar: "���� ����" },
+  "Jumpsuite": { en: "Jumpsuit", ar: "������" },
+  "Long Suites": { en: "Long Suits", ar: "���� �����" },
+  "Short Suites": { en: "Short Suits", ar: "���� �����" },
+  "Shirts & Blouses": { en: "Shirts & Blouses", ar: "����� �������" },
+  "Blouses": { en: "Blouses", ar: "������" },
+  "Suites": { en: "Suits", ar: "����" },
+  "T-Shirts": { en: "T-Shirts", ar: "�� ����" },
 };
 
 const PAGE_SIZE = 24;
@@ -39,29 +39,29 @@ type SeasonData = {
 
 const seasons: Record<Season, SeasonData> = {
   summer: {
-    titleEn: "Summer Collection", titleAr: "مجموعة الصيف",
+    titleEn: "Summer Collection", titleAr: "������ �����",
     bodyEn: "Breathable cotton and linen pieces, cut for play and built to last through warm days.",
-    bodyAr: "قطع قطنية وكتانية خفيفة، مصممة للراحة ومتحمّلة لأيام الصيف.",
+    bodyAr: "��� ����� ������� ����ɡ ����� ������ �������� ����� �����.",
     categories: [
-      { key: "casual", en: "Casual", ar: "كاجوال", fitEn: "Boys & Girls", fitAr: "أولاد وبنات",
+      { key: "casual", en: "Casual", ar: "������", fitEn: "Boys & Girls", fitAr: "����� �����",
         bodyEn: "Everyday sets: tees, shirts, shorts and lightweight layers.",
-        bodyAr: "أطقم يومية: تي شيرتات وقمصان وشورتات وطبقات خفيفة." },
-      { key: "dresses", en: "Dresses", ar: "فساتين", fitEn: "Girls", fitAr: "بنات",
+        bodyAr: "���� �����: �� ������ ������ ������� ������ �����." },
+      { key: "dresses", en: "Dresses", ar: "������", fitEn: "Girls", fitAr: "����",
         bodyEn: "Sundresses and day dresses in soft, breathable fabrics.",
-        bodyAr: "فساتين صيفية ونهارية بأقمشة ناعمة وقابلة للتهوية." },
+        bodyAr: "������ ����� ������� ������ ����� ������ �������." },
     ],
   },
   winter: {
-    titleEn: "Winter Collection", titleAr: "مجموعة الشتاء",
+    titleEn: "Winter Collection", titleAr: "������ ������",
     bodyEn: "Knits, corduroy and warm layering pieces in deep, grounded colours.",
-    bodyAr: "تريكو وكوردروي وطبقات دافئة بألوان عميقة وهادئة.",
+    bodyAr: "����� �������� ������ ����� ������ ����� ������.",
     categories: [
-      { key: "casual", en: "Casual", ar: "كاجوال", fitEn: "Boys & Girls", fitAr: "أولاد وبنات",
+      { key: "casual", en: "Casual", ar: "������", fitEn: "Boys & Girls", fitAr: "����� �����",
         bodyEn: "Sweaters, jeans, jackets and everyday winter staples.",
-        bodyAr: "كنزات وجينزات وجاكيتات وأساسيات الشتاء اليومية." },
-      { key: "dresses", en: "Dresses", ar: "فساتين", fitEn: "Girls", fitAr: "بنات",
+        bodyAr: "����� ������� �������� �������� ������ �������." },
+      { key: "dresses", en: "Dresses", ar: "������", fitEn: "Girls", fitAr: "����",
         bodyEn: "Long-sleeve and knit dresses made for cooler days.",
-        bodyAr: "فساتين بأكمام طويلة وتريكو مصممة للأيام الباردة." },
+        bodyAr: "������ ������ ����� ������ ����� ������ �������." },
     ],
   },
 };
@@ -71,30 +71,30 @@ interface B2BCategory { key: string; labelEn: string; labelAr: string; descEn: s
 
 const b2bCategories: B2BCategory[] = [
   {
-    key: "homewear", labelEn: "Home Wear", labelAr: "ملابس المنزل",
-    descEn: "Comfortable and stylish home wear collections for all ages — loungewear, sets, and relaxed styles.",
-    descAr: "تشكيلات ملابس المنزل المريحة والأنيقة لجميع الأعمار — لاونج وير، أطقم، وتصاميم عصرية.",
+    key: "homewear", labelEn: "Home Wear", labelAr: "����� ������",
+    descEn: "Comfortable and stylish home wear collections for all ages � loungewear, sets, and relaxed styles.",
+    descAr: "������� ����� ������ ������� �������� ����� ������� � ����� ��ѡ ���� ������� �����.",
     folder: "Home Wear",
     images: ["2003 (1).jpg","2009 (3).jpg","2019 (1).jpg","2027 (2).jpg","2028 (1).jpg","2028 (2).jpg","2031 (2).jpg","2031 (3).jpg","2032 (1).jpg","2032 (4).jpg","2033 (1).jpg","2034 (2).jpg","2040 (1).jpg","2040 (3).jpg","2041 (1).jpg","2041 (4).jpg","2045 (1).jpg","2046 (2).jpg","2047 (3).jpg","2049 (2).jpg","2050 (1).jpg","2051 (1).jpg","2053 (3).jpg","2054 (1).jpg","2054 (2).jpg","2056 (2).jpg","2058 (2).jpg","2059 (2).jpg","2060 (1).jpg","2066 (1).jpg","2066 (3).jpg","2070 (1).jpg","2070 (2).jpg","2078 (1).jpg","2079 (1).jpg","2106 (1).jpg"],
   },
   {
-    key: "kids", labelEn: "Kids", labelAr: "ملابس الأطفال",
-    descEn: "Children's fashion across all ages — sets, dresses, casual wear, and occasion outfits.",
-    descAr: "أزياء الأطفال لجميع الأعمار — أطقم وفساتين وملابس كاجوال وملابس مناسبات.",
+    key: "kids", labelEn: "Kids", labelAr: "����� �������",
+    descEn: "Children's fashion across all ages � sets, dresses, casual wear, and occasion outfits.",
+    descAr: "����� ������� ����� ������� � ���� ������� ������ ������ ������ �������.",
     folder: "Kids",
     images: ["001.jpg","001 (2).jpg","001 (3).jpg","002.jpg","002 (2).jpg","002 (3).jpg","003.jpg","003 (2).jpg","003 (3).jpg","004.jpg","004 (2).jpg","009.jpg","010.jpg","010 (2).jpg","010 (3).jpg","011.jpg","011 (2).jpg","011 (3).jpg","012.jpg","012 (2).jpg","013.jpg","013 (2).jpg","014.jpg","014 (2).jpg","015.jpg","015 (2).jpg","015 (3).jpg","106 (1).jpg","106 (2).jpg","106 (3).jpg","107.jpg","107 (2).jpg","107 (3).jpg","108.jpg","108 (2).jpg","108 (3).jpg"],
   },
   {
-    key: "lingerie", labelEn: "Lingerie", labelAr: "لانجري",
+    key: "lingerie", labelEn: "Lingerie", labelAr: "������",
     descEn: "Elegant lingerie and intimate wear collections crafted with premium fabrics and delicate finishing.",
-    descAr: "تشكيلات لانجري أنيقة مصنوعة من أقمشة فاخرة وتشطيبات راقية.",
+    descAr: "������� ������ ����� ������ �� ����� ����� �������� �����.",
     folder: "Lingerie",
     images: ["1001.jpeg","1005.jpeg","1007.jpeg","1010.jpeg","1015.jpeg","1019.jpeg","1022.jpeg","1023.jpeg","1026 (1).jpeg","1026 (2).jpeg","1026 (3).jpeg","1027 (1).jpeg","1027 (2).jpeg","1027 (3).jpeg","1028 (1).jpeg","1028 (2).jpeg","1028 (3).jpeg","1029 (1).jpeg","1029 (2).jpeg","1029 (3).jpeg","1030 (1).jpeg","1030 (2).jpeg","1030 (3).jpeg","1036 (1).jpg","1036 (2).jpg","1036 (3).jpg","1036 (4).jpg","1038.jpg","1039.jpg","1040.jpg","1041 (1).jpg","1041 (2).jpg","1041 (3).jpg","1042 (1).jpg","1042 (2).jpg","1044 (1).jpg"],
   },
   {
-    key: "soiree", labelEn: "Soiree", labelAr: "سواريه",
-    descEn: "Glamorous evening and occasion wear — evening gowns, formal dresses, and special occasion collections.",
-    descAr: "ملابس السهرة والمناسبات الفاخرة — فساتين سهرة، ملابس رسمية، وتشكيلات المناسبات الخاصة.",
+    key: "soiree", labelEn: "Soiree", labelAr: "������",
+    descEn: "Glamorous evening and occasion wear � evening gowns, formal dresses, and special occasion collections.",
+    descAr: "����� ������ ���������� ������� � ������ ���ɡ ����� ����ɡ �������� ��������� ������.",
     folder: "Soiree",
     images: ["001(1).jpg","001(2).jpg","001 (3).jpg","001 (4).jpg","001 (5).jpg","002(1).jpg","002(2).jpg","002(3).jpg","002 (1).jpg","002 (4).jpg","007(1).jpg","007(2).jpg","007(3).jpg","007(4).jpg","007(5).jpg","007(6).jpg","008(1).jpg","008(2).jpg","008(3).jpg","008 (2).jpg","008 (3).jpg","008 (4).jpg","009(1).jpg","009(2).jpg","009(3).jpg","009(4).jpg","009(5).jpg","010(1).jpg","010(2).jpg","010(3).jpg","011(1).jpg","011(2).jpg","011(3).jpg","015(1).jpg","015(2).jpg","015(3).jpg"],
   },
@@ -148,7 +148,7 @@ function B2BShowcase({ ar }: { ar: boolean }) {
         </div>
       </Reveal>
 
-      {/* Photo grid — uniform 3:4 */}
+      {/* Photo grid � uniform 3:4 */}
       <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {visible.map((filename, idx) => {
           const encodedFolder = encodeURIComponent(current.folder);
@@ -171,7 +171,7 @@ function B2BShowcase({ ar }: { ar: boolean }) {
                 <div className="mt-3 border-t border-border/50 pt-3">
                   <Link to="/contact" search={{ model: modelCode }}
                     className="inline-flex items-center gap-1 text-xs font-semibold text-brand-green-text underline-offset-4 hover:underline">
-                    {ar ? "طلب استفسار" : "Request Inquiry"}
+                    {ar ? "��� �������" : "Request Inquiry"}
                     <ArrowRight className="size-3 rtl:rotate-180" />
                   </Link>
                 </div>
@@ -184,14 +184,14 @@ function B2BShowcase({ ar }: { ar: boolean }) {
       {totalPages > 1 && (
         <div className="flex flex-wrap items-center justify-center gap-2">
           <Button variant="ghost" size="sm" disabled={page === 0} onClick={() => setPage((p) => Math.max(0, p - 1))}>
-            <ChevronLeft className="size-4" />{ar ? "السابق" : "Prev"}
+            <ChevronLeft className="size-4" />{ar ? "������" : "Prev"}
           </Button>
           {Array.from({ length: Math.min(totalPages, 8) }, (_, i) => (
             <Button key={i} variant={page === i ? "default" : "ghost"} size="sm" className="h-8 w-8 p-0" onClick={() => setPage(i)}>{i + 1}</Button>
           ))}
-          {totalPages > 8 && <span className="px-1 text-sm text-muted-foreground">…</span>}
+          {totalPages > 8 && <span className="px-1 text-sm text-muted-foreground">�</span>}
           <Button variant="ghost" size="sm" disabled={page === totalPages - 1} onClick={() => setPage((p) => Math.min(totalPages - 1, p + 1))}>
-            {ar ? "التالي" : "Next"}<ChevronRight className="size-4" />
+            {ar ? "������" : "Next"}<ChevronRight className="size-4" />
           </Button>
         </div>
       )}
@@ -199,14 +199,14 @@ function B2BShowcase({ ar }: { ar: boolean }) {
       <Reveal>
         <div className="rounded-3xl border border-white/20 bg-background/80 p-6 text-center shadow-lg backdrop-blur-xl">
           <p className="font-head text-lg font-semibold text-foreground">
-            {ar ? "هل تبحث عن تشغيل تجاري بالجملة؟" : "Looking for commercial wholesale production?"}
+            {ar ? "�� ���� �� ����� ����� ������ɿ" : "Looking for commercial wholesale production?"}
           </p>
           <p className="mt-2 text-sm text-muted-foreground">
-            {ar ? "تواصل معنا لمناقشة الطلبيات بالجملة، الموديلات المخصصة، وبرامج Private Label."
+            {ar ? "����� ���� ������� �������� ������ɡ ��������� ������ɡ ������ Private Label."
               : "Contact us to discuss wholesale orders, custom models, and Private Label programs."}
           </p>
           <Button asChild variant="primary" size="lg" className="mt-5">
-            <Link to="/contact">{ar ? "تواصل معنا" : "Get in Touch"} <ArrowRight className="size-4 rtl:rotate-180" /></Link>
+            <Link to="/contact">{ar ? "����� ����" : "Get in Touch"} <ArrowRight className="size-4 rtl:rotate-180" /></Link>
           </Button>
         </div>
       </Reveal>
@@ -227,10 +227,10 @@ function PhotoGrid({ photos, ar }: { photos: JzraPhoto[]; ar: boolean }) {
         {visible.map((photo, idx) => {
           const subLabel = photo.subcategory && subcategoryLabels[photo.subcategory]
             ? (ar ? subcategoryLabels[photo.subcategory]!.ar : subcategoryLabels[photo.subcategory]!.en)
-            : photo.category === "dresses" ? (ar ? "فستان صيفي للأطفال" : "Children's Summer Dress") : (ar ? "طقم كاجوال للأطفال" : "Kids Casual Set");
-          const audLabel = photo.audiences.map((a) => (a === "boys" ? (ar ? "أولاد" : "Boys") : (ar ? "بنات" : "Girls"))).join(ar ? " و" : " & ");
-          const ageLabel = photo.ages.join(", ") + (ar ? " سنة" : "Y");
-          const desc = ar ? `${audLabel} · الأعمار: ${ageLabel} · أقمشة قطنية مريحة عالية الجودة` : `${audLabel} · Ages: ${ageLabel} · Premium breathable cotton fabric`;
+            : photo.category === "dresses" ? (ar ? "����� ���� �������" : "Children's Summer Dress") : (ar ? "��� ������ �������" : "Kids Casual Set");
+          const audLabel = photo.audiences.map((a) => (a === "boys" ? (ar ? "�����" : "Boys") : (ar ? "����" : "Girls"))).join(ar ? " �" : " & ");
+          const ageLabel = photo.ages.join(", ") + (ar ? " ���" : "Y");
+          const desc = ar ? `${audLabel} � �������: ${ageLabel} � ����� ����� ����� ����� ������` : `${audLabel} � Ages: ${ageLabel} � Premium breathable cotton fabric`;
           const modelCode = `B2C-${photo.season.slice(0, 1).toUpperCase()}${String(idx + 1).padStart(3, "0")}`;
           const variant = cardVariants[idx % cardVariants.length]!;
           return (
@@ -245,7 +245,7 @@ function PhotoGrid({ photos, ar }: { photos: JzraPhoto[]; ar: boolean }) {
                 <h3 className="font-head font-semibold leading-snug">{subLabel}</h3>
                 <p className="mt-1 flex-1 text-sm text-muted-foreground">{desc}</p>
                 <div className="mt-4 flex items-center justify-between gap-3 border-t border-border/50 pt-3">
-                  <Link to="/contact" search={{ model: modelCode }} className="text-sm font-medium text-brand-green-text underline-offset-4 hover:underline">{ar ? "طلب استفسار" : "Request Inquiry"}</Link>
+                  <Link to="/contact" search={{ model: modelCode }} className="text-sm font-medium text-brand-green-text underline-offset-4 hover:underline">{ar ? "��� �������" : "Request Inquiry"}</Link>
                 </div>
               </div>
             </div>
@@ -254,10 +254,10 @@ function PhotoGrid({ photos, ar }: { photos: JzraPhoto[]; ar: boolean }) {
       </div>
       {totalPages > 1 && (
         <div className="mt-6 flex flex-wrap items-center justify-center gap-2">
-          <Button variant="ghost" size="sm" disabled={page === 0} onClick={() => setPage((p) => Math.max(0, p - 1))}><ChevronLeft className="size-4" />{ar ? "السابق" : "Prev"}</Button>
+          <Button variant="ghost" size="sm" disabled={page === 0} onClick={() => setPage((p) => Math.max(0, p - 1))}><ChevronLeft className="size-4" />{ar ? "������" : "Prev"}</Button>
           {Array.from({ length: Math.min(totalPages, 10) }, (_, i) => (<Button key={i} variant={page === i ? "default" : "ghost"} size="sm" className="h-8 w-8 p-0" onClick={() => setPage(i)}>{i + 1}</Button>))}
-          {totalPages > 10 && <span className="px-1 text-sm text-muted-foreground">…</span>}
-          <Button variant="ghost" size="sm" disabled={page === totalPages - 1} onClick={() => setPage((p) => Math.min(totalPages - 1, p + 1))}>{ar ? "التالي" : "Next"}<ChevronRight className="size-4" /></Button>
+          {totalPages > 10 && <span className="px-1 text-sm text-muted-foreground">�</span>}
+          <Button variant="ghost" size="sm" disabled={page === totalPages - 1} onClick={() => setPage((p) => Math.min(totalPages - 1, p + 1))}>{ar ? "������" : "Next"}<ChevronRight className="size-4" /></Button>
         </div>
       )}
     </div>
@@ -283,7 +283,7 @@ export function ProductsPage({ line }: { line: ProductLine }) {
     <div className="w-full">
       <section className="site-container section-band">
         <Reveal>
-          <p className="eyebrow">{ar ? "منتجاتنا" : "Our Products"}</p>
+          <p className="eyebrow">{ar ? "��������" : "Our Products"}</p>
           <h1 className="section-title mt-3">{ar ? active.ar : active.en}</h1>
         </Reveal>
         {line === "b2c" ? (
@@ -293,13 +293,13 @@ export function ProductsPage({ line }: { line: ProductLine }) {
                 <h2 className="font-head text-2xl font-semibold sm:text-3xl">{ar ? s.titleAr : s.titleEn}</h2>
                 <p className="mt-2 text-sm text-muted-foreground sm:text-base">{ar ? s.bodyAr : s.bodyEn}</p>
               </div>
-              <div className="inline-flex w-full rounded-full border border-border p-1 sm:w-auto" role="group" aria-label={ar ? "الموسم" : "Season"}>
+              <div className="inline-flex w-full rounded-full border border-border p-1 sm:w-auto" role="group" aria-label={ar ? "������" : "Season"}>
                 {(["summer", "winter"] as Season[]).map((key) => (
                   <Button key={key} variant={season === key ? "default" : "ghost"} type="button" aria-pressed={season === key}
                     onClick={() => { setSeason(key); setSubcategory("all"); }}
                     className={cn("inline-flex flex-1 items-center justify-center gap-2 rounded-full px-4 py-2.5 text-sm transition-colors sm:flex-none sm:px-5", season === key ? "bg-primary text-primary-foreground" : "hover:bg-secondary")}>
                     {key === "summer" ? <Sun className="size-4" /> : <Snowflake className="size-4" />}
-                    {key === "summer" ? (ar ? "صيف" : "Summer") : (ar ? "شتاء" : "Winter")}
+                    {key === "summer" ? (ar ? "���" : "Summer") : (ar ? "����" : "Winter")}
                   </Button>
                 ))}
               </div>
@@ -338,11 +338,11 @@ export function ProductsPage({ line }: { line: ProductLine }) {
               </div>
               {availableSubcategories.length > 0 && (
                 <div>
-                  <label id="b2c-sub-label" className="mb-2 block text-sm font-semibold">{ar ? "النوع" : "Type"}</label>
+                  <label id="b2c-sub-label" className="mb-2 block text-sm font-semibold">{ar ? "�����" : "Type"}</label>
                   <Select value={subcategory} onValueChange={setSubcategory} dir={ar ? "rtl" : "ltr"}>
                     <SelectTrigger aria-labelledby="b2c-sub-label" className="h-11 rounded-full px-4 shadow-none"><SelectValue /></SelectTrigger>
                     <SelectContent className="rounded-none">
-                      <SelectItem value="all">{ar ? "الكل" : "All types"}</SelectItem>
+                      <SelectItem value="all">{ar ? "����" : "All types"}</SelectItem>
                       {availableSubcategories.map((sub) => (<SelectItem key={sub} value={sub}>{subcategoryLabels[sub] ? (ar ? subcategoryLabels[sub].ar : subcategoryLabels[sub].en) : sub}</SelectItem>))}
                     </SelectContent>
                   </Select>
@@ -364,7 +364,7 @@ export function ProductsPage({ line }: { line: ProductLine }) {
               </div>
             )}
             <Button asChild className="mt-8 w-full sm:mt-10 sm:w-auto">
-              <Link to="/models">{ar ? "استعرض كل الموديلات" : "Browse all models"} <ArrowRight className="size-4 rtl:rotate-180" /></Link>
+              <Link to="/models">{ar ? "������ �� ���������" : "Browse all models"} <ArrowRight className="size-4 rtl:rotate-180" /></Link>
             </Button>
           </div>
         ) : (
@@ -378,3 +378,4 @@ export function ProductsPage({ line }: { line: ProductLine }) {
 function uniquePhotosCount(photos: JzraPhoto[]) {
   return new Set(photos.map((p) => p.image)).size;
 }
+

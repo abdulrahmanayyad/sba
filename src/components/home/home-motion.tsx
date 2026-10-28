@@ -1,4 +1,4 @@
-import { useEffect, useRef, type ReactNode, type PointerEvent } from "react";
+﻿import { useEffect, useRef, type ReactNode, type PointerEvent } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -113,3 +113,4 @@ export function ProcessContent({ children, step }: { children: ReactNode; step: 
   }, [step]);
   return <div ref={root} aria-live="polite">{children}</div>;
 }
+

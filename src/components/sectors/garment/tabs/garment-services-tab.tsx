@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+﻿import { Link } from "@tanstack/react-router";
 import { ArrowRight, CheckCircle2, ChevronRight, Layers, Sparkles, Workflow } from "lucide-react";
 
 import { Reveal } from "@/components/home/reveal";
@@ -34,7 +34,7 @@ export function GarmentServicesTab() {
             <h2 className="section-title mt-3">
               {ar ? "حلول تصنيع متكاملة تناسب كل نموذج عمل" : "Tailored Manufacturing Solutions for Every Business Model"}
             </h2>
-            <p className="section-intro mt-4 text-justify [text-align-last:start]">
+            <p className="section-intro mt-4">
               {ar
                 ? "سواء كنت بحاجة إلى تصنيع متكامل بنظام Private Label أو برامج FOB شاملة من الأقمشة وحتى الميناء، أو تصنيع تعاقدي دقيق، نوفر لك المنظومة الصناعية المتكاملة التي تدعم نجاح علامتك التجارية."
                 : "Whether you need full Private Label execution, turnkey FOB management from raw fabric to export port, or precision OEM production, we offer the complete manufacturing ecosystem to scale your brand."}
@@ -78,7 +78,7 @@ export function GarmentServicesTab() {
                         {ar ? service.taglineAr : service.taglineEn}
                       </p>
 
-                      <p className="mt-4 text-sm leading-relaxed text-muted-foreground text-justify [text-align-last:start]">
+                      <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
                         {ar ? service.descriptionAr : service.descriptionEn}
                       </p>
 
@@ -115,3 +115,5 @@ export function GarmentServicesTab() {
     </div>
   );
 }
+
+

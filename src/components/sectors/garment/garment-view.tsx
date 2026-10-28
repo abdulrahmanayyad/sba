@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+﻿import { Link } from "@tanstack/react-router";
 import { 
   Building2, 
   ChevronRight, 
@@ -141,3 +141,5 @@ export function GarmentSectorView({ tab = "about" }: GarmentViewProps) {
     </div>
   );
 }
+
+

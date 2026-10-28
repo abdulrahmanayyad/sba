@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+﻿import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 
 import apparel from "@/assets/sector-apparel.jpg";
@@ -51,3 +51,5 @@ export function BrandsPage() {
     </div>
   );
 }
+
+

@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+﻿import { cn } from "@/lib/utils";
 
 import { Reveal } from "@/components/home/reveal";
 
@@ -22,3 +22,5 @@ export const fieldClass =
   "w-full rounded-none border border-border bg-background px-4 py-3 font-body text-sm text-foreground placeholder:text-muted-foreground focus:border-foreground focus:outline-none";
 
 export const labelClass = "block font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground";
+
+

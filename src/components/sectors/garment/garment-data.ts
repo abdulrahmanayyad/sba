@@ -1,4 +1,4 @@
-import apparelImg from "@/assets/sector-apparel.jpg";
+﻿import apparelImg from "@/assets/sector-apparel.jpg";
 
 export const garmentHeroData = {
   image: apparelImg,
@@ -400,3 +400,5 @@ export const garmentProcessSteps = [
   { step: "09", titleEn: "Finishing & Packaging", titleAr: "التشطيب والتعبئة", descEn: "Ironing, tagging, barcode application, folding, and carton packing.", descAr: "الكي بالبخار، تركيب الملصقات والباركود، والتعبئة الفردية والكرتونية." },
   { step: "10", titleEn: "Export Preparation", titleAr: "التجهيز للتصدير", descEn: "Palletization, customs compliance, and port handover logistics.", descAr: "تجهيز الشحنات ومستندات التصدير والشحن الدولي وفق الاتفاق." },
 ];
+
+

@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+﻿import { createFileRoute } from "@tanstack/react-router";
 import { GroupPage } from "@/components/group/group-page";
 
 export const Route = createFileRoute("/")({
@@ -14,3 +14,5 @@ export const Route = createFileRoute("/")({
   }),
   component: GroupPage,
 });
+
+

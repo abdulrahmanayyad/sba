@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+﻿import { createFileRoute } from "@tanstack/react-router";
 
 import { PartnersPage } from "@/components/partners/partners-page";
 
@@ -15,3 +15,5 @@ export const Route = createFileRoute("/partners")({
   }),
   component: PartnersPage,
 });
+
+

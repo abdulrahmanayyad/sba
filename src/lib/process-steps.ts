@@ -1,4 +1,4 @@
-export const processSteps = [
+﻿export const processSteps = [
   ["Product Brief", "We review the product concept, technical requirements, target market and commercial specifications."],
   ["Fabric & Materials", "Materials are sourced or developed for composition, weight, construction, color and performance."],
   ["Pattern & Development", "Patterns, measurements and construction details are prepared to the approved requirements."],
@@ -13,3 +13,5 @@ export const processSteps = [
 
 export const WHATSAPP_URL = "https://wa.me/201222238072";
 export const CONTACT_EMAIL = "info@sami-trade.com";
+
+

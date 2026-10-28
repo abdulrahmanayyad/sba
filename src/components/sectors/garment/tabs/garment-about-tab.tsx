@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+﻿import { Link } from "@tanstack/react-router";
 import { 
   Building2, 
   CheckCircle2, 
@@ -62,10 +62,10 @@ export function GarmentAboutTab() {
 
             <div className="mt-8 grid gap-8 lg:grid-cols-12 lg:items-center">
               <div className="space-y-4 text-base leading-relaxed text-muted-foreground lg:col-span-7">
-                <p className="font-semibold text-foreground text-lg leading-relaxed text-justify [text-align-last:start]">
+                <p className="font-semibold text-foreground text-lg leading-relaxed">
                   {ar ? whoWeAre.bodyAr : whoWeAre.body}
                 </p>
-                <p className="text-justify [text-align-last:start]">{ar ? whoWeAre.extendedAr : whoWeAre.extended}</p>
+                <p className="">{ar ? whoWeAre.extendedAr : whoWeAre.extended}</p>
 
                 <div className="mt-6 grid gap-4 sm:grid-cols-2 pt-2">
                   <div className="rounded-2xl border border-border bg-card/70 p-5 shadow-sm backdrop-blur-sm">
@@ -75,7 +75,7 @@ export function GarmentAboutTab() {
                     <h3 className="mt-3 font-head text-base font-bold text-foreground">
                       {ar ? whoWeAre.mission.titleAr : whoWeAre.mission.title}
                     </h3>
-                    <p className="mt-2 text-xs text-muted-foreground leading-relaxed text-justify [text-align-last:start]">
+                    <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
                       {ar ? whoWeAre.mission.descAr : whoWeAre.mission.desc}
                     </p>
                   </div>
@@ -87,7 +87,7 @@ export function GarmentAboutTab() {
                     <h3 className="mt-3 font-head text-base font-bold text-foreground">
                       {ar ? whoWeAre.vision.titleAr : whoWeAre.vision.title}
                     </h3>
-                    <p className="mt-2 text-xs text-muted-foreground leading-relaxed text-justify [text-align-last:start]">
+                    <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
                       {ar ? whoWeAre.vision.descAr : whoWeAre.vision.desc}
                     </p>
                   </div>
@@ -121,7 +121,7 @@ export function GarmentAboutTab() {
                 <h2 className="section-title">
                   {ar ? whatWeOffer.headingAr : whatWeOffer.heading}
                 </h2>
-                <p className="section-intro mt-2 max-w-2xl text-justify [text-align-last:start]">
+                <p className="section-intro mt-2 max-w-2xl">
                   {ar ? whatWeOffer.introAr : whatWeOffer.intro}
                 </p>
               </div>
@@ -159,7 +159,7 @@ export function GarmentAboutTab() {
                         <h3 className="font-head text-base font-bold text-foreground group-hover:text-brand-orange transition">
                           {ar ? item.titleAr : item.title}
                         </h3>
-                        <p className="mt-2 text-xs leading-relaxed text-muted-foreground text-justify [text-align-last:start]">
+                        <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
                           {ar ? item.descAr : item.desc}
                         </p>
                       </div>
@@ -190,7 +190,7 @@ export function GarmentAboutTab() {
             <h2 className="section-title mt-3">
               {ar ? whyChooseUs.headingAr : whyChooseUs.heading}
             </h2>
-            <p className="section-intro mt-2 max-w-2xl text-justify [text-align-last:start]">
+            <p className="section-intro mt-2 max-w-2xl">
               {ar ? whyChooseUs.subtitleAr : whyChooseUs.subtitle}
             </p>
 
@@ -203,7 +203,7 @@ export function GarmentAboutTab() {
                   <h3 className="mt-4 font-head text-base font-bold text-foreground">
                     {ar ? point.titleAr : point.title}
                   </h3>
-                  <p className="mt-2 text-xs sm:text-sm leading-relaxed text-muted-foreground text-justify [text-align-last:start]">
+                  <p className="mt-2 text-xs sm:text-sm leading-relaxed text-muted-foreground">
                     {ar ? point.descAr : point.desc}
                   </p>
                 </div>
@@ -227,7 +227,7 @@ export function GarmentAboutTab() {
                 <h2 className="section-title">
                   {ar ? capabilities.headingAr : capabilities.heading}
                 </h2>
-                <p className="section-intro mt-2 max-w-2xl text-justify [text-align-last:start]">
+                <p className="section-intro mt-2 max-w-2xl">
                   {ar ? capabilities.introAr : capabilities.intro}
                 </p>
               </div>
@@ -259,7 +259,7 @@ export function GarmentAboutTab() {
                   <div className="mt-2 font-head text-base font-bold text-foreground">
                     {ar ? stat.labelAr : stat.labelEn}
                   </div>
-                  <p className="mt-1 text-xs font-medium text-muted-foreground text-justify [text-align-last:start]">
+                  <p className="mt-1 text-xs font-medium text-muted-foreground">
                     {ar ? stat.descAr : stat.descEn}
                   </p>
                 </div>
@@ -281,7 +281,7 @@ export function GarmentAboutTab() {
             <h2 className="section-title mt-3">
               {ar ? infrastructure.headingAr : infrastructure.heading}
             </h2>
-            <p className="section-intro mt-2 max-w-2xl text-justify [text-align-last:start]">
+            <p className="section-intro mt-2 max-w-2xl">
               {ar ? infrastructure.introAr : infrastructure.intro}
             </p>
 
@@ -306,7 +306,7 @@ export function GarmentAboutTab() {
                       <h3 className="font-head text-base font-bold text-foreground">
                         {ar ? item.titleAr : item.title}
                       </h3>
-                      <p className="mt-2 text-xs sm:text-sm leading-relaxed text-muted-foreground text-justify [text-align-last:start]">
+                      <p className="mt-2 text-xs sm:text-sm leading-relaxed text-muted-foreground">
                         {ar ? item.descAr : item.desc}
                       </p>
                     </div>
@@ -330,11 +330,11 @@ export function GarmentAboutTab() {
             <h2 className="section-title mt-3">
               {ar ? markets.headingAr : markets.heading}
             </h2>
-            <p className="section-intro mt-2 max-w-2xl text-justify [text-align-last:start]">
+            <p className="section-intro mt-2 max-w-2xl">
               {ar ? markets.subtitleAr : markets.subtitle}
             </p>
 
-            <p className="mt-4 text-base leading-relaxed text-muted-foreground max-w-3xl text-justify [text-align-last:start]">
+            <p className="mt-4 text-base leading-relaxed text-muted-foreground max-w-3xl">
               {ar ? markets.overviewAr : markets.overview}
             </p>
 
@@ -350,7 +350,7 @@ export function GarmentAboutTab() {
                   <div className="mt-2 rounded-md bg-brand-orange/10 px-2.5 py-1 text-xs font-bold text-brand-orange">
                     {ar ? reg.countriesAr : reg.countries}
                   </div>
-                  <p className="mt-3 text-xs sm:text-sm leading-relaxed text-muted-foreground text-justify [text-align-last:start]">
+                  <p className="mt-3 text-xs sm:text-sm leading-relaxed text-muted-foreground">
                     {ar ? reg.descAr : reg.desc}
                   </p>
                 </div>
@@ -362,3 +362,5 @@ export function GarmentAboutTab() {
     </div>
   );
 }
+
+

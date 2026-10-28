@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+﻿import { createFileRoute } from "@tanstack/react-router";
 
 import { ContactPage } from "@/components/contact/contact-page";
 import { modelsQueryOptions } from "@/lib/models";
@@ -25,3 +25,5 @@ function ContactRoute() {
   const { model } = Route.useSearch();
   return <ContactPage modelCode={model ?? ""} />;
 }
+
+

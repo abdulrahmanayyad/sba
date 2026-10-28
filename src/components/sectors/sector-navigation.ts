@@ -1,4 +1,4 @@
-import { getMessages } from "@/i18n";
+﻿import { getMessages } from "@/i18n";
 import type { SectorSlug } from "./sector-data";
 
 export const sectionId = (value: string) => value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
@@ -36,3 +36,4 @@ export function getSectorNavigation(slug: SectorSlug, ar: boolean) {
   if (!(slug in configurations)) return null;
   return { ...configurations[slug as keyof typeof configurations], label: copy.about, joinUs: slug === "food" ? copy.joinUs : null };
 }
+

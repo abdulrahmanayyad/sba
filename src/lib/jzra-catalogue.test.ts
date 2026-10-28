@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+﻿import { describe, expect, it } from "vitest";
 import { filterJzraPhotos, jzraAgeRanges, type JzraPhoto } from "./jzra-catalogue";
 
 const photos: JzraPhoto[] = [
@@ -25,3 +25,4 @@ describe("JZRA photo filters", () => {
     expect(filterJzraPhotos(photos, { season: "winter", age: "2-5", audience: "all" })).toEqual([]);
   });
 });
+

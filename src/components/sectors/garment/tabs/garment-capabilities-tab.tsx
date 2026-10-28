@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+﻿import { Link } from "@tanstack/react-router";
 import { 
   CheckCircle2, 
   Factory, 
@@ -47,7 +47,7 @@ export function GarmentCapabilitiesTab() {
             <h2 className="section-title mt-3">
               {ar ? "منظومة إنتاج متطورة مصممة للمرونة والنمو" : "Advanced Production Network Built for Scalability & Speed"}
             </h2>
-            <p className="section-intro mt-4 text-justify [text-align-last:start]">
+            <p className="section-intro mt-4">
               {ar
                 ? "تستند إمكاناتنا إلى بنية صناعية تجمع بين مصانع المجموعة وخطوط الإنتاج التخصصية والكوادر الماهرة، لتنفيذ برامج تصنيع دقيقة ومتطابقة مع المعايير الدولية."
                 : "Our capabilities leverage an integrated industrial network of dedicated garment factories, specialized machinery, and master craftspeople tailored for demanding global apparel programs."}
@@ -78,7 +78,7 @@ export function GarmentCapabilitiesTab() {
                 <div className="mt-2 font-head text-base font-bold text-foreground">
                   {ar ? stat.labelAr : stat.labelEn}
                 </div>
-                <p className="mt-1 text-xs font-medium text-muted-foreground text-justify [text-align-last:start]">
+                <p className="mt-1 text-xs font-medium text-muted-foreground">
                   {ar ? stat.descAr : stat.descEn}
                 </p>
               </div>
@@ -95,7 +95,7 @@ export function GarmentCapabilitiesTab() {
             <h2 className="section-title mt-3">
               {ar ? "مسار واضح ومنضبط من الفكرة وحتى التصدير" : "A Disciplined 10-Stage Path From Concept to Global Delivery"}
             </h2>
-            <p className="section-intro mt-4 max-w-2xl text-justify [text-align-last:start]">
+            <p className="section-intro mt-4 max-w-2xl">
               {ar
                 ? "تتبع كافة طلبياتنا دورة تصنيع قياسية صارمة لضمان الالتزام بالمواصفات الفنية والجداول الزمنية."
                 : "Every order follows an established ten-phase protocol ensuring technical compliance and milestone predictability."}
@@ -115,7 +115,7 @@ export function GarmentCapabilitiesTab() {
                   <h3 className="mt-2 font-head text-sm font-bold text-foreground group-hover:text-brand-orange transition">
                     {ar ? step.titleAr : step.titleEn}
                   </h3>
-                  <p className="mt-2 text-xs leading-relaxed text-muted-foreground text-justify [text-align-last:start]">
+                  <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
                     {ar ? step.descAr : step.descEn}
                   </p>
                 </div>
@@ -134,7 +134,7 @@ export function GarmentCapabilitiesTab() {
               <h3 className="section-title mt-3">
                 {ar ? "الجودة مدمجة في كل خطوة وليست مجرد فحص أخير" : "Quality Built-In At Every Touchpoint"}
               </h3>
-              <p className="section-intro mt-4 text-justify [text-align-last:start]">
+              <p className="section-intro mt-4">
                 {ar
                   ? "نعتمد على متابعة الجودة خلال كافة المراحل: بدءًا من فحص الأقمشة والمقاسات والباترونات، مرورًا بالقص والخياطة والتشطيب، وصولًا إلى المظهر النهائي والملصقات والتعبئة. تُحدد معايير الفحص لكل مشروع وفق المواصفات الفنية المعتمدة من العميل."
                   : "Quality is monitored continuously: from raw textile and pattern audits to automated cutting, in-line sewing checks, steam finishing, labeling, and final carton packing against approved AQL benchmarks."}
@@ -169,3 +169,5 @@ export function GarmentCapabilitiesTab() {
     </div>
   );
 }
+
+

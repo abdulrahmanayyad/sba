@@ -1,4 +1,4 @@
-import { Reveal } from "@/components/home/reveal";
+﻿import { Reveal } from "@/components/home/reveal";
 import { useLanguage } from "@/i18n/language-context";
 
 const placeholderTiles = Array.from({ length: 6 });
@@ -49,3 +49,5 @@ export function PartnersPage() {
     </div>
   );
 }
+
+

@@ -1,4 +1,4 @@
-import { queryOptions } from "@tanstack/react-query";
+﻿import { queryOptions } from "@tanstack/react-query";
 
 import { supabase } from "@/integrations/supabase/client";
 import type { Database } from "@/integrations/supabase/types";
@@ -244,3 +244,5 @@ export function similarModels(models: Model[], current: Model, limit = 4) {
     .sort((a, b) => b.score - a.score || a.model.name.localeCompare(b.model.name))
     .slice(0, limit);
 }
+
+

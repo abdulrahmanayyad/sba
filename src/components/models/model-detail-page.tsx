@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { Link } from "@tanstack/react-router";
 
@@ -209,3 +209,5 @@ function Spec({ label, value }: { label: string; value: string }) {
     </div>
   );
 }
+
+

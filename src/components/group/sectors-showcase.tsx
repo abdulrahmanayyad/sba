@@ -1,4 +1,4 @@
-import { ArrowUpRight } from "lucide-react";
+﻿import { ArrowUpRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { cn } from "@/lib/utils";
@@ -221,7 +221,7 @@ export function SectorsShowcase({ ar }: { ar: boolean }) {
               </p>
 
               {/* Body */}
-              <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground font-medium sm:text-base text-justify [text-align-last:start]">
+              <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground font-medium sm:text-base">
                 {ar ? current.bodyAr : current.bodyEn}
               </p>
 
@@ -255,3 +255,5 @@ export function SectorsShowcase({ ar }: { ar: boolean }) {
     </section>
   );
 }
+
+

@@ -1,4 +1,4 @@
-import construction from "@/assets/sector-construction.jpg";
+﻿import construction from "@/assets/sector-construction.jpg";
 
 export const constructionHeroData = {
   image: construction,
@@ -614,3 +614,5 @@ export const constructionProjectsData = {
     },
   ],
 };
+
+

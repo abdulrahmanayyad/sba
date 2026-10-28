@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 
 import jzraLogo from "@/assets/jzra-logo-orange.png.asset.json";
@@ -298,3 +298,4 @@ export function HomePage() {
 function BrandColumn({ title, subtitle, items }: { title: string; subtitle: string; items: string[] }) {
   return <Reveal className="border-b border-r border-border p-7 md:p-9"><p className="eyebrow">{title}</p><h3 className="mt-5 text-3xl">{subtitle}</h3><ul className="mt-7 grid gap-3 text-sm text-muted-foreground">{items.map((item) => <li key={item} className="border-t border-border pt-3">{item}</li>)}</ul></Reveal>;
 }
+

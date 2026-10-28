@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+﻿import { Link } from "@tanstack/react-router";
 import { ArrowRight, Mail, MessageCircle } from "lucide-react";
 
 import heroBg from "@/assets/home-hero-st.jpg";
@@ -51,11 +51,11 @@ export function GroupPage() {
             <h2 className="section-title mt-2">{ar ? "نقود التقدم عبر الصناعات" : "Driving Progress Across Industries"}</h2>
             <div className="section-intro mx-auto mt-6 leading-relaxed max-w-3xl space-y-1">
               {ar ? (
-                <p className="text-justify [text-align-last:center] leading-relaxed">
+                <p className="leading-relaxed">
                   تجمع مجموعة سامي بن عياد قدرات أعمال متنوعة في قطاعات المقاولات، والحلول البيئية، وتصنيع المنسوجات والملابس، والمنتجات الطبيعية. ومن خلال الخبرة التشغيلية والتنفيذ القائم على الجودة والشراكات الاستراتيجية، نعمل جاهدين على خلق وتطوير قيمة دائمة ومستدامة عبر مختلف الصناعات والأسواق.
                 </p>
               ) : (
-                <p className="text-justify [text-align-last:center]">
+                <p className="">
                   SAMI BIN AYYAD GROUP brings together diverse business capabilities across contracting, environmental solutions, textile and garment manufacturing, and natural products. Through operational expertise, quality-driven execution, and strategic partnerships, we work to create lasting value across industries and markets.
                 </p>
               )}
@@ -96,7 +96,7 @@ export function GroupPage() {
                   <span className="font-mono text-xs font-bold text-brand-orange">{String(index + 1).padStart(2, "0")}</span>
                   <h3 className="mt-3 font-head text-2xl font-bold leading-snug md:text-3xl">{ar ? sector.headlineAr : sector.headline}</h3>
                   <p className={cn("mt-2 text-xs font-semibold text-muted-foreground", ar ? "font-sans tracking-normal text-sm" : "font-mono uppercase tracking-[0.14em] text-[11px]")}>{ar ? sector.subtitleAr : sector.subtitle}</p>
-                  <p className="mt-4 max-w-xl text-sm leading-7 text-muted-foreground sm:text-base text-justify [text-align-last:start]">{ar ? sector.descriptionAr : sector.description}</p>
+                  <p className="mt-4 max-w-xl text-sm leading-7 text-muted-foreground sm:text-base">{ar ? sector.descriptionAr : sector.description}</p>
                   <p className={cn("mt-6 font-bold text-brand-green", ar ? "font-sans tracking-normal text-xs" : "font-mono text-[10px] uppercase tracking-[0.18em]")}>{ar ? sector.supportingLabelAr : sector.supportingLabel}</p>
                   {sector.figures && (
                     <div data-stagger className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3">
@@ -225,3 +225,5 @@ export function GroupPage() {
     </HomeMotion>
   );
 }
+
+

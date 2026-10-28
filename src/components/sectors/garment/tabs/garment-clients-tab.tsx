@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+﻿import { useState, useMemo } from "react";
 import { Link } from "@tanstack/react-router";
 import { Search, ShieldCheck, Trophy, Users, ArrowRight } from "lucide-react";
 
@@ -127,3 +127,5 @@ export function GarmentClientsTab() {
     </div>
   );
 }
+
+

@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { Building2, Leaf, Shirt, Wheat, Globe, CheckCircle2, MapPin, Sparkles, Plus, Minus, Layers, X } from "lucide-react";
 
 import { HomeReveal as Reveal } from "@/components/home/home-motion";
@@ -698,3 +698,5 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
     </section>
   );
 }
+
+

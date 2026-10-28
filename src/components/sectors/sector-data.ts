@@ -1,4 +1,4 @@
-import apparel from "@/assets/sector-apparel.jpg";
+﻿import apparel from "@/assets/sector-apparel.jpg";
 import construction from "@/assets/sector-construction.jpg";
 import enviro from "@/assets/sector-enviro.jpg";
 import food from "@/assets/sector-food.jpg";
@@ -469,3 +469,5 @@ export const sectorFullMenu = (sector: SectorPageData): SectorSection[] => {
     contactSection,
   ];
 };
+
+

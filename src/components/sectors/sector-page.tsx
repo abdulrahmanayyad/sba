@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+﻿import { Link } from "@tanstack/react-router";
 import { ArrowRight, CheckCircle2, ChevronRight, Layers, MessageCircle, Phone, Send, Sparkles, Trophy } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -119,7 +119,7 @@ export function SectorPage({ sector }: { sector: SectorPageData }) {
               {tagline}
             </p>
 
-            <p className="mt-4 max-w-2xl text-sm leading-7 text-footer-foreground/90 sm:text-base text-justify [text-align-last:start]">
+            <p className="mt-4 max-w-2xl text-sm leading-7 text-footer-foreground/90 sm:text-base">
               {intro}
             </p>
 
@@ -211,7 +211,7 @@ export function SectorPage({ sector }: { sector: SectorPageData }) {
                         {ar ? section.titleAr : section.title}
                       </h2>
 
-                      <p className="section-intro mt-4 text-justify [text-align-last:start] leading-relaxed">
+                      <p className="section-intro mt-4 leading-relaxed">
                         {ar ? section.bodyAr : section.body}
                       </p>
 
@@ -284,7 +284,7 @@ export function SectorPage({ sector }: { sector: SectorPageData }) {
             <h2 className="section-title mt-3">
               {ar ? "ابدأ شراكتك ومشروعك معنا بخطوات واضحة" : "Start Your Partnership with Us Today"}
             </h2>
-            <p className="section-intro mx-auto mt-4 text-justify [text-align-last:center]">
+            <p className="section-intro mx-auto mt-4">
               {ar
                 ? "فريقنا المتخصص في قطاع الأعمال جاهز لدراسة متطلباتك وتقديم الحلول الفنية والتشغيلية المخصصة لمشروعك، مع الالتزام بأعلى معايير الجودة والاستدامة."
                 : "Our dedicated sector team is ready to evaluate your requirements and deliver tailored technical and operational solutions, committed to the highest standards of quality."}
@@ -357,3 +357,5 @@ export function SectorPage({ sector }: { sector: SectorPageData }) {
 }
 
 const slugify = sectionId;
+
+

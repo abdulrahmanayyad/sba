@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+﻿import { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -83,3 +83,5 @@ export function MotionEnhancer({ rtl }: { rtl: boolean }) {
 
   return null;
 }
+
+

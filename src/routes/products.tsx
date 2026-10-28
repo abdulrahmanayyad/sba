@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+﻿import { createFileRoute } from "@tanstack/react-router";
 
 import { ProductsPage, type ProductLine } from "@/components/products/products-page";
 
@@ -27,3 +27,5 @@ function ProductsRoute() {
   const { line } = Route.useSearch();
   return <ProductsPage line={line} />;
 }
+
+

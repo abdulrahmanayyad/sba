@@ -1,4 +1,4 @@
-import { createFileRoute, notFound } from "@tanstack/react-router";
+﻿import { createFileRoute, notFound } from "@tanstack/react-router";
 
 import { ModelDetailPage } from "@/components/models/model-detail-page";
 import { modelsQueryOptions } from "@/lib/models";
@@ -36,3 +36,5 @@ function ModelDetailRoute() {
   const { code } = Route.useParams();
   return <ModelDetailPage code={code} />;
 }
+
+

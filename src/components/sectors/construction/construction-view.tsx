@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+﻿import { Link } from "@tanstack/react-router";
 import { ArrowRight, CheckCircle2, ChevronRight, FileText, HardHat, Layers, MessageCircle, Phone, ShieldCheck, Sparkles, Trophy, Users } from "lucide-react";
 import { useState } from "react";
 
@@ -114,7 +114,7 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
               <span>{ar ? "من نحن" : "Who We Are"}</span>
             </div>
             <h2 className="section-title mt-2">{ar ? data.partnerTitleAr : data.partnerTitle}</h2>
-            <div className="section-intro mx-auto mt-6 leading-relaxed max-w-3xl space-y-4 text-justify [text-align-last:center]">
+            <div className="section-intro mx-auto mt-6 leading-relaxed max-w-3xl space-y-4">
               {data.partnerContent.map((item, idx) => (
                 <p key={idx}>{ar ? item.ar : item.en}</p>
               ))}
@@ -135,7 +135,7 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
                 </div>
                 <h3 className="font-head text-xl font-bold text-foreground">{ar ? data.mission.titleAr : data.mission.title}</h3>
               </div>
-              <p className="text-sm sm:text-base leading-7 text-foreground/90 text-justify [text-align-last:start]">
+              <p className="text-sm sm:text-base leading-7 text-foreground/90">
                 {ar ? data.mission.bodyAr : data.mission.body}
               </p>
             </div>
@@ -148,7 +148,7 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
                 </div>
                 <h3 className="font-head text-xl font-bold text-foreground">{ar ? data.vision.titleAr : data.vision.title}</h3>
               </div>
-              <p className="text-sm sm:text-base leading-7 text-foreground/90 text-justify [text-align-last:start]">
+              <p className="text-sm sm:text-base leading-7 text-foreground/90">
                 {ar ? data.vision.bodyAr : data.vision.body}
               </p>
             </div>
@@ -165,7 +165,7 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
               <div className="md:col-span-7 space-y-4">
                 <SectionBadge title={ar ? "الجودة والالتزام" : "Quality Assurance"} />
                 <h2 className="section-title mt-2">{ar ? data.quality.titleAr : data.quality.title}</h2>
-                <p className="section-intro leading-relaxed text-foreground/90 text-justify [text-align-last:start]">
+                <p className="section-intro leading-relaxed text-foreground/90">
                   {ar ? data.quality.bodyAr : data.quality.body}
                 </p>
               </div>
@@ -206,7 +206,7 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
                     </span>
                     <h3 className="font-head text-base font-bold text-foreground">{ar ? pillar.titleAr : pillar.title}</h3>
                   </div>
-                  <p className="mt-4 text-sm leading-6 text-muted-foreground text-justify [text-align-last:start]">{ar ? pillar.bodyAr : pillar.body}</p>
+                  <p className="mt-4 text-sm leading-6 text-muted-foreground">{ar ? pillar.bodyAr : pillar.body}</p>
                 </div>
               </Reveal>
             ))}
@@ -230,7 +230,7 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
                 <div className="flex h-full flex-col rounded-2xl border border-white/20 bg-background/60 p-6 backdrop-blur-xl shadow-sm">
                   <span className="font-mono text-xs font-bold text-brand-orange-text">{step.number}</span>
                   <h3 className="mt-2 font-head text-base font-semibold text-foreground">{ar ? step.titleAr : step.title}</h3>
-                  <p className="mt-3 text-xs leading-5 text-muted-foreground text-justify [text-align-last:start]">{ar ? step.bodyAr : step.body}</p>
+                  <p className="mt-3 text-xs leading-5 text-muted-foreground">{ar ? step.bodyAr : step.body}</p>
                 </div>
               </Reveal>
             ))}
@@ -260,7 +260,7 @@ function ConstructionSectorsView({ ar }: { ar: boolean }) {
             <div className="max-w-3xl">
               <SectionBadge title={ar ? "قطاعاتنا" : "Our Sectors"} />
               <h2 className="section-title mt-3">{ar ? data.titleAr : data.title}</h2>
-              <p className="section-intro mt-4 text-justify [text-align-last:start]">{ar ? data.subtitleAr : data.subtitle}</p>
+              <p className="section-intro mt-4">{ar ? data.subtitleAr : data.subtitle}</p>
             </div>
           </Reveal>
 
@@ -275,7 +275,7 @@ function ConstructionSectorsView({ ar }: { ar: boolean }) {
                         <span className="font-mono text-xs uppercase tracking-widest text-brand-orange-text">{sector.number}</span>
                         <h3 className="mt-1 font-head text-xl font-bold sm:text-2xl text-foreground">{ar ? sector.titleAr : sector.title}</h3>
                         <p className="mt-1 text-sm font-medium text-brand-green-text">{ar ? sector.taglineAr : sector.tagline}</p>
-                        <p className="mt-4 text-sm sm:text-base leading-7 text-foreground/90 text-justify [text-align-last:start]">{ar ? sector.bodyAr : sector.body}</p>
+                        <p className="mt-4 text-sm sm:text-base leading-7 text-foreground/90">{ar ? sector.bodyAr : sector.body}</p>
                       </div>
                       <div className="md:col-span-4 overflow-hidden rounded-2xl border border-border shadow-md">
                         <img
@@ -338,7 +338,7 @@ function ConstructionServicesView({ ar }: { ar: boolean }) {
             <div className="max-w-3xl">
               <SectionBadge title={ar ? "خدماتنا وتخصصاتنا" : "Our Services"} />
               <h2 className="section-title mt-3">{ar ? data.titleAr : data.title}</h2>
-              <p className="section-intro mt-4 text-justify [text-align-last:start]">{ar ? data.subtitleAr : data.subtitle}</p>
+              <p className="section-intro mt-4">{ar ? data.subtitleAr : data.subtitle}</p>
             </div>
           </Reveal>
 
@@ -371,7 +371,7 @@ function ConstructionServicesView({ ar }: { ar: boolean }) {
 
                         <h3 className="mt-4 font-head text-lg sm:text-xl font-bold text-foreground">{ar ? service.titleAr : service.title}</h3>
                         <p className="mt-1 text-xs sm:text-sm font-medium text-brand-green-text">{ar ? service.leadAr : service.lead}</p>
-                        <p className="mt-4 text-xs sm:text-sm leading-6 text-muted-foreground text-justify [text-align-last:start]">{ar ? service.bodyAr : service.body}</p>
+                        <p className="mt-4 text-xs sm:text-sm leading-6 text-muted-foreground">{ar ? service.bodyAr : service.body}</p>
 
                         <div className="mt-6 border-t border-border pt-4">
                           <h4 className="font-head text-xs font-semibold text-foreground">{ar ? "مجالات العمل التخصصية:" : "Key Technical Disciplines:"}</h4>
@@ -441,7 +441,7 @@ function ConstructionProjectsView({ ar }: { ar: boolean }) {
             <div className="max-w-3xl">
               <SectionBadge title={ar ? "سجل الأعمال الموثق" : "Project Portfolio"} />
               <h2 className="section-title mt-3">{ar ? data.titleAr : data.title}</h2>
-              <p className="section-intro mt-4 text-justify [text-align-last:start]">{ar ? data.subtitleAr : data.subtitle}</p>
+              <p className="section-intro mt-4">{ar ? data.subtitleAr : data.subtitle}</p>
             </div>
           </Reveal>
 
@@ -489,7 +489,7 @@ function ConstructionProjectsView({ ar }: { ar: boolean }) {
 
                           <h4 className="mt-3 font-head text-base font-bold text-foreground">{ar ? proj.nameAr : proj.nameEn}</h4>
                           <p className="mt-1 text-xs font-medium text-brand-orange-text">{ar ? proj.clientAr : proj.clientEn}</p>
-                          <p className="mt-3 text-xs leading-5 text-muted-foreground text-justify [text-align-last:start]">{ar ? proj.scopeAr : proj.scopeEn}</p>
+                          <p className="mt-3 text-xs leading-5 text-muted-foreground">{ar ? proj.scopeAr : proj.scopeEn}</p>
                         </div>
 
                         {"value" in proj && proj.value && (
@@ -510,3 +510,5 @@ function ConstructionProjectsView({ ar }: { ar: boolean }) {
     </div>
   );
 }
+
+

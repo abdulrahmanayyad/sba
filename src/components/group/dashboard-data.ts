@@ -1,4 +1,4 @@
-/** Single source for the homepage business dashboard. Figures are reported company figures — never sum or annualise them. */
+﻿/** Single source for the homepage business dashboard. Figures are reported company figures — never sum or annualise them. */
 export type SectorId = "construction" | "environmental" | "garment" | "food";
 export type SectorFilter = "all" | SectorId;
 type T = { en: string; ar: string };
@@ -73,3 +73,5 @@ export const matchesFilter = (filter: SectorFilter, sector: SectorId) => filter 
 export function formatUsd(value: number, ar: boolean) {
   return `${ar ? "" : "USD "}${value.toLocaleString("en-US")}${ar ? " دولار" : ""}`;
 }
+
+

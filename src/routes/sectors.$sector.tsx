@@ -1,4 +1,4 @@
-import { createFileRoute, notFound } from "@tanstack/react-router";
+﻿import { createFileRoute, notFound } from "@tanstack/react-router";
 
 import { SectorPage } from "@/components/sectors/sector-page";
 import { sectors, type SectorSlug } from "@/components/sectors/sector-data";
@@ -80,4 +80,6 @@ function SectorRoute() {
 
   return <SectorPage sector={data} />;
 }
+
+
 

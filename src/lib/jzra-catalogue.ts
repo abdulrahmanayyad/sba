@@ -1,4 +1,4 @@
-export const jzraAgeRanges = ["2-5", "3-6", "6-12", "8-14", "14-18"] as const;
+﻿export const jzraAgeRanges = ["2-5", "3-6", "6-12", "8-14", "14-18"] as const;
 export type JzraAge = (typeof jzraAgeRanges)[number];
 export type JzraSeason = "summer" | "winter";
 export type JzraAudience = "boys" | "girls";
@@ -237,3 +237,4 @@ export const jzraCatalogue: JzraPhoto[] = [
   ...winterDresses3_6,
   ...winterDresses8_14,
 ];
+

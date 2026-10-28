@@ -1,4 +1,4 @@
-import { Reveal } from "@/components/home/reveal";
+﻿import { Reveal } from "@/components/home/reveal";
 import { useLanguage } from "@/i18n/language-context";
 
 const placeholderItems = [
@@ -42,3 +42,5 @@ export function NewsPage() {
     </div>
   );
 }
+
+

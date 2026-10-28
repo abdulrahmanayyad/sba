@@ -1,4 +1,4 @@
-import ar from "./ar.json";
+﻿import ar from "./ar.json";
 import en from "./en.json";
 
 export const languages = ["EN", "AR"] as const;
@@ -12,3 +12,4 @@ export function getMessages(language: Language): Messages {
 export function isFallbackLanguage(language: Language) {
   return !["EN", "AR"].includes(language);
 }
+

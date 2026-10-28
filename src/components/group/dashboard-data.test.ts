@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+﻿import { describe, expect, it } from "vitest";
 import { businessVolumes, targetMarkets } from "./dashboard-data";
 
 describe("business dashboard data", () => {
@@ -16,3 +16,5 @@ describe("business dashboard data", () => {
     expect(targetMarkets.construction.map((m) => m.name.en)).toEqual(["Egypt"]);
   });
 });
+
+

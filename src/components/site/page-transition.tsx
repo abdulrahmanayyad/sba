@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+﻿import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { useRouter } from "@tanstack/react-router";
 
@@ -89,3 +89,5 @@ export function PageTransition({ pathname, rtl }: { pathname: string; rtl: boole
     </div>
   );
 }
+
+
