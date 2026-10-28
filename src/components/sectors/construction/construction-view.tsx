@@ -21,6 +21,15 @@ interface ConstructionViewProps {
   tab?: ConstructionTab;
 }
 
+function SectionBadge({ title }: { title: string }) {
+  return (
+    <span className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+      <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+      {title}
+    </span>
+  );
+}
+
 export function ConstructionSectorView({ tab = "about" }: ConstructionViewProps) {
   const { language } = useLanguage();
   const ar = language === "AR";
@@ -29,13 +38,13 @@ export function ConstructionSectorView({ tab = "about" }: ConstructionViewProps)
   const tabLabels: Record<ConstructionTab, { en: string; ar: string; descEn: string; descAr: string }> = {
     about: {
       en: "About Us",
-      ar: "نبذة عن القطاع",
+      ar: "من نحن",
       descEn: "Overview, vision, values, and project delivery methodology",
       descAr: "الرؤية والرسالة، قيم الجودة، ومنهجية تنفيذ المشروعات",
     },
     sectors: {
       en: "Our Sectors",
-      ar: "قطاعات نخدمها",
+      ar: "قطاعاتنا",
       descEn: "Healthcare, residential, commercial, oil & gas, and infrastructure",
       descAr: "القطاع الطبي، السكني، التجاري، البترول والغاز، والبنية التحتية",
     },
@@ -47,7 +56,7 @@ export function ConstructionSectorView({ tab = "about" }: ConstructionViewProps)
     },
     projects: {
       en: "Our Projects",
-      ar: "سجل المشروعات والأعمال",
+      ar: "سجل الأعمال الموثق",
       descEn: "57+ documented projects and EGP 400.5M+ turnover across Egypt",
       descAr: "أكثر من 57 مشروعًا موثقًا و400.5 مليون جنيه حجم أعمال مسجل",
     },
@@ -55,86 +64,55 @@ export function ConstructionSectorView({ tab = "about" }: ConstructionViewProps)
 
   return (
     <div className="w-full">
-      {/* Sector Hero */}
-      <section className="relative text-footer-foreground">
-        <img
-          data-clip-reveal
-          src={constructionHeroData.image}
-          alt={ar ? constructionHeroData.titleAr : constructionHeroData.title}
-          className="absolute inset-0 size-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-footer via-footer/85 to-footer/70" />
-        <div className="site-container relative py-16 md:py-24">
+      {/* Sector Hero - Clean, elegant header without large photo/duplicate buttons */}
+      <section className="relative overflow-hidden border-b border-border bg-gradient-to-b from-card/80 via-background/95 to-background text-foreground py-14 md:py-20">
+        <div className="site-container relative">
           <Reveal>
             <div className="flex flex-wrap items-center gap-2 text-xs font-medium text-brand-orange">
-              <span>{ar ? constructionHeroData.companyAr : constructionHeroData.company}</span>
-              <ChevronRight className="size-3.5 rtl:rotate-180" />
-              <span className="text-white/80">{ar ? tabLabels[activeTab].ar : tabLabels[activeTab].en}</span>
+              <span className="text-foreground/80">{ar ? tabLabels[activeTab].ar : tabLabels[activeTab].en}</span>
             </div>
 
-            <h1 className="mt-4 max-w-4xl font-head text-[clamp(1.85rem,6vw,3.75rem)] font-bold leading-[1.15] text-white">
+            <h1 className="mt-4 max-w-4xl font-head text-[clamp(1.85rem,6vw,3.75rem)] font-bold leading-[1.15] text-foreground">
               {ar ? constructionHeroData.titleAr : constructionHeroData.title}
             </h1>
 
-            <p className={cn("mt-4 max-w-3xl font-head text-base text-footer-muted sm:text-xl", ar && "font-body")}>
+            <p className={cn("mt-4 max-w-3xl font-head text-base text-muted-foreground sm:text-xl", ar && "font-body")}>
               {ar ? constructionHeroData.subtitleAr : constructionHeroData.subtitle}
             </p>
-
-            <p className="mt-4 max-w-2xl text-sm leading-7 text-footer-foreground/90 sm:text-base">
-              {ar ? constructionHeroData.introAr : constructionHeroData.intro}
-            </p>
-
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button asChild variant="primary" size="lg" className="w-full sm:w-auto">
-                <Link to="/contact">
-                  {ar ? "اطلب عرض سعر" : "Request a Quotation"}
-                </Link>
-              </Button>
-              <Button asChild size="lg" className="glass-dark w-full !text-footer-foreground hover:!bg-footer sm:w-auto">
-                <a href={WHATSAPP_URL} target="_blank" rel="noreferrer">
-                  <MessageCircle className="size-4" /> WhatsApp
-                </a>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="w-full sm:w-auto">
-                <Link to="/contact">
-                  <HardHat className="size-4" /> {ar ? "انضم إلينا" : "Join Us"}
-                </Link>
-              </Button>
-            </div>
           </Reveal>
         </div>
       </section>
 
-
       {/* Render Active Page Content */}
-
-      {activeTab === "about" && <ConstructionAboutView ar={ar} />}
-      {activeTab === "sectors" && <ConstructionSectorsView ar={ar} />}
-      {activeTab === "services" && <ConstructionServicesView ar={ar} />}
-      {activeTab === "projects" && <ConstructionProjectsView ar={ar} />}
+      <div className="py-8 space-y-12">
+        {activeTab === "about" && <ConstructionAboutView ar={ar} />}
+        {activeTab === "sectors" && <ConstructionSectorsView ar={ar} />}
+        {activeTab === "services" && <ConstructionServicesView ar={ar} />}
+        {activeTab === "projects" && <ConstructionProjectsView ar={ar} />}
+      </div>
 
       {/* Bottom CTA & Quote Request Banner */}
-      <section className="site-container section-band">
-        <div className="rounded-3xl border border-border bg-gradient-to-br from-secondary/80 via-background to-secondary/50 p-8 sm:p-12">
+      <section className="site-container py-12">
+        <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-8 sm:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="eyebrow">{ar ? "دعوة للتواصل" : "Let's Build Together"}</p>
-            <h2 className="section-title mt-2">
+            <SectionBadge title={ar ? "دعوة للتواصل" : "Let's Build Together"} />
+            <h2 className="section-title mt-3">
               {ar ? "لنبدأ مشروعك بخطوات واضحة وتنفيذ مسؤول" : "Let's Move Your Project Forward with Precision"}
             </h2>
-            <p className="section-intro mx-auto mt-4 max-w-2xl">
+            <p className="section-intro mx-auto mt-4 max-w-2xl text-justify [text-align-last:center]">
               {ar
                 ? "سواء كنت تخطط لإنشاء مبنى جديد، أو تطوير منشأة قائمة، أو تشطيبات سكنية وتجارية فاخرة، أو تجهيزات طبية وأنظمة كهروميكانيكية، فإننا نرحب بمراجعة متطلباتك ومناقشة نطاق العمل المناسب."
                 : "Whether you are planning a new construction build, facility upgrades, turnkey interior fit-out, medical installations, or specialized MEP infrastructure, our technical team welcomes your inquiry."}
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <Button asChild variant="primary" size="lg">
+              <Button asChild size="lg" className="rounded-xl bg-brand-green text-white hover:bg-brand-orange hover:text-white transition-all duration-300 font-bold shadow-md hover:shadow-lg">
                 <Link to="/contact">
-                  {ar ? "إرسال طلب مشروع" : "Submit Project Inquiry"} <ArrowRight className="size-4 rtl:rotate-180" />
+                  {ar ? "إرسال طلب مشروع" : "Submit Project Inquiry"} <ArrowRight className="size-4 rtl:rotate-180 ms-2" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg">
-                <a href="tel:+201222238072" dir="ltr">
-                  <Phone className="size-4" /> +20 12 222 380 72
+              <Button asChild size="lg" className="rounded-xl bg-brand-green text-white hover:bg-brand-orange hover:text-white transition-all duration-300 font-bold shadow-md hover:shadow-lg">
+                <a href={WHATSAPP_URL} target="_blank" rel="noreferrer">
+                  <MessageCircle className="size-4 me-2" /> WhatsApp: +20 12 222 380 72
                 </a>
               </Button>
             </div>
@@ -149,98 +127,102 @@ export function ConstructionSectorView({ tab = "about" }: ConstructionViewProps)
 function ConstructionAboutView({ ar }: { ar: boolean }) {
   const data = constructionAboutData;
   return (
-    <div className="w-full">
+    <div className="w-full space-y-12">
       {/* Partner in Execution */}
-      <section className="site-container section-band">
-        <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
-          <Reveal>
-            <p className="eyebrow">{ar ? "من نحن" : "About the Division"}</p>
-            <h2 className="section-title mt-2">{ar ? data.partnerTitleAr : data.partnerTitle}</h2>
-            <div className="mt-6 space-y-4 text-sm sm:text-base leading-7 text-muted-foreground">
-              {data.partnerContent.map((item, idx) => (
-                <p key={idx}>{ar ? item.ar : item.en}</p>
-              ))}
-            </div>
-          </Reveal>
-
-          <Reveal delay={0.1}>
-            <div className="grid gap-6">
-              <div className="glass-card rounded-2xl border border-border p-6 sm:p-8">
-                <div className="flex items-center gap-3 text-brand-green-text">
-                  <Sparkles className="size-5 shrink-0" />
-                  <h3 className="font-head text-lg font-bold">{ar ? data.mission.titleAr : data.mission.title}</h3>
-                </div>
-                <p className="mt-3 text-sm leading-6 text-foreground/90">{ar ? data.mission.bodyAr : data.mission.body}</p>
+      <section className="site-container">
+        <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+            <Reveal>
+              <SectionBadge title={ar ? "من نحن" : "About the Division"} />
+              <h2 className="section-title mt-3">{ar ? data.partnerTitleAr : data.partnerTitle}</h2>
+              <div className="mt-6 space-y-4 text-sm sm:text-base leading-7 text-muted-foreground text-justify [text-align-last:start]">
+                {data.partnerContent.map((item, idx) => (
+                  <p key={idx}>{ar ? item.ar : item.en}</p>
+                ))}
               </div>
+            </Reveal>
 
-              <div className="glass-card rounded-2xl border border-border p-6 sm:p-8">
-                <div className="flex items-center gap-3 text-brand-orange-text">
-                  <Trophy className="size-5 shrink-0" />
-                  <h3 className="font-head text-lg font-bold">{ar ? data.vision.titleAr : data.vision.title}</h3>
+            <Reveal delay={0.1}>
+              <div className="grid gap-6">
+                <div className="rounded-2xl border border-white/20 bg-background/60 p-6 sm:p-8 backdrop-blur-xl shadow-sm">
+                  <div className="flex items-center gap-3 text-brand-green-text">
+                    <Sparkles className="size-5 shrink-0" />
+                    <h3 className="font-head text-lg font-bold">{ar ? data.mission.titleAr : data.mission.title}</h3>
+                  </div>
+                  <p className="mt-3 text-sm leading-6 text-foreground/90 text-justify [text-align-last:start]">{ar ? data.mission.bodyAr : data.mission.body}</p>
                 </div>
-                <p className="mt-3 text-sm leading-6 text-foreground/90">{ar ? data.vision.bodyAr : data.vision.body}</p>
+
+                <div className="rounded-2xl border border-white/20 bg-background/60 p-6 sm:p-8 backdrop-blur-xl shadow-sm">
+                  <div className="flex items-center gap-3 text-brand-orange-text">
+                    <Trophy className="size-5 shrink-0" />
+                    <h3 className="font-head text-lg font-bold">{ar ? data.vision.titleAr : data.vision.title}</h3>
+                  </div>
+                  <p className="mt-3 text-sm leading-6 text-foreground/90 text-justify [text-align-last:start]">{ar ? data.vision.bodyAr : data.vision.body}</p>
+                </div>
               </div>
-            </div>
-          </Reveal>
+            </Reveal>
+          </div>
         </div>
       </section>
 
       {/* Quality Commitment */}
-      <section className="border-y border-border bg-page-alt section-band">
-        <div className="site-container">
+      <section className="site-container">
+        <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
           <Reveal>
             <div className="max-w-3xl">
-              <p className="eyebrow">{ar ? "الجودة والالتزام" : "Quality Assurance"}</p>
-              <h2 className="section-title mt-2">{ar ? data.quality.titleAr : data.quality.title}</h2>
-              <p className="mt-4 text-base leading-8 text-foreground/90">{ar ? data.quality.bodyAr : data.quality.body}</p>
+              <SectionBadge title={ar ? "الجودة والالتزام" : "Quality Assurance"} />
+              <h2 className="section-title mt-3">{ar ? data.quality.titleAr : data.quality.title}</h2>
+              <p className="mt-4 text-base leading-8 text-foreground/90 text-justify [text-align-last:start]">{ar ? data.quality.bodyAr : data.quality.body}</p>
             </div>
           </Reveal>
         </div>
       </section>
 
       {/* Why Choose Us */}
-      <section className="site-container section-band">
-        <Reveal>
-          <div className="text-center">
-            <p className="eyebrow">{ar ? "لماذا سامي بن عياد للمقاولات؟" : "Why Choose SAMI BIN AYYAD GROUP?"}</p>
-            <h2 className="section-title mt-2">{ar ? data.whyChooseUs.titleAr : data.whyChooseUs.title}</h2>
-          </div>
-        </Reveal>
+      <section className="site-container">
+        <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
+          <Reveal>
+            <div className="text-center">
+              <SectionBadge title={ar ? "لماذا سامي بن عياد للمقاولات" : "Why Choose SAMI BIN AYYAD GROUP"} />
+              <h2 className="section-title mt-3">{ar ? data.whyChooseUs.titleAr : data.whyChooseUs.title}</h2>
+            </div>
+          </Reveal>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {data.whyChooseUs.pillars.map((pillar, idx) => (
-            <Reveal key={idx} delay={idx * 0.05}>
-              <div className="glass-card group flex h-full flex-col rounded-2xl border border-border p-6 transition-all hover:border-brand-green/60 hover:shadow-md">
-                <div className="flex items-center gap-3">
-                  <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-brand-green/10 font-mono text-xs font-bold text-brand-green-text">
-                    0{idx + 1}
-                  </span>
-                  <h3 className="font-head text-base font-bold text-foreground">{ar ? pillar.titleAr : pillar.title}</h3>
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {data.whyChooseUs.pillars.map((pillar, idx) => (
+              <Reveal key={idx} delay={idx * 0.05}>
+                <div className="flex h-full flex-col rounded-2xl border border-white/20 bg-background/60 p-6 backdrop-blur-xl shadow-sm transition-all hover:border-brand-green/60 hover:shadow-md">
+                  <div className="flex items-center gap-3">
+                    <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-brand-green/10 font-mono text-xs font-bold text-brand-green-text">
+                      0{idx + 1}
+                    </span>
+                    <h3 className="font-head text-base font-bold text-foreground">{ar ? pillar.titleAr : pillar.title}</h3>
+                  </div>
+                  <p className="mt-4 text-sm leading-6 text-muted-foreground text-justify [text-align-last:start]">{ar ? pillar.bodyAr : pillar.body}</p>
                 </div>
-                <p className="mt-4 text-sm leading-6 text-muted-foreground">{ar ? pillar.bodyAr : pillar.body}</p>
-              </div>
-            </Reveal>
-          ))}
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Project Delivery Steps */}
-      <section className="border-t border-border bg-page-alt section-band">
-        <div className="site-container">
+      <section className="site-container">
+        <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
           <Reveal>
             <div className="text-center">
-              <p className="eyebrow">{ar ? "منهجية العمل" : "Project Delivery Process"}</p>
-              <h2 className="section-title mt-2">{ar ? data.deliveryProcess.titleAr : data.deliveryProcess.title}</h2>
+              <SectionBadge title={ar ? "منهجية العمل" : "Project Delivery Process"} />
+              <h2 className="section-title mt-3">{ar ? data.deliveryProcess.titleAr : data.deliveryProcess.title}</h2>
             </div>
           </Reveal>
 
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {data.deliveryProcess.steps.map((step) => (
               <Reveal key={step.number}>
-                <div className="glass-card flex h-full flex-col rounded-2xl border border-border p-6">
+                <div className="flex h-full flex-col rounded-2xl border border-white/20 bg-background/60 p-6 backdrop-blur-xl shadow-sm">
                   <span className="font-mono text-xs font-bold text-brand-orange-text">{step.number}</span>
                   <h3 className="mt-2 font-head text-base font-semibold text-foreground">{ar ? step.titleAr : step.title}</h3>
-                  <p className="mt-3 text-xs leading-5 text-muted-foreground">{ar ? step.bodyAr : step.body}</p>
+                  <p className="mt-3 text-xs leading-5 text-muted-foreground text-justify [text-align-last:start]">{ar ? step.bodyAr : step.body}</p>
                 </div>
               </Reveal>
             ))}
@@ -255,17 +237,18 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
 function ConstructionSectorsView({ ar }: { ar: boolean }) {
   const data = constructionSectorsData;
   return (
-    <div className="w-full">
-      <section className="site-container section-band">
-        <Reveal>
-          <div className="max-w-3xl">
-            <p className="eyebrow">{ar ? "قطاعات نخدمها" : "Sectors We Serve"}</p>
-            <h2 className="section-title mt-2">{ar ? data.titleAr : data.title}</h2>
-            <p className="section-intro mt-4">{ar ? data.subtitleAr : data.subtitle}</p>
-          </div>
-        </Reveal>
+    <div className="w-full space-y-12">
+      <section className="site-container">
+        <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
+          <Reveal>
+            <div className="max-w-3xl">
+              <SectionBadge title={ar ? "قطاعاتنا" : "Our Sectors"} />
+              <h2 className="section-title mt-3">{ar ? data.titleAr : data.title}</h2>
+              <p className="section-intro mt-4 text-justify [text-align-last:start]">{ar ? data.subtitleAr : data.subtitle}</p>
+            </div>
+          </Reveal>
 
-        <div className="mt-12 space-y-12">
+          <div className="mt-12 space-y-12">
           {data.sectors.map((sector, index) => (
             <Reveal key={sector.id} delay={index * 0.05}>
               <div className="glass-card overflow-hidden rounded-3xl border border-border p-6 sm:p-10">
@@ -311,6 +294,7 @@ function ConstructionSectorsView({ ar }: { ar: boolean }) {
               </div>
             </Reveal>
           ))}
+          </div>
         </div>
       </section>
     </div>
@@ -321,45 +305,47 @@ function ConstructionSectorsView({ ar }: { ar: boolean }) {
 function ConstructionServicesView({ ar }: { ar: boolean }) {
   const data = constructionServicesData;
   return (
-    <div className="w-full">
-      <section className="site-container section-band">
-        <Reveal>
-          <div className="max-w-3xl">
-            <p className="eyebrow">{ar ? "خدماتنا وتخصصاتنا" : "Our Services"}</p>
-            <h2 className="section-title mt-2">{ar ? data.titleAr : data.title}</h2>
-            <p className="section-intro mt-4">{ar ? data.subtitleAr : data.subtitle}</p>
+    <div className="w-full space-y-12">
+      <section className="site-container">
+        <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
+          <Reveal>
+            <div className="max-w-3xl">
+              <SectionBadge title={ar ? "خدماتنا وتخصصاتنا" : "Our Services"} />
+              <h2 className="section-title mt-3">{ar ? data.titleAr : data.title}</h2>
+              <p className="section-intro mt-4 text-justify [text-align-last:start]">{ar ? data.subtitleAr : data.subtitle}</p>
+            </div>
+          </Reveal>
+
+          <div className="mt-12 grid gap-8 lg:grid-cols-2">
+            {data.services.map((service, idx) => (
+              <Reveal key={service.id} delay={idx * 0.05}>
+                <div className="flex h-full flex-col rounded-3xl border border-white/20 bg-background/60 p-6 sm:p-8 backdrop-blur-xl shadow-sm">
+                  <div className="flex items-center justify-between border-b border-border pb-4">
+                    <span className="font-mono text-xs font-bold text-brand-orange-text">{service.number}</span>
+                    <span className="rounded-full bg-brand-green/10 px-3 py-1 font-mono text-[11px] font-semibold text-brand-green-text">
+                      SBA Contracting
+                    </span>
+                  </div>
+
+                  <h3 className="mt-4 font-head text-lg sm:text-xl font-bold text-foreground">{ar ? service.titleAr : service.title}</h3>
+                  <p className="mt-1 text-xs sm:text-sm font-medium text-brand-green-text">{ar ? service.leadAr : service.lead}</p>
+                  <p className="mt-4 text-xs sm:text-sm leading-6 text-muted-foreground text-justify [text-align-last:start]">{ar ? service.bodyAr : service.body}</p>
+
+                  <div className="mt-6 border-t border-border pt-4">
+                    <h4 className="font-head text-xs font-semibold text-foreground">{ar ? "مجالات العمل التخصصية:" : "Key Technical Disciplines:"}</h4>
+                    <ul className="mt-3 space-y-2">
+                      {service.capabilities.map((cap, cIdx) => (
+                        <li key={cIdx} className="flex items-start gap-2 text-xs text-muted-foreground">
+                          <CheckCircle2 className="mt-0.5 size-3.5 shrink-0 text-brand-green-text" />
+                          <span>{ar ? cap.ar : cap.en}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
           </div>
-        </Reveal>
-
-        <div className="mt-12 grid gap-8 lg:grid-cols-2">
-          {data.services.map((service, idx) => (
-            <Reveal key={service.id} delay={idx * 0.05}>
-              <div className="glass-card flex h-full flex-col rounded-3xl border border-border p-6 sm:p-8">
-                <div className="flex items-center justify-between border-b border-border pb-4">
-                  <span className="font-mono text-xs font-bold text-brand-orange-text">{service.number}</span>
-                  <span className="rounded-full bg-brand-green/10 px-3 py-1 font-mono text-[11px] font-semibold text-brand-green-text">
-                    SBA Contracting
-                  </span>
-                </div>
-
-                <h3 className="mt-4 font-head text-lg sm:text-xl font-bold text-foreground">{ar ? service.titleAr : service.title}</h3>
-                <p className="mt-1 text-xs sm:text-sm font-medium text-brand-green-text">{ar ? service.leadAr : service.lead}</p>
-                <p className="mt-4 text-xs sm:text-sm leading-6 text-muted-foreground">{ar ? service.bodyAr : service.body}</p>
-
-                <div className="mt-6 border-t border-border pt-4">
-                  <h4 className="font-head text-xs font-semibold text-foreground">{ar ? "مجالات العمل التخصصية:" : "Key Technical Disciplines:"}</h4>
-                  <ul className="mt-3 space-y-2">
-                    {service.capabilities.map((cap, cIdx) => (
-                      <li key={cIdx} className="flex items-start gap-2 text-xs text-muted-foreground">
-                        <CheckCircle2 className="mt-0.5 size-3.5 shrink-0 text-brand-green-text" />
-                        <span>{ar ? cap.ar : cap.en}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </Reveal>
-          ))}
         </div>
       </section>
     </div>
@@ -375,90 +361,99 @@ function ConstructionProjectsView({ ar }: { ar: boolean }) {
     activeCategory === "all" ? data.categories : data.categories.filter((cat) => cat.id === activeCategory);
 
   return (
-    <div className="w-full">
+    <div className="w-full space-y-12">
       {/* Key Numbers Banner */}
-      <section className="site-container pt-12">
-        <Reveal>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {data.stats.map((stat, idx) => (
-              <div key={idx} className="glass-card rounded-2xl border border-border p-6 text-center">
-                <p className="font-mono text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm" dir="ltr">{stat.value}</p>
-                <p className="mt-2 text-xs sm:text-sm font-semibold text-foreground">{ar ? stat.labelAr : stat.labelEn}</p>
-              </div>
-            ))}
-          </div>
-        </Reveal>
+      <section className="site-container">
+        <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-8 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
+          <Reveal>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {data.stats.map((stat, idx) => (
+                <div key={idx} className={cn("p-4 border-b sm:border-b-0 sm:border-e border-border/60 last:border-none", ar ? "text-right" : "text-left")}>
+                  <p className={cn(
+                    "font-head text-3xl sm:text-4xl font-black text-brand-orange drop-shadow-sm tracking-tight",
+                    ar ? "text-right" : "text-left"
+                  )}>
+                    {stat.value}
+                  </p>
+                  <p className="mt-2 text-xs sm:text-sm font-semibold text-foreground">{ar ? stat.labelAr : stat.labelEn}</p>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        </div>
       </section>
 
       {/* Projects Showcase */}
-      <section className="site-container section-band">
-        <Reveal>
-          <div className="max-w-3xl">
-            <p className="eyebrow">{ar ? "سجل الأعمال الموثق" : "Project Portfolio"}</p>
-            <h2 className="section-title mt-2">{ar ? data.titleAr : data.title}</h2>
-            <p className="section-intro mt-4">{ar ? data.subtitleAr : data.subtitle}</p>
-          </div>
-        </Reveal>
-
-        {/* Filter Chips */}
-        <div className="mt-8 flex flex-wrap gap-2">
-          <Button
-            variant={activeCategory === "all" ? "default" : "outline"}
-            size="sm"
-            onClick={() => setActiveCategory("all")}
-          >
-            {ar ? "جميع المشروعات" : "All Projects"}
-          </Button>
-          {data.categories.map((cat) => (
-            <Button
-              key={cat.id}
-              variant={activeCategory === cat.id ? "default" : "outline"}
-              size="sm"
-              onClick={() => setActiveCategory(cat.id)}
-            >
-              {ar ? cat.titleAr : cat.titleEn}
-            </Button>
-          ))}
-        </div>
-
-        {/* Categories and Project Cards */}
-        <div className="mt-10 space-y-12">
-          {filteredCategories.map((category) => (
-            <div key={category.id}>
-              <div className="border-b border-border pb-3">
-                <h3 className="font-head text-xl font-bold text-foreground">{ar ? category.titleAr : category.titleEn}</h3>
-                <p className="mt-1 text-xs text-muted-foreground">{ar ? category.descriptionAr : category.descriptionEn}</p>
-              </div>
-
-              <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-                {category.projects.map((proj, pIdx) => (
-                  <Reveal key={pIdx} delay={pIdx * 0.04}>
-                    <div className="glass-card flex h-full flex-col justify-between rounded-2xl border border-border p-5 transition-all hover:border-brand-green/60">
-                      <div>
-                        <div className="flex items-center justify-between gap-2">
-                          <span className="rounded bg-brand-green/10 px-2 py-0.5 font-mono text-[10px] font-semibold text-brand-green-text">
-                            {proj.category}
-                          </span>
-                          {"year" in proj && proj.year && <span className="font-mono text-[11px] text-muted-foreground">{proj.year}</span>}
-                        </div>
-
-                        <h4 className="mt-3 font-head text-base font-bold text-foreground">{ar ? proj.nameAr : proj.nameEn}</h4>
-                        <p className="mt-1 text-xs font-medium text-brand-orange-text">{ar ? proj.clientAr : proj.clientEn}</p>
-                        <p className="mt-3 text-xs leading-5 text-muted-foreground">{ar ? proj.scopeAr : proj.scopeEn}</p>
-                      </div>
-
-                      {"value" in proj && proj.value && (
-                        <div className="mt-4 border-t border-border/70 pt-3 flex items-center justify-between text-xs">
-                          <span className="text-muted-foreground">{ar ? "القيمة المسجلة:" : "Contract Value:"}</span>
-                          <span className="font-mono font-bold text-brand-green-text">{ar ? ("valueAr" in proj && proj.valueAr ? proj.valueAr : proj.value) : proj.value}</span>
-                        </div>
-                      )}
-                    </div>
-                  </Reveal>
-                ))}
-              </div>
+      <section className="site-container">
+        <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
+          <Reveal>
+            <div className="max-w-3xl">
+              <SectionBadge title={ar ? "سجل الأعمال الموثق" : "Project Portfolio"} />
+              <h2 className="section-title mt-3">{ar ? data.titleAr : data.title}</h2>
+              <p className="section-intro mt-4 text-justify [text-align-last:start]">{ar ? data.subtitleAr : data.subtitle}</p>
             </div>
-          ))}
+          </Reveal>
+
+          {/* Filter Chips */}
+          <div className="mt-8 flex flex-wrap gap-2">
+            <Button
+              variant={activeCategory === "all" ? "default" : "outline"}
+              size="sm"
+              onClick={() => setActiveCategory("all")}
+            >
+              {ar ? "جميع المشروعات" : "All Projects"}
+            </Button>
+            {data.categories.map((cat) => (
+              <Button
+                key={cat.id}
+                variant={activeCategory === cat.id ? "default" : "outline"}
+                size="sm"
+                onClick={() => setActiveCategory(cat.id)}
+              >
+                {ar ? cat.titleAr : cat.titleEn}
+              </Button>
+            ))}
+          </div>
+
+          {/* Categories and Project Cards */}
+          <div className="mt-10 space-y-12">
+            {filteredCategories.map((category) => (
+              <div key={category.id}>
+                <div className="border-b border-border pb-3">
+                  <h3 className="font-head text-xl font-bold text-foreground">{ar ? category.titleAr : category.titleEn}</h3>
+                  <p className="mt-1 text-xs text-muted-foreground">{ar ? category.descriptionAr : category.descriptionEn}</p>
+                </div>
+
+                <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                  {category.projects.map((proj, pIdx) => (
+                    <Reveal key={pIdx} delay={pIdx * 0.04}>
+                      <div className="flex h-full flex-col justify-between rounded-2xl border border-white/20 bg-background/60 p-5 backdrop-blur-xl shadow-sm transition-all hover:border-brand-green/60">
+                        <div>
+                          <div className="flex items-center justify-between gap-2">
+                            <span className="rounded bg-brand-green/10 px-2 py-0.5 font-mono text-[10px] font-semibold text-brand-green-text">
+                              {proj.category}
+                            </span>
+                            {"year" in proj && proj.year && <span className="font-mono text-[11px] text-muted-foreground">{proj.year}</span>}
+                          </div>
+
+                          <h4 className="mt-3 font-head text-base font-bold text-foreground">{ar ? proj.nameAr : proj.nameEn}</h4>
+                          <p className="mt-1 text-xs font-medium text-brand-orange-text">{ar ? proj.clientAr : proj.clientEn}</p>
+                          <p className="mt-3 text-xs leading-5 text-muted-foreground text-justify [text-align-last:start]">{ar ? proj.scopeAr : proj.scopeEn}</p>
+                        </div>
+
+                        {"value" in proj && proj.value && (
+                          <div className="mt-4 border-t border-border/70 pt-3 flex items-center justify-between text-xs">
+                            <span className="text-muted-foreground">{ar ? "القيمة المسجلة:" : "Contract Value:"}</span>
+                            <span className={cn("font-mono font-bold text-brand-green-text", ar ? "text-right" : "text-left")}>{ar ? ("valueAr" in proj && proj.valueAr ? proj.valueAr : proj.value) : proj.value}</span>
+                          </div>
+                        )}
+                      </div>
+                    </Reveal>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </div>

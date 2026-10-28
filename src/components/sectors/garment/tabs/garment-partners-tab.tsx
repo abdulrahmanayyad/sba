@@ -119,36 +119,38 @@ export function GarmentPartnersTab() {
           )}
         </div>
 
-        {/* Partners Grid */}
-        <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-          {filteredPartners.map((partner) => (
-            <div
-              key={partner.id}
-              className="group relative flex flex-col items-center justify-between rounded-2xl border border-border/80 bg-card p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-brand-orange/50 hover:shadow-md"
-            >
-              <div className="relative flex h-24 w-full items-center justify-center overflow-hidden rounded-xl bg-white p-3">
-                <img
-                  src={partner.src}
-                  alt={partner.name}
-                  loading="lazy"
-                  className="max-h-full max-w-full object-contain filter transition duration-300 group-hover:scale-105"
-                  onError={(e) => {
-                    const target = e.currentTarget;
-                    target.style.display = "none";
-                  }}
-                />
-              </div>
+        {/* Partners Slides / Carousel */}
+        <div className="relative mt-8">
+          <div className="flex gap-4 overflow-x-auto pb-4 pt-1 no-scrollbar scroll-smooth">
+            {filteredPartners.map((partner) => (
+              <div
+                key={partner.id}
+                className="group relative flex w-44 sm:w-52 shrink-0 flex-col items-center justify-between rounded-2xl border border-border/80 bg-card p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-brand-orange/50 hover:shadow-md"
+              >
+                <div className="relative flex h-24 w-full items-center justify-center overflow-hidden rounded-xl bg-white p-3">
+                  <img
+                    src={partner.src}
+                    alt={partner.name}
+                    loading="lazy"
+                    className="max-h-full max-w-full object-contain filter transition duration-300 group-hover:scale-105"
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      target.style.display = "none";
+                    }}
+                  />
+                </div>
 
-              <div className="mt-3 w-full text-center">
-                <span className="block truncate font-head text-xs font-bold text-foreground group-hover:text-brand-orange transition">
-                  {partner.name}
-                </span>
-                <span className="mt-1 block text-[10px] text-muted-foreground">
-                  {ar ? partner.categoryAr : partner.categoryEn}
-                </span>
+                <div className="mt-3 w-full text-center">
+                  <span className="block truncate font-head text-xs font-bold text-foreground group-hover:text-brand-orange transition">
+                    {partner.name}
+                  </span>
+                  <span className="mt-1 block text-[10px] text-muted-foreground">
+                    {ar ? partner.categoryAr : partner.categoryEn}
+                  </span>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         {filteredPartners.length === 0 && (
@@ -158,33 +160,6 @@ export function GarmentPartnersTab() {
             </p>
           </div>
         )}
-
-        {/* Partnership Benefits Bar */}
-        <div className="mt-16 rounded-3xl border border-border bg-gradient-to-r from-card via-card to-secondary/60 p-6 md:p-10">
-          <div className="flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-center">
-            <div>
-              <div className="flex items-center gap-2 text-xs font-bold text-brand-orange">
-                <Handshake className="size-4" />
-                <span>{ar ? "انضم إلى شبكة شركاء الإنتاج" : "Join Our Production Partner Network"}</span>
-              </div>
-              <h3 className="mt-2 font-head text-2xl font-bold text-foreground">
-                {ar ? "نساعد العلامات على التوسع وزيادة مرونة التوريد" : "Empowering Brands with Resilient Sourcing & Industrial Muscle"}
-              </h3>
-              <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-                {ar
-                  ? "نوفر للعلامات التجارية والشركاء برامج إنتاج مرنة، وحلول خامات متنوعة، وضماناً صارماً للمواعيد والمواصفات الفنية."
-                  : "We provide our partners with flexible manufacturing schedules, diverse fabric alternatives, and ironclad delivery commitments."}
-              </p>
-            </div>
-
-            <Button asChild variant="primary" size="lg" className="shrink-0">
-              <Link to="/sectors/$sector" params={{ sector: "garment" }} search={{ tab: "join" }}>
-                {ar ? "كن شريكاً لنا" : "Partner With Us"}
-                <ArrowRight className="size-4 ms-2 rtl:rotate-180" />
-              </Link>
-            </Button>
-          </div>
-        </div>
       </Reveal>
     </div>
   );

@@ -27,36 +27,10 @@ import { cn } from "@/lib/utils";
 export function GarmentAboutTab() {
   const { language } = useLanguage();
   const ar = language === "AR";
-  const { whoWeAre, whatWeOffer, whyChooseUs, capabilities, infrastructure, productionVolume, experience, markets } = garmentAboutData;
-
-  const quickSections = [
-    { id: "who-we-are", labelEn: "1. Who We Are", labelAr: "1. من نحن" },
-    { id: "what-we-offer", labelEn: "2. What We Offer", labelAr: "2. ماذا نقدم" },
-    { id: "why-choose-us", labelEn: "3. Why Choose Us", labelAr: "3. لماذا تختارنا" },
-    { id: "our-capabilities", labelEn: "4. Our Capabilities", labelAr: "4. قدراتنا" },
-    { id: "our-facilities", labelEn: "5. Our Infrastructure", labelAr: "5. إمكانياتنا" },
-    { id: "production-volume", labelEn: "6. Production Volume", labelAr: "6. حجم الإنتاج" },
-    { id: "our-experience", labelEn: "7. Our Experience", labelAr: "7. خبراتنا" },
-    { id: "our-markets", labelEn: "8. Our Markets", labelAr: "8. أسواقنا" },
-  ];
+  const { whoWeAre, whatWeOffer, whyChooseUs, capabilities, infrastructure, markets } = garmentAboutData;
 
   return (
-    <div className="space-y-24 py-8">
-      {/* Quick Jump Bar */}
-      <div className="sticky top-20 z-30 -mt-4 rounded-xl border border-border/80 bg-background/95 p-2 shadow-md backdrop-blur-md">
-        <div className="flex items-center gap-2 overflow-x-auto pb-1 text-xs sm:text-sm no-scrollbar">
-          <span className="shrink-0 font-bold px-2 text-brand-orange">{ar ? "أقسام الصفحة:" : "Sections:"}</span>
-          {quickSections.map((sec) => (
-            <a
-              key={sec.id}
-              href={`#${sec.id}`}
-              className="shrink-0 rounded-lg px-3 py-1.5 font-medium text-muted-foreground transition hover:bg-secondary hover:text-foreground"
-            >
-              {ar ? sec.labelAr : sec.labelEn}
-            </a>
-          ))}
-        </div>
-      </div>
+    <div className="space-y-16 py-4">
 
       {/* 1 — من نحن | Who We Are */}
       <section id="who-we-are" className="scroll-mt-36">
@@ -221,16 +195,16 @@ export function GarmentAboutTab() {
 
           <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {capabilities.stats.map((stat, idx) => (
-              <div key={stat.labelEn} className="relative overflow-hidden rounded-3xl border border-white/20 bg-background/80 p-7 shadow-lg backdrop-blur-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:border-brand-orange/40">
+              <div key={stat.labelEn} className="relative overflow-hidden rounded-3xl border border-white/20 bg-background/80 p-6 shadow-lg backdrop-blur-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:border-brand-orange/40">
                 <div className="flex items-center justify-between mb-3">
-                  <div className="font-head text-4xl lg:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">
+                  <div className="font-head text-2xl sm:text-3xl font-black text-brand-orange drop-shadow-sm">
                     {stat.value}
                   </div>
                   <span className="font-mono text-xs font-bold text-muted-foreground/70 border border-border/60 rounded-full px-2.5 py-0.5">
                     0{idx + 1}
                   </span>
                 </div>
-                <div className="mt-2 font-head text-lg font-bold text-foreground">
+                <div className="mt-2 font-head text-base font-bold text-foreground">
                   {ar ? stat.labelAr : stat.labelEn}
                 </div>
                 <p className="mt-1 text-xs font-medium text-muted-foreground">
@@ -275,119 +249,12 @@ export function GarmentAboutTab() {
         </Reveal>
       </section>
 
-      {/* 6 — حجم الإنتاج الحالي | Current Production Volume */}
-      <section id="production-volume" className="scroll-mt-36 rounded-3xl bg-secondary/40 p-6 md:p-10 border border-border">
-        <Reveal>
-          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-orange">
-            <span className="inline-block size-2 rounded-full bg-brand-orange" />
-            <span>{ar ? "06 — حجم الإنتاج الحالي" : "06 — Current Production Volume"}</span>
-          </div>
-
-          <h2 className="mt-3 font-head text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            {ar ? productionVolume.headingAr : productionVolume.heading}
-          </h2>
-          <p className="mt-2 max-w-2xl text-base text-muted-foreground">
-            {ar ? productionVolume.introAr : productionVolume.intro}
-          </p>
-
-          {/* Dedicated Classic Shirt Facility Highlight Card */}
-          <div className="mt-8 overflow-hidden rounded-2xl border-2 border-brand-orange/30 bg-card p-6 md:p-8 shadow-sm">
-            <div className="flex flex-wrap items-center justify-between gap-3">
-              <div className="flex items-center gap-3">
-                <div className="flex size-12 items-center justify-center rounded-2xl bg-brand-orange/10 text-brand-orange">
-                  <Shirt className="size-6" />
-                </div>
-                <div>
-                  <h3 className="font-head text-xl font-bold text-foreground">
-                    {ar ? productionVolume.classicShirtUnit.titleAr : productionVolume.classicShirtUnit.title}
-                  </h3>
-                  <span className="text-xs font-medium text-brand-orange">
-                    {ar ? "تخصص صناعي عالي الدقة" : "High-Precision Dedicated Apparel Unit"}
-                  </span>
-                </div>
-              </div>
-              <span className="rounded-full bg-brand-orange/15 px-4 py-1.5 font-mono text-sm font-bold text-brand-orange">
-                {ar ? productionVolume.classicShirtUnit.badgeAr : productionVolume.classicShirtUnit.badge}
-              </span>
-            </div>
-
-            <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-              {ar ? productionVolume.classicShirtUnit.descAr : productionVolume.classicShirtUnit.desc}
-            </p>
-
-            <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4 border-t border-border pt-4">
-              {productionVolume.classicShirtUnit.features.map((feat) => (
-                <div key={feat.en} className="flex items-center gap-2 text-sm font-medium text-foreground">
-                  <CheckCircle2 className="size-4 shrink-0 text-brand-orange" />
-                  <span>{ar ? feat.ar : feat.en}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Volume Summary Cards with Milestones number style */}
-          <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {productionVolume.volumeSummary.map((item, idx) => (
-              <div key={item.categoryEn} className="rounded-3xl border border-white/20 bg-background/80 p-6 shadow-lg backdrop-blur-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:border-brand-orange/40">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs font-semibold text-muted-foreground">{ar ? item.categoryAr : item.categoryEn}</span>
-                  <span className="font-mono text-xs font-bold text-muted-foreground/70 border border-border/60 rounded-full px-2 py-0.5">
-                    0{idx + 1}
-                  </span>
-                </div>
-                <div className="mt-1 font-head text-3xl lg:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">
-                  {ar ? item.volumeAr : item.volumeEn}
-                </div>
-                <p className="mt-2 text-xs font-medium text-muted-foreground">{ar ? item.notesAr : item.notesEn}</p>
-              </div>
-            ))}
-          </div>
-        </Reveal>
-      </section>
-
-      {/* 7 — خبراتنا | Our Experience & Expertise */}
-      <section id="our-experience" className="scroll-mt-36">
-        <Reveal>
-          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-orange">
-            <span className="inline-block size-2 rounded-full bg-brand-orange" />
-            <span>{ar ? "07 — خبراتنا وتطوير الأزياء" : "07 — Our Experience"}</span>
-          </div>
-
-          <h2 className="mt-3 font-head text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            {ar ? experience.headingAr : experience.heading}
-          </h2>
-          <p className="mt-2 max-w-2xl text-base text-muted-foreground">
-            {ar ? experience.subtitleAr : experience.subtitle}
-          </p>
-
-          <p className="mt-4 text-base leading-relaxed text-muted-foreground max-w-3xl">
-            {ar ? experience.overviewAr : experience.overview}
-          </p>
-
-          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {experience.pillars.map((item) => (
-              <div key={item.title} className="rounded-2xl border border-border bg-card p-6 shadow-sm">
-                <div className="flex size-10 items-center justify-center rounded-xl bg-brand-orange/10 text-brand-orange">
-                  <Scissors className="size-5" />
-                </div>
-                <h3 className="mt-4 font-head text-lg font-bold text-foreground">
-                  {ar ? item.titleAr : item.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {ar ? item.descAr : item.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </Reveal>
-      </section>
-
-      {/* 8 — أسواقنا | Our Markets */}
+      {/* 6 — أسواقنا | Our Markets */}
       <section id="our-markets" className="scroll-mt-36 rounded-3xl bg-gradient-to-br from-card via-card to-secondary/50 p-6 md:p-10 border border-border">
         <Reveal>
           <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-orange">
             <span className="inline-block size-2 rounded-full bg-brand-orange" />
-            <span>{ar ? "08 — أسواقنا وحضورنا الدولي" : "08 — Our Markets"}</span>
+            <span>{ar ? "06 — أسواقنا وحضورنا الدولي" : "06 — Our Markets"}</span>
           </div>
 
           <h2 className="mt-3 font-head text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -418,25 +285,6 @@ export function GarmentAboutTab() {
                 </p>
               </div>
             ))}
-          </div>
-
-          {/* Action Call Banner */}
-          <div className="mt-10 flex flex-col items-center justify-between gap-4 rounded-2xl bg-brand-orange/10 p-6 sm:flex-row sm:p-8">
-            <div>
-              <h3 className="font-head text-xl font-bold text-foreground">
-                {ar ? "هل تبحث عن شريك تصنيع موثوق لعلامتك التجارية؟" : "Looking for a Trusted Apparel Manufacturing Partner?"}
-              </h3>
-              <p className="text-sm text-muted-foreground mt-1">
-                {ar ? "فريقنا الفني جاهز لمراجعة تصاميمك وتقديم دراسة جدوى وتكلفة تفصيلية." : "Our technical team is ready to review your tech pack and quote your project."}
-              </p>
-            </div>
-            <div className="flex items-center gap-3">
-              <Button asChild variant="primary" size="lg">
-                <Link to="/sectors/$sector" params={{ sector: "garment" }} search={{ tab: "join" }}>
-                  {ar ? "اطلب عرض سعر الآن" : "Request Quotation Now"}
-                </Link>
-              </Button>
-            </div>
           </div>
         </Reveal>
       </section>

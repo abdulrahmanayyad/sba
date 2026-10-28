@@ -301,20 +301,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
                 <p className={cn("mt-4 font-bold text-brand-orange", isArabic ? "font-sans text-xs tracking-normal" : "font-mono text-[10px] uppercase tracking-[0.18em]")}>{messages.footer.addressLabel}</p>
                 <p className="mt-1.5 max-w-sm text-xs font-semibold leading-5 text-foreground/90">{messages.footer.address}</p>
 
-                {/* In Arabic: show reg/tax/copyright under address in brand column */}
-                {isArabic && (
-                  <div className="mt-5 flex flex-col gap-1 border-t border-white/10 pt-4">
-                    <p className="font-sans text-xs font-semibold text-foreground/90 text-right" dir="rtl">
-                      {messages.footer.registration}
-                    </p>
-                    <p className="font-sans text-xs font-semibold text-foreground/90 text-right" dir="rtl">
-                      {messages.footer.taxNumber}
-                    </p>
-                    <p className="mt-1 font-sans text-xs font-medium text-foreground/80 text-right" dir="rtl">
-                      {messages.footer.copyright}
-                    </p>
-                  </div>
-                )}
+
               </div>
 
               {/* Links grid */}
@@ -359,22 +346,20 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
               </div>
             </div>
 
-            {/* Bottom bar — English only (Arabic shows these under address in brand column) */}
-            {!isArabic && (
-              <div className="mt-8 border-t border-white/10 pt-6">
-                <div className="flex flex-col gap-1 items-start">
-                  <p className="font-mono text-xs font-semibold uppercase tracking-[0.05em] text-foreground/90 text-left" dir="ltr">
-                    {messages.footer.registration}
-                  </p>
-                  <p className="font-mono text-xs font-semibold uppercase tracking-[0.05em] text-foreground/90 text-left" dir="ltr">
-                    {messages.footer.taxNumber}
-                  </p>
-                  <p className="mt-1 text-xs font-medium text-foreground/80 text-left" dir="ltr">
-                    {messages.footer.copyright}
-                  </p>
-                </div>
+            {/* Bottom bar — Shown in both English & Arabic at the end of the footer */}
+            <div className="mt-8 border-t border-white/10 pt-6">
+              <div className={cn("flex flex-col gap-1", isArabic ? "items-start text-right font-sans" : "items-start text-left font-mono")}>
+                <p className="text-xs font-semibold uppercase tracking-[0.05em] text-foreground/90">
+                  {messages.footer.registration}
+                </p>
+                <p className="text-xs font-semibold uppercase tracking-[0.05em] text-foreground/90">
+                  {messages.footer.taxNumber}
+                </p>
+                <p className="mt-1 text-xs font-medium text-foreground/80">
+                  {messages.footer.copyright}
+                </p>
               </div>
-            )}
+            </div>
           </div>
         </div>
       </footer>

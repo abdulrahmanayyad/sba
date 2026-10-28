@@ -319,7 +319,7 @@ export const policiesData = {
   title: "Professional Standards & Guiding Policies",
   titleAr: "معايير مهنية وسياسات تشغيلية حاكمة",
   lead: "The policies of SAMI BIN AYYAD GROUP reflect its commitment to organized business practices, clear professional expectations, responsibility, and compliance. They provide a general framework for supporting performance quality and business relationship continuity.",
-  leadAr: "تعكس سياسات SAMI BIN AYYAD GROUP التزامها بتنظيم الأعمال، وتوضيح التوقعات المهنية، وتعزيز المسؤولية والامتثال، ودعم جودة الأداء واستمرارية العلاقات التجارية.",
+  leadAr: "تعكس سياسات مجموعة سامي بن عياد التزامها بتنظيم الأعمال، وتوضيح التوقعات المهنية، وتعزيز المسؤولية والامتثال، ودعم جودة الأداء واستمرارية العلاقات التجارية.",
   items: [
     {
       title: "Professional Conduct & Business Ethics",

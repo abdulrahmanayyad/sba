@@ -25,6 +25,7 @@ import {
 } from "lucide-react";
 
 import { HomeMotion, HomeReveal as Reveal } from "@/components/home/home-motion";
+import { AnimatedStatistic } from "@/components/site/animated-statistic";
 import { useLanguage } from "@/i18n/language-context";
 import { cn } from "@/lib/utils";
 import { divisions, founders } from "@/components/group/group-data";
@@ -37,6 +38,15 @@ import {
   whoWeAreData,
   whySbaData,
 } from "./about-data";
+
+function SectionBadge({ title }: { title: string }) {
+  return (
+    <span className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+      <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+      {title}
+    </span>
+  );
+}
 
 export function AboutPage() {
   const { language } = useLanguage();
@@ -58,14 +68,14 @@ export function AboutPage() {
     <HomeMotion key={language} variant="group">
       {/* 1. Who We Are / من نحن */}
       <section id="whoWeAre" className="site-container py-12 scroll-mt-24">
-        <div className="overflow-hidden rounded-3xl border border-white/25 bg-background/80 p-8 sm:p-12 shadow-lg backdrop-blur-2xl">
+        <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-8 sm:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
             <Reveal>
-              <p className="eyebrow">{ar ? whoWeAreData.eyebrowAr : whoWeAreData.eyebrow}</p>
-              <h1 className="section-title mt-2">
+              <SectionBadge title={ar ? "من نحن" : "About Us"} />
+              <h1 className="section-title mt-3">
                 {ar ? whoWeAreData.titleAr : whoWeAreData.title}
               </h1>
-              <div className="mt-6 space-y-4 text-base leading-8 text-muted-foreground">
+              <div className="mt-6 space-y-4 text-base leading-8 text-muted-foreground text-justify [text-align-last:start]">
                 {whoWeAreData.paragraphs.map((p, idx) => (
                   <p key={idx}>{ar ? p.ar : p.en}</p>
                 ))}
@@ -73,9 +83,12 @@ export function AboutPage() {
 
               <div className="mt-8 grid grid-cols-3 gap-4 border-t border-border pt-6">
                 {whoWeAreData.stats.map((stat) => (
-                  <div key={stat.value}>
-                    <p className="font-head text-2xl font-bold text-brand-orange sm:text-3xl">
-                      {stat.value}
+                  <div key={stat.value} className={ar ? "text-right" : "text-left"}>
+                    <p className={cn(
+                      "font-head text-2xl sm:text-3xl font-black text-brand-orange drop-shadow-sm tracking-tight",
+                      ar ? "text-right" : "text-left"
+                    )}>
+                      <AnimatedStatistic value={stat.value} />
                     </p>
                     <p className="mt-1 text-xs font-semibold text-muted-foreground sm:text-sm">
                       {ar ? stat.labelAr : stat.label}
@@ -114,11 +127,11 @@ export function AboutPage() {
 
       {/* 2. What We Do / ماذا نفعل */}
       <section id="whatWeDo" className="site-container py-12 scroll-mt-24">
-        <div className="overflow-hidden rounded-3xl border border-white/25 bg-background/80 p-8 sm:p-12 shadow-lg backdrop-blur-2xl">
+        <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-8 sm:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
           <Reveal className="mx-auto max-w-3xl text-center">
-            <p className="eyebrow">{ar ? whatWeDoData.eyebrowAr : whatWeDoData.eyebrow}</p>
-            <h2 className="section-title mt-2">{ar ? whatWeDoData.titleAr : whatWeDoData.title}</h2>
-            <p className="section-intro mx-auto mt-4">{ar ? whatWeDoData.leadAr : whatWeDoData.lead}</p>
+            <SectionBadge title={ar ? "ماذا نفعل" : "What We Do"} />
+            <h2 className="section-title mt-3">{ar ? whatWeDoData.titleAr : whatWeDoData.title}</h2>
+            <p className="section-intro mx-auto mt-4 text-justify [text-align-last:center]">{ar ? whatWeDoData.leadAr : whatWeDoData.lead}</p>
           </Reveal>
 
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -139,7 +152,7 @@ export function AboutPage() {
                       <h3 className="mt-5 font-head text-xl font-bold">
                         {ar ? sector.titleAr : sector.title}
                       </h3>
-                      <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                      <p className="mt-3 text-sm leading-6 text-muted-foreground text-justify [text-align-last:start]">
                         {ar ? sector.bodyAr : sector.body}
                       </p>
                     </div>
@@ -153,14 +166,14 @@ export function AboutPage() {
 
       {/* 3. Our Approach / نهجنا */}
       <section id="ourApproach" className="site-container py-12 scroll-mt-24">
-        <div className="overflow-hidden rounded-3xl border border-white/25 bg-background/80 p-8 sm:p-12 shadow-lg backdrop-blur-2xl">
+        <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-8 sm:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
           <div className="grid gap-12 lg:grid-cols-12 lg:items-start">
             <Reveal className="lg:col-span-5">
-              <p className="eyebrow">{ar ? ourApproachData.eyebrowAr : ourApproachData.eyebrow}</p>
-              <h2 className="section-title mt-2">
+              <SectionBadge title={ar ? "نهجنا" : "Our Approach"} />
+              <h2 className="section-title mt-3">
                 {ar ? ourApproachData.titleAr : ourApproachData.title}
               </h2>
-              <div className="mt-6 space-y-4 text-base leading-7 text-muted-foreground">
+              <div className="mt-6 space-y-4 text-base leading-7 text-muted-foreground text-justify [text-align-last:start]">
                 {ourApproachData.paragraphs.map((p, idx) => (
                   <p key={idx}>{ar ? p.ar : p.en}</p>
                 ))}
@@ -172,12 +185,12 @@ export function AboutPage() {
                 <Reveal key={step.num} delay={idx * 0.08}>
                   <div className="h-full rounded-2xl border border-white/20 bg-background/60 p-6 backdrop-blur-xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-orange/40 hover:shadow-md">
                     <span className="font-mono text-xs font-bold text-brand-orange">
-                      STEP {step.num}
+                      {ar ? step.num : `STEP ${step.num}`}
                     </span>
                     <h3 className="mt-2 font-head text-lg font-bold">
                       {ar ? step.titleAr : step.title}
                     </h3>
-                    <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                    <p className="mt-2 text-sm leading-6 text-muted-foreground text-justify [text-align-last:start]">
                       {ar ? step.bodyAr : step.body}
                     </p>
                   </div>
@@ -190,11 +203,11 @@ export function AboutPage() {
 
       {/* 4. Our Values / قيمنا */}
       <section id="ourValues" className="site-container py-12 scroll-mt-24">
-        <div className="overflow-hidden rounded-3xl border border-white/25 bg-background/80 p-8 sm:p-12 shadow-lg backdrop-blur-2xl">
+        <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-8 sm:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
           <Reveal className="mx-auto max-w-3xl text-center">
-            <p className="eyebrow">{ar ? ourValuesData.eyebrowAr : ourValuesData.eyebrow}</p>
-            <h2 className="section-title mt-2">{ar ? ourValuesData.titleAr : ourValuesData.title}</h2>
-            <p className="section-intro mx-auto mt-4">{ar ? ourValuesData.leadAr : ourValuesData.lead}</p>
+            <SectionBadge title={ar ? "قيمنا" : "Our Values"} />
+            <h2 className="section-title mt-3">{ar ? ourValuesData.titleAr : ourValuesData.title}</h2>
+            <p className="section-intro mx-auto mt-4 text-justify [text-align-last:center]">{ar ? ourValuesData.leadAr : ourValuesData.lead}</p>
           </Reveal>
 
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -210,7 +223,7 @@ export function AboutPage() {
                       <h3 className="mt-4 font-head text-lg font-bold">
                         {ar ? item.titleAr : item.title}
                       </h3>
-                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground text-justify [text-align-last:start]">
                         {ar ? item.bodyAr : item.body}
                       </p>
                     </div>
@@ -224,11 +237,11 @@ export function AboutPage() {
 
       {/* 5. Why Sami Bin Ayyad / لماذا سامي بن عياد */}
       <section id="whySba" className="site-container py-12 scroll-mt-24">
-        <div className="overflow-hidden rounded-3xl border border-white/25 bg-background/80 p-8 sm:p-12 shadow-lg backdrop-blur-2xl">
+        <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-8 sm:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
           <Reveal className="mx-auto max-w-3xl text-center">
-            <p className="eyebrow">{ar ? whySbaData.eyebrowAr : whySbaData.eyebrow}</p>
-            <h2 className="section-title mt-2">{ar ? whySbaData.titleAr : whySbaData.title}</h2>
-            <p className="section-intro mx-auto mt-4">{ar ? whySbaData.leadAr : whySbaData.lead}</p>
+            <SectionBadge title={ar ? "لماذا سامي بن عياد" : "Why Sami Bin Ayyad"} />
+            <h2 className="section-title mt-3">{ar ? whySbaData.titleAr : whySbaData.title}</h2>
+            <p className="section-intro mx-auto mt-4 text-justify [text-align-last:center]">{ar ? whySbaData.leadAr : whySbaData.lead}</p>
           </Reveal>
 
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -244,7 +257,7 @@ export function AboutPage() {
                         {ar ? pillar.titleAr : pillar.title}
                       </h3>
                     </div>
-                    <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                    <p className="mt-3 text-sm leading-6 text-muted-foreground text-justify [text-align-last:start]">
                       {ar ? pillar.bodyAr : pillar.body}
                     </p>
                   </div>
@@ -258,7 +271,7 @@ export function AboutPage() {
                 <span className="inline-flex size-10 items-center justify-center rounded-xl bg-brand-green text-footer-foreground">
                   <Sparkles className="size-5" />
                 </span>
-                <p className="mt-4 font-head text-base font-bold leading-snug text-foreground sm:text-lg">
+                <p className="mt-4 font-head text-base font-bold leading-snug text-foreground sm:text-lg text-justify [text-align-last:start]">
                   {ar ? whySbaData.conclusionAr : whySbaData.conclusion}
                 </p>
                 <div className="mt-6">
@@ -277,11 +290,11 @@ export function AboutPage() {
 
       {/* 6. Company Leadership / قيادة الشركة */}
       <section id="leadership" className="site-container py-12 scroll-mt-24">
-        <div className="overflow-hidden rounded-3xl border border-white/25 bg-background/80 p-8 sm:p-12 shadow-lg backdrop-blur-2xl">
+        <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-8 sm:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
           <Reveal className="mx-auto max-w-3xl text-center">
-            <p className="eyebrow">{ar ? "قيادة الشركة" : "Company Leadership"}</p>
-            <h2 className="section-title mt-2">{ar ? "قيادات تصنع الرؤية" : "The People Behind the Vision"}</h2>
-            <p className="section-intro mx-auto mt-3">
+            <SectionBadge title={ar ? "قيادة الشركة" : "Company Leadership"} />
+            <h2 className="section-title mt-3">{ar ? "قيادات تصنع الرؤية" : "The People Behind the Vision"}</h2>
+            <p className="section-intro mx-auto mt-3 text-justify [text-align-last:center]">
               {ar
                 ? "تقود المجموعة نخبة من المؤسسين والقياديين بخبرات متراكمة في إدارة الاستثمارات والتصنيع والخدمات البيئية والتطوير الأكاديمي."
                 : "The group is led by experienced founders bringing decades of leadership across contracting, manufacturing, sustainability, and education."}
@@ -300,11 +313,11 @@ export function AboutPage() {
 
       {/* 7. Company Governance / حوكمة الشركة */}
       <section id="governance" className="site-container py-12 scroll-mt-24">
-        <div className="overflow-hidden rounded-3xl border border-white/25 bg-background/80 p-8 sm:p-12 shadow-lg backdrop-blur-2xl">
+        <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-8 sm:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
           <Reveal className="mx-auto max-w-3xl text-center">
-            <p className="eyebrow">{ar ? governanceData.eyebrowAr : governanceData.eyebrow}</p>
-            <h2 className="section-title mt-2">{ar ? governanceData.titleAr : governanceData.title}</h2>
-            <p className="section-intro mx-auto mt-4">{ar ? governanceData.leadAr : governanceData.lead}</p>
+            <SectionBadge title={ar ? "حوكمة الشركة" : "Company Governance"} />
+            <h2 className="section-title mt-3">{ar ? governanceData.titleAr : governanceData.title}</h2>
+            <p className="section-intro mx-auto mt-4 text-justify [text-align-last:center]">{ar ? governanceData.leadAr : governanceData.lead}</p>
           </Reveal>
 
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -321,7 +334,7 @@ export function AboutPage() {
                     <h3 className="mt-4 font-head text-base font-bold">
                       {ar ? principle.titleAr : principle.title}
                     </h3>
-                    <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                    <p className="mt-2 text-sm leading-6 text-muted-foreground text-justify [text-align-last:start]">
                       {ar ? principle.bodyAr : principle.body}
                     </p>
                   </div>
@@ -331,7 +344,7 @@ export function AboutPage() {
           </div>
 
           <Reveal delay={0.4} className="mx-auto mt-10 max-w-3xl">
-            <div className="rounded-2xl border border-white/20 bg-background/60 p-5 text-center text-sm font-medium leading-relaxed text-muted-foreground backdrop-blur-md">
+            <div className="rounded-2xl border border-white/20 bg-background/60 p-5 text-center text-sm font-medium leading-relaxed text-muted-foreground backdrop-blur-md text-justify [text-align-last:center]">
               {ar ? governanceData.conclusionAr : governanceData.conclusion}
             </div>
           </Reveal>
@@ -340,11 +353,11 @@ export function AboutPage() {
 
       {/* 8. Policies / السياسات */}
       <section id="policies" className="site-container py-12 scroll-mt-24">
-        <div className="overflow-hidden rounded-3xl border border-white/25 bg-background/80 p-8 sm:p-12 shadow-lg backdrop-blur-2xl">
+        <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-8 sm:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
           <Reveal className="mx-auto max-w-3xl text-center">
-            <p className="eyebrow">{ar ? policiesData.eyebrowAr : policiesData.eyebrow}</p>
-            <h2 className="section-title mt-2">{ar ? policiesData.titleAr : policiesData.title}</h2>
-            <p className="section-intro mx-auto mt-4">{ar ? policiesData.leadAr : policiesData.lead}</p>
+            <SectionBadge title={ar ? "سياسات المجموعة" : "Group Policies"} />
+            <h2 className="section-title mt-3">{ar ? policiesData.titleAr : policiesData.title}</h2>
+            <p className="section-intro mx-auto mt-4 text-justify [text-align-last:center]">{ar ? policiesData.leadAr : policiesData.lead}</p>
           </Reveal>
 
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -360,7 +373,7 @@ export function AboutPage() {
                         {ar ? policy.titleAr : policy.title}
                       </h3>
                     </div>
-                    <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                    <p className="mt-3 text-sm leading-6 text-muted-foreground text-justify [text-align-last:start]">
                       {ar ? policy.bodyAr : policy.body}
                     </p>
                   </div>
@@ -395,15 +408,18 @@ function LeaderCard({
   return (
     <div className="glass-card group flex h-full flex-col justify-between rounded-3xl border border-white/20 bg-background/80 p-6 md:p-7 shadow-lg backdrop-blur-xl transition-all duration-300 hover:shadow-xl hover:border-brand-green/40">
       <div>
-        <div className="flex items-start gap-4">
-          {/* Photo Frame */}
-          <div className="relative size-16 shrink-0 overflow-hidden rounded-2xl border-2 border-brand-green/30 bg-gradient-to-br from-brand-green/15 via-background to-brand-orange/15 shadow-inner flex items-center justify-center text-brand-green-text">
-            <User className="size-8" />
+        <div className="flex items-start gap-4 sm:gap-5">
+          {/* Photo Frame - Spacious enough for normal photo */}
+          <div className="relative h-28 w-24 sm:h-32 sm:w-28 shrink-0 overflow-hidden rounded-2xl border-2 border-brand-green/30 bg-gradient-to-br from-brand-green/15 via-background to-brand-orange/15 shadow-inner flex items-center justify-center text-brand-green-text">
+            <User className="size-12 opacity-50" />
           </div>
 
           {/* Beside Photo Frame: Leader Info */}
           <div className="min-w-0 flex-1">
-            <span className="font-mono text-[10px] uppercase tracking-wider text-brand-orange font-semibold block">
+            <span className={cn(
+              "font-bold text-brand-orange block",
+              ar ? "font-sans text-xs md:text-sm font-black tracking-normal" : "font-mono text-[11px] uppercase tracking-wider"
+            )}>
               {ar ? founder.roleAr : founder.role}
             </span>
             <h3 className="mt-1 font-head text-lg md:text-xl font-bold text-foreground leading-snug">
@@ -414,7 +430,7 @@ function LeaderCard({
 
         {/* Bio area with See More toggle */}
         <div className="mt-4 border-t border-border/50 pt-3">
-          <p className="text-sm leading-relaxed text-muted-foreground transition-all duration-300">
+          <p className="text-sm leading-relaxed text-muted-foreground transition-all duration-300 text-justify [text-align-last:start]">
             {expanded ? bio : shortBio}
           </p>
           {isLong && (

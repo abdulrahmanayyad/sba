@@ -106,8 +106,6 @@ export function GarmentSectorView({ tab = "about" }: GarmentViewProps) {
         <div className="site-container relative py-16 md:py-24">
           <Reveal>
             <div className="flex flex-wrap items-center gap-2 text-xs font-medium text-brand-orange">
-              <span>{ar ? garmentHeroData.companyAr : garmentHeroData.company}</span>
-              <ChevronRight className="size-3.5 rtl:rotate-180" />
               <span className="text-white/80">{ar ? tabLabels[activeTab].ar : tabLabels[activeTab].en}</span>
             </div>
 
@@ -118,28 +116,6 @@ export function GarmentSectorView({ tab = "about" }: GarmentViewProps) {
             <p className={cn("mt-4 max-w-3xl font-head text-base text-footer-muted sm:text-xl", ar && "font-body")}>
               {ar ? garmentHeroData.subtitleAr : garmentHeroData.subtitle}
             </p>
-
-            <p className="mt-4 max-w-2xl text-sm leading-7 text-footer-foreground/90 sm:text-base">
-              {ar ? garmentHeroData.introAr : garmentHeroData.intro}
-            </p>
-
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button asChild variant="primary" size="lg" className="w-full sm:w-auto">
-                <Link to="/sectors/$sector" params={{ sector: "garment" }} search={{ tab: "join" }}>
-                  {ar ? "اطلب عرض سعر" : "Request a Quotation"}
-                </Link>
-              </Button>
-              <Button asChild size="lg" className="glass-dark w-full !text-footer-foreground hover:!bg-footer sm:w-auto">
-                <a href={WHATSAPP_URL} target="_blank" rel="noreferrer">
-                  <MessageCircle className="size-4 me-1.5" /> WhatsApp
-                </a>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="w-full sm:w-auto">
-                <Link to="/sectors/$sector" params={{ sector: "garment" }} search={{ tab: "capabilities" }}>
-                  <Sparkles className="size-4 me-1.5" /> {ar ? "استكشف قدراتنا" : "Explore Capabilities"}
-                </Link>
-              </Button>
-            </div>
           </Reveal>
         </div>
       </section>

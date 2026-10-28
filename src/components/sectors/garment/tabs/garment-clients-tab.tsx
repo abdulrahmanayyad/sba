@@ -49,31 +49,32 @@ export function GarmentClientsTab() {
           </div>
         </div>
 
-        {/* Clients Grid */}
-        <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-          {filteredClients.map((client) => (
-            <div
-              key={client.id}
-              className="group relative flex flex-col items-center justify-center rounded-2xl border border-border/80 bg-card p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-brand-orange/50 hover:shadow-md"
-            >
-              <div className="relative flex h-24 w-full items-center justify-center overflow-hidden rounded-xl bg-white p-3">
-                <img
-                  src={client.src}
-                  alt={client.name}
-                  loading="lazy"
-                  className="max-h-full max-w-full object-contain filter transition duration-300 group-hover:scale-105"
-                  onError={(e) => {
-                    // Fallback to text if image format error
-                    const target = e.currentTarget;
-                    target.style.display = "none";
-                  }}
-                />
+        {/* Clients Slides / Carousel */}
+        <div className="relative mt-10">
+          <div className="flex gap-4 overflow-x-auto pb-4 pt-1 no-scrollbar scroll-smooth">
+            {filteredClients.map((client) => (
+              <div
+                key={client.id}
+                className="group relative flex w-44 sm:w-52 shrink-0 flex-col items-center justify-center rounded-2xl border border-border/80 bg-card p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-brand-orange/50 hover:shadow-md"
+              >
+                <div className="relative flex h-24 w-full items-center justify-center overflow-hidden rounded-xl bg-white p-3">
+                  <img
+                    src={client.src}
+                    alt={client.name}
+                    loading="lazy"
+                    className="max-h-full max-w-full object-contain filter transition duration-300 group-hover:scale-105"
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      target.style.display = "none";
+                    }}
+                  />
+                </div>
+                <span className="mt-3 text-center font-head text-xs font-bold text-foreground transition group-hover:text-brand-orange line-clamp-1">
+                  {client.name}
+                </span>
               </div>
-              <span className="mt-3 text-center font-head text-xs font-bold text-foreground transition group-hover:text-brand-orange line-clamp-1">
-                {client.name}
-              </span>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         {filteredClients.length === 0 && (
@@ -121,24 +122,6 @@ export function GarmentClientsTab() {
               </p>
             </div>
           </div>
-        </div>
-
-        {/* CTA */}
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 rounded-2xl border border-border bg-card p-6 sm:flex-row sm:p-8">
-          <div>
-            <h3 className="font-head text-xl font-bold text-foreground">
-              {ar ? "هل تود تصنيع مجموعتك القادمة معنا؟" : "Ready to Manufacture Your Next Apparel Collection?"}
-            </h3>
-            <p className="text-sm text-muted-foreground mt-1">
-              {ar ? "انضم إلى شبكة عملائنا الرائدة واستفد من حلولنا الصناعية المتكاملة." : "Join our roster of premier brand clients and scale your fashion line."}
-            </p>
-          </div>
-          <Button asChild variant="primary" size="lg">
-            <Link to="/sectors/$sector" params={{ sector: "garment" }} search={{ tab: "join" }}>
-              {ar ? "ابدأ مشروعك معنا" : "Start Your Project"}
-              <ArrowRight className="size-4 ms-2 rtl:rotate-180" />
-            </Link>
-          </Button>
         </div>
       </Reveal>
     </div>

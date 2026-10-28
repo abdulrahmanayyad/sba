@@ -339,14 +339,14 @@ export function SectorHeader({
 
           <div className="hidden items-center gap-3 xl:flex">
             {language}
-            <Button asChild variant="primary" size="lg" data-magnetic className="rounded-full">
+            <Button asChild size="lg" data-magnetic className="rounded-full bg-brand-green text-white hover:bg-brand-orange hover:text-white transition-all duration-300 font-bold shadow-md hover:shadow-lg">
               {isGarment ? (
                 <Link to="/sectors/$sector" params={{ sector: "garment" }} search={{ tab: "join" }}>
-                  {ar ? "اطلب عرض سعر" : "Request a Quote"}
+                  {ar ? "تواصل معنا" : "Contact Us"}
                 </Link>
               ) : (
                 <Link to="/contact">
-                  {ar ? "اطلب عرض سعر" : "Request a Quote"}
+                  {ar ? "تواصل معنا" : "Contact Us"}
                 </Link>
               )}
             </Button>
@@ -543,7 +543,7 @@ export function SectorHeader({
 
             <div className="mt-auto space-y-4 pt-10">
               {language}
-              <Button asChild variant="primary" size="lg" className="w-full">
+              <Button asChild size="lg" className="w-full rounded-full bg-brand-green text-white hover:bg-brand-orange hover:text-white transition-all duration-300 font-bold">
                 {isGarment ? (
                   <Link
                     to="/sectors/$sector"
@@ -551,11 +551,11 @@ export function SectorHeader({
                     search={{ tab: "join" }}
                     onClick={() => setMenuOpen(false)}
                   >
-                    {ar ? "اطلب عرض سعر" : "Request a Quote"}
+                    {ar ? "تواصل معنا" : "Contact Us"}
                   </Link>
                 ) : (
                   <Link to="/contact" onClick={() => setMenuOpen(false)}>
-                    {ar ? "اطلب عرض سعر" : "Request a Quote"}
+                    {ar ? "تواصل معنا" : "Contact Us"}
                   </Link>
                 )}
               </Button>

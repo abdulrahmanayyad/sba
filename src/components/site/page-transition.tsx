@@ -30,8 +30,20 @@ export function PageTransition({ pathname, rtl }: { pathname: string; rtl: boole
         .set(el, { display: "none" });
     };
 
+    const triggerTransition = () => {
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      timeline?.kill();
+      clearTimeout(safety);
+      active = true;
+      timeline = gsap.timeline()
+        .set(el, { display: "flex", opacity: 1 })
+        .fromTo(logo, { scale: 0.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.25, ease: "back.out(1.4)" });
+      safety = setTimeout(uncover, 600);
+    };
+
     const before = router.subscribe("onBeforeNavigate", (event) => {
-      if (!event.pathChanged || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      const urlChanged = event.pathChanged || (event.fromLocation && event.fromLocation.href !== event.toLocation.href);
+      if (!urlChanged || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
       timeline?.kill();
       clearTimeout(safety);
       active = true;
@@ -48,9 +60,12 @@ export function PageTransition({ pathname, rtl }: { pathname: string; rtl: boole
       }
     });
 
+    window.addEventListener("sba-transition", triggerTransition);
+
     return () => {
       before();
       resolved();
+      window.removeEventListener("sba-transition", triggerTransition);
       clearTimeout(safety);
       timeline?.kill();
       gsap.set(el, { display: "none" });

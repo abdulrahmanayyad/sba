@@ -19,6 +19,11 @@ import { cn } from "@/lib/utils";
 
 const PAGE_SIZE = 24;
 
+function cleanModelTitle(title: string) {
+  const cleaned = title.replace(/[-_ ]*\d+$/, "").trim();
+  return cleaned || title;
+}
+
 export function GarmentProjectsTab() {
   const { language } = useLanguage();
   const ar = language === "AR";
@@ -157,7 +162,7 @@ export function GarmentProjectsTab() {
               <div className="relative aspect-[3/4] w-full overflow-hidden bg-secondary">
                 <img
                   src={item.src}
-                  alt={item.title}
+                  alt={cleanModelTitle(item.title)}
                   loading="lazy"
                   className="size-full object-cover transition duration-500 group-hover:scale-105"
                 />
@@ -174,7 +179,7 @@ export function GarmentProjectsTab() {
                   {ar ? item.categoryAr : item.categoryEn}
                 </span>
                 <span className="mt-0.5 block truncate font-head text-xs font-semibold text-foreground">
-                  {item.title}
+                  {cleanModelTitle(item.title)}
                 </span>
               </div>
             </div>
@@ -195,9 +200,6 @@ export function GarmentProjectsTab() {
                 ? `تحميل المزيد (${filteredItems.length - displayedItems.length} متبقي)`
                 : `Load More (${filteredItems.length - displayedItems.length} remaining)`}
             </Button>
-            <span className="text-xs text-muted-foreground">
-              {ar ? "تم عرض الصور بتدرج لضمان أسرع تجربة تصفح" : "Paginated for ultra-fast browsing performance"}
-            </span>
           </div>
         )}
 
@@ -234,7 +236,7 @@ export function GarmentProjectsTab() {
             <div className="relative flex max-h-[60vh] md:max-h-[85vh] w-full md:w-3/5 items-center justify-center bg-black/20 p-2">
               <img
                 src={selectedItem.src}
-                alt={selectedItem.title}
+                alt={cleanModelTitle(selectedItem.title)}
                 className="max-h-full max-w-full rounded-2xl object-contain shadow-md"
               />
             </div>
@@ -246,7 +248,7 @@ export function GarmentProjectsTab() {
                 </span>
 
                 <h3 className="mt-4 font-head text-2xl font-bold text-foreground">
-                  {selectedItem.title}
+                  {cleanModelTitle(selectedItem.title)}
                 </h3>
 
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">

@@ -221,7 +221,7 @@ export function SectorsShowcase({ ar }: { ar: boolean }) {
               </p>
 
               {/* Body */}
-              <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground font-medium sm:text-base">
+              <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground font-medium sm:text-base text-justify [text-align-last:start]">
                 {ar ? current.bodyAr : current.bodyEn}
               </p>
 
