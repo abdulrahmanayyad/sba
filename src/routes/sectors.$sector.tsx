@@ -1,18 +1,24 @@
-﻿import { createFileRoute, notFound } from "@tanstack/react-router";
+import { createFileRoute, notFound } from "@tanstack/react-router";
 
 import { SectorPage } from "@/components/sectors/sector-page";
 import { sectors, type SectorSlug } from "@/components/sectors/sector-data";
 import { ConstructionSectorView, type ConstructionTab } from "@/components/sectors/construction/construction-view";
 import { GarmentSectorView, type GarmentTab } from "@/components/sectors/garment/garment-view";
+import { EnvironmentalSectorView, type EnvironmentalTab } from "@/components/sectors/environmental/environmental-view";
 
 const validConstructionTabs: ConstructionTab[] = ["about", "sectors", "services", "projects"];
 const validGarmentTabs: GarmentTab[] = ["about", "services", "clients", "projects", "partners", "capabilities", "join"];
+const validEnvironmentalTabs: EnvironmentalTab[] = ["about", "sectors", "services"];
 
 export const Route = createFileRoute("/sectors/$sector")({
   validateSearch: (search: Record<string, unknown>): { tab?: string | undefined } => {
     const tabStr = search["tab"];
     if (typeof tabStr === "string" && tabStr) {
-      if (validConstructionTabs.includes(tabStr as ConstructionTab) || validGarmentTabs.includes(tabStr as GarmentTab)) {
+      if (
+        validConstructionTabs.includes(tabStr as ConstructionTab) ||
+        validGarmentTabs.includes(tabStr as GarmentTab) ||
+        validEnvironmentalTabs.includes(tabStr as EnvironmentalTab)
+      ) {
         return { tab: tabStr };
       }
     }
@@ -48,6 +54,15 @@ export const Route = createFileRoute("/sectors/$sector")({
       if (garmentTabTitles[tab]) {
         title = `${garmentTabTitles[tab]} — SBA Garment`;
       }
+    } else if (params.sector === "environmental" && tab) {
+      const environmentalTabTitles: Record<string, string> = {
+        about: "About Us — Sustainable Environment & Renewable Energy",
+        sectors: "Sectors We Serve — Environmental & Energy Solutions",
+        services: "Our Services — Environmental Consulting & Green Technologies",
+      };
+      if (environmentalTabTitles[tab]) {
+        title = `${environmentalTabTitles[tab]} — SBA Environmental`;
+      }
     }
 
     return {
@@ -76,6 +91,10 @@ function SectorRoute() {
 
   if (sector === "garment") {
     return <GarmentSectorView tab={tab as GarmentTab} />;
+  }
+
+  if (sector === "environmental") {
+    return <EnvironmentalSectorView tab={tab as EnvironmentalTab} />;
   }
 
   return <SectorPage sector={data} />;

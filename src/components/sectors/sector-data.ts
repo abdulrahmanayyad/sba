@@ -275,6 +275,12 @@ export const sectors: Record<SectorSlug, SectorPageData> = {
         ],
       },
       {
+        title: "Our Services",
+        titleAr: "خدماتنا وتخصصاتنا",
+        body: "Comprehensive environmental and technical services covering waste-to-energy, carbon footprint, environmental studies (EIA/SEA/ESIA), laboratory measurements, waste management, biotechnology, and ISO qualifications.",
+        bodyAr: "نطاق متكامل من الخدمات والحلول البيئية يشمل تحويل المخلفات لطاقة، البصمة الكربونية، دراسات تقييم الأثر البيئي، القياسات الميدانية والمعملية، التكنولوجيا الحيوية، وتأهيل شهادات الأيزو.",
+      },
+      {
         title: "Environmental Studies & Consulting",
         titleAr: "الدراسات والاستشارات البيئية",
         body: "Environmental Impact Assessment (EIA), Environmental and Social Impact Assessment (ESIA), Strategic Environmental Assessment (SEA), Environmental Risk Assessment, Due Diligence, Environmental Auditing, Compliance Studies, and Permitting.",

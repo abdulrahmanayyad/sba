@@ -1,4 +1,4 @@
-﻿import { Link, useRouterState } from "@tanstack/react-router";
+import { Link, useRouterState } from "@tanstack/react-router";
 import { ArrowLeft, ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -86,6 +86,7 @@ export function SectorHeader({
 
   const isConstruction = slug === "construction";
   const isGarment = slug === "garment";
+  const isEnvironmental = slug === "environmental";
   const activeTab = searchTab || "about";
 
   const navPill =
@@ -209,6 +210,43 @@ export function SectorHeader({
                   params={{ sector: "garment" }}
                   search={{ tab: "join" }}
                   className={cn(navPill, activeTab === "join" && "!text-brand-orange bg-white/40 shadow-sm")}
+                >
+                  {ar ? "انضم إلينا" : "Join Us"}
+                </Link>
+              </>
+            ) : isEnvironmental ? (
+              /* Custom Environmental Navigation */
+              <>
+                <Link
+                  to="/sectors/$sector"
+                  params={{ sector: "environmental" }}
+                  search={{}}
+                  className={cn(navPill, activeTab === "about" && "!text-brand-green bg-white/40 shadow-sm")}
+                >
+                  {ar ? "من نحن" : "About Us"}
+                </Link>
+
+                <Link
+                  to="/sectors/$sector"
+                  params={{ sector: "environmental" }}
+                  search={{ tab: "sectors" }}
+                  className={cn(navPill, activeTab === "sectors" && "!text-brand-green bg-white/40 shadow-sm")}
+                >
+                  {ar ? "قطاعاتنا" : "Our Sectors"}
+                </Link>
+
+                <Link
+                  to="/sectors/$sector"
+                  params={{ sector: "environmental" }}
+                  search={{ tab: "services" }}
+                  className={cn(navPill, activeTab === "services" && "!text-brand-green bg-white/40 shadow-sm")}
+                >
+                  {ar ? "خدماتنا" : "Our Services"}
+                </Link>
+
+                <Link
+                  to="/contact"
+                  className={navPill}
                 >
                   {ar ? "انضم إلينا" : "Join Us"}
                 </Link>
@@ -476,6 +514,43 @@ export function SectorHeader({
                       search={{ tab: "join" }}
                       onClick={() => setMenuOpen(false)}
                       className={cn(mobileLinkStyle, activeTab === "join" && "!text-brand-orange bg-white/40")}
+                    >
+                      {ar ? "انضم إلينا" : "Join Us"}
+                    </Link>
+                  </>
+                ) : isEnvironmental ? (
+                  <>
+                    <Link
+                      to="/sectors/$sector"
+                      params={{ sector: "environmental" }}
+                      search={{}}
+                      onClick={() => setMenuOpen(false)}
+                      className={cn(mobileLinkStyle, activeTab === "about" && "!text-brand-green bg-white/40")}
+                    >
+                      {ar ? "من نحن" : "About Us"}
+                    </Link>
+                    <Link
+                      to="/sectors/$sector"
+                      params={{ sector: "environmental" }}
+                      search={{ tab: "sectors" }}
+                      onClick={() => setMenuOpen(false)}
+                      className={cn(mobileLinkStyle, activeTab === "sectors" && "!text-brand-green bg-white/40")}
+                    >
+                      {ar ? "قطاعاتنا" : "Our Sectors"}
+                    </Link>
+                    <Link
+                      to="/sectors/$sector"
+                      params={{ sector: "environmental" }}
+                      search={{ tab: "services" }}
+                      onClick={() => setMenuOpen(false)}
+                      className={cn(mobileLinkStyle, activeTab === "services" && "!text-brand-green bg-white/40")}
+                    >
+                      {ar ? "خدماتنا" : "Our Services"}
+                    </Link>
+                    <Link
+                      to="/contact"
+                      onClick={() => setMenuOpen(false)}
+                      className={mobileLinkStyle}
                     >
                       {ar ? "انضم إلينا" : "Join Us"}
                     </Link>
