@@ -94,31 +94,29 @@ export function GarmentSectorView({ tab = "about" }: GarmentViewProps) {
 
   return (
     <div className="w-full">
-      {/* Sector Hero */}
-      <section className="relative text-footer-foreground">
-        <img
-          data-clip-reveal
-          src={garmentHeroData.image}
-          alt={ar ? garmentHeroData.titleAr : garmentHeroData.title}
-          className="absolute inset-0 size-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-footer via-footer/80 to-footer/65" />
-        <div className="site-container relative py-16 md:py-24">
-          <Reveal>
-            <div className="flex flex-wrap items-center gap-2 text-xs font-medium text-brand-orange">
-              <span className="text-white/80">{ar ? tabLabels[activeTab].ar : tabLabels[activeTab].en}</span>
-            </div>
+      {/* Sector Hero — Only displayed on About Us tab, matching Construction */}
+      {(activeTab === "about" || activeTab === "clients" || activeTab === "partners") && (
+        <section className="relative w-full overflow-hidden text-footer-foreground min-h-[380px] md:min-h-[460px] lg:min-h-[480px] flex items-center">
+          <img
+            data-clip-reveal
+            src={garmentHeroData.image}
+            alt={ar ? garmentHeroData.titleAr : garmentHeroData.title}
+            className="absolute inset-0 size-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-footer via-footer/80 to-footer/65" />
+          <div className="site-container relative w-full py-16 md:py-24">
+            <Reveal>
+              <h1 className="mt-4 max-w-4xl font-head text-[clamp(1.85rem,6vw,3.75rem)] font-bold leading-[1.15] text-white">
+                {ar ? garmentHeroData.titleAr : garmentHeroData.title}
+              </h1>
 
-            <h1 className="mt-4 max-w-4xl font-head text-[clamp(1.85rem,6vw,3.75rem)] font-bold leading-[1.15] text-white">
-              {ar ? garmentHeroData.titleAr : garmentHeroData.title}
-            </h1>
-
-            <p className={cn("mt-4 max-w-3xl font-head text-base text-footer-muted sm:text-xl", ar && "font-body")}>
-              {ar ? garmentHeroData.subtitleAr : garmentHeroData.subtitle}
-            </p>
-          </Reveal>
-        </div>
-      </section>
+              <p className={cn("mt-4 max-w-3xl font-head text-base text-footer-muted sm:text-xl", ar && "font-body")}>
+                {ar ? garmentHeroData.subtitleAr : garmentHeroData.subtitle}
+              </p>
+            </Reveal>
+          </div>
+        </section>
+      )}
 
 
       {/* Main Content */}

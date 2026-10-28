@@ -16,6 +16,21 @@ import { Reveal } from "@/components/home/reveal";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/i18n/language-context";
 import { garmentProcessSteps, garmentAboutData } from "../garment-data";
+import { cn } from "@/lib/utils";
+import { AnimatedStatistic } from "@/components/site/animated-statistic";
+
+import apparelImg from "@/assets/sector-apparel.jpg";
+import homeTextile from "@/assets/home-textile.jpg";
+import jzraCasual from "@/assets/jzra-summer-casual.jpg";
+
+function SectionBadge({ title }: { title: string }) {
+  return (
+    <span className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+      <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+      {title}
+    </span>
+  );
+}
 
 export function GarmentCapabilitiesTab() {
   const { language } = useLanguage();
@@ -23,105 +38,64 @@ export function GarmentCapabilitiesTab() {
   const { capabilities, infrastructure, productionVolume } = garmentAboutData;
 
   return (
-    <div className="space-y-20 py-8">
+    <div className="space-y-12 py-6">
       {/* Overview & Key Stats */}
-      <Reveal>
-        <div className="max-w-3xl">
-          <span className="text-xs font-bold uppercase tracking-wider text-brand-orange">
-            {ar ? "قدراتنا وإمكانياتنا الصناعية" : "Manufacturing Infrastructure & Capabilities"}
-          </span>
-          <h2 className="mt-2 font-head text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            {ar ? "منظومة إنتاج متطورة مصممة للمرونة والنمو" : "Advanced Production Network Built for Scalability & Speed"}
-          </h2>
-          <p className="mt-4 text-base text-muted-foreground leading-relaxed sm:text-lg">
-            {ar
-              ? "تستند إمكاناتنا إلى بنية صناعية تجمع بين مصانع المجموعة وخطوط الإنتاج التخصصية والكوادر الماهرة، لتنفيذ برامج تصنيع دقيقة ومتطابقة مع المعايير الدولية."
-              : "Our capabilities leverage an integrated industrial network of dedicated garment factories, specialized machinery, and master craftspeople tailored for demanding global apparel programs."}
-          </p>
-        </div>
-
-        {/* Stats Grid */}
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {capabilities.stats.map((stat, idx) => (
-            <div key={stat.labelEn} className="relative overflow-hidden rounded-3xl border border-white/20 bg-background/80 p-7 shadow-lg backdrop-blur-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:border-brand-orange/40">
-              <div className="flex items-center justify-between mb-3">
-                <div className="font-head text-4xl lg:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">
-                  {stat.value}
-                </div>
-                <span className="font-mono text-xs font-bold text-muted-foreground/70 border border-border/60 rounded-full px-2.5 py-0.5">
-                  0{idx + 1}
-                </span>
-              </div>
-              <div className="mt-2 font-head text-lg font-bold text-foreground">
-                {ar ? stat.labelAr : stat.labelEn}
-              </div>
-              <p className="mt-1 text-xs font-medium text-muted-foreground">
-                {ar ? stat.descAr : stat.descEn}
-              </p>
-            </div>
-          ))}
-        </div>
-      </Reveal>
-
-      {/* Dedicated Classic Shirt Facility Showcase */}
-      <section className="rounded-3xl border-2 border-brand-orange/30 bg-card p-6 md:p-10 shadow-sm">
+      <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
         <Reveal>
-          <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-            <div className="max-w-3xl">
-              <div className="flex items-center gap-3">
-                <div className="flex size-12 items-center justify-center rounded-2xl bg-brand-orange/10 text-brand-orange">
-                  <Shirt className="size-6" />
-                </div>
-                <div>
-                  <span className="font-mono text-xs font-bold text-brand-orange">
-                    {ar ? "مصنع تخصصي للقمصان" : "DEDICATED SHIRTMAKING FACILITY"}
+          <div className="max-w-3xl">
+            <SectionBadge title={ar ? "قدراتنا وإمكانياتنا الصناعية" : "Manufacturing Infrastructure"} />
+            <h2 className="section-title mt-3">
+              {ar ? "منظومة إنتاج متطورة مصممة للمرونة والنمو" : "Advanced Production Network Built for Scalability & Speed"}
+            </h2>
+            <p className="section-intro mt-4 text-justify [text-align-last:start]">
+              {ar
+                ? "تستند إمكاناتنا إلى بنية صناعية تجمع بين مصانع المجموعة وخطوط الإنتاج التخصصية والكوادر الماهرة، لتنفيذ برامج تصنيع دقيقة ومتطابقة مع المعايير الدولية."
+                : "Our capabilities leverage an integrated industrial network of dedicated garment factories, specialized machinery, and master craftspeople tailored for demanding global apparel programs."}
+            </p>
+          </div>
+
+          {/* Stats Grid */}
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {capabilities.stats.map((stat, idx) => (
+              <div 
+                key={stat.labelEn} 
+                className={cn(
+                  "relative overflow-hidden rounded-2xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur-md transition-all duration-300 hover:border-brand-orange/40 hover:shadow-lg",
+                  ar ? "text-right" : "text-left"
+                )}
+              >
+                <div className="flex items-center justify-between mb-3">
+                  <p className={cn(
+                    "font-head text-3xl sm:text-4xl font-black text-brand-orange drop-shadow-sm tracking-tight",
+                    ar ? "text-right" : "text-left"
+                  )}>
+                    <AnimatedStatistic value={stat.value} />
+                  </p>
+                  <span className="font-mono text-xs font-bold text-muted-foreground/70 border border-border/60 rounded-full px-2.5 py-0.5">
+                    0{idx + 1}
                   </span>
-                  <h3 className="font-head text-2xl font-bold text-foreground sm:text-3xl">
-                    {ar ? productionVolume.classicShirtUnit.titleAr : productionVolume.classicShirtUnit.title}
-                  </h3>
                 </div>
+                <div className="mt-2 font-head text-base font-bold text-foreground">
+                  {ar ? stat.labelAr : stat.labelEn}
+                </div>
+                <p className="mt-1 text-xs font-medium text-muted-foreground text-justify [text-align-last:start]">
+                  {ar ? stat.descAr : stat.descEn}
+                </p>
               </div>
-
-              <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-                {ar ? productionVolume.classicShirtUnit.descAr : productionVolume.classicShirtUnit.desc}
-              </p>
-
-              <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                {productionVolume.classicShirtUnit.features.map((feat) => (
-                  <div key={feat.en} className="flex items-center gap-2 text-sm font-medium text-foreground">
-                    <CheckCircle2 className="size-4 shrink-0 text-brand-orange" />
-                    <span>{ar ? feat.ar : feat.en}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="flex flex-col items-center justify-center rounded-2xl border border-border bg-secondary/60 p-6 text-center lg:w-72 shrink-0">
-              <span className="font-mono text-4xl font-extrabold text-brand-orange">
-                30,000
-              </span>
-              <span className="mt-1 font-head text-sm font-bold text-foreground">
-                {ar ? "قميص شهريًا" : "Classic Shirts / Mo"}
-              </span>
-              <p className="mt-2 text-xs text-muted-foreground">
-                {ar ? "100 ماكينة متخصصة وخط إنتاج مخصص للقمصان الكلاسيك" : "100 dedicated machines & specialized production line"}
-              </p>
-            </div>
+            ))}
           </div>
         </Reveal>
-      </section>
+      </div>
 
       {/* 10-Stage Structured Manufacturing Process */}
-      <section className="space-y-8">
+      <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
         <Reveal>
           <div>
-            <span className="text-xs font-bold uppercase tracking-wider text-brand-orange">
-              {ar ? "مراحل التصنيع المنظمة" : "Our Structured Manufacturing Process"}
-            </span>
-            <h2 className="mt-2 font-head text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            <SectionBadge title={ar ? "مراحل التصنيع المنظمة" : "Our Process"} />
+            <h2 className="section-title mt-3">
               {ar ? "مسار واضح ومنضبط من الفكرة وحتى التصدير" : "A Disciplined 10-Stage Path From Concept to Global Delivery"}
             </h2>
-            <p className="mt-3 max-w-2xl text-base text-muted-foreground">
+            <p className="section-intro mt-4 max-w-2xl text-justify [text-align-last:start]">
               {ar
                 ? "تتبع كافة طلبياتنا دورة تصنيع قياسية صارمة لضمان الالتزام بالمواصفات الفنية والجداول الزمنية."
                 : "Every order follows an established ten-phase protocol ensuring technical compliance and milestone predictability."}
@@ -132,16 +106,16 @@ export function GarmentCapabilitiesTab() {
             {garmentProcessSteps.map((step) => (
               <div
                 key={step.step}
-                className="group relative flex flex-col justify-between rounded-2xl border border-border bg-card p-5 shadow-sm transition hover:border-brand-orange/40 hover:shadow-md"
+                className="group relative flex flex-col justify-between rounded-2xl border border-border bg-card/60 p-5 shadow-sm backdrop-blur-md transition hover:border-brand-orange/40 hover:shadow-md"
               >
                 <div>
-                  <span className="font-mono text-xl font-black text-brand-orange/80">
+                  <span className="font-mono text-xl font-black text-brand-orange">
                     {step.step}
                   </span>
-                  <h3 className="mt-2 font-head text-base font-bold text-foreground group-hover:text-brand-orange transition">
+                  <h3 className="mt-2 font-head text-sm font-bold text-foreground group-hover:text-brand-orange transition">
                     {ar ? step.titleAr : step.titleEn}
                   </h3>
-                  <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+                  <p className="mt-2 text-xs leading-relaxed text-muted-foreground text-justify [text-align-last:start]">
                     {ar ? step.descAr : step.descEn}
                   </p>
                 </div>
@@ -149,20 +123,18 @@ export function GarmentCapabilitiesTab() {
             ))}
           </div>
         </Reveal>
-      </section>
+      </div>
 
-      {/* Quality Control & Standards */}
-      <section className="rounded-3xl border border-border bg-secondary/50 p-6 md:p-10">
+      {/* Quality Control & Standards with Visual Image */}
+      <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
         <Reveal>
           <div className="grid gap-8 lg:grid-cols-12 lg:items-center">
             <div className="lg:col-span-7">
-              <span className="text-xs font-bold uppercase tracking-wider text-brand-orange">
-                {ar ? "ضمان الجودة" : "Quality Assurance"}
-              </span>
-              <h3 className="mt-2 font-head text-3xl font-bold text-foreground">
+              <SectionBadge title={ar ? "ضمان الجودة" : "Quality Assurance"} />
+              <h3 className="section-title mt-3">
                 {ar ? "الجودة مدمجة في كل خطوة وليست مجرد فحص أخير" : "Quality Built-In At Every Touchpoint"}
               </h3>
-              <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+              <p className="section-intro mt-4 text-justify [text-align-last:start]">
                 {ar
                   ? "نعتمد على متابعة الجودة خلال كافة المراحل: بدءًا من فحص الأقمشة والمقاسات والباترونات، مرورًا بالقص والخياطة والتشطيب، وصولًا إلى المظهر النهائي والملصقات والتعبئة. تُحدد معايير الفحص لكل مشروع وفق المواصفات الفنية المعتمدة من العميل."
                   : "Quality is monitored continuously: from raw textile and pattern audits to automated cutting, in-line sewing checks, steam finishing, labeling, and final carton packing against approved AQL benchmarks."}
@@ -175,7 +147,7 @@ export function GarmentCapabilitiesTab() {
                   { en: "Seam Strength & Wash Tests", ar: "اختبارات قوة الحياكة وثبات الغسيل" },
                   { en: "100% Pre-Pack Auditing", ar: "فحص شامل لكافة القطع قبل التعبئة" },
                 ].map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-2 text-sm font-semibold text-foreground">
+                  <div key={idx} className="flex items-center gap-2 rounded-xl border border-border bg-card/60 p-3 text-xs sm:text-sm font-semibold text-foreground backdrop-blur-sm">
                     <ShieldCheck className="size-4 shrink-0 text-brand-orange" />
                     <span>{ar ? item.ar : item.en}</span>
                   </div>
@@ -183,28 +155,17 @@ export function GarmentCapabilitiesTab() {
               </div>
             </div>
 
-            <div className="rounded-2xl border border-border bg-card p-6 shadow-sm lg:col-span-5">
-              <h4 className="font-head text-lg font-bold text-foreground">
-                {ar ? "مرونة الحد الأدنى للطلب (MOQ)" : "Flexible Order Quantities (MOQ)"}
-              </h4>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                {ar
-                  ? "نحن نؤمن بأن الحد الأدنى للطلب يجب أن يتحدد وفق طبيعة المنتج ونوع القماش والمواصفات الفنية، وليس برقم جامد. يتيح نموذجنا المرن دعم العلامات التجارية الصاعدة والطلبيات التجريبية بجانب الإنتاج الكمي الضخم."
-                  : "We believe minimum order quantities should adapt to garment complexity and fabric availability rather than rigid universal numbers. Our flexible model supports both emerging capsules and high-volume rollouts."}
-              </p>
-
-              <div className="mt-6 border-t border-border pt-4">
-                <Button asChild variant="primary" size="lg" className="w-full">
-                  <Link to="/sectors/$sector" params={{ sector: "garment" }} search={{ tab: "join" }}>
-                    {ar ? "اطلب دراسة لتشغيلتك القادمة" : "Inquire About Your Production Run"}
-                    <ArrowRight className="size-4 ms-2 rtl:rotate-180" />
-                  </Link>
-                </Button>
-              </div>
+            <div className="overflow-hidden rounded-2xl border border-border shadow-lg lg:col-span-5">
+              <img
+                src={homeTextile}
+                alt="Quality Assurance"
+                loading="lazy"
+                className="aspect-[4/3] w-full object-cover transition-transform duration-700 hover:scale-105"
+              />
             </div>
           </div>
         </Reveal>
-      </section>
+      </div>
     </div>
   );
 }

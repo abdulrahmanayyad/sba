@@ -1,5 +1,5 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { ArrowLeft, ChevronDown, Menu, X } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/button";
@@ -88,7 +88,9 @@ export function SectorHeader({
   const isGarment = slug === "garment";
   const activeTab = searchTab || "about";
 
-  const navLinkStyle = "nav-link whitespace-nowrap font-body text-sm font-bold";
+  const navPill =
+    "group relative inline-flex items-center gap-1 rounded-full px-4 py-2 text-sm font-bold tracking-wide text-foreground transition-all duration-300 hover:bg-white/40 hover:text-brand-orange hover:shadow-sm hover:backdrop-blur-md hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap";
+  const navLinkStyle = navPill;
   const mobileLinkStyle = "border-b border-border py-3 font-body text-base font-bold";
 
   return (
@@ -110,9 +112,9 @@ export function SectorHeader({
             {name}
           </p>
 
-          <nav aria-label={name} className="mx-auto hidden items-center gap-4 xl:flex">
+          <nav aria-label={name} className="mx-auto hidden items-center justify-center gap-x-1 xl:flex">
             {/* Home Link - Exact matching font and size */}
-            <Link to="/" className={navLinkStyle}>
+            <Link to="/" className={navPill}>
               {home}
             </Link>
 
@@ -123,7 +125,7 @@ export function SectorHeader({
                   to="/sectors/$sector"
                   params={{ sector: "construction" }}
                   search={{}}
-                  className={cn(navLinkStyle, activeTab === "about" && "text-brand-green")}
+                  className={cn(navPill, activeTab === "about" && "!text-brand-green bg-white/40 shadow-sm")}
                 >
                   {ar ? "نبذة عنا" : "About Us"}
                 </Link>
@@ -132,16 +134,16 @@ export function SectorHeader({
                   to="/sectors/$sector"
                   params={{ sector: "construction" }}
                   search={{ tab: "sectors" }}
-                  className={cn(navLinkStyle, activeTab === "sectors" && "text-brand-green")}
+                  className={cn(navPill, activeTab === "sectors" && "!text-brand-green bg-white/40 shadow-sm")}
                 >
-                  {ar ? "قطاعات نخدمها" : "Our Sectors"}
+                  {ar ? "قطاعاتنا" : "Our Sectors"}
                 </Link>
 
                 <Link
                   to="/sectors/$sector"
                   params={{ sector: "construction" }}
                   search={{ tab: "services" }}
-                  className={cn(navLinkStyle, activeTab === "services" && "text-brand-green")}
+                  className={cn(navPill, activeTab === "services" && "!text-brand-green bg-white/40 shadow-sm")}
                 >
                   {ar ? "خدماتنا" : "Our Services"}
                 </Link>
@@ -150,14 +152,14 @@ export function SectorHeader({
                   to="/sectors/$sector"
                   params={{ sector: "construction" }}
                   search={{ tab: "projects" }}
-                  className={cn(navLinkStyle, activeTab === "projects" && "text-brand-green")}
+                  className={cn(navPill, activeTab === "projects" && "!text-brand-green bg-white/40 shadow-sm")}
                 >
                   {ar ? "مشاريعنا" : "Our Projects"}
                 </Link>
 
                 <Link
                   to="/contact"
-                  className={navLinkStyle}
+                  className={navPill}
                 >
                   {ar ? "انضم إلينا" : "Join Us"}
                 </Link>
@@ -169,7 +171,7 @@ export function SectorHeader({
                   to="/sectors/$sector"
                   params={{ sector: "garment" }}
                   search={{}}
-                  className={cn(navLinkStyle, activeTab === "about" && "text-brand-orange")}
+                  className={cn(navPill, activeTab === "about" && "!text-brand-orange bg-white/40 shadow-sm")}
                 >
                   {ar ? "من نحن" : "About Us"}
                 </Link>
@@ -178,7 +180,7 @@ export function SectorHeader({
                   to="/sectors/$sector"
                   params={{ sector: "garment" }}
                   search={{ tab: "services" }}
-                  className={cn(navLinkStyle, activeTab === "services" && "text-brand-orange")}
+                  className={cn(navPill, activeTab === "services" && "!text-brand-orange bg-white/40 shadow-sm")}
                 >
                   {ar ? "خدماتنا" : "Our Services"}
                 </Link>
@@ -187,7 +189,7 @@ export function SectorHeader({
                   to="/sectors/$sector"
                   params={{ sector: "garment" }}
                   search={{ tab: "projects" }}
-                  className={cn(navLinkStyle, activeTab === "projects" && "text-brand-orange")}
+                  className={cn(navPill, activeTab === "projects" && "!text-brand-orange bg-white/40 shadow-sm")}
                 >
                   {ar ? "مشاريعنا" : "Our Projects"}
                 </Link>
@@ -196,7 +198,7 @@ export function SectorHeader({
                   to="/sectors/$sector"
                   params={{ sector: "garment" }}
                   search={{ tab: "capabilities" }}
-                  className={cn(navLinkStyle, activeTab === "capabilities" && "text-brand-orange")}
+                  className={cn(navPill, activeTab === "capabilities" && "!text-brand-orange bg-white/40 shadow-sm")}
                 >
                   {ar ? "قدراتنا" : "Our Capabilities"}
                 </Link>
@@ -205,7 +207,7 @@ export function SectorHeader({
                   to="/sectors/$sector"
                   params={{ sector: "garment" }}
                   search={{ tab: "join" }}
-                  className={cn(navLinkStyle, activeTab === "join" && "text-brand-orange")}
+                  className={cn(navPill, activeTab === "join" && "!text-brand-orange bg-white/40 shadow-sm")}
                 >
                   {ar ? "انضم إلينا" : "Join Us"}
                 </Link>
@@ -337,19 +339,15 @@ export function SectorHeader({
             </div>
           </nav>
 
-          <div className="hidden items-center gap-3 xl:flex">
+          <div className="hidden items-center gap-3 xl:flex shrink-0">
             {language}
-            <Button asChild size="lg" data-magnetic className="rounded-full bg-brand-green text-white hover:bg-brand-orange hover:text-white transition-all duration-300 font-bold shadow-md hover:shadow-lg">
-              {isGarment ? (
-                <Link to="/sectors/$sector" params={{ sector: "garment" }} search={{ tab: "join" }}>
-                  {ar ? "تواصل معنا" : "Contact Us"}
-                </Link>
-              ) : (
-                <Link to="/contact">
-                  {ar ? "تواصل معنا" : "Contact Us"}
-                </Link>
-              )}
-            </Button>
+            <Link
+              to={isGarment ? "/sectors/garment?tab=join" : "/contact"}
+              className="group/cta inline-flex items-center gap-2 rounded-full bg-brand-green px-5 py-2.5 text-xs font-bold text-white transition-all duration-300 hover:bg-brand-orange hover:shadow-lg hover:shadow-brand-orange/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/50 active:scale-95"
+            >
+              <span>{ar ? "تواصل معنا" : "Contact Us"}</span>
+              <ArrowUpRight className="size-3.5 transition-transform duration-300 group-hover/cta:translate-x-1 group-hover/cta:-translate-y-1 rtl:rotate-90 rtl:group-hover/cta:-translate-x-1 rtl:group-hover/cta:-translate-y-1" />
+            </Link>
           </div>
 
           <Button
@@ -404,7 +402,7 @@ export function SectorHeader({
                     onClick={() => setMenuOpen(false)}
                     className={cn(mobileLinkStyle, activeTab === "sectors" && "text-brand-green")}
                   >
-                    {ar ? "قطاعات نخدمها" : "Our Sectors"}
+                    {ar ? "قطاعاتنا" : "Our Sectors"}
                   </Link>
                   <Link
                     to="/sectors/$sector"
@@ -543,22 +541,14 @@ export function SectorHeader({
 
             <div className="mt-auto space-y-4 pt-10">
               {language}
-              <Button asChild size="lg" className="w-full rounded-full bg-brand-green text-white hover:bg-brand-orange hover:text-white transition-all duration-300 font-bold">
-                {isGarment ? (
-                  <Link
-                    to="/sectors/$sector"
-                    params={{ sector: "garment" }}
-                    search={{ tab: "join" }}
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    {ar ? "تواصل معنا" : "Contact Us"}
-                  </Link>
-                ) : (
-                  <Link to="/contact" onClick={() => setMenuOpen(false)}>
-                    {ar ? "تواصل معنا" : "Contact Us"}
-                  </Link>
-                )}
-              </Button>
+              <Link
+                to={isGarment ? "/sectors/garment?tab=join" : "/contact"}
+                onClick={() => setMenuOpen(false)}
+                className="group/cta flex items-center justify-center gap-2 w-full rounded-full bg-brand-green px-5 py-3 text-sm font-bold text-white transition-all duration-300 hover:bg-brand-orange shadow-md active:scale-95"
+              >
+                <span>{ar ? "تواصل معنا" : "Contact Us"}</span>
+                <ArrowUpRight className="size-4 rtl:rotate-90" />
+              </Link>
               <Link to="/" className="inline-flex items-center gap-2 text-sm font-semibold text-brand-green-text">
                 <ArrowLeft aria-hidden="true" className="size-4 rtl:rotate-180" /> {back}
               </Link>
