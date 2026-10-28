@@ -301,7 +301,8 @@ export function AboutPage() {
             </p>
           </Reveal>
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+
             {founders.map((founder, index) => (
               <Reveal key={founder.role} delay={index * 0.08}>
                 <LeaderCard founder={founder} ar={ar} />
@@ -397,7 +398,7 @@ function LeaderCard({
   founder,
   ar,
 }: {
-  founder: typeof founders[number];
+  founder: (typeof founders)[number];
   ar: boolean;
 }) {
   const [expanded, setExpanded] = useState(false);
@@ -408,28 +409,37 @@ function LeaderCard({
   return (
     <div className="glass-card group flex h-full flex-col justify-between rounded-3xl border border-white/20 bg-background/80 p-6 md:p-7 shadow-lg backdrop-blur-xl transition-all duration-300 hover:shadow-xl hover:border-brand-green/40">
       <div>
-        <div className="flex items-start gap-4 sm:gap-5">
-          {/* Photo Frame - Spacious enough for normal photo */}
-          <div className="relative h-28 w-24 sm:h-32 sm:w-28 shrink-0 overflow-hidden rounded-2xl border-2 border-brand-green/30 bg-gradient-to-br from-brand-green/15 via-background to-brand-orange/15 shadow-inner flex items-center justify-center text-brand-green-text">
-            <User className="size-12 opacity-50" />
-          </div>
+        {/* Photo — uniform square, full-width, centered crop */}
+        <div className="relative w-full aspect-[3/4] overflow-hidden rounded-2xl border border-brand-green/20 bg-gradient-to-br from-brand-green/10 via-background to-brand-orange/10 shadow-inner mb-5">
+          {"image" in founder && founder.image ? (
+            <img
+              src={founder.image as string}
+              alt={ar ? founder.nameAr : founder.name}
+              className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+              loading="lazy"
+            />
+          ) : (
+            <div className="flex h-full w-full items-center justify-center text-brand-green">
+              <User className="size-16 opacity-40" />
+            </div>
+          )}
+        </div>
 
-          {/* Beside Photo Frame: Leader Info */}
-          <div className="min-w-0 flex-1">
-            <span className={cn(
-              "font-bold text-brand-orange block",
-              ar ? "font-sans text-xs md:text-sm font-black tracking-normal" : "font-mono text-[11px] uppercase tracking-wider"
-            )}>
-              {ar ? founder.roleAr : founder.role}
-            </span>
-            <h3 className="mt-1 font-head text-lg md:text-xl font-bold text-foreground leading-snug">
-              {ar ? founder.nameAr : founder.name}
-            </h3>
-          </div>
+        {/* Leader Info */}
+        <div className="text-center mb-4">
+          <span className={cn(
+            "font-bold text-brand-orange block",
+            ar ? "font-sans text-xs md:text-sm font-black tracking-normal" : "font-mono text-[11px] uppercase tracking-wider"
+          )}>
+            {ar ? founder.roleAr : founder.role}
+          </span>
+          <h3 className="mt-1 font-head text-lg md:text-xl font-bold text-foreground leading-snug">
+            {ar ? founder.nameAr : founder.name}
+          </h3>
         </div>
 
         {/* Bio area with See More toggle */}
-        <div className="mt-4 border-t border-border/50 pt-3">
+        <div className="border-t border-border/50 pt-3">
           <p className="text-sm leading-relaxed text-muted-foreground transition-all duration-300 text-justify [text-align-last:start]">
             {expanded ? bio : shortBio}
           </p>

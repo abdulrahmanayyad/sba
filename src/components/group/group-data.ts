@@ -357,8 +357,9 @@ export const founders = [
   {
     role: "Chairman of the Board",
     roleAr: "رئيس مجلس الإدارة",
-    name: "Sheikh Sami Bin Ayyad",
-    nameAr: "الشيخ سامي عياد",
+    name: "Sami Bin Ayyad",
+    nameAr: "سامي بن عياد",
+    image: "/Leadership/Sami Bin Ayyad.jpg",
     bio: "A career in contracting, trade and investment spanning five decades — from contracting and finishing in 1977, through gold, wholesale food and heritage publishing, to building today's diversified group.",
     bioAr: "مسيرة مهنية واستثمارية ممتدة منذ عام 1977، بدأت في المقاولات والتشطيبات، ومرّت بتجارة الذهب والجملة الغذائية وتحقيق التراث، وصولًا إلى بناء مجموعة أعمال متنوعة.",
   },
@@ -367,6 +368,7 @@ export const founders = [
     roleAr: "المؤسس",
     name: "Abdulhakam Mashhour",
     nameAr: "د. عبد الحكم مشهور",
+    image: "/Leadership/Abdelhakam Mashhour.jpg",
     bio: "Founder & CEO of EnviroTaqa. A certified environmental consultant with executive HSSE leadership across the Middle East oil & gas sector, working with BP, Shell, ENI and Schlumberger.",
     bioAr: "المؤسس والرئيس التنفيذي لشركة إنفيروطاقة. استشاري بيئي معتمد، وقائد تنفيذي في أنظمة الصحة والسلامة والبيئة بقطاع النفط والغاز في الشرق الأوسط، مع خبرة مع BP وShell وENI وSchlumberger.",
   },
@@ -374,7 +376,8 @@ export const founders = [
     role: "Co-Founder",
     roleAr: "الشريك المؤسس",
     name: "Abdulrahman Sami Bin Ayyad",
-    nameAr: "د. عبد الرحمن سامي عياد",
+    nameAr: "عبد الرحمن بن عياد",
+    image: "/Leadership/Abdulrahman Bin Ayyad.jpg",
     bio: "CEO of the Garment Division and General Manager for contracts at the group. Founder of Rewaq Academy (2019) and a researcher in heritage editing and scientific research.",
     bioAr: "الرئيس التنفيذي لقطاع الملابس والتصنيع، والمدير العام للتعاقدات بالمجموعة. مؤسس أكاديمية رواق التعليمية (2019)، وباحث في تحقيق التراث والبحث العلمي.",
   },
@@ -382,11 +385,22 @@ export const founders = [
     role: "Business Developer",
     roleAr: "مطوّر الأعمال",
     name: "Abdullah Sami Bin Ayyad",
-    nameAr: "د. عبد الله سامي عياد",
+    nameAr: "عبد الله بن عياد",
+    image: "/Leadership/Abdullah Bin Ayyad.jpg",
     bio: "Leads business development across the group's divisions, connecting partners and clients with the right sector capability.",
     bioAr: "يقود تطوير الأعمال في قطاعات المجموعة، ويربط الشركاء والعملاء بالقدرات المناسبة في كل قطاع.",
   },
+  {
+    role: "Chief Financial Officer",
+    roleAr: "المدير المالي",
+    name: "Abdulaziz Bin Ayyad",
+    nameAr: "عبد العزيز بن عياد",
+    image: "/Leadership/Abdulaziz Bin Ayyad.jpg",
+    bio: "Oversees financial planning, reporting and governance across all group divisions, ensuring fiscal discipline and sustainable growth.",
+    bioAr: "يشرف على التخطيط المالي والتقارير والحوكمة في جميع قطاعات المجموعة، ضمانًا للانضباط المالي والنمو المستدام.",
+  },
 ] as const;
+
 
 export const processSteps = [
   ["Design", "Design references become technical patterns, measurements and approved samples.", "التصميم", "تتحول المراجع التصميمية إلى باترونات فنية ومقاسات وعينات معتمدة."],
