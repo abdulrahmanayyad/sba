@@ -65,9 +65,9 @@ export function ConstructionSectorView({ tab = "about" }: ConstructionViewProps)
 
   return (
     <div className="w-full">
-      {/* Sector Hero — Only displayed on About Us tab, without the "من نحن" label overlay */}
+      {/* Sector Hero — Only displayed on About Us tab, full first screen, matching Home hero font size */}
       {activeTab === "about" && (
-        <section className="relative w-full overflow-hidden text-footer-foreground min-h-[380px] md:min-h-[460px] lg:min-h-[480px] flex items-center">
+        <section className="relative w-full overflow-hidden text-footer-foreground min-h-screen flex items-center">
           <img
             data-clip-reveal
             src={constructionHeroData.image}
@@ -75,13 +75,13 @@ export function ConstructionSectorView({ tab = "about" }: ConstructionViewProps)
             className="absolute inset-0 size-full object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-footer via-footer/80 to-footer/65" />
-          <div className="site-container relative w-full py-16 md:py-24">
+          <div className="site-container relative w-full py-20 sm:py-28 z-10">
             <Reveal>
-              <h1 className="mt-4 max-w-4xl font-head text-[clamp(1.85rem,6vw,3.75rem)] font-bold leading-[1.15] text-white">
+              <h1 className="mt-4 max-w-4xl font-head text-[clamp(1.85rem,3.5vw,3rem)] font-extrabold leading-tight text-white drop-shadow-md">
                 {ar ? constructionHeroData.titleAr : constructionHeroData.title}
               </h1>
 
-              <p className={cn("mt-4 max-w-3xl font-head text-base text-footer-muted sm:text-xl", ar && "font-body")}>
+              <p className={cn("mt-4 max-w-3xl font-head text-base sm:text-lg font-bold leading-relaxed text-footer-foreground/90", ar && "font-body")}>
                 {ar ? constructionHeroData.subtitleAr : constructionHeroData.subtitle}
               </p>
             </Reveal>
@@ -96,37 +96,6 @@ export function ConstructionSectorView({ tab = "about" }: ConstructionViewProps)
         {activeTab === "services" && <ConstructionServicesView ar={ar} />}
         {activeTab === "projects" && <ConstructionProjectsView ar={ar} />}
       </div>
-
-      {/* Bottom CTA — Only displayed on "Our Sectors" (removed from About Us, Services, Projects) */}
-      {activeTab === "sectors" && (
-        <section className="site-container py-12">
-          <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-8 sm:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
-            <div className="mx-auto max-w-3xl text-center">
-              <SectionBadge title={ar ? "دعوة للتواصل" : "Let's Build Together"} />
-              <h2 className="section-title mt-3">
-                {ar ? "لنبدأ مشروعك بخطوات واضحة وتنفيذ مسؤول" : "Let's Move Your Project Forward with Precision"}
-              </h2>
-              <p className="section-intro mx-auto mt-4 max-w-2xl text-justify [text-align-last:center]">
-                {ar
-                  ? "سواء كنت تخطط لإنشاء مبنى جديد، أو تطوير منشأة قائمة، أو تشطيبات سكنية وتجارية فاخرة، أو تجهيزات طبية وأنظمة كهروميكانيكية، فإننا نرحب بمراجعة متطلباتك ومناقشة نطاق العمل المناسب."
-                  : "Whether you are planning a new construction build, facility upgrades, turnkey interior fit-out, medical installations, or specialized MEP infrastructure, our technical team welcomes your inquiry."}
-              </p>
-              <div className="mt-8 flex flex-wrap justify-center gap-4">
-                <Button asChild size="lg" className="rounded-xl bg-brand-green text-white hover:bg-brand-orange hover:text-white transition-all duration-300 font-bold shadow-md hover:shadow-lg">
-                  <Link to="/contact">
-                    {ar ? "إرسال طلب مشروع" : "Submit Project Inquiry"} <ArrowRight className="size-4 rtl:rotate-180 ms-2" />
-                  </Link>
-                </Button>
-                <Button asChild size="lg" className="rounded-xl bg-brand-green text-white hover:bg-brand-orange hover:text-white transition-all duration-300 font-bold shadow-md hover:shadow-lg">
-                  <a href={WHATSAPP_URL} target="_blank" rel="noreferrer">
-                    <MessageCircle className="size-4 me-2" /> WhatsApp: +20 12 222 380 72
-                  </a>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
     </div>
   );
 }
@@ -187,32 +156,41 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
         </Reveal>
       </section>
 
-      {/* 3. Quality Commitment — Title centered in Arabic and English */}
+      {/* 3. Quality Commitment — 2-column layout (Text on right in AR, Portrait Image on left in AR; reversed in EN) */}
       <section className="site-container">
         <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
           <Reveal>
-            <div className="text-center max-w-3xl mx-auto">
-              <SectionBadge title={ar ? "الجودة والالتزام" : "Quality Assurance"} />
-              <h2 className="section-title mt-3 text-center">{ar ? data.quality.titleAr : data.quality.title}</h2>
-              <p className="section-intro mt-4 text-justify [text-align-last:center]">{ar ? data.quality.bodyAr : data.quality.body}</p>
-            </div>
-            <div className="mt-8 overflow-hidden rounded-2xl border border-border shadow-lg max-w-4xl mx-auto">
-              <img
-                src={heroSustainable}
-                alt={ar ? data.quality.titleAr : data.quality.title}
-                loading="lazy"
-                className="aspect-[21/9] w-full object-cover transition-transform duration-700 hover:scale-105"
-              />
+            <div className="grid gap-8 md:grid-cols-12 md:items-center">
+              {/* Text Column: Right in AR, Left in EN */}
+              <div className="md:col-span-7 space-y-4">
+                <SectionBadge title={ar ? "الجودة والالتزام" : "Quality Assurance"} />
+                <h2 className="section-title mt-2">{ar ? data.quality.titleAr : data.quality.title}</h2>
+                <p className="section-intro leading-relaxed text-foreground/90 text-justify [text-align-last:start]">
+                  {ar ? data.quality.bodyAr : data.quality.body}
+                </p>
+              </div>
+
+              {/* Portrait Image Column: Left in AR, Right in EN */}
+              <div className="md:col-span-5 flex justify-center">
+                <div className="w-full max-w-sm overflow-hidden rounded-3xl border border-border shadow-xl">
+                  <img
+                    src={heroSustainable}
+                    alt={ar ? data.quality.titleAr : data.quality.title}
+                    loading="lazy"
+                    className="aspect-[3/4] w-full object-cover transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
+              </div>
             </div>
           </Reveal>
         </div>
       </section>
 
-      {/* 4. Why Choose Us */}
+      {/* 4. Why Choose Us / Building Enduring Value */}
       <section className="site-container">
         <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
           <Reveal>
-            <div className="text-center">
+            <div className="text-center max-w-3xl mx-auto">
               <SectionBadge title={ar ? "لماذا سامي بن عياد للمقاولات" : "Why Choose SAMI BIN AYYAD GROUP"} />
               <h2 className="section-title mt-3 text-center">{ar ? data.whyChooseUs.titleAr : data.whyChooseUs.title}</h2>
             </div>
@@ -240,9 +218,9 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
       <section className="site-container">
         <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
           <Reveal>
-            <div className="text-center max-w-3xl mx-auto">
+            <div className="text-center max-w-4xl mx-auto">
               <SectionBadge title={ar ? "منهجية العمل" : "Project Delivery Process"} />
-              <h2 className="section-title mt-3 text-center">{ar ? data.deliveryProcess.titleAr : data.deliveryProcess.title}</h2>
+              <h2 className="section-title mt-3 text-center leading-snug">{ar ? data.deliveryProcess.titleAr : data.deliveryProcess.title}</h2>
             </div>
           </Reveal>
 
@@ -429,10 +407,16 @@ function ConstructionProjectsView({ ar }: { ar: boolean }) {
 
   return (
     <div className="w-full space-y-12">
-      {/* Key Numbers Banner */}
+      {/* Key Numbers Banner with Title */}
       <section className="site-container">
-        <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-8 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
+        <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-10 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
           <Reveal>
+            <div className="mb-8 text-center max-w-3xl mx-auto">
+              <SectionBadge title={ar ? "مؤشرات وأرقام موثقة" : "Documented Track Record"} />
+              <h2 className="section-title mt-2">
+                {ar ? "سجل إنجازاتنا بالأرقام والمشروعات المنفذة" : "Our Track Record in Numbers & Executed Projects"}
+              </h2>
+            </div>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {data.stats.map((stat, idx) => (
                 <div key={idx} className={cn("p-4 border-b sm:border-b-0 sm:border-e border-border/60 last:border-none", ar ? "text-right" : "text-left")}>

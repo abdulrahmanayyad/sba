@@ -4,8 +4,8 @@ export const constructionHeroData = {
   image: construction,
   title: "Contracting, Construction & Real Estate Development",
   titleAr: "المقاولات والإنشاءات والتطوير العقاري",
-  subtitle: "Integrated solutions for construction and property development, spanning structural works, finishing, building systems, and specialized installations.",
-  subtitleAr: "حلول متكاملة لتنفيذ المشروعات وتطوير المباني، من الأعمال الإنشائية والتشطيبات إلى الأنظمة الهندسية والتجهيزات المتخصصة.",
+  subtitle: "Integrated solutions for project execution, construction, and architectural development.",
+  subtitleAr: "حلول متكاملة لتنفيذ المشروعات والإنشاءات والتطوير المعماري",
   intro: "SAMI BIN AYYAD GROUP Contracting & Real Estate Development delivers integrated solutions across general contracting, construction, real estate development, and finishing works. Our documented project portfolio reflects experience across healthcare, residential, commercial, administrative, industrial, oil and gas, and service-related sectors.",
   introAr: "تقدم شركة مجموعة سامي بن عياد للمقاولات والتطوير العقاري حلولًا متكاملة في المقاولات العامة والإنشاءات والتطوير العقاري والتشطيبات، مدعومة بخبرة عملية في تنفيذ مشروعات متنوعة بالقطاعات الطبية والسكنية والتجارية والإدارية والصناعية والبترولية والخدمية.",
   company: "SAMI BIN AYYAD GROUP · Contracting & Real Estate Development",
@@ -17,16 +17,8 @@ export const constructionAboutData = {
   partnerTitleAr: "شريكك في التنفيذ والتطوير",
   partnerContent: [
     {
-      en: "SAMI BIN AYYAD GROUP Contracting & Real Estate Development operates across general contracting, construction, real estate development, and finishing. Our documented project portfolio encompasses a range of project types, scopes, and contract values.",
-      ar: "تعمل شركة مجموعة سامي بن عياد للمقاولات والتطوير العقاري في مجال المقاولات العامة والإنشاءات والتطوير العقاري والتشطيبات، وتستند إلى سجل مشروعات موثق يغطي أعمالًا متعددة من حيث طبيعتها ونطاقها وقيمتها التعاقدية.",
-    },
-    {
-      en: "Our experience extends from civil and architectural works to finishing, electromechanical systems, medical installations, and specialized oil and gas projects. We also undertake building upgrades, comprehensive residential and villa finishing, and development and fit-out works for healthcare and service facilities.",
-      ar: "تمتد خبراتنا من تنفيذ الأعمال المدنية والمعمارية والتشطيبات إلى الأنظمة الكهروميكانيكية والتجهيزات الطبية والأعمال المتخصصة في قطاعات البترول والغاز. كما تشمل أعمالنا تطوير ورفع كفاءة المباني والمنشآت، وتنفيذ التشطيبات المتكاملة للوحدات السكنية والفلل، وأعمال التجهيز والتطوير للمرافق الطبية والخدمية.",
-    },
-    {
-      en: "Our approach is built on a clear understanding of project scope, coordination across technical disciplines, and adherence to client requirements and agreed specifications. This enables us to deliver practical, well-coordinated solutions tailored to each project.",
-      ar: "نعتمد في تنفيذ المشروعات على فهم نطاق العمل، والتنسيق بين التخصصات المختلفة، والالتزام بمتطلبات العميل والمواصفات المتفق عليها، بما يدعم تنفيذًا منظمًا وحلولًا عملية تناسب احتياجات كل مشروع.",
+      en: "SAMI BIN AYYAD GROUP Contracting & Real Estate Development operates in general contracting, construction, property development, and finishing, based on a diverse and documented project record. Our expertise spans civil and architectural works, integrated finishing, electromechanical systems, medical installations, and oil & gas projects, alongside upgrading and developing facilities and buildings.",
+      ar: "تعمل مجموعة سامي بن عياد للمقاولات والتطوير العقاري في مجال المقاولات العامة والإنشاءات والتطوير العقاري والتشطيبات، مستندةً إلى سجل مشروعات متنوع وموثق. تشمل خبراتنا الأعمال المدنية والمعمارية، والتشطيبات المتكاملة، والأنظمة الكهروميكانيكية، والتجهيزات الطبية، وأعمال البترول والغاز، إلى جانب تطوير ورفع كفاءة المباني والمنشآت.",
     },
   ],
   mission: {
@@ -48,8 +40,8 @@ export const constructionAboutData = {
     bodyAr: "تعتمد الشركة على فهم متطلبات العميل وتحديد نطاق الأعمال بوضوح، مع تنسيق التخصصات المشاركة والالتزام بالمواصفات الفنية والمتطلبات التعاقدية للمشروع. ونحرص على متابعة تنفيذ الأعمال ومراجعة مدى توافقها مع نطاق العمل المعتمد، مع مراعاة طبيعة المنشأة ومتطلبات التشغيل والتنسيق بين الأعمال المدنية والمعمارية والكهروميكانيكية والتجهيزات المتخصصة.",
   },
   whyChooseUs: {
-    title: "More Than Construction Execution",
-    titleAr: "أكثر من مجرد تنفيذ للأعمال",
+    title: "Building Enduring Value",
+    titleAr: "نبني قيمة تدوم",
     pillars: [
       {
         title: "Cross-Sector Experience",
@@ -90,8 +82,8 @@ export const constructionAboutData = {
     ],
   },
   deliveryProcess: {
-    title: "A Clear, Coordinated Approach to Project Delivery",
-    titleAr: "خطوات واضحة. تنسيق منظم. تنفيذ مسؤول.",
+    title: "An Integrated Delivery Methodology Ensuring Clear Planning, Coordinated Execution, and Project Accountability",
+    titleAr: "نعتمد منهجية عمل متكاملة تضمن وضوح التخطيط، وكفاءة التنسيق، والالتزام بمسؤوليات التنفيذ في كل مشروع",
     steps: [
       {
         number: "01",
