@@ -376,24 +376,11 @@ export function SectorHeader({
           <AnimatedPanel
             modal
             onClose={() => setMenuOpen(false)}
-            className="fixed inset-x-4 top-[74px] z-50 mx-auto max-w-sm overflow-hidden rounded-3xl border border-white/35 bg-background/90 p-5 shadow-[0_20px_50px_rgba(0,0,0,0.22)] backdrop-blur-2xl ring-1 ring-black/5 dark:border-white/15 dark:bg-background/85 xl:hidden max-h-[calc(100vh-90px)] overflow-y-auto"
+            className="fixed inset-x-4 top-[74px] z-50 mx-auto max-w-sm overflow-hidden rounded-3xl border border-white/40 bg-background/50 p-5 shadow-[0_24px_60px_rgba(0,0,0,0.16)] backdrop-blur-3xl ring-1 ring-white/20 dark:border-white/15 dark:bg-background/40 xl:hidden max-h-[calc(100vh-90px)] overflow-y-auto"
             role="dialog"
             label={name}
           >
-            <div className="flex flex-col space-y-4">
-              <div className="flex items-center justify-between pb-3 border-b border-border/60">
-                <p className="min-w-0 pe-2 font-head text-sm font-bold truncate text-foreground">{name}</p>
-                <Button
-                  variant="icon"
-                  size="icon"
-                  className="size-8 rounded-full hover:bg-secondary shrink-0"
-                  aria-label="Close"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  <X className="size-4" aria-hidden="true" />
-                </Button>
-              </div>
-
+            <div className="flex flex-col space-y-3">
               <nav className="flex flex-col gap-1">
                 <Link to="/" onClick={() => setMenuOpen(false)} className={mobileLinkStyle}>
                   {home}
@@ -570,23 +557,22 @@ export function SectorHeader({
                 )}
               </div>
 
-              {/* Bottom Actions: Language & Contact */}
-              <div className="pt-3 border-t border-border/60 space-y-3">
-                <div className="flex items-center justify-between px-1">
-                  <span className="text-xs font-bold text-muted-foreground">
-                    {ar ? "اللغة:" : "Language:"}
-                  </span>
-                  {language}
+              {/* Bottom Actions: Language button without label + Contact button */}
+              <div className="pt-3 border-t border-white/20 flex flex-col gap-2.5">
+                <div className="flex items-center gap-3">
+                  <div className="flex size-11 items-center justify-center rounded-2xl bg-white/30 border border-white/30 hover:bg-white/50 text-foreground shrink-0 shadow-sm">
+                    {language}
+                  </div>
+                  <Link
+                    to={isGarment ? "/sectors/garment?tab=join" : "/contact"}
+                    onClick={() => setMenuOpen(false)}
+                    className="group/cta flex-1 flex items-center justify-center gap-2 rounded-2xl bg-brand-green px-5 py-3 text-xs font-bold text-white transition-all duration-300 hover:bg-brand-orange shadow-md active:scale-95"
+                  >
+                    <span>{ar ? "تواصل معنا" : "Contact Us"}</span>
+                    <ArrowUpRight className="size-3.5 rtl:rotate-90" />
+                  </Link>
                 </div>
-                <Link
-                  to={isGarment ? "/sectors/garment?tab=join" : "/contact"}
-                  onClick={() => setMenuOpen(false)}
-                  className="group/cta flex items-center justify-center gap-2 w-full rounded-2xl bg-brand-green px-5 py-2.5 text-xs font-bold text-white transition-all duration-300 hover:bg-brand-orange shadow-md active:scale-95"
-                >
-                  <span>{ar ? "تواصل معنا" : "Contact Us"}</span>
-                  <ArrowUpRight className="size-3.5 rtl:rotate-90" />
-                </Link>
-                <Link to="/" onClick={() => setMenuOpen(false)} className="inline-flex items-center gap-2 text-xs font-semibold text-brand-green-text hover:underline pt-1">
+                <Link to="/" onClick={() => setMenuOpen(false)} className="inline-flex items-center justify-center gap-2 text-xs font-semibold text-brand-green-text hover:underline pt-1">
                   <ArrowLeft aria-hidden="true" className="size-3.5 rtl:rotate-180" /> {back}
                 </Link>
               </div>

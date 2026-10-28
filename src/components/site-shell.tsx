@@ -285,40 +285,27 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
           <AnimatedPanel
             modal
             onClose={() => setMenuOpen(false)}
-            className="fixed inset-x-4 top-[74px] z-50 mx-auto max-w-sm overflow-hidden rounded-3xl border border-white/35 bg-background/90 p-5 shadow-[0_20px_50px_rgba(0,0,0,0.22)] backdrop-blur-2xl ring-1 ring-black/5 dark:border-white/15 dark:bg-background/85 xl:hidden max-h-[calc(100vh-90px)] overflow-y-auto"
+            className="fixed inset-x-4 top-[74px] z-50 mx-auto max-w-sm overflow-hidden rounded-3xl border border-white/40 bg-background/50 p-5 shadow-[0_24px_60px_rgba(0,0,0,0.16)] backdrop-blur-3xl ring-1 ring-white/20 dark:border-white/15 dark:bg-background/40 xl:hidden max-h-[calc(100vh-90px)] overflow-y-auto"
             role="dialog"
             label={messages.accessibility.primaryNavigation}
           >
-            <div className="flex flex-col space-y-4">
-              <div className="flex items-center justify-between pb-3 border-b border-border/60">
-                <img src={currentLogo} alt={isArabic ? "سامي بن عياد" : "SBA"} className="h-8 w-auto" />
-                <Button
-                  ref={closeButtonRef}
-                  variant="icon"
-                  size="icon"
-                  className="size-8 rounded-full hover:bg-secondary shrink-0"
-                  aria-label={messages.accessibility.closeMenu}
-                  onClick={() => setMenuOpen(false)}
-                >
-                  <X className="size-4" aria-hidden="true" />
-                </Button>
-              </div>
-
+            <div className="flex flex-col space-y-3">
+              {/* Navigation links without duplicate logo */}
               <nav className="flex flex-col gap-1 py-1" aria-label={messages.accessibility.primaryNavigation}>
                 {primaryLinks(
-                  "rounded-2xl px-3.5 py-2 font-head text-sm font-bold text-foreground transition-all duration-200 hover:bg-white/40 hover:text-brand-orange hover:translate-x-1 rtl:hover:-translate-x-1",
+                  "rounded-2xl px-3.5 py-2.5 font-head text-sm font-bold text-foreground transition-all duration-200 hover:bg-white/40 hover:text-brand-orange hover:translate-x-1 rtl:hover:-translate-x-1",
                   () => setMenuOpen(false)
                 )}
               </nav>
 
-              <div className="pt-3 border-t border-border/60 space-y-3">
-                <div className="flex items-center justify-between px-1">
-                  <span className="text-xs font-bold text-muted-foreground">
-                    {isArabic ? "اللغة:" : "Language:"}
-                  </span>
-                  <LanguageSwitcher language={language} onChange={selectLanguage} />
-                </div>
-                <Button asChild size="lg" className="w-full rounded-2xl bg-brand-green text-white hover:bg-brand-orange font-bold shadow-md">
+              {/* Bottom Actions: Language icon without label + Contact button */}
+              <div className="pt-3 border-t border-white/20 flex items-center gap-3">
+                <LanguageSwitcher
+                  language={language}
+                  onChange={selectLanguage}
+                  className="size-11 rounded-2xl bg-white/30 border border-white/30 hover:bg-white/50 text-foreground shrink-0 shadow-sm"
+                />
+                <Button asChild size="lg" className="flex-1 rounded-2xl bg-brand-green text-white hover:bg-brand-orange font-bold shadow-md">
                   <Link to="/contact" onClick={() => setMenuOpen(false)}>
                     {messages.nav.contact}
                   </Link>
