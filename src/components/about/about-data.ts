@@ -86,24 +86,12 @@ export const whatWeDoData = {
 export const ourApproachData = {
   eyebrow: "Our Approach",
   eyebrowAr: "نهجنا",
-  title: "Strategic Planning. Operational Excellence. Long-term Partnerships.",
-  titleAr: "تخطيط استراتيجي. كفاءة تشغيلية. شراكات طويلة الأمد.",
+  title: "Strategic Planning & Sustainable Partnerships",
+  titleAr: "تخطيط استراتيجي وشراكات مستدامة",
   paragraphs: [
     {
-      en: "SAMI BIN AYYAD GROUP follows an institutional approach that combines strategic planning, operational efficiency, quality, innovation, and long-term partnerships.",
-      ar: "تعتمد مجموعة سامي بن عياد نهجًا مؤسسيًا يجمع بين التخطيط الاستراتيجي، والكفاءة التشغيلية، والجودة، والابتكار، وبناء الشراكات طويلة الأمد.",
-    },
-    {
-      en: "We begin by understanding market and client needs, defining project objectives and requirements, and developing appropriate plans based on the assessment of opportunities, resources, and risks.",
-      ar: "نبدأ بفهم احتياجات الأسواق والعملاء، وتحديد أهداف كل مشروع ومتطلباته، ثم تطوير خطط مناسبة تستند إلى تقييم الفرص والموارد والمخاطر.",
-    },
-    {
-      en: "We focus on improving processes, strengthening coordination among teams, monitoring performance, and using results and feedback to support continuous improvement. We encourage knowledge exchange and seek to establish professional relationships based on commitment, transparency, and shared interests.",
-      ar: "نركز على تحسين الإجراءات، وتعزيز التنسيق بين فرق العمل، ومتابعة الأداء، والاستفادة من النتائج والملاحظات في التطوير المستمر. كما نشجع تبادل المعرفة والخبرات، ونحرص على بناء علاقات مهنية واضحة تقوم على الالتزام والشفافية والمصالح المشتركة.",
-    },
-    {
-      en: "Strategic planning and long-term partnerships.",
-      ar: "تخطيط استراتيجي وشراكات طويلة الأمد",
+      en: "SAMI BIN AYYAD GROUP follows an institutional approach based on strategic planning, operational efficiency, quality, and innovation. We study market and client needs, develop well-planned strategies, and continuously improve performance while building long-term partnerships founded on commitment, transparency, and mutual benefit.",
+      ar: "تعتمد مجموعة سامي بن عياد نهجًا مؤسسيًا يرتكز على التخطيط الاستراتيجي، والكفاءة التشغيلية، والجودة، والابتكار. ندرس احتياجات الأسواق والعملاء، ونطوّر خططًا مدروسة، ونعمل على تحسين الأداء وتعزيز التنسيق وتبادل الخبرات، مع بناء شراكات طويلة الأمد قائمة على الالتزام والشفافية والمصالح المشتركة.",
     },
   ],
   steps: [

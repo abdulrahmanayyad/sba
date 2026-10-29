@@ -190,7 +190,7 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
   const handleZoomOut = () => setZoom((prev) => Math.max(prev - 0.25, 0.85));
 
   return (
-    <section id="business-numbers" aria-labelledby="dash-heading" className="bg-page-alt section-band scroll-mt-24 relative overflow-hidden">
+    <section id="business-numbers" aria-labelledby="dash-heading" className="bg-page-alt pt-16 pb-4 scroll-mt-24 relative overflow-hidden">
       {/* Background ambient lighting */}
       <div className="pointer-events-none absolute -top-40 start-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-brand-green/5 blur-3xl rounded-full" />
 
@@ -576,7 +576,7 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
               <span>{ar ? "ماذا نقدم" : "What We Offer"}</span>
             </div>
             <h3 className="text-2xl sm:text-3xl font-bold font-head">
-              {ar ? "ماذا نقدّم" : "What We Do"}
+              {ar ? "ماذا نقدم" : "What We Do"}
             </h3>
             <p className="mt-1.5 text-sm text-muted-foreground max-w-2xl">
               {ar

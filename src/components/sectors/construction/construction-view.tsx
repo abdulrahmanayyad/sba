@@ -20,7 +20,7 @@ import {
 import { contractingProjectsList, type ContractingProject } from "./contracting-projects-list";
 import heroSustainable from "@/assets/hero-sustainable.png";
 
-export type ConstructionTab = "about" | "sectors" | "services" | "projects";
+export type ConstructionTab = "about" | "sectors" | "services" | "projects" | "start-project";
 
 interface ConstructionViewProps {
   tab?: ConstructionTab;
@@ -38,7 +38,7 @@ function SectionBadge({ title }: { title: string }) {
 export function ConstructionSectorView({ tab = "about" }: ConstructionViewProps) {
   const { language } = useLanguage();
   const ar = language === "AR";
-  const activeTab: ConstructionTab = ["about", "sectors", "services", "projects"].includes(tab) ? tab : "about";
+  const activeTab: ConstructionTab = ["about", "sectors", "services", "projects", "start-project"].includes(tab) ? tab : "about";
 
   const tabLabels: Record<ConstructionTab, { en: string; ar: string; descEn: string; descAr: string }> = {
     about: {
@@ -64,6 +64,12 @@ export function ConstructionSectorView({ tab = "about" }: ConstructionViewProps)
       ar: "سجل الأعمال الموثق",
       descEn: "57+ documented projects and EGP 400.5M+ turnover across Egypt",
       descAr: "أكثر من 57 مشروعًا موثقًا و400.5 مليون جنيه حجم أعمال مسجل",
+    },
+    "start-project": {
+      en: "Start Project",
+      ar: "ابدأ مشروعك",
+      descEn: "Submit your project brief and get a proposal",
+      descAr: "قدّم موجز مشروعك واحصل على عرض",
     },
   };
 
@@ -106,6 +112,7 @@ export function ConstructionSectorView({ tab = "about" }: ConstructionViewProps)
         {activeTab === "sectors" && <ConstructionSectorsView ar={ar} />}
         {activeTab === "services" && <ConstructionServicesView ar={ar} />}
         {activeTab === "projects" && <ConstructionProjectsView ar={ar} />}
+        {activeTab === "start-project" && <ConstructionStartProjectView ar={ar} />}
       </div>
     </div>
   );
@@ -530,10 +537,7 @@ function ConstructionProjectsView({ ar }: { ar: boolean }) {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
                       
                       {/* Top Badges */}
-                      <div className="absolute top-3 inset-x-3 flex items-center justify-between">
-                        <span className="font-sans text-xs font-bold px-2.5 py-0.5 rounded-full bg-black/60 text-white backdrop-blur-md border border-white/20">
-                          {String(proj.id).padStart(2, "0")}
-                        </span>
+                      <div className="absolute top-3 end-3 flex items-center">
                         <span className="font-sans text-xs font-bold px-2.5 py-0.5 rounded-full bg-brand-orange text-white shadow-sm">
                           {proj.year}
                         </span>
@@ -637,7 +641,7 @@ function ConstructionProjectsView({ ar }: { ar: boolean }) {
             <DialogHeader>
               <div className="flex items-center gap-2 mb-1">
                 <span className="font-sans text-xs font-bold px-2.5 py-0.5 rounded-full bg-brand-orange text-white">
-                  {String(activeProject.id).padStart(2, "0")} • {activeProject.year}
+                  {activeProject.year}
                 </span>
                 <span className="text-xs font-semibold text-muted-foreground font-sans">
                   {ar ? activeProject.contractDate : `Contract: ${activeProject.contractDate}`}
@@ -691,6 +695,382 @@ function ConstructionProjectsView({ ar }: { ar: boolean }) {
           </DialogContent>
         )}
       </Dialog>
+    </div>
+  );
+}
+
+/** 5. Start Project View — Multi-step Proposal Form */
+function ConstructionStartProjectView({ ar }: { ar: boolean }) {
+  const [step, setStep] = useState(1);
+  const totalSteps = 5;
+  const [form, setForm] = useState({
+    projectName: "",
+    projectType: "",
+    projectLocation: "",
+    services: [] as string[],
+    scopeNotes: "",
+    budget: "",
+    currency: "EGP",
+    startDate: "",
+    endDate: "",
+    contractType: "",
+    company: "",
+    contact: "",
+    title: "",
+    email: "",
+    phone: "",
+    country: "",
+    website: "",
+    consent: false,
+    submitted: false,
+    refNum: "",
+  });
+  const up = (k: string, v: unknown) => setForm((p) => ({ ...p, [k]: v }));
+
+  const projectTypes = ar
+    ? ["سكني", "تجاري", "إداري", "صناعي", "بنية تحتية", "متعدد الاستخدامات", "أخرى"]
+    : ["Residential", "Commercial", "Administrative", "Industrial", "Infrastructure", "Mixed-Use", "Other"];
+  const servicesList = ar
+    ? ["مقاولات عامة", "أعمال هيكلية", "أعمال خرسانية", "تشطيبات", "أعمال MEP", "بنية تحتية", "تسليم مفتاح", "إدارة مشروع", "أخرى"]
+    : ["General Contracting", "Structural Works", "Concrete Works", "Finishing Works", "MEP Works", "Infrastructure", "Turnkey", "Project Management", "Other"];
+  const contractTypes = ar
+    ? ["تسليم مفتاح", "مقاولات عامة", "إدارة مشروع", "BOT", "PPP", "أخرى"]
+    : ["Turnkey", "General Contracting", "Project Management", "BOT", "PPP", "Other"];
+
+  const toggleService = (s: string) => {
+    setForm((p) => ({
+      ...p,
+      services: p.services.includes(s) ? p.services.filter((x) => x !== s) : [...p.services, s],
+    }));
+  };
+
+  const handleSubmit = () => {
+    const ref = "CP-" + Date.now().toString(36).toUpperCase();
+    setForm((p) => ({ ...p, submitted: true, refNum: ref }));
+  };
+
+  if (form.submitted) {
+    return (
+      <div className="site-container py-16">
+        <div className="mx-auto max-w-2xl rounded-3xl border border-brand-green/40 bg-background/80 p-10 text-center backdrop-blur-2xl shadow-xl">
+          <div className="mb-4 flex justify-center">
+            <span className="flex size-16 items-center justify-center rounded-full bg-brand-green/10">
+              <CheckCircle2 className="size-8 text-brand-green-text" />
+            </span>
+          </div>
+          <h2 className="font-head text-2xl font-extrabold text-foreground">
+            {ar ? "تم استلام طلبك بنجاح!" : "Request Received Successfully!"}
+          </h2>
+          <p className="mt-3 text-sm text-muted-foreground">
+            {ar
+              ? `رقم المرجع: ${form.refNum} — سيتواصل معك فريقنا خلال 48 ساعة عمل.`
+              : `Reference: ${form.refNum} — Our team will contact you within 48 business hours.`}
+          </p>
+          <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
+            <a
+              href={`mailto:info@sami-trade.com?subject=Project Inquiry ${form.refNum}&body=Project: ${form.projectName}%0AType: ${form.projectType}%0AContact: ${form.contact} — ${form.email}`}
+              className="inline-flex items-center gap-2 rounded-full bg-brand-green px-6 py-3 text-sm font-bold text-white transition hover:bg-brand-orange"
+            >
+              <span>{ar ? "راسلنا مباشرة" : "Email Us Directly"}</span>
+            </a>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 px-6 py-3 text-sm font-bold text-foreground transition hover:border-brand-green"
+            >
+              <MessageCircle className="size-4" />
+              <span>WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="site-container py-12">
+      <div className="mx-auto max-w-3xl mb-10 text-center">
+        <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+          <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+          <span>{ar ? "ابدأ مشروعك" : "Start Your Project"}</span>
+        </div>
+        <h2 className="font-head text-2xl sm:text-3xl font-extrabold text-foreground mt-2">
+          {ar ? "نصنع المستقبل برؤية هندسية متكاملة" : "Build the Future with Integrated Engineering Vision"}
+        </h2>
+        <p className="mt-3 text-sm text-muted-foreground">
+          {ar
+            ? "أكمل النموذج أدناه وسيتواصل معك فريقنا خلال 48 ساعة عمل بعرض مفصّل."
+            : "Complete the form below and our team will reach out within 48 business hours with a detailed proposal."}
+        </p>
+        <div className="mt-6 flex items-center justify-center gap-1">
+          {Array.from({ length: totalSteps }, (_, i) => (
+            <div
+              key={i}
+              className={cn(
+                "h-1.5 rounded-full transition-all duration-300",
+                i + 1 === step ? "w-8 bg-brand-orange" : i + 1 < step ? "w-6 bg-brand-green" : "w-4 bg-border"
+              )}
+            />
+          ))}
+        </div>
+        <p className="mt-2 text-xs text-muted-foreground">
+          {ar ? `الخطوة ${step} من ${totalSteps}` : `Step ${step} of ${totalSteps}`}
+        </p>
+      </div>
+
+      <div className="mx-auto max-w-3xl rounded-3xl border border-white/30 bg-background/80 p-8 sm:p-10 backdrop-blur-2xl shadow-xl">
+        {step === 1 && (
+          <div className="space-y-5">
+            <h3 className="font-head text-lg font-bold text-foreground">{ar ? "معلومات المشروع" : "Project Information"}</h3>
+            <div>
+              <label className="block text-xs font-bold text-foreground mb-1">{ar ? "اسم المشروع *" : "Project Name *"}</label>
+              <input
+                className="w-full rounded-xl border border-border bg-background/60 px-4 py-2.5 text-sm text-foreground focus:border-brand-green focus:outline-none"
+                value={form.projectName}
+                onChange={(e) => up("projectName", e.target.value)}
+                placeholder={ar ? "مثال: برج سكني في القاهرة الجديدة" : "e.g. Residential Tower in New Cairo"}
+              />
+            </div>
+            <div>
+              <label className="block text-xs font-bold text-foreground mb-1">{ar ? "نوع المشروع *" : "Project Type *"}</label>
+              <div className="flex flex-wrap gap-2">
+                {projectTypes.map((t) => (
+                  <button
+                    key={t}
+                    type="button"
+                    onClick={() => up("projectType", t)}
+                    className={cn(
+                      "rounded-full border px-4 py-1.5 text-xs font-semibold transition",
+                      form.projectType === t
+                        ? "border-brand-orange bg-brand-orange/10 text-brand-orange"
+                        : "border-border text-foreground hover:border-brand-green"
+                    )}
+                  >
+                    {t}
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div>
+              <label className="block text-xs font-bold text-foreground mb-1">{ar ? "موقع المشروع *" : "Project Location *"}</label>
+              <input
+                className="w-full rounded-xl border border-border bg-background/60 px-4 py-2.5 text-sm text-foreground focus:border-brand-green focus:outline-none"
+                value={form.projectLocation}
+                onChange={(e) => up("projectLocation", e.target.value)}
+                placeholder={ar ? "المحافظة / المدينة / المنطقة" : "Governorate / City / District"}
+              />
+            </div>
+          </div>
+        )}
+
+        {step === 2 && (
+          <div className="space-y-5">
+            <h3 className="font-head text-lg font-bold text-foreground">{ar ? "نطاق العمل" : "Scope of Work"}</h3>
+            <div>
+              <label className="block text-xs font-bold text-foreground mb-2">{ar ? "الخدمات المطلوبة (اختر ما ينطبق)" : "Required Services (select all that apply)"}</label>
+              <div className="flex flex-wrap gap-2">
+                {servicesList.map((s) => (
+                  <button
+                    key={s}
+                    type="button"
+                    onClick={() => toggleService(s)}
+                    className={cn(
+                      "rounded-full border px-4 py-1.5 text-xs font-semibold transition",
+                      form.services.includes(s)
+                        ? "border-brand-green bg-brand-green/10 text-brand-green-text"
+                        : "border-border text-foreground hover:border-brand-green"
+                    )}
+                  >
+                    {s}
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div>
+              <label className="block text-xs font-bold text-foreground mb-1">{ar ? "ملاحظات إضافية عن النطاق" : "Additional Scope Notes"}</label>
+              <textarea
+                rows={4}
+                className="w-full rounded-xl border border-border bg-background/60 px-4 py-2.5 text-sm text-foreground focus:border-brand-green focus:outline-none resize-none"
+                value={form.scopeNotes}
+                onChange={(e) => up("scopeNotes", e.target.value)}
+                placeholder={ar ? "وصف مختصر لنطاق المشروع ومتطلباته..." : "Brief description of project scope and requirements..."}
+              />
+            </div>
+          </div>
+        )}
+
+        {step === 3 && (
+          <div className="space-y-5">
+            <h3 className="font-head text-lg font-bold text-foreground">{ar ? "الميزانية والجدول الزمني" : "Budget & Timeline"}</h3>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div>
+                <label className="block text-xs font-bold text-foreground mb-1">{ar ? "الميزانية التقريبية" : "Approximate Budget"}</label>
+                <input
+                  className="w-full rounded-xl border border-border bg-background/60 px-4 py-2.5 text-sm text-foreground focus:border-brand-green focus:outline-none"
+                  value={form.budget}
+                  onChange={(e) => up("budget", e.target.value)}
+                  placeholder={ar ? "مثال: 5,000,000" : "e.g. 5,000,000"}
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-bold text-foreground mb-1">{ar ? "العملة" : "Currency"}</label>
+                <select
+                  className="w-full rounded-xl border border-border bg-background/60 px-4 py-2.5 text-sm text-foreground focus:border-brand-green focus:outline-none"
+                  value={form.currency}
+                  onChange={(e) => up("currency", e.target.value)}
+                >
+                  <option value="EGP">EGP</option>
+                  <option value="USD">USD</option>
+                  <option value="EUR">EUR</option>
+                  <option value="SAR">SAR</option>
+                  <option value="AED">AED</option>
+                </select>
+              </div>
+              <div>
+                <label className="block text-xs font-bold text-foreground mb-1">{ar ? "تاريخ البداية المتوقع" : "Expected Start Date"}</label>
+                <input
+                  type="date"
+                  className="w-full rounded-xl border border-border bg-background/60 px-4 py-2.5 text-sm text-foreground focus:border-brand-green focus:outline-none"
+                  value={form.startDate}
+                  onChange={(e) => up("startDate", e.target.value)}
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-bold text-foreground mb-1">{ar ? "تاريخ الانتهاء المتوقع" : "Expected End Date"}</label>
+                <input
+                  type="date"
+                  className="w-full rounded-xl border border-border bg-background/60 px-4 py-2.5 text-sm text-foreground focus:border-brand-green focus:outline-none"
+                  value={form.endDate}
+                  onChange={(e) => up("endDate", e.target.value)}
+                />
+              </div>
+            </div>
+            <div>
+              <label className="block text-xs font-bold text-foreground mb-1">{ar ? "نوع العقد" : "Contract Type"}</label>
+              <div className="flex flex-wrap gap-2">
+                {contractTypes.map((t) => (
+                  <button
+                    key={t}
+                    type="button"
+                    onClick={() => up("contractType", t)}
+                    className={cn(
+                      "rounded-full border px-4 py-1.5 text-xs font-semibold transition",
+                      form.contractType === t
+                        ? "border-brand-orange bg-brand-orange/10 text-brand-orange"
+                        : "border-border text-foreground hover:border-brand-green"
+                    )}
+                  >
+                    {t}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {step === 4 && (
+          <div className="space-y-5">
+            <h3 className="font-head text-lg font-bold text-foreground">{ar ? "بيانات العميل" : "Client Information"}</h3>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {[
+                { k: "company", labelAr: "الشركة / الجهة *", labelEn: "Company / Entity *", ph: ar ? "اسم الشركة أو الجهة" : "Company or entity name" },
+                { k: "contact", labelAr: "اسم التواصل *", labelEn: "Contact Name *", ph: ar ? "الاسم الكامل" : "Full name" },
+                { k: "title", labelAr: "المسمى الوظيفي", labelEn: "Job Title", ph: ar ? "المسمى الوظيفي" : "Your job title" },
+                { k: "email", labelAr: "البريد الإلكتروني *", labelEn: "Business Email *", ph: "name@company.com" },
+                { k: "phone", labelAr: "رقم الجوال *", labelEn: "Phone Number *", ph: "+20 10x xxx xxxx" },
+                { k: "country", labelAr: "الدولة", labelEn: "Country", ph: ar ? "مصر" : "Egypt" },
+                { k: "website", labelAr: "الموقع الإلكتروني", labelEn: "Website", ph: "https://yourcompany.com" },
+              ].map(({ k, labelAr, labelEn, ph }) => (
+                <div key={k} className={k === "company" || k === "website" ? "sm:col-span-2" : ""}>
+                  <label className="block text-xs font-bold text-foreground mb-1">{ar ? labelAr : labelEn}</label>
+                  <input
+                    className="w-full rounded-xl border border-border bg-background/60 px-4 py-2.5 text-sm text-foreground focus:border-brand-green focus:outline-none"
+                    value={(form as unknown as Record<string, string>)[k]}
+                    onChange={(e) => up(k, e.target.value)}
+                    placeholder={ph}
+                    type={k === "email" ? "email" : k === "website" ? "url" : "text"}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {step === 5 && (
+          <div className="space-y-6">
+            <h3 className="font-head text-lg font-bold text-foreground">{ar ? "المراجعة والإرسال" : "Review & Submit"}</h3>
+            <div className="rounded-2xl border border-border/60 bg-secondary/30 p-5 space-y-3 text-sm">
+              <div className="flex justify-between gap-2">
+                <span className="text-muted-foreground">{ar ? "المشروع:" : "Project:"}</span>
+                <span className="font-semibold text-foreground">{form.projectName || "—"}</span>
+              </div>
+              <div className="flex justify-between gap-2">
+                <span className="text-muted-foreground">{ar ? "النوع:" : "Type:"}</span>
+                <span className="font-semibold text-foreground">{form.projectType || "—"}</span>
+              </div>
+              <div className="flex justify-between gap-2">
+                <span className="text-muted-foreground">{ar ? "الخدمات:" : "Services:"}</span>
+                <span className="font-semibold text-foreground text-end">{form.services.join(", ") || "—"}</span>
+              </div>
+              <div className="flex justify-between gap-2">
+                <span className="text-muted-foreground">{ar ? "الميزانية:" : "Budget:"}</span>
+                <span className="font-semibold text-foreground">{form.budget ? `${form.budget} ${form.currency}` : "—"}</span>
+              </div>
+              <div className="flex justify-between gap-2">
+                <span className="text-muted-foreground">{ar ? "جهة التواصل:" : "Contact:"}</span>
+                <span className="font-semibold text-foreground">{form.contact || "—"} — {form.email || "—"}</span>
+              </div>
+            </div>
+            <label className="flex items-start gap-3 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={form.consent}
+                onChange={(e) => up("consent", e.target.checked)}
+                className="mt-1 size-4 accent-brand-green"
+              />
+              <span className="text-xs text-muted-foreground leading-relaxed">
+                {ar
+                  ? "أوافق على مشاركة بياناتي مع فريق مجموعة سامي بن عياد للتواصل بشأن هذا المشروع."
+                  : "I agree to share my information with Sami Bin Ayyad Group team for communication regarding this project."}
+              </span>
+            </label>
+            <div className="rounded-xl border border-border/60 bg-secondary/20 p-4 text-xs text-muted-foreground">
+              <p>{ar ? "📧 للتواصل المباشر: info@sami-trade.com" : "📧 Direct contact: info@sami-trade.com"}</p>
+            </div>
+          </div>
+        )}
+
+        <div className="mt-8 flex items-center justify-between gap-4">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => setStep((p) => Math.max(1, p - 1))}
+            disabled={step === 1}
+            className="rounded-full px-6"
+          >
+            {ar ? "السابق" : "Back"}
+          </Button>
+          {step < totalSteps ? (
+            <Button
+              size="sm"
+              onClick={() => setStep((p) => Math.min(totalSteps, p + 1))}
+              className="rounded-full bg-brand-green hover:bg-brand-orange text-white px-8"
+            >
+              {ar ? "التالي" : "Next"}
+            </Button>
+          ) : (
+            <Button
+              size="sm"
+              onClick={handleSubmit}
+              disabled={!form.consent || !form.projectName || !form.contact || !form.email}
+              className="rounded-full bg-brand-orange hover:bg-brand-green text-white px-8"
+            >
+              {ar ? "إرسال الطلب" : "Submit Request"}
+            </Button>
+          )}
+        </div>
+      </div>
     </div>
   );
 }

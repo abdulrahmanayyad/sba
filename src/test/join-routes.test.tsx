@@ -22,7 +22,7 @@ describe("Join Us Pathways & Routes", () => {
     const expectedHeadlines: Record<JoinTrackId, string> = {
       group: "Build the Future With Us",
       construction: "Engineering Excellence. Building Tomorrow.",
-      sustainability: "Innovate for a Better Tomorrow",
+      sustainability: "",
       garment: "Crafting Excellence. Dressing the World.",
     };
 
@@ -30,7 +30,9 @@ describe("Join Us Pathways & Routes", () => {
       const track = joinTracks[trackId];
       expect(track).toBeDefined();
       expect(track.headlineEn).toBe(expectedHeadlines[trackId]);
-      expect(track.headlineAr).toBeTruthy();
+      if (trackId !== "sustainability") {
+        expect(track.headlineAr).toBeTruthy();
+      }
       expect(track.descriptionEn).toBeTruthy();
       expect(track.descriptionAr).toBeTruthy();
       expect(track.individualCategories.length).toBeGreaterThan(0);

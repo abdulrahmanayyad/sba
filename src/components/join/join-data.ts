@@ -43,7 +43,7 @@ export const joinTracks: Record<JoinTrackId, JoinTrackConfig> = {
     eyebrowEn: "SAMI BIN AYYAD GROUP · Careers & Strategic Partnerships",
     eyebrowAr: "مجموعة سامي بن عياد · التوظيف والشراكات الاستراتيجية",
     headlineEn: "Build the Future With Us",
-    headlineAr: "لنبنِ المستقبل معًا",
+    headlineAr: "لنبن المستقبل معًا",
     descriptionEn:
       "We welcome ambitious professionals, strategic partners, investors, and organizations that share our vision for sustainable growth, operational excellence, and long-term value creation across our business sectors.",
     descriptionAr:

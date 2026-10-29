@@ -55,10 +55,10 @@ export const activities: Record<SectorId, { items: T[]; note?: T }> = {
     { en: "Research, Development & Emerging Technologies", ar: "البحث والتطوير والتقنيات الناشئة" }, { en: "Sustainability & Climate Change", ar: "الاستدامة وتغيّر المناخ" }, { en: "Digital Technologies", ar: "التقنيات الرقمية" },
   ] },
   garment: { items: [
-    { en: "B2B · Manufacturing Contracts with Local and International Brands", ar: "B2B · عقود تصنيع مع علامات محلية ودولية" },
-    { en: "B2B · Wholesale Supply to Retailers and Trade Buyers", ar: "B2B · توريد بالجملة لتجار التجزئة والمشترين" },
-    { en: "B2B · Supply to Commercial Stores and Retail Outlets", ar: "B2B · التوريد للمتاجر ومنافذ البيع" },
-    { en: "Retail · Retail Garment Sales", ar: "تجزئة · بيع الملابس بالتجزئة" },
+    { en: "Manufacturing Contracts with Local and International Brands", ar: "عقود تصنيع مع علامات محلية ودولية" },
+    { en: "Wholesale Supply to Retailers and Trade Buyers", ar: "توريد بالجملة لتجار التجزئة والمشترين" },
+    { en: "Supply to Commercial Stores and Retail Outlets", ar: "التوريد للمتاجر ومنافذ البيع" },
+    { en: "Retail Garment Sales", ar: "بيع الملابس بالتجزئة" },
   ] },
   food: { items: [
     { en: "Natural and Premium Honey Products", ar: "منتجات العسل الطبيعي والفاخر" }, { en: "Olives & Olive Oil", ar: "الزيتون وزيت الزيتون" },

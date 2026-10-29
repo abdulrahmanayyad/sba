@@ -143,8 +143,8 @@ export function AboutPage() {
                 <Reveal key={sector.title} delay={index * 0.08}>
                   <div className="flex h-full flex-col justify-between rounded-2xl border border-white/20 bg-background/60 p-6 backdrop-blur-xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-green/40 hover:shadow-lg">
                     <div>
-                      <div className="flex items-center justify-end">
-                        <span className="rounded-full bg-secondary px-2.5 py-1 text-[11px] font-semibold text-muted-foreground">
+                      <div className="flex items-center justify-center text-center">
+                        <span className="rounded-full bg-secondary px-3 py-1 text-[11px] font-semibold text-muted-foreground">
                           {ar ? sector.tagAr : sector.tag}
                         </span>
                       </div>

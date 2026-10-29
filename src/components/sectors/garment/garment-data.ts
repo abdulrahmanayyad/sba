@@ -2,10 +2,10 @@ import apparelImg from "@/assets/sector-apparel.jpg";
 
 export const garmentHeroData = {
   image: apparelImg,
-  company: "SAMI BIN AYYAD · Ready-Made Garment Manufacturing",
-  companyAr: "مجموعة سامي بن عياد · قطاع تصنيع الملابس الجاهزة",
-  title: "Ready-Made Garment Manufacturing",
-  titleAr: "تصنيع الملابس الجاهزة",
+  company: "SAMI BIN AYYAD · Ready-Made Garments",
+  companyAr: "مجموعة سامي بن عياد · قطاع الملابس الجاهزة",
+  title: "Ready-Made Garments",
+  titleAr: "الملابس الجاهزة",
   subtitle: "Integrated manufacturing solutions for fashion brands and global markets.",
   subtitleAr: "حلول تصنيع متكاملة للعلامات التجارية والأسواق العالمية.",
   intro: "SAMI BIN AYYAD GROUP delivers integrated ready-made garment manufacturing solutions, combining product development, diverse production capabilities, manufacturing management, and quality control. With specialization in women's, children's, and men's apparel, we support fashion brands, importers, and international buyers through flexible manufacturing programs tailored to each project.",
@@ -17,8 +17,8 @@ export const garmentAboutData = {
   whoWeAre: {
     heading: "Your Partner in the Manufacturing Journey",
     headingAr: "شريكك في رحلة التصنيع",
-    body: "Garment manufacturing is one of the Group's core industrial divisions, supported by our own garment factory, our dedicated fabric mill with internal dyeing, ownership interests in three additional manufacturing factories, and an expansive network of production partnerships.",
-    bodyAr: "يمثل قطاع تصنيع الملابس أحد القطاعات الصناعية الرئيسية في مجموعة سامي بن عياد، ويعتمد على منظومة صناعية متكاملة تجمع بين مصنع الملابس التابع للمجموعة، ومصنع متخصص للأقمشة بقدرات صباغة داخلية، إلى جانب حصص ملكية في ثلاثة مصانع تصنيع أخرى وشبكة واسعة من الشراكات الإنتاجية.",
+    body: "Garment division is one of the Group's core industrial divisions, supported by our own garment factory, our dedicated fabric mill with internal dyeing, ownership interests in three additional manufacturing factories, and an expansive network of production partnerships.",
+    bodyAr: "يمثل قطاع الملابس أحد القطاعات الصناعية الرئيسية في مجموعة سامي بن عياد، ويعتمد على منظومة صناعية متكاملة تجمع بين مصنع الملابس التابع للمجموعة، ومصنع متخصص للأقمشة بقدرات صباغة داخلية، إلى جانب حصص ملكية في ثلاثة مصانع تصنيع أخرى وشبكة واسعة من الشراكات الإنتاجية.",
     extended: "Our operations cover multiple stages of the manufacturing cycle, from product development, pattern making, and sampling to cutting, sewing, finishing, quality control, packaging, and export preparation. In addition, the Group owns its own private fashion brand with a direct retail footprint across 7 flagship showrooms, giving us deep consumer-market insights alongside our contract manufacturing for international labels. We focus on building long-term manufacturing partnerships grounded in clear specifications, disciplined production, accountability, and effective communication.",
     extendedAr: "نغطي مراحل متعددة من دورة التصنيع، بدءًا من تطوير المنتج والباترونات والعينات، مرورًا بالقص والخياطة والتشطيب ومراقبة الجودة، وصولًا إلى التعبئة وتجهيز الطلبات للتصدير. وتمتلك المجموعة براندًا خاصًا بها يتواجد في 7 معارض كبرى بما يعكس حضورًا مباشرًا في سوق التجزئة بالتوازي مع نشاطنا الصناعي للعلامات التجارية العالمية. ونركز على بناء علاقات تصنيع طويلة الأمد قائمة على وضوح المواصفات، والانضباط الإنتاجي، والمسؤولية، والتواصل الفعال.",
     mission: {

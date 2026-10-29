@@ -165,6 +165,15 @@ export function SectorHeader({
                 >
                   {ar ? "انضم إلينا" : "Join Us"}
                 </Link>
+
+                <Link
+                  to="/sectors/$sector"
+                  params={{ sector: "construction" }}
+                  search={{ tab: "start-project" }}
+                  className={cn(navPill, "bg-brand-green/10 text-brand-green-text border border-brand-green/30 hover:bg-brand-green hover:text-white")}
+                >
+                  {ar ? "ابدأ مشروعًا" : "Start Project"}
+                </Link>
               </>
             ) : isGarment ? (
               /* Custom Garment Navigation without Clients & Partners */
@@ -213,6 +222,15 @@ export function SectorHeader({
                 >
                   {ar ? "انضم إلينا" : "Join Us"}
                 </Link>
+
+                <Link
+                  to="/sectors/$sector"
+                  params={{ sector: "garment" }}
+                  search={{ tab: "start-project" }}
+                  className={cn(navPill, "bg-brand-orange/10 text-brand-orange border border-brand-orange/30 hover:bg-brand-orange hover:text-white")}
+                >
+                  {ar ? "ابدأ مشروعًا" : "Start Project"}
+                </Link>
               </>
             ) : isEnvironmental ? (
               /* Custom Environmental Navigation */
@@ -245,10 +263,28 @@ export function SectorHeader({
                 </Link>
 
                 <Link
+                  to="/sectors/$sector"
+                  params={{ sector: "environmental" }}
+                  search={{ tab: "products" }}
+                  className={cn(navPill, activeTab === "products" && "!text-brand-green bg-white/40 shadow-sm")}
+                >
+                  {ar ? "منتجاتنا" : "Our Products"}
+                </Link>
+
+                <Link
                   to="/join/sustainability"
                   className={navPill}
                 >
                   {ar ? "انضم إلينا" : "Join Us"}
+                </Link>
+
+                <Link
+                  to="/sectors/$sector"
+                  params={{ sector: "environmental" }}
+                  search={{ tab: "start-consultation" }}
+                  className={cn(navPill, "bg-brand-green/10 text-brand-green-text border border-brand-green/30 hover:bg-brand-green hover:text-white")}
+                >
+                  {ar ? "ابدأ استشارة" : "Start Consultation"}
                 </Link>
               </>
             ) : (
@@ -320,62 +356,64 @@ export function SectorHeader({
               </>
             )}
 
-            {/* Other Sectors Dropdown with exact homepage names */}
-            <div
-              className="relative"
-              onMouseEnter={() => setOthersOpen(true)}
-              onMouseLeave={() => setOthersOpen(false)}
-              onBlur={(event) => {
-                if (!event.currentTarget.contains(event.relatedTarget)) setOthersOpen(false);
-              }}
-              onKeyDown={(event) => {
-                if (event.key === "Escape") setOthersOpen(false);
-              }}
-            >
-              <Button
-                variant="ghost"
-                size="bare"
-                type="button"
-                aria-expanded={othersOpen}
-                className={navLinkStyle}
-                onClick={(event) => {
-                  if (event.detail > 0 && window.matchMedia("(hover: hover)").matches) setOthersOpen(true);
-                  else setOthersOpen((v) => !v);
+            {/* Other Sectors Dropdown — only for non-main sectors */}
+            {!isConstruction && !isGarment && !isEnvironmental && (
+              <div
+                className="relative"
+                onMouseEnter={() => setOthersOpen(true)}
+                onMouseLeave={() => setOthersOpen(false)}
+                onBlur={(event) => {
+                  if (!event.currentTarget.contains(event.relatedTarget)) setOthersOpen(false);
+                }}
+                onKeyDown={(event) => {
+                  if (event.key === "Escape") setOthersOpen(false);
                 }}
               >
-                {ar ? "قطاعات أخرى" : "Other sectors"}
-                <ChevronDown aria-hidden="true" className={cn("size-3 transition-transform", othersOpen && "rotate-180")} />
-              </Button>
-              {othersOpen && (
-                <div className="absolute end-0 top-full z-50 w-64 pt-2.5">
-                  <AnimatedPanel
-                    onClose={() => setOthersOpen(false)}
-                    className="overflow-hidden rounded-[24px] border border-white/35 bg-background/75 p-2 shadow-[0_20px_50px_rgba(0,0,0,0.18)] backdrop-blur-2xl ring-1 ring-white/20 dark:border-white/15 dark:bg-background/70"
-                  >
-                    {visibleSectors
-                      .filter((key) => key !== slug)
-                      .map((key) => {
-                        const item = sectors[key as keyof typeof sectors];
-                        return (
-                          <Link
-                            key={key}
-                            to="/sectors/$sector"
-                            params={{ sector: key }}
-                            search={{}}
-                            className="block rounded-[16px] px-3.5 py-2.5 text-sm font-medium text-foreground transition-all duration-200 hover:bg-brand-orange/15 hover:text-brand-orange hover:translate-x-1 rtl:hover:-translate-x-1"
-                            onClick={() => {
-                              setOthersOpen(false);
-                              setMenuOpen(false);
-                            }}
-                          >
-                            {ar ? item?.nameAr : item?.name}
-                          </Link>
-                        );
-                      })}
-                  </AnimatedPanel>
-                </div>
-              )}
-            </div>
+                <Button
+                  variant="ghost"
+                  size="bare"
+                  type="button"
+                  aria-expanded={othersOpen}
+                  className={navLinkStyle}
+                  onClick={(event) => {
+                    if (event.detail > 0 && window.matchMedia("(hover: hover)").matches) setOthersOpen(true);
+                    else setOthersOpen((v) => !v);
+                  }}
+                >
+                  {ar ? "قطاعات أخرى" : "Other sectors"}
+                  <ChevronDown aria-hidden="true" className={cn("size-3 transition-transform", othersOpen && "rotate-180")} />
+                </Button>
+                {othersOpen && (
+                  <div className="absolute end-0 top-full z-50 w-64 pt-2.5">
+                    <AnimatedPanel
+                      onClose={() => setOthersOpen(false)}
+                      className="overflow-hidden rounded-[24px] border border-white/35 bg-background/75 p-2 shadow-[0_20px_50px_rgba(0,0,0,0.18)] backdrop-blur-2xl ring-1 ring-white/20 dark:border-white/15 dark:bg-background/70"
+                    >
+                      {visibleSectors
+                        .filter((key) => key !== slug)
+                        .map((key) => {
+                          const item = sectors[key as keyof typeof sectors];
+                          return (
+                            <Link
+                              key={key}
+                              to="/sectors/$sector"
+                              params={{ sector: key }}
+                              search={{}}
+                              className="block rounded-[16px] px-3.5 py-2.5 text-sm font-medium text-foreground transition-all duration-200 hover:bg-brand-orange/15 hover:text-brand-orange hover:translate-x-1 rtl:hover:-translate-x-1"
+                              onClick={() => {
+                                setOthersOpen(false);
+                                setMenuOpen(false);
+                              }}
+                            >
+                              {ar ? item?.nameAr : item?.name}
+                            </Link>
+                          );
+                        })}
+                    </AnimatedPanel>
+                  </div>
+                )}
+              </div>
+            )}
           </nav>
 
           <div className="hidden items-center gap-3 xl:flex shrink-0">
@@ -476,6 +514,15 @@ export function SectorHeader({
                     >
                       {ar ? "انضم إلينا" : "Join Us"}
                     </Link>
+                    <Link
+                      to="/sectors/$sector"
+                      params={{ sector: "construction" }}
+                      search={{ tab: "start-project" }}
+                      onClick={() => setMenuOpen(false)}
+                      className={cn(mobileLinkStyle, "!text-brand-green font-bold bg-brand-green/10")}
+                    >
+                      {ar ? "ابدأ مشروعًا" : "Start Project"}
+                    </Link>
                   </>
                 ) : isGarment ? (
                   <>
@@ -524,6 +571,15 @@ export function SectorHeader({
                     >
                       {ar ? "انضم إلينا" : "Join Us"}
                     </Link>
+                    <Link
+                      to="/sectors/$sector"
+                      params={{ sector: "garment" }}
+                      search={{ tab: "start-project" }}
+                      onClick={() => setMenuOpen(false)}
+                      className={cn(mobileLinkStyle, "!text-brand-orange font-bold bg-brand-orange/10")}
+                    >
+                      {ar ? "ابدأ مشروعًا" : "Start Project"}
+                    </Link>
                   </>
                 ) : isEnvironmental ? (
                   <>
@@ -555,11 +611,29 @@ export function SectorHeader({
                       {ar ? "خدماتنا" : "Our Services"}
                     </Link>
                     <Link
+                      to="/sectors/$sector"
+                      params={{ sector: "environmental" }}
+                      search={{ tab: "products" }}
+                      onClick={() => setMenuOpen(false)}
+                      className={cn(mobileLinkStyle, activeTab === "products" && "!text-brand-green bg-white/40")}
+                    >
+                      {ar ? "منتجاتنا" : "Our Products"}
+                    </Link>
+                    <Link
                       to="/join/sustainability"
                       onClick={() => setMenuOpen(false)}
                       className={mobileLinkStyle}
                     >
                       {ar ? "انضم إلينا" : "Join Us"}
+                    </Link>
+                    <Link
+                      to="/sectors/$sector"
+                      params={{ sector: "environmental" }}
+                      search={{ tab: "start-consultation" }}
+                      onClick={() => setMenuOpen(false)}
+                      className={cn(mobileLinkStyle, "!text-brand-green font-bold bg-brand-green/10")}
+                    >
+                      {ar ? "ابدأ استشارة" : "Start Consultation"}
                     </Link>
                   </>
                 ) : (

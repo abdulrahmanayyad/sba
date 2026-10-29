@@ -332,7 +332,7 @@ export function GarmentJoinTab() {
 
               <div className="flex items-center gap-3 text-xs text-muted-foreground">
                 <Clock className="size-4 shrink-0 text-brand-orange" />
-                <span>{ar ? "الأحد - الخميس: 9:00 ص - 5:00 م" : "Sun - Thu: 9:00 AM - 5:00 PM (Cairo Time)"}</span>
+                <span>{ar ? "السبت - الخميس: 9:00 ص - 7:00 م" : "Sat – Thu: 9:00 AM – 7:00 PM (Cairo Time)"}</span>
               </div>
             </div>
           </div>

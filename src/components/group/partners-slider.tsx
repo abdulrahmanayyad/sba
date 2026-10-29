@@ -100,7 +100,7 @@ export function PartnersSlider({ ar }: { ar: boolean }) {
                 <span className="text-xs font-semibold text-muted-foreground">
                   {ar ? "شراكة استراتيجية وتجارية" : "Strategic Partnership"}
                 </span>
-                <span className="size-2 rounded-full bg-brand-green animate-pulse" />
+                <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
               </div>
             </div>
           );

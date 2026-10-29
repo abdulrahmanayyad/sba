@@ -19,7 +19,7 @@ import {
   environmentalServicesData,
 } from "./environmental-data";
 
-export type EnvironmentalTab = "about" | "sectors" | "services";
+export type EnvironmentalTab = "about" | "sectors" | "services" | "products" | "start-consultation";
 
 interface EnvironmentalViewProps {
   tab?: EnvironmentalTab;
@@ -37,7 +37,7 @@ function SectionBadge({ title }: { title: string }) {
 export function EnvironmentalSectorView({ tab = "about" }: EnvironmentalViewProps) {
   const { language } = useLanguage();
   const ar = language === "AR";
-  const activeTab: EnvironmentalTab = ["about", "sectors", "services"].includes(tab) ? tab : "about";
+  const activeTab: EnvironmentalTab = ["about", "sectors", "services", "products", "start-consultation"].includes(tab) ? tab : "about";
 
   return (
     <div className="w-full">
@@ -75,6 +75,8 @@ export function EnvironmentalSectorView({ tab = "about" }: EnvironmentalViewProp
         {activeTab === "about" && <EnvironmentalAboutView ar={ar} />}
         {activeTab === "sectors" && <EnvironmentalSectorsView ar={ar} />}
         {activeTab === "services" && <EnvironmentalServicesView ar={ar} />}
+        {activeTab === "products" && <EnvironmentalProductsView ar={ar} />}
+        {activeTab === "start-consultation" && <EnvironmentalStartConsultationView ar={ar} />}
       </div>
     </div>
   );
@@ -349,6 +351,394 @@ function EnvironmentalSectorsView({ ar }: { ar: boolean }) {
           </div>
         </div>
       </section>
+    </div>
+  );
+}
+
+/** 4. Our Products Tab View */
+function EnvironmentalProductsView({ ar }: { ar: boolean }) {
+  const products = [
+    {
+      id: "ET-POT-01",
+      titleEn: "ET-POT-01 — Oil Terminator",
+      titleAr: "ET-POT-01 — محلل الزيوت البيولوجي",
+      leadEn: "Biological oil decomposition for industrial wastewater",
+      leadAr: "تحليل بيولوجي للزيوت في مياه الصرف الصناعي",
+      descEn: "A proprietary biological formulation that decomposes hydrocarbon contaminants in industrial wastewater and oil-polluted environments. Ideal for factories, oil refineries, fuel stations, and marine applications.",
+      descAr: "تركيبة بيولوجية خاصة تحلل الملوثات الهيدروكربونية في مياه الصرف الصناعي والبيئات الملوثة بالزيوت. مثالية للمصانع والمصافي ومحطات الوقود والتطبيقات البحرية.",
+      features: [
+        { en: "Rapidly degrades petroleum hydrocarbons", ar: "يحلل الهيدروكربونات النفطية بسرعة عالية" },
+        { en: "Effective in aerobic and anaerobic conditions", ar: "فعّال في الظروف الهوائية واللاهوائية" },
+        { en: "Non-toxic, environmentally safe formulation", ar: "تركيبة غير سامة وآمنة بيئيًا" },
+        { en: "Reduces COD and BOD in effluent", ar: "يقلل COD وBOD في مياه الصرف" },
+        { en: "Compatible with existing treatment systems", ar: "متوافق مع أنظمة المعالجة القائمة" },
+      ],
+    },
+    {
+      id: "ET-POR-01",
+      titleEn: "ET-POR-01 — Odor Removal Solution",
+      titleAr: "ET-POR-01 — محلول إزالة الروائح",
+      leadEn: "Industrial-grade odor neutralization for waste & wastewater",
+      leadAr: "تحييد الروائح الصناعية للنفايات ومياه الصرف",
+      descEn: "A concentrated odor-neutralizing compound that eliminates hydrogen sulfide (H₂S) and organic odor compounds at source. Widely used in wastewater treatment plants, landfills, composting facilities, and food processing plants.",
+      descAr: "مركب متخصص لتحييد الروائح يزيل كبريتيد الهيدروجين والمركبات العضوية المسببة للروائح من المصدر. يُستخدم على نطاق واسع في محطات معالجة المياه ومدافن النفايات والمصانع.",
+      features: [
+        { en: "Eliminates H₂S and VOCs at source", ar: "يزيل H₂S والمركبات العضوية المتطايرة من المصدر" },
+        { en: "Immediate and long-lasting effect", ar: "تأثير فوري وطويل الأمد" },
+        { en: "Safe for operators and environment", ar: "آمن للمشغلين والبيئة" },
+        { en: "Available in liquid and powder forms", ar: "متاح في صورة سائل أو مسحوق" },
+        { en: "Suitable for large-scale industrial use", ar: "مناسب للاستخدام الصناعي على نطاق واسع" },
+      ],
+    },
+    {
+      id: "IoT-ENV",
+      titleEn: "IoT Environmental Monitoring System",
+      titleAr: "نظام مراقبة بيئية عبر إنترنت الأشياء",
+      leadEn: "Real-time environmental data collection via Techno Set partnership",
+      leadAr: "جمع بيانات بيئية لحظية بالشراكة مع Techno Set",
+      descEn: "Smart IoT-based sensors and dashboards for continuous monitoring of air quality, water parameters, temperature, humidity, and pollution indicators. Delivered in partnership with Techno Set.",
+      descAr: "أجهزة استشعار ذكية ولوحات تحكم مبنية على إنترنت الأشياء لمراقبة مستمرة لجودة الهواء وبارامترات المياه ودرجات الحرارة والرطوبة ومؤشرات التلوث. تُقدَّم بالشراكة مع Techno Set.",
+      features: [
+        { en: "Real-time data dashboards and alerts", ar: "لوحات بيانات لحظية وتنبيهات فورية" },
+        { en: "Air quality: PM2.5, PM10, CO₂, VOC, NOx", ar: "جودة الهواء: PM2.5، PM10، CO₂، VOC، NOx" },
+        { en: "Water: pH, TDS, turbidity, DO, conductivity", ar: "المياه: pH، TDS، عكارة، DO، التوصيلية" },
+        { en: "Remote access via web and mobile apps", ar: "وصول عن بعد عبر تطبيقات الويب والجوال" },
+        { en: "Integration with EHS compliance reports", ar: "تكامل مع تقارير الامتثال البيئي والصحي" },
+      ],
+    },
+    {
+      id: "EHS-APP",
+      titleEn: "EHS Regulatory Compliance App",
+      titleAr: "تطبيق الامتثال لمتطلبات EHS",
+      leadEn: "Digital EHS management and regulatory reporting platform",
+      leadAr: "منصة رقمية لإدارة EHS والتقارير التنظيمية",
+      descEn: "A regulatory compliance management application that helps organizations track EHS obligations, manage audits, generate compliance reports, and maintain documentation in line with Egyptian and international standards.",
+      descAr: "تطبيق إدارة الامتثال التنظيمي يساعد المؤسسات على تتبع التزامات EHS وإدارة عمليات التدقيق وإنشاء تقارير الامتثال والحفاظ على التوثيق وفق المعايير المصرية والدولية.",
+      features: [
+        { en: "EHS audit scheduling and tracking", ar: "جدولة ومتابعة عمليات التدقيق البيئي" },
+        { en: "Automated compliance reporting", ar: "إعداد تقارير الامتثال تلقائيًا" },
+        { en: "Incident and near-miss logging", ar: "تسجيل الحوادث وحالات اقتراب الخطر" },
+        { en: "Egyptian Environmental Law integration", ar: "تكامل مع قانون البيئة المصري" },
+        { en: "Multi-site and multi-user support", ar: "دعم متعدد المواقع والمستخدمين" },
+      ],
+    },
+  ];
+
+  return (
+    <div className="w-full space-y-12">
+      <section className="site-container">
+        <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
+          <Reveal>
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <SectionBadge title={ar ? "منتجاتنا" : "Our Products"} />
+              <h2 className="section-title mt-3">
+                {ar ? "حلول بيئية مبتكرة ومنتجات متخصصة" : "Innovative Environmental Solutions & Specialized Products"}
+              </h2>
+              <p className="section-intro mt-4">
+                {ar
+                  ? "نقدم منتجات وحلولًا بيئية متخصصة مطورة بالشراكة مع خبراء دوليين لمواجهة التحديات البيئية الصناعية."
+                  : "We offer specialized environmental products and solutions developed in partnership with international experts to address industrial environmental challenges."}
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="grid gap-8 lg:grid-cols-2">
+            {products.map((product, idx) => (
+              <Reveal key={product.id} delay={idx * 0.05}>
+                <div className="group flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-white/20 bg-background/60 p-6 sm:p-8 backdrop-blur-xl shadow-sm transition-all duration-300 hover:border-brand-green/60 hover:shadow-xl hover:scale-[1.01]">
+                  <div>
+                    <div className="flex items-center justify-between gap-3">
+                      <span className="inline-flex items-center rounded-full bg-brand-green/10 px-3 py-1 font-mono text-xs font-bold text-brand-green-text">
+                        {product.id}
+                      </span>
+                    </div>
+                    <h3 className="mt-4 font-head text-lg sm:text-xl font-bold text-foreground">
+                      {ar ? product.titleAr : product.titleEn}
+                    </h3>
+                    <p className="mt-1 text-xs sm:text-sm font-medium text-brand-green-text">
+                      {ar ? product.leadAr : product.leadEn}
+                    </p>
+                    <p className="mt-4 text-xs sm:text-sm leading-6 text-muted-foreground">
+                      {ar ? product.descAr : product.descEn}
+                    </p>
+                  </div>
+                  <div className="mt-6 border-t border-border pt-4">
+                    <h4 className="font-head text-xs font-semibold text-foreground mb-3">
+                      {ar ? "المزايا الرئيسية:" : "Key Benefits:"}
+                    </h4>
+                    <ul className="space-y-2">
+                      {product.features.map((feat, fIdx) => (
+                        <li key={fIdx} className="flex items-start gap-2 text-xs text-muted-foreground">
+                          <CheckCircle2 className="mt-0.5 size-3.5 shrink-0 text-brand-green-text" />
+                          <span>{ar ? feat.ar : feat.en}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="mt-6 pt-4 border-t border-border/50 flex items-center justify-end">
+                      <Link
+                        to="/sectors/$sector"
+                        params={{ sector: "environmental" }}
+                        search={{}}
+                        hash="contact"
+                        className="inline-flex items-center gap-2 rounded-full bg-brand-green px-5 py-2.5 text-xs font-bold text-white transition-all duration-300 hover:bg-brand-orange hover:shadow-md hover:scale-105 active:scale-95"
+                      >
+                        <span>{ar ? "استفسر عن المنتج" : "Inquire Product"}</span>
+                        <ArrowRight className={cn("size-3.5", ar && "rotate-180")} />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+/** 5. Start Consultation View — Multi-step Form */
+function EnvironmentalStartConsultationView({ ar }: { ar: boolean }) {
+  const [step, setStep] = useState(1);
+  const totalSteps = 5;
+  const [form, setForm] = useState({
+    projectName: "",
+    projectType: "",
+    services: [] as string[],
+    engagementModel: "",
+    techNotes: "",
+    budget: "",
+    currency: "EGP",
+    startDate: "",
+    company: "",
+    contact: "",
+    title: "",
+    email: "",
+    phone: "",
+    country: "",
+    website: "",
+    consent: false,
+    submitted: false,
+    refNum: "",
+  });
+  const up = (k: string, v: unknown) => setForm((p) => ({ ...p, [k]: v }));
+
+  const projectTypes = ar
+    ? ["صناعي", "تجاري", "بنية تحتية", "طاقة", "مياه", "إدارة نفايات", "نفط وغاز", "أخرى"]
+    : ["Industrial", "Commercial", "Infrastructure", "Energy", "Water", "Waste Management", "Oil & Gas", "Other"];
+  const servicesList = ar
+    ? ["استشارات بيئية", "دراسة جدوى", "هندسة وتصميم", "توريد منتجات", "تنفيذ", "تشغيل وصيانة", "شراكة استراتيجية", "أخرى"]
+    : ["Environmental Consulting", "Feasibility Study", "Engineering & Design", "Supply", "Implementation", "O&M", "Strategic Partnership", "Other"];
+  const engagementModels = ar
+    ? ["استشارة", "دراسة جدوى", "هندسة وتصميم", "توريد", "تنفيذ", "تشغيل وصيانة", "شراكة استراتيجية", "أخرى"]
+    : ["Consulting", "Feasibility Study", "Engineering & Design", "Supply", "Implementation", "O&M", "Strategic Partnership", "Other"];
+
+  const toggleService = (s: string) =>
+    setForm((p) => ({ ...p, services: p.services.includes(s) ? p.services.filter((x) => x !== s) : [...p.services, s] }));
+
+  const handleSubmit = () => {
+    const ref = "ENV-" + Date.now().toString(36).toUpperCase();
+    setForm((p) => ({ ...p, submitted: true, refNum: ref }));
+  };
+
+  if (form.submitted) {
+    return (
+      <div className="site-container py-16">
+        <div className="mx-auto max-w-2xl rounded-3xl border border-brand-green/40 bg-background/80 p-10 text-center backdrop-blur-2xl shadow-xl">
+          <div className="mb-4 flex justify-center">
+            <span className="flex size-16 items-center justify-center rounded-full bg-brand-green/10">
+              <CheckCircle2 className="size-8 text-brand-green-text" />
+            </span>
+          </div>
+          <h2 className="font-head text-2xl font-extrabold text-foreground">
+            {ar ? "تم استلام طلب الاستشارة!" : "Consultation Request Received!"}
+          </h2>
+          <p className="mt-3 text-sm text-muted-foreground">
+            {ar
+              ? `رقم المرجع: ${form.refNum} — سيتواصل معك خبراؤنا البيئيون خلال 48 ساعة عمل.`
+              : `Reference: ${form.refNum} — Our environmental experts will contact you within 48 business hours.`}
+          </p>
+          <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
+            <a
+              href={`mailto:info@sami-trade.com?subject=Environmental Consultation ${form.refNum}&body=Project: ${form.projectName}%0AContact: ${form.contact} — ${form.email}`}
+              className="inline-flex items-center gap-2 rounded-full bg-brand-green px-6 py-3 text-sm font-bold text-white transition hover:bg-brand-orange"
+            >
+              <span>{ar ? "راسلنا مباشرة" : "Email Us Directly"}</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="site-container py-12">
+      <div className="mx-auto max-w-3xl mb-10 text-center">
+        <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+          <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+          <span>{ar ? "ابدأ استشارتك" : "Start Consultation"}</span>
+        </div>
+        <h2 className="font-head text-2xl sm:text-3xl font-extrabold text-foreground mt-2">
+          {ar ? "احصل على استشارة بيئية متخصصة" : "Get a Specialized Environmental Consultation"}
+        </h2>
+        <p className="mt-3 text-sm text-muted-foreground">
+          {ar
+            ? "أكمل النموذج وسيتواصل معك خبراؤنا البيئيون خلال 48 ساعة."
+            : "Complete the form and our environmental experts will reach out within 48 hours."}
+        </p>
+        <div className="mt-6 flex items-center justify-center gap-1">
+          {Array.from({ length: totalSteps }, (_, i) => (
+            <div
+              key={i}
+              className={cn(
+                "h-1.5 rounded-full transition-all duration-300",
+                i + 1 === step ? "w-8 bg-brand-orange" : i + 1 < step ? "w-6 bg-brand-green" : "w-4 bg-border"
+              )}
+            />
+          ))}
+        </div>
+        <p className="mt-2 text-xs text-muted-foreground">
+          {ar ? `الخطوة ${step} من ${totalSteps}` : `Step ${step} of ${totalSteps}`}
+        </p>
+      </div>
+
+      <div className="mx-auto max-w-3xl rounded-3xl border border-white/30 bg-background/80 p-8 sm:p-10 backdrop-blur-2xl shadow-xl">
+        {step === 1 && (
+          <div className="space-y-5">
+            <h3 className="font-head text-lg font-bold text-foreground">{ar ? "معلومات المشروع" : "Project Information"}</h3>
+            <div>
+              <label className="block text-xs font-bold text-foreground mb-1">{ar ? "اسم المشروع *" : "Project Name *"}</label>
+              <input
+                className="w-full rounded-xl border border-border bg-background/60 px-4 py-2.5 text-sm text-foreground focus:border-brand-green focus:outline-none"
+                value={form.projectName}
+                onChange={(e) => up("projectName", e.target.value)}
+                placeholder={ar ? "وصف مختصر للمشروع" : "Brief project description"}
+              />
+            </div>
+            <div>
+              <label className="block text-xs font-bold text-foreground mb-1">{ar ? "نوع المشروع *" : "Project Type *"}</label>
+              <div className="flex flex-wrap gap-2">
+                {projectTypes.map((t) => (
+                  <button key={t} type="button" onClick={() => up("projectType", t)}
+                    className={cn("rounded-full border px-4 py-1.5 text-xs font-semibold transition",
+                      form.projectType === t ? "border-brand-orange bg-brand-orange/10 text-brand-orange" : "border-border text-foreground hover:border-brand-green")}>
+                    {t}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+        {step === 2 && (
+          <div className="space-y-5">
+            <h3 className="font-head text-lg font-bold text-foreground">{ar ? "الخدمات المطلوبة" : "Required Services"}</h3>
+            <div className="flex flex-wrap gap-2">
+              {servicesList.map((s) => (
+                <button key={s} type="button" onClick={() => toggleService(s)}
+                  className={cn("rounded-full border px-4 py-1.5 text-xs font-semibold transition",
+                    form.services.includes(s) ? "border-brand-green bg-brand-green/10 text-brand-green-text" : "border-border text-foreground hover:border-brand-green")}>
+                  {s}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+        {step === 3 && (
+          <div className="space-y-5">
+            <h3 className="font-head text-lg font-bold text-foreground">{ar ? "المتطلبات التقنية" : "Technical Requirements"}</h3>
+            <div>
+              <label className="block text-xs font-bold text-foreground mb-1">{ar ? "نموذج التعاون المفضل" : "Preferred Engagement Model"}</label>
+              <div className="flex flex-wrap gap-2">
+                {engagementModels.map((m) => (
+                  <button key={m} type="button" onClick={() => up("engagementModel", m)}
+                    className={cn("rounded-full border px-4 py-1.5 text-xs font-semibold transition",
+                      form.engagementModel === m ? "border-brand-orange bg-brand-orange/10 text-brand-orange" : "border-border text-foreground hover:border-brand-green")}>
+                    {m}
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div>
+              <label className="block text-xs font-bold text-foreground mb-1">{ar ? "ملاحظات تقنية إضافية" : "Additional Technical Notes"}</label>
+              <textarea rows={4} className="w-full rounded-xl border border-border bg-background/60 px-4 py-2.5 text-sm text-foreground focus:border-brand-green focus:outline-none resize-none"
+                value={form.techNotes} onChange={(e) => up("techNotes", e.target.value)}
+                placeholder={ar ? "وصف الموقع، التقنيات المستخدمة، أي معلومات فنية ذات صلة..." : "Site description, current technologies, relevant technical info..."} />
+            </div>
+          </div>
+        )}
+        {step === 4 && (
+          <div className="space-y-5">
+            <h3 className="font-head text-lg font-bold text-foreground">{ar ? "الميزانية والتوقيت" : "Budget & Timeline"}</h3>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div>
+                <label className="block text-xs font-bold text-foreground mb-1">{ar ? "الميزانية التقريبية" : "Approximate Budget"}</label>
+                <input className="w-full rounded-xl border border-border bg-background/60 px-4 py-2.5 text-sm text-foreground focus:border-brand-green focus:outline-none"
+                  value={form.budget} onChange={(e) => up("budget", e.target.value)} placeholder={ar ? "مثال: 500,000" : "e.g. 500,000"} />
+              </div>
+              <div>
+                <label className="block text-xs font-bold text-foreground mb-1">{ar ? "العملة" : "Currency"}</label>
+                <select className="w-full rounded-xl border border-border bg-background/60 px-4 py-2.5 text-sm text-foreground focus:border-brand-green focus:outline-none"
+                  value={form.currency} onChange={(e) => up("currency", e.target.value)}>
+                  <option value="EGP">EGP</option>
+                  <option value="USD">USD</option>
+                  <option value="EUR">EUR</option>
+                </select>
+              </div>
+              <div className="sm:col-span-2">
+                <label className="block text-xs font-bold text-foreground mb-1">{ar ? "تاريخ البداية المتوقع" : "Expected Start Date"}</label>
+                <input type="date" className="w-full rounded-xl border border-border bg-background/60 px-4 py-2.5 text-sm text-foreground focus:border-brand-green focus:outline-none"
+                  value={form.startDate} onChange={(e) => up("startDate", e.target.value)} />
+              </div>
+            </div>
+          </div>
+        )}
+        {step === 5 && (
+          <div className="space-y-5">
+            <h3 className="font-head text-lg font-bold text-foreground">{ar ? "بيانات التواصل والمراجعة" : "Contact Info & Review"}</h3>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {[
+                { k: "company", labelAr: "الشركة / الجهة *", labelEn: "Company *", ph: ar ? "اسم الشركة" : "Company name", span: true },
+                { k: "contact", labelAr: "اسم التواصل *", labelEn: "Contact Name *", ph: ar ? "الاسم الكامل" : "Full name", span: false },
+                { k: "email", labelAr: "البريد الإلكتروني *", labelEn: "Business Email *", ph: "name@company.com", span: false },
+                { k: "phone", labelAr: "رقم الجوال", labelEn: "Phone Number", ph: "+20 10x xxx xxxx", span: false },
+                { k: "country", labelAr: "الدولة", labelEn: "Country", ph: ar ? "مصر" : "Egypt", span: false },
+              ].map(({ k, labelAr, labelEn, ph, span }) => (
+                <div key={k} className={span ? "sm:col-span-2" : ""}>
+                  <label className="block text-xs font-bold text-foreground mb-1">{ar ? labelAr : labelEn}</label>
+                  <input className="w-full rounded-xl border border-border bg-background/60 px-4 py-2.5 text-sm text-foreground focus:border-brand-green focus:outline-none"
+                    value={(form as unknown as Record<string, string>)[k]} onChange={(e) => up(k, e.target.value)} placeholder={ph}
+                    type={k === "email" ? "email" : "text"} />
+                </div>
+              ))}
+            </div>
+            <label className="flex items-start gap-3 cursor-pointer">
+              <input type="checkbox" checked={form.consent} onChange={(e) => up("consent", e.target.checked)} className="mt-1 size-4 accent-brand-green" />
+              <span className="text-xs text-muted-foreground leading-relaxed">
+                {ar ? "أوافق على مشاركة بياناتي مع فريق مجموعة سامي بن عياد للتواصل بشأن هذا الطلب." : "I agree to share my information with Sami Bin Ayyad Group for communication regarding this request."}
+              </span>
+            </label>
+            <div className="rounded-xl border border-border/60 bg-secondary/20 p-4 text-xs text-muted-foreground">
+              <p>{ar ? "📧 للتواصل المباشر: info@sami-trade.com" : "📧 Direct contact: info@sami-trade.com"}</p>
+            </div>
+          </div>
+        )}
+
+        <div className="mt-8 flex items-center justify-between gap-4">
+          <Button variant="outline" size="sm" onClick={() => setStep((p) => Math.max(1, p - 1))} disabled={step === 1} className="rounded-full px-6">
+            {ar ? "السابق" : "Back"}
+          </Button>
+          {step < totalSteps ? (
+            <Button size="sm" onClick={() => setStep((p) => Math.min(totalSteps, p + 1))} className="rounded-full bg-brand-green hover:bg-brand-orange text-white px-8">
+              {ar ? "التالي" : "Next"}
+            </Button>
+          ) : (
+            <Button size="sm" onClick={handleSubmit} disabled={!form.consent || !form.projectName || !form.contact || !form.email}
+              className="rounded-full bg-brand-orange hover:bg-brand-green text-white px-8">
+              {ar ? "إرسال الطلب" : "Submit Request"}
+            </Button>
+          )}
+        </div>
+      </div>
     </div>
   );
 }

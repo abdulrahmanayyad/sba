@@ -61,16 +61,19 @@ export function GarmentAboutTab() {
               {ar ? whoWeAre.headingAr : whoWeAre.heading}
             </h2>
 
-            <div className="mt-8 space-y-4 text-base leading-relaxed text-muted-foreground max-w-4xl">
-              <p className="font-semibold text-foreground text-lg leading-relaxed">
+            {/* Main Interactive Description Card */}
+            <div className="mt-8 group rounded-2xl border border-border/80 bg-card/70 p-6 sm:p-8 shadow-sm backdrop-blur-sm transition-all duration-300 hover:scale-[1.005] hover:border-brand-green/50 hover:shadow-md">
+              <p className="font-semibold text-foreground text-lg sm:text-xl leading-relaxed">
                 {highlightBrand(ar ? whoWeAre.bodyAr : whoWeAre.body)}
               </p>
-              <p>{highlightBrand(ar ? whoWeAre.extendedAr : whoWeAre.extended)}</p>
+              <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+                {highlightBrand(ar ? whoWeAre.extendedAr : whoWeAre.extended)}
+              </p>
             </div>
 
             {/* Dedicated Separate Mission & Vision Cards */}
-            <div className="mt-8 grid gap-6 sm:grid-cols-2 pt-2">
-              <div className="group rounded-2xl border border-border/80 bg-card/70 p-6 shadow-sm backdrop-blur-sm transition-all duration-300 hover:scale-[1.01] hover:border-brand-orange/50 hover:shadow-md">
+            <div className="mt-6 grid gap-6 sm:grid-cols-2">
+              <div className="group rounded-2xl border border-border/80 bg-card/70 p-6 shadow-sm backdrop-blur-sm transition-all duration-300 hover:scale-[1.01] hover:border-brand-green/50 hover:shadow-md">
                 <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3 py-0.5 text-xs font-bold text-brand-orange">
                   <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
                   <span>{ar ? whoWeAre.mission.titleAr : whoWeAre.mission.title}</span>
@@ -108,7 +111,7 @@ export function GarmentAboutTab() {
               <SectionBadge title={ar ? "ماذا نقدم" : "What We Offer"} />
             </div>
 
-            <div className="mt-3 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+            <div className="mt-3">
               <div>
                 <h2 className="section-title">
                   {ar ? whatWeOffer.headingAr : whatWeOffer.heading}
@@ -117,12 +120,6 @@ export function GarmentAboutTab() {
                   {ar ? whatWeOffer.introAr : whatWeOffer.intro}
                 </p>
               </div>
-              <Button asChild variant="outline" size="sm" className="shrink-0 border-brand-orange/40 hover:bg-brand-orange/10">
-                <Link to="/sectors/$sector" params={{ sector: "garment" }} search={{ tab: "services" }}>
-                  {ar ? "عرض تفاصيل الخدمات بالكامل" : "View Detailed Services"}
-                  <ArrowRight className="size-4 ms-2 rtl:rotate-180" />
-                </Link>
-              </Button>
             </div>
 
             <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -203,7 +200,7 @@ export function GarmentAboutTab() {
               <SectionBadge title={ar ? "قدراتنا" : "Our Capabilities"} />
             </div>
 
-            <div className="mt-3 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+            <div className="mt-3">
               <div>
                 <h2 className="section-title">
                   {ar ? capabilities.headingAr : capabilities.heading}
@@ -212,12 +209,6 @@ export function GarmentAboutTab() {
                   {ar ? capabilities.introAr : capabilities.intro}
                 </p>
               </div>
-              <Button asChild variant="outline" size="sm" className="shrink-0 border-brand-orange/40 hover:bg-brand-orange/10">
-                <Link to="/sectors/$sector" params={{ sector: "garment" }} search={{ tab: "capabilities" }}>
-                  {ar ? "استكشف البنية والمراحل" : "Explore Full Infrastructure"}
-                  <ArrowRight className="size-4 ms-2 rtl:rotate-180" />
-                </Link>
-              </Button>
             </div>
 
             <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">

@@ -12,11 +12,11 @@ export function JoinShowcase() {
   const track = joinTracks.group;
 
   return (
-    <section id="join" className="site-container section-band scroll-mt-24">
+    <section id="join" className="site-container pt-4 pb-16 scroll-mt-24">
       <Reveal className="max-w-3xl">
         <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
           <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-          <span>{ar ? "انضم إلينا والشراكات" : "Careers & Partnerships"}</span>
+          <span>{ar ? "انضم إلينا" : "Careers & Partnerships"}</span>
         </div>
         <h2 className="section-title">
           {ar ? "شاركنا بناء المستقبل وصناعة القيمة" : "Build What's Next with SAMI BIN AYYAD GROUP"}

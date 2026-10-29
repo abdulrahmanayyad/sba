@@ -11,12 +11,17 @@ export function GarmentClientsTab() {
   const { language } = useLanguage();
   const ar = language === "AR";
   const [searchQuery, setSearchQuery] = useState("");
+  const [visibleCount, setVisibleCount] = useState(12);
 
   const filteredClients = useMemo(() => {
     if (!searchQuery.trim()) return garmentClientLogos;
     const q = searchQuery.toLowerCase().trim();
     return garmentClientLogos.filter((client) => client.name.toLowerCase().includes(q));
   }, [searchQuery]);
+
+  const displayedClients = useMemo(() => {
+    return filteredClients.slice(0, visibleCount);
+  }, [filteredClients, visibleCount]);
 
   return (
     <div className="space-y-16 py-8">
@@ -50,15 +55,15 @@ export function GarmentClientsTab() {
           </div>
         </div>
 
-        {/* Clients Slides / Carousel */}
-        <div className="relative mt-10">
-          <div className="flex gap-4 overflow-x-auto pb-4 pt-1 no-scrollbar scroll-smooth">
-            {filteredClients.map((client) => (
+        {/* Clients Grid with View More */}
+        <div className="mt-10">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            {displayedClients.map((client) => (
               <div
                 key={client.id}
-                className="group relative flex w-44 sm:w-52 shrink-0 flex-col items-center justify-center rounded-2xl border border-border/80 bg-card p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-brand-orange/50 hover:shadow-md"
+                className="group relative flex flex-col items-center justify-center rounded-2xl border border-border/80 bg-card p-4 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-brand-green/50 hover:shadow-md"
               >
-                <div className="relative flex h-24 w-full items-center justify-center overflow-hidden rounded-xl bg-white p-3">
+                <div className="relative flex h-20 w-full items-center justify-center overflow-hidden rounded-xl bg-white p-2">
                   <img
                     src={client.src}
                     alt={client.name}
@@ -70,12 +75,27 @@ export function GarmentClientsTab() {
                     }}
                   />
                 </div>
-                <span className="mt-3 text-center font-head text-xs font-bold text-foreground transition group-hover:text-brand-orange line-clamp-1">
+                <span className="mt-2 text-center font-head text-xs font-bold text-foreground transition group-hover:text-brand-green line-clamp-1">
                   {client.name}
                 </span>
               </div>
             ))}
           </div>
+
+          {visibleCount < filteredClients.length && (
+            <div className="mt-10 flex justify-center">
+              <Button
+                variant="outline"
+                size="lg"
+                onClick={() => setVisibleCount((prev) => prev + 12)}
+                className="rounded-full border-border bg-background/80 px-8 font-head font-bold text-foreground transition hover:border-brand-green hover:bg-brand-green/10"
+              >
+                {ar
+                  ? `عرض المزيد من العلامات (${filteredClients.length - visibleCount} متبقية)`
+                  : `View More Brands (${filteredClients.length - visibleCount} remaining)`}
+              </Button>
+            </div>
+          )}
         </div>
 
         {filteredClients.length === 0 && (
