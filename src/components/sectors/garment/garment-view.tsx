@@ -70,13 +70,13 @@ export function GarmentSectorView({ tab = "about" }: GarmentViewProps) {
       en: "Our Projects",
       ar: "مشاريعنا",
       descEn: "Over 550 documented styles across women, men, kids & matching sets",
-      descAr: "أكثر من 550 تصميماً موثقاً عبر الحريمي والرجالي والأطفال والكابلز",
+      descAr: "أكثر من 550 تصميمًا موثقًا عبر الحريمي والرجالي والأطفال والكابلز",
     },
     partners: {
       en: "Our Partners",
       ar: "شركاؤنا",
       descEn: "139 brand partners across casual, classic, kids, loungewear & soirée",
-      descAr: "139 شريكاً تجارياً عبر الكاجوال والكلاسيك والأطفال والسواريه",
+      descAr: "139 شريكًا تجاريًا عبر الكاجوال والكلاسيك والأطفال والسواريه",
     },
     capabilities: {
       en: "Our Capabilities",

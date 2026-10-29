@@ -17,7 +17,7 @@ const aggregateStats = [
   {
     value: "+100",
     labelEn: "Documented Projects & Works Delivered",
-    labelAr: "مشروعًا وعملاً موثقًا تم تنفيذه",
+    labelAr: "مشروعًا وعملًا موثقًا تم تنفيذه",
     subEn: "Across general contracting, real estate development and environmental systems.",
     subAr: "في المقاولات العامة والتطوير العقاري والأنظمة البيئية.",
     sector: "construction" as SectorId,
@@ -238,7 +238,7 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
                         ? "text-2xl sm:text-3xl font-black text-brand-orange tracking-tight"
                         : "text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500"
                     )}
-                    dir="ltr"
+                    dir={ar ? "rtl" : "ltr"}
                   >
                     <AnimatedStatistic value={stat.value} />
                   </div>
@@ -457,63 +457,20 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
                         {/* Country Label Pill under Pin */}
                         <span
                           className={cn(
-                            "mt-1 rounded-md px-1.5 py-0.5 font-sans text-[10px] font-bold shadow-md whitespace-nowrap transition-all",
+                            "mt-1 flex items-center gap-1 rounded-md px-1.5 py-0.5 text-[10px] font-bold shadow-md whitespace-nowrap transition-all",
+                            ar ? "font-head font-medium" : "font-sans",
                             isActive
                               ? "bg-slate-900 text-white ring-2 ring-blue-500 scale-105"
                               : "bg-white/95 text-slate-800 border border-slate-300/80"
                           )}
                         >
-                          {ar ? c.nameAr : c.nameEn}
+                          <span className="text-xs leading-none">{c.flag}</span>
+                          <span>{ar ? c.nameAr : c.nameEn}</span>
                         </span>
                       </div>
                     </button>
                   );
                 })}
-
-                {/* Google Maps Authentic InfoWindow Card */}
-                {activeCountry && (
-                  <div
-                    className="absolute z-50 w-64 -translate-x-1/2 -translate-y-full rounded-xl border border-black/10 bg-white p-3.5 text-slate-800 shadow-2xl animate-in fade-in zoom-in-95 duration-200"
-                    style={{
-                      left: `${Math.min(Math.max(activeCountry.x, 20), 80)}%`,
-                      top: `${Math.max(activeCountry.y - 12, 10)}%`,
-                    }}
-                  >
-                    <div className="flex items-start justify-between gap-2 border-b border-slate-200/80 pb-2">
-                      <div className="flex items-center gap-2">
-                        <span className="text-2xl">{activeCountry.flag}</span>
-                        <div>
-                          <h4 className="font-head text-sm font-bold text-slate-900 leading-tight">
-                            {ar ? activeCountry.nameAr : activeCountry.nameEn}
-                          </h4>
-                          <span className="text-[10px] text-slate-500 font-medium">
-                            {ar ? activeCountry.capitalAr : activeCountry.capitalEn} · {activeCountry.coords}
-                          </span>
-                        </div>
-                      </div>
-                      <button
-                        type="button"
-                        onClick={() => { setSelectedCountry(null); setHoveredCountry(null); }}
-                        className="rounded-full p-1 text-slate-400 hover:bg-slate-100 hover:text-slate-600"
-                      >
-                        <X className="size-3.5" />
-                      </button>
-                    </div>
-
-                    <div className="mt-2.5">
-                      <div className="inline-flex items-center gap-1 rounded bg-emerald-50 px-2 py-0.5 text-[10px] font-bold text-emerald-700">
-                        <CheckCircle2 className="size-3" />
-                        <span>{ar ? "شريك تجاري معتمد لمجموعة SBA" : "Verified SBA Partner Market"}</span>
-                      </div>
-                      <p className="mt-2 text-xs leading-relaxed text-slate-600 font-medium">
-                        {ar ? activeCountry.roleAr : activeCountry.roleEn}
-                      </p>
-                    </div>
-
-                    {/* InfoWindow Arrow Tip */}
-                    <div className="absolute -bottom-2 start-1/2 -translate-x-1/2 size-4 rotate-45 border-b border-e border-black/10 bg-white" />
-                  </div>
-                )}
               </div>
 
               {/* Google Maps Bottom-Start Watermark Logo */}
@@ -554,9 +511,11 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
                   <p className="text-xs font-bold uppercase tracking-wider text-brand-orange">
                     {ar ? "الدول الشريكة المعتمدة فقط (9 دول)" : "Verified Partner Markets Only (9 Countries)"}
                   </p>
-                  <span className="font-mono text-[11px] font-bold text-brand-green">
-                    {partnerCountries.length} {ar ? "دول" : "Countries"}
-                  </span>
+                  {!ar && (
+                    <span className="font-mono text-[11px] font-bold text-brand-green">
+                      {partnerCountries.length} Countries
+                    </span>
+                  )}
                 </div>
 
                 <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-2">
@@ -579,8 +538,8 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
                         <div className="flex items-center gap-2">
                           <span className="text-base">{c.flag}</span>
                           <div>
-                            <p className="font-bold leading-tight">{ar ? c.nameAr : c.nameEn}</p>
-                            <span className={cn("text-[10px] font-mono", isSelected ? "text-white/80" : "text-muted-foreground")}>
+                            <p className={cn("font-bold leading-tight", ar ? "font-head text-xs" : "text-xs")}>{ar ? c.nameAr : c.nameEn}</p>
+                            <span className={cn("text-[10px]", ar ? "font-head text-muted-foreground" : "font-mono text-muted-foreground", isSelected && "text-white/80")}>
                               {ar ? c.capitalAr : c.capitalEn}
                             </span>
                           </div>
@@ -628,7 +587,6 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
 
           <div className="grid gap-6">
             {dashboardSectors.map((s) => {
-              const Icon = icons[s.id];
               const data = activities[s.id];
               return (
                 <div
@@ -636,18 +594,13 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
                   className="rounded-3xl border border-white/20 bg-background/80 p-6 sm:p-8 backdrop-blur-2xl shadow-lg transition-all duration-300 hover:shadow-xl hover:border-brand-green/35"
                 >
                   <div className="flex items-center justify-between flex-wrap gap-4 border-b border-border/60 pb-5 mb-6">
-                    <div className="flex items-center gap-3.5">
-                      <span className="flex size-12 items-center justify-center rounded-2xl bg-brand-green/10 text-brand-green-text shadow-sm">
-                        <Icon className="size-6" />
+                    <div>
+                      <h4 className="font-head text-lg sm:text-xl font-bold text-foreground">
+                        {t(s.name)}
+                      </h4>
+                      <span className={cn("text-xs font-bold text-brand-orange", ar ? "font-sans" : "font-mono")}>
+                        {data.items.length} {ar ? "خدمات ومشروعات رئيسية" : "Specialized Capabilities"}
                       </span>
-                      <div>
-                        <h4 className="font-head text-lg sm:text-xl font-bold text-foreground">
-                          {t(s.name)}
-                        </h4>
-                        <span className={cn("text-xs font-bold text-brand-orange", ar ? "font-sans" : "font-mono")}>
-                          {data.items.length} {ar ? "خدمات ومشروعات رئيسية" : "Specialized Capabilities"}
-                        </span>
-                      </div>
                     </div>
                   </div>
 

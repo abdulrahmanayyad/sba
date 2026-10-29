@@ -48,14 +48,14 @@ const sectorStatsConfig: Record<SectorSlug, Array<{ value: string; labelEn: stri
   ],
   food: [
     { value: "+6", labelEn: "Core Natural Product Lines", labelAr: "تصنيفات منتجات طبيعية رئيسية" },
-    { value: "+15", labelEn: "Honey & Date Varieties", labelAr: "صنفاً من التمور وعسل النحل" },
+    { value: "+15", labelEn: "Honey & Date Varieties", labelAr: "صنفًا من التمور وعسل النحل" },
     { value: "100%", labelEn: "Pure Natural Sourcing", labelAr: "منتجات طبيعية نقية وموثوقة" },
     { value: "+10", labelEn: "Target Regional & Global Markets", labelAr: "أسواق مستهدفة للتوزيع والتصدير" },
   ],
   research: [
     { value: "2008", labelEn: "Scholarly Foundation Year", labelAr: "تاريخ التأسيس والعطاء العلمي" },
-    { value: "+50", labelEn: "Published Reference Works", labelAr: "مؤلفاً وبحثاً محققاً معتمداً" },
-    { value: "+15", labelEn: "Years of Academic Editing", labelAr: "عاماً في تحقيق التراث والعلوم" },
+    { value: "+50", labelEn: "Published Reference Works", labelAr: "مؤلفًا وبحثًا محققًا معتمدًا" },
+    { value: "+15", labelEn: "Years of Academic Editing", labelAr: "عامًا في تحقيق التراث والعلوم" },
     { value: "100%", labelEn: "Peer-Reviewed Scholarly Rigor", labelAr: "تحقيق وتأصيل شرعي رصين" },
   ],
   education: [
@@ -65,13 +65,13 @@ const sectorStatsConfig: Record<SectorSlug, Array<{ value: string; labelEn: stri
     { value: "2024", labelEn: "Knowledge & Human Growth", labelAr: "ريادة مستمرة في بناء الأجيال" },
   ],
   construction: [
-    { value: "+57", labelEn: "Documented Projects", labelAr: "+57 مشروعاً موثقاً" },
+    { value: "+57", labelEn: "Documented Projects", labelAr: "+57 مشروعًا موثقًا" },
     { value: "+400.5M", labelEn: "Turnover (EGP)", labelAr: "+400.5 مليون جنيه أعمال مسجلة" },
-    { value: "+20", labelEn: "Years Practical Track Record", labelAr: "+20 عاماً من الخبرة التنفيذية" },
+    { value: "+20", labelEn: "Years Practical Track Record", labelAr: "+20 عامًا من الخبرة التنفيذية" },
     { value: "100%", labelEn: "Client Specification Delivery", labelAr: "100% الالتزام بالمواصفات" },
   ],
   garment: [
-    { value: "+100K", labelEn: "Pieces Monthly Capacity", labelAr: "+100 ألف قطعة شهرياً" },
+    { value: "+100K", labelEn: "Pieces Monthly Capacity", labelAr: "+100 ألف قطعة شهريًا" },
     { value: "+20K", labelEn: "Developed Styles", labelAr: "+20 ألف موديل تم تطويره" },
     { value: "+15", labelEn: "Parallel Production Lines", labelAr: "+15 خط إنتاج متوازي" },
     { value: "7", labelEn: "Direct Showrooms", labelAr: "7 معارض كبرى مباشرة" },

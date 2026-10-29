@@ -23,6 +23,7 @@ import { useLanguage } from "@/i18n/language-context";
 import { garmentAboutData } from "../garment-data";
 import { WHATSAPP_URL } from "@/lib/process-steps";
 import { cn } from "@/lib/utils";
+import { SectorContactSection } from "@/components/site/sector-contact-section";
 import { highlightBrand } from "@/components/site/brand-text";
 import { AnimatedStatistic } from "@/components/site/animated-statistic";
 
@@ -333,6 +334,9 @@ export function GarmentAboutTab() {
           </Reveal>
         </div>
       </section>
+
+      {/* Contact Section */}
+      <SectorContactSection ar={ar} />
     </div>
   );
 }

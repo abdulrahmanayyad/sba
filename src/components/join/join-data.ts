@@ -43,7 +43,7 @@ export const joinTracks: Record<JoinTrackId, JoinTrackConfig> = {
     eyebrowEn: "SAMI BIN AYYAD GROUP · Careers & Strategic Partnerships",
     eyebrowAr: "مجموعة سامي بن عياد · التوظيف والشراكات الاستراتيجية",
     headlineEn: "Build the Future With Us",
-    headlineAr: "لنبنِ المستقبل معاً",
+    headlineAr: "لنبنِ المستقبل معًا",
     descriptionEn:
       "We welcome ambitious professionals, strategic partners, investors, and organizations that share our vision for sustainable growth, operational excellence, and long-term value creation across our business sectors.",
     descriptionAr:
@@ -127,12 +127,12 @@ export const joinTracks: Record<JoinTrackId, JoinTrackConfig> = {
       { id: "labs-inspection", labelEn: "Soil, Concrete & Materials Testing Lab", labelAr: "مختبرات فحص التربة واختبارات الخرسانة والمواد" },
     ],
     perksEn: [
-      { title: "Documented Track Record", desc: "57+ completed projects and over EGP 400.5M turnover spanning medical, energy, and commercial sectors." },
+      { title: "Documented Track Record", desc: "57+ completed projects and over EGP 540M turnover spanning medical, energy, and commercial sectors." },
       { title: "Specialized Environments", desc: "Expertise in complex healthcare facilities, gas regulator installations, and high-spec developments." },
       { title: "Integrated Collaboration", desc: "Rigorous planning, transparent procurement, and long-term subcontracts." },
     ],
     perksAr: [
-      { title: "سجل أعمال موثق", desc: "أكثر من 57 مشروعاً منجزاً وحجم أعمال يتجاوز 400.5 مليون جنيه في القطاعات الطبية والسكنية والبترولية." },
+      { title: "سجل أعمال موثق", desc: "أكثر من 57 مشروعًا منجزًا وحجم أعمال يتجاوز 540 مليون جنيه في القطاعات الطبية والسكنية والبترولية." },
       { title: "بيئات تنفيذ متخصصة", desc: "ريادة في المنشآت الطبية وغرف العمليات والأشعة، ومحطات وشبكات الغاز، والمجمعات الراقية." },
       { title: "شراكة تعاقدية شفافة", desc: "تخطيط دقيق، تسديد مستحقات منضبط، وعلاقات عمل مستمرة مع نخبة الموردين ومقاولي الباطن." },
     ],
@@ -147,8 +147,8 @@ export const joinTracks: Record<JoinTrackId, JoinTrackConfig> = {
     titleAr: "انضم إلى قطاع البيئة والاستدامة",
     eyebrowEn: "SAMI BIN AYYAD · Environmental & Sustainability Solutions",
     eyebrowAr: "مجموعة سامي بن عياد · قطاع البيئة المستدامة والطاقة المتجددة",
-    headlineEn: "Innovate for a Better Tomorrow",
-    headlineAr: "نبتكر من أجل غدٍ أفضل",
+    headlineEn: "",
+    headlineAr: "",
     descriptionEn:
       "Recruitment and collaboration with environmental professionals, sustainability experts, renewable energy specialists, water and waste management companies, technology providers, researchers, consultants, and strategic project partners.",
     descriptionAr:

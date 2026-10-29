@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/i18n/language-context";
 import { cn } from "@/lib/utils";
 import { highlightBrand } from "@/components/site/brand-text";
+import { SectorContactSection } from "@/components/site/sector-contact-section";
 import {
   environmentalAboutData,
   environmentalHeroData,
@@ -148,7 +149,7 @@ function EnvironmentalAboutView({ ar }: { ar: boolean }) {
               <span>{ar ? data.approach.badgeAr : data.approach.badgeEn}</span>
             </div>
             <h2 className="font-head text-2xl sm:text-4xl font-extrabold text-foreground tracking-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.15)]">
-              &ldquo;{ar ? data.approach.mottoAr : data.approach.mottoEn}&rdquo;
+              {ar ? data.approach.mottoAr : data.approach.mottoEn}
             </h2>
             <p className="mt-4 mx-auto max-w-2xl text-sm sm:text-base leading-relaxed text-muted-foreground">
               {ar ? data.approach.descAr : data.approach.descEn}
@@ -255,6 +256,9 @@ function EnvironmentalAboutView({ ar }: { ar: boolean }) {
           </div>
         </div>
       </section>
+
+      {/* Contact Section */}
+      <SectorContactSection ar={ar} />
     </div>
   );
 }
@@ -431,7 +435,10 @@ function EnvironmentalServicesView({ ar }: { ar: boolean }) {
 
                     <div className="mt-6 pt-4 border-t border-border/50 flex items-center justify-end">
                       <Link
-                        to="/contact"
+                        to="/sectors/$sector"
+                        params={{ sector: "environmental" }}
+                        search={{}}
+                        hash="contact"
                         className="inline-flex items-center gap-2 rounded-full bg-brand-green px-5 py-2.5 text-xs font-bold text-white transition-all duration-300 hover:bg-brand-orange hover:shadow-md hover:scale-105 active:scale-95"
                       >
                         <span>{ar ? "طلب استشارة" : "Inquire Service"}</span>

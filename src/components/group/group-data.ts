@@ -36,7 +36,7 @@ export const divisions: Division[] = [
     bodyAr: "حلول متكاملة في المقاولات العامة والإنشاءات والتطوير العقاري والتشطيبات، مدعومة بسجل مشروعات موثق يغطي القطاعات الطبية والسكنية والتجارية والإدارية والصناعية والبترولية.",
     points: [
       { en: "+57 documented projects", ar: "+57 مشروعًا موثقًا" },
-      { en: "+EGP 400.5M turnover (2013–2024)", ar: "+400.5 مليون جنيه حجم أعمال مسجل" },
+      { en: "+EGP 540M turnover (2013–2024)", ar: "+540 مليون جنيه حجم أعمال مسجل" },
       { en: "Hospitals, MEP, healthcare fit-out & elevators", ar: "مستشفيات وتجهيزات طبية وأنظمة MEP ومصاعد" },
       { en: "Villas, commercial developments & oil/gas works", ar: "فيلات وتطوير سكني وتجاري ومشروعات بترول وغاز" },
     ],
@@ -161,7 +161,7 @@ export interface Stat {
 export const stats: Stat[] = [
   { value: "+20,000", label: "Garment models developed", labelAr: "موديل ملابس تم تطويرها" },
   { value: "+57", label: "Construction projects", labelAr: "مشروعًا إنشائيًا" },
-  { value: "+400.5M", label: "EGP construction turnover", labelAr: "جنيه حجم أعمال المقاولات" },
+  { value: "+540M", label: "EGP construction turnover", labelAr: "جنيه حجم أعمال المقاولات" },
   { value: "4", label: "Strategic sectors", labelAr: "قطاعات استراتيجية" },
   { value: "1977", label: "Group heritage since 1977", labelAr: "جذور المجموعة منذ 1977" },
 ];
@@ -169,7 +169,7 @@ export const stats: Stat[] = [
 /** Verified group-wide figures only — garment figures are attributed to manufacturing operations. */
 export const capabilityStats: Stat[] = [
   { value: "+57", label: "Documented projects", labelAr: "مشروعًا موثقًا" },
-  { value: "+400.5", label: "EGP million+ recorded project value (2013–2024)", labelAr: "مليون جنيه قيمة مشروعات مسجلة (2013–2024)" },
+  { value: "+540", label: "EGP million+ recorded project value", labelAr: "مليون جنيه قيمة مشروعات مسجلة" },
   { value: "+5,000", label: "Garments per day", labelAr: "قطعة ملابس يوميًا" },
   { value: "+100,000", label: "Garments per month", labelAr: "قطعة ملابس شهريًا" },
   { value: "+15", label: "Production lines", labelAr: "خط إنتاج" },
@@ -179,6 +179,7 @@ export const capabilityStats: Stat[] = [
 
 export interface SectorOverview {
   slug: SectorSlug;
+  tab?: string;
   headline: string;
   headlineAr: string;
   subtitle: string;
@@ -201,6 +202,7 @@ export interface SectorOverview {
 export const sectorOverviews: SectorOverview[] = [
   {
     slug: "construction",
+    tab: "projects",
     headline: "Contracting, & Real Estate Development",
     headlineAr: "المقاولات والإنشاءات والتطوير العقاري",
     subtitle: "Integrated Solutions for Construction & Property Development",
@@ -211,7 +213,7 @@ export const sectorOverviews: SectorOverview[] = [
     supportingLabelAr: "أرقام رئيسية",
     figures: [
       { value: "+57", label: "Documented projects", labelAr: "مشروعًا موثقًا" },
-      { value: "+400.5", label: "EGP million+ recorded turnover (2013–2024)", labelAr: "مليون جنيه حجم أعمال مسجل (2013–2024)" },
+      { value: "+540", label: "EGP million+ recorded turnover", labelAr: "مليون جنيه حجم أعمال مسجل" },
     ],
     cta: "Explore Our Projects",
     ctaAr: "استكشف مشروعاتنا",
@@ -219,6 +221,7 @@ export const sectorOverviews: SectorOverview[] = [
   },
   {
     slug: "environmental",
+    tab: "services",
     headline: "Sustainable Environment",
     headlineAr: "البيئة المستدامة",
     subtitle: "Integrated environmental solutions that turn challenges into sustainable opportunities.",
@@ -241,6 +244,7 @@ export const sectorOverviews: SectorOverview[] = [
   },
   {
     slug: "garment",
+    tab: "services",
     headline: "Garment Manufacturing & Fashion Development",
     headlineAr: "تصنيع الملابس وتطوير الأزياء",
     subtitle: "Integrated Manufacturing for Brands & Global Markets",
@@ -370,7 +374,7 @@ export const founders = [
     nameAr: "د. عبد الحكم مشهور",
     image: "/Leadership/Abdelhakam Mashhour.jpg",
     bio: "Abdelhakam Mashhour is a highly experienced leader, he has served as Regional HSSE Manager of Seenopex in Middle East in 2012-2018, appointed as QHSE Manager of United Oil Company in Syria & Iraq 2010-2012. Participated in large scale projects in Drilling, intervention Services, Wellhead Integrity and Inspection Services with global corporations such BP, Shell, ENI, Luk Oil, Schlumberger, Halliburton, SOC Iraq, Weatherford, Daqing. These experiences bring not only a deep understanding of projects management, but the skills to co-ordinate the diverse range of knowledge and perspectives provided to the board.",
-    bioAr: "قائد تنفيذي ذو خبرة ممتدة، شغل منصب المدير الإقليمي للصحة والسلامة والبيئة لشركة سينوبكس في الشرق الأوسط (2012–2018)، ومدير QHSE لشركة يونايتد أويل في سوريا والعراق (2010–2012). شارك في مشروعات كبرى للحفر وسلامة الآبار وخدمات الفحص مع شركات عالمية كبرى مثل BP وShell وENI وLuk Oil وSchlumberger وHalliburton وSOC العراق وWeatherford وDaqing، مما يمنحه فهماً عميقاً لإدارة المشروعات وتنسيق المعارف والرؤى المتنوعة لمجلس الإدارة.",
+    bioAr: "قائد تنفيذي ذو خبرة ممتدة، شغل منصب المدير الإقليمي للصحة والسلامة والبيئة لشركة سينوبكس في الشرق الأوسط (2012–2018)، ومدير QHSE لشركة يونايتد أويل في سوريا والعراق (2010–2012). شارك في مشروعات كبرى للحفر وسلامة الآبار وخدمات الفحص مع شركات عالمية كبرى مثل BP وShell وENI وLuk Oil وSchlumberger وHalliburton وSOC العراق وWeatherford وDaqing، مما يمنحه فهمًا عميقًا لإدارة المشروعات وتنسيق المعارف والرؤى المتنوعة لمجلس الإدارة.",
   },
   {
     role: "Co-Founder",

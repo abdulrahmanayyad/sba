@@ -29,11 +29,14 @@ export function GroupPage() {
     <HomeMotion key={language} variant="group">
       {/* Hero */}
       <section data-home-hero className="relative min-h-[min(640px,calc(100svh-76px))] overflow-hidden text-footer-foreground">
-        <img data-hero-image src={heroBg} alt={ar ? "بناء مستقبل مستدام معاً" : "Building a Sustainable Future Together"} width={1920} height={1088} fetchPriority="high" className="absolute inset-0 size-full object-cover" />
+        <img data-hero-image src={heroBg} alt={ar ? "بناء مستقبل مستدام معًا" : "Building a Sustainable Future Together"} width={1920} height={1088} fetchPriority="high" className="absolute inset-0 size-full object-cover" />
         <div className="group-hero-overlay absolute inset-0 bg-black/60 backdrop-blur-[1px]" />
         <div className="site-container relative flex min-h-[inherit] flex-col justify-center py-14 sm:py-20 z-10">
           <div>
-            <p data-hero-reveal className="eyebrow text-brand-orange">{messages.hero.eyebrow}</p>
+            <div data-hero-reveal className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/40 px-3.5 py-1 text-xs font-bold tracking-wide text-white backdrop-blur-md">
+              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+              <span>{ar ? "مجموعة سامي بن عياد" : "SAMI BIN AYYAD GROUP"}</span>
+            </div>
             <h1 data-hero-reveal className="mt-4 max-w-4xl font-head text-[clamp(1.85rem,3.5vw,3rem)] font-extrabold leading-tight text-white drop-shadow-md">
               {ar ? messages.hero.titleAr : messages.hero.title}
             </h1>
@@ -48,7 +51,7 @@ export function GroupPage() {
           <div className="group relative mx-auto max-w-4xl overflow-hidden rounded-3xl border border-white/20 bg-background/75 p-8 sm:p-12 shadow-[0_12px_40px_rgba(0,0,0,0.08)] backdrop-blur-2xl transition-all duration-300 hover:scale-[1.01] hover:shadow-[0_20px_60px_rgba(0,0,0,0.12)] hover:border-brand-orange/40 text-center">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-              <span className="font-bold text-brand-orange">{ar ? "مجموعة سامي بن عياد" : "SAMI BIN AYYAD GROUP"}</span>
+              <span className="font-bold text-brand-green">{ar ? "مجموعة سامي بن عياد" : "SAMI BIN AYYAD GROUP"}</span>
             </div>
             <h2 className="section-title mt-2">{ar ? "نقود التقدم عبر الصناعات" : "Driving Progress Across Industries"}</h2>
             <div className="section-intro mx-auto mt-6 leading-relaxed max-w-3xl space-y-1">
@@ -79,14 +82,14 @@ export function GroupPage() {
             <div className="group relative overflow-hidden rounded-3xl border border-white/25 bg-background/80 p-8 shadow-lg backdrop-blur-2xl transition-all duration-300 hover:scale-[1.01] hover:shadow-2xl hover:border-brand-orange/50">
               <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
                 <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-                <span className="font-bold text-brand-orange">{ar ? "رؤيتنا" : "Our Vision"}</span>
+                <span className="font-bold text-brand-green">{ar ? "رؤيتنا" : "Our Vision"}</span>
               </div>
               <h3 className="font-head text-xl sm:text-2xl font-extrabold text-foreground leading-snug">
                 {ar ? "ريادة استثمارية وصناعية تبني قيمة حقيقية تدوم" : "Regional Industrial Leadership & Compounding Value"}
               </h3>
               <p className="mt-4 text-sm sm:text-base leading-7 text-muted-foreground">
                 {ar
-                  ? "أن نكون مجموعة رائدة وموثوقة إقليمياً ودولياً في المقاولات والإنشاءات، والحلول البيئية، وصناعة الملابس الجاهزة، والمنتجات الطبيعية، نرتكز على الابتكار والاستدامة لتحقيق أثر تنموي متواصل."
+                  ? "أن نكون مجموعة رائدة وموثوقة إقليميًا ودوليًا في المقاولات والإنشاءات، والحلول البيئية، وصناعة الملابس الجاهزة، والمنتجات الطبيعية، نرتكز على الابتكار والاستدامة لتحقيق أثر تنموي متواصل."
                   : "To be a leading and trusted regional and international group across contracting, environmental solutions, garment manufacturing, and natural products, driven by innovation, quality, and sustainable development."}
               </p>
             </div>
@@ -95,7 +98,7 @@ export function GroupPage() {
             <div className="group relative overflow-hidden rounded-3xl border border-white/25 bg-background/80 p-8 shadow-lg backdrop-blur-2xl transition-all duration-300 hover:scale-[1.01] hover:shadow-2xl hover:border-brand-orange/50">
               <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
                 <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-                <span className="font-bold text-brand-orange">{ar ? "رسالتنا" : "Our Mission"}</span>
+                <span className="font-bold text-brand-green">{ar ? "رسالتنا" : "Our Mission"}</span>
               </div>
               <h3 className="font-head text-xl sm:text-2xl font-extrabold text-foreground leading-snug">
                 {ar ? "حلول متكاملة تبتكر وتلبي تطلعات شركائنا" : "Integrated Solutions Delivering Excellence"}
@@ -171,7 +174,7 @@ export function GroupPage() {
                   )}
                   {sector.brand && <p className="mt-5 font-head text-sm font-bold text-brand-orange">{ar ? sector.brandAr : sector.brand}</p>}
                   <Button asChild size="default" className="mt-7 group relative inline-flex items-center justify-center gap-2 rounded-full !bg-brand-green !text-white px-6 py-2.5 font-head text-sm font-bold shadow-md transition-all duration-300 hover:!bg-brand-orange hover:shadow-brand-orange/30 hover:scale-105 active:scale-95 cursor-pointer">
-                    <Link to="/sectors/$sector" params={{ sector: sector.slug }}>
+                    <Link to="/sectors/$sector" params={{ sector: sector.slug }} search={sector.tab ? { tab: sector.tab } : {}}>
                       {ar ? sector.ctaAr : sector.cta} <ArrowRight className="size-4 rtl:rotate-180 transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1" />
                     </Link>
                   </Button>
@@ -225,13 +228,13 @@ export function GroupPage() {
       <section id="contact" className="relative px-4 pb-6 pt-4 text-foreground scroll-mt-24">
         <div className="mx-auto max-w-6xl overflow-hidden rounded-3xl border border-white/20 bg-background/75 p-8 sm:p-12 shadow-[0_8px_40px_rgba(0,0,0,0.18)] backdrop-blur-2xl grid gap-8 lg:grid-cols-[1.3fr_1fr]">
           <div>
-            <p className="eyebrow text-brand-green">{ar ? "تواصل معنا" : "Get In Touch"}</p>
+            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+              <span>{ar ? "تواصل معنا" : "Contact Us"}</span>
+            </div>
             <h2 className="section-title mt-2 text-foreground">{ar ? "لنبنِ ما هو قادم" : "Let's Build What's Next"}</h2>
             <p className="section-intro mt-4 text-muted-foreground">{ar ? "استكشف فرص التعاون مع مجموعة سامي عياد في التصنيع والإنشاءات والحلول البيئية والمنتجات الطبيعية." : "Explore opportunities to collaborate with SAMI BIN AYYAD GROUP across manufacturing, construction, environmental solutions, and natural products."}</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button asChild size="lg" className="group relative inline-flex items-center justify-center gap-2 rounded-full !bg-brand-green !text-white px-7 py-3 font-head text-sm font-bold shadow-lg transition-all duration-300 hover:!bg-brand-orange hover:shadow-brand-orange/30 hover:scale-105 active:scale-95 w-full sm:w-auto">
-                <Link to="/contact">{ar ? "تواصل مع فريقنا" : "Contact Our Team"}</Link>
-              </Button>
               <Button asChild size="lg" className="group relative inline-flex items-center justify-center gap-2 rounded-full !bg-brand-green !text-white px-7 py-3 font-head text-sm font-bold shadow-lg transition-all duration-300 hover:!bg-brand-orange hover:shadow-brand-orange/30 hover:scale-105 active:scale-95 w-full sm:w-auto">
                 <a href={WHATSAPP_URL} target="_blank" rel="noreferrer"><MessageCircle className="size-4" /> WhatsApp</a>
               </Button>

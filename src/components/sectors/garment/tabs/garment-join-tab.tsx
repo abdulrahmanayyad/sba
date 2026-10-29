@@ -1,4 +1,4 @@
-﻿import { useState } from "react";
+import { useState } from "react";
 import { 
   Building2, 
   CheckCircle2, 
@@ -55,11 +55,12 @@ export function GarmentJoinTab() {
     <div className="space-y-16 py-8">
       <Reveal>
         <div className="max-w-3xl">
-          <span className="text-xs font-bold uppercase tracking-wider text-brand-orange">
-            {ar ? "انضم إلينا واطلب عرض سعر" : "Join Us & Request Quotation"}
-          </span>
+          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+            <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+            <span>{ar ? "انضم إلينا واطلب عرض سعر" : "Join Us & Request Quotation"}</span>
+          </div>
           <h2 className="mt-2 font-head text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            {ar ? "أخبرنا بما تريد تصنيعه لنبدأ شراكة جديدة" : "Tell Us What You Wish to Manufacture"}
+            {ar ? "أخبرنا بما تريد تصنيعه" : "Tell Us What You Wish to Manufacture"}
           </h2>
           <p className="mt-4 text-base text-muted-foreground leading-relaxed sm:text-lg">
             {ar
@@ -81,7 +82,7 @@ export function GarmentJoinTab() {
                 </h3>
                 <p className="mt-2 text-sm text-muted-foreground max-w-md mx-auto">
                   {ar
-                    ? "شكراً لتواصلك مع قطاع تصنيع الملابس في مجموعة سامي بن عياد. سيقوم فريقنا التجاري والفني بمراجعة طلبك والتواصل معك خلال 24 ساعة."
+                    ? "شكرًا لتواصلك مع قطاع تصنيع الملابس في مجموعة سامي بن عياد. سيقوم فريقنا التجاري والفني بمراجعة طلبك والتواصل معك خلال 24 ساعة."
                     : "Thank you for contacting SBA Garment Division. Our technical merchandising team will review your specifications and contact you within 24 business hours."}
                 </p>
                 <Button
@@ -274,10 +275,9 @@ export function GarmentJoinTab() {
 
                 <Button
                   type="submit"
-                  variant="primary"
                   size="lg"
                   disabled={loading}
-                  className="w-full text-base"
+                  className="w-full text-base rounded-full bg-brand-green hover:bg-brand-orange text-white font-head font-bold shadow-md transition-all py-3.5 hover:scale-[1.01] active:scale-95"
                 >
                   {loading ? (
                     <span>{ar ? "جاري الإرسال..." : "Sending Request..."}</span>
@@ -295,8 +295,8 @@ export function GarmentJoinTab() {
           {/* Direct Contacts & Fast Inquiry */}
           <div className="space-y-6 lg:col-span-4">
             {/* Direct WhatsApp Box */}
-            <div className="rounded-3xl border border-brand-orange/40 bg-brand-orange/10 p-6 md:p-8">
-              <div className="flex size-12 items-center justify-center rounded-2xl bg-brand-orange text-white">
+            <div className="rounded-3xl border border-white/40 bg-background/80 p-6 md:p-8 shadow-sm backdrop-blur-2xl transition-all duration-300 hover:shadow-xl hover:border-brand-green/50 hover:scale-[1.01]">
+              <div className="flex size-12 items-center justify-center rounded-2xl bg-[#25D366]/15 text-[#25D366]">
                 <MessageCircle className="size-6" />
               </div>
               <h3 className="mt-4 font-head text-xl font-bold text-foreground">
@@ -307,7 +307,7 @@ export function GarmentJoinTab() {
                   ? "للاستفسارات العاجلة، مناقشة العينات، أو التنسيق السريع مع مدير الحسابات التجارية."
                   : "For immediate assistance, sample dispatching, or quick consultations with our merchandising team."}
               </p>
-              <Button asChild size="lg" className="mt-6 w-full bg-[#25D366] text-white hover:bg-[#20ba59]">
+              <Button asChild size="lg" className="mt-6 w-full rounded-full bg-[#25D366] text-white hover:bg-[#20ba59] font-head font-bold shadow-sm transition-all hover:scale-105 active:scale-95">
                 <a href={WHATSAPP_URL} target="_blank" rel="noreferrer">
                   <MessageCircle className="size-4 me-2" />
                   {ar ? "محادثة فورية واتساب" : "Chat on WhatsApp"}
@@ -316,7 +316,7 @@ export function GarmentJoinTab() {
             </div>
 
             {/* Division Coordinates */}
-            <div className="rounded-3xl border border-border bg-card p-6 md:p-8 space-y-4">
+            <div className="rounded-3xl border border-white/40 bg-background/80 p-6 md:p-8 space-y-4 shadow-sm backdrop-blur-xl">
               <h4 className="font-head text-base font-bold text-foreground">
                 {ar ? "بيانات قطاع الملابس" : "Garment Division Office"}
               </h4>
@@ -328,11 +328,6 @@ export function GarmentJoinTab() {
                     ? "المنطقة الصناعية، جمهورية مصر العربية"
                     : "Industrial Area, Arab Republic of Egypt"}
                 </span>
-              </div>
-
-              <div className="flex items-center gap-3 text-xs text-muted-foreground">
-                <Mail className="size-4 shrink-0 text-brand-orange" />
-                <span>garment@sami-group.com</span>
               </div>
 
               <div className="flex items-center gap-3 text-xs text-muted-foreground">

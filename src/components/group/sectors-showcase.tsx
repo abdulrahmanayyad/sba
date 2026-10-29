@@ -9,6 +9,8 @@ import { cn } from "@/lib/utils";
 
 interface ShowcaseTab {
   id: string;
+  slug: "construction" | "environmental" | "garment" | "food";
+  tab?: string;
   labelEn: string;
   labelAr: string;
   headlineEn: string;
@@ -27,6 +29,8 @@ interface ShowcaseTab {
 const tabs: ShowcaseTab[] = [
   {
     id: "contracting",
+    slug: "construction",
+    tab: "projects",
     labelEn: "Contracting & Construction",
     labelAr: "المقاولات والإنشاءات",
     headlineEn: "Contracting, & Real Estate Development",
@@ -45,6 +49,8 @@ const tabs: ShowcaseTab[] = [
   },
   {
     id: "environment",
+    slug: "environmental",
+    tab: "services",
     labelEn: "Environment & Sustainability",
     labelAr: "البيئة والاستدامة",
     headlineEn: "Sustainable Environment",
@@ -63,6 +69,8 @@ const tabs: ShowcaseTab[] = [
   },
   {
     id: "garment",
+    slug: "garment",
+    tab: "services",
     labelEn: "Garment Manufacturing",
     labelAr: "تصنيع الملابس",
     headlineEn: "Garment Manufacturing & Fashion Development",
@@ -81,6 +89,7 @@ const tabs: ShowcaseTab[] = [
   },
   {
     id: "natural",
+    slug: "food",
     labelEn: "Food & Natural Products",
     labelAr: "الأغذية والمنتجات الطبيعية",
     headlineEn: "Food & Natural Products",
@@ -187,13 +196,13 @@ export function SectorsShowcase({ ar }: { ar: boolean }) {
 
             {/* Contact CTA */}
             <div className="mt-10 pt-4">
-              <Link
-                to="/contact"
-                className="group inline-flex items-center gap-3 rounded-full bg-brand-green px-6 py-3 font-head text-sm font-bold text-white shadow-lg transition-all duration-300 hover:bg-brand-orange hover:shadow-brand-orange/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+              <a
+                href="#contact"
+                className="group inline-flex items-center gap-3 rounded-full bg-brand-green px-6 py-3 font-head text-sm font-bold text-white shadow-lg transition-all duration-300 hover:bg-brand-orange hover:shadow-brand-orange/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 cursor-pointer"
               >
                 <span>{ar ? "تواصل معنا" : "Contact Us"}</span>
                 <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 rtl:rotate-90" />
-              </Link>
+              </a>
             </div>
           </div>
 
@@ -241,7 +250,9 @@ export function SectorsShowcase({ ar }: { ar: boolean }) {
             {/* Explore CTA */}
             <div className="mt-8 pt-6 border-t border-border/60 flex items-center justify-start">
               <Link
-                to={current.href}
+                to="/sectors/$sector"
+                params={{ sector: current.slug }}
+                search={current.tab ? { tab: current.tab } : {}}
                 className="group relative inline-flex items-center justify-center gap-2 rounded-full !bg-brand-green !text-white px-6 py-2.5 font-head text-sm font-bold shadow-lg transition-all duration-300 hover:!bg-brand-orange hover:shadow-brand-orange/30 hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/50 cursor-pointer"
               >
                 <span>{ar ? current.ctaAr : current.ctaEn}</span>

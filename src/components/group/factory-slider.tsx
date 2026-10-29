@@ -1,4 +1,4 @@
-﻿import { ChevronLeft, ChevronRight, Pause, Play, Sparkles } from "lucide-react";
+import { ChevronLeft, ChevronRight, Pause, Play, Sparkles } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 import { Reveal } from "@/components/home/reveal";
@@ -54,7 +54,7 @@ export function FactorySlider({ ar }: { ar: boolean }) {
           <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
           <span>{ar ? "جولة تصويرية متكاملة" : "Visual Factory Tour"}</span>
         </div>
-        <h2 className="section-title mt-1">{ar ? "نظرة عامة على المصنع — Factory Overview" : "Factory Overview"}</h2>
+        <h2 className="section-title mt-1">{ar ? "نظرة عامة على المصنع" : "Factory Overview"}</h2>
       </Reveal>
 
       {/* Main Full Photo Slider Container — Focused purely on images */}

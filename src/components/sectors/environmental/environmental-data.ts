@@ -20,15 +20,15 @@ export const environmentalAboutData = {
     paragraphs: [
       {
         en: "Sami Bin Ayyad provides integrated environmental and advisory solutions across environmental research and development, sustainability, renewable energy, and waste management.",
-        ar: "تقدم شركة سامي بن عياد حلولاً بيئية واستشارية متكاملة في مجالات البحث والتطوير البيئي، والاستدامة، والطاقة المتجددة، وإدارة المخلفات.",
+        ar: "تقدم شركة سامي بن عياد حلولًا بيئية واستشارية متكاملة في مجالات البحث والتطوير البيئي، والاستدامة، والطاقة المتجددة، وإدارة المخلفات.",
       },
       {
         en: "We leverage scientific research and advanced technologies to transform waste into valuable resources, supporting a safer, more affordable, and sustainable future for Egypt and the world.",
-        ar: "نستفيد من البحث العلمي والتقنيات المتقدمة لتحويل المخلفات إلى موارد قيّمة، مما يدعم مستقبلاً أكثر أماناً وتوفيراً واستدامة لمصر والعالم.",
+        ar: "نستفيد من البحث العلمي والتقنيات المتقدمة لتحويل المخلفات إلى موارد قيّمة، مما يدعم مستقبلًا أكثر أمانًا وتوفيرًا واستدامة لمصر والعالم.",
       },
       {
         en: "Through collaboration and technical expertise, we deliver practical, high-quality, and cost-effective solutions tailored to our clients’ needs.",
-        ar: "من خلال التعاون والخبرة الفنية، نقدم حلولاً عملية وعالية الجودة وفعالة من حيث التكلفة مصممة خصيصاً لتلبية احتياجات عملائنا.",
+        ar: "من خلال التعاون والخبرة الفنية، نقدم حلولًا عملية وعالية الجودة وفعالة من حيث التكلفة مصممة خصيصًا لتلبية احتياجات عملائنا.",
       },
     ],
   },
@@ -61,9 +61,9 @@ export const environmentalAboutData = {
     badgeEn: "Our Vision",
     badgeAr: "رؤيتنا",
     titleEn: "The Environmental Partner of Choice",
-    titleAr: "الخيار البيئي الأول عالمياً",
+    titleAr: "الخيار البيئي الأول عالميًا",
     bodyEn: "Our vision is to be the environmental company of choice, to assist in solving the future environmental issues upon the strength of our Research & Development in Africa and worldwide.",
-    bodyAr: "رؤيتنا هي أن نكون الشركة البيئية الخيار الأول والشريك المفضل، للمساهمة في حل القضايا البيئية المستقبلية اعتماداً على قوة أبحاثنا وتطويرنا العلمي في أفريقيا وحول العالم.",
+    bodyAr: "رؤيتنا هي أن نكون الشركة البيئية الخيار الأول والشريك المفضل، للمساهمة في حل القضايا البيئية المستقبلية اعتمادًا على قوة أبحاثنا وتطويرنا العلمي في أفريقيا وحول العالم.",
   },
   mission: {
     badgeEn: "Our Mission",
@@ -123,7 +123,7 @@ export const environmentalAboutData = {
         titleEn: "Flexibility",
         titleAr: "المرونة والتكيف",
         descEn: "We believe that flexibility leads to excellence and we tailor all our services to the specific needs of each client.",
-        descAr: "نؤمن بأن المرونة هي مفتاح التميز، لذلك نصمم خدماتنا خصيصاً لتلائم الاحتياجات الدقيقة والمتطلبات الفريدة لكل عميل.",
+        descAr: "نؤمن بأن المرونة هي مفتاح التميز، لذلك نصمم خدماتنا خصيصًا لتلائم الاحتياجات الدقيقة والمتطلبات الفريدة لكل عميل.",
       },
       {
         titleEn: "Openness & Honesty",
@@ -160,14 +160,14 @@ export const environmentalAboutData = {
         titleEn: "Integrity & Commitment",
         titleAr: "النزاهة والشفافية التامة",
         bodyEn: "We at Sami Bin Ayyad can proudly claim utmost respect, honesty, and transparency vis-a-vis our customers and employees. We deliver what we promise.",
-        bodyAr: "نفخر في سامي بن عياد بالتزامنا المطلق بالاحترام والصدق والشفافية التامة مع عملائنا وموظفينا، ونفي دائماً بما نعد به.",
+        bodyAr: "نفخر في سامي بن عياد بالتزامنا المطلق بالاحترام والصدق والشفافية التامة مع عملائنا وموظفينا، ونفي دائمًا بما نعد به.",
       },
       {
         number: "04",
         titleEn: "Customer Profitability",
         titleAr: "تعظيم ربحية العملاء",
         bodyEn: "Sami Bin Ayyad always considers customer profitability as Sami Bin Ayyad Profitability, optimizing operational expenses and converting waste into valuable assets.",
-        bodyAr: "نعتبر ربحية ونجاح عملائنا جزءاً لا يتجزأ من نجاحنا وربحيتنا، عبر ترشيد التكاليف وتحويل الهدر إلى موارد ذات عائد اقتصادي.",
+        bodyAr: "نعتبر ربحية ونجاح عملائنا جزءًا لا يتجزأ من نجاحنا وربحيتنا، عبر ترشيد التكاليف وتحويل الهدر إلى موارد ذات عائد اقتصادي.",
       },
       {
         number: "05",
@@ -203,7 +203,7 @@ export const environmentalSectorsData = {
       taglineEn: "Upstream, Midstream & Downstream Technical & HSE Support",
       taglineAr: "خدمات شاملة لمراحل الاستكشاف والإنتاج والتكرير والسلامة البيئية",
       descEn: "Sami Bin Ayyad offers services at all stages of the oil and gas value chain; from exploration & production through to end-user markets and planning for end of asset life. With multidisciplinary teams working across the globe and a broad project portfolio, we provide independent technical and advisory services to add value and manage HSE risks.",
-      descAr: "نقدم خدمات متخصصة في كافة مراحل سلسلة القيمة لقطاع النفط والغاز، بدءاً من الاستكشاف والإنتاج وحتى أسواق الاستهلاك وإخراج الأصول من الخدمة، مع إدارة شاملة لمخاطر الصحة والسلامة والبيئة وإضافة قيمة ملموسة للمشروعات.",
+      descAr: "نقدم خدمات متخصصة في كافة مراحل سلسلة القيمة لقطاع النفط والغاز، بدءًا من الاستكشاف والإنتاج وحتى أسواق الاستهلاك وإخراج الأصول من الخدمة، مع إدارة شاملة لمخاطر الصحة والسلامة والبيئة وإضافة قيمة ملموسة للمشروعات.",
       keyCapabilities: [
         { en: "Exploration & Production HSE advisory", ar: "استشارات الصحة والسلامة والبيئة لمشروعات الاستكشاف" },
         { en: "Upstream, midstream and downstream risk assessments", ar: "تقييم المخاطر لعمليات النقل والتكرير والمعالجة" },
@@ -267,7 +267,7 @@ export const environmentalSectorsData = {
       taglineEn: "Specialist Water Team, Laboratory Analysis & Bioremediation",
       taglineAr: "فريق مائي متخصص وتحاليل معملية وتقنيات المعالجة الحيوية",
       descEn: "Our in-house specialist water team works with water and wastewater utilities, supply chains, and statutory authorities. Utilizing an ecosystems services approach, we take a holistic view of potential environmental impacts upstream and downstream, supported by laboratory analysis, instrumentation, and water bioremediation.",
-      descAr: "يعمل فريقنا المائي المتخصص مع شركات المرافق وهيئات المياه، معتمداً على نهج خدمات النظم البيئية الشامل لتقييم الأثر البيئي قبل وبعد محطات المعالجة، مدعوماً بمختبرات تحليلية متقدمة وحلول المعالجة الحيوية.",
+      descAr: "يعمل فريقنا المائي المتخصص مع شركات المرافق وهيئات المياه، معتمدًا على نهج خدمات النظم البيئية الشامل لتقييم الأثر البيئي قبل وبعد محطات المعالجة، مدعومًا بمختبرات تحليلية متقدمة وحلول المعالجة الحيوية.",
       keyCapabilities: [
         { en: "Biological and chemical water quality testing", ar: "اختبارات جودة المياه الكيميائية والبيولوجية المعتمدة" },
         { en: "Advanced water bioremediation & treatment technologies", ar: "تقنيات المعالجة الحيوية المتقدمة لمياه الصرف الصناعي والبلدي" },
@@ -283,7 +283,7 @@ export const environmentalSectorsData = {
       taglineEn: "Operational Risk Management & Environmental Systems",
       taglineAr: "إدارة المخاطر التشغيلية وأنظمة الإدارة البيئية المعتمدة",
       descEn: "Managing environmental risk on sites and in industrial processes through tailored mitigation measures. We support clients from the concept phase of new plants to ongoing operations via Environmental Management Systems (EMS), retail portfolio compliance, and sustainable corporate culture training.",
-      descAr: "إدارة المخاطر البيئية في المصانع ومواقع التجزئة عبر إجراءات تخفيف مصممة خصيصاً، بدءاً من مرحلة تصميم المنشآت وحتى التشغيل المستمر من خلال أنظمة الإدارة البيئية (EMS) والتدريب المؤسسي المستدام.",
+      descAr: "إدارة المخاطر البيئية في المصانع ومواقع التجزئة عبر إجراءات تخفيف مصممة خصيصًا، بدءًا من مرحلة تصميم المنشآت وحتى التشغيل المستمر من خلال أنظمة الإدارة البيئية (EMS) والتدريب المؤسسي المستدام.",
       keyCapabilities: [
         { en: "Industrial plant environmental design & permitting", ar: "التصميم البيئي للمصانع واستخراج التراخيص الصناعية" },
         { en: "Environmental Management Systems (EMS) deployment", ar: "تطبيق وتأهيل أنظمة الإدارة البيئية المؤسسية" },
@@ -299,7 +299,7 @@ export const environmentalSectorsData = {
       taglineEn: "Trusted Advisory, Policy Research & Expert Witness Services",
       taglineAr: "استشارات استراتيجية وبحوث سياسات وشهادات الخبرة القضائية",
       descEn: "Delivering quality work to government departments, local authorities, statutory bodies, and specialist organizations through long-term partnerships. Services include ecological research, policy advice, contaminated land remediation, Environmental Statements, and acting as independent Expert Witnesses.",
-      descAr: "شريك موثوق للوزارات والهيئات الحكومية والإدارات المحلية عبر شراكات ممتدة، نقدم أبحاثاً بيئية مبتكرة، واستشارات للسياسات العامة، ومخططات معالجة الأراضي الملوثة، وشهادات الخبراء المستقلين أمام الجهات القضائية.",
+      descAr: "شريك موثوق للوزارات والهيئات الحكومية والإدارات المحلية عبر شراكات ممتدة، نقدم أبحاثًا بيئية مبتكرة، واستشارات للسياسات العامة، ومخططات معالجة الأراضي الملوثة، وشهادات الخبراء المستقلين أمام الجهات القضائية.",
       keyCapabilities: [
         { en: "Protected & invasive species ecological research", ar: "أبحاث التنوع البيولوجي والأنواع المحمية والغازية" },
         { en: "Strategic planning & environmental policy formulation", ar: "صياغة السياسات البيئية والتخطيط الاستراتيجي المستدام" },
@@ -360,12 +360,12 @@ export const environmentalServicesData = {
       leadEn: "Turnkey technology solutions turning organic waste into renewable power, compost, and fertilizers",
       leadAr: "حلول تكنولوجية متكاملة لتحويل المخلفات العضوية إلى طاقة نظيفة وسماد عضوي عالي الجودة",
       bodyEn: "Sami Bin Ayyad for Sustainable Environmental Services & Renewable Energy (Egypt) conducted a professional partnership with leading European company Ren ergon International AG (Switzerland), creating an alliance to lead the biogas production & waste-to-energy plant industry in Egypt. Utilizing Ren ergon's patented RSD (Ren ergon Simultaneous Digestion) dry fermentation technology, we build and operate small, medium, and large-scale plants converting municipal solid waste (MSW), food, agricultural, animal, and chicken manure into clean energy and bio-products.",
-      bodyAr: "عقدت سامي بن عياد شراكة استراتيجية مع شركة رين إرجون إنترناشيونال السويسرية (Ren ergon International AG)، الرائدة أوروبياً، لتشكيل تحالف يقود صناعة إنتاج البيوجاز ومحطات تحويل المخلفات إلى طاقة في مصر. نعتمد على تكنولوجيا RSD الحاصلة على براءة اختراع للتخمير الجاف (Dry fermentation)، لإنشاء وتشغيل محطات بمختلف السعات لمعالجة المخلفات البلدية والزراعية ومخلفات الدواجن والحيوانات وتحويلها لطاقة وموارد ذات قيمة عالية.",
+      bodyAr: "عقدت سامي بن عياد شراكة استراتيجية مع شركة رين إرجون إنترناشيونال السويسرية (Ren ergon International AG)، الرائدة أوروبيًا، لتشكيل تحالف يقود صناعة إنتاج البيوجاز ومحطات تحويل المخلفات إلى طاقة في مصر. نعتمد على تكنولوجيا RSD الحاصلة على براءة اختراع للتخمير الجاف (Dry fermentation)، لإنشاء وتشغيل محطات بمختلف السعات لمعالجة المخلفات البلدية والزراعية ومخلفات الدواجن والحيوانات وتحويلها لطاقة وموارد ذات قيمة عالية.",
       features: [
         { en: "RSD patented dry anaerobic digestion technology", ar: "تكنولوجيا التخمير الجاف اللاهوائي RSD الحاصلة على براءة اختراع" },
         { en: "Turnkey engineering, construction & operation for small, medium & large plants", ar: "حلول تسليم مفتاح تشمل التصميم والتنفيذ والتشغيل لكافة السعات" },
         { en: "Value extraction creating Biofuel, Biogas, Renewable Energy, Compost, Fertilizer & Biochar", ar: "إنتاج الوقود الحيوي، البيوجاز، الكهرباء النظيفة، الكمبوست، السماد، والبيوتشار" },
-        { en: "Treating up to 60% of municipal and agro waste streams naturally", ar: "معالجة ما يصل إلى 60% من تيارات المخلفات البلدية والزراعية يومياً" },
+        { en: "Treating up to 60% of municipal and agro waste streams naturally", ar: "معالجة ما يصل إلى 60% من تيارات المخلفات البلدية والزراعية يوميًا" },
       ],
     },
     {
@@ -378,11 +378,11 @@ export const environmentalServicesData = {
       leadEn: "Measuring, reporting, auditing, and reducing corporate and product GHG emissions",
       leadAr: "قياس وتدقيق وخفض انبعاثات الغازات الدفيئة للمؤسسات والمنتجات وفق المعايير الدولية",
       bodyEn: "We deliver full carbon footprint auditing and evaluation across scopes 1, 2, and 3 according to World Resources Institute (WRI) and international standards. From Corporate Carbon Footprints covering full corporate operations, logistics, and recycling, to Product Carbon Footprints (PCF/LCA) evaluating cradle-to-grave and cradle-to-gate lifecycles. We also provide our proprietary Carbon Footprint Tool for real-time GHG monitoring and rapid decarbonization decision-making, helping organizations lower production costs and unlock global export and green financing channels.",
-      bodyAr: "نقدم حلولاً متكاملة لحساب وتدقيق البصمة الكربونية وانبعاثات غازات الاحتباس الحراري وفق معايير معهد الموارد العالمية (WRI) والمعايير الدولية. تشمل خدماتنا: البصمة الكربونية للمؤسسات (Corporate)، والبصمة الكربونية للمنتجات (Product LCA) بمفهومي Cradle-to-grave وCradle-to-gate، بالإضافة إلى أداة الرصد اللحظي (Carbon Footprint Tool) وإصدار التقارير المعتمدة دولياً لفتح أسواق التصدير العالمية وفرص التمويل الأخضر.",
+      bodyAr: "نقدم حلولًا متكاملة لحساب وتدقيق البصمة الكربونية وانبعاثات غازات الاحتباس الحراري وفق معايير معهد الموارد العالمية (WRI) والمعايير الدولية. تشمل خدماتنا: البصمة الكربونية للمؤسسات (Corporate)، والبصمة الكربونية للمنتجات (Product LCA) بمفهومي Cradle-to-grave وCradle-to-gate، بالإضافة إلى أداة الرصد اللحظي (Carbon Footprint Tool) وإصدار التقارير المعتمدة دوليًا لفتح أسواق التصدير العالمية وفرص التمويل الأخضر.",
       features: [
         { en: "Corporate Carbon Footprint accounting across all business activities", ar: "حساب البصمة الكربونية المؤسسية الشاملة لكافة الأنشطة والعمليات" },
         { en: "Product Life Cycle Assessment (LCA) — Cradle-to-Grave & Cradle-to-Gate", ar: "تقييم دورة حياة المنتج من المهد إلى اللحد ومن المهد إلى المصنع" },
-        { en: "Accredited Carbon Footprint Auditing Reports meeting international standards", ar: "إصدار تقارير تدقيق البصمة الكربونية المعتمدة دولياً" },
+        { en: "Accredited Carbon Footprint Auditing Reports meeting international standards", ar: "إصدار تقارير تدقيق البصمة الكربونية المعتمدة دوليًا" },
         { en: "Real-time dynamic Carbon Footprint Tool for rapid mitigation decisions", ar: "أداة برمجية تفاعلية للرصد اللحظي واتخاذ قرارات خفض الانبعاثات" },
       ],
     },
@@ -396,7 +396,7 @@ export const environmentalServicesData = {
       leadEn: "Full range of EIA and SEA services harmonizing built and natural environments",
       leadAr: "منظومة متكاملة لدراسات تقييم الأثر البيئي والاستراتيجي لتحقيق التوافق مع الطبيعة",
       bodyEn: "Sami Bin Ayyad provides a comprehensive suite of Environmental Impact Assessment (EIA) and Strategic Environmental Assessment (SEA) services across all business sectors. We conduct extensive on-site investigations to empower clients in understanding human-environmental interactions before acquiring or developing new sites. Our scopes encompass efficient water usage, clean energy planning, land conservation, biodiversity preservation, green transportation viability, and micro-climate optimization.",
-      bodyAr: "نقدم نطاقاً متكاملاً من خدمات دراسات تقييم الأثر البيئي (EIA) والتقييم البيئي الاستراتيجي (SEA) لكافة المشروعات الاستثمارية والصناعية. ننفذ دراسات ميدانية متخصصة لفهم طبيعة التفاعل الإنساني مع البيئة قبل الاستحواذ على الأراضي أو بدء التطوير، مع مراعاة كفاءة استخدام المياه، الطاقة النظيفة، صون التنوع البيولوجي، والارتقاء بالمناخ الموضعي.",
+      bodyAr: "نقدم نطاقًا متكاملًا من خدمات دراسات تقييم الأثر البيئي (EIA) والتقييم البيئي الاستراتيجي (SEA) لكافة المشروعات الاستثمارية والصناعية. ننفذ دراسات ميدانية متخصصة لفهم طبيعة التفاعل الإنساني مع البيئة قبل الاستحواذ على الأراضي أو بدء التطوير، مع مراعاة كفاءة استخدام المياه، الطاقة النظيفة، صون التنوع البيولوجي، والارتقاء بالمناخ الموضعي.",
       features: [
         { en: "Comprehensive EIA & SEA preparation, management and permitting", ar: "إعداد وإدارة دراسات EIA وSEA واعتمادها من الجهات التنظيمية" },
         { en: "Site environmental feasibility & human-environment interaction analysis", ar: "التحليل الميداني للتفاعل البيئي ودراسات الجدوى للمواقع" },
@@ -448,7 +448,7 @@ export const environmentalServicesData = {
       titleEn: "Environmental Measurements & Continuous Monitoring",
       titleAr: "خدمات القياسات والرصد البيئي الميداني والمعملي",
       leadEn: "Full series of field tests and continuous monitoring to comply with international standards",
-      leadAr: "منظومة قياسات ورصد بيئي متكاملة لبيئة العمل والمداخن والانبعاثات طبقاً للمعايير القياسية",
+      leadAr: "منظومة قياسات ورصد بيئي متكاملة لبيئة العمل والمداخن والانبعاثات طبقًا للمعايير القياسية",
       bodyEn: "Sami Bin Ayyad conducts comprehensive environmental testing and monitoring to detect baseline conditions, exceedances, and areas requiring corrective action. Our experts deploy state-of-the-art calibrated instruments across industrial, commercial, and service sectors to ensure rigorous compliance with international and national environmental thresholds.",
       bodyAr: "نمتلك أحدث الأجهزة المعايرة والكوادر الفنية المتخصصة لإجراء كافة القياسات والمسوحات البيئية المعتمدة للمنشآت الصناعية والخدمية لرصد وتصحيح الانحرافات وضمان الامتثال التام للاشتراطات البيئية وقوانين العمل الدولية والمحلية.",
       features: [
@@ -472,7 +472,7 @@ export const environmentalServicesData = {
       bodyEn: "As a leading provider of environmental consultancy services to the waste and recycling sector, Sami Bin Ayyad advises waste producers, operators, regulators, and investors. Our philosophy follows the established international waste hierarchy: Prevention, Minimization, Reuse, Recycling, Energy Recovery, and Final Disposal, covering municipal, commercial, industrial, hazardous, agricultural, and mining streams.",
       bodyAr: "نقدم استشارات بيئية رائدة لقطاع إدارة وتدوير المخلفات، موجهة للمصانع والمنتجين والهيئات الرقابية والمستثمرين. نطبق التسلسل الهرمي العالمي المعتمد لإدارة المخلفات: منع التولد، التقليل، إعادة الاستخدام، إعادة التدوير، استرداد الطاقة، والتخلص النهائي الآمن للمخلفات البلدية، الصناعية، الزراعية، التعدينية، والخطرة.",
       features: [
-        { en: "Strategic application of international waste hierarchy principles", ar: "تطبيق استراتيجي لمبادئ هرم إدارة المخلفات المعترف به دولياً" },
+        { en: "Strategic application of international waste hierarchy principles", ar: "تطبيق استراتيجي لمبادئ هرم إدارة المخلفات المعترف به دوليًا" },
         { en: "Practical handling of municipal, commercial, industrial & mining wastes", ar: "حلول عملية لإدارة المخلفات الصلبة، الصناعية، الزراعية والتعدينية" },
         { en: "Hazardous waste classification, storage, transport & disposal protocols", ar: "بروتوكولات تصنيف وتخزين ونقل والتخلص الآمن من المخلفات الخطرة" },
         { en: "Circular economy feasibility & recycling facility technical advisory", ar: "دراسات جدوى مشاريع الاقتصاد الدائري وإنشاء مصانع التدوير" },
@@ -506,7 +506,7 @@ export const environmentalServicesData = {
       leadEn: "Harnessing microorganisms, plants, and enzymes for sustainable environmental remediation",
       leadAr: "تسخير الكائنات الحية الدقيقة والإنزيمات في معالجة الملوثات وإعادة تأهيل البيئة",
       bodyEn: "We believe biological treatment represents the future of sustainable waste management as an efficient, economical, and eco-friendly approach. Our environmental biotechnology practice integrates biology and engineering to utilize the biochemical potential of microorganisms and enzymes for the remediation of contaminated land, air, water, and sediments, as well as advancing green manufacturing technologies.",
-      bodyAr: "نؤمن في سامي بن عياد بأن المعالجة البيولوجية هي مستقبل صناعة إدارة المخلفات كونها الأكثر كفاءة واقتصادية وأماناً بيئياً. ندمج العلوم الحيوية مع الهندسة لاستغلال الإمكانات الكيميائية الحيوية للكائنات الدقيقة والإنزيمات في تطهير التربة الملوثة، تنقية المياه والهواء، واستعادة الموارد ضمن تطبيقات التصنيع الأخضر.",
+      bodyAr: "نؤمن في سامي بن عياد بأن المعالجة البيولوجية هي مستقبل صناعة إدارة المخلفات كونها الأكثر كفاءة واقتصادية وأمانًا بيئيًا. ندمج العلوم الحيوية مع الهندسة لاستغلال الإمكانات الكيميائية الحيوية للكائنات الدقيقة والإنزيمات في تطهير التربة الملوثة، تنقية المياه والهواء، واستعادة الموارد ضمن تطبيقات التصنيع الأخضر.",
       features: [
         { en: "Bioremediation of contaminated soils, sediments, industrial air & water bodies", ar: "المعالجة الحيوية للتربة والرواسب والمصادر المائية الملوثة" },
         { en: "Microorganism utilization of various complex carbon sources and pollutants", ar: "استخدام الكائنات الحية الدقيقة لتحليل الملوثات الكربونية المعقدة" },
@@ -542,7 +542,7 @@ export const environmentalServicesData = {
       leadEn: "Next-generation electronic management system platforms replacing paper documentation",
       leadAr: "منظومة رقمية ذكية لإدارة أنظمة الجودة والسلامة والبيئة دون معاملات ورقية",
       bodyEn: "In cooperation with our partner TechnoSet (Malaysia), Sami Bin Ayyad LLC offers organizations the opportunity to manage next-generation electronic QHSE platforms. We design customized electronic systems that unite ISO 9001, ISO 14001, ISO 45001, and ISO 22000 within a single intuitive dashboard, eliminating paper constraints and providing real-time compliance tracking.",
-      bodyAr: "بالتعاون مع شريكنا تكنوسيت (ماليزيا)، توفر سامي بن عياد منصة رقمية ذكية لإدارة أنظمة الجودة والصحة والسلامة والبيئة إلكترونياً. نصمم منصات مخصصة تدمج شهادات أيزو 9001 و14001 و45001 و22000 في بيئة سحابية واحدة تمكن الإدارة من التحكم والمتابعة اللحظية للامتثال دون أي مستندات ورقية.",
+      bodyAr: "بالتعاون مع شريكنا تكنوسيت (ماليزيا)، توفر سامي بن عياد منصة رقمية ذكية لإدارة أنظمة الجودة والصحة والسلامة والبيئة إلكترونيًا. نصمم منصات مخصصة تدمج شهادات أيزو 9001 و14001 و45001 و22000 في بيئة سحابية واحدة تمكن الإدارة من التحكم والمتابعة اللحظية للامتثال دون أي مستندات ورقية.",
       features: [
         { en: "Integrated platform uniting ISO 9001, 14001, 45001 & 22000 workflows", ar: "منصة واحدة تدمج كافة متطلبات أيزو 9001 و14001 و45001 و22000" },
         { en: "Custom electronic platform design tailored to company scope and activities", ar: "تصميم مخصص للمنصة وفق نطاق عمل وطبيعة أنشطة كل مؤسسة" },
@@ -560,10 +560,10 @@ export const environmentalServicesData = {
       leadEn: "Single-platform compliance management reducing risk and automating legal registers",
       leadAr: "منظومة موحدة لإدارة الامتثال البيئي والسلامة بالمستشفيات مع سجلات قانونية محدثة",
       bodyEn: "Our HSE healthcare advisors lead environmental, health, and safety management for hospitals and healthcare providers with specialized technical expertise. We deploy our single-platform EHS Regulatory Application to manage multi-site or mono-site compliance in real-time. Legal specialists and advisors visit client sites, construct tailored legal registers updated quarterly, and automate safety workflows.",
-      bodyAr: "يقود مستشارونا المتخصصون إدارة السلامة والصحة والبيئة للمستشفيات والمراكز الطبية بأعلى درجات الاحترافية. نوفر تطبيق EHS Regulatory الرقمي لإدارة الامتثال اللحظي للمنشآت الفردية ومتعددة الفروع، مع إعداد سجلات قانونية مخصصة يتم تحديثها ربع سنوياً بواسطة خبراء قانونيين وبيئيين معتمدين.",
+      bodyAr: "يقود مستشارونا المتخصصون إدارة السلامة والصحة والبيئة للمستشفيات والمراكز الطبية بأعلى درجات الاحترافية. نوفر تطبيق EHS Regulatory الرقمي لإدارة الامتثال اللحظي للمنشآت الفردية ومتعددة الفروع، مع إعداد سجلات قانونية مخصصة يتم تحديثها ربع سنويًا بواسطة خبراء قانونيين وبيئيين معتمدين.",
       features: [
         { en: "Specialized EHS technical advisory dedicated to healthcare facilities", ar: "استشارات فنية متخصصة لمعايير السلامة والبيئة في المستشفيات" },
-        { en: "Quarterly updated customized legal compliance registers per facility", ar: "سجلات قانونية مخصصة ومحدثة ربع سنوياً وفق القوانين المنظمة" },
+        { en: "Quarterly updated customized legal compliance registers per facility", ar: "سجلات قانونية مخصصة ومحدثة ربع سنويًا وفق القوانين المنظمة" },
         { en: "Centralized real-time incident reporting, alerts & automated task workflows", ar: "رصد الحوادث وتتبع الإجراءات التصحيحية والتنبيهات اللحظية" },
         { en: "Full data security, document revision tracking & automated audit generation", ar: "حماية تامة للبيانات وإعداد التقارير الرقابية والتدقيق بضغطة زر" },
       ],
@@ -618,7 +618,7 @@ export const environmentalServicesData = {
       features: [
         { en: "Commercial agencies for Micro-Hydropower, Micro-Wind & Solar technologies", ar: "وكالات تجارية لتكنولوجيات الطاقة الكهرومائية والرياح والطاقة الشمسية" },
         { en: "Specialized Environmental, HSE & Quality enterprise software solutions", ar: "توزيع برمجيات ومنظومات إدارة البيئة والسلامة والجودة المؤسسية" },
-        { en: "Certified Personal Protective Equipment (PPE) for industrial & medical safety", ar: "توريد مهمات السلامة والوقاية الشخصية (PPE) المعتمدة عالمياً" },
+        { en: "Certified Personal Protective Equipment (PPE) for industrial & medical safety", ar: "توريد مهمات السلامة والوقاية الشخصية (PPE) المعتمدة عالميًا" },
         { en: "Next-gen Internet of Things (IoT) sensors & Robotic Process Automation (RPA)", ar: "حلول إنترنت الأشياء (IoT) للرصد البيئي وتقنيات أتمتة العمليات (RPA)" },
       ],
     },

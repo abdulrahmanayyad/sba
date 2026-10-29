@@ -306,7 +306,7 @@ Attached Files: ${files.map((f) => f.name).join(", ") || "None"}
 
             <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
               {ar
-                ? `شكراً لاهتمامك بالانضمام إلى ${track.titleAr}. تمت أرشفة بياناتك وسيقوم فريق الاستقطاب والشراكات بمراجعة طلبك والتواصل معك عبر البريد الإلكتروني أو الهاتف خلال أيام العمل الرسمية.`
+                ? `شكرًا لاهتمامك بالانضمام إلى ${track.titleAr}. تمت أرشفة بياناتك وسيقوم فريق الاستقطاب والشراكات بمراجعة طلبك والتواصل معك عبر البريد الإلكتروني أو الهاتف خلال أيام العمل الرسمية.`
                 : `Thank you for your interest in ${track.titleEn}. Your application has been logged and our recruitment and partnerships team will review your qualifications and contact you within standard business days.`}
             </p>
 
@@ -373,7 +373,7 @@ Attached Files: ${files.map((f) => f.name).join(", ") || "None"}
                 </h3>
                 <p className="mt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed">
                   {ar
-                    ? "وفقاً لاشتراطات الأمان، لم تتم محاكاة نجاح زائف. تعذّر تسجيل الطلب تلقائياً في قاعدة البيانات نظراً للاحتياج إلى ضبط تصاريح الأمان (Row-Level Security) على Supabase أو خدمة معالجة النماذج."
+                    ? "وفقًا لاشتراطات الأمان، لم تتم محاكاة نجاح زائف. تعذّر تسجيل الطلب تلقائيًا في قاعدة البيانات نظرًا للاحتياج إلى ضبط تصاريح الأمان (Row-Level Security) على Supabase أو خدمة معالجة النماذج."
                     : "In accordance with strict security specifications, no simulated success was shown. The submission could not be committed directly to the database due to backend service permissions or Row-Level Security (RLS) restrictions."}
                 </p>
 
@@ -485,7 +485,7 @@ Attached Files: ${files.map((f) => f.name).join(", ") || "None"}
                     : "Organization & Contact Details"}
               </h3>
               <p className="mt-1 text-xs text-muted-foreground">
-                {ar ? "جميع البيانات تعامل بسرية تامة ولا تنشر علناً." : "All data is securely handled and never displayed publicly."}
+                {ar ? "جميع البيانات تعامل بسرية تامة ولا تنشر علنًا." : "All data is securely handled and never displayed publicly."}
               </p>
             </div>
 
@@ -721,7 +721,7 @@ Attached Files: ${files.map((f) => f.name).join(", ") || "None"}
                         ? "مثال: 7 سنوات خبرة بالمشروعات الطبية"
                         : "e.g. 7 years in healthcare MEP contracting"
                       : ar
-                        ? "مثال: أكثر من 12 عاماً ونفذنا 30 مشروعاً"
+                        ? "مثال: أكثر من 12 عامًا ونفذنا 30 مشروعًا"
                         : "e.g. 10+ years with 25+ delivered industrial projects"
                   }
                   className="w-full rounded-2xl border border-border bg-background/80 px-4 py-3 text-xs sm:text-sm text-foreground focus:border-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green/20"

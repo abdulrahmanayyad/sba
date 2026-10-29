@@ -328,13 +328,19 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
             {/* Right: CTA + language */}
             <div className="hidden items-center gap-3 xl:flex shrink-0">
               <LanguageSwitcher language={language} onChange={selectLanguage} />
-              <Link
-                to="/contact"
+              <a
+                href="/#contact"
+                onClick={() => {
+                  const el = document.getElementById("contact");
+                  if (el) {
+                    el.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
                 className="group/cta inline-flex items-center gap-2 rounded-full bg-brand-green px-5 py-2.5 text-xs font-bold text-white transition-all duration-300 hover:bg-brand-orange hover:shadow-lg hover:shadow-brand-orange/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/50 active:scale-95"
               >
                 <span>{isArabic ? "تواصل معنا" : "Contact Us"}</span>
                 <ArrowUpRight className="size-3.5 transition-transform duration-300 group-hover/cta:translate-x-1 group-hover/cta:-translate-y-1 rtl:rotate-90 rtl:group-hover/cta:-translate-x-1 rtl:group-hover/cta:-translate-y-1" />
-              </Link>
+              </a>
             </div>
 
             {/* Mobile hamburger */}
@@ -385,9 +391,18 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
                   className="size-11 rounded-2xl bg-white/30 border border-white/30 hover:bg-white/50 text-foreground shrink-0 shadow-sm"
                 />
                 <Button asChild size="lg" className="flex-1 rounded-2xl bg-brand-green text-white hover:bg-brand-orange font-bold shadow-md">
-                  <Link to="/contact" onClick={() => setMenuOpen(false)}>
+                  <a
+                    href="/#contact"
+                    onClick={() => {
+                      setMenuOpen(false);
+                      const el = document.getElementById("contact");
+                      if (el) {
+                        el.scrollIntoView({ behavior: "smooth" });
+                      }
+                    }}
+                  >
                     {messages.nav.contact}
-                  </Link>
+                  </a>
                 </Button>
               </div>
             </div>

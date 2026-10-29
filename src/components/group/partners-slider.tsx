@@ -37,7 +37,7 @@ export function PartnersSlider({ ar }: { ar: boolean }) {
               onClick={() => setCurrent(idx)}
               className={cn(
                 "h-2 rounded-full transition-all duration-300",
-                current === idx ? "w-8 bg-brand-orange" : "w-2 bg-border hover:bg-muted-foreground/50"
+                current === idx ? "w-8 bg-brand-green" : "w-2 bg-border hover:bg-muted-foreground/50"
               )}
               aria-label={`Slide ${idx + 1}`}
             />
@@ -49,7 +49,7 @@ export function PartnersSlider({ ar }: { ar: boolean }) {
             variant="outline"
             size="icon"
             onClick={ar ? next : prev}
-            className="size-9 rounded-full border-white/20 bg-background/80 shadow-sm backdrop-blur-md hover:bg-brand-orange hover:text-white transition-all cursor-pointer"
+            className="size-9 rounded-full border-white/20 bg-background/80 shadow-sm backdrop-blur-md hover:bg-brand-green hover:text-white transition-all cursor-pointer"
             aria-label="Previous Slide"
           >
             <ChevronLeft className="size-4 rtl:rotate-180" />
@@ -58,7 +58,7 @@ export function PartnersSlider({ ar }: { ar: boolean }) {
             variant="outline"
             size="icon"
             onClick={ar ? prev : next}
-            className="size-9 rounded-full border-white/20 bg-background/80 shadow-sm backdrop-blur-md hover:bg-brand-orange hover:text-white transition-all cursor-pointer"
+            className="size-9 rounded-full border-white/20 bg-background/80 shadow-sm backdrop-blur-md hover:bg-brand-green hover:text-white transition-all cursor-pointer"
             aria-label="Next Slide"
           >
             <ChevronRight className="size-4 rtl:rotate-180" />
@@ -76,11 +76,14 @@ export function PartnersSlider({ ar }: { ar: boolean }) {
           return (
             <div
               key={audience.en}
-              className="group relative overflow-hidden rounded-3xl border border-white/25 bg-background/80 p-6 sm:p-7 shadow-lg backdrop-blur-xl transition-all duration-500 hover:shadow-2xl hover:border-brand-orange/50 hover:scale-[1.02] flex flex-col justify-between"
+              className="group relative overflow-hidden rounded-3xl border border-white/25 bg-background/80 p-6 sm:p-7 shadow-lg backdrop-blur-xl transition-all duration-500 hover:shadow-2xl hover:border-brand-green/50 hover:scale-[1.02] flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between gap-3 mb-4">
-                  <span className="rounded-full bg-brand-orange/10 border border-brand-orange/30 px-3 py-1 font-mono text-[10px] font-bold text-brand-orange uppercase tracking-wider">
+                  <span className={cn(
+                    "rounded-full bg-brand-green/10 border border-brand-green/30 px-3 py-1 text-[10px] font-bold text-brand-green-text uppercase tracking-wider",
+                    ar ? "font-head" : "font-mono"
+                  )}>
                     {ar ? audience.sectorAr : audience.sectorEn}
                   </span>
                   <span className="font-mono text-xs text-muted-foreground/60">
@@ -88,7 +91,7 @@ export function PartnersSlider({ ar }: { ar: boolean }) {
                   </span>
                 </div>
 
-                <h3 className="font-head text-lg sm:text-xl font-extrabold text-foreground leading-snug group-hover:text-brand-orange transition-colors">
+                <h3 className="font-head text-lg sm:text-xl font-extrabold text-foreground leading-snug group-hover:text-brand-green transition-colors">
                   {ar ? audience.ar : audience.en}
                 </h3>
               </div>
@@ -97,7 +100,7 @@ export function PartnersSlider({ ar }: { ar: boolean }) {
                 <span className="text-xs font-semibold text-muted-foreground">
                   {ar ? "شراكة استراتيجية وتجارية" : "Strategic Partnership"}
                 </span>
-                <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
+                <span className="size-2 rounded-full bg-brand-green animate-pulse" />
               </div>
             </div>
           );

@@ -3,6 +3,6 @@
     "age": "Age group", "allAges": "All ages", "audience": "Boys / Girls", "allAudiences": "Boys & Girls", "boys": "Boys", "girls": "Girls", "reset": "Reset filters", "sample": "Sample image", "empty": "Photos coming soon", "emptyBody": "Photos for this selection have not been added yet", "photos": "photos", "years": "years"
   },
   "AR": {
-    "age": "الفئة العمرية", "allAges": "كل الأعمار", "audience": "أولاد / بنات", "allAudiences": "أولاد وبنات", "boys": "أولاد", "girls": "بنات", "reset": "إعادة ضبط الفلاتر", "sample": "صورة تجريبية", "empty": "الصور قريباً", "emptyBody": "لم تتم إضافة صور لهذا الاختيار بعد", "photos": "صور", "years": "سنوات"
+    "age": "الفئة العمرية", "allAges": "كل الأعمار", "audience": "أولاد / بنات", "allAudiences": "أولاد وبنات", "boys": "أولاد", "girls": "بنات", "reset": "إعادة ضبط الفلاتر", "sample": "صورة تجريبية", "empty": "الصور قريبًا", "emptyBody": "لم تتم إضافة صور لهذا الاختيار بعد", "photos": "صور", "years": "سنوات"
   }
 }

@@ -31,23 +31,10 @@ export function JoinShowcase() {
       {/* Single Dedicated Group Join Card */}
       <div className="mt-10">
         <div
-          className="group relative flex flex-col md:flex-row items-center justify-between gap-8 overflow-hidden rounded-3xl border border-white/25 bg-background/80 p-8 sm:p-12 shadow-lg backdrop-blur-xl transition-all duration-300 hover:shadow-2xl hover:border-brand-orange/50 hover:scale-[1.01]"
+          className="group relative flex flex-col md:flex-row items-center justify-between gap-8 overflow-hidden rounded-3xl border border-white/25 bg-background/80 p-8 sm:p-12 shadow-lg backdrop-blur-xl transition-all duration-300 hover:shadow-2xl hover:border-brand-green/40 hover:scale-[1.01]"
         >
           <div className="max-w-2xl">
-            <div className="flex items-center gap-3">
-              <div className="flex size-12 items-center justify-center rounded-2xl bg-secondary/80 shadow-xs backdrop-blur-md text-brand-orange">
-                <Users className="size-6" />
-              </div>
-              <span className="rounded-full border border-border bg-secondary/60 px-3.5 py-1 text-xs font-bold text-brand-orange">
-                {ar ? track.titleAr : track.titleEn}
-              </span>
-            </div>
-
-            <h3 className="mt-5 font-head text-2xl sm:text-3xl font-extrabold text-foreground leading-snug group-hover:text-brand-orange transition-colors">
-              &ldquo;{ar ? track.headlineAr : track.headlineEn}&rdquo;
-            </h3>
-
-            <p className="mt-3 text-sm sm:text-base leading-7 text-muted-foreground">
+            <p className="text-sm sm:text-base leading-7 text-muted-foreground">
               {ar ? track.descriptionAr : track.descriptionEn}
             </p>
 

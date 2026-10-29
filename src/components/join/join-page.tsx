@@ -41,9 +41,11 @@ export function JoinPage({ trackId }: JoinPageProps) {
               </div>
             )}
 
-            <h1 className="mt-2 max-w-4xl font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-tight text-white drop-shadow-md">
-              {ar ? track.headlineAr : track.headlineEn}
-            </h1>
+            {((ar && track.headlineAr) || (!ar && track.headlineEn)) ? (
+              <h1 className="mt-2 max-w-4xl font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-tight text-white drop-shadow-md">
+                {ar ? track.headlineAr : track.headlineEn}
+              </h1>
+            ) : null}
 
             <p className="mt-4 max-w-3xl font-head text-sm sm:text-base font-medium leading-relaxed text-footer-foreground/90">
               {ar ? track.descriptionAr : track.descriptionEn}
@@ -140,14 +142,14 @@ export function JoinPage({ trackId }: JoinPageProps) {
               <div className="max-w-2xl">
                 <span className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground">
                   <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-                  <span>{ar ? "نموذج التقديم الموحد" : "Official Application Form"}</span>
+                  <span>{ar ? "نموذج التقديم" : "Official Application Form"}</span>
                 </span>
                 <h2 className="mt-3 font-head text-2xl sm:text-3xl font-extrabold text-foreground">
                   {ar ? "سجل اهتمامك وشاركنا رؤيتك" : "Submit Your Application or Proposal"}
                 </h2>
                 <p className="mt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed">
                   {ar
-                    ? "يرجى تعبئة الحقول المطلوبة بدقة وتحديد صفة التقديم (فرد أو مؤسسة) لتحويل طلبك فوراً إلى القسم المعني."
+                    ? "يرجى تعبئة الحقول المطلوبة بدقة وتحديد صفة التقديم (فرد أو مؤسسة) لتحويل طلبك فورًا إلى القسم المعني."
                     : "Please fill out the form fields accurately and select your applicant type (individual or organization) to route your submission to the designated team."}
                 </p>
               </div>

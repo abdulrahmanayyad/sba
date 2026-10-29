@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Building, Calendar, CheckCircle2, ChevronRight, FileText, HardHat, Layers, MapPin, MessageCircle, Phone, Search, ShieldCheck, Sparkles, Trophy, Users, ZoomIn } from "lucide-react";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 import { Reveal } from "@/components/home/reveal";
 import { Button } from "@/components/ui/button";
@@ -9,6 +9,7 @@ import { useLanguage } from "@/i18n/language-context";
 import { WHATSAPP_URL } from "@/lib/process-steps";
 import { cn } from "@/lib/utils";
 import { highlightBrand } from "@/components/site/brand-text";
+import { SectorContactSection } from "@/components/site/sector-contact-section";
 import {
   constructionAboutData,
   constructionHeroData,
@@ -80,7 +81,14 @@ export function ConstructionSectorView({ tab = "about" }: ConstructionViewProps)
           <div className="absolute inset-0 bg-gradient-to-t from-footer via-footer/80 to-footer/65" />
           <div className="site-container relative w-full py-20 sm:py-28 z-10">
             <Reveal>
-              <h1 className="mt-4 max-w-4xl font-head text-[clamp(1.85rem,3.5vw,3rem)] font-extrabold leading-tight text-white drop-shadow-md">
+              <div className="flex flex-wrap items-center gap-2 text-xs font-medium mb-4">
+                <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/40 px-3.5 py-1 text-xs font-bold tracking-wide text-white backdrop-blur-md">
+                  <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+                  <span>{ar ? "مجموعة سامي بن عياد · قطاع المقاولات والتطوير العقاري" : "SAMI BIN AYYAD · Contracting & Real Estate Development"}</span>
+                </span>
+              </div>
+
+              <h1 className="mt-2 max-w-4xl font-head text-[clamp(1.85rem,3.5vw,3rem)] font-extrabold leading-tight text-white drop-shadow-md">
                 {ar ? constructionHeroData.titleAr : constructionHeroData.title}
               </h1>
 
@@ -225,6 +233,9 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
           </div>
         </div>
       </section>
+
+      {/* Contact Section */}
+      <SectorContactSection ar={ar} />
     </div>
   );
 }
@@ -324,7 +335,7 @@ function ConstructionServicesView({ ar }: { ar: boolean }) {
         <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
           <Reveal>
             <div className="max-w-3xl">
-              <SectionBadge title={ar ? "خدماتنا وتخصصاتنا" : "Our Services"} />
+              <SectionBadge title={ar ? "خدماتنا" : "Our Services"} />
               <h2 className="section-title mt-3">{ar ? data.titleAr : data.title}</h2>
               <p className="section-intro mt-4">{ar ? data.subtitleAr : data.subtitle}</p>
             </div>
@@ -387,7 +398,7 @@ function ConstructionProjectsView({ ar }: { ar: boolean }) {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [activeProject, setActiveProject] = useState<ContractingProject | null>(null);
-  const [visibleCount, setVisibleCount] = useState<number>(5);
+  const [visibleCount, setVisibleCount] = useState<number>(6);
 
   const years = ["all", "2023", "2021", "2020", "2019", "2018", "2016", "2015", "2014", "2013"];
 
@@ -399,7 +410,16 @@ function ConstructionProjectsView({ ar }: { ar: boolean }) {
     { id: "commercial", titleEn: "Commercial & Administrative", titleAr: "المراكز التجارية والإدارية" },
   ];
 
-  const filteredProjects = contractingProjectsList.filter((proj) => {
+  const parseContractValue = (val: string) => {
+    const num = parseInt(val.replace(/[^0-9]/g, ""), 10);
+    return isNaN(num) ? 0 : num;
+  };
+
+  const sortedProjects = useMemo(() => {
+    return [...contractingProjectsList].sort((a, b) => parseContractValue(b.valueEn) - parseContractValue(a.valueEn));
+  }, []);
+
+  const filteredProjects = sortedProjects.filter((proj) => {
     if (selectedYear !== "all" && proj.year !== selectedYear) return false;
     if (selectedCategory !== "all" && proj.category !== selectedCategory) return false;
     if (searchQuery.trim()) {
@@ -417,64 +437,14 @@ function ConstructionProjectsView({ ar }: { ar: boolean }) {
 
   return (
     <div className="w-full space-y-12">
-      {/* Projects Overview — Styled identically to Sectors Overview on Home */}
-      <section className="site-container">
-        <article className="grid items-center gap-6 md:grid-cols-2 md:gap-10 lg:gap-14 rounded-3xl border border-white/20 bg-background/80 p-6 sm:p-10 shadow-lg backdrop-blur-2xl transition-all duration-300 hover:shadow-2xl hover:border-brand-orange/40">
-          <Reveal className="overflow-hidden rounded-2xl shadow-sm">
-            <img
-              src={constructionHeroData.image}
-              alt={ar ? "نظرة عامة على المشروعات" : "Projects Overview"}
-              loading="lazy"
-              width={944}
-              height={704}
-              className="aspect-[4/3] w-full object-cover transition-transform duration-700 hover:scale-105 motion-reduce:transition-none"
-            />
-          </Reveal>
-          <Reveal delay={0.08}>
-            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
-              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-              <span>{ar ? "نظرة عامة على المشروعات" : "Projects Overview"}</span>
-            </div>
-            <h3 className="mt-2 font-head text-2xl font-bold leading-snug md:text-3xl text-foreground">
-              {ar ? "سجل إنجازاتنا بالأرقام والمشروعات المنفذة" : "Our Track Record in Numbers & Executed Projects"}
-            </h3>
-            <p className={cn("mt-2 text-xs font-semibold text-muted-foreground", ar ? "font-sans tracking-normal text-sm" : "uppercase tracking-[0.14em] text-[11px]")}>
-              {ar ? "مؤشرات وأرقام موثقة (2013 - 2024)" : "Documented Track Record (2013 - 2024)"}
-            </p>
-            <p className="mt-4 max-w-xl text-sm leading-7 text-muted-foreground sm:text-base">
-              {ar
-                ? "يعكس سجل المشروعات الموثق لشركة مجموعة سامي بن عياد للمقاولات والتطوير العقاري خبرة ممتدة عبر عدة قطاعات استراتيجية تشمل المنشآت الطبية، شبكات الغاز والبترول، المجمعات السكنية، والمراكز الإدارية بقيمة تعاقدية إجمالية تتجاوز 540 مليون جنيه."
-                : "Our documented portfolio reflects over a decade of delivery across strategic sectors including healthcare facilities, energy pipelines, residential communities, and commercial complexes totaling over 540M EGP."}
-            </p>
-            <p className={cn("mt-6 font-bold text-brand-green", ar ? "font-sans tracking-normal text-xs" : "text-[10px] uppercase tracking-[0.18em]")}>
-              {ar ? "أبرز أرقام سجل الأعمال" : "Key Documented Figures"}
-            </p>
-            <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-4">
-              {data.stats.map((stat, idx) => (
-                <div key={idx} className="border-t border-border pt-3">
-                  <p className={cn(
-                    "font-head text-xl sm:text-2xl font-bold text-brand-orange drop-shadow-sm tracking-tight",
-                    ar ? "text-right" : "text-left"
-                  )}>
-                    {stat.value}
-                  </p>
-                  <p className="mt-1 text-xs leading-5 text-muted-foreground font-semibold">{ar ? stat.labelAr : stat.labelEn}</p>
-                </div>
-              ))}
-            </div>
-          </Reveal>
-        </article>
-      </section>
-
       {/* Projects Showcase */}
       <section className="site-container">
         <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
           <Reveal>
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
               <div className="max-w-2xl">
-                <SectionBadge title={ar ? "سجل الأعمال الموثق (57 مشروعًا)" : "Project Portfolio (57 Projects)"} />
+                <SectionBadge title={ar ? "سجل الأعمال الموثق" : "Project Portfolio"} />
                 <h2 className="section-title mt-3">{ar ? data.titleAr : data.title}</h2>
-                <p className="section-intro mt-4">{ar ? data.subtitleAr : data.subtitle}</p>
               </div>
 
               {/* Search input */}
@@ -628,9 +598,8 @@ function ConstructionProjectsView({ ar }: { ar: boolean }) {
             <div className="mt-10 flex justify-center">
               <Button
                 size="lg"
-                variant="outline"
                 onClick={() => setVisibleCount((prev) => prev + 6)}
-                className="rounded-full border-brand-orange/50 px-8 py-3 font-head font-bold text-foreground hover:bg-brand-orange hover:text-white transition-all shadow-sm"
+                className="rounded-full bg-brand-green hover:bg-brand-orange text-white px-8 py-3 font-head font-bold shadow-md transition-all duration-300"
               >
                 {ar
                   ? `رؤية المزيد من المشروعات (${filteredProjects.length - visibleCount} متبقية)`

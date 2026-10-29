@@ -1,4 +1,4 @@
-﻿/** Single source for the homepage business dashboard. Figures are reported company figures — never sum or annualise them. */
+/** Single source for the homepage business dashboard. Figures are reported company figures — never sum or annualise them. */
 export type SectorId = "construction" | "environmental" | "garment" | "food";
 export type SectorFilter = "all" | SectorId;
 type T = { en: string; ar: string };
@@ -7,7 +7,7 @@ export const dashboardSectors: { id: SectorId; name: T; short: T }[] = [
   { id: "construction", name: { en: "Contracting & Real Estate Development", ar: "المقاولات والتطوير العقاري" }, short: { en: "Contracting", ar: "المقاولات" } },
   { id: "environmental", name: { en: "Environmental Solutions & Sustainability", ar: "الحلول البيئية والاستدامة" }, short: { en: "Environment", ar: "البيئة" } },
   { id: "garment", name: { en: "Textile & Garment Manufacturing", ar: "صناعة النسيج والملابس" }, short: { en: "Garment Manufacturing", ar: "تصنيع الملابس" } },
-  { id: "food", name: { en: "Natural Products & Food Trading", ar: "المنتجات الطبيعية وتجارة الأغذية" }, short: { en: "Food Products", ar: "المنتجات الغذائية" } },
+  { id: "food", name: { en: "Natural Products", ar: "المنتجات الطبيعية" }, short: { en: "Natural Products", ar: "المنتجات الطبيعية" } },
 ];
 
 /** Reported business volume over a stated period (USD). Food is intentionally absent until verified. */

@@ -396,8 +396,8 @@ export const constructionProjectsData = {
   subtitleAr: "يعكس سجل المشروعات الموثق لشركة مجموعة سامي بن عياد للمقاولات والتطوير العقاري خبرة ممتدة عبر عدة سنوات وقطاعات، مع تنوع في طبيعة الأعمال وقيمها التعاقدية من عام 2013 إلى 2024.",
   stats: [
     { value: "+57", labelEn: "Documented Projects", labelAr: "مشروعًا موثقًا بسجل الأعمال" },
-    { value: "+540M", labelEn: "EGP Recorded Volume", labelAr: "جنيه مصري إجمالي حجم الأعمال المسجل (2013-2024)" },
-    { value: "137M", labelEn: "EGP Peak Project Value", labelAr: "جنيه مصري قيمة أكبر مشروع منفذ" },
+    { value: "+540M", labelEn: "EGP Recorded Volume", labelAr: "جنيه إجمالي حجم الأعمال" },
+    { value: "137M", labelEn: "EGP Peak Project Value", labelAr: "جنيه قيمة أكبر مشروع" },
     { value: "2013–2024", labelEn: "Years of Delivery", labelAr: "سنوات من التنفيذ والخبرة الميدانية" },
   ],
   categories: [
