@@ -11,14 +11,6 @@ import { AnimatedStatistic } from "@/components/site/animated-statistic";
 import { sectorOrder, sectorFullMenu, sectors, type SectorPageData, type SectorSlug } from "./sector-data";
 import { sectionId } from "./sector-navigation";
 
-import heroSustainable from "@/assets/hero-sustainable.png";
-import enviroImg from "@/assets/sector-enviro.jpg";
-import foodImg from "@/assets/sector-food.jpg";
-import researchImg from "@/assets/sector-research.jpg";
-import educationImg from "@/assets/sector-education.jpg";
-import constructionImg from "@/assets/sector-construction.jpg";
-import apparelImg from "@/assets/sector-apparel.jpg";
-
 function SectionBadge({ title }: { title: string }) {
   return (
     <span className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
@@ -30,12 +22,42 @@ function SectionBadge({ title }: { title: string }) {
 
 // Visual placeholders mapping for internal section richness
 const sectorImagesPool: Record<SectorSlug, string[]> = {
-  environmental: [enviroImg, heroSustainable, constructionImg, apparelImg],
-  food: [foodImg, heroSustainable, foodImg, enviroImg],
-  research: [researchImg, educationImg, researchImg, heroSustainable],
-  education: [educationImg, researchImg, educationImg, heroSustainable],
-  construction: [constructionImg, heroSustainable, constructionImg, enviroImg],
-  garment: [apparelImg, heroSustainable, apparelImg, constructionImg],
+  environmental: [
+    "/BG/andreas-gucklhorn-Ilpf2eUPpUE-unsplash.jpg",
+    "/BG/philipp-HGBCAbRBIME-unsplash.jpg",
+    "/BG/steve-marquez-zi7gDhirekg-unsplash.jpg",
+    "/BG/chelsea-WvusC5M-TM8-unsplash.jpg",
+  ],
+  food: [
+    "/BG/jennifer-delmarre-IqmuHJF5khU-unsplash.jpg",
+    "/BG/sergi-dolcet-escrig-o1vnK75SOgk-unsplash.jpg",
+    "/BG/paula-prekopova-Mt9DbRm2KmA-unsplash.jpg",
+    "/BG/gabor-molnar-Y7ufx8R8PM0-unsplash.jpg",
+  ],
+  research: [
+    "/BG/riccardo-annandale-7e2pe9wjL9M-unsplash.jpg",
+    "/BG/google-deepmind-s2TPKAD6fag-unsplash.jpg",
+    "/BG/sebastian-dario-A3BVd3_mOCo-unsplash.jpg",
+    "/BG/sasun-bughdaryan-SFNUwmLEOis-unsplash.jpg",
+  ],
+  education: [
+    "/BG/danist-soh-n-3Pn7Ybe-s-unsplash.jpg",
+    "/BG/gabor-molnar-Y7ufx8R8PM0-unsplash.jpg",
+    "/BG/riccardo-annandale-7e2pe9wjL9M-unsplash.jpg",
+    "/BG/google-deepmind-s2TPKAD6fag-unsplash.jpg",
+  ],
+  construction: [
+    "/BG/andrew-whitmore-iVqkxn2PiU0-unsplash.jpg",
+    "/BG/kevin-matos-Nl_FMFpXo2g-unsplash.jpg",
+    "/BG/matthew-henry-VviFtDJakYk-unsplash.jpg",
+    "/BG/samson-ZGjbiukp_-A-unsplash.jpg",
+  ],
+  garment: [
+    "/BG/arawark-chen-b6WsvhfM-kU-unsplash.jpg",
+    "/BG/arawark-chen-HIrP05jnXNs-unsplash.jpg",
+    "/BG/pj-wallace-KAMaLRggG9g-unsplash.jpg",
+    "/BG/vitaly-gariev-1lg6Gn0-o54-unsplash.jpg",
+  ],
 };
 
 // Key sector stats matching Home page numbers system

@@ -1,4 +1,4 @@
-import construction from "@/assets/sector-construction.jpg";
+const construction = "/BG/andrew-whitmore-iVqkxn2PiU0-unsplash.jpg";
 
 export const constructionHeroData = {
   image: construction,

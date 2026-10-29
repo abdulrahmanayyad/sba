@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Mail, MessageCircle } from "lucide-react";
 
-import heroBg from "@/assets/home-hero-st.jpg";
+const heroBg = "/BG/danist-soh-dqXiw7nCb9Q-unsplash.jpg";
 import { Button } from "@/components/ui/button";
 import { HomeMotion, HomeReveal as Reveal } from "@/components/home/home-motion";
 import { useLanguage } from "@/i18n/language-context";

@@ -1,9 +1,9 @@
-import apparel from "@/assets/sector-apparel.jpg";
-import construction from "@/assets/sector-construction.jpg";
-import enviro from "@/assets/sector-enviro.jpg";
-import food from "@/assets/sector-food.jpg";
-import research from "@/assets/sector-research.jpg";
-import education from "@/assets/sector-education.jpg";
+const apparel = "/BG/arawark-chen-b6WsvhfM-kU-unsplash.jpg";
+const construction = "/BG/andrew-whitmore-iVqkxn2PiU0-unsplash.jpg";
+const enviro = "/BG/andreas-gucklhorn-Ilpf2eUPpUE-unsplash.jpg";
+const food = "/BG/jennifer-delmarre-IqmuHJF5khU-unsplash.jpg";
+const research = "/BG/riccardo-annandale-7e2pe9wjL9M-unsplash.jpg";
+const education = "/BG/danist-soh-n-3Pn7Ybe-s-unsplash.jpg";
 import jzraLogo from "@/assets/JZRA_Logo.svg.asset.json";
 
 export type SectorSlug = "garment" | "construction" | "environmental" | "research" | "education" | "food";

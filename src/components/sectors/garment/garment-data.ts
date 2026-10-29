@@ -1,4 +1,4 @@
-import apparelImg from "@/assets/sector-apparel.jpg";
+const apparelImg = "/BG/arawark-chen-b6WsvhfM-kU-unsplash.jpg";
 
 export const garmentHeroData = {
   image: apparelImg,

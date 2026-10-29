@@ -1,7 +1,7 @@
-import groupHero from "@/assets/group-hero.jpg";
-import constructionImg from "@/assets/sector-construction.jpg";
-import sustainableImg from "@/assets/hero-sustainable.png";
-import garmentImg from "@/assets/sector-apparel.jpg";
+const groupHero = "/BG/beatriz-cattel-C55M3wxaoB0-unsplash.jpg";
+const constructionImg = "/BG/kevin-matos-Nl_FMFpXo2g-unsplash.jpg";
+const sustainableImg = "/BG/philipp-HGBCAbRBIME-unsplash.jpg";
+const garmentImg = "/BG/arawark-chen-HIrP05jnXNs-unsplash.jpg";
 
 export type JoinTrackId = "group" | "construction" | "sustainability" | "garment";
 

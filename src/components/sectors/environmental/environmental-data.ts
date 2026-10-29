@@ -1,5 +1,5 @@
-import heroSustainable from "@/assets/hero-sustainable.png";
-import enviroImg from "@/assets/sector-enviro.jpg";
+const heroSustainable = "/BG/andreas-gucklhorn-Ilpf2eUPpUE-unsplash.jpg";
+const enviroImg = "/BG/chelsea-WvusC5M-TM8-unsplash.jpg";
 
 export const environmentalHeroData = {
   image: heroSustainable,
