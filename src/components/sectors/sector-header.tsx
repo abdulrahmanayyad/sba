@@ -160,8 +160,10 @@ export function SectorHeader({
                 </Link>
 
                 <Link
-                  to="/join/construction"
-                  className={navPill}
+                  to="/sectors/$sector"
+                  params={{ sector: "construction" }}
+                  search={{ tab: "join" }}
+                  className={cn(navPill, activeTab === "join" && "!text-brand-green bg-white/40 shadow-sm")}
                 >
                   {ar ? "انضم إلينا" : "Join Us"}
                 </Link>
@@ -272,8 +274,10 @@ export function SectorHeader({
                 </Link>
 
                 <Link
-                  to="/join/sustainability"
-                  className={navPill}
+                  to="/sectors/$sector"
+                  params={{ sector: "environmental" }}
+                  search={{ tab: "join" }}
+                  className={cn(navPill, activeTab === "join" && "!text-brand-green bg-white/40 shadow-sm")}
                 >
                   {ar ? "انضم إلينا" : "Join Us"}
                 </Link>
@@ -508,9 +512,11 @@ export function SectorHeader({
                       {ar ? "مشاريعنا" : "Our Projects"}
                     </Link>
                     <Link
-                      to="/join/construction"
+                      to="/sectors/$sector"
+                      params={{ sector: "construction" }}
+                      search={{ tab: "join" }}
                       onClick={() => setMenuOpen(false)}
-                      className={mobileLinkStyle}
+                      className={cn(mobileLinkStyle, activeTab === "join" && "!text-brand-green bg-white/40")}
                     >
                       {ar ? "انضم إلينا" : "Join Us"}
                     </Link>
@@ -620,9 +626,11 @@ export function SectorHeader({
                       {ar ? "منتجاتنا" : "Our Products"}
                     </Link>
                     <Link
-                      to="/join/sustainability"
+                      to="/sectors/$sector"
+                      params={{ sector: "environmental" }}
+                      search={{ tab: "join" }}
                       onClick={() => setMenuOpen(false)}
-                      className={mobileLinkStyle}
+                      className={cn(mobileLinkStyle, activeTab === "join" && "!text-brand-green bg-white/40")}
                     >
                       {ar ? "انضم إلينا" : "Join Us"}
                     </Link>

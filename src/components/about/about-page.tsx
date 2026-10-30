@@ -6,7 +6,6 @@ import {
   BadgeCheck,
   Building2,
   CheckCircle2,
-  ChevronDown,
   Compass,
   FileCheck2,
   Handshake,
@@ -293,8 +292,7 @@ export function AboutPage() {
             </p>
           </Reveal>
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-
+          <div className="mt-12 space-y-6 max-w-5xl mx-auto">
             {founders.map((founder, index) => (
               <Reveal key={founder.role} delay={index * 0.08}>
                 <LeaderCard founder={founder} ar={ar} />
@@ -388,16 +386,13 @@ function LeaderCard({
   founder: (typeof founders)[number];
   ar: boolean;
 }) {
-  const [expanded, setExpanded] = useState(false);
   const bio = ar ? founder.bioAr : founder.bio;
-  const isLong = bio.length > 100;
-  const shortBio = isLong ? bio.slice(0, 100) + "..." : bio;
 
   return (
-    <div className="glass-card group flex h-full flex-col justify-between rounded-3xl border border-white/20 bg-background/80 p-6 md:p-7 shadow-lg backdrop-blur-xl transition-all duration-300 hover:shadow-xl hover:border-brand-green/40">
-      <div>
-        {/* Photo — uniform square, full-width, centered crop */}
-        <div className="relative w-full aspect-[3/4] overflow-hidden rounded-2xl border border-brand-green/20 bg-gradient-to-br from-brand-green/10 via-background to-brand-orange/10 shadow-inner mb-5">
+    <div className="glass-card group rounded-3xl border border-white/30 bg-background/85 p-6 sm:p-8 shadow-md backdrop-blur-xl transition-all duration-300 hover:shadow-xl hover:border-brand-green/40">
+      <div className="grid gap-6 sm:grid-cols-[180px_1fr] md:grid-cols-[220px_1fr] lg:grid-cols-[240px_1fr] items-start">
+        {/* Photo container */}
+        <div className="relative aspect-[3/4] w-full max-w-[240px] mx-auto sm:mx-0 overflow-hidden rounded-2xl border border-brand-green/20 bg-gradient-to-br from-brand-green/10 via-background to-brand-orange/10 shadow-sm">
           {"image" in founder && founder.image ? (
             <img
               src={founder.image as string}
@@ -412,34 +407,27 @@ function LeaderCard({
           )}
         </div>
 
-        {/* Leader Info */}
-        <div className="text-center mb-4">
-          <span className={cn(
-            "font-bold text-brand-orange block",
-            ar ? "font-sans text-xs md:text-sm font-black tracking-normal" : "font-mono text-[11px] uppercase tracking-wider"
-          )}>
-            {ar ? founder.roleAr : founder.role}
-          </span>
-          <h3 className="mt-1 font-head text-lg md:text-xl font-bold text-foreground leading-snug">
-            {ar ? founder.nameAr : founder.name}
-          </h3>
-        </div>
-
-        {/* Bio area with See More toggle */}
-        <div className="border-t border-border/50 pt-3">
-          <p className="text-sm leading-relaxed text-muted-foreground transition-all duration-300">
-            {expanded ? bio : shortBio}
-          </p>
-          {isLong && (
-            <button
-              type="button"
-              onClick={() => setExpanded(!expanded)}
-              className="mt-3 text-xs font-semibold text-brand-orange hover:text-brand-orange/80 inline-flex items-center gap-1 focus-visible:outline-none transition-colors"
+        {/* Info & Detailed Bio */}
+        <div className="flex flex-col justify-start">
+          <div className="mb-3">
+            <span
+              className={cn(
+                "inline-block rounded-full bg-secondary/80 px-3.5 py-1 text-xs font-bold text-brand-orange border border-border backdrop-blur-md mb-2",
+                ar ? "font-sans font-bold" : "font-mono uppercase tracking-wider text-[11px]"
+              )}
             >
-              <span>{expanded ? (ar ? "عرض أقل" : "See Less") : (ar ? "اقرأ المزيد" : "See More")}</span>
-              <ChevronDown className={cn("size-3.5 transition-transform duration-200", expanded && "rotate-180")} />
-            </button>
-          )}
+              {ar ? founder.roleAr : founder.role}
+            </span>
+            <h3 className="font-head text-xl sm:text-2xl font-bold text-foreground">
+              {ar ? founder.nameAr : founder.name}
+            </h3>
+          </div>
+
+          <div className="border-t border-border/50 pt-4">
+            <p className="whitespace-pre-line text-sm sm:text-base leading-relaxed text-muted-foreground/95">
+              {bio}
+            </p>
+          </div>
         </div>
       </div>
     </div>

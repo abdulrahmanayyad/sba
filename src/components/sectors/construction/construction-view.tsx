@@ -272,7 +272,7 @@ function ConstructionSectorsView({ ar }: { ar: boolean }) {
 
           <div className="mt-12 space-y-12">
             {data.sectors.map((sector, index) => {
-              const cardImg = sectorImages[index % sectorImages.length];
+              const cardImg = ("image" in sector && sector.image) ? (sector.image as string) : sectorImages[index % sectorImages.length];
               return (
                 <Reveal key={sector.id} delay={index * 0.05}>
                   <div className="glass-card overflow-hidden rounded-3xl border border-border p-6 sm:p-10">
@@ -350,8 +350,7 @@ function ConstructionServicesView({ ar }: { ar: boolean }) {
 
           <div className="mt-12 grid gap-8">
             {data.services.map((service, idx) => {
-              const serviceImgs = [constructionHeroData.image, heroSustainable];
-              const cardImg = serviceImgs[idx % serviceImgs.length];
+              const cardImg = ("image" in service && service.image) ? (service.image as string) : constructionHeroData.image;
               return (
                 <Reveal key={service.id} delay={idx * 0.05}>
                   <div className="group flex h-full flex-col overflow-hidden rounded-3xl border border-white/20 bg-background/60 backdrop-blur-xl shadow-sm transition hover:border-brand-green/60 hover:shadow-xl">

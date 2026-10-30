@@ -6,9 +6,9 @@ import { ConstructionSectorView, type ConstructionTab } from "@/components/secto
 import { GarmentSectorView, type GarmentTab } from "@/components/sectors/garment/garment-view";
 import { EnvironmentalSectorView, type EnvironmentalTab } from "@/components/sectors/environmental/environmental-view";
 
-const validConstructionTabs: ConstructionTab[] = ["about", "sectors", "services", "projects"];
-const validGarmentTabs: GarmentTab[] = ["about", "services", "clients", "projects", "partners", "capabilities", "join"];
-const validEnvironmentalTabs: EnvironmentalTab[] = ["about", "sectors", "services"];
+const validConstructionTabs: ConstructionTab[] = ["about", "sectors", "services", "projects", "join", "start-project"];
+const validGarmentTabs: GarmentTab[] = ["about", "services", "clients", "projects", "partners", "capabilities", "join", "start-project"];
+const validEnvironmentalTabs: EnvironmentalTab[] = ["about", "sectors", "services", "products", "join", "start-consultation"];
 
 export const Route = createFileRoute("/sectors/$sector")({
   validateSearch: (search: Record<string, unknown>): { tab?: string | undefined } => {

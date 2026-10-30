@@ -11,8 +11,7 @@ import { WHATSAPP_URL } from "@/lib/process-steps";
 import { JourneySection } from "./journey-section";
 import { BusinessDashboard } from "./business-dashboard";
 import { AnimatedStatistic } from "@/components/site/animated-statistic";
-import { aboutTabs, divisions, sectorOverviews, whoWeServe } from "./group-data";
-import { FactorySlider } from "./factory-slider";
+import { aboutTabs, divisions, sectorOverviews, strategicPartners, whoWeServe } from "./group-data";
 import { SectorsShowcase } from "./sectors-showcase";
 import { JoinShowcase } from "./join-showcase";
 import { PartnersSlider } from "./partners-slider";
@@ -142,8 +141,25 @@ export function GroupPage() {
                   <p className={cn("mt-2 text-xs font-semibold text-muted-foreground", ar ? "font-sans tracking-normal text-sm" : "font-mono uppercase tracking-[0.14em] text-[11px]")}>{ar ? sector.subtitleAr : sector.subtitle}</p>
                   <p className="mt-4 max-w-xl text-sm leading-7 text-muted-foreground sm:text-base">{ar ? sector.descriptionAr : sector.description}</p>
                   <p className={cn("mt-6 font-bold text-brand-green", ar ? "font-sans tracking-normal text-xs" : "font-mono text-[10px] uppercase tracking-[0.18em]")}>{ar ? sector.supportingLabelAr : sector.supportingLabel}</p>
+
+                  {/* Internal Subsectors Overview */}
+                  {sector.subsectors && (
+                    <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                      {sector.subsectors.map((sub, sIdx) => (
+                        <div key={sIdx} className="rounded-xl border border-white/20 bg-secondary/50 p-3.5 backdrop-blur-md transition hover:border-brand-green/30">
+                          <p className="font-head text-xs sm:text-sm font-bold text-foreground">
+                            {ar ? sub.titleAr : sub.titleEn}
+                          </p>
+                          <p className="mt-1 text-xs text-muted-foreground leading-relaxed">
+                            {ar ? sub.descAr : sub.descEn}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
                   {sector.figures && (
-                    <div data-stagger className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3">
+                    <div data-stagger className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
                       {sector.figures.map((figure) => {
                         const isProminent = sector.slug === "construction" || sector.slug === "garment";
                         return (
@@ -185,9 +201,6 @@ export function GroupPage() {
         </div>
       </section>
 
-      {/* Factory Overview — Sequential walkthrough from Cutting to Packing */}
-      <FactorySlider ar={ar} />
-
       <BusinessDashboard ar={ar} />
 
       <JourneySection ar={ar} />
@@ -208,6 +221,33 @@ export function GroupPage() {
             )}
           </p>
         </Reveal>
+
+        {/* Strategic International Partnerships (China) */}
+        <div className="mt-8 grid gap-5 sm:grid-cols-2">
+          {strategicPartners.map((partner) => (
+            <Reveal key={partner.id}>
+              <div className="glass-card h-full flex flex-col justify-between rounded-3xl border border-white/30 bg-background/85 p-6 sm:p-7 shadow-md backdrop-blur-xl transition hover:border-brand-green/50 hover:shadow-xl">
+                <div>
+                  <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+                    <span className="inline-flex items-center gap-1.5 rounded-full border border-brand-green/30 bg-brand-green/10 px-3 py-1 text-xs font-bold text-brand-green">
+                      <span>🇨🇳</span>
+                      <span>{ar ? partner.countryAr : partner.country}</span>
+                    </span>
+                    <span className="text-xs font-bold text-brand-orange bg-brand-orange/10 px-3 py-1 rounded-full border border-brand-orange/20">
+                      {ar ? partner.tagAr : partner.tag}
+                    </span>
+                  </div>
+                  <h3 className="font-head text-base sm:text-lg font-bold text-foreground">
+                    {ar ? partner.nameAr : partner.name}
+                  </h3>
+                  <p className="mt-3 text-xs sm:text-sm leading-relaxed text-muted-foreground">
+                    {ar ? partner.descriptionAr : partner.description}
+                  </p>
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
 
         {/* Interactive Partnerships Slider */}
         <PartnersSlider ar={ar} />

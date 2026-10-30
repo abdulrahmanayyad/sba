@@ -177,6 +177,13 @@ export const capabilityStats: Stat[] = [
   { value: "+20,000", label: "Apparel styles developed", labelAr: "موديل ملابس تم تطويره" },
 ];
 
+export interface SubsectorBrief {
+  titleEn: string;
+  titleAr: string;
+  descEn: string;
+  descAr: string;
+}
+
 export interface SectorOverview {
   slug: SectorSlug;
   tab?: string;
@@ -188,6 +195,8 @@ export interface SectorOverview {
   descriptionAr: string;
   supportingLabel: string;
   supportingLabelAr: string;
+  /** Internal subsectors and specialized disciplines */
+  subsectors?: SubsectorBrief[];
   /** Chips for sectors without verified figures. */
   chips?: { en: string; ar: string }[];
   /** Verified figures shown as animated counters. */
@@ -209,8 +218,46 @@ export const sectorOverviews: SectorOverview[] = [
     subtitleAr: "حلول متكاملة لتنفيذ المشروعات وتطوير المباني",
     description: "SAMI BIN AYYAD GROUP delivers comprehensive solutions across general contracting, healthcare facilities, MEP systems, finishing works, and oil & gas specialized civil projects, backed by a documented track record of delivery.",
     descriptionAr: "حلول متكاملة في المقاولات العامة، وتجهيز المنشآت الطبية، والأنظمة الكهروميكانيكية، والتشطيبات، ومشروعات البترول والغاز، مدعومة بسجل مشروعات موثق يمتد لعقود.",
-    supportingLabel: "Key Figures",
-    supportingLabelAr: "أرقام رئيسية",
+    supportingLabel: "Sectors Inside Contracting",
+    supportingLabelAr: "القطاعات المتخصصة داخل قطاع المقاولات",
+    subsectors: [
+      {
+        titleEn: "General Contracting & Civil Works",
+        titleAr: "المقاولات العامة والإنشاءات المدنية",
+        descEn: "Turnkey structural concrete, multi-story buildings, and large-scale public and private infrastructure.",
+        descAr: "تنفيذ شامل للهياكل الخرسانية والأعمال المدنية الكبرى والمشروعات القومية وتسليم المفتاح.",
+      },
+      {
+        titleEn: "Residential & Luxury Villas Development",
+        titleAr: "التطوير العقاري والسكني والفلل الفاخرة",
+        descEn: "High-end private villas, twin houses, compounds, and turnkey coastal resort developments.",
+        descAr: "تطوير الفلل الفاخرة، المجمعات السكنية، والمشروعات الساحلية بأحدث معايير التشطيب والتصميم.",
+      },
+      {
+        titleEn: "Commercial & Administrative Complexes",
+        titleAr: "المولات والمباني التجارية والإدارية",
+        descEn: "Shopping centers, commercial headquarters, and retail facilities engineered for high traffic and life-safety.",
+        descAr: "إنشاء وتشطيب المراكز التجارية والمقرات الإدارية والشركات بأعلى متانة وأنظمة أمان.",
+      },
+      {
+        titleEn: "Healthcare & Specialized Hospital Fit-Out",
+        titleAr: "المنشآت الطبية والمستشفيات التخصصية",
+        descEn: "Operating theatres, imaging/sterilization suites, medical gas networks, and hospital elevators.",
+        descAr: "تجهيز غرف العمليات، الأشعة، وحدات التعقيم، شبكات الغازات الطبية، ومصاعد المستشفيات.",
+      },
+      {
+        titleEn: "Integrated Electromechanical Systems (MEP)",
+        titleAr: "الأنظمة الكهروميكانيكية المتكاملة (MEP)",
+        descEn: "Central HVAC, power distribution, automated fire fighting, low-current networks, and elevators.",
+        descAr: "شبكات القوى والإنارة، التكييف المركزي، مكافحة الحريق، والتيار الخفيف، والمصاعد.",
+      },
+      {
+        titleEn: "Oil & Gas Industrial Civil Works",
+        titleAr: "البنية التحتية لمشروعات البترول والغاز",
+        descEn: "Gas pipeline concrete protection, gas regulator stations, and petrol service stations.",
+        descAr: "أعمال مدنية متخصصة، حماية خطوط الغاز، غرف تخفيض الضغط، ومحطات تموين الوقود والغاز.",
+      },
+    ],
     figures: [
       { value: "+57", label: "Documented projects", labelAr: "مشروعًا موثقًا" },
       { value: "+540", label: "EGP million+ recorded turnover", labelAr: "مليون جنيه حجم أعمال مسجل" },
@@ -228,15 +275,39 @@ export const sectorOverviews: SectorOverview[] = [
     subtitleAr: "حلول بيئية متكاملة تحول التحديات إلى فرص مستدامة",
     description: "Specialized solutions and consulting in environmental impact assessments (EIA/ESIA), waste management and resource recovery, water and wastewater treatment, renewable energy, and HSE compliance.",
     descriptionAr: "حلول واستشارات متخصصة تدعم إدارة الأثر البيئي، وتقييم الأثر البيئي (EIA/ESIA)، وإدارة المخلفات وتحويلها إلى قيمة، ومعالجة المياه، والطاقة المتجددة، والامتثال للسلامة والصحة المهنية.",
-    supportingLabel: "Key Areas of Expertise",
-    supportingLabelAr: "مجالات الخبرة الرئيسية",
-    chips: [
-      { en: "Environmental Studies (EIA/ESIA)", ar: "دراسات الأثر البيئي (EIA/ESIA)" },
-      { en: "Waste Management & Resource Recovery", ar: "إدارة المخلفات واسترداد الموارد" },
-      { en: "Water & Wastewater Treatment", ar: "معالجة المياه والصرف" },
-      { en: "Energy & Carbon Footprint", ar: "الطاقة والبصمة الكربونية" },
-      { en: "HSE & Regulatory Compliance", ar: "السلامة والصحة والامتثال البيئي" },
-      { en: "Digital Environmental Monitoring", ar: "الرصد البيئي الرقمي وإنترنت الأشياء" },
+    supportingLabel: "Sectors Inside Environmental",
+    supportingLabelAr: "القطاعات المتخصصة داخل قطاع البيئة",
+    subsectors: [
+      {
+        titleEn: "EIA / ESIA Studies & Permitting",
+        titleAr: "دراسات تقييم الأثر البيئي والتراخيص",
+        descEn: "Full environmental compliance assessments, licensing approvals, and environmental audits.",
+        descAr: "تقييم بيئي شامل وتراخيص بيئية معتمدة ومراجعة امتثال المنشآت وفق القوانين والتشريعات.",
+      },
+      {
+        titleEn: "Waste Management & Resource Recovery",
+        titleAr: "إدارة المخلفات وتدوير الموارد",
+        descEn: "Waste-to-energy systems, organic compost, biochar, and circular economy integration.",
+        descAr: "تحويل المخلفات إلى طاقة وموارد قيّمة، إنتاج السماد العضوي، الفحم الحيوي، والاقتصاد الدائري.",
+      },
+      {
+        titleEn: "Bioremediation & Odor Treatment",
+        titleAr: "المعالجة البيئية الحيوية وإزالة الروائح",
+        descEn: "ET-POT-01 for oil-based drilling waste and ET-POR-01 for industrial & municipal odor control.",
+        descAr: "منتجات حيوية مبتكرة لمعالجة مخلفات الحفر البترولي (ET-POT-01) وإزالة الروائح (ET-POR-01).",
+      },
+      {
+        titleEn: "Water & Industrial Effluent Treatment",
+        titleAr: "معالجة المياه والصرف الصناعي",
+        descEn: "Custom engineering solutions for industrial wastewater recycling and zero liquid discharge.",
+        descAr: "تصميم وتنفيذ محطات متطورة لمعالجة مياه الصرف الصناعي والصحي وإعادة تدوير الموارد المائية.",
+      },
+      {
+        titleEn: "Digital EHS Platform & IoT Monitoring",
+        titleAr: "المنصة الرقمية للامتثال وإنترنت الأشياء",
+        descEn: "Authorized agent for Techno Set IoT solutions and the proprietary EHS Regulatory compliance app.",
+        descAr: "وكيل معتمد لحلول إنترنت الأشياء Techno Set وتطبيق EHS Regulatory لإدارة السلامة والامتثال.",
+      },
     ],
     cta: "Explore Environmental Solutions",
     ctaAr: "استكشف الحلول البيئية",
@@ -251,8 +322,46 @@ export const sectorOverviews: SectorOverview[] = [
     subtitleAr: "حلول تصنيع متكاملة للعلامات التجارية والأسواق العالمية",
     description: "Specialized manufacturing of women's, children's, and men's apparel, from pattern making and sampling to bulk production, classic shirt lines, Private Label, and FOB export programs.",
     descriptionAr: "تصنيع متكامل للملابس الجاهزة (حريمي، أطفالي، رجالي)، من إعداد الباترونات والعينات والقص والخياطة، إلى خط القمصان الكلاسيك، وبرامج العلامات الخاصة والتصدير بنظام FOB.",
-    supportingLabel: "Key Figures",
-    supportingLabelAr: "أرقام رئيسية",
+    supportingLabel: "Production Divisions Inside Garment",
+    supportingLabelAr: "خطوط الإنتاج والتصنيع داخل قطاع الملابس",
+    subsectors: [
+      {
+        titleEn: "Casual & Contemporary Wear",
+        titleAr: "الملابس الكاجوال واليومية",
+        descEn: "High-volume precision apparel across cotton, blends, and denim for men and women.",
+        descAr: "خطوط إنتاج للملابس الكاجوال النسائية والشبابية بأحدث خطوط الموضة وأقمشة عالية الجودة.",
+      },
+      {
+        titleEn: "Evening Wear & Soirée Collections",
+        titleAr: "فساتين السهرة والسواريه",
+        descEn: "High-end occasionwear with detailed embroidery, delicate stitching, and premium finishes.",
+        descAr: "أزياء راقية وتطريز وتشطيبات دقيقة للمناسبات بمقاييس فاخرة تواكب الأسواق الراقية.",
+      },
+      {
+        titleEn: "Kids & Youth Collections",
+        titleAr: "ملابس الأطفال والمواليد",
+        descEn: "Safe, ultra-soft combed cotton wear designed specifically for comfort and active use.",
+        descAr: "خامات قطنية آمنة وتصاميم عملية مريحة للأطفال من عمر المواليد حتى سن المراهقة.",
+      },
+      {
+        titleEn: "Home Wear & Lingerie",
+        titleAr: "الملابس المنزلية واللانجري",
+        descEn: "Export-grade loungewear, pajama sets, and delicate lingerie crafted from soft fabrics.",
+        descAr: "أقمشة ناعمة ومريحة ومواصفات تصديرية تلبي معايير الجودة والأناقة المنزلية.",
+      },
+      {
+        titleEn: "Dedicated Classic Shirt Lines",
+        titleAr: "خطوط القمصان الكلاسيكية التخصصية",
+        descEn: "Specialized lines producing 30,000 classic formal shirts per month for prominent brands.",
+        descAr: "خط إنتاج متخصص لقمصان الرجال الكلاسيكية بطاقة 30,000 قميص شهرياً بجودة أوروبية.",
+      },
+      {
+        titleEn: "Private Label & FOB Export Programs",
+        titleAr: "تصنيع العلامات الخاصة وبرامج FOB",
+        descEn: "End-to-end manufacturing from patterns, trims, and packaging to international shipping.",
+        descAr: "تصنيع متكامل للعلامات التجارية العالمية من مرحلة الباترون حتى التعبئة والشحن الدولي.",
+      },
+    ],
     figures: [
       { value: "+5,000", label: "Garments per day", labelAr: "قطعة ملابس يوميًا" },
       { value: "+100,000", label: "Garments per month", labelAr: "قطعة ملابس شهريًا" },
@@ -272,8 +381,34 @@ export const sectorOverviews: SectorOverview[] = [
     subtitleAr: "من خيرات الطبيعة إلى الأسواق العالمية",
     description: "Sourcing and marketing a diverse portfolio of natural food products: pure honey and bee products, olives and olive oil, premium dates, herbs, spices, and natural powdered juice products.",
     descriptionAr: "توفير وتسويق مجموعة متنوعة من الأغذية الطبيعية عبر شبكة تجارية مرنة: عسل النحل ومنتجاته، والزيتون وزيت الزيتون، والتمور الفاخرة، والأعشاب والتوابل، ومشروبات العصائر البودر الطبيعية.",
-    supportingLabel: "Product Categories",
-    supportingLabelAr: "فئات المنتجات",
+    supportingLabel: "Product Sectors Inside Natural Products",
+    supportingLabelAr: "الأقسام والمنتجات داخل قطاع المنتجات الطبيعية",
+    subsectors: [
+      {
+        titleEn: "Pure Natural Honey & Bee Products",
+        titleAr: "عسل النحل النقي ومنتجات الخلية",
+        descEn: "Sidr, clover, black seed honey, royal jelly, and propolis verified for purity.",
+        descAr: "عسل السدر، البرسيم، حبة البركة، الغذاء الملكي وحبوب اللقاح المعتمدة مخبريًا.",
+      },
+      {
+        titleEn: "Olives & Extra Virgin Olive Oil",
+        titleAr: "الزيتون وزيت الزيتون البكر الممتاز",
+        descEn: "Cold-pressed extra virgin olive oil, table olives, and premium agricultural crops.",
+        descAr: "زيت زيتون بكر ممتاز معصور على البارد، مخللات ومصنعات الزيتون بمواصفات تصديرية.",
+      },
+      {
+        titleEn: "Premium Dates & Gourmet Products",
+        titleAr: "التمور الفاخرة ومشتقاتها الطبيعية",
+        descEn: "Finest Sukkari, Medjool, Ajwa, date paste, syrup, and artisanal date delicacies.",
+        descAr: "أصناف السكري، المجدول، العجوة، دبس ومربى التمر والمنتجات الغذائية المشتقة.",
+      },
+      {
+        titleEn: "Herbs, Spices & Natural Juice Powders",
+        titleAr: "الأعشاب والتوابل وعصائر البودر الطبيعية",
+        descEn: "Aromatic herbs, culinary spices, and 100% natural powdered beverages.",
+        descAr: "أعشاب عطرية وتوابل منتقاة وعصائر بودر طبيعية خالية تماماً من الملونات الصناعية.",
+      },
+    ],
     chips: [
       { en: "Honey & Bee Products", ar: "عسل النحل ومنتجاته" },
       { en: "Olives, Oils & Date Products", ar: "الزيتون والزيوت ومنتجات التمر" },
@@ -348,6 +483,43 @@ export interface ClientMarket {
   image: string;
 }
 
+export interface StrategicPartner {
+  id: string;
+  name: string;
+  nameAr: string;
+  country: string;
+  countryAr: string;
+  description: string;
+  descriptionAr: string;
+  tag: string;
+  tagAr: string;
+}
+
+export const strategicPartners: StrategicPartner[] = [
+  {
+    id: "dianyingpu",
+    name: "SHENZHEN DIANYINGPU TECHNOLOGY Co., Ltd.",
+    nameAr: "شركة شنتشن ديانينغبو للتكنولوجيا المحدودة (SHENZHEN DIANYINGPU TECHNOLOGY Co., Ltd.)",
+    country: "China",
+    countryAr: "الصين",
+    description: "Strategic industrial and technological cooperation in smart systems, innovative electronic hardware, and international supply chain solutions.",
+    descriptionAr: "شراكة استراتيجية في التكنولوجيا الذكية والابتكار التقني وحلول التصنيع المتقدمة وسلاسل الإمداد والتوريد الدولية.",
+    tag: "Smart Technology & Hardware",
+    tagAr: "التكنولوجيا الذكية والتصنيع المتقدم",
+  },
+  {
+    id: "jumptek",
+    name: "Ningbo JumpTek co.,ltd",
+    nameAr: "شركة نينغبو جامبتيك المحدودة (Ningbo JumpTek co.,ltd)",
+    country: "China",
+    countryAr: "الصين",
+    description: "Strategic partnership in technical equipment, precision hardware manufacturing, and global trade & logistics integration.",
+    descriptionAr: "شراكة استراتيجية متخصصة في المعدات والتقنيات الصناعية المتقدمة والتكامل اللوجستي وسلاسل التوريد العالمية.",
+    tag: "Technical Solutions & Global Supply",
+    tagAr: "الحلول التقنية والتوريد الدولي",
+  },
+];
+
 export const whoWeServe: ClientMarket[] = [
   { en: "Developers & Real Estate Leaders", ar: "المطورون وشركات التطوير العقاري", sectorEn: "Contracting & Construction", sectorAr: "المقاولات والإنشاءات", image: construction },
   { en: "Government & National Infrastructure", ar: "الجهات الحكومية والمشروعات القومية", sectorEn: "General Contracting", sectorAr: "المقاولات العامة والبنية التحتية", image: construction },
@@ -377,13 +549,13 @@ export const founders = [
     bioAr: "قائد تنفيذي ذو خبرة ممتدة، شغل منصب المدير الإقليمي للصحة والسلامة والبيئة لشركة سينوبكس في الشرق الأوسط (2012–2018)، ومدير QHSE لشركة يونايتد أويل في سوريا والعراق (2010–2012). شارك في مشروعات كبرى للحفر وسلامة الآبار وخدمات الفحص مع شركات عالمية كبرى مثل BP وShell وENI وLuk Oil وSchlumberger وHalliburton وSOC العراق وWeatherford وDaqing، مما يمنحه فهمًا عميقًا لإدارة المشروعات وتنسيق المعارف والرؤى المتنوعة لمجلس الإدارة.",
   },
   {
-    role: "Co-Founder",
-    roleAr: "الشريك المؤسس",
-    name: "Abdulrahman Sami Bin Ayyad",
-    nameAr: "عبد الرحمن بن عياد",
+    role: "Executive Leadership, Corporate Management & Scientific Research",
+    roleAr: "القيادة التنفيذية والإدارة المؤسسية والبحث العلمي",
+    name: "Dr. Abdulrahman Sami Bin Ayyad",
+    nameAr: "د. عبد الرحمن عياد",
     image: "/Leadership/Abdulrahman Bin Ayyad.jpg",
-    bio: "CEO of the Garment Division and General Manager for contracts at the group. Founder of Rewaq Academy (2019) and a researcher in heritage editing and scientific research.",
-    bioAr: "الرئيس التنفيذي لقطاع الملابس والتصنيع، والمدير العام للتعاقدات بالمجموعة. مؤسس أكاديمية رواق التعليمية (2019)، وباحث في تحقيق التراث والبحث العلمي.",
+    bio: "Dr. Abdulrahman Ayyad brings multi-disciplinary leadership across executive direction, corporate management, scientific research, educational development, industrial operations, and commercial contracting, with a strategic focus on planning, digital transformation, and international expansion.\n\nHe founded Rewaq Educational Academy in 2019, managing its programs, curricula, and proprietary digital platform, and expanding services to non-Arabic speakers across Europe and the Americas. In scientific research, he conducts heritage manuscript editing with Al-Abadila, having received commendations from eminent scholars of Al-Azhar.\n\nIn industry and trade, he serves as CEO of a specialized apparel manufacturing and export facility and General Manager of Contracts at SAMI BIN AYYAD GROUP, driving contractual partnerships, client-production alignment, and international institutional growth.",
+    bioAr: "يمتلك د. عبد الرحمن عياد خبرة متعددة المجالات في القيادة التنفيذية والإدارة المؤسسية والبحث العلمي وتطوير الأنظمة التعليمية وإدارة العمليات الصناعية والتعاقدات التجارية مع اهتمام بالتخطيط الاستراتيجي والتحول الرقمي وبناء الشراكات والتوسع في الأسواق المحلية والدولية.\n\nأسّس أكاديمية رواق التعليمية عام 2019 ويتولى إدارتها وتطوير برامجها ومناهجها لمختلف المراحل العمرية. وفي عام 2021 ساهم في توسيع نطاق خدماتها من خلال التعليم الحضوري وعن بُعد للناطقين بغير العربية في أسواق دولية من بينها أوروبا وأمريكا كما عمل على تطوير تطبيق خاص لدعم العمليات التعليمية والإدارية.\n\nوفي المجال البحثي يعمل باحثًا لدى شركة العبادلة في تحقيق كتب التراث والبحث العلمي كما يمتلك خبرات في التواصل العلمي والثقافي الدولي وحصل على تزكيات من علماء الأزهر الشريف وتولى أدوارًا مرتبطة بالبحث والتمثيل الثقافي وفق صفاته ومهامه المعلنة.\n\nوعلى الصعيد الصناعي والتجاري يشغل منصب الرئيس التنفيذي لمصنع ملابس متخصص في التصنيع للسوقين المحلي والتصديري ويتولى إدارة التعاقدات ومنصب المدير العام في مجموعة سامي بن عياد (SAMI BIN AYYAD GROUP) حيث يركز على إدارة العلاقات التعاقدية وتطوير الشراكات والتنسيق بين متطلبات العملاء والقدرات الإنتاجية ودعم النمو المؤسسي والتوسع الدولي.\n\nوتجمع مسيرته بين الإدارة والبحث والتعليم والصناعة بما يدعم تأسيس المبادرات وتطوير الأنظمة التشغيلية وقيادة الفرق وتحويل الأهداف الاستراتيجية إلى خطط عمل قابلة للتنفيذ والتطوير.",
   },
   {
     role: "Business Developer",
