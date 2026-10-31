@@ -1209,3 +1209,4 @@ export const foodMarketsData: FoodMarketsData = {
       "SAMI BIN AYYAD GROUP is actively expanding its network of international supply and distribution partnerships, facilitating entry into emerging markets and delivering versatile product solutions that cater to the exacting standards of global food conglomerates, packers, and distributors.",
   },
 };
+
