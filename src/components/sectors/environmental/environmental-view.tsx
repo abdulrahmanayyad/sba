@@ -12,6 +12,7 @@ import { useLanguage } from "@/i18n/language-context";
 import { cn } from "@/lib/utils";
 import { highlightBrand } from "@/components/site/brand-text";
 import { SectorContactSection } from "@/components/site/sector-contact-section";
+import { JoinPage } from "@/components/join/join-page";
 import {
   environmentalAboutData,
   environmentalHeroData,
@@ -19,7 +20,7 @@ import {
   environmentalServicesData,
 } from "./environmental-data";
 
-export type EnvironmentalTab = "about" | "sectors" | "services" | "products" | "start-consultation";
+export type EnvironmentalTab = "about" | "sectors" | "services" | "products" | "start-consultation" | "join";
 
 interface EnvironmentalViewProps {
   tab?: EnvironmentalTab;
@@ -37,7 +38,7 @@ function SectionBadge({ title }: { title: string }) {
 export function EnvironmentalSectorView({ tab = "about" }: EnvironmentalViewProps) {
   const { language } = useLanguage();
   const ar = language === "AR";
-  const activeTab: EnvironmentalTab = ["about", "sectors", "services", "products", "start-consultation"].includes(tab) ? tab : "about";
+  const activeTab: EnvironmentalTab = ["about", "sectors", "services", "products", "start-consultation", "join"].includes(tab) ? tab : "about";
 
   return (
     <div className="w-full">
@@ -77,6 +78,7 @@ export function EnvironmentalSectorView({ tab = "about" }: EnvironmentalViewProp
         {activeTab === "services" && <EnvironmentalServicesView ar={ar} />}
         {activeTab === "products" && <EnvironmentalProductsView ar={ar} />}
         {activeTab === "start-consultation" && <EnvironmentalStartConsultationView ar={ar} />}
+        {activeTab === "join" && <JoinPage trackId="sustainability" />}
       </div>
     </div>
   );
@@ -99,9 +101,9 @@ function EnvironmentalAboutView({ ar }: { ar: boolean }) {
             <h2 className="font-head text-xl sm:text-2xl font-extrabold text-foreground mt-2 drop-shadow-md">
               {ar ? data.whoWeAre.titleAr : data.whoWeAre.titleEn}
             </h2>
-            <div className="section-intro mx-auto mt-6 leading-relaxed max-w-3xl space-y-4">
+            <div className="section-intro mx-auto mt-6 leading-relaxed max-w-3xl space-y-4 text-start">
               {data.whoWeAre.paragraphs.map((p, idx) => (
-                <p key={idx}>{highlightBrand(ar ? p.ar : p.en)}</p>
+                <p key={idx} className="text-start">{highlightBrand(ar ? p.ar : p.en)}</p>
               ))}
             </div>
           </div>
@@ -142,11 +144,11 @@ function EnvironmentalAboutView({ ar }: { ar: boolean }) {
         </div>
       </section>
 
-      {/* 3. Our Approach — Highlight Motto Card (Interactive on hover with shadow) */}
+      {/* 3. Our Approach — Highlight Motto Card (Transparent white liquid glass) */}
       <section className="site-container">
         <Reveal>
-          <div className="group relative overflow-hidden rounded-3xl border border-brand-orange/30 bg-gradient-to-br from-brand-orange/10 via-background/90 to-brand-green/10 p-8 sm:p-12 shadow-lg backdrop-blur-2xl text-center transition-all duration-300 hover:scale-[1.01] hover:shadow-2xl hover:border-brand-orange/60 hover:bg-background/95 cursor-default">
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/90 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+          <div className="group relative overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-8 sm:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl text-center transition-all duration-300 hover:scale-[1.01] hover:shadow-2xl hover:border-brand-green/60 active:scale-[0.99] cursor-pointer">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
               <span>{ar ? data.approach.badgeAr : data.approach.badgeEn}</span>
             </div>
@@ -309,45 +311,63 @@ function EnvironmentalSectorsView({ ar }: { ar: boolean }) {
             </div>
           </Reveal>
 
-          {/* Sectors Grid */}
-          <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {filteredSectors.map((sec, idx) => (
-              <Reveal key={sec.id} delay={idx * 0.04}>
-                <div className="group flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-white/20 bg-background/60 p-6 sm:p-8 backdrop-blur-xl shadow-sm transition-all duration-300 hover:border-brand-orange/60 hover:shadow-xl hover:-translate-y-1">
-                  <div>
-                    <div className="flex items-center justify-between">
-                      <span className="inline-flex size-9 items-center justify-center rounded-full bg-brand-orange/10 font-mono text-xs font-bold text-brand-orange">
+          {/* Sectors Stacked Vertically with Big Image on Top */}
+          <div className="mt-12 flex flex-col gap-10">
+            {filteredSectors.map((sec, idx) => {
+              const sectorImages = [
+                "/BG/steve-marquez-zi7gDhirekg-unsplash.jpg",
+                "/BG/jennifer-delmarre-IqmuHJF5khU-unsplash.jpg",
+                "/BG/chelsea-WvusC5M-TM8-unsplash.jpg",
+                "/BG/paula-prekopova-Mt9DbRm2KmA-unsplash.jpg",
+                "/BG/andreas-gucklhorn-Ilpf2eUPpUE-unsplash.jpg",
+              ];
+              const sectorImg = sectorImages[idx % sectorImages.length];
+
+              return (
+                <Reveal key={sec.id} delay={idx * 0.04}>
+                  <div className="group overflow-hidden rounded-3xl border border-white/30 bg-background/70 p-6 sm:p-8 backdrop-blur-xl shadow-md transition-all duration-300 hover:border-brand-green/60 hover:shadow-2xl hover:scale-[1.005] active:scale-[0.99] cursor-pointer">
+                    {/* Big Image on Top */}
+                    <div className="relative aspect-[21/9] sm:aspect-[24/9] max-h-80 w-full overflow-hidden rounded-2xl bg-secondary mb-6 shadow-sm">
+                      <img
+                        src={sectorImg}
+                        alt={ar ? sec.nameAr : sec.nameEn}
+                        className="size-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                      <span className="absolute top-4 start-4 inline-flex size-10 items-center justify-center rounded-xl bg-black/60 font-mono text-sm font-bold text-white backdrop-blur-md">
                         {sec.number}
                       </span>
                     </div>
 
-                    <h3 className="mt-4 font-head text-lg sm:text-xl font-bold text-foreground">
-                      {ar ? sec.nameAr : sec.nameEn}
-                    </h3>
-                    <p className="mt-1 text-xs font-medium text-brand-orange">
-                      {ar ? sec.taglineAr : sec.taglineEn}
-                    </p>
-                    <p className="mt-4 text-xs sm:text-sm leading-6 text-muted-foreground">
-                      {ar ? sec.descAr : sec.descEn}
-                    </p>
-                  </div>
+                    <div>
+                      <h3 className="font-head text-xl sm:text-2xl font-bold text-foreground">
+                        {ar ? sec.nameAr : sec.nameEn}
+                      </h3>
+                      <p className="mt-1 text-sm font-semibold text-brand-orange">
+                        {ar ? sec.taglineAr : sec.taglineEn}
+                      </p>
+                      <p className="mt-3 text-sm sm:text-base leading-relaxed text-muted-foreground">
+                        {ar ? sec.descAr : sec.descEn}
+                      </p>
+                    </div>
 
-                  <div className="mt-6 border-t border-border pt-4">
-                    <h4 className="font-head text-xs font-bold text-foreground mb-3">
-                      {ar ? "نطاق الخدمات والقدرات التخصصية:" : "Key Scope & Technical Capabilities:"}
-                    </h4>
-                    <ul className="space-y-2">
-                      {sec.keyCapabilities.map((cap, cIdx) => (
-                        <li key={cIdx} className="flex items-start gap-2 text-xs text-muted-foreground">
-                          <CheckCircle2 className="mt-0.5 size-3.5 shrink-0 text-brand-orange" />
-                          <span>{ar ? cap.ar : cap.en}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    <div className="mt-6 border-t border-border pt-5">
+                      <h4 className="font-head text-xs font-bold uppercase tracking-wider text-foreground mb-3">
+                        {ar ? "نطاق الخدمات والقدرات التخصصية:" : "Key Scope & Technical Capabilities:"}
+                      </h4>
+                      <div className="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+                        {sec.keyCapabilities.map((cap, cIdx) => (
+                          <div key={cIdx} className="flex items-center gap-2 rounded-xl border border-white/20 bg-background/80 p-2.5 text-xs font-medium text-foreground">
+                            <CheckCircle2 className="size-4 shrink-0 text-brand-green" />
+                            <span>{ar ? cap.ar : cap.en}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </Reveal>
-            ))}
+                </Reveal>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -442,54 +462,76 @@ function EnvironmentalProductsView({ ar }: { ar: boolean }) {
             </div>
           </Reveal>
 
-          <div className="grid gap-8 lg:grid-cols-2">
-            {products.map((product, idx) => (
-              <Reveal key={product.id} delay={idx * 0.05}>
-                <div className="group flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-white/20 bg-background/60 p-6 sm:p-8 backdrop-blur-xl shadow-sm transition-all duration-300 hover:border-brand-green/60 hover:shadow-xl hover:scale-[1.01]">
-                  <div>
-                    <div className="flex items-center justify-between gap-3">
-                      <span className="inline-flex items-center rounded-full bg-brand-green/10 px-3 py-1 font-mono text-xs font-bold text-brand-green-text">
+          {/* Products Stacked Vertically with Big Image on Top */}
+          <div className="flex flex-col gap-10">
+            {products.map((product, idx) => {
+              const productImages = [
+                "/BG/chelsea-WvusC5M-TM8-unsplash.jpg",
+                "/BG/jennifer-delmarre-IqmuHJF5khU-unsplash.jpg",
+                "/BG/google-deepmind-s2TPKAD6fag-unsplash.jpg",
+                "/BG/riccardo-annandale-7e2pe9wjL9M-unsplash.jpg",
+              ];
+              const prodImg = productImages[idx % productImages.length];
+
+              return (
+                <Reveal key={product.id} delay={idx * 0.05}>
+                  <div className="group overflow-hidden rounded-3xl border border-white/30 bg-background/70 p-6 sm:p-8 backdrop-blur-xl shadow-md transition-all duration-300 hover:border-brand-green/60 hover:shadow-2xl hover:scale-[1.005] active:scale-[0.99] cursor-pointer">
+                    {/* Big Image on Top */}
+                    <div className="relative aspect-[21/9] sm:aspect-[24/9] max-h-80 w-full overflow-hidden rounded-2xl bg-secondary mb-6 shadow-sm">
+                      <img
+                        src={prodImg}
+                        alt={ar ? product.titleAr : product.titleEn}
+                        className="size-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                      <span className="absolute top-4 start-4 inline-flex items-center rounded-xl bg-black/60 px-3.5 py-1.5 font-mono text-xs font-bold text-white backdrop-blur-md">
                         {product.id}
                       </span>
                     </div>
-                    <h3 className="mt-4 font-head text-lg sm:text-xl font-bold text-foreground">
-                      {ar ? product.titleAr : product.titleEn}
-                    </h3>
-                    <p className="mt-1 text-xs sm:text-sm font-medium text-brand-green-text">
-                      {ar ? product.leadAr : product.leadEn}
-                    </p>
-                    <p className="mt-4 text-xs sm:text-sm leading-6 text-muted-foreground">
-                      {ar ? product.descAr : product.descEn}
-                    </p>
-                  </div>
-                  <div className="mt-6 border-t border-border pt-4">
-                    <h4 className="font-head text-xs font-semibold text-foreground mb-3">
-                      {ar ? "المزايا الرئيسية:" : "Key Benefits:"}
-                    </h4>
-                    <ul className="space-y-2">
-                      {product.features.map((feat, fIdx) => (
-                        <li key={fIdx} className="flex items-start gap-2 text-xs text-muted-foreground">
-                          <CheckCircle2 className="mt-0.5 size-3.5 shrink-0 text-brand-green-text" />
-                          <span>{ar ? feat.ar : feat.en}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <div className="mt-6 pt-4 border-t border-border/50 flex items-center justify-end">
-                      <Link
-                        to="/sectors/$sector"
-                        params={{ sector: "environmental" }}
-                        search={{}}
-                        hash="contact"
-                        className="inline-flex items-center gap-2 rounded-full bg-brand-green px-5 py-2.5 text-xs font-bold text-white transition-all duration-300 hover:bg-brand-orange hover:shadow-md hover:scale-105 active:scale-95"
-                      >
-                        <span>{ar ? "استفسر عن المنتج" : "Inquire Product"}</span>
-                        <ArrowRight className={cn("size-3.5", ar && "rotate-180")} />
-                      </Link>
+
+                    <div>
+                      <h3 className="font-head text-xl sm:text-2xl font-bold text-foreground">
+                        {ar ? product.titleAr : product.titleEn}
+                      </h3>
+                      <p className="mt-1 text-sm font-semibold text-brand-green-text">
+                        {ar ? product.leadAr : product.leadEn}
+                      </p>
+                      <p className="mt-3 text-sm sm:text-base leading-relaxed text-muted-foreground">
+                        {ar ? product.descAr : product.descEn}
+                      </p>
+                    </div>
+
+                    <div className="mt-6 border-t border-border pt-5">
+                      <h4 className="font-head text-xs font-bold uppercase tracking-wider text-foreground mb-3">
+                        {ar ? "المزايا والمواصفات الفنية:" : "Key Technical Features & Specifications:"}
+                      </h4>
+                      <div className="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+                        {product.features.map((feat, fIdx) => (
+                          <div key={fIdx} className="flex items-center gap-2 rounded-xl border border-white/20 bg-background/80 p-2.5 text-xs font-medium text-foreground">
+                            <CheckCircle2 className="size-4 shrink-0 text-brand-green-text" />
+                            <span>{ar ? feat.ar : feat.en}</span>
+                          </div>
+                        ))}
+                      </div>
+
+                      <div className="mt-6 pt-4 border-t border-border/50 flex items-center justify-end">
+                        <a
+                          href="#contact"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+                          }}
+                          className="inline-flex items-center gap-2 rounded-full bg-brand-green px-5 py-2.5 text-xs font-bold text-white transition-all duration-300 hover:bg-brand-orange hover:shadow-md hover:scale-105 active:scale-95 cursor-pointer"
+                        >
+                          <span>{ar ? "استفسر عن المنتج" : "Inquire Product"}</span>
+                          <ArrowRight className={cn("size-3.5", ar && "rotate-180")} />
+                        </a>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </Reveal>
-            ))}
+                </Reveal>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -787,58 +829,78 @@ function EnvironmentalServicesView({ ar }: { ar: boolean }) {
             </div>
           </Reveal>
 
-          {/* Services Grid matching Construction cards aesthetic */}
-          <div className="mt-12 grid gap-8 lg:grid-cols-2">
-            {filteredServices.map((service, idx) => (
-              <Reveal key={service.id} delay={idx * 0.04}>
-                <div className="group flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-white/20 bg-background/60 p-6 sm:p-8 backdrop-blur-xl shadow-sm transition-all duration-300 hover:border-brand-orange/60 hover:shadow-xl hover:scale-[1.01]">
-                  <div>
-                    <div className="flex items-center justify-between gap-3">
-                      <span className="inline-flex size-9 items-center justify-center rounded-full bg-brand-orange/10 font-mono text-xs font-bold text-brand-orange">
+          {/* Services Stacked Vertically with Big Image on Top */}
+          <div className="mt-12 flex flex-col gap-10">
+            {filteredServices.map((service, idx) => {
+              const serviceImages = [
+                "/BG/andreas-gucklhorn-Ilpf2eUPpUE-unsplash.jpg",
+                "/BG/jennifer-delmarre-IqmuHJF5khU-unsplash.jpg",
+                "/BG/steve-marquez-zi7gDhirekg-unsplash.jpg",
+                "/BG/chelsea-WvusC5M-TM8-unsplash.jpg",
+                "/BG/paula-prekopova-Mt9DbRm2KmA-unsplash.jpg",
+                "/BG/sebastian-dario-A3BVd3_mOCo-unsplash.jpg",
+                "/BG/sasun-bughdaryan-SFNUwmLEOis-unsplash.jpg",
+                "/BG/philipp-HGBCAbRBIME-unsplash.jpg",
+              ];
+              const sImg = serviceImages[idx % serviceImages.length];
+
+              return (
+                <Reveal key={service.id} delay={idx * 0.04}>
+                  <div className="group overflow-hidden rounded-3xl border border-white/30 bg-background/70 p-6 sm:p-8 backdrop-blur-xl shadow-md transition-all duration-300 hover:border-brand-green/60 hover:shadow-2xl hover:scale-[1.005] active:scale-[0.99] cursor-pointer">
+                    {/* Big Image on Top */}
+                    <div className="relative aspect-[21/9] sm:aspect-[24/9] max-h-80 w-full overflow-hidden rounded-2xl bg-secondary mb-6 shadow-sm">
+                      <img
+                        src={sImg}
+                        alt={ar ? service.titleAr : service.titleEn}
+                        className="size-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                      <span className="absolute top-4 start-4 inline-flex size-10 items-center justify-center rounded-xl bg-black/60 font-mono text-sm font-bold text-white backdrop-blur-md">
                         {service.number}
                       </span>
                     </div>
 
-                    <h3 className="mt-4 font-head text-lg sm:text-xl font-bold text-foreground">
-                      {ar ? service.titleAr : service.titleEn}
-                    </h3>
-                    <p className="mt-1 text-xs sm:text-sm font-medium text-brand-orange">
-                      {ar ? service.leadAr : service.leadEn}
-                    </p>
-                    <p className="mt-4 text-xs sm:text-sm leading-6 text-muted-foreground">
-                      {ar ? service.bodyAr : service.bodyEn}
-                    </p>
-                  </div>
+                    <div>
+                      <h3 className="font-head text-xl sm:text-2xl font-bold text-foreground">
+                        {ar ? service.titleAr : service.titleEn}
+                      </h3>
+                      <p className="mt-1 text-sm font-semibold text-brand-orange">
+                        {ar ? service.leadAr : service.leadEn}
+                      </p>
+                      <p className="mt-3 text-sm sm:text-base leading-relaxed text-muted-foreground">
+                        {ar ? service.bodyAr : service.bodyEn}
+                      </p>
+                    </div>
 
-                  <div className="mt-6 border-t border-border pt-4">
-                    <h4 className="font-head text-xs font-semibold text-foreground mb-3">
-                      {ar ? "أبرز المحاور والمخرجات الفنية:" : "Key Technical Deliverables & Scope:"}
-                    </h4>
-                    <ul className="space-y-2">
-                      {service.features.map((feat, fIdx) => (
-                        <li key={fIdx} className="flex items-start gap-2 text-xs text-muted-foreground">
-                          <CheckCircle2 className="mt-0.5 size-3.5 shrink-0 text-brand-orange" />
-                          <span>{ar ? feat.ar : feat.en}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    <div className="mt-6 border-t border-border pt-5">
+                      <h4 className="font-head text-xs font-bold uppercase tracking-wider text-foreground mb-3">
+                        {ar ? "أبرز المحاور والمخرجات الفنية:" : "Key Technical Deliverables & Scope:"}
+                      </h4>
+                      <div className="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+                        {service.features.map((feat, fIdx) => (
+                          <div key={fIdx} className="flex items-center gap-2 rounded-xl border border-white/20 bg-background/80 p-2.5 text-xs font-medium text-foreground">
+                            <CheckCircle2 className="size-4 shrink-0 text-brand-green" />
+                            <span>{ar ? feat.ar : feat.en}</span>
+                          </div>
+                        ))}
+                      </div>
 
-                    <div className="mt-6 pt-4 border-t border-border/50 flex items-center justify-end">
-                      <Link
-                        to="/sectors/$sector"
-                        params={{ sector: "environmental" }}
-                        search={{}}
-                        hash="contact"
-                        className="inline-flex items-center gap-2 rounded-full bg-brand-green px-5 py-2.5 text-xs font-bold text-white transition-all duration-300 hover:bg-brand-orange hover:shadow-md hover:scale-105 active:scale-95"
-                      >
-                        <span>{ar ? "طلب استشارة" : "Inquire Service"}</span>
-                        <ArrowRight className={cn("size-3.5", ar && "rotate-180")} />
-                      </Link>
+                      <div className="mt-6 pt-4 border-t border-border/50 flex items-center justify-end">
+                        <Link
+                          to="/sectors/$sector"
+                          params={{ sector: "environmental" }}
+                          search={{ tab: "start-consultation" }}
+                          className="inline-flex items-center gap-2 rounded-full bg-brand-green px-5 py-2.5 text-xs font-bold text-white transition-all duration-300 hover:bg-brand-orange hover:shadow-md hover:scale-105 active:scale-95 cursor-pointer"
+                        >
+                          <span>{ar ? "طلب استشارة" : "Request Consultation"}</span>
+                          <ArrowRight className={cn("size-3.5", ar && "rotate-180")} />
+                        </Link>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </Reveal>
-            ))}
+                </Reveal>
+              );
+            })}
           </div>
         </div>
       </section>

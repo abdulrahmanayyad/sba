@@ -182,7 +182,7 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
 
   const t = (v: { en: string; ar: string }) => (ar ? v.ar : v.en);
 
-  const card = "rounded-3xl border border-white/20 bg-background/80 p-6 md:p-8 backdrop-blur-xl shadow-lg transition-all duration-300 hover:shadow-xl hover:border-brand-orange/30";
+  const card = "rounded-3xl border border-white/20 bg-background/80 p-6 md:p-8 backdrop-blur-xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-[1.01] hover:border-brand-orange/40 active:scale-[0.99] cursor-pointer";
 
   const activeCountry = selectedCountry ?? (hoveredCountry ? partnerCountries.find((c) => c.nameEn === hoveredCountry) ?? null : null);
 
@@ -279,10 +279,10 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
             )}
           </div>
 
-          <div className="mt-6 grid gap-6 lg:grid-cols-[1.5fr_1fr]">
-            {/* Realistic Google Maps Interactive Canvas */}
+          <div className="mt-6 space-y-6">
+            {/* Realistic Google Maps Interactive Canvas — Full Width */}
             <div
-              className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-[#d0d7de] bg-[#aad3df] shadow-inner select-none transition-colors duration-500"
+              className="relative aspect-[16/10] sm:aspect-[21/9] lg:aspect-[2.4/1] w-full overflow-hidden rounded-2xl border border-[#d0d7de] bg-[#aad3df] shadow-inner select-none transition-colors duration-500"
               role="region"
               aria-label={ar ? "خريطة Google التفاعلية لأسواقنا" : "Interactive Google Maps of our markets"}
             >
@@ -504,51 +504,44 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
               </div>
             </div>
 
-            {/* Exclusive Partner Countries List */}
-            <div className="flex flex-col justify-between gap-5">
-              <div>
-                <div className="flex items-center justify-between mb-3">
-                  <p className="text-xs font-bold uppercase tracking-wider text-brand-orange">
-                    {ar ? "الدول الشريكة المعتمدة فقط (9 دول)" : "Verified Partner Markets Only (9 Countries)"}
-                  </p>
-                  {!ar && (
-                    <span className="font-mono text-[11px] font-bold text-brand-green">
-                      {partnerCountries.length} Countries
-                    </span>
-                  )}
-                </div>
+            {/* Exclusive Partner Countries List — Full Width Grid */}
+            <div className="space-y-4 pt-2">
+              <div className="flex items-center justify-between">
+                <p className="text-xs font-bold uppercase tracking-wider text-brand-orange">
+                  {ar ? "الدول الشريكة المعتمدة فقط (9 دول)" : "Verified Partner Markets Only (9 Countries)"}
+                </p>
+                {!ar && (
+                  <span className="font-mono text-[11px] font-bold text-brand-green">
+                    {partnerCountries.length} Countries
+                  </span>
+                )}
+              </div>
 
-                <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-2">
-                  {partnerCountries.map((c) => {
-                    const isSelected = activeCountry?.nameEn === c.nameEn;
-                    return (
-                      <button
-                        key={c.nameEn}
-                        type="button"
-                        onMouseEnter={() => setHoveredCountry(c.nameEn)}
-                        onMouseLeave={() => setHoveredCountry(null)}
-                        onClick={() => setSelectedCountry((prev) => (prev?.nameEn === c.nameEn ? null : c))}
-                        className={cn(
-                          "group flex items-center justify-between rounded-2xl border p-2.5 text-xs font-semibold transition-all duration-200 cursor-pointer text-start",
-                          isSelected
-                            ? "border-brand-orange bg-brand-orange text-white shadow-md shadow-brand-orange/30 scale-[1.02]"
-                            : "border-border bg-background/70 text-foreground hover:border-brand-orange/40 hover:bg-brand-orange/10"
-                        )}
-                      >
-                        <div className="flex items-center gap-2">
-                          <span className="text-base">{c.flag}</span>
-                          <div>
-                            <p className={cn("font-bold leading-tight", ar ? "font-head text-xs" : "text-xs")}>{ar ? c.nameAr : c.nameEn}</p>
-                            <span className={cn("text-[10px]", ar ? "font-head text-muted-foreground" : "font-mono text-muted-foreground", isSelected && "text-white/80")}>
-                              {ar ? c.capitalAr : c.capitalEn}
-                            </span>
-                          </div>
-                        </div>
-                        <MapPin className={cn("size-3.5 shrink-0", isSelected ? "text-white" : "text-brand-orange")} />
-                      </button>
-                    );
-                  })}
-                </div>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-9 gap-2">
+                {partnerCountries.map((c) => {
+                  const isSelected = activeCountry?.nameEn === c.nameEn;
+                  return (
+                    <button
+                      key={c.nameEn}
+                      type="button"
+                      onMouseEnter={() => setHoveredCountry(c.nameEn)}
+                      onMouseLeave={() => setHoveredCountry(null)}
+                      onClick={() => setSelectedCountry((prev) => (prev?.nameEn === c.nameEn ? null : c))}
+                      className={cn(
+                        "group flex flex-col items-center justify-center text-center rounded-2xl border p-2.5 text-xs font-semibold transition-all duration-200 cursor-pointer",
+                        isSelected
+                          ? "border-brand-orange bg-brand-orange text-white shadow-md shadow-brand-orange/30 scale-[1.03]"
+                          : "border-border bg-background/70 text-foreground hover:border-brand-orange/40 hover:bg-brand-orange/10 hover:scale-[1.02] active:scale-95"
+                      )}
+                    >
+                      <span className="text-xl mb-1">{c.flag}</span>
+                      <p className={cn("font-bold leading-tight", ar ? "font-head text-xs" : "text-xs")}>{ar ? c.nameAr : c.nameEn}</p>
+                      <span className={cn("text-[9px] mt-0.5", ar ? "font-head text-muted-foreground" : "font-mono text-muted-foreground", isSelected && "text-white/80")}>
+                        {ar ? c.capitalAr : c.capitalEn}
+                      </span>
+                    </button>
+                  );
+                })}
               </div>
 
               {/* Summary footprint badge */}
@@ -567,62 +560,67 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
             </div>
           </div>
         </div>
+      </div>
+    </section>
+  );
+}
 
-        {/* What We Do — Separate Sectors, Horizontal Order in Curved Glass Badges */}
-        <div className="mt-14">
-          <div className="mb-8">
-            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
-              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-              <span>{ar ? "ماذا نقدم" : "What We Offer"}</span>
-            </div>
-            <h3 className="text-2xl sm:text-3xl font-bold font-head">
-              {ar ? "ماذا نقدم" : "What We Do"}
-            </h3>
-            <p className="mt-1.5 text-sm text-muted-foreground max-w-2xl">
-              {ar
-                ? "قائمة شاملة ومفصلة بكافة المشروعات والخدمات والقدرات عبر كل قطاع من قطاعاتنا، معروضة بوضوح ومرونة."
-                : "A structured breakdown of all projects, capabilities, and specialized services delivered by each sector."}
-            </p>
-          </div>
+export function WhatWeOfferSection({ ar }: { ar: boolean }) {
+  const t = (v: { en: string; ar: string }) => (ar ? v.ar : v.en);
 
-          <div className="grid gap-6">
-            {dashboardSectors.map((s) => {
-              const data = activities[s.id];
-              return (
-                <div
-                  key={s.id}
-                  className="rounded-3xl border border-white/20 bg-background/80 p-6 sm:p-8 backdrop-blur-2xl shadow-lg transition-all duration-300 hover:shadow-xl hover:border-brand-green/35"
-                >
-                  <div className="flex items-center justify-between flex-wrap gap-4 border-b border-border/60 pb-5 mb-6">
-                    <div>
-                      <h4 className="font-head text-lg sm:text-xl font-bold text-foreground">
-                        {t(s.name)}
-                      </h4>
-                      <span className={cn("text-xs font-bold text-brand-orange", ar ? "font-sans" : "font-mono")}>
-                        {data.items.length} {ar ? "خدمات ومشروعات رئيسية" : "Specialized Capabilities"}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Horizontal Flex Wrap of Services in Curved Glass Boxes */}
-                  <div className="flex flex-wrap gap-3">
-                    {data.items.map((item) => (
-                      <div
-                        key={item.en}
-                        className="group flex items-center gap-2.5 rounded-2xl border border-white/25 bg-background/70 px-4 py-2.5 shadow-sm backdrop-blur-md transition-all duration-200 hover:border-brand-green hover:bg-brand-green/10 hover:scale-[1.02] active:scale-95"
-                      >
-                        <CheckCircle2 className="size-4 shrink-0 text-brand-green-text transition-transform group-hover:scale-110" />
-                        <span className="text-xs sm:text-sm font-semibold text-foreground/90 leading-snug">
-                          {t(item)}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+  return (
+    <section id="what-we-offer" className="site-container py-12 scroll-mt-24">
+      <div className="mb-8">
+        <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+          <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+          <span>{ar ? "ماذا نقدم" : "What We Offer"}</span>
         </div>
+        <h3 className="text-2xl sm:text-3xl font-bold font-head">
+          {ar ? "ماذا نقدم" : "What We Do"}
+        </h3>
+        <p className="mt-1.5 text-sm text-muted-foreground max-w-2xl">
+          {ar
+            ? "قائمة شاملة ومفصلة بكافة المشروعات والخدمات والقدرات عبر كل قطاع من قطاعاتنا، معروضة بوضوح ومرونة."
+            : "A structured breakdown of all projects, capabilities, and specialized services delivered by each sector."}
+        </p>
+      </div>
+
+      <div className="grid gap-6">
+        {dashboardSectors.map((s) => {
+          const data = activities[s.id];
+          return (
+            <div
+              key={s.id}
+              className="rounded-3xl border border-white/20 bg-background/80 p-6 sm:p-8 backdrop-blur-2xl shadow-lg transition-all duration-300 hover:shadow-xl hover:border-brand-green/35 hover:scale-[1.005]"
+            >
+              <div className="flex items-center justify-between flex-wrap gap-4 border-b border-border/60 pb-5 mb-6">
+                <div>
+                  <h4 className="font-head text-lg sm:text-xl font-bold text-foreground">
+                    {t(s.name)}
+                  </h4>
+                  <span className={cn("text-xs font-bold text-brand-orange", ar ? "font-sans" : "font-mono")}>
+                    {data.items.length} {ar ? "خدمات ومشروعات رئيسية" : "Specialized Capabilities"}
+                  </span>
+                </div>
+              </div>
+
+              {/* Horizontal Flex Wrap of Services in Curved Glass Boxes */}
+              <div className="flex flex-wrap gap-3">
+                {data.items.map((item) => (
+                  <div
+                    key={item.en}
+                    className="group flex items-center gap-2.5 rounded-2xl border border-white/25 bg-background/70 px-4 py-2.5 shadow-sm backdrop-blur-md transition-all duration-200 hover:border-brand-green hover:bg-brand-green/10 hover:scale-[1.02] active:scale-95 cursor-pointer"
+                  >
+                    <CheckCircle2 className="size-4 shrink-0 text-brand-green-text transition-transform group-hover:scale-110" />
+                    <span className="text-xs sm:text-sm font-semibold text-foreground/90 leading-snug">
+                      {t(item)}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          );
+        })}
       </div>
     </section>
   );

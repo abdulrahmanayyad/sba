@@ -19,8 +19,9 @@ import {
 } from "./construction-data";
 import { contractingProjectsList, type ContractingProject } from "./contracting-projects-list";
 import heroSustainable from "@/assets/hero-sustainable.png";
+import { JoinPage } from "@/components/join/join-page";
 
-export type ConstructionTab = "about" | "sectors" | "services" | "projects" | "start-project";
+export type ConstructionTab = "about" | "sectors" | "services" | "projects" | "start-project" | "join";
 
 interface ConstructionViewProps {
   tab?: ConstructionTab;
@@ -38,7 +39,7 @@ function SectionBadge({ title }: { title: string }) {
 export function ConstructionSectorView({ tab = "about" }: ConstructionViewProps) {
   const { language } = useLanguage();
   const ar = language === "AR";
-  const activeTab: ConstructionTab = ["about", "sectors", "services", "projects", "start-project"].includes(tab) ? tab : "about";
+  const activeTab: ConstructionTab = ["about", "sectors", "services", "projects", "start-project", "join"].includes(tab) ? tab : "about";
 
   const tabLabels: Record<ConstructionTab, { en: string; ar: string; descEn: string; descAr: string }> = {
     about: {
@@ -70,6 +71,12 @@ export function ConstructionSectorView({ tab = "about" }: ConstructionViewProps)
       ar: "ابدأ مشروعك",
       descEn: "Submit your project brief and get a proposal",
       descAr: "قدّم موجز مشروعك واحصل على عرض",
+    },
+    join: {
+      en: "Join Us",
+      ar: "انضم إلينا",
+      descEn: "Contractor registration, subcontracting and partnership opportunities",
+      descAr: "تسجيل مقاول، فرص التعاقد من الباطن والفرص المهنية",
     },
   };
 
@@ -113,6 +120,7 @@ export function ConstructionSectorView({ tab = "about" }: ConstructionViewProps)
         {activeTab === "services" && <ConstructionServicesView ar={ar} />}
         {activeTab === "projects" && <ConstructionProjectsView ar={ar} />}
         {activeTab === "start-project" && <ConstructionStartProjectView ar={ar} />}
+        {activeTab === "join" && <JoinPage trackId="construction" />}
       </div>
     </div>
   );
@@ -176,7 +184,7 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
 
       {/* 3. Quality Commitment — Compact centered text box */}
       <section className="site-container">
-        <div className="mx-auto max-w-3xl overflow-hidden rounded-2xl border border-white/40 bg-background/80 p-6 sm:p-8 shadow-sm backdrop-blur-xl ring-1 ring-black/5 text-center flex flex-col items-center justify-center">
+        <div className="mx-auto max-w-3xl overflow-hidden rounded-2xl border border-white/40 bg-background/80 p-6 sm:p-8 shadow-sm backdrop-blur-xl ring-1 ring-black/5 text-center flex flex-col items-center justify-center transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:border-brand-green/60 active:scale-[0.98] cursor-pointer">
           <Reveal>
             <div className="space-y-3 flex flex-col items-center text-center">
               <SectionBadge title={ar ? "الجودة والالتزام" : "Quality Assurance"} />
@@ -230,7 +238,7 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {data.deliveryProcess.steps.map((step) => (
               <Reveal key={step.number}>
-                <div className="flex h-full flex-col rounded-2xl border border-white/20 bg-background/60 p-6 backdrop-blur-xl shadow-sm">
+                <div className="flex h-full flex-col rounded-2xl border border-white/20 bg-background/60 p-6 backdrop-blur-xl shadow-sm transition-all duration-300 hover:scale-[1.03] hover:shadow-xl hover:border-brand-orange/60 active:scale-[0.98] cursor-pointer">
                   <span className="font-mono text-xs font-bold text-brand-orange-text">{step.number}</span>
                   <h3 className="mt-2 font-head text-base font-semibold text-foreground">{ar ? step.titleAr : step.title}</h3>
                   <p className="mt-3 text-xs leading-5 text-muted-foreground">{ar ? step.bodyAr : step.body}</p>

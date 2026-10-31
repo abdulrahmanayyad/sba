@@ -27,6 +27,7 @@ import { GarmentProjectsTab } from "./tabs/garment-projects-tab";
 import { GarmentPartnersTab } from "./tabs/garment-partners-tab";
 import { GarmentCapabilitiesTab } from "./tabs/garment-capabilities-tab";
 import { GarmentJoinTab } from "./tabs/garment-join-tab";
+import { JoinPage } from "@/components/join/join-page";
 
 export type GarmentTab = 
   | "about" 
@@ -102,9 +103,9 @@ export function GarmentSectorView({ tab = "about" }: GarmentViewProps) {
 
   return (
     <div className="w-full">
-      {/* Sector Hero — Only displayed on About Us tab, matching Construction */}
+      {/* Sector Hero — Only displayed on About Us tab, full screen matching Construction & Environmental */}
       {(activeTab === "about" || activeTab === "clients" || activeTab === "partners") && (
-        <section className="relative w-full overflow-hidden text-footer-foreground min-h-[380px] md:min-h-[460px] lg:min-h-[480px] flex items-center">
+        <section className="relative w-full overflow-hidden text-footer-foreground min-h-screen flex items-center">
           <img
             data-clip-reveal
             src={garmentHeroData.image}
@@ -112,7 +113,7 @@ export function GarmentSectorView({ tab = "about" }: GarmentViewProps) {
             className="absolute inset-0 size-full object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-footer via-footer/80 to-footer/65" />
-          <div className="site-container relative w-full py-16 md:py-24">
+          <div className="site-container relative w-full py-20 sm:py-28 z-10">
             <Reveal>
               <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/40 px-4 py-1.5 text-xs font-bold tracking-wide text-white backdrop-blur-md">
                 <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
@@ -149,7 +150,7 @@ export function GarmentSectorView({ tab = "about" }: GarmentViewProps) {
         {activeTab === "services" && <GarmentServicesTab />}
         {activeTab === "projects" && <GarmentProjectsTab />}
         {activeTab === "capabilities" && <GarmentCapabilitiesTab />}
-        {activeTab === "join" && <GarmentJoinTab />}
+        {activeTab === "join" && <JoinPage trackId="garment" />}
         {activeTab === "start-project" && <GarmentStartProjectView />}
       </main>
     </div>

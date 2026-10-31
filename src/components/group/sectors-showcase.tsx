@@ -198,6 +198,10 @@ export function SectorsShowcase({ ar }: { ar: boolean }) {
             <div className="mt-10 pt-4">
               <a
                 href="#contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+                }}
                 className="group inline-flex items-center gap-3 rounded-full bg-brand-green px-6 py-3 font-head text-sm font-bold text-white shadow-lg transition-all duration-300 hover:bg-brand-orange hover:shadow-brand-orange/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 cursor-pointer"
               >
                 <span>{ar ? "تواصل معنا" : "Contact Us"}</span>

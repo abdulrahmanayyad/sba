@@ -19,6 +19,7 @@ import { garmentProcessSteps, garmentAboutData } from "../garment-data";
 import { cn } from "@/lib/utils";
 import { AnimatedStatistic } from "@/components/site/animated-statistic";
 import { WHATSAPP_URL } from "@/lib/process-steps";
+import { FactorySlider } from "@/components/group/factory-slider";
 
 import apparelImg from "@/assets/sector-apparel.jpg";
 
@@ -233,41 +234,9 @@ export function GarmentCapabilitiesTab() {
         </Reveal>
       </div>
 
-      {/* 5. Direct RFQ & Consultation Callout */}
-      <div className="overflow-hidden rounded-3xl border border-white/40 bg-gradient-to-br from-background/90 via-background/70 to-secondary/50 p-8 sm:p-12 shadow-lg backdrop-blur-2xl ring-1 ring-black/5">
-        <Reveal>
-          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
-            <div className="max-w-2xl">
-              <span className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground">
-                <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-                <span>{ar ? "استشارات وطلبات التصنيع" : "Consultation & Manufacturing"}</span>
-              </span>
-              <h3 className="mt-3 font-head text-2xl sm:text-3xl font-extrabold text-foreground">
-                {ar ? "هل لديك تصميم أو خط إنتاج ترغب في تنفيذه؟" : "Ready to Discuss Your Next Apparel Collection?"}
-              </h3>
-              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-                {ar
-                  ? "تواصل مباشرة مع فريقنا الفني والتجاري للحصول على دراسة تفصيلية للعينات والمواصفات وجداول التسليم."
-                  : "Connect with our engineering and merchandising team for sample reviews, tech-pack consultations, and competitive quotation structures."}
-              </p>
-            </div>
-
-            <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0">
-              <Button asChild size="lg" className="rounded-2xl bg-brand-orange hover:bg-brand-orange/90 text-white font-bold shadow-md w-full sm:w-auto">
-                <Link to="/join/garment">
-                  <span>{ar ? "انضم إلينا / اطلب عرض سعر" : "Join Us / Request a Quote"}</span>
-                  <ArrowRight className="size-4 ms-2 rtl:rotate-180" />
-                </Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="rounded-2xl border-border bg-background/80 hover:bg-secondary font-bold w-full sm:w-auto">
-                <a href={WHATSAPP_URL} target="_blank" rel="noreferrer">
-                  <MessageCircle className="size-4 me-2 text-brand-green" />
-                  <span>WhatsApp</span>
-                </a>
-              </Button>
-            </div>
-          </div>
-        </Reveal>
+      {/* 5. Factory Overview Slider — نظرة عامة على المصنع بالصور */}
+      <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
+        <FactorySlider ar={ar} />
       </div>
     </div>
   );

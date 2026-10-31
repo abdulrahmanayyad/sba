@@ -502,10 +502,12 @@ export const strategicPartners: StrategicPartner[] = [
     nameAr: "شركة شنتشن ديانينغبو للتكنولوجيا المحدودة (SHENZHEN DIANYINGPU TECHNOLOGY Co., Ltd.)",
     country: "China",
     countryAr: "الصين",
-    description: "Strategic industrial and technological cooperation in smart systems, innovative electronic hardware, and international supply chain solutions.",
-    descriptionAr: "شراكة استراتيجية في التكنولوجيا الذكية والابتكار التقني وحلول التصنيع المتقدمة وسلاسل الإمداد والتوريد الدولية.",
-    tag: "Smart Technology & Hardware",
-    tagAr: "التكنولوجيا الذكية والتصنيع المتقدم",
+    description:
+      "Shenzhen Dianyingpu Technology Co., Ltd. (hereinafter referred to as DYP) located in shenzhen city was incorporated in 2008, as a China national high-tech enterprises designs and manufactures ultrasonic sensors, providing OEM, ODM, JDM business service of ultrasonic sensor solutions. DYP company provided millions of sensors worldwide per year, Excellent quality products and good services are highly recognized by customers, our sensors have been integrated into 5000 projects worldwide. DYP company has become the industry preferred ultrasonic sensor supplier in china market.",
+    descriptionAr:
+      "تأسست شركة شنتشن ديانينغبو للتكنولوجيا المحدودة (DYP) في مدينة شنتشن عام 2008 كإحدى الشركات الوطنية الصينية الرائدة في التقنيات الفائقة. تختص الشركة في تصميم وتصنيع حساسات الموجات فوق الصوتية وتقديم خدمات OEM وODM وJDM المتكاملة، حيث تورد ملايين الحساسات سنويًا حول العالم وتم دمج منتجاتها في أكثر من 5000 مشروع دولي، لتصبح المورد المفضل في السوق الصيني والعالمي.",
+    tag: "Ultrasonic Sensors & High-Tech OEM",
+    tagAr: "حساسات الموجات فوق الصوتية والتصنيع الذكي",
   },
   {
     id: "jumptek",
@@ -513,10 +515,38 @@ export const strategicPartners: StrategicPartner[] = [
     nameAr: "شركة نينغبو جامبتيك المحدودة (Ningbo JumpTek co.,ltd)",
     country: "China",
     countryAr: "الصين",
-    description: "Strategic partnership in technical equipment, precision hardware manufacturing, and global trade & logistics integration.",
-    descriptionAr: "شراكة استراتيجية متخصصة في المعدات والتقنيات الصناعية المتقدمة والتكامل اللوجستي وسلاسل التوريد العالمية.",
-    tag: "Technical Solutions & Global Supply",
-    tagAr: "الحلول التقنية والتوريد الدولي",
+    description:
+      "Ningbo JumpTek co.,ltd is specialize in the water filter and its spare parts. The company was established in 2011, Through years' development, it has become a large scaled export company of water filters, the products are sold well to domestic and industrial market, a complete global system for marketing and service has been established and is providing good products and excellent service to customers of all over the world. The general manager of the company has been committed to the export trading of water purifier products since 2006, and has accumulated lots of experience in this field and also familiar with QC and export trade process. The company is located in the beautiful Chinese port city of ningbo, according to the favorable geographical conditions, and rely on the hometown of mold&plastic to provide professional mold design and production and injection molding, at the same time rely on the professional bending and spray molding process, to provide customized processing services.",
+    descriptionAr:
+      "تتخصص شركة نينغبو جامبتيك المحدودة (تأسست عام 2011) في فلاتر المياه وقطع غيارها المتطورة. تطورت الشركة لتصبح صرحًا تصديريًا بارزًا يغطي الأسواق المنزلية والصناعية حول العالم بمنظومة تسويق وخدمة متكاملة. يقود إدارتها رواد متخصصون في تجارة وتنقية المياه منذ 2006 مع خبرة متعمقة في مراقبة الجودة وضوابط التصدير. وتقع الشركة في ميناء نينغبو وتعتمد على قدرات استثنائية في تصميم القوالب وحقن البلاستيك والتشكيل والرش لتقديم خدمات تصنيع مخصصة وفق أعلى المواصفات.",
+    tag: "Water Filtration Systems & Precision Mold",
+    tagAr: "فلاتر المياه والقوالب الصناعية الدقيقة",
+  },
+  {
+    id: "renergon",
+    name: "RENERGON International AG",
+    nameAr: "شركة رينرجون الدولية (RENERGON International AG)",
+    country: "Switzerland",
+    countryAr: "سويسرا",
+    description:
+      "RENERGON International AG is a dynamic, innovative and globally active company with forward-looking solutions and technologies based on biogas production from biogenic waste. With headquarters in Lengwil, Switzerland and a subsidiary in Berlin, Germany, and a worldwide network of partners. Renergon & EnviroTaqa Alliance will collaborate creating and Developing Biogas Plants with various capacity, Small, Medium and Large-Scale plants Using the advanced dry fermentations technology in Biomass.",
+    descriptionAr:
+      "شركة رينرجون الدولية (سويسرا) شركة ديناميكية ومبتكرة عالمية رائدة في تقنيات إنتاج الغاز الحيوي من المخلفات العضوية ومقرها الرئيسي في لينغويل بسويسرا وفرعها في برلين بألمانيا مع شبكة شركاء دولية. يتعاون تحالف رينرجون وإنفيروطاقة في إنشاء وتطوير محطات الغاز الحيوي بقدرات متنوعة (صغيرة ومتوسطة وكبيرة) باستخدام تقنية التخمير الجاف المتقدمة في الكتلة الحيوية لتحويل المخلفات لطاقة متجددة وأسمدة عضوية.",
+    tag: "Biogas & Dry Fermentation Technology",
+    tagAr: "الغاز الحيوي وتكنولوجيا التخمير الجاف",
+  },
+  {
+    id: "technoset",
+    name: "TechnoSet",
+    nameAr: "شركة تكنوسيت (TechnoSet)",
+    country: "Regional / GCC",
+    countryAr: "الشرق الأوسط والخليج",
+    description:
+      "Techno Set is a Zoho Advanced Partner and Creator Certified Expert (Low-Code Solution Provider). We implement Zoho CRM, Zoho Creator ERP, and Zoho One for 220+ businesses across Southeast Asia and the Gulf — with 10+ years of Zoho specialization.",
+    descriptionAr:
+      "تكنوسيت هي شريك Zoho المتقدم وخبير معتمد في حلول Zoho Creator (مزود حلول Low-Code المتطورة). تنفذ الشركة أنظمة Zoho CRM وZoho Creator ERP وZoho One لأكثر من 220 شركة ومؤسسة عبر جنوب شرق آسيا والخليج العربي مع أكثر من 10 سنوات من التخصص والتطوير التقني المتقدم.",
+    tag: "Zoho Advanced ERP & QHSE Systems",
+    tagAr: "أنظمة ERP الرقمية وتطبيقات QHSE وIoT",
   },
 ];
 
@@ -536,23 +566,23 @@ export const founders = [
     name: "Sheikh Sami Bin Ayyad",
     nameAr: "الشيخ سامي بن عياد",
     image: "/Leadership/Sami Bin Ayyad.jpg",
-    bio: "A career in contracting, trade and investment spanning five decades — from contracting and finishing in 1977, through gold, wholesale food and heritage publishing, to building today's diversified group.",
-    bioAr: "مسيرة مهنية واستثمارية ممتدة منذ عام 1977، بدأت في المقاولات والتشطيبات، ومرّت بتجارة الذهب والجملة الغذائية وتحقيق التراث، وصولًا إلى بناء مجموعة أعمال متنوعة.",
+    bio: "Sheikh Sami Bin Ayyad has an extensive professional and investment journey that began in 1977, when he started in contracting, finishing, and decor, gaining early practical experience in project execution, workforce management, cost estimation, and project oversight. This foundation paved the way for his successful trajectory in trade, investment, and multi-sector corporate leadership.\n\n1977 | The Inception of the Contracting & Finishing Career\nSheikh Sami Bin Ayyad began his operations in contracting, finishing, and interior decor, executing paint works, styling, and outfitting residential units, commercial offices, and retail stores. This formative period built his executive and operational competence, team leadership, and quality control.\n\n1992 | Expansion into Contracting & Finishing in Saudi Arabia\nHis expertise expanded to the Kingdom of Saudi Arabia through architectural works, marble installations, and renovations in collaboration with a Saudi partner, broadening his experience in multi-jurisdiction project management and diverse execution requirements.\n\nDecember 4, 1996 | Founding of Gold & Jewelry Trading\nSheikh Sami Bin Ayyad entered the gold, jewelry, and precious metals trade by establishing a specialized enterprise. His operations covered wholesale markets, purchasing, sales management, market movement tracking, alongside parallel commercial activities in currency trade and automobiles.\n\nJune 5, 1998 | Founding of «Jomlat Al-Sheikh»\nHe established a wholesale food and confectionery distribution enterprise under the trade name «Jomlat Al-Sheikh». This marked a significant expansion in commercial reach, inventory logistics, distribution networks, and operations management.\n\nFebruary 12, 2008 | Founding of Al-Abadila for Heritage Publishing & Scientific Research\nCombining his passion for reading and knowledge with entrepreneurial experience, he founded Al-Abadila for Heritage Book Editing and Scientific Research. The company’s scope grew to scholarly text verification, academic review, and partnerships with specialized printing and publishing houses.\n\nSubsequent Era | Institutional Development & Corporate Expansion\nSheikh Sami Bin Ayyad continued developing ventures across contracting, finishing, procurement, trade, and services. In subsequent institutional structuring, operations evolved into Al-Dakhel General Contracting, followed by SAMI BIN AYYAD FOR TRADE & INVESTMENT, solidifying an integrated corporate ecosystem.\n\nExecutive & Investment Philosophy\nHis management philosophy rests on thorough opportunity assessment, realistic planning, prudent partner selection, rigorous cost estimation, documented commitments, continuous performance monitoring, and learning from practical execution.",
+    bioAr: "يمتلك الشيخ سامي بن عياد مسيرة مهنية واستثمارية ممتدة بدأت عام 1977، حين انطلق في مجال المقاولات والتشطيبات والديكور، مكتسبًا خبرة عملية مبكرة في تنفيذ الأعمال وإدارة العمال وتقدير التكاليف ومتابعة المشروعات. وشكّلت هذه البداية الأساس الذي انطلقت منه مسيرته في التجارة والاستثمار وإدارة الأنشطة المتنوعة.\n\nعام 1977 | بداية المسيرة المهنية في المقاولات والتشطيبات\nبدأ الشيخ سامي بن عياد نشاطه في أعمال المقاولات والتشطيبات والديكور، وشملت خبراته تنفيذ أعمال الدهانات والديكورات وتجهيز الوحدات السكنية والمكاتب والمحلات التجارية. وأسهمت هذه المرحلة في بناء خبرته التنفيذية والإدارية، وتعزيز قدرته على إدارة فرق العمل ومتابعة جودة التنفيذ والتعامل مع العملاء.\n\nعام 1992 | التوسع في أعمال المقاولات والتشطيبات بالمملكة العربية السعودية\nامتدت خبرته إلى المملكة العربية السعودية من خلال تجربة في الأعمال المعمارية والتشطيبات بالتعاون مع شريك سعودي، وشملت الأعمال تنفيذ التشطيبات والرخام والترميمات ومشروعات متنوعة. وأسهمت هذه التجربة في توسيع خبرته في إدارة المشروعات والتعامل مع متطلبات التنفيذ في بيئات عمل مختلفة.\n\n4 ديسمبر 1996 | تأسيس نشاط تجارة الذهب والمجوهرات\nدخل الشيخ سامي بن عياد مجال تجارة الذهب والمصوغات والمجوهرات من خلال تأسيس منشأة متخصصة في هذا النشاط. وشملت تجربته التعامل مع أسواق الجملة وإدارة عمليات الشراء والبيع ومتابعة حركة السوق، إلى جانب أنشطة تجارية أخرى، من بينها تجارة العملات والسيارات المستعملة.\n\n5 يونيو 1998 | تأسيس مؤسسة «جملة الشيخ»\nأسس مؤسسة متخصصة في تجارة الجملة للمواد الغذائية ومختلف أنواع الحلويات تحت اسم «جملة الشيخ». ومثّلت هذه المرحلة توسعًا في نطاق أنشطته التجارية، مع اكتساب خبرة في إدارة المخزون وشبكات العملاء والتوزيع والتحصيل والتشغيل.\n\n12 فبراير 2008 | تأسيس شركة العبادلة لتحقيق كتب التراث والبحث العلمي\nأسس شركة العبادلة لتحقيق كتب التراث والبحث العلمي، جامعًا بين اهتمامه بالقراءة والبحث والمطالعة وخبرته في تأسيس الأعمال وإدارتها. وامتد نشاط الشركة إلى إعداد الكتب ومراجعة الأعمال العلمية والتعاون مع المتخصصين في الطباعة والنشر والتوزيع، لتصبح هذه التجربة محطة مهمة تجمع بين الإدارة والعمل المعرفي.\n\nالمرحلة اللاحقة | تطوير المسار المؤسسي والتوسع في الاستثمار والتجارة\nواصل الشيخ سامي بن عياد تطوير خبراته من خلال أنشطة وشراكات متنوعة شملت المقاولات والتشطيبات والتوريدات والتجارة والخدمات، إلى جانب تجارب في قطاعات أخرى. وفي المسار المؤسسي اللاحق، تطورت الأنشطة لتشمل شركة الداخل للمقاولات العامة، ثم شركة سامي بن عياد للتجارة والاستثمار، ضمن توجه نحو بناء منظومة أعمال متنوعة تجمع بين الخبرة التنفيذية والنشاط التجاري والاستثماري.\n\nالرؤية الإدارية والاستثمارية\nتقوم فلسفة الشيخ سامي بن عياد في إدارة الأعمال على دراسة الفرص قبل الدخول فيها، والتخطيط الواقعي، وحسن اختيار الشركاء، وتقدير التكاليف، وتوثيق الالتزامات، ومتابعة الأداء، والاستفادة من التجارب العملية. وتعكس مسيرته الممتدة منذ عام 1977 توجهًا نحو تنويع الأنشطة وتراكم الخبرة وبناء الأعمال على أسس عملية وإدارية واضحة.",
+  },
+  {
+    role: "Founder & HSSE Environmental Leader",
+    roleAr: "المؤسس واستشاري البيئة والسلامة",
+    name: "Abdelhakam Mashhour",
+    nameAr: "عبد الحكم مشهور",
+    image: "/Leadership/Abdelhakam Mashhour.jpg",
+    bio: "Abdelhakam Mashhour graduated from Alazhar University- Egypt, with Bachelor of Science degree in Biology Department, Over 15 years’ experience in Health, Safety, Environment and the Integrated Management Systems for Oil & Gas industry throughout Middle East. Accredited as Environmental Consultant by the Egyptian Ministry of Environment.\n\nAbdelhakam Mashhour is a highly experienced leader, he has served as Regional HSSE Manager of Seenopex in Middle East in 2012-2018, appointed as QHSE Manager of United Oil Company in Syria & Iraq 2010-2012.\n\nParticipated in a large scale projects in Drilling, intervention Services, Wellhead Integrity and Inspection Services with a global corporations such BP, Shell, ENI, Luk Oil, Schlumberger, Halliburton, SOC Iraq, Weatherford, Daqing.\n\nThese experiences bring not only a deep understanding of the projects management, but the skills to co-ordinate the diverse range of knowledge and perspectives provided to the board.",
+    bioAr: "تخرج عبد الحكم مشهور من جامعة الأزهر بمصر، حاصلًا على بكالوريوس العلوم في قسم البيولوجي، ويمتلك أكثر من 15 عامًا من الخبرة في مجالات الصحة والسلامة والبيئة ونظم الإدارة المتكاملة لصناعة النفط والغاز في مختلف أنحاء الشرق الأوسط. وهو استشاري بيئي معتمد ومصرح له من وزارة البيئة المصرية.\n\nيُعد عبد الحكم مشهور قائدًا تنفيذيًا رفيع الخبرة؛ حيث شغل منصب المدير الإقليمي للصحة والسلامة والبيئة (HSSE) لشركة سينوبكس (Seenopex) في الشرق الأوسط خلال الفترة 2012–2018، كما عُيّن مديرًا للجودة والصحة والسلامة والبيئة (QHSE) لشركة يونايتد أويل في سوريا والعراق خلال الفترة 2010–2012.\n\nشارك في مشروعات واسعة النطاق في عمليات الحفر وخدمات التدخل وسلامة رؤوس الآبار وخدمات الفحص والمعاينة مع كبرى الشركات والمؤسسات العالمية مثل BP، وShell، وENI، وLuk Oil، وSchlumberger، وHalliburton، وSOC العراق، وWeatherford، وDaqing.\n\nتمنح هذه الخبرات العميقة ليس فقط فهمًا متقدمًا لإدارة المشروعات، بل والمهارات اللازمة لتنسيق النطاق المتنوع من المعارف والرؤى وتقديمها لمجلس الإدارة.",
   },
   {
     role: "Founder",
     roleAr: "المؤسس",
-    name: "Abdelhakam Mashhour",
-    nameAr: "د. عبد الحكم مشهور",
-    image: "/Leadership/Abdelhakam Mashhour.jpg",
-    bio: "Abdelhakam Mashhour is a highly experienced leader, he has served as Regional HSSE Manager of Seenopex in Middle East in 2012-2018, appointed as QHSE Manager of United Oil Company in Syria & Iraq 2010-2012. Participated in large scale projects in Drilling, intervention Services, Wellhead Integrity and Inspection Services with global corporations such BP, Shell, ENI, Luk Oil, Schlumberger, Halliburton, SOC Iraq, Weatherford, Daqing. These experiences bring not only a deep understanding of projects management, but the skills to co-ordinate the diverse range of knowledge and perspectives provided to the board.",
-    bioAr: "قائد تنفيذي ذو خبرة ممتدة، شغل منصب المدير الإقليمي للصحة والسلامة والبيئة لشركة سينوبكس في الشرق الأوسط (2012–2018)، ومدير QHSE لشركة يونايتد أويل في سوريا والعراق (2010–2012). شارك في مشروعات كبرى للحفر وسلامة الآبار وخدمات الفحص مع شركات عالمية كبرى مثل BP وShell وENI وLuk Oil وSchlumberger وHalliburton وSOC العراق وWeatherford وDaqing، مما يمنحه فهمًا عميقًا لإدارة المشروعات وتنسيق المعارف والرؤى المتنوعة لمجلس الإدارة.",
-  },
-  {
-    role: "Executive Leadership, Corporate Management & Scientific Research",
-    roleAr: "القيادة التنفيذية والإدارة المؤسسية والبحث العلمي",
-    name: "Dr. Abdulrahman Sami Bin Ayyad",
-    nameAr: "د. عبد الرحمن عياد",
+    name: "Dr. Abdulrahman Bin Ayyad",
+    nameAr: "د. عبد الرحمن بن عياد",
     image: "/Leadership/Abdulrahman Bin Ayyad.jpg",
     bio: "Dr. Abdulrahman Ayyad brings multi-disciplinary leadership across executive direction, corporate management, scientific research, educational development, industrial operations, and commercial contracting, with a strategic focus on planning, digital transformation, and international expansion.\n\nHe founded Rewaq Educational Academy in 2019, managing its programs, curricula, and proprietary digital platform, and expanding services to non-Arabic speakers across Europe and the Americas. In scientific research, he conducts heritage manuscript editing with Al-Abadila, having received commendations from eminent scholars of Al-Azhar.\n\nIn industry and trade, he serves as CEO of a specialized apparel manufacturing and export facility and General Manager of Contracts at SAMI BIN AYYAD GROUP, driving contractual partnerships, client-production alignment, and international institutional growth.",
     bioAr: "يمتلك د. عبد الرحمن عياد خبرة متعددة المجالات في القيادة التنفيذية والإدارة المؤسسية والبحث العلمي وتطوير الأنظمة التعليمية وإدارة العمليات الصناعية والتعاقدات التجارية مع اهتمام بالتخطيط الاستراتيجي والتحول الرقمي وبناء الشراكات والتوسع في الأسواق المحلية والدولية.\n\nأسّس أكاديمية رواق التعليمية عام 2019 ويتولى إدارتها وتطوير برامجها ومناهجها لمختلف المراحل العمرية. وفي عام 2021 ساهم في توسيع نطاق خدماتها من خلال التعليم الحضوري وعن بُعد للناطقين بغير العربية في أسواق دولية من بينها أوروبا وأمريكا كما عمل على تطوير تطبيق خاص لدعم العمليات التعليمية والإدارية.\n\nوفي المجال البحثي يعمل باحثًا لدى شركة العبادلة في تحقيق كتب التراث والبحث العلمي كما يمتلك خبرات في التواصل العلمي والثقافي الدولي وحصل على تزكيات من علماء الأزهر الشريف وتولى أدوارًا مرتبطة بالبحث والتمثيل الثقافي وفق صفاته ومهامه المعلنة.\n\nوعلى الصعيد الصناعي والتجاري يشغل منصب الرئيس التنفيذي لمصنع ملابس متخصص في التصنيع للسوقين المحلي والتصديري ويتولى إدارة التعاقدات ومنصب المدير العام في مجموعة سامي بن عياد (SAMI BIN AYYAD GROUP) حيث يركز على إدارة العلاقات التعاقدية وتطوير الشراكات والتنسيق بين متطلبات العملاء والقدرات الإنتاجية ودعم النمو المؤسسي والتوسع الدولي.\n\nوتجمع مسيرته بين الإدارة والبحث والتعليم والصناعة بما يدعم تأسيس المبادرات وتطوير الأنظمة التشغيلية وقيادة الفرق وتحويل الأهداف الاستراتيجية إلى خطط عمل قابلة للتنفيذ والتطوير.",
@@ -560,8 +590,8 @@ export const founders = [
   {
     role: "Business Developer",
     roleAr: "مطوّر الأعمال",
-    name: "Abdullah Sami Bin Ayyad",
-    nameAr: "عبد الله بن عياد",
+    name: "Dr. Abdullah Bin Ayyad",
+    nameAr: "د. عبد الله بن عياد",
     image: "/Leadership/Abdullah Bin Ayyad.jpg",
     bio: "Leads business development across the group's divisions, connecting partners and clients with the right sector capability.",
     bioAr: "يقود تطوير الأعمال في قطاعات المجموعة، ويربط الشركاء والعملاء بالقدرات المناسبة في كل قطاع.",

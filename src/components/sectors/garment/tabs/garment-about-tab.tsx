@@ -26,11 +26,8 @@ import { cn } from "@/lib/utils";
 import { SectorContactSection } from "@/components/site/sector-contact-section";
 import { highlightBrand } from "@/components/site/brand-text";
 import { AnimatedStatistic } from "@/components/site/animated-statistic";
-
-import homeTextile from "@/assets/home-textile.jpg";
-import apparelImg from "@/assets/sector-apparel.jpg";
-import jzraCasual from "@/assets/jzra-summer-casual.jpg";
-import jzraDresses from "@/assets/jzra-summer-dresses.jpg";
+import { GarmentPartnersTab } from "./garment-partners-tab";
+import { GarmentClientsTab } from "./garment-clients-tab";
 
 function SectionBadge({ title }: { title: string }) {
   return (
@@ -123,39 +120,26 @@ export function GarmentAboutTab() {
             </div>
 
             <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-              {whatWeOffer.services.map((item, index) => {
-                const cardImgs = [jzraCasual, jzraDresses, apparelImg, homeTextile];
-                const cardImg = cardImgs[index % cardImgs.length];
-                return (
-                  <div 
-                    key={item.id}
-                    className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-border bg-card/60 backdrop-blur-md shadow-sm transition duration-300 hover:border-brand-orange/50 hover:shadow-lg"
-                  >
-                    <div className="relative aspect-[16/10] overflow-hidden bg-secondary">
-                      <img
-                        src={cardImg}
-                        alt={ar ? item.titleAr : item.title}
-                        loading="lazy"
-                        className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                      <span className="absolute top-2.5 start-2.5 rounded-full bg-black/60 px-2.5 py-0.5 font-mono text-[10px] font-bold text-white backdrop-blur-md">
+              {whatWeOffer.services.map((item, index) => (
+                <div 
+                  key={item.id}
+                  className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/30 bg-card/75 p-6 backdrop-blur-xl shadow-sm transition-all duration-300 hover:scale-[1.02] hover:border-brand-orange/60 hover:shadow-xl active:scale-[0.98] cursor-pointer"
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="inline-flex size-8 items-center justify-center rounded-xl bg-brand-orange/15 font-mono text-xs font-bold text-brand-orange">
                         0{index + 1}
                       </span>
                     </div>
-
-                    <div className="p-5 flex flex-col justify-between flex-1">
-                      <div>
-                        <h3 className="font-head text-base font-bold text-foreground group-hover:text-brand-orange transition">
-                          {ar ? item.titleAr : item.title}
-                        </h3>
-                        <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
-                          {ar ? item.descAr : item.desc}
-                        </p>
-                      </div>
-                    </div>
+                    <h3 className="font-head text-base sm:text-lg font-bold text-foreground group-hover:text-brand-orange transition">
+                      {ar ? item.titleAr : item.title}
+                    </h3>
+                    <p className="mt-2 text-xs sm:text-sm leading-relaxed text-muted-foreground">
+                      {ar ? item.descAr : item.desc}
+                    </p>
                   </div>
-                );
-              })}
+                </div>
+              ))}
             </div>
           </Reveal>
         </div>
@@ -241,52 +225,7 @@ export function GarmentAboutTab() {
         </div>
       </section>
 
-      {/* 5 — إمكانياتنا | Our Facilities & Infrastructure */}
-      <section id="our-facilities" className="scroll-mt-36">
-        <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
-          <Reveal>
-            <div className="flex items-center gap-3">
-              <SectionBadge title={ar ? "إمكانياتنا" : "Our Infrastructure"} />
-            </div>
-
-            <h2 className="section-title mt-3">
-              {ar ? infrastructure.headingAr : infrastructure.heading}
-            </h2>
-            <p className="section-intro mt-2 max-w-2xl">
-              {ar ? infrastructure.introAr : infrastructure.intro}
-            </p>
-
-            <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {infrastructure.pillars.map((item, pIdx) => {
-                const pillarImgs = [apparelImg, homeTextile, jzraDresses];
-                const pImg = pillarImgs[pIdx % pillarImgs.length];
-                return (
-                  <div key={item.title} className="group overflow-hidden rounded-2xl border border-border bg-card/60 backdrop-blur-md shadow-sm transition hover:border-brand-orange/50 hover:shadow-md">
-                    <div className="relative aspect-[16/10] overflow-hidden bg-secondary">
-                      <img
-                        src={pImg}
-                        alt={ar ? item.titleAr : item.title}
-                        loading="lazy"
-                        className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                    </div>
-                    <div className="p-6">
-                      <h3 className="font-head text-base font-bold text-foreground">
-                        {ar ? item.titleAr : item.title}
-                      </h3>
-                      <p className="mt-2 text-xs sm:text-sm leading-relaxed text-muted-foreground">
-                        {ar ? item.descAr : item.desc}
-                      </p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* 6 — أسواقنا | Our Markets */}
+      {/* 5 — أسواقنا | Our Markets */}
       <section id="our-markets" className="scroll-mt-36">
         <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
           <Reveal>
@@ -307,7 +246,7 @@ export function GarmentAboutTab() {
 
             <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {markets.regions.map((reg) => (
-                <div key={reg.id} className="rounded-2xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur-md transition hover:border-brand-orange/50">
+                <div key={reg.id} className="rounded-2xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur-md transition-all duration-300 hover:scale-[1.02] hover:border-brand-orange/50 hover:shadow-md cursor-pointer">
                   <div className="flex items-center justify-between">
                     <h3 className="font-head text-lg font-bold text-foreground">
                       {ar ? reg.nameAr : reg.name}
@@ -324,6 +263,12 @@ export function GarmentAboutTab() {
             </div>
           </Reveal>
         </div>
+      </section>
+
+      {/* 6 — شركاؤنا وعملاؤنا مباشرة تحت أسواقنا */}
+      <section id="partners-and-clients" className="space-y-12">
+        <GarmentPartnersTab />
+        <GarmentClientsTab />
       </section>
 
       {/* Contact Section */}

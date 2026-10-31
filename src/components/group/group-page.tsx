@@ -9,12 +9,11 @@ import { getMessages } from "@/i18n";
 import { cn } from "@/lib/utils";
 import { WHATSAPP_URL } from "@/lib/process-steps";
 import { JourneySection } from "./journey-section";
-import { BusinessDashboard } from "./business-dashboard";
+import { BusinessDashboard, WhatWeOfferSection } from "./business-dashboard";
 import { AnimatedStatistic } from "@/components/site/animated-statistic";
-import { aboutTabs, divisions, sectorOverviews, strategicPartners, whoWeServe } from "./group-data";
+import { aboutTabs, divisions, sectorOverviews, whoWeServe } from "./group-data";
 import { SectorsShowcase } from "./sectors-showcase";
 import { JoinShowcase } from "./join-showcase";
-import { PartnersSlider } from "./partners-slider";
 
 
 export function GroupPage() {
@@ -201,72 +200,21 @@ export function GroupPage() {
         </div>
       </section>
 
+      {/* What We Offer — Directly under Our Sectors at a Glance after Food & Natural Products */}
+      <WhatWeOfferSection ar={ar} />
+
+      {/* Group Performance & Verified Markets Map */}
       <BusinessDashboard ar={ar} />
 
+      {/* Journey & History */}
       <JourneySection ar={ar} />
-
-      {/* Partnerships & Markets — Interactive Slider */}
-      <section id="partners" className="site-container pt-16 pb-2 scroll-mt-24">
-        <Reveal className="max-w-3xl">
-          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
-            <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-            <span>{ar ? "الشراكات والأسواق" : "Partnerships & Markets"}</span>
-          </div>
-          <h2 className="section-title">{ar ? "نربط القدرات بالفرص العالمية" : "Connecting Capabilities with Global Opportunities"}</h2>
-          <p className="section-intro mt-4">
-            {ar ? (
-              <span>تطوّر <span className="text-brand-orange">مجموعة سامي بن عياد</span> علاقات أعمال عبر قطاعات متنوعة، مع التركيز على التصنيع وتنفيذ المشروعات والتجارة الدولية والشراكات التجارية طويلة الأمد.</span>
-            ) : (
-              <span><span className="text-brand-orange">SAMI BIN AYYAD GROUP</span> develops business relationships across diverse sectors, with a focus on manufacturing, project execution, international trade, and long-term commercial partnerships.</span>
-            )}
-          </p>
-        </Reveal>
-
-        {/* Strategic International Partnerships (China) */}
-        <div className="mt-8 grid gap-5 sm:grid-cols-2">
-          {strategicPartners.map((partner) => (
-            <Reveal key={partner.id}>
-              <div className="glass-card h-full flex flex-col justify-between rounded-3xl border border-white/30 bg-background/85 p-6 sm:p-7 shadow-md backdrop-blur-xl transition hover:border-brand-green/50 hover:shadow-xl">
-                <div>
-                  <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
-                    <span className="inline-flex items-center gap-1.5 rounded-full border border-brand-green/30 bg-brand-green/10 px-3 py-1 text-xs font-bold text-brand-green">
-                      <span>🇨🇳</span>
-                      <span>{ar ? partner.countryAr : partner.country}</span>
-                    </span>
-                    <span className="text-xs font-bold text-brand-orange bg-brand-orange/10 px-3 py-1 rounded-full border border-brand-orange/20">
-                      {ar ? partner.tagAr : partner.tag}
-                    </span>
-                  </div>
-                  <h3 className="font-head text-base sm:text-lg font-bold text-foreground">
-                    {ar ? partner.nameAr : partner.name}
-                  </h3>
-                  <p className="mt-3 text-xs sm:text-sm leading-relaxed text-muted-foreground">
-                    {ar ? partner.descriptionAr : partner.description}
-                  </p>
-                </div>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-
-        {/* Interactive Partnerships Slider */}
-        <PartnersSlider ar={ar} />
-
-        <Reveal className="mt-8 text-center sm:text-start">
-          <Button asChild size="lg" className="group relative inline-flex items-center justify-center gap-2 rounded-full !bg-brand-green !text-white px-7 py-3 font-head text-sm font-bold shadow-lg transition-all duration-300 hover:!bg-brand-orange hover:shadow-brand-orange/30 hover:scale-105 active:scale-95">
-            <a href="#contact">
-              {ar ? "ناقش شراكة" : "Discuss a Partnership"} <ArrowRight className="size-4 rtl:rotate-180" />
-            </a>
-          </Button>
-        </Reveal>
-      </section>
 
       {/* Join Us Pathways — 3 Concise Cards linking to dedicated pages */}
       <JoinShowcase />
 
-      {/* Final CTA — Glassmorphic Island matching Footer */}
+      {/* Final CTA — Interactive Glassmorphic Island matching Footer */}
       <section id="contact" className="relative px-4 pb-6 pt-4 text-foreground scroll-mt-24">
-        <div className="mx-auto max-w-6xl overflow-hidden rounded-3xl border border-white/20 bg-background/75 p-8 sm:p-12 shadow-[0_8px_40px_rgba(0,0,0,0.18)] backdrop-blur-2xl grid gap-8 lg:grid-cols-[1.2fr_1fr] items-center">
+        <div className="mx-auto max-w-6xl overflow-hidden rounded-3xl border border-white/20 bg-background/75 p-8 sm:p-12 shadow-[0_8px_40px_rgba(0,0,0,0.18)] backdrop-blur-2xl grid gap-8 lg:grid-cols-[1.2fr_1fr] items-center transition-all duration-300 hover:scale-[1.01] hover:shadow-2xl hover:border-brand-green/40">
           <div>
             <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
@@ -276,25 +224,25 @@ export function GroupPage() {
             <p className="section-intro mt-4 text-muted-foreground">{ar ? "استكشف فرص التعاون مع مجموعة سامي عياد في التصنيع والإنشاءات والحلول البيئية والمنتجات الطبيعية." : "Explore opportunities to collaborate with SAMI BIN AYYAD GROUP across manufacturing, construction, environmental solutions, and natural products."}</p>
           </div>
           <div className="min-w-0 flex flex-col gap-4">
-            <Button asChild variant="ghost" className="group relative h-auto w-full justify-start gap-4 overflow-hidden rounded-2xl border border-border bg-background/60 p-5 text-start whitespace-normal hover:border-brand-green hover:shadow-lg sm:p-6 backdrop-blur-md">
+            <Button asChild variant="ghost" className="group relative h-auto w-full justify-start gap-4 overflow-hidden rounded-2xl border border-[#0066CC]/30 bg-[#0066CC]/5 p-5 text-start whitespace-normal hover:border-[#0066CC] hover:bg-[#0066CC]/15 hover:shadow-lg sm:p-6 backdrop-blur-md transition-all duration-300 hover:scale-[1.01] active:scale-[0.98]">
               <a data-email-contact href="mailto:info@sami-trade.com">
-                <span data-email-icon className="flex size-12 shrink-0 items-center justify-center rounded-full bg-brand-green/10 text-brand-green"><Mail aria-hidden="true" className="size-5" /></span>
+                <span data-email-icon className="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#0066CC]/15 text-[#0066CC]"><Mail aria-hidden="true" className="size-5" /></span>
                 <span data-email-copy className="min-w-0 flex-1">
-                  <span className="block font-head text-sm font-bold text-foreground/80">{ar ? "البريد الإلكتروني" : "Email"}</span>
+                  <span className="block font-head text-sm font-bold text-foreground/80">{ar ? "البريد الإلكتروني الرسمي" : "Official Email"}</span>
                   <span dir="ltr" className="mt-1 block break-all font-head text-base font-bold text-foreground sm:text-lg">info@sami-trade.com</span>
                 </span>
-                <span data-email-arrow className="shrink-0 text-brand-green"><ArrowRight aria-hidden="true" className="size-5 rtl:rotate-180" /></span>
+                <span data-email-arrow className="shrink-0 text-[#0066CC]"><ArrowRight aria-hidden="true" className="size-5 rtl:rotate-180" /></span>
               </a>
             </Button>
 
-            <Button asChild variant="ghost" className="group relative h-auto w-full justify-start gap-4 overflow-hidden rounded-2xl border border-border bg-background/60 p-5 text-start whitespace-normal hover:border-brand-green hover:shadow-lg sm:p-6 backdrop-blur-md">
+            <Button asChild variant="ghost" className="group relative h-auto w-full justify-start gap-4 overflow-hidden rounded-2xl border border-[#25D366]/30 bg-[#25D366]/5 p-5 text-start whitespace-normal hover:border-[#25D366] hover:bg-[#25D366]/15 hover:shadow-lg sm:p-6 backdrop-blur-md transition-all duration-300 hover:scale-[1.01] active:scale-[0.98]">
               <a href={WHATSAPP_URL} target="_blank" rel="noreferrer">
-                <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-brand-green/10 text-brand-green"><MessageCircle aria-hidden="true" className="size-5" /></span>
+                <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#25D366]/15 text-[#25D366]"><MessageCircle aria-hidden="true" className="size-5" /></span>
                 <span className="min-w-0 flex-1">
-                  <span className="block font-head text-sm font-bold text-foreground/80">WhatsApp</span>
+                  <span className="block font-head text-sm font-bold text-foreground/80">WhatsApp Direct</span>
                   <span dir="ltr" className="mt-1 block font-head text-base font-bold text-foreground sm:text-lg">+20 12 222 380 72</span>
                 </span>
-                <span className="shrink-0 text-brand-green"><ArrowRight aria-hidden="true" className="size-5 rtl:rotate-180" /></span>
+                <span className="shrink-0 text-[#25D366]"><ArrowRight aria-hidden="true" className="size-5 rtl:rotate-180" /></span>
               </a>
             </Button>
           </div>

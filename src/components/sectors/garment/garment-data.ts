@@ -2,14 +2,14 @@ const apparelImg = "/BG/arawark-chen-b6WsvhfM-kU-unsplash.jpg";
 
 export const garmentHeroData = {
   image: apparelImg,
-  company: "SAMI BIN AYYAD · Ready-Made Garments",
-  companyAr: "مجموعة سامي بن عياد · قطاع الملابس الجاهزة",
-  title: "Ready-Made Garments",
-  titleAr: "الملابس الجاهزة",
+  company: "SAMI BIN AYYAD · Apparel Manufacturing",
+  companyAr: "مجموعة سامي بن عياد · تصنيع الملابس",
+  title: "Apparel Manufacturing",
+  titleAr: "تصنيع الملابس",
   subtitle: "Integrated manufacturing solutions for fashion brands and global markets.",
   subtitleAr: "حلول تصنيع متكاملة للعلامات التجارية والأسواق العالمية.",
-  intro: "SAMI BIN AYYAD GROUP delivers integrated ready-made garment manufacturing solutions, combining product development, diverse production capabilities, manufacturing management, and quality control. With specialization in women's, children's, and men's apparel, we support fashion brands, importers, and international buyers through flexible manufacturing programs tailored to each project.",
-  introAr: "نقدم من خلال قطاع الملابس في مجموعة سامي بن عياد حلولًا متكاملة لتصنيع الملابس الجاهزة، تجمع بين تطوير المنتجات، والقدرات الإنتاجية المتنوعة، وإدارة التصنيع، ومراقبة الجودة. نتخصص في الملابس الحريمي والأطفالي، إلى جانب الملابس الرجالية، وندعم العلامات التجارية والمستوردين والعملاء الدوليين من خلال برامج تصنيع مرنة تتوافق مع متطلبات كل مشروع.",
+  intro: "SAMI BIN AYYAD GROUP delivers integrated apparel manufacturing solutions, combining product development, diverse production capabilities, manufacturing management, and quality control. With specialization in women's, children's, and men's apparel, we support fashion brands, importers, and international buyers through flexible manufacturing programs tailored to each project.",
+  introAr: "يمثل قطاع الملابس أحد القطاعات الصناعية الرئيسية في مجموعة سامي بن عياد، ونغطي مراحل متعددة من دورة التصنيع، بدءًا من تطوير المنتج والباترونات والعينات، مرورًا بالقص والخياطة والتشطيب ومراقبة الجودة، وصولًا إلى التعبئة وتجهيز الطلبات للتصدير، ونركز على بناء علاقات تصنيع طويلة الأمد قائمة على وضوح المواصفات، والانضباط الإنتاجي، والمسؤولية، والتواصل الفعال.",
 };
 
 export const garmentAboutData = {
@@ -17,10 +17,10 @@ export const garmentAboutData = {
   whoWeAre: {
     heading: "Your Partner in the Manufacturing Journey",
     headingAr: "شريكك في رحلة التصنيع",
-    body: "Garment division is one of the Group's core industrial divisions, supported by our own garment factory, our dedicated fabric mill with internal dyeing, ownership interests in three additional manufacturing factories, and an expansive network of production partnerships.",
-    bodyAr: "يمثل قطاع الملابس أحد القطاعات الصناعية الرئيسية في مجموعة سامي بن عياد، ويعتمد على منظومة صناعية متكاملة تجمع بين مصنع الملابس التابع للمجموعة، ومصنع متخصص للأقمشة بقدرات صباغة داخلية، إلى جانب حصص ملكية في ثلاثة مصانع تصنيع أخرى وشبكة واسعة من الشراكات الإنتاجية.",
-    extended: "Our operations cover multiple stages of the manufacturing cycle, from product development, pattern making, and sampling to cutting, sewing, finishing, quality control, packaging, and export preparation. In addition, the Group owns its own private fashion brand with a direct retail footprint across 7 flagship showrooms, giving us deep consumer-market insights alongside our contract manufacturing for international labels. We focus on building long-term manufacturing partnerships grounded in clear specifications, disciplined production, accountability, and effective communication.",
-    extendedAr: "نغطي مراحل متعددة من دورة التصنيع، بدءًا من تطوير المنتج والباترونات والعينات، مرورًا بالقص والخياطة والتشطيب ومراقبة الجودة، وصولًا إلى التعبئة وتجهيز الطلبات للتصدير. وتمتلك المجموعة براندًا خاصًا بها يتواجد في 7 معارض كبرى بما يعكس حضورًا مباشرًا في سوق التجزئة بالتوازي مع نشاطنا الصناعي للعلامات التجارية العالمية. ونركز على بناء علاقات تصنيع طويلة الأمد قائمة على وضوح المواصفات، والانضباط الإنتاجي، والمسؤولية، والتواصل الفعال.",
+    body: "The apparel sector represents one of the main industrial sectors in SAMI BIN AYYAD GROUP, covering multiple stages of the manufacturing cycle from product development, pattern engineering, and sampling, through cutting, sewing, finishing, and quality control, to packaging and preparing orders for export.",
+    bodyAr: "يمثل قطاع الملابس أحد القطاعات الصناعية الرئيسية في مجموعة سامي بن عياد، ونغطي مراحل متعددة من دورة التصنيع، بدءًا من تطوير المنتج والباترونات والعينات، مرورًا بالقص والخياطة والتشطيب ومراقبة الجودة، وصولًا إلى التعبئة وتجهيز الطلبات للتصدير، ونركز على بناء علاقات تصنيع طويلة الأمد قائمة على وضوح المواصفات، والانضباط الإنتاجي، والمسؤولية، والتواصل الفعال.",
+    extended: "We focus on building long-term manufacturing partnerships grounded in clear specifications, disciplined production, accountability, and effective communication.",
+    extendedAr: "ونركز على بناء علاقات تصنيع طويلة الأمد قائمة على وضوح المواصفات، والانضباط الإنتاجي، والمسؤولية، والتواصل الفعال.",
     mission: {
       title: "Our Mission",
       titleAr: "رسالتنا",
@@ -201,12 +201,12 @@ export const garmentAboutData = {
     },
     volumeSummary: [
       {
-        categoryEn: "Total Ready-Made Garments",
+        categoryEn: "Total Monthly Apparel Output",
         categoryAr: "إجمالي الملابس الجاهزة",
-        volumeEn: "100,000+ pieces / month",
-        volumeAr: "+100,000 قطعة شهريًا",
-        notesEn: "Across women's, men's, kids', and loungewear",
-        notesAr: "تشمل الأزياء الحريمي، الرجالي، الأطفالي، والمنزلي",
+        volumeEn: "+100,000",
+        volumeAr: "+100,000",
+        notesEn: "pieces / month across women's, men's, kids', and loungewear",
+        notesAr: "قطعة شهريًا تشمل الأزياء الحريمي، الرجالي، الأطفالي، والمنزلي",
       },
       {
         categoryEn: "Specialized Production Lines",
@@ -219,18 +219,18 @@ export const garmentAboutData = {
       {
         categoryEn: "Daily Production Peak",
         categoryAr: "ذروة الإنتاج اليومي",
-        volumeEn: "5,000+ pieces / day",
-        volumeAr: "+5,000 قطعة يوميًا",
-        notesEn: "Supported by parallel production lines",
-        notesAr: "مدعومة بخطوط إنتاج متوازية",
+        volumeEn: "+5,000",
+        volumeAr: "+5,000",
+        notesEn: "pieces / day supported by parallel production lines",
+        notesAr: "قطعة يوميًا مدعومة بخطوط إنتاج متوازية",
       },
       {
         categoryEn: "Style Development Output",
         categoryAr: "تطوير الموديلات الجديدة",
-        volumeEn: "20,000+ styles developed",
-        volumeAr: "+20,000 موديل تم تطويره",
-        notesEn: "Broad design references and technical packs",
-        notesAr: "خبرة واسعة في تحويل الأفكار لمنتجات حقيقية",
+        volumeEn: "+20,000",
+        volumeAr: "+20,000",
+        notesEn: "models developed representing vast expertise in transforming ideas into products",
+        notesAr: "موديل تم تطويره ويمثل هذا خبرة واسعة في تحويل الأفكار لمنتجات حقيقية",
       },
     ],
   },

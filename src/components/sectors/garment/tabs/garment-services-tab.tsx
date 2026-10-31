@@ -88,7 +88,7 @@ export function GarmentServicesTab() {
 
                     <div className="mt-8 pt-4 border-t border-border/70 flex items-center justify-between">
                       <Button asChild size="sm" className="bg-brand-green text-white hover:bg-brand-orange transition-colors">
-                        <Link to="/join/garment">
+                        <Link to="/sectors/$sector" params={{ sector: "garment" }} search={{ tab: "start-project" }}>
                           {ar ? "اطلب عرض سعر لهذه الخدمة" : "Request Quote for This"}
                           <ArrowRight className="size-3.5 ms-2 rtl:rotate-180" />
                         </Link>
