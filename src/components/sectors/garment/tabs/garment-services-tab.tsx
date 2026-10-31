@@ -6,10 +6,14 @@ import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/i18n/language-context";
 import { garmentServicesDetailed } from "../garment-data";
 
-import apparelImg from "@/assets/sector-apparel.jpg";
-import homeTextile from "@/assets/home-textile.jpg";
-import jzraCasual from "@/assets/jzra-summer-casual.jpg";
-import jzraDresses from "@/assets/jzra-summer-dresses.jpg";
+const serviceImagesMap: Record<string, string> = {
+  "ready-made-garments": "/BG/Ready-Made Garment Manufacturing.jpg",
+  "product-development": "/BG/Product Development & Sampling.jpg",
+  "private-label": "/BG/Private Label Manufacturing.jpg",
+  "fob-programs": "/BG/FOB Manufacturing Programs.jpg",
+  "textile-dyeing": "/BG/Textile Mill & Internal Dyeing.jpg",
+  "quality-control": "/BG/Rigorous Quality Assurance.jpg",
+};
 
 function SectionBadge({ title }: { title: string }) {
   return (
@@ -23,7 +27,6 @@ function SectionBadge({ title }: { title: string }) {
 export function GarmentServicesTab() {
   const { language } = useLanguage();
   const ar = language === "AR";
-  const serviceImages = [apparelImg, homeTextile, jzraCasual, jzraDresses];
 
   return (
     <div className="py-6 space-y-12">
@@ -42,8 +45,8 @@ export function GarmentServicesTab() {
           </div>
 
           <div className="mt-12 grid gap-8 md:grid-cols-2">
-            {garmentServicesDetailed.map((service, index) => {
-              const cardImg = serviceImages[index % serviceImages.length];
+            {garmentServicesDetailed.map((service) => {
+              const cardImg = serviceImagesMap[service.id] || `/BG/${service.titleEn}.jpg`;
               return (
                 <div
                   key={service.id}

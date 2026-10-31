@@ -21,8 +21,6 @@ import { AnimatedStatistic } from "@/components/site/animated-statistic";
 import { WHATSAPP_URL } from "@/lib/process-steps";
 import { FactorySlider } from "@/components/group/factory-slider";
 
-import apparelImg from "@/assets/sector-apparel.jpg";
-
 function SectionBadge({ title }: { title: string }) {
   return (
     <span className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
@@ -128,28 +126,39 @@ export function GarmentCapabilitiesTab() {
       {/* 3. Quality Control & Standards */}
       <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
         <Reveal>
-          <div>
-            <SectionBadge title={ar ? "ضمان الجودة" : "Quality Assurance"} />
-            <h3 className="section-title mt-3">
-              {ar ? "الجودة مدمجة في كل خطوة وليست مجرد فحص أخير" : "Quality Built-In At Every Touchpoint"}
-            </h3>
-            <p className="section-intro mt-4 max-w-4xl">
-              {ar
-                ? "نعتمد على متابعة الجودة خلال كافة المراحل: بدءًا من فحص الأقمشة والمقاسات والباترونات، مرورًا بالقص والخياطة والتشطيب، وصولًا إلى المظهر النهائي والملصقات والتعبئة. تُحدد معايير الفحص لكل مشروع وفق المواصفات الفنية المعتمدة من العميل."
-                : "Quality is monitored continuously: from raw textile and pattern audits to automated cutting, in-line sewing checks, steam finishing, labeling, and final carton packing against approved AQL benchmarks."}
-            </p>
+          <div className="grid gap-8 lg:grid-cols-12 lg:items-center">
+            <div className="lg:col-span-7">
+              <SectionBadge title={ar ? "ضمان الجودة" : "Quality Assurance"} />
+              <h3 className="section-title mt-3">
+                {ar ? "الجودة مدمجة في كل خطوة وليست مجرد فحص أخير" : "Quality Built-In At Every Touchpoint"}
+              </h3>
+              <p className="section-intro mt-4">
+                {ar
+                  ? "نعتمد على متابعة الجودة خلال كافة المراحل: بدءًا من فحص الأقمشة والمقاسات والباترونات، مرورًا بالقص والخياطة والتشطيب، وصولًا إلى المظهر النهائي والملصقات والتعبئة. تُحدد معايير الفحص لكل مشروع وفق المواصفات الفنية المعتمدة من العميل."
+                  : "Quality is monitored continuously: from raw textile and pattern audits to automated cutting, in-line sewing checks, steam finishing, labeling, and final carton packing against approved AQL benchmarks."}
+              </p>
 
-            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {[
-                { en: "4-Point Fabric Inspection", ar: "فحص الأقمشة بنظام النقاط الأربعة" },
-                { en: "In-Line Sewing Tolerances Check", ar: "متابعة دقيقة لحدود السماح بالخياطة" },
-                { en: "Seam Strength & Wash Tests", ar: "اختبارات قوة الحياكة وثبات الغسيل" },
-                { en: "100% Pre-Pack Auditing", ar: "فحص شامل لكافة القطع قبل التعبئة" },
-              ].map((item, idx) => (
-                <div key={idx} className="flex items-center justify-center text-center rounded-2xl border border-border bg-card/60 p-4 text-xs sm:text-sm font-semibold text-foreground backdrop-blur-sm transition-all duration-300 hover:border-brand-orange/40 hover:-translate-y-0.5 hover:shadow-md">
-                  <span>{ar ? item.ar : item.en}</span>
-                </div>
-              ))}
+              <div className="mt-8 grid gap-3 sm:grid-cols-2">
+                {[
+                  { en: "4-Point Fabric Inspection", ar: "فحص الأقمشة بنظام النقاط الأربعة" },
+                  { en: "In-Line Sewing Tolerances Check", ar: "متابعة دقيقة لحدود السماح بالخياطة" },
+                  { en: "Seam Strength & Wash Tests", ar: "اختبارات قوة الحياكة وثبات الغسيل" },
+                  { en: "100% Pre-Pack Auditing", ar: "فحص شامل لكافة القطع قبل التعبئة" },
+                ].map((item, idx) => (
+                  <div key={idx} className="flex items-center justify-center text-center rounded-xl border border-border bg-card/60 p-3 text-xs sm:text-sm font-semibold text-foreground backdrop-blur-sm transition-all duration-300 hover:border-brand-orange/40 hover:-translate-y-0.5 hover:shadow-md">
+                    <span>{ar ? item.ar : item.en}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="overflow-hidden rounded-2xl border border-border shadow-md lg:col-span-5">
+              <img
+                src="/BG/Rigorous Quality Assurance.jpg"
+                alt={ar ? "مراقبة الجودة وضمان المعايير" : "Rigorous Quality Assurance"}
+                loading="lazy"
+                className="aspect-[4/3] w-full object-cover transition-transform duration-700 hover:scale-105"
+              />
             </div>
           </div>
         </Reveal>
@@ -202,7 +211,7 @@ export function GarmentCapabilitiesTab() {
 
               <div className="overflow-hidden rounded-2xl border border-border shadow-md lg:col-span-5">
                 <img
-                  src={apparelImg}
+                  src="/BG/Specialized Production Lines.jpg"
                   alt={ar ? productionVolume.classicShirtUnit.titleAr : productionVolume.classicShirtUnit.title}
                   loading="lazy"
                   className="aspect-[4/3] w-full object-cover transition-transform duration-700 hover:scale-105"

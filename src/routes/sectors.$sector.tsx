@@ -7,7 +7,7 @@ import { GarmentSectorView, type GarmentTab } from "@/components/sectors/garment
 import { EnvironmentalSectorView, type EnvironmentalTab } from "@/components/sectors/environmental/environmental-view";
 
 const validConstructionTabs: ConstructionTab[] = ["about", "sectors", "services", "projects", "join", "start-project"];
-const validGarmentTabs: GarmentTab[] = ["about", "services", "clients", "projects", "partners", "capabilities", "join", "start-project"];
+const validGarmentTabs: GarmentTab[] = ["about", "capabilities", "services", "projects", "join", "start-project"];
 const validEnvironmentalTabs: EnvironmentalTab[] = ["about", "sectors", "services", "products", "join", "start-consultation"];
 
 export const Route = createFileRoute("/sectors/$sector")({

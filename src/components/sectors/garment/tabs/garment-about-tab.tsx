@@ -26,8 +26,6 @@ import { cn } from "@/lib/utils";
 import { SectorContactSection } from "@/components/site/sector-contact-section";
 import { highlightBrand } from "@/components/site/brand-text";
 import { AnimatedStatistic } from "@/components/site/animated-statistic";
-import { GarmentPartnersTab } from "./garment-partners-tab";
-import { GarmentClientsTab } from "./garment-clients-tab";
 
 function SectionBadge({ title }: { title: string }) {
   return (
@@ -46,58 +44,23 @@ export function GarmentAboutTab() {
   return (
     <div className="space-y-12 py-4">
 
-      {/* 1 — من نحن | Who We Are */}
+      {/* 1 — من نحن | Who We Are — Matching Environmental Sector Style */}
       <section id="who-we-are" className="scroll-mt-36">
-        <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
-          <Reveal>
-            <div className="flex items-center gap-3">
-              <SectionBadge title={ar ? "من نحن" : "Who We Are"} />
+        <Reveal>
+          <div className="group relative mx-auto max-w-4xl overflow-hidden rounded-3xl border border-white/20 bg-background/75 p-8 sm:p-12 shadow-[0_12px_40px_rgba(0,0,0,0.08)] backdrop-blur-2xl transition-all duration-300 hover:scale-[1.01] hover:shadow-[0_20px_60px_rgba(0,0,0,0.12)] hover:border-brand-orange/40 text-center">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+              <span>{ar ? "من نحن" : "Who We Are"}</span>
             </div>
-
-            <h2 className="section-title mt-3">
+            <h2 className="font-head text-xl sm:text-2xl font-extrabold text-foreground mt-2 drop-shadow-md">
               {ar ? whoWeAre.headingAr : whoWeAre.heading}
             </h2>
-
-            {/* Main Interactive Description Card */}
-            <div className="mt-8 group rounded-2xl border border-border/80 bg-card/70 p-6 sm:p-8 shadow-sm backdrop-blur-sm transition-all duration-300 hover:scale-[1.005] hover:border-brand-green/50 hover:shadow-md">
-              <p className="font-semibold text-foreground text-lg sm:text-xl leading-relaxed">
-                {highlightBrand(ar ? whoWeAre.bodyAr : whoWeAre.body)}
-              </p>
-              <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-                {highlightBrand(ar ? whoWeAre.extendedAr : whoWeAre.extended)}
-              </p>
+            <div className="section-intro mx-auto mt-6 leading-relaxed max-w-3xl space-y-4 text-start">
+              <p className="text-start">{highlightBrand(ar ? whoWeAre.bodyAr : whoWeAre.body)}</p>
+              <p className="text-start">{highlightBrand(ar ? whoWeAre.extendedAr : whoWeAre.extended)}</p>
             </div>
-
-            {/* Dedicated Separate Mission & Vision Cards */}
-            <div className="mt-6 grid gap-6 sm:grid-cols-2">
-              <div className="group rounded-2xl border border-border/80 bg-card/70 p-6 shadow-sm backdrop-blur-sm transition-all duration-300 hover:scale-[1.01] hover:border-brand-green/50 hover:shadow-md">
-                <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3 py-0.5 text-xs font-bold text-brand-orange">
-                  <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-                  <span>{ar ? whoWeAre.mission.titleAr : whoWeAre.mission.title}</span>
-                </div>
-                <h3 className="mt-3 font-head text-lg font-bold text-foreground">
-                  {ar ? whoWeAre.mission.titleAr : whoWeAre.mission.title}
-                </h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                  {ar ? whoWeAre.mission.descAr : whoWeAre.mission.desc}
-                </p>
-              </div>
-
-              <div className="group rounded-2xl border border-border/80 bg-card/70 p-6 shadow-sm backdrop-blur-sm transition-all duration-300 hover:scale-[1.01] hover:border-brand-orange/50 hover:shadow-md">
-                <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3 py-0.5 text-xs font-bold text-brand-orange">
-                  <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-                  <span>{ar ? whoWeAre.vision.titleAr : whoWeAre.vision.title}</span>
-                </div>
-                <h3 className="mt-3 font-head text-lg font-bold text-foreground">
-                  {ar ? whoWeAre.vision.titleAr : whoWeAre.vision.title}
-                </h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                  {ar ? whoWeAre.vision.descAr : whoWeAre.vision.desc}
-                </p>
-              </div>
-            </div>
-          </Reveal>
-        </div>
+          </div>
+        </Reveal>
       </section>
 
       {/* 2 — ماذا نقدم | What We Offer */}
@@ -145,7 +108,7 @@ export function GarmentAboutTab() {
         </div>
       </section>
 
-      {/* 3 — لماذا تختارنا | Why Choose Us */}
+      {/* 3 — لماذا تختارنا | Why Choose Us — Interactive with Green Borders */}
       <section id="why-choose-us" className="scroll-mt-36">
         <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
           <Reveal>
@@ -162,8 +125,12 @@ export function GarmentAboutTab() {
 
             <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {whyChooseUs.points.map((point) => (
-                <div key={point.title} className="rounded-2xl border border-border/70 bg-card/60 p-6 shadow-sm backdrop-blur-md transition hover:border-brand-orange/50 hover:shadow-md">
-                  <h3 className="font-head text-base font-bold text-foreground">
+                <div
+                  key={point.title}
+                  className="group relative rounded-2xl border border-brand-green/30 bg-card/75 p-6 shadow-sm backdrop-blur-xl transition-all duration-300 hover:scale-[1.03] hover:-translate-y-1 hover:border-brand-green hover:shadow-[0_12px_30px_rgba(34,197,94,0.18)] active:scale-[0.98] cursor-pointer"
+                >
+                  <div className="mb-3 inline-flex size-2 rounded-full bg-brand-green animate-pulse" />
+                  <h3 className="font-head text-base font-bold text-foreground group-hover:text-brand-green-text transition-colors">
                     {ar ? point.titleAr : point.title}
                   </h3>
                   <p className="mt-2 text-xs sm:text-sm leading-relaxed text-muted-foreground">
@@ -263,12 +230,6 @@ export function GarmentAboutTab() {
             </div>
           </Reveal>
         </div>
-      </section>
-
-      {/* 6 — شركاؤنا وعملاؤنا مباشرة تحت أسواقنا */}
-      <section id="partners-and-clients" className="space-y-12">
-        <GarmentPartnersTab />
-        <GarmentClientsTab />
       </section>
 
       {/* Contact Section */}
