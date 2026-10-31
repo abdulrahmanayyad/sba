@@ -254,10 +254,14 @@ export function GarmentCapabilitiesTab() {
                   <span>{ar ? item.categoryAr : item.categoryEn}</span>
                 </div>
                 <div className={cn(
-                  "mt-3 font-head font-black text-brand-orange",
-                  item.volumeEn === "Dedicated Lines" ? "text-xl sm:text-2xl font-bold" : "text-2xl sm:text-3xl"
+                  "mt-3 text-brand-orange",
+                  item.volumeEn === "Dedicated Lines" ? "text-xl sm:text-2xl font-bold font-head" : "text-2xl sm:text-3xl font-head font-black"
                 )}>
-                  <AnimatedStatistic value={ar ? item.volumeAr : item.volumeEn} />
+                  {/\d/.test(ar ? item.volumeAr : item.volumeEn) ? (
+                    <AnimatedStatistic value={ar ? item.volumeAr : item.volumeEn} />
+                  ) : (
+                    <span className="font-head font-bold">{ar ? item.volumeAr : item.volumeEn}</span>
+                  )}
                 </div>
                 <p className="mt-2 text-xs font-medium text-muted-foreground leading-relaxed">
                   {ar ? item.notesAr : item.notesEn}

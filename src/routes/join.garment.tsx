@@ -17,7 +17,7 @@ export const Route = createFileRoute("/join/garment")({
       {
         property: "og:description",
         content:
-          "Join SBA Ready-Made Garment Manufacturing across fashion brands, international buyers, and specialized production lines.",
+          "Join SBA Apparel Manufacturing across fashion brands, international buyers, and specialized production lines.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

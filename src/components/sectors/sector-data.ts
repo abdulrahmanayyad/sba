@@ -69,7 +69,7 @@ export const sectors: Record<SectorSlug, SectorPageData> = {
         body: "Integrated manufacturing solutions and diverse capabilities for brands, importers, and global buyers.",
         bodyAr: "حلول تصنيع متكاملة وقدرات متعددة للعلامات التجارية والمستوردين والمشترين الدوليين.",
         items: [
-          { label: "Ready-Made Garment Manufacturing", labelAr: "تصنيع الملابس الجاهزة" },
+          { label: "Apparel Manufacturing", labelAr: "تصنيع الملابس الجاهزة" },
           { label: "Product Development & Sampling", labelAr: "تطوير المنتجات والعينات" },
           { label: "Private Label Manufacturing", labelAr: "التصنيع للعلامات التجارية الخاصة" },
           { label: "FOB Manufacturing Programs", labelAr: "برامج التصنيع بنظام FOB" },

@@ -199,7 +199,7 @@ export const joinTracks: Record<JoinTrackId, JoinTrackConfig> = {
     url: "/join/garment",
     titleEn: "Join Our Garment Manufacturing Team",
     titleAr: "انضم إلى قطاع تصنيع الملابس الجاهزة",
-    eyebrowEn: "SAMI BIN AYYAD · Ready-Made Garment Manufacturing",
+    eyebrowEn: "SAMI BIN AYYAD · Apparel Manufacturing",
     eyebrowAr: "مجموعة سامي بن عياد · قطاع تصنيع الملابس الجاهزة",
     headlineEn: "Crafting Excellence. Dressing the World.",
     headlineAr: "نصنع أزياء الغد بإتقان",

@@ -220,7 +220,9 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {data.whyChooseUs.pillars.map((pillar, idx) => (
               <Reveal key={idx} delay={idx * 0.05}>
-                <div className="group relative flex h-full flex-col rounded-2xl border border-brand-green/30 bg-background/70 p-6 backdrop-blur-xl shadow-sm transition-all duration-300 hover:scale-[1.03] hover:border-brand-green hover:shadow-xl hover:bg-card/95 active:scale-[0.98] cursor-pointer">
+                <div className="group relative flex h-full flex-col rounded-2xl border border-brand-green/30 bg-background/70 p-6 backdrop-blur-xl shadow-sm transition-all duration-300 hover:scale-[1.03] hover:-translate-y-1 hover:border-brand-green hover:shadow-xl hover:bg-card/95 active:scale-[0.98] cursor-pointer">
+                  {/* Pulsing dot — visible on hover */}
+                  <span className="absolute top-3 end-3 size-2 rounded-full bg-brand-green opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-opacity duration-300" />
                   <div className="flex items-center gap-3">
                     <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-brand-green/10 font-mono text-xs font-bold text-brand-green-text group-hover:bg-brand-green group-hover:text-white transition-colors">
                       0{idx + 1}
