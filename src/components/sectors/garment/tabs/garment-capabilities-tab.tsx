@@ -33,7 +33,7 @@ function SectionBadge({ title }: { title: string }) {
 export function GarmentCapabilitiesTab() {
   const { language } = useLanguage();
   const ar = language === "AR";
-  const { capabilities, productionVolume } = garmentAboutData;
+  const { capabilities, productionVolume, infrastructure } = garmentAboutData;
 
   return (
     <div className="space-y-12 py-6">
@@ -126,39 +126,38 @@ export function GarmentCapabilitiesTab() {
       {/* 3. Quality Control & Standards */}
       <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
         <Reveal>
-          <div className="grid gap-8 lg:grid-cols-12 lg:items-center">
-            <div className="lg:col-span-7">
-              <SectionBadge title={ar ? "ضمان الجودة" : "Quality Assurance"} />
-              <h3 className="section-title mt-3">
-                {ar ? "الجودة مدمجة في كل خطوة وليست مجرد فحص أخير" : "Quality Built-In At Every Touchpoint"}
-              </h3>
-              <p className="section-intro mt-4">
-                {ar
-                  ? "نعتمد على متابعة الجودة خلال كافة المراحل: بدءًا من فحص الأقمشة والمقاسات والباترونات، مرورًا بالقص والخياطة والتشطيب، وصولًا إلى المظهر النهائي والملصقات والتعبئة. تُحدد معايير الفحص لكل مشروع وفق المواصفات الفنية المعتمدة من العميل."
-                  : "Quality is monitored continuously: from raw textile and pattern audits to automated cutting, in-line sewing checks, steam finishing, labeling, and final carton packing against approved AQL benchmarks."}
-              </p>
+          <div>
+            <SectionBadge title={ar ? "ضمان الجودة" : "Quality Assurance"} />
+            <h3 className="section-title mt-3">
+              {ar ? "الجودة مدمجة في كل خطوة وليست مجرد فحص أخير" : "Quality Built-In At Every Touchpoint"}
+            </h3>
+            <p className="section-intro mt-4 max-w-4xl">
+              {ar
+                ? "نعتمد على متابعة الجودة خلال كافة المراحل: بدءًا من فحص الأقمشة والمقاسات والباترونات، مرورًا بالقص والخياطة والتشطيب، وصولًا إلى المظهر النهائي والملصقات والتعبئة. تُحدد معايير الفحص لكل مشروع وفق المواصفات الفنية المعتمدة من العميل."
+                : "Quality is monitored continuously: from raw textile and pattern audits to automated cutting, in-line sewing checks, steam finishing, labeling, and final carton packing against approved AQL benchmarks."}
+            </p>
 
-              <div className="mt-8 grid gap-3 sm:grid-cols-2">
+            <div className="mt-8 grid gap-8 lg:grid-cols-12 lg:items-center">
+              <div className="lg:col-span-7 grid gap-4 sm:grid-cols-2">
                 {[
                   { en: "4-Point Fabric Inspection", ar: "فحص الأقمشة بنظام النقاط الأربعة" },
                   { en: "In-Line Sewing Tolerances Check", ar: "متابعة دقيقة لحدود السماح بالخياطة" },
                   { en: "Seam Strength & Wash Tests", ar: "اختبارات قوة الحياكة وثبات الغسيل" },
                   { en: "100% Pre-Pack Auditing", ar: "فحص شامل لكافة القطع قبل التعبئة" },
                 ].map((item, idx) => (
-                  <div key={idx} className="flex items-center justify-center text-center rounded-xl border border-border bg-card/60 p-3 text-xs sm:text-sm font-semibold text-foreground backdrop-blur-sm transition-all duration-300 hover:border-brand-orange/40 hover:-translate-y-0.5 hover:shadow-md">
+                  <div key={idx} className="flex items-center justify-center text-center rounded-2xl border border-border bg-card/60 p-4 text-xs sm:text-sm font-semibold text-foreground backdrop-blur-sm transition-all duration-300 hover:border-brand-orange/40 hover:-translate-y-0.5 hover:shadow-md">
                     <span>{ar ? item.ar : item.en}</span>
                   </div>
                 ))}
               </div>
-            </div>
-
-            <div className="overflow-hidden rounded-2xl border border-border shadow-md lg:col-span-5">
-              <img
-                src="/BG/Rigorous Quality Assurance.jpg"
-                alt={ar ? "مراقبة الجودة وضمان المعايير" : "Rigorous Quality Assurance"}
-                loading="lazy"
-                className="aspect-[4/3] w-full object-cover transition-transform duration-700 hover:scale-105"
-              />
+              <div className="overflow-hidden rounded-2xl border border-border shadow-md lg:col-span-5">
+                <img
+                  src="/BG/Rigorous Quality Assurance.jpg"
+                  alt={ar ? "ضمان الجودة ومراقبة المعايير" : "Rigorous Quality Assurance"}
+                  loading="lazy"
+                  className="aspect-[4/3] w-full object-cover transition-transform duration-700 hover:scale-105"
+                />
+              </div>
             </div>
           </div>
         </Reveal>
@@ -242,6 +241,47 @@ export function GarmentCapabilitiesTab() {
           </div>
         </Reveal>
       </div>
+
+      {/* 5. Infrastructure & Fabric Mill */}
+      {infrastructure && (
+        <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
+          <Reveal>
+            <div className="grid gap-8 lg:grid-cols-12 lg:items-center">
+              <div className="lg:col-span-7">
+                <SectionBadge title={ar ? "البنية الصناعية" : "Industrial Infrastructure"} />
+                <h2 className="section-title mt-3">
+                  {ar ? infrastructure.headingAr : infrastructure.heading}
+                </h2>
+                <p className="section-intro mt-4">
+                  {ar ? infrastructure.introAr : infrastructure.intro}
+                </p>
+
+                <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                  {infrastructure.pillars.slice(0, 4).map((pillar) => (
+                    <div key={pillar.title} className="rounded-xl border border-border/70 bg-card/60 p-4 backdrop-blur-sm">
+                      <h4 className="font-head text-sm font-bold text-foreground">
+                        {ar ? pillar.titleAr : pillar.title}
+                      </h4>
+                      <p className="mt-1 text-xs text-muted-foreground leading-relaxed">
+                        {ar ? pillar.descAr : pillar.desc}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="overflow-hidden rounded-2xl border border-border shadow-md lg:col-span-5">
+                <img
+                  src="/BG/Textile Mill & Internal Dyeing.jpg"
+                  alt={ar ? "مصنع الأقمشة والصباغة الداخلية" : "Textile Mill & Internal Dyeing"}
+                  loading="lazy"
+                  className="aspect-[4/3] w-full object-cover transition-transform duration-700 hover:scale-105"
+                />
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      )}
 
       {/* 5. Factory Overview Slider — نظرة عامة على المصنع بالصور */}
       <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">

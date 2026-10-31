@@ -178,8 +178,15 @@ export function SectorHeader({
                 </Link>
               </>
             ) : isGarment ? (
-              /* Custom Garment Navigation without Clients & Partners */
+              /* Custom Garment Navigation: الرئيسية, من نحن, قدراتنا, خدماتنا, مشاريعنا, انضم إلينا, ابدأ مشروع */
               <>
+                <Link
+                  to="/"
+                  className={navPill}
+                >
+                  {ar ? "الرئيسية" : "Home"}
+                </Link>
+
                 <Link
                   to="/sectors/$sector"
                   params={{ sector: "garment" }}
@@ -231,7 +238,7 @@ export function SectorHeader({
                   search={{ tab: "start-project" }}
                   className={cn(navPill, "bg-brand-orange/10 text-brand-orange border border-brand-orange/30 hover:bg-brand-orange hover:text-white")}
                 >
-                  {ar ? "ابدأ مشروعًا" : "Start Project"}
+                  {ar ? "ابدأ مشروع" : "Start Project"}
                 </Link>
               </>
             ) : isEnvironmental ? (
@@ -533,6 +540,13 @@ export function SectorHeader({
                 ) : isGarment ? (
                   <>
                     <Link
+                      to="/"
+                      onClick={() => setMenuOpen(false)}
+                      className={mobileLinkStyle}
+                    >
+                      {ar ? "الرئيسية" : "Home"}
+                    </Link>
+                    <Link
                       to="/sectors/$sector"
                       params={{ sector: "garment" }}
                       search={{}}
@@ -584,7 +598,7 @@ export function SectorHeader({
                       onClick={() => setMenuOpen(false)}
                       className={cn(mobileLinkStyle, "!text-brand-orange font-bold bg-brand-orange/10")}
                     >
-                      {ar ? "ابدأ مشروعًا" : "Start Project"}
+                      {ar ? "ابدأ مشروع" : "Start Project"}
                     </Link>
                   </>
                 ) : isEnvironmental ? (

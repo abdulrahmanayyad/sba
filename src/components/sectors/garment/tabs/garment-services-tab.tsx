@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/i18n/language-context";
 import { garmentServicesDetailed } from "../garment-data";
 
-const serviceImagesMap: Record<string, string> = {
+const serviceImageMap: Record<string, string> = {
   "ready-made-garments": "/BG/Ready-Made Garment Manufacturing.jpg",
   "product-development": "/BG/Product Development & Sampling.jpg",
   "private-label": "/BG/Private Label Manufacturing.jpg",
@@ -46,7 +46,7 @@ export function GarmentServicesTab() {
 
           <div className="mt-12 grid gap-8 md:grid-cols-2">
             {garmentServicesDetailed.map((service) => {
-              const cardImg = serviceImagesMap[service.id] || `/BG/${service.titleEn}.jpg`;
+              const cardImg = serviceImageMap[service.id] || "/BG/Ready-Made Garment Manufacturing.jpg";
               return (
                 <div
                   key={service.id}

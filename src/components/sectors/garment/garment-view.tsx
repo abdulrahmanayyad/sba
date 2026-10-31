@@ -22,16 +22,20 @@ import { garmentHeroData } from "./garment-data";
 
 import { GarmentAboutTab } from "./tabs/garment-about-tab";
 import { GarmentServicesTab } from "./tabs/garment-services-tab";
+import { GarmentClientsTab } from "./tabs/garment-clients-tab";
 import { GarmentProjectsTab } from "./tabs/garment-projects-tab";
+import { GarmentPartnersTab } from "./tabs/garment-partners-tab";
 import { GarmentCapabilitiesTab } from "./tabs/garment-capabilities-tab";
 import { GarmentJoinTab } from "./tabs/garment-join-tab";
 import { JoinPage } from "@/components/join/join-page";
 
 export type GarmentTab = 
   | "about" 
-  | "capabilities"
   | "services" 
+  | "clients" 
   | "projects" 
+  | "partners" 
+  | "capabilities" 
   | "join"
   | "start-project";
 
@@ -43,7 +47,7 @@ export function GarmentSectorView({ tab = "about" }: GarmentViewProps) {
   const { language } = useLanguage();
   const ar = language === "AR";
 
-  const validTabs: GarmentTab[] = ["about", "capabilities", "services", "projects", "join", "start-project"];
+  const validTabs: GarmentTab[] = ["about", "services", "clients", "projects", "partners", "capabilities", "join", "start-project"];
   const activeTab: GarmentTab = validTabs.includes(tab) ? tab : "about";
 
   const tabLabels: Record<GarmentTab, { en: string; ar: string; descEn: string; descAr: string }> = {
@@ -53,23 +57,35 @@ export function GarmentSectorView({ tab = "about" }: GarmentViewProps) {
       descEn: "Who we are, what we offer, why us, facilities & production volume",
       descAr: "من نحن، ماذا نقدم، لماذا تختارنا، إمكانياتنا، وحجم الإنتاج",
     },
-    capabilities: {
-      en: "Our Capabilities",
-      ar: "قدراتنا",
-      descEn: "15+ lines, 250+ machines, dedicated classic shirt facility & QC",
-      descAr: "15+ خط إنتاج، 250+ ماكينة، مصنع القمصان المتخصص ومراقبة الجودة",
-    },
     services: {
       en: "Our Services",
       ar: "خدماتنا",
       descEn: "Ready-made garments, Private Label, FOB & textile solutions",
       descAr: "تصنيع الملابس، Private Label، برامج FOB وتوريد الأقمشة",
     },
+    clients: {
+      en: "Our Clients",
+      ar: "عملاؤنا",
+      descEn: "Leading global and regional fashion brands and retailers",
+      descAr: "كبرى العلامات التجارية وسلاسل التجزئة المحلية والدولية",
+    },
     projects: {
       en: "Our Projects",
       ar: "مشاريعنا",
       descEn: "Over 550 documented styles across women, men, kids & matching sets",
       descAr: "أكثر من 550 تصميمًا موثقًا عبر الحريمي والرجالي والأطفال والكابلز",
+    },
+    partners: {
+      en: "Our Partners",
+      ar: "شركاؤنا",
+      descEn: "139 brand partners across casual, classic, kids, loungewear & soirée",
+      descAr: "139 شريكًا تجاريًا عبر الكاجوال والكلاسيك والأطفال والسواريه",
+    },
+    capabilities: {
+      en: "Our Capabilities",
+      ar: "قدراتنا",
+      descEn: "15+ lines, 250+ machines, dedicated classic shirt facility & QC",
+      descAr: "15+ خط إنتاج، 250+ ماكينة، مصنع القمصان المتخصص ومراقبة الجودة",
     },
     join: {
       en: "Join Us",
@@ -88,7 +104,7 @@ export function GarmentSectorView({ tab = "about" }: GarmentViewProps) {
   return (
     <div className="w-full">
       {/* Sector Hero — Only displayed on About Us tab, full screen matching Construction & Environmental */}
-      {activeTab === "about" && (
+      {(activeTab === "about" || activeTab === "clients" || activeTab === "partners") && (
         <section className="relative w-full overflow-hidden text-footer-foreground min-h-screen flex items-center">
           <img
             data-clip-reveal
@@ -121,9 +137,11 @@ export function GarmentSectorView({ tab = "about" }: GarmentViewProps) {
 
       <main className="site-container min-h-[50vh] space-y-12">
         {activeTab === "about" && <GarmentAboutTab />}
-        {activeTab === "capabilities" && <GarmentCapabilitiesTab />}
+        {activeTab === "clients" && <GarmentClientsTab />}
+        {activeTab === "partners" && <GarmentPartnersTab />}
         {activeTab === "services" && <GarmentServicesTab />}
         {activeTab === "projects" && <GarmentProjectsTab />}
+        {activeTab === "capabilities" && <GarmentCapabilitiesTab />}
         {activeTab === "join" && <JoinPage trackId="garment" />}
         {activeTab === "start-project" && <GarmentStartProjectView />}
       </main>
