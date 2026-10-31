@@ -40,6 +40,16 @@ export function GarmentCapabilitiesTab() {
       {/* 1. Overview & Key Stats */}
       <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
         <Reveal>
+          {/* Image Banner Above Content */}
+          <div className="relative mb-8 aspect-[21/9] sm:aspect-[24/8] w-full overflow-hidden rounded-2xl border border-white/20 shadow-md">
+            <img
+              src="/BG/Ready-Made Garment Manufacturing.jpg"
+              alt={ar ? "قدراتنا وإمكانياتنا الصناعية" : "Manufacturing Infrastructure"}
+              loading="lazy"
+              className="size-full object-cover transition-transform duration-700 hover:scale-105"
+            />
+          </div>
+
           <div className="max-w-3xl">
             <SectionBadge title={ar ? "قدراتنا وإمكانياتنا الصناعية" : "Manufacturing Infrastructure"} />
             <h2 className="section-title mt-3">
@@ -88,6 +98,16 @@ export function GarmentCapabilitiesTab() {
       {/* 2. 10-Stage Structured Manufacturing Process */}
       <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
         <Reveal>
+          {/* Image Banner Above Content */}
+          <div className="relative mb-8 aspect-[21/9] sm:aspect-[24/8] w-full overflow-hidden rounded-2xl border border-white/20 shadow-md">
+            <img
+              src="/BG/Product Development & Sampling.jpg"
+              alt={ar ? "مراحل التصنيع المنظمة" : "Our Process"}
+              loading="lazy"
+              className="size-full object-cover transition-transform duration-700 hover:scale-105"
+            />
+          </div>
+
           <div>
             <SectionBadge title={ar ? "مراحل التصنيع المنظمة" : "Our Process"} />
             <h2 className="section-title mt-3">
@@ -181,7 +201,10 @@ export function GarmentCapabilitiesTab() {
             <div className="grid gap-8 lg:grid-cols-12 lg:items-center">
               <div className="lg:col-span-7">
                 <div className="flex flex-wrap items-center gap-3">
-                  <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-orange/15 px-3 py-1 font-mono text-xs font-bold text-brand-orange">
+                  <span className={cn(
+                    "inline-flex items-center gap-1.5 rounded-full bg-brand-orange/15 px-3 py-1 text-xs font-bold text-brand-orange",
+                    ar ? "font-head font-semibold" : "font-mono"
+                  )}>
                     <Shirt className="size-3.5" />
                     {ar ? productionVolume.classicShirtUnit.badgeAr : productionVolume.classicShirtUnit.badge}
                   </span>
@@ -230,7 +253,10 @@ export function GarmentCapabilitiesTab() {
                   <TrendingUp className="size-4 text-brand-orange" />
                   <span>{ar ? item.categoryAr : item.categoryEn}</span>
                 </div>
-                <div className="mt-3 font-head text-2xl sm:text-3xl font-black text-brand-orange">
+                <div className={cn(
+                  "mt-3 font-head font-black text-brand-orange",
+                  item.volumeEn === "Dedicated Lines" ? "text-xl sm:text-2xl font-bold" : "text-2xl sm:text-3xl"
+                )}>
                   <AnimatedStatistic value={ar ? item.volumeAr : item.volumeEn} />
                 </div>
                 <p className="mt-2 text-xs font-medium text-muted-foreground leading-relaxed">

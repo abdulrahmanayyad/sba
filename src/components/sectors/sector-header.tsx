@@ -87,6 +87,7 @@ export function SectorHeader({
   const isConstruction = slug === "construction";
   const isGarment = slug === "garment";
   const isEnvironmental = slug === "environmental";
+  const isFood = slug === "food";
   const activeTab = searchTab || "about";
 
   const navPill =
@@ -291,6 +292,63 @@ export function SectorHeader({
                   {ar ? "ابدأ استشارة" : "Start Consultation"}
                 </Link>
               </>
+            ) : isFood ? (
+              /* Custom Food Navigation: نبذة عنا, قطاعاتنا, منتجاتنا, أسواقنا, انضم إلينا, اطلب منتج */
+              <>
+                <Link
+                  to="/sectors/$sector"
+                  params={{ sector: "food" }}
+                  search={{}}
+                  className={cn(navPill, activeTab === "about" && "!text-brand-orange bg-white/40 shadow-sm")}
+                >
+                  {ar ? "نبذة عنا" : "About Us"}
+                </Link>
+
+                <Link
+                  to="/sectors/$sector"
+                  params={{ sector: "food" }}
+                  search={{ tab: "sectors" }}
+                  className={cn(navPill, activeTab === "sectors" && "!text-brand-orange bg-white/40 shadow-sm")}
+                >
+                  {ar ? "قطاعاتنا" : "Our Sectors"}
+                </Link>
+
+                <Link
+                  to="/sectors/$sector"
+                  params={{ sector: "food" }}
+                  search={{ tab: "products" }}
+                  className={cn(navPill, activeTab === "products" && "!text-brand-orange bg-white/40 shadow-sm")}
+                >
+                  {ar ? "منتجاتنا" : "Our Products"}
+                </Link>
+
+                <Link
+                  to="/sectors/$sector"
+                  params={{ sector: "food" }}
+                  search={{ tab: "markets" }}
+                  className={cn(navPill, activeTab === "markets" && "!text-brand-orange bg-white/40 shadow-sm")}
+                >
+                  {ar ? "أسواقنا" : "Our Markets"}
+                </Link>
+
+                <Link
+                  to="/sectors/$sector"
+                  params={{ sector: "food" }}
+                  search={{ tab: "join" }}
+                  className={cn(navPill, activeTab === "join" && "!text-brand-orange bg-white/40 shadow-sm")}
+                >
+                  {ar ? "انضم إلينا" : "Join Us"}
+                </Link>
+
+                <Link
+                  to="/sectors/$sector"
+                  params={{ sector: "food" }}
+                  search={{ tab: "order-product" }}
+                  className={cn(navPill, "bg-brand-orange/15 text-brand-orange border border-brand-orange/30 hover:bg-brand-orange hover:text-white")}
+                >
+                  {ar ? "اطلب منتج" : "Order Product"}
+                </Link>
+              </>
             ) : (
               /* Other Sectors Navigation */
               <>
@@ -361,7 +419,7 @@ export function SectorHeader({
             )}
 
             {/* Other Sectors Dropdown — only for non-main sectors */}
-            {!isConstruction && !isGarment && !isEnvironmental && (
+            {!isConstruction && !isGarment && !isEnvironmental && !isFood && (
               <div
                 className="relative"
                 onMouseEnter={() => setOthersOpen(true)}
@@ -644,6 +702,63 @@ export function SectorHeader({
                       {ar ? "ابدأ استشارة" : "Start Consultation"}
                     </Link>
                   </>
+                ) : isFood ? (
+                  <>
+                    <Link
+                      to="/sectors/$sector"
+                      params={{ sector: "food" }}
+                      search={{}}
+                      onClick={() => setMenuOpen(false)}
+                      className={cn(mobileLinkStyle, activeTab === "about" && "!text-brand-orange bg-white/40")}
+                    >
+                      {ar ? "نبذة عنا" : "About Us"}
+                    </Link>
+                    <Link
+                      to="/sectors/$sector"
+                      params={{ sector: "food" }}
+                      search={{ tab: "sectors" }}
+                      onClick={() => setMenuOpen(false)}
+                      className={cn(mobileLinkStyle, activeTab === "sectors" && "!text-brand-orange bg-white/40")}
+                    >
+                      {ar ? "قطاعاتنا" : "Our Sectors"}
+                    </Link>
+                    <Link
+                      to="/sectors/$sector"
+                      params={{ sector: "food" }}
+                      search={{ tab: "products" }}
+                      onClick={() => setMenuOpen(false)}
+                      className={cn(mobileLinkStyle, activeTab === "products" && "!text-brand-orange bg-white/40")}
+                    >
+                      {ar ? "منتجاتنا" : "Our Products"}
+                    </Link>
+                    <Link
+                      to="/sectors/$sector"
+                      params={{ sector: "food" }}
+                      search={{ tab: "markets" }}
+                      onClick={() => setMenuOpen(false)}
+                      className={cn(mobileLinkStyle, activeTab === "markets" && "!text-brand-orange bg-white/40")}
+                    >
+                      {ar ? "أسواقنا" : "Our Markets"}
+                    </Link>
+                    <Link
+                      to="/sectors/$sector"
+                      params={{ sector: "food" }}
+                      search={{ tab: "join" }}
+                      onClick={() => setMenuOpen(false)}
+                      className={cn(mobileLinkStyle, activeTab === "join" && "!text-brand-orange bg-white/40")}
+                    >
+                      {ar ? "انضم إلينا" : "Join Us"}
+                    </Link>
+                    <Link
+                      to="/sectors/$sector"
+                      params={{ sector: "food" }}
+                      search={{ tab: "order-product" }}
+                      onClick={() => setMenuOpen(false)}
+                      className={cn(mobileLinkStyle, "!text-brand-orange font-bold bg-brand-orange/10")}
+                    >
+                      {ar ? "اطلب منتج" : "Order Product"}
+                    </Link>
+                  </>
                 ) : (
                   <>
                     {navigation ? (
@@ -736,6 +851,17 @@ export function SectorHeader({
                       className="group/cta flex-1 flex items-center justify-center gap-2 rounded-2xl bg-brand-green px-5 py-3 text-xs font-bold text-white transition-all duration-300 hover:bg-brand-orange shadow-md active:scale-95"
                     >
                       <span>{ar ? "تواصل معنا" : "Contact Us"}</span>
+                      <ArrowUpRight className="size-3.5 rtl:rotate-90" />
+                    </Link>
+                  ) : isFood ? (
+                    <Link
+                      to="/sectors/$sector"
+                      params={{ sector: "food" }}
+                      search={{ tab: "order-product" }}
+                      onClick={() => setMenuOpen(false)}
+                      className="group/cta flex-1 flex items-center justify-center gap-2 rounded-2xl bg-brand-orange px-5 py-3 text-xs font-bold text-white transition-all duration-300 hover:bg-brand-green shadow-md active:scale-95"
+                    >
+                      <span>{ar ? "اطلب منتج" : "Order Product"}</span>
                       <ArrowUpRight className="size-3.5 rtl:rotate-90" />
                     </Link>
                   ) : (

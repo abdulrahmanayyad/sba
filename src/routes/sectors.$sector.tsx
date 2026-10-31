@@ -5,10 +5,12 @@ import { sectors, type SectorSlug } from "@/components/sectors/sector-data";
 import { ConstructionSectorView, type ConstructionTab } from "@/components/sectors/construction/construction-view";
 import { GarmentSectorView, type GarmentTab } from "@/components/sectors/garment/garment-view";
 import { EnvironmentalSectorView, type EnvironmentalTab } from "@/components/sectors/environmental/environmental-view";
+import { FoodSectorView, type FoodTab } from "@/components/sectors/food/food-view";
 
 const validConstructionTabs: ConstructionTab[] = ["about", "sectors", "services", "projects", "join", "start-project"];
 const validGarmentTabs: GarmentTab[] = ["about", "services", "clients", "projects", "partners", "capabilities", "join", "start-project"];
 const validEnvironmentalTabs: EnvironmentalTab[] = ["about", "sectors", "services", "products", "join", "start-consultation"];
+const validFoodTabs: FoodTab[] = ["about", "sectors", "products", "markets", "order-product", "join"];
 
 export const Route = createFileRoute("/sectors/$sector")({
   validateSearch: (search: Record<string, unknown>): { tab?: string | undefined } => {
@@ -17,7 +19,8 @@ export const Route = createFileRoute("/sectors/$sector")({
       if (
         validConstructionTabs.includes(tabStr as ConstructionTab) ||
         validGarmentTabs.includes(tabStr as GarmentTab) ||
-        validEnvironmentalTabs.includes(tabStr as EnvironmentalTab)
+        validEnvironmentalTabs.includes(tabStr as EnvironmentalTab) ||
+        validFoodTabs.includes(tabStr as FoodTab)
       ) {
         return { tab: tabStr };
       }
@@ -63,6 +66,18 @@ export const Route = createFileRoute("/sectors/$sector")({
       if (environmentalTabTitles[tab]) {
         title = `${environmentalTabTitles[tab]} — SBA Environmental`;
       }
+    } else if (params.sector === "food" && tab) {
+      const foodTabTitles: Record<string, string> = {
+        about: "About Us — Natural & Agri-Food Products",
+        sectors: "Our 7 Agri-Food Sectors — Honey, Olives, Dates & Herbs",
+        products: "Our Products & Export Specifications",
+        markets: "Our Global Markets & 2024 Trade Indicators",
+        "order-product": "Request for Quotation (RFQ) — Order Natural Products",
+        join: "Join Us & Commercial Agri-Food Partnership",
+      };
+      if (foodTabTitles[tab]) {
+        title = `${foodTabTitles[tab]} — SBA Natural Products`;
+      }
     }
 
     return {
@@ -95,6 +110,10 @@ function SectorRoute() {
 
   if (sector === "environmental") {
     return <EnvironmentalSectorView tab={tab as EnvironmentalTab} />;
+  }
+
+  if (sector === "food") {
+    return <FoodSectorView tab={tab as FoodTab} />;
   }
 
   return <SectorPage sector={data} />;

@@ -61,7 +61,7 @@ export const divisions: Division[] = [
   },
   {
     slug: "garment",
-    name: "Ready-Made Garment Manufacturing",
+    name: "Apparel Manufacturing",
     nameAr: "تصنيع الملابس الجاهزة",
     company: "SAMI BIN AYYAD GROUP · Garment Division",
     companyAr: "مجموعة سامي بن عياد · قطاع تصنيع الملابس الجاهزة",

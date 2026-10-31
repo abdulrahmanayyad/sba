@@ -106,6 +106,56 @@ function EnvironmentalAboutView({ ar }: { ar: boolean }) {
                 <p key={idx} className="text-start">{highlightBrand(ar ? p.ar : p.en)}</p>
               ))}
             </div>
+
+            {/* Explore Our Sectors Button */}
+            <div className="mt-8 flex justify-center">
+              <Button asChild size="default" className="rounded-full bg-brand-green text-white hover:bg-brand-orange transition-all duration-300 shadow-md">
+                <Link to="/sectors/$sector" params={{ sector: "environmental" }} search={{ tab: "sectors" }}>
+                  <span>{ar ? "استكشف قطاعاتنا" : "Explore Our Sectors"}</span>
+                  <ArrowRight className="size-4 ms-2 rtl:rotate-180" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </Reveal>
+      </section>
+
+      {/* 2. Vision & Mission — Lifted directly under Who We Are */}
+      <section className="site-container">
+        <Reveal>
+          <div className="grid gap-6 md:grid-cols-2">
+            {/* Vision */}
+            <div className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-white/30 bg-background/70 p-8 sm:p-10 shadow-[0_12px_40px_rgba(0,0,0,0.06)] backdrop-blur-2xl transition-all duration-300 hover:scale-[1.02] hover:border-brand-orange/60 hover:shadow-xl">
+              <div>
+                <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+                  <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+                  <span>{ar ? data.vision.badgeAr : data.vision.badgeEn}</span>
+                </div>
+                <h3 className="font-head text-xl font-bold text-foreground">{ar ? data.vision.titleAr : data.vision.titleEn}</h3>
+                <p className="mt-4 text-sm sm:text-base leading-7 text-foreground/90">
+                  {ar ? data.vision.bodyAr : data.vision.bodyEn}
+                </p>
+              </div>
+            </div>
+
+            {/* Mission */}
+            <div className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-white/30 bg-background/70 p-8 sm:p-10 shadow-[0_12px_40px_rgba(0,0,0,0.06)] backdrop-blur-2xl transition-all duration-300 hover:scale-[1.02] hover:border-brand-orange/60 hover:shadow-xl">
+              <div>
+                <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+                  <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+                  <span>{ar ? data.mission.badgeAr : data.mission.badgeEn}</span>
+                </div>
+                <h3 className="font-head text-xl font-bold text-foreground">{ar ? data.mission.titleAr : data.mission.titleEn}</h3>
+                <ul className="mt-4 space-y-3">
+                  {data.mission.pillars.map((pillar, pIdx) => (
+                    <li key={pIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-foreground/90 leading-relaxed">
+                      <CheckCircle2 className="mt-1 size-4 shrink-0 text-brand-green-text" />
+                      <span>{ar ? pillar.ar : pillar.en}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
         </Reveal>
       </section>
@@ -158,46 +208,6 @@ function EnvironmentalAboutView({ ar }: { ar: boolean }) {
             <p className="mt-4 mx-auto max-w-2xl text-sm sm:text-base leading-relaxed text-muted-foreground">
               {ar ? data.approach.descAr : data.approach.descEn}
             </p>
-          </div>
-        </Reveal>
-      </section>
-
-      {/* 4. Vision & Mission — Separate interactive transparent curved glass cards */}
-      <section className="site-container">
-        <Reveal>
-          <div className="grid gap-6 md:grid-cols-2">
-            {/* Vision */}
-            <div className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-white/30 bg-background/70 p-8 sm:p-10 shadow-[0_12px_40px_rgba(0,0,0,0.06)] backdrop-blur-2xl transition-all duration-300 hover:scale-[1.02] hover:border-brand-orange/60 hover:shadow-xl">
-              <div>
-                <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
-                  <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-                  <span>{ar ? data.vision.badgeAr : data.vision.badgeEn}</span>
-                </div>
-                <h3 className="font-head text-xl font-bold text-foreground">{ar ? data.vision.titleAr : data.vision.titleEn}</h3>
-                <p className="mt-4 text-sm sm:text-base leading-7 text-foreground/90">
-                  {ar ? data.vision.bodyAr : data.vision.bodyEn}
-                </p>
-              </div>
-            </div>
-
-            {/* Mission */}
-            <div className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-white/30 bg-background/70 p-8 sm:p-10 shadow-[0_12px_40px_rgba(0,0,0,0.06)] backdrop-blur-2xl transition-all duration-300 hover:scale-[1.02] hover:border-brand-orange/60 hover:shadow-xl">
-              <div>
-                <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
-                  <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-                  <span>{ar ? data.mission.badgeAr : data.mission.badgeEn}</span>
-                </div>
-                <h3 className="font-head text-xl font-bold text-foreground">{ar ? data.mission.titleAr : data.mission.titleEn}</h3>
-                <ul className="mt-4 space-y-3">
-                  {data.mission.pillars.map((pillar, pIdx) => (
-                    <li key={pIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-foreground/90 leading-relaxed">
-                      <CheckCircle2 className="mt-1 size-4 shrink-0 text-brand-green-text" />
-                      <span>{ar ? pillar.ar : pillar.en}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
           </div>
         </Reveal>
       </section>

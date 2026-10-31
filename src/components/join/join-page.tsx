@@ -106,7 +106,7 @@ export function JoinPage({ trackId }: JoinPageProps) {
             {/* Direct Contact Card */}
             <div className="rounded-3xl border border-white/40 bg-gradient-to-br from-background/90 to-secondary/50 p-6 shadow-sm backdrop-blur-xl space-y-4 transition-all duration-300 hover:shadow-xl hover:border-brand-orange/40 hover:scale-[1.01]">
               <h4 className="font-head text-sm font-bold text-foreground">
-                {ar ? "التواصل المباشر مع لجنة الاستقطاب:" : "Direct Recruitment Inquiries:"}
+                {ar ? "استفسارات التوظيف المباشر:" : "Direct Recruitment Inquiries:"}
               </h4>
               <p className="text-xs text-muted-foreground">
                 {ar

@@ -5,6 +5,7 @@ import {
   Leaf,
   Shirt,
   Users,
+  Wheat,
 } from "lucide-react";
 
 import { Reveal } from "@/components/home/reveal";
@@ -16,13 +17,14 @@ export function JoinIndexPage() {
   const { language } = useLanguage();
   const ar = language === "AR";
 
-  const trackIds: JoinTrackId[] = ["group", "construction", "sustainability", "garment"];
+  const trackIds: JoinTrackId[] = ["group", "construction", "sustainability", "garment", "food"];
 
   const icons: Record<JoinTrackId, React.ReactNode> = {
     group: <Users className="size-6 text-brand-orange" />,
     construction: <HardHat className="size-6 text-brand-orange" />,
     sustainability: <Leaf className="size-6 text-brand-orange" />,
     garment: <Shirt className="size-6 text-brand-orange" />,
+    food: <Wheat className="size-6 text-brand-orange" />,
   };
 
   return (

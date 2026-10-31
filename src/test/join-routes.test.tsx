@@ -24,9 +24,10 @@ describe("Join Us Pathways & Routes", () => {
       construction: "Engineering Excellence. Building Tomorrow.",
       sustainability: "",
       garment: "Crafting Excellence. Dressing the World.",
+      food: "Pure Heritage, Certified Global Reach",
     };
 
-    for (const trackId of ["group", "construction", "sustainability", "garment"] as JoinTrackId[]) {
+    for (const trackId of ["group", "construction", "sustainability", "garment", "food"] as JoinTrackId[]) {
       const track = joinTracks[trackId];
       expect(track).toBeDefined();
       expect(track.headlineEn).toBe(expectedHeadlines[trackId]);

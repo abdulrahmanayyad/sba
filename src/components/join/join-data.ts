@@ -2,8 +2,9 @@ const groupHero = "/BG/beatriz-cattel-C55M3wxaoB0-unsplash.jpg";
 const constructionImg = "/BG/kevin-matos-Nl_FMFpXo2g-unsplash.jpg";
 const sustainableImg = "/BG/philipp-HGBCAbRBIME-unsplash.jpg";
 const garmentImg = "/BG/arawark-chen-HIrP05jnXNs-unsplash.jpg";
+const foodImg = "/BG/jennifer-delmarre-IqmuHJF5khU-unsplash.jpg";
 
-export type JoinTrackId = "group" | "construction" | "sustainability" | "garment";
+export type JoinTrackId = "group" | "construction" | "sustainability" | "garment" | "food";
 
 export interface ApplicationCategory {
   id: string;
@@ -201,7 +202,7 @@ export const joinTracks: Record<JoinTrackId, JoinTrackConfig> = {
     eyebrowEn: "SAMI BIN AYYAD · Ready-Made Garment Manufacturing",
     eyebrowAr: "مجموعة سامي بن عياد · قطاع تصنيع الملابس الجاهزة",
     headlineEn: "Crafting Excellence. Dressing the World.",
-    headlineAr: "إتقان التصنيع. نصنع أزياء الغد.",
+    headlineAr: "نصنع أزياء الغد بإتقان",
     descriptionEn:
       "Recruitment and collaboration for fashion brands, international buyers, textile mills, fashion designers, pattern makers, production managers, QA specialists, and trim suppliers.",
     descriptionAr:
@@ -240,5 +241,53 @@ export const joinTracks: Record<JoinTrackId, JoinTrackConfig> = {
     ],
     targetAudienceEn: ["Fashion Brands", "Textile Mills", "Apparel Designers", "Production Supervisors", "International Buyers"],
     targetAudienceAr: ["ماركات الأزياء", "مصانع الأقمشة", "مصممو الباترون والأزياء", "مشرفو الإنتاج", "المستوردون الدوليون"],
+  },
+  food: {
+    id: "food",
+    url: "/sectors/food?tab=join",
+    titleEn: "Natural & Food Products Sector",
+    titleAr: "قطاع المنتجات الطبيعية والغذائية",
+    eyebrowEn: "SAMI BIN AYYAD · Natural & Agri-Food Products",
+    eyebrowAr: "مجموعة سامي بن عياد · قطاع المنتجات الطبيعية والغذائية",
+    headlineEn: "Pure Heritage, Certified Global Reach",
+    headlineAr: "أصالة المصادر وجودة التصدير للعالم",
+    descriptionEn:
+      "Join our commercial ecosystem across premium honey, authentic Egyptian olives, virgin olive oils, dates, culinary herbs, spices, and natural powdered juices.",
+    descriptionAr:
+      "فرص التوظيف والتعاون التجاري والشراكات الزراعية والتوريد في مجالات العسل الطبيعي، الزيتون، زيت الزيتون، التمور، الأعشاب، التوابل، ومساحيق العصائر الطبيعية.",
+    purposeEn:
+      "Commercial partnerships, bulk export contracts, agricultural sourcing, private label co-packing, and supply chain positions.",
+    purposeAr:
+      "بناء شراكات التوزيع الدولي، عقود التصدير بالجملة، استقطاب الكفاءات والخبراء في سلامة الغذاء والتسويق الدولي، وشبكات الموردين والمزارع المعتمدة.",
+    heroImage: foodImg,
+    badgeColor: "bg-brand-orange text-white",
+    individualCategories: [
+      { id: "food-safety-specialist", labelEn: "Food Safety & Quality Control Specialist", labelAr: "أخصائي سلامة وجودة أغذية ومختبرات" },
+      { id: "export-sales-manager", labelEn: "Agri-Food International Export Manager", labelAr: "مدير مبيعات وتصدير زراعي وغذائي" },
+      { id: "supply-chain-specialist", labelEn: "Agricultural Supply Chain & Procurement Lead", labelAr: "مسؤول سلاسل إمداد ومشتريات زراعية" },
+      { id: "packaging-technologist", labelEn: "Food Packaging & Private Label Specialist", labelAr: "أخصائي تغليف غذائي وعلامات تجارية خاصة" },
+      { id: "apiary-olive-expert", labelEn: "Apiary & Olive Production Consultant", labelAr: "مستشار مناحل وإنتاج زيتون وتصنيع زراعي" },
+      { id: "herbal-botanical-expert", labelEn: "Medicinal & Aromatic Botanicals Specialist", labelAr: "خبير نباتات طبية وعطرية وتجفيف" },
+    ],
+    organizationCategories: [
+      { id: "international-importer", labelEn: "International Importers, Distributors & Wholesalers", labelAr: "المستوردون وتجار الجملة والموزعون الدوليون" },
+      { id: "private-label-client", labelEn: "Private Label Food Brands & Supermarket Chains", labelAr: "سلاسل السوبرماركت والعلامات التجارية الخاصة (Private Label)" },
+      { id: "certified-grower", labelEn: "Certified Farms, Olive Groves & Date Plantations", labelAr: "المزارع المعتمدة ومزارع الزيتون والنخيل" },
+      { id: "apiary-cooperative", labelEn: "Apiary Cooperatives & Honey Producers", labelAr: "جمعيات النحالين ومنتجو العسل المعتمدون" },
+      { id: "food-processor-horeca", labelEn: "Food Manufacturers & HoReCa Chains", labelAr: "مصانع الأغذية وسلاسل الفنادق والمطاعم الكبرى" },
+      { id: "logistics-cold-chain", labelEn: "Cold Chain Logistics & Reefer Shipping Lines", labelAr: "شركات الشحن المبرد والخدمات اللوجستية" },
+    ],
+    perksEn: [
+      { title: "7 Core Food Sectors", desc: "Diverse commercial opportunities spanning honey, olives, oils, dates, herbs, spices, and juices." },
+      { title: "Global Compliance & Traceability", desc: "Rigorous origin certification, accredited lab assays, and full phytosanitary documentation." },
+      { title: "Flexible Supply Models", desc: "From bulk commodity shipments in containers to bespoke private label retail packaging." },
+    ],
+    perksAr: [
+      { title: "7 قطاعات غذائية متخصصة", desc: "تنوع تجاري شامل يغطي العسل، الزيتون، زيت الزيتون، التمور، الأعشاب، التوابل، والعصائر الطبيعية." },
+      { title: "معايير دولية وتوثيق المنشأ", desc: "شهادات جودة معتمدة، تحاليل معملية دقيقة، وتتبع شامل لكافة اشتراطات السلامة والتصدير." },
+      { title: "مرونة في التوريد والتعبئة", desc: "من الحاويات والبراميل الصناعية الكبرى إلى التعبئة الفاخرة بعلامة العميل الخاصة (Private Label)." },
+    ],
+    targetAudienceEn: ["Food Importers", "Supermarket Chains", "Apiary Owners", "Food Safety Experts", "HoReCa Operators"],
+    targetAudienceAr: ["مستوردو الأغذية", "سلاسل التجزئة", "أصحاب المناحل والمزارع", "خبراء سلامة الغذاء", "شركات الضيافة والفنادق"],
   },
 };

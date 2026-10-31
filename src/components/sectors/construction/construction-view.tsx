@@ -145,6 +145,16 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
                 <p key={idx}>{highlightBrand(ar ? item.ar : item.en)}</p>
               ))}
             </div>
+
+            {/* Explore Our Sectors Button */}
+            <div className="mt-8 flex justify-center">
+              <Button asChild size="default" className="rounded-full bg-brand-green text-white hover:bg-brand-orange transition-all duration-300 shadow-md">
+                <Link to="/sectors/$sector" params={{ sector: "construction" }} search={{ tab: "sectors" }}>
+                  <span>{ar ? "استكشف قطاعاتنا" : "Explore Our Sectors"}</span>
+                  <ArrowRight className="size-4 ms-2 rtl:rotate-180" />
+                </Link>
+              </Button>
+            </div>
           </div>
         </Reveal>
       </section>
@@ -210,12 +220,12 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {data.whyChooseUs.pillars.map((pillar, idx) => (
               <Reveal key={idx} delay={idx * 0.05}>
-                <div className="flex h-full flex-col rounded-2xl border border-white/20 bg-background/60 p-6 backdrop-blur-xl shadow-sm transition-all hover:border-brand-green/60 hover:shadow-md">
+                <div className="group relative flex h-full flex-col rounded-2xl border border-brand-green/30 bg-background/70 p-6 backdrop-blur-xl shadow-sm transition-all duration-300 hover:scale-[1.03] hover:border-brand-green hover:shadow-xl hover:bg-card/95 active:scale-[0.98] cursor-pointer">
                   <div className="flex items-center gap-3">
-                    <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-brand-green/10 font-mono text-xs font-bold text-brand-green-text">
+                    <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-brand-green/10 font-mono text-xs font-bold text-brand-green-text group-hover:bg-brand-green group-hover:text-white transition-colors">
                       0{idx + 1}
                     </span>
-                    <h3 className="font-head text-base font-bold text-foreground">{ar ? pillar.titleAr : pillar.title}</h3>
+                    <h3 className="font-head text-base font-bold text-foreground group-hover:text-brand-green transition-colors">{ar ? pillar.titleAr : pillar.title}</h3>
                   </div>
                   <p className="mt-4 text-sm leading-6 text-muted-foreground">{ar ? pillar.bodyAr : pillar.body}</p>
                 </div>

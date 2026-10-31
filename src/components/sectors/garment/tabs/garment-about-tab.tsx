@@ -59,33 +59,43 @@ export function GarmentAboutTab() {
               <p className="text-start leading-relaxed">{highlightBrand(ar ? whoWeAre.bodyAr : whoWeAre.body)}</p>
               <p className="text-start leading-relaxed">{highlightBrand(ar ? whoWeAre.extendedAr : whoWeAre.extended)}</p>
             </div>
+
+            {/* Explore Capabilities Button */}
+            <div className="mt-8 flex justify-center">
+              <Button asChild size="default" className="rounded-full bg-brand-green text-white hover:bg-brand-orange transition-all duration-300 shadow-md">
+                <Link to="/sectors/$sector" params={{ sector: "garment" }} search={{ tab: "capabilities" }}>
+                  <span>{ar ? "استكشف قدراتنا" : "Explore Our Capabilities"}</span>
+                  <ArrowRight className="size-4 ms-2 rtl:rotate-180" />
+                </Link>
+              </Button>
+            </div>
           </div>
         </Reveal>
 
-        {/* Dedicated Separate Mission & Vision Cards */}
-        <div className="mx-auto max-w-4xl mt-6 grid gap-6 sm:grid-cols-2">
-          <div className="group rounded-2xl border border-brand-green/30 bg-card/75 p-6 shadow-sm backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:border-brand-green hover:shadow-xl active:scale-[0.98] cursor-pointer">
+        {/* Dedicated Separate Mission & Vision Cards — Full Width matching Construction system */}
+        <div className="mt-8 grid gap-6 md:grid-cols-2">
+          <div className="group rounded-3xl border border-brand-green/30 bg-card/75 p-8 shadow-sm backdrop-blur-sm transition-all duration-300 hover:scale-[1.01] hover:border-brand-green hover:shadow-xl active:scale-[0.99] cursor-pointer">
             <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3 py-0.5 text-xs font-bold text-brand-orange">
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
               <span>{ar ? whoWeAre.mission.titleAr : whoWeAre.mission.title}</span>
             </div>
-            <h3 className="mt-3 font-head text-lg font-bold text-foreground">
+            <h3 className="mt-3 font-head text-xl font-bold text-foreground">
               {ar ? whoWeAre.mission.titleAr : whoWeAre.mission.title}
             </h3>
-            <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+            <p className="mt-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
               {ar ? whoWeAre.mission.descAr : whoWeAre.mission.desc}
             </p>
           </div>
 
-          <div className="group rounded-2xl border border-brand-green/30 bg-card/75 p-6 shadow-sm backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:border-brand-green hover:shadow-xl active:scale-[0.98] cursor-pointer">
+          <div className="group rounded-3xl border border-brand-green/30 bg-card/75 p-8 shadow-sm backdrop-blur-sm transition-all duration-300 hover:scale-[1.01] hover:border-brand-green hover:shadow-xl active:scale-[0.99] cursor-pointer">
             <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3 py-0.5 text-xs font-bold text-brand-orange">
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
               <span>{ar ? whoWeAre.vision.titleAr : whoWeAre.vision.title}</span>
             </div>
-            <h3 className="mt-3 font-head text-lg font-bold text-foreground">
+            <h3 className="mt-3 font-head text-xl font-bold text-foreground">
               {ar ? whoWeAre.vision.titleAr : whoWeAre.vision.title}
             </h3>
-            <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+            <p className="mt-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
               {ar ? whoWeAre.vision.descAr : whoWeAre.vision.desc}
             </p>
           </div>

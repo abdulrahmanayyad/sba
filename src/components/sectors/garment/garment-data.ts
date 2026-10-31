@@ -44,7 +44,7 @@ export const garmentAboutData = {
     services: [
       {
         id: "ready-made",
-        title: "Ready-Made Garment Manufacturing",
+        title: "Apparel Manufacturing",
         titleAr: "تصنيع الملابس الجاهزة",
         desc: "Manufacturing women's, men's, and children's apparel to approved technical specifications and strict quality benchmarks.",
         descAr: "إنتاج متكامل للملابس الحريمي، الرجالي، والأطفالي وفق المواصفات الفنية المعتمدة وأعلى معايير الجودة.",
@@ -151,12 +151,6 @@ export const garmentAboutData = {
         titleAr: "مصنع الأقمشة والصباغة الداخلية",
         desc: "Circular knitting machines and woven loom capabilities paired with internal dyeing and color-matching laboratories.",
         descAr: "قدرات لإنتاج أقمشة التريكو والمنسوجات (Woven) مع مصنع صباغة داخلي ومعمل ضبط ومطابقة ألوان متطور.",
-      },
-      {
-        title: "Stakes in 3 Partner Factories",
-        titleAr: "ملكية في 3 مصانع تصنيع إضافية",
-        desc: "Strategic ownership equity providing surge capacity, category specializations, and seamless overflow handling.",
-        descAr: "حصص ملكية استراتيجية في 3 مصانع تصنيع إضافية تتيح مرونة هائلة في استيعاب طلبيات الذروة والتخصصات الدقيقة.",
       },
       {
         title: "CAD & Rapid Prototyping Lab",
@@ -323,7 +317,7 @@ export const garmentAboutData = {
 export const garmentServicesDetailed = [
   {
     id: "ready-made-garments",
-    titleEn: "Ready-Made Garment Manufacturing",
+    titleEn: "Apparel Manufacturing",
     titleAr: "تصنيع الملابس الجاهزة",
     taglineEn: "Comprehensive mass production across women's, men's, and children's categories.",
     taglineAr: "إنتاج كمي متكامل لمختلف فئات الملابس الحريمي، الرجالي، والأطفالي.",
