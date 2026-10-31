@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Building2, Leaf, Shirt, Wheat, Globe, CheckCircle2, MapPin, Sparkles, Plus, Minus, Layers, X } from "lucide-react";
+import { Building2, Leaf, Shirt, Wheat, Globe, CheckCircle2, MapPin, Sparkles, Plus, Minus, Layers, X, Search, Mic, Navigation, Map } from "lucide-react";
 
 import { HomeReveal as Reveal } from "@/components/home/home-motion";
 import { AnimatedStatistic } from "@/components/site/animated-statistic";
@@ -280,19 +280,30 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
           </div>
 
           <div className="mt-6 space-y-6">
-            {/* Realistic Google Maps Interactive Canvas — Full Width */}
+            {/* Apple Maps Interactive Canvas — Full Width Styled after Apple Maps UI */}
             <div
-              className="relative aspect-[16/10] sm:aspect-[21/9] lg:aspect-[2.4/1] w-full overflow-hidden rounded-2xl border border-[#d0d7de] bg-[#aad3df] shadow-inner select-none transition-colors duration-500"
+              className="relative aspect-[16/10] sm:aspect-[21/9] lg:aspect-[2.4/1] w-full overflow-hidden rounded-3xl border border-black/10 dark:border-white/15 bg-[#007AFF] shadow-[0_16px_50px_rgba(0,122,255,0.18)] select-none transition-colors duration-500 font-sans"
               role="region"
-              aria-label={ar ? "خريطة Google التفاعلية لأسواقنا" : "Interactive Google Maps of our markets"}
+              aria-label={ar ? "خريطة Apple التفاعلية لأسواقنا" : "Interactive Apple Maps of our markets"}
             >
-              {/* Clean Map Badge indicator */}
-              <div className="absolute start-3 top-3 z-30 flex items-center gap-2 rounded-lg border border-black/15 bg-white/95 px-3 py-1.5 shadow-md text-xs font-bold text-slate-800 backdrop-blur-sm">
-                <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
-                <span>{ar ? "خريطة الأسواق المعتمدة" : "Verified Markets Map"}</span>
+              {/* Apple Maps Top-Start Badge */}
+              <div className="absolute start-3 top-3 z-30 flex items-center gap-2 rounded-full border border-black/10 bg-white/90 dark:bg-zinc-900/90 px-3.5 py-1.5 shadow-md text-xs font-bold text-slate-800 dark:text-slate-100 backdrop-blur-md">
+                <span className="font-sans font-bold text-sm leading-none"></span>
+                <span className="font-sans font-semibold tracking-tight">{ar ? "خرائط Apple" : "Apple Maps"}</span>
+                <span className="size-1 rounded-full bg-slate-300 dark:bg-slate-600" />
+                <span className="text-[11px] text-brand-orange font-medium">{ar ? "الأسواق المعتمدة" : "Verified Markets"}</span>
               </div>
 
-              {/* Realistic Google Maps Vector Geography */}
+              {/* Apple Maps Top-End Quick Info Chip when country is active */}
+              {activeCountry && (
+                <div className="absolute end-3 top-3 z-30 hidden sm:flex items-center gap-2 rounded-full border border-white/60 bg-white/90 dark:bg-zinc-900/90 px-3 py-1 shadow-lg text-xs font-bold text-slate-800 dark:text-slate-100 backdrop-blur-md animate-in fade-in zoom-in-95">
+                  <span className="text-sm">{activeCountry.flag}</span>
+                  <span className="font-semibold">{ar ? activeCountry.nameAr : activeCountry.nameEn}</span>
+                  <span className="text-[10px] text-sky-600 dark:text-sky-400 font-mono">({activeCountry.capitalEn})</span>
+                </div>
+              )}
+
+              {/* Apple Maps Vector Canvas */}
               <div
                 className="absolute inset-0 size-full transition-transform duration-700 ease-out"
                 style={{
@@ -305,120 +316,360 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
                   className="size-full"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  {/* Subtle Google Maps coordinate grid lines */}
                   <defs>
-                    <pattern id="gmap-grid" width="60" height="60" patternUnits="userSpaceOnUse">
-                      <path
-                        d="M 60 0 L 0 0 0 60"
-                        fill="none"
-                        stroke={mapType === "roadmap" ? "rgba(180, 210, 225, 0.45)" : "rgba(255, 255, 255, 0.08)"}
-                        strokeWidth="0.8"
-                      />
-                    </pattern>
-                  </defs>
-                  <rect width="100%" height="100%" fill="url(#gmap-grid)" />
+                    {/* Apple Maps Vibrant Ocean Blue Gradient */}
+                    <linearGradient id="apple-ocean-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stopColor="#1ea0ff" />
+                      <stop offset="25%" stopColor="#0086fb" />
+                      <stop offset="65%" stopColor="#006ee6" />
+                      <stop offset="100%" stopColor="#0058c4" />
+                    </linearGradient>
 
-                  {/* Landmass Outlines with Realistic Google Maps Palettes */}
-                  {/* Europe */}
+                    {/* Coastal shelf cyan glow */}
+                    <radialGradient id="nile-delta-glow" cx="57%" cy="45%" r="30%">
+                      <stop offset="0%" stopColor="#5eead4" stopOpacity="0.45" />
+                      <stop offset="60%" stopColor="#38bdf8" stopOpacity="0.2" />
+                      <stop offset="100%" stopColor="#007aff" stopOpacity="0" />
+                    </radialGradient>
+
+                    <radialGradient id="aegean-shelf-glow" cx="53%" cy="32%" r="25%">
+                      <stop offset="0%" stopColor="#7dd3fc" stopOpacity="0.5" />
+                      <stop offset="70%" stopColor="#007aff" stopOpacity="0" />
+                    </radialGradient>
+                  </defs>
+
+                  {/* 1. Deep Ocean Base */}
+                  <rect width="1000" height="600" fill="url(#apple-ocean-grad)" />
+
+                  {/* Coastal Cyan Shelf Glows */}
+                  <rect width="1000" height="600" fill="url(#nile-delta-glow)" />
+                  <rect width="1000" height="600" fill="url(#aegean-shelf-glow)" />
+
+                  {/* 2. Landmasses with Apple Maps Soft Pastel Palettes */}
+                  {/* Europe / Balkans / Romania / Bulgaria / Greece (Apple Maps Lush Olive Green) */}
                   <path
                     d="M260,110 Q320,60 410,70 Q490,50 560,90 Q620,120 590,170 Q540,200 500,190 Q460,225 430,215 Q390,200 360,170 Q300,180 260,140 Z"
-                    fill={mapType === "roadmap" ? "#f5f3f0" : "#2d3748"}
-                    stroke={mapType === "roadmap" ? "#d9d6cb" : "#4a5568"}
+                    fill="#C3E298"
+                    stroke="#A8CE7A"
                     strokeWidth="1.2"
                   />
-                  {/* France Highlight contour */}
+                  {/* France (Apple Maps Soft Green) */}
                   <path
                     d="M360,130 Q420,120 435,160 Q410,200 375,185 Q350,160 360,130 Z"
-                    fill={activeCountry?.nameEn === "France" ? (mapType === "roadmap" ? "#e8f0fe" : "#1e3a5f") : (mapType === "roadmap" ? "#edf5e5" : "#374151")}
-                    stroke={activeCountry?.nameEn === "France" ? "#1a73e8" : (mapType === "roadmap" ? "#d0d9cd" : "#4b5563")}
-                    strokeWidth={activeCountry?.nameEn === "France" ? 2 : 1}
+                    fill={activeCountry?.nameEn === "France" ? "#B5DE86" : "#C8E6A2"}
+                    stroke={activeCountry?.nameEn === "France" ? "#007AFF" : "#ADCFA0"}
+                    strokeWidth={activeCountry?.nameEn === "France" ? 2.5 : 1}
                   />
-                  {/* Italy Peninsula */}
+                  {/* Italy Peninsula (Apple Maps Green) */}
                   <path
                     d="M455,165 Q485,180 475,230 Q455,240 450,210 Q450,175 455,165 Z"
-                    fill={activeCountry?.nameEn === "Italy" ? (mapType === "roadmap" ? "#e8f0fe" : "#1e3a5f") : (mapType === "roadmap" ? "#edf5e5" : "#374151")}
-                    stroke={activeCountry?.nameEn === "Italy" ? "#1a73e8" : (mapType === "roadmap" ? "#d0d9cd" : "#4b5563")}
-                    strokeWidth={activeCountry?.nameEn === "Italy" ? 2 : 1}
+                    fill={activeCountry?.nameEn === "Italy" ? "#B5DE86" : "#C8E6A2"}
+                    stroke={activeCountry?.nameEn === "Italy" ? "#007AFF" : "#ADCFA0"}
+                    strokeWidth={activeCountry?.nameEn === "Italy" ? 2.5 : 1}
                   />
-                  {/* Turkey / Anatolia */}
+
+                  {/* Turkey / Anatolia (Apple Maps Sage Green with Relief) */}
                   <path
-                    d="M540,165 Q625,150 645,185 Q610,215 550,205 Q530,185 540,165 Z"
-                    fill={activeCountry?.nameEn === "Turkey" ? (mapType === "roadmap" ? "#e8f0fe" : "#1e3a5f") : (mapType === "roadmap" ? "#f3ecd8" : "#3f3f46")}
-                    stroke={activeCountry?.nameEn === "Turkey" ? "#1a73e8" : (mapType === "roadmap" ? "#d9d0b8" : "#52525b")}
-                    strokeWidth={activeCountry?.nameEn === "Turkey" ? 2 : 1}
+                    d="M540,165 Q625,150 670,175 Q650,215 550,205 Q530,185 540,165 Z"
+                    fill={activeCountry?.nameEn === "Turkey" ? "#BCE38E" : "#C6E49E"}
+                    stroke={activeCountry?.nameEn === "Turkey" ? "#007AFF" : "#ABCFA1"}
+                    strokeWidth={activeCountry?.nameEn === "Turkey" ? 2.5 : 1.2}
                   />
-                  {/* North Africa & Sahara */}
+
+                  {/* Cyprus Island */}
+                  <path
+                    d="M615,225 Q635,220 642,225 Q628,235 615,225 Z"
+                    fill="#C6E4A0"
+                    stroke="#ABCFA1"
+                    strokeWidth="1"
+                  />
+
+                  {/* Crete Island */}
+                  <path
+                    d="M500,218 Q535,215 540,222 Q515,226 500,218 Z"
+                    fill="#C6E4A0"
+                    stroke="#ABCFA1"
+                    strokeWidth="1"
+                  />
+
+                  {/* Levant (Lebanon, Syria, Jordan) */}
+                  <path
+                    d="M635,225 Q660,225 665,270 Q640,280 635,250 Z"
+                    fill="#EFE7D2"
+                    stroke="#DFCFB0"
+                    strokeWidth="1"
+                  />
+
+                  {/* North Africa & Sahara (Apple Maps Warm Desert Sand: #FAF1E3) */}
                   <path
                     d="M170,230 Q330,210 470,230 Q540,240 580,280 Q560,370 480,430 Q330,460 210,410 Q160,320 170,230 Z"
-                    fill={mapType === "roadmap" ? "#fbf5eb" : "#443428"}
-                    stroke={mapType === "roadmap" ? "#e5ded2" : "#5c4838"}
+                    fill="#FAF1E3"
+                    stroke="#E6D3BF"
                     strokeWidth="1.2"
                   />
-                  {/* Morocco & Atlas */}
+
+                  {/* Morocco */}
                   <path
                     d="M200,240 Q260,235 270,280 Q230,310 200,280 Z"
-                    fill={activeCountry?.nameEn === "Morocco" ? (mapType === "roadmap" ? "#e8f0fe" : "#1e3a5f") : (mapType === "roadmap" ? "#f2ede2" : "#4a3c30")}
-                    stroke={activeCountry?.nameEn === "Morocco" ? "#1a73e8" : "#d9d0c0"}
-                    strokeWidth={activeCountry?.nameEn === "Morocco" ? 2 : 1}
+                    fill={activeCountry?.nameEn === "Morocco" ? "#F5E2C4" : "#FAF1E3"}
+                    stroke={activeCountry?.nameEn === "Morocco" ? "#007AFF" : "#E2CFB8"}
+                    strokeWidth={activeCountry?.nameEn === "Morocco" ? 2.5 : 1}
                   />
+
                   {/* Algeria */}
                   <path
                     d="M275,240 Q380,235 385,320 Q330,350 275,310 Z"
-                    fill={activeCountry?.nameEn === "Algeria" ? (mapType === "roadmap" ? "#e8f0fe" : "#1e3a5f") : (mapType === "roadmap" ? "#f7f1e4" : "#4e3f32")}
-                    stroke={activeCountry?.nameEn === "Algeria" ? "#1a73e8" : "#ded5c4"}
-                    strokeWidth={activeCountry?.nameEn === "Algeria" ? 2 : 1}
+                    fill={activeCountry?.nameEn === "Algeria" ? "#F5E2C4" : "#FAF2E5"}
+                    stroke={activeCountry?.nameEn === "Algeria" ? "#007AFF" : "#E5D4BF"}
+                    strokeWidth={activeCountry?.nameEn === "Algeria" ? 2.5 : 1}
                   />
+
                   {/* Libya */}
                   <path
                     d="M390,240 Q495,240 495,330 Q440,350 390,320 Z"
-                    fill={activeCountry?.nameEn === "Libya" ? (mapType === "roadmap" ? "#e8f0fe" : "#1e3a5f") : (mapType === "roadmap" ? "#f8f2e5" : "#534436")}
-                    stroke={activeCountry?.nameEn === "Libya" ? "#1a73e8" : "#ded5c4"}
-                    strokeWidth={activeCountry?.nameEn === "Libya" ? 2 : 1}
+                    fill={activeCountry?.nameEn === "Libya" ? "#F5E2C4" : "#FBF3E7"}
+                    stroke={activeCountry?.nameEn === "Libya" ? "#007AFF" : "#E5D4BF"}
+                    strokeWidth={activeCountry?.nameEn === "Libya" ? 2.5 : 1}
                   />
-                  {/* Egypt & Nile River Valley Greenery */}
+
+                  {/* Egypt (Warm Apple Maps Sand with delicate coast) */}
                   <path
                     d="M500,250 Q600,250 605,330 Q540,360 500,335 Z"
-                    fill={activeCountry?.nameEn === "Egypt" ? (mapType === "roadmap" ? "#d2e3fc" : "#1a365d") : (mapType === "roadmap" ? "#fdf8ee" : "#5a4a3c")}
-                    stroke={activeCountry?.nameEn === "Egypt" ? "#1a73e8" : "#d9d0be"}
+                    fill={activeCountry?.nameEn === "Egypt" ? "#F3E2C4" : "#FCF5EA"}
+                    stroke={activeCountry?.nameEn === "Egypt" ? "#007AFF" : "#E5D4BD"}
                     strokeWidth={activeCountry?.nameEn === "Egypt" ? 2.5 : 1.2}
                   />
-                  {/* Nile Delta & River in Egypt */}
-                  <path
-                    d="M570,255 L575,275 L565,315"
-                    fill="none"
-                    stroke={mapType === "roadmap" ? "#2e7d32" : "#48bb78"}
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                    className="opacity-75"
-                  />
+
                   {/* Arabian Peninsula */}
                   <path
                     d="M620,260 Q690,230 750,270 Q770,360 690,410 Q640,360 620,260 Z"
-                    fill={mapType === "roadmap" ? "#f8f0e0" : "#534333"}
-                    stroke={mapType === "roadmap" ? "#e2d7c5" : "#6b5844"}
+                    fill="#FAF1E3"
+                    stroke="#E6D3BF"
                     strokeWidth="1.2"
                   />
+
                   {/* Kuwait Region */}
                   <circle
                     cx="735"
                     cy="255"
-                    r="12"
-                    fill={activeCountry?.nameEn === "Kuwait" ? (mapType === "roadmap" ? "#e8f0fe" : "#1e3a5f") : (mapType === "roadmap" ? "#fdf0d5" : "#614f3c")}
-                    stroke={activeCountry?.nameEn === "Kuwait" ? "#1a73e8" : "#d4c5a9"}
-                    strokeWidth={activeCountry?.nameEn === "Kuwait" ? 2 : 1}
+                    r="13"
+                    fill={activeCountry?.nameEn === "Kuwait" ? "#F5E2C4" : "#FAF1E3"}
+                    stroke={activeCountry?.nameEn === "Kuwait" ? "#007AFF" : "#E2CFB8"}
+                    strokeWidth={activeCountry?.nameEn === "Kuwait" ? 2.5 : 1}
                   />
+
                   {/* Mauritania */}
                   <path
                     d="M160,350 Q210,340 215,400 Q170,420 150,380 Z"
-                    fill={activeCountry?.nameEn === "Mauritania" ? (mapType === "roadmap" ? "#e8f0fe" : "#1e3a5f") : (mapType === "roadmap" ? "#f5eedd" : "#4a3c2e")}
-                    stroke={activeCountry?.nameEn === "Mauritania" ? "#1a73e8" : "#ded4bf"}
-                    strokeWidth={activeCountry?.nameEn === "Mauritania" ? 2 : 1}
+                    fill={activeCountry?.nameEn === "Mauritania" ? "#F5E2C4" : "#FAF1E3"}
+                    stroke={activeCountry?.nameEn === "Mauritania" ? "#007AFF" : "#E2CFB8"}
+                    strokeWidth={activeCountry?.nameEn === "Mauritania" ? 2.5 : 1}
                   />
+
+                  {/* Red Sea Cutout (Apple Blue) */}
+                  <path
+                    d="M592,274 L608,295 L650,395 L638,400 L598,298 L588,276 Z"
+                    fill="url(#apple-ocean-grad)"
+                    stroke="#4FA3E3"
+                    strokeWidth="0.8"
+                  />
+
+                  {/* 3. Nile River & Nile Delta (Signature Vivid Apple Maps Green: #67C439) */}
+                  {/* Delta Fan */}
+                  <path
+                    d="M555,260 Q575,250 590,260 Q585,275 575,275 Q565,275 555,260 Z"
+                    fill="#67C439"
+                    stroke="#52AC27"
+                    strokeWidth="1"
+                  />
+                  {/* Nile River Fertile Valley Buffer */}
+                  <path
+                    d="M575,275 Q570,300 575,315 Q578,335 585,348 Q590,365 588,380 L590,410"
+                    fill="none"
+                    stroke="#8BE052"
+                    strokeWidth="7"
+                    strokeLinecap="round"
+                    opacity="0.4"
+                  />
+                  {/* Nile River Main Stem */}
+                  <path
+                    d="M575,275 Q570,300 575,315 Q578,335 585,348 Q590,365 588,380 L590,410"
+                    fill="none"
+                    stroke="#52AC27"
+                    strokeWidth="3.2"
+                    strokeLinecap="round"
+                  />
+                  {/* Delta branches */}
+                  <path d="M575,275 L565,262 M575,275 L582,261" fill="none" stroke="#52AC27" strokeWidth="1.6" />
+
+                  {/* 4. Apple Maps Delicate Highways & Transport Lines */}
+                  <g stroke="#ADC4DB" strokeWidth="0.85" opacity="0.75" fill="none">
+                    {/* Egypt highways: Alexandria to Cairo, Cairo to Suez, Cairo to Asyut */}
+                    <path d="M550,260 L575,275 L595,277" />
+                    <path d="M575,275 L576,315 L585,348" />
+                    {/* Turkey highways: Istanbul to Bursa, Ankara, Konya, Mersin */}
+                    <path d="M570,155 L580,170 L615,165 L605,195 L635,205" />
+                    <path d="M580,170 L545,185 L565,202" />
+                    {/* Levant & Jordan */}
+                    <path d="M635,235 L645,245 L640,265 L655,290" />
+                  </g>
+
+                  {/* 5. Apple Maps Subtle Country Boundaries (Delicate Pinkish-Purple Dashes) */}
+                  <g stroke="#C47C9E" strokeWidth="0.9" strokeDasharray="3 3" fill="none" opacity="0.85">
+                    {/* Egypt - Libya border */}
+                    <path d="M498,252 L498,340" />
+                    {/* Egypt - Sudan border */}
+                    <path d="M498,340 L605,340" />
+                    {/* Turkey - Syria - Iraq border */}
+                    <path d="M630,215 L665,215 L680,240" />
+                    {/* Jordan borders */}
+                    <path d="M635,258 L655,258 L665,285" />
+                  </g>
+
+                  {/* 6. Apple Maps Typographic Labels (Matching Screenshot) */}
+                  {/* Water Labels (Italic, Subtle, Apple Serif/Sans) */}
+                  <text x="450" y="228" fontStyle="italic" fontSize="11" fill="rgba(255,255,255,0.78)" letterSpacing="1.5">
+                    Mediterranean Sea
+                  </text>
+                  <text x="630" y="112" fontStyle="italic" fontSize="10" fill="rgba(255,255,255,0.72)" letterSpacing="1.5">
+                    Black Sea
+                  </text>
+                  <text x="640" y="340" fontStyle="italic" fontSize="10" fill="rgba(255,255,255,0.72)" letterSpacing="1.5">
+                    Red Sea
+                  </text>
+
+                  {/* Regional Names (Matching Screenshot) */}
+                  <text x="590" y="196" fontSize="7.5" fontWeight="700" fill="#6B8055" letterSpacing="2.5">
+                    TAURUS MOUNTAINS
+                  </text>
+                  <text x="598" y="174" fontSize="7" fontWeight="700" fill="#6B8055" letterSpacing="2">
+                    ANADOLU
+                  </text>
+                  <text x="525" y="325" fontSize="9" fontWeight="800" fill="#B39379" letterSpacing="3.5">
+                    EGYPT
+                  </text>
+                  <text x="630" y="176" fontSize="8" fontWeight="800" fill="#A8526F" letterSpacing="2">
+                    TÜRKIYE
+                  </text>
+                  <text x="515" y="105" fontSize="7.5" fontWeight="800" fill="#758B5D" letterSpacing="2">
+                    BULGARIA
+                  </text>
+                  <text x="642" y="278" fontSize="7.5" fontWeight="800" fill="#A8526F" letterSpacing="2">
+                    JORDAN
+                  </text>
+                  <text x="430" y="320" fontSize="7.5" fontWeight="800" fill="#B39379" letterSpacing="2">
+                    LIBYAN DESERT
+                  </text>
+
+                  {/* City Dots & Text Labels (Matching Screenshot) */}
+                  {/* Alexandria */}
+                  <circle cx="550" cy="260" r="2.2" fill="#334155" />
+                  <text x="520" y="256" fontSize="9" fontWeight="600" fill="#0f172a" stroke="#ffffff" strokeWidth="2" paintOrder="stroke fill">
+                    Alexandria
+                  </text>
+
+                  {/* Istanbul */}
+                  <circle cx="570" cy="155" r="2.5" fill="#334155" />
+                  <text x="575" y="157" fontSize="10" fontWeight="700" fill="#0f172a" stroke="#ffffff" strokeWidth="2.5" paintOrder="stroke fill">
+                    Istanbul
+                  </text>
+
+                  {/* Ankara */}
+                  <circle cx="615" cy="165" r="2.2" fill="#334155" />
+                  <text x="618" y="163" fontSize="8.5" fontWeight="600" fill="#0f172a" stroke="#ffffff" strokeWidth="2" paintOrder="stroke fill">
+                    Ankara
+                  </text>
+
+                  {/* Izmir */}
+                  <circle cx="545" cy="185" r="2" fill="#334155" />
+                  <text x="523" y="187" fontSize="8" fontWeight="600" fill="#0f172a" stroke="#ffffff" strokeWidth="2" paintOrder="stroke fill">
+                    Izmir
+                  </text>
+
+                  {/* Antalya */}
+                  <circle cx="565" cy="202" r="2" fill="#334155" />
+                  <text x="568" y="205" fontSize="7.5" fontWeight="600" fill="#0f172a" stroke="#ffffff" strokeWidth="2" paintOrder="stroke fill">
+                    Antalya
+                  </text>
+
+                  {/* Konya */}
+                  <circle cx="605" cy="195" r="2" fill="#334155" />
+                  <text x="608" y="196" fontSize="7.5" fontWeight="600" fill="#0f172a" stroke="#ffffff" strokeWidth="2" paintOrder="stroke fill">
+                    Konya
+                  </text>
+
+                  {/* Beirut */}
+                  <circle cx="635" cy="235" r="2.5" fill="#334155" />
+                  <text x="600" y="238" fontSize="9.5" fontWeight="700" fill="#0f172a" stroke="#ffffff" strokeWidth="2.5" paintOrder="stroke fill">
+                    Beirut
+                  </text>
+
+                  {/* Amman */}
+                  <circle cx="640" cy="265" r="2.5" fill="#334155" />
+                  <text x="645" y="268" fontSize="9.5" fontWeight="700" fill="#0f172a" stroke="#ffffff" strokeWidth="2.5" paintOrder="stroke fill">
+                    Amman
+                  </text>
+
+                  {/* Asyut */}
+                  <circle cx="575" cy="315" r="2" fill="#334155" />
+                  <text x="580" y="318" fontSize="7.5" fontWeight="600" fill="#0f172a" stroke="#ffffff" strokeWidth="2" paintOrder="stroke fill">
+                    Asyut
+                  </text>
+
+                  {/* Luxor */}
+                  <circle cx="585" cy="348" r="2" fill="#334155" />
+                  <text x="590" y="350" fontSize="7.5" fontWeight="600" fill="#0f172a" stroke="#ffffff" strokeWidth="2" paintOrder="stroke fill">
+                    Luxor
+                  </text>
+
+                  {/* Aswan */}
+                  <circle cx="590" cy="380" r="2" fill="#334155" />
+                  <text x="595" y="382" fontSize="7.5" fontWeight="600" fill="#0f172a" stroke="#ffffff" strokeWidth="2" paintOrder="stroke fill">
+                    Aswan
+                  </text>
+
+                  {/* 7. Signature Apple Maps Current Location Puck for Cairo / SBA Headquarters */}
+                  <g id="apple-cairo-puck" className="cursor-pointer" onClick={() => setSelectedCountry(partnerCountries.find(c => c.nameEn === "Egypt") || null)}>
+                    {/* Outer animated radar pulse */}
+                    <circle cx="575" cy="275" r="22" fill="#007AFF" opacity="0.2" className="animate-ping" />
+                    {/* Middle soft cyan-blue glow */}
+                    <circle cx="575" cy="275" r="13" fill="#007AFF" opacity="0.32" />
+                    {/* Crisp white outer ring */}
+                    <circle cx="575" cy="275" r="7.5" fill="#FFFFFF" filter="drop-shadow(0 2px 5px rgba(0,0,0,0.35))" />
+                    {/* Inner Apple vibrant blue puck */}
+                    <circle cx="575" cy="275" r="4.8" fill="#007AFF" />
+
+                    {/* Cairo Label matching Apple Maps */}
+                    <text
+                      x="587"
+                      y="278"
+                      fontFamily="-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif"
+                      fontWeight="800"
+                      fontSize="13"
+                      fill="#0f172a"
+                      stroke="#ffffff"
+                      strokeWidth="3.5"
+                      paintOrder="stroke fill"
+                    >
+                      Cairo
+                    </text>
+                    <text
+                      x="587"
+                      y="290"
+                      fontFamily="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif"
+                      fontWeight="700"
+                      fontSize="8.5"
+                      fill="#0284c7"
+                    >
+                      HQ · المقر الرئيسي
+                    </text>
+                  </g>
                 </svg>
 
-                {/* Authentic Google Maps Red Teardrop Markers for Partner Countries */}
+                {/* Apple Maps Style Floating Capsule Pins for Verified Partner Countries */}
                 {partnerCountries.map((c) => {
                   const isActive = activeCountry?.nameEn === c.nameEn;
+                  const isEgypt = c.nameEn === "Egypt";
                   return (
                     <button
                       key={c.nameEn}
@@ -427,80 +678,84 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
                       onMouseLeave={() => setHoveredCountry(null)}
                       onClick={() => setSelectedCountry((prev) => (prev?.nameEn === c.nameEn ? null : c))}
                       className={cn(
-                        "group/pin absolute -translate-x-1/2 -translate-y-full transition-all duration-300 focus-visible:outline-none cursor-pointer",
-                        isActive ? "z-40 scale-125" : "z-20 hover:scale-115"
+                        "group/pin absolute -translate-x-1/2 -translate-y-1/2 transition-all duration-300 focus-visible:outline-none cursor-pointer",
+                        isActive ? "z-40 scale-125" : "z-20 hover:scale-110",
+                        isEgypt && "mt-[-20px]"
                       )}
                       style={{ left: `${c.x}%`, top: `${c.y}%` }}
                       aria-label={`${c.nameAr} - ${c.capitalAr}`}
                     >
-                      {/* Google Maps Authentic Pin Icon */}
                       <div className="relative flex flex-col items-center">
-                        <svg
-                          width="28"
-                          height="36"
-                          viewBox="0 0 28 36"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
+                        {/* Apple Maps Pill Marker */}
+                        <div
                           className={cn(
-                            "drop-shadow-[0_4px_8px_rgba(0,0,0,0.35)] transition-transform duration-200",
-                            isActive && "scale-110"
-                          )}
-                        >
-                          <path
-                            d="M14 0C6.268 0 0 6.268 0 14C0 24.5 14 36 14 36C14 36 28 24.5 28 14C28 6.268 21.732 0 14 0Z"
-                            fill={isActive ? "#ea4335" : "#e03828"}
-                          />
-                          <circle cx="14" cy="14" r="5.5" fill="#ffffff" />
-                          <circle cx="14" cy="14" r="2.8" fill={isActive ? "#c5221f" : "#a51d24"} />
-                        </svg>
-
-                        {/* Country Label Pill under Pin */}
-                        <span
-                          className={cn(
-                            "mt-1 flex items-center gap-1 rounded-md px-1.5 py-0.5 text-[10px] font-bold shadow-md whitespace-nowrap transition-all",
-                            ar ? "font-head font-medium" : "font-sans",
+                            "flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-bold shadow-[0_4px_14px_rgba(0,0,0,0.18)] backdrop-blur-md whitespace-nowrap transition-all duration-200 border",
                             isActive
-                              ? "bg-slate-900 text-white ring-2 ring-blue-500 scale-105"
-                              : "bg-white/95 text-slate-800 border border-slate-300/80"
+                              ? "bg-[#007AFF] text-white border-white/60 shadow-[0_6px_22px_rgba(0,122,255,0.45)] ring-2 ring-white/50"
+                              : "bg-white/95 dark:bg-zinc-900/95 text-slate-800 dark:text-slate-100 border-black/10 dark:border-white/20 hover:border-[#007AFF]/60 hover:bg-white"
                           )}
                         >
+                          {/* Pulsing Apple Blue dot indicator */}
+                          <span
+                            className={cn(
+                              "size-2 rounded-full",
+                              isActive ? "bg-white animate-pulse" : "bg-[#007AFF]"
+                            )}
+                          />
                           <span className="text-xs leading-none">{c.flag}</span>
-                          <span>{ar ? c.nameAr : c.nameEn}</span>
-                        </span>
+                          <span className={ar ? "font-head font-medium text-[11px]" : "font-sans font-semibold"}>
+                            {ar ? c.nameAr : c.nameEn}
+                          </span>
+                        </div>
                       </div>
                     </button>
                   );
                 })}
               </div>
 
-              {/* Google Maps Bottom-Start Watermark Logo */}
-              <div className="absolute bottom-2 start-3 z-30 flex items-center gap-1 bg-white/70 px-2 py-0.5 rounded backdrop-blur-sm">
-                <span className="font-sans font-bold text-xs tracking-tight text-slate-700">Google</span>
+              {/* Apple Maps Floating Bottom Search Bar (Exact Matching Screenshot) */}
+              <div className="absolute bottom-3 inset-x-4 sm:inset-x-auto sm:start-1/2 sm:-translate-x-1/2 z-30 flex items-center justify-between gap-3 rounded-full border border-white/60 bg-white/85 dark:bg-zinc-900/85 backdrop-blur-2xl shadow-[0_10px_35px_rgba(0,0,0,0.18)] px-4 py-2 sm:min-w-[320px] max-w-sm pointer-events-auto">
+                <div className="flex items-center gap-2 text-slate-800 dark:text-slate-100 font-sans text-xs font-semibold">
+                  <Search className="size-3.5 text-slate-400" />
+                  <span>{ar ? "خرائط Apple · شبكة أسواقنا" : "Apple Maps · Global Markets"}</span>
+                </div>
+                <div className="flex items-center gap-2 text-slate-500">
+                  <Mic className="size-3.5 hover:text-sky-500 transition cursor-pointer" />
+                  <div className="size-5 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-[10px] font-bold text-slate-700 dark:text-slate-200">
+                    SBA
+                  </div>
+                </div>
               </div>
 
-              {/* Google Maps Bottom-End Zoom Controls */}
-              <div className="absolute bottom-3 end-3 z-30 flex flex-col rounded-lg border border-black/15 bg-white shadow-md overflow-hidden">
+              {/* Apple Maps Floating Blue Control Pill (Exact Matching Bottom-Right of Screenshot) */}
+              <div className="absolute bottom-16 sm:bottom-4 end-3 z-30 flex flex-col items-center gap-2 rounded-2xl border border-white/50 bg-[#38bdf8]/45 dark:bg-sky-500/30 p-1.5 shadow-[0_8px_24px_rgba(0,122,255,0.25)] backdrop-blur-xl">
                 <button
                   type="button"
-                  aria-label="Zoom in"
-                  onClick={handleZoomIn}
-                  className="flex size-8 items-center justify-center text-slate-700 hover:bg-slate-100 transition-colors border-b border-slate-200 cursor-pointer"
+                  onClick={() => setZoom((prev) => (prev > 1.2 ? 1 : 1.35))}
+                  title={ar ? "تبديل وضع الخريطة" : "Toggle map view"}
+                  className="flex size-8 items-center justify-center rounded-xl bg-white/40 dark:bg-white/20 text-slate-900 dark:text-white hover:bg-white/70 transition active:scale-95 cursor-pointer shadow-xs"
                 >
-                  <Plus className="size-4" />
+                  <Map className="size-4" />
                 </button>
                 <button
                   type="button"
-                  aria-label="Zoom out"
-                  onClick={handleZoomOut}
-                  className="flex size-8 items-center justify-center text-slate-700 hover:bg-slate-100 transition-colors cursor-pointer"
+                  onClick={() => {
+                    const egypt = partnerCountries.find((c) => c.nameEn === "Egypt") || null;
+                    setSelectedCountry(egypt);
+                    setZoom(1.3);
+                  }}
+                  title={ar ? "تحديد المقر الرئيسي في مصر" : "Center on Cairo HQ"}
+                  className="flex size-8 items-center justify-center rounded-xl bg-white/40 dark:bg-white/20 text-[#007AFF] hover:bg-white/70 transition active:scale-95 cursor-pointer shadow-xs"
                 >
-                  <Minus className="size-4" />
+                  <Navigation className="size-4 -rotate-45 fill-current" />
                 </button>
               </div>
 
-              {/* Google Maps Attribution */}
-              <div className="absolute bottom-1 end-14 z-20 text-[9px] text-slate-500 bg-white/60 px-1.5 py-0.5 rounded backdrop-blur-xs font-mono">
-                {ar ? "بيانات الخريطة ©2026 Google" : "Map data ©2026 Google"}
+              {/* Apple Maps Bottom-Start Attribution */}
+              <div className="absolute bottom-2 start-3 z-20 flex items-center gap-1.5 text-[10px] text-white/90 dark:text-white/80 font-sans font-medium drop-shadow-sm">
+                <span className="font-bold"> Maps</span>
+                <span>·</span>
+                <span className="text-[9px]">{ar ? "البيانات الجغرافية المعتمدة" : "Verified Geographic Data"}</span>
               </div>
             </div>
 
