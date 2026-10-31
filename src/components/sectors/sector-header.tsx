@@ -178,15 +178,8 @@ export function SectorHeader({
                 </Link>
               </>
             ) : isGarment ? (
-              /* Custom Garment Navigation: الرئيسية, من نحن, قدراتنا, خدماتنا, مشاريعنا, انضم إلينا, ابدأ مشروع */
+              /* Custom Garment Navigation: من نحن, قدراتنا, خدماتنا, مشاريعنا, انضم إلينا, ابدأ مشروع */
               <>
-                <Link
-                  to="/"
-                  className={navPill}
-                >
-                  {ar ? "الرئيسية" : "Home"}
-                </Link>
-
                 <Link
                   to="/sectors/$sector"
                   params={{ sector: "garment" }}
@@ -539,13 +532,6 @@ export function SectorHeader({
                   </>
                 ) : isGarment ? (
                   <>
-                    <Link
-                      to="/"
-                      onClick={() => setMenuOpen(false)}
-                      className={mobileLinkStyle}
-                    >
-                      {ar ? "الرئيسية" : "Home"}
-                    </Link>
                     <Link
                       to="/sectors/$sector"
                       params={{ sector: "garment" }}
