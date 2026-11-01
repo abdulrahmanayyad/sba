@@ -17,7 +17,7 @@ export const foodHeroData: FoodHero = {
     "Developing, marketing, and supplying selected authentic agri-food products connecting certified Egyptian and international origins to global markets.",
   subtitleAr:
     "أصالة المصادر وجودة المنتج وتنوع الاستخدامات في الأسواق الإقليمية والدولية",
-  heroImage: "/BG/jennifer-delmarre-IqmuHJF5khU-unsplash.jpg",
+  heroImage: "/BG/Natural & Agri-Food Products/Natural & Agri-Food Products Home Page.jpg",
 };
 
 export interface ValueItem {
@@ -270,7 +270,7 @@ export const foodSectorsData: FoodSectorItem[] = [
       "Hungarian White Honey, Comb Honey & Royal Jelly",
       "Retail glass jars & industrial food-grade drums",
     ],
-    image: "/BG/jennifer-delmarre-IqmuHJF5khU-unsplash.jpg",
+    image: "/BG/Natural & Agri-Food Products/Natural Honey & Bee Products.jpg",
   },
   {
     id: "olives",
@@ -293,7 +293,7 @@ export const foodSectorsData: FoodSectorItem[] = [
       "Stuffed olives with bell pepper, carrots, and almonds",
       "Industrial bulk drums and branded retail packaging",
     ],
-    image: "/BG/sebastian-dario-A3BVd3_mOCo-unsplash.jpg",
+    image: "/BG/Natural & Agri-Food Products/Table Olives.jpg",
   },
   {
     id: "olive-oil",
@@ -316,7 +316,7 @@ export const foodSectorsData: FoodSectorItem[] = [
       "Olive Pomace Oil for industrial and culinary use",
       "Documented acidity rates, origin verification, and certified assays",
     ],
-    image: "/BG/andreas-gucklhorn-Ilpf2eUPpUE-unsplash.jpg",
+    image: "/BG/Natural & Agri-Food Products/Olive Oil Grades.jpg",
   },
   {
     id: "dates",
@@ -339,7 +339,7 @@ export const foodSectorsData: FoodSectorItem[] = [
       "Processed derivatives: Date molasses, date jam, and confectionary paste",
       "Electronic sorting, moisture calibration, and vacuum-sealed packing",
     ],
-    image: "/BG/vitaly-gariev-1lg6Gn0-o54-unsplash.jpg",
+    image: "/BG/Natural & Agri-Food Products/Dates.jpg",
   },
   {
     id: "herbs",
@@ -362,7 +362,7 @@ export const foodSectorsData: FoodSectorItem[] = [
       "Culinary green herbs: Thyme, Sage, Rosemary, Dill, Parsley",
       "Preparation cuts: Whole leaves, TBC tea-bag cut, crushed, and fine ground",
     ],
-    image: "/BG/paula-prekopova-Mt9DbRm2KmA-unsplash.jpg",
+    image: "/BG/Natural & Agri-Food Products/Herbs & Natural Plants.jpg",
   },
   {
     id: "spices",
@@ -376,7 +376,7 @@ export const foodSectorsData: FoodSectorItem[] = [
     highlightsAr: [
       "توابل مفردة: الكمون، الكزبرة، الفلفل الأسود والأحمر، البابريكا، والكركم",
       "توابل عطرية فاخرة: القرفة، الزنجبيل، الهيل والحبهان، القرنفل، وجوزة الطيب",
-      "خلطات بهارات متخصصة: السبع بهارات، خلطات اللحوم والدجاج والأسماك والكفتة",
+      "خلطات بهارات متخصصة: السبع بهارات، خخلطات اللحوم والدجاج والأسماك والكفتة",
       "خيارات التعبئة بالتجزئة وأكياس التوريد الصناعي المقاومة للرطوبة",
     ],
     highlightsEn: [
@@ -385,7 +385,7 @@ export const foodSectorsData: FoodSectorItem[] = [
       "Proprietary blends: 7 Spices, Meat seasoning, Poultry, Seafood, Kofta marinades",
       "Moisture-proof industrial bulk sacks and retail jars/shakers",
     ],
-    image: "/BG/sergi-dolcet-escrig-o1vnK75SOgk-unsplash.jpg",
+    image: "/BG/Natural & Agri-Food Products/Spices & Seasonings.jpg",
   },
   {
     id: "powdered-juices",
@@ -408,7 +408,7 @@ export const foodSectorsData: FoodSectorItem[] = [
       "Functional vegetable powders: Beetroot and beta-carotene-rich Carrot",
       "Calibrated solubility rates, fine mesh particle size, and food-grade packaging",
     ],
-    image: "/BG/chelsea-WvusC5M-TM8-unsplash.jpg",
+    image: "/BG/Natural & Agri-Food Products/Natural Powdered Fruit & Vegetable Juices.jpg",
   },
 ];
 

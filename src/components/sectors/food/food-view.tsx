@@ -71,13 +71,13 @@ const sectorIcons: Record<string, typeof Flower> = {
 };
 
 const categoryImages: Record<string, string> = {
-  honey: "/BG/jennifer-delmarre-IqmuHJF5khU-unsplash.jpg",
-  olives: "/BG/sebastian-dario-A3BVd3_mOCo-unsplash.jpg",
-  "olive-oil": "/BG/andreas-gucklhorn-Ilpf2eUPpUE-unsplash.jpg",
-  dates: "/BG/vitaly-gariev-1lg6Gn0-o54-unsplash.jpg",
-  herbs: "/BG/paula-prekopova-Mt9DbRm2KmA-unsplash.jpg",
-  spices: "/BG/sergi-dolcet-escrig-o1vnK75SOgk-unsplash.jpg",
-  "powdered-juices": "/BG/chelsea-WvusC5M-TM8-unsplash.jpg",
+  honey: "/BG/Natural & Agri-Food Products/Natural Honey & Bee Products.jpg",
+  olives: "/BG/Natural & Agri-Food Products/Table Olives.jpg",
+  "olive-oil": "/BG/Natural & Agri-Food Products/Olive Oil Grades.jpg",
+  dates: "/BG/Natural & Agri-Food Products/Dates.jpg",
+  herbs: "/BG/Natural & Agri-Food Products/Herbs & Natural Plants.jpg",
+  spices: "/BG/Natural & Agri-Food Products/Spices & Seasonings.jpg",
+  "powdered-juices": "/BG/Natural & Agri-Food Products/Natural Powdered Fruit & Vegetable Juices.jpg",
 };
 
 export function FoodSectorView({ tab = "about" }: FoodViewProps) {
