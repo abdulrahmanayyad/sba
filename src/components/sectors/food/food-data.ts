@@ -421,6 +421,7 @@ export interface FoodProductDetail {
   descEn: string;
   tagsAr: string[];
   tagsEn: string[];
+  image?: string;
 }
 
 export interface FoodProductCategory {

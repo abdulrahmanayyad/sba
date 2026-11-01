@@ -70,6 +70,16 @@ const sectorIcons: Record<string, typeof Flower> = {
   "powdered-juices": Apple,
 };
 
+const categoryImages: Record<string, string> = {
+  honey: "/BG/jennifer-delmarre-IqmuHJF5khU-unsplash.jpg",
+  olives: "/BG/sebastian-dario-A3BVd3_mOCo-unsplash.jpg",
+  "olive-oil": "/BG/andreas-gucklhorn-Ilpf2eUPpUE-unsplash.jpg",
+  dates: "/BG/vitaly-gariev-1lg6Gn0-o54-unsplash.jpg",
+  herbs: "/BG/paula-prekopova-Mt9DbRm2KmA-unsplash.jpg",
+  spices: "/BG/sergi-dolcet-escrig-o1vnK75SOgk-unsplash.jpg",
+  "powdered-juices": "/BG/chelsea-WvusC5M-TM8-unsplash.jpg",
+};
+
 export function FoodSectorView({ tab = "about" }: FoodViewProps) {
   const { language } = useLanguage();
   const ar = language === "AR";
@@ -219,9 +229,6 @@ function FoodAboutTab({ ar }: { ar: boolean }) {
               <div className="mb-4">
                 <SectionBadge title={ar ? "رؤيتنا" : "Our Vision"} />
               </div>
-              <h3 className="font-head text-xl sm:text-2xl font-bold text-foreground mb-4 group-hover:text-brand-orange transition-colors">
-                {ar ? vision.titleAr : vision.titleEn}
-              </h3>
               <p className="text-base text-muted-foreground leading-relaxed">
                 {highlightBrand(ar ? vision.descAr : vision.descEn)}
               </p>
@@ -234,9 +241,6 @@ function FoodAboutTab({ ar }: { ar: boolean }) {
               <div className="mb-4">
                 <SectionBadge title={ar ? "رسالتنا" : "Our Mission"} />
               </div>
-              <h3 className="font-head text-xl sm:text-2xl font-bold text-foreground mb-4 group-hover:text-brand-green transition-colors">
-                {ar ? mission.titleAr : mission.titleEn}
-              </h3>
               <p className="text-base text-muted-foreground leading-relaxed">
                 {highlightBrand(ar ? mission.descAr : mission.descEn)}
               </p>
@@ -250,9 +254,6 @@ function FoodAboutTab({ ar }: { ar: boolean }) {
             <div className="mb-4">
               <SectionBadge title={ar ? "نهجنا" : "Our Approach"} />
             </div>
-            <h3 className="font-head text-xl sm:text-2xl font-bold text-foreground mb-4 group-hover:text-brand-green transition-colors">
-              {ar ? approach.titleAr : approach.titleEn}
-            </h3>
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-4xl">
               {highlightBrand(ar ? approach.descAr : approach.descEn)}
             </p>
@@ -264,10 +265,7 @@ function FoodAboutTab({ ar }: { ar: boolean }) {
           <Reveal>
             <div className="text-center max-w-2xl mx-auto mb-10">
               <SectionBadge title={ar ? "قيمنا" : "Our Values"} />
-              <h3 className="font-head text-2xl sm:text-4xl font-bold tracking-tight text-foreground mt-3">
-                {ar ? "قيمنا المؤسسية" : "Our Values"}
-              </h3>
-              <p className="text-muted-foreground text-sm sm:text-base mt-2">
+              <p className="text-muted-foreground text-sm sm:text-base mt-3">
                 {ar
                   ? "المبادئ المهنية التي تحكم علاقاتنا مع المزارعين والموردين والمستوردين"
                   : "The professional standards governing our relationships with growers, suppliers, and global buyers"}
@@ -302,10 +300,7 @@ function FoodAboutTab({ ar }: { ar: boolean }) {
           <Reveal>
             <div className="rounded-3xl border border-white/20 bg-background/80 p-8 sm:p-12 shadow-xl backdrop-blur-2xl mb-8">
               <SectionBadge title={ar ? "ماذا نقدم" : "What We Offer"} />
-              <h3 className="font-head text-2xl sm:text-4xl font-bold tracking-tight text-foreground mt-3 mb-4">
-                {ar ? whatWeOffer.titleAr : whatWeOffer.titleEn}
-              </h3>
-              <div className="text-base text-muted-foreground leading-relaxed max-w-4xl space-y-3">
+              <div className="text-base text-muted-foreground leading-relaxed max-w-4xl space-y-3 mt-4">
                 {(ar ? whatWeOffer.descAr : whatWeOffer.descEn).split("\n\n").map((part, i) => (
                   <p key={i}>{part}</p>
                 ))}
@@ -345,10 +340,7 @@ function FoodAboutTab({ ar }: { ar: boolean }) {
           <Reveal>
             <div className="text-center max-w-2xl mx-auto mb-10">
               <SectionBadge title={ar ? "لماذا تختارنا" : "Why Choose Us"} />
-              <h3 className="font-head text-2xl sm:text-4xl font-bold tracking-tight text-foreground mt-3">
-                {ar ? "لماذا تختارنا؟" : "Why Choose Us"}
-              </h3>
-              <p className="text-muted-foreground text-sm sm:text-base mt-2">
+              <p className="text-muted-foreground text-sm sm:text-base mt-3">
                 {ar
                   ? "معايير الجودة والموثوقية التي تجعلنا الشريك المفضل للمستوردين والموزعين"
                   : "Quality benchmarks and supply reliability making us the preferred commercial trade partner"}
@@ -510,6 +502,21 @@ function FoodProductsTab({ ar }: { ar: boolean }) {
 
   return (
     <section className="site-container pt-28 sm:pt-36 pb-20">
+      {/* Products Header Box */}
+      <Reveal>
+        <div className="mx-auto max-w-3xl rounded-3xl border border-white/20 bg-background/80 p-8 sm:p-10 shadow-xl backdrop-blur-2xl mb-12 text-center">
+          <SectionBadge title={ar ? "منتجاتنا" : "Our Products"} />
+          <h2 className="font-head text-2xl sm:text-3xl font-bold tracking-tight text-foreground mt-3 mb-3 text-center">
+            {ar ? "منتجاتنا" : "Our Products"}
+          </h2>
+          <p className="text-muted-foreground text-sm sm:text-base leading-relaxed text-center max-w-2xl mx-auto">
+            {ar
+              ? "مجموعة متكاملة من المنتجات التي تجمع بين الأصالة والجودة."
+              : "An integrated collection of products blending authenticity and superior quality."}
+          </p>
+        </div>
+      </Reveal>
+
       {/* Category Filter Pills & Search */}
       <Reveal>
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-10 pb-6 border-b border-border/60">
@@ -525,7 +532,7 @@ function FoodProductsTab({ ar }: { ar: boolean }) {
                   : "border border-brand-green/30 bg-background/80 text-foreground hover:bg-brand-orange hover:text-white hover:border-brand-orange"
               )}
             >
-              {ar ? "جميع المنتجات (7 قطاعات)" : "All Products (7 Categories)"}
+              {ar ? "جميع المنتجات" : "All Products"}
             </button>
 
             {foodProductsCategories.map((c) => (
@@ -586,14 +593,25 @@ function FoodProductsTab({ ar }: { ar: boolean }) {
                 </Link>
               </div>
 
-              {/* Items Grid */}
+              {/* Items Grid with Product Images */}
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mb-8">
                 {cat.items.map((item) => (
                   <div
                     key={item.id}
-                    className="group rounded-2xl border border-border/70 bg-secondary/40 p-4 transition-all duration-300 hover:scale-[1.03] hover:-translate-y-1 hover:border-brand-green hover:bg-background hover:shadow-lg flex flex-col justify-between cursor-pointer"
+                    className="group rounded-2xl border border-border/70 bg-secondary/40 p-4 transition-all duration-300 hover:scale-[1.03] hover:-translate-y-1 hover:border-brand-green hover:bg-background hover:shadow-lg flex flex-col justify-between cursor-pointer overflow-hidden"
                   >
                     <div>
+                      {/* Product Image */}
+                      <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl bg-secondary mb-3 shadow-xs border border-border/40">
+                        <img
+                          src={item.image || categoryImages[cat.id] || "/BG/jennifer-delmarre-IqmuHJF5khU-unsplash.jpg"}
+                          alt={ar ? item.nameAr : item.nameEn}
+                          loading="lazy"
+                          className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-40 group-hover:opacity-20 transition-opacity" />
+                      </div>
+
                       <div className="flex items-center justify-between gap-2 mb-2">
                         <h4 className="font-head text-sm sm:text-base font-bold text-foreground group-hover:text-brand-orange transition-colors">
                           {ar ? item.nameAr : item.nameEn}
@@ -672,7 +690,7 @@ function FoodMarketsTab({ ar }: { ar: boolean }) {
       {/* Intro Reach Card — Centered and compact */}
       <Reveal>
         <div className="mx-auto max-w-3xl rounded-3xl border border-white/20 bg-background/80 p-8 sm:p-10 shadow-xl backdrop-blur-2xl mb-12 text-center">
-          <SectionBadge title={ar ? "انتشارنا التجاري والجغرافي" : "Commercial & Geographic Reach"} />
+          <SectionBadge title={ar ? "أسواقنا" : "Our Markets"} />
           <h2 className="font-head text-2xl sm:text-3xl font-bold tracking-tight text-foreground mt-3 mb-4 text-center">
             {ar ? "حضور ممتد في الأسواق العربية والأوروبية" : "Expanding Presence Across Arab & European Markets"}
           </h2>
@@ -692,7 +710,7 @@ function FoodMarketsTab({ ar }: { ar: boolean }) {
                 {ar ? "أبرز مؤشرات الاستيراد السنوي في الأسواق المستهدفة" : "Annual Import Volumes in Target Export Destinations"}
               </h3>
             </div>
-            <span className="text-xs font-bold text-foreground bg-background/80 border border-white/30 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-sm shrink-0">
+            <span className="text-xs font-bold text-brand-green-text bg-brand-green/10 border border-brand-green/30 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-sm shrink-0">
               {ar ? "بيانات موثقة لعام 2024" : "Verified 2024 Trade Data"}
             </span>
           </div>
@@ -713,7 +731,10 @@ function FoodMarketsTab({ ar }: { ar: boolean }) {
                   {stat.data.map((row, rIdx) => (
                     <div key={rIdx} className="flex items-center justify-between text-xs border-b border-border/40 pb-2 last:border-0 last:pb-0">
                       <span className="text-muted-foreground">{ar ? row.countryAr : row.countryEn}</span>
-                      <span className="font-bold text-foreground font-mono">{row.volume}</span>
+                      <span className="font-bold text-foreground">
+                        <span className="font-mono text-xs">{row.volume.split(" ")[0]}</span>{" "}
+                        <span className="font-body text-xs font-medium text-muted-foreground">{row.volume.split(" ").slice(1).join(" ")}</span>
+                      </span>
                     </div>
                   ))}
                 </div>
