@@ -72,21 +72,9 @@ export function GarmentAboutTab() {
           </div>
         </Reveal>
 
-        {/* Dedicated Separate Mission & Vision Cards — Full Width matching Construction system */}
+        {/* Dedicated Separate Vision & Mission Cards — Full Width matching Construction system */}
         <div className="mt-8 grid gap-6 md:grid-cols-2">
-          <div className="group rounded-3xl border border-brand-green/30 bg-card/75 p-8 shadow-sm backdrop-blur-sm transition-all duration-300 hover:scale-[1.01] hover:border-brand-green hover:shadow-xl active:scale-[0.99] cursor-pointer">
-            <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3 py-0.5 text-xs font-bold text-brand-orange">
-              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-              <span>{ar ? whoWeAre.mission.titleAr : whoWeAre.mission.title}</span>
-            </div>
-            <h3 className="mt-3 font-head text-xl font-bold text-foreground">
-              {ar ? whoWeAre.mission.titleAr : whoWeAre.mission.title}
-            </h3>
-            <p className="mt-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
-              {ar ? whoWeAre.mission.descAr : whoWeAre.mission.desc}
-            </p>
-          </div>
-
+          {/* Vision / رؤيتنا */}
           <div className="group rounded-3xl border border-brand-green/30 bg-card/75 p-8 shadow-sm backdrop-blur-sm transition-all duration-300 hover:scale-[1.01] hover:border-brand-green hover:shadow-xl active:scale-[0.99] cursor-pointer">
             <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3 py-0.5 text-xs font-bold text-brand-orange">
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
@@ -97,6 +85,20 @@ export function GarmentAboutTab() {
             </h3>
             <p className="mt-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
               {ar ? whoWeAre.vision.descAr : whoWeAre.vision.desc}
+            </p>
+          </div>
+
+          {/* Mission / رسالتنا */}
+          <div className="group rounded-3xl border border-brand-green/30 bg-card/75 p-8 shadow-sm backdrop-blur-sm transition-all duration-300 hover:scale-[1.01] hover:border-brand-green hover:shadow-xl active:scale-[0.99] cursor-pointer">
+            <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3 py-0.5 text-xs font-bold text-brand-orange">
+              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+              <span>{ar ? whoWeAre.mission.titleAr : whoWeAre.mission.title}</span>
+            </div>
+            <h3 className="mt-3 font-head text-xl font-bold text-foreground">
+              {ar ? whoWeAre.mission.titleAr : whoWeAre.mission.title}
+            </h3>
+            <p className="mt-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
+              {ar ? whoWeAre.mission.descAr : whoWeAre.mission.desc}
             </p>
           </div>
         </div>

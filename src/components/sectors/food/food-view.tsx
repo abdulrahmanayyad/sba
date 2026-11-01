@@ -211,28 +211,28 @@ function FoodAboutTab({ ar }: { ar: boolean }) {
           </div>
         </Reveal>
 
-        {/* Mission & Vision — Mission first, then Vision, without badges/icons */}
+        {/* Vision & Mission — Vision first, then Mission, without badges/icons */}
         <div className="grid gap-6 md:grid-cols-2 mb-12">
-          {/* 1. Mission / رسالتنا */}
+          {/* 1. Vision / رؤيتنا */}
           <Reveal>
-            <div className="group h-full rounded-3xl border border-white/20 bg-background/80 p-8 sm:p-10 shadow-lg backdrop-blur-2xl transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-2xl hover:border-brand-green hover:bg-card/95 cursor-pointer">
-              <h3 className="font-head text-xl sm:text-2xl font-bold text-foreground mb-4 group-hover:text-brand-green transition-colors">
-                {ar ? mission.titleAr : mission.titleEn}
-              </h3>
-              <p className="text-base text-muted-foreground leading-relaxed">
-                {highlightBrand(ar ? mission.descAr : mission.descEn)}
-              </p>
-            </div>
-          </Reveal>
-
-          {/* 2. Vision / رؤيتنا */}
-          <Reveal delay={0.1}>
             <div className="group h-full rounded-3xl border border-white/20 bg-background/80 p-8 sm:p-10 shadow-lg backdrop-blur-2xl transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-2xl hover:border-brand-green hover:bg-card/95 cursor-pointer">
               <h3 className="font-head text-xl sm:text-2xl font-bold text-foreground mb-4 group-hover:text-brand-orange transition-colors">
                 {ar ? vision.titleAr : vision.titleEn}
               </h3>
               <p className="text-base text-muted-foreground leading-relaxed">
                 {highlightBrand(ar ? vision.descAr : vision.descEn)}
+              </p>
+            </div>
+          </Reveal>
+
+          {/* 2. Mission / رسالتنا */}
+          <Reveal delay={0.1}>
+            <div className="group h-full rounded-3xl border border-white/20 bg-background/80 p-8 sm:p-10 shadow-lg backdrop-blur-2xl transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-2xl hover:border-brand-green hover:bg-card/95 cursor-pointer">
+              <h3 className="font-head text-xl sm:text-2xl font-bold text-foreground mb-4 group-hover:text-brand-green transition-colors">
+                {ar ? mission.titleAr : mission.titleEn}
+              </h3>
+              <p className="text-base text-muted-foreground leading-relaxed">
+                {highlightBrand(ar ? mission.descAr : mission.descEn)}
               </p>
             </div>
           </Reveal>

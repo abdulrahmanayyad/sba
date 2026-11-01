@@ -159,23 +159,10 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
         </Reveal>
       </section>
 
-      {/* 2. Mission & Vision — Separate interactive transparent curved glass cards */}
+      {/* 2. Vision & Mission — Separate interactive transparent curved glass cards */}
       <section className="site-container">
         <Reveal>
           <div className="grid gap-6 md:grid-cols-2">
-            {/* Mission */}
-            <div className="group relative overflow-hidden rounded-3xl border border-white/30 bg-background/70 p-8 sm:p-10 shadow-[0_12px_40px_rgba(0,0,0,0.06)] backdrop-blur-2xl transition-all duration-300 hover:scale-[1.02] hover:border-brand-green/60 hover:shadow-xl">
-              <div className="mb-4">
-                <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
-                  <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-                  <span>{ar ? data.mission.titleAr : data.mission.title}</span>
-                </div>
-              </div>
-              <p className="text-sm sm:text-base leading-7 text-foreground/90">
-                {ar ? data.mission.bodyAr : data.mission.body}
-              </p>
-            </div>
-
             {/* Vision */}
             <div className="group relative overflow-hidden rounded-3xl border border-white/30 bg-background/70 p-8 sm:p-10 shadow-[0_12px_40px_rgba(0,0,0,0.06)] backdrop-blur-2xl transition-all duration-300 hover:scale-[1.02] hover:border-brand-orange/60 hover:shadow-xl">
               <div className="mb-4">
@@ -186,6 +173,19 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
               </div>
               <p className="text-sm sm:text-base leading-7 text-foreground/90">
                 {ar ? data.vision.bodyAr : data.vision.body}
+              </p>
+            </div>
+
+            {/* Mission */}
+            <div className="group relative overflow-hidden rounded-3xl border border-white/30 bg-background/70 p-8 sm:p-10 shadow-[0_12px_40px_rgba(0,0,0,0.06)] backdrop-blur-2xl transition-all duration-300 hover:scale-[1.02] hover:border-brand-green/60 hover:shadow-xl">
+              <div className="mb-4">
+                <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+                  <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+                  <span>{ar ? data.mission.titleAr : data.mission.title}</span>
+                </div>
+              </div>
+              <p className="text-sm sm:text-base leading-7 text-foreground/90">
+                {ar ? data.mission.bodyAr : data.mission.body}
               </p>
             </div>
           </div>
