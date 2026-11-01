@@ -344,7 +344,7 @@ export function SectorHeader({
                   to="/sectors/$sector"
                   params={{ sector: "food" }}
                   search={{ tab: "order-product" }}
-                  className={cn(navPill, "bg-brand-orange/15 text-brand-orange border border-brand-orange/30 hover:bg-brand-orange hover:text-white")}
+                  className={cn(navPill, "bg-brand-green text-white font-bold border border-brand-green hover:bg-brand-orange hover:border-brand-orange hover:text-white transition-all duration-300")}
                 >
                   {ar ? "اطلب منتج" : "Order Product"}
                 </Link>
@@ -754,7 +754,7 @@ export function SectorHeader({
                       params={{ sector: "food" }}
                       search={{ tab: "order-product" }}
                       onClick={() => setMenuOpen(false)}
-                      className={cn(mobileLinkStyle, "!text-brand-orange font-bold bg-brand-orange/10")}
+                      className={cn(mobileLinkStyle, "bg-brand-green !text-white font-bold hover:bg-brand-orange transition-colors")}
                     >
                       {ar ? "اطلب منتج" : "Order Product"}
                     </Link>
@@ -859,7 +859,7 @@ export function SectorHeader({
                       params={{ sector: "food" }}
                       search={{ tab: "order-product" }}
                       onClick={() => setMenuOpen(false)}
-                      className="group/cta flex-1 flex items-center justify-center gap-2 rounded-2xl bg-brand-orange px-5 py-3 text-xs font-bold text-white transition-all duration-300 hover:bg-brand-green shadow-md active:scale-95"
+                      className="group/cta flex-1 flex items-center justify-center gap-2 rounded-2xl bg-brand-green px-5 py-3 text-xs font-bold text-white transition-all duration-300 hover:bg-brand-orange shadow-md active:scale-95"
                     >
                       <span>{ar ? "اطلب منتج" : "Order Product"}</span>
                       <ArrowUpRight className="size-3.5 rtl:rotate-90" />
