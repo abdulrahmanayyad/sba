@@ -146,10 +146,6 @@ export function FoodSectorView({ tab = "about" }: FoodViewProps) {
                       : "SAMI BIN AYYAD · Natural & Agri-Food Products"}
                   </span>
                 </span>
-                <span className="text-white/60">•</span>
-                <span className="text-brand-orange font-semibold">
-                  {ar ? "أصالة المصادر وجودة التصدير" : "Authentic Origin & Export Quality"}
-                </span>
               </div>
             </Reveal>
 
@@ -160,104 +156,10 @@ export function FoodSectorView({ tab = "about" }: FoodViewProps) {
             </Reveal>
 
             <Reveal delay={0.15}>
-              <p className="text-lg sm:text-2xl text-white/90 max-w-3xl leading-relaxed mb-8">
+              <p className="text-lg sm:text-2xl text-white/90 max-w-3xl leading-relaxed">
                 {ar ? foodHeroData.subtitleAr : foodHeroData.subtitleEn}
               </p>
             </Reveal>
-
-            <Reveal delay={0.2}>
-              <div className="flex flex-wrap gap-4 pt-2">
-                <Link
-                  to="/sectors/$sector"
-                  params={{ sector: "food" }}
-                  search={{ tab: "products" }}
-                  className="inline-flex items-center gap-2 rounded-full bg-brand-orange px-7 py-3.5 text-sm font-bold text-white shadow-xl shadow-brand-orange/30 transition-all duration-300 hover:bg-brand-green hover:scale-[1.02] active:scale-95"
-                >
-                  <span>{ar ? "استكشف منتجاتنا" : "Explore Products"}</span>
-                  <ArrowRight className="size-4 rtl:rotate-180" />
-                </Link>
-
-                <Link
-                  to="/sectors/$sector"
-                  params={{ sector: "food" }}
-                  search={{ tab: "order-product" }}
-                  className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-7 py-3.5 text-sm font-bold text-white backdrop-blur-md transition-all duration-300 hover:bg-white/20 hover:scale-[1.02] active:scale-95"
-                >
-                  <span>{ar ? "اطلب عرض سعر" : "Request RFQ"}</span>
-                  <ArrowUpRight className="size-4 rtl:rotate-90" />
-                </Link>
-
-                <Link
-                  to="/sectors/$sector"
-                  params={{ sector: "food" }}
-                  search={{ tab: "markets" }}
-                  className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-7 py-3.5 text-sm font-bold text-white backdrop-blur-md transition-all duration-300 hover:bg-white/20 hover:scale-[1.02] active:scale-95"
-                >
-                  <span>{ar ? "أسواقنا العالمية" : "Global Markets"}</span>
-                  <Globe className="size-4" />
-                </Link>
-              </div>
-            </Reveal>
-          </div>
-        </section>
-      )}
-
-      {/* Tab Navigation Banner — Rendered when NOT on the about tab for quick switching */}
-      {activeTab !== "about" && activeTab !== "join" && (
-        <section className="relative w-full border-b border-border bg-gradient-to-b from-secondary/50 via-background to-background pt-28 pb-10">
-          <div className="site-container">
-            <div className="flex items-center gap-2 text-xs text-muted-foreground mb-4">
-              <Link to="/" className="hover:text-foreground transition-colors">
-                {ar ? "الرئيسية" : "Home"}
-              </Link>
-              <ChevronRight className="size-3.5 rtl:rotate-180" />
-              <Link
-                to="/sectors/$sector"
-                params={{ sector: "food" }}
-                search={{}}
-                className="hover:text-foreground transition-colors"
-              >
-                {ar ? "المنتجات الطبيعية والغذائية" : "Natural Products"}
-              </Link>
-              <ChevronRight className="size-3.5 rtl:rotate-180" />
-              <span className="text-foreground font-semibold">
-                {ar ? tabLabels[activeTab].ar : tabLabels[activeTab].en}
-              </span>
-            </div>
-
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-              <div>
-                <SectionBadge title={ar ? "قطاع المنتجات الطبيعية" : "Agri-Food Sector"} />
-                <h1 className="font-head text-3xl sm:text-5xl font-bold tracking-tight text-foreground mt-3">
-                  {ar ? tabLabels[activeTab].ar : tabLabels[activeTab].en}
-                </h1>
-                <p className="text-base sm:text-lg text-muted-foreground mt-2 max-w-2xl">
-                  {ar ? tabLabels[activeTab].descAr : tabLabels[activeTab].descEn}
-                </p>
-              </div>
-
-              {/* Quick Tab Switcher Pills */}
-              <div className="flex flex-wrap gap-2">
-                {(["about", "sectors", "products", "markets", "order-product", "join"] as FoodTab[]).map(
-                  (t) => (
-                    <Link
-                      key={t}
-                      to="/sectors/$sector"
-                      params={{ sector: "food" }}
-                      search={t === "about" ? {} : { tab: t }}
-                      className={cn(
-                        "rounded-full px-4 py-2 text-xs font-bold transition-all duration-200",
-                        activeTab === t
-                          ? "bg-brand-orange text-white shadow-md shadow-brand-orange/20"
-                          : "border border-border bg-background/80 text-foreground hover:bg-secondary hover:text-brand-orange"
-                      )}
-                    >
-                      {ar ? tabLabels[t].ar : tabLabels[t].en}
-                    </Link>
-                  )
-                )}
-              </div>
-            </div>
           </div>
         </section>
       )}
@@ -268,7 +170,7 @@ export function FoodSectorView({ tab = "about" }: FoodViewProps) {
       {activeTab === "products" && <FoodProductsTab ar={ar} />}
       {activeTab === "markets" && <FoodMarketsTab ar={ar} />}
       {activeTab === "order-product" && <FoodOrderProductTab ar={ar} />}
-      {activeTab === "join" && <JoinPage trackId="food" />}
+      {activeTab === "join" && <div className="pt-24 sm:pt-28"><JoinPage trackId="food" /></div>}
     </div>
   );
 }
@@ -282,108 +184,66 @@ function FoodAboutTab({ ar }: { ar: boolean }) {
       {/* Who We Are Section */}
       <section className="site-container py-16 sm:py-24">
         <Reveal>
-          <div className="rounded-3xl border border-white/20 bg-background/80 p-8 sm:p-12 shadow-xl backdrop-blur-2xl mb-12">
-            <SectionBadge title={ar ? "قطاع المنتجات الطبيعية والغذائية" : "Natural Products Sector"} />
+          <div className="mx-auto max-w-4xl rounded-3xl border border-white/20 bg-background/80 p-8 sm:p-12 shadow-xl backdrop-blur-2xl mb-12 text-center transition-all duration-300 hover:scale-[1.01] hover:shadow-2xl hover:border-brand-green/40">
+            <SectionBadge title={ar ? "أصالة المصادر وجودة التصدير" : "Authentic Origin & Export Quality"} />
             <h2 className="font-head text-2xl sm:text-4xl font-bold tracking-tight text-foreground mt-4 mb-6">
-              {ar ? whoWeAre.titleAr : whoWeAre.titleEn}
+              {ar ? "من نحن" : "Who We Are"}
             </h2>
 
-            <div className="space-y-4 text-base sm:text-lg text-muted-foreground leading-relaxed max-w-4xl">
+            <div className="mx-auto space-y-4 text-base sm:text-lg text-muted-foreground leading-relaxed max-w-3xl text-center">
               {(ar ? whoWeAre.paragraphsAr : whoWeAre.paragraphsEn).map((p, idx) => (
                 <p key={idx}>{highlightBrand(p)}</p>
               ))}
             </div>
 
-            {/* Direct exploration buttons */}
-            <div className="mt-8 flex flex-wrap gap-4 pt-4 border-t border-border/60">
+            {/* Direct exploration button */}
+            <div className="mt-8 flex justify-center pt-4 border-t border-border/60">
               <Link
                 to="/sectors/$sector"
                 params={{ sector: "food" }}
                 search={{ tab: "sectors" }}
-                className="inline-flex items-center gap-2 rounded-full bg-brand-green px-6 py-3 text-sm font-bold text-white shadow-md transition-all duration-300 hover:bg-brand-orange hover:scale-[1.02] active:scale-95"
+                className="inline-flex items-center gap-2 rounded-full bg-brand-green px-7 py-3 text-sm font-bold text-white shadow-md transition-all duration-300 hover:bg-brand-orange hover:scale-105 active:scale-95"
               >
-                <span>{ar ? "استكشف قطاعاتنا الـ 7" : "Explore 7 Sectors"}</span>
+                <span>{ar ? "استكشف قطاعاتنا" : "Explore Our Sectors"}</span>
                 <ArrowRight className="size-4 rtl:rotate-180" />
-              </Link>
-
-              <Link
-                to="/sectors/$sector"
-                params={{ sector: "food" }}
-                search={{ tab: "products" }}
-                className="inline-flex items-center gap-2 rounded-full border border-brand-orange/40 bg-brand-orange/10 px-6 py-3 text-sm font-bold text-brand-orange transition-all duration-300 hover:bg-brand-orange hover:text-white hover:scale-[1.02] active:scale-95"
-              >
-                <span>{ar ? "استكشف المنتجات والمواصفات" : "Explore Catalog & Specs"}</span>
-                <Package className="size-4" />
-              </Link>
-
-              <Link
-                to="/sectors/$sector"
-                params={{ sector: "food" }}
-                search={{ tab: "markets" }}
-                className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-6 py-3 text-sm font-bold text-foreground transition-all duration-300 hover:bg-secondary hover:text-brand-orange"
-              >
-                <span>{ar ? "الأسواق ومؤشرات 2024" : "Markets & 2024 Indicators"}</span>
-                <Globe className="size-4" />
               </Link>
             </div>
           </div>
         </Reveal>
 
-        {/* Vision & Mission — Full width grid matching Contracting Sector layout */}
+        {/* Mission & Vision — Mission first, then Vision, without badges/icons */}
         <div className="grid gap-6 md:grid-cols-2 mb-12">
+          {/* 1. Mission / رسالتنا */}
           <Reveal>
-            <div className="h-full rounded-3xl border border-white/20 bg-background/80 p-8 sm:p-10 shadow-lg backdrop-blur-2xl transition-all duration-300 hover:shadow-xl hover:border-brand-green/40">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="flex size-12 items-center justify-center rounded-2xl bg-brand-orange/15 text-brand-orange">
-                  <Sun className="size-6" />
-                </div>
-                <div>
-                  <SectionBadge title={ar ? "طموح مستقبلي" : "Future Ambition"} />
-                  <h3 className="font-head text-xl sm:text-2xl font-bold text-foreground mt-1">
-                    {ar ? vision.titleAr : vision.titleEn}
-                  </h3>
-                </div>
-              </div>
-              <p className="text-base text-muted-foreground leading-relaxed">
-                {highlightBrand(ar ? vision.descAr : vision.descEn)}
-              </p>
-            </div>
-          </Reveal>
-
-          <Reveal delay={0.1}>
-            <div className="h-full rounded-3xl border border-white/20 bg-background/80 p-8 sm:p-10 shadow-lg backdrop-blur-2xl transition-all duration-300 hover:shadow-xl hover:border-brand-green/40">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="flex size-12 items-center justify-center rounded-2xl bg-brand-green/15 text-brand-green-text">
-                  <ShieldCheck className="size-6" />
-                </div>
-                <div>
-                  <SectionBadge title={ar ? "التزامنا التجاري" : "Commercial Commitment"} />
-                  <h3 className="font-head text-xl sm:text-2xl font-bold text-foreground mt-1">
-                    {ar ? mission.titleAr : mission.titleEn}
-                  </h3>
-                </div>
-              </div>
+            <div className="group h-full rounded-3xl border border-white/20 bg-background/80 p-8 sm:p-10 shadow-lg backdrop-blur-2xl transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-2xl hover:border-brand-green hover:bg-card/95 cursor-pointer">
+              <h3 className="font-head text-xl sm:text-2xl font-bold text-foreground mb-4 group-hover:text-brand-green transition-colors">
+                {ar ? mission.titleAr : mission.titleEn}
+              </h3>
               <p className="text-base text-muted-foreground leading-relaxed">
                 {highlightBrand(ar ? mission.descAr : mission.descEn)}
               </p>
             </div>
           </Reveal>
+
+          {/* 2. Vision / رؤيتنا */}
+          <Reveal delay={0.1}>
+            <div className="group h-full rounded-3xl border border-white/20 bg-background/80 p-8 sm:p-10 shadow-lg backdrop-blur-2xl transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-2xl hover:border-brand-green hover:bg-card/95 cursor-pointer">
+              <h3 className="font-head text-xl sm:text-2xl font-bold text-foreground mb-4 group-hover:text-brand-orange transition-colors">
+                {ar ? vision.titleAr : vision.titleEn}
+              </h3>
+              <p className="text-base text-muted-foreground leading-relaxed">
+                {highlightBrand(ar ? vision.descAr : vision.descEn)}
+              </p>
+            </div>
+          </Reveal>
         </div>
 
-        {/* Approach Card */}
+        {/* 3. Approach / نهجنا — Without icon, without operational methodology badge */}
         <Reveal>
-          <div className="rounded-3xl border border-white/20 bg-gradient-to-br from-background/90 via-background/70 to-secondary/30 p-8 sm:p-10 shadow-lg backdrop-blur-2xl mb-16">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="flex size-12 items-center justify-center rounded-2xl bg-brand-orange/15 text-brand-orange">
-                <Layers className="size-6" />
-              </div>
-              <div>
-                <SectionBadge title={ar ? "منهجية العمل" : "Operational Methodology"} />
-                <h3 className="font-head text-xl sm:text-2xl font-bold text-foreground mt-1">
-                  {ar ? approach.titleAr : approach.titleEn}
-                </h3>
-              </div>
-            </div>
+          <div className="group rounded-3xl border border-white/20 bg-gradient-to-br from-background/90 via-background/70 to-secondary/30 p-8 sm:p-10 shadow-lg backdrop-blur-2xl mb-16 transition-all duration-300 hover:scale-[1.01] hover:-translate-y-1 hover:shadow-2xl hover:border-brand-green cursor-pointer">
+            <h3 className="font-head text-xl sm:text-2xl font-bold text-foreground mb-4 group-hover:text-brand-green transition-colors">
+              {ar ? approach.titleAr : approach.titleEn}
+            </h3>
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-4xl">
               {highlightBrand(ar ? approach.descAr : approach.descEn)}
             </p>
@@ -409,7 +269,7 @@ function FoodAboutTab({ ar }: { ar: boolean }) {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {values.map((v, idx) => (
               <Reveal key={idx} delay={idx * 0.05}>
-                <div className="group h-full rounded-3xl border border-white/20 bg-background/80 p-6 sm:p-8 shadow-sm backdrop-blur-2xl transition-all duration-300 hover:shadow-xl hover:border-brand-green hover:-translate-y-1">
+                <div className="group h-full rounded-3xl border border-white/20 bg-background/80 p-6 sm:p-8 shadow-sm backdrop-blur-2xl transition-all duration-300 hover:scale-[1.03] hover:-translate-y-1 hover:shadow-2xl hover:border-brand-green hover:bg-card/95 cursor-pointer">
                   <div className="flex items-center justify-between mb-4">
                     <span className="flex size-10 items-center justify-center rounded-2xl bg-brand-orange/15 text-brand-orange font-bold text-sm">
                       0{idx + 1}
@@ -447,7 +307,7 @@ function FoodAboutTab({ ar }: { ar: boolean }) {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {whatWeOffer.models.map((m, idx) => (
               <Reveal key={idx} delay={idx * 0.05}>
-                <div className="group h-full rounded-3xl border border-white/20 bg-background/80 p-6 shadow-sm backdrop-blur-2xl transition-all duration-300 hover:shadow-xl hover:border-brand-green hover:-translate-y-1 flex flex-col justify-between">
+                <div className="group h-full rounded-3xl border border-white/20 bg-background/80 p-6 shadow-sm backdrop-blur-2xl transition-all duration-300 hover:scale-[1.03] hover:-translate-y-1 hover:shadow-2xl hover:border-brand-green hover:bg-card/95 cursor-pointer flex flex-col justify-between">
                   <div>
                     <span className="inline-block rounded-full bg-brand-orange/15 px-3 py-1 text-xs font-bold text-brand-orange mb-4">
                       {ar ? m.badgeAr : m.badgeEn}
@@ -511,49 +371,6 @@ function FoodAboutTab({ ar }: { ar: boolean }) {
           </div>
         </div>
 
-        {/* Contact & RFQ CTA Section */}
-        <Reveal>
-          <div className="rounded-3xl border border-brand-orange/30 bg-gradient-to-r from-brand-orange/15 via-background to-brand-green/15 p-8 sm:p-12 shadow-xl backdrop-blur-2xl flex flex-col md:flex-row items-center justify-between gap-8">
-            <div className="max-w-xl">
-              <span className="inline-block rounded-full bg-brand-orange px-3.5 py-1 text-xs font-bold text-white mb-3">
-                {ar ? "جاهزون للتوريد الفوري" : "Ready for Commercial Supply"}
-              </span>
-              <h3 className="font-head text-2xl sm:text-3xl font-bold text-foreground">
-                {ar
-                  ? "هل تبحث عن توريد منتجات طبيعية بمواصفات معتمدة؟"
-                  : "Looking for Certified Agri-Food Sourcing?"}
-              </h3>
-              <p className="text-muted-foreground text-sm sm:text-base mt-2">
-                {ar
-                  ? "قدّم طلبك أو تواصل مباشرة مع فريق التصدير للحصول على عينات وعروض أسعار مفصلة."
-                  : "Submit your request or connect directly with our export desk for samples and tailored commercial offers."}
-              </p>
-            </div>
-
-            <div className="flex flex-wrap gap-3 shrink-0">
-              <Link
-                to="/sectors/$sector"
-                params={{ sector: "food" }}
-                search={{ tab: "order-product" }}
-                className="inline-flex items-center gap-2 rounded-full bg-brand-orange px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-brand-orange/25 transition-all duration-300 hover:bg-brand-green hover:scale-105 active:scale-95"
-              >
-                <span>{ar ? "اطلب عرض سعر الآن" : "Submit RFQ Now"}</span>
-                <ArrowRight className="size-4 rtl:rotate-180" />
-              </Link>
-
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-border bg-background/90 px-6 py-3.5 text-sm font-bold text-foreground shadow-sm transition-all duration-300 hover:bg-secondary hover:text-brand-green hover:scale-105 active:scale-95"
-              >
-                <MessageCircle className="size-4 text-emerald-500" />
-                <span>WhatsApp Direct</span>
-              </a>
-            </div>
-          </div>
-        </Reveal>
-
         {/* Global Sector Contact Section */}
         <div className="mt-16">
           <SectorContactSection ar={ar} />
@@ -566,7 +383,7 @@ function FoodAboutTab({ ar }: { ar: boolean }) {
 /** 2. Our Sectors Tab */
 function FoodSectorsTab({ ar }: { ar: boolean }) {
   return (
-    <section className="site-container py-12 sm:py-20">
+    <section className="site-container pt-28 sm:pt-36 pb-20">
       <Reveal>
         <div className="max-w-3xl mb-12">
           <SectionBadge title={ar ? "تنوع زراعي وصناعي متكامل" : "Integrated Agri-Food Divisions"} />
@@ -588,7 +405,7 @@ function FoodSectorsTab({ ar }: { ar: boolean }) {
           const IconComp = sectorIcons[sec.id] || Flower;
           return (
             <Reveal key={sec.id} delay={idx * 0.05}>
-              <div className="group h-full rounded-3xl border border-white/20 bg-background/80 overflow-hidden shadow-lg backdrop-blur-2xl transition-all duration-300 hover:shadow-2xl hover:border-brand-green hover:-translate-y-1.5 flex flex-col justify-between">
+              <div className="group h-full rounded-3xl border border-white/20 bg-background/80 overflow-hidden shadow-lg backdrop-blur-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:border-brand-green hover:-translate-y-1.5 flex flex-col justify-between cursor-pointer">
                 <div>
                   {/* Sector Image Banner */}
                   <div className="relative h-48 w-full overflow-hidden bg-secondary">
@@ -687,7 +504,7 @@ function FoodProductsTab({ ar }: { ar: boolean }) {
   }, [selectedCategory, searchQuery]);
 
   return (
-    <section className="site-container py-12 sm:py-20">
+    <section className="site-container pt-28 sm:pt-36 pb-20">
       {/* Category Filter Pills & Search */}
       <Reveal>
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-10 pb-6 border-b border-border/60">
@@ -769,14 +586,14 @@ function FoodProductsTab({ ar }: { ar: boolean }) {
                 {cat.items.map((item) => (
                   <div
                     key={item.id}
-                    className="group rounded-2xl border border-border/70 bg-secondary/40 p-4 transition-all duration-200 hover:border-brand-green hover:bg-background hover:shadow-md flex flex-col justify-between"
+                    className="group rounded-2xl border border-border/70 bg-secondary/40 p-4 transition-all duration-300 hover:scale-[1.03] hover:-translate-y-1 hover:border-brand-green hover:bg-background hover:shadow-lg flex flex-col justify-between cursor-pointer"
                   >
                     <div>
                       <div className="flex items-center justify-between gap-2 mb-2">
                         <h4 className="font-head text-sm sm:text-base font-bold text-foreground group-hover:text-brand-orange transition-colors">
                           {ar ? item.nameAr : item.nameEn}
                         </h4>
-                        <span className="size-2 rounded-full bg-brand-green shrink-0" />
+                        <span className="size-2 rounded-full bg-brand-green shrink-0 group-hover:animate-ping" />
                       </div>
                       <p className="text-xs text-muted-foreground leading-relaxed mb-3">
                         {ar ? item.descAr : item.descEn}
@@ -787,7 +604,7 @@ function FoodProductsTab({ ar }: { ar: boolean }) {
                       {(ar ? item.tagsAr : item.tagsEn).map((t, ti) => (
                         <span
                           key={ti}
-                          className="rounded-md bg-background px-2 py-0.5 text-[10px] font-semibold text-foreground/80 border border-border/50"
+                          className="rounded-md bg-background px-2 py-0.5 text-[10px] font-semibold text-foreground/80 border border-border/50 group-hover:border-brand-orange/40 transition-colors"
                         >
                           {t}
                         </span>
@@ -799,7 +616,7 @@ function FoodProductsTab({ ar }: { ar: boolean }) {
 
               {/* Packaging / Preparation Forms Box if available */}
               {(cat.prepFormsAr || cat.specsAr) && (
-                <div className="rounded-2xl border border-brand-orange/20 bg-brand-orange/5 p-5">
+                <div className="rounded-2xl border border-brand-orange/20 bg-brand-orange/5 p-5 transition-all duration-300 hover:border-brand-orange/40 hover:shadow-md">
                   <div className="flex items-center gap-2 mb-3">
                     <Package className="size-4 text-brand-orange" />
                     <h5 className="font-head text-xs sm:text-sm font-bold text-foreground">
@@ -813,7 +630,7 @@ function FoodProductsTab({ ar }: { ar: boolean }) {
                       (ar ? cat.specsAr : cat.specsEn))?.map((fmt, fi) => (
                       <div
                         key={fi}
-                        className="flex items-center gap-2 rounded-xl bg-background/80 px-3 py-2 text-xs font-medium text-foreground/90 border border-border/60 shadow-sm"
+                        className="flex items-center gap-2 rounded-xl bg-background/80 px-3 py-2 text-xs font-medium text-foreground/90 border border-border/60 shadow-sm transition-all duration-200 hover:scale-[1.02] hover:border-brand-green cursor-pointer"
                       >
                         <CheckCircle2 className="size-3.5 text-brand-green-text shrink-0" />
                         <span className="truncate">{fmt}</span>
@@ -846,7 +663,7 @@ function FoodMarketsTab({ ar }: { ar: boolean }) {
     foodMarketsData;
 
   return (
-    <section className="site-container py-12 sm:py-20">
+    <section className="site-container pt-28 sm:pt-36 pb-20">
       {/* Intro Reach Card */}
       <Reveal>
         <div className="rounded-3xl border border-white/20 bg-background/80 p-8 sm:p-12 shadow-xl backdrop-blur-2xl mb-12">
@@ -879,7 +696,7 @@ function FoodMarketsTab({ ar }: { ar: boolean }) {
             {stats2024.map((stat, sIdx) => (
               <div
                 key={sIdx}
-                className="rounded-2xl border border-white/25 bg-background/80 p-5 shadow-sm backdrop-blur-md"
+                className="rounded-2xl border border-white/25 bg-background/80 p-5 shadow-sm backdrop-blur-md transition-all duration-300 hover:scale-[1.03] hover:-translate-y-1 hover:border-brand-green hover:shadow-lg cursor-pointer"
               >
                 <div className="flex items-center gap-2 mb-4">
                   <div className="size-2 rounded-full bg-brand-orange animate-pulse" />
@@ -920,7 +737,7 @@ function FoodMarketsTab({ ar }: { ar: boolean }) {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {arabMarkets.map((m, idx) => (
             <Reveal key={idx} delay={idx * 0.05}>
-              <div className="group h-full rounded-3xl border border-white/20 bg-background/80 p-6 shadow-sm backdrop-blur-2xl transition-all duration-300 hover:shadow-xl hover:border-brand-green hover:-translate-y-1 flex flex-col justify-between">
+              <div className="group h-full rounded-3xl border border-white/20 bg-background/80 p-6 shadow-sm backdrop-blur-2xl transition-all duration-300 hover:scale-[1.03] hover:-translate-y-1 hover:shadow-xl hover:border-brand-green hover:bg-card/95 flex flex-col justify-between cursor-pointer">
                 <div>
                   <div className="flex items-center justify-between mb-3">
                     <span className="flex size-9 items-center justify-center rounded-xl bg-brand-orange/15 text-brand-orange">
@@ -968,7 +785,7 @@ function FoodMarketsTab({ ar }: { ar: boolean }) {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {europeanMarkets.map((m, idx) => (
             <Reveal key={idx} delay={idx * 0.05}>
-              <div className="group h-full rounded-3xl border border-white/20 bg-background/80 p-6 shadow-sm backdrop-blur-2xl transition-all duration-300 hover:shadow-xl hover:border-brand-green hover:-translate-y-1 flex flex-col justify-between">
+              <div className="group h-full rounded-3xl border border-white/20 bg-background/80 p-6 shadow-sm backdrop-blur-2xl transition-all duration-300 hover:scale-[1.03] hover:-translate-y-1 hover:shadow-xl hover:border-brand-green hover:bg-card/95 flex flex-col justify-between cursor-pointer">
                 <div>
                   <div className="flex items-center justify-between mb-3">
                     <span className="flex size-9 items-center justify-center rounded-xl bg-brand-green/15 text-brand-green-text">
@@ -1012,7 +829,7 @@ function FoodMarketsTab({ ar }: { ar: boolean }) {
             {egyptianExports.destinations.map((dest, di) => (
               <div
                 key={di}
-                className="rounded-2xl border border-border/70 bg-secondary/50 p-5 backdrop-blur-md"
+                className="rounded-2xl border border-border/70 bg-secondary/50 p-5 backdrop-blur-md transition-all duration-300 hover:scale-[1.02] hover:border-brand-green hover:shadow-md cursor-pointer"
               >
                 <div className="flex items-center gap-2 mb-2">
                   <CheckCircle2 className="size-4 text-brand-green-text" />
@@ -1122,9 +939,9 @@ function FoodOrderProductTab({ ar }: { ar: boolean }) {
   }
 
   return (
-    <section className="site-container py-12 sm:py-20">
+    <section className="site-container pt-28 sm:pt-36 pb-20">
       <Reveal>
-        <div className="max-w-3xl mx-auto rounded-3xl border border-white/20 bg-background/90 p-8 sm:p-12 shadow-2xl backdrop-blur-2xl">
+        <div className="max-w-3xl mx-auto rounded-3xl border border-white/20 bg-background/90 p-8 sm:p-12 shadow-2xl backdrop-blur-2xl transition-all duration-300 hover:shadow-2xl hover:border-brand-orange/40">
           <div className="text-center mb-8">
             <SectionBadge title={ar ? "طلب عروض الأسعار والتوريد" : "Request for Quotation (RFQ)"} />
             <h2 className="font-head text-2xl sm:text-4xl font-bold text-foreground mt-3 mb-2">

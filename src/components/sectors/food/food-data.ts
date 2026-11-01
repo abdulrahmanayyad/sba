@@ -16,7 +16,7 @@ export const foodHeroData: FoodHero = {
   subtitleEn:
     "Developing, marketing, and supplying selected authentic agri-food products connecting certified Egyptian and international origins to global markets.",
   subtitleAr:
-    "تطوير وتسويق وتوريد مجموعة مختارة من المنتجات الغذائية والطبيعية التي تجمع بين أصالة المصادر وجودة المنتج وتنوع الاستخدامات في الأسواق الإقليمية والدولية.",
+    "أصالة المصادر وجودة المنتج وتنوع الاستخدامات في الأسواق الإقليمية والدولية",
   heroImage: "/BG/jennifer-delmarre-IqmuHJF5khU-unsplash.jpg",
 };
 
