@@ -570,60 +570,64 @@ function FoodProductsTab({ ar }: { ar: boolean }) {
         {filteredCategories.map((cat, idx) => (
           <Reveal key={cat.id} delay={idx * 0.05}>
             <div className="rounded-3xl border border-white/20 bg-background/85 p-6 sm:p-10 shadow-xl backdrop-blur-2xl">
-              {/* Category Header */}
-              <div className="border-b border-border/60 pb-6 mb-8 flex flex-col md:flex-row md:items-center justify-between gap-4">
-                <div>
+              {/* Category Header with Single Category Image */}
+              <div className="border-b border-border/60 pb-6 mb-8 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+                <div className="lg:col-span-7 xl:col-span-8">
                   <SectionBadge title={ar ? "كتالوج التصدير والمواصفات" : "Export Catalog & Specs"} />
                   <h3 className="font-head text-2xl sm:text-3xl font-bold text-foreground mt-2">
                     {ar ? cat.titleAr : cat.titleEn}
                   </h3>
-                  <p className="text-sm sm:text-base text-muted-foreground mt-1 max-w-3xl leading-relaxed">
+                  <p className="text-sm sm:text-base text-muted-foreground mt-2 max-w-2xl leading-relaxed">
                     {ar ? cat.introAr : cat.introEn}
                   </p>
+
+                  <div className="mt-4">
+                    <Link
+                      to="/sectors/$sector"
+                      params={{ sector: "food" }}
+                      search={{ tab: "order-product" }}
+                      className="inline-flex items-center gap-2 rounded-full bg-brand-green border border-brand-green px-5 py-2.5 text-xs font-bold text-white hover:bg-brand-orange hover:border-brand-orange hover:text-white transition-all duration-300 shadow-md shrink-0 cursor-pointer"
+                    >
+                      <span>{ar ? "طلب توريد لهذه الفئة" : "Request Sourcing"}</span>
+                      <ArrowRight className="size-3.5 rtl:rotate-180" />
+                    </Link>
+                  </div>
                 </div>
 
-                <Link
-                  to="/sectors/$sector"
-                  params={{ sector: "food" }}
-                  search={{ tab: "order-product" }}
-                  className="inline-flex items-center gap-2 self-start rounded-full bg-brand-green border border-brand-green px-5 py-2.5 text-xs font-bold text-white hover:bg-brand-orange hover:border-brand-orange hover:text-white transition-all duration-300 shadow-md shrink-0 cursor-pointer"
-                >
-                  <span>{ar ? "طلب توريد لهذه الفئة" : "Request Sourcing"}</span>
-                  <ArrowRight className="size-3.5 rtl:rotate-180" />
-                </Link>
+                {/* Single Image for the Category */}
+                <div className="lg:col-span-5 xl:col-span-4">
+                  <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl shadow-md border border-white/30 bg-secondary">
+                    <img
+                      src={categoryImages[cat.id] || "/BG/Natural & Agri-Food Products/Natural & Agri-Food Products Home Page.jpg"}
+                      alt={ar ? cat.titleAr : cat.titleEn}
+                      loading="lazy"
+                      className="size-full object-cover transition-transform duration-700 hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                  </div>
+                </div>
               </div>
 
-              {/* Items Grid with Product Images */}
+              {/* Items Grid (Clean Product Cards without duplicate images) */}
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mb-8">
                 {cat.items.map((item) => (
                   <div
                     key={item.id}
-                    className="group rounded-2xl border border-border/70 bg-secondary/40 p-4 transition-all duration-300 hover:scale-[1.03] hover:-translate-y-1 hover:border-brand-green hover:bg-background hover:shadow-lg flex flex-col justify-between cursor-pointer overflow-hidden"
+                    className="group rounded-2xl border border-border/70 bg-secondary/40 p-5 transition-all duration-300 hover:scale-[1.03] hover:-translate-y-1 hover:border-brand-green hover:bg-background hover:shadow-lg flex flex-col justify-between cursor-pointer"
                   >
                     <div>
-                      {/* Product Image */}
-                      <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl bg-secondary mb-3 shadow-xs border border-border/40">
-                        <img
-                          src={item.image || categoryImages[cat.id] || "/BG/jennifer-delmarre-IqmuHJF5khU-unsplash.jpg"}
-                          alt={ar ? item.nameAr : item.nameEn}
-                          loading="lazy"
-                          className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-40 group-hover:opacity-20 transition-opacity" />
-                      </div>
-
                       <div className="flex items-center justify-between gap-2 mb-2">
                         <h4 className="font-head text-sm sm:text-base font-bold text-foreground group-hover:text-brand-orange transition-colors">
                           {ar ? item.nameAr : item.nameEn}
                         </h4>
                         <span className="size-2 rounded-full bg-brand-green shrink-0 group-hover:animate-ping" />
                       </div>
-                      <p className="text-xs text-muted-foreground leading-relaxed mb-3">
+                      <p className="text-xs text-muted-foreground leading-relaxed mb-4">
                         {ar ? item.descAr : item.descEn}
                       </p>
                     </div>
 
-                    <div className="flex flex-wrap gap-1.5 pt-2 border-t border-border/40">
+                    <div className="flex flex-wrap gap-1.5 pt-3 border-t border-border/40">
                       {(ar ? item.tagsAr : item.tagsEn).map((t, ti) => (
                         <span
                           key={ti}

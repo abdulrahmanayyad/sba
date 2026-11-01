@@ -1,8 +1,8 @@
-const groupHero = "/BG/beatriz-cattel-C55M3wxaoB0-unsplash.jpg";
-const constructionImg = "/BG/kevin-matos-Nl_FMFpXo2g-unsplash.jpg";
-const sustainableImg = "/BG/philipp-HGBCAbRBIME-unsplash.jpg";
-const garmentImg = "/BG/arawark-chen-HIrP05jnXNs-unsplash.jpg";
-const foodImg = "/BG/jennifer-delmarre-IqmuHJF5khU-unsplash.jpg";
+const groupHero = "/BG/Join Us Background.jpg";
+const constructionImg = "/BG/Contracting & Real Estate Development/Contracting & Real Estate Development Home Page.jpg";
+const sustainableImg = "/BG/Environment & Sustainability/Sustainable Environmental Home Page.avif";
+const garmentImg = "/BG/Apparel Manufacturing/Apparel Manufacturing Home Page.jpg";
+const foodImg = "/BG/Natural & Agri-Food Products/Natural & Agri-Food Products Home Page.jpg";
 
 export type JoinTrackId = "group" | "construction" | "sustainability" | "garment" | "food";
 
