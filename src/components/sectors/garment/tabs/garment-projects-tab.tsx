@@ -115,17 +115,17 @@ export function GarmentProjectsTab() {
                 type="button"
                 onClick={() => handleCategoryChange(cat.key)}
                 className={cn(
-                  "flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold transition cursor-pointer",
+                  "flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold transition-all duration-300 cursor-pointer",
                   isActive
-                    ? "bg-brand-orange text-white shadow-sm"
-                    : "bg-secondary text-muted-foreground hover:bg-secondary/80 hover:text-foreground"
+                    ? "bg-brand-green text-white shadow-md hover:bg-brand-orange hover:text-white"
+                    : "border border-brand-green/30 bg-background/70 text-foreground hover:bg-brand-orange hover:text-white hover:border-brand-orange"
                 )}
               >
                 <span>{ar ? cat.labelAr : cat.labelEn}</span>
                 <span
                   className={cn(
-                    "rounded-full px-2 py-0.5 text-xs font-mono font-bold",
-                    isActive ? "bg-white/20 text-white" : "bg-card text-foreground"
+                    "rounded-full px-2 py-0.5 text-xs font-mono font-bold transition-colors",
+                    isActive ? "bg-white/20 text-white" : "bg-muted text-foreground"
                   )}
                 >
                   {cat.count}
@@ -191,10 +191,9 @@ export function GarmentProjectsTab() {
         {displayedItems.length < filteredItems.length && (
           <div className="mt-12 flex flex-col items-center justify-center gap-3">
             <Button
-              variant="outline"
               size="lg"
               onClick={handleLoadMore}
-              className="min-w-48 border-brand-orange/40 hover:bg-brand-orange/10 hover:text-brand-orange"
+              className="min-w-48 rounded-full bg-brand-green text-white font-bold border border-brand-green hover:bg-brand-orange hover:border-brand-orange hover:text-white transition-all duration-300 shadow-md cursor-pointer"
             >
               <ChevronDown className="size-4 me-2" />
               {ar

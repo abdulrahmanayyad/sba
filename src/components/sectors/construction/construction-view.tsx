@@ -496,7 +496,12 @@ function ConstructionProjectsView({ ar }: { ar: boolean }) {
                   key={cat.id}
                   variant={selectedCategory === cat.id ? "default" : "outline"}
                   size="sm"
-                  className={cn("rounded-full text-xs shrink-0", selectedCategory === cat.id && "bg-brand-orange hover:bg-brand-orange/90 text-white")}
+                  className={cn(
+                    "rounded-full text-xs shrink-0 transition-all duration-300 font-medium",
+                    selectedCategory === cat.id
+                      ? "bg-brand-green text-white hover:bg-brand-orange hover:border-brand-orange hover:text-white border-brand-green"
+                      : "border-brand-green/30 text-foreground hover:bg-brand-orange hover:text-white hover:border-brand-orange"
+                  )}
                   onClick={() => {
                     setSelectedCategory(cat.id);
                     setVisibleCount(5);
@@ -515,7 +520,12 @@ function ConstructionProjectsView({ ar }: { ar: boolean }) {
                   key={y}
                   variant={selectedYear === y ? "default" : "outline"}
                   size="sm"
-                  className={cn("rounded-full text-xs shrink-0 font-sans font-medium", selectedYear === y && "bg-brand-green hover:bg-brand-green/90 text-white")}
+                  className={cn(
+                    "rounded-full text-xs shrink-0 font-sans font-medium transition-all duration-300",
+                    selectedYear === y
+                      ? "bg-brand-green text-white hover:bg-brand-orange hover:border-brand-orange hover:text-white border-brand-green"
+                      : "border-brand-green/30 text-foreground hover:bg-brand-orange hover:text-white hover:border-brand-orange"
+                  )}
                   onClick={() => {
                     setSelectedYear(y);
                     setVisibleCount(5);

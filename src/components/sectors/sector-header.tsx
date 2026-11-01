@@ -173,9 +173,9 @@ export function SectorHeader({
                   to="/sectors/$sector"
                   params={{ sector: "construction" }}
                   search={{ tab: "start-project" }}
-                  className={cn(navPill, "bg-brand-green/10 text-brand-green-text border border-brand-green/30 hover:bg-brand-green hover:text-white")}
+                  className={cn(navPill, "bg-brand-green text-white font-bold border border-brand-green hover:bg-brand-orange hover:border-brand-orange hover:text-white transition-all duration-300")}
                 >
-                  {ar ? "ابدأ مشروعًا" : "Start Project"}
+                  {ar ? "ابدأ مشروع" : "Start Project"}
                 </Link>
               </>
             ) : isGarment ? (
@@ -230,7 +230,7 @@ export function SectorHeader({
                   to="/sectors/$sector"
                   params={{ sector: "garment" }}
                   search={{ tab: "start-project" }}
-                  className={cn(navPill, "bg-brand-orange/10 text-brand-orange border border-brand-orange/30 hover:bg-brand-orange hover:text-white")}
+                  className={cn(navPill, "bg-brand-green text-white font-bold border border-brand-green hover:bg-brand-orange hover:border-brand-orange hover:text-white transition-all duration-300")}
                 >
                   {ar ? "ابدأ مشروع" : "Start Project"}
                 </Link>
@@ -287,7 +287,7 @@ export function SectorHeader({
                   to="/sectors/$sector"
                   params={{ sector: "environmental" }}
                   search={{ tab: "start-consultation" }}
-                  className={cn(navPill, "bg-brand-green/10 text-brand-green-text border border-brand-green/30 hover:bg-brand-green hover:text-white")}
+                  className={cn(navPill, "bg-brand-green text-white font-bold border border-brand-green hover:bg-brand-orange hover:border-brand-orange hover:text-white transition-all duration-300")}
                 >
                   {ar ? "ابدأ استشارة" : "Start Consultation"}
                 </Link>
@@ -583,9 +583,9 @@ export function SectorHeader({
                       params={{ sector: "construction" }}
                       search={{ tab: "start-project" }}
                       onClick={() => setMenuOpen(false)}
-                      className={cn(mobileLinkStyle, "!text-brand-green font-bold bg-brand-green/10")}
+                      className={cn(mobileLinkStyle, "bg-brand-green !text-white font-bold hover:bg-brand-orange transition-colors")}
                     >
-                      {ar ? "ابدأ مشروعًا" : "Start Project"}
+                      {ar ? "ابدأ مشروع" : "Start Project"}
                     </Link>
                   </>
                 ) : isGarment ? (
@@ -640,7 +640,7 @@ export function SectorHeader({
                       params={{ sector: "garment" }}
                       search={{ tab: "start-project" }}
                       onClick={() => setMenuOpen(false)}
-                      className={cn(mobileLinkStyle, "!text-brand-orange font-bold bg-brand-orange/10")}
+                      className={cn(mobileLinkStyle, "bg-brand-green !text-white font-bold hover:bg-brand-orange transition-colors")}
                     >
                       {ar ? "ابدأ مشروع" : "Start Project"}
                     </Link>
@@ -697,7 +697,7 @@ export function SectorHeader({
                       params={{ sector: "environmental" }}
                       search={{ tab: "start-consultation" }}
                       onClick={() => setMenuOpen(false)}
-                      className={cn(mobileLinkStyle, "!text-brand-green font-bold bg-brand-green/10")}
+                      className={cn(mobileLinkStyle, "bg-brand-green !text-white font-bold hover:bg-brand-orange transition-colors")}
                     >
                       {ar ? "ابدأ استشارة" : "Start Consultation"}
                     </Link>

@@ -185,9 +185,9 @@ function FoodAboutTab({ ar }: { ar: boolean }) {
       <section className="site-container py-16 sm:py-24">
         <Reveal>
           <div className="mx-auto max-w-4xl rounded-3xl border border-white/20 bg-background/80 p-8 sm:p-12 shadow-xl backdrop-blur-2xl mb-12 text-center transition-all duration-300 hover:scale-[1.01] hover:shadow-2xl hover:border-brand-green/40">
-            <SectionBadge title={ar ? "أصالة المصادر وجودة التصدير" : "Authentic Origin & Export Quality"} />
+            <SectionBadge title={ar ? "من نحن" : "Who We Are"} />
             <h2 className="font-head text-2xl sm:text-4xl font-bold tracking-tight text-foreground mt-4 mb-6">
-              {ar ? "من نحن" : "Who We Are"}
+              {ar ? "أصالة المصادر وجودة التصدير" : "Authentic Origin & Export Quality"}
             </h2>
 
             <div className="mx-auto space-y-4 text-base sm:text-lg text-muted-foreground leading-relaxed max-w-3xl text-center">
@@ -211,11 +211,14 @@ function FoodAboutTab({ ar }: { ar: boolean }) {
           </div>
         </Reveal>
 
-        {/* Vision & Mission — Vision first, then Mission, without badges/icons */}
+        {/* Vision & Mission — Vision first, then Mission, with SectionBadges */}
         <div className="grid gap-6 md:grid-cols-2 mb-12">
           {/* 1. Vision / رؤيتنا */}
           <Reveal>
             <div className="group h-full rounded-3xl border border-white/20 bg-background/80 p-8 sm:p-10 shadow-lg backdrop-blur-2xl transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-2xl hover:border-brand-green hover:bg-card/95 cursor-pointer">
+              <div className="mb-4">
+                <SectionBadge title={ar ? "رؤيتنا" : "Our Vision"} />
+              </div>
               <h3 className="font-head text-xl sm:text-2xl font-bold text-foreground mb-4 group-hover:text-brand-orange transition-colors">
                 {ar ? vision.titleAr : vision.titleEn}
               </h3>
@@ -228,6 +231,9 @@ function FoodAboutTab({ ar }: { ar: boolean }) {
           {/* 2. Mission / رسالتنا */}
           <Reveal delay={0.1}>
             <div className="group h-full rounded-3xl border border-white/20 bg-background/80 p-8 sm:p-10 shadow-lg backdrop-blur-2xl transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-2xl hover:border-brand-green hover:bg-card/95 cursor-pointer">
+              <div className="mb-4">
+                <SectionBadge title={ar ? "رسالتنا" : "Our Mission"} />
+              </div>
               <h3 className="font-head text-xl sm:text-2xl font-bold text-foreground mb-4 group-hover:text-brand-green transition-colors">
                 {ar ? mission.titleAr : mission.titleEn}
               </h3>
@@ -238,9 +244,12 @@ function FoodAboutTab({ ar }: { ar: boolean }) {
           </Reveal>
         </div>
 
-        {/* 3. Approach / نهجنا — Without icon, without operational methodology badge */}
+        {/* 3. Approach / نهجنا — With SectionBadge */}
         <Reveal>
           <div className="group rounded-3xl border border-white/20 bg-gradient-to-br from-background/90 via-background/70 to-secondary/30 p-8 sm:p-10 shadow-lg backdrop-blur-2xl mb-16 transition-all duration-300 hover:scale-[1.01] hover:-translate-y-1 hover:shadow-2xl hover:border-brand-green cursor-pointer">
+            <div className="mb-4">
+              <SectionBadge title={ar ? "نهجنا" : "Our Approach"} />
+            </div>
             <h3 className="font-head text-xl sm:text-2xl font-bold text-foreground mb-4 group-hover:text-brand-green transition-colors">
               {ar ? approach.titleAr : approach.titleEn}
             </h3>
@@ -254,7 +263,7 @@ function FoodAboutTab({ ar }: { ar: boolean }) {
         <div className="mb-16">
           <Reveal>
             <div className="text-center max-w-2xl mx-auto mb-10">
-              <SectionBadge title={ar ? "ركائز التميز" : "Core Foundations"} />
+              <SectionBadge title={ar ? "قيمنا" : "Our Values"} />
               <h3 className="font-head text-2xl sm:text-4xl font-bold tracking-tight text-foreground mt-3">
                 {ar ? "قيمنا المؤسسية" : "Our Values"}
               </h3>
@@ -292,7 +301,7 @@ function FoodAboutTab({ ar }: { ar: boolean }) {
         <div className="mb-16">
           <Reveal>
             <div className="rounded-3xl border border-white/20 bg-background/80 p-8 sm:p-12 shadow-xl backdrop-blur-2xl mb-8">
-              <SectionBadge title={ar ? "خدمات التوريد" : "Supply Capabilities"} />
+              <SectionBadge title={ar ? "ماذا نقدم" : "What We Offer"} />
               <h3 className="font-head text-2xl sm:text-4xl font-bold tracking-tight text-foreground mt-3 mb-4">
                 {ar ? whatWeOffer.titleAr : whatWeOffer.titleEn}
               </h3>
@@ -335,7 +344,7 @@ function FoodAboutTab({ ar }: { ar: boolean }) {
         <div className="mb-16">
           <Reveal>
             <div className="text-center max-w-2xl mx-auto mb-10">
-              <SectionBadge title={ar ? "الميزة التنافسية" : "Competitive Advantage"} />
+              <SectionBadge title={ar ? "لماذا تختارنا" : "Why Choose Us"} />
               <h3 className="font-head text-2xl sm:text-4xl font-bold tracking-tight text-foreground mt-3">
                 {ar ? "لماذا تختارنا؟" : "Why Choose Us"}
               </h3>
@@ -386,11 +395,11 @@ function FoodSectorsTab({ ar }: { ar: boolean }) {
     <section className="site-container pt-28 sm:pt-36 pb-20">
       <Reveal>
         <div className="max-w-3xl mb-12">
-          <SectionBadge title={ar ? "تنوع زراعي وصناعي متكامل" : "Integrated Agri-Food Divisions"} />
+          <SectionBadge title={ar ? "قطاعاتنا" : "Our Sectors"} />
           <h2 className="font-head text-2xl sm:text-4xl font-bold tracking-tight text-foreground mt-3 mb-4">
             {ar
-              ? "7 قطاعات متخصصة تغطي أهم سلاسل القيمة الغذائية"
-              : "7 Specialized Divisions Covering Premier Agri-Food Value Chains"}
+              ? "منظومة متكاملة من المنتجات الطبيعية والغذائية."
+              : "An Integrated System of Natural & Food Products."}
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
             {ar
@@ -402,7 +411,6 @@ function FoodSectorsTab({ ar }: { ar: boolean }) {
 
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         {foodSectorsData.map((sec, idx) => {
-          const IconComp = sectorIcons[sec.id] || Flower;
           return (
             <Reveal key={sec.id} delay={idx * 0.05}>
               <div className="group h-full rounded-3xl border border-white/20 bg-background/80 overflow-hidden shadow-lg backdrop-blur-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:border-brand-green hover:-translate-y-1.5 flex flex-col justify-between cursor-pointer">
@@ -415,9 +423,6 @@ function FoodSectorsTab({ ar }: { ar: boolean }) {
                       className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                    <div className="absolute top-4 start-4 flex size-11 items-center justify-center rounded-2xl bg-white/20 backdrop-blur-md text-white border border-white/30 shadow-md">
-                      <IconComp className="size-5" />
-                    </div>
                     <span className="absolute bottom-3 start-4 text-xs font-bold text-white/90">
                       {ar ? `قطاع رقم 0${idx + 1}` : `Division 0${idx + 1}`}
                     </span>
@@ -453,7 +458,7 @@ function FoodSectorsTab({ ar }: { ar: boolean }) {
                     to="/sectors/$sector"
                     params={{ sector: "food" }}
                     search={{ tab: "products" }}
-                    className="w-full flex items-center justify-between rounded-2xl border border-border bg-secondary/60 px-4 py-2.5 text-xs font-bold text-foreground transition-all duration-200 hover:bg-brand-green hover:text-white hover:border-brand-green"
+                    className="w-full flex items-center justify-between rounded-2xl bg-brand-green border border-brand-green text-white px-4 py-2.5 text-xs font-bold transition-all duration-300 hover:bg-brand-orange hover:border-brand-orange shadow-md cursor-pointer"
                   >
                     <span>{ar ? "استعراض منتجات هذا القطاع" : "Browse Category Products"}</span>
                     <ArrowRight className="size-3.5 rtl:rotate-180" />
@@ -514,10 +519,10 @@ function FoodProductsTab({ ar }: { ar: boolean }) {
               type="button"
               onClick={() => setSelectedCategory("all")}
               className={cn(
-                "rounded-full px-4 py-2 text-xs font-bold transition-all duration-200",
+                "rounded-full px-4 py-2 text-xs font-bold transition-all duration-300 cursor-pointer",
                 selectedCategory === "all"
-                  ? "bg-brand-orange text-white shadow-md shadow-brand-orange/20"
-                  : "border border-border bg-background/80 text-foreground hover:bg-secondary hover:text-brand-orange"
+                  ? "bg-brand-green text-white border border-brand-green hover:bg-brand-orange hover:border-brand-orange hover:text-white shadow-md"
+                  : "border border-brand-green/30 bg-background/80 text-foreground hover:bg-brand-orange hover:text-white hover:border-brand-orange"
               )}
             >
               {ar ? "جميع المنتجات (7 قطاعات)" : "All Products (7 Categories)"}
@@ -529,10 +534,10 @@ function FoodProductsTab({ ar }: { ar: boolean }) {
                 type="button"
                 onClick={() => setSelectedCategory(c.id)}
                 className={cn(
-                  "rounded-full px-4 py-2 text-xs font-bold transition-all duration-200",
+                  "rounded-full px-4 py-2 text-xs font-bold transition-all duration-300 cursor-pointer",
                   selectedCategory === c.id
-                    ? "bg-brand-orange text-white shadow-md shadow-brand-orange/20"
-                    : "border border-border bg-background/80 text-foreground hover:bg-secondary hover:text-brand-orange"
+                    ? "bg-brand-green text-white border border-brand-green hover:bg-brand-orange hover:border-brand-orange hover:text-white shadow-md"
+                    : "border border-brand-green/30 bg-background/80 text-foreground hover:bg-brand-orange hover:text-white hover:border-brand-orange"
                 )}
               >
                 {ar ? c.titleAr.split(". ")[1] || c.titleAr : c.titleEn.split(". ")[1] || c.titleEn}
@@ -574,7 +579,7 @@ function FoodProductsTab({ ar }: { ar: boolean }) {
                   to="/sectors/$sector"
                   params={{ sector: "food" }}
                   search={{ tab: "order-product" }}
-                  className="inline-flex items-center gap-2 self-start rounded-full bg-brand-orange/15 border border-brand-orange/30 px-5 py-2.5 text-xs font-bold text-brand-orange hover:bg-brand-orange hover:text-white transition-all shrink-0"
+                  className="inline-flex items-center gap-2 self-start rounded-full bg-brand-green border border-brand-green px-5 py-2.5 text-xs font-bold text-white hover:bg-brand-orange hover:border-brand-orange hover:text-white transition-all duration-300 shadow-md shrink-0 cursor-pointer"
                 >
                   <span>{ar ? "طلب توريد لهذه الفئة" : "Request Sourcing"}</span>
                   <ArrowRight className="size-3.5 rtl:rotate-180" />
@@ -616,7 +621,7 @@ function FoodProductsTab({ ar }: { ar: boolean }) {
 
               {/* Packaging / Preparation Forms Box if available */}
               {(cat.prepFormsAr || cat.specsAr) && (
-                <div className="rounded-2xl border border-brand-orange/20 bg-brand-orange/5 p-5 transition-all duration-300 hover:border-brand-orange/40 hover:shadow-md">
+                <div className="rounded-2xl border border-white/40 bg-background/80 p-5 shadow-sm backdrop-blur-xl transition-all duration-300 hover:border-brand-green/40 hover:shadow-md">
                   <div className="flex items-center gap-2 mb-3">
                     <Package className="size-4 text-brand-orange" />
                     <h5 className="font-head text-xs sm:text-sm font-bold text-foreground">
@@ -659,27 +664,27 @@ function FoodProductsTab({ ar }: { ar: boolean }) {
 
 /** 4. Our Markets Tab */
 function FoodMarketsTab({ ar }: { ar: boolean }) {
-  const { introAr, introEn, arabMarkets, europeanMarkets, stats2024, egyptianExports, globalOutlook } =
+  const { introAr, introEn, arabMarkets, europeanMarkets, stats2024, egyptianExports } =
     foodMarketsData;
 
   return (
     <section className="site-container pt-28 sm:pt-36 pb-20">
-      {/* Intro Reach Card */}
+      {/* Intro Reach Card — Centered and compact */}
       <Reveal>
-        <div className="rounded-3xl border border-white/20 bg-background/80 p-8 sm:p-12 shadow-xl backdrop-blur-2xl mb-12">
+        <div className="mx-auto max-w-3xl rounded-3xl border border-white/20 bg-background/80 p-8 sm:p-10 shadow-xl backdrop-blur-2xl mb-12 text-center">
           <SectionBadge title={ar ? "انتشارنا التجاري والجغرافي" : "Commercial & Geographic Reach"} />
-          <h2 className="font-head text-2xl sm:text-4xl font-bold tracking-tight text-foreground mt-3 mb-4">
+          <h2 className="font-head text-2xl sm:text-3xl font-bold tracking-tight text-foreground mt-3 mb-4 text-center">
             {ar ? "حضور ممتد في الأسواق العربية والأوروبية" : "Expanding Presence Across Arab & European Markets"}
           </h2>
-          <p className="text-muted-foreground text-base sm:text-lg leading-relaxed max-w-4xl">
+          <p className="text-muted-foreground text-sm sm:text-base leading-relaxed text-center">
             {ar ? introAr : introEn}
           </p>
         </div>
       </Reveal>
 
-      {/* 2024 Market Size Indicators Banner */}
+      {/* 2024 Market Size Indicators Banner — Frosted Glass Style */}
       <Reveal>
-        <div className="rounded-3xl border border-brand-green/30 bg-gradient-to-br from-brand-green/10 via-background to-secondary/30 p-8 sm:p-10 shadow-lg backdrop-blur-2xl mb-16">
+        <div className="rounded-3xl border border-white/40 bg-background/80 p-8 sm:p-10 shadow-lg backdrop-blur-2xl mb-16">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-border/60 pb-6 mb-8">
             <div>
               <SectionBadge title={ar ? "مؤشرات حجم الأسواق لعام 2024" : "2024 Global Import Indicators"} />
@@ -687,7 +692,7 @@ function FoodMarketsTab({ ar }: { ar: boolean }) {
                 {ar ? "أبرز مؤشرات الاستيراد السنوي في الأسواق المستهدفة" : "Annual Import Volumes in Target Export Destinations"}
               </h3>
             </div>
-            <span className="text-xs font-bold text-brand-orange bg-brand-orange/15 px-3 py-1.5 rounded-full shrink-0">
+            <span className="text-xs font-bold text-foreground bg-background/80 border border-white/30 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-sm shrink-0">
               {ar ? "بيانات موثقة لعام 2024" : "Verified 2024 Trade Data"}
             </span>
           </div>
@@ -845,31 +850,6 @@ function FoodMarketsTab({ ar }: { ar: boolean }) {
                 </p>
               </div>
             ))}
-          </div>
-        </div>
-      </Reveal>
-
-      {/* Global Outlook */}
-      <Reveal>
-        <div className="rounded-3xl border border-brand-orange/30 bg-gradient-to-r from-background/90 via-secondary/40 to-background/90 p-8 sm:p-12 shadow-lg backdrop-blur-2xl text-center max-w-4xl mx-auto">
-          <SectionBadge title={ar ? "آفاق المستقبل" : "Global Horizon"} />
-          <h3 className="font-head text-2xl sm:text-3xl font-bold text-foreground mt-3 mb-4">
-            {ar ? globalOutlook.titleAr : globalOutlook.titleEn}
-          </h3>
-          <p className="text-muted-foreground text-base leading-relaxed">
-            {highlightBrand(ar ? globalOutlook.descAr : globalOutlook.descEn)}
-          </p>
-
-          <div className="mt-8 flex justify-center gap-4">
-            <Link
-              to="/sectors/$sector"
-              params={{ sector: "food" }}
-              search={{ tab: "order-product" }}
-              className="inline-flex items-center gap-2 rounded-full bg-brand-orange px-8 py-3.5 text-sm font-bold text-white shadow-xl shadow-brand-orange/25 transition-all duration-300 hover:bg-brand-green hover:scale-105 active:scale-95"
-            >
-              <span>{ar ? "اطلب منتج الآن" : "Order Products Now"}</span>
-              <ArrowRight className="size-4 rtl:rotate-180" />
-            </Link>
           </div>
         </div>
       </Reveal>

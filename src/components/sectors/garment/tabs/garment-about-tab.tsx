@@ -57,7 +57,9 @@ export function GarmentAboutTab() {
             </h2>
             <div className="section-intro mx-auto mt-6 leading-relaxed max-w-3xl space-y-4 text-start">
               <p className="text-start leading-relaxed">{highlightBrand(ar ? whoWeAre.bodyAr : whoWeAre.body)}</p>
-              <p className="text-start leading-relaxed">{highlightBrand(ar ? whoWeAre.extendedAr : whoWeAre.extended)}</p>
+              {(ar ? whoWeAre.extendedAr : whoWeAre.extended)?.trim() ? (
+                <p className="text-start leading-relaxed">{highlightBrand(ar ? whoWeAre.extendedAr : whoWeAre.extended)}</p>
+              ) : null}
             </div>
 
             {/* Explore Capabilities Button */}

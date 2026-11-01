@@ -109,17 +109,6 @@ export function AboutPage() {
                   height={704}
                   className="aspect-[4/3] w-full object-cover transition-transform duration-700 hover:scale-105"
                 />
-                <div className="glass-dark absolute inset-x-4 bottom-4 rounded-xl p-5 sm:bottom-6 sm:start-6 sm:inset-x-auto sm:max-w-md">
-                  <p className="font-mono text-xs uppercase tracking-wider text-brand-orange">
-                    {ar ? "رؤيتنا وقيمنا" : "Our Vision & Values"}
-                  </p>
-                  <div className="mt-2 grid grid-cols-2 gap-2 text-sm font-medium text-footer-foreground sm:text-base">
-                    <span>{ar ? "• الالتزام والمسؤولية" : "• Commitment & Responsibility"}</span>
-                    <span>{ar ? "• الجودة والابتكار" : "• Quality & Innovation"}</span>
-                    <span>{ar ? "• الشراكات طويلة الأمد" : "• Long-term Partnerships"}</span>
-                    <span>{ar ? "• الاستدامة والأثر" : "• Sustainable Impact"}</span>
-                  </div>
-                </div>
               </div>
             </Reveal>
           </div>

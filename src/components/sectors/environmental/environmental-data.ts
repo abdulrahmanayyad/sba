@@ -70,6 +70,8 @@ export const environmentalAboutData = {
     badgeAr: "رسالتنا",
     titleEn: "Empowering Clients & Preserving Global Resources",
     titleAr: "تمكين العملاء والحفاظ على موارد الكوكب",
+    bodyEn: "We strive to achieve the environmental objectives of our clients and meet their legislative requirements, corporate and commercial responsibilities to ensure their sustainability, through continuous investment in our people and developing their capabilities at all levels, building a leading reputation in delivering sustainable environmental solutions that contribute to preserving earth's resources for current and future generations, and embedding and promoting environmental awareness culture across Africa and the Middle East.",
+    bodyAr: "نسعى إلى تحقيق الأهداف البيئية لعملائنا وتلبية متطلباتهم التشريعية ومسؤولياتهم المؤسسية والتجارية بما يضمن استدامتهم، من خلال الاستثمار المستمر في كوادرنا وتنمية قدراتهم على كافة المستويات، وبناء سمعة رائدة في تقديم الحلول البيئية المستدامة التي تسهم في الحفاظ على موارد الأرض للأجيال الحالية والقادمة، وترسيخ ثقافة الوعي البيئي ونشرها في أفريقيا ومنطقة الشرق الأوسط.",
     pillars: [
       {
         en: "We want to be known as a company that achieves the environmental objectives of its customers and meets their legislative, corporate responsibility and commercial requirements as well as customer's sustainability.",

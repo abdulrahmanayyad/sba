@@ -9,7 +9,7 @@ export const garmentHeroData = {
   subtitle: "Integrated manufacturing solutions for fashion brands and global markets.",
   subtitleAr: "حلول تصنيع متكاملة للعلامات التجارية والأسواق العالمية.",
   intro: "SAMI BIN AYYAD GROUP delivers integrated apparel manufacturing solutions, combining product development, diverse production capabilities, manufacturing management, and quality control. With specialization in women's, children's, and men's apparel, we support fashion brands, importers, and international buyers through flexible manufacturing programs tailored to each project.",
-  introAr: "يمثل قطاع الملابس أحد القطاعات الصناعية الرئيسية في مجموعة سامي بن عياد، ونغطي مراحل متعددة من دورة التصنيع، بدءًا من تطوير المنتج والباترونات والعينات، مرورًا بالقص والخياطة والتشطيب ومراقبة الجودة، وصولًا إلى التعبئة وتجهيز الطلبات للتصدير، ونركز على بناء علاقات تصنيع طويلة الأمد قائمة على وضوح المواصفات، والانضباط الإنتاجي، والمسؤولية، والتواصل الفعال.",
+  introAr: "يمثل قطاع الملابس أحد القطاعات الصناعية الرئيسية في مجموعة سامي بن عياد، ونغطي مراحل متعددة من دورة التصنيع، بدءًا من تطوير المنتج والباترونات والعينات، مرورًا بالقص والخياطة والتشطيب ومراقبة الجودة، وصولًا إلى التعبئة وتجهيز الطلبات للتصدير.",
 };
 
 export const garmentAboutData = {
@@ -18,9 +18,9 @@ export const garmentAboutData = {
     heading: "Your Partner in the Manufacturing Journey",
     headingAr: "شريكك في رحلة التصنيع",
     body: "The apparel sector represents one of the main industrial sectors in SAMI BIN AYYAD GROUP, covering multiple stages of the manufacturing cycle from product development, pattern engineering, and sampling, through cutting, sewing, finishing, and quality control, to packaging and preparing orders for export.",
-    bodyAr: "يمثل قطاع الملابس أحد القطاعات الصناعية الرئيسية في مجموعة سامي بن عياد، ونغطي مراحل متعددة من دورة التصنيع، بدءًا من تطوير المنتج والباترونات والعينات، مرورًا بالقص والخياطة والتشطيب ومراقبة الجودة، وصولًا إلى التعبئة وتجهيز الطلبات للتصدير، ونركز على بناء علاقات تصنيع طويلة الأمد قائمة على وضوح المواصفات، والانضباط الإنتاجي، والمسؤولية، والتواصل الفعال.",
-    extended: "We focus on building long-term manufacturing partnerships grounded in clear specifications, disciplined production, accountability, and effective communication.",
-    extendedAr: "ونركز على بناء علاقات تصنيع طويلة الأمد قائمة على وضوح المواصفات، والانضباط الإنتاجي، والمسؤولية، والتواصل الفعال.",
+    bodyAr: "يمثل قطاع الملابس أحد القطاعات الصناعية الرئيسية في مجموعة سامي بن عياد، ونغطي مراحل متعددة من دورة التصنيع، بدءًا من تطوير المنتج والباترونات والعينات، مرورًا بالقص والخياطة والتشطيب ومراقبة الجودة، وصولًا إلى التعبئة وتجهيز الطلبات للتصدير.",
+    extended: "",
+    extendedAr: "",
     mission: {
       title: "Our Mission",
       titleAr: "رسالتنا",
