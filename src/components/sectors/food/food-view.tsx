@@ -501,10 +501,10 @@ function FoodProductsTab({ ar }: { ar: boolean }) {
   }, [selectedCategory, searchQuery]);
 
   return (
-    <section className="site-container pt-24 sm:pt-28 lg:pt-36 pb-20">
+    <section className="site-container pt-20 sm:pt-28 pb-20">
       {/* Products Header Box */}
       <Reveal>
-        <div className="mx-auto max-w-3xl rounded-3xl border border-white/20 bg-background/80 p-6 sm:p-8 lg:p-10 shadow-xl backdrop-blur-2xl mb-10 text-center">
+        <div className="mx-auto max-w-3xl rounded-3xl border border-white/20 bg-background/80 p-5 sm:p-8 lg:p-10 shadow-xl backdrop-blur-2xl mb-8 text-center">
           <SectionBadge title={ar ? "منتجاتنا" : "Our Products"} />
           <h2 className="font-head text-2xl sm:text-3xl font-bold tracking-tight text-foreground mt-3 mb-3 text-center">
             {ar ? "منتجاتنا" : "Our Products"}
@@ -566,40 +566,73 @@ function FoodProductsTab({ ar }: { ar: boolean }) {
       </Reveal>
 
       {/* Render Product Categories */}
-      <div className="space-y-16">
+      <div className="space-y-10 sm:space-y-14">
         {filteredCategories.map((cat, idx) => (
           <Reveal key={cat.id} delay={idx * 0.05}>
-            <div className="rounded-3xl border border-white/20 bg-background/85 p-5 sm:p-8 lg:p-10 shadow-xl backdrop-blur-2xl">
-              {/* Category Header with Single Category Image */}
-              <div className="border-b border-border/60 pb-6 mb-8 flex flex-col lg:grid lg:grid-cols-12 gap-5 lg:gap-6 items-start lg:items-center">
-                {/* Single Image for the Category — shown first on mobile */}
-                <div className="lg:col-span-5 xl:col-span-4 w-full order-first lg:order-last">
-                  <div className="relative aspect-[16/9] sm:aspect-[16/10] w-full overflow-hidden rounded-2xl shadow-md border border-white/30 bg-secondary">
-                    <img
-                      src={categoryImages[cat.id] || "/BG/Natural & Agri-Food Products/Natural & Agri-Food Products Home Page.jpg"}
-                      alt={ar ? cat.titleAr : cat.titleEn}
-                      loading="lazy"
-                      className="size-full object-cover transition-transform duration-700 hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+            <div className="rounded-3xl border border-white/20 bg-background/85 p-4 sm:p-6 lg:p-10 shadow-xl backdrop-blur-2xl">
+              {/* Category Header — Image on top on mobile, side-by-side on desktop */}
+              <div className="border-b border-border/60 pb-5 mb-6">
+                {/* Image — compact height on mobile */}
+                <div className="relative w-full overflow-hidden rounded-2xl shadow-md border border-white/30 bg-secondary mb-4 lg:hidden" style={{ aspectRatio: "21/9", maxHeight: "180px" }}>
+                  <img
+                    src={categoryImages[cat.id] || "/BG/Natural & Agri-Food Products/Natural & Agri-Food Products Home Page.jpg"}
+                    alt={ar ? cat.titleAr : cat.titleEn}
+                    loading="lazy"
+                    className="size-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                </div>
+
+                {/* Desktop: side-by-side grid */}
+                <div className="hidden lg:grid lg:grid-cols-12 gap-6 items-center">
+                  <div className="lg:col-span-7">
+                    <SectionBadge title={ar ? "كتالوج التصدير والمواصفات" : "Export Catalog & Specs"} />
+                    <h3 className="font-head text-2xl lg:text-3xl font-bold text-foreground mt-2">
+                      {ar ? cat.titleAr : cat.titleEn}
+                    </h3>
+                    <p className="text-sm sm:text-base text-muted-foreground mt-2 leading-relaxed">
+                      {ar ? cat.introAr : cat.introEn}
+                    </p>
+                    <div className="mt-4">
+                      <Link
+                        to="/sectors/$sector"
+                        params={{ sector: "food" }}
+                        search={{ tab: "order-product" }}
+                        className="inline-flex items-center gap-2 rounded-full bg-brand-green border border-brand-green px-5 py-2.5 text-xs font-bold text-white hover:bg-brand-orange hover:border-brand-orange transition-all duration-300 shadow-md cursor-pointer"
+                      >
+                        <span>{ar ? "طلب توريد لهذه الفئة" : "Request Sourcing"}</span>
+                        <ArrowRight className="size-3.5 rtl:rotate-180" />
+                      </Link>
+                    </div>
+                  </div>
+                  <div className="lg:col-span-5">
+                    <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl shadow-md border border-white/30 bg-secondary">
+                      <img
+                        src={categoryImages[cat.id] || "/BG/Natural & Agri-Food Products/Natural & Agri-Food Products Home Page.jpg"}
+                        alt={ar ? cat.titleAr : cat.titleEn}
+                        loading="lazy"
+                        className="size-full object-cover transition-transform duration-700 hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                    </div>
                   </div>
                 </div>
 
-                <div className="lg:col-span-7 xl:col-span-8 order-last lg:order-first">
+                {/* Mobile: title + description below image */}
+                <div className="lg:hidden">
                   <SectionBadge title={ar ? "كتالوج التصدير والمواصفات" : "Export Catalog & Specs"} />
-                  <h3 className="font-head text-xl sm:text-2xl lg:text-3xl font-bold text-foreground mt-2">
+                  <h3 className="font-head text-lg sm:text-2xl font-bold text-foreground mt-2">
                     {ar ? cat.titleAr : cat.titleEn}
                   </h3>
-                  <p className="text-sm sm:text-base text-muted-foreground mt-2 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-muted-foreground mt-2 leading-relaxed">
                     {ar ? cat.introAr : cat.introEn}
                   </p>
-
-                  <div className="mt-4">
+                  <div className="mt-3">
                     <Link
                       to="/sectors/$sector"
                       params={{ sector: "food" }}
                       search={{ tab: "order-product" }}
-                      className="inline-flex items-center gap-2 rounded-full bg-brand-green border border-brand-green px-5 py-2.5 text-xs font-bold text-white hover:bg-brand-orange hover:border-brand-orange hover:text-white transition-all duration-300 shadow-md shrink-0 cursor-pointer"
+                      className="inline-flex items-center gap-2 rounded-full bg-brand-green border border-brand-green px-4 py-2 text-xs font-bold text-white hover:bg-brand-orange hover:border-brand-orange transition-all duration-300 shadow-md cursor-pointer"
                     >
                       <span>{ar ? "طلب توريد لهذه الفئة" : "Request Sourcing"}</span>
                       <ArrowRight className="size-3.5 rtl:rotate-180" />
@@ -608,30 +641,30 @@ function FoodProductsTab({ ar }: { ar: boolean }) {
                 </div>
               </div>
 
-              {/* Items Grid (Clean Product Cards without duplicate images) */}
-              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mb-8">
+              {/* Items Grid */}
+              <div className="grid gap-3 sm:gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mb-6">
                 {cat.items.map((item) => (
                   <div
                     key={item.id}
-                    className="group rounded-2xl border border-border/70 bg-secondary/40 p-5 transition-all duration-300 hover:scale-[1.03] hover:-translate-y-1 hover:border-brand-green hover:bg-background hover:shadow-lg flex flex-col justify-between cursor-pointer"
+                    className="group rounded-2xl border border-border/70 bg-secondary/40 p-4 sm:p-5 transition-all duration-300 hover:scale-[1.02] hover:-translate-y-0.5 hover:border-brand-green hover:bg-background hover:shadow-lg flex flex-col justify-between cursor-pointer"
                   >
                     <div>
-                      <div className="flex items-center justify-between gap-2 mb-2">
-                        <h4 className="font-head text-sm sm:text-base font-bold text-foreground group-hover:text-brand-orange transition-colors">
+                      <div className="flex items-center justify-between gap-2 mb-1.5">
+                        <h4 className="font-head text-sm font-bold text-foreground group-hover:text-brand-orange transition-colors">
                           {ar ? item.nameAr : item.nameEn}
                         </h4>
                         <span className="size-2 rounded-full bg-brand-green shrink-0 group-hover:animate-ping" />
                       </div>
-                      <p className="text-xs text-muted-foreground leading-relaxed mb-4">
+                      <p className="text-xs text-muted-foreground leading-relaxed mb-3">
                         {ar ? item.descAr : item.descEn}
                       </p>
                     </div>
 
-                    <div className="flex flex-wrap gap-1.5 pt-3 border-t border-border/40">
+                    <div className="flex flex-wrap gap-1 pt-2 border-t border-border/40">
                       {(ar ? item.tagsAr : item.tagsEn).map((t, ti) => (
                         <span
                           key={ti}
-                          className="rounded-md bg-background px-2 py-0.5 text-[10px] font-semibold text-foreground/80 border border-border/50 group-hover:border-brand-orange/40 transition-colors"
+                          className="rounded-md bg-background px-1.5 py-0.5 text-[10px] font-semibold text-foreground/80 border border-border/50 group-hover:border-brand-orange/40 transition-colors"
                         >
                           {t}
                         </span>
@@ -641,26 +674,26 @@ function FoodProductsTab({ ar }: { ar: boolean }) {
                 ))}
               </div>
 
-              {/* Packaging / Preparation Forms Box if available */}
+              {/* Packaging / Preparation Forms Box */}
               {(cat.prepFormsAr || cat.specsAr) && (
-                <div className="rounded-2xl border border-white/40 bg-background/80 p-5 shadow-sm backdrop-blur-xl transition-all duration-300 hover:border-brand-green/40 hover:shadow-md">
+                <div className="rounded-2xl border border-white/40 bg-background/80 p-4 sm:p-5 shadow-sm backdrop-blur-xl">
                   <div className="flex items-center gap-2 mb-3">
-                    <Package className="size-4 text-brand-orange" />
+                    <Package className="size-4 text-brand-orange shrink-0" />
                     <h5 className="font-head text-xs sm:text-sm font-bold text-foreground">
                       {ar
                         ? "خيارات التجهيز وأشكال التوريد والتعبئة المتاحة:"
                         : "Available Packaging, Grading & Sourcing Formats:"}
                     </h5>
                   </div>
-                  <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+                  <div className="grid gap-2 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
                     {((ar ? cat.prepFormsAr : cat.prepFormsEn) ||
                       (ar ? cat.specsAr : cat.specsEn))?.map((fmt, fi) => (
                       <div
                         key={fi}
-                        className="flex items-center gap-2 rounded-xl bg-background/80 px-3 py-2 text-xs font-medium text-foreground/90 border border-border/60 shadow-sm transition-all duration-200 hover:scale-[1.02] hover:border-brand-green cursor-pointer"
+                        className="flex items-start gap-2 rounded-xl bg-background/80 px-3 py-2 text-xs font-medium text-foreground/90 border border-border/60 shadow-sm"
                       >
-                        <CheckCircle2 className="size-3.5 text-brand-green-text shrink-0" />
-                        <span className="truncate">{fmt}</span>
+                        <CheckCircle2 className="size-3.5 text-brand-green-text shrink-0 mt-0.5" />
+                        <span className="leading-relaxed">{fmt}</span>
                       </div>
                     ))}
                   </div>
