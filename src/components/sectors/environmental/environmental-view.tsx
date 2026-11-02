@@ -319,18 +319,18 @@ function EnvironmentalSectorsView({ ar }: { ar: boolean }) {
           {/* Sectors Stacked Vertically with Big Image on Top */}
           <div className="mt-12 flex flex-col gap-10">
             {filteredSectors.map((sec, idx) => {
-              const sectorImages = [
-                "/BG/Environment & Sustainability/Agriculture Sector.jpg",
-                "/BG/Environment & Sustainability/Oil & Gas Sector.jpg",
-                "/BG/Environment & Sustainability/Water & Wastewater Sector.jpg",
-                "/BG/Environment & Sustainability/Manufacturing & Retail Sectors.jpg",
-                "/BG/Environment & Sustainability/Built Environment Sector.jpg",
-                "/BG/Environment & Sustainability/Government & Public Sectors.jpg",
-                "/BG/Environment & Sustainability/Development & Construction Sector.jpg",
-                "/BG/Environment & Sustainability/Education & Healthcare Sector.jpg",
-                "/BG/Environment & Sustainability/Renewable Energy Sector.jpg",
-              ];
-              const sectorImg = sectorImages[idx % sectorImages.length];
+              const sectorImageMap: Record<string, string> = {
+                "oil-gas": "/BG/Environment & Sustainability/Oil & Gas Sector.jpg",
+                "construction": "/BG/Environment & Sustainability/Development & Construction Sector.jpg",
+                "education-healthcare": "/BG/Environment & Sustainability/Education & Healthcare Sector.jpg",
+                "renewable-energy": "/BG/Environment & Sustainability/Renewable Energy Sector.jpg",
+                "water-wastewater": "/BG/Environment & Sustainability/Water & Wastewater Sector.jpg",
+                "manufacturing-retail": "/BG/Environment & Sustainability/Manufacturing & Retail Sectors.jpg",
+                "government-public": "/BG/Environment & Sustainability/Government & Public Sectors.jpg",
+                "agriculture": "/BG/Environment & Sustainability/Agriculture Sector.jpg",
+                "built-environment": "/BG/Environment & Sustainability/Built Environment Sector.jpg",
+              };
+              const sectorImg = sectorImageMap[sec.id] ?? "/BG/Environment & Sustainability/Sustainable Environmental Home Page.avif";
 
               return (
                 <Reveal key={sec.id} delay={idx * 0.04}>
@@ -474,13 +474,13 @@ function EnvironmentalProductsView({ ar }: { ar: boolean }) {
           {/* Products Stacked Vertically with Big Image on Top */}
           <div className="flex flex-col gap-10">
             {products.map((product, idx) => {
-              const productImages = [
-                "/BG/Environment & Sustainability/ET-POR-01 — Odor Removal Solution.jpg",
-                "/BG/Environment & Sustainability/ET-POT-01 — Oil Terminator.jpg",
-                "/BG/Environment & Sustainability/Environmental Biotechnology Services.jpg",
-                "/BG/Environment & Sustainability/Comprehensive Waste Management Services.jpg",
-              ];
-              const prodImg = productImages[idx % productImages.length];
+              const productImageMap: Record<string, string> = {
+                "ET-POT-01": "/BG/Environment & Sustainability/ET-POT-01 — Oil Terminator.jpg",
+                "ET-POR-01": "/BG/Environment & Sustainability/ET-POR-01 — Odor Removal Solution.jpg",
+                "IoT-ENV": "/BG/Environment & Sustainability/IoT Environmental Monitoring System.jpg",
+                "EHS-APP": "/BG/Environment & Sustainability/EHS Regulatory Compliance App.jpg",
+              };
+              const prodImg = productImageMap[product.id] ?? "/BG/Environment & Sustainability/Environmental Biotechnology Services.jpg";
 
               return (
                 <Reveal key={product.id} delay={idx * 0.05}>
@@ -841,25 +841,24 @@ function EnvironmentalServicesView({ ar }: { ar: boolean }) {
           {/* Services Stacked Vertically with Big Image on Top */}
           <div className="mt-12 flex flex-col gap-10">
             {filteredServices.map((service, idx) => {
-              const serviceImages = [
-                "/BG/Environment & Sustainability/Environmental Impact Studies & Strategic Assessments.jpg",
-                "/BG/Environment & Sustainability/Environmental & Social Impact Assessments (ESIA).jpg",
-                "/BG/Environment & Sustainability/Environmental Measurements & Continuous Monitoring.jpg",
-                "/BG/Environment & Sustainability/Comprehensive Waste Management Services.jpg",
-                "/BG/Environment & Sustainability/Waste to Energy Services & Biogas Plants.jpg",
-                "/BG/Environment & Sustainability/Renewable Energy Solutions & Green Power.jpg",
-                "/BG/Environment & Sustainability/Carbon Footprint & Greenhouse Gas Services.jpg",
-                "/BG/Environment & Sustainability/Management Consultations & ISO Qualification Projects.jpg",
-                "/BG/Environment & Sustainability/EHS Consultations & Regulatory Applications for Healthcare.jpg",
-                "/BG/Environment & Sustainability/Environmental Biotechnology Services.jpg",
-                "/BG/Environment & Sustainability/EHS Regulatory Compliance App.jpg",
-                "/BG/Environment & Sustainability/Intelligent QHSE Application & Software Solutions.jpg",
-                "/BG/Environment & Sustainability/IoT Environmental Monitoring System.jpg",
-                "/BG/Environment & Sustainability/Research & Development & Environmental Software Solutions.jpg",
-                "/BG/Environment & Sustainability/Sustainable Development Advisory & UN Global Goals.jpg",
-                "/BG/Environment & Sustainability/Environmental Economic Studies & Policy Advisory.jpg",
-              ];
-              const sImg = serviceImages[idx % serviceImages.length];
+              const serviceImageMap: Record<string, string> = {
+                "waste-to-energy": "/BG/Environment & Sustainability/Waste to Energy Services & Biogas Plants.jpg",
+                "carbon-footprint": "/BG/Environment & Sustainability/Carbon Footprint & Greenhouse Gas Services.jpg",
+                "environmental-studies": "/BG/Environment & Sustainability/Environmental Impact Studies & Strategic Assessments.jpg",
+                "environmental-social": "/BG/Environment & Sustainability/Environmental & Social Impact Assessments (ESIA).jpg",
+                "environmental-economics": "/BG/Environment & Sustainability/Environmental Economic Studies & Policy Advisory.jpg",
+                "measurements-monitoring": "/BG/Environment & Sustainability/Environmental Measurements & Continuous Monitoring.jpg",
+                "waste-management": "/BG/Environment & Sustainability/Comprehensive Waste Management Services.jpg",
+                "rd-environmental-software": "/BG/Environment & Sustainability/Research & Development & Environmental Software Solutions.jpg",
+                "biotechnology": "/BG/Environment & Sustainability/Environmental Biotechnology Services.jpg",
+                "iso-qualifications": "/BG/Environment & Sustainability/Management Consultations & ISO Qualification Projects.jpg",
+                "qhse-smart-software": "/BG/Environment & Sustainability/Intelligent QHSE Application & Software Solutions.jpg",
+                "healthcare-ehs": "/BG/Environment & Sustainability/EHS Consultations & Regulatory Applications for Healthcare.jpg",
+                "sustainable-development": "/BG/Environment & Sustainability/Sustainable Development Advisory & UN Global Goals.jpg",
+                "renewable-energy": "/BG/Environment & Sustainability/Renewable Energy Solutions & Green Power.jpg",
+                "marketing-distribution": "/BG/Environment & Sustainability/Marketing, Commercial Agencies & Technology Distribution.jpg",
+              };
+              const sImg = serviceImageMap[service.id] ?? "/BG/Environment & Sustainability/Sustainable Environmental Home Page.avif";
 
               return (
                 <Reveal key={service.id} delay={idx * 0.04}>
