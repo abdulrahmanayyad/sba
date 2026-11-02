@@ -172,7 +172,7 @@ export function ModelsPage() {
       <section className="relative w-full overflow-hidden text-footer-foreground min-h-[420px] md:min-h-[480px] flex items-center">
         <img
           data-clip-reveal
-          src="/BG/vitaly-gariev-1lg6Gn0-o54-unsplash.jpg"
+          src="/BG/Apparel Manufacturing/Apparel Manufacturing Home Page.jpg"
           alt={ar ? "كتالوج منتجات الملابس" : "Garment Product Catalogue"}
           className="absolute inset-0 size-full object-cover object-center"
         />

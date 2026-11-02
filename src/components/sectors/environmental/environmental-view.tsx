@@ -320,11 +320,15 @@ function EnvironmentalSectorsView({ ar }: { ar: boolean }) {
           <div className="mt-12 flex flex-col gap-10">
             {filteredSectors.map((sec, idx) => {
               const sectorImages = [
-                "/BG/steve-marquez-zi7gDhirekg-unsplash.jpg",
-                "/BG/jennifer-delmarre-IqmuHJF5khU-unsplash.jpg",
-                "/BG/chelsea-WvusC5M-TM8-unsplash.jpg",
-                "/BG/paula-prekopova-Mt9DbRm2KmA-unsplash.jpg",
-                "/BG/andreas-gucklhorn-Ilpf2eUPpUE-unsplash.jpg",
+                "/BG/Environment & Sustainability/Agriculture Sector.jpg",
+                "/BG/Environment & Sustainability/Oil & Gas Sector.jpg",
+                "/BG/Environment & Sustainability/Water & Wastewater Sector.jpg",
+                "/BG/Environment & Sustainability/Manufacturing & Retail Sectors.jpg",
+                "/BG/Environment & Sustainability/Built Environment Sector.jpg",
+                "/BG/Environment & Sustainability/Government & Public Sectors.jpg",
+                "/BG/Environment & Sustainability/Development & Construction Sector.jpg",
+                "/BG/Environment & Sustainability/Education & Healthcare Sector.jpg",
+                "/BG/Environment & Sustainability/Renewable Energy Sector.jpg",
               ];
               const sectorImg = sectorImages[idx % sectorImages.length];
 
@@ -471,10 +475,10 @@ function EnvironmentalProductsView({ ar }: { ar: boolean }) {
           <div className="flex flex-col gap-10">
             {products.map((product, idx) => {
               const productImages = [
-                "/BG/chelsea-WvusC5M-TM8-unsplash.jpg",
-                "/BG/jennifer-delmarre-IqmuHJF5khU-unsplash.jpg",
-                "/BG/google-deepmind-s2TPKAD6fag-unsplash.jpg",
-                "/BG/riccardo-annandale-7e2pe9wjL9M-unsplash.jpg",
+                "/BG/Environment & Sustainability/ET-POR-01 — Odor Removal Solution.jpg",
+                "/BG/Environment & Sustainability/ET-POT-01 — Oil Terminator.jpg",
+                "/BG/Environment & Sustainability/Environmental Biotechnology Services.jpg",
+                "/BG/Environment & Sustainability/Comprehensive Waste Management Services.jpg",
               ];
               const prodImg = productImages[idx % productImages.length];
 
@@ -838,14 +842,22 @@ function EnvironmentalServicesView({ ar }: { ar: boolean }) {
           <div className="mt-12 flex flex-col gap-10">
             {filteredServices.map((service, idx) => {
               const serviceImages = [
-                "/BG/andreas-gucklhorn-Ilpf2eUPpUE-unsplash.jpg",
-                "/BG/jennifer-delmarre-IqmuHJF5khU-unsplash.jpg",
-                "/BG/steve-marquez-zi7gDhirekg-unsplash.jpg",
-                "/BG/chelsea-WvusC5M-TM8-unsplash.jpg",
-                "/BG/paula-prekopova-Mt9DbRm2KmA-unsplash.jpg",
-                "/BG/sebastian-dario-A3BVd3_mOCo-unsplash.jpg",
-                "/BG/sasun-bughdaryan-SFNUwmLEOis-unsplash.jpg",
-                "/BG/philipp-HGBCAbRBIME-unsplash.jpg",
+                "/BG/Environment & Sustainability/Environmental Impact Studies & Strategic Assessments.jpg",
+                "/BG/Environment & Sustainability/Environmental & Social Impact Assessments (ESIA).jpg",
+                "/BG/Environment & Sustainability/Environmental Measurements & Continuous Monitoring.jpg",
+                "/BG/Environment & Sustainability/Comprehensive Waste Management Services.jpg",
+                "/BG/Environment & Sustainability/Waste to Energy Services & Biogas Plants.jpg",
+                "/BG/Environment & Sustainability/Renewable Energy Solutions & Green Power.jpg",
+                "/BG/Environment & Sustainability/Carbon Footprint & Greenhouse Gas Services.jpg",
+                "/BG/Environment & Sustainability/Management Consultations & ISO Qualification Projects.jpg",
+                "/BG/Environment & Sustainability/EHS Consultations & Regulatory Applications for Healthcare.jpg",
+                "/BG/Environment & Sustainability/Environmental Biotechnology Services.jpg",
+                "/BG/Environment & Sustainability/EHS Regulatory Compliance App.jpg",
+                "/BG/Environment & Sustainability/Intelligent QHSE Application & Software Solutions.jpg",
+                "/BG/Environment & Sustainability/IoT Environmental Monitoring System.jpg",
+                "/BG/Environment & Sustainability/Research & Development & Environmental Software Solutions.jpg",
+                "/BG/Environment & Sustainability/Sustainable Development Advisory & UN Global Goals.jpg",
+                "/BG/Environment & Sustainability/Environmental Economic Studies & Policy Advisory.jpg",
               ];
               const sImg = serviceImages[idx % serviceImages.length];
 

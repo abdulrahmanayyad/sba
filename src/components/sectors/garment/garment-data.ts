@@ -1,4 +1,4 @@
-const apparelImg = "/BG/arawark-chen-b6WsvhfM-kU-unsplash.jpg";
+const apparelImg = "/BG/Apparel Manufacturing/Apparel Manufacturing Home Page.jpg";
 
 export const garmentHeroData = {
   image: apparelImg,

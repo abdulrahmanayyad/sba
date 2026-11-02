@@ -1,5 +1,5 @@
-const heroSustainable = "/BG/andreas-gucklhorn-Ilpf2eUPpUE-unsplash.jpg";
-const enviroImg = "/BG/chelsea-WvusC5M-TM8-unsplash.jpg";
+const heroSustainable = "/BG/Environment & Sustainability/Sustainable Environmental Home Page.avif";
+const enviroImg = "/BG/Environment & Sustainability/Comprehensive Waste Management Services.jpg";
 
 export const environmentalHeroData = {
   image: heroSustainable,

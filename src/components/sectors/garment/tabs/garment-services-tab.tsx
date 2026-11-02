@@ -7,12 +7,12 @@ import { useLanguage } from "@/i18n/language-context";
 import { garmentServicesDetailed } from "../garment-data";
 
 const serviceImageMap: Record<string, string> = {
-  "ready-made-garments": "/BG/Ready-Made Garment Manufacturing.jpg",
-  "product-development": "/BG/Product Development & Sampling.jpg",
-  "private-label": "/BG/Private Label Manufacturing.jpg",
-  "fob-programs": "/BG/FOB Manufacturing Programs.jpg",
-  "textile-dyeing": "/BG/Textile Mill & Internal Dyeing.jpg",
-  "quality-control": "/BG/Rigorous Quality Assurance.jpg",
+  "ready-made-garments": "/BG/Apparel Manufacturing/Ready-Made Garment Manufacturing.jpg",
+  "product-development": "/BG/Apparel Manufacturing/Product Development & Sampling.jpg",
+  "private-label": "/BG/Apparel Manufacturing/Private Label Manufacturing.jpg",
+  "fob-programs": "/BG/Apparel Manufacturing/FOB Manufacturing Programs.jpg",
+  "textile-dyeing": "/BG/Apparel Manufacturing/Textile Mill & Internal Dyeing.jpg",
+  "quality-control": "/BG/Apparel Manufacturing/Rigorous Quality Assurance.jpg",
 };
 
 function SectionBadge({ title }: { title: string }) {

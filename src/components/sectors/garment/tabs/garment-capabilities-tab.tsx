@@ -43,7 +43,7 @@ export function GarmentCapabilitiesTab() {
           {/* Image Banner Above Content */}
           <div className="relative mb-8 aspect-[21/9] sm:aspect-[24/8] w-full overflow-hidden rounded-2xl border border-white/20 shadow-md">
             <img
-              src="/BG/Ready-Made Garment Manufacturing.jpg"
+              src="/BG/Apparel Manufacturing/Ready-Made Garment Manufacturing.jpg"
               alt={ar ? "قدراتنا وإمكانياتنا الصناعية" : "Manufacturing Infrastructure"}
               loading="lazy"
               className="size-full object-cover transition-transform duration-700 hover:scale-105"
@@ -172,7 +172,7 @@ export function GarmentCapabilitiesTab() {
               </div>
               <div className="overflow-hidden rounded-2xl border border-border shadow-md lg:col-span-5">
                 <img
-                  src="/BG/Rigorous Quality Assurance.jpg"
+                  src="/BG/Apparel Manufacturing/Rigorous Quality Assurance.jpg"
                   alt={ar ? "ضمان الجودة ومراقبة المعايير" : "Rigorous Quality Assurance"}
                   loading="lazy"
                   className="aspect-[4/3] w-full object-cover transition-transform duration-700 hover:scale-105"
@@ -233,7 +233,7 @@ export function GarmentCapabilitiesTab() {
 
               <div className="overflow-hidden rounded-2xl border border-border shadow-md lg:col-span-5">
                 <img
-                  src="/BG/Specialized Production Lines.jpg"
+                  src="/BG/Apparel Manufacturing/Specialized Production Lines.jpg"
                   alt={ar ? productionVolume.classicShirtUnit.titleAr : productionVolume.classicShirtUnit.title}
                   loading="lazy"
                   className="aspect-[4/3] w-full object-cover transition-transform duration-700 hover:scale-105"
@@ -302,7 +302,7 @@ export function GarmentCapabilitiesTab() {
 
               <div className="overflow-hidden rounded-2xl border border-border shadow-md lg:col-span-5">
                 <img
-                  src="/BG/Textile Mill & Internal Dyeing.jpg"
+                  src="/BG/Apparel Manufacturing/Textile Mill & Internal Dyeing.jpg"
                   alt={ar ? "مصنع الأقمشة والصباغة الداخلية" : "Textile Mill & Internal Dyeing"}
                   loading="lazy"
                   className="aspect-[4/3] w-full object-cover transition-transform duration-700 hover:scale-105"
