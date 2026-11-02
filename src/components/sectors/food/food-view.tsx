@@ -192,9 +192,9 @@ function FoodAboutTab({ ar }: { ar: boolean }) {
   return (
     <div className="w-full">
       {/* Who We Are Section */}
-      <section className="site-container py-16 sm:py-24">
+      <section className="site-container py-10 sm:py-16 lg:py-24">
         <Reveal>
-          <div className="mx-auto max-w-4xl rounded-3xl border border-white/20 bg-background/80 p-8 sm:p-12 shadow-xl backdrop-blur-2xl mb-12 text-center transition-all duration-300 hover:scale-[1.01] hover:shadow-2xl hover:border-brand-green/40">
+          <div className="mx-auto max-w-4xl rounded-3xl border border-white/20 bg-background/80 p-6 sm:p-10 shadow-xl backdrop-blur-2xl mb-10 text-center transition-all duration-300 hover:scale-[1.01] hover:shadow-2xl hover:border-brand-green/40">
             <SectionBadge title={ar ? "من نحن" : "Who We Are"} />
             <h2 className="font-head text-2xl sm:text-4xl font-bold tracking-tight text-foreground mt-4 mb-6">
               {ar ? "أصالة المصادر وجودة التصدير" : "Authentic Origin & Export Quality"}
@@ -222,10 +222,10 @@ function FoodAboutTab({ ar }: { ar: boolean }) {
         </Reveal>
 
         {/* Vision & Mission — Vision first, then Mission, with SectionBadges */}
-        <div className="grid gap-6 md:grid-cols-2 mb-12">
+        <div className="grid gap-5 sm:gap-6 md:grid-cols-2 mb-10 sm:mb-12">
           {/* 1. Vision / رؤيتنا */}
           <Reveal>
-            <div className="group h-full rounded-3xl border border-white/20 bg-background/80 p-8 sm:p-10 shadow-lg backdrop-blur-2xl transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-2xl hover:border-brand-green hover:bg-card/95 cursor-pointer">
+            <div className="group h-full rounded-3xl border border-white/20 bg-background/80 p-6 sm:p-8 lg:p-10 shadow-lg backdrop-blur-2xl transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-2xl hover:border-brand-green hover:bg-card/95 cursor-pointer">
               <div className="mb-4">
                 <SectionBadge title={ar ? "رؤيتنا" : "Our Vision"} />
               </div>
@@ -237,7 +237,7 @@ function FoodAboutTab({ ar }: { ar: boolean }) {
 
           {/* 2. Mission / رسالتنا */}
           <Reveal delay={0.1}>
-            <div className="group h-full rounded-3xl border border-white/20 bg-background/80 p-8 sm:p-10 shadow-lg backdrop-blur-2xl transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-2xl hover:border-brand-green hover:bg-card/95 cursor-pointer">
+            <div className="group h-full rounded-3xl border border-white/20 bg-background/80 p-6 sm:p-8 lg:p-10 shadow-lg backdrop-blur-2xl transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-2xl hover:border-brand-green hover:bg-card/95 cursor-pointer">
               <div className="mb-4">
                 <SectionBadge title={ar ? "رسالتنا" : "Our Mission"} />
               </div>
@@ -250,7 +250,7 @@ function FoodAboutTab({ ar }: { ar: boolean }) {
 
         {/* 3. Approach / نهجنا — With SectionBadge */}
         <Reveal>
-          <div className="group rounded-3xl border border-white/20 bg-gradient-to-br from-background/90 via-background/70 to-secondary/30 p-8 sm:p-10 shadow-lg backdrop-blur-2xl mb-16 transition-all duration-300 hover:scale-[1.01] hover:-translate-y-1 hover:shadow-2xl hover:border-brand-green cursor-pointer">
+          <div className="group rounded-3xl border border-white/20 bg-gradient-to-br from-background/90 via-background/70 to-secondary/30 p-6 sm:p-8 lg:p-10 shadow-lg backdrop-blur-2xl mb-12 transition-all duration-300 hover:scale-[1.01] hover:-translate-y-1 hover:shadow-2xl hover:border-brand-green cursor-pointer">
             <div className="mb-4">
               <SectionBadge title={ar ? "نهجنا" : "Our Approach"} />
             </div>
@@ -296,9 +296,9 @@ function FoodAboutTab({ ar }: { ar: boolean }) {
         </div>
 
         {/* What We Offer — Supply Models */}
-        <div className="mb-16">
+        <div className="mb-10 sm:mb-16">
           <Reveal>
-            <div className="rounded-3xl border border-white/20 bg-background/80 p-8 sm:p-12 shadow-xl backdrop-blur-2xl mb-8">
+            <div className="rounded-3xl border border-white/20 bg-background/80 p-6 sm:p-10 shadow-xl backdrop-blur-2xl mb-8">
               <SectionBadge title={ar ? "ماذا نقدم" : "What We Offer"} />
               <div className="text-base text-muted-foreground leading-relaxed max-w-4xl space-y-3 mt-4">
                 {(ar ? whatWeOffer.descAr : whatWeOffer.descEn).split("\n\n").map((part, i) => (
@@ -501,10 +501,10 @@ function FoodProductsTab({ ar }: { ar: boolean }) {
   }, [selectedCategory, searchQuery]);
 
   return (
-    <section className="site-container pt-28 sm:pt-36 pb-20">
+    <section className="site-container pt-24 sm:pt-28 lg:pt-36 pb-20">
       {/* Products Header Box */}
       <Reveal>
-        <div className="mx-auto max-w-3xl rounded-3xl border border-white/20 bg-background/80 p-8 sm:p-10 shadow-xl backdrop-blur-2xl mb-12 text-center">
+        <div className="mx-auto max-w-3xl rounded-3xl border border-white/20 bg-background/80 p-6 sm:p-8 lg:p-10 shadow-xl backdrop-blur-2xl mb-10 text-center">
           <SectionBadge title={ar ? "منتجاتنا" : "Our Products"} />
           <h2 className="font-head text-2xl sm:text-3xl font-bold tracking-tight text-foreground mt-3 mb-3 text-center">
             {ar ? "منتجاتنا" : "Our Products"}
@@ -519,9 +519,9 @@ function FoodProductsTab({ ar }: { ar: boolean }) {
 
       {/* Category Filter Pills & Search */}
       <Reveal>
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-10 pb-6 border-b border-border/60">
+        <div className="flex flex-col gap-4 mb-10 pb-6 border-b border-border/60">
           {/* Filter Pills */}
-          <div className="flex flex-wrap items-center gap-2 w-full md:w-auto">
+          <div className="flex flex-wrap items-center gap-2 w-full">
             <button
               type="button"
               onClick={() => setSelectedCategory("all")}
@@ -553,7 +553,7 @@ function FoodProductsTab({ ar }: { ar: boolean }) {
           </div>
 
           {/* Search Box */}
-          <div className="w-full md:w-72">
+          <div className="w-full sm:w-72">
             <input
               type="text"
               placeholder={ar ? "ابحث عن صنف أو بهار أو نوع زيت..." : "Search product, seed or variety..."}
@@ -569,15 +569,28 @@ function FoodProductsTab({ ar }: { ar: boolean }) {
       <div className="space-y-16">
         {filteredCategories.map((cat, idx) => (
           <Reveal key={cat.id} delay={idx * 0.05}>
-            <div className="rounded-3xl border border-white/20 bg-background/85 p-6 sm:p-10 shadow-xl backdrop-blur-2xl">
+            <div className="rounded-3xl border border-white/20 bg-background/85 p-5 sm:p-8 lg:p-10 shadow-xl backdrop-blur-2xl">
               {/* Category Header with Single Category Image */}
-              <div className="border-b border-border/60 pb-6 mb-8 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-                <div className="lg:col-span-7 xl:col-span-8">
+              <div className="border-b border-border/60 pb-6 mb-8 flex flex-col lg:grid lg:grid-cols-12 gap-5 lg:gap-6 items-start lg:items-center">
+                {/* Single Image for the Category — shown first on mobile */}
+                <div className="lg:col-span-5 xl:col-span-4 w-full order-first lg:order-last">
+                  <div className="relative aspect-[16/9] sm:aspect-[16/10] w-full overflow-hidden rounded-2xl shadow-md border border-white/30 bg-secondary">
+                    <img
+                      src={categoryImages[cat.id] || "/BG/Natural & Agri-Food Products/Natural & Agri-Food Products Home Page.jpg"}
+                      alt={ar ? cat.titleAr : cat.titleEn}
+                      loading="lazy"
+                      className="size-full object-cover transition-transform duration-700 hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                  </div>
+                </div>
+
+                <div className="lg:col-span-7 xl:col-span-8 order-last lg:order-first">
                   <SectionBadge title={ar ? "كتالوج التصدير والمواصفات" : "Export Catalog & Specs"} />
-                  <h3 className="font-head text-2xl sm:text-3xl font-bold text-foreground mt-2">
+                  <h3 className="font-head text-xl sm:text-2xl lg:text-3xl font-bold text-foreground mt-2">
                     {ar ? cat.titleAr : cat.titleEn}
                   </h3>
-                  <p className="text-sm sm:text-base text-muted-foreground mt-2 max-w-2xl leading-relaxed">
+                  <p className="text-sm sm:text-base text-muted-foreground mt-2 leading-relaxed">
                     {ar ? cat.introAr : cat.introEn}
                   </p>
 
@@ -591,19 +604,6 @@ function FoodProductsTab({ ar }: { ar: boolean }) {
                       <span>{ar ? "طلب توريد لهذه الفئة" : "Request Sourcing"}</span>
                       <ArrowRight className="size-3.5 rtl:rotate-180" />
                     </Link>
-                  </div>
-                </div>
-
-                {/* Single Image for the Category */}
-                <div className="lg:col-span-5 xl:col-span-4">
-                  <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl shadow-md border border-white/30 bg-secondary">
-                    <img
-                      src={categoryImages[cat.id] || "/BG/Natural & Agri-Food Products/Natural & Agri-Food Products Home Page.jpg"}
-                      alt={ar ? cat.titleAr : cat.titleEn}
-                      loading="lazy"
-                      className="size-full object-cover transition-transform duration-700 hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                   </div>
                 </div>
               </div>
