@@ -181,6 +181,8 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
         document.title = "شركاؤنا — Sami Bin Ayyad";
       } else if (pathname === "/products") {
         document.title = "منتجاتنا — Sami Bin Ayyad";
+      } else if (pathname === "/investor-relations") {
+        document.title = "علاقات المستثمرين — Sami Bin Ayyad";
       } else if (pathname === "/sectors") {
         document.title = "قطاعاتنا — Sami Bin Ayyad";
       } else if (sectorSlug) {
@@ -254,7 +256,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
         ))}
       </NavDropdown>
       <Link
-        to="/models"
+        to="/products"
         className={cn(className, "whitespace-nowrap", isProductsActive && navPillActive)}
         onClick={onNavigate}
       >
@@ -438,8 +440,9 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
                   <h2 className="font-head text-sm font-bold uppercase tracking-wider text-brand-orange">{messages.footer.company}</h2>
                   <nav aria-label={messages.accessibility.footerNavigation} className="mt-4 grid gap-2.5">
                     <Link to="/about" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{messages.nav.about}</Link>
-                    <Link to="/models" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{messages.nav.products}</Link>
+                    <Link to="/products" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{messages.nav.products}</Link>
                     <Link to="/partners" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{messages.nav.partners}</Link>
+                    <Link to="/investor-relations" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{isArabic ? "علاقات المستثمرين" : "Investor Relations"}</Link>
                     <Link to="/news" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{messages.nav.news}</Link>
                     <Link to="/join/group" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{messages.nav.joinUs}</Link>
                   </nav>
