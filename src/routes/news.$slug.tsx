@@ -7,6 +7,31 @@ export const Route = createFileRoute("/news/$slug")({
     const article = newsArticles.find((a) => a.slug === params.slug);
     const title = article ? `${article.titleEn} — SBA News` : "Article — SBA News";
     const desc = article?.excerptEn ?? "Sami Bin Ayyad Group news and insights.";
+    const articleSchema = article
+      ? {
+          "@context": "https://schema.org",
+          "@type": "NewsArticle",
+          headline: article.titleEn,
+          description: article.excerptEn,
+          image: article.image ? [`https://sami-trade.com${article.image}`] : undefined,
+          datePublished: article.publishedAt,
+          dateModified: article.publishedAt,
+          author: {
+            "@type": "Organization",
+            name: "Sami Bin Ayyad Group Editorial Team",
+            url: "https://sami-trade.com",
+          },
+          publisher: {
+            "@type": "Organization",
+            name: "Sami Bin Ayyad Group",
+            logo: {
+              "@type": "ImageObject",
+              url: "https://sami-trade.com/favicon.png",
+            },
+          },
+        }
+      : null;
+
     return {
       meta: [
         { title },
@@ -16,6 +41,14 @@ export const Route = createFileRoute("/news/$slug")({
         { property: "og:type", content: "article" },
         { name: "twitter:card", content: "summary_large_image" },
       ],
+      scripts: articleSchema
+        ? [
+            {
+              type: "application/ld+json",
+              children: JSON.stringify(articleSchema),
+            },
+          ]
+        : [],
     };
   },
   component: NewsDetailRoute,
