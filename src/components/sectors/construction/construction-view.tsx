@@ -20,11 +20,24 @@ import {
 import { contractingProjectsList, type ContractingProject } from "./contracting-projects-list";
 import heroSustainable from "@/assets/hero-sustainable.png";
 import { JoinPage } from "@/components/join/join-page";
+import { VerifiedProjectsBanner } from "./verification/verified-projects-banner";
+import { ProjectVerificationModal } from "./verification/project-verification-modal";
+import { VerificationPortal } from "./verification/verification-portal";
+import { ProjectVerificationAdminDashboard } from "./verification/project-verification-admin-dashboard";
 
-export type ConstructionTab = "about" | "sectors" | "services" | "projects" | "start-project" | "join";
+export type ConstructionTab =
+  | "about"
+  | "sectors"
+  | "services"
+  | "projects"
+  | "start-project"
+  | "join"
+  | "verify-portal"
+  | "verification-admin";
 
 interface ConstructionViewProps {
-  tab?: ConstructionTab;
+  tab?: ConstructionTab | undefined;
+  token?: string | undefined;
 }
 
 function SectionBadge({ title }: { title: string }) {
@@ -36,10 +49,20 @@ function SectionBadge({ title }: { title: string }) {
   );
 }
 
-export function ConstructionSectorView({ tab = "about" }: ConstructionViewProps) {
+export function ConstructionSectorView({ tab = "about", token }: ConstructionViewProps) {
   const { language } = useLanguage();
   const ar = language === "AR";
-  const activeTab: ConstructionTab = ["about", "sectors", "services", "projects", "start-project", "join"].includes(tab) ? tab : "about";
+  const validTabs: ConstructionTab[] = [
+    "about",
+    "sectors",
+    "services",
+    "projects",
+    "start-project",
+    "join",
+    "verify-portal",
+    "verification-admin",
+  ];
+  const activeTab: ConstructionTab = validTabs.includes(tab) ? tab : "about";
 
   const tabLabels: Record<ConstructionTab, { en: string; ar: string; descEn: string; descAr: string }> = {
     about: {
@@ -77,6 +100,18 @@ export function ConstructionSectorView({ tab = "about" }: ConstructionViewProps)
       ar: "انضم إلينا",
       descEn: "Contractor registration, subcontracting and partnership opportunities",
       descAr: "تسجيل مقاول، فرص التعاقد من الباطن والفرص المهنية",
+    },
+    "verify-portal": {
+      en: "Verified Projects Dossier",
+      ar: "بوابة المشروعات الموثقة",
+      descEn: "Secure project verification and due diligence portal",
+      descAr: "بوابة الاطلاع المعتمدة على مستندات المشروعات وسابقة الأعمال",
+    },
+    "verification-admin": {
+      en: "Verification Management",
+      ar: "إدارة طلبات التحقق",
+      descEn: "Administrative review and compliance control",
+      descAr: "لوحة الحوكمة والتحقق من المشروعات والطلبات",
     },
   };
 
@@ -121,6 +156,8 @@ export function ConstructionSectorView({ tab = "about" }: ConstructionViewProps)
         {activeTab === "projects" && <ConstructionProjectsView ar={ar} />}
         {activeTab === "start-project" && <ConstructionStartProjectView ar={ar} />}
         {activeTab === "join" && <JoinPage trackId="construction" />}
+        {activeTab === "verify-portal" && <VerificationPortal token={token || ""} />}
+        {activeTab === "verification-admin" && <ProjectVerificationAdminDashboard />}
       </div>
     </div>
   );
@@ -424,6 +461,7 @@ function ConstructionProjectsView({ ar }: { ar: boolean }) {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [activeProject, setActiveProject] = useState<ContractingProject | null>(null);
+  const [verificationModalProject, setVerificationModalProject] = useState<ContractingProject | null>(null);
   const [visibleCount, setVisibleCount] = useState<number>(6);
 
   const years = useMemo(
@@ -466,8 +504,13 @@ function ConstructionProjectsView({ ar }: { ar: boolean }) {
 
   return (
     <div className="w-full space-y-12">
-      {/* Projects Showcase */}
+      {/* Verified Projects Institutional Trust Banner */}
       <section className="site-container">
+        <VerifiedProjectsBanner ar={ar} />
+      </section>
+
+      {/* Projects Showcase */}
+      <section className="site-container" id="projects-grid-anchor">
         <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
           <Reveal>
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
@@ -607,8 +650,8 @@ function ConstructionProjectsView({ ar }: { ar: boolean }) {
                     </div>
                   </div>
 
-                  {/* Card Footer: Date & Value */}
-                  <div className="border-t border-border/70 p-4 bg-muted/20 flex flex-col gap-1.5 text-xs">
+                  {/* Card Footer: Date & Value & Verification CTA */}
+                  <div className="border-t border-border/70 p-4 bg-muted/20 flex flex-col gap-2 text-xs">
                     <div className="flex items-center justify-between text-muted-foreground text-[11px]">
                       <span className="flex items-center gap-1">
                         <Calendar className="size-3 text-muted-foreground" />
@@ -622,6 +665,22 @@ function ConstructionProjectsView({ ar }: { ar: boolean }) {
                       <span className="font-head font-bold text-brand-orange drop-shadow-sm">
                         {ar ? proj.valueAr : proj.valueEn}
                       </span>
+                    </div>
+
+                    {/* Verification Action Button */}
+                    <div className="pt-2 border-t border-border/40">
+                      <Button
+                        size="sm"
+                        variant="ghost"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setVerificationModalProject(proj);
+                        }}
+                        className="w-full h-8 rounded-xl bg-brand-green/10 hover:bg-brand-green hover:text-white text-brand-green-text text-[11px] font-head font-bold flex items-center justify-center gap-1.5 transition-all"
+                      >
+                        <ShieldCheck className="size-3.5" />
+                        <span>{ar ? "طلب التحقق من المشروع" : "Request Project Verification"}</span>
+                      </Button>
                     </div>
                   </div>
                 </div>
@@ -723,10 +782,59 @@ function ConstructionProjectsView({ ar }: { ar: boolean }) {
                   {ar ? activeProject.descriptionAr : activeProject.descriptionEn}
                 </p>
               </div>
+
+              {/* Verified Project Institutional Section inside Modal */}
+              <div className="rounded-2xl border border-brand-green/30 bg-brand-green/5 p-4 sm:p-5 space-y-3">
+                <div className="flex items-center gap-2 text-brand-green-text">
+                  <ShieldCheck className="size-5 shrink-0" />
+                  <h6 className="font-head text-sm font-bold">
+                    {ar ? "المشروعات الموثقة · Verified Projects" : "Verified Projects & Due Diligence"}
+                  </h6>
+                </div>
+                <p className="text-xs leading-relaxed text-muted-foreground">
+                  {ar
+                    ? "يمكن للشركات والجهات المؤهلة طلب التحقق من بيانات هذا المشروع والاطلاع على مستندات الإثبات الرسمية، بعد مراجعة هوية مقدم الطلب وصفته المهنية."
+                    : "Qualified corporate entities and authorities may request access to official supporting documents for this project following professional identity and capacity vetting."}
+                </p>
+                <div className="flex flex-wrap items-center gap-2 pt-1">
+                  <Button
+                    size="sm"
+                    onClick={() => {
+                      const p = activeProject;
+                      setActiveProject(null);
+                      setVerificationModalProject(p);
+                    }}
+                    className="rounded-full bg-brand-green hover:bg-brand-orange text-white text-xs font-head font-bold gap-1.5 shadow-sm"
+                  >
+                    <ShieldCheck className="size-3.5" />
+                    <span>{ar ? "طلب التحقق من المشروع" : "Request Project Verification"}</span>
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => {
+                      setActiveProject(null);
+                      const banner = document.getElementById("projects-grid-anchor");
+                      banner?.scrollIntoView({ behavior: "smooth" });
+                    }}
+                    className="rounded-full text-xs font-semibold"
+                  >
+                    {ar ? "معرفة المزيد" : "Learn More"}
+                  </Button>
+                </div>
+              </div>
             </div>
           </DialogContent>
         )}
       </Dialog>
+
+      {/* Project Verification Application Form Modal */}
+      <ProjectVerificationModal
+        project={verificationModalProject}
+        isOpen={!!verificationModalProject}
+        onClose={() => setVerificationModalProject(null)}
+        ar={ar}
+      />
     </div>
   );
 }

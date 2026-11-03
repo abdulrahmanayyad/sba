@@ -7,15 +7,16 @@ import { GarmentSectorView, type GarmentTab } from "@/components/sectors/garment
 import { EnvironmentalSectorView, type EnvironmentalTab } from "@/components/sectors/environmental/environmental-view";
 import { FoodSectorView, type FoodTab } from "@/components/sectors/food/food-view";
 
-const validConstructionTabs: ConstructionTab[] = ["about", "sectors", "services", "projects", "join", "start-project"];
+const validConstructionTabs: ConstructionTab[] = ["about", "sectors", "services", "projects", "join", "start-project", "verify-portal", "verification-admin"];
 const validGarmentTabs: GarmentTab[] = ["about", "services", "clients", "projects", "partners", "capabilities", "join", "start-project"];
 const validEnvironmentalTabs: EnvironmentalTab[] = ["about", "sectors", "services", "products", "join", "start-consultation"];
 const validFoodTabs: FoodTab[] = ["about", "sectors", "products", "markets", "order-product", "join"];
 
 export const Route = createFileRoute("/sectors/$sector")({
-  validateSearch: (search: Record<string, unknown>): { tab?: string | undefined; service?: string | undefined } => {
+  validateSearch: (search: Record<string, unknown>): { tab?: string | undefined; service?: string | undefined; token?: string | undefined } => {
     const tabStr = search["tab"];
     const serviceStr = typeof search["service"] === "string" ? search["service"] : undefined;
+    const tokenStr = typeof search["token"] === "string" ? search["token"] : undefined;
     let validatedTab: string | undefined = undefined;
     if (typeof tabStr === "string" && tabStr) {
       if (
@@ -27,7 +28,7 @@ export const Route = createFileRoute("/sectors/$sector")({
         validatedTab = tabStr;
       }
     }
-    return { tab: validatedTab, service: serviceStr };
+    return { tab: validatedTab, service: serviceStr, token: tokenStr };
   },
   head: ({ params, search }: { params: { sector: string }; search?: { tab?: string; service?: string } }) => {
     const sector = sectors[params.sector as SectorSlug];
@@ -98,12 +99,12 @@ export const Route = createFileRoute("/sectors/$sector")({
 
 function SectorRoute() {
   const { sector } = Route.useParams();
-  const { tab } = Route.useSearch();
+  const { tab, token } = Route.useSearch();
   const data = sectors[sector as SectorSlug];
   if (!data) throw notFound();
 
   if (sector === "construction") {
-    return <ConstructionSectorView tab={tab as ConstructionTab} />;
+    return <ConstructionSectorView tab={tab as ConstructionTab} token={token} />;
   }
 
   if (sector === "garment") {
