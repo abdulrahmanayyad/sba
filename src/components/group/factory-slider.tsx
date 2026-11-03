@@ -146,7 +146,13 @@ export function FactorySlider({ ar }: { ar: boolean }) {
                     : "border-transparent opacity-50 hover:opacity-90 hover:scale-100"
                 )}
               >
-                <img src={img} alt="" loading="lazy" className="size-full object-cover" />
+                <img
+                  src={img}
+                  alt={ar ? `لقطة تفقدية للمنشآت ${idx + 1}` : `Facility inspection view ${idx + 1}`}
+                  loading="lazy"
+                  decoding="async"
+                  className="size-full object-cover"
+                />
                 <span className="absolute bottom-0.5 end-0.5 rounded bg-black/70 px-1 font-mono text-[9px] text-white">
                   {idx + 1}
                 </span>

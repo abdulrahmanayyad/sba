@@ -396,7 +396,7 @@ export function SectorHeader({
                     </a>
                   ))
                 )}
-                <Link to="/join" className={navLinkStyle}>
+                <Link to="/join/group" className={navLinkStyle}>
                   {ar ? "انضم إلينا" : "Join Us"}
                 </Link>
               </>

@@ -376,3 +376,4 @@ export function VerificationPortal({ token }: VerificationPortalProps) {
     </div>
   );
 }
+

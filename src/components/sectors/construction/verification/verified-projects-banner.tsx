@@ -88,3 +88,4 @@ export function VerifiedProjectsBanner({ ar, onRequestOpen }: VerifiedProjectsBa
     </Reveal>
   );
 }
+

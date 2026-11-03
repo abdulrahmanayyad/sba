@@ -715,3 +715,4 @@ export function ProjectVerificationModal({
     </Dialog>
   );
 }
+
