@@ -22,3 +22,4 @@ export const Route = createFileRoute("/investor-relations")({
   }),
   component: InvestorRelationsPage,
 });
+

@@ -654,3 +654,4 @@ export const catalogueProducts: CatalogueProduct[] = [
     technicalFileName: "TechnoSet_QHSE_Platform_Capability_Brochure.pdf",
   },
 ];
+
