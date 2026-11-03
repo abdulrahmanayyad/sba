@@ -397,3 +397,734 @@ export const garmentProcessSteps = [
 ];
 
 
+
+// ==========================================
+// 1. INDUSTRIAL PRODUCTION CAPACITY BREAKDOWN
+// ==========================================
+export const garmentProductionCapacity = {
+  headingEn: "Certified Industrial Production Capacity",
+  headingAr: "الطاقة الإنتاجية الصناعية المعتمدة",
+  subtitleEn: "Clear distinction between design capacity, actual throughput, and available allocation for global B2B clients.",
+  subtitleAr: "تحديد دقيق وشفاف بين الطاقة التصميمية، والطاقة التشغيلية الفعلية، والسعة المتاحة لتعاقدات العملاء الجدد.",
+  capacities: [
+    {
+      type: "design",
+      numberEn: "150,000",
+      numberAr: "150,000",
+      unitEn: "Pieces / Month",
+      unitAr: "قطعة / شهرياً",
+      labelEn: "Design Nameplate Capacity",
+      labelAr: "الطاقة التصميمية القصوى",
+      descEn: "Maximum engineered output across all 15 operational lines at full 2-shift scheduling.",
+      descAr: "القدرة الاستيعابية القصوى المخططة لجميع خطوط الإنتاج الـ 15 بنظام الورديتين."
+    },
+    {
+      type: "actual",
+      numberEn: "100,000",
+      numberAr: "100,000",
+      unitEn: "Pieces / Month",
+      unitAr: "قطعة / شهرياً",
+      labelEn: "Actual Operating Volume",
+      labelAr: "الطاقة التشغيلية الفعلية",
+      descEn: "Current sustained output dedicated to contracted European, GCC, and domestic brand partners.",
+      descAr: "حجم الإنتاج الشهري الفعلي المستقر المخصص لعقود التوريد الحالية في أوروبا والخليج ومصر."
+    },
+    {
+      type: "available",
+      numberEn: "35,000 – 50,000",
+      numberAr: "35,000 – 50,000",
+      unitEn: "Pieces / Month",
+      unitAr: "قطعة / شهرياً",
+      labelEn: "Available Spare Capacity",
+      labelAr: "الطاقة المتاحة للتعاقدات الجديدة",
+      descEn: "Ready-to-allocate manufacturing capacity available immediately for new global fashion brands and FOB programs.",
+      descAr: "سعة إنتاجية جاهزة ومتاحة فوراً لاستقبال برامج تصنيع وتوريد لعلامات تجارية جديدة."
+    }
+  ],
+  keyMetrics: [
+    { labelEn: "Active Production Lines", labelAr: "خطوط الإنتاج النشطة", value: "15 Lines" },
+    { labelEn: "Specialized Machinery", labelAr: "الماكينات التخصصية", value: "250+ Units" },
+    { labelEn: "Skilled Technicians & Operators", labelAr: "الكوادر والعمالة الماهرة", value: "400+ Staff" },
+    { labelEn: "Single Shift Daily Output", labelAr: "متوسط الإنتاج اليومي", value: "+5,000 Pcs" }
+  ]
+};
+
+// ==========================================
+// 2. 10 CORE INDUSTRIAL CAPABILITIES
+// ==========================================
+export interface IndustrialCapabilityItem {
+  id: string;
+  number: string;
+  titleEn: string;
+  titleAr: string;
+  leadEn: string;
+  leadAr: string;
+  specsEn: string[];
+  specsAr: string[];
+  image: string;
+}
+
+export const garmentIndustrialCapabilities: IndustrialCapabilityItem[] = [
+  {
+    id: "production-lines",
+    number: "01",
+    titleEn: "Production Lines",
+    titleAr: "خطوط الإنتاج الصناعية",
+    leadEn: "15 modular assembly lines configured for flexible switching between knitwear and woven garments.",
+    leadAr: "15 خط إنتاج نمطي مرن مصمم للتحويل السريع بين الملابس القطنية (Knit) والمنسوجة (Woven).",
+    specsEn: [
+      "Modular lean manufacturing layout minimizing handling time",
+      "Dedicated lines for structured garments and soft knits",
+      "Individual workstation digital piece-rate tracking",
+      "Ergonomic operator seating and LED task illumination"
+    ],
+    specsAr: [
+      "تخطيط تصنيع رشيق (Lean) يقلل وقت المناولة البينية بنسبة 25%",
+      "خطوط مستقلة متخصصة للملابس الهيكلية وخطوط للملابس القطنية",
+      "نظام تتبع رقمي لإنتاجية المحطات والقطع لضمان دقة المواعيد",
+      "بيئة عمل مريحة ومطابقة لاشتراطات السلامة والإنارة الصناعية"
+    ],
+    image: "/BG/Apparel Manufacturing/Ready-Made Garment Manufacturing.jpg"
+  },
+  {
+    id: "sewing-machinery",
+    number: "02",
+    titleEn: "Sewing Machinery Fleet",
+    titleAr: "أسطول ماكينات الخياطة المتطورة",
+    leadEn: "Over 250 heavy-duty computerized machines from industry leaders Juki, Brother, and Pegasus.",
+    leadAr: "أكثر من 250 ماكينة خياطة إلكترونية متقدمة من كبرى العلامات اليابانية مثل Juki وBrother وPegasus.",
+    specsEn: [
+      "Computerized direct-drive lockstitch sewing machines",
+      "4-thread and 5-thread high-speed differential overlock units",
+      "Coverstitch (Flatlock) machines for activewear & underwear seams",
+      "Automatic programmable pattern-tack and bar-tack stations"
+    ],
+    specsAr: [
+      "ماكينات سنجر إلكترونية Direct-Drive موفرة للطاقة وفائقة الدقة",
+      "ماكينات أوفرلوك 4 فتلة و5 فتلة سريعة للتشطيب الحركي المرن",
+      "ماكينات فلاتلوك (Flatlock) مخصصة للملابس الرياضية والداخلية",
+      "وحدات فرماتورة وتثبيت مبرمجة إلكترونياً لمتانة درزات الضغط"
+    ],
+    image: "/BG/Apparel Manufacturing/Apparel Manufacturing Home Page.jpg"
+  },
+  {
+    id: "cutting-facilities",
+    number: "03",
+    titleEn: "Precision Cutting Facilities",
+    titleAr: "غرف ومرافق القص الآلي",
+    leadEn: "Long-bed spreading tables and computerized cutting capabilities ensuring millimeter-accurate fabric plies.",
+    leadAr: "طاولات فرد أوتوماتيكية وقص فائق الدقة يضمن تطابق طبقات القماش بنسبة 100% وخفض الهدر.",
+    specsEn: [
+      "18-meter precision spreading tables with vacuum tension control",
+      "High-ply reciprocating vertical knife cutting machines",
+      "End-of-ply automatic fabric edge aligners",
+      "Laser-guided notch and drill marking for pocket placements"
+    ],
+    specsAr: [
+      "طاولات فرد أقمشة بطول 18 متراً مزودة بنظام شفط وتثبيت هوائي",
+      "ماكينات قص رأسي للطبقات الكثيفة تضمن استقامة الحواف",
+      "حساسات محاذاة آلية لحواف الأقمشة لتقليل نسبة الهدر في القماش",
+      "تحديد مواضع الجيوب والأزرار بالعلامات الضوئية الدقيقة"
+    ],
+    image: "/BG/Apparel Manufacturing/Ready-Made Garment Manufacturing.jpg"
+  },
+  {
+    id: "pattern-making",
+    number: "04",
+    titleEn: "CAD / CAM Pattern Making & Grading",
+    titleAr: "هندسة الباترون وتدريج المقاسات بالكمبيوتر",
+    leadEn: "State-of-the-art Gerber & Lectra digital pattern systems executing exact fit grading from XS to 5XL.",
+    leadAr: "أنظمة باترونات رقمية متطورة (Gerber وLectra) لتدريج المقاسات بدقة متناهية من XS إلى 5XL.",
+    specsEn: [
+      "Digital marker optimization yielding maximum fabric utilization (>88%)",
+      "Precision size grading for European, American, and Gulf body proportions",
+      "Full 3D digital fit prototyping reducing physical sample rounds",
+      "Standard DXF/AAMA export compatibility for international tech packs"
+    ],
+    specsAr: [
+      "تعشيق آلي للماركر الرقمي يحقق أقصى استغلال للمساحة (>88%)",
+      "تدريج مقاسات مطابق للجداول القياسية الأوروبية والأمريكية والخليجية",
+      "محاكاة القياسات ثلاثية الأبعاد (3D Fit) لتقليل دورات العينات",
+      "تصدير واستيراد الباترونات بصيغ DXF وAAMA المتوافقة عالمياً"
+    ],
+    image: "/BG/Apparel Manufacturing/Product Development & Sampling.jpg"
+  },
+  {
+    id: "sample-development",
+    number: "05",
+    titleEn: "Sample Development & Rapid Prototyping",
+    titleAr: "تطوير العينات والنماذج الأولية السريعة",
+    leadEn: "Dedicated master sampling room turning sketches and mood boards into approved fit samples within 5–7 days.",
+    leadAr: "غرفة عينات تخصصية تضم أمهر الفنيين لتحويل الاسكتشات والمراجع إلى عينات قياس معتمدة خلال 5-7 أيام.",
+    specsEn: [
+      "Proto-sample, fit-sample, and pre-production (PP) sample development",
+      "On-site master tailor and pattern engineer collaboration",
+      "Comprehensive size set and salesman sample (SMS) runs",
+      "Detailed bill of materials (BOM) and tech pack generation"
+    ],
+    specsAr: [
+      "إنهاء العينات الأولية (Proto) وعينات القياس وعينات ما قبل الإنتاج (PP)",
+      "تعاون مباشر بين مصممي الباترون والخبراء الفنيين للتطريز والتشطيب",
+      "تنفيذ عينات المقاسات الكاملة (Size Sets) وعينات ممثلي المبيعات (SMS)",
+      "إعداد ملف المواصفات الفنية الكامل (Tech Pack) وجداول المواد الخام (BOM)"
+    ],
+    image: "/BG/Apparel Manufacturing/Product Development & Sampling.jpg"
+  },
+  {
+    id: "fabric-sourcing",
+    number: "06",
+    titleEn: "Fabric Sourcing & Development",
+    titleAr: "توريد وتطوير الأقمشة والغزول",
+    leadEn: "Vertical integration with SBA textile mills and premier Egyptian long-staple cotton spinners.",
+    leadAr: "ارتباط صناعي مباشر بمصانع أقمشة المجموعة وموردي القطن المصري طويل التيلة المعتمد.",
+    specsEn: [
+      "100% Giza combed Egyptian cotton (Single jersey, Pique, Interlock, Rib)",
+      "Cotton-Lycra, French Terry, CVC, and poly-cotton performance blends",
+      "Woven poplin, twill, dobby, and oxford fabrics for shirt manufacturing",
+      "OEKO-TEX Standard 100 and GOTS certified organic yarn partnerships"
+    ],
+    specsAr: [
+      "قطن مصري ممشط 100% (سنجل جيرسي، بيكيه، إنترلوك، وريب)",
+      "مخاليط قطن ليكرا، ميلتون (French Terry)، وأقمشة الأداء الرياضي CVC",
+      "أقمشة بوبلين وتويل وأكسفورد منسوجة فائقة الجودة لقمصان التصدير",
+      "شراكات أقمشة معتمدة بشهادات OEKO-TEX Standard 100 والقطن العضوي GOTS"
+    ],
+    image: "/BG/Apparel Manufacturing/Textile Mill & Internal Dyeing.jpg"
+  },
+  {
+    id: "printing-embroidery",
+    number: "07",
+    titleEn: "Printing & Embroidery Techniques",
+    titleAr: "تقنيات الطباعة والتطريز الصناعي",
+    leadEn: "Multi-head Tajima embroidery machines and automated screen printing lines delivering durable brand detailing.",
+    leadAr: "ماكينات تطريز تاجيما متعددة الرؤوس وخطوط طباعة شاشة آلية تضمن ثبات ألوان ومظهر فخم.",
+    specsEn: [
+      "Multi-head computerized embroidery (up to 12 colors per design)",
+      "High-density (3D puff), sequin, chenille, and appliqué embroidery",
+      "Automatic screen printing: Plastisol, water-based, discharge, and foil",
+      "Dye-sublimation and Direct-to-Garment (DTG) digital printing"
+    ],
+    specsAr: [
+      "تطريز كمبيوتر متعدد الرؤوس حتى 12 لوناً مختلفاً في التصميم الواحد",
+      "تطريز بارز ثلاثي الأبعاد (3D Puff) وتطريز شينيل وتطبيقات قماشية",
+      "طباعة شاشة حريرية آلية: بلاستيزول، أحبار مائية صديقة للبيئة، وفروتي",
+      "طباعة حرارية ديجيتال وسبلميشن عالية الوضوح للأقمشة الرياضية"
+    ],
+    image: "/BG/Apparel Manufacturing/Ready-Made Garment Manufacturing.jpg"
+  },
+  {
+    id: "washing-finishing",
+    number: "08",
+    titleEn: "Washing & Industrial Finishing",
+    titleAr: "الغسيل الصناعي والتشطيب النهائي",
+    leadEn: "Industrial garment wash, enzyme softening, and steam tunnel finishing ensuring zero shrinkage and luxurious hand-feel.",
+    leadAr: "غسيل إنزيمي صناعي وتنعيم وتجفيف وتشطيب بنفق البخار لضمان ثبات المقاس وملمس فاخر.",
+    specsEn: [
+      "Garment enzyme, silicone, and bio-wash treatment barrels",
+      "Steam tunnel form finishers and vacuum pressing boards",
+      "Anti-pilling, antimicrobial, and moisture-wicking chemical finishes",
+      "Strict shrinkage stability testing (less than 3% residual tolerance)"
+    ],
+    specsAr: [
+      "براميل معالجة بالغسيل الإنزيمي والسيليكوني لملمس ناعم يدوم طويلاً",
+      "أنفاق بخار وطاولات كي وشفط أوتوماتيكية لإظهار رونق الملابس",
+      "معالجات كيميائية مقاومة للوبرية ومضادة للبكتيريا وسريعة الجفاف",
+      "اختبارات ثبات انكماش صارمة تضمن عدم تغير المقاس بعد الغسيل المنزلي"
+    ],
+    image: "/BG/Apparel Manufacturing/Apparel Manufacturing Home Page.jpg"
+  },
+  {
+    id: "quality-inspection",
+    number: "09",
+    titleEn: "Quality Inspection & Testing Protocols",
+    titleAr: "الفحص ومراقبة الجودة الصارمة",
+    leadEn: "Multi-gate quality control following international AQL 2.5 / 4.0 standards with metal/needle detection.",
+    leadAr: "منظومة فحص متعددة البوابات تطبق معايير AQL 2.5/4.0 العالمية مع أجهزة كشف الإبر والمعادن.",
+    specsEn: [
+      "4-point fabric inspection upon raw roll arrival",
+      "100% in-line sewing inspection during critical production stages",
+      "Automated metal detector scanning ensuring infant and child safety",
+      "Comprehensive lab tests: Colorfastness, seam slippage, and tensile pull"
+    ],
+    specsAr: [
+      "فحص أثواب الأقمشة بنظام النقاط الأربعة قبل السماح بدخولها للقص",
+      "فحص مرحلي 100% على خطوط الخياطة لضمان مطابقة عينة الاعتماد",
+      "تمرير كافة القطع على أجهزة الكشف عن الإبر والمعادن لسلامة المستهلك",
+      "اختبارات معملية لثبات الصباغة وقوة الشد ومقاومة التمزق"
+    ],
+    image: "/BG/Apparel Manufacturing/Rigorous Quality Assurance.jpg"
+  },
+  {
+    id: "packaging-export",
+    number: "10",
+    titleEn: "Packaging & Export Logistics Preparation",
+    titleAr: "التعبئة والتغليف وتجهيز الشحن للتصدير",
+    leadEn: "Custom retail-ready packaging, barcode tagging, moisture-barrier polybagging, and export container stuffing.",
+    leadAr: "تعبئة جاهزة للعرض التجاري، ملصقات الباركود، أكياس محكمة عازلة للرطوبة، وتجهيز الحاويات للتصدير.",
+    specsEn: [
+      "Client-branded woven neck labels, care tags, and price hangtags",
+      "Individual eco-friendly bio-polybags with warning micro-perforations",
+      "Heavy-duty 5-ply export master cartons with moisture desiccant bags",
+      "Palletized container consolidation and EUR-1 / COO export documentation"
+    ],
+    specsAr: [
+      "تركيب الليبل المنسوج، وبطاقات العناية (Care Labels)، وملصقات الباركود",
+      "تكييس فردي بأكياس بولي قابلة للتحلل مطابقة لاشتراطات سلاسل التجزئة",
+      "كراتين تصدير كرتونية خماسية الطبقات مدعمة بأكياس امتصاص الرطوبة",
+      "رص الحاويات وتجهيز شهادات المنشأ (EUR-1 / Certificate of Origin)"
+    ],
+    image: "/BG/Apparel Manufacturing/FOB Manufacturing Programs.jpg"
+  }
+];
+
+// ==========================================
+// 3. 11 STRUCTURED PRODUCT CATEGORIES
+// ==========================================
+export interface GarmentCategoryItem {
+  id: string;
+  nameEn: string;
+  nameAr: string;
+  descriptionEn: string;
+  descriptionAr: string;
+  itemsEn: string[];
+  itemsAr: string[];
+  image: string;
+}
+
+export const garmentProductCategories: GarmentCategoryItem[] = [
+  {
+    id: "womens-wear",
+    nameEn: "Women's Wear",
+    nameAr: "الأزياء النسائية والحريمي",
+    descriptionEn: "Dresses, modestwear, abayas, co-ord two-piece sets, tunics, and contemporary skirts.",
+    descriptionAr: "فساتين، عبايات وأزياء محتشمة، أطقم خروج متناسقة، وتونيكات عصرية بخامات راقية.",
+    itemsEn: ["Casual & Evening Dresses", "Modestwear & Abayas", "Co-ord Two-Piece Sets", "Tunics & Blouses"],
+    itemsAr: ["فساتين كاجوال وسهرة", "عبايات وأزياء محتشمة", "أطقم خروج متناسقة (2-Piece)", "بلوزات وتونيكات"],
+    image: "/BG/Apparel Manufacturing/Ready-Made Garment Manufacturing.jpg"
+  },
+  {
+    id: "mens-wear",
+    nameEn: "Men's Wear",
+    nameAr: "الملابس الرجالية الكلاسيكية والكاجوال",
+    descriptionEn: "Classic formal shirts, polo shirts, tailored chino pants, sweatshirts, and casual trousers.",
+    descriptionAr: "قمصان كلاسيك، بولو شيرت، بنطلونات تشينو، سويت شيرت، وملابس رجالية يومية مريحة.",
+    itemsEn: ["Classic Formal Shirts", "Polo Shirts", "Tailored Chinos & Trousers", "Casual Sweatshirts"],
+    itemsAr: ["قمصان كلاسيك رسمية", "قمصان بولو", "بنطلونات كاجوال وتشينو", "سويت شيرت وهوديز"],
+    image: "/BG/Apparel Manufacturing/Apparel Manufacturing Home Page.jpg"
+  },
+  {
+    id: "kidswear",
+    nameEn: "Kidswear & Infant Collections",
+    nameAr: "أزياء الأطفال والمواليد",
+    descriptionEn: "Children's dresses, playful co-ords, infant rompers, and safe ultra-soft everyday wear.",
+    descriptionAr: "فساتين أطفال، أطقم خروج حركية، سالوبيتات مواليد، وخامات قطنية آمنة 100%.",
+    itemsEn: ["Girls' Party & Casual Dresses", "Boys' Playwear Sets", "Infant Rompers & Sleepwear", "Kids' Cotton Essentials"],
+    itemsAr: ["فساتين بنات كاجوال وسهرة", "أطقم خروج للأولاد", "ملابس نوم وسالوبيت مواليد", "ملابس أطفال قطنية أساسية"],
+    image: "/BG/Apparel Manufacturing/Product Development & Sampling.jpg"
+  },
+  {
+    id: "sportswear",
+    nameEn: "Sportswear & Activewear",
+    nameAr: "الملابس الرياضية وأقمشة الأداء",
+    descriptionEn: "Moisture-wicking training tees, gym leggings, running shorts, and compression apparel.",
+    descriptionAr: "تيشيرتات تدريب سريعة الجفاف، ليجن رياضي، شورتات للجري، وملابس ضغط رياضية مرنة.",
+    itemsEn: ["Moisture-wicking T-Shirts", "Gym Leggings & Tights", "Athletic Tracksuits", "Training Shorts"],
+    itemsAr: ["تيشيرتات رياضية طاردة للعرق", "ليجن رياضي مرن", "ترنجات رياضية كاملة", "شورتات تدريب"],
+    image: "/BG/Apparel Manufacturing/Ready-Made Garment Manufacturing.jpg"
+  },
+  {
+    id: "underwear",
+    nameEn: "Underwear & Loungewear",
+    nameAr: "الملابس الداخلية والمنزلية (Loungewear)",
+    descriptionEn: "100% combed cotton undershirts, boxer briefs, thermal baselayers, and pyjama sets.",
+    descriptionAr: "فانلات داخلية قطن ممشط 100%، بوكسرات مريحة، ملابس تدفئة داخلية، وبيجامات منزلية.",
+    itemsEn: ["Men's Combed Cotton Vests", "Boxer Briefs & Trunks", "Thermal Baselayers", "Luxury Pyjama Sets"],
+    itemsAr: ["فانلات رجالي قطن ممشط", "بوكسرات وشورتات داخلية", "ملابس حرارية داخلية", "أطقم بيجامات منزلية فاخرة"],
+    image: "/BG/Apparel Manufacturing/Textile Mill & Internal Dyeing.jpg"
+  },
+  {
+    id: "t-shirts",
+    nameEn: "T-Shirts & Tops",
+    nameAr: "التيشيرتات والبولو",
+    descriptionEn: "Crewneck tees, V-necks, oversized streetwear, heavy-jersey basics, and graphic prints.",
+    descriptionAr: "تيشيرتات رقبة دائرية وV-neck، مقاسات أوفر سايز عصرية، خامات ثقيلة، وطباعات جرافيك.",
+    itemsEn: ["Basic Crewneck Tees", "Heavyweight 240+ GSM Tees", "Oversized Streetwear", "Graphic Printed Tees"],
+    itemsAr: ["تيشيرتات سادة يومية", "تيشيرتات خامات ثقيلة +240 GSM", "أوفر سايز عصري", "تيشيرتات مطبوعة"],
+    image: "/BG/Apparel Manufacturing/Ready-Made Garment Manufacturing.jpg"
+  },
+  {
+    id: "leggings",
+    nameEn: "Leggings & Tights",
+    nameAr: "الليجن وبنطلونات الاسترتش",
+    descriptionEn: "Cotton-spandex stretch leggings, high-waist seamless designs, and fleece-lined tights.",
+    descriptionAr: "ليجن قطن سباندكس فائق المرونة، تصميمات خصر عالي بدون درزات، وليجن شتوي مبطن.",
+    itemsEn: ["Cotton-Elastane Everyday Leggings", "Seamless High-Waist Tights", "Fleece-Lined Winter Leggings", "Cropped Capri Leggings"],
+    itemsAr: ["ليجن قطن ليكرا يومي", "ليجن خصر مرتفع (Seamless)", "ليجن مبطن بالفرو للشتاء", "بنطلونات كابري استرتش"],
+    image: "/BG/Apparel Manufacturing/Product Development & Sampling.jpg"
+  },
+  {
+    id: "jackets",
+    nameEn: "Jackets & Outerwear",
+    nameAr: "الجواكت والملابس الخارجية",
+    descriptionEn: "Puffer jackets, lightweight windbreakers, softshell zip-ups, and tailored casual blazers.",
+    descriptionAr: "جواكت بافر مبطنة، وند بريكر خفيف، جواكت سوفت شيل بسحاب، وبليزرات كاجوال عصرية.",
+    itemsEn: ["Lightweight Puffer Jackets", "Water-resistant Windbreakers", "Zip-Up Hooded Jackets", "Casual Unstructured Blazers"],
+    itemsAr: ["جواكت بافر خفيفة ودافئة", "وند بريكر مقاوم للماء", "جواكت كاجوال بسحاب وغطاء رأس", "بليزرات كاجوال غير مبطنة"],
+    image: "/BG/Apparel Manufacturing/Apparel Manufacturing Home Page.jpg"
+  },
+  {
+    id: "classic-shirts",
+    nameEn: "Classic Shirts",
+    nameAr: "القمصان الكلاسيكية والرسمية",
+    descriptionEn: "High-thread-count cotton poplin and twill shirts, fused collars, and precision French cuffs.",
+    descriptionAr: "قمصان بوبلين وتويل قطنية عالية الكثافة، ياقات وأساور مدمجة بدقة، وتشطيب أزرار فاخر.",
+    itemsEn: ["Slim-Fit Formal Business Shirts", "Spread Collar Poplin Shirts", "Button-Down Oxford Shirts", "Evening French-Cuff Shirts"],
+    itemsAr: ["قمصان رسمية بقصة سليم فت", "قمصان بوبلين بياقة مفتوحة", "قمصان أكسفورد كاجوال وبزنس", "قمصان سهرة بأساور فرنسية"],
+    image: "/BG/Apparel Manufacturing/FOB Manufacturing Programs.jpg"
+  },
+  {
+    id: "casual-wear",
+    nameEn: "Casual Wear",
+    nameAr: "الملابس الكاجوال اليومية",
+    descriptionEn: "Hoodies, French terry sweatpants, casual shorts, cargo pants, and relaxed denim-alternative bottoms.",
+    descriptionAr: "هوديز، بنطلونات سويت بانتس قطنية، شورتات كاجوال، وبنطلونات كارغو بأعلى جودة خياطة.",
+    itemsEn: ["Heavyweight Fleece Hoodies", "French Terry Joggers", "Relaxed Cargo Pants", "Casual Twill Shorts"],
+    itemsAr: ["هوديز قطن ميلتون ثقيل", "بانتس رياضي وجوجر", "بنطلونات كارغو مريحة", "شورتات تويل كاجوال"],
+    image: "/BG/Apparel Manufacturing/Ready-Made Garment Manufacturing.jpg"
+  },
+  {
+    id: "seasonal-collections",
+    nameEn: "Seasonal Collections",
+    nameAr: "المجموعات الموسمية والكبسولات",
+    descriptionEn: "Spring/Summer breathable linen-cotton lines and Autumn/Winter cozy knit and fleece assortments.",
+    descriptionAr: "تشكيلات ربيع/صيف من الكتان والقطن الخفيف، ومجموعات خريف/شتاء دافئة من الصوف والميلتون.",
+    itemsEn: ["Summer Linen-Cotton Capsule", "Winter Heavyknit & Fleece Drop", "Ramadan & Eid Modest Collections", "Back-to-School Essentials"],
+    itemsAr: ["مجموعة الصيف القطنية الكتانية", "مجموعة الشتاء الدافئة من الميلتون", "مجموعات رمضان والأعياد المحتشمة", "تشكيلات العودة للمدارس"],
+    image: "/BG/Apparel Manufacturing/Product Development & Sampling.jpg"
+  }
+];
+
+// ==========================================
+// 4. DEDICATED CLASSIC SHIRT MANUFACTURING
+// ==========================================
+export const garmentClassicShirtFacility = {
+  headingEn: "Specialized Classic Shirt Manufacturing Line",
+  headingAr: "خط إنتاج وتصنيع القمصان الكلاسيكية المتخصص",
+  subtitleEn: "A dedicated manufacturing ecosystem engineered strictly for high-end formal, business, and luxury shirts.",
+  subtitleAr: "خط إنتاج مستقل مجهز بماكينات يابانية متخصصة لتصنيع القمصان الرسمية وبدل العمل وفق أرقى معايير الخياطة العالمية.",
+  monthlyCapacityEn: "45,000 Certified Shirts / Month",
+  monthlyCapacityAr: "45,000 قميص كلاسيكي معتمد شهرياً",
+  noteEn: "This capacity is measured and dedicated exclusively to the Classic Shirt Line, separate from general knitwear throughput.",
+  noteAr: "هذه الطاقة الإنتاجية مخصصة ومقاسة حصرياً لخط تصنيع القمصان، ومنفصلة تماماً عن طاقة مصانع الملابس القطنية الأخرى.",
+  specializedMachinery: [
+    {
+      nameEn: "Automated Collar Profile Stitchers",
+      nameAr: "ماكينات الخياطة الآلية لبروفايل الياقات",
+      descEn: "Laser-guided profile stitchers executing identical, razor-sharp collar points without manual deviation.",
+      descAr: "ماكينات آلية موجهة بالليزر لخياطة حواف الياقات بدقة متطابقة تماماً ودون أي انحراف يدوي."
+    },
+    {
+      nameEn: "Continuous Rotary Fusing Presses",
+      nameAr: "مكابس اللصق الحراري الدوارة المستمرة",
+      descEn: "Precision temperature and pressure-controlled interlining bonding preventing bubbling and puckering.",
+      descAr: "مكابس هيدروليكية دوارة مضبوطة الحرارة والضغط للصق الحشوات لمنع ظهور أي فقاعات أو تجاعيد بعد الغسيل."
+    },
+    {
+      nameEn: "Electronic Cuff Forming & Stitching Units",
+      nameAr: "وحدات تشكيل وخياطة الأساور الإلكترونية",
+      descEn: "Dedicated jig-based cuff stitchers delivering consistent round or mitered cuff profiles.",
+      descAr: "ماكينات مجهزة بقوالب تشغيل لتنفيذ الأساور المستديرة أو المربعة بانسيابية تامة وتطابق كامل."
+    },
+    {
+      nameEn: "Computerized Index Buttoning & Buttonholing",
+      nameAr: "محطات الأزرار والعراوي الإلكترونية المؤتمتة",
+      descEn: "Indexed automatic spacing aligning front placket buttons and buttonholes down to the millimeter.",
+      descAr: "محطات تغذية آلية تضبط المسافات البينية للأزرار والعراوي على مرد القميص بدقة المليمتر."
+    }
+  ],
+  workflowSteps: [
+    { step: "01", titleEn: "Precision Collar & Cuff Cutting", titleAr: "قص الياقات والأساور بالقوالب الدقيقة" },
+    { step: "02", titleEn: "Controlled Temperature Interlining Fusing", titleAr: "اللصق الحراري المضبوط للحشوات" },
+    { step: "03", titleEn: "Placket Engineering & Front Assembly", titleAr: "تجهيز وتركيب المرد الأمامي للقميص" },
+    { step: "04", titleEn: "Collar Setting & Point Inspection", titleAr: "تركيب الياقة وفحص زوايا النقاط" },
+    { step: "05", titleEn: "Sleeve Setting & French Seam Closing", titleAr: "تركيب الأكمام والخياطة الفرنسية المغلقة" },
+    { step: "06", titleEn: "Automated Index Buttonhole & Button Stitch", titleAr: "تفتيح العراوي وتركيب الأزرار آلياً" },
+    { step: "07", titleEn: "18-Point Final Inspection & Cardboard Fold", titleAr: "الفحص الشامل لـ 18 نقطة جودة والطي والتغليف" }
+  ],
+  qualityBenchmarks: [
+    { metric: "16 – 18", labelEn: "Stitches Per Inch (SPI)", labelAr: "غرزة في البوصة (SPI)", descEn: "Ultra-fine seam density matching British & Italian tailoring benchmarks", descAr: "كثافة حياكة فائقة النعومة مطابقة لأعلى المعايير الإيطالية والبريطانية" },
+    { metric: "0.5 mm", labelEn: "Maximum Margin Tolerance", labelAr: "أقصى نسبة سماح بالدرزات", descEn: "Laser-measured seam margin consistency across all critical panels", descAr: "ثبات مسافات الخياطة وهوامش الدرزات عبر كافة أجزاء القميص" },
+    { metric: "100%", labelEn: "Pre-Shrunk Interlinings", labelAr: "حشوات معالجة ضد الانكماش", descEn: "High-grade imported woven interlinings tested for 50 commercial laundry cycles", descAr: "حشوات منسوجة مستوردة معالجة ومختبرة لتحمل أكثر من 50 دورة غسيل" }
+  ]
+};
+
+// ==========================================
+// 5. 8 EXPANDED MANUFACTURING SERVICES
+// ==========================================
+export interface GarmentManufacturingService {
+  id: string;
+  number: string;
+  badgeEn: string;
+  badgeAr: string;
+  titleEn: string;
+  titleAr: string;
+  leadEn: string;
+  leadAr: string;
+  descEn: string;
+  descAr: string;
+  capabilitiesEn: string[];
+  capabilitiesAr: string[];
+  deliverablesEn: string[];
+  deliverablesAr: string[];
+  image: string;
+}
+
+export const garmentServicesExpanded: GarmentManufacturingService[] = [
+  {
+    id: "oem-manufacturing",
+    number: "01",
+    badgeEn: "Contract Production · Customer Specifications",
+    badgeAr: "تصنيع تعاقدي · مواصفات العميل",
+    titleEn: "OEM Manufacturing",
+    titleAr: "التصنيع كشريك للمعدات الأصلية (OEM)",
+    leadEn: "Flawless bulk manufacturing adhering strictly to the client's provided patterns, tech packs, and fabric requirements.",
+    leadAr: "تصنيع كمي متطابق تماماً مع الباترونات وملفات المواصفات الفنية والخامات المعتمدة من العميل.",
+    descEn: "Our OEM contract manufacturing service takes your fully developed designs, approved samples, and bills of materials to execute bulk production with disciplined cycle times and international quality compliance.",
+    descAr: "نقدم خدمة التصنيع التعاقدي للملابس الجاهزة وفق تصميماتك وعيناتك المعتمدة، مع الالتزام التام بالجداول الزمنية، والمواصفات الفنية، ومعايير الجودة العالمية.",
+    capabilitiesEn: ["Strict tech-pack conformance", "Flexible order scaling", "In-line milestone audits", "Client-supplied fabric handling"],
+    capabilitiesAr: ["مطابقة تامة لملف المواصفات الفنية", "مرونة في استيعاب أحجام الطلبيات", "مراجعات جودة في كل مرحلة إنتاج", "إمكانية التشغيل بخامات يوردها العميل"],
+    deliverablesEn: ["Pre-production approval sample", "Bulk production conforming to AQL 2.5", "Inspection certificate"],
+    deliverablesAr: ["عينة اعتماد ما قبل الإنتاج (PP Sample)", "إنتاج كمي مطابق لمعايير AQL 2.5", "شهادة الفحص ومطابقة الجودة"],
+    image: "/BG/Apparel Manufacturing/Ready-Made Garment Manufacturing.jpg"
+  },
+  {
+    id: "odm-development",
+    number: "02",
+    badgeEn: "Concept to Production · In-House Library",
+    badgeAr: "من الفكرة للإنتاج · كتالوج الموديلات",
+    titleEn: "ODM Development",
+    titleAr: "التصميم والتصنيع المشترك (ODM)",
+    leadEn: "Complete concept creation where brands select and customize designs from our 20,000+ style library for private branding.",
+    leadAr: "خدمة تطوير وتصميم متكاملة تتيح للعلامات التجارية اختيار وتخصيص موديلات من محفظتنا التي تضم أكثر من 20,000 تصميم.",
+    descEn: "We provide comprehensive fashion development for brands needing fresh seasonal collections without maintaining internal design teams. Choose from our proven silhouette library, customize colors and trims, and launch under your own brand.",
+    descAr: "نوفر حلاً متكاملاً للعلامات التجارية التي ترغب في إطلاق مجموعات أزياء جديدة دون الحاجة لفرق تصميم داخلية، عبر تعديل وتخصيص تصميماتنا الجاهزة بعلامتك التجارية.",
+    capabilitiesEn: ["Trend-driven fashion design", "Silhouettes engineered for fit", "Rapid custom graphic application", "Commercial price-point engineering"],
+    capabilitiesAr: ["تصميمات متوافقة مع أحدث خطوط الموضة", "قصات مجربة ومثبتة في الأسواق", "تخصيص سريع للألوان والطباعات", "هندسة تكلفة تناسب السعر المستهدف"],
+    deliverablesEn: ["Trend capsule collection proposals", "Fabric & color swatch cards", "Branded prototype approvals"],
+    deliverablesAr: ["مقترحات كبسولات أزياء موسمية", "بطاقات خامات وعينات ألوان معتمدة", "عينات أولية معتمدة بهوية علامتك"],
+    image: "/BG/Apparel Manufacturing/Product Development & Sampling.jpg"
+  },
+  {
+    id: "private-label",
+    number: "03",
+    badgeEn: "Turnkey Brand Identity · Full Packaging",
+    badgeAr: "هوية علامة كاملة · تغليف احترافي",
+    titleEn: "Private Label Manufacturing",
+    titleAr: "التصنيع للعلامات التجارية الخاصة (Private Label)",
+    leadEn: "End-to-end execution of apparel collections bearing your bespoke labels, hangtags, barcodes, and custom retail packaging.",
+    leadAr: "تصنيع متكامل لمجموعات أزياء كاملة تحمل علامتك التجارية، والملصقات، والباركود، والتغليف التجاري الجاهز للبيع.",
+    descEn: "Turnkey private label manufacturing transforming your brand identity into retail-ready garments, from custom woven damask labels and heat-transfer tags to embossed hangtags, branded polybags, and retail master cartons.",
+    descAr: "خدمة متكاملة تشمل تصنيع الملابس وتجهيز كافة مستلزمات هوية العلامة التجارية من ليبل منسوج، وبطاقات عناية، وتغليف كرتوني مخصص للعرض في المتاجر مباشرة.",
+    capabilitiesEn: ["Woven & printed label sourcing", "Custom barcode & RFID hangtag integration", "Retail-ready individual folding & bagging", "Anti-counterfeit security tags"],
+    capabilitiesAr: ["توريد الليبل المنسوج والحراري المخصص", "دمج بطاقات الأسعار والباركود وRFID", "تغليف فردي جاهز للعرض بالمتاجر", "ملصقات وعلامات أمان مخصصة للعلامة"],
+    deliverablesEn: ["Complete branded collection ready for retail shelves", "Barcode compliance report", "Master export cartons"],
+    deliverablesAr: ["مجموعة ملابس متكاملة جاهزة للأرفف والمتاجر", "تقرير مطابقة الباركود وسلاسل التوريد", "كراتين تصدير مطبوعة بهوية البراند"],
+    image: "/BG/Apparel Manufacturing/Private Label Manufacturing.jpg"
+  },
+  {
+    id: "fob-manufacturing",
+    number: "04",
+    badgeEn: "Full Package · Raw Material to Export Port",
+    badgeAr: "تصنيع شامل FOB · من الغزل حتى الميناء",
+    titleEn: "FOB Manufacturing Programs",
+    titleAr: "برامج التصنيع الشامل (FOB)",
+    leadEn: "Turnkey coordination from raw fabric yarn and trims to finished packed garments delivered directly to the export shipping port.",
+    leadAr: "إدارة صناعية شاملة تتولى توفير الأقمشة والإكسسوارات والتصنيع والتعبئة والشحن حتى ميناء التصدير (FOB).",
+    descEn: "Our FOB (Free on Board) programs give international buyers full cost transparency and risk mitigation. We handle yarn spinning, knitting, dyeing, cutting, sewing, finishing, quality auditing, and export customs clearance under a single unified contract.",
+    descAr: "توفر برامج FOB للمستوردين والشركات الدولية شفافية كاملة في التكلفة وإدارة المخاطر، حيث نتولى الغزل والنسيج والصباغة والقص والخياطة والجمارك حتى التسليم على ظهر السفينة.",
+    capabilitiesEn: ["Raw material procurement & financial underwriting", "Internal dyeing lab color approvals", "Customs export clearance and shipping coordination", "Single fixed price per garment with zero hidden costs"],
+    capabilitiesAr: ["تمويل وتوريد كافة الخامات ومستلزمات الإنتاج", "ضبط ومطابقة ألوان الصباغة معملياً", "التخليص الجمركي وتجهيز مستندات الشحن والتصدير", "سعر تعاقدي ثابت ومحدد للقطعة دون تكاليف خفية"],
+    deliverablesEn: ["Export-cleared container at shipping port", "Bill of Lading & Commercial Invoice", "Certificate of Origin & EUR-1 Form"],
+    deliverablesAr: ["حاوية بضائع مخلصة جمركياً بميناء التصدير", "بوليصة الشحن والفاتورة التجارية المعتمدة", "شهادة المنشأ المصرية ونموذج EUR-1 التصديري"],
+    image: "/BG/Apparel Manufacturing/FOB Manufacturing Programs.jpg"
+  },
+  {
+    id: "product-development",
+    number: "05",
+    badgeEn: "Engineering & Tech Packs · Pattern Optimization",
+    badgeAr: "الهندسة الفنية · ملفات Tech Pack",
+    titleEn: "Product Development",
+    titleAr: "تطوير المنتجات وهندسة الأزياء",
+    leadEn: "Translating designer sketches, physical garments, or mood references into mass-producible technical engineering packs.",
+    leadAr: "تحويل الرسومات والتصميمات والمراجع الإبداعية إلى ملفات هندسية فنية (Tech Packs) قابلة للتصنيع الكمي التجاري.",
+    descEn: "We bridge the gap between creative fashion design and industrial production. Our technical design team constructs digital patterns, defines tolerance charts, calculates fabric shrinkage allowances, and specifies stitch constructions.",
+    descAr: "نربط بين الإبداع الفني والتنفيذ الصناعي الدقيق، من خلال إعداد جداول القياسات وتسامح الدرزات، واحتساب نسب انكماش الأقمشة وتحديد أنواع الخيوط والماكينات المناسبة.",
+    capabilitiesEn: ["Complete Tech Pack authoring", "Fabric consumption calculations", "Grading rule formulation across sizes", "Production feasibility analysis"],
+    capabilitiesAr: ["إعداد ملفات المواصفات الفنية الكاملة (Tech Packs)", "حسابات استهلاك القماش الدقيقة لكل مقاس", "وضع قواعد تدريج المقاسات لمختلف الأسواق", "تحليل الجدوى التشغيلية وتكاليف الإنتاج الكمي"],
+    deliverablesEn: ["Production-ready Tech Pack Dossier", "Graded digital pattern files (DXF/AAMA)", "Stitch and construction specifications sheet"],
+    deliverablesAr: ["ملف Tech Pack فني متكامل جاهز للمصانع", "ملفات الباترون الرقمية المدرجة بجميع المقاسات", "جدول مواصفات الغرز وتقنيات الحياكة المعتمدة"],
+    image: "/BG/Apparel Manufacturing/Product Development & Sampling.jpg"
+  },
+  {
+    id: "sampling-prototyping",
+    number: "06",
+    badgeEn: "Rapid Sample Room · Fast Turnaround",
+    badgeAr: "غرفة عينات سريعة · اعتماد مسبق",
+    titleEn: "Sampling & Prototyping",
+    titleAr: "صناعة العينات والنماذج الأولية",
+    leadEn: "High-speed sample room turning initial prototypes into production-approved fit samples in record time.",
+    leadAr: "غرفة عينات مستقلة تضم نخبة من الفنيين لإنجاز عينات القياس والاعتماد في أوقات قياسية.",
+    descEn: "Before committing to bulk fabric cutting, our sampling line builds first prototypes, size sets, and counter samples to ensure absolute fit perfection, drape balance, and aesthetic appeal.",
+    descAr: "قبل بدء القص للإنتاج الكمي، تقوم وحدة العينات بإنتاج عينات المقاسات الأولى وعينات المطابقة للتحقق من دقة المقاسات وجماليات المظهر وجودة التنفيذ.",
+    capabilitiesEn: ["Proto-samples in 5–7 business days", "Size set sample production (XS to 3XL)", "Salesman Samples (SMS) for buyer showrooms", "Fit evaluation reports and alteration adjustments"],
+    capabilitiesAr: ["إنهاء العينات الأولى خلال 5 إلى 7 أيام عمل", "تنفيذ مجموعات المقاسات الكاملة (Size Sets)", "عينات معارض المبيعات للعملاء والمشترين (SMS)", "تقارير تقييم القياسات وتعديلات الباترون الفورية"],
+    deliverablesEn: ["Physical approved fit sample", "Sample measurement audit sheet", "Pre-production (PP) sign-off protocol"],
+    deliverablesAr: ["عينة فيت معتمدة ومطابقة للمواصفات", "جدول فحص وتدقيق قياسات العينة الفعلي", "محضر اعتماد عينة ما قبل الإنتاج (PP Sign-Off)"],
+    image: "/BG/Apparel Manufacturing/Product Development & Sampling.jpg"
+  },
+  {
+    id: "bulk-production",
+    number: "07",
+    badgeEn: "Volume Scalability · High Throughput",
+    badgeAr: "إنتاج كمي ضخم · دقة وانضباط",
+    titleEn: "Bulk Production",
+    titleAr: "الإنتاج الصناعي الكمي (Bulk Production)",
+    leadEn: "High-volume, repeatable garment manufacturing operating under rigorous lead-time schedules and synchronized lines.",
+    leadAr: "تنفيذ طلبيات الملابس بأحجام إنتاجية ضخمة مع التزام صارم بالمواعيد وتوحيد معايير الجودة عبر كافة القطع.",
+    descEn: "With 15 active lines and 250+ machines, we manage large-scale contract orders with zero compromise on quality. Parallel line synchronization ensures that whether you order 2,000 or 50,000 pieces, every piece matches the master sample.",
+    descAr: "بفضل خطوطنا الـ 15 وأسطول ماكيناتنا المتطور، ندير طلبيات التوريد الكبرى بكفاءة عالية، مما يضمن أن كل قطعة في طلبية الـ 50,000 تتطابق تماماً مع عينة الاعتماد.",
+    capabilitiesEn: ["Capacity scaling from 1,000 to 100,000+ pieces", "Line balancing to eliminate bottlenecks", "Real-time production tracking dashboards", "Synchronized color-batch production"],
+    capabilitiesAr: ["مرونة إنتاجية تبدأ من 1,000 وحتى أكثر من 100,000 قطعة", "توازن خطوط الإنتاج للقضاء على نقاط الاختناق", "متابعة رقمية لحظية لمعدلات الإنتاج اليومي", "تنظيم الإنتاج بحسب دفعات الصباغة والألوان (Lots)"],
+    deliverablesEn: ["Complete inspected order ready on schedule", "Final AQL 2.5 quality inspection certificate", "Carton packing list and shipping manifest"],
+    deliverablesAr: ["الطلبية الكاملة مفحوصة وجاهزة في الموعد المحدد", "شهادة الفحص النهائي للجودة بمعيار AQL 2.5", "كشف التعبئة التفصيلي (Packing List) وجدول الكراتين"],
+    image: "/BG/Apparel Manufacturing/Ready-Made Garment Manufacturing.jpg"
+  },
+  {
+    id: "fabric-development-sourcing",
+    number: "08",
+    badgeEn: "Yarn to Fabric · Laboratory Color Matching",
+    badgeAr: "تطوير الأنسجة · مطابقة الألوان معملياً",
+    titleEn: "Fabric Development & Sourcing",
+    titleAr: "تطوير وتوريد الأقمشة والغزول التخصصية",
+    leadEn: "Custom knitting, weaving, and laboratory lab-dip dyeing tailored to the exact GSM, hand-feel, and color requirements of your collection.",
+    leadAr: "تصنيع وتطوير أقمشة تريكو ومنسوجات مخصصة مع مطابقة ألوان الصباغة معملياً لتحقيق الملمس والوزن المستهدف.",
+    descEn: "Leveraging our integrated textile capabilities and strong domestic and imported yarn supply chains, we develop custom fabric weights (GSM), specialized knit structures, and lab-dip color formulations matching Pantone codes.",
+    descAr: "بالاعتماد على مصانع الأقمشة التابعة للمجموعة، نطور تراكيب نسيجية مخصصة، ونوفر مختلف أوزان الأقمشة (GSM)، مع مطابقة درجات ألوان بانتون (Pantone) معملياً.",
+    capabilitiesEn: ["Custom yarn spinning and knitting (Jersey, Pique, Rib, Interlock)", "Pantone-matched lab dips within 4 business days", "Specialty chemical finishes (Peach skin, anti-pilling, enzyme wash)", "Certified physical testing (Tensile, tear, colorfastness to washing/rubbing)"],
+    capabilitiesAr: ["غزل ونسيج أقمشة مخصصة (سنجل جيرسي، بيكيه، ريب، إنترلوك)", "مطابقة درجات ألوان بانتون عبر Lab Dips خلال 4 أيام عمل", "تشطيبات كيميائية ملمس الخوخ ومقاومة الوبرية ومقاومة البكتيريا", "فحوصات معملية لقوة الشد وثبات الألوان ضد الغسيل والاحتكاك"],
+    deliverablesEn: ["Approved Lab-Dip Color Swatches", "Fabric Technical Spec Sheet (Weight, Width, Shrinkage)", "Bulk Fabric Mill Roll Delivery"],
+    deliverablesAr: ["عينات ألوان الصباغة المعتمدة (Lab Dips)", "بطاقة المواصفات الفنية للقماش (الوزن، العرض، نسبة الانكماش)", "توريد أثواب الأقمشة المعتمدة لصالة القص"],
+    image: "/BG/Apparel Manufacturing/Textile Mill & Internal Dyeing.jpg"
+  }
+];
+
+// ==========================================
+// 6. PROJECTS & PORTFOLIO 4 CLASSIFICATIONS
+// ==========================================
+export const garmentPortfolioTypes = [
+  {
+    id: "ready-models",
+    titleEn: "Ready Manufacturing Models",
+    titleAr: "نماذج جاهزة للتصنيع الفوري",
+    descEn: "Over 550 fully engineered, graded styles from our catalogue ready for immediate bulk production with custom branding.",
+    descAr: "أكثر من 550 تصميماً متكاملاً ومدرج المقاسات من الكتالوج، جاهز لبدء الإنتاج الفوري بهوية علامتك الخاصة."
+  },
+  {
+    id: "previously-manufactured",
+    titleEn: "Previously Manufactured Products",
+    titleAr: "منتجات تم تصنيعها وتوريدها سابقاً",
+    descEn: "Documented styles successfully produced and delivered to wholesale buyers and retail showroom networks.",
+    descAr: "موديلات تم إنتاجها وتوريدها بنجاح لأسواق التوزيع وسلاسل التجزئة والمعارض التجارية."
+  },
+  {
+    id: "client-projects",
+    titleEn: "Client Projects & Private Labels",
+    titleAr: "مشروعات العملاء والعلامات التجارية الشريكة",
+    descEn: "Custom contract collections manufactured exclusively for international and regional brand partners under strict NDA.",
+    descAr: "مجموعات أزياء صُنعت خصيصاً لعلامات تجارية شريكة في أوروبا والخليج وفق اتفاقيات سرية تامة."
+  },
+  {
+    id: "development-samples",
+    titleEn: "Development Samples & Prototypes",
+    titleAr: "عينات ونماذج التطوير الأولية",
+    descEn: "Experimental silhouette prototypes, innovative wash tests, and seasonal runway concepts developed in our R&D lab.",
+    descAr: "نماذج أولية مبتكرة وتجارب غسيل وقصات جديدة طورها معمل العينات لاستكشاف خطوط الموضة القادمة."
+  }
+];
+
+// ==========================================
+// 7. FACTORY GALLERY
+// ==========================================
+export interface FactoryGalleryItem {
+  id: string;
+  titleEn: string;
+  titleAr: string;
+  categoryEn: string;
+  categoryAr: string;
+  image: string;
+  descEn: string;
+  descAr: string;
+}
+
+export const garmentFactoryGallery: FactoryGalleryItem[] = [
+  {
+    id: "gal-01",
+    titleEn: "Automated Spreading & Precision Cutting Hall",
+    titleAr: "صالة الفرد الآلي والقص الدقيق للأقمشة",
+    categoryEn: "Cutting Department",
+    categoryAr: "قسم القص وتجهيز الأقمشة",
+    image: "/BG/Apparel Manufacturing/Ready-Made Garment Manufacturing.jpg",
+    descEn: "18-meter tension-free vacuum spreading tables paired with high-ply vertical cutting cutters.",
+    descAr: "طاولات فرد أوتوماتيكية بطول 18 متراً مزودة بنظام شفط هوائي لتثبيت طبقات القماش أثناء القص."
+  },
+  {
+    id: "gal-02",
+    titleEn: "Modular Sewing Assembly Lines",
+    titleAr: "خطوط الخياطة والتجميع النمطية المتطورة",
+    categoryEn: "Sewing Production",
+    categoryAr: "صالة الخياطة والتشغيل",
+    image: "/BG/Apparel Manufacturing/Apparel Manufacturing Home Page.jpg",
+    descEn: "Synchronized direct-drive sewing stations operating under lean manufacturing line balancing.",
+    descAr: "ماكينات إلكترونية يابانية متقدمة تعمل بنظام التصنيع الرشيق لتفادي الاختناقات وتسريع الإنجاز."
+  },
+  {
+    id: "gal-03",
+    titleEn: "Dedicated Classic Shirt Specialty Unit",
+    titleAr: "خط إنتاج القمصان الكلاسيكية المتخصص",
+    categoryEn: "Classic Shirt Line",
+    categoryAr: "خط القمصان الكلاسيك",
+    image: "/BG/Apparel Manufacturing/FOB Manufacturing Programs.jpg",
+    descEn: "Automatic collar profile stitchers, fusing presses, and precision buttonhole stations.",
+    descAr: "ماكينات متخصصة لصق وتشكيل الياقات والأساور بدقة ليزرية تضمن مظهراً رسمياً فخماً."
+  },
+  {
+    id: "gal-04",
+    titleEn: "Multi-Gate Quality Inspection & Metal Detection",
+    titleAr: "محطات مراقبة الجودة والكشف عن المعادن",
+    categoryEn: "Quality Assurance",
+    categoryAr: "مراقبة وضمان الجودة",
+    image: "/BG/Apparel Manufacturing/Rigorous Quality Assurance.jpg",
+    descEn: "In-line measurement auditing, 100% pre-pack visual checks, and calibrated needle detectors.",
+    descAr: "فحص أبعاد وتسامح الدرزات، ومطابقة عينة الاعتماد، وتمرير القطع على كواشف الإبر الإلكترونية."
+  },
+  {
+    id: "gal-05",
+    titleEn: "CAD/CAM Pattern Development & Sample Room",
+    titleAr: "معمل الباترون الرقمي وتطوير العينات السريعة",
+    categoryEn: "Design & Sampling",
+    categoryAr: "التصميم والعينات",
+    image: "/BG/Apparel Manufacturing/Product Development & Sampling.jpg",
+    descEn: "Gerber and Lectra computerized grading stations executing fit-perfect prototypes in 5 days.",
+    descAr: "أنظمة تدريج المقاسات الرقمية وتجهيز العينات الأولية وعينات المبيعات خلال أوقات قياسية."
+  },
+  {
+    id: "gal-06",
+    titleEn: "Industrial Finishing, Pressing & Export Packaging",
+    titleAr: "صالة الكي والتشطيب النهائي والتعبئة للتصدير",
+    categoryEn: "Finishing & Packaging",
+    categoryAr: "التشطيب والتعبئة للتصدير",
+    image: "/BG/Apparel Manufacturing/Textile Mill & Internal Dyeing.jpg",
+    descEn: "Vacuum steam pressing tables, individual barcode tagging, and export carton consolidation.",
+    descAr: "طاولات كي بالبخار الشافط، تركيب بطاقات الباركود والأسعار، والتعبئة في كراتين التصدير خماسية الطبقات."
+  }
+];

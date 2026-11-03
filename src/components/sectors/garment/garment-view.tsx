@@ -158,85 +158,135 @@ function GarmentStartProjectView() {
   const requestedServiceId = useRouterState({
     select: (s) => (s.location.search as Record<string, string>)["service"],
   });
-  const matchedService = requestedServiceId
-    ? garmentServicesDetailed.find((s) => s.id === requestedServiceId)
-    : null;
 
   const [form, setForm] = useState({
-    productType: [] as string[],
-    cooperationType: "",
-    quantity: "",
-    fabricNotes: "",
-    company: "",
-    contact: "",
+    // Stage 1: Product Information
+    productCategory: "",
+    productType: "",
+    referenceImages: "",
+    modelDescription: "",
+
+    // Stage 2: Manufacturing Requirements
+    fabricType: "",
+    gsm: "",
+    composition: "",
+    sizes: [] as string[],
+    colors: "",
+    printingEmbroidery: [] as string[],
+    labelsPackaging: [] as string[],
+
+    // Stage 3: Order Details
+    estimatedQuantity: "",
+    targetPrice: "",
+    currency: "USD",
+    deliveryDate: "",
+    destinationCountry: "",
+    cooperationType: "FOB",
+
+    // Stage 4: Customer Information
+    companyName: "",
+    contactPerson: "",
+    jobTitle: "",
     email: "",
     phone: "",
-    country: "",
-    notes: "",
+    additionalNotes: "",
     consent: false,
     submitted: false,
     refNum: "",
   });
 
-  useEffect(() => {
-    if (matchedService) {
-      const title = ar ? matchedService.titleAr : matchedService.titleEn;
-      setForm((p) => ({
-        ...p,
-        notes: p.notes ? p.notes : (ar ? `الخدمة المطلوبة: ${title}` : `Requested Service: ${title}`),
-      }));
-    }
-  }, [matchedService, ar]);
   const up = (k: string, v: unknown) => setForm((p) => ({ ...p, [k]: v }));
 
-  const productTypes = ar
-    ? ["ملابس حريمي", "ملابس رجالي", "ملابس أطفال", "قمصان", "بدل سواريه", "أقمشة", "أخرى"]
-    : ["Women's Wear", "Men's Wear", "Kids Wear", "Shirts", "Soirée", "Fabrics", "Other"];
-  const cooperationTypes = ar
-    ? ["CM (تصنيع بخامات العميل)", "FOB (تصنيع شامل الخامات)", "Private Label", "OEM"]
-    : ["CM (Cut & Make)", "FOB (Full Package)", "Private Label", "OEM"];
+  const categories = ar
+    ? ["ملابس حريمي", "ملابس رجالي", "ملابس أطفال", "ملابس رياضية", "ملابس داخلية ومنزلية", "تيشيرتات وبولو", "ليجن واسترتش", "جواكت ومعاطف", "قمصان كلاسيكية", "كاجوال", "مجموعات موسمية"]
+    : ["Women's Wear", "Men's Wear", "Kidswear", "Sportswear", "Underwear & Loungewear", "T-Shirts & Polos", "Leggings & Tights", "Jackets & Outerwear", "Classic Shirts", "Casual Wear", "Seasonal Collections"];
 
-  const toggleProduct = (t: string) =>
-    setForm((p) => ({ ...p, productType: p.productType.includes(t) ? p.productType.filter((x) => x !== t) : [...p.productType, t] }));
+  const fabricTypes = ar
+    ? ["قطن مصري 100% (Single Jersey)", "قطن ليكرا (Cotton Spandex)", "بيكيه (Pique)", "إنترلوك (Interlock)", "ريب (Rib)", "ميلتون (French Terry)", "تويل (Twill Woven)", "بوبلين (Poplin Woven)", "أكسفورد (Oxford Woven)", "بوليستر رياضي (Dry-Fit)", "كتان مخلوط (Linen Blend)"]
+    : ["100% Combed Cotton (Single Jersey)", "Cotton-Lycra (Cotton Spandex)", "Pique", "Interlock", "Rib Knit", "French Terry (Fleece)", "Twill Woven", "Poplin Woven", "Oxford Woven", "Performance Polyester (Dry-Fit)", "Linen-Cotton Blend"];
+
+  const sizesList = ["XS", "S", "M", "L", "XL", "XXL", "3XL", "4XL", "Kids Sizes (2–14Y)"];
+
+  const embellishmentOptions = ar
+    ? ["طباعة سلك سكرين بلاستيزول", "طباعة أحبار مائية صديقة للبيئة", "تطريز كمبيوتر عادي", "تطريز ثلاثي الأبعاد 3D Puff", "طباعة حرارية ديجيتال DTG", "سبلميشن رياضي", "سادة بدون طباعة"]
+    : ["Plastisol Screen Print", "Water-Based Eco Print", "Flat Computer Embroidery", "3D Puff High-Density Embroidery", "DTG Digital Print", "Dye-Sublimation", "Plain / No Embellishment"];
+
+  const packagingOptions = ar
+    ? ["ليبل رقبة منسوج (Woven Label)", "طباعة حرارية داخلية (Heat Transfer)", "كارت أسعار وتعليق (Hangtag)", "ملصقات باركود مخصصة", "تكييس فردي بأكياس بولي قابلة للتحلل", "كراتين تصدير خماسية معتمدة"]
+    : ["Custom Woven Neck Label", "Inner Heat-Transfer Tag", "Branded Hangtag", "Custom Barcode / SKU Stickers", "Individual Bio-Polybags", "5-Ply Master Export Cartons"];
+
+  const cooperationTypes = [
+    { id: "FOB", titleEn: "FOB Manufacturing (Full Package from yarn to export port)", titleAr: "تصنيع شامل FOB (من القماش حتى ميناء التصدير)" },
+    { id: "Private-Label", titleEn: "Private Label (Custom collection with your full branding)", titleAr: "علامة تجارية خاصة Private Label (هوية وتغليف مخصص)" },
+    { id: "OEM", titleEn: "OEM Contract Manufacturing (Strict client specs execution)", titleAr: "تصنيع تعاقدي OEM (تنفيذ مواصفات العميل الدقيقة)" },
+    { id: "ODM", titleEn: "ODM Development (Select & customize from our 20,000+ catalog)", titleAr: "تصميم مشترك ODM (اختيار وتعديل من كتالوج المجموعة)" },
+  ];
+
+  const toggleSize = (s: string) => {
+    setForm((p) => ({
+      ...p,
+      sizes: p.sizes.includes(s) ? p.sizes.filter((x) => x !== s) : [...p.sizes, s]
+    }));
+  };
+
+  const toggleEmbellishment = (e: string) => {
+    setForm((p) => ({
+      ...p,
+      printingEmbroidery: p.printingEmbroidery.includes(e)
+        ? p.printingEmbroidery.filter((x) => x !== e)
+        : [...p.printingEmbroidery, e]
+    }));
+  };
+
+  const togglePackaging = (pkg: string) => {
+    setForm((p) => ({
+      ...p,
+      labelsPackaging: p.labelsPackaging.includes(pkg)
+        ? p.labelsPackaging.filter((x) => x !== pkg)
+        : [...p.labelsPackaging, pkg]
+    }));
+  };
 
   const handleSubmit = () => {
-    const ref = "GAR-" + Date.now().toString(36).toUpperCase();
+    const ref = "GAR-" + new Date().getFullYear() + "-" + Math.floor(1000 + Math.random() * 9000);
     setForm((p) => ({ ...p, submitted: true, refNum: ref }));
   };
 
   if (form.submitted) {
     return (
       <div className="py-16">
-        <div className="mx-auto max-w-2xl rounded-3xl border border-brand-green/40 bg-background/80 p-10 text-center backdrop-blur-2xl shadow-xl">
+        <div className="mx-auto max-w-2xl rounded-3xl border border-brand-green/40 bg-background/90 p-10 text-center backdrop-blur-2xl shadow-xl">
           <div className="mb-4 flex justify-center">
             <span className="flex size-16 items-center justify-center rounded-full bg-brand-green/10">
-              <Send className="size-8 text-brand-green-text" />
+              <CheckCircle2 className="size-8 text-brand-green-text" />
             </span>
           </div>
           <h2 className="font-head text-2xl font-extrabold text-foreground">
-            {ar ? "تم استلام طلبك!" : "Request Received!"}
+            {ar ? "تم استلام طلب التصنيع والتوريد بنجاح!" : "Manufacturing Brief Successfully Received!"}
           </h2>
-          <p className="mt-3 text-sm text-muted-foreground">
+          <div className="my-4 inline-block rounded-xl border border-brand-green/30 bg-brand-green/10 px-4 py-2 font-mono text-sm font-bold text-brand-green-text">
+            {ar ? `رقم الطلب المرجعي: ${form.refNum}` : `Reference Code: ${form.refNum}`}
+          </div>
+          <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed max-w-lg mx-auto">
             {ar
-              ? `رقم المرجع: ${form.refNum} — سيتواصل معك فريقنا خلال 48 ساعة عمل.`
-              : `Reference: ${form.refNum} — Our team will contact you within 48 business hours.`}
+              ? "تم تحويل مواصفات طلبكم إلى المكتب الفني وإدارة الإنتاج لتقييم المقايسات واستهلاك الأقمشة. سيتواصل معكم مدير حسابات التصدير بعرض سعر مبدئي وتفاصيل العينات خلال 48 ساعة عمل."
+              : "Your production brief has been routed to our technical engineering office for costing and yield calculation. An export account manager will contact you with costing and sampling timelines within 48 business hours."}
           </p>
-          <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
+
+          <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
             <a
-              href={`mailto:info@sami-trade.com?subject=Garment Inquiry ${form.refNum}&body=Product: ${form.productType.join(", ")}%0AContact: ${form.contact} — ${form.email}`}
-              className="inline-flex items-center gap-2 rounded-full bg-brand-green px-6 py-3 text-sm font-bold text-white transition hover:bg-brand-orange"
+              href={`mailto:info@sami-trade.com?subject=Garment Manufacturing Brief [${form.refNum}] - ${form.companyName}&body=Reference: ${form.refNum}%0ACompany: ${form.companyName}%0ACategory: ${form.productCategory}%0AQuantity: ${form.estimatedQuantity}%0AContact: ${form.contactPerson} (${form.phone})`}
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-green px-6 py-3 text-xs font-bold text-white transition hover:bg-brand-orange shadow-md"
             >
-              {ar ? "راسلنا مباشرة" : "Email Us"}
+              <span>{ar ? "مراسلة الإدارة التجارية بالبريد" : "Email Commercial Team"}</span>
             </a>
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 px-6 py-3 text-sm font-bold text-foreground transition hover:border-brand-green"
+            <Button
+              variant="outline"
+              onClick={() => setForm((p) => ({ ...p, submitted: false }))}
+              className="rounded-full text-xs"
             >
-              <MessageCircle className="size-4" />
-              <span>WhatsApp</span>
-            </a>
+              {ar ? "تقديم طلب تصنيع آخر" : "Submit Another Brief"}
+            </Button>
           </div>
         </div>
       </div>
@@ -248,17 +298,19 @@ function GarmentStartProjectView() {
       <div className="mx-auto max-w-3xl mb-10 text-center">
         <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
           <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-          <span>{ar ? "ابدأ مشروعك" : "Start Your Project"}</span>
+          <span>{ar ? "ابدأ مشروع التصنيع التعاقدي" : "Start Your Manufacturing Project"}</span>
         </div>
         <h2 className="font-head text-2xl sm:text-3xl font-extrabold text-foreground mt-2">
-          {ar ? "أخبرنا بما تريد تصنيعه" : "Tell Us What You Want to Manufacture"}
+          {ar ? "نموذج دراسة وتكلفة طلبيات الملابس الجاهزة (B2B)" : "International Apparel Manufacturing Proposal Builder"}
         </h2>
-        <p className="mt-3 text-sm text-muted-foreground">
+        <p className="mt-3 text-xs sm:text-sm text-muted-foreground max-w-2xl mx-auto">
           {ar
-            ? "أكمل النموذج وسيتواصل معك فريقنا خلال 48 ساعة بعرض سعر مفصّل."
-            : "Complete the form and our team will reach out within 48 hours with a detailed quote."}
+            ? "أكمل المراحل الأربعة التالية لتحديد فئات الملابس، والخامات، والكميات، ومتطلبات التعبئة والشحن للحصول على عرض سعر فني وتجاري مفصل."
+            : "Complete the 4 stages below covering product specs, fabric requirements, order volume, and packaging for a comprehensive FOB/OEM quotation."}
         </p>
-        <div className="mt-6 flex items-center justify-center gap-1">
+
+        {/* Progress Bar */}
+        <div className="mt-6 flex items-center justify-center gap-1.5">
           {Array.from({ length: totalSteps }, (_, i) => (
             <div
               key={i}
@@ -269,126 +321,455 @@ function GarmentStartProjectView() {
             />
           ))}
         </div>
-        <p className="mt-2 text-xs text-muted-foreground">{ar ? `الخطوة ${step} من ${totalSteps}` : `Step ${step} of ${totalSteps}`}</p>
+        <p className="mt-2 text-xs text-muted-foreground font-medium">
+          {ar ? `المرحلة ${step} من ${totalSteps}` : `Stage ${step} of ${totalSteps}`}
+        </p>
       </div>
 
-      <div className="mx-auto max-w-3xl rounded-3xl border border-white/30 bg-background/80 p-8 sm:p-10 backdrop-blur-2xl shadow-xl">
+      <div className="mx-auto max-w-3xl rounded-3xl border border-white/30 bg-background/80 p-6 sm:p-10 backdrop-blur-2xl shadow-xl">
+        {/* STAGE 1 – PRODUCT INFORMATION */}
         {step === 1 && (
-          <div className="space-y-5">
-            <h3 className="font-head text-lg font-bold text-foreground">{ar ? "نوع المنتج" : "Product Type"}</h3>
-            <div className="flex flex-wrap gap-2">
-              {productTypes.map((t) => (
-                <button key={t} type="button" onClick={() => toggleProduct(t)}
-                  className={cn("rounded-full border px-4 py-1.5 text-xs font-semibold transition",
-                    form.productType.includes(t) ? "border-brand-orange bg-brand-orange/10 text-brand-orange" : "border-border text-foreground hover:border-brand-green")}>
-                  {t}
-                </button>
-              ))}
-            </div>
+          <div className="space-y-6">
             <div>
-              <label className="block text-xs font-bold text-foreground mb-1">{ar ? "نوع التعاون" : "Cooperation Type"}</label>
+              <h3 className="font-head text-lg font-bold text-foreground">
+                {ar ? "المرحلة 1: معلومات المنتج والتصنيف *" : "Stage 1: Product Information *"}
+              </h3>
+              <p className="text-xs text-muted-foreground mt-1">
+                {ar ? "حدد فئة ونوع الملابس والموديل المطلوب تصنيعه:" : "Select the category and describe the product to be manufactured:"}
+              </p>
+            </div>
+
+            <div>
+              <label className="block text-xs font-bold text-foreground mb-2">
+                {ar ? "فئة المنتج الرئيسية (Product Category) *" : "Product Category *"}
+              </label>
               <div className="flex flex-wrap gap-2">
-                {cooperationTypes.map((c) => (
-                  <button key={c} type="button" onClick={() => up("cooperationType", c)}
-                    className={cn("rounded-full border px-4 py-1.5 text-xs font-semibold transition",
-                      form.cooperationType === c ? "border-brand-green bg-brand-green/10 text-brand-green-text" : "border-border text-foreground hover:border-brand-green")}>
+                {categories.map((c) => (
+                  <button
+                    key={c}
+                    type="button"
+                    onClick={() => up("productCategory", c)}
+                    className={cn(
+                      "rounded-xl border px-3.5 py-1.5 text-xs transition",
+                      form.productCategory === c
+                        ? "border-brand-green bg-brand-green/10 text-brand-green-text font-bold"
+                        : "border-border text-foreground hover:border-brand-green/60"
+                    )}
+                  >
                     {c}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div>
+                <label className="block text-xs font-bold text-foreground mb-1">
+                  {ar ? "نوع المنتج بالتحديد (Product Type) *" : "Product Type / Style Name *"}
+                </label>
+                <input
+                  type="text"
+                  value={form.productType}
+                  onChange={(e) => up("productType", e.target.value)}
+                  placeholder={ar ? "مثال: قميص كلاسيك سليم فت / فستان كاجوال" : "e.g. Slim-fit Formal Shirt / Oversized Tee"}
+                  className="w-full rounded-xl border border-border bg-background/60 px-4 py-2.5 text-xs text-foreground focus:border-brand-green focus:outline-none"
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs font-bold text-foreground mb-1">
+                  {ar ? "روابط صور أو تصميمات مرجعية (Reference Images)" : "Reference Image Links or Model Code"}
+                </label>
+                <input
+                  type="text"
+                  value={form.referenceImages}
+                  onChange={(e) => up("referenceImages", e.target.value)}
+                  placeholder={ar ? "مثال: موديل JZ-2024-W01 أو رابط صورة/درايف" : "e.g. Model JZ-2024-W01 or Google Drive link"}
+                  className="w-full rounded-xl border border-border bg-background/60 px-4 py-2.5 text-xs text-foreground focus:border-brand-green focus:outline-none"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label className="block text-xs font-bold text-foreground mb-1">
+                {ar ? "وصف الموديل والتفاصيل الفنية (Model Description) *" : "Model Description & Fit Details *"}
+              </label>
+              <textarea
+                rows={3}
+                value={form.modelDescription}
+                onChange={(e) => up("modelDescription", e.target.value)}
+                placeholder={ar ? "صف تفاصيل القصة، الياقة، الجيوب، الأكمام، أي متطلبات فنية خاصة..." : "Describe the silhouette, collar style, pockets, stitching details, and any fit notes..."}
+                className="w-full rounded-xl border border-border bg-background/60 p-3.5 text-xs text-foreground focus:border-brand-green focus:outline-none resize-none leading-relaxed"
+              />
+            </div>
+          </div>
+        )}
+
+        {/* STAGE 2 – MANUFACTURING REQUIREMENTS */}
+        {step === 2 && (
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-head text-lg font-bold text-foreground">
+                {ar ? "المرحلة 2: متطلبات التصنيع والخامات" : "Stage 2: Manufacturing Requirements"}
+              </h3>
+            </div>
+
+            <div>
+              <label className="block text-xs font-bold text-foreground mb-1.5">
+                {ar ? "نوع القماش المفضل (Fabric Type) *" : "Fabric Type *"}
+              </label>
+              <div className="flex flex-wrap gap-2">
+                {fabricTypes.map((ft) => (
+                  <button
+                    key={ft}
+                    type="button"
+                    onClick={() => up("fabricType", ft)}
+                    className={cn(
+                      "rounded-lg border px-3 py-1.5 text-xs transition",
+                      form.fabricType === ft
+                        ? "border-brand-orange bg-brand-orange/10 text-brand-orange font-bold"
+                        : "border-border text-foreground hover:border-brand-orange/60"
+                    )}
+                  >
+                    {ft}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div>
+                <label className="block text-xs font-bold text-foreground mb-1">
+                  {ar ? "وزن القماش (GSM)" : "Fabric Weight (GSM)"}
+                </label>
+                <input
+                  type="text"
+                  value={form.gsm}
+                  onChange={(e) => up("gsm", e.target.value)}
+                  placeholder={ar ? "مثال: 180 GSM / 240 GSM" : "e.g. 180 GSM / 220 GSM"}
+                  className="w-full rounded-xl border border-border bg-background/60 px-4 py-2.5 text-xs text-foreground focus:border-brand-green focus:outline-none"
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs font-bold text-foreground mb-1">
+                  {ar ? "التركيب النسيجي (Composition)" : "Composition (e.g. 95% Cotton 5% Elastane)"}
+                </label>
+                <input
+                  type="text"
+                  value={form.composition}
+                  onChange={(e) => up("composition", e.target.value)}
+                  placeholder={ar ? "مثال: 95% قطن 5% ليكرا أو 100% قطن ممشط" : "e.g. 100% Combed Cotton / 60% Cotton 40% Poly"}
+                  className="w-full rounded-xl border border-border bg-background/60 px-4 py-2.5 text-xs text-foreground focus:border-brand-green focus:outline-none"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label className="block text-xs font-bold text-foreground mb-1.5">
+                {ar ? "المقاسات المطلوبة (Sizes) - اختر ما ينطبق:" : "Required Sizes (select all applicable):"}
+              </label>
+              <div className="flex flex-wrap gap-2">
+                {sizesList.map((sz) => (
+                  <button
+                    key={sz}
+                    type="button"
+                    onClick={() => toggleSize(sz)}
+                    className={cn(
+                      "rounded-lg border px-3 py-1.5 text-xs font-mono font-bold transition",
+                      form.sizes.includes(sz)
+                        ? "border-brand-green bg-brand-green/10 text-brand-green-text"
+                        : "border-border text-foreground hover:border-brand-green"
+                    )}
+                  >
+                    {sz}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <label className="block text-xs font-bold text-foreground mb-1">
+                {ar ? "الألوان المستهدفة (Colors)" : "Target Colors (Pantone or basic shades)"}
+              </label>
+              <input
+                type="text"
+                value={form.colors}
+                onChange={(e) => up("colors", e.target.value)}
+                placeholder={ar ? "مثال: أسود، أبيض، كحلي، أو أكواد Pantone TCX" : "e.g. Black, White, Navy Blue, or Pantone TCX codes"}
+                className="w-full rounded-xl border border-border bg-background/60 px-4 py-2.5 text-xs text-foreground focus:border-brand-green focus:outline-none"
+              />
+            </div>
+
+            <div>
+              <label className="block text-xs font-bold text-foreground mb-1.5">
+                {ar ? "الطباعة والتطريز (Printing & Embroidery):" : "Printing & Embroidery Options:"}
+              </label>
+              <div className="flex flex-wrap gap-2">
+                {embellishmentOptions.map((emb) => (
+                  <button
+                    key={emb}
+                    type="button"
+                    onClick={() => toggleEmbellishment(emb)}
+                    className={cn(
+                      "rounded-lg border px-3 py-1.5 text-xs transition",
+                      form.printingEmbroidery.includes(emb)
+                        ? "border-brand-orange bg-brand-orange/10 text-brand-orange font-bold"
+                        : "border-border text-foreground hover:border-brand-orange/60"
+                    )}
+                  >
+                    {emb}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <label className="block text-xs font-bold text-foreground mb-1.5">
+                {ar ? "الليبل والتغليف (Labels & Packaging):" : "Labels & Packaging Requirements:"}
+              </label>
+              <div className="flex flex-wrap gap-2">
+                {packagingOptions.map((pkg) => (
+                  <button
+                    key={pkg}
+                    type="button"
+                    onClick={() => togglePackaging(pkg)}
+                    className={cn(
+                      "rounded-lg border px-3 py-1.5 text-xs transition",
+                      form.labelsPackaging.includes(pkg)
+                        ? "border-brand-green bg-brand-green/10 text-brand-green-text font-bold"
+                        : "border-border text-foreground hover:border-brand-green/60"
+                    )}
+                  >
+                    {pkg}
                   </button>
                 ))}
               </div>
             </div>
           </div>
         )}
-        {step === 2 && (
-          <div className="space-y-5">
-            <h3 className="font-head text-lg font-bold text-foreground">{ar ? "تفاصيل الطلب" : "Order Details"}</h3>
-            <div>
-              <label className="block text-xs font-bold text-foreground mb-1">{ar ? "الكمية المتوقعة" : "Expected Quantity"}</label>
-              <input className="w-full rounded-xl border border-border bg-background/60 px-4 py-2.5 text-sm text-foreground focus:border-brand-green focus:outline-none"
-                value={form.quantity} onChange={(e) => up("quantity", e.target.value)}
-                placeholder={ar ? "مثال: 500 قطعة شهريًا" : "e.g. 500 pieces/month"} />
-            </div>
-            <div>
-              <label className="block text-xs font-bold text-foreground mb-1">{ar ? "تفاصيل الخامات والمواصفات" : "Fabric & Specifications"}</label>
-              <textarea rows={4} className="w-full rounded-xl border border-border bg-background/60 px-4 py-2.5 text-sm text-foreground focus:border-brand-green focus:outline-none resize-none"
-                value={form.fabricNotes} onChange={(e) => up("fabricNotes", e.target.value)}
-                placeholder={ar ? "نوع القماش، المقاسات، الألوان، المواصفات الخاصة..." : "Fabric type, sizes, colors, special requirements..."} />
-            </div>
-          </div>
-        )}
+
+        {/* STAGE 3 – ORDER DETAILS */}
         {step === 3 && (
-          <div className="space-y-5">
-            <h3 className="font-head text-lg font-bold text-foreground">{ar ? "بيانات التواصل" : "Contact Information"}</h3>
-            <div className="grid gap-4 sm:grid-cols-2">
-              {[
-                { k: "company", labelAr: "الشركة / العلامة التجارية *", labelEn: "Company / Brand *", ph: ar ? "اسم الشركة" : "Company name", span: true },
-                { k: "contact", labelAr: "اسم التواصل *", labelEn: "Contact Name *", ph: ar ? "الاسم الكامل" : "Full name", span: false },
-                { k: "email", labelAr: "البريد الإلكتروني *", labelEn: "Business Email *", ph: "name@company.com", span: false },
-                { k: "phone", labelAr: "رقم الجوال", labelEn: "Phone Number", ph: "+20 10x xxx xxxx", span: false },
-                { k: "country", labelAr: "الدولة", labelEn: "Country", ph: ar ? "مصر" : "Egypt", span: false },
-              ].map(({ k, labelAr, labelEn, ph, span }) => (
-                <div key={k} className={span ? "sm:col-span-2" : ""}>
-                  <label className="block text-xs font-bold text-foreground mb-1">{ar ? labelAr : labelEn}</label>
-                  <input className="w-full rounded-xl border border-border bg-background/60 px-4 py-2.5 text-sm text-foreground focus:border-brand-green focus:outline-none"
-                    value={(form as unknown as Record<string, string>)[k]} onChange={(e) => up(k, e.target.value)} placeholder={ph}
-                    type={k === "email" ? "email" : "text"} />
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-        {step === 4 && (
-          <div className="space-y-5">
-            <h3 className="font-head text-lg font-bold text-foreground">{ar ? "المراجعة والإرسال" : "Review & Submit"}</h3>
-            <div className="rounded-2xl border border-border/60 bg-secondary/30 p-5 space-y-3 text-sm">
-              <div className="flex justify-between gap-2">
-                <span className="text-muted-foreground">{ar ? "نوع المنتج:" : "Product:"}</span>
-                <span className="font-semibold text-foreground text-end">{form.productType.join(", ") || "—"}</span>
-              </div>
-              <div className="flex justify-between gap-2">
-                <span className="text-muted-foreground">{ar ? "التعاون:" : "Cooperation:"}</span>
-                <span className="font-semibold text-foreground">{form.cooperationType || "—"}</span>
-              </div>
-              <div className="flex justify-between gap-2">
-                <span className="text-muted-foreground">{ar ? "الكمية:" : "Quantity:"}</span>
-                <span className="font-semibold text-foreground">{form.quantity || "—"}</span>
-              </div>
-              <div className="flex justify-between gap-2">
-                <span className="text-muted-foreground">{ar ? "جهة التواصل:" : "Contact:"}</span>
-                <span className="font-semibold text-foreground">{form.contact || "—"} — {form.email || "—"}</span>
-              </div>
-            </div>
+          <div className="space-y-6">
             <div>
-              <label className="block text-xs font-bold text-foreground mb-1">{ar ? "ملاحظات إضافية" : "Additional Notes"}</label>
-              <textarea rows={3} className="w-full rounded-xl border border-border bg-background/60 px-4 py-2.5 text-sm text-foreground focus:border-brand-green focus:outline-none resize-none"
-                value={form.notes} onChange={(e) => up("notes", e.target.value)}
-                placeholder={ar ? "أي ملاحظات أو متطلبات إضافية..." : "Any additional notes or requirements..."} />
+              <h3 className="font-head text-lg font-bold text-foreground">
+                {ar ? "المرحلة 3: تفاصيل وحجم الطلبية" : "Stage 3: Order Details & Commercial Terms"}
+              </h3>
             </div>
-            <label className="flex items-start gap-3 cursor-pointer">
-              <input type="checkbox" checked={form.consent} onChange={(e) => up("consent", e.target.checked)} className="mt-1 size-4 accent-brand-green" />
-              <span className="text-xs text-muted-foreground leading-relaxed">
-                {ar ? "أوافق على مشاركة بياناتي مع فريق مجموعة سامي بن عياد للتواصل بشأن هذا الطلب." : "I agree to share my information with Sami Bin Ayyad Group for communication regarding this request."}
-              </span>
-            </label>
-            <div className="rounded-xl border border-border/60 bg-secondary/20 p-4 text-xs text-muted-foreground">
-              <p>{ar ? "📧 ساعات العمل: السبت - الخميس: 9:00 ص - 7:00 م (توقيت القاهرة)" : "📧 Working Hours: Sat – Thu: 9:00 AM – 7:00 PM (Cairo Time)"}</p>
-              <p className="mt-1">{ar ? "info@sami-trade.com" : "📧 info@sami-trade.com"}</p>
+
+            <div>
+              <label className="block text-xs font-bold text-foreground mb-1.5">
+                {ar ? "نموذج التعاون الصناعي (Cooperation Type) *" : "Cooperation Model *"}
+              </label>
+              <div className="grid gap-2 sm:grid-cols-2">
+                {cooperationTypes.map((cp) => (
+                  <button
+                    key={cp.id}
+                    type="button"
+                    onClick={() => up("cooperationType", cp.id)}
+                    className={cn(
+                      "rounded-xl border p-3 text-xs text-start transition",
+                      form.cooperationType === cp.id
+                        ? "border-brand-green bg-brand-green/10 text-brand-green-text font-bold shadow-sm"
+                        : "border-border text-foreground hover:border-brand-green/60"
+                    )}
+                  >
+                    <span className="font-bold block">{cp.id}</span>
+                    <span className="text-muted-foreground text-[11px] block mt-0.5">{ar ? cp.titleAr : cp.titleEn}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div>
+                <label className="block text-xs font-bold text-foreground mb-1">
+                  {ar ? "الكمية التقديرية الإجمالية (Estimated Quantity) *" : "Estimated Total Quantity *"}
+                </label>
+                <input
+                  type="text"
+                  required
+                  value={form.estimatedQuantity}
+                  onChange={(e) => up("estimatedQuantity", e.target.value)}
+                  placeholder={ar ? "مثال: 1,500 قطعة (أو 500 قطعة لكل لون)" : "e.g. 1,500 pcs (500 pcs/color)"}
+                  className="w-full rounded-xl border border-border bg-background/60 px-4 py-2.5 text-xs text-foreground focus:border-brand-green focus:outline-none"
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs font-bold text-foreground mb-1">
+                  {ar ? "السعر المستهدف للقطعة (Target Price)" : "Target Unit Price (Optional)"}
+                </label>
+                <input
+                  type="text"
+                  value={form.targetPrice}
+                  onChange={(e) => up("targetPrice", e.target.value)}
+                  placeholder={ar ? "مثال: $8.50 - $12.00 FOB" : "e.g. $8.50 – $11.00 USD FOB"}
+                  className="w-full rounded-xl border border-border bg-background/60 px-4 py-2.5 text-xs text-foreground focus:border-brand-green focus:outline-none"
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs font-bold text-foreground mb-1">
+                  {ar ? "تاريخ التسليم المستهدف (Delivery Date) *" : "Target Delivery Date *"}
+                </label>
+                <input
+                  type="date"
+                  value={form.deliveryDate}
+                  onChange={(e) => up("deliveryDate", e.target.value)}
+                  className="w-full rounded-xl border border-border bg-background/60 px-4 py-2.5 text-xs text-foreground focus:border-brand-green focus:outline-none"
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs font-bold text-foreground mb-1">
+                  {ar ? "دولة وجهة التصدير (Destination Country) *" : "Destination Country / Port *"}
+                </label>
+                <input
+                  type="text"
+                  value={form.destinationCountry}
+                  onChange={(e) => up("destinationCountry", e.target.value)}
+                  placeholder={ar ? "مثال: فرنسا، إيطاليا، السعودية، الإمارات، مصر" : "e.g. France, Italy, Saudi Arabia, UAE, USA"}
+                  className="w-full rounded-xl border border-border bg-background/60 px-4 py-2.5 text-xs text-foreground focus:border-brand-green focus:outline-none"
+                />
+              </div>
             </div>
           </div>
         )}
 
-        <div className="mt-8 flex items-center justify-between gap-4">
-          <Button variant="outline" size="sm" onClick={() => setStep((p) => Math.max(1, p - 1))} disabled={step === 1} className="rounded-full px-6">
-            {ar ? "السابق" : "Back"}
-          </Button>
+        {/* STAGE 4 – CUSTOMER INFORMATION */}
+        {step === 4 && (
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-head text-lg font-bold text-foreground">
+                {ar ? "المرحلة 4: بيانات العميل والشركة *" : "Stage 4: Customer & Brand Information *"}
+              </h3>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div>
+                <label className="block text-xs font-bold text-foreground mb-1">{ar ? "اسم الشركة / العلامة التجارية *" : "Company / Brand Name *"}</label>
+                <input
+                  type="text"
+                  required
+                  value={form.companyName}
+                  onChange={(e) => up("companyName", e.target.value)}
+                  className="w-full rounded-xl border border-border bg-background/60 px-4 py-2.5 text-xs text-foreground focus:border-brand-green focus:outline-none"
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs font-bold text-foreground mb-1">{ar ? "اسم مسؤول المشتريات / التواصل *" : "Contact Person Name *"}</label>
+                <input
+                  type="text"
+                  required
+                  value={form.contactPerson}
+                  onChange={(e) => up("contactPerson", e.target.value)}
+                  className="w-full rounded-xl border border-border bg-background/60 px-4 py-2.5 text-xs text-foreground focus:border-brand-green focus:outline-none"
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs font-bold text-foreground mb-1">{ar ? "المسمى الوظيفي" : "Job Title / Role"}</label>
+                <input
+                  type="text"
+                  value={form.jobTitle}
+                  onChange={(e) => up("jobTitle", e.target.value)}
+                  placeholder={ar ? "مثال: مدير المشتريات / مؤسس البراند" : "e.g. Head of Sourcing / Brand Founder"}
+                  className="w-full rounded-xl border border-border bg-background/60 px-4 py-2.5 text-xs text-foreground focus:border-brand-green focus:outline-none"
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs font-bold text-foreground mb-1">{ar ? "رقم الهاتف / واتساب *" : "Phone / WhatsApp *"}</label>
+                <input
+                  type="tel"
+                  required
+                  value={form.phone}
+                  onChange={(e) => up("phone", e.target.value)}
+                  className="w-full rounded-xl border border-border bg-background/60 px-4 py-2.5 text-xs text-foreground focus:border-brand-green focus:outline-none"
+                />
+              </div>
+
+              <div className="sm:col-span-2">
+                <label className="block text-xs font-bold text-foreground mb-1">{ar ? "البريد الإلكتروني التجاري *" : "Corporate Email *"}</label>
+                <input
+                  type="email"
+                  required
+                  value={form.email}
+                  onChange={(e) => up("email", e.target.value)}
+                  className="w-full rounded-xl border border-border bg-background/60 px-4 py-2.5 text-xs text-foreground focus:border-brand-green focus:outline-none"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label className="block text-xs font-bold text-foreground mb-1">{ar ? "ملاحظات إضافية ومرفقات" : "Additional Notes & Tech Pack Attachments"}</label>
+              <textarea
+                rows={3}
+                value={form.additionalNotes}
+                onChange={(e) => up("additionalNotes", e.target.value)}
+                placeholder={ar ? "أي متطلبات فنية إضافية، شروط اعتماد العينات، أو تفاصيل الشحن والتصدير..." : "Any additional technical requirements, sample approval milestones, or export shipping notes..."}
+                className="w-full rounded-xl border border-border bg-background/60 p-3.5 text-xs text-foreground focus:border-brand-green focus:outline-none resize-none"
+              />
+            </div>
+
+            {/* Tech pack attachment notice */}
+            <div className="rounded-xl border border-dashed border-border p-4 text-center bg-secondary/20">
+              <p className="text-xs text-muted-foreground">
+                {ar
+                  ? "ملاحظة: يمكنك إرسال ملفات الـ Tech Pack والباترونات بصيغ DXF أو PDF مباشرة عبر البريد الإلكتروني بعد التواصل الأول وتأكيد كود الطلب."
+                  : "Note: Master Tech Packs and DXF pattern files can be delivered directly via email following coordinator contact."}
+              </p>
+            </div>
+
+            <div className="flex items-center gap-2 pt-2">
+              <input
+                type="checkbox"
+                id="gar-consent"
+                checked={form.consent}
+                onChange={(e) => up("consent", e.target.checked)}
+                className="rounded border-border"
+              />
+              <label htmlFor="gar-consent" className="text-xs text-muted-foreground cursor-pointer">
+                {ar ? "أوافق على معالجة بيانات الطلب والتواصل من قِبل إدارة التصدير بمجموعة سامي بن عياد." : "I consent to the processing of this brief by the export division of Sami Bin Ayyad Group."}
+              </label>
+            </div>
+          </div>
+        )}
+
+        {/* Navigation Buttons */}
+        <div className="mt-8 flex items-center justify-between border-t border-border/50 pt-5">
+          {step > 1 ? (
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => setStep((s) => s - 1)}
+              className="rounded-full text-xs"
+            >
+              {ar ? "السابق" : "Previous"}
+            </Button>
+          ) : <div />}
+
           {step < totalSteps ? (
-            <Button size="sm" onClick={() => setStep((p) => Math.min(totalSteps, p + 1))} className="rounded-full bg-brand-green hover:bg-brand-orange text-white px-8">
-              {ar ? "التالي" : "Next"}
+            <Button
+              size="sm"
+              onClick={() => setStep((s) => s + 1)}
+              className="rounded-full bg-brand-green text-white hover:bg-brand-orange text-xs font-bold px-6"
+            >
+              <span>{ar ? "التالي" : "Next"}</span>
+              <ArrowRight className="size-3.5 ms-1 rtl:rotate-180" />
             </Button>
           ) : (
-            <Button size="sm" onClick={handleSubmit} disabled={!form.consent || !form.productType.length || !form.contact || !form.email}
-              className="rounded-full bg-brand-orange hover:bg-brand-green text-white px-8">
-              {ar ? "إرسال الطلب" : "Submit Request"}
+            <Button
+              size="sm"
+              onClick={handleSubmit}
+              disabled={!form.companyName || !form.email || !form.phone}
+              className="rounded-full bg-brand-orange text-white hover:bg-brand-green text-xs font-bold px-8 shadow-md"
+            >
+              <Send className="size-3.5 me-1.5" />
+              <span>{ar ? "إرسال طلب دراسة التصنيع" : "Submit Manufacturing Brief"}</span>
             </Button>
           )}
         </div>
@@ -396,5 +777,3 @@ function GarmentStartProjectView() {
     </div>
   );
 }
-
-

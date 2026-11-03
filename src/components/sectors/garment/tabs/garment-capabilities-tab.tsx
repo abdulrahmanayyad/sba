@@ -9,16 +9,28 @@ import {
   ArrowRight,
   TrendingUp,
   Cpu,
-  MessageCircle
+  MessageCircle,
+  Scissors,
+  Sparkles,
+  ShieldCheck,
+  Package,
+  Wrench,
+  Gauge
 } from "lucide-react";
 
 import { Reveal } from "@/components/home/reveal";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/i18n/language-context";
-import { garmentProcessSteps, garmentAboutData } from "../garment-data";
+import { 
+  garmentProcessSteps, 
+  garmentAboutData,
+  garmentProductionCapacity,
+  garmentIndustrialCapabilities,
+  garmentClassicShirtFacility,
+  garmentFactoryGallery
+} from "../garment-data";
 import { cn } from "@/lib/utils";
 import { AnimatedStatistic } from "@/components/site/animated-statistic";
-import { WHATSAPP_URL } from "@/lib/process-steps";
 import { FactorySlider } from "@/components/group/factory-slider";
 
 function SectionBadge({ title }: { title: string }) {
@@ -33,289 +45,224 @@ function SectionBadge({ title }: { title: string }) {
 export function GarmentCapabilitiesTab() {
   const { language } = useLanguage();
   const ar = language === "AR";
-  const { capabilities, productionVolume, infrastructure } = garmentAboutData;
+  const capacity = garmentProductionCapacity;
+  const capabilities = garmentIndustrialCapabilities;
+  const shirtFacility = garmentClassicShirtFacility;
+  const gallery = garmentFactoryGallery;
 
   return (
-    <div className="space-y-12 py-6">
-      {/* 1. Overview & Key Stats */}
+    <div className="space-y-16 py-6">
+      {/* 1. Production Capacity Breakdown (Design vs Actual vs Available) */}
       <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
         <Reveal>
-          {/* Image Banner Above Content */}
-          <div className="relative mb-8 aspect-[21/9] sm:aspect-[24/8] w-full overflow-hidden rounded-2xl border border-white/20 shadow-md">
-            <img
-              src="/BG/Apparel Manufacturing/Ready-Made Garment Manufacturing.jpg"
-              alt={ar ? "قدراتنا وإمكانياتنا الصناعية" : "Manufacturing Infrastructure"}
-              loading="lazy"
-              className="size-full object-cover transition-transform duration-700 hover:scale-105"
-            />
-          </div>
-
           <div className="max-w-3xl">
-            <SectionBadge title={ar ? "قدراتنا وإمكانياتنا الصناعية" : "Manufacturing Infrastructure"} />
+            <SectionBadge title={ar ? "الطاقة والقدرة الصناعية المعتمدة" : "Certified Production Capacity"} />
             <h2 className="section-title mt-3">
-              {ar ? "منظومة إنتاج متطورة مصممة للمرونة والنمو" : "Advanced Production Network Built for Scalability & Speed"}
+              {ar ? capacity.headingAr : capacity.headingEn}
             </h2>
             <p className="section-intro mt-4">
-              {ar
-                ? "تستند إمكاناتنا إلى بنية صناعية تجمع بين مصانع المجموعة وخطوط الإنتاج التخصصية والكوادر الماهرة، لتنفيذ برامج تصنيع دقيقة ومتطابقة مع المعايير الدولية."
-                : "Our capabilities leverage an integrated industrial network of dedicated garment factories, specialized machinery, and master craftspeople tailored for demanding global apparel programs."}
+              {ar ? capacity.subtitleAr : capacity.subtitleEn}
             </p>
           </div>
 
-          {/* Stats Grid */}
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {capabilities.stats.map((stat, idx) => (
-              <div 
-                key={stat.labelEn} 
+          {/* 3 Capacity Pillars */}
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {capacity.capacities.map((cap) => (
+              <div
+                key={cap.type}
                 className={cn(
-                  "relative overflow-hidden rounded-2xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur-md transition-all duration-300 hover:border-brand-orange/40 hover:shadow-lg",
-                  ar ? "text-right" : "text-left"
+                  "rounded-3xl border p-8 shadow-sm backdrop-blur-xl flex flex-col justify-between transition hover:-translate-y-1 hover:shadow-xl",
+                  cap.type === "available"
+                    ? "border-brand-green bg-brand-green/10 ring-2 ring-brand-green/30"
+                    : "border-border bg-card/60"
                 )}
               >
-                <div className="flex items-center justify-between mb-3">
-                  <p className={cn(
-                    "font-head text-3xl sm:text-4xl font-black text-brand-orange drop-shadow-sm tracking-tight",
-                    ar ? "text-right" : "text-left"
-                  )}>
-                    <AnimatedStatistic value={stat.value} />
-                  </p>
-                  <span className="font-mono text-xs font-bold text-muted-foreground/70 border border-border/60 rounded-full px-2.5 py-0.5">
-                    0{idx + 1}
-                  </span>
-                </div>
-                <div className="mt-2 font-head text-base font-bold text-foreground">
-                  {ar ? stat.labelAr : stat.labelEn}
-                </div>
-                <p className="mt-1 text-xs font-medium text-muted-foreground">
-                  {ar ? stat.descAr : stat.descEn}
-                </p>
-              </div>
-            ))}
-          </div>
-        </Reveal>
-      </div>
-
-      {/* 2. 10-Stage Structured Manufacturing Process */}
-      <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
-        <Reveal>
-          {/* Image Banner Above Content */}
-          <div className="relative mb-8 aspect-[21/9] sm:aspect-[24/8] w-full overflow-hidden rounded-2xl border border-white/20 shadow-md">
-            <img
-              src="/BG/Product Development & Sampling.jpg"
-              alt={ar ? "مراحل التصنيع المنظمة" : "Our Process"}
-              loading="lazy"
-              className="size-full object-cover transition-transform duration-700 hover:scale-105"
-            />
-          </div>
-
-          <div>
-            <SectionBadge title={ar ? "مراحل التصنيع المنظمة" : "Our Process"} />
-            <h2 className="section-title mt-3">
-              {ar ? "مسار واضح ومنضبط من الفكرة وحتى التصدير" : "A Disciplined 10-Stage Path From Concept to Global Delivery"}
-            </h2>
-            <p className="section-intro mt-4 max-w-2xl">
-              {ar
-                ? "تتبع كافة طلبياتنا دورة تصنيع قياسية صارمة لضمان الالتزام بالمواصفات الفنية والجداول الزمنية."
-                : "Every order follows an established ten-phase protocol ensuring technical compliance and milestone predictability."}
-            </p>
-          </div>
-
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-            {garmentProcessSteps.map((step) => (
-              <div
-                key={step.step}
-                className="group relative flex flex-col justify-between rounded-2xl border border-border bg-card/60 p-5 shadow-sm backdrop-blur-md transition hover:border-brand-orange/40 hover:shadow-md"
-              >
                 <div>
-                  <span className="font-mono text-xl font-black text-brand-orange">
-                    {step.step}
-                  </span>
-                  <h3 className="mt-2 font-head text-sm font-bold text-foreground group-hover:text-brand-orange transition">
-                    {ar ? step.titleAr : step.titleEn}
-                  </h3>
-                  <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
-                    {ar ? step.descAr : step.descEn}
+                  <div className="flex items-center justify-between mb-4">
+                    <span className={cn(
+                      "text-xs font-bold px-3 py-1 rounded-full",
+                      cap.type === "available" ? "bg-brand-green text-white" : "bg-secondary text-foreground"
+                    )}>
+                      {ar ? cap.labelAr : cap.labelEn}
+                    </span>
+                    {cap.type === "available" && <Sparkles className="size-4 text-brand-orange" />}
+                  </div>
+
+                  <div className="font-head text-3xl sm:text-4xl font-black text-brand-orange">
+                    {ar ? cap.numberAr : cap.numberEn}
+                  </div>
+                  <div className="text-xs font-bold text-brand-green mt-1">
+                    {ar ? cap.unitAr : cap.unitEn}
+                  </div>
+
+                  <p className="mt-4 text-xs text-muted-foreground leading-relaxed">
+                    {ar ? cap.descAr : cap.descEn}
                   </p>
                 </div>
+
+                <div className="mt-6 pt-4 border-t border-border/50">
+                  <span className="text-[11px] font-semibold text-foreground/80 block">
+                    {cap.type === "available" ? (ar ? "جاهزة للتعاقد الفوري للعلامات التجارية" : "Ready for Allocation") : (ar ? "طاقة تشغيلية مستقرة" : "Sustained Operation")}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Key Metrics Banner */}
+          <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4 rounded-2xl border border-border/60 bg-secondary/30 p-4 text-center">
+            {capacity.keyMetrics.map((km, idx) => (
+              <div key={idx} className="p-2">
+                <span className="font-head text-lg sm:text-xl font-bold text-foreground block">{km.value}</span>
+                <span className="text-xs text-muted-foreground">{ar ? km.labelAr : km.labelEn}</span>
               </div>
             ))}
           </div>
         </Reveal>
       </div>
 
-      {/* 3. Quality Control & Standards */}
+      {/* 2. 10 Core Industrial Capabilities */}
       <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
         <Reveal>
-          <div>
-            <SectionBadge title={ar ? "ضمان الجودة" : "Quality Assurance"} />
-            <h3 className="section-title mt-3">
-              {ar ? "الجودة مدمجة في كل خطوة وليست مجرد فحص أخير" : "Quality Built-In At Every Touchpoint"}
-            </h3>
-            <p className="section-intro mt-4 max-w-4xl">
-              {ar
-                ? "نعتمد على متابعة الجودة خلال كافة المراحل: بدءًا من فحص الأقمشة والمقاسات والباترونات، مرورًا بالقص والخياطة والتشطيب، وصولًا إلى المظهر النهائي والملصقات والتعبئة. تُحدد معايير الفحص لكل مشروع وفق المواصفات الفنية المعتمدة من العميل."
-                : "Quality is monitored continuously: from raw textile and pattern audits to automated cutting, in-line sewing checks, steam finishing, labeling, and final carton packing against approved AQL benchmarks."}
-            </p>
-
-            <div className="mt-8 grid gap-8 lg:grid-cols-12 lg:items-center">
-              <div className="lg:col-span-7 grid gap-4 sm:grid-cols-2">
-                {[
-                  { en: "4-Point Fabric Inspection", ar: "فحص الأقمشة بنظام النقاط الأربعة" },
-                  { en: "In-Line Sewing Tolerances Check", ar: "متابعة دقيقة لحدود السماح بالخياطة" },
-                  { en: "Seam Strength & Wash Tests", ar: "اختبارات قوة الحياكة وثبات الغسيل" },
-                  { en: "100% Pre-Pack Auditing", ar: "فحص شامل لكافة القطع قبل التعبئة" },
-                ].map((item, idx) => (
-                  <div key={idx} className="flex items-center justify-center text-center rounded-2xl border border-border bg-card/60 p-4 text-xs sm:text-sm font-semibold text-foreground backdrop-blur-sm transition-all duration-300 hover:border-brand-orange/40 hover:-translate-y-0.5 hover:shadow-md">
-                    <span>{ar ? item.ar : item.en}</span>
-                  </div>
-                ))}
-              </div>
-              <div className="overflow-hidden rounded-2xl border border-border shadow-md lg:col-span-5">
-                <img
-                  src="/BG/Apparel Manufacturing/Rigorous Quality Assurance.jpg"
-                  alt={ar ? "ضمان الجودة ومراقبة المعايير" : "Rigorous Quality Assurance"}
-                  loading="lazy"
-                  className="aspect-[4/3] w-full object-cover transition-transform duration-700 hover:scale-105"
-                />
-              </div>
-            </div>
-          </div>
-        </Reveal>
-      </div>
-
-      {/* 4. Production Volume & Classic Shirt Facility */}
-      <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
-        <Reveal>
-          <div className="max-w-3xl">
-            <SectionBadge title={ar ? "الطاقة والقدرة الإنتاجية" : "Production Volume & Scale"} />
+          <div className="max-w-3xl mb-10">
+            <SectionBadge title={ar ? "القدرات الصناعية المتكاملة" : "10 Industrial Capabilities"} />
             <h2 className="section-title mt-3">
-              {ar ? productionVolume.headingAr : productionVolume.heading}
+              {ar ? "منظومة تصنيع متطورة من الخيط وحتى التعبئة للتصدير" : "End-to-End Industrial Capabilities"}
             </h2>
             <p className="section-intro mt-4">
-              {ar ? productionVolume.introAr : productionVolume.intro}
+              {ar
+                ? "تغطي منشآتنا الصناعية كافة مفاصل دورة التصنيع بماكينات أوتوماتيكية متطورة لضمان الدقة والسرعة والجودة."
+                : "Comprehensive industrial infrastructure covering pattern making, automated cutting, high-speed sewing, and export packing."}
             </p>
           </div>
 
-          {/* Dedicated Classic Shirt Feature Box */}
-          <div className="mt-10 overflow-hidden rounded-3xl border border-border bg-gradient-to-br from-card via-card/70 to-secondary/40 p-6 sm:p-10 shadow-sm backdrop-blur-md">
-            <div className="grid gap-8 lg:grid-cols-12 lg:items-center">
-              <div className="lg:col-span-7">
-                <div className="flex flex-wrap items-center gap-3">
-                  <span className={cn(
-                    "inline-flex items-center gap-1.5 rounded-full bg-brand-orange/15 px-3 py-1 text-xs font-bold text-brand-orange",
-                    ar ? "font-head font-semibold" : "font-mono"
-                  )}>
-                    <Shirt className="size-3.5" />
-                    {ar ? productionVolume.classicShirtUnit.badgeAr : productionVolume.classicShirtUnit.badge}
-                  </span>
-                  <span className="text-xs font-semibold text-muted-foreground">
-                    {ar ? "مصنع متخصص بمعدات حصرية" : "Dedicated Category Facility"}
-                  </span>
-                </div>
-
-                <h3 className="mt-4 font-head text-2xl font-bold text-foreground sm:text-3xl">
-                  {ar ? productionVolume.classicShirtUnit.titleAr : productionVolume.classicShirtUnit.title}
-                </h3>
-
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
-                  {ar ? productionVolume.classicShirtUnit.descAr : productionVolume.classicShirtUnit.desc}
-                </p>
-
-                <div className="mt-6 grid gap-2.5 sm:grid-cols-2">
-                  {productionVolume.classicShirtUnit.features.map((feat, fIdx) => (
-                    <div key={fIdx} className="flex items-center gap-2 rounded-xl border border-border/70 bg-background/60 p-2.5 text-xs font-semibold text-foreground">
-                      <CheckCircle2 className="size-4 shrink-0 text-brand-orange" />
-                      <span>{ar ? feat.ar : feat.en}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="overflow-hidden rounded-2xl border border-border shadow-md lg:col-span-5">
-                <img
-                  src="/BG/Apparel Manufacturing/Specialized Production Lines.jpg"
-                  alt={ar ? productionVolume.classicShirtUnit.titleAr : productionVolume.classicShirtUnit.title}
-                  loading="lazy"
-                  className="aspect-[4/3] w-full object-cover transition-transform duration-700 hover:scale-105"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Volume Summary Cards */}
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {productionVolume.volumeSummary.map((item) => (
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
+            {capabilities.map((cap) => (
               <div
-                key={item.categoryEn}
-                className="rounded-2xl border border-border bg-card/60 p-5 shadow-xs backdrop-blur-md transition hover:border-brand-orange/40 hover:shadow-md"
+                key={cap.id}
+                className="group overflow-hidden rounded-3xl border border-border bg-card/60 backdrop-blur-md shadow-sm transition hover:border-brand-green/60 hover:shadow-lg flex flex-col justify-between"
               >
-                <div className="flex items-center gap-2 text-xs font-bold text-muted-foreground">
-                  <TrendingUp className="size-4 text-brand-orange" />
-                  <span>{ar ? item.categoryAr : item.categoryEn}</span>
+                <div>
+                  <div className="relative aspect-[16/9] overflow-hidden bg-muted">
+                    <img
+                      src={cap.image}
+                      alt={ar ? cap.titleAr : cap.titleEn}
+                      className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                    <span className="absolute top-3 start-3 bg-black/70 text-white font-mono text-xs font-bold px-2.5 py-1 rounded-lg backdrop-blur-md">
+                      {cap.number}
+                    </span>
+                  </div>
+
+                  <div className="p-6 space-y-3">
+                    <h3 className="font-head text-lg sm:text-xl font-bold text-foreground group-hover:text-brand-green transition-colors">
+                      {ar ? cap.titleAr : cap.titleEn}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-brand-orange-text font-medium">
+                      {ar ? cap.leadAr : cap.leadEn}
+                    </p>
+
+                    <div className="pt-3 border-t border-border/50">
+                      <span className="text-xs font-bold uppercase tracking-wider text-foreground block mb-2">
+                        {ar ? "المواصفات والقدرات الفنية:" : "Technical Specifications & Scopes:"}
+                      </span>
+                      <ul className="space-y-1.5">
+                        {(ar ? cap.specsAr : cap.specsEn).map((sp, idx) => (
+                          <li key={idx} className="flex items-start gap-2 text-xs text-muted-foreground">
+                            <CheckCircle2 className="size-3.5 text-brand-green shrink-0 mt-0.5" />
+                            <span>{sp}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
                 </div>
-                <div className={cn(
-                  "mt-3 text-brand-orange",
-                  item.volumeEn === "Dedicated Lines" ? "text-xl sm:text-2xl font-bold font-head" : "text-2xl sm:text-3xl font-head font-black"
-                )}>
-                  {/\d/.test(ar ? item.volumeAr : item.volumeEn) ? (
-                    <AnimatedStatistic value={ar ? item.volumeAr : item.volumeEn} />
-                  ) : (
-                    <span className="font-head font-bold">{ar ? item.volumeAr : item.volumeEn}</span>
-                  )}
-                </div>
-                <p className="mt-2 text-xs font-medium text-muted-foreground leading-relaxed">
-                  {ar ? item.notesAr : item.notesEn}
-                </p>
               </div>
             ))}
           </div>
         </Reveal>
       </div>
 
-      {/* 5. Infrastructure & Fabric Mill */}
-      {infrastructure && (
-        <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
-          <Reveal>
-            <div className="grid gap-8 lg:grid-cols-12 lg:items-center">
-              <div className="lg:col-span-7">
-                <SectionBadge title={ar ? "البنية الصناعية" : "Industrial Infrastructure"} />
-                <h2 className="section-title mt-3">
-                  {ar ? infrastructure.headingAr : infrastructure.heading}
-                </h2>
-                <p className="section-intro mt-4">
-                  {ar ? infrastructure.introAr : infrastructure.intro}
-                </p>
+      {/* 3. Dedicated Classic Shirt Line */}
+      <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
+        <Reveal>
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-border pb-6 mb-8">
+            <div className="max-w-2xl">
+              <SectionBadge title={ar ? "خط إنتاج القمصان الكلاسيكية" : "Dedicated Classic Shirt Line"} />
+              <h2 className="section-title mt-3">{ar ? shirtFacility.headingAr : shirtFacility.headingEn}</h2>
+              <p className="section-intro mt-3">{ar ? shirtFacility.subtitleAr : shirtFacility.subtitleEn}</p>
+            </div>
+            <div className="rounded-2xl border border-brand-orange/40 bg-brand-orange/10 p-5 text-center shrink-0">
+              <div className="text-2xl sm:text-3xl font-black text-brand-orange">{ar ? shirtFacility.monthlyCapacityAr : shirtFacility.monthlyCapacityEn}</div>
+              <div className="text-xs font-bold text-muted-foreground uppercase mt-1">{ar ? "طاقة الخط المعتمدة شهرياً" : "Certified Monthly Capacity"}</div>
+            </div>
+          </div>
 
-                <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                  {infrastructure.pillars.slice(0, 4).map((pillar) => (
-                    <div key={pillar.title} className="rounded-xl border border-border/70 bg-card/60 p-4 backdrop-blur-sm">
-                      <h4 className="font-head text-sm font-bold text-foreground">
-                        {ar ? pillar.titleAr : pillar.title}
-                      </h4>
-                      <p className="mt-1 text-xs text-muted-foreground leading-relaxed">
-                        {ar ? pillar.descAr : pillar.desc}
-                      </p>
-                    </div>
-                  ))}
+          {/* Specialized Machinery */}
+          <div className="mb-10">
+            <h4 className="font-head text-sm font-bold uppercase tracking-wider text-foreground mb-4 flex items-center gap-2">
+              <Cpu className="size-4 text-brand-green" />
+              <span>{ar ? "الماكينات والتجهيزات التخصصية للقميص الكلاسيك:" : "Specialized Shirt Machinery Fleet:"}</span>
+            </h4>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {shirtFacility.specializedMachinery.map((mach, idx) => (
+                <div key={idx} className="rounded-2xl border border-border bg-card/60 p-4">
+                  <span className="font-head text-xs font-bold text-foreground block">{ar ? mach.nameAr : mach.nameEn}</span>
+                  <p className="mt-2 text-xs text-muted-foreground leading-relaxed">{ar ? mach.descAr : mach.descEn}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Tailoring Benchmarks */}
+          <div className="grid gap-4 sm:grid-cols-3 rounded-2xl border border-border/80 bg-secondary/30 p-6">
+            {shirtFacility.qualityBenchmarks.map((qb, idx) => (
+              <div key={idx} className="text-center sm:text-start">
+                <div className="font-head text-2xl font-black text-brand-green">{qb.metric}</div>
+                <div className="text-xs font-bold text-foreground mt-0.5">{ar ? qb.labelAr : qb.labelEn}</div>
+                <p className="text-[11px] text-muted-foreground mt-1 leading-snug">{ar ? qb.descAr : qb.descEn}</p>
+              </div>
+            ))}
+          </div>
+        </Reveal>
+      </div>
+
+      {/* 4. Factory Gallery Showcase */}
+      <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
+        <Reveal>
+          <div className="text-center max-w-3xl mx-auto mb-10">
+            <SectionBadge title={ar ? "معرض المصنع وصالات الإنتاج" : "Factory Gallery"} />
+            <h2 className="section-title mt-3">
+              {ar ? "جولة مصورة داخل مرافق التصنيع والماكينات" : "Inside Our Factory & Assembly Lines"}
+            </h2>
+            <p className="section-intro mt-3">
+              {ar ? "صور حقيقية ومحدثة من صالات القص، وخطوط الخياطة، ومعامل الجودة، والتعبئة." : "Real photographs of our cutting hall, sewing floors, QC stations, and export packing."}
+            </p>
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {gallery.map((item) => (
+              <div key={item.id} className="group overflow-hidden rounded-2xl border border-border bg-card/60 backdrop-blur-md shadow-sm">
+                <div className="relative aspect-[16/10] overflow-hidden bg-muted">
+                  <img
+                    src={item.image}
+                    alt={ar ? item.titleAr : item.titleEn}
+                    className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                  <span className="absolute bottom-2.5 start-2.5 bg-black/70 text-white text-[11px] font-bold px-2.5 py-0.5 rounded-md backdrop-blur-sm">
+                    {ar ? item.categoryAr : item.categoryEn}
+                  </span>
+                </div>
+                <div className="p-4 space-y-1.5">
+                  <h4 className="font-head text-sm font-bold text-foreground">{ar ? item.titleAr : item.titleEn}</h4>
+                  <p className="text-xs text-muted-foreground leading-relaxed line-clamp-2">{ar ? item.descAr : item.descEn}</p>
                 </div>
               </div>
-
-              <div className="overflow-hidden rounded-2xl border border-border shadow-md lg:col-span-5">
-                <img
-                  src="/BG/Apparel Manufacturing/Textile Mill & Internal Dyeing.jpg"
-                  alt={ar ? "مصنع الأقمشة والصباغة الداخلية" : "Textile Mill & Internal Dyeing"}
-                  loading="lazy"
-                  className="aspect-[4/3] w-full object-cover transition-transform duration-700 hover:scale-105"
-                />
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      )}
-
-      {/* 5. Factory Overview Slider — نظرة عامة على المصنع بالصور */}
-      <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
-        <FactorySlider ar={ar} />
+            ))}
+          </div>
+        </Reveal>
       </div>
     </div>
   );
