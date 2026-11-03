@@ -778,7 +778,7 @@ export function SectorHeader({
                         </a>
                       ))
                     )}
-                    <Link to="/join" onClick={() => setMenuOpen(false)} className={mobileLinkStyle}>
+                    <Link to="/join/group" onClick={() => setMenuOpen(false)} className={mobileLinkStyle}>
                       {ar ? "انضم إلينا" : "Join Us"}
                     </Link>
                   </>
