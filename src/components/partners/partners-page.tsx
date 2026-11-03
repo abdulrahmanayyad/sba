@@ -1,5 +1,6 @@
-import { ArrowRight, Building2, Globe2, Handshake, Mail, MessageCircle, ShieldCheck, Sparkles } from "lucide-react";
+import { ArrowRight, Building2, CheckCircle2, Factory, FileUp, Globe2, Handshake, Mail, MessageCircle, Send, ShieldCheck, Sparkles, TrendingUp, Truck, UploadCloud } from "lucide-react";
 import { Link } from "@tanstack/react-router";
+import { useState } from "react";
 import { Reveal } from "@/components/home/reveal";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/i18n/language-context";
@@ -111,7 +112,167 @@ export function PartnersPage() {
         </div>
       </section>
 
-      {/* 4. Discuss a Partnership CTA Box */}
+      {/* 4. Become a Partner Multi-Step Interactive Form */}
+      <section id="become-partner" className="site-container py-14 scroll-mt-24">
+        <div className="mx-auto max-w-4xl overflow-hidden rounded-3xl border border-white/40 bg-background/85 p-6 sm:p-10 lg:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.08)] backdrop-blur-2xl ring-1 ring-black/5">
+          <Reveal>
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+              <span>{ar ? "انضم لشبكة شركائنا" : "Become a Partner"}</span>
+            </div>
+            <h2 className="section-title text-2xl sm:text-3xl font-extrabold text-foreground">
+              {ar ? "قدّم طلب شراكة استراتيجية أو تجارية" : "Apply to Become a Verified Partner"}
+            </h2>
+            <p className="section-intro mt-2 text-sm sm:text-base text-muted-foreground leading-relaxed">
+              {ar
+                ? "نرحب بالشركات والمصنعين والموزعين والمؤسسات التقنية الراغبة في بناء تعاون استراتيجي مستدام يخدم التوسع الإقليمي والدولي للمجموعة."
+                : "We welcome suppliers, technology providers, manufacturers, and distributors to explore co-development and strategic supply partnerships."}
+            </p>
+
+            {/* Structured Partner Categories Overview */}
+            <div className="mt-8 grid gap-3 grid-cols-2 sm:grid-cols-3 lg:grid-cols-6">
+              {[
+                { en: "Strategic Partners", ar: "شركاء استراتيجيون", icon: Handshake },
+                { en: "Technology Partners", ar: "شركاء التكنولوجيا", icon: Sparkles },
+                { en: "Manufacturing", ar: "شركاء التصنيع", icon: Factory },
+                { en: "Supply Partners", ar: "شركاء التوريد", icon: Truck },
+                { en: "Distribution", ar: "شركاء التوزيع", icon: Globe2 },
+                { en: "Commercial Alliances", ar: "تحالفات تجارية", icon: Building2 },
+              ].map((c, i) => {
+                const Icon = c.icon;
+                return (
+                  <div key={i} className="rounded-2xl border border-white/20 bg-secondary/50 p-3 text-center backdrop-blur-md flex flex-col items-center justify-center gap-1.5 shadow-xs">
+                    <Icon className="size-4 text-brand-green" />
+                    <span className="text-[11px] font-bold text-foreground">{ar ? c.ar : c.en}</span>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Proposal Submission Form */}
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                alert(ar ? "تم استلام مقترح الشراكة بنجاح! سيتواصل معك فريق تطوير الأعمال بالمجموعة." : "Your partnership proposal has been received! Our business development team will contact you shortly.");
+              }}
+              className="mt-10 space-y-5 rounded-2xl border border-border/80 bg-background/60 p-6 sm:p-8 backdrop-blur-xl"
+            >
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div>
+                  <label className="block text-xs font-bold text-foreground mb-1.5">
+                    {ar ? "اسم الشركة / الكيان المؤسسي *" : "Company / Entity Name *"}
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    placeholder={ar ? "مثال: شركة الحلول الصناعية" : "e.g. Industrial Solutions Corp."}
+                    className="w-full rounded-xl border border-border bg-background/90 px-3.5 py-2.5 text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand-green shadow-inner"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-bold text-foreground mb-1.5">
+                    {ar ? "الدولة والمقر الرئيسي *" : "Country & Headquarters *"}
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    placeholder={ar ? "مثال: مصر، السعودية، الصين، الإمارات..." : "e.g. Egypt, UAE, China, Germany..."}
+                    className="w-full rounded-xl border border-border bg-background/90 px-3.5 py-2.5 text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand-green shadow-inner"
+                  />
+                </div>
+              </div>
+
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div>
+                  <label className="block text-xs font-bold text-foreground mb-1.5">
+                    {ar ? "قطاع الشراكة المستهدف *" : "Target Partnership Sector *"}
+                  </label>
+                  <select
+                    required
+                    className="w-full rounded-xl border border-border bg-background/90 px-3.5 py-2.5 text-xs text-foreground focus:outline-none focus:ring-2 focus:ring-brand-green shadow-inner"
+                  >
+                    <option value="construction">{ar ? "المقاولات والتطوير العقاري" : "Construction & Real Estate"}</option>
+                    <option value="environmental">{ar ? "البيئة والاستدامة وإعادة التدوير" : "Environment & Sustainability"}</option>
+                    <option value="garment">{ar ? "تصنيع الملابس وتطوير الأزياء" : "Garment Manufacturing & Apparel"}</option>
+                    <option value="food">{ar ? "المنتجات الطبيعية والغذائية والتصدير" : "Natural & Agri-Food Products"}</option>
+                    <option value="group-alliances">{ar ? "تحالف استراتيجي عام على مستوى المجموعة" : "Group-Wide Strategic Alliance"}</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-xs font-bold text-foreground mb-1.5">
+                    {ar ? "الموقع الإلكتروني الرسمي للشركة" : "Official Website URL"}
+                  </label>
+                  <input
+                    type="url"
+                    placeholder="https://company.com"
+                    className="w-full rounded-xl border border-border bg-background/90 px-3.5 py-2.5 text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand-green shadow-inner"
+                  />
+                </div>
+              </div>
+
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div>
+                  <label className="block text-xs font-bold text-foreground mb-1.5">
+                    {ar ? "البريد الإلكتروني المهني للتواصل *" : "Official Contact Email *"}
+                  </label>
+                  <input
+                    type="email"
+                    required
+                    placeholder="partnerships@company.com"
+                    className="w-full rounded-xl border border-border bg-background/90 px-3.5 py-2.5 text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand-green shadow-inner"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-bold text-foreground mb-1.5">
+                    {ar ? "رقم الهاتف / واتساب مباشر *" : "Phone / Direct WhatsApp *"}
+                  </label>
+                  <input
+                    type="tel"
+                    required
+                    placeholder="+20 ..."
+                    className="w-full rounded-xl border border-border bg-background/90 px-3.5 py-2.5 text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand-green shadow-inner"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-xs font-bold text-foreground mb-1.5">
+                  {ar ? "ملخص مقترح الشراكة ونطاق التعاون *" : "Partnership Proposal & Scope of Cooperation *"}
+                </label>
+                <textarea
+                  required
+                  rows={4}
+                  placeholder={ar ? "صف بإيجاز طبيعة التعاون المقترح، القيمة المضافة لقطاعات المجموعة، والأسواق المستهدفة..." : "Briefly outline the proposed collaboration, value added to our sectors, and target geographic markets..."}
+                  className="w-full rounded-xl border border-border bg-background/90 p-3 text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand-green shadow-inner"
+                />
+              </div>
+
+              {/* Secure Attachment upload note */}
+              <div className="flex items-center gap-3 rounded-xl border border-dashed border-border/80 bg-secondary/30 p-3.5 text-xs text-muted-foreground">
+                <UploadCloud className="size-5 text-brand-orange shrink-0" />
+                <span>
+                  {ar
+                    ? "يمكنك إرفاق الملف التعريفي للشركة لاحقاً عبر البريد الرسمي أو مراسلة فريقنا على info@sami-trade.com"
+                    : "Company profiles and NDA agreements can also be shared directly with our desk at info@sami-trade.com"}
+                </span>
+              </div>
+
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
+                <Button type="submit" size="lg" className="w-full sm:w-auto rounded-full bg-brand-green text-white hover:bg-brand-orange font-bold text-xs sm:text-sm px-8 py-3 shadow-md transition-all cursor-pointer">
+                  <Send className="size-4 me-2" />
+                  <span>{ar ? "إرسال مقترح الشراكة رسمياً" : "Submit Formal Proposal"}</span>
+                </Button>
+                <span className="text-[11px] text-muted-foreground flex items-center gap-1.5">
+                  <ShieldCheck className="size-3.5 text-brand-green" />
+                  {ar ? "تخضع جميع الطلبات لسياسة السرية المهنية" : "All submissions are bound by corporate NDA ethics"}
+                </span>
+              </div>
+            </form>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* 5. Discuss a Partnership CTA Box */}
       <section className="site-container py-12">
         <div className="mx-auto max-w-5xl overflow-hidden rounded-3xl border border-white/20 bg-background/80 p-8 sm:p-12 shadow-[0_8px_40px_rgba(0,0,0,0.18)] backdrop-blur-2xl grid gap-8 lg:grid-cols-[1.3fr_1fr] items-center transition-all duration-300 hover:scale-[1.01] hover:shadow-2xl hover:border-brand-green/40">
           <div>
@@ -130,12 +291,12 @@ export function PartnersPage() {
           </div>
 
           <div className="flex flex-col gap-3.5">
-            <Button asChild size="lg" className="w-full bg-brand-green text-white hover:bg-brand-orange transition-all duration-300 font-bold text-sm shadow-md">
-              <Link to="/contact">
+            <Button asChild size="lg" className="w-full bg-brand-green text-white hover:bg-brand-orange transition-all duration-300 font-bold text-sm shadow-md cursor-pointer">
+              <a href="#become-partner">
                 <Handshake className="size-4 me-2" />
                 <span>{ar ? "قدّم مقترح شراكة" : "Submit a partnership proposal"}</span>
                 <ArrowRight className="size-4 ms-2 rtl:rotate-180" />
-              </Link>
+              </a>
             </Button>
 
             <Button asChild variant="ghost" className="group relative h-auto w-full justify-start gap-4 overflow-hidden rounded-2xl border border-[#0066CC]/30 bg-[#0066CC]/5 p-4 text-start whitespace-normal hover:border-[#0066CC] hover:bg-[#0066CC]/15 hover:shadow-lg sm:p-5 backdrop-blur-md transition-all duration-300 hover:scale-[1.01] active:scale-[0.98]">
