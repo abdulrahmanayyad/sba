@@ -39,6 +39,18 @@ export function GroupPage() {
               {ar ? messages.hero.titleAr : messages.hero.title}
             </h1>
             <p data-hero-reveal className="mt-3 max-w-3xl text-base sm:text-lg font-bold leading-relaxed text-brand-orange">{messages.hero.lead}</p>
+            <div data-hero-reveal className="mt-6 flex flex-wrap items-center gap-3">
+              <Button asChild size="lg" className="rounded-full !bg-brand-green !text-white px-7 py-3 font-head text-sm font-bold shadow-lg transition-all duration-300 hover:!bg-brand-orange hover:scale-105 active:scale-95">
+                <a href="#divisions">
+                  {ar ? "استكشف قطاعاتنا" : "Explore our sectors"} <ArrowRight className="size-4 rtl:rotate-180" />
+                </a>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="rounded-full border-white/40 bg-black/30 backdrop-blur-md text-white px-7 py-3 font-head text-sm font-bold transition-all duration-300 hover:bg-white hover:text-black hover:scale-105 active:scale-95">
+                <a href="#contact">
+                  {ar ? "ناقش احتياجاتك معنا" : "Discuss your requirements"}
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
@@ -55,17 +67,17 @@ export function GroupPage() {
             <div className="section-intro mx-auto mt-6 leading-relaxed max-w-3xl space-y-1">
               {ar ? (
                 <p className="leading-relaxed">
-                  تجمع <span className="text-brand-orange">مجموعة سامي بن عياد</span> قدرات أعمال متنوعة في قطاعات المقاولات، والحلول البيئية، وتصنيع المنسوجات والملابس، والمنتجات الطبيعية. ومن خلال الخبرة التشغيلية والتنفيذ القائم على الجودة والشراكات الاستراتيجية، نعمل جاهدين على خلق وتطوير قيمة دائمة ومستدامة عبر مختلف الصناعات والأسواق.
+                  نطوّر أعمالًا في <span className="text-brand-orange">المقاولات والتطوير العقاري</span>، والبيئة والاستدامة، وتصنيع الملابس، والمنتجات الطبيعية والغذائية. يجمع عملنا فهم احتياجات العميل والتنسيق بين التخصصات وبناء علاقات تجارية تستند إلى الجودة ووضوح الالتزامات ومتابعة التنفيذ.
                 </p>
               ) : (
                 <p className="">
-                  <span className="text-brand-orange">SAMI BIN AYYAD GROUP</span> brings together diverse business capabilities across contracting, environmental solutions, textile and garment manufacturing, and natural products. Through operational expertise, quality-driven execution, and strategic partnerships, we work to create lasting value across industries and markets.
+                  Our activities span <span className="text-brand-orange">contracting and real estate development</span>, environment and sustainability, apparel manufacturing, and natural and food products. Across these sectors, we focus on understanding client requirements, coordinating delivery and building lasting business relationships.
                 </p>
               )}
             </div>
             <Button asChild size="lg" className="mt-8 group relative inline-flex items-center justify-center gap-2 rounded-full !bg-brand-green !text-white px-7 py-3 font-head text-sm font-bold shadow-lg transition-all duration-300 hover:!bg-brand-orange hover:shadow-brand-orange/30 hover:scale-105 active:scale-95">
               <a href="#divisions">
-                {ar ? "استكشف قطاعاتنا" : "Explore Our Sectors"} <ArrowRight className="size-4 rtl:rotate-180" />
+                {ar ? "استكشف قطاعاتنا" : "Explore our sectors"} <ArrowRight className="size-4 rtl:rotate-180" />
               </a>
             </Button>
           </div>
@@ -83,12 +95,12 @@ export function GroupPage() {
                 <span className="font-bold text-brand-green">{ar ? "رؤيتنا" : "Our Vision"}</span>
               </div>
               <h3 className="font-head text-xl sm:text-2xl font-extrabold text-foreground leading-snug">
-                {ar ? "ريادة استثمارية وصناعية تبني قيمة حقيقية تدوم" : "Regional Industrial Leadership & Compounding Value"}
+                {ar ? "شريك موثوق وقيمة مستدامة للعملاء والشركاء" : "A Trusted Business Partner Creating Lasting Value"}
               </h3>
               <p className="mt-4 text-sm sm:text-base leading-7 text-muted-foreground">
                 {ar
-                  ? "أن نكون مجموعة رائدة وموثوقة إقليميًا ودوليًا في المقاولات والإنشاءات، والحلول البيئية، وصناعة الملابس الجاهزة، والمنتجات الطبيعية، نرتكز على الابتكار والاستدامة لتحقيق أثر تنموي متواصل."
-                  : "To be a leading and trusted regional and international group across contracting, environmental solutions, garment manufacturing, and natural products, driven by innovation, quality, and sustainable development."}
+                  ? "أن نكون شريكًا موثوقًا في القطاعات التي نعمل بها، وأن نبني أعمالًا قابلة للنمو تحقق قيمة للعملاء والشركاء."
+                  : "To become a trusted business partner in our chosen sectors, building businesses that create lasting value for clients and partners."}
               </p>
             </div>
 
@@ -99,12 +111,12 @@ export function GroupPage() {
                 <span className="font-bold text-brand-green">{ar ? "رسالتنا" : "Our Mission"}</span>
               </div>
               <h3 className="font-head text-xl sm:text-2xl font-extrabold text-foreground leading-snug">
-                {ar ? "حلول متكاملة تبتكر وتلبي تطلعات شركائنا" : "Integrated Solutions Delivering Excellence"}
+                {ar ? "تحويل الاحتياجات إلى نطاق عمل وحلول عملية" : "Translating Client Needs into Practical Solutions"}
               </h3>
               <p className="mt-4 text-sm sm:text-base leading-7 text-muted-foreground">
                 {ar
-                  ? "تقديم حلول متكاملة وموثوقة تلبي تطلعات عملائنا وشركائنا، والاستثمار المستمر في كوادرنا وتطوير تقنياتنا التشغيلية، مع الالتزام التام بالمسؤولية المجتمعية والبيئية وصون الموارد للأجيال القادمة."
-                  : "Delivering integrated, reliable solutions that exceed partner expectations, continually investing in our people and technology, while upholding corporate and environmental responsibility for generations to come."}
+                  ? "تحويل احتياجات العملاء إلى نطاق عمل واضح وحلول قابلة للتنفيذ، من خلال تطوير الكفاءات وتحسين العمليات والاستخدام المسؤول للموارد."
+                  : "To translate client needs into clearly defined work and practical solutions through capable teams, coordinated delivery and responsible use of resources."}
               </p>
             </div>
           </div>

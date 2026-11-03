@@ -1,4 +1,4 @@
-﻿export const jzraAgeRanges = ["2-5", "3-6", "6-12", "8-14", "14-18"] as const;
+export const jzraAgeRanges = ["2-5", "3-6", "6-12", "8-14", "14-18"] as const;
 export type JzraAge = (typeof jzraAgeRanges)[number];
 export type JzraSeason = "summer" | "winter";
 export type JzraAudience = "boys" | "girls";
@@ -72,16 +72,16 @@ const summerCasual3_6JeansSets: JzraPhoto[] = makePhotos(
   Array.from({ length: 15 }, (_, i) => { const n = i + 1; return `Summer - Casual - (3-6)  (${n}).${n <= 2 ? "jpeg" : "jpg"}`; }),
 );
 
-// Summer Casual 3-6 Jumpsuite
-const summerCasual3_6Jumpsuite: JzraPhoto[] = makePhotos(
-  "summer", "casual", "Jumpsuite", ["boys", "girls"], ["3-6"],
-  "/Summer/Casual/3-6/Jumpsuite",
+// Summer Casual 3-6 Jumpsuit
+const summerCasual3_6Jumpsuit: JzraPhoto[] = makePhotos(
+  "summer", "casual", "Jumpsuit", ["boys", "girls"], ["3-6"],
+  "/Summer/Casual/3-6/Jumpsuit",
   Array.from({ length: 6 }, (_, i) => `Summer - Casual - (3-6) (${i + 1}).jpg`),
 );
 
-// Summer Casual 3-6 Long Suites
+// Summer Casual 3-6 Long Suits
 const summerCasual3_6LongSuites: JzraPhoto[] = makePhotos(
-  "summer", "casual", "Long Suites", ["boys", "girls"], ["3-6"],
+  "summer", "casual", "Long Suits", ["boys", "girls"], ["3-6"],
   "/Summer/Casual/3-6/Long Suites",
   Array.from({ length: 24 }, (_, i) => { const n = i + 1; const jpegNums = [1, 2, 3, 4, 5, 6, 24]; return `Summer - Casual - (3-6) (${n}).${jpegNums.includes(n) ? "jpeg" : "jpg"}`; }),
 );
@@ -93,9 +93,9 @@ const summerCasual3_6ShirtsBlouses: JzraPhoto[] = makePhotos(
   Array.from({ length: 6 }, (_, i) => `Summer - Casual - (3-6) (${i + 1}).jpg`),
 );
 
-// Summer Casual 3-6 Short Suites
+// Summer Casual 3-6 Short Suits
 const summerCasual3_6ShortSuites: JzraPhoto[] = makePhotos(
-  "summer", "casual", "Short Suites", ["boys", "girls"], ["3-6"],
+  "summer", "casual", "Short Suits", ["boys", "girls"], ["3-6"],
   "/Summer/Casual/3-6/Short Suites",
   Array.from({ length: 27 }, (_, i) => { const n = i + 1; const jpegNums = [1, 2, 25, 26, 27]; return `Summer - Casual - (3-6) (${n}).${jpegNums.includes(n) ? "jpeg" : "jpg"}`; }),
 );
@@ -114,16 +114,16 @@ const summerCasual8_14Blouses: JzraPhoto[] = makePhotos(
   Array.from({ length: 33 }, (_, i) => `Summer - Casual - (8-14) (${i + 1}).jpg`),
 );
 
-// Summer Casual 8-14 Jumpsuite
-const summerCasual8_14Jumpsuite: JzraPhoto[] = makePhotos(
-  "summer", "casual", "Jumpsuite", ["boys", "girls"], ["8-14"],
-  "/Summer/Casual/8-14/Jumpsuite",
+// Summer Casual 8-14 Jumpsuits
+const summerCasual8_14Jumpsuit: JzraPhoto[] = makePhotos(
+  "summer", "casual", "Jumpsuits", ["boys", "girls"], ["8-14"],
+  "/Summer/Casual/8-14/Jumpsuit",
   Array.from({ length: 10 }, (_, i) => `Summer - Casual - (8-14) (${i + 1}).jpg`),
 );
 
-// Summer Casual 8-14 Suites
+// Summer Casual 8-14 Suits
 const summerCasual8_14Suites: JzraPhoto[] = makePhotos(
-  "summer", "casual", "Suites", ["boys", "girls"], ["8-14"],
+  "summer", "casual", "Suits", ["boys", "girls"], ["8-14"],
   "/Summer/Casual/8-14/Suites",
   Array.from({ length: 12 }, (_, i) => { const n = i + 1; return `Summer - Casual - (8-14) (${n}).${n === 1 ? "jpeg" : "jpg"}`; }),
 );
@@ -216,13 +216,13 @@ export const jzraCatalogue: JzraPhoto[] = [
   ...summerCasual2_5,
   ...summerCasual3_6CottonSets,
   ...summerCasual3_6JeansSets,
-  ...summerCasual3_6Jumpsuite,
+  ...summerCasual3_6Jumpsuit,
   ...summerCasual3_6LongSuites,
   ...summerCasual3_6ShirtsBlouses,
   ...summerCasual3_6ShortSuites,
   ...summerCasual6_12,
   ...summerCasual8_14Blouses,
-  ...summerCasual8_14Jumpsuite,
+  ...summerCasual8_14Jumpsuit,
   ...summerCasual8_14Suites,
   ...summerCasual8_14TShirts,
   ...summerDresses2_5,
@@ -237,4 +237,5 @@ export const jzraCatalogue: JzraPhoto[] = [
   ...winterDresses3_6,
   ...winterDresses8_14,
 ];
+
 

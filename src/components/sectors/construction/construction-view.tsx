@@ -262,7 +262,7 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
       </section>
 
       {/* Contact Section */}
-      <SectorContactSection ar={ar} />
+      <SectorContactSection ar={ar} sector="construction" />
     </div>
   );
 }
@@ -426,7 +426,10 @@ function ConstructionProjectsView({ ar }: { ar: boolean }) {
   const [activeProject, setActiveProject] = useState<ContractingProject | null>(null);
   const [visibleCount, setVisibleCount] = useState<number>(6);
 
-  const years = ["all", "2023", "2021", "2020", "2019", "2018", "2016", "2015", "2014", "2013"];
+  const years = useMemo(
+    () => ["all", ...Array.from(new Set(contractingProjectsList.map((p) => p.year).filter(Boolean))).sort((a, b) => Number(b) - Number(a))],
+    []
+  );
 
   const categories = [
     { id: "all", titleEn: "All Sectors", titleAr: "جميع القطاعات" },

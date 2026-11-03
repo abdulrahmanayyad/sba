@@ -278,7 +278,7 @@ export function GarmentAboutTab() {
       </section>
 
       {/* Contact Section */}
-      <SectorContactSection ar={ar} />
+      <SectorContactSection ar={ar} sector="garment" />
     </div>
   );
 }

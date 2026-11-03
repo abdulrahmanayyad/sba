@@ -25,15 +25,15 @@ export function PartnersPage() {
         <Reveal>
           <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-4">
             <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-            <span>{ar ? "شركاؤنا والتحالفات الاستراتيجية" : "Our Partners & Strategic Alliances"}</span>
+            <span>{ar ? "التعاون التقني والتجاري" : "Technical and Commercial Cooperation"}</span>
           </div>
           <h1 className="section-title mt-2 text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground">
-            {ar ? "شركاء يبنون معنا المستقبل" : "Partners Building the Future With Us"}
+            {ar ? "التعاون التقني والتجاري" : "Technical and Commercial Cooperation"}
           </h1>
           <p className="section-intro mt-4 max-w-3xl leading-relaxed text-muted-foreground sm:text-lg">
             {ar
-              ? "تعتمد مجموعة سامي بن عياد نهجًا مؤسسيًا يرتكز على بناء شراكات استراتيجية طويلة الأمد مع كبرى الشركات والمؤسسات التقنية والصناعية الرائدة عالميًا وإقليميًا."
-              : "SAMI BIN AYYAD GROUP operates on a disciplined corporate strategy centered on building enduring, high-trust strategic alliances with tier-one global technology and industrial leaders."}
+              ? "نعمل على تطوير علاقات تعاون تدعم احتياجات عملائنا في التصنيع والتوريد والحلول البيئية والتقنية. ويُحدد نطاق كل علاقة بحسب الاتفاق القائم والمنتجات أو الخدمات المشمولة والأسواق المستهدفة."
+              : "We develop relationships that support manufacturing, sourcing and environmental technology requirements. The scope of each relationship depends on the relevant agreement, participating entity, products and markets."}
           </p>
         </Reveal>
       </section>
@@ -117,19 +117,27 @@ export function PartnersPage() {
           <div>
             <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-              <span>{ar ? "بدء شراكة" : "Start a Partnership"}</span>
+              <span>{ar ? "ناقش فرصة تعاون" : "Discuss a Partnership"}</span>
             </div>
             <h2 className="section-title mt-2 text-foreground text-2xl sm:text-3xl font-bold">
-              {ar ? "هل ترغب في بناء شراكة معنا؟" : "Looking to Build a Strategic Partnership?"}
+              {ar ? "ناقش فرصة تعاون معنا" : "Discuss a Partnership"}
             </h2>
             <p className="section-intro mt-4 text-muted-foreground text-sm sm:text-base">
               {ar
-                ? "نرحب بفرص التعاون مع الشركات والمؤسسات الدولية والمحلية لتوسيع آفاق الأعمال المشتركة في التصنيع والإنشاءات والتقنيات البيئية والتجارة الدولية."
-                : "We welcome collaborative opportunities with international and domestic enterprises to expand business frontiers across manufacturing, contracting, environmental tech, and global trade."}
+                ? "إذا كانت شركتك تقدم منتجات أو تقنيات تتكامل مع قطاعاتنا، أرسل نبذة عن نشاطها ونطاق التعاون المقترح والأسواق المستهدفة."
+                : "Tell us about your company, relevant products or services, target markets and proposed cooperation."}
             </p>
           </div>
 
           <div className="flex flex-col gap-3.5">
+            <Button asChild size="lg" className="w-full bg-brand-green text-white hover:bg-brand-orange transition-all duration-300 font-bold text-sm shadow-md">
+              <Link to="/contact">
+                <Handshake className="size-4 me-2" />
+                <span>{ar ? "قدّم مقترح شراكة" : "Submit a partnership proposal"}</span>
+                <ArrowRight className="size-4 ms-2 rtl:rotate-180" />
+              </Link>
+            </Button>
+
             <Button asChild variant="ghost" className="group relative h-auto w-full justify-start gap-4 overflow-hidden rounded-2xl border border-[#0066CC]/30 bg-[#0066CC]/5 p-4 text-start whitespace-normal hover:border-[#0066CC] hover:bg-[#0066CC]/15 hover:shadow-lg sm:p-5 backdrop-blur-md transition-all duration-300 hover:scale-[1.01] active:scale-[0.98]">
               <a href="mailto:info@sami-trade.com">
                 <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-[#0066CC]/15 text-[#0066CC]">

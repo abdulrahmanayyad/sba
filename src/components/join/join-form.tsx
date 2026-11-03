@@ -453,7 +453,7 @@ Attached Files: ${files.map((f) => f.name).join(", ") || "None"}
                 )}
               >
                 <User className="size-4" />
-                <span>{ar ? "أفراد / مهنيون / كوادر" : "Individual / Professional"}</span>
+                <span>{ar ? "المهنيون والخبراء" : "Skilled professionals"}</span>
               </button>
 
               <button
@@ -863,7 +863,7 @@ Attached Files: ${files.map((f) => f.name).join(", ") || "None"}
                     </span>
                   ) : (
                     <span className="flex items-center gap-2">
-                      <span>{ar ? "إرسال طلب الانضمام" : "Submit Application"}</span>
+                      <span>{ar ? "إرسال الطلب" : "Submit application"}</span>
                       <Send className="size-4 rtl:rotate-180" />
                     </span>
                   )}

@@ -1,187 +1,320 @@
-import { useState } from "react";
-import { ArrowRight, Calendar, ChevronDown, ChevronUp, FileText, Globe, Layers, Sparkles, Tag } from "lucide-react";
+import { useState, useMemo } from "react";
+import { Link } from "@tanstack/react-router";
+import {
+  ArrowRight,
+  Calendar,
+  Clock,
+  ExternalLink,
+  Layers,
+  Search,
+  Sparkles,
+  Tag,
+  Newspaper,
+  BookOpen,
+} from "lucide-react";
 import { Reveal } from "@/components/home/reveal";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/i18n/language-context";
 import { cn } from "@/lib/utils";
+import {
+  newsArticles,
+  newsCategories,
+  type NewsCategoryType,
+  type NewsArticle,
+} from "./news-data";
 
-interface NewsItem {
-  id: string;
-  dateEn: string;
-  dateAr: string;
-  tagEn: string;
-  tagAr: string;
-  categoryEn: string;
-  categoryAr: string;
-  titleEn: string;
-  titleAr: string;
-  summaryEn: string;
-  summaryAr: string;
-  contentEn: string;
-  contentAr: string;
+function SectionBadge({ title }: { title: string }) {
+  return (
+    <span className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+      <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+      {title}
+    </span>
+  );
 }
-
-const newsList: NewsItem[] = [
-  {
-    id: "renergon-partnership",
-    dateEn: "Sep 2, 2020",
-    dateAr: "2 سبتمبر 2020",
-    tagEn: "Strategic Alliance",
-    tagAr: "تحالف استراتيجي",
-    categoryEn: "Sustainable Environment & Energy",
-    categoryAr: "البيئة المستدامة والطاقة المتجددة",
-    titleEn: "Partners with Renergon International AG (Switzerland)",
-    titleAr: "تحالف استراتيجي مع شركة رينرجون الدولية (سويسرا) لتكنولوجيا التخمير الجاف والغاز الحيوي",
-    summaryEn:
-      "Signing an exclusive Partnership & Alliance contract with Renergon International AG (Switzerland) to become the licensed company in Egypt for Dry Fermentation Technology, turning organic waste into renewable biogas, electricity, and organic fertilizers.",
-    summaryAr:
-      "توقيع عقد تحالف وشراكة استراتيجية مع شركة رينرجون الدولية (سويسرا) لتصبح المجموعة والتحالف المرخص الوحيد في مصر لتكنولوجيا التخمير الجاف المتقدمة، لتحويل المخلفات العضوية إلى طاقة متجددة وغاز حيوي وأسمدة عضوية عالية الجودة.",
-    contentEn: `We signed a Partnership & Alliance contract with the European company Renergon International AG (Switzerland), to become the only licensed company in Egypt by Renergon for the Technology of Dry Fermentation. The Alliance is aimed to provide “state-of-the-art, turnkey technology solutions” for turning organic waste into renewable energy for producing both biogas and electricity as well as organic fertilizers through the Dry Fermentation Technology.
-
-The partnership sets the tone of cooperation between the two organizations and contains several collaborations that include: Creating and Developing Biogas Plants with various capacity starting from 50 kW and up to 5 MW, Using the advanced dry fermentations technology in Biomass.
-
-Mr. Karl-Heinz Restle, “CEO & Founder of Renergon” said: "The Renergon-We Partnership brings together industry leaders with proven technologies who recognize the need for an integrated solution approach to advancing the deployment of biogas plants in Egypt."
-
-We affirmed: “The importance of energy security for Egypt and the signing of this Partnership reinforces and creates a great competitive opportunity in the field of energy supply from Biomass and Dry Fermentation Technology, which is supporting a various sector in the region. And they add that Weis planning to build & operate several Biogas power plants in Egypt varies in capacity between Small, Medium, and Large Biogas Power Plants that will produce an accumulative of 10 MW electricity for the next five years plan 2020-2025, by 2030 We planning to increase the numbers of Biogas Power Plants to produce 50 MW of electricity that will be produced from Biomass with a total increase in investment levels.
-
-We is delighted to partner Renergon for reaching our common goals together and supporting the different sectors together in Egypt.”`,
-    contentAr: `وقّعنا عقد شراكة وتحالف استراتيجي مع الشركة الأوروبية الرائدة «رينرجون الدولية» (RENERGON International AG - سويسرا)، لنصبح الشريك المرخص حصريًا في مصر لتكنولوجيا التخمير الجاف (Dry Fermentation Technology). ويهدف التحالف إلى توفير حلول تكنولوجية متكاملة ومتقدمة بنظام تسليم المفتاح لتحويل المخلفات والكتلة الحيوية العضوية إلى طاقة متجددة، وإنتاج كل من الغاز الحيوي (Biogas) والكهرباء، إلى جانب الأسمدة العضوية القياسية عالية الخصوبة.
-
-ترسي هذه الشراكة أسس تعاون طويل الأمد بين الطرفين، وتشمل مجالات متعددة من بينها: إنشاء وتطوير محطات الغاز الحيوي بقدرات متنوعة تبدأ من 50 كيلوواط وتصل إلى 5 ميجاواط، اعتمادًا على تقنيات التخمير الجاف الأحدث عالميًا في معالجة الكتلة الحيوية.
-
-وصرح السيد/ كارل هاينز ريستل، الرئيس التنفيذي ومؤسس شركة رينرجون الدولية: «تجمع هذه الشراكة بين رواد الصناعة وأصحاب التقنيات المثبتة دوليًا الذين يدركون الحاجة الماسة إلى نهج حلول متكاملة لتسريع نشر وتشغيل محطات الغاز الحيوي في جمهورية مصر العربية».
-
-وأكدت المجموعة: «يمثل أمن الطاقة ركيزة استراتيجية لمصر والمنطقة، وتوقيع هذا التحالف يعزز ويخلق فرصة تنافسية استثنائية في مجال إمدادات الطاقة المستدامة من الكتلة الحيوية وتكنولوجيا التخمير الجاف لدعم مختلف القطاعات الصناعية والتنموية. وتتضمن الخطة الخمسية 2020-2025 بناء وتشغيل محطات متعددة الأحجام (صغيرة ومتوسطة وكبيرة) لإنتاج طاقة تراكمية تبلغ 10 ميجاواط كهرباء، مع استهداف التوسع بحلول 2030 لتوليد 50 ميجاواط كهرباء من الكتلة الحيوية مع رفع معدلات الاستثمار الصناعي».
-
-يسعدنا هذا التعاون الاستراتيجي مع رينرجون لتحقيق أهدافنا المشتركة نحو بيئة مستدامة ومستقبل واعد للطاقة النظيفة.`,
-  },
-  {
-    id: "technoset-mou",
-    dateEn: "Apr 12, 2019",
-    dateAr: "12 أبريل 2019",
-    tagEn: "Digital Transformation & IoT",
-    tagAr: "التحول الرقمي وإنترنت الأشياء",
-    categoryEn: "QHSE Software & Smart Technology",
-    categoryAr: "أنظمة وبرمجيات الجودة والسلامة وإنترنت الأشياء",
-    titleEn: "TECHNO SET partners with Us",
-    titleAr: "شراكة استراتيجية ومذكرة تفاهم مع شركة تكنوسيت لتطبيقات QHSE وإنترنت الأشياء",
-    summaryEn:
-      "Signing a comprehensive Memorandum of Understanding (MoU) with TechnoSet Company to develop QHSE softwares, mobile enterprise applications, and advanced IoT technologies across Oil & Gas, Healthcare, and industrial operations.",
-    summaryAr:
-      "توقيع مذكرة تفاهم استراتيجية (MoU) مع شركة تكنوسيت (TechnoSet) لتطوير برمجيات وحلول إدارة الجودة والصحة والسلامة والبيئة (QHSE) وتطبيقات الهاتف الذكي وأنظمة إنترنت الأشياء (IoT) المتقدمة في مختلف القطاعات الصناعية والحيوية.",
-    contentEn: `We signed a Memorandum of Understanding (MoU) with TechnoSet Company, The MoU is aimed at creating and developing QHSE Software’s, Mobile Applications and the services of IoT advanced Technology for the different sectors and activities.
-
-The MoU sets the tone of cooperation between the two organizations and contains several collaborations that include: Creating and Developing QHSE Software’s and Mobile Applications for supporting the different Sectors such Oil and Gas, Healthcare and others. As well as IoT technology and its applications in the different sectors and activities.
-
-We affirmed: “The signing of this MoU reinforces and creates a great competitive opportunity in the region in the field of QHSE software and IoT technology, which is supporting a various organization in the region through the development of Management performance using the latest technology and software in both management and operations to reach the international standards and thus achieve customer satisfaction and sustainability.
-
-We are delighted to partner TechnoSet for reaching our common goals together and supporting the different sectors together in the Middle East, Africa and worldwide.”`,
-    contentAr: `وقّعنا مذكرة تفاهم استراتيجية (MoU) مع شركة «تكنوسيت» (TechnoSet Company)، تهدف إلى ابتكار وتطوير برمجيات ومنظومات إدارة الجودة والصحة والسلامة المهنية والبيئة (QHSE Software)، وتطبيقات الهواتف الذكية الميدانية، وحلول تكنولوجيا إنترنت الأشياء المتقدمة (IoT) لمختلف القطاعات والأنشطة الاقتصادية.
-
-تحدد مذكرة التفاهم مسارًا راسخًا للتعاون المشترك، ويشمل ذلك تطوير أنظمة برمجية وتطبيقات متخصصة لدعم قطاعات استراتيجية كالنفط والغاز (Oil & Gas)، والمنشآت الصحية والطبية (Healthcare)، والقطاعات الصناعية، وتوظيف أجهزة واستشعارات IoT لرصد مؤشرات السلامة والبيئة لحظيًا.
-
-وأكدت المجموعة: «إن توقيع مذكرة التفاهم يعزز ويخلق ميزة تنافسية كبرى على مستوى المنطقة في مجالات برمجيات السلامة والبيئة وتقنيات إنترنت الأشياء، بما يدعم المؤسسات والشركات في الارتقاء بمستوى الأداء الإداري والتشغيلي ومطابقة أعلى المعايير الدولية والامتثال التشريعي، وصولًا إلى أعلى درجات رضا العملاء والاستدامة المؤسسية».
-
-نعتز بشراكتنا المثمرة مع تكنوسيت لتحقيق رؤيتنا المشتركة وخدمة عملائنا وقطاعاتنا في الشرق الأوسط وإفريقيا والعالم.`,
-  },
-];
 
 export function NewsPage() {
   const { language } = useLanguage();
   const ar = language === "AR";
-  const [expandedArticle, setExpandedArticle] = useState<string | null>(null);
 
-  const toggleArticle = (id: string) => {
-    setExpandedArticle((prev) => (prev === id ? null : id));
-  };
+  const [selectedCategory, setSelectedCategory] = useState<NewsCategoryType>("all");
+  const [selectedType, setSelectedType] = useState<"all" | "external" | "insight">("all");
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const filteredArticles = useMemo(() => {
+    return newsArticles.filter((article) => {
+      if (selectedCategory !== "all" && article.category !== selectedCategory) return false;
+      if (selectedType !== "all" && article.type !== selectedType) return false;
+      if (searchQuery.trim()) {
+        const q = searchQuery.toLowerCase().trim();
+        const inTitle = (ar ? article.titleAr : article.titleEn).toLowerCase().includes(q);
+        const inExcerpt = (ar ? article.excerptAr : article.excerptEn).toLowerCase().includes(q);
+        const inBody = (ar ? article.bodyAr : article.bodyEn).toLowerCase().includes(q);
+        if (!inTitle && !inExcerpt && !inBody) return false;
+      }
+      return true;
+    });
+  }, [selectedCategory, selectedType, searchQuery, ar]);
+
+  const featuredArticle = useMemo(() => {
+    return newsArticles.find((a) => a.featured) || newsArticles[0];
+  }, []);
 
   return (
     <div className="w-full">
-      {/* 1. News Hero Section */}
-      <section className="site-container pt-16 pb-12 scroll-mt-24">
+      {/* 1. Newsroom Hero */}
+      <section className="site-container pt-20 sm:pt-28 pb-12 scroll-mt-24">
         <Reveal>
-          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-4">
-            <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-            <span>{ar ? "مركز الأخبار والمستجدات" : "News & Announcements"}</span>
+          <div className="max-w-3xl">
+            <SectionBadge title={ar ? "أخبار وتحديثات" : "News & Updates"} />
+            <h1 className="section-title mt-3 text-3xl sm:text-5xl font-extrabold text-foreground leading-tight">
+              {ar ? "أخبار المجموعة والكيانات المشاركة" : "News and business updates"}
+            </h1>
+            <p className="section-intro mt-4 max-w-2xl text-base sm:text-lg leading-relaxed text-muted-foreground">
+              {ar
+                ? "تابع أخبار المشروعات والأنشطة واتفاقات التعاون، مع بيان الجهة المعنية وتاريخ كل إعلان."
+                : "Read updates on projects, activities and cooperation agreements, with the relevant organisation and announcement date clearly identified."}
+            </p>
           </div>
-          <h1 className="section-title text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground">
-            {ar ? "أخبار المجموعة والشراكات" : "Group News & Strategic Updates"}
-          </h1>
-          <p className="section-intro mt-4 max-w-3xl leading-relaxed text-muted-foreground sm:text-lg">
-            {ar
-              ? "تابع أحدث إعلانات مجموعة سامي بن عياد، والاتفاقيات الدولية، والشراكات الاستراتيجية، ومستجدات قطاعاتنا وأعمالنا."
-              : "Explore the latest corporate announcements, international partnership agreements, and milestone developments across SAMI BIN AYYAD GROUP."}
-          </p>
         </Reveal>
       </section>
 
-      {/* 2. Articles List */}
-      <section className="site-container pb-20">
-        <div className="space-y-8">
-          {newsList.map((item, idx) => {
-            const isExpanded = expandedArticle === item.id;
-            return (
-              <Reveal key={item.id} delay={idx * 0.08}>
-                <article
-                  className={cn(
-                    "glass-card overflow-hidden rounded-3xl border border-white/30 bg-background/85 p-6 sm:p-10 shadow-md backdrop-blur-xl transition-all duration-300",
-                    isExpanded ? "border-brand-green/60 shadow-2xl" : "hover:border-brand-orange/40 hover:shadow-xl hover:scale-[1.005]"
-                  )}
-                >
-                  <div className="flex flex-wrap items-center justify-between gap-3 text-xs">
-                    <div className="flex flex-wrap items-center gap-2">
-                      <span className="inline-flex items-center gap-1 rounded-full bg-brand-orange/10 px-3 py-1 font-bold text-brand-orange border border-brand-orange/20">
-                        <Tag className="size-3" />
-                        <span>{ar ? item.tagAr : item.tagEn}</span>
+      {/* 2. Featured Lead Article (Only when no search/filter active) */}
+      {selectedCategory === "all" && selectedType === "all" && !searchQuery && featuredArticle && (
+        <section className="site-container pb-14">
+          <Reveal>
+            <div className="group relative overflow-hidden rounded-3xl border border-white/30 bg-background/80 shadow-xl backdrop-blur-2xl transition-all duration-300 hover:shadow-2xl hover:border-brand-green/50">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 items-center">
+                <div className="lg:col-span-7 relative aspect-[16/10] lg:aspect-[16/11] w-full overflow-hidden bg-secondary">
+                  <img
+                    src={featuredArticle.image}
+                    alt={ar ? featuredArticle.titleAr : featuredArticle.titleEn}
+                    className="size-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  <div className="absolute top-4 start-4 flex items-center gap-2">
+                    <span className="rounded-full bg-brand-orange px-3.5 py-1 text-xs font-bold text-white shadow-md">
+                      {ar ? "مقال مميز" : "Featured Lead"}
+                    </span>
+                    <span className="rounded-full bg-black/60 px-3 py-1 text-xs font-semibold text-white/90 backdrop-blur-md border border-white/20">
+                      {featuredArticle.type === "external"
+                        ? ar ? "خبر موثق" : "Verified News"
+                        : ar ? "رؤية تحليلية" : "Editorial Insight"}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="lg:col-span-5 p-6 sm:p-10 flex flex-col justify-between">
+                  <div>
+                    <div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground mb-4">
+                      <span className="inline-flex items-center gap-1.5 font-mono">
+                        <Calendar className="size-3.5 text-brand-orange" />
+                        <span>{ar ? featuredArticle.dateAr : featuredArticle.dateEn}</span>
                       </span>
-                      <span className="inline-flex items-center gap-1 rounded-full bg-secondary/80 px-3 py-1 font-semibold text-foreground/80 border border-border">
-                        <Layers className="size-3 text-brand-green" />
-                        <span>{ar ? item.categoryAr : item.categoryEn}</span>
+                      <span>•</span>
+                      <span className="inline-flex items-center gap-1.5 font-mono">
+                        <Clock className="size-3.5 text-brand-green" />
+                        <span>{ar ? featuredArticle.readingTimeAr : featuredArticle.readingTimeEn}</span>
                       </span>
                     </div>
 
-                    <div className="flex items-center gap-1.5 font-mono text-muted-foreground">
-                      <Calendar className="size-3.5 text-brand-orange" />
-                      <span>{ar ? item.dateAr : item.dateEn}</span>
+                    <h2 className="font-head text-2xl sm:text-3xl font-extrabold text-foreground group-hover:text-brand-green transition-colors leading-snug">
+                      <Link to="/news/$slug" params={{ slug: featuredArticle.slug }}>
+                        {ar ? featuredArticle.titleAr : featuredArticle.titleEn}
+                      </Link>
+                    </h2>
+
+                    <p className="mt-4 text-sm sm:text-base text-muted-foreground leading-relaxed line-clamp-3">
+                      {ar ? featuredArticle.excerptAr : featuredArticle.excerptEn}
+                    </p>
+                  </div>
+
+                  <div className="mt-8 pt-6 border-t border-border/60 flex items-center justify-between">
+                    <Button asChild className="rounded-full bg-brand-green hover:bg-brand-orange text-white font-bold text-xs shadow-md transition-all">
+                      <Link to="/news/$slug" params={{ slug: featuredArticle.slug }}>
+                        <span>{ar ? "قراءة التقرير الكامل" : "Read Full Article"}</span>
+                        <ArrowRight className="size-3.5 ms-2 rtl:rotate-180" />
+                      </Link>
+                    </Button>
+
+                    {featuredArticle.sourceName && (
+                      <span className="text-[11px] font-mono text-muted-foreground">
+                        {ar ? `المصدر: ${featuredArticle.sourceName}` : `Source: ${featuredArticle.sourceName}`}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </section>
+      )}
+
+      {/* 3. Category Filters & Search */}
+      <section className="site-container pb-8">
+        <div className="flex flex-col gap-5 border-b border-border/60 pb-8">
+          {/* Top Controls: Search and Type Pills */}
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            {/* Search Box */}
+            <div className="relative w-full md:w-80">
+              <Search className="absolute start-3.5 top-1/2 -translate-y-1/2 size-4 text-muted-foreground" />
+              <input
+                type="text"
+                placeholder={ar ? "ابحث في المقالات والأخبار..." : "Search articles and news..."}
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full rounded-full border border-border bg-background/80 py-2.5 ps-10 pe-4 text-xs font-medium text-foreground placeholder:text-muted-foreground shadow-sm focus:border-brand-green focus:outline-none focus:ring-1 focus:ring-brand-green"
+              />
+            </div>
+
+            {/* Type Filters */}
+            <div className="flex items-center gap-2 w-full md:w-auto">
+              <button
+                type="button"
+                onClick={() => setSelectedType("all")}
+                className={cn(
+                  "rounded-full px-4 py-1.5 text-xs font-bold transition-all duration-200 cursor-pointer",
+                  selectedType === "all"
+                    ? "bg-brand-green text-white shadow-sm"
+                    : "border border-border bg-secondary/70 text-foreground hover:bg-secondary"
+                )}
+              >
+                {ar ? "الكل" : "All Types"}
+              </button>
+              <button
+                type="button"
+                onClick={() => setSelectedType("external")}
+                className={cn(
+                  "inline-flex items-center gap-1.5 rounded-full px-4 py-1.5 text-xs font-bold transition-all duration-200 cursor-pointer",
+                  selectedType === "external"
+                    ? "bg-brand-green text-white shadow-sm"
+                    : "border border-border bg-secondary/70 text-foreground hover:bg-secondary"
+                )}
+              >
+                <Newspaper className="size-3.5" />
+                <span>{ar ? "أخبار موثقة" : "Verified News"}</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setSelectedType("insight")}
+                className={cn(
+                  "inline-flex items-center gap-1.5 rounded-full px-4 py-1.5 text-xs font-bold transition-all duration-200 cursor-pointer",
+                  selectedType === "insight"
+                    ? "bg-brand-green text-white shadow-sm"
+                    : "border border-border bg-secondary/70 text-foreground hover:bg-secondary"
+                )}
+              >
+                <BookOpen className="size-3.5" />
+                <span>{ar ? "رؤى تحليلية" : "Editorial Insights"}</span>
+              </button>
+            </div>
+          </div>
+
+          {/* Categories Horizontal Scroll / Wrap */}
+          <div className="flex flex-wrap items-center gap-2">
+            {newsCategories.map((cat) => (
+              <button
+                key={cat.id}
+                type="button"
+                onClick={() => setSelectedCategory(cat.id)}
+                className={cn(
+                  "rounded-full px-4 py-2 text-xs font-bold transition-all duration-300 cursor-pointer",
+                  selectedCategory === cat.id
+                    ? "bg-brand-green text-white shadow-md border border-brand-green"
+                    : "border border-border/80 bg-background/80 text-foreground hover:border-brand-orange/40 hover:bg-secondary"
+                )}
+              >
+                {ar ? cat.titleAr : cat.titleEn}
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Articles Grid */}
+      <section className="site-container pb-24">
+        {filteredArticles.length > 0 ? (
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {filteredArticles.map((article, idx) => (
+              <Reveal key={article.id} delay={idx * 0.04}>
+                <article className="group h-full flex flex-col justify-between overflow-hidden rounded-3xl border border-white/25 bg-background/85 shadow-md backdrop-blur-xl transition-all duration-300 hover:scale-[1.015] hover:border-brand-green/60 hover:shadow-2xl">
+                  <div>
+                    {/* Image Banner */}
+                    <Link to="/news/$slug" params={{ slug: article.slug }}>
+                      <div className="relative aspect-[16/10] w-full overflow-hidden bg-secondary">
+                        <img
+                          src={article.image}
+                          alt={ar ? article.titleAr : article.titleEn}
+                          loading="lazy"
+                          className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                        <div className="absolute top-3 start-3">
+                          <span className="rounded-full bg-black/60 px-3 py-0.5 text-[10px] font-bold text-white backdrop-blur-md border border-white/20">
+                            {article.type === "external"
+                              ? ar ? "خبر موثق" : "Verified News"
+                              : ar ? "رؤية تحليلية" : "Editorial"}
+                          </span>
+                        </div>
+                      </div>
+                    </Link>
+
+                    {/* Content */}
+                    <div className="p-6">
+                      <div className="flex items-center justify-between gap-2 text-xs text-muted-foreground mb-3 font-mono">
+                        <span className="inline-flex items-center gap-1">
+                          <Calendar className="size-3 text-brand-orange" />
+                          <span>{ar ? article.dateAr : article.dateEn}</span>
+                        </span>
+                        <span className="inline-flex items-center gap-1">
+                          <Clock className="size-3 text-brand-green" />
+                          <span>{ar ? article.readingTimeAr : article.readingTimeEn}</span>
+                        </span>
+                      </div>
+
+                      <h3 className="font-head text-lg font-bold text-foreground group-hover:text-brand-orange transition-colors leading-snug line-clamp-2">
+                        <Link to="/news/$slug" params={{ slug: article.slug }}>
+                          {ar ? article.titleAr : article.titleEn}
+                        </Link>
+                      </h3>
+
+                      <p className="mt-3 text-xs sm:text-sm text-muted-foreground leading-relaxed line-clamp-3">
+                        {ar ? article.excerptAr : article.excerptEn}
+                      </p>
                     </div>
                   </div>
 
-                  <h2 className="mt-5 font-head text-xl sm:text-2xl lg:text-3xl font-extrabold text-foreground leading-snug">
-                    {ar ? item.titleAr : item.titleEn}
-                  </h2>
-
-                  <p className="mt-3 text-sm sm:text-base leading-relaxed text-muted-foreground/95">
-                    {ar ? item.summaryAr : item.summaryEn}
-                  </p>
-
-                  {/* Expandable Full Story */}
-                  {isExpanded && (
-                    <div className="mt-6 border-t border-border/70 pt-6 animate-in fade-in duration-300">
-                      <div className="whitespace-pre-line text-sm sm:text-base leading-relaxed text-foreground/90 space-y-4 font-normal">
-                        {ar ? item.contentAr : item.contentEn}
-                      </div>
-                    </div>
-                  )}
-
-                  <div className="mt-6 pt-4 border-t border-border/50 flex items-center justify-between flex-wrap gap-4">
-                    <button
-                      type="button"
-                      onClick={() => toggleArticle(item.id)}
-                      className="inline-flex items-center gap-2 font-head text-xs sm:text-sm font-bold text-brand-green hover:text-brand-orange transition-colors cursor-pointer"
+                  {/* Card Footer */}
+                  <div className="p-6 pt-0 border-t border-border/40 mt-4 flex items-center justify-between">
+                    <Link
+                      to="/news/$slug"
+                      params={{ slug: article.slug }}
+                      className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-green hover:text-brand-orange transition-colors"
                     >
-                      <span>{isExpanded ? (ar ? "إغلاق التفاصيل" : "Show Less") : (ar ? "قراءة البيان الصحفي الكامل" : "Read Full Official Release")}</span>
-                      {isExpanded ? <ChevronUp className="size-4" /> : <ChevronDown className="size-4" />}
-                    </button>
+                      <span>{ar ? "اقرأ الإعلان" : "Read the announcement"}</span>
+                      <ArrowRight className="size-3 rtl:rotate-180" />
+                    </Link>
 
-                    <span className="text-[11px] font-mono text-muted-foreground/70 uppercase tracking-wider">
-                      {ar ? "بيان صحفي موثق" : "Official Press Release"}
-                    </span>
+                    {article.sourceName && (
+                      <span className="text-[10px] font-mono text-muted-foreground/80 truncate max-w-[130px]">
+                        {article.sourceName}
+                      </span>
+                    )}
                   </div>
                 </article>
               </Reveal>
-            );
-          })}
-        </div>
+            ))}
+          </div>
+        ) : (
+          <div className="py-20 text-center rounded-3xl border border-dashed border-border bg-secondary/30">
+            <Newspaper className="mx-auto size-10 text-muted-foreground/60 mb-3" />
+            <h3 className="font-head text-lg font-bold text-foreground">
+              {ar ? "لا توجد نتائج مطابقة" : "No matching articles"}
+            </h3>
+            <p className="text-xs text-muted-foreground mt-1">
+              {ar ? "جرّب استخدام كلمات بحث أخرى أو تغيير الفلاتر." : "Try adjusting your search query or filters."}
+            </p>
+          </div>
+        )}
       </section>
     </div>
   );

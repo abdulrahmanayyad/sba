@@ -28,6 +28,8 @@ import { Route as JoinGroupRouteImport } from './routes/join.group'
 import { Route as JoinSustainabilityRouteImport } from './routes/join.sustainability'
 import { Route as ModelsIndexRouteImport } from './routes/models.index'
 import { Route as ModelsCodeRouteImport } from './routes/models.$code'
+import { Route as NewsIndexRouteImport } from './routes/news.index'
+import { Route as NewsSlugRouteImport } from './routes/news.$slug'
 import { Route as SectorsIndexRouteImport } from './routes/sectors.index'
 import { Route as SectorsSectorRouteImport } from './routes/sectors.$sector'
 
@@ -126,6 +128,16 @@ const ModelsCodeRoute = ModelsCodeRouteImport.update({
   path: '/$code',
   getParentRoute: () => ModelsRoute,
 } as any)
+const NewsIndexRoute = NewsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => NewsRoute,
+} as any)
+const NewsSlugRoute = NewsSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => NewsRoute,
+} as any)
 const SectorsIndexRoute = SectorsIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -146,7 +158,7 @@ export interface FileRoutesByFullPath {
   '/how-we-manufacture': typeof HowWeManufactureRoute
   '/join': typeof JoinRouteWithChildren
   '/models': typeof ModelsRouteWithChildren
-  '/news': typeof NewsRoute
+  '/news': typeof NewsRouteWithChildren
   '/partners': typeof PartnersRoute
   '/products': typeof ProductsRoute
   '/sectors': typeof SectorsRouteWithChildren
@@ -155,9 +167,11 @@ export interface FileRoutesByFullPath {
   '/join/group': typeof JoinGroupRoute
   '/join/sustainability': typeof JoinSustainabilityRoute
   '/models/$code': typeof ModelsCodeRoute
+  '/news/$slug': typeof NewsSlugRoute
   '/sectors/$sector': typeof SectorsSectorRoute
   '/join/': typeof JoinIndexRoute
   '/models/': typeof ModelsIndexRoute
+  '/news/': typeof NewsIndexRoute
   '/sectors/': typeof SectorsIndexRoute
 }
 export interface FileRoutesByTo {
@@ -167,7 +181,6 @@ export interface FileRoutesByTo {
   '/brands': typeof BrandsRoute
   '/contact': typeof ContactRoute
   '/how-we-manufacture': typeof HowWeManufactureRoute
-  '/news': typeof NewsRoute
   '/partners': typeof PartnersRoute
   '/products': typeof ProductsRoute
   '/join/construction': typeof JoinConstructionRoute
@@ -175,9 +188,11 @@ export interface FileRoutesByTo {
   '/join/group': typeof JoinGroupRoute
   '/join/sustainability': typeof JoinSustainabilityRoute
   '/models/$code': typeof ModelsCodeRoute
+  '/news/$slug': typeof NewsSlugRoute
   '/sectors/$sector': typeof SectorsSectorRoute
   '/join': typeof JoinIndexRoute
   '/models': typeof ModelsIndexRoute
+  '/news': typeof NewsIndexRoute
   '/sectors': typeof SectorsIndexRoute
 }
 export interface FileRoutesById {
@@ -190,7 +205,7 @@ export interface FileRoutesById {
   '/how-we-manufacture': typeof HowWeManufactureRoute
   '/join': typeof JoinRouteWithChildren
   '/models': typeof ModelsRouteWithChildren
-  '/news': typeof NewsRoute
+  '/news': typeof NewsRouteWithChildren
   '/partners': typeof PartnersRoute
   '/products': typeof ProductsRoute
   '/sectors': typeof SectorsRouteWithChildren
@@ -199,9 +214,11 @@ export interface FileRoutesById {
   '/join/group': typeof JoinGroupRoute
   '/join/sustainability': typeof JoinSustainabilityRoute
   '/models/$code': typeof ModelsCodeRoute
+  '/news/$slug': typeof NewsSlugRoute
   '/sectors/$sector': typeof SectorsSectorRoute
   '/join/': typeof JoinIndexRoute
   '/models/': typeof ModelsIndexRoute
+  '/news/': typeof NewsIndexRoute
   '/sectors/': typeof SectorsIndexRoute
 }
 export interface FileRouteTypes {
@@ -224,9 +241,11 @@ export interface FileRouteTypes {
     | '/join/group'
     | '/join/sustainability'
     | '/models/$code'
+    | '/news/$slug'
     | '/sectors/$sector'
     | '/join/'
     | '/models/'
+    | '/news/'
     | '/sectors/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -236,7 +255,6 @@ export interface FileRouteTypes {
     | '/brands'
     | '/contact'
     | '/how-we-manufacture'
-    | '/news'
     | '/partners'
     | '/products'
     | '/join/construction'
@@ -244,9 +262,11 @@ export interface FileRouteTypes {
     | '/join/group'
     | '/join/sustainability'
     | '/models/$code'
+    | '/news/$slug'
     | '/sectors/$sector'
     | '/join'
     | '/models'
+    | '/news'
     | '/sectors'
   id:
     | '__root__'
@@ -267,9 +287,11 @@ export interface FileRouteTypes {
     | '/join/group'
     | '/join/sustainability'
     | '/models/$code'
+    | '/news/$slug'
     | '/sectors/$sector'
     | '/join/'
     | '/models/'
+    | '/news/'
     | '/sectors/'
   fileRoutesById: FileRoutesById
 }
@@ -282,7 +304,7 @@ export interface RootRouteChildren {
   HowWeManufactureRoute: typeof HowWeManufactureRoute
   JoinRoute: typeof JoinRouteWithChildren
   ModelsRoute: typeof ModelsRouteWithChildren
-  NewsRoute: typeof NewsRoute
+  NewsRoute: typeof NewsRouteWithChildren
   PartnersRoute: typeof PartnersRoute
   ProductsRoute: typeof ProductsRoute
   SectorsRoute: typeof SectorsRouteWithChildren
@@ -423,6 +445,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ModelsCodeRouteImport
       parentRoute: typeof ModelsRoute
     }
+    '/news/': {
+      id: '/news/'
+      path: '/'
+      fullPath: '/news/'
+      preLoaderRoute: typeof NewsIndexRouteImport
+      parentRoute: typeof NewsRoute
+    }
+    '/news/$slug': {
+      id: '/news/$slug'
+      path: '/$slug'
+      fullPath: '/news/$slug'
+      preLoaderRoute: typeof NewsSlugRouteImport
+      parentRoute: typeof NewsRoute
+    }
     '/sectors/': {
       id: '/sectors/'
       path: '/'
@@ -471,6 +507,18 @@ const ModelsRouteChildren: ModelsRouteChildren = {
 const ModelsRouteWithChildren =
   ModelsRoute._addFileChildren(ModelsRouteChildren)
 
+interface NewsRouteChildren {
+  NewsSlugRoute: typeof NewsSlugRoute
+  NewsIndexRoute: typeof NewsIndexRoute
+}
+
+const NewsRouteChildren: NewsRouteChildren = {
+  NewsSlugRoute: NewsSlugRoute,
+  NewsIndexRoute: NewsIndexRoute,
+}
+
+const NewsRouteWithChildren = NewsRoute._addFileChildren(NewsRouteChildren)
+
 interface SectorsRouteChildren {
   SectorsSectorRoute: typeof SectorsSectorRoute
   SectorsIndexRoute: typeof SectorsIndexRoute
@@ -493,7 +541,7 @@ const rootRouteChildren: RootRouteChildren = {
   HowWeManufactureRoute: HowWeManufactureRoute,
   JoinRoute: JoinRouteWithChildren,
   ModelsRoute: ModelsRouteWithChildren,
-  NewsRoute: NewsRoute,
+  NewsRoute: NewsRouteWithChildren,
   PartnersRoute: PartnersRoute,
   ProductsRoute: ProductsRoute,
   SectorsRoute: SectorsRouteWithChildren,

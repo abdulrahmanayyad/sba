@@ -21,21 +21,21 @@ export const whoWeAreData = {
   titleAr: "مجموعة أعمال متعددة القطاعات تبني قيمة مستدامة",
   paragraphs: [
     {
-      en: "SAMI BIN AYYAD GROUP is a diversified business group established in 2023, developing activities and projects across several strategic sectors: Construction & Contracting, Sustainable Environment, Garment Manufacturing, and Natural Food Products.",
-      ar: "مجموعة سامي بن عياد هي مجموعة أعمال متعددة القطاعات، تأسست عام 2023، وتعمل على تطوير أنشطة ومشروعات ضمن عدة قطاعات استراتيجية: المقاولات، والبيئة المستدامة، وتصنيع الملابس، والمنتجات الطبيعية.",
+      en: "Established in 2023, Sami Bin Ayyad Group operates across four sectors: contracting and real estate development, environment and sustainability, apparel manufacturing, and natural and food products. The Group draws on its founders' experience in project delivery, trade and business management to develop activities that respond to client and market needs.",
+      ar: "مجموعة سامي بن عياد مجموعة أعمال متعددة القطاعات، تأسست عام 2023، وتعمل في المقاولات والتطوير العقاري، والبيئة والاستدامة، وتصنيع الملابس، والمنتجات الطبيعية والغذائية. تستند المجموعة إلى خبرات مؤسسيها في التنفيذ والتجارة وإدارة الأعمال، وتعمل على تطوير هذه الخبرات ضمن إطار مؤسسي يواكب احتياجات العملاء والأسواق.",
     },
     {
-      en: "Our vision combines practical expertise, continuous development, and innovation through an institutional framework focused on operational efficiency, strategic partnerships, and long-term value creation for clients, partners, and communities.",
-      ar: "تقوم رؤيتنا على الجمع بين الخبرة العملية والتطوير المستمر والابتكار، من خلال منظومة مؤسسية تسعى إلى تعزيز الكفاءة التشغيلية، وبناء الشراكات الاستراتيجية، وتحقيق قيمة طويلة الأجل للعملاء والشركاء والمجتمعات.",
+      en: "Sheikh Sami Bin Ayyad began his professional career in contracting and finishing works in 1977, later expanding into trade and investment. This experience forms part of the background on which the Group has developed since its establishment. Historical projects and agreements should be presented with the name of the entity responsible for them.",
+      ar: "بدأت المسيرة المهنية للشيخ سامي بن عياد في أعمال المقاولات والتشطيبات عام 1977، وامتدت لاحقًا إلى التجارة وأنشطة استثمارية متنوعة. وتمثل هذه الخبرات جانبًا من الخلفية التي تستند إليها المجموعة منذ تأسيسها عام 2023. وتُعرض مشروعات وخبرات الكيانات المشاركة مع بيان الجهة المنفذة وتاريخ العمل.",
     },
     {
-      en: "We believe the success of a business group depends not only on diversification, but also on a clear vision, effective management, disciplined execution, and the ability to turn opportunities into practical results. We aim to build an evolving organization capable of responding to changing markets, exploring new opportunities, and contributing to sustainable economic and social development.",
-      ar: "نؤمن بأن نجاح المجموعة لا يعتمد فقط على تنوع أنشطتها، بل على وضوح الرؤية، وكفاءة الإدارة، والانضباط في التنفيذ، والقدرة على تحويل الفرص إلى نتائج عملية. ونسعى إلى بناء كيان متطور قادر على مواكبة تغيرات الأسواق، واستكشاف فرص جديدة، والمساهمة في التنمية الاقتصادية والاجتماعية المستدامة.",
+      en: "We believe the success of a business group depends on a clear vision, effective management, disciplined execution, and the ability to turn opportunities into practical results, contributing to sustainable economic and social development.",
+      ar: "نؤمن بأن نجاح المجموعة يعتمد على وضوح الرؤية، وكفاءة الإدارة، والانضباط في التنفيذ، والقدرة على تحويل الفرص إلى نتائج عملية، والمساهمة في التنمية الاقتصادية والاجتماعية المستدامة.",
     },
   ],
   stats: [
     { value: "1977", label: "Heritage Roots", labelAr: "جذور متوارثة" },
-    { value: "4+", label: "Strategic Sectors", labelAr: "قطاعات استراتيجية" },
+    { value: "4", label: "Strategic Sectors", labelAr: "قطاعات استراتيجية" },
     { value: "100%", label: "Committed to Growth", labelAr: "التزام بالنمو المستدام" },
   ],
 };
@@ -90,8 +90,8 @@ export const ourApproachData = {
   titleAr: "تخطيط استراتيجي وشراكات مستدامة",
   paragraphs: [
     {
-      en: "SAMI BIN AYYAD GROUP follows an institutional approach based on strategic planning, operational efficiency, quality, and innovation. We study market and client needs, develop well-planned strategies, and continuously improve performance while building long-term partnerships founded on commitment, transparency, and mutual benefit.",
-      ar: "تعتمد مجموعة سامي بن عياد نهجًا مؤسسيًا يرتكز على التخطيط الاستراتيجي، والكفاءة التشغيلية، والجودة، والابتكار. ندرس احتياجات الأسواق والعملاء، ونطوّر خططًا مدروسة، ونعمل على تحسين الأداء وتعزيز التنسيق وتبادل الخبرات، مع بناء شراكات طويلة الأمد قائمة على الالتزام والشفافية والمصالح المشتركة.",
+      en: "We begin by understanding the client's objectives and assessing the technical and commercial requirements. We then define the scope, responsibilities and delivery arrangements, monitor progress and use feedback to improve performance.",
+      ar: "نبدأ بفهم احتياجات العميل وتقييم المتطلبات الفنية والتجارية. ثم نحدد نطاق العمل والمسؤوليات وآلية التنفيذ والمتابعة. ونراجع النتائج والملاحظات لتطوير الأداء وتحسين جودة الخدمة.",
     },
   ],
   steps: [
@@ -196,8 +196,8 @@ export const whySbaData = {
     {
       title: "Strategic Diversification",
       titleAr: "تنوع استراتيجي",
-      body: "Operating across five sectors creates opportunities for cooperation and development.",
-      bodyAr: "العمل عبر خمسة قطاعات يتيح استكشاف فرص متعددة للتعاون والتطوير.",
+      body: "Operating across four strategic sectors creates opportunities for cooperation and development.",
+      bodyAr: "العمل عبر أربعة قطاعات استراتيجية يتيح استكشاف فرص متعددة للتعاون والتطوير.",
     },
     {
       title: "Long-Term Vision",

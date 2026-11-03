@@ -52,8 +52,8 @@ export const environmentalAboutData = {
   approach: {
     badgeEn: "Our Approach",
     badgeAr: "نهجنا",
-    mottoEn: "We Looking After Your Business and Keep Earth Alive",
-    mottoAr: "نرعى أعمالك ونحافظ على كوكب الأرض آمنًا",
+    mottoEn: "Supporting your business and environmental goals",
+    mottoAr: "حلول بيئية تدعم قراراتك وأداء أعمالك",
     descEn: "Our philosophy connects commercial success with ecological balance, delivering pragmatic, science-backed solutions that protect both the client's investment and our shared planet.",
     descAr: "تقوم فلسفتنا على الربط المتناغم بين النجاح التجاري والتوازن البيئي، من خلال تقديم حلول علمية وعملية تحمي استثمارات العملاء وتصون موارد كوكبنا المشترك.",
   },
@@ -118,7 +118,7 @@ export const environmentalAboutData = {
       {
         titleEn: "Teamwork & Performance",
         titleAr: "العمل الجماعي والأداء المتميز",
-        descEn: "We work together across boundaries to meet the ends of our customers and to help the company win. We value our people, encourage their development, and reward their performance.",
+        descEn: "We work together across boundaries to meet our customers' needs and to help the company win. We value our people, encourage their development, and reward their performance.",
         descAr: "نعمل بروح الفريق الواحد العابر للحدود لتحقيق أهداف عملائنا، ونقدر كوادرنا ونشجع تطورهم ونكافئ تميزهم المستمر.",
       },
       {
@@ -355,14 +355,14 @@ export const environmentalServicesData = {
     {
       id: "waste-to-energy",
       number: "01",
-      badgeEn: "Strategic Alliance · Ren ergon AG",
-      badgeAr: "شراكة استراتيجية · رين إرجون السويسرية",
+      badgeEn: "Strategic Alliance · RENERGON International AG",
+      badgeAr: "شراكة استراتيجية · رينرجون الدولية (RENERGON) السويسرية",
       titleEn: "Waste to Energy Services & Biogas Plants",
       titleAr: "خدمات تحويل المخلفات إلى طاقة ومحطات الغاز الحيوي",
       leadEn: "Turnkey technology solutions turning organic waste into renewable power, compost, and fertilizers",
       leadAr: "حلول تكنولوجية متكاملة لتحويل المخلفات العضوية إلى طاقة نظيفة وسماد عضوي عالي الجودة",
-      bodyEn: "Sami Bin Ayyad for Sustainable Environmental Services & Renewable Energy (Egypt) conducted a professional partnership with leading European company Ren ergon International AG (Switzerland), creating an alliance to lead the biogas production & waste-to-energy plant industry in Egypt. Utilizing Ren ergon's patented RSD (Ren ergon Simultaneous Digestion) dry fermentation technology, we build and operate small, medium, and large-scale plants converting municipal solid waste (MSW), food, agricultural, animal, and chicken manure into clean energy and bio-products.",
-      bodyAr: "عقدت سامي بن عياد شراكة استراتيجية مع شركة رين إرجون إنترناشيونال السويسرية (Ren ergon International AG)، الرائدة أوروبيًا، لتشكيل تحالف يقود صناعة إنتاج البيوجاز ومحطات تحويل المخلفات إلى طاقة في مصر. نعتمد على تكنولوجيا RSD الحاصلة على براءة اختراع للتخمير الجاف (Dry fermentation)، لإنشاء وتشغيل محطات بمختلف السعات لمعالجة المخلفات البلدية والزراعية ومخلفات الدواجن والحيوانات وتحويلها لطاقة وموارد ذات قيمة عالية.",
+      bodyEn: "Sami Bin Ayyad for Sustainable Environmental Services & Renewable Energy (Egypt) conducted a professional partnership with leading European company RENERGON International AG (Switzerland), creating an alliance to lead the biogas production & waste-to-energy plant industry in Egypt. Utilizing RENERGON's patented RSD (Simultaneous Digestion) dry fermentation technology, we build and operate small, medium, and large-scale plants converting municipal solid waste (MSW), food, agricultural, animal, and chicken manure into clean energy and bio-products.",
+      bodyAr: "عقدت سامي بن عياد شراكة استراتيجية مع شركة رينرجون إنترناشيونال السويسرية (RENERGON International AG)، الرائدة أوروبيًا، لتشكيل تحالف يقود صناعة إنتاج البيوجاز ومحطات تحويل المخلفات إلى طاقة في مصر. نعتمد على تكنولوجيا RSD الحاصلة على براءة اختراع للتخمير الجاف (Dry fermentation)، لإنشاء وتشغيل محطات بمختلف السعات لمعالجة المخلفات البلدية والزراعية ومخلفات الدواجن والحيوانات وتحويلها لطاقة وموارد ذات قيمة عالية.",
       features: [
         { en: "RSD patented dry anaerobic digestion technology", ar: "تكنولوجيا التخمير الجاف اللاهوائي RSD الحاصلة على براءة اختراع" },
         { en: "Turnkey engineering, construction & operation for small, medium & large plants", ar: "حلول تسليم مفتاح تشمل التصميم والتنفيذ والتشغيل لكافة السعات" },

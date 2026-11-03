@@ -102,10 +102,31 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: ReactNode }) {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Sami Bin Ayyad Group",
+    alternateName: "مجموعة سامي بن عياد",
+    url: "https://sami-trade.com",
+    logo: "https://sami-trade.com/favicon.png",
+    description: "Multidisciplinary corporate group operating across Apparel Manufacturing, Contracting & Real Estate, Sustainable Environment, and Natural & Agri-Food Products.",
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+201222238072",
+      contactType: "customer service",
+      email: "info@sami-trade.com",
+      availableLanguage: ["Arabic", "English"],
+    },
+  };
+
   return (
     <html lang="en">
       <head>
         <HeadContent />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
       </head>
       <body>
         <ScrollRestoration />

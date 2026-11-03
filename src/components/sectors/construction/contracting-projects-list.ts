@@ -33,7 +33,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "16/5/2013",
     "valueAr": "727,480 جنيه",
     "valueEn": "727,480 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2001.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2001.jpg"
   },
   {
     "id": 2,
@@ -50,7 +50,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "10/6/2013",
     "valueAr": "969,337 جنيه",
     "valueEn": "969,337 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2002.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2002.jpg"
   },
   {
     "id": 3,
@@ -67,7 +67,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "5/1/2014",
     "valueAr": "3,109,500 جنيه",
     "valueEn": "3,109,500 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2003.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2003.jpg"
   },
   {
     "id": 4,
@@ -84,7 +84,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "22/1/2014",
     "valueAr": "15,570 جنيه",
     "valueEn": "15,570 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2004.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2004.jpg"
   },
   {
     "id": 5,
@@ -101,7 +101,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "22/1/2014",
     "valueAr": "15,570 جنيه",
     "valueEn": "15,570 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2005.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2005.jpg"
   },
   {
     "id": 6,
@@ -118,7 +118,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "1/2/2014",
     "valueAr": "5,490,000 جنيه",
     "valueEn": "5,490,000 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2006.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2006.jpg"
   },
   {
     "id": 7,
@@ -135,7 +135,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "12/2/2014",
     "valueAr": "481,310 جنيه",
     "valueEn": "481,310 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2007.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2007.jpg"
   },
   {
     "id": 8,
@@ -152,7 +152,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "19/2/2014",
     "valueAr": "473,025 جنيه",
     "valueEn": "473,025 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2008.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2008.jpg"
   },
   {
     "id": 9,
@@ -169,7 +169,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "23/2/2014",
     "valueAr": "6,812,900 جنيه",
     "valueEn": "6,812,900 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2009.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2009.jpg"
   },
   {
     "id": 10,
@@ -186,7 +186,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "24/2/2014",
     "valueAr": "1,372,500 جنيه",
     "valueEn": "1,372,500 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2010.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2010.jpg"
   },
   {
     "id": 11,
@@ -203,7 +203,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "24/2/2014",
     "valueAr": "5,490,000 جنيه",
     "valueEn": "5,490,000 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2011.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2011.jpg"
   },
   {
     "id": 12,
@@ -220,7 +220,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "3/3/2014",
     "valueAr": "2,916,250 جنيه",
     "valueEn": "2,916,250 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2012.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2012.jpg"
   },
   {
     "id": 13,
@@ -237,7 +237,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "12/3/2014",
     "valueAr": "1,432,000 جنيه",
     "valueEn": "1,432,000 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2013.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2013.jpg"
   },
   {
     "id": 14,
@@ -271,7 +271,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "3/4/2014",
     "valueAr": "2,465,000 جنيه",
     "valueEn": "2,465,000 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2015.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2015.jpg"
   },
   {
     "id": 16,
@@ -288,7 +288,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "5/5/2014",
     "valueAr": "6,718,129 جنيه",
     "valueEn": "6,718,129 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2016.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2016.jpg"
   },
   {
     "id": 17,
@@ -305,7 +305,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "6/5/2014",
     "valueAr": "571,741 جنيه",
     "valueEn": "571,741 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2017.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2017.jpg"
   },
   {
     "id": 18,
@@ -322,7 +322,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "27/5/2014",
     "valueAr": "89,245 جنيه",
     "valueEn": "89,245 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2018.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2018.jpg"
   },
   {
     "id": 19,
@@ -339,7 +339,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "9/6/2014",
     "valueAr": "322,640 جنيه",
     "valueEn": "322,640 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2019.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2019.jpg"
   },
   {
     "id": 20,
@@ -356,7 +356,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "9/6/2014",
     "valueAr": "870,125 جنيه",
     "valueEn": "870,125 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2020.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2020.jpg"
   },
   {
     "id": 21,
@@ -373,7 +373,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "12/6/2014",
     "valueAr": "1,196,160 جنيه",
     "valueEn": "1,196,160 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2021.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2021.jpg"
   },
   {
     "id": 22,
@@ -390,7 +390,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "24/6/2014",
     "valueAr": "3,114,700 جنيه",
     "valueEn": "3,114,700 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2022.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2022.jpg"
   },
   {
     "id": 23,
@@ -407,7 +407,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "26/6/2014",
     "valueAr": "1,634,900 جنيه",
     "valueEn": "1,634,900 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2023.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2023.jpg"
   },
   {
     "id": 24,
@@ -424,7 +424,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "29/6/2014",
     "valueAr": "2,115,000 جنيه",
     "valueEn": "2,115,000 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2024.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2024.jpg"
   },
   {
     "id": 25,
@@ -441,7 +441,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "10/7/2014",
     "valueAr": "346,032 جنيه",
     "valueEn": "346,032 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2025.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2025.jpg"
   },
   {
     "id": 26,
@@ -458,7 +458,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "10/9/2014",
     "valueAr": "148,685 جنيه",
     "valueEn": "148,685 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2026.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2026.jpg"
   },
   {
     "id": 27,
@@ -475,7 +475,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "6/7/2015",
     "valueAr": "1,034,350 جنيه",
     "valueEn": "1,034,350 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2027.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2027.jpg"
   },
   {
     "id": 28,
@@ -492,7 +492,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "6/7/2015",
     "valueAr": "5,129,380 جنيه",
     "valueEn": "5,129,380 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2028.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2028.jpg"
   },
   {
     "id": 29,
@@ -509,7 +509,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "24/8/2015",
     "valueAr": "64,160 جنيه",
     "valueEn": "64,160 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2029.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2029.jpg"
   },
   {
     "id": 30,
@@ -526,7 +526,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "1/11/2015",
     "valueAr": "85,365 جنيه",
     "valueEn": "85,365 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2030.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2030.jpg"
   },
   {
     "id": 31,
@@ -543,7 +543,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "18/11/2015",
     "valueAr": "6,000,000 جنيه",
     "valueEn": "6,000,000 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2031.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2031.jpg"
   },
   {
     "id": 32,
@@ -560,7 +560,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "7/12/2015",
     "valueAr": "3,078,780 جنيه",
     "valueEn": "3,078,780 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2032.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2032.jpg"
   },
   {
     "id": 33,
@@ -577,7 +577,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "7/12/2015",
     "valueAr": "3,078,780 جنيه",
     "valueEn": "3,078,780 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2033.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2033.jpg"
   },
   {
     "id": 34,
@@ -594,7 +594,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "18/2/2016",
     "valueAr": "6,141,425 جنيه",
     "valueEn": "6,141,425 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2034.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2034.jpg"
   },
   {
     "id": 35,
@@ -611,7 +611,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "6/3/2016",
     "valueAr": "1,423,620 جنيه",
     "valueEn": "1,423,620 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2035.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2035.jpg"
   },
   {
     "id": 36,
@@ -628,7 +628,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "31/3/2016",
     "valueAr": "5,894,848 جنيه",
     "valueEn": "5,894,848 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2036.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2036.jpg"
   },
   {
     "id": 37,
@@ -645,7 +645,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "5/4/2016",
     "valueAr": "2,929,606 جنيه",
     "valueEn": "2,929,606 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2037.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2037.jpg"
   },
   {
     "id": 38,
@@ -662,7 +662,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "5/4/2016",
     "valueAr": "31,965,100 جنيه",
     "valueEn": "31,965,100 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2038.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2038.jpg"
   },
   {
     "id": 39,
@@ -679,7 +679,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "3/5/2016",
     "valueAr": "81,499 جنيه",
     "valueEn": "81,499 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2039.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2039.jpg"
   },
   {
     "id": 40,
@@ -696,7 +696,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "3/5/2016",
     "valueAr": "4,414,865 جنيه",
     "valueEn": "4,414,865 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2040.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2040.jpg"
   },
   {
     "id": 41,
@@ -713,7 +713,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "15/5/2016",
     "valueAr": "73,939,123 جنيه",
     "valueEn": "73,939,123 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2041.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2041.jpg"
   },
   {
     "id": 42,
@@ -730,7 +730,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "18/8/2016",
     "valueAr": "1,797,727 جنيه",
     "valueEn": "1,797,727 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2042.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2042.jpg"
   },
   {
     "id": 43,
@@ -747,7 +747,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "10/1/2018",
     "valueAr": "8,748,980 جنيه",
     "valueEn": "8,748,980 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2043.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2043.jpg"
   },
   {
     "id": 44,
@@ -764,7 +764,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "15/1/2018",
     "valueAr": "3,337,706 جنيه",
     "valueEn": "3,337,706 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2044.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2044.jpg"
   },
   {
     "id": 45,
@@ -781,7 +781,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "2018",
     "valueAr": "30,000,000 جنيه",
     "valueEn": "30,000,000 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2045.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2045.jpg"
   },
   {
     "id": 46,
@@ -798,7 +798,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "2018",
     "valueAr": "6,000,000 جنيه",
     "valueEn": "6,000,000 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2046.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2046.jpg"
   },
   {
     "id": 47,
@@ -815,7 +815,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "2019",
     "valueAr": "3,000,000 جنيه",
     "valueEn": "3,000,000 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2047.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2047.jpg"
   },
   {
     "id": 48,
@@ -832,7 +832,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "2020",
     "valueAr": "23,000,000 جنيه",
     "valueEn": "23,000,000 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2048.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2048.jpg"
   },
   {
     "id": 49,
@@ -849,7 +849,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "2020",
     "valueAr": "12,000,000 جنيه",
     "valueEn": "12,000,000 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2049.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2049.jpg"
   },
   {
     "id": 50,
@@ -866,7 +866,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "2020",
     "valueAr": "3,000,000 جنيه",
     "valueEn": "3,000,000 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2050.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2050.jpg"
   },
   {
     "id": 51,
@@ -883,7 +883,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "2021",
     "valueAr": "5,000,000 جنيه",
     "valueEn": "5,000,000 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2051.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2051.jpg"
   },
   {
     "id": 52,
@@ -900,7 +900,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "2021",
     "valueAr": "5,000,000 جنيه",
     "valueEn": "5,000,000 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2052.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2052.jpg"
   },
   {
     "id": 53,
@@ -917,7 +917,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "2021",
     "valueAr": "22,000,000 جنيه",
     "valueEn": "22,000,000 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2053.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2053.jpg"
   },
   {
     "id": 54,
@@ -934,7 +934,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "2/1/2023",
     "valueAr": "6,000,000 جنيه",
     "valueEn": "6,000,000 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2054.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2054.jpg"
   },
   {
     "id": 55,
@@ -951,7 +951,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "2023",
     "valueAr": "12,000,000 جنيه",
     "valueEn": "12,000,000 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2055.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2055.jpg"
   },
   {
     "id": 56,
@@ -959,7 +959,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "nameAr": "إنشاء فيلات سكنية بمدينة العبور",
     "nameEn": "17 Standalone Luxury Villas in Obour City",
     "category": "residential",
-    "descriptionAr": "إنشاء عدد 17فيلا ستندالون بالكامل من العضم حتى المباني والتشطيب الخارجي والواجهات",
+    "descriptionAr": "إنشاء عدد 17فيلا ستندالون بالكامل من العظم حتى المباني والتشطيب الخارجي والواجهات",
     "descriptionEn": "Turnkey construction of 17 standalone luxury residential villas in Obour City, from full concrete skeleton to brickwork and exterior facades.",
     "clientAr": "الهيئة الهندسية للقوات المسلحة",
     "clientEn": "Armed Forces Engineering Authority",
@@ -968,11 +968,11 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "2023",
     "valueAr": "68,000,000 جنيه",
     "valueEn": "68,000,000 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2056.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2056.jpg"
   },
   {
     "id": 57,
-    "year": "2023",
+    "year": "2024",
     "nameAr": "مشروع باتيو تاون التجمع الخامس",
     "nameEn": "Patio Town Luxury Compound (New Cairo)",
     "category": "residential",
@@ -985,6 +985,7 @@ export const contractingProjectsList: ContractingProject[] = [
     "contractDate": "1/2/2024",
     "valueAr": "137,000,000 جنيه",
     "valueEn": "137,000,000 EGP",
-    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2057.bmp"
+    "image": "/Contracting Photos/%D9%85%D8%B4%D8%B1%D9%88%D8%B9%2057.jpg"
   }
 ];
+

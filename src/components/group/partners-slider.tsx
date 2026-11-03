@@ -8,7 +8,8 @@ import { whoWeServe } from "./group-data";
 export function PartnersSlider({ ar }: { ar: boolean }) {
   const [current, setCurrent] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-  const total = whoWeServe.length;
+  const items = whoWeServe.slice(0, 3);
+  const total = items.length;
 
   useEffect(() => {
     if (isPaused) return;
@@ -30,7 +31,7 @@ export function PartnersSlider({ ar }: { ar: boolean }) {
       {/* Slider Controls */}
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
-          {whoWeServe.map((_, idx) => (
+          {items.map((_, idx) => (
             <button
               key={idx}
               type="button"
@@ -68,9 +69,7 @@ export function PartnersSlider({ ar }: { ar: boolean }) {
 
       {/* Slider Cards — Dynamic window view */}
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {[0, 1, 2].map((offset) => {
-          const itemIndex = (current + offset) % total;
-          const audience = whoWeServe[itemIndex];
+        {items.map((audience, itemIndex) => {
           if (!audience) return null;
 
           return (

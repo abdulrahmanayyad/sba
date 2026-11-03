@@ -13,8 +13,10 @@ const validEnvironmentalTabs: EnvironmentalTab[] = ["about", "sectors", "service
 const validFoodTabs: FoodTab[] = ["about", "sectors", "products", "markets", "order-product", "join"];
 
 export const Route = createFileRoute("/sectors/$sector")({
-  validateSearch: (search: Record<string, unknown>): { tab?: string | undefined } => {
+  validateSearch: (search: Record<string, unknown>): { tab?: string | undefined; service?: string | undefined } => {
     const tabStr = search["tab"];
+    const serviceStr = typeof search["service"] === "string" ? search["service"] : undefined;
+    let validatedTab: string | undefined = undefined;
     if (typeof tabStr === "string" && tabStr) {
       if (
         validConstructionTabs.includes(tabStr as ConstructionTab) ||
@@ -22,12 +24,12 @@ export const Route = createFileRoute("/sectors/$sector")({
         validEnvironmentalTabs.includes(tabStr as EnvironmentalTab) ||
         validFoodTabs.includes(tabStr as FoodTab)
       ) {
-        return { tab: tabStr };
+        validatedTab = tabStr;
       }
     }
-    return { tab: undefined };
+    return { tab: validatedTab, service: serviceStr };
   },
-  head: ({ params, search }: { params: { sector: string }; search?: { tab?: string } }) => {
+  head: ({ params, search }: { params: { sector: string }; search?: { tab?: string; service?: string } }) => {
     const sector = sectors[params.sector as SectorSlug];
     const name = sector?.name ?? "Sector";
     const tab = search?.tab;
@@ -69,7 +71,7 @@ export const Route = createFileRoute("/sectors/$sector")({
     } else if (params.sector === "food" && tab) {
       const foodTabTitles: Record<string, string> = {
         about: "About Us — Natural & Agri-Food Products",
-        sectors: "Our 7 Agri-Food Sectors — Honey, Olives, Dates & Herbs",
+        sectors: "Our Product Categories — Honey, Olives, Dates & Herbs",
         products: "Our Products & Export Specifications",
         markets: "Our Global Markets & 2024 Trade Indicators",
         "order-product": "Request for Quotation (RFQ) — Order Natural Products",

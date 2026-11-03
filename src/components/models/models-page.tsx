@@ -185,13 +185,13 @@ export function ModelsPage() {
             </div>
 
             <h1 className="mt-2 max-w-4xl font-head text-[clamp(1.85rem,3.5vw,3rem)] font-extrabold leading-tight text-white drop-shadow-md">
-              {ar ? "مكتبة الموديلات والمنتجات الجاهزة" : "Our Production-Ready Models & Apparel Lines"}
+              {ar ? "كتالوج الملابس" : "Apparel Catalogue"}
             </h1>
 
             <p className={cn("mt-4 max-w-3xl font-head text-base sm:text-lg font-bold leading-relaxed text-footer-foreground/90", ar && "font-body")}>
               {ar
-                ? "مكتبة شاملة تضم أكثر من 2,700 تصميم وموديل عبر كبرى خطوط الأزياء — الكاجوال، الفساتين، ملابس المنزل، الأطفال، اللانجيري، والسواريه — جاهزة للتصنيع والطلب المباشر."
-                : "Explore our comprehensive library of over 2,700 designs across major fashion lines — casual, dresses, loungewear, kids, lingerie, and soirée — ready for contract manufacturing and immediate private label orders."}
+                ? "تصفح الموديلات بحسب الفئة والموسم والفئة العمرية، واختر التصاميم المناسبة لطلب التصنيع. تُراجع الخامات والمقاسات والكميات والألوان ومواعيد التسليم قبل تأكيد الطلب."
+                : "Browse styles by collection, garment category and age range. Select the designs you would like to discuss, then confirm materials, sizes, colours, quantities and delivery requirements with our manufacturing team."}
             </p>
           </Reveal>
         </div>
@@ -392,16 +392,28 @@ export function ModelsPage() {
 
                 {/* Meta details footer */}
                 <div className="p-3">
-                  <div className="flex items-center justify-between gap-1">
+                  <div className="flex items-center justify-between gap-1 mb-2">
                     <span className="text-[11px] font-bold text-foreground line-clamp-1 group-hover:text-brand-green transition-colors">
                       {item.subcategory || item.code}
                     </span>
                     {item.age && (
                       <span className="shrink-0 rounded-md bg-secondary px-1.5 py-0.5 font-mono text-[9px] font-semibold text-muted-foreground">
-                        {item.age}y
+                        {item.age} {ar ? "سنوات" : "yrs"}
                       </span>
                     )}
                   </div>
+
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    className="w-full h-7 text-[10px] font-bold rounded-xl border-brand-green/30 bg-brand-green/5 text-brand-green-text hover:bg-brand-green hover:text-white transition-all py-0 px-2"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setActiveItem(item);
+                    }}
+                  >
+                    {ar ? "اطلب هذا التصميم" : "Order Design"}
+                  </Button>
                 </div>
               </div>
             ))}
@@ -409,7 +421,7 @@ export function ModelsPage() {
         ) : (
           <div className="py-20 text-center rounded-3xl border border-dashed border-border bg-secondary/20">
             <p className="text-base font-semibold text-muted-foreground">
-              {ar ? "لا توجد تصميمات مطابقة لمعايير البحث الحالية." : "No designs match your selected criteria."}
+              {ar ? "لم نعثر على موديلات مطابقة. جرّب تعديل الفلاتر." : "No styles match your selection. Try adjusting the filters."}
             </p>
             <Button
               variant="outline"

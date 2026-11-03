@@ -4,7 +4,7 @@ import { JoinPage } from "@/components/join/join-page";
 export const Route = createFileRoute("/join/group")({
   head: () => ({
     meta: [
-      { title: "Join Our Group — Build the Future With Us | Sami Bin Ayyad Group" },
+      { title: "Careers & Business Opportunities — Sami Bin Ayyad Group" },
       {
         name: "description",
         content:

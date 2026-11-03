@@ -1,10 +1,10 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useRouterState } from "@tanstack/react-router";
 import {
   ArrowRight,
   CheckCircle2,
   Search,
 } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Reveal } from "@/components/home/reveal";
 import { Button } from "@/components/ui/button";
@@ -390,65 +390,73 @@ function EnvironmentalProductsView({ ar }: { ar: boolean }) {
     {
       id: "ET-POT-01",
       titleEn: "ET-POT-01 — Oil Terminator",
-      titleAr: "ET-POT-01 — محلل الزيوت البيولوجي",
-      leadEn: "Biological oil decomposition for industrial wastewater",
-      leadAr: "تحليل بيولوجي للزيوت في مياه الصرف الصناعي",
-      descEn: "A proprietary biological formulation that decomposes hydrocarbon contaminants in industrial wastewater and oil-polluted environments. Ideal for factories, oil refineries, fuel stations, and marine applications.",
-      descAr: "تركيبة بيولوجية خاصة تحلل الملوثات الهيدروكربونية في مياه الصرف الصناعي والبيئات الملوثة بالزيوت. مثالية للمصانع والمصافي ومحطات الوقود والتطبيقات البحرية.",
+      titleAr: "ET-POT-01 — معالجة الملوثات الزيتية",
+      leadEn: "Biological treatment for applications involving hydrocarbon and oil contamination",
+      leadAr: "منتج للمعالجة الحيوية للملوثات الزيتية والهيدروكربونية",
+      descEn: "A biological treatment product for applications involving oil contamination. Confirm suitability, dosage and operating conditions against the product documentation and site assessment.",
+      descAr: "منتج للمعالجة الحيوية للملوثات الزيتية. تُراجع ملاءمته وجرعاته وظروف تشغيله وفق بيانات الموقع ونشرة المنتج.",
+      btnEn: "Request technical information",
+      btnAr: "اطلب البيانات الفنية",
       features: [
-        { en: "Rapidly degrades petroleum hydrocarbons", ar: "يحلل الهيدروكربونات النفطية بسرعة عالية" },
+        { en: "Rapidly degrades petroleum hydrocarbons", ar: "يحلل الهيدروكربونات النفطية بكفاءة عالية" },
         { en: "Effective in aerobic and anaerobic conditions", ar: "فعّال في الظروف الهوائية واللاهوائية" },
-        { en: "Non-toxic, environmentally safe formulation", ar: "تركيبة غير سامة وآمنة بيئيًا" },
-        { en: "Reduces COD and BOD in effluent", ar: "يقلل COD وBOD في مياه الصرف" },
-        { en: "Compatible with existing treatment systems", ar: "متوافق مع أنظمة المعالجة القائمة" },
+        { en: "Tailored biological formulation", ar: "تركيبة حيوية متخصصة ومدروسة" },
+        { en: "Reduces COD and BOD in effluent", ar: "يساعد في تقليل نسب COD وBOD في الصرف" },
+        { en: "Compatible with treatment processes", ar: "متوافق مع محطات وأنظمة المعالجة" },
       ],
     },
     {
       id: "ET-POR-01",
-      titleEn: "ET-POR-01 — Odor Removal Solution",
-      titleAr: "ET-POR-01 — محلول إزالة الروائح",
-      leadEn: "Industrial-grade odor neutralization for waste & wastewater",
-      leadAr: "تحييد الروائح الصناعية للنفايات ومياه الصرف",
-      descEn: "A concentrated odor-neutralizing compound that eliminates hydrogen sulfide (H₂S) and organic odor compounds at source. Widely used in wastewater treatment plants, landfills, composting facilities, and food processing plants.",
-      descAr: "مركب متخصص لتحييد الروائح يزيل كبريتيد الهيدروجين والمركبات العضوية المسببة للروائح من المصدر. يُستخدم على نطاق واسع في محطات معالجة المياه ومدافن النفايات والمصانع.",
+      titleEn: "ET-POR-01 — Odour Removal Solution",
+      titleAr: "ET-POR-01 — إزالة الروائح",
+      leadEn: "Odour management compound for environmental and industrial applications",
+      leadAr: "منتج لمعالجة الروائح في التطبيقات البيئية والصناعية",
+      descEn: "A product for odour management in environmental and industrial applications. Selection and application should reflect the odour source and operating conditions.",
+      descAr: "منتج لمعالجة الروائح في التطبيقات البيئية والصناعية. يُحدد أسلوب الاستخدام بعد تقييم مصدر الروائح وظروف الموقع.",
+      btnEn: "Discuss your application",
+      btnAr: "ناقش تطبيق المنتج",
       features: [
-        { en: "Eliminates H₂S and VOCs at source", ar: "يزيل H₂S والمركبات العضوية المتطايرة من المصدر" },
-        { en: "Immediate and long-lasting effect", ar: "تأثير فوري وطويل الأمد" },
-        { en: "Safe for operators and environment", ar: "آمن للمشغلين والبيئة" },
-        { en: "Available in liquid and powder forms", ar: "متاح في صورة سائل أو مسحوق" },
-        { en: "Suitable for large-scale industrial use", ar: "مناسب للاستخدام الصناعي على نطاق واسع" },
+        { en: "Targeted H₂S and organic odor management", ar: "معالجة مركبات كبريتيد الهيدروجين والروائح العضوية" },
+        { en: "Fast-acting application at emission sources", ar: "تطبيق سريع ومباشر عند مصادر الانبعاث" },
+        { en: "Designed for industrial wastewater and landfills", ar: "مخصص لمحطات معالجة الصرف ومدافن المخلفات" },
+        { en: "Available in liquid and powder options", ar: "متاح في خيارات سائلة ومسحوقة" },
+        { en: "Adaptable dosing for facility requirements", ar: "جرعات قابلة للضبط بحسب متطلبات المنشأة" },
       ],
     },
     {
       id: "IoT-ENV",
-      titleEn: "IoT Environmental Monitoring System",
-      titleAr: "نظام مراقبة بيئية عبر إنترنت الأشياء",
-      leadEn: "Real-time environmental data collection via Techno Set partnership",
-      leadAr: "جمع بيانات بيئية لحظية بالشراكة مع Techno Set",
-      descEn: "Smart IoT-based sensors and dashboards for continuous monitoring of air quality, water parameters, temperature, humidity, and pollution indicators. Delivered in partnership with Techno Set.",
-      descAr: "أجهزة استشعار ذكية ولوحات تحكم مبنية على إنترنت الأشياء لمراقبة مستمرة لجودة الهواء وبارامترات المياه ودرجات الحرارة والرطوبة ومؤشرات التلوث. تُقدَّم بالشراكة مع Techno Set.",
+      titleEn: "IoT-ENV — Environmental Monitoring System",
+      titleAr: "IoT-ENV — رصد بيئي ذكي",
+      leadEn: "Sensors and dashboards for collecting and reviewing environmental parameters",
+      leadAr: "حلول لرصد مؤشرات بيئية وتجميع البيانات وعرضها",
+      descEn: "Sensors and dashboards for collecting and reviewing selected environmental parameters. Sensor ranges, calibration, alerts and reporting functions are specified for each installation.",
+      descAr: "حلول لرصد مؤشرات بيئية وتجميع البيانات وعرضها، باستخدام حساسات ووظائف تُحدد حسب نطاق المشروع.",
+      btnEn: "Request a system proposal",
+      btnAr: "اطلب عرض النظام",
       features: [
-        { en: "Real-time data dashboards and alerts", ar: "لوحات بيانات لحظية وتنبيهات فورية" },
-        { en: "Air quality: PM2.5, PM10, CO₂, VOC, NOx", ar: "جودة الهواء: PM2.5، PM10، CO₂، VOC، NOx" },
-        { en: "Water: pH, TDS, turbidity, DO, conductivity", ar: "المياه: pH، TDS، عكارة، DO، التوصيلية" },
-        { en: "Remote access via web and mobile apps", ar: "وصول عن بعد عبر تطبيقات الويب والجوال" },
-        { en: "Integration with EHS compliance reports", ar: "تكامل مع تقارير الامتثال البيئي والصحي" },
+        { en: "Real-time parameter tracking and alerts", ar: "تتبع لحظي للبارامترات وإرسال التنبيهات" },
+        { en: "Air quality: particulate matter, CO₂, VOCs", ar: "جودة الهواء: الجسيمات العالقة، CO₂، والمركبات المتطايرة" },
+        { en: "Water metrics: pH, TDS, turbidity, DO", ar: "مؤشرات المياه: درجة الحموضة، الأملاح الذائبة، والعكارة" },
+        { en: "Web and dashboard integration", ar: "واجهات تحكم مخصصة وتقارير رقمية" },
+        { en: "Calibrated to site operational needs", ar: "معايرة دقيقة وفق بيئة العمل المستهدفة" },
       ],
     },
     {
       id: "EHS-APP",
-      titleEn: "EHS Regulatory Compliance App",
-      titleAr: "تطبيق الامتثال لمتطلبات EHS",
-      leadEn: "Digital EHS management and regulatory reporting platform",
-      leadAr: "منصة رقمية لإدارة EHS والتقارير التنظيمية",
-      descEn: "A regulatory compliance management application that helps organizations track EHS obligations, manage audits, generate compliance reports, and maintain documentation in line with Egyptian and international standards.",
-      descAr: "تطبيق إدارة الامتثال التنظيمي يساعد المؤسسات على تتبع التزامات EHS وإدارة عمليات التدقيق وإنشاء تقارير الامتثال والحفاظ على التوثيق وفق المعايير المصرية والدولية.",
+      titleEn: "EHS-APP — Environmental Health and Safety Management Application",
+      titleAr: "EHS-APP — تطبيق إدارة السلامة والبيئة",
+      leadEn: "Digital tools to organise records, audits, incidents and follow-up actions",
+      leadAr: "تطبيق لتنظيم سجلات السلامة والبيئة ومتابعة المهام والإجراءات والتقارير",
+      descEn: "Digital tools to organise records, audits, incidents and follow-up actions, with reporting functions configured to the agreed requirements.",
+      descAr: "تطبيق لتنظيم سجلات السلامة والبيئة ومتابعة المهام والإجراءات والتقارير، وفق إعدادات ومتطلبات كل منشأة.",
+      btnEn: "Request a demonstration",
+      btnAr: "اطلب عرضًا توضيحيًا",
       features: [
-        { en: "EHS audit scheduling and tracking", ar: "جدولة ومتابعة عمليات التدقيق البيئي" },
-        { en: "Automated compliance reporting", ar: "إعداد تقارير الامتثال تلقائيًا" },
-        { en: "Incident and near-miss logging", ar: "تسجيل الحوادث وحالات اقتراب الخطر" },
-        { en: "Egyptian Environmental Law integration", ar: "تكامل مع قانون البيئة المصري" },
-        { en: "Multi-site and multi-user support", ar: "دعم متعدد المواقع والمستخدمين" },
+        { en: "Organised audit scheduling and tracking", ar: "تنظيم وجدولة ومتابعة عمليات التدقيق" },
+        { en: "Structured regulatory reporting workflows", ar: "نماذج إعداد التقارير الرقابية المعتمدة" },
+        { en: "Incident and corrective action follow-up", ar: "متابعة الحوادث وتسجيل الإجراءات التصحيحية" },
+        { en: "Centralised document and register management", ar: "إدارة مركزية للسجلات والوثائق المنظمة" },
+        { en: "Role-based access across facilities", ar: "صلاحيات استخدام محددة لفرق العمل والمواقع" },
       ],
     },
   ];
@@ -532,7 +540,7 @@ function EnvironmentalProductsView({ ar }: { ar: boolean }) {
                           }}
                           className="inline-flex items-center gap-2 rounded-full bg-brand-green px-5 py-2.5 text-xs font-bold text-white transition-all duration-300 hover:bg-brand-orange hover:shadow-md hover:scale-105 active:scale-95 cursor-pointer"
                         >
-                          <span>{ar ? "استفسر عن المنتج" : "Inquire Product"}</span>
+                          <span>{ar ? (product.btnAr || "استفسر عن المنتج") : (product.btnEn || "Enquire about this product")}</span>
                           <ArrowRight className={cn("size-3.5", ar && "rotate-180")} />
                         </a>
                       </div>
@@ -552,6 +560,14 @@ function EnvironmentalProductsView({ ar }: { ar: boolean }) {
 function EnvironmentalStartConsultationView({ ar }: { ar: boolean }) {
   const [step, setStep] = useState(1);
   const totalSteps = 5;
+
+  const requestedServiceId = useRouterState({
+    select: (s) => (s.location.search as Record<string, string>)["service"],
+  });
+  const matchedService = requestedServiceId
+    ? environmentalServicesData.services.find((s) => s.id === requestedServiceId)
+    : null;
+
   const [form, setForm] = useState({
     projectName: "",
     projectType: "",
@@ -572,6 +588,16 @@ function EnvironmentalStartConsultationView({ ar }: { ar: boolean }) {
     submitted: false,
     refNum: "",
   });
+
+  useEffect(() => {
+    if (matchedService) {
+      const sName = ar ? matchedService.titleAr : matchedService.titleEn;
+      setForm((p) => ({
+        ...p,
+        services: p.services.includes(sName) ? p.services : [sName, ...p.services],
+      }));
+    }
+  }, [matchedService, ar]);
   const up = (k: string, v: unknown) => setForm((p) => ({ ...p, [k]: v }));
 
   const projectTypes = ar
@@ -905,7 +931,7 @@ function EnvironmentalServicesView({ ar }: { ar: boolean }) {
                         <Link
                           to="/sectors/$sector"
                           params={{ sector: "environmental" }}
-                          search={{ tab: "start-consultation" }}
+                          search={{ tab: "start-consultation", service: service.id }}
                           className="inline-flex items-center gap-2 rounded-full bg-brand-green px-5 py-2.5 text-xs font-bold text-white transition-all duration-300 hover:bg-brand-orange hover:shadow-md hover:scale-105 active:scale-95 cursor-pointer"
                         >
                           <span>{ar ? "طلب استشارة" : "Request Consultation"}</span>

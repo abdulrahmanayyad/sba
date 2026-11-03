@@ -1,5 +1,5 @@
-import { Link } from "@tanstack/react-router";
-import { useState } from "react";
+import { Link, useRouterState } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import { 
   Building2, 
   ChevronRight, 
@@ -18,7 +18,7 @@ import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/i18n/language-context";
 import { WHATSAPP_URL } from "@/lib/process-steps";
 import { cn } from "@/lib/utils";
-import { garmentHeroData } from "./garment-data";
+import { garmentHeroData, garmentServicesDetailed } from "./garment-data";
 
 import { GarmentAboutTab } from "./tabs/garment-about-tab";
 import { GarmentServicesTab } from "./tabs/garment-services-tab";
@@ -154,6 +154,14 @@ function GarmentStartProjectView() {
   const ar = language === "AR";
   const [step, setStep] = useState(1);
   const totalSteps = 4;
+
+  const requestedServiceId = useRouterState({
+    select: (s) => (s.location.search as Record<string, string>)["service"],
+  });
+  const matchedService = requestedServiceId
+    ? garmentServicesDetailed.find((s) => s.id === requestedServiceId)
+    : null;
+
   const [form, setForm] = useState({
     productType: [] as string[],
     cooperationType: "",
@@ -169,6 +177,16 @@ function GarmentStartProjectView() {
     submitted: false,
     refNum: "",
   });
+
+  useEffect(() => {
+    if (matchedService) {
+      const title = ar ? matchedService.titleAr : matchedService.titleEn;
+      setForm((p) => ({
+        ...p,
+        notes: p.notes ? p.notes : (ar ? `الخدمة المطلوبة: ${title}` : `Requested Service: ${title}`),
+      }));
+    }
+  }, [matchedService, ar]);
   const up = (k: string, v: unknown) => setForm((p) => ({ ...p, [k]: v }));
 
   const productTypes = ar

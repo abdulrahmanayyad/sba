@@ -2,7 +2,44 @@ import { ArrowRight, Mail, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { WHATSAPP_URL } from "@/lib/process-steps";
 
-export function SectorContactSection({ ar }: { ar: boolean }) {
+interface SectorContactSectionProps {
+  ar: boolean;
+  sector?: "construction" | "environmental" | "garment" | "food" | string;
+}
+
+export function SectorContactSection({ ar, sector }: SectorContactSectionProps) {
+  const customCopy = {
+    construction: {
+      titleAr: "ابدأ مشروعك الإنشائي القادم مع خبراء التنفيذ",
+      titleEn: "Build Your Next Project with Execution Experts",
+      introAr: "تواصل مباشرة مع إدارة قطاع المقاولات لمناقشة دراسات الجدوى، مقايسات الأعمال، وجداول التنفيذ والتسليم المعتمدة.",
+      introEn: "Connect directly with our Contracting division to discuss feasibility, BOQ reviews, and certified turnkey engineering execution.",
+    },
+    garment: {
+      titleAr: "طوّر خط إنتاج أزياء علامتك التجارية",
+      titleEn: "Scale Your Apparel Brand Manufacturing",
+      introAr: "تواصل مع فريق تصنيع الملابس لمناقشة برامج FOB المتكاملة، التصنيع للعلامات الخاصة (Private Label)، واعتماد العينات.",
+      introEn: "Connect with our Apparel desk to discuss turnkey FOB programs, Private Label contracts, and rapid production sampling.",
+    },
+    environmental: {
+      titleAr: "حلول بيئية واستدامة متقدمة لمنشأتك الصناعية",
+      titleEn: "Advanced Environmental Solutions for Your Enterprise",
+      introAr: "تواصل مع مستشارينا المعتمدين لتقييم دراسات الأثر البيئي (EIA)، تكنولوجيا الغاز الحيوي، حساب البصمة الكربونية وتأهيل الأيزو.",
+      introEn: "Consult with our accredited specialists on EIA studies, dry fermentation biogas plants, carbon verification, and ISO qualification.",
+    },
+    food: {
+      titleAr: "شراكات توريد المنتجات الطبيعية والغذائية للتصدير",
+      titleEn: "Agri-Food Sourcing & Global Export Partnerships",
+      introAr: "تواصل مع مكتب التصدير التجاري لتلقي عينات موثقة، شهادات التحليل المعملية، وعروض أسعار توريد الحاويات والشحنات الفورية.",
+      introEn: "Contact our Agri-Food Export Desk for certified origin samples, lab certificates, and custom wholesale export pricing.",
+    },
+  }[sector || ""];
+
+  const title = customCopy ? (ar ? customCopy.titleAr : customCopy.titleEn) : (ar ? "لنبن ما هو قادم" : "Let's Build What's Next");
+  const intro = customCopy ? (ar ? customCopy.introAr : customCopy.introEn) : (ar
+    ? "استكشف فرص التعاون مع مجموعة سامي بن عياد في التصنيع والإنشاءات والحلول البيئية والمنتجات الطبيعية."
+    : "Explore opportunities to collaborate with SAMI BIN AYYAD GROUP across manufacturing, construction, environmental solutions, and natural products.");
+
   return (
     <section id="contact" className="site-container scroll-mt-24 pt-8">
       <div className="mx-auto max-w-6xl overflow-hidden rounded-3xl border border-white/20 bg-background/75 p-5 sm:p-8 lg:p-12 shadow-[0_8px_40px_rgba(0,0,0,0.18)] backdrop-blur-2xl grid gap-6 sm:gap-8 lg:grid-cols-[1.2fr_1fr] items-center transition-all duration-300 hover:shadow-2xl hover:border-brand-green/40">
@@ -12,12 +49,10 @@ export function SectorContactSection({ ar }: { ar: boolean }) {
             <span>{ar ? "تواصل معنا" : "Contact Us"}</span>
           </div>
           <h2 className="font-head text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-foreground mt-2">
-            {ar ? "لنبن ما هو قادم" : "Let's Build What's Next"}
+            {title}
           </h2>
           <p className="text-sm sm:text-base text-muted-foreground mt-3 leading-relaxed">
-            {ar
-              ? "استكشف فرص التعاون مع مجموعة سامي عياد في التصنيع والإنشاءات والحلول البيئية والمنتجات الطبيعية."
-              : "Explore opportunities to collaborate with SAMI BIN AYYAD GROUP across manufacturing, construction, environmental solutions, and natural products."}
+            {intro}
           </p>
         </div>
         <div className="min-w-0 flex flex-col gap-3 sm:gap-4">

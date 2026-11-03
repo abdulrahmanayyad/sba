@@ -297,7 +297,7 @@ export const constructionServicesData = {
     {
       id: "finishing-and-interior",
       number: "02",
-      title: "Finishing & Interior Design",
+      title: "Finishing & Detailed Construction Drawings",
       titleAr: "التشطيبات والديكور والتصميمات التنفيذية",
       image: "/BG/Contracting & Real Estate Development/Finishing & Interior Design.jpg",
       lead: "High-end interior and exterior finishing with 2D/3D visualization",

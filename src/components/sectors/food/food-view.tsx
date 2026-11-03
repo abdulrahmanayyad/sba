@@ -374,7 +374,7 @@ function FoodAboutTab({ ar }: { ar: boolean }) {
 
         {/* Global Sector Contact Section */}
         <div className="mt-16">
-          <SectorContactSection ar={ar} />
+          <SectorContactSection ar={ar} sector="food" />
         </div>
       </section>
     </div>
@@ -505,9 +505,9 @@ function FoodProductsTab({ ar }: { ar: boolean }) {
       {/* Products Header Box */}
       <Reveal>
         <div className="mx-auto max-w-3xl rounded-3xl border border-white/20 bg-background/80 p-5 sm:p-8 lg:p-10 shadow-xl backdrop-blur-2xl mb-8 text-center">
-          <SectionBadge title={ar ? "منتجاتنا" : "Our Products"} />
+          <SectionBadge title={ar ? "كتالوج التصدير والتوريد" : "Export & Sourcing Catalog"} />
           <h2 className="font-head text-2xl sm:text-3xl font-bold tracking-tight text-foreground mt-3 mb-3 text-center">
-            {ar ? "منتجاتنا" : "Our Products"}
+            {ar ? "منتجاتنا الطبيعية" : "Our Natural Products"}
           </h2>
           <p className="text-muted-foreground text-sm sm:text-base leading-relaxed text-center max-w-2xl mx-auto">
             {ar
@@ -569,11 +569,11 @@ function FoodProductsTab({ ar }: { ar: boolean }) {
       <div className="space-y-10 sm:space-y-14">
         {filteredCategories.map((cat, idx) => (
           <Reveal key={cat.id} delay={idx * 0.05}>
-            <div className="rounded-3xl border border-white/20 bg-background/85 p-4 sm:p-6 lg:p-10 shadow-xl backdrop-blur-2xl">
+            <div className="rounded-3xl border border-white/20 bg-background/85 p-4 sm:p-6 lg:p-10 shadow-xl backdrop-blur-2xl w-full min-w-0 max-w-full overflow-hidden">
               {/* Category Header — Image on top on mobile, side-by-side on desktop */}
               <div className="border-b border-border/60 pb-5 mb-6">
-                {/* Image — compact height on mobile */}
-                <div className="relative w-full overflow-hidden rounded-2xl shadow-md border border-white/30 bg-secondary mb-4 lg:hidden" style={{ aspectRatio: "21/9", maxHeight: "180px" }}>
+                {/* Image — framed nicely on mobile */}
+                <div className="relative w-full overflow-hidden rounded-2xl shadow-md border border-white/30 bg-secondary mb-4 lg:hidden aspect-[16/10] sm:aspect-[2/1] max-h-[220px]">
                   <img
                     src={categoryImages[cat.id] || "/BG/Natural & Agri-Food Products/Natural & Agri-Food Products Home Page.jpg"}
                     alt={ar ? cat.titleAr : cat.titleEn}
@@ -676,7 +676,7 @@ function FoodProductsTab({ ar }: { ar: boolean }) {
 
               {/* Packaging / Preparation Forms Box */}
               {(cat.prepFormsAr || cat.specsAr) && (
-                <div className="rounded-2xl border border-white/40 bg-background/80 p-4 sm:p-5 shadow-sm backdrop-blur-xl">
+                <div className="rounded-2xl border border-white/40 bg-background/80 p-4 sm:p-5 shadow-sm backdrop-blur-xl w-full min-w-0 max-w-full overflow-hidden">
                   <div className="flex items-center gap-2 mb-3">
                     <Package className="size-4 text-brand-orange shrink-0" />
                     <h5 className="font-head text-xs sm:text-sm font-bold text-foreground">
@@ -685,15 +685,15 @@ function FoodProductsTab({ ar }: { ar: boolean }) {
                         : "Available Packaging, Grading & Sourcing Formats:"}
                     </h5>
                   </div>
-                  <div className="grid gap-2 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+                  <div className="grid gap-2.5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full min-w-0">
                     {((ar ? cat.prepFormsAr : cat.prepFormsEn) ||
                       (ar ? cat.specsAr : cat.specsEn))?.map((fmt, fi) => (
                       <div
                         key={fi}
-                        className="flex items-start gap-2 rounded-xl bg-background/80 px-3 py-2 text-xs font-medium text-foreground/90 border border-border/60 shadow-sm"
+                        className="flex items-start gap-2.5 rounded-xl bg-background/90 px-3.5 py-2.5 text-xs font-medium text-foreground border border-border/70 shadow-sm w-full min-w-0 max-w-full"
                       >
-                        <CheckCircle2 className="size-3.5 text-brand-green-text shrink-0 mt-0.5" />
-                        <span className="leading-relaxed">{fmt}</span>
+                        <CheckCircle2 className="size-4 text-brand-green shrink-0 mt-0.5" />
+                        <span className="leading-relaxed flex-1 min-w-0 break-words [overflow-wrap:anywhere]">{fmt}</span>
                       </div>
                     ))}
                   </div>
@@ -712,6 +712,11 @@ function FoodProductsTab({ ar }: { ar: boolean }) {
             </p>
           </div>
         )}
+
+        {/* Global Sector Contact Section */}
+        <div className="mt-16">
+          <SectorContactSection ar={ar} sector="food" />
+        </div>
       </div>
     </section>
   );

@@ -39,16 +39,16 @@ export const joinTracks: Record<JoinTrackId, JoinTrackConfig> = {
   group: {
     id: "group",
     url: "/join/group",
-    titleEn: "Join Our Group",
-    titleAr: "انضم إلى مجموعتنا",
-    eyebrowEn: "SAMI BIN AYYAD GROUP · Careers & Strategic Partnerships",
-    eyebrowAr: "مجموعة سامي بن عياد · التوظيف والشراكات الاستراتيجية",
-    headlineEn: "Build the Future With Us",
-    headlineAr: "لنبن المستقبل معًا",
+    titleEn: "Careers and Business Opportunities",
+    titleAr: "فرص العمل والتعاون",
+    eyebrowEn: "SAMI BIN AYYAD GROUP · Careers & Strategic Cooperation",
+    eyebrowAr: "مجموعة سامي بن عياد · فرص العمل والتعاون",
+    headlineEn: "Careers and business opportunities",
+    headlineAr: "فرص العمل والتعاون",
     descriptionEn:
-      "We welcome ambitious professionals, strategic partners, investors, and organizations that share our vision for sustainable growth, operational excellence, and long-term value creation across our business sectors.",
+      "We welcome enquiries from professionals, suppliers and organisations interested in working with the Group. Select the purpose of your application and the relevant sector, then provide the information needed to assess your proposal.",
     descriptionAr:
-      "نرحب بالمهنيين الطموحين، والشركاء الاستراتيجيين، والمستثمرين، والشركات التي تشاركنا رؤيتنا للنمو المستدام، والتميز التشغيلي، وصناعة القيمة طويلة الأجل عبر كافة قطاعاتنا الاستراتيجية.",
+      "نرحب بتواصل المهنيين والشركات والموردين الراغبين في العمل أو التعاون مع مجموعة سامي بن عياد. اختر نوع الطلب والقطاع المناسب، وأرفق المعلومات التي تساعدنا على تقييمه.",
     purposeEn:
       "Group-level recruitment, strategic partnerships, investment and business development, suppliers, and general applications.",
     purposeAr:

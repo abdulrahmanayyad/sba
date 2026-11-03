@@ -84,12 +84,12 @@ export const foodAboutData: FoodAbout = {
     titleAr: "من نحن",
     titleEn: "Who We Are",
     paragraphsAr: [
-      "يعمل قطاع المنتجات الطبيعية والغذائية بمجموعة سامي بن عياد على تطوير وتسويق وتوريد مجموعة مختارة من المنتجات الغذائية والطبيعية التي تجمع بين أصالة المصادر وجودة المنتج وتنوع الاستخدامات.",
-      "ونستهدف بناء منظومة تجارية مرنة تربط المنتجين والموردين بالأسواق المحلية والإقليمية والدولية، مع التركيز على العسل ومنتجات النحل والزيتون وزيت الزيتون والتمور والأعشاب والتوابل والمكونات الغذائية الطبيعية.",
+      "نوفر خيارات توريد من العسل ومنتجات النحل، والزيتون وزيت الزيتون، والتمور ومشتقاتها، والأعشاب والتوابل ومكونات المشروبات. نراجع مع العميل المنشأ والمواصفات والكميات والتعبئة ومتطلبات التسليم لكل طلب.",
+      "ونستهدف بناء منظومة تجارية مرنة تشمل التوريد بالجملة للكميات التجارية، والتعبئة بعلامة العميل بحسب الإمكانات المتاحة، وتجهيز المستندات المطلوبة للشحنة وفق المنتج والوجهة.",
     ],
     paragraphsEn: [
-      "The Natural and Food Products Sector at Sami Bin Ayyad Group develops, markets, and supplies a curated selection of food and natural products that blend authentic origin, superior quality, and diverse culinary and industrial applications.",
-      "We aim to establish an agile commercial ecosystem linking growers and producers to regional and global markets, focusing on natural honey, bee products, olives, olive oils, premium dates, herbs, spices, and dried natural food ingredients.",
+      "We source and supply selected honey and bee products, olives and olive oil, dates and date products, herbs, spices and beverage ingredients. Each enquiry is reviewed against the required origin, specification, quantity, packaging and destination.",
+      "Our supply models include commercial wholesale, bulk orders, private-label packing where available, and food-service supply, with shipment documentation and logistics responsibilities agreed for each order.",
     ],
   },
   vision: {
@@ -200,8 +200,8 @@ export const foodAboutData: FoodAbout = {
     {
       titleAr: "تنوع في فئات المنتجات ومصادر التوريد",
       titleEn: "Diverse Categories & Trusted Origins",
-      descAr: "تغطية شاملة لـ 7 قطاعات رئيسية تجمع بين المصادر المصرية الأصيلة ومصادر الاستيراد العالمية الموثوقة.",
-      descEn: "Comprehensive coverage across 7 major categories bridging authentic Egyptian farms and vetted international sources.",
+      descAr: "تغطية شاملة لـ 7 فئات إنتاجية متخصصة تجمع بين المصادر المصرية الأصيلة ومصادر الاستيراد العالمية الموثوقة.",
+      descEn: "Comprehensive coverage across 7 specialized product categories bridging authentic Egyptian farms and vetted international sources.",
     },
     {
       titleAr: "مرونة في كميات التوريد وخيارات التعبئة",
