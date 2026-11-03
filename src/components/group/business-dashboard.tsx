@@ -15,6 +15,14 @@ const icons: Record<SectorId, typeof Leaf> = {
 
 const aggregateStats = [
   {
+    value: "+45",
+    labelEn: "Years of Foundational Heritage",
+    labelAr: "عامًا من الخبرة المؤسسية الممتدة",
+    subEn: "Since 1977 across construction, industry, and international business.",
+    subAr: "منذ عام 1977 في قطاعات المقاولات والصناعة والتجارة الدولية.",
+    sector: "construction" as SectorId,
+  },
+  {
     value: "+100",
     labelEn: "Documented Projects & Works Delivered",
     labelAr: "مشروعًا وعملًا موثقًا تم تنفيذه",
@@ -31,6 +39,14 @@ const aggregateStats = [
     sector: "garment" as SectorId,
   },
   {
+    value: "4",
+    labelEn: "Core Strategic Integrated Sectors",
+    labelAr: "قطاعات استراتيجية متكاملة",
+    subEn: "Contracting, sustainable environment, garment manufacturing, and natural products.",
+    subAr: "المقاولات، والبيئة المستدامة، وتصنيع الملابس، والمنتجات الطبيعية.",
+    sector: "food" as SectorId,
+  },
+  {
     value: "+10M",
     labelEn: "USD Overall Historic Business Volume",
     labelAr: "دولار إجمالي حجم الأعمال التاريخي",
@@ -40,11 +56,11 @@ const aggregateStats = [
   },
   {
     value: "4",
-    labelEn: "Core Strategic Integrated Sectors",
-    labelAr: "قطاعات استراتيجية متكاملة",
-    subEn: "Contracting, sustainable environment, garment manufacturing, and natural products.",
-    subAr: "المقاولات، والبيئة المستدامة، وتصنيع الملابس، والمنتجات الطبيعية.",
-    sector: "food" as SectorId,
+    labelEn: "Verified Strategic International Alliances",
+    labelAr: "تحالفات استراتيجية دولية معتمدة",
+    subEn: "With leading partners across China, Switzerland, and the GCC region.",
+    subAr: "مع كبرى الشركات والتحالفات في الصين وسويسرا ودول الخليج.",
+    sector: "environmental" as SectorId,
   },
 ];
 
@@ -207,7 +223,7 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
         </Reveal>
 
         {/* Aggregated Group Statistics Grid */}
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
           {aggregateStats.map((stat, idx) => {
             const Icon = icons[stat.sector];
             return (

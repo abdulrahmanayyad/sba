@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, Mail, MessageCircle } from "lucide-react";
+import { ArrowRight, Building2, Globe2, Handshake, Mail, MessageCircle, Newspaper, Sparkles, TrendingUp } from "lucide-react";
 
 const heroBg = "/BG/Main Home Page.jpg";
 import { Button } from "@/components/ui/button";
@@ -11,9 +11,10 @@ import { WHATSAPP_URL } from "@/lib/process-steps";
 import { JourneySection } from "./journey-section";
 import { BusinessDashboard, WhatWeOfferSection } from "./business-dashboard";
 import { AnimatedStatistic } from "@/components/site/animated-statistic";
-import { aboutTabs, divisions, sectorOverviews, whoWeServe } from "./group-data";
+import { aboutTabs, divisions, sectorOverviews, strategicPartners, whoWeServe } from "./group-data";
 import { SectorsShowcase } from "./sectors-showcase";
 import { JoinShowcase } from "./join-showcase";
+import { newsArticles } from "@/components/news/news-data";
 
 
 export function GroupPage() {
@@ -40,14 +41,19 @@ export function GroupPage() {
             </h1>
             <p data-hero-reveal className="mt-3 max-w-3xl text-base sm:text-lg font-bold leading-relaxed text-brand-orange">{messages.hero.lead}</p>
             <div data-hero-reveal className="mt-6 flex flex-wrap items-center gap-3">
-              <Button asChild size="lg" className="rounded-full !bg-brand-green !text-white px-7 py-3 font-head text-sm font-bold shadow-lg transition-all duration-300 hover:!bg-brand-orange hover:scale-105 active:scale-95">
+              <Button asChild size="lg" className="rounded-full !bg-brand-green !text-white px-6 sm:px-7 py-3 font-head text-xs sm:text-sm font-bold shadow-lg transition-all duration-300 hover:!bg-brand-orange hover:scale-105 active:scale-95 cursor-pointer">
+                <Link to="/about">
+                  {ar ? "استكشف مجموعتنا" : "Explore Our Group"} <ArrowRight className="size-4 rtl:rotate-180" />
+                </Link>
+              </Button>
+              <Button asChild size="lg" className="rounded-full !bg-white/15 border border-white/40 backdrop-blur-md !text-white px-6 sm:px-7 py-3 font-head text-xs sm:text-sm font-bold shadow-lg transition-all duration-300 hover:!bg-brand-orange hover:!border-brand-orange hover:scale-105 active:scale-95 cursor-pointer">
                 <a href="#divisions">
-                  {ar ? "استكشف قطاعاتنا" : "Explore our sectors"} <ArrowRight className="size-4 rtl:rotate-180" />
+                  {ar ? "استكشف قطاعاتنا" : "Explore Our Sectors"}
                 </a>
               </Button>
-              <Button asChild variant="outline" size="lg" className="rounded-full border-white/40 bg-black/30 backdrop-blur-md text-white px-7 py-3 font-head text-sm font-bold transition-all duration-300 hover:bg-white hover:text-black hover:scale-105 active:scale-95">
+              <Button asChild variant="outline" size="lg" className="rounded-full border-white/40 bg-black/40 backdrop-blur-md text-white px-6 sm:px-7 py-3 font-head text-xs sm:text-sm font-bold transition-all duration-300 hover:bg-white hover:text-black hover:scale-105 active:scale-95 cursor-pointer">
                 <a href="#contact">
-                  {ar ? "ناقش احتياجاتك معنا" : "Discuss your requirements"}
+                  {ar ? "استفسارات الأعمال" : "Business Inquiries"}
                 </a>
               </Button>
             </div>
@@ -64,22 +70,39 @@ export function GroupPage() {
               <span className="font-bold text-brand-green">{ar ? "مجموعة سامي بن عياد" : "SAMI BIN AYYAD GROUP"}</span>
             </div>
             <h2 className="section-title mt-2">{ar ? "نقود التقدم عبر الصناعات" : "Driving Progress Across Industries"}</h2>
-            <div className="section-intro mx-auto mt-6 leading-relaxed max-w-3xl space-y-1">
+            <div className="section-intro mx-auto mt-6 leading-relaxed max-w-3xl space-y-3">
               {ar ? (
-                <p className="leading-relaxed">
-                  نطوّر أعمالًا في <span className="text-brand-orange">المقاولات والتطوير العقاري</span>، والبيئة والاستدامة، وتصنيع الملابس، والمنتجات الطبيعية والغذائية. يجمع عملنا فهم احتياجات العميل والتنسيق بين التخصصات وبناء علاقات تجارية تستند إلى الجودة ووضوح الالتزامات ومتابعة التنفيذ.
-                </p>
+                <>
+                  <p className="leading-relaxed">
+                    نطوّر أعمالًا رائدة في <span className="text-brand-orange font-bold">المقاولات والتطوير العقاري</span>، والبيئة والاستدامة، وتصنيع الملابس وتطوير الأزياء، والمنتجات الطبيعية والغذائية. يجمع عملنا بين الفهم العميق لمتطلبات العملاء وبناء شراكات تجارية موثوقة تستند إلى أعلى معايير الجودة والشفافية.
+                  </p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    تستند المجموعة إلى خبرات مؤسسية وتنفيذية عريقة تمتد جذورها منذ عام <span className="font-bold text-foreground">1977</span> في قطاع الإنشاءات والمقاولات، وتوجت بتأسيس الكيان المؤسسي الموحد للمجموعة عام <span className="font-bold text-foreground">2023</span> لتكامل القدرات الصناعية والاستثمارية عبر 4 قطاعات رئيسية.
+                  </p>
+                </>
               ) : (
-                <p className="">
-                  Our activities span <span className="text-brand-orange">contracting and real estate development</span>, environment and sustainability, apparel manufacturing, and natural and food products. Across these sectors, we focus on understanding client requirements, coordinating delivery and building lasting business relationships.
-                </p>
+                <>
+                  <p className="leading-relaxed">
+                    Our operations span four integrated sectors: <span className="text-brand-orange font-bold">contracting and real estate development</span>, environment and sustainability, apparel manufacturing and fashion development, and natural agri-food products. We focus on delivering value, disciplined execution, and long-term corporate partnerships.
+                  </p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    The Group builds upon foundational commercial and contracting experience dating back to <span className="font-bold text-foreground">1977</span>, formally unified into its institutional corporate structure in <span className="font-bold text-foreground">2023</span> to drive multidisciplinary growth across global markets.
+                  </p>
+                </>
               )}
             </div>
-            <Button asChild size="lg" className="mt-8 group relative inline-flex items-center justify-center gap-2 rounded-full !bg-brand-green !text-white px-7 py-3 font-head text-sm font-bold shadow-lg transition-all duration-300 hover:!bg-brand-orange hover:shadow-brand-orange/30 hover:scale-105 active:scale-95">
-              <a href="#divisions">
-                {ar ? "استكشف قطاعاتنا" : "Explore our sectors"} <ArrowRight className="size-4 rtl:rotate-180" />
-              </a>
-            </Button>
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
+              <Button asChild size="lg" className="group relative inline-flex items-center justify-center gap-2 rounded-full !bg-brand-green !text-white px-7 py-3 font-head text-sm font-bold shadow-lg transition-all duration-300 hover:!bg-brand-orange hover:shadow-brand-orange/30 hover:scale-105 active:scale-95 cursor-pointer">
+                <a href="#divisions">
+                  {ar ? "استكشف قطاعاتنا" : "Explore Our Sectors"} <ArrowRight className="size-4 rtl:rotate-180" />
+                </a>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="rounded-full border-border bg-secondary/80 px-7 py-3 font-head text-sm font-bold transition-all duration-300 hover:bg-brand-orange hover:text-white hover:border-brand-orange hover:scale-105 active:scale-95 cursor-pointer">
+                <Link to="/about">
+                  {ar ? "رحلة المجموعة وتاريخها" : "Our Group Story & History"}
+                </Link>
+              </Button>
+            </div>
           </div>
         </Reveal>
       </section>
@@ -221,42 +244,225 @@ export function GroupPage() {
       {/* Journey & History */}
       <JourneySection ar={ar} />
 
+      {/* Verified Strategic Alliances Section */}
+      <section className="site-container py-14 scroll-mt-24">
+        <Reveal>
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+            <div>
+              <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+                <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+                <span>{ar ? "تحالفاتنا وشراكاتنا" : "Our Strategic Partners"}</span>
+              </div>
+              <h2 className="section-title text-2xl sm:text-3xl lg:text-4xl">
+                {ar ? "شراكات استراتيجية وتقنية دولية" : "Strategic & Technological Alliances"}
+              </h2>
+              <p className="section-intro mt-2 max-w-2xl text-sm sm:text-base">
+                {ar
+                  ? "شبكة موثقة من التحالفات الصناعية والتكنولوجية العالمية تدعم الابتكار والقدرات التشغيلية للمجموعة."
+                  : "Verified global alliances driving technological innovation and expanding our operational capabilities."}
+              </p>
+            </div>
+            <Button asChild variant="outline" className="rounded-full border-border bg-background/80 px-5 py-2 text-xs font-bold transition-all hover:bg-brand-orange hover:text-white hover:border-brand-orange shrink-0 cursor-pointer">
+              <Link to="/partners">
+                {ar ? "عرض كافة الشركاء" : "View All Partners"} <ArrowRight className="size-3.5 rtl:rotate-180" />
+              </Link>
+            </Button>
+          </div>
+
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {strategicPartners.slice(0, 4).map((p, idx) => (
+              <div
+                key={p.id}
+                className="group relative rounded-3xl border border-white/20 bg-background/80 p-6 shadow-md backdrop-blur-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:border-brand-green flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex items-center justify-between gap-2 mb-3">
+                    <span className="font-mono text-xs font-bold text-brand-orange bg-brand-orange/10 px-2.5 py-0.5 rounded-full border border-brand-orange/20">
+                      {ar ? p.countryAr : p.country}
+                    </span>
+                    <Handshake className="size-4 text-brand-green" />
+                  </div>
+                  <h3 className="font-head text-base font-bold text-foreground group-hover:text-brand-orange transition-colors">
+                    {ar ? p.nameAr : p.name}
+                  </h3>
+                  <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
+                    {ar ? p.descriptionAr : p.description}
+                  </p>
+                </div>
+                <div className="mt-4 pt-3 border-t border-border/40">
+                  <span className="text-[11px] font-semibold text-brand-green">
+                    {ar ? p.tagAr : p.tag}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </Reveal>
+      </section>
+
+      {/* Latest Corporate News & Industry Insights */}
+      <section className="site-container py-14 bg-page-alt/50 rounded-3xl my-8 scroll-mt-24">
+        <Reveal>
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+            <div>
+              <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+                <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+                <span>{ar ? "المركز الإعلامي" : "News & Media"}</span>
+              </div>
+              <h2 className="section-title text-2xl sm:text-3xl lg:text-4xl">
+                {ar ? "آخر أخبار ورؤى المجموعة" : "Latest News & Insights"}
+              </h2>
+              <p className="section-intro mt-2 max-w-2xl text-sm sm:text-base">
+                {ar
+                  ? "متابعة مستمرة لأحدث التطورات المؤسسية، الصفقات الصناعية، والتقارير التحليلية لأسواقنا."
+                  : "Stay updated with institutional announcements, sector achievements, and market insights."}
+              </p>
+            </div>
+            <Button asChild variant="outline" className="rounded-full border-border bg-background/80 px-5 py-2 text-xs font-bold transition-all hover:bg-brand-orange hover:text-white hover:border-brand-orange shrink-0 cursor-pointer">
+              <Link to="/news">
+                {ar ? "كافة الأخبار والتقارير" : "All News & Reports"} <ArrowRight className="size-3.5 rtl:rotate-180" />
+              </Link>
+            </Button>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            {newsArticles.slice(0, 3).map((article, idx) => (
+              <article
+                key={article.id}
+                className="group relative rounded-3xl border border-white/20 bg-background/85 overflow-hidden shadow-md backdrop-blur-xl transition-all duration-300 hover:scale-[1.015] hover:shadow-2xl hover:border-brand-orange/40 flex flex-col justify-between"
+              >
+                <div>
+                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-secondary">
+                    <img
+                      src={article.image}
+                      alt={ar ? article.titleAr : article.titleEn}
+                      loading="lazy"
+                      className="size-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute top-3 start-3 inline-flex items-center gap-1.5 rounded-full bg-black/60 px-3 py-1 text-[11px] font-bold text-white backdrop-blur-md">
+                      <Newspaper className="size-3" />
+                      <span>{ar ? article.dateAr : article.dateEn}</span>
+                    </div>
+                  </div>
+                  <div className="p-5 sm:p-6">
+                    <h3 className="font-head text-base sm:text-lg font-bold text-foreground leading-snug group-hover:text-brand-orange transition-colors">
+                      {ar ? article.titleAr : article.titleEn}
+                    </h3>
+                    <p className="mt-2.5 text-xs sm:text-sm text-muted-foreground leading-relaxed line-clamp-3">
+                      {ar ? article.excerptAr : article.excerptEn}
+                    </p>
+                  </div>
+                </div>
+                <div className="p-5 sm:p-6 pt-0">
+                  <Link
+                    to="/news/$slug"
+                    params={{ slug: article.slug }}
+                    className="inline-flex items-center gap-2 text-xs font-bold text-brand-green group-hover:text-brand-orange transition-colors"
+                  >
+                    <span>{ar ? "قراءة التحليل والمقال" : "Read Full Article"}</span>
+                    <ArrowRight className="size-3.5 rtl:rotate-180" />
+                  </Link>
+                </div>
+              </article>
+            ))}
+          </div>
+        </Reveal>
+      </section>
+
+      {/* Investment & Strategic Opportunities Section */}
+      <section className="site-container py-12 scroll-mt-24">
+        <Reveal>
+          <div className="relative overflow-hidden rounded-3xl border border-white/25 bg-gradient-to-br from-brand-green/10 via-background/90 to-brand-orange/10 p-8 sm:p-12 shadow-xl backdrop-blur-2xl">
+            <div className="grid gap-6 lg:grid-cols-12 items-center">
+              <div className="lg:col-span-8">
+                <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+                  <TrendingUp className="size-3.5 text-brand-orange" />
+                  <span>{ar ? "الاستثمار والشراكات الاستراتيجية" : "Investment & Strategic Alliances"}</span>
+                </div>
+                <h2 className="font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold text-foreground leading-tight">
+                  {ar ? "فرص استثمارية وشراكات تطوير عبر 4 قطاعات حيوية" : "Strategic Investment & Co-Development Opportunities"}
+                </h2>
+                <p className="mt-3 text-sm sm:text-base text-muted-foreground leading-relaxed max-w-2xl">
+                  {ar
+                    ? "نستقبل المستثمرين والمؤسسات والصناديق لمناقشة المشروعات المشتركة، التوسع الصناعي في تصنيع الملابس، محطات تدوير الموارد والبيئة، وفرص المقاولات الكبرى والتوريد التصديري."
+                    : "We welcome investors, funds, and strategic partners to explore co-development projects, apparel manufacturing expansion, circular environmental plants, and turnkey infrastructure ventures."}
+                </p>
+              </div>
+              <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3 justify-center">
+                <Button asChild size="lg" className="rounded-full !bg-brand-green !text-white px-6 py-3 font-head text-xs sm:text-sm font-bold shadow-lg transition-all hover:!bg-brand-orange hover:scale-105 active:scale-95 cursor-pointer">
+                  <Link to="/join/group">
+                    {ar ? "طلب اجتماع استثماري" : "Request Investment Meeting"} <ArrowRight className="size-4 rtl:rotate-180" />
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" size="lg" className="rounded-full border-border bg-background/80 px-6 py-3 font-head text-xs sm:text-sm font-bold transition-all hover:bg-brand-orange hover:text-white hover:border-brand-orange cursor-pointer">
+                  <Link to="/partners">
+                    {ar ? "استكشف نماذج التعاون" : "Explore Partnership Models"}
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </Reveal>
+      </section>
+
       {/* Join Us Pathways — 3 Concise Cards linking to dedicated pages */}
       <JoinShowcase />
 
       {/* Final CTA — Interactive Glassmorphic Island matching Footer */}
-      <section id="contact" className="relative px-4 pb-6 pt-4 text-foreground scroll-mt-24">
-        <div className="mx-auto max-w-6xl overflow-hidden rounded-3xl border border-white/20 bg-background/75 p-8 sm:p-12 shadow-[0_8px_40px_rgba(0,0,0,0.18)] backdrop-blur-2xl grid gap-8 lg:grid-cols-[1.2fr_1fr] items-center transition-all duration-300 hover:scale-[1.01] hover:shadow-2xl hover:border-brand-green/40">
-          <div>
-            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
-              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-              <span>{ar ? "تواصل معنا" : "Contact Us"}</span>
+      <section id="contact" className="relative px-4 pb-10 pt-4 text-foreground scroll-mt-24">
+        <div className="mx-auto max-w-6xl overflow-hidden rounded-3xl border border-white/20 bg-background/75 p-8 sm:p-12 shadow-[0_8px_40px_rgba(0,0,0,0.18)] backdrop-blur-2xl transition-all duration-300 hover:scale-[1.01] hover:shadow-2xl hover:border-brand-green/40">
+          <div className="grid gap-8 lg:grid-cols-[1.2fr_1fr] items-center">
+            <div>
+              <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+                <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+                <span>{ar ? "تواصل وشراكات الأعمال" : "Business & Partnership Connect"}</span>
+              </div>
+              <h2 className="section-title mt-2 text-foreground">{ar ? "لنبنِ شراكات الغد اليوم" : "Let's Build What's Next"}</h2>
+              <p className="section-intro mt-4 text-muted-foreground">{ar ? "استكشف فرص التعاون المتكاملة مع مجموعة سامي بن عياد عبر التصنيع، الإنشاءات، والحلول البيئية والمنتجات التصديرية." : "Explore multidisciplinary collaboration opportunities with SAMI BIN AYYAD GROUP across manufacturing, construction, environmental solutions, and global trade."}</p>
+              
+              {/* Quick Action Pills */}
+              <div className="mt-6 flex flex-wrap gap-2.5">
+                <Button asChild size="sm" className="rounded-full !bg-brand-green !text-white text-xs font-bold hover:!bg-brand-orange transition-colors cursor-pointer">
+                  <Link to="/sectors/$sector" params={{ sector: "construction" }} search={{ tab: "projects" }}>
+                    {ar ? "بدء مشروع" : "Start a Project"}
+                  </Link>
+                </Button>
+                <Button asChild size="sm" variant="outline" className="rounded-full border-border bg-secondary/80 text-xs font-bold hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-colors cursor-pointer">
+                  <Link to="/partners">
+                    {ar ? "كن شريكاً" : "Become a Partner"}
+                  </Link>
+                </Button>
+                <Button asChild size="sm" variant="outline" className="rounded-full border-border bg-secondary/80 text-xs font-bold hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-colors cursor-pointer">
+                  <Link to="/join/group">
+                    {ar ? "فرص الاستثمار" : "Explore Investment"}
+                  </Link>
+                </Button>
+              </div>
             </div>
-            <h2 className="section-title mt-2 text-foreground">{ar ? "لنبن ما هو قادم" : "Let's Build What's Next"}</h2>
-            <p className="section-intro mt-4 text-muted-foreground">{ar ? "استكشف فرص التعاون مع مجموعة سامي عياد في التصنيع والإنشاءات والحلول البيئية والمنتجات الطبيعية." : "Explore opportunities to collaborate with SAMI BIN AYYAD GROUP across manufacturing, construction, environmental solutions, and natural products."}</p>
-          </div>
-          <div className="min-w-0 flex flex-col gap-4">
-            <Button asChild variant="ghost" className="group relative h-auto w-full justify-start gap-4 overflow-hidden rounded-2xl border border-[#0066CC]/30 bg-[#0066CC]/5 p-5 text-start whitespace-normal hover:border-[#0066CC] hover:bg-[#0066CC]/15 hover:shadow-lg sm:p-6 backdrop-blur-md transition-all duration-300 hover:scale-[1.01] active:scale-[0.98]">
-              <a data-email-contact href="mailto:info@sami-trade.com">
-                <span data-email-icon className="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#0066CC]/15 text-[#0066CC]"><Mail aria-hidden="true" className="size-5" /></span>
-                <span data-email-copy className="min-w-0 flex-1">
-                  <span className="block font-head text-sm font-bold text-foreground/80">{ar ? "البريد الإلكتروني الرسمي" : "Official Email"}</span>
-                  <span dir="ltr" className="mt-1 block break-all font-head text-base font-bold text-foreground sm:text-lg">info@sami-trade.com</span>
-                </span>
-                <span data-email-arrow className="shrink-0 text-[#0066CC]"><ArrowRight aria-hidden="true" className="size-5 rtl:rotate-180" /></span>
-              </a>
-            </Button>
 
-            <Button asChild variant="ghost" className="group relative h-auto w-full justify-start gap-4 overflow-hidden rounded-2xl border border-[#25D366]/30 bg-[#25D366]/5 p-5 text-start whitespace-normal hover:border-[#25D366] hover:bg-[#25D366]/15 hover:shadow-lg sm:p-6 backdrop-blur-md transition-all duration-300 hover:scale-[1.01] active:scale-[0.98]">
-              <a href={WHATSAPP_URL} target="_blank" rel="noreferrer">
-                <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#25D366]/15 text-[#25D366]"><MessageCircle aria-hidden="true" className="size-5" /></span>
-                <span className="min-w-0 flex-1">
-                  <span className="block font-head text-sm font-bold text-foreground/80">WhatsApp Direct</span>
-                  <span dir="ltr" className="mt-1 block font-head text-base font-bold text-foreground sm:text-lg">+20 12 222 380 72</span>
-                </span>
-                <span className="shrink-0 text-[#25D366]"><ArrowRight aria-hidden="true" className="size-5 rtl:rotate-180" /></span>
-              </a>
-            </Button>
+            <div className="min-w-0 flex flex-col gap-4">
+              <Button asChild variant="ghost" className="group relative h-auto w-full justify-start gap-4 overflow-hidden rounded-2xl border border-[#0066CC]/30 bg-[#0066CC]/5 p-5 text-start whitespace-normal hover:border-[#0066CC] hover:bg-[#0066CC]/15 hover:shadow-lg sm:p-6 backdrop-blur-md transition-all duration-300 hover:scale-[1.01] active:scale-[0.98]">
+                <a data-email-contact href="mailto:info@sami-trade.com">
+                  <span data-email-icon className="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#0066CC]/15 text-[#0066CC]"><Mail aria-hidden="true" className="size-5" /></span>
+                  <span data-email-copy className="min-w-0 flex-1">
+                    <span className="block font-head text-sm font-bold text-foreground/80">{ar ? "البريد الإلكتروني الرسمي" : "Official Email"}</span>
+                    <span dir="ltr" className="mt-1 block break-all font-head text-base font-bold text-foreground sm:text-lg">info@sami-trade.com</span>
+                  </span>
+                  <span data-email-arrow className="shrink-0 text-[#0066CC]"><ArrowRight aria-hidden="true" className="size-5 rtl:rotate-180" /></span>
+                </a>
+              </Button>
+
+              <Button asChild variant="ghost" className="group relative h-auto w-full justify-start gap-4 overflow-hidden rounded-2xl border border-[#25D366]/30 bg-[#25D366]/5 p-5 text-start whitespace-normal hover:border-[#25D366] hover:bg-[#25D366]/15 hover:shadow-lg sm:p-6 backdrop-blur-md transition-all duration-300 hover:scale-[1.01] active:scale-[0.98]">
+                <a href={WHATSAPP_URL} target="_blank" rel="noreferrer">
+                  <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#25D366]/15 text-[#25D366]"><MessageCircle aria-hidden="true" className="size-5" /></span>
+                  <span className="min-w-0 flex-1">
+                    <span className="block font-head text-sm font-bold text-foreground/80">WhatsApp Direct</span>
+                    <span dir="ltr" className="mt-1 block font-head text-base font-bold text-foreground sm:text-lg">+20 12 222 380 72</span>
+                  </span>
+                  <span className="shrink-0 text-[#25D366]"><ArrowRight aria-hidden="true" className="size-5 rtl:rotate-180" /></span>
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
       </section>

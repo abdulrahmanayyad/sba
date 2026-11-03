@@ -21,12 +21,12 @@ export const whoWeAreData = {
   titleAr: "مجموعة أعمال متعددة القطاعات تبني قيمة مستدامة",
   paragraphs: [
     {
-      en: "Established in 2023, Sami Bin Ayyad Group operates across four sectors: contracting and real estate development, environment and sustainability, apparel manufacturing, and natural and food products. The Group draws on its founders' experience in project delivery, trade and business management to develop activities that respond to client and market needs.",
-      ar: "مجموعة سامي بن عياد مجموعة أعمال متعددة القطاعات، تأسست عام 2023، وتعمل في المقاولات والتطوير العقاري، والبيئة والاستدامة، وتصنيع الملابس، والمنتجات الطبيعية والغذائية. تستند المجموعة إلى خبرات مؤسسيها في التنفيذ والتجارة وإدارة الأعمال، وتعمل على تطوير هذه الخبرات ضمن إطار مؤسسي يواكب احتياجات العملاء والأسواق.",
+      en: "Sami Bin Ayyad Group was formally established in its unified corporate form in 2023, building upon foundational commercial and industrial experience dating back to 1977. The Group operates across four core business sectors: contracting and real estate development, environment and sustainability, garment manufacturing and fashion development, and natural and agri-food products.",
+      ar: "تأسست مجموعة سامي بن عياد بصورتها المؤسسية الموحدة عام 2023، امتدادًا لخبرات تجارية وصناعية وتنفيذية عريقة تعود إلى عام 1977. وتعمل المجموعة اليوم عبر أربعة قطاعات استراتيجية متكاملة: المقاولات والتطوير العقاري، وحلول البيئة والاستدامة، وتصنيع الملابس الجاهزة، والمنتجات الطبيعية والغذائية.",
     },
     {
-      en: "Sheikh Sami Bin Ayyad began his professional career in contracting and finishing works in 1977, later expanding into trade and investment. This experience forms part of the background on which the Group has developed since its establishment. Historical projects and agreements should be presented with the name of the entity responsible for them.",
-      ar: "بدأت المسيرة المهنية للشيخ سامي بن عياد في أعمال المقاولات والتشطيبات عام 1977، وامتدت لاحقًا إلى التجارة وأنشطة استثمارية متنوعة. وتمثل هذه الخبرات جانبًا من الخلفية التي تستند إليها المجموعة منذ تأسيسها عام 2023. وتُعرض مشروعات وخبرات الكيانات المشاركة مع بيان الجهة المنفذة وتاريخ العمل.",
+      en: "Sheikh Sami Bin Ayyad began his professional career in contracting and finishing works in 1977, later expanding into trade and investment. This multi-decade legacy provides the solid operational foundation upon which the unified corporate Group was established in 2023, translating individual milestones into an institutional corporate framework.",
+      ar: "بدأت المسيرة المهنية للمؤسس الشيخ سامي بن عياد في أعمال المقاولات والتشطيبات الكبرى عام 1977، وامتدت لاحقًا لتشمل التجارة والاستثمار الإقليمي. وتمثل هذه المسيرة الحجر الأساس الذي استندت إليه المجموعة في تأسيسها المؤسسي عام 2023، لترسيخ تلك الخبرات ضمن حوكمة مؤسسية تلبي متطلبات الشركاء والأسواق الدولية.",
     },
     {
       en: "We believe the success of a business group depends on a clear vision, effective management, disciplined execution, and the ability to turn opportunities into practical results, contributing to sustainable economic and social development.",
