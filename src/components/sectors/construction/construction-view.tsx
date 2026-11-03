@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, Building, Calendar, CheckCircle2, ChevronRight, FileText, HardHat, Layers, MapPin, MessageCircle, Phone, Search, ShieldCheck, Sparkles, Trophy, Users, ZoomIn } from "lucide-react";
+import { ArrowRight, Award, Briefcase, Building, Calendar, CheckCircle2, ChevronRight, Clock, Cpu, FileCheck, FileText, HardHat, Layers, MapPin, MessageCircle, Phone, Search, ShieldAlert, ShieldCheck, Sparkles, Trophy, Truck, Users, Wrench, ZoomIn } from "lucide-react";
 import { useMemo, useState } from "react";
 
 import { Reveal } from "@/components/home/reveal";
@@ -16,8 +16,10 @@ import {
   constructionProjectsData,
   constructionSectorsData,
   constructionServicesData,
+  constructionCapabilitiesData,
+  constructionCredentialsData,
 } from "./construction-data";
-import { contractingProjectsList, type ContractingProject } from "./contracting-projects-list";
+import { contractingProjectsList, getProjectMeta, type ContractingProject } from "./contracting-projects-list";
 import heroSustainable from "@/assets/hero-sustainable.png";
 import { JoinPage } from "@/components/join/join-page";
 import { VerifiedProjectsBanner } from "./verification/verified-projects-banner";
@@ -163,18 +165,55 @@ export function ConstructionSectorView({ tab = "about", token }: ConstructionVie
   );
 }
 
-/** 1. About Us View */
+/** 1. About Us View — Comprehensive 10-Section Architecture */
 function ConstructionAboutView({ ar }: { ar: boolean }) {
   const data = constructionAboutData;
+  const capabilities = constructionCapabilitiesData;
+  const credentials = constructionCredentialsData;
+  const services = constructionServicesData.services;
+  const featuredProjects = contractingProjectsList.slice(0, 3);
+
   return (
-    <div className="w-full space-y-12">
-      {/* 1. Who We Are — Isolated centered box matching Home "نقود التقدم عبر الصناعات" */}
+    <div className="w-full space-y-16">
+      {/* 1. SECTOR OVERVIEW & VERIFIED PERFORMANCE STATS */}
       <section className="site-container">
         <Reveal>
-          <div className="group relative mx-auto max-w-4xl overflow-hidden rounded-3xl border border-white/20 bg-background/75 p-8 sm:p-12 shadow-[0_12px_40px_rgba(0,0,0,0.08)] backdrop-blur-2xl transition-all duration-300 hover:scale-[1.01] hover:shadow-[0_20px_60px_rgba(0,0,0,0.12)] hover:border-brand-green/40 text-center">
+          {/* Key Metrics Dashboard */}
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:gap-4 mb-8">
+            <div className="rounded-2xl border border-white/20 bg-background/80 p-5 shadow-sm backdrop-blur-md text-center">
+              <div className="text-2xl sm:text-3xl font-black text-brand-orange">+45 {ar ? "عاماً" : "Years"}</div>
+              <div className="mt-1 text-xs font-bold text-muted-foreground uppercase tracking-wider">
+                {ar ? "خبرة ممتدة منذ 1977" : "Heritage Since 1977"}
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-white/20 bg-background/80 p-5 shadow-sm backdrop-blur-md text-center">
+              <div className="text-2xl sm:text-3xl font-black text-brand-green">+57</div>
+              <div className="mt-1 text-xs font-bold text-muted-foreground uppercase tracking-wider">
+                {ar ? "مشروعاً موثقاً بسجل الأعمال" : "Documented Projects"}
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-white/20 bg-background/80 p-5 shadow-sm backdrop-blur-md text-center">
+              <div className="text-2xl sm:text-3xl font-black text-brand-orange">+540M {ar ? "ج.م" : "EGP"}</div>
+              <div className="mt-1 text-xs font-bold text-muted-foreground uppercase tracking-wider">
+                {ar ? "حجم أعمال تعاقدية منجز" : "Turnover Volume Delivered"}
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-white/20 bg-background/80 p-5 shadow-sm backdrop-blur-md text-center">
+              <div className="text-2xl sm:text-3xl font-black text-brand-green">12</div>
+              <div className="mt-1 text-xs font-bold text-muted-foreground uppercase tracking-wider">
+                {ar ? "تخصصاً إنشائياً وهندسياً" : "Integrated Disciplines"}
+              </div>
+            </div>
+          </div>
+
+          {/* Executive Corporate Intro Box */}
+          <div className="group relative mx-auto max-w-4xl overflow-hidden rounded-3xl border border-white/20 bg-background/75 p-8 sm:p-12 shadow-[0_12px_40px_rgba(0,0,0,0.08)] backdrop-blur-2xl transition-all duration-300 hover:scale-[1.01] hover:border-brand-green/40 text-center">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-              <span>{ar ? "من نحن" : "Who We Are"}</span>
+              <span>{ar ? "نظرة عامة على القطاع" : "Sector Overview"}</span>
             </div>
             <h2 className="section-title mt-2">{ar ? data.partnerTitleAr : data.partnerTitle}</h2>
             <div className="section-intro mx-auto mt-6 leading-relaxed max-w-3xl space-y-4">
@@ -183,12 +222,17 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
               ))}
             </div>
 
-            {/* Explore Our Sectors Button */}
-            <div className="mt-8 flex justify-center">
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <Button asChild size="default" className="rounded-full bg-brand-green text-white hover:bg-brand-orange transition-all duration-300 shadow-md">
-                <Link to="/sectors/$sector" params={{ sector: "construction" }} search={{ tab: "sectors" }}>
-                  <span>{ar ? "استكشف قطاعاتنا" : "Explore Our Sectors"}</span>
+                <Link to="/sectors/$sector" params={{ sector: "construction" }} search={{ tab: "projects" }}>
+                  <span>{ar ? "استعراض سجل المشروعات الموثق" : "Explore Documented Projects"}</span>
                   <ArrowRight className="size-4 ms-2 rtl:rotate-180" />
+                </Link>
+              </Button>
+
+              <Button asChild variant="outline" size="default" className="rounded-full">
+                <Link to="/sectors/$sector" params={{ sector: "construction" }} search={{ tab: "start-project" }}>
+                  <span>{ar ? "ابدأ مشروعك معنا" : "Start Your Project"}</span>
                 </Link>
               </Button>
             </div>
@@ -196,12 +240,11 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
         </Reveal>
       </section>
 
-      {/* 2. Vision & Mission — Separate interactive transparent curved glass cards */}
+      {/* 2. VISION & MISSION */}
       <section className="site-container">
         <Reveal>
           <div className="grid gap-6 md:grid-cols-2">
-            {/* Vision */}
-            <div className="group relative overflow-hidden rounded-3xl border border-white/30 bg-background/70 p-8 sm:p-10 shadow-[0_12px_40px_rgba(0,0,0,0.06)] backdrop-blur-2xl transition-all duration-300 hover:scale-[1.02] hover:border-brand-orange/60 hover:shadow-xl">
+            <div className="group relative overflow-hidden rounded-3xl border border-white/30 bg-background/70 p-8 sm:p-10 shadow-md backdrop-blur-2xl transition-all duration-300 hover:scale-[1.02] hover:border-brand-orange/60 hover:shadow-xl">
               <div className="mb-4">
                 <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
                   <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
@@ -213,8 +256,7 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
               </p>
             </div>
 
-            {/* Mission */}
-            <div className="group relative overflow-hidden rounded-3xl border border-white/30 bg-background/70 p-8 sm:p-10 shadow-[0_12px_40px_rgba(0,0,0,0.06)] backdrop-blur-2xl transition-all duration-300 hover:scale-[1.02] hover:border-brand-green/60 hover:shadow-xl">
+            <div className="group relative overflow-hidden rounded-3xl border border-white/30 bg-background/70 p-8 sm:p-10 shadow-md backdrop-blur-2xl transition-all duration-300 hover:scale-[1.02] hover:border-brand-green/60 hover:shadow-xl">
               <div className="mb-4">
                 <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
                   <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
@@ -229,27 +271,168 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
         </Reveal>
       </section>
 
-      {/* 3. Quality Commitment — Compact centered text box */}
+      {/* 3. TECHNICAL CAPABILITIES (القدرات الفنية والتنفيذية) */}
       <section className="site-container">
-        <div className="mx-auto max-w-3xl overflow-hidden rounded-2xl border border-white/40 bg-background/80 p-6 sm:p-8 shadow-sm backdrop-blur-xl ring-1 ring-black/5 text-center flex flex-col items-center justify-center transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:border-brand-green/60 active:scale-[0.98] cursor-pointer">
-          <Reveal>
-            <div className="space-y-3 flex flex-col items-center text-center">
-              <SectionBadge title={ar ? "الجودة والالتزام" : "Quality Assurance"} />
-              <h2 className="section-title mt-2 text-xl sm:text-2xl text-center">{ar ? data.quality.titleAr : data.quality.title}</h2>
-              <p className="text-sm sm:text-base leading-relaxed text-foreground/90 max-w-2xl mx-auto text-center">
-                {ar ? data.quality.bodyAr : data.quality.body}
-              </p>
-            </div>
-          </Reveal>
-        </div>
+        <Reveal>
+          <div className="text-center max-w-3xl mx-auto mb-10">
+            <SectionBadge title={ar ? "القدرات الفنية والتنفيذية" : "Technical Capabilities"} />
+            <h2 className="section-title mt-3">{ar ? capabilities.titleAr : capabilities.titleEn}</h2>
+            <p className="section-intro mt-3">{ar ? capabilities.subtitleAr : capabilities.subtitleEn}</p>
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {capabilities.capabilities.map((cap, cIdx) => (
+              <div
+                key={cap.id}
+                className="glass-card flex h-full flex-col justify-between rounded-3xl border border-white/30 bg-background/80 p-6 sm:p-7 shadow-md backdrop-blur-xl transition-all duration-300 hover:scale-[1.02] hover:border-brand-green/60 hover:shadow-xl"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="size-8 rounded-2xl bg-brand-green/10 flex items-center justify-center font-bold text-xs text-brand-green font-mono">
+                      0{cIdx + 1}
+                    </span>
+                    <Wrench className="size-4 text-brand-orange" />
+                  </div>
+                  <h3 className="font-head text-base sm:text-lg font-bold text-foreground">
+                    {ar ? cap.titleAr : cap.titleEn}
+                  </h3>
+                  <p className="mt-2.5 text-xs sm:text-sm leading-relaxed text-muted-foreground">
+                    {ar ? cap.descAr : cap.descEn}
+                  </p>
+                </div>
+
+                <div className="mt-5 pt-4 border-t border-border/60 space-y-2">
+                  {cap.highlights.map((h, hIdx) => (
+                    <div key={hIdx} className="flex items-start gap-2 text-xs text-foreground">
+                      <CheckCircle2 className="size-3.5 text-brand-green shrink-0 mt-0.5" />
+                      <span>{ar ? h.ar : h.en}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </Reveal>
       </section>
 
-      {/* 4. Why Choose Us / Building Enduring Value */}
+      {/* 4. ENGINEERING & CONSTRUCTION SERVICES (12 Disciplines Preview) */}
+      <section className="site-container">
+        <Reveal>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+            <div>
+              <SectionBadge title={ar ? "خدماتنا المتخصصة" : "Engineering Services"} />
+              <h2 className="section-title mt-3">
+                {ar ? "12 تخصصاً إنشائياً وهندسياً متكاملاً" : "12 Core Engineering & Construction Disciplines"}
+              </h2>
+            </div>
+            <Button asChild variant="outline" size="sm" className="rounded-full">
+              <Link to="/sectors/$sector" params={{ sector: "construction" }} search={{ tab: "services" }}>
+                <span>{ar ? "استعراض كافة الخدمات بالتفصيل" : "View All 12 Services Detailed"}</span>
+                <ArrowRight className="size-3.5 ms-1.5 rtl:rotate-180" />
+              </Link>
+            </Button>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {services.map((srv) => (
+              <div
+                key={srv.id}
+                className="rounded-2xl border border-white/20 bg-background/80 p-5 shadow-sm backdrop-blur-md transition-all duration-200 hover:border-brand-green hover:shadow-lg flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="font-mono text-xs font-bold text-brand-orange">{srv.number}</span>
+                    <Building className="size-3.5 text-muted-foreground" />
+                  </div>
+                  <h4 className="font-head text-sm font-bold text-foreground line-clamp-1">
+                    {ar ? srv.titleAr : srv.title}
+                  </h4>
+                  <p className="mt-2 text-xs leading-relaxed text-muted-foreground line-clamp-3">
+                    {ar ? srv.leadAr : srv.lead}
+                  </p>
+                </div>
+                <div className="mt-4 pt-3 border-t border-border/50">
+                  <Link
+                    to="/sectors/$sector"
+                    params={{ sector: "construction" }}
+                    search={{ tab: "services" }}
+                    className="text-xs font-bold text-brand-green hover:text-brand-orange flex items-center justify-between"
+                  >
+                    <span>{ar ? "نطاق العمل والقدرات" : "Explore Scope"}</span>
+                    <ArrowRight className="size-3 rtl:rotate-180" />
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </Reveal>
+      </section>
+
+      {/* 5. INDUSTRIES WE SERVE */}
+      <section className="site-container">
+        <Reveal>
+          <div className="text-center max-w-3xl mx-auto mb-10">
+            <SectionBadge title={ar ? "القطاعات المخدومة" : "Industries We Serve"} />
+            <h2 className="section-title mt-3">
+              {ar ? "ريادة تنفيذية موثقة عبر كبرى القطاعات" : "Proven Track Record Across Key Industries"}
+            </h2>
+            <p className="section-intro mt-3">
+              {ar
+                ? "خبرات هندسية متخصصة تلبي أعلى متطلبات المستشفيات، منشآت الطاقة، المشروعات السكنية، والتجارية."
+                : "Engineering expertise tailored to demanding medical cleanrooms, oil & gas regulator stations, luxury compounds, and commercial centers."}
+            </p>
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="rounded-3xl border border-white/30 bg-background/80 p-6 shadow-md backdrop-blur-xl text-center">
+              <div className="mx-auto size-12 rounded-2xl bg-brand-green/10 flex items-center justify-center text-brand-green mb-3">
+                <Building className="size-6" />
+              </div>
+              <h3 className="font-head text-base font-bold text-foreground">{ar ? "القطاع الطبي والرعاية الصحية" : "Healthcare & Medical Facilities"}</h3>
+              <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
+                {ar ? "غرف العمليات، الأشعة والتعقيم، شبكات الغازات الطبية، والمصاعد المتخصصة." : "Operating theatres, imaging rooms, medical gas networks, and bed elevators."}
+              </p>
+            </div>
+
+            <div className="rounded-3xl border border-white/30 bg-background/80 p-6 shadow-md backdrop-blur-xl text-center">
+              <div className="mx-auto size-12 rounded-2xl bg-brand-orange/10 flex items-center justify-center text-brand-orange mb-3">
+                <HardHat className="size-6" />
+              </div>
+              <h3 className="font-head text-base font-bold text-foreground">{ar ? "مشروعات البترول والغاز" : "Oil & Gas Infrastructure"}</h3>
+              <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
+                {ar ? "حماية خطوط الغاز القومية، غرف محولات الضغط، ومحطات تموين الوقود." : "High-pressure gas pipeline protection, regulator rooms, and fuel stations."}
+              </p>
+            </div>
+
+            <div className="rounded-3xl border border-white/30 bg-background/80 p-6 shadow-md backdrop-blur-xl text-center">
+              <div className="mx-auto size-12 rounded-2xl bg-brand-green/10 flex items-center justify-center text-brand-green mb-3">
+                <Layers className="size-6" />
+              </div>
+              <h3 className="font-head text-base font-bold text-foreground">{ar ? "التطوير السكني والفلل الفاخرة" : "Residential & Luxury Estates"}</h3>
+              <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
+                {ar ? "منتجع فيدالا الجلالة، وفلل التجمع الخامس وماونتن فيو وقطامية ديونز." : "Vidala El-Galala resort blocks, Katameya Dunes, and Fifth Settlement villas."}
+              </p>
+            </div>
+
+            <div className="rounded-3xl border border-white/30 bg-background/80 p-6 shadow-md backdrop-blur-xl text-center">
+              <div className="mx-auto size-12 rounded-2xl bg-brand-orange/10 flex items-center justify-center text-brand-orange mb-3">
+                <Trophy className="size-6" />
+              </div>
+              <h3 className="font-head text-base font-bold text-foreground">{ar ? "المباني التجارية والإدارية" : "Commercial & Headquarters"}</h3>
+              <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
+                {ar ? "مجمعات التسوق، مقرات الشركات، والمشروعات التعليمية والمدارس الدولية." : "Corporate headquarters, retail shopping complexes, and international schools."}
+              </p>
+            </div>
+          </div>
+        </Reveal>
+      </section>
+
+      {/* 6. COMPETITIVE ADVANTAGES */}
       <section className="site-container">
         <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
           <Reveal>
             <div className="text-center max-w-3xl mx-auto">
-              <SectionBadge title={ar ? "لماذا تختارنا" : "Why Choose Us"} />
+              <SectionBadge title={ar ? "المزايا التنافسية" : "Competitive Advantages"} />
               <h2 className="section-title mt-3 text-center">{ar ? data.whyChooseUs.titleAr : data.whyChooseUs.title}</h2>
             </div>
           </Reveal>
@@ -258,7 +441,6 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
             {data.whyChooseUs.pillars.map((pillar, idx) => (
               <Reveal key={idx} delay={idx * 0.05}>
                 <div className="group relative flex h-full flex-col rounded-2xl border border-brand-green/30 bg-background/70 p-6 backdrop-blur-xl shadow-sm transition-all duration-300 hover:scale-[1.03] hover:-translate-y-1 hover:border-brand-green hover:shadow-xl hover:bg-card/95 active:scale-[0.98] cursor-pointer">
-                  {/* Pulsing dot — visible on hover */}
                   <span className="absolute top-3 end-3 size-2 rounded-full bg-brand-green opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-opacity duration-300" />
                   <div className="flex items-center gap-3">
                     <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-brand-green/10 font-mono text-xs font-bold text-brand-green-text group-hover:bg-brand-green group-hover:text-white transition-colors">
@@ -274,12 +456,12 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
         </div>
       </section>
 
-      {/* 5. Project Delivery Steps — Title centered in Arabic and English */}
+      {/* 7. PROJECT EXECUTION METHODOLOGY */}
       <section className="site-container">
         <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
           <Reveal>
             <div className="text-center max-w-4xl mx-auto">
-              <SectionBadge title={ar ? "نهجنا" : "Project Delivery Process"} />
+              <SectionBadge title={ar ? "منهجية التنفيذ الهندسية" : "Project Execution Methodology"} />
               <h2 className="section-title mt-3 text-center leading-snug">{ar ? data.deliveryProcess.titleAr : data.deliveryProcess.title}</h2>
             </div>
           </Reveal>
@@ -295,6 +477,156 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* 8. QUALITY, HEALTH, SAFETY & ENVIRONMENT (QHSE) & CREDENTIALS */}
+      <section className="site-container">
+        <div className="rounded-3xl border border-white/30 bg-background/80 p-6 sm:p-10 shadow-lg backdrop-blur-2xl">
+          <Reveal>
+            <div className="text-center max-w-3xl mx-auto mb-10">
+              <SectionBadge title={ar ? "الجودة والسلامة والاعتمادات الرسمية" : "QHSE Standards & Official Accreditations"} />
+              <h2 className="section-title mt-3">{ar ? credentials.titleAr : credentials.titleEn}</h2>
+              <p className="section-intro mt-3">{ar ? credentials.subtitleAr : credentials.subtitleEn}</p>
+            </div>
+
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {credentials.credentials.map((cred) => (
+                <div
+                  key={cred.id}
+                  className="rounded-2xl border border-border bg-secondary/30 p-5 backdrop-blur-md flex flex-col justify-between hover:border-brand-green transition-colors"
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="text-[11px] font-bold text-brand-green bg-brand-green/10 border border-brand-green/20 px-2.5 py-0.5 rounded-full">
+                        {ar ? cred.badgeAr : cred.badgeEn}
+                      </span>
+                      <Award className="size-4 text-brand-orange" />
+                    </div>
+                    <h4 className="font-head text-sm font-bold text-foreground">
+                      {ar ? cred.titleAr : cred.titleEn}
+                    </h4>
+                    <p className="text-[11px] text-brand-orange font-semibold mt-1">
+                      {ar ? cred.issuerAr : cred.issuerEn}
+                    </p>
+                    <p className="mt-2.5 text-xs text-muted-foreground leading-relaxed">
+                      {ar ? cred.descAr : cred.descEn}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* 9. FEATURED PROJECTS SHOWCASE */}
+      <section className="site-container">
+        <Reveal>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+            <div>
+              <SectionBadge title={ar ? "سابقة الأعمال الموثقة" : "Featured Projects"} />
+              <h2 className="section-title mt-3">
+                {ar ? "نماذج من المشروعات المنجزة والمسلمة" : "Selected Completed & Verified Works"}
+              </h2>
+            </div>
+            <Button asChild size="default" className="rounded-full bg-brand-green text-white hover:bg-brand-orange">
+              <Link to="/sectors/$sector" params={{ sector: "construction" }} search={{ tab: "projects" }}>
+                <span>{ar ? "عرض كافة المشروعات (+57 مشروعاً)" : "View Full 57+ Portfolio"}</span>
+                <ArrowRight className="size-4 ms-2 rtl:rotate-180" />
+              </Link>
+            </Button>
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-3">
+            {featuredProjects.map((proj) => {
+              const meta = getProjectMeta(proj);
+              return (
+                <div
+                  key={proj.id}
+                  className="glass-card flex flex-col justify-between overflow-hidden rounded-3xl border border-white/30 bg-background/85 shadow-md backdrop-blur-xl transition hover:border-brand-green/60 hover:shadow-xl"
+                >
+                  <div>
+                    <div className="relative aspect-[16/10] w-full overflow-hidden bg-muted">
+                      <img
+                        src={proj.image}
+                        alt={ar ? proj.nameAr : proj.nameEn}
+                        loading="lazy"
+                        className="size-full object-cover"
+                      />
+                      <div className="absolute top-3 start-3">
+                        <span className="font-mono text-xs font-bold px-2.5 py-0.5 rounded-full bg-background/90 text-foreground backdrop-blur-md border border-white/20">
+                          {meta.referenceCode}
+                        </span>
+                      </div>
+                      <div className="absolute top-3 end-3">
+                        <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-brand-orange text-white shadow-sm">
+                          {proj.year}
+                        </span>
+                      </div>
+                    </div>
+                    <div className="p-5">
+                      <h4 className="font-head text-base font-bold text-foreground line-clamp-1">
+                        {ar ? proj.nameAr : proj.nameEn}
+                      </h4>
+                      <p className="text-xs text-muted-foreground mt-1 line-clamp-1">
+                        {ar ? proj.clientAr : proj.clientEn}
+                      </p>
+                      <div className="mt-3 pt-3 border-t border-border flex items-center justify-between text-xs">
+                        <span className="text-muted-foreground">{ar ? "القيمة التعاقدية:" : "Value:"}</span>
+                        <span className="font-bold text-brand-orange">{ar ? proj.valueAr : proj.valueEn}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="p-5 pt-0">
+                    <Button asChild variant="outline" size="sm" className="w-full rounded-2xl text-xs font-bold">
+                      <Link to="/sectors/$sector" params={{ sector: "construction" }} search={{ tab: "projects" }}>
+                        <span>{ar ? "تفاصيل وطلب التحقق" : "Details & Verify"}</span>
+                        <ArrowRight className="size-3 ms-1 rtl:rotate-180" />
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </Reveal>
+      </section>
+
+      {/* 10. START YOUR PROJECT CTA */}
+      <section className="site-container pb-8">
+        <div className="rounded-3xl border border-brand-green/30 bg-gradient-to-r from-brand-green/15 via-background to-brand-orange/15 p-8 sm:p-12 backdrop-blur-2xl text-center shadow-xl">
+          <Reveal>
+            <div className="max-w-3xl mx-auto">
+              <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-3">
+                <Sparkles className="size-3.5 text-brand-orange" />
+                <span>{ar ? "ابدأ دراسة وتنفيذ مشروعك" : "Start Your Construction Project"}</span>
+              </div>
+              <h2 className="text-2xl sm:text-4xl font-extrabold font-head text-foreground">
+                {ar ? "جاهزون لمناقشة ودراسة مشروعك القادم" : "Ready to Execute Your Next Milestone Project"}
+              </h2>
+              <p className="mt-3 text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                {ar
+                  ? "قدم مواصفات مشروعك الآن عبر نموذج دراسة المشروعات متعدد الخطوات، وسيقوم فريق المكتب الفني بدراسة المقايسات والمخططات والتواصل معكم بعرض فني ومالي معتمد."
+                  : "Submit your technical project brief through our multi-step proposal builder, and our senior engineering team will evaluate drawings and BOQs to provide a certified turnkey proposal."}
+              </p>
+
+              <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+                <Button asChild size="lg" className="rounded-full bg-brand-green text-white hover:bg-brand-orange shadow-lg px-8">
+                  <Link to="/sectors/$sector" params={{ sector: "construction" }} search={{ tab: "start-project" }}>
+                    <span>{ar ? "تقديم طلب دراسة مشروع جديد" : "Submit Project Proposal Brief"}</span>
+                    <ArrowRight className="size-4 ms-2 rtl:rotate-180" />
+                  </Link>
+                </Button>
+
+                <Button asChild variant="outline" size="lg" className="rounded-full">
+                  <Link to="/sectors/$sector" params={{ sector: "construction" }} search={{ tab: "projects" }}>
+                    <span>{ar ? "استعراض سابقة الأعمال المعتمدة" : "Review Track Record"}</span>
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </Reveal>
         </div>
       </section>
 

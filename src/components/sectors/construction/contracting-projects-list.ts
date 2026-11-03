@@ -15,6 +15,100 @@ export interface ContractingProject {
   valueAr: string;
   valueEn: string;
   image: string;
+  referenceCode?: string;
+  status?: "completed" | "ongoing" | "under_development" | "proposed";
+  scopeEn?: string;
+  scopeAr?: string;
+  executionRoleEn?: string;
+  executionRoleAr?: string;
+  durationEn?: string;
+  durationAr?: string;
+  technicalHighlightsEn?: string[];
+  technicalHighlightsAr?: string[];
+  region?: string;
+}
+
+export function getProjectMeta(p: ContractingProject) {
+  const referenceCode = p.referenceCode || `PRJ-EGY-${String(p.id).padStart(3, "0")}`;
+  const is2024 = p.year === "2024";
+  const status: "completed" | "ongoing" | "under_development" | "proposed" =
+    p.status || (is2024 ? "completed" : "completed");
+
+  const statusLabel = {
+    completed: { en: "Completed & Handed Over", ar: "منجز ومسلّم رسمياً" },
+    ongoing: { en: "Active Execution", ar: "قيد التنفيذ الميداني" },
+    under_development: { en: "Under Development", ar: "تحت التطوير والتهيئة" },
+    proposed: { en: "Proposed Project", ar: "مشروع مقترح" },
+  }[status];
+
+  // Execution Role
+  let roleEn = "Main Contractor — Turnkey Execution";
+  let roleAr = "مقاول رئيسي — تنفيذ متكامل";
+  if (p.category === "healthcare" && (p.nameEn.includes("Elevator") || p.descriptionEn.includes("elevator"))) {
+    roleEn = "Specialized Medical Mobility & MEP Contractor";
+    roleAr = "مقاول تخصصي للمصاعد الطبية والأنظمة الكهروميكانيكية";
+  } else if (p.category === "infrastructure") {
+    roleEn = "Specialized Infrastructure & Pipeline Contractor";
+    roleAr = "مقاول تخصصي لحماية خطوط الغاز والبنية التحتية";
+  } else if (p.category === "residential") {
+    roleEn = "General Building & Luxury Fit-Out Contractor";
+    roleAr = "مقاول عام للإنشاءات المعمارية والتشطيبات الراقية";
+  }
+
+  // Duration estimation based on project scale
+  const durationEn = p.year.includes("–") ? "18-24 Months" : "6-12 Months";
+  const durationAr = p.year.includes("–") ? "18 إلى 24 شهراً" : "6 إلى 12 شهراً";
+
+  // Region
+  let regionId = "nationwide";
+  let regionEn = "Nationwide";
+  let regionAr = "على مستوى الجمهورية";
+
+  const loc = (p.locationAr + " " + p.locationEn).toLowerCase();
+  if (loc.includes("قاهرة") || loc.includes("cairo") || loc.includes("تجمع") || loc.includes("معادي") || loc.includes("إمبابة") || loc.includes("قطامية")) {
+    regionId = "cairo";
+    regionEn = "Greater Cairo";
+    regionAr = "القاهرة الكبرى";
+  } else if (loc.includes("جلالة") || loc.includes("galala") || loc.includes("سويس") || loc.includes("سيناء")) {
+    regionId = "canal_sinai";
+    regionEn = "Suez Canal & Sinai";
+    regionAr = "محور القناة وسيناء والجلالة";
+  } else if (loc.includes("ميت غمر") || loc.includes("دقهلية") || loc.includes("إسماعيلية") || loc.includes("delta")) {
+    regionId = "delta";
+    regionEn = "Delta & Lower Egypt";
+    regionAr = "الدلتا والوجه البحري";
+  } else if (loc.includes("إسكندرية") || loc.includes("alexandria")) {
+    regionId = "alex";
+    regionEn = "Alexandria & North Coast";
+    regionAr = "الإسكندرية والساحل الشمالي";
+  }
+
+  // Highlights
+  const highlightsEn = [
+    `Contractual Value: ${p.valueEn}`,
+    `Certified client handover protocol completed on ${p.contractDate}`,
+    `Full architectural & MEP engineering compliance signed off`,
+  ];
+  const highlightsAr = [
+    `القيمة التعاقدية الموثقة: ${p.valueAr}`,
+    `محضر تسليم واستلام رسمي معتمد بتاريخ ${p.contractDate}`,
+    `مطابقة تامة للمواصفات المعمارية والهندسية ودفاتر الشروط`,
+  ];
+
+  return {
+    referenceCode,
+    status,
+    statusLabel,
+    roleEn,
+    roleAr,
+    durationEn,
+    durationAr,
+    regionId,
+    regionEn,
+    regionAr,
+    highlightsEn,
+    highlightsAr,
+  };
 }
 
 export const contractingProjectsList: ContractingProject[] = [
