@@ -2,11 +2,13 @@ import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import {
+  ArrowRight,
   Award,
   BadgeCheck,
   Building2,
   CheckCircle2,
   Compass,
+  Download,
   FileCheck2,
   Handshake,
   HeartHandshake,
@@ -97,6 +99,21 @@ export function AboutPage() {
                   </div>
                 ))}
               </div>
+
+              {/* Company Profile Download CTA */}
+              <div className="mt-8 flex flex-wrap items-center gap-3 pt-6 border-t border-border/60">
+                <Button asChild size="default" className="rounded-full !bg-brand-green !text-white text-xs sm:text-sm font-bold shadow-md hover:!bg-brand-orange transition-all duration-300 cursor-pointer">
+                  <a href="/public/sitemap.xml" download="SBA-Corporate-Profile.pdf" onClick={(e) => { e.preventDefault(); window.print(); }}>
+                    <Download className="size-4" />
+                    <span>{ar ? "تحميل الملف التعريفي للمجموعة (PDF)" : "Download Company Profile"}</span>
+                  </a>
+                </Button>
+                <Button asChild variant="outline" size="default" className="rounded-full border-border bg-secondary/80 text-xs sm:text-sm font-bold hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-all cursor-pointer">
+                  <Link to="/join/group">
+                    {ar ? "فرص التعاون والشراكة" : "Cooperation Pathways"}
+                  </Link>
+                </Button>
+              </div>
             </Reveal>
 
             <Reveal delay={0.15}>
@@ -148,6 +165,143 @@ export function AboutPage() {
               );
             })}
           </div>
+        </div>
+      </section>
+
+      {/* 2.5 Corporate Structure & Architecture Diagram */}
+      <section id="structure" className="site-container py-12 scroll-mt-24">
+        <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-8 sm:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
+          <Reveal className="mx-auto max-w-3xl text-center">
+            <SectionBadge title={ar ? "الهيكل المؤسسي والحوكمة" : "Corporate Structure & Architecture"} />
+            <h2 className="section-title mt-3 text-xl sm:text-2xl lg:text-3xl">
+              {ar ? "الهيكل المؤسسي للمجموعة والقطاعات التابعة" : "Group Institutional Structure & Subsidiary Operating Units"}
+            </h2>
+            <p className="section-intro mx-auto mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
+              {ar
+                ? "تعتمد مجموعة سامي بن عياد نموذجاً مؤسسياً موحداً يجمع بين حوكمة الشركة القابضة المركزية والكيانات التشغيلية المتخصصة عبر أربعة قطاعات أعمال استراتيجية لضمان كفاءة الإدارة وجودة الالتزامات."
+                : "Sami Bin Ayyad Group operates a cohesive corporate model integrating centralized corporate governance with specialized operating subsidiaries across four strategic sectors."}
+            </p>
+          </Reveal>
+
+          {/* Interactive Corporate Structure Diagram */}
+          <Reveal delay={0.15}>
+            <div className="mt-12 max-w-5xl mx-auto">
+              {/* Parent Holding Node */}
+              <div className="mx-auto max-w-md rounded-3xl border-2 border-brand-green/60 bg-gradient-to-br from-brand-green/15 via-background to-brand-orange/10 p-6 text-center shadow-xl backdrop-blur-2xl">
+                <span className="font-mono text-[11px] font-extrabold uppercase tracking-widest text-brand-orange">
+                  {ar ? "الكيان المؤسسي الموحد (الشركة الأم)" : "Unified Parent Holding Entity"}
+                </span>
+                <h3 className="font-head text-xl sm:text-2xl font-black text-foreground mt-1">
+                  {ar ? "مجموعة سامي بن عياد" : "SAMI BIN AYYAD GROUP"}
+                </h3>
+                <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
+                  {ar
+                    ? "التوجيه الاستراتيجي، الحوكمة المؤسسية، إدارة رؤوس الأموال والتحالفات الدولية الكبرى"
+                    : "Strategic Leadership, Group Governance, Capital Allocation & International Alliances"}
+                </p>
+                <div className="mt-3 flex items-center justify-center gap-2 text-[11px] font-bold text-brand-green">
+                  <BadgeCheck className="size-4" />
+                  <span>{ar ? "تأسست رسمياً 2023 · جذور الخبرة منذ 1977" : "Formally Unified 2023 · Heritage Roots 1977"}</span>
+                </div>
+              </div>
+
+              {/* Connecting Branch Line */}
+              <div className="my-6 flex justify-center">
+                <div className="h-8 w-0.5 bg-gradient-to-b from-brand-green to-brand-orange/60" />
+              </div>
+
+              {/* Four Subsidiary Sectors */}
+              <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+                {[
+                  {
+                    icon: Building2,
+                    nameAr: "قطاع المقاولات والتطوير العقاري",
+                    nameEn: "Construction & Real Estate",
+                    statusAr: "كيان تشغيلي تابع",
+                    statusEn: "Operating Division",
+                    rootsAr: "منذ 1977 · سجل موثق",
+                    rootsEn: "Since 1977 · Documented Track Record",
+                    descAr: "المقاولات العامة، المنشآت الطبية، التطوير العقاري، وشبكات البنية التحتية.",
+                    descEn: "General contracting, healthcare facilities, real estate, and structural engineering.",
+                    link: "/sectors/construction",
+                  },
+                  {
+                    icon: Leaf,
+                    nameAr: "قطاع البيئة والاستدامة",
+                    nameEn: "Environment & Sustainability",
+                    statusAr: "استشارات وحلول هندسية",
+                    statusEn: "Engineering & Advisory",
+                    rootsAr: "شراكات سويسرية ودولية",
+                    rootsEn: "Swiss & Global Alliances",
+                    descAr: "تقييم الأثر البيئي، محطات الغاز الحيوي، معالجة المياه، والامتثال البيئي.",
+                    descEn: "EIA studies, dry fermentation biogas, water filtration, and ESG compliance.",
+                    link: "/sectors/environmental",
+                  },
+                  {
+                    icon: Shirt,
+                    nameAr: "قطاع تصنيع الملابس وتطوير الأزياء",
+                    nameEn: "Garment Manufacturing",
+                    statusAr: "مجمع صناعي وخطوط تصدير",
+                    statusEn: "Industrial Production & Export",
+                    rootsAr: "علامات خاصة + FOB متكامل",
+                    rootsEn: "Private Label + Full FOB",
+                    descAr: "تصنيع الملابس الجاهزة، هندسة الباترون، برامج التصدير، وخطوط القميص الكلاسيكي.",
+                    descEn: "Ready-made garment manufacturing, pattern engineering, and international FOB programs.",
+                    link: "/sectors/garment",
+                  },
+                  {
+                    icon: Wheat,
+                    nameAr: "قطاع المنتجات الطبيعية والغذائية",
+                    nameEn: "Food & Agri-Products",
+                    statusAr: "توريد وتصدير دولي",
+                    statusEn: "Global Sourcing & Export",
+                    rootsAr: "مصادر مصرية أصيلة موثقة",
+                    rootsEn: "Certified Authentic Origins",
+                    descAr: "عسل طبيعي، زيتون، زيت زيتون بكر، تمور فاخرة، وأعشاب وتوابل موثقة معملياً.",
+                    descEn: "Natural honey, table olives, extra virgin olive oil, premium dates, and certified herbs.",
+                    link: "/sectors/food",
+                  },
+                ].map((sec, sIdx) => {
+                  const SecIcon = sec.icon;
+                  return (
+                    <div
+                      key={sIdx}
+                      className="group flex flex-col justify-between rounded-2xl border border-white/30 bg-background/80 p-5 shadow-md backdrop-blur-xl transition-all duration-300 hover:scale-[1.02] hover:border-brand-green/60 hover:shadow-xl"
+                    >
+                      <div>
+                        <div className="flex items-center justify-between mb-3">
+                          <span className="flex size-9 items-center justify-center rounded-xl bg-brand-green/10 text-brand-green transition-transform group-hover:scale-110">
+                            <SecIcon className="size-4" />
+                          </span>
+                          <span className="font-mono text-[10px] font-bold text-brand-orange bg-brand-orange/10 px-2 py-0.5 rounded-full border border-brand-orange/20">
+                            {ar ? sec.statusAr : sec.statusEn}
+                          </span>
+                        </div>
+                        <h4 className="font-head text-base font-bold text-foreground group-hover:text-brand-orange transition-colors">
+                          {ar ? sec.nameAr : sec.nameEn}
+                        </h4>
+                        <p className="mt-1 text-[11px] font-semibold text-brand-green">
+                          {ar ? sec.rootsAr : sec.rootsEn}
+                        </p>
+                        <p className="mt-2.5 text-xs text-muted-foreground leading-relaxed">
+                          {ar ? sec.descAr : sec.descEn}
+                        </p>
+                      </div>
+                      <div className="mt-4 pt-3 border-t border-border/40">
+                        <Link
+                          to={sec.link}
+                          className="inline-flex items-center gap-1.5 text-xs font-bold text-foreground hover:text-brand-orange transition-colors"
+                        >
+                          <span>{ar ? "استكشف تفاصيل القطاع" : "View Division Details"}</span>
+                          <ArrowRight className="size-3.5 rtl:rotate-180" />
+                        </Link>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </Reveal>
         </div>
       </section>
 
