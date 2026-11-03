@@ -15,12 +15,14 @@ import { Route as ApparelRouteImport } from './routes/apparel'
 import { Route as BrandsRouteImport } from './routes/brands'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as HowWeManufactureRouteImport } from './routes/how-we-manufacture'
+import { Route as InvestorRelationsRouteImport } from './routes/investor-relations'
 import { Route as JoinRouteImport } from './routes/join'
 import { Route as ModelsRouteImport } from './routes/models'
 import { Route as NewsRouteImport } from './routes/news'
 import { Route as PartnersRouteImport } from './routes/partners'
 import { Route as ProductsRouteImport } from './routes/products'
 import { Route as SectorsRouteImport } from './routes/sectors'
+import { Route as AdminInquiriesRouteImport } from './routes/admin.inquiries'
 import { Route as JoinIndexRouteImport } from './routes/join.index'
 import { Route as JoinConstructionRouteImport } from './routes/join.construction'
 import { Route as JoinGarmentRouteImport } from './routes/join.garment'
@@ -63,6 +65,11 @@ const HowWeManufactureRoute = HowWeManufactureRouteImport.update({
   path: '/how-we-manufacture',
   getParentRoute: () => rootRouteImport,
 } as any)
+const InvestorRelationsRoute = InvestorRelationsRouteImport.update({
+  id: '/investor-relations',
+  path: '/investor-relations',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const JoinRoute = JoinRouteImport.update({
   id: '/join',
   path: '/join',
@@ -91,6 +98,11 @@ const ProductsRoute = ProductsRouteImport.update({
 const SectorsRoute = SectorsRouteImport.update({
   id: '/sectors',
   path: '/sectors',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminInquiriesRoute = AdminInquiriesRouteImport.update({
+  id: '/admin/inquiries',
+  path: '/admin/inquiries',
   getParentRoute: () => rootRouteImport,
 } as any)
 const JoinIndexRoute = JoinIndexRouteImport.update({
@@ -156,12 +168,14 @@ export interface FileRoutesByFullPath {
   '/brands': typeof BrandsRoute
   '/contact': typeof ContactRoute
   '/how-we-manufacture': typeof HowWeManufactureRoute
+  '/investor-relations': typeof InvestorRelationsRoute
   '/join': typeof JoinRouteWithChildren
   '/models': typeof ModelsRouteWithChildren
   '/news': typeof NewsRouteWithChildren
   '/partners': typeof PartnersRoute
   '/products': typeof ProductsRoute
   '/sectors': typeof SectorsRouteWithChildren
+  '/admin/inquiries': typeof AdminInquiriesRoute
   '/join/construction': typeof JoinConstructionRoute
   '/join/garment': typeof JoinGarmentRoute
   '/join/group': typeof JoinGroupRoute
@@ -181,8 +195,10 @@ export interface FileRoutesByTo {
   '/brands': typeof BrandsRoute
   '/contact': typeof ContactRoute
   '/how-we-manufacture': typeof HowWeManufactureRoute
+  '/investor-relations': typeof InvestorRelationsRoute
   '/partners': typeof PartnersRoute
   '/products': typeof ProductsRoute
+  '/admin/inquiries': typeof AdminInquiriesRoute
   '/join/construction': typeof JoinConstructionRoute
   '/join/garment': typeof JoinGarmentRoute
   '/join/group': typeof JoinGroupRoute
@@ -203,12 +219,14 @@ export interface FileRoutesById {
   '/brands': typeof BrandsRoute
   '/contact': typeof ContactRoute
   '/how-we-manufacture': typeof HowWeManufactureRoute
+  '/investor-relations': typeof InvestorRelationsRoute
   '/join': typeof JoinRouteWithChildren
   '/models': typeof ModelsRouteWithChildren
   '/news': typeof NewsRouteWithChildren
   '/partners': typeof PartnersRoute
   '/products': typeof ProductsRoute
   '/sectors': typeof SectorsRouteWithChildren
+  '/admin/inquiries': typeof AdminInquiriesRoute
   '/join/construction': typeof JoinConstructionRoute
   '/join/garment': typeof JoinGarmentRoute
   '/join/group': typeof JoinGroupRoute
@@ -230,12 +248,14 @@ export interface FileRouteTypes {
     | '/brands'
     | '/contact'
     | '/how-we-manufacture'
+    | '/investor-relations'
     | '/join'
     | '/models'
     | '/news'
     | '/partners'
     | '/products'
     | '/sectors'
+    | '/admin/inquiries'
     | '/join/construction'
     | '/join/garment'
     | '/join/group'
@@ -255,8 +275,10 @@ export interface FileRouteTypes {
     | '/brands'
     | '/contact'
     | '/how-we-manufacture'
+    | '/investor-relations'
     | '/partners'
     | '/products'
+    | '/admin/inquiries'
     | '/join/construction'
     | '/join/garment'
     | '/join/group'
@@ -276,12 +298,14 @@ export interface FileRouteTypes {
     | '/brands'
     | '/contact'
     | '/how-we-manufacture'
+    | '/investor-relations'
     | '/join'
     | '/models'
     | '/news'
     | '/partners'
     | '/products'
     | '/sectors'
+    | '/admin/inquiries'
     | '/join/construction'
     | '/join/garment'
     | '/join/group'
@@ -302,12 +326,14 @@ export interface RootRouteChildren {
   BrandsRoute: typeof BrandsRoute
   ContactRoute: typeof ContactRoute
   HowWeManufactureRoute: typeof HowWeManufactureRoute
+  InvestorRelationsRoute: typeof InvestorRelationsRoute
   JoinRoute: typeof JoinRouteWithChildren
   ModelsRoute: typeof ModelsRouteWithChildren
   NewsRoute: typeof NewsRouteWithChildren
   PartnersRoute: typeof PartnersRoute
   ProductsRoute: typeof ProductsRoute
   SectorsRoute: typeof SectorsRouteWithChildren
+  AdminInquiriesRoute: typeof AdminInquiriesRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -354,6 +380,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HowWeManufactureRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/investor-relations': {
+      id: '/investor-relations'
+      path: '/investor-relations'
+      fullPath: '/investor-relations'
+      preLoaderRoute: typeof InvestorRelationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/join': {
       id: '/join'
       path: '/join'
@@ -394,6 +427,13 @@ declare module '@tanstack/react-router' {
       path: '/sectors'
       fullPath: '/sectors'
       preLoaderRoute: typeof SectorsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/inquiries': {
+      id: '/admin/inquiries'
+      path: '/admin/inquiries'
+      fullPath: '/admin/inquiries'
+      preLoaderRoute: typeof AdminInquiriesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/join/': {
@@ -539,12 +579,14 @@ const rootRouteChildren: RootRouteChildren = {
   BrandsRoute: BrandsRoute,
   ContactRoute: ContactRoute,
   HowWeManufactureRoute: HowWeManufactureRoute,
+  InvestorRelationsRoute: InvestorRelationsRoute,
   JoinRoute: JoinRouteWithChildren,
   ModelsRoute: ModelsRouteWithChildren,
   NewsRoute: NewsRouteWithChildren,
   PartnersRoute: PartnersRoute,
   ProductsRoute: ProductsRoute,
   SectorsRoute: SectorsRouteWithChildren,
+  AdminInquiriesRoute: AdminInquiriesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
