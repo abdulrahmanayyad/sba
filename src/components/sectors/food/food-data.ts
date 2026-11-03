@@ -1211,3 +1211,1123 @@ export const foodMarketsData: FoodMarketsData = {
   },
 };
 
+
+
+// ============================================================================
+// COMPREHENSIVE FOOD SECTOR ENHANCEMENTS (B2B COMMERCIAL SUPPLY & EXPORT)
+// ============================================================================
+
+export interface SupplyCapabilityMetric {
+  titleEn: string;
+  titleAr: string;
+  value: string;
+  unitEn: string;
+  unitAr: string;
+  descriptionEn: string;
+  descriptionAr: string;
+}
+
+export interface SupplyCapabilityDomain {
+  id: string;
+  titleEn: string;
+  titleAr: string;
+  summaryEn: string;
+  summaryAr: string;
+  pointsEn: string[];
+  pointsAr: string[];
+  icon: string;
+}
+
+export const foodSupplyCapabilities = {
+  metrics: [
+    {
+      titleEn: "Monthly Agri-Food Export Capacity",
+      titleAr: "طاقة التصدير والتوريد الشهرية",
+      value: "2,500+",
+      unitEn: "Metric Tonnes / Month",
+      unitAr: "طن متري / شهرياً",
+      descriptionEn: "Combined export throughput across dates, table olives, olive oil, botanical herbs and bulk commodities.",
+      descriptionAr: "إجمالي القدرة التصديرية المشتركة للتمور والزيتون وزيت الزيتون والأعشاب الطبية والمحاصيل.",
+    },
+    {
+      titleEn: "Cold Storage & Climate Control",
+      titleAr: "سعات التخزين المبرد والمستودعات الجافة",
+      value: "8,000+",
+      unitEn: "Pallet Positions",
+      unitAr: "موقع طبلية تخزينية",
+      descriptionEn: "Temperature-monitored cold storage preserving date moisture, olive texture and botanical volatile oils.",
+      descriptionAr: "مستودعات مبردة ومكيفة تحافظ على رطوبة التمور وقوام الزيتون ونقاء الزيوت العطرية في الأعشاب.",
+    },
+    {
+      titleEn: "Vetted Contracted Farmlands",
+      titleAr: "مساحات زراعية متعاقد عليها",
+      value: "12,000+",
+      unitEn: "Feddan (Acres)",
+      unitAr: "فدان زراعي معتمد",
+      descriptionEn: "Heritage groves in Siwa Oasis, Sinai, Upper Egypt, Matrouh, and fertile Nile Valley farms.",
+      descriptionAr: "مزارع في واحة سيوة، شبه جزيرة سيناء، صعيد مصر، مطروح وبساتين دلتا النيل الخصبة.",
+    },
+    {
+      titleEn: "Global Compliance Assays",
+      titleAr: "الفحوصات والتحاليل المعملية",
+      value: "100%",
+      unitEn: "Batch Tested (COA)",
+      unitAr: "فحص كامل لكل تشغيلة",
+      descriptionEn: "Complete physical, chemical, microbiological and pesticide residue screening before container sealing.",
+      descriptionAr: "فحص فيزيائي وكيميائي وميكروبيولوجي وتحليل متبقيات مبيدات شامل قبل إغلاق الحاويات.",
+    },
+  ] as SupplyCapabilityMetric[],
+
+  domains: [
+    {
+      id: "bulk-supply",
+      titleEn: "Bulk Commodity & Industrial Sourcing",
+      titleAr: "التوريد الخام والكميات الصناعية الضخمة",
+      summaryEn: "Reliable FCL/LCL ocean container shipping of bulk food ingredients for international industrial processors, re-packers, and refinery facilities.",
+      summaryAr: "شحن حاويات بحرية كاملة ومجمعة من الخامات الغذائية للمصانع وشركات إعادة التعبئة ومصانع الأغذية الدولية.",
+      pointsEn: [
+        "Food-grade drums (150kg, 200kg, 300kg) for olives and pure honey.",
+        "1,000L IBC totes and flexitanks for industrial olive oil deliveries.",
+        "25kg / 50kg multi-layer polypropylene & paper sacks for dried botanicals and spices.",
+        "Direct port loading from Alexandria, Damietta, and Ain Sokhna ports.",
+      ],
+      pointsAr: [
+        "براميل غذائية معتمدة (150، 200، 300 كجم) للزيتون والعسل الخام.",
+        "خزانات IBC سعة 1,000 لتر وفليكسي تانك لزيت الزيتون الصناعي.",
+        "أكياس متعددة الطبقات سعة 25 و50 كجم للأعشاب المجففة والتوابل.",
+        "شحن وتعبئة مباشرة من موانئ الإسكندرية ودمياط والعين السخنة.",
+      ],
+      icon: "Truck",
+    },
+    {
+      id: "contract-packaging",
+      titleEn: "Private Label & Customized Co-Packing",
+      titleAr: "التعبئة بعلامة العميل الخاصة (Private Label)",
+      summaryEn: "Full turnkey OEM packaging solutions transforming bulk harvests into premium retail shelf-ready jars, pouches, and lithographed tins under client brands.",
+      summaryAr: "حلول تصنيع وتعبئة متكاملة تحول المحاصيل الخام إلى عبوات تجزئة فاخرة وبرطمانات زجاجية تحت علامتك التجارية.",
+      pointsEn: [
+        "Marasca and Dorica dark UV-blocking glass bottles for olive oil (250ml - 1L).",
+        "Hexagonal and round glass jars with tamper-evident induction seals for pure honey.",
+        "Vacuum-sealed Doypack pouches with zip locks for pitted olives and gourmet dates.",
+        "Compliant multilingual nutritional labeling for FDA, EU, and SASO regulations.",
+      ],
+      pointsAr: [
+        "زجاجات ماراسكا ودوريكا داكنة حاجزة للأشعة لزيت الزيتون (250 مل - 1 لتر).",
+        "برطمانات زجاجية سداسية ودائرية بأختام حرارية مانعة للتلاعب لعسل النحل.",
+        "أكياس دويباك محكمة الإغلاق ومفرغة من الهواء للزيتون والتمور الفاخرة.",
+        "تصميم بطاقات بيانات غذائية مطابقة لاشتراطات هيئة الغذاء والدواء، الاتحاد الأوروبي، والمواصفات الخليجية SASO.",
+      ],
+      icon: "Package",
+    },
+    {
+      id: "traceability",
+      titleEn: "End-to-End Origin Traceability",
+      titleAr: "التتبع الكامل من المزرعة حتى ميناء الوصول",
+      summaryEn: "Every export shipment is coded with harvest coordinates, batch lot numbers, processing plant stamps, and certified date of packing.",
+      summaryAr: "ترميز كل شحنة تصديرية بإحداثيات المزرعة، رقم التشغيلة، ترخيص محطة التعبئة وتاريخ الفحص.",
+      pointsEn: [
+        "Direct tracking to specific date palm groves and regional apiary cooperatives.",
+        "Strict batch segregation preventing cross-contamination in organic lots.",
+        "Accredited third-party pre-shipment inspections (SGS / Bureau Veritas available on demand).",
+        "Full documentation archived for 5 years per international food traceability mandates.",
+      ],
+      pointsAr: [
+        "تتبع مباشر لبساتين النخيل ومناحل العسل والمزارع المتعاقد معها.",
+        "عزل كامل للتشغيلات لمنع التلوث التبادلي وضمان نقاء الأصناف العضوية.",
+        "فحص طرف ثالث مستقل قبل الشحن (SGS / Bureau Veritas) عند طلب العميل.",
+        "أرشفة رقمية متكاملة لبيانات التشغيلات وسجلات الجودة لمدة 5 سنوات.",
+      ],
+      icon: "ShieldCheck",
+    },
+  ] as SupplyCapabilityDomain[],
+};
+
+// SOURCING & PROCUREMENT SECTION
+export const foodSourcingAndProcurement = {
+  titleEn: "Sourcing & Agricultural Procurement",
+  titleAr: "إدارة التوريد والمصادر الزراعية",
+  subtitleEn: "Direct integration with origin growers, certified farm cooperatives, and sustainable harvest reserves across Egypt and regional agricultural hubs.",
+  subtitleAr: "ربط مباشر مع المزارعين وأصحاب البساتين والمناحل المعتمدة في واحات مصر ودلتا النيل والمناطق الزراعية البكر.",
+  steps: [
+    {
+      step: "01",
+      titleEn: "Origin Selection & Soil Analysis",
+      titleAr: "اختيار المنشأ وتحليل التربة والمياه",
+      descEn: "We select geographical zones renowned for ideal microclimates—Siwa Oasis for dates and olives, Upper Egypt for hibiscus, and the Nile Delta for clover honey and herbs.",
+      descAr: "اختيار مناطق جغرافية تتميز بمناخ ملائم: واحة سيوة للتمور والزيتون، صعيد مصر للكركديه، ودلتا النيل لعسل البرسيم والأعشاب.",
+    },
+    {
+      step: "02",
+      titleEn: "Contract Farming Agreements",
+      titleAr: "الزراعة التعاقدية والإشراف الزراعي",
+      descEn: "Binding seasonal agricultural agreements with growers adhering to Good Agricultural Practices (GAP), pesticide control schedules, and natural pollination cycles.",
+      descAr: "اتفاقيات موسمية ملزمة مع المزارعين تلتزم بالممارسات الزراعية الجيدة، جداول الرش الآمن، ودورات التلقيح الطبيعية.",
+    },
+    {
+      step: "03",
+      titleEn: "Pre-Harvest Screening & Assays",
+      titleAr: "الفحص الميداني قبل الحصاد والقطاف",
+      descEn: "Field agronomists evaluate fruit brix, oil content, maturity indexing, and moisture ratios prior to authorizing harvest timing.",
+      descAr: "فريق زراعي متخصص يقيس درجات السكر (Brix)، نسبة الزيت، مؤشر نضج الثمار، ونسب الرطوبة قبل بدء الجني والقطاف.",
+    },
+    {
+      step: "04",
+      titleEn: "Controlled Transport to Packing Hubs",
+      titleAr: "النقل المبرد لمحطات الفرز والتجهيز",
+      descEn: "Clean, ventilated, and refrigerated logistics transfer freshly collected crops from field to licensed processing facilities within hours.",
+      descAr: "نقل سريع عبر سيارات مجهزة ومهواة ومبردة من المزارع والمناحل إلى محطات الفرز والتجهيز خلال ساعات قليلة لمنع التلف.",
+    },
+  ],
+};
+
+// PROCESSING & PACKAGING SECTION
+export const foodProcessingAndPackaging = {
+  titleEn: "Industrial Processing & Sterile Packaging",
+  titleAr: "التصنيع والتجهيز والتعبئة المعقمة",
+  subtitleEn: "Modern optical sorting, ultrasonic washing, cold-centrifugal extraction, and vacuum-controlled packaging lines adhering to international food safety regulations.",
+  subtitleAr: "محطات فرز إلكتروني بصري، غسيل بالموجات، عصر ميكانيكي على البارد، وخطوط تعبئة مفرغة من الهواء مرخصة من سلامة الغذاء.",
+  pillars: [
+    {
+      titleEn: "Optical Laser Sorting & Calibration",
+      titleAr: "الفرز البصري والليزر والتدريج الآلي",
+      descEn: "High-speed camera sorting grading dates and olives by caliber, color consistency, and skin integrity, rejecting any foreign matter.",
+      descAr: "فرز آلي فائق الدقة يفرز التمور والزيتون حسب الحجم (العيار)، ثبات اللون، وخلو الثمار من أي عيوب أو شوائب.",
+    },
+    {
+      titleEn: "Cold Mechanical Extraction (EVOO)",
+      titleAr: "العصر الميكانيكي على البارد لزيت الزيتون",
+      descEn: "Olives are pressed within 24 hours of harvest at strictly regulated temperatures (< 27°C) with zero solvents or heat exposure to guarantee genuine EVOO quality.",
+      descAr: "عصر الثمار خلال 24 ساعة من القطف في درجات حرارة مضبوطة أقل من 27 درجة مئوية بدون أي مذيبات لضمان جودة بكر ممتاز حقيقية.",
+    },
+    {
+      titleEn: "Controlled Dehydration & Sieving",
+      titleAr: "التجفيف الهوائي والفرز الغربالي للأعشاب",
+      descEn: "Shadow and air-dehydration preserving aromatic essential oils, followed by multi-deck vibrating sieves ensuring accurate cut sizes (TBC tea-bag cut, crushed, fine).",
+      descAr: "تجفيف هوائي وظلي مدروس يحافظ على الزيوت الطيارة، مع غربلة آلية لضبط المقاسات المطلوبة (قطع شاي TBC، مجروش، ناعم).",
+    },
+    {
+      titleEn: "Inert Gas Packaging & Induction Sealing",
+      titleAr: "الحقن بغاز خامل وأختام الحث الحراري",
+      descEn: "Flushing packaging with food-grade nitrogen and heat-induction sealing prevents oxidation, guaranteeing maximum shelf life and aroma retention.",
+      descAr: "حقن العبوات بغاز النيتروجين الغذائي الخامل واستخدام أختام الحث الحراري لعزل الأكسجين وحفظ النكهة طوال مدة الصلاحية.",
+    },
+  ],
+};
+
+// QUALITY & COMPLIANCE SECTION
+export const foodQualityAndCompliance = {
+  titleEn: "Quality Assurance & Accredited Certifications",
+  titleAr: "ضمان الجودة والشهادات والمستندات المعتمدة",
+  subtitleEn: "Every export consignment is verified against international standards and backed by authentic documentation issued by competent national and international authorities.",
+  subtitleAr: "كل شحنة تصديرية تخضع لفحص دقيق ومرفقة بمستندات وشهادات صادرة عن الجهات الرسمية المعنية ونتائج تحاليل معملية حقيقية.",
+  documents: [
+    {
+      code: "COA",
+      nameEn: "Certificate of Analysis (COA)",
+      nameAr: "شهادة التحليل المخبري المعتمدة",
+      issuerEn: "Accredited ISO/IEC 17025 Food Testing Laboratories",
+      issuerAr: "معامل الفحص الغذائي المعتمدة طبقاً للمواصفة ISO/IEC 17025",
+      detailsEn: "Reports batch acidity, peroxide index, moisture %, Brix %, microbial count, and heavy metal & pesticide residue compliance.",
+      detailsAr: "توضح نسبة الحموضة، رقم البيروكسيد، نسبة الرطوبة، مؤشر السكريات، الفحص الميكروبيولوجي، وخلو الشحنة من متبقيات المبيدات والمعادن الثقيلة.",
+    },
+    {
+      code: "COO",
+      nameEn: "Certificate of Origin",
+      nameAr: "شهادة المنشأ الرسمية",
+      issuerEn: "Federation of Egyptian Chambers of Commerce / Ministry of Trade",
+      issuerAr: "الغرف التجارية المصرية / وزارة التجارة والصناعة (نموذج EUR.1 والدول العربية)",
+      detailsEn: "Legally authenticates goods origin for customs clearance, preferential duty tariffs, and trade agreement compliance.",
+      detailsAr: "توثق بلد المنشأ المصري للاستفادة من الإعفاءات الجمركية والاتفاقيات التجارية الثنائية والدولية المعمول بها.",
+    },
+    {
+      code: "HEALTH",
+      nameEn: "Export Health Certificate",
+      nameAr: "الشهادة الصحية التصديرية",
+      issuerEn: "National Food Safety Authority (NFSA)",
+      issuerAr: "الهيئة القومية لسلامة الغذاء (NFSA)",
+      detailsEn: "Confirms that the food items are produced in registered facilities conforming to human consumption safety benchmarks.",
+      detailsAr: "تثبت أن الشحنة تم تجهيزها وتعبئتها في منشآت غذائية معتمدة ومسجلة وصالحة تماماً للاستهلاك الآدمي.",
+    },
+    {
+      code: "PHYTO",
+      nameEn: "Phytosanitary Certificate",
+      nameAr: "شهادة الصحة النباتية (للحاصلات الزراعية)",
+      issuerEn: "Central Administration of Plant Quarantine (Ministry of Agriculture)",
+      issuerAr: "الإدارة المركزية للحجر الزراعي (وزارة الزراعة المصرية)",
+      detailsEn: "Mandatory for agricultural botanicals, herbs, dates, and fresh crops confirming freedom from quarantine pests.",
+      detailsAr: "شهادة إلزامية للتمور والأعشاب والنباتات الطبية والمحاصيل الزراعية تؤكد خلوها التام من الآفات الحجرية.",
+    },
+    {
+      code: "STANDARDS",
+      nameEn: "Food Safety Management Compliance",
+      nameAr: "الامتثال لأنظمة سلامة الغذاء الدولية",
+      issuerEn: "HACCP & ISO 22000 System Frameworks",
+      issuerAr: "أنظمة الهاسب وتحليل المخاطر HACCP والمواصفة الدولية ISO 22000:2018",
+      detailsEn: "Certified operational processes guaranteeing hazard analysis, critical control points, and full sanitary sanitation.",
+      detailsAr: "تطبيق معايير نقاط التحكم الحرجة وتحليل المخاطر وضمان التعقيم والنظافة التشغيلية في كافة مراحل التجهيز والتعبئة.",
+    },
+    {
+      code: "SPECS",
+      nameEn: "Detailed Technical Data Sheets (TDS)",
+      nameAr: "بطاقات المواصفات الفنية التفصيلية (TDS)",
+      issuerEn: "SBA Commercial Technical Office",
+      issuerAr: "المكتب الفني التجاري لمجموعة سامي بن عياد",
+      detailsEn: "Exhaustive physical, chemical, organoleptic specifications and packing dimensions per product grade.",
+      detailsAr: "مواصفات فيزيائية وكيميائية وحسية متكاملة وأبعاد العبوات لكل رتبة من رتب المنتجات.",
+    },
+  ],
+};
+
+// SUPPLY MODELS EXPANDED (6 MODELS)
+export interface SupplyModelExpanded {
+  id: string;
+  titleEn: string;
+  titleAr: string;
+  badgeEn: string;
+  badgeAr: string;
+  summaryEn: string;
+  summaryAr: string;
+  featuresEn: string[];
+  featuresAr: string[];
+}
+
+export const foodSupplyModelsExpanded: SupplyModelExpanded[] = [
+  {
+    id: "bulk-supply",
+    titleEn: "1. Bulk Commodity Supply",
+    titleAr: "1. التوريد بالكميات الكبيرة والخامات (Bulk Supply)",
+    badgeEn: "Industrial Volume",
+    badgeAr: "كميات صناعية",
+    summaryEn: "Direct high-volume supply for commercial re-packers, food manufacturing plants, and extraction refineries.",
+    summaryAr: "توريد كميات كبيرة وحاويات كاملة للمصانع، مراكز إعادة التعبئة، ومصانع الأغذية الكبرى.",
+    featuresEn: [
+      "20ft and 40ft full ocean container loads (FCL).",
+      "Food-grade drums: 150kg, 200kg, and 300kg.",
+      "1,000L IBC totes for olive oils and syrups.",
+      "Multi-wall 25kg / 50kg bulk bags for herbs and seeds.",
+    ],
+    featuresAr: [
+      "شحن حاويات بحرية كاملة 20 قدم و40 قدم (FCL).",
+      "براميل غذائية معتمدة سعة 150 و200 و300 كجم.",
+      "خزانات وسوائل IBC سعة 1,000 لتر للزيوت والدبس.",
+      "أكياس توريد صناعية سعة 25 و50 كجم للأعشاب والبذور.",
+    ],
+  },
+  {
+    id: "private-label",
+    titleEn: "2. Private Label Contract Packing",
+    titleAr: "2. التعبئة بعلامة العميل الخاصة (Private Label)",
+    badgeEn: "Brand Customization",
+    badgeAr: "علامتك التجارية",
+    summaryEn: "Produce and pack our certified authentic harvests under your brand identity with custom packaging and labeling.",
+    summaryAr: "تصنيع وتعبئة منتجاتنا المعتمدة تحت علامتك التجارية الخاصة مع تخصيص العبوات والملصقات بالكامل.",
+    featuresEn: [
+      "Custom glass jar and bottle design sourcing.",
+      "Full multilingual regulatory label printing and application.",
+      "Tamper-evident sealing and protective exterior cartons.",
+      "Flexible MOQs for initial market launch tests.",
+    ],
+    featuresAr: [
+      "توفير زجاجات وبرطمانات بأشكال وتصميمات مخصصة.",
+      "طباعة بطاقات بيانات متعددة اللغات متوافقة مع اشتراطات أسواقك.",
+      "أختام أمان حرارية وكراتين خارجية مطبوعة بشعارك.",
+      "مرونة في الحد الأدنى للطلب للبدء واختبار الأسواق.",
+    ],
+  },
+  {
+    id: "oem-packaging",
+    titleEn: "3. OEM Sizing & Technical Packaging",
+    titleAr: "3. التغليف الصناعي المتخصص (OEM Packaging)",
+    badgeEn: "Technical Specs",
+    badgeAr: "مواصفات هندسية",
+    summaryEn: "Engineering specific packaging dimensions, barrier films, vacuum-levels, or nitrogen flushing to meet strict buyer handling requirements.",
+    summaryAr: "تجهيز عبوات بمقاسات وأغشية حاجزة ومستويات تفريغ هواء أو حقن نيتروجين وفق الاشتراطات الدقيقة للمشتري.",
+    featuresEn: [
+      "Custom portion packs (10g - 500g sachets and cups).",
+      "Multi-barrier EVOH films protecting sensitive botanicals.",
+      "Modified Atmosphere Packaging (MAP) extending shelf life.",
+      "Palletized and stretch-wrapped to export container dimensions.",
+    ],
+    featuresAr: [
+      "عبوات حصص صغيرة (10 جم - 500 جم أكياس وأكواب).",
+      "أغشية عالية الحماية لحفظ الزيوت العطرية في الأعشاب.",
+      "تعبئة تحت جو معدل (MAP) لإطالة فترة الصلاحية.",
+      "رص وتغليف احترافي على طبليات قياسية مهيأة للحاويات.",
+    ],
+  },
+  {
+    id: "wholesale-distribution",
+    titleEn: "4. Wholesale Commercial Distribution",
+    titleAr: "4. التوزيع والتوريد لتجار الجملة (Wholesale Distribution)",
+    badgeEn: "Wholesale Trade",
+    badgeAr: "تجارة الجملة",
+    summaryEn: "Supplying regional distributors and commodity wholesalers with steady seasonal quotas and competitive volume pricing.",
+    summaryAr: "تزويد الموزعين الإقليميين وتجار الجملة بحصص موسمية منتظمة وأسعار تنافسية مدروسة تدعم هوامش الربح.",
+    featuresEn: [
+      "Pre-allocated seasonal production quotas.",
+      "Tiered discount structures based on order volume.",
+      "Co-marketing support and high-resolution digital assets.",
+      "Scheduled shipments keeping distributor inventories stocked.",
+    ],
+    featuresAr: [
+      "تخصيص حصص إنتاجية موسمية مضمونة قبل بدء المحصول.",
+      "هياكل تسعير متدرجة تعتمد على أحجام التوريد السنوية.",
+      "دعم تسويقي ومواد ترويجية وصور عالية الدقة للمنتجات.",
+      "شحنات دورية منتظمة تضمن استمرارية المخزون لدى الموزع.",
+    ],
+  },
+  {
+    id: "horeca-supply",
+    titleEn: "5. HoReCa & Food Service Programs",
+    titleAr: "5. توريد الفنادق والمطاعم والضيافة (HoReCa)",
+    badgeEn: "Hospitality Grade",
+    badgeAr: "قطاع الضيافة",
+    summaryEn: "Catering formats tailored for five-star hotels, luxury resort chains, airline catering, and institutional kitchens.",
+    summaryAr: "أحجام توريد مصممة خصيصاً لسلاسل الفنادق الفاخرة، شركات التموين وخطوط الطيران، والمطابخ المركزية.",
+    featuresEn: [
+      "5L, 10L, and 18L food-grade tins of olive oil and table olives.",
+      "Single-serve breakfast honey portions and gourmet date boxes.",
+      "Kitchen-ready pre-sliced olives and culinary spice containers.",
+      "Reliable delivery schedules meeting hospitality procurement calendars.",
+    ],
+    featuresAr: [
+      "صفائح غذائية سعة 5 و10 و18 لتر لزيت الزيتون والزيتون المخلل.",
+      "عبوات إفطار فردية للعسل الطبيعي وعلب تمور فاخرة للضيافة.",
+      "زيتون شرائح جاهز وتوابل بأحجام مناسبة لطهاة المطابخ.",
+      "جداول تسليم منتظمة تتوافق مع دورات مشتريات قطاع الضيافة.",
+    ],
+  },
+  {
+    id: "export-contracts",
+    titleEn: "6. Long-Term Export Contracts",
+    titleAr: "6. عقود التصدير السنوية والشحنات المجدولة",
+    badgeEn: "Annual Contracts",
+    badgeAr: "عقود سنوية",
+    summaryEn: "Securing multi-month or annual export supply contracts with price locking and guaranteed crop availability regardless of market volatility.",
+    summaryAr: "إبرام عقود توريد تصديرية سنوية أو موسمية تثبت الأسعار وتضمن توافر المحاصيل رغم تقلبات الأسواق العالمية.",
+    featuresEn: [
+      "Protection against seasonal price spikes and raw material shortages.",
+      "Guaranteed priority container slot allocations during harvest peaks.",
+      "Flexible Incoterms: FOB, CIF, CFR, or DDP upon request.",
+      "Comprehensive trade finance support: L/C, CAD, and Escrow options.",
+    ],
+    featuresAr: [
+      "حماية المشتري من تقلبات الأسعار الموسمية ونقص المحاصيل.",
+      "أولوية مطلقة في حجز الحاويات والتشغيل خلال ذروة المواسم.",
+      "مرونة في شروط التجارة الدولية: FOB, CIF, CFR, أو DDP.",
+      "دعم التسهيلات المصرفية: اعتمادات مستندية (L/C) والدفع ضد المستندات (CAD).",
+    ],
+  },
+];
+
+// SUPPLIER & FARM NETWORK SECTION
+export interface SupplierNetworkHub {
+  id: string;
+  nameEn: string;
+  nameAr: string;
+  regionEn: string;
+  regionAr: string;
+  relationshipEn: string;
+  relationshipAr: string;
+  cropsEn: string[];
+  cropsAr: string[];
+  capacityEn: string;
+  capacityAr: string;
+  qualitySupervisionEn: string;
+  qualitySupervisionAr: string;
+}
+
+export const foodSupplierNetwork: SupplierNetworkHub[] = [
+  {
+    id: "siwa-dates",
+    nameEn: "Siwa Oasis Date Palm & Olive Reserves",
+    nameAr: "مزارع وبساتين واحة سيوة للتمور والزيتون",
+    regionEn: "Western Desert / Siwa Oasis, Egypt",
+    regionAr: "الصحراء الغربية / واحة سيوة، مصر",
+    relationshipEn: "Direct Long-Term Contract Farming & Harvest Supervision",
+    relationshipAr: "زراعة تعاقدية مباشرة طويلة الأمد وإشراف كامل على الحصاد",
+    cropsEn: ["Siwi Oasis Dates", "Tofahi Olives", "Cold-Pressed EVOO"],
+    cropsAr: ["التمر السيوي الواحاتي", "الزيتون التفاحي", "زيت زيتون بكر معصور على البارد"],
+    capacityEn: "3,500+ Metric Tonnes / Season",
+    capacityAr: "أكثر من 3,500 طن متري لكل موسم",
+    qualitySupervisionEn: "Direct SBA agronomists overseeing organic fertilization and harvest moisture calibration.",
+    qualitySupervisionAr: "فريق زراعي من SBA يشرف على التسميد العضوي وضبط رطوبة الحصاد دون مواد كيماوية.",
+  },
+  {
+    id: "upper-egypt-herbs",
+    nameEn: "Upper Egypt Aromatic & Botanical Cooperative",
+    nameAr: "تجمع مزارع النباتات الطبية والأعشاب بصعيد مصر",
+    regionEn: "Fayoum, Beni Suef, Minya & Aswan, Egypt",
+    regionAr: "الفيوم، بني سويف، المنيا وأسوان، مصر",
+    relationshipEn: "Vetted Cooperative Network with Standardized Agronomic Protocols",
+    relationshipAr: "شبكة جمعيات زراعية معتمدة وفق بروتوكول إنتاجي موحد",
+    cropsEn: ["Egyptian Hibiscus", "Chamomile", "Fennel", "Anise", "Cumin", "Peppermint"],
+    cropsAr: ["الكركديه الأسواني", "البابونج الألماني", "الشمر", "اليانسون", "الكمون", "النعناع الفلفلي"],
+    capacityEn: "1,800+ Metric Tonnes / Year",
+    capacityAr: "أكثر من 1,800 طن متري سنوياً",
+    qualitySupervisionEn: "Shade-drying monitoring, pre-harvest pesticide testing, and mechanical sorting validation.",
+    qualitySupervisionAr: "مراقبة التجفيف الهوائي الظلي، فحص متبقيات المبيدات قبل الحصاد، وفصل الشوائب آلياً.",
+  },
+  {
+    id: "nile-delta-apiaries",
+    nameEn: "Certified Nile Delta & Citrus Apiaries Network",
+    nameAr: "شبكة المناحل المعتمدة بالدلتا ومزارع الموالح",
+    regionEn: "Beheira, Sharqia & Ismailia, Egypt",
+    regionAr: "البحيرة، الشرقية والإسماعيلية، مصر",
+    relationshipEn: "Contracted Certified Beekeepers & Direct Quality Assaying",
+    relationshipAr: "مناحل تعاقدية معتمدة وفحص معملي مباشر لكل فرزة",
+    cropsEn: ["Egyptian Clover Honey", "Citrus Blossom Honey", "Black Seed Honey", "Pure Comb"],
+    cropsAr: ["عسل البرسيم المصري", "عسل زهور الموالح", "عسل حبة البركة", "شمع العسل الطبيعي"],
+    capacityEn: "600+ Metric Tonnes / Year",
+    capacityAr: "أكثر من 600 طن متري سنوياً",
+    qualitySupervisionEn: "Pollen profile verification, HMF analysis, zero sucrose adulteration certification.",
+    qualitySupervisionAr: "تحليل طيف حبوب اللقاح، فحص نسبة HMF، وضمان خلو العسل تماماً من أي تغذية سكرية.",
+  },
+  {
+    id: "packing-hubs",
+    nameEn: "NFSA-Licensed Sorting & Cold Logistics Hubs",
+    nameAr: "محطات الفرز والتعبئة المرخصة من سلامة الغذاء والمخازن المبردة",
+    regionEn: "Alexandria Free Zone & 6th of October Industrial Zone",
+    regionAr: "المنطقة الحرة بالإسكندرية والمنطقة الصناعية بالسادس من أكتوبر",
+    relationshipEn: "Audited & Licensed Processing Facilities with Dedicated SBA Lines",
+    relationshipAr: "منشآت تصنيع مرخصة ومراجعة وتضم خطوط تشغيل مخصصة لمجموعة سامي بن عياد",
+    cropsEn: ["Automated Date Sorting", "Table Olive Brining", "Sterile Oil Bottling", "Vacuum Packing"],
+    cropsAr: ["فرز التمور الإلكتروني", "تخليل وتدريج الزيتون", "تعبئة الزيوت آلياً", "التعبئة المفرغة من الهواء"],
+    capacityEn: "Daily throughput of 50+ Tonnes",
+    capacityAr: "طاقة تشغيل وتعبئة يومية تفوق 50 طناً",
+    qualitySupervisionEn: "Continuous in-line QA inspection, metal detection, and container pre-cooling protocol.",
+    qualitySupervisionAr: "فحص جودة مستمر على الخطوط، كواشف معادن، وتبريد مسبق للحاويات قبل التحميل.",
+  },
+];
+
+// MARKETS SEPARATION (ACTIVE CURRENT MARKETS VS TARGET EXPANSION MARKETS)
+export interface MarketProfile {
+  countryEn: string;
+  countryAr: string;
+  flag: string;
+  type: "active" | "target";
+  productsEn: string[];
+  productsAr: string[];
+  statsEn: string;
+  statsAr: string;
+  channelsEn: string;
+  channelsAr: string;
+  source: string;
+  date: string;
+}
+
+export const detailedExportMarkets: MarketProfile[] = [
+  // ACTIVE CURRENT EXPORT MARKETS
+  {
+    countryEn: "Kingdom of Saudi Arabia",
+    countryAr: "المملكة العربية السعودية",
+    flag: "🇸🇦",
+    type: "active",
+    productsEn: ["Natural Honey", "Table Olives", "Olive Oil", "Premium Dates", "Culinary Spices"],
+    productsAr: ["العسل الطبيعي", "الزيتون المحفوظ", "زيت الزيتون", "التمور الفاخرة", "التوابل والبهارات"],
+    statsEn: "Annual market import volume: ~18,509 MT honey, ~21,650 MT olive oil.",
+    statsAr: "حجم الواردات السنوية: نحو 18,509 طن عسل طبيعي، و21,650 طن زيت زيتون.",
+    channelsEn: "Supermarket chains, wholesale food markets in Riyadh and Jeddah, and HoReCa hospitality operators.",
+    channelsAr: "سلاسل السوبرماركت الكبرى، أسواق الجملة المركزية بالرياض وجدة، وقطاع الفنادق والتموين.",
+    source: "UN Comtrade / Saudi General Authority for Statistics",
+    date: "2024 Trade Review",
+  },
+  {
+    countryEn: "United Arab Emirates",
+    countryAr: "دولة الإمارات العربية المتحدة",
+    flag: "🇦🇪",
+    type: "active",
+    productsEn: ["Medjool & Siwi Dates", "EVOO Olive Oil", "Aromatic Botanicals", "Private Label Jars"],
+    productsAr: ["تمور المجدول والسيوي", "زيت زيتون بكر ممتاز", "أعشاب ونباتات طبية", "منتجات معبأة بعلامات خاصة"],
+    statsEn: "Dynamic re-export trade hub with over 30,000 MT annual date and specialty botanical turnover.",
+    statsAr: "مركز إعادة تصدير ولوجستيات إقليمي يتجاوز 30,000 طن سنوياً من التمور والمنتجات الطبيعية.",
+    channelsEn: "Dubai re-export logistics, modern retail hypermarkets, and airline catering suppliers.",
+    channelsAr: "منظومة إعادة التصدير بدبي، الهايبرماركت، وشركات التموين الجوي والضيافة.",
+    source: "Federal Competitiveness and Statistics Authority",
+    date: "2024 Official Data",
+  },
+  {
+    countryEn: "State of Kuwait",
+    countryAr: "دولة الكويت",
+    flag: "🇰🇼",
+    type: "active",
+    productsEn: ["Pure Sidr & Clover Honey", "Table Olives", "Heritage Dates", "Herbal Teas"],
+    productsAr: ["عسل السدر والبرسيم", "زيتون المائدة", "التمور الفاخرة", "الأعشاب الطبيعية"],
+    statsEn: "National honey imports exceeded 4,050 MT with consistent demand for premium packaging.",
+    statsAr: "تجاوزت واردات الكويت من العسل 4,050 طناً مع طلب مرتفع على العبوات الزجاجية الفاخرة.",
+    channelsEn: "Cooperative societies (Jam'iyat), specialty natural food boutiques, and food distributors.",
+    channelsAr: "الجمعيات التعاونية الاستهلاكية، محلات الأغذية الصحية، وشركات توزيع المواد الغذائية.",
+    source: "Kuwait Central Statistical Bureau",
+    date: "2024 Trade Census",
+  },
+  {
+    countryEn: "Hashemite Kingdom of Jordan",
+    countryAr: "المملكة الأردنية الهاشمية",
+    flag: "🇯🇴",
+    type: "active",
+    productsEn: ["Table Olives (Tofahi & Agizi)", "Fresh & Semi-Dry Dates", "Aromatic Spices"],
+    productsAr: ["زيتون المائدة (تفاحي وعجيزي)", "التمور نصف الجافة", "التوابل والأعشاب"],
+    statsEn: "Steady bilateral trade flow with strong preferences for Egyptian table olive calibers.",
+    statsAr: "حركة تبادل تجاري نشطة مع إقبال واسع على عيارات وأحجام الزيتون المصري المميز.",
+    channelsEn: "Wholesale food terminals in Amman and Zarqa, and industrial food packers.",
+    channelsAr: "أسواق الجملة والتوزيع في عمان والزرقاء ومصانع التعبئة المحلية.",
+    source: "Department of Statistics Jordan",
+    date: "2024 Indicators",
+  },
+  {
+    countryEn: "Republic of France",
+    countryAr: "الجمهورية الفرنسية",
+    flag: "🇫🇷",
+    type: "active",
+    productsEn: ["Preserved Table Olives", "Virgin Olive Oils", "Medjool & Confectionery Dates"],
+    productsAr: ["الزيتون المحفوظ", "زيت الزيتون البكر", "تمور المجدول والتمور التصنيعية"],
+    statsEn: "Annual imports: 158,443 MT preserved olives, 111,233 MT olive oil, 54,063 MT dates.",
+    statsAr: "واردات سنوية: 158,443 طن زيتون محفوظ، 111,233 طن زيت زيتون، 54,063 طن تمور.",
+    channelsEn: "Southern France packaging distributors, ethnic supermarket chains, and food processors.",
+    channelsAr: "موزعو الأغذية ومحطات إعادة التعبئة بمارسيليا وجنوب فرنسا والمتاجر المتخصصة.",
+    source: "French Customs & Eurostat",
+    date: "2024 Eurostat Report",
+  },
+  {
+    countryEn: "Federal Republic of Germany",
+    countryAr: "جمهورية ألمانيا الاتحادية",
+    flag: "🇩🇪",
+    type: "active",
+    productsEn: ["Organic Dried Hibiscus", "Chamomile Flowers", "Peppermint", "Natural Honey"],
+    productsAr: ["الكركديه العضوي", "أزهار البابونج", "أوراق النعناع المجففة", "العسل الطبيعي"],
+    statsEn: "Europe's largest herbal tea buyer: imported 78,772 MT natural honey and substantial botanical tonnages.",
+    statsAr: "أكبر سوق أوروبي لشاي الأعشاب: استيراد 78,772 طن عسل طبيعي ومئات الأطنان من الأعشاب الطبية.",
+    channelsEn: "Tea-bag blenders in Hamburg, botanical pharmaceutical extraction laboratories, and organic retail.",
+    channelsAr: "مصانع خلط وتعبئة الشاي بهامبورغ، معامل الاستخلاص الصيدلاني، ومتاجر الأغذية العضوية.",
+    source: "Destatis Federal Statistical Office Germany",
+    date: "2024 Trade Benchmark",
+  },
+  {
+    countryEn: "Italian Republic",
+    countryAr: "الجمهورية الإيطالية",
+    flag: "🇮🇹",
+    type: "active",
+    productsEn: ["Bulk Preserved Table Olives", "Fennel & Coriander Seeds", "Olive Pomace Oil"],
+    productsAr: ["براميل الزيتون المحفوظ", "بذور الشمر والكزبرة", "زيت تفل الزيتون للاستخدامات الصناعية"],
+    statsEn: "Imported 86,320 MT of preserved table olives for re-packing and food service supply.",
+    statsAr: "استوردت إيطاليا 86,320 طناً من الزيتون المحفوظ لإعادة التعبئة وتوريد قطاع المطاعم.",
+    channelsEn: "Food canning cooperatives, Mediterranean seasoning processors, and wholesale trade.",
+    channelsAr: "مصانع التعليب والتجهيز الغذائي، شركات التتبيل والصلصات، وموزعو الجملة.",
+    source: "ISTAT National Institute of Statistics Italy",
+    date: "2024 Statistics",
+  },
+  {
+    countryEn: "State of Libya",
+    countryAr: "دولة ليبيا",
+    flag: "🇱🇾",
+    type: "active",
+    productsEn: ["Packaged Egyptian Dates", "Table Olives", "Sunflower & Olive Oils", "Consumer Honey"],
+    productsAr: ["التمور المصرية المعبأة", "زيتون المائدة", "زيوت الطعام وزيت الزيتون", "العسل التجاري"],
+    statsEn: "Geographically direct overland and maritime supply with continuous weekly container flows.",
+    statsAr: "شحنات برية وبحرية أسبوعية منتظمة لتلبية الطلب الاستهلاكي والتجاري المباشر.",
+    channelsEn: "Direct cross-border wholesale logistics, retail distribution hubs in Tripoli and Benghazi.",
+    channelsAr: "مستوردو وتجار الجملة المباشرون ومحطات التوزيع في طرابلس وبنغازي ومصراتة.",
+    source: "Egyptian-Libyan Joint Chamber of Commerce",
+    date: "2024 Trade Records",
+  },
+
+  // TARGET EXPANSION MARKETS
+  {
+    countryEn: "United Kingdom",
+    countryAr: "المملكة المتحدة",
+    flag: "🇬🇧",
+    type: "target",
+    productsEn: ["Extra Virgin Olive Oil (EVOO)", "Gourmet Medjool Dates", "Infusion Botanicals"],
+    productsAr: ["زيت زيتون بكر ممتاز", "تمور المجدول الفاخرة", "أعشاب خلطات الشاي"],
+    statsEn: "UK imported ~60,893 MT of olive oil and over 35,000 MT of specialty dried dates.",
+    statsAr: "استوردت بريطانيا نحو 60,893 طن زيت زيتون وأكثر من 35,000 طن تمور مجففة.",
+    channelsEn: "Targeting major British retail multiples, ethnic supermarket networks, and organic packers.",
+    channelsAr: "استهداف سلاسل التجزئة الكبرى وشبكات الموزعين المتخصصة ومصانع الأغذية الصحية.",
+    source: "HMRC UK Trade Info",
+    date: "2024 Data Analysis",
+  },
+  {
+    countryEn: "Kingdom of the Netherlands",
+    countryAr: "مملكة هولندا",
+    flag: "🇳🇱",
+    type: "target",
+    productsEn: ["Bulk Date Paste", "Medjool Calibers", "Loose Botanicals & Seeds"],
+    productsAr: ["معجون التمر للمخابز", "تمور المجدول بمختلف الرتب", "الأعشاب والبذور السائبة"],
+    statsEn: "Port of Rotterdam handles over 24,416 MT of date imports as Continental Europe gateway.",
+    statsAr: "يستقبل ميناء روتردام أكثر من 24,416 طن تمور كبوابة توزيع رئيسية لغرب أوروبا.",
+    channelsEn: "Rotterdam warehousing operators, European distribution brokers, and confectionery ingredient houses.",
+    channelsAr: "شركات التخزين والتوزيع بروتردام، وسطاء الاستيراد الأوروبيون، ومصانع الحلويات.",
+    source: "CBS Statistics Netherlands",
+    date: "2024 Trade Report",
+  },
+  {
+    countryEn: "Kingdom of Spain",
+    countryAr: "مملكة إسبانيا",
+    flag: "🇪🇸",
+    type: "target",
+    productsEn: ["Manzanilla & Picual Olives", "Aromatic Seeds (Cumin, Coriander)", "Date Derivatives"],
+    productsAr: ["زيتون المانزانيلا والبيكوال", "البذور العطرية (الكمون، الكزبرة)", "مشتقات التمور"],
+    statsEn: "Collaborative co-packing destination for off-season olive supplies and processing inputs.",
+    statsAr: "وجهة للشراكة والتوريد التبادلي للزيتون في غير مواسم الحصاد الإسبانية ومواد التصنيع.",
+    channelsEn: "Olive processing cooperatives in Andalusia and commercial food processors.",
+    channelsAr: "جمعيات تجهيز وتعبئة الزيتون بالأندلس وشركات التوابل والصلصات.",
+    source: "ICEX Spain Trade & Investment",
+    date: "2024 Overview",
+  },
+  {
+    countryEn: "United States of America",
+    countryAr: "الولايات المتحدة الأمريكية",
+    flag: "🇺🇸",
+    type: "target",
+    productsEn: ["FDA-Compliant Medjool Dates", "Organic Hibiscus", "Specialty Olive Oils"],
+    productsAr: ["تمور مجدول مطابقة للـ FDA", "كركديه عضوي", "زيوت زيتون متخصصة"],
+    statsEn: "Growing North American demand for Mediterranean diet staples, organic botanical teas, and natural sweeteners.",
+    statsAr: "نمو متسارع في أمريكا الشمالية لمنتجات حمية البحر المتوسط وشاي الأعشاب والمحليات الطبيعية.",
+    channelsEn: "Specialty gourmet food importers in New York and California, natural grocery chains.",
+    channelsAr: "مستوردو الأغذية الفاخرة بنيويورك وكاليفورنيا وسلاسل متاجر المنتجات العضوية والطبيعية.",
+    source: "USDA Foreign Agricultural Service",
+    date: "2024 Market Forecast",
+  },
+];
+
+// COMPREHENSIVE DETAILED PRODUCT CATALOG (12 REQUIRED FIELDS PER PRODUCT)
+export interface DetailedFoodProduct {
+  id: string;
+  category: "honey" | "olives" | "olive-oil" | "dates" | "herbs" | "beverage-powders" | "spices" | "other-agri";
+  nameEn: string;
+  nameAr: string;
+  productOverviewEn: string;
+  productOverviewAr: string;
+  countryOfOriginEn: string;
+  countryOfOriginAr: string;
+  productSpecificationsEn: string[];
+  productSpecificationsAr: string[];
+  availableGradesEn: string[];
+  availableGradesAr: string[];
+  packagingOptionsEn: string[];
+  packagingOptionsAr: string[];
+  storageConditionsEn: string;
+  storageConditionsAr: string;
+  shelfLifeEn: string;
+  shelfLifeAr: string;
+  availableQuantitiesEn: string;
+  availableQuantitiesAr: string;
+  qualityCertificatesEn: string[];
+  qualityCertificatesAr: string[];
+  minOrderQuantityEn: string;
+  minOrderQuantityAr: string;
+  exportDocumentationEn: string[];
+  exportDocumentationAr: string[];
+  image: string;
+  featured: boolean;
+}
+
+export const detailedFoodProductsCatalog: DetailedFoodProduct[] = [
+  // 1. HONEY
+  {
+    id: "sidr-honey-dossier",
+    category: "honey",
+    nameEn: "Pure Wild Sidr Honey",
+    nameAr: "عسل السدر البري النقي",
+    productOverviewEn: "Extracted exclusively from the nectar of wild Ziziphus spina-christi blossoms, prized globally for high therapeutic enzymes, complex amber viscosity, and non-sucrose sweetness.",
+    productOverviewAr: "مستخلص من رحيق أزهار أشجار السدر البرية النادرة، معروف عالمياً بخصائصه العلاجية الفريدة، لونه الكهرماني الجذاب، ومذاقه الغني العطري الخالي تماماً من السكر المضاف.",
+    countryOfOriginEn: "Egypt / Arab Republic of Egypt",
+    countryOfOriginAr: "مصر / جمهورية مصر العربية",
+    productSpecificationsEn: [
+      "Moisture: ≤ 18.0%",
+      "HMF (Hydroxymethylfurfural): < 20 mg/kg",
+      "Diastase Activity: ≥ 10 Schade units",
+      "Fructose/Glucose Ratio: > 1.2",
+      "Pollen spectrum: > 70% Ziziphus flora",
+    ],
+    productSpecificationsAr: [
+      "نسبة الرطوبة: أقل من أو يساوي 18.0%",
+      "نسبة مركب HMF: أقل من 20 مجم/كجم (دليل طزاجة ونقاء فائق)",
+      "نشاط إنزيم الدياستاز: أكثر من 10 وحدات شاديه",
+      "نسبة الفركتوز إلى الجلوكوز: أكبر من 1.2",
+      "طيف حبوب اللقاح: أكثر من 70% أزهار السدر الطبيعية",
+    ],
+    availableGradesEn: ["Grade A Royal Reserve", "Premium Commercial First Grade", "Raw Unfiltered Comb"],
+    availableGradesAr: ["رتبة ملكية ممتازة (Grade A)", "رتبة تجارية أولى فاخرة", "خام نقي بدون تصفية"],
+    packagingOptionsEn: [
+      "Retail hexagonal glass jars: 250g, 500g, 1kg (tamper-evident sealed)",
+      "Food-grade epoxy-lined steel drums: 25kg, 300kg for industrial packing",
+      "Custom private label bottles with client embossed brand",
+    ],
+    packagingOptionsAr: [
+      "برطمانات زجاجية سداسية فاخرة: 250جم، 500جم، 1كجم بأختام أمان",
+      "براميل صلب غذائية مبطنة: سعة 25كجم و300كجم للتوريد الصناعي",
+      "تعبئة وتصميم عبوات خاصة بعلامة العميل التجارية",
+    ],
+    storageConditionsEn: "Store at ambient room temperature (18°C - 24°C) away from direct sunlight and humidity. Do not freeze.",
+    storageConditionsAr: "يحفظ في درجة حرارة الغرفة (18 - 24 مئوية) في مكان جاف ومظلم بعيداً عن الرطوبة والشمس المباشرة.",
+    shelfLifeEn: "24 to 36 months from packing date",
+    shelfLifeAr: "من 24 إلى 36 شهراً من تاريخ التعبئة",
+    availableQuantitiesEn: "45 Metric Tonnes / Season (strictly batch allocated)",
+    availableQuantitiesAr: "45 طناً مترياً سنوياً (يتم تخصيص الحصص مسبقاً)",
+    qualityCertificatesEn: ["ISO 22000:2018 Certified Facility", "HACCP Certified", "Halal Certified", "NFSA Export Register"],
+    qualityCertificatesAr: ["منشأة معتمدة ISO 22000:2018", "شهادة تحليل المخاطر HACCP", "شهادة حلال", "مسجل بالهيئة القومية لسلامة الغذاء"],
+    minOrderQuantityEn: "1 Pallet (approx 600kg retail jars) or 1 Metric Tonne bulk",
+    minOrderQuantityAr: "1 طبلية تخزينية (حوالي 600 كجم عبوات تجزئة) أو 1 طن متري توريد سائب",
+    exportDocumentationEn: ["Certificate of Origin", "NFSA Health Certificate", "Comprehensive Batch COA Lab Test", "Packing List & Commercial Invoice"],
+    exportDocumentationAr: ["شهادة المنشأ الرسمية", "الشهادة الصحية التصديرية من NFSA", "شهادة تحليل مخبري شاملة لكل تشغيلة", "قائمة التعبئة والفاتورة الموثقة"],
+    image: "/BG/Natural & Agri-Food Products/Natural Honey & Bee Products.jpg",
+    featured: true,
+  },
+
+  // 2. OLIVES
+  {
+    id: "tofahi-olives-dossier",
+    category: "olives",
+    nameEn: "Egyptian Tofahi Jumbo Table Olives",
+    nameAr: "الزيتون التفاحي المصري الجامبو",
+    productOverviewEn: "Egypt's premier indigenous table olive cultivar, characterized by its colossal round apple shape, succulent fleshy ratio, crisp bite, and tender skin suitable for direct dining and luxury stuffing.",
+    productOverviewAr: "أشهر أصناف الزيتون المصري وأكبرها حجماً، يتميز بثماره الكروية الشبيهة بالتفاح، سماكة اللحم نسبة للنواة، قرمشته الطبيعية، ومناسبته الفائقة لمائدة الطعام أو الحشو.",
+    countryOfOriginEn: "Egypt (Siwa Oasis & Matrouh Farmlands)",
+    countryOfOriginAr: "مصر (واحة سيوة وبساتين مطروح والفيوم)",
+    productSpecificationsEn: [
+      "Caliber count: 60/70, 70/80, 80/90, 90/100, 100/120 pieces/kg",
+      "Brine salinity: 6% - 9% (calibrated per export market requirement)",
+      "Acidity (Lactic/Citric): 0.6% - 1.0%",
+      "Texture: Crisp, firm succulent bite, pit-adhesion easily released",
+    ],
+    productSpecificationsAr: [
+      "العيار والعدد: 60/70، 70/80، 80/90، 90/100، 100/120 ثمرة في الكيلوجرام",
+      "ملوحة المحلول الملحي: 6% - 9% (معايرة حسب اشتراطات بلد الاستيراد)",
+      "الحموضة (حمض اللاكتيك/الستريك): 0.6% - 1.0%",
+      "القوام: مقرمش متماسك ولحمي يسهل نزع النواة منه آلياً",
+    ],
+    availableGradesEn: ["Super Jumbo (60/70)", "Jumbo (70/80)", "Standard Table (90/110)"],
+    availableGradesAr: ["سوبر جامبو (60/70)", "جامبو فاخر (70/80)", "مائدة قياسي (90/110)"],
+    packagingOptionsEn: [
+      "Food-grade HDPE blue barrels: 150kg / 200kg gross (brine packed for export)",
+      "Lithographed food-grade tin cans: 5kg, 10kg, 15kg net",
+      "Glass jars: 370ml, 720ml, 1,000ml (Whole, Pitted, or Stuffed with pimento/carrots)",
+    ],
+    packagingOptionsAr: [
+      "براميل بلاستيكية زرقاء غذائية HDPE: سعة 150كجم و200كجم بمحلول ملحي للتصدير",
+      "صفائح معدنية مطبوعة غذائية: سعة 5كجم، 10كجم، 15كجم",
+      "برطمانات زجاجية: 370مل، 720مل، 1,000مل (كامل، منزوع النواة، أو محشو بالفلفل والجزر)",
+    ],
+    storageConditionsEn: "Store submerged in brine in a cool, ventilated warehouse (ambient temperature < 25°C). Avoid direct solar exposure.",
+    storageConditionsAr: "يحفظ مغموراً بالمحلول الملحي في مستودع نظيف وجيد التهوية (< 25 مئوية) بعيداً عن أشعة الشمس المباشرة.",
+    shelfLifeEn: "24 months in unopened airtight drums or jars",
+    shelfLifeAr: "24 شهراً في البراميل أو العبوات المحكمة المغلقة",
+    availableQuantitiesEn: "450 Metric Tonnes / Month (Year-round brine storage capacity)",
+    availableQuantitiesAr: "450 طناً مترياً شهرياً (مع تخزين منظم بالمحلول طوال العام)",
+    qualityCertificatesEn: ["ISO 22000 Certified Packing", "HACCP Compliant", "NFSA Registered Facility", "GlobalGAP Certified Sources"],
+    qualityCertificatesAr: ["تعبئة معتمدة ISO 22000", "مطابق للهاسب HACCP", "منشأة مرخصة من هيئة سلامة الغذاء", "مزارع مطابقة لجلوبال جاب GlobalGAP"],
+    minOrderQuantityEn: "1 x 20ft Full Container Load (approx. 80-85 drums / 17 MT net drained)",
+    minOrderQuantityAr: "حاوية كاملة 20 قدم FCL (حوالي 80-85 برميلاً / 17 طن متري صافي مصفى)",
+    exportDocumentationEn: ["Certificate of Origin", "NFSA Phytosanitary/Health Certificate", "COA Analysis Certificate", "Bill of Lading & Packing List"],
+    exportDocumentationAr: ["شهادة المنشأ", "شهادة فحص صحي ونباتي من الحجر الزراعي وسلامة الغذاء", "شهادة تحليل مخبري", "بوليصة الشحن وقائمة المحتويات"],
+    image: "/BG/Natural & Agri-Food Products/Table Olives.jpg",
+    featured: true,
+  },
+
+  // 3. OLIVE OIL
+  {
+    id: "evoo-extra-virgin-dossier",
+    category: "olive-oil",
+    nameEn: "Cold Extracted Extra Virgin Olive Oil (EVOO)",
+    nameAr: "زيت زيتون بكر ممتاز معصور على البارد (EVOO)",
+    productOverviewEn: "First cold mechanical extraction (< 27°C) of freshly harvested Egyptian and Mediterranean olives, characterized by free acidity strictly below 0.8%, balanced bitterness, fruity herbaceous aroma, and high polyphenol content.",
+    productOverviewAr: "عصرة ميكانيكية أولى على البارد (أقل من 27 درجة مئوية) لثمار الزيتون الطازجة، بنسبة حموضة حرة أقل من 0.8%، ونكهة فاكهية متوازنة مع غنى فائق بمركبات البوليفينول ومضادات الأكسدة.",
+    countryOfOriginEn: "Egypt / Mediterranean Basin Groves",
+    countryOfOriginAr: "مصر / بساتين حوض البحر الأبيض المتوسط",
+    productSpecificationsEn: [
+      "Free Acidity (as oleic acid): ≤ 0.80% (typically 0.4% - 0.6% on fresh harvest)",
+      "Peroxide Value: ≤ 20 meq O2/kg",
+      "K270 absorbency: ≤ 0.22 | K232 absorbency: ≤ 2.50",
+      "Fatty Acid Ethyl Esters (FAEE): ≤ 35 mg/kg",
+      "Polyphenols content: > 250 mg/kg",
+    ],
+    productSpecificationsAr: [
+      "نسبة الحموضة الحرة: أقل من أو يساوي 0.80% (وتتراوح بين 0.4% و0.6% في موسم العصر)",
+      "رقم البيروكسيد: أقل من 20 ملي مكافئ أكسجين/كجم",
+      "الامتصاص الضوئي K270: أقل من 0.22 | وK232: أقل من 2.50",
+      "إسترات الأحماض الدهنية: أقل من 35 مجم/كجم",
+      "مركبات البوليفينول الحيوية: أكثر من 250 مجم/كجم",
+    ],
+    availableGradesEn: ["Extra Virgin (EVOO)", "Virgin Olive Oil (Acidity ≤ 2.0%)", "Refined Olive Oil", "Industrial Pomace"],
+    availableGradesAr: ["بكر ممتاز (EVOO)", "بكر طبيعي (حموضة حتى 2.0%)", "مكرر مخصص للطهي", "زيت تفل الزيتون الصناعي (Pomace)"],
+    packagingOptionsEn: [
+      "Dark UV-blocking Marasca / Dorica glass bottles: 250ml, 500ml, 750ml, 1,000ml",
+      "Lithographed food-grade rectangular tins: 3L, 5L, 10L, 18L net",
+      "Bulk logistics: 1,000L IBC food-grade totes or 21,000L flexitanks for bulk refinery buyers",
+    ],
+    packagingOptionsAr: [
+      "زجاج داكن عازل للأشعة طراز ماراسكا ودوريكا: 250مل، 500مل، 750مل، 1لتر",
+      "صفائح معدنية محكمة مطبوعة: سعة 3 لتر، 5 لتر، 10 لتر، و18 لتر",
+      "توريد سائب: خزانات IBC غذائية سعة 1,000 لتر وفليكسي تانك سعة 21,000 لتر للشحن البحري",
+    ],
+    storageConditionsEn: "Store in a cool, dark room at 14°C - 18°C. Protect strictly from light, heat, and air contact.",
+    storageConditionsAr: "يحفظ في مكان بارد ومظلم في درجات حرارة بين 14 و18 مئوية بعيداً تماماً عن الضوء والحرارة والهواء.",
+    shelfLifeEn: "24 months from bottling date",
+    shelfLifeAr: "24 شهراً من تاريخ التعبئة",
+    availableQuantitiesEn: "120 Metric Tonnes / Month",
+    availableQuantitiesAr: "120 طناً مترياً شهرياً",
+    qualityCertificatesEn: ["IOC Testing Standard Compliance", "ISO 22000 Certified Mill", "NFSA Export Authorization", "Halal Certified"],
+    qualityCertificatesAr: ["مطابق لمعايير المجلس الدولي للزيتون IOC", "معاصر معتمدة ISO 22000", "ترخيص تصدير من سلامة الغذاء", "شهادة حلال"],
+    minOrderQuantityEn: "1 Full Pallet (approx. 720 bottles of 1L) or 1 FCL 20ft container for bulk",
+    minOrderQuantityAr: "1 طبلية كاملة (حوالي 720 زجاجة 1 لتر) أو حاوية 20 قدم للشحن السائب",
+    exportDocumentationEn: ["Certificate of Origin", "NFSA Health Clearance", "Full Gas Chromatography Fatty Acid Analysis", "COA Assay"],
+    exportDocumentationAr: ["شهادة المنشأ الرسمية", "شهادة صحية من هيئة سلامة الغذاء", "تقرير تحليل كروماتوجرافي للأحماض الدهنية", "شهادة التحليل المخبري COA"],
+    image: "/BG/Natural & Agri-Food Products/Olive Oil Grades.jpg",
+    featured: true,
+  },
+
+  // 4. DATES
+  {
+    id: "medjool-dates-dossier",
+    category: "dates",
+    nameEn: "Egyptian Jumbo Medjool Dates",
+    nameAr: "تمر المجدول المصري الجامبو (ملك التمور)",
+    productOverviewEn: "The undisputed 'King of Dates', cultivated in Egypt's arid south and oasis soils. Remarkable for its colossal size, naturally translucent wrinkling, rich caramel sweetness, and soft succulent fiber.",
+    productOverviewAr: "المصنف كـ 'ملك التمور' بلا منازع، يزرع في الواحات وجنوب مصر بتربة خصبة ومناخ جاف مثالي. يتميز بحجمه العملاق، لونه الكهرماني المجعد الجذاب، ونكهة الكراميل الطبيعية الغنية بالسكريات الطبيعية.",
+    countryOfOriginEn: "Egypt (Toshka, New Valley, Siwa & Bahariya Oases)",
+    countryOfOriginAr: "مصر (توشكى، الوادي الجديد، واحة سيوة، والواحات البحرية)",
+    productSpecificationsEn: [
+      "Caliber sizing: Jumbo (> 23g/piece), Large (19g - 23g), Medium (15g - 19g)",
+      "Moisture content: 18% - 22% (Semi-dry, ideal shelf longevity)",
+      "Skin separation index: < 5% - 10% (Choice Grade A selection)",
+      "Pesticide residues: Zero / Strict EU and FDA MRL compliance",
+    ],
+    productSpecificationsAr: [
+      "تدريج الحجم والوزن: جامبو فائق (> 23 جم للثمرة)، كبير (19-23 جم)، متوسط (15-19 جم)",
+      "نسبة الرطوبة: 18% - 22% (نصف جاف ملائم تماماً للحفظ والشحن الدولي)",
+      "انفصال القشرة عن اللحم: أقل من 5% - 10% (فرز رتبة أولى مختارة)",
+      "متبقيات المبيدات: خلو تام / مطابقة كاملة لحدود MRL الأوروبية والأمريكية",
+    ],
+    availableGradesEn: ["Super Jumbo Grade A", "Jumbo Grade A", "Large Premium", "Commercial Medium"],
+    availableGradesAr: ["سوبر جامبو رتبة أولى", "جامبو رتبة أولى", "كبير فاخر", "متوسط تجاري"],
+    packagingOptionsEn: [
+      "Gourmet window retail cartons: 500g, 1kg, 2kg with food-grade inner film",
+      "Bulk export telescopic cartons: 5kg net weight with moisture absorbent sheet",
+      "Specialty gift packs and vacuum sealed bags on request",
+    ],
+    packagingOptionsAr: [
+      "علب كرتونية فاخرة بنافذة شفافة: 500جم، 1كجم، 2كجم بغشاء داخلي غذائي",
+      "كراتين تصدير تلسكوبية مقواة: 5كجم صافي مزودة بوسائد امتصاص الرطوبة",
+      "عبوات هدايا فاخرة وأكياس مفرغة من الهواء حسب طلب العميل",
+    ],
+    storageConditionsEn: "Store in cold storage at 0°C to +4°C for up to 12 months, or -18°C for prolonged 24-month preservation. Do not expose to humidity.",
+    storageConditionsAr: "يحفظ في مستودعات مبردة (من 0 إلى +4 درجات مئوية) لمدة 12 شهراً، أو في التجميد (-18 مئوية) لمدة 24 شهراً.",
+    shelfLifeEn: "12 months at 4°C | 24 months frozen at -18°C",
+    shelfLifeAr: "12 شهراً في التبريد (4 مئوية) | 24 شهراً مجمدة في (-18 مئوية)",
+    availableQuantitiesEn: "2,000 Metric Tonnes / Annual Season",
+    availableQuantitiesAr: "2,000 طن متري سنوياً",
+    qualityCertificatesEn: ["ISO 22000 Certified Packing Station", "HACCP Certified", "GlobalGAP Vetted Orchards", "Halal Certified"],
+    qualityCertificatesAr: ["محطة تعبئة معتمدة ISO 22000", "شهادة الهاسب HACCP", "مزارع مطابقة لجلوبال جاب", "شهادة حلال"],
+    minOrderQuantityEn: "1 x 20ft Refrigerated Container (RF) ~ 12 MT net weight",
+    minOrderQuantityAr: "حاوية مبردة ريفير 20 قدم (Reefer FCL) بحمولة 12 طناً مترياً تقريباً",
+    exportDocumentationEn: ["Certificate of Origin", "Phytosanitary Certificate (Plant Quarantine)", "NFSA Health Certificate", "COA Assay Report"],
+    exportDocumentationAr: ["شهادة المنشأ", "شهادة الصحة النباتية من الحجر الزراعي", "شهادة صحية تصديرية من سلامة الغذاء", "تقرير الفحص والتحليل COA"],
+    image: "/BG/Natural & Agri-Food Products/Dates.jpg",
+    featured: true,
+  },
+
+  // 5. HERBS
+  {
+    id: "egyptian-hibiscus-dossier",
+    category: "herbs",
+    nameEn: "Egyptian Hibiscus Flower Calyces (Karkadeh)",
+    nameAr: "زهور الكركديه الأسواني الطبيعي (كركديه)",
+    productOverviewEn: "Internationally renowned deep-ruby whole flower calyces harvested along Upper Egypt and Aswan. Celebrated for high anthocyanin antioxidant pigments, intense crimson infusion, and tart refreshing palate.",
+    productOverviewAr: "زهور الكركديه الحمراء القرمزية الشهيرة عالمياً المحصودة من صعيد مصر وأسوان، والمعروفة بغناها بصبغات الأنثوسيانين ومضادات الأكسدة، ولونها الياقوتي الفاقع ومذاقها الحامض المنعش.",
+    countryOfOriginEn: "Egypt (Aswan, Qena & Fayoum)",
+    countryOfOriginAr: "مصر (أسوان، قنا، والفيوم)",
+    productSpecificationsEn: [
+      "Moisture: ≤ 12.0%",
+      "Total Ash: ≤ 10.0% | Acid-insoluble ash: ≤ 1.5%",
+      "Color: Deep natural dark ruby red to purple",
+      "Purity: ≥ 99.0% (Cleaned by mechanical air sieving)",
+      "Foreign organic matter: ≤ 1.0%",
+    ],
+    productSpecificationsAr: [
+      "نسبة الرطوبة: أقل من أو يساوي 12.0%",
+      "إجمالي الرماد: أقل من 10.0% | والرماد غير القابل للذوبان في الحمض: أقل من 1.5%",
+      "اللون: أحمر قرمزي داكن إلى ياقوتي طبيعي غني",
+      "درجة النقاء: أكثر من أو يساوي 99.0% (منظف ومفروز هوائياً)",
+      "المواد النباتية الغريبة: أقل من 1.0%",
+    ],
+    availableGradesEn: ["Whole Selected Calyces (Grade A)", "Crushed / Coarse Cut", "Tea-Bag Cut (TBC: 0.5mm - 2.0mm)", "Fine Botanical Powder"],
+    availableGradesAr: ["زهور كاملة مختارة (رتبة أولى)", "كركديه مجروش خشن", "قطع شاي الفتلة (TBC: من 0.5 إلى 2.0 مم)", "مسحوق بودر ناعم"],
+    packagingOptionsEn: [
+      "Multi-ply kraft paper sacks with inner food-grade poly liner: 20kg / 25kg net",
+      "Compressed polypropylene bales: 50kg net",
+      "Retail stand-up doypack pouches: 250g, 500g, 1kg with zip closure",
+    ],
+    packagingOptionsAr: [
+      "أكياس كرافت متعددة الطبقات مبطنة ببولي إيثيلين غذائي: 20كجم / 25كجم صافي",
+      "بالات بولي بروبيلين مضغوطة: 50كجم صافي",
+      "أكياس تجزئة دويباك بسحاب محكم: 250جم، 500جم، 1كجم",
+    ],
+    storageConditionsEn: "Store in a cool, ventilated, dry storehouse (relative humidity < 60%, temperature < 22°C). Keep protected from humidity.",
+    storageConditionsAr: "يحفظ في مستودع نظيف وجاف وجيد التهوية (رطوبة نسبية أقل من 60% وحرارة أقل من 22 مئوية).",
+    shelfLifeEn: "24 months from processing date",
+    shelfLifeAr: "24 شهراً من تاريخ التجهيز",
+    availableQuantitiesEn: "150 Metric Tonnes / Month",
+    availableQuantitiesAr: "150 طناً مترياً شهرياً",
+    qualityCertificatesEn: ["ISO 22000 Certified Processing", "HACCP System Certified", "NFSA Export Register", "Non-GMO & Organic Compliant"],
+    qualityCertificatesAr: ["معالجة وتعبئة ISO 22000", "معتمد هاسب HACCP", "مسجل تصدير بسلامة الغذاء", "خالٍ من التعديل الوراثي ومطابق للمواصفات العضوية"],
+    minOrderQuantityEn: "1 Metric Tonne (LCL) or 1 x 40ft High Cube Container (approx. 12-14 MT uncompressed or 20 MT baled)",
+    minOrderQuantityAr: "1 طن متري شحن مجمع أو حاوية 40 قدم عالية السعة (حوالي 12-14 طناً بالأكياس أو 20 طناً بالبالات)",
+    exportDocumentationEn: ["Certificate of Origin", "Phytosanitary Certificate", "Health Certificate (NFSA)", "COA Chemical/Microbial Assay"],
+    exportDocumentationAr: ["شهادة المنشأ", "شهادة صحة نباتية من الحجر الزراعي", "شهادة صحية من سلامة الغذاء", "شهادة تحليل مخبري كيميائي وميكروبيولوجي"],
+    image: "/BG/Natural & Agri-Food Products/Herbs & Natural Plants.jpg",
+    featured: true,
+  },
+
+  // 6. NATURAL BEVERAGE INGREDIENTS (POWDERED JUICES)
+  {
+    id: "spray-dried-hibiscus-powder-dossier",
+    category: "beverage-powders",
+    nameEn: "Instant Spray-Dried Natural Hibiscus Powder",
+    nameAr: "مسحوق الكركديه الطبيعي سريع الذوبان المجفف بالرش",
+    productOverviewEn: "100% natural water-soluble botanical fruit extract engineered via gentle low-temperature spray drying. Dissolves instantaneously in cold or hot water with radiant clarity, zero synthetic colorants, and authentic sharp flavor.",
+    productOverviewAr: "مستخلص طبيعي 100% سريع الذوبان في الماء البارد والساخن، مصنع بتقنية التجفيف بالرش في درجات حرارة منخفضة، يمنح نقاءً ولوناً ياقوتياً مبهراً بدون أي صبغات صناعية أو مواد حافظة.",
+    countryOfOriginEn: "Egypt",
+    countryOfOriginAr: "مصر",
+    productSpecificationsEn: [
+      "Solubility: 100% instant in cold (10°C) and hot water without sediment",
+      "Particle size: 80 - 100 mesh uniform powder",
+      "Moisture: ≤ 5.0%",
+      "Color: Natural deep ruby red (Natural Anthocyanin pigment)",
+      "Zero artificial flavors, colors, or chemical preservatives",
+    ],
+    productSpecificationsAr: [
+      "الذوبان: 100% سريع وتام في الماء البارد (10 مئوية) والساخن دون أي ترسبات",
+      "حجم الحبيبات: ناعم متجانس من 80 إلى 100 مش",
+      "نسبة الرطوبة: أقل من أو يساوي 5.0%",
+      "اللون: أحمر ياقوتي طبيعي مركز (صبغة أنثوسيانين طبيعية)",
+      "خالٍ تماماً من النكهات أو الألوان الصناعية أو المواد الحافظة الكيماوية",
+    ],
+    availableGradesEn: ["Pure 100% Botanical Extract", "Beverage Base (Pre-sweetened optional)", "Bakery & Confectionery Grade"],
+    availableGradesAr: ["مستخلص نباتي نقي 100%", "قاعدة مشروبات فورية", "رتبة مخصصة لصناعات الحلويات والمخبوزات"],
+    packagingOptionsEn: [
+      "Food-grade aluminum foil barrier bags inside rigid cartons: 10kg, 20kg net",
+      "Fiber drums with double polyethylene moisture liners: 25kg net",
+      "Retail sachets or jars: 100g, 250g, 500g under Private Label",
+    ],
+    packagingOptionsAr: [
+      "أكياس ألومنيوم فويل حاجزة للرطوبة داخل كراتين مقواة: 10كجم، 20كجم صافي",
+      "براميل فايبر مبطنة ببطانة مزدوجة: 25كجم صافي",
+      "أكياس ساشيه أو عبوات تجزئة: 100جم، 250جم، 500جم بعلامتك التجارية",
+    ],
+    storageConditionsEn: "Store in a cool, dry place below 20°C and relative humidity < 50%. Keep tightly sealed in moisture-proof packaging.",
+    storageConditionsAr: "يحفظ في مكان بارد وجاف في درجة حرارة أقل من 20 مئوية ورطوبة أقل من 50% في عبوات محكمة الغلق.",
+    shelfLifeEn: "24 months in unopened original packaging",
+    shelfLifeAr: "24 شهراً في العبوة الأصلية المغلقة",
+    availableQuantitiesEn: "40 Metric Tonnes / Month",
+    availableQuantitiesAr: "40 طناً مترياً شهرياً",
+    qualityCertificatesEn: ["ISO 22000 Certified Plant", "HACCP Compliant", "Halal Certified", "NFSA Registered"],
+    qualityCertificatesAr: ["مصنع معتمد ISO 22000", "شهادة الهاسب HACCP", "شهادة حلال", "مسجل لدى هيئة سلامة الغذاء"],
+    minOrderQuantityEn: "500 kg for export shipments",
+    minOrderQuantityAr: "500 كجم كحد أدنى لشحنات التصدير",
+    exportDocumentationEn: ["Certificate of Origin", "NFSA Health Certificate", "Comprehensive Laboratory Analysis COA", "Packing List"],
+    exportDocumentationAr: ["شهادة المنشأ", "شهادة صحية من سلامة الغذاء", "شهادة تحليل مخبري شاملة COA", "قائمة التعبئة والفاتورة"],
+    image: "/BG/Natural & Agri-Food Products/Natural Powdered Fruit & Vegetable Juices.jpg",
+    featured: false,
+  },
+
+  // 7. SPICES
+  {
+    id: "cumin-seeds-dossier",
+    category: "spices",
+    nameEn: "Egyptian Whole Sun-Dried Cumin Seeds",
+    nameAr: "بذور الكمون البلدي المصري المجفف شمسياً",
+    productOverviewEn: "Purity-machine cleaned whole cumin seeds harvested from the Upper Nile basin. World-renowned for high volatile oil content, warm earthy aroma, and absence of weed seeds.",
+    productOverviewAr: "بذور كمون بلدي مصري كاملة ومفروزة آلياً بنقاء 99% محصودة من صعيد مصر، تشتهر بارتفاع نسبة الزيوت الطيارة، رائحتها العطرية الدافئة، وخلوها من بذور الحشائش والشوائب.",
+    countryOfOriginEn: "Egypt (Minya & Assiut)",
+    countryOfOriginAr: "مصر (المنيا وأسيوط)",
+    productSpecificationsEn: [
+      "Purity: 99.0% / 99.5% machine cleaned",
+      "Volatile Essential Oil: ≥ 2.5% - 3.5% (v/w)",
+      "Moisture: ≤ 9.0%",
+      "Total Ash: ≤ 8.5% | Acid insoluble ash: ≤ 1.0%",
+    ],
+    productSpecificationsAr: [
+      "درجة النقاء: 99.0% إلى 99.5% مفروز آلياً عبر الغرابيل وأجهزة الليزر",
+      "نسبة الزيوت الطيارة العطرية: أكثر من أو يساوي 2.5% إلى 3.5%",
+      "نسبة الرطوبة: أقل من أو يساوي 9.0%",
+      "إجمالي الرماد: أقل من 8.5% | والرماد غير الذائب: أقل من 1.0%",
+    ],
+    availableGradesEn: ["Grade 1 (99.5% Purity)", "Grade 2 (99.0% Purity)", "Fine Micro-Ground Cumin Powder"],
+    availableGradesAr: ["رتبة أولى (نقاء 99.5%)", "رتبة ثانية (نقاء 99.0%)", "مسحوق كمون بلدي ناعم وميكروني"],
+    packagingOptionsEn: [
+      "Polypropylene woven sacks with inner poly liner: 25kg / 50kg net",
+      "Multi-ply paper bags: 25kg net",
+      "Retail spice shakers and barrier pouches: 100g, 250g, 500g",
+    ],
+    packagingOptionsAr: [
+      "أكياس بولي بروبيلين منسوجة مبطنة ببولي إيثيلين: 25كجم و50كجم صافي",
+      "أكياس ورقية كرافت متعددة الطبقات: 25كجم صافي",
+      "عبوات بهارات زجاجية وأكياس محكمة: 100جم، 250جم، 500جم",
+    ],
+    storageConditionsEn: "Store in a cool, dry, well-ventilated spice warehouse (< 20°C, RH < 60%). Keep away from direct sunlight.",
+    storageConditionsAr: "يحفظ في مستودع بارد وجاف وجيد التهوية (< 20 مئوية، رطوبة < 60%) بعيداً عن أشعة الشمس المباشرة.",
+    shelfLifeEn: "24 months for whole seeds | 18 months for ground powder",
+    shelfLifeAr: "24 شهراً للبذور الكاملة | 18 شهراً للمطحون الناعم",
+    availableQuantitiesEn: "100 Metric Tonnes / Month",
+    availableQuantitiesAr: "100 طن متري شهرياً",
+    qualityCertificatesEn: ["ISO 22000 Certified Plant", "HACCP System Compliant", "NFSA Export Cleared", "Halal Certified"],
+    qualityCertificatesAr: ["مصنع معتمد ISO 22000", "مطابق للهاسب HACCP", "ترخيص تصدير من هيئة سلامة الغذاء", "شهادة حلال"],
+    minOrderQuantityEn: "1 Metric Tonne LCL or 1 x 20ft FCL (approx. 18 MT)",
+    minOrderQuantityAr: "1 طن متري شحن مجمع أو حاوية كاملة 20 قدم FCL (حوالي 18 طناً)",
+    exportDocumentationEn: ["Certificate of Origin", "Phytosanitary Certificate", "Health Certificate", "COA Analysis Certificate"],
+    exportDocumentationAr: ["شهادة المنشأ", "شهادة صحة نباتية", "شهادة صحية من سلامة الغذاء", "شهادة تحليل مخبري COA"],
+    image: "/BG/Natural & Agri-Food Products/Spices & Seasonings.jpg",
+    featured: false,
+  },
+
+  // 8. OTHER AGRICULTURAL PRODUCTS
+  {
+    id: "golden-sesame-dossier",
+    category: "other-agri",
+    nameEn: "Egyptian Natural Golden & White Sesame Seeds",
+    nameAr: "السمسم المصري الذهبي والأبيض الطبيعي",
+    productOverviewEn: "Premium unhulled and mechanically cleaned sesame seeds cultivated in the fertile Nile Valley. Celebrated for high natural oil content (> 50%), sweet nutty taste, and excellent roasting stability for tahini and halva confectionery.",
+    productOverviewAr: "بذور سمسم مصري ذهبية وبيضاء طبيعية عالية الجودة محصودة من وادي النيل، تشتهر بارتفاع نسبة الزيت الطبيعي (> 50%)، مذاقها المكسراتي الغني، وثباتها العالي في تصنيع الطحينة والحلاوة الطحينية والمخبوزات.",
+    countryOfOriginEn: "Egypt (Upper Egypt & Sharkia)",
+    countryOfOriginAr: "مصر (صعيد مصر والشرقية)",
+    productSpecificationsEn: [
+      "Purity: 99.0% - 99.5% machine cleaned and color sorted",
+      "Oil content: ≥ 50.0% - 52.0%",
+      "Moisture: ≤ 6.0%",
+      "Free Fatty Acids (FFA): ≤ 1.5%",
+      "E. coli & Salmonella: Negative in 25g",
+    ],
+    productSpecificationsAr: [
+      "درجة النقاء: 99.0% إلى 99.5% مفروز آلياً ومفرز بالألوان",
+      "نسبة الزيت الطبيعي: أكثر من أو يساوي 50.0% إلى 52.0%",
+      "نسبة الرطوبة: أقل من أو يساوي 6.0%",
+      "الأحماض الدهنية الحرة (FFA): أقل من 1.5%",
+      "فحص الإشريكية القولونية والسالمونيلا: خلو تام في 25 جم",
+    ],
+    availableGradesEn: ["Natural Golden Grade A", "Natural White Cleaned", "Unhulled Bakery Grade"],
+    availableGradesAr: ["ذهبي طبيعي رتبة أولى", "أبيض طبيعي مفروز", "سمسم بقشره للمخابز والمطاحن"],
+    packagingOptionsEn: [
+      "Multi-ply paper bags or polypropylene woven bags: 25kg / 50kg net",
+      "Big Bags (Jumbo Bags): 1,000kg with lifting loops",
+    ],
+    packagingOptionsAr: [
+      "أكياس ورقية أو بولي بروبيلين منسوجة: 25كجم و50كجم صافي",
+      "أكياس جامبو صناعية ضخمة: 1,000 كجم مزودة بأربطة رفع للحاويات",
+    ],
+    storageConditionsEn: "Store in a dry, cool warehouse (< 18°C, relative humidity < 55%) away from pests and direct heat.",
+    storageConditionsAr: "يحفظ في مستودع جاف وبارد (< 18 مئوية، رطوبة < 55%) بعيداً عن الآفات ومصادر الحرارة.",
+    shelfLifeEn: "18 to 24 months from crop harvest date",
+    shelfLifeAr: "من 18 إلى 24 شهراً من تاريخ الحصاد",
+    availableQuantitiesEn: "150 Metric Tonnes / Month",
+    availableQuantitiesAr: "150 طناً مترياً شهرياً",
+    qualityCertificatesEn: ["ISO 22000 Certified Processing", "HACCP Certified", "NFSA Registered Facility", "Halal Certified"],
+    qualityCertificatesAr: ["معالجة وتعبئة معتمدة ISO 22000", "شهادة الهاسب HACCP", "منشأة مرخصة من سلامة الغذاء", "شهادة حلال"],
+    minOrderQuantityEn: "1 x 20ft FCL container (approx. 18-19 MT)",
+    minOrderQuantityAr: "حاوية كاملة 20 قدم FCL (حوالي 18-19 طناً مترياً)",
+    exportDocumentationEn: ["Certificate of Origin", "Phytosanitary Certificate", "Health Certificate (NFSA)", "COA Analysis Certificate"],
+    exportDocumentationAr: ["شهادة المنشأ", "شهادة صحة نباتية من الحجر الزراعي", "شهادة صحية تصديرية", "شهادة فحص مخبري شاملة COA"],
+    image: "/BG/Natural & Agri-Food Products/Natural & Agri-Food Products Home Page.jpg",
+    featured: false,
+  },
+];
