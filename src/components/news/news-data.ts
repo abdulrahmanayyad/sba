@@ -248,7 +248,7 @@ The government's industrial program prioritizes deepening local content ratios, 
     titleEn: "The Growing Importance of Integrated Garment Manufacturing",
     titleAr: "التصنيع المتكامل يعيد تشكيل مستقبل صناعة الملابس الجاهزة",
     excerptEn: "Seamless vertical coordination from fabric knitting to sewing and finishing reduces lead times and cuts waste for global apparel brands.",
-    excerptAr: "يمثل التكامل الرأسي بين مراحل التصميم واختيار الخامات والقص والحياكة ومراقبة الجودة عاملاً حاسمًا لتقليل الهدر ورفع كفاءة المصانع.",
+    excerptAr: "يمثل التكامل الرأسي بين مراحل التصميم واختيار الخامات والقص والحياكة ومراقبة الجودة عاملًا حاسمًا لتقليل الهدر ورفع كفاءة المصانع.",
     bodyEn: `In modern apparel sourcing, fragmented manufacturing chains introduce unnecessary lead time, material discrepancies, and communication bottlenecks. Integrated manufacturing models that synchronize fabric knitting, internal dyeing, automated cutting, line sewing, and finishing under unified oversight offer profound competitive advantages.
 
 This full-spectrum alignment minimizes fabric waste, maintains strict colorfastness tolerances, and provides international retail partners with end-to-end accountability.`,
@@ -270,7 +270,7 @@ This full-spectrum alignment minimizes fabric waste, maintains strict colorfastn
     titleEn: "Technology and Automation in Modern Apparel Production",
     titleAr: "التكنولوجيا والأتمتة في تطوير خطوط إنتاج الملابس الجاهزة",
     excerptEn: "How CAD pattern software, automated spreader cutters, and IoT production tracking elevate factory throughput and dimensional consistency.",
-    excerptAr: "يشهد قطاع الملابس تحولاً متسارعًا نحو الأنظمة الرقمية والآلات الذكية في تخطيط الإنتاج ومراقبة الجودة لرفع الإنتاجية وتقليل الأخطاء التشغيلية.",
+    excerptAr: "يشهد قطاع الملابس تحولًا متسارعًا نحو الأنظمة الرقمية والآلات الذكية في تخطيط الإنتاج ومراقبة الجودة لرفع الإنتاجية وتقليل الأخطاء التشغيلية.",
     bodyEn: `The global apparel industry is undergoing rapid digital modernization. Advanced computer-aided design (CAD) grading, computer-controlled fabric spreading and precision cutting machines have drastically curtailed human cutting variance.
 
 Coupled with digital shop-floor tracking systems, factory leadership gains real-time visibility into operator line balances, defect occurrences, and output velocity, transforming industrial management from reactive correction to predictive precision.`,
@@ -314,7 +314,7 @@ Implementing systematic quality assurance protocols builds enduring institutiona
     titleEn: "Nearshoring and the Changing Geography of Global Apparel Sourcing",
     titleAr: "التحولات العالمية في التوريد تمنح مراكز التصنيع القريبة فرصًا جديدة",
     excerptEn: "Global logistics volatility and fast-fashion inventory cycles prompt European and GCC retailers to shift volume to North African production hubs.",
-    excerptAr: "تدفع تكاليف الشحن وسرعة دورة الموضة كبرى العلامات إلى تفضيل مراكز التصنيع القريبة جغرافياً لتقليص فترات التوريد وإدارة المخاطر بكفاءة.",
+    excerptAr: "تدفع تكاليف الشحن وسرعة دورة الموضة كبرى العلامات إلى تفضيل مراكز التصنيع القريبة جغرافيًا لتقليص فترات التوريد وإدارة المخاطر بكفاءة.",
     bodyEn: `Rising maritime freight rates, geopolitical passage uncertainties, and retail demand for agile inventory cycles are driving European and Middle Eastern fashion retailers to re-evaluate far-flung Asian supply networks.
 
 Nearshoring to established manufacturing hubs in Egypt offers decisive advantages: transit times of mere days to southern European ports, duty-free market access through trade conventions, and flexible production run sizes that curtail excessive inventory risk.`,
@@ -342,7 +342,7 @@ Nearshoring to established manufacturing hubs in Egypt offers decisive advantage
 Modern apparel facilities that proactively invest in closed-loop effluent management, certified eco-dyes, and fabric scrap upcycling secure long-term contracts with premium tier-one brands.`,
     bodyAr: `تتزايد أهمية الممارسات المستدامة في قطاع المنسوجات، بداية من الاستخدام الرشيد للمياه والطاقة وحتى إدارة مخلفات الإنتاج واختيار الخامات المعتمدة بيئيًا.
 
-وأصبح تحسين الأداء البيئي والتشغيلي عاملاً جوهريًا في تعزيز قدرة الشركات الصناعية على التعامل مع متطلبات العملاء الدوليين وسلاسل الإمداد الحديثة الملتزمة بالمسؤولية المجتمعية.`,
+وأصبح تحسين الأداء البيئي والتشغيلي عاملًا جوهريًا في تعزيز قدرة الشركات الصناعية على التعامل مع متطلبات العملاء الدوليين وسلاسل الإمداد الحديثة الملتزمة بالمسؤولية المجتمعية.`,
     image: "/BG/Apparel Manufacturing/Apparel Manufacturing Home Page.jpg",
   },
 
@@ -451,7 +451,7 @@ Robust risk management frameworks protect developer capital, ensure strict adher
     titleEn: "Sustainable Urban Development and Modern Infrastructure",
     titleAr: "التنمية العمرانية المستدامة والبنية التحتية الحديثة",
     excerptEn: "Designing livable, energy-efficient commercial and residential communities balances density, green spaces, and smart utility management.",
-    excerptAr: "تتطلب المدن والمجمعات العمرانية الحديثة حلولاً متكاملة تجمع بين كفاءة استغلال الأراضي، وشبكات المرافق الذكية، والاعتبارات البيئية المستدامة.",
+    excerptAr: "تتطلب المدن والمجمعات العمرانية الحديثة حلولًا متكاملة تجمع بين كفاءة استغلال الأراضي، وشبكات المرافق الذكية، والاعتبارات البيئية المستدامة.",
     bodyEn: `Modern urban planning requires a holistic convergence of land-use optimization, integrated stormwater drainage, subterranean utility corridors, and renewable public lighting. Sustainable master plans prioritize human well-being alongside structural efficiency.
 
 Achieving lasting livability in residential and commercial developments mandates close coordination between architectural vision, structural engineering, and ecological preservation.`,
@@ -477,7 +477,7 @@ Achieving lasting livability in residential and commercial developments mandates
     bodyEn: `Public-private concessions (PPP) represent a proven structural tool for bridging capital deficits in national infrastructure agendas. By allocating design, construction, and long-term operational risk to experienced private engineering syndicates, public agencies ensure fiscal accountability and superior service delivery.
 
 Long-term success requires transparent bidding protocols, equitable risk distribution matrices, and robust lifecycle maintenance covenants.`,
-    bodyAr: `توفر نماذج الشراكة بين القطاعين العام والخاص إطارًا فعالاً لتعبئة التمويل والخبرات الفنية اللازمة لتطوير مشروعات البنية التحتية الحيوية.
+    bodyAr: `توفر نماذج الشراكة بين القطاعين العام والخاص إطارًا فعالًا لتعبئة التمويل والخبرات الفنية اللازمة لتطوير مشروعات البنية التحتية الحيوية.
 
 وتتطلب هذه النماذج إعداد دراسات جدوى دقيقة، وتوزيعًا واضحًا للمخاطر بين الأطراف، واعتماد آليات تعاقد وتشغيل ورقابة تضمن تحقيق الأهداف الاقتصادية والخدمية للمجتمع.`,
     image: "/BG/Contracting & Real Estate Development/Finishing & Interior Design.jpg",

@@ -212,7 +212,7 @@ export function CrmDashboard() {
               />
               {pinError && (
                 <span className="mt-1.5 block text-xs font-bold text-red-500">
-                  {ar ? "رمز غير صحيح، يرجى المحاولة مجدداً." : "Invalid credentials. Please re-enter."}
+                  {ar ? "رمز غير صحيح، يرجى المحاولة مجددًا." : "Invalid credentials. Please re-enter."}
                 </span>
               )}
             </div>

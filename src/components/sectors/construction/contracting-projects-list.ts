@@ -35,7 +35,7 @@ export function getProjectMeta(p: ContractingProject) {
     p.status || (is2024 ? "completed" : "completed");
 
   const statusLabel = {
-    completed: { en: "Completed & Handed Over", ar: "منجز ومسلّم رسمياً" },
+    completed: { en: "Completed & Handed Over", ar: "منجز ومسلّم رسميًا" },
     ongoing: { en: "Active Execution", ar: "قيد التنفيذ الميداني" },
     under_development: { en: "Under Development", ar: "تحت التطوير والتهيئة" },
     proposed: { en: "Proposed Project", ar: "مشروع مقترح" },
@@ -57,7 +57,7 @@ export function getProjectMeta(p: ContractingProject) {
 
   // Duration estimation based on project scale
   const durationEn = p.year.includes("–") ? "18-24 Months" : "6-12 Months";
-  const durationAr = p.year.includes("–") ? "18 إلى 24 شهراً" : "6 إلى 12 شهراً";
+  const durationAr = p.year.includes("–") ? "18 إلى 24 شهرًا" : "6 إلى 12 شهرًا";
 
   // Region
   let regionId = "nationwide";

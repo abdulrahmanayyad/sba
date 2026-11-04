@@ -124,7 +124,7 @@ Non-Disclosure Agreement (NDA).
 
   const getWhatsappMeetingUrl = () => {
     const text = ar
-      ? `مرحباً إدارة الاستثمار بمجموعة سامي بن عياد، أود ترتيب اجتماع استثماري وبحث فرص الشراكة المؤسسية معكم.`
+      ? `مرحبًا إدارة الاستثمار بمجموعة سامي بن عياد، أود ترتيب اجتماع استثماري وبحث فرص الشراكة المؤسسية معكم.`
       : `Hello Investor Relations at Sami Bin Ayyad Group, I represent an institutional investor/fund and would like to schedule a strategic discussion regarding partnership opportunities.`;
     return `${WHATSAPP_URL}?text=${encodeURIComponent(text)}`;
   };
@@ -225,19 +225,19 @@ Non-Disclosure Agreement (NDA).
                 </h3>
                 <p className="mt-3 text-xs sm:text-sm leading-relaxed text-muted-foreground">
                   {ar
-                    ? "توزع المجموعة استثماراتها التشغيلية عبر قطاعات المقاولات والبنية التحتية، تصنيع الملابس، الحلول البيئية، والصناعات الغذائية، مما يوفر تنوعاً متوازناً في التدفقات النقدية وقدرة عالية على التحوط."
+                    ? "توزع المجموعة استثماراتها التشغيلية عبر قطاعات المقاولات والبنية التحتية، تصنيع الملابس، الحلول البيئية، والصناعات الغذائية، مما يوفر تنوعًا متوازنًا في التدفقات النقدية وقدرة عالية على التحوط."
                     : "SBA balances capital exposure across Construction Infrastructure, Ready-Made Garments, Environmental Technologies, and Natural Agri-Food, delivering resilient operational cash flows and inflation protection."}
                 </p>
               </div>
 
               <div className="grid grid-cols-2 gap-4 sm:gap-6 shrink-0">
                 <div className="text-center p-4 rounded-2xl bg-background/80 border border-border">
-                  <div className="text-2xl sm:text-3xl font-black text-brand-orange">+45 {ar ? "عاماً" : "Yrs"}</div>
+                  <div className="text-2xl sm:text-3xl font-black text-brand-orange">+45 {ar ? "عامًا" : "Yrs"}</div>
                   <div className="text-[11px] font-bold text-muted-foreground mt-1">{ar ? "تاريخ وخبرة متراكمة" : "Operating Heritage"}</div>
                 </div>
                 <div className="text-center p-4 rounded-2xl bg-background/80 border border-border">
                   <div className="text-2xl sm:text-3xl font-black text-brand-green">+100</div>
-                  <div className="text-[11px] font-bold text-muted-foreground mt-1">{ar ? "مشروعاً منجزاً" : "Completed Projects"}</div>
+                  <div className="text-[11px] font-bold text-muted-foreground mt-1">{ar ? "مشروعًا منجزًا" : "Completed Projects"}</div>
                 </div>
                 <div className="text-center p-4 rounded-2xl bg-background/80 border border-border">
                   <div className="text-2xl sm:text-3xl font-black text-brand-orange">4</div>
@@ -485,7 +485,7 @@ Non-Disclosure Agreement (NDA).
               </h3>
               <p className="mt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed">
                 {ar
-                  ? "شكراً لتواصلكم. تم توجيه طلبكم مباشرة إلى مكتب الرئيس التنفيذي وإدارة الاستراتيجية، وسيتواصل معكم فريق علاقات المستثمرين لتحديد موعد الاجتماع خلال يومي عمل."
+                  ? "شكرًا لتواصلكم. تم توجيه طلبكم مباشرة إلى مكتب الرئيس التنفيذي وإدارة الاستراتيجية، وسيتواصل معكم فريق علاقات المستثمرين لتحديد موعد الاجتماع خلال يومي عمل."
                   : "Thank you for your interest. Your inquiry has been routed to the Executive Office & Corporate Strategy Team. Our IR representative will follow up within two business days to schedule the discussion."}
               </p>
             </div>
@@ -625,7 +625,7 @@ Non-Disclosure Agreement (NDA).
                   onChange={(e) => setInquiryForm({ ...inquiryForm, notes: e.target.value })}
                   placeholder={
                     ar
-                      ? "أدخل ملخصاً لطبيعة التعاون المقترح أو المواعيد المفضلة لعقد اجتماع افتراضي أو حضوري بمقر المجموعة..."
+                      ? "أدخل ملخصًا لطبيعة التعاون المقترح أو المواعيد المفضلة لعقد اجتماع افتراضي أو حضوري بمقر المجموعة..."
                       : "Brief outline of your investment thesis, target allocation, or preferred schedule for a virtual or in-person executive session..."
                   }
                   className="w-full rounded-2xl border border-border bg-secondary/50 px-4 py-2.5 text-xs sm:text-sm text-foreground focus:border-brand-green focus:outline-none"
@@ -677,7 +677,7 @@ Non-Disclosure Agreement (NDA).
             <p className="text-[11px] text-muted-foreground/80 leading-relaxed">
               <ShieldAlert className="inline size-3.5 me-1 text-brand-orange" />
               {ar
-                ? "إشعار الامتثال والحوكمة: تلتزم مجموعة سامي بن عياد بعدم نشر أي توقعات مالية أو بيانات مستقبلية غير معتمدة. كافة البيانات المحاسبية الرسمية وسجلات التدقيق المالي تخضع لاتفاقيات سرية المعلومات المعمول بها دولياً."
+                ? "إشعار الامتثال والحوكمة: تلتزم مجموعة سامي بن عياد بعدم نشر أي توقعات مالية أو بيانات مستقبلية غير معتمدة. كافة البيانات المحاسبية الرسمية وسجلات التدقيق المالي تخضع لاتفاقيات سرية المعلومات المعمول بها دوليًا."
                 : "Compliance & Governance Notice: Sami Bin Ayyad Group does not publish unverified financial projections or speculative forward-looking claims. All verified corporate financial audits, asset evaluations, and legal agreements are shared strictly under customary bilateral Non-Disclosure Agreements."}
             </p>
           </div>

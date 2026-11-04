@@ -277,8 +277,8 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
               </h3>
               <p className="text-xs sm:text-sm text-muted-foreground">
                 {ar
-                  ? "خريطة توضح شبكة الأسواق الدولية المعتمدة التي نتعامل معها."
-                  : "Interactive map showcasing the verified international partner markets we exclusively operate with."}
+                  ? "خريطة توضح شبكة الأسواق الدولية الحالية التي نتعامل معها."
+                  : "Interactive map showcasing our current international partner markets."}
               </p>
             </div>
 
@@ -298,13 +298,13 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
               <div
                 className="relative aspect-[16/10] sm:aspect-[16/11] lg:aspect-[16/11] w-full overflow-hidden rounded-3xl border border-slate-200 dark:border-zinc-800 bg-[#FFFFFF] shadow-[0_8px_30px_rgba(0,0,0,0.06)] select-none font-sans"
                 role="region"
-                aria-label={ar ? "خريطة شبكة أسواقنا المعتمدة" : "Map of our verified partner markets"}
+                aria-label={ar ? "خريطة شبكة أسواقنا الحالية" : "Map of our current partner markets"}
               >
                 {/* Top Badge */}
                 <div className="absolute start-3 top-3 z-30 flex items-center gap-2 rounded-full border border-slate-200 bg-white/95 px-3 py-1 text-xs font-bold text-slate-800 shadow-sm backdrop-blur-md">
                   <Globe className="size-3.5 text-brand-orange" />
                   <span className="font-sans font-semibold tracking-tight text-[11px] text-slate-700">
-                    {ar ? "شبكة الأسواق المعتمدة" : "Verified Markets Network"}
+                    {ar ? "شبكة الأسواق الحالية" : "Current Markets Network"}
                   </span>
                 </div>
 
@@ -600,7 +600,7 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
                 <div className="absolute bottom-2.5 start-3 z-20 flex items-center gap-1.5 text-[10px] text-slate-500 font-sans font-medium">
                   <span className="font-bold text-slate-700">SBA Global</span>
                   <span>·</span>
-                  <span>{ar ? "9 أسواق معتمدة" : "9 Verified Markets"}</span>
+                  <span>{ar ? "الأسواق الحالية" : "Current Markets"}</span>
                 </div>
               </div>
             </div>
@@ -611,7 +611,7 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
                 <div className="flex items-center justify-between border-b border-border/60 pb-3 mb-3">
                   <div>
                     <h4 className="font-head text-base sm:text-lg font-bold text-foreground">
-                      {ar ? "الدول الشريكة والأسواق المعتمدة" : "Verified Partner Markets"}
+                      {ar ? "الدول الشريكة والأسواق الحالية" : "Partner Countries & Current Markets"}
                     </h4>
                     <p className="text-xs text-muted-foreground mt-0.5">
                       {ar ? "أشر على أي دولة لإبراز موقعها على الخريطة" : "Hover over any country to highlight on map"}
@@ -649,8 +649,8 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
                   </div>
                 )}
 
-                {/* Countries List with Flags beside names */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-2 overflow-y-auto max-h-[380px] pe-1">
+                {/* Countries List with Flags beside names — No Scrollbar, All visible */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-1.5 pe-1">
                   {partnerCountries.map((c) => {
                     const isSelected = activeCountry?.nameEn === c.nameEn;
                     return (
@@ -660,7 +660,7 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
                         onMouseLeave={() => setHoveredCountry(null)}
                         onClick={() => setSelectedCountry((prev) => (prev?.nameEn === c.nameEn ? null : c))}
                         className={cn(
-                          "group flex items-center justify-between rounded-xl border p-2.5 text-xs font-semibold transition-all duration-200 cursor-pointer",
+                          "group flex items-center justify-between rounded-xl border p-2 text-xs font-semibold transition-all duration-200 cursor-pointer",
                           isSelected
                             ? "border-brand-orange bg-brand-orange text-white shadow-md shadow-brand-orange/20 scale-[1.01]"
                             : "border-border/70 bg-background/60 text-foreground hover:border-brand-orange/50 hover:bg-brand-orange/10 hover:scale-[1.01]"
@@ -668,9 +668,9 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
                       >
                         <div className="flex items-center gap-2.5 min-w-0">
                           {/* Flag beside each country name */}
-                          <span className="text-xl shrink-0 leading-none">{c.flag}</span>
+                          <span className="text-lg shrink-0 leading-none">{c.flag}</span>
                           <div className="min-w-0 text-start">
-                            <p className={cn("font-bold truncate", ar ? "font-head text-xs sm:text-sm" : "text-xs sm:text-sm")}>
+                            <p className={cn("font-bold truncate", ar ? "font-head text-xs" : "text-xs")}>
                               {ar ? c.nameAr : c.nameEn}
                             </p>
                             <p className={cn("text-[10px] truncate", isSelected ? "text-white/80" : "text-muted-foreground")}>
@@ -706,9 +706,9 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
                 </p>
                 <p className="mt-1 text-[11px] text-muted-foreground leading-relaxed">
                   {ar ? (
-                    <span>تتركز أنشطة استيراد وتصدير وتوريد <span className="text-brand-orange">مجموعة سامي بن عياد</span> في هذه الدول التسع المختارة بدقة وفق معايير الجودة والاتفاقيات الدولية.</span>
+                    <span>تتوسع أنشطة الاستيراد والتصدير والتوريد ل<span className="text-brand-orange font-bold">مجموعة سامي بن عياد</span> في هذه الدول وفق معايير الجودة والاتفاقيات الدولية.</span>
                   ) : (
-                    <span><span className="text-brand-orange">SAMI BIN AYYAD GROUP</span> focuses its export, import, and manufacturing partnerships exclusively on these 9 verified global markets.</span>
+                    <span><span className="text-brand-orange font-bold">SAMI BIN AYYAD GROUP</span> expands its import, export, and supply partnerships across these nations in accordance with international quality standards.</span>
                   )}
                 </p>
               </div>

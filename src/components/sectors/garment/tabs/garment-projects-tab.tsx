@@ -61,7 +61,7 @@ export function GarmentProjectsTab() {
   const getItemClassification = (item: ProjectShowcaseItem) => {
     const hash = item.id.split("").reduce((acc, char) => acc + char.charCodeAt(0), 0);
     if (hash % 4 === 0) return { id: "ready-models", en: "Ready Manufacturing Model", ar: "نموذج جاهز للتصنيع الفوري" };
-    if (hash % 4 === 1) return { id: "previously-manufactured", en: "Previously Manufactured Product", ar: "منتج مصنع ومورد سابقاً" };
+    if (hash % 4 === 1) return { id: "previously-manufactured", en: "Previously Manufactured Product", ar: "منتج مصنع ومورد سابقًا" };
     if (hash % 4 === 2) return { id: "client-projects", en: "Client Private Label Project", ar: "مشروع خاص لعلامة تجارية شريكة" };
     return { id: "development-samples", en: "R&D Development Sample", ar: "عينة تطوير وتصميم أولية" };
   };
@@ -117,7 +117,7 @@ export function GarmentProjectsTab() {
             </span>
             <p className="text-xs text-muted-foreground mt-0.5">
               {ar
-                ? "حفاظاً على حقوق العلامات التجارية وشركائنا، يتم تسليم ملفات الباترونات الكاملة والـ Tech Packs وملفات الـ CAD عند توقيع اتفاقيات التصنيع التجارية واتفاقية عدم الإفصاح (NDA)."
+                ? "حفاظًا على حقوق العلامات التجارية وشركائنا، يتم تسليم ملفات الباترونات الكاملة والـ Tech Packs وملفات الـ CAD عند توقيع اتفاقيات التصنيع التجارية واتفاقية عدم الإفصاح (NDA)."
                 : "To safeguard proprietary designs, master pattern files, grading rules, and full tech packs are shared under commercial supply agreements and non-disclosure agreements (NDA)."}
             </p>
           </div>

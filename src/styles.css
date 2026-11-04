@@ -145,8 +145,22 @@
 
   html[dir="rtl"],
   html[lang="ar"],
-  [dir="rtl"] {
-    font-family: "IBM Plex Sans Arabic", system-ui, sans-serif;
+  [dir="rtl"],
+  [dir="rtl"] body,
+  [dir="rtl"] h1,
+  [dir="rtl"] h2,
+  [dir="rtl"] h3,
+  [dir="rtl"] h4,
+  [dir="rtl"] h5,
+  [dir="rtl"] h6,
+  [dir="rtl"] .font-head,
+  [dir="rtl"] .font-body,
+  [dir="rtl"] .font-sans,
+  [dir="rtl"] input,
+  [dir="rtl"] button,
+  [dir="rtl"] select,
+  [dir="rtl"] textarea {
+    font-family: "IBM Plex Sans Arabic", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
     --font-head: "IBM Plex Sans Arabic", sans-serif;
     --font-body: "IBM Plex Sans Arabic", sans-serif;
     --font-sans: "IBM Plex Sans Arabic", sans-serif;

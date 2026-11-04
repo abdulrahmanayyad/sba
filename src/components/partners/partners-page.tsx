@@ -252,7 +252,7 @@ export function PartnersPage() {
                 <UploadCloud className="size-5 text-brand-orange shrink-0" />
                 <span>
                   {ar
-                    ? "يمكنك إرفاق الملف التعريفي للشركة لاحقاً عبر البريد الرسمي أو مراسلة فريقنا على info@sami-trade.com"
+                    ? "يمكنك إرفاق الملف التعريفي للشركة لاحقًا عبر البريد الرسمي أو مراسلة فريقنا على info@sami-trade.com"
                     : "Company profiles and NDA agreements can also be shared directly with our desk at info@sami-trade.com"}
                 </span>
               </div>
@@ -260,7 +260,7 @@ export function PartnersPage() {
               <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
                 <Button type="submit" size="lg" className="w-full sm:w-auto rounded-full bg-brand-green text-white hover:bg-brand-orange font-bold text-xs sm:text-sm px-8 py-3 shadow-md transition-all cursor-pointer">
                   <Send className="size-4 me-2" />
-                  <span>{ar ? "إرسال مقترح الشراكة رسمياً" : "Submit Formal Proposal"}</span>
+                  <span>{ar ? "إرسال مقترح الشراكة رسميًا" : "Submit Formal Proposal"}</span>
                 </Button>
                 <span className="text-[11px] text-muted-foreground flex items-center gap-1.5">
                   <ShieldCheck className="size-3.5 text-brand-green" />

@@ -113,7 +113,7 @@ export function EnvironmentalSectorView({ tab = "about" }: EnvironmentalViewProp
               <div className="mt-8 flex flex-wrap items-center gap-3">
                 <Button asChild size="default" className="rounded-full bg-brand-green text-white hover:bg-brand-orange transition-all duration-300 shadow-md">
                   <Link to="/sectors/$sector" params={{ sector: "environmental" }} search={{ tab: "services" }}>
-                    <span>{ar ? "استكشف خدماتنا البيئية (19 تخصصاً)" : "Explore Our 19 Services"}</span>
+                    <span>{ar ? "استكشف خدماتنا البيئية (19 تخصصًا)" : "Explore Our 19 Services"}</span>
                     <ArrowRight className="size-4 ms-2 rtl:rotate-180" />
                   </Link>
                 </Button>
@@ -162,7 +162,7 @@ function EnvironmentalAboutView({ ar }: { ar: boolean }) {
             <div className="rounded-2xl border border-white/20 bg-background/80 p-5 shadow-sm backdrop-blur-md text-center">
               <div className="text-2xl sm:text-3xl font-black text-brand-green">19</div>
               <div className="mt-1 text-xs font-bold text-muted-foreground uppercase tracking-wider">
-                {ar ? "تخصصاً وخدمة بيئية متكاملة" : "Core Disciplines"}
+                {ar ? "تخصصًا وخدمة بيئية متكاملة" : "Core Disciplines"}
               </div>
             </div>
 
@@ -255,7 +255,7 @@ function EnvironmentalAboutView({ ar }: { ar: boolean }) {
             <div>
               <SectionBadge title={ar ? "الخدمات والاستشارات" : "Environmental Services"} />
               <h2 className="section-title mt-3">
-                {ar ? "منظومة الخدمات البيئية والاستشارية (19 تخصصاً)" : "19 Specialized Environmental Disciplines"}
+                {ar ? "منظومة الخدمات البيئية والاستشارية (19 تخصصًا)" : "19 Specialized Environmental Disciplines"}
               </h2>
             </div>
             <Button asChild size="default" className="rounded-full bg-brand-green text-white hover:bg-brand-orange">
@@ -562,7 +562,7 @@ function EnvironmentalAboutView({ ar }: { ar: boolean }) {
                         <div className="flex items-center justify-between">
                           <span className="font-head text-xs font-bold text-foreground">{ar ? exp.nameAr : exp.nameEn}</span>
                           <span className="text-[10px] font-bold text-brand-green bg-brand-green/10 px-2 py-0.5 rounded-full">
-                            +{exp.experienceYears} {ar ? "عاماً" : "Yrs"}
+                            +{exp.experienceYears} {ar ? "عامًا" : "Yrs"}
                           </span>
                         </div>
                         <p className="text-[11px] text-brand-orange font-medium mt-0.5">{ar ? exp.roleAr : exp.roleEn}</p>
@@ -753,7 +753,7 @@ function EnvironmentalServicesView({ ar }: { ar: boolean }) {
                 </h2>
                 <p className="section-intro mt-3">
                   {ar
-                    ? "19 تخصصاً استشارياً وهندسياً متكاملاً يغطي تقييم الأثر البيئي، وإدارة المخلفات، والبصمة الكربونية، وتأهيل الأيزو والبرمجيات."
+                    ? "19 تخصصًا استشاريًا وهندسيًا متكاملًا يغطي تقييم الأثر البيئي، وإدارة المخلفات، والبصمة الكربونية، وتأهيل الأيزو والبرمجيات."
                     : "19 specialized disciplines covering environmental impact, waste-to-energy, carbon footprint, ISO qualification, and digital solutions."}
                 </p>
               </div>
@@ -1394,7 +1394,7 @@ function EnvironmentalStartConsultationView({ ar }: { ar: boolean }) {
     : ["Small (< 50 employees)", "Medium (50 - 250 employees)", "Large Industrial (> 250 employees)", "Multi-site Enterprise Group"];
 
   const deliverablesOptions = ar
-    ? ["دراسة أثر بيئي معتمدة من جهاز شئون البيئة", "تقرير تدقيق البصمة الكربونية معتمد دولياً", "سجل بيئي موثق وسجل مواد ومخلفات خطرة", "تقارير قياسات مداخن وضوضاء وبيئة عمل مختومة", "دراسة جدوى فنية ومالية لمحطة بيوجاز / طاقة", "تأهيل كامل لشهادة الأيزو ISO 14001 / 50001", "تهيئة وترخيص منصة EHS-APP الرقمية", "عرض سعر توريد ومواصفات لمنتجات بيئية"]
+    ? ["دراسة أثر بيئي معتمدة من جهاز شئون البيئة", "تقرير تدقيق البصمة الكربونية معتمد دوليًا", "سجل بيئي موثق وسجل مواد ومخلفات خطرة", "تقارير قياسات مداخن وضوضاء وبيئة عمل مختومة", "دراسة جدوى فنية ومالية لمحطة بيوجاز / طاقة", "تأهيل كامل لشهادة الأيزو ISO 14001 / 50001", "تهيئة وترخيص منصة EHS-APP الرقمية", "عرض سعر توريد ومواصفات لمنتجات بيئية"]
     : ["Certified EIA Study with EEAA Approval", "Accredited Carbon Footprint Audit Report", "Official Environmental & Hazardous Logbooks", "Certified Stack & Workplace Measurement Reports", "Biogas / WtE Techno-Economic Feasibility Study", "Turnkey ISO 14001 / 50001 Certification Dossier", "Configured Enterprise EHS-APP Instance", "Formal Product Quotation & Datasheets"];
 
   const toggleDeliverable = (d: string) => {
@@ -1428,7 +1428,7 @@ function EnvironmentalStartConsultationView({ ar }: { ar: boolean }) {
           </div>
           <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed max-w-lg mx-auto">
             {ar
-              ? "تم تسجيل طلبكم رسمياً وتوجيهه إلى فريق الاستشارات البيئية والهندسية المختص. سيقوم أحد استشاريينا المعتمدين بمراجعة المتطلبات والتواصل معكم خلال 48 ساعة عمل."
+              ? "تم تسجيل طلبكم رسميًا وتوجيهه إلى فريق الاستشارات البيئية والهندسية المختص. سيقوم أحد استشاريينا المعتمدين بمراجعة المتطلبات والتواصل معكم خلال 48 ساعة عمل."
               : "Your request has been logged in our central CRM. Our accredited environmental engineering consultants will evaluate your brief and contact you within 48 business hours."}
           </p>
 
@@ -1630,7 +1630,7 @@ function EnvironmentalStartConsultationView({ ar }: { ar: boolean }) {
 
             <div>
               <label className="block text-xs font-bold text-foreground mb-1">
-                {ar ? "نوع الدراسة أو التقرير المطلوب تفصيلاً" : "Specific Study or Report Type Needed"}
+                {ar ? "نوع الدراسة أو التقرير المطلوب تفصيلًا" : "Specific Study or Report Type Needed"}
               </label>
               <input
                 type="text"
@@ -1775,7 +1775,7 @@ function EnvironmentalStartConsultationView({ ar }: { ar: boolean }) {
             <div className="rounded-xl border border-dashed border-border p-4 text-center bg-secondary/20">
               <p className="text-xs text-muted-foreground">
                 {ar
-                  ? "ملاحظة: يمكنك إرفاق تقارير الفحص البيئي أو المخططات الهندسية لاحقاً عبر البريد الإلكتروني بعد مراجعة المنسق الفني وتأكيد رقم الطلب."
+                  ? "ملاحظة: يمكنك إرفاق تقارير الفحص البيئي أو المخططات الهندسية لاحقًا عبر البريد الإلكتروني بعد مراجعة المنسق الفني وتأكيد رقم الطلب."
                   : "Note: Supporting engineering layouts or inspection reports can be provided via email following initial coordinator contact."}
               </p>
             </div>

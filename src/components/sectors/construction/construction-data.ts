@@ -275,7 +275,7 @@ export const constructionServicesData = {
   title: "Integrated Engineering & Construction Disciplines",
   titleAr: "منظومة الخدمات والحلول الإنشائية المتكاملة",
   subtitle: "SAMI BIN AYYAD GROUP delivers 12 comprehensive, verified engineering and contracting disciplines under a single accountable umbrella, backed by over 45 years of documented delivery heritage.",
-  subtitleAr: "تقدم مجموعة سامي بن عياد للمقاولات والتطوير العقاري 12 تخصصاً هندسياً وتنفيذياً متكاملاً تحت مظلة واحدة مسؤولة، مدعومة بخبرة تنفيذية موثقة تمتد لأكثر من 45 عاماً.",
+  subtitleAr: "تقدم مجموعة سامي بن عياد للمقاولات والتطوير العقاري 12 تخصصًا هندسيًا وتنفيذيًا متكاملًا تحت مظلة واحدة مسؤولة، مدعومة بخبرة تنفيذية موثقة تمتد لأكثر من 45 عامًا.",
   services: [
     {
       id: "general-contracting",
@@ -782,11 +782,11 @@ export const constructionCapabilitiesData = {
       titleEn: "Health, Safety & Environment (HSE)",
       titleAr: "الصحة والسلامة المهنية والبيئة (HSE)",
       descEn: "Uncompromising zero-harm safety policy. Dedicated on-site NEBOSH and OSHA qualified safety officers enforcing daily Toolbox Talks, Hazard Identification and Risk Assessments (HIRA), and complete personal protective equipment (PPE).",
-      descAr: "سياسة حوادث صفرية صارمة؛ يقودها مشرفو سلامة معتمدون دولياً (NEBOSH و OSHA) مع تنفيذ لقاءات السلامة اليومية (Toolbox Talks)، تقييم المخاطر المسبق (HIRA)، وتوفير كافة معدات الوقاية الشخصية وحماية البيئة.",
+      descAr: "سياسة حوادث صفرية صارمة؛ يقودها مشرفو سلامة معتمدون دوليًا (NEBOSH و OSHA) مع تنفيذ لقاءات السلامة اليومية (Toolbox Talks)، تقييم المخاطر المسبق (HIRA)، وتوفير كافة معدات الوقاية الشخصية وحماية البيئة.",
       highlights: [
         { en: "Daily site risk assessments, permit-to-work (PTW) protocols", ar: "تقييم يومي للمخاطر وتصاريح عمل إلكترونية معتمدة PTW" },
         { en: "Mandatory certified PPE and fall protection equipment at heights", ar: "إلزامية مهمات الوقاية الشخصية وحماية العمل على الارتفاعات" },
-        { en: "Environmental site waste segregation and responsible disposal logs", ar: "فرز وتدوير مخلفات الموقع والتخلص الآمن بيئياً" },
+        { en: "Environmental site waste segregation and responsible disposal logs", ar: "فرز وتدوير مخلفات الموقع والتخلص الآمن بيئيًا" },
       ],
     },
   ],
@@ -807,7 +807,7 @@ export const constructionCredentialsData = {
       badgeEn: "Official Classification",
       badgeAr: "تصنيف رسمي معتمد",
       descEn: "Classified and registered building and civil engineering contractor qualified for executing public and private works nationwide.",
-      descAr: "شركة مقاولات مصنفة ومسجلة رسمياً بالاتحاد المصري لمقاولي التشييد والبناء لتنفيذ مشروعات المباني المتكاملة والأعمال التخصصية.",
+      descAr: "شركة مقاولات مصنفة ومسجلة رسميًا بالاتحاد المصري لمقاولي التشييد والبناء لتنفيذ مشروعات المباني المتكاملة والأعمال التخصصية.",
     },
     {
       id: "iso-9001",

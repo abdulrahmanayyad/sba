@@ -412,7 +412,7 @@ export const garmentProductionCapacity = {
       numberEn: "150,000",
       numberAr: "150,000",
       unitEn: "Pieces / Month",
-      unitAr: "قطعة / شهرياً",
+      unitAr: "قطعة / شهريًا",
       labelEn: "Design Nameplate Capacity",
       labelAr: "الطاقة التصميمية القصوى",
       descEn: "Maximum engineered output across all 15 operational lines at full 2-shift scheduling.",
@@ -423,7 +423,7 @@ export const garmentProductionCapacity = {
       numberEn: "100,000",
       numberAr: "100,000",
       unitEn: "Pieces / Month",
-      unitAr: "قطعة / شهرياً",
+      unitAr: "قطعة / شهريًا",
       labelEn: "Actual Operating Volume",
       labelAr: "الطاقة التشغيلية الفعلية",
       descEn: "Current sustained output dedicated to contracted European, GCC, and domestic brand partners.",
@@ -434,11 +434,11 @@ export const garmentProductionCapacity = {
       numberEn: "35,000 – 50,000",
       numberAr: "35,000 – 50,000",
       unitEn: "Pieces / Month",
-      unitAr: "قطعة / شهرياً",
+      unitAr: "قطعة / شهريًا",
       labelEn: "Available Spare Capacity",
       labelAr: "الطاقة المتاحة للتعاقدات الجديدة",
       descEn: "Ready-to-allocate manufacturing capacity available immediately for new global fashion brands and FOB programs.",
-      descAr: "سعة إنتاجية جاهزة ومتاحة فوراً لاستقبال برامج تصنيع وتوريد لعلامات تجارية جديدة."
+      descAr: "سعة إنتاجية جاهزة ومتاحة فورًا لاستقبال برامج تصنيع وتوريد لعلامات تجارية جديدة."
     }
   ],
   keyMetrics: [
@@ -503,7 +503,7 @@ export const garmentIndustrialCapabilities: IndustrialCapabilityItem[] = [
       "ماكينات سنجر إلكترونية Direct-Drive موفرة للطاقة وفائقة الدقة",
       "ماكينات أوفرلوك 4 فتلة و5 فتلة سريعة للتشطيب الحركي المرن",
       "ماكينات فلاتلوك (Flatlock) مخصصة للملابس الرياضية والداخلية",
-      "وحدات فرماتورة وتثبيت مبرمجة إلكترونياً لمتانة درزات الضغط"
+      "وحدات فرماتورة وتثبيت مبرمجة إلكترونيًا لمتانة درزات الضغط"
     ],
     image: "/BG/Apparel Manufacturing/Apparel Manufacturing Home Page.jpg"
   },
@@ -521,7 +521,7 @@ export const garmentIndustrialCapabilities: IndustrialCapabilityItem[] = [
       "Laser-guided notch and drill marking for pocket placements"
     ],
     specsAr: [
-      "طاولات فرد أقمشة بطول 18 متراً مزودة بنظام شفط وتثبيت هوائي",
+      "طاولات فرد أقمشة بطول 18 مترًا مزودة بنظام شفط وتثبيت هوائي",
       "ماكينات قص رأسي للطبقات الكثيفة تضمن استقامة الحواف",
       "حساسات محاذاة آلية لحواف الأقمشة لتقليل نسبة الهدر في القماش",
       "تحديد مواضع الجيوب والأزرار بالعلامات الضوئية الدقيقة"
@@ -545,7 +545,7 @@ export const garmentIndustrialCapabilities: IndustrialCapabilityItem[] = [
       "تعشيق آلي للماركر الرقمي يحقق أقصى استغلال للمساحة (>88%)",
       "تدريج مقاسات مطابق للجداول القياسية الأوروبية والأمريكية والخليجية",
       "محاكاة القياسات ثلاثية الأبعاد (3D Fit) لتقليل دورات العينات",
-      "تصدير واستيراد الباترونات بصيغ DXF وAAMA المتوافقة عالمياً"
+      "تصدير واستيراد الباترونات بصيغ DXF وAAMA المتوافقة عالميًا"
     ],
     image: "/BG/Apparel Manufacturing/Product Development & Sampling.jpg"
   },
@@ -605,7 +605,7 @@ export const garmentIndustrialCapabilities: IndustrialCapabilityItem[] = [
       "Dye-sublimation and Direct-to-Garment (DTG) digital printing"
     ],
     specsAr: [
-      "تطريز كمبيوتر متعدد الرؤوس حتى 12 لوناً مختلفاً في التصميم الواحد",
+      "تطريز كمبيوتر متعدد الرؤوس حتى 12 لونًا مختلفًا في التصميم الواحد",
       "تطريز بارز ثلاثي الأبعاد (3D Puff) وتطريز شينيل وتطبيقات قماشية",
       "طباعة شاشة حريرية آلية: بلاستيزول، أحبار مائية صديقة للبيئة، وفروتي",
       "طباعة حرارية ديجيتال وسبلميشن عالية الوضوح للأقمشة الرياضية"
@@ -626,7 +626,7 @@ export const garmentIndustrialCapabilities: IndustrialCapabilityItem[] = [
       "Strict shrinkage stability testing (less than 3% residual tolerance)"
     ],
     specsAr: [
-      "براميل معالجة بالغسيل الإنزيمي والسيليكوني لملمس ناعم يدوم طويلاً",
+      "براميل معالجة بالغسيل الإنزيمي والسيليكوني لملمس ناعم يدوم طويلًا",
       "أنفاق بخار وطاولات كي وشفط أوتوماتيكية لإظهار رونق الملابس",
       "معالجات كيميائية مقاومة للوبرية ومضادة للبكتيريا وسريعة الجفاف",
       "اختبارات ثبات انكماش صارمة تضمن عدم تغير المقاس بعد الغسيل المنزلي"
@@ -813,15 +813,15 @@ export const garmentClassicShirtFacility = {
   subtitleEn: "A dedicated manufacturing ecosystem engineered strictly for high-end formal, business, and luxury shirts.",
   subtitleAr: "خط إنتاج مستقل مجهز بماكينات يابانية متخصصة لتصنيع القمصان الرسمية وبدل العمل وفق أرقى معايير الخياطة العالمية.",
   monthlyCapacityEn: "45,000 Certified Shirts / Month",
-  monthlyCapacityAr: "45,000 قميص كلاسيكي معتمد شهرياً",
+  monthlyCapacityAr: "45,000 قميص كلاسيكي معتمد شهريًا",
   noteEn: "This capacity is measured and dedicated exclusively to the Classic Shirt Line, separate from general knitwear throughput.",
-  noteAr: "هذه الطاقة الإنتاجية مخصصة ومقاسة حصرياً لخط تصنيع القمصان، ومنفصلة تماماً عن طاقة مصانع الملابس القطنية الأخرى.",
+  noteAr: "هذه الطاقة الإنتاجية مخصصة ومقاسة حصريًا لخط تصنيع القمصان، ومنفصلة تمامًا عن طاقة مصانع الملابس القطنية الأخرى.",
   specializedMachinery: [
     {
       nameEn: "Automated Collar Profile Stitchers",
       nameAr: "ماكينات الخياطة الآلية لبروفايل الياقات",
       descEn: "Laser-guided profile stitchers executing identical, razor-sharp collar points without manual deviation.",
-      descAr: "ماكينات آلية موجهة بالليزر لخياطة حواف الياقات بدقة متطابقة تماماً ودون أي انحراف يدوي."
+      descAr: "ماكينات آلية موجهة بالليزر لخياطة حواف الياقات بدقة متطابقة تمامًا ودون أي انحراف يدوي."
     },
     {
       nameEn: "Continuous Rotary Fusing Presses",
@@ -848,7 +848,7 @@ export const garmentClassicShirtFacility = {
     { step: "03", titleEn: "Placket Engineering & Front Assembly", titleAr: "تجهيز وتركيب المرد الأمامي للقميص" },
     { step: "04", titleEn: "Collar Setting & Point Inspection", titleAr: "تركيب الياقة وفحص زوايا النقاط" },
     { step: "05", titleEn: "Sleeve Setting & French Seam Closing", titleAr: "تركيب الأكمام والخياطة الفرنسية المغلقة" },
-    { step: "06", titleEn: "Automated Index Buttonhole & Button Stitch", titleAr: "تفتيح العراوي وتركيب الأزرار آلياً" },
+    { step: "06", titleEn: "Automated Index Buttonhole & Button Stitch", titleAr: "تفتيح العراوي وتركيب الأزرار آليًا" },
     { step: "07", titleEn: "18-Point Final Inspection & Cardboard Fold", titleAr: "الفحص الشامل لـ 18 نقطة جودة والطي والتغليف" }
   ],
   qualityBenchmarks: [
@@ -888,7 +888,7 @@ export const garmentServicesExpanded: GarmentManufacturingService[] = [
     titleEn: "OEM Manufacturing",
     titleAr: "التصنيع كشريك للمعدات الأصلية (OEM)",
     leadEn: "Flawless bulk manufacturing adhering strictly to the client's provided patterns, tech packs, and fabric requirements.",
-    leadAr: "تصنيع كمي متطابق تماماً مع الباترونات وملفات المواصفات الفنية والخامات المعتمدة من العميل.",
+    leadAr: "تصنيع كمي متطابق تمامًا مع الباترونات وملفات المواصفات الفنية والخامات المعتمدة من العميل.",
     descEn: "Our OEM contract manufacturing service takes your fully developed designs, approved samples, and bills of materials to execute bulk production with disciplined cycle times and international quality compliance.",
     descAr: "نقدم خدمة التصنيع التعاقدي للملابس الجاهزة وفق تصميماتك وعيناتك المعتمدة، مع الالتزام التام بالجداول الزمنية، والمواصفات الفنية، ومعايير الجودة العالمية.",
     capabilitiesEn: ["Strict tech-pack conformance", "Flexible order scaling", "In-line milestone audits", "Client-supplied fabric handling"],
@@ -907,7 +907,7 @@ export const garmentServicesExpanded: GarmentManufacturingService[] = [
     leadEn: "Complete concept creation where brands select and customize designs from our 20,000+ style library for private branding.",
     leadAr: "خدمة تطوير وتصميم متكاملة تتيح للعلامات التجارية اختيار وتخصيص موديلات من محفظتنا التي تضم أكثر من 20,000 تصميم.",
     descEn: "We provide comprehensive fashion development for brands needing fresh seasonal collections without maintaining internal design teams. Choose from our proven silhouette library, customize colors and trims, and launch under your own brand.",
-    descAr: "نوفر حلاً متكاملاً للعلامات التجارية التي ترغب في إطلاق مجموعات أزياء جديدة دون الحاجة لفرق تصميم داخلية، عبر تعديل وتخصيص تصميماتنا الجاهزة بعلامتك التجارية.",
+    descAr: "نوفر حلًا متكاملًا للعلامات التجارية التي ترغب في إطلاق مجموعات أزياء جديدة دون الحاجة لفرق تصميم داخلية، عبر تعديل وتخصيص تصميماتنا الجاهزة بعلامتك التجارية.",
     capabilitiesEn: ["Trend-driven fashion design", "Silhouettes engineered for fit", "Rapid custom graphic application", "Commercial price-point engineering"],
     capabilitiesAr: ["تصميمات متوافقة مع أحدث خطوط الموضة", "قصات مجربة ومثبتة في الأسواق", "تخصيص سريع للألوان والطباعات", "هندسة تكلفة تناسب السعر المستهدف"],
     deliverablesEn: ["Trend capsule collection proposals", "Fabric & color swatch cards", "Branded prototype approvals"],
@@ -943,9 +943,9 @@ export const garmentServicesExpanded: GarmentManufacturingService[] = [
     descEn: "Our FOB (Free on Board) programs give international buyers full cost transparency and risk mitigation. We handle yarn spinning, knitting, dyeing, cutting, sewing, finishing, quality auditing, and export customs clearance under a single unified contract.",
     descAr: "توفر برامج FOB للمستوردين والشركات الدولية شفافية كاملة في التكلفة وإدارة المخاطر، حيث نتولى الغزل والنسيج والصباغة والقص والخياطة والجمارك حتى التسليم على ظهر السفينة.",
     capabilitiesEn: ["Raw material procurement & financial underwriting", "Internal dyeing lab color approvals", "Customs export clearance and shipping coordination", "Single fixed price per garment with zero hidden costs"],
-    capabilitiesAr: ["تمويل وتوريد كافة الخامات ومستلزمات الإنتاج", "ضبط ومطابقة ألوان الصباغة معملياً", "التخليص الجمركي وتجهيز مستندات الشحن والتصدير", "سعر تعاقدي ثابت ومحدد للقطعة دون تكاليف خفية"],
+    capabilitiesAr: ["تمويل وتوريد كافة الخامات ومستلزمات الإنتاج", "ضبط ومطابقة ألوان الصباغة معمليًا", "التخليص الجمركي وتجهيز مستندات الشحن والتصدير", "سعر تعاقدي ثابت ومحدد للقطعة دون تكاليف خفية"],
     deliverablesEn: ["Export-cleared container at shipping port", "Bill of Lading & Commercial Invoice", "Certificate of Origin & EUR-1 Form"],
-    deliverablesAr: ["حاوية بضائع مخلصة جمركياً بميناء التصدير", "بوليصة الشحن والفاتورة التجارية المعتمدة", "شهادة المنشأ المصرية ونموذج EUR-1 التصديري"],
+    deliverablesAr: ["حاوية بضائع مخلصة جمركيًا بميناء التصدير", "بوليصة الشحن والفاتورة التجارية المعتمدة", "شهادة المنشأ المصرية ونموذج EUR-1 التصديري"],
     image: "/BG/Apparel Manufacturing/FOB Manufacturing Programs.jpg"
   },
   {
@@ -992,7 +992,7 @@ export const garmentServicesExpanded: GarmentManufacturingService[] = [
     leadEn: "High-volume, repeatable garment manufacturing operating under rigorous lead-time schedules and synchronized lines.",
     leadAr: "تنفيذ طلبيات الملابس بأحجام إنتاجية ضخمة مع التزام صارم بالمواعيد وتوحيد معايير الجودة عبر كافة القطع.",
     descEn: "With 15 active lines and 250+ machines, we manage large-scale contract orders with zero compromise on quality. Parallel line synchronization ensures that whether you order 2,000 or 50,000 pieces, every piece matches the master sample.",
-    descAr: "بفضل خطوطنا الـ 15 وأسطول ماكيناتنا المتطور، ندير طلبيات التوريد الكبرى بكفاءة عالية، مما يضمن أن كل قطعة في طلبية الـ 50,000 تتطابق تماماً مع عينة الاعتماد.",
+    descAr: "بفضل خطوطنا الـ 15 وأسطول ماكيناتنا المتطور، ندير طلبيات التوريد الكبرى بكفاءة عالية، مما يضمن أن كل قطعة في طلبية الـ 50,000 تتطابق تمامًا مع عينة الاعتماد.",
     capabilitiesEn: ["Capacity scaling from 1,000 to 100,000+ pieces", "Line balancing to eliminate bottlenecks", "Real-time production tracking dashboards", "Synchronized color-batch production"],
     capabilitiesAr: ["مرونة إنتاجية تبدأ من 1,000 وحتى أكثر من 100,000 قطعة", "توازن خطوط الإنتاج للقضاء على نقاط الاختناق", "متابعة رقمية لحظية لمعدلات الإنتاج اليومي", "تنظيم الإنتاج بحسب دفعات الصباغة والألوان (Lots)"],
     deliverablesEn: ["Complete inspected order ready on schedule", "Final AQL 2.5 quality inspection certificate", "Carton packing list and shipping manifest"],
@@ -1003,13 +1003,13 @@ export const garmentServicesExpanded: GarmentManufacturingService[] = [
     id: "fabric-development-sourcing",
     number: "08",
     badgeEn: "Yarn to Fabric · Laboratory Color Matching",
-    badgeAr: "تطوير الأنسجة · مطابقة الألوان معملياً",
+    badgeAr: "تطوير الأنسجة · مطابقة الألوان معمليًا",
     titleEn: "Fabric Development & Sourcing",
     titleAr: "تطوير وتوريد الأقمشة والغزول التخصصية",
     leadEn: "Custom knitting, weaving, and laboratory lab-dip dyeing tailored to the exact GSM, hand-feel, and color requirements of your collection.",
-    leadAr: "تصنيع وتطوير أقمشة تريكو ومنسوجات مخصصة مع مطابقة ألوان الصباغة معملياً لتحقيق الملمس والوزن المستهدف.",
+    leadAr: "تصنيع وتطوير أقمشة تريكو ومنسوجات مخصصة مع مطابقة ألوان الصباغة معمليًا لتحقيق الملمس والوزن المستهدف.",
     descEn: "Leveraging our integrated textile capabilities and strong domestic and imported yarn supply chains, we develop custom fabric weights (GSM), specialized knit structures, and lab-dip color formulations matching Pantone codes.",
-    descAr: "بالاعتماد على مصانع الأقمشة التابعة للمجموعة، نطور تراكيب نسيجية مخصصة، ونوفر مختلف أوزان الأقمشة (GSM)، مع مطابقة درجات ألوان بانتون (Pantone) معملياً.",
+    descAr: "بالاعتماد على مصانع الأقمشة التابعة للمجموعة، نطور تراكيب نسيجية مخصصة، ونوفر مختلف أوزان الأقمشة (GSM)، مع مطابقة درجات ألوان بانتون (Pantone) معمليًا.",
     capabilitiesEn: ["Custom yarn spinning and knitting (Jersey, Pique, Rib, Interlock)", "Pantone-matched lab dips within 4 business days", "Specialty chemical finishes (Peach skin, anti-pilling, enzyme wash)", "Certified physical testing (Tensile, tear, colorfastness to washing/rubbing)"],
     capabilitiesAr: ["غزل ونسيج أقمشة مخصصة (سنجل جيرسي، بيكيه، ريب، إنترلوك)", "مطابقة درجات ألوان بانتون عبر Lab Dips خلال 4 أيام عمل", "تشطيبات كيميائية ملمس الخوخ ومقاومة الوبرية ومقاومة البكتيريا", "فحوصات معملية لقوة الشد وثبات الألوان ضد الغسيل والاحتكاك"],
     deliverablesEn: ["Approved Lab-Dip Color Swatches", "Fabric Technical Spec Sheet (Weight, Width, Shrinkage)", "Bulk Fabric Mill Roll Delivery"],
@@ -1027,12 +1027,12 @@ export const garmentPortfolioTypes = [
     titleEn: "Ready Manufacturing Models",
     titleAr: "نماذج جاهزة للتصنيع الفوري",
     descEn: "Over 550 fully engineered, graded styles from our catalogue ready for immediate bulk production with custom branding.",
-    descAr: "أكثر من 550 تصميماً متكاملاً ومدرج المقاسات من الكتالوج، جاهز لبدء الإنتاج الفوري بهوية علامتك الخاصة."
+    descAr: "أكثر من 550 تصميمًا متكاملًا ومدرج المقاسات من الكتالوج، جاهز لبدء الإنتاج الفوري بهوية علامتك الخاصة."
   },
   {
     id: "previously-manufactured",
     titleEn: "Previously Manufactured Products",
-    titleAr: "منتجات تم تصنيعها وتوريدها سابقاً",
+    titleAr: "منتجات تم تصنيعها وتوريدها سابقًا",
     descEn: "Documented styles successfully produced and delivered to wholesale buyers and retail showroom networks.",
     descAr: "موديلات تم إنتاجها وتوريدها بنجاح لأسواق التوزيع وسلاسل التجزئة والمعارض التجارية."
   },
@@ -1041,7 +1041,7 @@ export const garmentPortfolioTypes = [
     titleEn: "Client Projects & Private Labels",
     titleAr: "مشروعات العملاء والعلامات التجارية الشريكة",
     descEn: "Custom contract collections manufactured exclusively for international and regional brand partners under strict NDA.",
-    descAr: "مجموعات أزياء صُنعت خصيصاً لعلامات تجارية شريكة في أوروبا والخليج وفق اتفاقيات سرية تامة."
+    descAr: "مجموعات أزياء صُنعت خصيصًا لعلامات تجارية شريكة في أوروبا والخليج وفق اتفاقيات سرية تامة."
   },
   {
     id: "development-samples",
@@ -1075,7 +1075,7 @@ export const garmentFactoryGallery: FactoryGalleryItem[] = [
     categoryAr: "قسم القص وتجهيز الأقمشة",
     image: "/BG/Apparel Manufacturing/Ready-Made Garment Manufacturing.jpg",
     descEn: "18-meter tension-free vacuum spreading tables paired with high-ply vertical cutting cutters.",
-    descAr: "طاولات فرد أوتوماتيكية بطول 18 متراً مزودة بنظام شفط هوائي لتثبيت طبقات القماش أثناء القص."
+    descAr: "طاولات فرد أوتوماتيكية بطول 18 مترًا مزودة بنظام شفط هوائي لتثبيت طبقات القماش أثناء القص."
   },
   {
     id: "gal-02",
@@ -1095,7 +1095,7 @@ export const garmentFactoryGallery: FactoryGalleryItem[] = [
     categoryAr: "خط القمصان الكلاسيك",
     image: "/BG/Apparel Manufacturing/FOB Manufacturing Programs.jpg",
     descEn: "Automatic collar profile stitchers, fusing presses, and precision buttonhole stations.",
-    descAr: "ماكينات متخصصة لصق وتشكيل الياقات والأساور بدقة ليزرية تضمن مظهراً رسمياً فخماً."
+    descAr: "ماكينات متخصصة لصق وتشكيل الياقات والأساور بدقة ليزرية تضمن مظهرًا رسميًا فخمًا."
   },
   {
     id: "gal-04",

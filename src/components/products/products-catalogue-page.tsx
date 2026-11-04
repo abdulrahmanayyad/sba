@@ -244,7 +244,7 @@ Generated: ${new Date().toLocaleDateString()}
   // Generate WhatsApp RFQ URL
   const getWhatsappUrl = (product: CatalogueProduct) => {
     const message = ar
-      ? `مرحباً مجموعة سامي بن عياد، أود الاستفسار وطلب عرض سعر للمنتج:\n- الاسم: ${product.nameAr}\n- الكود: ${product.code}\n- القطاع: ${product.categoryAr}`
+      ? `مرحبًا مجموعة سامي بن عياد، أود الاستفسار وطلب عرض سعر للمنتج:\n- الاسم: ${product.nameAr}\n- الكود: ${product.code}\n- القطاع: ${product.categoryAr}`
       : `Hello Sami Bin Ayyad Group, I would like to request an official quotation for:\n- Product: ${product.nameEn}\n- Code: ${product.code}\n- Sector: ${product.categoryEn}`;
     return `${WHATSAPP_URL}?text=${encodeURIComponent(message)}`;
   };
@@ -782,7 +782,7 @@ Generated: ${new Date().toLocaleDateString()}
                   </h4>
                   <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
                     {ar
-                      ? "شكراً لاهتمامكم. سيقوم فريق المبيعات والتعاقدات المختص بمراجعة مواصفاتكم والتواصل معكم عبر البريد أو الهاتف خلال 24 ساعة عمل."
+                      ? "شكرًا لاهتمامكم. سيقوم فريق المبيعات والتعاقدات المختص بمراجعة مواصفاتكم والتواصل معكم عبر البريد أو الهاتف خلال 24 ساعة عمل."
                       : "Thank you for reaching out. Our dedicated commercial team will review your specifications and contact you via email or phone within 24 business hours."}
                   </p>
                 </div>

@@ -211,7 +211,7 @@ export function ProjectVerificationModal({
       }
     } catch (err: unknown) {
       const e = err as Error;
-      setErrorMessage(e?.message || (ar ? "تعذر إرسال الطلب، يرجى المحاولة لاحقاً." : "Failed to submit request."));
+      setErrorMessage(e?.message || (ar ? "تعذر إرسال الطلب، يرجى المحاولة لاحقًا." : "Failed to submit request."));
     } finally {
       setIsSubmitting(false);
     }

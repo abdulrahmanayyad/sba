@@ -181,7 +181,7 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
           {/* Key Metrics Dashboard */}
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:gap-4 mb-8">
             <div className="rounded-2xl border border-white/20 bg-background/80 p-5 shadow-sm backdrop-blur-md text-center">
-              <div className="text-2xl sm:text-3xl font-black text-brand-orange">+45 {ar ? "عاماً" : "Years"}</div>
+              <div className="text-2xl sm:text-3xl font-black text-brand-orange">+45 {ar ? "عامًا" : "Years"}</div>
               <div className="mt-1 text-xs font-bold text-muted-foreground uppercase tracking-wider">
                 {ar ? "خبرة ممتدة منذ 1977" : "Heritage Since 1977"}
               </div>
@@ -190,7 +190,7 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
             <div className="rounded-2xl border border-white/20 bg-background/80 p-5 shadow-sm backdrop-blur-md text-center">
               <div className="text-2xl sm:text-3xl font-black text-brand-green">+57</div>
               <div className="mt-1 text-xs font-bold text-muted-foreground uppercase tracking-wider">
-                {ar ? "مشروعاً موثقاً بسجل الأعمال" : "Documented Projects"}
+                {ar ? "مشروعًا موثقًا بسجل الأعمال" : "Documented Projects"}
               </div>
             </div>
 
@@ -204,7 +204,7 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
             <div className="rounded-2xl border border-white/20 bg-background/80 p-5 shadow-sm backdrop-blur-md text-center">
               <div className="text-2xl sm:text-3xl font-black text-brand-green">12</div>
               <div className="mt-1 text-xs font-bold text-muted-foreground uppercase tracking-wider">
-                {ar ? "تخصصاً إنشائياً وهندسياً" : "Integrated Disciplines"}
+                {ar ? "تخصصًا إنشائيًا وهندسيًا" : "Integrated Disciplines"}
               </div>
             </div>
           </div>
@@ -322,7 +322,7 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
             <div>
               <SectionBadge title={ar ? "خدماتنا المتخصصة" : "Engineering Services"} />
               <h2 className="section-title mt-3">
-                {ar ? "12 تخصصاً إنشائياً وهندسياً متكاملاً" : "12 Core Engineering & Construction Disciplines"}
+                {ar ? "12 تخصصًا إنشائيًا وهندسيًا متكاملًا" : "12 Core Engineering & Construction Disciplines"}
               </h2>
             </div>
             <Button asChild variant="outline" size="sm" className="rounded-full">
@@ -532,7 +532,7 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
             </div>
             <Button asChild size="default" className="rounded-full bg-brand-green text-white hover:bg-brand-orange">
               <Link to="/sectors/$sector" params={{ sector: "construction" }} search={{ tab: "projects" }}>
-                <span>{ar ? "عرض كافة المشروعات (+57 مشروعاً)" : "View Full 57+ Portfolio"}</span>
+                <span>{ar ? "عرض كافة المشروعات (+57 مشروعًا)" : "View Full 57+ Portfolio"}</span>
                 <ArrowRight className="size-4 ms-2 rtl:rotate-180" />
               </Link>
             </Button>

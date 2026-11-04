@@ -94,7 +94,7 @@ export const investmentModels: InvestmentModel[] = [
       "Quarterly operational & financial reporting",
     ],
     highlightsAr: [
-      "كيان قانوني مستقل ومسجل رسمياً",
+      "كيان قانوني مستقل ومسجل رسميًا",
       "مشاركة الأصول الفنية والتكنولوجية",
       "توفير التراخيص والبنية التحتية والتشغيل الميداني من SBA",
       "تقارير تشغيلية ومالية دورية ربع سنوية",
@@ -207,7 +207,7 @@ export const investmentOpportunities: InvestmentOpportunity[] = [
     titleEn: "Healthcare Specialized MEP & Gas Infrastructure Development Division",
     titleAr: "ذراع المشروعات الطبية المتخصصة وشبكات الغاز الكهروميكانيكية",
     scopeEn: "Consolidating SBA's 45+ year track record into an independent high-spec engineering subsidiary for specialized healthcare cleanrooms, medical gases, and industrial civil contracts.",
-    scopeAr: "تحويل خبرة الـ 45 عاماً في المستشفيات وشبكات الغاز إلى كيان هندسي متخصص لمشروعات الرعاية الصحية والبنية التحتية الكبرى.",
+    scopeAr: "تحويل خبرة الـ 45 عامًا في المستشفيات وشبكات الغاز إلى كيان هندسي متخصص لمشروعات الرعاية الصحية والبنية التحتية الكبرى.",
     modelEn: "Strategic Alliance / Institutional Debt & Equity",
     modelAr: "تحالف استراتيجي / تمويل رأسمالي مشترك",
     marketDriversEn: "Egypt's Universal Health Insurance rollout, national hospital modernization programs, and high-margin specialized fit-out demands.",
@@ -229,7 +229,7 @@ export const investorDocuments: InvestorDocument[] = [
     fileSize: "4.8 MB",
     fileName: "SBA_Group_Corporate_Profile_2026.pdf",
     descEn: "Comprehensive corporate presentation covering 45+ years heritage, governance framework, board members, 4 core sectors, and international alliances.",
-    descAr: "عرض مؤسسي شامل يغطي تاريخ المجموعة الممتد لأكثر من 45 عاماً، هيكل الحوكمة، مجلس الإدارة، القطاعات الأربعة، والشراكات الدولية.",
+    descAr: "عرض مؤسسي شامل يغطي تاريخ المجموعة الممتد لأكثر من 45 عامًا، هيكل الحوكمة، مجلس الإدارة، القطاعات الأربعة، والشراكات الدولية.",
   },
   {
     id: "doc-investment-presentation",

@@ -622,7 +622,7 @@ function FoodAboutTab({
           <div className="mt-8 rounded-2xl border border-brand-orange/30 bg-brand-orange/5 p-4 text-center max-w-2xl mx-auto">
             <p className="text-xs text-muted-foreground">
               {ar
-                ? "تنويه مهني: تصدر جميع الشهادات الصحية وشهادات المنشأ والتحاليل المعملية رسمياً لكل شحنة من الهيئات الحكومية المعتمدة (الهيئة القومية لسلامة الغذاء، الحجر الزراعي، ومعامل ISO 17025)."
+                ? "تنويه مهني: تصدر جميع الشهادات الصحية وشهادات المنشأ والتحاليل المعملية رسميًا لكل شحنة من الهيئات الحكومية المعتمدة (الهيئة القومية لسلامة الغذاء، الحجر الزراعي، ومعامل ISO 17025)."
                 : "Professional Disclosure: All health certificates, certificates of origin, and lab assays are officially issued per shipment by accredited regulatory authorities (NFSA, Plant Quarantine, and ISO 17025 labs)."}
             </p>
           </div>
@@ -639,7 +639,7 @@ function FoodAboutTab({
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground">
               {ar
-                ? "نفصل بين الأسواق التي يتم التوريد إليها فعلياً والأسواق المستهدفة للتوسع، بالاستناد إلى مؤشرات التجارة لعام 2024."
+                ? "نفصل بين الأسواق التي يتم التوريد إليها فعليًا والأسواق المستهدفة للتوسع، بالاستناد إلى مؤشرات التجارة لعام 2024."
                 : "Clear separation between active operating export markets and expansion target destinations backed by 2024 trade indicators."}
             </p>
           </div>
@@ -951,7 +951,7 @@ function FoodAboutTab({
             <div className="relative z-10 max-w-3xl mx-auto">
               <SectionBadge title={ar ? "10. اطلب عرض توريد" : "10. Start Your Supply Order"} />
               <h2 className="font-head text-3xl sm:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight">
-                {ar ? "هل تبحث عن شريك توريد غذائي معتمد دولياً؟" : "Looking for an Accredited International Food Supply Partner?"}
+                {ar ? "هل تبحث عن شريك توريد غذائي معتمد دوليًا؟" : "Looking for an Accredited International Food Supply Partner?"}
               </h2>
               <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-8 max-w-2xl mx-auto">
                 {ar
@@ -1578,7 +1578,7 @@ function FoodOrderProductTab({
             <a
               href={`${WHATSAPP_URL}&text=${encodeURIComponent(
                 ar
-                  ? `مرحباً، أود متابعة طلب عرض الأسعار والتوريد رقم: ${quotationCode} لمنتج ${formData.productName || formData.category}`
+                  ? `مرحبًا، أود متابعة طلب عرض الأسعار والتوريد رقم: ${quotationCode} لمنتج ${formData.productName || formData.category}`
                   : `Hello, I would like to follow up on Food Sourcing RFQ Ref: ${quotationCode} for ${formData.productName || formData.category}`
               )}`}
               target="_blank"
@@ -1613,7 +1613,7 @@ function FoodOrderProductTab({
             </h2>
             <p className="text-xs sm:text-sm text-muted-foreground max-w-2xl mx-auto">
               {ar
-                ? "يرجى تعبئة المواصفات الفنية والكمية وميناء الوصول ليقوم فريقنا التجاري بتجهيز عرض سعر مفصل مشتملاً على التحاليل المخبرية والشهادات والمستندات."
+                ? "يرجى تعبئة المواصفات الفنية والكمية وميناء الوصول ليقوم فريقنا التجاري بتجهيز عرض سعر مفصل مشتملًا على التحاليل المخبرية والشهادات والمستندات."
                 : "Please fill in product specifications, target volumes, destination port, and incoterms to receive a comprehensive commercial & technical dossier."}
             </p>
           </div>

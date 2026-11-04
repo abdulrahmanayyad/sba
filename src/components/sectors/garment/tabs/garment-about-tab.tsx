@@ -68,7 +68,7 @@ export function GarmentAboutTab() {
           {/* Key Metrics Dashboard */}
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:gap-4 mb-8">
             <div className="rounded-2xl border border-white/20 bg-background/80 p-5 shadow-sm backdrop-blur-md text-center">
-              <div className="text-2xl sm:text-3xl font-black text-brand-orange">+40 {ar ? "عاماً" : "Years"}</div>
+              <div className="text-2xl sm:text-3xl font-black text-brand-orange">+40 {ar ? "عامًا" : "Years"}</div>
               <div className="mt-1 text-xs font-bold text-muted-foreground uppercase tracking-wider">
                 {ar ? "خبرة تصنيعية ممتدة" : "Industrial Heritage"}
               </div>
@@ -84,7 +84,7 @@ export function GarmentAboutTab() {
             <div className="rounded-2xl border border-white/20 bg-background/80 p-5 shadow-sm backdrop-blur-md text-center">
               <div className="text-2xl sm:text-3xl font-black text-brand-orange">100K+</div>
               <div className="mt-1 text-xs font-bold text-muted-foreground uppercase tracking-wider">
-                {ar ? "قطعة شهرياً طاقة فعلية" : "Actual Monthly Output"}
+                {ar ? "قطعة شهريًا طاقة فعلية" : "Actual Monthly Output"}
               </div>
             </div>
 
@@ -381,7 +381,7 @@ export function GarmentAboutTab() {
                 </h2>
                 <p className="text-sm leading-relaxed text-muted-foreground">
                   {ar
-                    ? "نطبق فحصاً مرحلياً بنظام النقاط الأربعة على الأقمشة، ومتابعة دقيقة لحدود السماح بالخياطة، وفحصاً شاملاً قبل التعبئة، مع تمرير كافة القطع على أجهزة الكشف عن الإبر والمعادن لضمان سلامة المستهلك والامتثال للأسواق الأوروبية والأمريكية."
+                    ? "نطبق فحصًا مرحليًا بنظام النقاط الأربعة على الأقمشة، ومتابعة دقيقة لحدود السماح بالخياطة، وفحصًا شاملًا قبل التعبئة، مع تمرير كافة القطع على أجهزة الكشف عن الإبر والمعادن لضمان سلامة المستهلك والامتثال للأسواق الأوروبية والأمريكية."
                     : "Continuous multi-gate quality auditing from raw fabric roll testing to in-line sewing checks, steam finishing inspection, and 100% metal/needle detection ensuring international consumer safety."}
                 </p>
                 <div className="grid grid-cols-2 gap-3 pt-2">

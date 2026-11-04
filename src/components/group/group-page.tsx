@@ -34,7 +34,7 @@ export function GroupPage() {
           <div>
             <div data-hero-reveal className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/40 px-3.5 py-1 text-xs font-bold tracking-wide text-white backdrop-blur-md">
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-              <span>{ar ? "مجموعة سامي بن عياد" : "SAMI BIN AYYAD GROUP"}</span>
+              <span className="font-bold text-brand-orange">{ar ? "مجموعة سامي بن عياد" : "SAMI BIN AYYAD GROUP"}</span>
             </div>
             <h1 data-hero-reveal className="mt-4 max-w-4xl font-head text-[clamp(1.85rem,3.5vw,3rem)] font-extrabold leading-tight text-white drop-shadow-md">
               {ar ? messages.hero.titleAr : messages.hero.title}
@@ -45,16 +45,6 @@ export function GroupPage() {
                 <Link to="/about">
                   {ar ? "استكشف مجموعتنا" : "Explore Our Group"} <ArrowRight className="size-4 rtl:rotate-180" />
                 </Link>
-              </Button>
-              <Button asChild size="lg" className="rounded-full !bg-white/15 border border-white/40 backdrop-blur-md !text-white px-6 sm:px-7 py-3 font-head text-xs sm:text-sm font-bold shadow-lg transition-all duration-300 hover:!bg-brand-orange hover:!border-brand-orange hover:scale-105 active:scale-95 cursor-pointer">
-                <a href="#divisions">
-                  {ar ? "استكشف قطاعاتنا" : "Explore Our Sectors"}
-                </a>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="rounded-full border-white/40 bg-black/40 backdrop-blur-md text-white px-6 sm:px-7 py-3 font-head text-xs sm:text-sm font-bold transition-all duration-300 hover:bg-white hover:text-black hover:scale-105 active:scale-95 cursor-pointer">
-                <a href="#contact">
-                  {ar ? "استفسارات الأعمال" : "Business Inquiries"}
-                </a>
               </Button>
             </div>
           </div>
@@ -67,14 +57,14 @@ export function GroupPage() {
           <div className="group relative mx-auto max-w-4xl overflow-hidden rounded-3xl border border-white/20 bg-background/75 p-8 sm:p-12 shadow-[0_12px_40px_rgba(0,0,0,0.08)] backdrop-blur-2xl transition-all duration-300 hover:scale-[1.01] hover:shadow-[0_20px_60px_rgba(0,0,0,0.12)] hover:border-brand-orange/40 text-center">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-              <span className="font-bold text-brand-green">{ar ? "مجموعة سامي بن عياد" : "SAMI BIN AYYAD GROUP"}</span>
+              <span className="font-bold text-brand-orange">{ar ? "مجموعة سامي بن عياد" : "SAMI BIN AYYAD GROUP"}</span>
             </div>
-            <h2 className="section-title mt-2">{ar ? "نقود التقدم عبر الصناعات" : "Driving Progress Across Industries"}</h2>
+            <h2 className="section-title mt-2">{ar ? "نقود التقدم عبر القطاعات" : "Driving Progress Across Sectors"}</h2>
             <div className="section-intro mx-auto mt-6 leading-relaxed max-w-3xl space-y-3">
               {ar ? (
                 <>
                   <p className="leading-relaxed">
-                    نطوّر أعمالًا رائدة في <span className="text-brand-orange font-bold">المقاولات والتطوير العقاري</span>، والبيئة والاستدامة، وتصنيع الملابس وتطوير الأزياء، والمنتجات الطبيعية والغذائية. يجمع عملنا بين الفهم العميق لمتطلبات العملاء وبناء شراكات تجارية موثوقة تستند إلى أعلى معايير الجودة والشفافية.
+                    نطوّر أعمالًا رائدة في <span className="text-foreground font-bold">المقاولات والتطوير العقاري</span>، والبيئة والاستدامة، وتصنيع الملابس وتطوير الأزياء، والمنتجات الطبيعية والغذائية. يجمع عملنا بين الفهم العميق لمتطلبات العملاء وبناء شراكات تجارية موثوقة تستند إلى أعلى معايير الجودة والشفافية.
                   </p>
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     تستند المجموعة إلى خبرات مؤسسية وتنفيذية عريقة تمتد جذورها منذ عام <span className="font-bold text-foreground">1977</span> في قطاع الإنشاءات والمقاولات، وتوجت بتأسيس الكيان المؤسسي الموحد للمجموعة عام <span className="font-bold text-foreground">2023</span> لتكامل القدرات الصناعية والاستثمارية عبر 4 قطاعات رئيسية.
@@ -83,7 +73,7 @@ export function GroupPage() {
               ) : (
                 <>
                   <p className="leading-relaxed">
-                    Our operations span four integrated sectors: <span className="text-brand-orange font-bold">contracting and real estate development</span>, environment and sustainability, apparel manufacturing and fashion development, and natural agri-food products. We focus on delivering value, disciplined execution, and long-term corporate partnerships.
+                    Our operations span four integrated sectors: <span className="text-foreground font-bold">contracting and real estate development</span>, environment and sustainability, apparel manufacturing and fashion development, and natural agri-food products. We focus on delivering value, disciplined execution, and long-term corporate partnerships.
                   </p>
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     The Group builds upon foundational commercial and contracting experience dating back to <span className="font-bold text-foreground">1977</span>, formally unified into its institutional corporate structure in <span className="font-bold text-foreground">2023</span> to drive multidisciplinary growth across global markets.
@@ -262,7 +252,7 @@ export function GroupPage() {
                   : "Verified global alliances driving technological innovation and expanding our operational capabilities."}
               </p>
             </div>
-            <Button asChild variant="outline" className="rounded-full border-border bg-background/80 px-5 py-2 text-xs font-bold transition-all hover:bg-brand-orange hover:text-white hover:border-brand-orange shrink-0 cursor-pointer">
+            <Button asChild size="default" className="rounded-full !bg-brand-green !text-white px-5 py-2 text-xs font-bold shadow-md transition-all duration-300 hover:!bg-brand-orange hover:scale-105 active:scale-95 shrink-0 cursor-pointer">
               <Link to="/partners">
                 {ar ? "عرض كافة الشركاء" : "View All Partners"} <ArrowRight className="size-3.5 rtl:rotate-180" />
               </Link>
@@ -318,7 +308,7 @@ export function GroupPage() {
                   : "Stay updated with institutional announcements, sector achievements, and market insights."}
               </p>
             </div>
-            <Button asChild variant="outline" className="rounded-full border-border bg-background/80 px-5 py-2 text-xs font-bold transition-all hover:bg-brand-orange hover:text-white hover:border-brand-orange shrink-0 cursor-pointer">
+            <Button asChild size="default" className="rounded-full !bg-brand-green !text-white px-5 py-2 text-xs font-bold shadow-md transition-all duration-300 hover:!bg-brand-orange hover:scale-105 active:scale-95 shrink-0 cursor-pointer">
               <Link to="/news">
                 {ar ? "كافة الأخبار والتقارير" : "All News & Reports"} <ArrowRight className="size-3.5 rtl:rotate-180" />
               </Link>
@@ -372,11 +362,11 @@ export function GroupPage() {
       {/* Investment & Strategic Opportunities Section */}
       <section className="site-container py-12 scroll-mt-24">
         <Reveal>
-          <div className="relative overflow-hidden rounded-3xl border border-white/25 bg-gradient-to-br from-brand-green/10 via-background/90 to-brand-orange/10 p-8 sm:p-12 shadow-xl backdrop-blur-2xl">
+          <div className="group relative overflow-hidden rounded-3xl border border-white/30 bg-background/70 p-8 sm:p-12 shadow-xl backdrop-blur-2xl transition-all duration-300 hover:scale-[1.01] hover:border-brand-orange/50 hover:shadow-2xl">
             <div className="grid gap-6 lg:grid-cols-12 items-center">
               <div className="lg:col-span-8">
                 <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
-                  <TrendingUp className="size-3.5 text-brand-orange" />
+                  <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
                   <span>{ar ? "الاستثمار والشراكات الاستراتيجية" : "Investment & Strategic Alliances"}</span>
                 </div>
                 <h2 className="font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold text-foreground leading-tight">
@@ -417,7 +407,7 @@ export function GroupPage() {
                 <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
                 <span>{ar ? "تواصل وشراكات الأعمال" : "Business & Partnership Connect"}</span>
               </div>
-              <h2 className="section-title mt-2 text-foreground">{ar ? "لنبنِ شراكات الغد اليوم" : "Let's Build What's Next"}</h2>
+              <h2 className="section-title mt-2 text-foreground">{ar ? "نبني شراكات الغد اليوم" : "Let's Build What's Next"}</h2>
               <p className="section-intro mt-4 text-muted-foreground">{ar ? "استكشف فرص التعاون المتكاملة مع مجموعة سامي بن عياد عبر التصنيع، الإنشاءات، والحلول البيئية والمنتجات التصديرية." : "Explore multidisciplinary collaboration opportunities with SAMI BIN AYYAD GROUP across manufacturing, construction, environmental solutions, and global trade."}</p>
               
               {/* Quick Action Pills */}
@@ -429,7 +419,7 @@ export function GroupPage() {
                 </Button>
                 <Button asChild size="sm" variant="outline" className="rounded-full border-border bg-secondary/80 text-xs font-bold hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-colors cursor-pointer">
                   <Link to="/partners">
-                    {ar ? "كن شريكاً" : "Become a Partner"}
+                    {ar ? "كن شريكًا" : "Become a Partner"}
                   </Link>
                 </Button>
                 <Button asChild size="sm" variant="outline" className="rounded-full border-border bg-secondary/80 text-xs font-bold hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-colors cursor-pointer">

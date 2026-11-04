@@ -353,7 +353,7 @@ export const sectorOverviews: SectorOverview[] = [
         titleEn: "Dedicated Classic Shirt Lines",
         titleAr: "خطوط القمصان الكلاسيكية التخصصية",
         descEn: "Specialized lines producing 30,000 classic formal shirts per month for prominent brands.",
-        descAr: "خط إنتاج متخصص لقمصان الرجال الكلاسيكية بطاقة 30,000 قميص شهرياً بجودة أوروبية.",
+        descAr: "خط إنتاج متخصص لقمصان الرجال الكلاسيكية بطاقة 30,000 قميص شهريًا بجودة أوروبية.",
       },
       {
         titleEn: "Private Label & FOB Export Programs",
@@ -361,13 +361,6 @@ export const sectorOverviews: SectorOverview[] = [
         descEn: "End-to-end manufacturing from patterns, trims, and packaging to international shipping.",
         descAr: "تصنيع متكامل للعلامات التجارية العالمية من مرحلة الباترون حتى التعبئة والشحن الدولي.",
       },
-    ],
-    figures: [
-      { value: "+5,000", label: "Garments per day", labelAr: "قطعة ملابس يوميًا" },
-      { value: "+100,000", label: "Garments per month", labelAr: "قطعة ملابس شهريًا" },
-      { value: "+15", label: "Production lines", labelAr: "خط إنتاج" },
-      { value: "+250", label: "Specialized machines", labelAr: "ماكينة متخصصة" },
-      { value: "+20,000", label: "Styles developed", labelAr: "موديل تم تطويره" },
     ],
     cta: "Explore Manufacturing",
     ctaAr: "استكشف التصنيع",
@@ -406,7 +399,7 @@ export const sectorOverviews: SectorOverview[] = [
         titleEn: "Herbs, Spices & Natural Juice Powders",
         titleAr: "الأعشاب والتوابل وعصائر البودر الطبيعية",
         descEn: "Aromatic herbs, culinary spices, and 100% natural powdered beverages.",
-        descAr: "أعشاب عطرية وتوابل منتقاة وعصائر بودر طبيعية خالية تماماً من الملونات الصناعية.",
+        descAr: "أعشاب عطرية وتوابل منتقاة وعصائر بودر طبيعية خالية تمامًا من الملونات الصناعية.",
       },
     ],
     chips: [

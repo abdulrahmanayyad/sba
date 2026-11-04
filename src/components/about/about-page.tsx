@@ -103,7 +103,7 @@ export function AboutPage() {
               {/* Company Profile Download CTA */}
               <div className="mt-8 flex flex-wrap items-center gap-3 pt-6 border-t border-border/60">
                 <Button asChild size="default" className="rounded-full !bg-brand-green !text-white text-xs sm:text-sm font-bold shadow-md hover:!bg-brand-orange transition-all duration-300 cursor-pointer">
-                  <a href="/public/sitemap.xml" download="SBA-Corporate-Profile.pdf" onClick={(e) => { e.preventDefault(); window.print(); }}>
+                  <a href="/SBA-Corporate-Profile.pdf" download="SBA-Corporate-Profile.pdf" target="_blank" rel="noopener noreferrer">
                     <Download className="size-4" />
                     <span>{ar ? "تحميل الملف التعريفي للمجموعة (PDF)" : "Download Company Profile"}</span>
                   </a>
@@ -178,7 +178,7 @@ export function AboutPage() {
             </h2>
             <p className="section-intro mx-auto mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
               {ar
-                ? "تعتمد مجموعة سامي بن عياد نموذجاً مؤسسياً موحداً يجمع بين حوكمة الشركة القابضة المركزية والكيانات التشغيلية المتخصصة عبر أربعة قطاعات أعمال استراتيجية لضمان كفاءة الإدارة وجودة الالتزامات."
+                ? "تعتمد مجموعة سامي بن عياد نموذجًا مؤسسيًا موحدًا يجمع بين حوكمة الشركة القابضة المركزية والكيانات التشغيلية المتخصصة عبر أربعة قطاعات أعمال استراتيجية لضمان كفاءة الإدارة وجودة الالتزامات."
                 : "Sami Bin Ayyad Group operates a cohesive corporate model integrating centralized corporate governance with specialized operating subsidiaries across four strategic sectors."}
             </p>
           </Reveal>
@@ -186,12 +186,12 @@ export function AboutPage() {
           {/* Interactive Corporate Structure Diagram */}
           <Reveal delay={0.15}>
             <div className="mt-12 max-w-5xl mx-auto">
-              {/* Parent Holding Node */}
-              <div className="mx-auto max-w-md rounded-3xl border-2 border-brand-green/60 bg-gradient-to-br from-brand-green/15 via-background to-brand-orange/10 p-6 text-center shadow-xl backdrop-blur-2xl">
-                <span className="font-mono text-[11px] font-extrabold uppercase tracking-widest text-brand-orange">
+              {/* Parent Holding Node — Glassmorphic & Interactive */}
+              <div className="group relative mx-auto max-w-md rounded-3xl border border-white/30 bg-background/65 p-7 text-center shadow-2xl backdrop-blur-2xl transition-all duration-300 hover:scale-[1.02] hover:border-brand-orange hover:bg-background/85 hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] ring-1 ring-white/20 cursor-pointer">
+                <span className={cn("text-[11px] font-extrabold uppercase tracking-widest text-brand-orange", ar ? "font-head text-xs tracking-normal" : "font-mono")}>
                   {ar ? "الكيان المؤسسي الموحد (الشركة الأم)" : "Unified Parent Holding Entity"}
                 </span>
-                <h3 className="font-head text-xl sm:text-2xl font-black text-foreground mt-1">
+                <h3 className="font-head text-xl sm:text-2xl font-black text-brand-orange mt-1">
                   {ar ? "مجموعة سامي بن عياد" : "SAMI BIN AYYAD GROUP"}
                 </h3>
                 <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
@@ -201,7 +201,7 @@ export function AboutPage() {
                 </p>
                 <div className="mt-3 flex items-center justify-center gap-2 text-[11px] font-bold text-brand-green">
                   <BadgeCheck className="size-4" />
-                  <span>{ar ? "تأسست رسمياً 2023 · جذور الخبرة منذ 1977" : "Formally Unified 2023 · Heritage Roots 1977"}</span>
+                  <span>{ar ? "تأسست رسميًا 2023 · جذور الخبرة منذ 1977" : "Formally Unified 2023 · Heritage Roots 1977"}</span>
                 </div>
               </div>
 
@@ -257,7 +257,7 @@ export function AboutPage() {
                     statusEn: "Global Sourcing & Export",
                     rootsAr: "مصادر مصرية أصيلة موثقة",
                     rootsEn: "Certified Authentic Origins",
-                    descAr: "عسل طبيعي، زيتون، زيت زيتون بكر، تمور فاخرة، وأعشاب وتوابل موثقة معملياً.",
+                    descAr: "عسل طبيعي، زيتون، زيت زيتون بكر، تمور فاخرة، وأعشاب وتوابل موثقة معمليًا.",
                     descEn: "Natural honey, table olives, extra virgin olive oil, premium dates, and certified herbs.",
                     link: "/sectors/food",
                   },
