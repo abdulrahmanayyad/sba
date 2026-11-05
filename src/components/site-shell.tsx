@@ -231,6 +231,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
   const isSectorsActive = pathname.startsWith("/sectors");
   const isProductsActive = pathname === "/products" || pathname === "/models";
   const isNewsActive = pathname === "/news";
+  const isInvestorActive = pathname === "/investor-relations";
   const isContactActive = pathname.startsWith("/contact") || pathname === "/complaints" || pathname === "/submit-opportunity";
 
   const primaryLinks = (className: string, onNavigate?: () => void) => (
@@ -274,7 +275,14 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
         className={cn(className, "whitespace-nowrap", pathname === "/trade" && navPillActive)}
         onClick={onNavigate}
       >
-        {isArabic ? "التجارة الدولية" : "Global Trade"}
+        {isArabic ? "الفرص العالمية" : "Global Opportunities"}
+      </Link>
+      <Link
+        to="/investor-relations"
+        className={cn(className, "whitespace-nowrap", isInvestorActive && navPillActive)}
+        onClick={onNavigate}
+      >
+        {isArabic ? "الشراكات والاستثمار" : "Investment & Partnerships"}
       </Link>
       <Link
         to="/partners"
@@ -295,7 +303,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
         className={cn(className, "whitespace-nowrap", pathname === "/downloads" && navPillActive)}
         onClick={onNavigate}
       >
-        {isArabic ? "التحميلات" : "Downloads"}
+        {isArabic ? "مركز الوثائق" : "Document Center"}
       </Link>
       <NavDropdown
         label={isArabic ? "تواصل معنا" : "Contact Us"}

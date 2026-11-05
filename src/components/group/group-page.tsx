@@ -33,9 +33,9 @@ export function GroupPage() {
         <div className="group-hero-overlay absolute inset-0 bg-black/60 backdrop-blur-[1px]" />
         <div className="site-container relative flex min-h-[inherit] flex-col justify-center py-14 sm:py-20 z-10">
           <div>
-            <div data-hero-reveal className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/95 px-3.5 py-1 text-xs font-bold tracking-wide backdrop-blur-md shadow-sm">
+            <div data-hero-reveal className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-sm">
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-              <span className="font-bold !text-black">{ar ? "مجموعة سامي بن عياد" : "SAMI BIN AYYAD GROUP"}</span>
+              <span className="font-bold text-brand-green">{ar ? "مجموعة سامي بن عياد" : "SAMI BIN AYYAD GROUP"}</span>
             </div>
             <h1 data-hero-reveal className="mt-4 max-w-4xl font-head text-[clamp(1.85rem,3.5vw,3rem)] font-extrabold leading-tight text-white drop-shadow-md">
               {ar ? messages.hero.titleAr : messages.hero.title}
@@ -56,16 +56,16 @@ export function GroupPage() {
       <section className="site-container section-band">
         <Reveal>
           <div className="group relative mx-auto max-w-4xl overflow-hidden rounded-3xl border border-white/20 bg-background/75 p-8 sm:p-12 shadow-[0_12px_40px_rgba(0,0,0,0.08)] backdrop-blur-2xl transition-all duration-300 hover:scale-[1.01] hover:shadow-[0_20px_60px_rgba(0,0,0,0.12)] hover:border-brand-orange/40 text-center">
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-white/95 px-3.5 py-1 text-xs font-bold tracking-wide backdrop-blur-md shadow-sm">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-sm">
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-              <span className="font-bold !text-black font-head">{ar ? "مجموعة سامي بن عياد" : "SAMI BIN AYYAD GROUP"}</span>
+              <span className="font-bold text-brand-green font-head">{ar ? "مجموعة سامي بن عياد" : "SAMI BIN AYYAD GROUP"}</span>
             </div>
             <h2 className="section-title mt-2 text-center mx-auto">{ar ? "نقود التقدم عبر القطاعات" : "Driving Progress Across Sectors"}</h2>
             <div className="section-intro mx-auto mt-6 leading-relaxed max-w-3xl space-y-3 text-start">
               {ar ? (
                 <>
                   <p className="leading-relaxed text-start">
-                    نطوّر أعمالًا رائدة في <span className="text-foreground font-bold">المقاولات والتطوير العقاري</span>، والبيئة والاستدامة، وتصنيع الملابس وتطوير الأزياء، والمنتجات الطبيعية والغذائية. يجمع عملنا بين الفهم العميق لمتطلبات العملاء وبناء شراكات تجارية موثوقة تستند إلى أعلى معايير الجودة والشفافية.
+                    نطوّر أعمالًا رائدة في المقاولات والتطوير العقاري، والبيئة والاستدامة، وتصنيع الملابس وتطوير الأزياء، والمنتجات الطبيعية والغذائية. يجمع عملنا بين الفهم العميق لمتطلبات العملاء وبناء شراكات تجارية موثوقة تستند إلى أعلى معايير الجودة والشفافية.
                   </p>
                   <p className="text-sm text-muted-foreground leading-relaxed text-start">
                     تستند المجموعة إلى خبرات مؤسسية وتنفيذية عريقة تمتد جذورها منذ عام <span className="font-bold text-foreground">1977</span> في قطاع الإنشاءات والمقاولات، وتوجت بتأسيس الكيان المؤسسي الموحد للمجموعة عام <span className="font-bold text-foreground">2023</span> لتكامل القدرات الصناعية والاستثمارية عبر 4 قطاعات رئيسية.
@@ -74,7 +74,7 @@ export function GroupPage() {
               ) : (
                 <>
                   <p className="leading-relaxed text-start">
-                    Our operations span four integrated sectors: <span className="text-foreground font-bold">contracting and real estate development</span>, environment and sustainability, apparel manufacturing and fashion development, and natural agri-food products. We focus on delivering value, disciplined execution, and long-term corporate partnerships.
+                    Our operations span four integrated sectors: contracting and real estate development, environment and sustainability, apparel manufacturing and fashion development, and natural agri-food products. We focus on delivering value, disciplined execution, and long-term corporate partnerships.
                   </p>
                   <p className="text-sm text-muted-foreground leading-relaxed text-start">
                     The Group builds upon foundational commercial and contracting experience dating back to <span className="font-bold text-foreground">1977</span>, formally unified into its institutional corporate structure in <span className="font-bold text-foreground">2023</span> to drive multidisciplinary growth across global markets.
