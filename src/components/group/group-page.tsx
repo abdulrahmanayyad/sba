@@ -42,8 +42,13 @@ export function GroupPage() {
             <p data-hero-reveal className="mt-3 max-w-3xl text-base sm:text-lg font-bold leading-relaxed text-brand-orange">{messages.hero.lead}</p>
             <div data-hero-reveal className="mt-6 flex flex-wrap items-center gap-3">
               <Button asChild size="lg" className="rounded-full !bg-brand-green !text-white px-6 sm:px-7 py-3 font-head text-xs sm:text-sm font-bold shadow-lg transition-all duration-300 hover:!bg-brand-orange hover:scale-105 active:scale-95 cursor-pointer">
-                <Link to="/about">
-                  {ar ? "استكشف مجموعتنا" : "Explore Our Group"} <ArrowRight className="size-4 rtl:rotate-180" />
+                <a href="#divisions">
+                  {ar ? "استكشف قطاعاتنا" : "Explore Our Business Sectors"} <ArrowRight className="size-4 rtl:rotate-180" />
+                </a>
+              </Button>
+              <Button asChild size="lg" className="rounded-full !bg-brand-green !text-white px-6 sm:px-7 py-3 font-head text-xs sm:text-sm font-bold shadow-lg transition-all duration-300 hover:!bg-brand-orange hover:scale-105 active:scale-95 cursor-pointer">
+                <Link to="/join">
+                  {ar ? "فرص التعاون والأعمال" : "Discuss a Business Opportunity"}
                 </Link>
               </Button>
             </div>

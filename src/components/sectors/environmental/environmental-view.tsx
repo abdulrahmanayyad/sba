@@ -720,10 +720,12 @@ function EnvironmentalServicesView({ ar }: { ar: boolean }) {
 
   const categories = [
     { id: "all", titleEn: "All Services (19)", titleAr: "كافة الخدمات (19)" },
-    { id: "assessment", titleEn: "Studies & Assessments", titleAr: "الدراسات وتقييم الأثر" },
-    { id: "waste-energy", titleEn: "Waste & Renewable Energy", titleAr: "إدارة المخلفات والطاقة" },
-    { id: "digital-qhse", titleEn: "QHSE & Digital Software", titleAr: "الجودة والسلامة والبرمجيات" },
-    { id: "bio-rd", titleEn: "Biotechnology & R&D", titleAr: "التكنولوجيا الحيوية والبحوث" },
+    { id: "consultancy-compliance", titleEn: "1. Consultancy & Compliance", titleAr: "١. الاستشارات والتوافق البيئي" },
+    { id: "waste-circular", titleEn: "2. Waste & Circular Economy", titleAr: "٢. إدارة المخلفات والاقتصاد الدائري" },
+    { id: "renewable-wte", titleEn: "3. Renewable Energy & WtE", titleAr: "٣. الطاقة المتجددة وتحويل المخلفات" },
+    { id: "water-wastewater", titleEn: "4. Water & Wastewater", titleAr: "٤. معالجة المياه والصرف والبيولوجيا" },
+    { id: "carbon-sustainability", titleEn: "5. Carbon & Sustainability", titleAr: "٥. الكربون والاستدامة وCBAM" },
+    { id: "tech-digital", titleEn: "6. Technology & Digital Solutions", titleAr: "٦. الحلول التكنولوجية والبرمجيات" },
   ];
 
   const filteredServices = useMemo(() => {

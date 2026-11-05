@@ -198,8 +198,32 @@ function GarmentStartProjectView() {
   const up = (k: string, v: unknown) => setForm((p) => ({ ...p, [k]: v }));
 
   const categories = ar
-    ? ["ملابس حريمي", "ملابس رجالي", "ملابس أطفال", "ملابس رياضية", "ملابس داخلية ومنزلية", "تيشيرتات وبولو", "ليجن واسترتش", "جواكت ومعاطف", "قمصان كلاسيكية", "كاجوال", "مجموعات موسمية"]
-    : ["Women's Wear", "Men's Wear", "Kidswear", "Sportswear", "Underwear & Loungewear", "T-Shirts & Polos", "Leggings & Tights", "Jackets & Outerwear", "Classic Shirts", "Casual Wear", "Seasonal Collections"];
+    ? [
+        "ملابس حريمي ونسائية (Women's Wear)",
+        "ملابس رجالية (Men's Wear)",
+        "أزياء الأطفال والمواليد (Kids & Baby Wear)",
+        "ملابس كاجوال يومية (Casual Wear)",
+        "ملابس منزلية وبيجامات (Homewear & Loungewear)",
+        "ملابس رسمية وقمصان كلاسيك (Classic & Formal Wear)",
+        "ملابس رياضية وأقمشة أداء (Sportswear & Activewear)",
+        "ملابس داخلية قطنية (Underwear & Intimates)",
+        "أزياء سهرة ومناسبات (Evening & Occasion Wear)",
+        "عبايات وأزياء محتشمة (Abayas & Modest Wear)",
+        "توريد أقمشة وحلول نسيجية (Fabrics & Textile Sourcing)"
+      ]
+    : [
+        "Women's Wear",
+        "Men's Wear",
+        "Kids & Baby Wear",
+        "Casual Wear",
+        "Homewear & Loungewear",
+        "Classic Wear (Formal & Business)",
+        "Sportswear & Activewear",
+        "Underwear & Intimates",
+        "Evening & Occasion Wear",
+        "Abayas & Modest Wear",
+        "Fabrics & Textile Sourcing"
+      ];
 
   const fabricTypes = ar
     ? ["قطن مصري 100% (Single Jersey)", "قطن ليكرا (Cotton Spandex)", "بيكيه (Pique)", "إنترلوك (Interlock)", "ريب (Rib)", "ميلتون (French Terry)", "تويل (Twill Woven)", "بوبلين (Poplin Woven)", "أكسفورد (Oxford Woven)", "بوليستر رياضي (Dry-Fit)", "كتان مخلوط (Linen Blend)"]
