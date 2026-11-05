@@ -58,6 +58,7 @@ import {
 } from "@/lib/crm-system";
 import { NewsCmsTab } from "./news-cms-tab";
 import { TradeCmsTab } from "./trade-cms-tab";
+import { ContactPortalCmsTab } from "./contact-portal-cms-tab";
 
 export function CrmDashboard() {
   const { language } = useLanguage();
@@ -69,7 +70,7 @@ export function CrmDashboard() {
   const [pinError, setPinError] = useState(false);
 
   // Navigation View Tab
-  const [adminTab, setAdminTab] = useState<"inquiries" | "news" | "trade">("inquiries");
+  const [adminTab, setAdminTab] = useState<"contact_portal" | "inquiries" | "news" | "trade">("contact_portal");
 
   // Data & Filters
   const [inquiries, setInquiries] = useState<CrmInquiry[]>([]);
@@ -258,26 +259,38 @@ export function CrmDashboard() {
 
               <div className="flex flex-wrap items-center gap-2">
                 {/* Admin Mode Switcher */}
-                <div className="flex items-center rounded-full bg-secondary/80 p-1 border border-border me-2">
+                <div className="flex flex-wrap items-center rounded-2xl bg-secondary/80 p-1 border border-border me-2 gap-1">
                   <button
                     type="button"
-                    onClick={() => setAdminTab("inquiries")}
+                    onClick={() => setAdminTab("contact_portal")}
                     className={cn(
-                      "rounded-full px-3.5 py-1 text-xs font-bold transition-all cursor-pointer",
-                      adminTab === "inquiries"
+                      "rounded-xl px-3.5 py-1 text-xs font-bold transition-all cursor-pointer",
+                      adminTab === "contact_portal"
                         ? "!bg-brand-green !text-white shadow-sm"
                         : "text-muted-foreground hover:text-foreground"
                     )}
                   >
-                    {ar ? "طلبات الأعمال والـ CRM" : "Inquiries & CRM"}
+                    {ar ? "منظومة الاتصال والفرص والشكاوى" : "Contact & Opportunity Portal"}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setAdminTab("inquiries")}
+                    className={cn(
+                      "rounded-xl px-3.5 py-1 text-xs font-bold transition-all cursor-pointer",
+                      adminTab === "inquiries"
+                        ? "!bg-brand-orange !text-white shadow-sm"
+                        : "text-muted-foreground hover:text-foreground"
+                    )}
+                  >
+                    {ar ? "طلبات القطاعات السابقة" : "Legacy Sector Requests"}
                   </button>
                   <button
                     type="button"
                     onClick={() => setAdminTab("news")}
                     className={cn(
-                      "rounded-full px-3.5 py-1 text-xs font-bold transition-all cursor-pointer",
+                      "rounded-xl px-3.5 py-1 text-xs font-bold transition-all cursor-pointer",
                       adminTab === "news"
-                        ? "!bg-brand-orange !text-white shadow-sm"
+                        ? "!bg-amber-600 !text-white shadow-sm"
                         : "text-muted-foreground hover:text-foreground"
                     )}
                   >
@@ -287,7 +300,7 @@ export function CrmDashboard() {
                     type="button"
                     onClick={() => setAdminTab("trade")}
                     className={cn(
-                      "rounded-full px-3.5 py-1 text-xs font-bold transition-all cursor-pointer",
+                      "rounded-xl px-3.5 py-1 text-xs font-bold transition-all cursor-pointer",
                       adminTab === "trade"
                         ? "!bg-emerald-600 !text-white shadow-sm"
                         : "text-muted-foreground hover:text-foreground"
@@ -322,6 +335,12 @@ export function CrmDashboard() {
             {adminTab === "trade" && (
               <div className="mt-8">
                 <TradeCmsTab />
+              </div>
+            )}
+
+            {adminTab === "contact_portal" && (
+              <div className="mt-8">
+                <ContactPortalCmsTab ar={ar} />
               </div>
             )}
 

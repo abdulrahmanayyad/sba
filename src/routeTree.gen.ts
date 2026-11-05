@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as ApparelRouteImport } from './routes/apparel'
 import { Route as BrandsRouteImport } from './routes/brands'
+import { Route as ComplaintsRouteImport } from './routes/complaints'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DownloadsRouteImport } from './routes/downloads'
 import { Route as HowWeManufactureRouteImport } from './routes/how-we-manufacture'
@@ -23,8 +24,12 @@ import { Route as NewsRouteImport } from './routes/news'
 import { Route as PartnersRouteImport } from './routes/partners'
 import { Route as ProductsRouteImport } from './routes/products'
 import { Route as SectorsRouteImport } from './routes/sectors'
+import { Route as SubmitOpportunityRouteImport } from './routes/submit-opportunity'
 import { Route as TradeRouteImport } from './routes/trade'
 import { Route as AdminInquiriesRouteImport } from './routes/admin.inquiries'
+import { Route as ContactIndexRouteImport } from './routes/contact.index'
+import { Route as ContactComplaintsRouteImport } from './routes/contact.complaints'
+import { Route as ContactOpportunitiesRouteImport } from './routes/contact.opportunities'
 import { Route as JoinIndexRouteImport } from './routes/join.index'
 import { Route as JoinConstructionRouteImport } from './routes/join.construction'
 import { Route as JoinGarmentRouteImport } from './routes/join.garment'
@@ -55,6 +60,11 @@ const ApparelRoute = ApparelRouteImport.update({
 const BrandsRoute = BrandsRouteImport.update({
   id: '/brands',
   path: '/brands',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComplaintsRoute = ComplaintsRouteImport.update({
+  id: '/complaints',
+  path: '/complaints',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -107,6 +117,11 @@ const SectorsRoute = SectorsRouteImport.update({
   path: '/sectors',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SubmitOpportunityRoute = SubmitOpportunityRouteImport.update({
+  id: '/submit-opportunity',
+  path: '/submit-opportunity',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TradeRoute = TradeRouteImport.update({
   id: '/trade',
   path: '/trade',
@@ -116,6 +131,21 @@ const AdminInquiriesRoute = AdminInquiriesRouteImport.update({
   id: '/admin/inquiries',
   path: '/admin/inquiries',
   getParentRoute: () => rootRouteImport,
+} as any)
+const ContactIndexRoute = ContactIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ContactRoute,
+} as any)
+const ContactComplaintsRoute = ContactComplaintsRouteImport.update({
+  id: '/complaints',
+  path: '/complaints',
+  getParentRoute: () => ContactRoute,
+} as any)
+const ContactOpportunitiesRoute = ContactOpportunitiesRouteImport.update({
+  id: '/opportunities',
+  path: '/opportunities',
+  getParentRoute: () => ContactRoute,
 } as any)
 const JoinIndexRoute = JoinIndexRouteImport.update({
   id: '/',
@@ -178,7 +208,8 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/apparel': typeof ApparelRoute
   '/brands': typeof BrandsRoute
-  '/contact': typeof ContactRoute
+  '/complaints': typeof ComplaintsRoute
+  '/contact': typeof ContactRouteWithChildren
   '/downloads': typeof DownloadsRoute
   '/how-we-manufacture': typeof HowWeManufactureRoute
   '/investor-relations': typeof InvestorRelationsRoute
@@ -188,8 +219,11 @@ export interface FileRoutesByFullPath {
   '/partners': typeof PartnersRoute
   '/products': typeof ProductsRoute
   '/sectors': typeof SectorsRouteWithChildren
+  '/submit-opportunity': typeof SubmitOpportunityRoute
   '/trade': typeof TradeRoute
   '/admin/inquiries': typeof AdminInquiriesRoute
+  '/contact/complaints': typeof ContactComplaintsRoute
+  '/contact/opportunities': typeof ContactOpportunitiesRoute
   '/join/construction': typeof JoinConstructionRoute
   '/join/garment': typeof JoinGarmentRoute
   '/join/group': typeof JoinGroupRoute
@@ -197,6 +231,7 @@ export interface FileRoutesByFullPath {
   '/models/$code': typeof ModelsCodeRoute
   '/news/$slug': typeof NewsSlugRoute
   '/sectors/$sector': typeof SectorsSectorRoute
+  '/contact/': typeof ContactIndexRoute
   '/join/': typeof JoinIndexRoute
   '/models/': typeof ModelsIndexRoute
   '/news/': typeof NewsIndexRoute
@@ -207,14 +242,17 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/apparel': typeof ApparelRoute
   '/brands': typeof BrandsRoute
-  '/contact': typeof ContactRoute
+  '/complaints': typeof ComplaintsRoute
   '/downloads': typeof DownloadsRoute
   '/how-we-manufacture': typeof HowWeManufactureRoute
   '/investor-relations': typeof InvestorRelationsRoute
   '/partners': typeof PartnersRoute
   '/products': typeof ProductsRoute
+  '/submit-opportunity': typeof SubmitOpportunityRoute
   '/trade': typeof TradeRoute
   '/admin/inquiries': typeof AdminInquiriesRoute
+  '/contact/complaints': typeof ContactComplaintsRoute
+  '/contact/opportunities': typeof ContactOpportunitiesRoute
   '/join/construction': typeof JoinConstructionRoute
   '/join/garment': typeof JoinGarmentRoute
   '/join/group': typeof JoinGroupRoute
@@ -222,6 +260,7 @@ export interface FileRoutesByTo {
   '/models/$code': typeof ModelsCodeRoute
   '/news/$slug': typeof NewsSlugRoute
   '/sectors/$sector': typeof SectorsSectorRoute
+  '/contact': typeof ContactIndexRoute
   '/join': typeof JoinIndexRoute
   '/models': typeof ModelsIndexRoute
   '/news': typeof NewsIndexRoute
@@ -233,7 +272,8 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/apparel': typeof ApparelRoute
   '/brands': typeof BrandsRoute
-  '/contact': typeof ContactRoute
+  '/complaints': typeof ComplaintsRoute
+  '/contact': typeof ContactRouteWithChildren
   '/downloads': typeof DownloadsRoute
   '/how-we-manufacture': typeof HowWeManufactureRoute
   '/investor-relations': typeof InvestorRelationsRoute
@@ -243,8 +283,11 @@ export interface FileRoutesById {
   '/partners': typeof PartnersRoute
   '/products': typeof ProductsRoute
   '/sectors': typeof SectorsRouteWithChildren
+  '/submit-opportunity': typeof SubmitOpportunityRoute
   '/trade': typeof TradeRoute
   '/admin/inquiries': typeof AdminInquiriesRoute
+  '/contact/complaints': typeof ContactComplaintsRoute
+  '/contact/opportunities': typeof ContactOpportunitiesRoute
   '/join/construction': typeof JoinConstructionRoute
   '/join/garment': typeof JoinGarmentRoute
   '/join/group': typeof JoinGroupRoute
@@ -252,6 +295,7 @@ export interface FileRoutesById {
   '/models/$code': typeof ModelsCodeRoute
   '/news/$slug': typeof NewsSlugRoute
   '/sectors/$sector': typeof SectorsSectorRoute
+  '/contact/': typeof ContactIndexRoute
   '/join/': typeof JoinIndexRoute
   '/models/': typeof ModelsIndexRoute
   '/news/': typeof NewsIndexRoute
@@ -264,6 +308,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/apparel'
     | '/brands'
+    | '/complaints'
     | '/contact'
     | '/downloads'
     | '/how-we-manufacture'
@@ -274,8 +319,11 @@ export interface FileRouteTypes {
     | '/partners'
     | '/products'
     | '/sectors'
+    | '/submit-opportunity'
     | '/trade'
     | '/admin/inquiries'
+    | '/contact/complaints'
+    | '/contact/opportunities'
     | '/join/construction'
     | '/join/garment'
     | '/join/group'
@@ -283,6 +331,7 @@ export interface FileRouteTypes {
     | '/models/$code'
     | '/news/$slug'
     | '/sectors/$sector'
+    | '/contact/'
     | '/join/'
     | '/models/'
     | '/news/'
@@ -293,14 +342,17 @@ export interface FileRouteTypes {
     | '/about'
     | '/apparel'
     | '/brands'
-    | '/contact'
+    | '/complaints'
     | '/downloads'
     | '/how-we-manufacture'
     | '/investor-relations'
     | '/partners'
     | '/products'
+    | '/submit-opportunity'
     | '/trade'
     | '/admin/inquiries'
+    | '/contact/complaints'
+    | '/contact/opportunities'
     | '/join/construction'
     | '/join/garment'
     | '/join/group'
@@ -308,6 +360,7 @@ export interface FileRouteTypes {
     | '/models/$code'
     | '/news/$slug'
     | '/sectors/$sector'
+    | '/contact'
     | '/join'
     | '/models'
     | '/news'
@@ -318,6 +371,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/apparel'
     | '/brands'
+    | '/complaints'
     | '/contact'
     | '/downloads'
     | '/how-we-manufacture'
@@ -328,8 +382,11 @@ export interface FileRouteTypes {
     | '/partners'
     | '/products'
     | '/sectors'
+    | '/submit-opportunity'
     | '/trade'
     | '/admin/inquiries'
+    | '/contact/complaints'
+    | '/contact/opportunities'
     | '/join/construction'
     | '/join/garment'
     | '/join/group'
@@ -337,6 +394,7 @@ export interface FileRouteTypes {
     | '/models/$code'
     | '/news/$slug'
     | '/sectors/$sector'
+    | '/contact/'
     | '/join/'
     | '/models/'
     | '/news/'
@@ -348,7 +406,8 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ApparelRoute: typeof ApparelRoute
   BrandsRoute: typeof BrandsRoute
-  ContactRoute: typeof ContactRoute
+  ComplaintsRoute: typeof ComplaintsRoute
+  ContactRoute: typeof ContactRouteWithChildren
   DownloadsRoute: typeof DownloadsRoute
   HowWeManufactureRoute: typeof HowWeManufactureRoute
   InvestorRelationsRoute: typeof InvestorRelationsRoute
@@ -358,6 +417,7 @@ export interface RootRouteChildren {
   PartnersRoute: typeof PartnersRoute
   ProductsRoute: typeof ProductsRoute
   SectorsRoute: typeof SectorsRouteWithChildren
+  SubmitOpportunityRoute: typeof SubmitOpportunityRoute
   TradeRoute: typeof TradeRoute
   AdminInquiriesRoute: typeof AdminInquiriesRoute
 }
@@ -390,6 +450,13 @@ declare module '@tanstack/react-router' {
       path: '/brands'
       fullPath: '/brands'
       preLoaderRoute: typeof BrandsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/complaints': {
+      id: '/complaints'
+      path: '/complaints'
+      fullPath: '/complaints'
+      preLoaderRoute: typeof ComplaintsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -462,6 +529,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SectorsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/submit-opportunity': {
+      id: '/submit-opportunity'
+      path: '/submit-opportunity'
+      fullPath: '/submit-opportunity'
+      preLoaderRoute: typeof SubmitOpportunityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/trade': {
       id: '/trade'
       path: '/trade'
@@ -475,6 +549,27 @@ declare module '@tanstack/react-router' {
       fullPath: '/admin/inquiries'
       preLoaderRoute: typeof AdminInquiriesRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/contact/': {
+      id: '/contact/'
+      path: '/'
+      fullPath: '/contact/'
+      preLoaderRoute: typeof ContactIndexRouteImport
+      parentRoute: typeof ContactRoute
+    }
+    '/contact/complaints': {
+      id: '/contact/complaints'
+      path: '/complaints'
+      fullPath: '/contact/complaints'
+      preLoaderRoute: typeof ContactComplaintsRouteImport
+      parentRoute: typeof ContactRoute
+    }
+    '/contact/opportunities': {
+      id: '/contact/opportunities'
+      path: '/opportunities'
+      fullPath: '/contact/opportunities'
+      preLoaderRoute: typeof ContactOpportunitiesRouteImport
+      parentRoute: typeof ContactRoute
     }
     '/join/': {
       id: '/join/'
@@ -556,6 +651,21 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface ContactRouteChildren {
+  ContactComplaintsRoute: typeof ContactComplaintsRoute
+  ContactOpportunitiesRoute: typeof ContactOpportunitiesRoute
+  ContactIndexRoute: typeof ContactIndexRoute
+}
+
+const ContactRouteChildren: ContactRouteChildren = {
+  ContactComplaintsRoute: ContactComplaintsRoute,
+  ContactOpportunitiesRoute: ContactOpportunitiesRoute,
+  ContactIndexRoute: ContactIndexRoute,
+}
+
+const ContactRouteWithChildren =
+  ContactRoute._addFileChildren(ContactRouteChildren)
+
 interface JoinRouteChildren {
   JoinConstructionRoute: typeof JoinConstructionRoute
   JoinGarmentRoute: typeof JoinGarmentRoute
@@ -617,7 +727,8 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   ApparelRoute: ApparelRoute,
   BrandsRoute: BrandsRoute,
-  ContactRoute: ContactRoute,
+  ComplaintsRoute: ComplaintsRoute,
+  ContactRoute: ContactRouteWithChildren,
   DownloadsRoute: DownloadsRoute,
   HowWeManufactureRoute: HowWeManufactureRoute,
   InvestorRelationsRoute: InvestorRelationsRoute,
@@ -627,6 +738,7 @@ const rootRouteChildren: RootRouteChildren = {
   PartnersRoute: PartnersRoute,
   ProductsRoute: ProductsRoute,
   SectorsRoute: SectorsRouteWithChildren,
+  SubmitOpportunityRoute: SubmitOpportunityRoute,
   TradeRoute: TradeRoute,
   AdminInquiriesRoute: AdminInquiriesRoute,
 }

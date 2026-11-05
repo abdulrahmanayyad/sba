@@ -1,4 +1,4 @@
-import { ArrowUpRight, ChevronDown, Facebook, Globe, Instagram, Linkedin, Menu, X } from "lucide-react";
+import { ArrowUpRight, ChevronDown, Facebook, Globe, Instagram, Linkedin, Mail, Menu, MessageSquare, Phone, ShieldAlert, Sparkles, X } from "lucide-react";
 import { Link, useRouterState } from "@tanstack/react-router";
 
 import { SectorHeader } from "@/components/sectors/sector-header";
@@ -175,6 +175,10 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
         document.title = "نبذة عنا — Sami Bin Ayyad";
       } else if (pathname === "/contact") {
         document.title = "تواصل معنا — Sami Bin Ayyad";
+      } else if (pathname === "/contact/complaints" || pathname === "/complaints") {
+        document.title = "الشكاوى والمقترحات — Sami Bin Ayyad";
+      } else if (pathname === "/contact/opportunities" || pathname === "/submit-opportunity") {
+        document.title = "اعرض فرصتك الاستثمارية والتجارية — Sami Bin Ayyad";
       } else if (pathname === "/news") {
         document.title = "أخبارنا — Sami Bin Ayyad";
       } else if (pathname === "/partners") {
@@ -227,6 +231,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
   const isSectorsActive = pathname.startsWith("/sectors");
   const isProductsActive = pathname === "/products" || pathname === "/models";
   const isNewsActive = pathname === "/news";
+  const isContactActive = pathname.startsWith("/contact") || pathname === "/complaints" || pathname === "/submit-opportunity";
 
   const primaryLinks = (className: string, onNavigate?: () => void) => (
     <>
@@ -292,6 +297,56 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
       >
         {isArabic ? "التحميلات" : "Downloads"}
       </Link>
+      <NavDropdown
+        label={isArabic ? "تواصل معنا" : "Contact Us"}
+        className={cn(className, "whitespace-nowrap", isContactActive && navPillActive)}
+      >
+        {(close) => (
+          <div className="flex flex-col gap-1 p-1">
+            <Link
+              to="/contact"
+              className={dropdownLink}
+              onClick={() => { close(); onNavigate?.(); }}
+            >
+              <div className="flex items-center gap-2">
+                <MessageSquare className="size-4 text-brand-orange shrink-0" />
+                <div className="flex flex-col">
+                  <span className="font-bold">{isArabic ? "تواصل معنا" : "Contact Us"}</span>
+                  <span className="text-[11px] text-foreground/60">{isArabic ? "الاستفسارات العامة وطلبات الأعمال" : "General inquiries & business requests"}</span>
+                </div>
+              </div>
+            </Link>
+
+            <Link
+              to="/contact/complaints"
+              className={dropdownLink}
+              onClick={() => { close(); onNavigate?.(); }}
+            >
+              <div className="flex items-center gap-2">
+                <ShieldAlert className="size-4 text-amber-500 shrink-0" />
+                <div className="flex flex-col">
+                  <span className="font-bold">{isArabic ? "الشكاوى والمقترحات" : "Complaints & Suggestions"}</span>
+                  <span className="text-[11px] text-foreground/60">{isArabic ? "تقديم ومتابعة الشكاوى برقم مرجعي" : "Submit & track complaints with ref code"}</span>
+                </div>
+              </div>
+            </Link>
+
+            <Link
+              to="/contact/opportunities"
+              className={dropdownLink}
+              onClick={() => { close(); onNavigate?.(); }}
+            >
+              <div className="flex items-center gap-2">
+                <Sparkles className="size-4 text-emerald-500 shrink-0" />
+                <div className="flex flex-col">
+                  <span className="font-bold">{isArabic ? "اعرض فرصتك" : "Submit Your Opportunity"}</span>
+                  <span className="text-[11px] text-foreground/60">{isArabic ? "بوابة الشراكات والصفقات الاستثمارية" : "Partnership & investment portal"}</span>
+                </div>
+              </div>
+            </Link>
+          </div>
+        )}
+      </NavDropdown>
       <Link
         to="/join/group"
         className={cn(className, "whitespace-nowrap", isJoinActive && navPillActive)}
@@ -462,6 +517,9 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
                     <Link to="/investor-relations" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{isArabic ? "علاقات المستثمرين" : "Investor Relations"}</Link>
                     <Link to="/news" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{messages.nav.news}</Link>
                     <Link to="/downloads" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{isArabic ? "مركز التحميلات والملفات" : "Downloads Center"}</Link>
+                    <Link to="/contact" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{isArabic ? "تواصل معنا" : "Contact Us"}</Link>
+                    <Link to="/contact/complaints" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{isArabic ? "الشكاوى والمقترحات" : "Complaints & Feedback"}</Link>
+                    <Link to="/contact/opportunities" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{isArabic ? "اعرض فرصتك الاستثمارية" : "Submit Your Opportunity"}</Link>
                     <Link to="/join/group" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{messages.nav.joinUs}</Link>
                   </nav>
                 </div>
