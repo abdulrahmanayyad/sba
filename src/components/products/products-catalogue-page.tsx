@@ -443,6 +443,14 @@ export function ProductsCataloguePage() {
                   <h3 className="font-head text-2xl font-black text-foreground">
                     {ar ? "اختر تصنيف المنتجات للتصفح والتوريد" : "Select Product Category"}
                   </h3>
+                  <div className="mt-2 flex items-center gap-2">
+                    <Button asChild size="sm" className="rounded-full !bg-brand-green !text-white hover:!bg-brand-orange text-xs font-bold shadow-xs cursor-pointer">
+                      <a href="/downloads/SBA_Complete_Products_Portfolio_EN.pdf" download="SBA_Complete_Products_Portfolio_EN.pdf" target="_blank" rel="noopener noreferrer">
+                        <Download className="size-3.5 me-1.5" />
+                        <span>{ar ? "تحميل كتالوج المنتجات المجمع (PDF)" : "Download Product Portfolio (PDF)"}</span>
+                      </a>
+                    </Button>
+                  </div>
                 </div>
 
                 {/* Search Bar for Products */}
@@ -724,6 +732,14 @@ export function ProductsCataloguePage() {
                   <h3 className="font-head text-2xl font-black text-foreground">
                     {ar ? "اختر قطاع الأعمال للاطلاع على القدرات والحلول" : "Select Engineering & Service Sector"}
                   </h3>
+                  <div className="mt-2 flex items-center gap-2">
+                    <Button asChild size="sm" className="rounded-full !bg-brand-green !text-white hover:!bg-brand-orange text-xs font-bold shadow-xs cursor-pointer">
+                      <a href="/downloads/SBA_Services_And_Solutions_Portfolio_EN.pdf" download="SBA_Services_And_Solutions_Portfolio_EN.pdf" target="_blank" rel="noopener noreferrer">
+                        <Download className="size-3.5 me-1.5" />
+                        <span>{ar ? "تحميل دليل الخدمات والحلول (39 تخصصًا)" : "Download Services Portfolio (PDF)"}</span>
+                      </a>
+                    </Button>
+                  </div>
                 </div>
 
                 {/* Search Bar for Services */}

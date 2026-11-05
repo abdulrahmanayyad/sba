@@ -14,6 +14,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as ApparelRouteImport } from './routes/apparel'
 import { Route as BrandsRouteImport } from './routes/brands'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as DownloadsRouteImport } from './routes/downloads'
 import { Route as HowWeManufactureRouteImport } from './routes/how-we-manufacture'
 import { Route as InvestorRelationsRouteImport } from './routes/investor-relations'
 import { Route as JoinRouteImport } from './routes/join'
@@ -58,6 +59,11 @@ const BrandsRoute = BrandsRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DownloadsRoute = DownloadsRouteImport.update({
+  id: '/downloads',
+  path: '/downloads',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HowWeManufactureRoute = HowWeManufactureRouteImport.update({
@@ -167,6 +173,7 @@ export interface FileRoutesByFullPath {
   '/apparel': typeof ApparelRoute
   '/brands': typeof BrandsRoute
   '/contact': typeof ContactRoute
+  '/downloads': typeof DownloadsRoute
   '/how-we-manufacture': typeof HowWeManufactureRoute
   '/investor-relations': typeof InvestorRelationsRoute
   '/join': typeof JoinRouteWithChildren
@@ -194,6 +201,7 @@ export interface FileRoutesByTo {
   '/apparel': typeof ApparelRoute
   '/brands': typeof BrandsRoute
   '/contact': typeof ContactRoute
+  '/downloads': typeof DownloadsRoute
   '/how-we-manufacture': typeof HowWeManufactureRoute
   '/investor-relations': typeof InvestorRelationsRoute
   '/partners': typeof PartnersRoute
@@ -218,6 +226,7 @@ export interface FileRoutesById {
   '/apparel': typeof ApparelRoute
   '/brands': typeof BrandsRoute
   '/contact': typeof ContactRoute
+  '/downloads': typeof DownloadsRoute
   '/how-we-manufacture': typeof HowWeManufactureRoute
   '/investor-relations': typeof InvestorRelationsRoute
   '/join': typeof JoinRouteWithChildren
@@ -247,6 +256,7 @@ export interface FileRouteTypes {
     | '/apparel'
     | '/brands'
     | '/contact'
+    | '/downloads'
     | '/how-we-manufacture'
     | '/investor-relations'
     | '/join'
@@ -274,6 +284,7 @@ export interface FileRouteTypes {
     | '/apparel'
     | '/brands'
     | '/contact'
+    | '/downloads'
     | '/how-we-manufacture'
     | '/investor-relations'
     | '/partners'
@@ -297,6 +308,7 @@ export interface FileRouteTypes {
     | '/apparel'
     | '/brands'
     | '/contact'
+    | '/downloads'
     | '/how-we-manufacture'
     | '/investor-relations'
     | '/join'
@@ -325,6 +337,7 @@ export interface RootRouteChildren {
   ApparelRoute: typeof ApparelRoute
   BrandsRoute: typeof BrandsRoute
   ContactRoute: typeof ContactRoute
+  DownloadsRoute: typeof DownloadsRoute
   HowWeManufactureRoute: typeof HowWeManufactureRoute
   InvestorRelationsRoute: typeof InvestorRelationsRoute
   JoinRoute: typeof JoinRouteWithChildren
@@ -371,6 +384,13 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/downloads': {
+      id: '/downloads'
+      path: '/downloads'
+      fullPath: '/downloads'
+      preLoaderRoute: typeof DownloadsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/how-we-manufacture': {
@@ -578,6 +598,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApparelRoute: ApparelRoute,
   BrandsRoute: BrandsRoute,
   ContactRoute: ContactRoute,
+  DownloadsRoute: DownloadsRoute,
   HowWeManufactureRoute: HowWeManufactureRoute,
   InvestorRelationsRoute: InvestorRelationsRoute,
   JoinRoute: JoinRouteWithChildren,

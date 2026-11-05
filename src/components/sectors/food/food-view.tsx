@@ -188,6 +188,16 @@ export function FoodSectorView({ tab = "about" }: FoodViewProps) {
                   <Package className="size-4" />
                   <span>{ar ? "كتالوج المنتجات والمواصفات" : "View Export Catalog"}</span>
                 </Link>
+                <a
+                  href={ar ? "/downloads/SBA_Natural_Products_Profile_AR.pdf" : "/downloads/SBA_Natural_Products_Profile_EN.pdf"}
+                  download={ar ? "SBA_Natural_Products_Profile_AR.pdf" : "SBA_Natural_Products_Profile_EN.pdf"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-7 py-3.5 text-sm font-bold text-white backdrop-blur-md transition-all hover:bg-white/20 hover:scale-105"
+                >
+                  <Download className="size-4" />
+                  <span>{ar ? "تحميل الدليل التصديري (PDF)" : "Download Export Dossier (PDF)"}</span>
+                </a>
               </div>
             </Reveal>
           </div>

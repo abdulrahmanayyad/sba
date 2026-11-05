@@ -1,4 +1,4 @@
-import { ArrowRight, Building2, CheckCircle2, Factory, FileUp, Globe2, Handshake, Mail, MessageCircle, Send, ShieldCheck, Sparkles, TrendingUp, Truck, UploadCloud } from "lucide-react";
+import { ArrowRight, Building2, CheckCircle2, Download, Factory, FileUp, Globe2, Handshake, Mail, MessageCircle, Send, ShieldCheck, Sparkles, TrendingUp, Truck, UploadCloud } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Reveal } from "@/components/home/reveal";
@@ -36,6 +36,21 @@ export function PartnersPage() {
               ? "نعمل على تطوير علاقات تعاون تدعم احتياجات عملائنا في التصنيع والتوريد والحلول البيئية والتقنية. ويُحدد نطاق كل علاقة بحسب الاتفاق القائم والمنتجات أو الخدمات المشمولة والأسواق المستهدفة."
               : "We develop relationships that support manufacturing, sourcing and environmental technology requirements. The scope of each relationship depends on the relevant agreement, participating entity, products and markets."}
           </p>
+
+          <div className="mt-6 flex flex-wrap items-center gap-3">
+            <Button asChild size="default" className="rounded-full !bg-brand-green !text-white hover:!bg-brand-orange text-xs sm:text-sm font-bold shadow-md cursor-pointer">
+              <a href="/downloads/SBA_Corporate_Capabilities_EN.pdf" download="SBA_Corporate_Capabilities_EN.pdf" target="_blank" rel="noopener noreferrer">
+                <Download className="size-4 me-1.5" />
+                <span>{ar ? "تحميل بيان القدرات المؤسسية (PDF)" : "Download Capabilities Statement (PDF)"}</span>
+              </a>
+            </Button>
+            <Button asChild size="default" className="rounded-full !bg-brand-green !text-white hover:!bg-brand-orange text-xs sm:text-sm font-bold shadow-md cursor-pointer">
+              <a href="/downloads/SBA_Business_And_Partnership_Overview_EN.pdf" download="SBA_Business_And_Partnership_Overview_EN.pdf" target="_blank" rel="noopener noreferrer">
+                <Download className="size-4 me-1.5" />
+                <span>{ar ? "مذكرة الشراكات والاستثمار (PDF)" : "Partnership Overview (PDF)"}</span>
+              </a>
+            </Button>
+          </div>
         </Reveal>
       </section>
 

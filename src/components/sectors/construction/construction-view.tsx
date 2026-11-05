@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, Award, Briefcase, Building, Calendar, CheckCircle2, ChevronRight, Clock, Cpu, FileCheck, FileText, HardHat, Layers, MapPin, MessageCircle, Phone, Search, ShieldAlert, ShieldCheck, Sparkles, Trophy, Truck, Users, Wrench, ZoomIn } from "lucide-react";
+import { ArrowRight, Award, Briefcase, Building, Calendar, CheckCircle2, ChevronRight, Clock, Cpu, Download, FileCheck, FileText, HardHat, Layers, MapPin, MessageCircle, Phone, Search, ShieldAlert, ShieldCheck, Sparkles, Trophy, Truck, Users, Wrench, ZoomIn } from "lucide-react";
 import { useMemo, useState } from "react";
 
 import { Reveal } from "@/components/home/reveal";
@@ -145,6 +145,39 @@ export function ConstructionSectorView({ tab = "about", token }: ConstructionVie
               <p className={cn("mt-4 max-w-3xl font-head text-base sm:text-lg font-bold leading-relaxed text-footer-foreground/90", ar && "font-body")}>
                 {ar ? constructionHeroData.subtitleAr : constructionHeroData.subtitle}
               </p>
+
+              <div className="mt-8 flex flex-wrap items-center gap-3">
+                <Button asChild size="default" className="rounded-full bg-brand-green text-white hover:bg-brand-orange transition-all duration-300 shadow-md">
+                  <Link to="/sectors/$sector" params={{ sector: "construction" }} search={{ tab: "start-project" }}>
+                    <span>{ar ? "ابدأ مشروعك" : "Start Your Project"}</span>
+                    <ArrowRight className="size-4 ms-2 rtl:rotate-180" />
+                  </Link>
+                </Button>
+
+                <Button asChild size="default" className="rounded-full bg-brand-green text-white hover:bg-brand-orange transition-all duration-300 shadow-md">
+                  <a
+                    href={ar ? "/downloads/SBA_Construction_Capabilities_AR.pdf" : "/downloads/SBA_Construction_Capabilities_EN.pdf"}
+                    download={ar ? "SBA_Construction_Capabilities_AR.pdf" : "SBA_Construction_Capabilities_EN.pdf"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Download className="size-4 me-1.5" />
+                    <span>{ar ? "تحميل الدليل الهندسي (PDF)" : "Download Sector Profile (PDF)"}</span>
+                  </a>
+                </Button>
+
+                <Button asChild size="default" className="rounded-full bg-brand-green text-white hover:bg-brand-orange transition-all duration-300 shadow-md">
+                  <a
+                    href="/downloads/SBA_Construction_Project_Portfolio_EN.pdf"
+                    download="SBA_Construction_Project_Portfolio_EN.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Download className="size-4 me-1.5" />
+                    <span>{ar ? "سجل المشروعات (57 مشروعًا)" : "Project Portfolio (PDF)"}</span>
+                  </a>
+                </Button>
+              </div>
             </Reveal>
           </div>
         </section>

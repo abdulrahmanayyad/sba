@@ -1044,16 +1044,19 @@ function EnvironmentalProductsView({ ar }: { ar: boolean }) {
   const [activeImage, setActiveImage] = useState<string>("");
 
   const handleDownloadDatasheet = (product: EnvironmentalProductItem) => {
-    const text = ar ? product.datasheetContentAr : product.datasheetContentEn;
-    const blob = new Blob([text], { type: "text/plain;charset=utf-8" });
-    const url = URL.createObjectURL(blob);
+    let pdfUrl = `/downloads/${product.code}_Technical_Data_Sheet.pdf`;
+    if (product.code === "ET-POT-01") pdfUrl = "/downloads/ET-POT-01_Technical_Data_Sheet.pdf";
+    else if (product.code === "ET-POR-01") pdfUrl = "/downloads/ET-POR-01_Technical_Data_Sheet.pdf";
+    else pdfUrl = ar ? "/downloads/SBA_Environmental_Solutions_AR.pdf" : "/downloads/SBA_Environmental_Solutions_EN.pdf";
+
     const link = document.createElement("a");
-    link.href = url;
-    link.download = `${product.code}_Technical_Datasheet.txt`;
+    link.href = pdfUrl;
+    link.download = `${product.code}_Technical_Data_Sheet.pdf`;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-    URL.revokeObjectURL(url);
   };
 
   return (

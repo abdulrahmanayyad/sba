@@ -277,6 +277,13 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
         {messages.nav.news}
       </Link>
       <Link
+        to="/downloads"
+        className={cn(className, "whitespace-nowrap", pathname === "/downloads" && navPillActive)}
+        onClick={onNavigate}
+      >
+        {isArabic ? "التحميلات" : "Downloads"}
+      </Link>
+      <Link
         to="/join/group"
         className={cn(className, "whitespace-nowrap", isJoinActive && navPillActive)}
         onClick={onNavigate}
@@ -444,6 +451,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
                     <Link to="/partners" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{messages.nav.partners}</Link>
                     <Link to="/investor-relations" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{isArabic ? "علاقات المستثمرين" : "Investor Relations"}</Link>
                     <Link to="/news" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{messages.nav.news}</Link>
+                    <Link to="/downloads" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{isArabic ? "مركز التحميلات والملفات" : "Downloads Center"}</Link>
                     <Link to="/join/group" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{messages.nav.joinUs}</Link>
                   </nav>
                 </div>

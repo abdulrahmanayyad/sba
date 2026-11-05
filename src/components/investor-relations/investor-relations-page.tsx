@@ -64,41 +64,21 @@ export function InvestorRelationsPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleDownloadDoc = (doc: InvestorDocument) => {
-    const content = `===============================================================
-SAMI BIN AYYAD GROUP — INVESTOR RELATIONS & CORPORATE DOSSIER
-===============================================================
-Document Title: ${doc.titleEn}
-العنوان بالعربية: ${doc.titleAr}
-Category: ${doc.categoryEn} / ${doc.categoryAr}
-Document Code: ${doc.fileName}
-File Size: ${doc.fileSize}
-
-EXECUTIVE SUMMARY:
-${doc.descEn}
-${doc.descAr}
-
-INVESTMENT RELATIONS CONTACT:
-Sami Bin Ayyad Group — Corporate Investment & Strategy Division
-Email: ${CONTACT_EMAIL}
-Website: https://www.sami-trade.com/investor-relations
-Direct Line: +20 100 000 0000
-
-DISCLAIMER:
-This document is distributed for institutional evaluation and strategic 
-partnership dialogue only. Detailed financial records, balance sheets, 
-and proprietary technical designs require execution of a standard bilateral 
-Non-Disclosure Agreement (NDA).
-===============================================================`;
-
-    const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
-    const url = URL.createObjectURL(blob);
+    const docMap: Record<string, string> = {
+      "doc-corporate-profile": ar ? "/downloads/SBA_Complete_Corporate_Profile_AR.pdf" : "/downloads/SBA_Complete_Corporate_Profile_EN.pdf",
+      "doc-investment-presentation": "/downloads/SBA_Business_And_Partnership_Overview_EN.pdf",
+      "doc-sector-dossier-environmental": ar ? "/downloads/SBA_Environmental_Solutions_AR.pdf" : "/downloads/SBA_Environmental_Solutions_EN.pdf",
+      "doc-sector-dossier-apparel": ar ? "/downloads/SBA_Apparel_Manufacturing_Profile_AR.pdf" : "/downloads/SBA_Apparel_Manufacturing_Profile_EN.pdf",
+    };
+    const targetUrl = docMap[doc.id] || "/downloads/SBA_Complete_Corporate_Profile_EN.pdf";
     const a = document.createElement("a");
-    a.href = url;
-    a.download = doc.fileName.replace(".pdf", ".txt");
+    a.href = targetUrl;
+    a.download = doc.fileName;
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
-    URL.revokeObjectURL(url);
   };
 
   const handleFormSubmit = (e: React.FormEvent) => {

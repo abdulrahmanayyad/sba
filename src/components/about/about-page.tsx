@@ -103,10 +103,20 @@ export function AboutPage() {
               {/* Company Profile Download CTA */}
               <div className="mt-8 flex flex-wrap items-center gap-3 pt-6 border-t border-border/60">
                 <Button asChild size="default" className="rounded-full !bg-brand-green !text-white text-xs sm:text-sm font-bold shadow-md hover:!bg-brand-orange transition-all duration-300 cursor-pointer">
-                  <a href="/SBA-Corporate-Profile.pdf" download="SBA-Corporate-Profile.pdf" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={ar ? "/downloads/SBA_Complete_Corporate_Profile_AR.pdf" : "/downloads/SBA_Complete_Corporate_Profile_EN.pdf"}
+                    download={ar ? "SBA_Complete_Corporate_Profile_AR.pdf" : "SBA_Complete_Corporate_Profile_EN.pdf"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Download className="size-4" />
-                    <span>{ar ? "تحميل الملف التعريفي للمجموعة (PDF)" : "Download Company Profile"}</span>
+                    <span>{ar ? "تحميل الملف التعريفي الشامل (PDF)" : "Download Company Profile"}</span>
                   </a>
+                </Button>
+                <Button asChild size="default" className="rounded-full bg-brand-green text-white text-xs sm:text-sm font-bold shadow-md hover:bg-brand-orange transition-all duration-300 cursor-pointer">
+                  <Link to="/downloads">
+                    <span>{ar ? "مركز الوثائق والتحميلات" : "Downloads Center"}</span>
+                  </Link>
                 </Button>
                 <Button asChild size="default" className="rounded-full bg-brand-green text-white text-xs sm:text-sm font-bold shadow-md hover:bg-brand-orange transition-all duration-300 cursor-pointer">
                   <Link to="/join/group">
