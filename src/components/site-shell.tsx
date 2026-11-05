@@ -295,12 +295,9 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
               className={dropdownLink}
               onClick={() => { close(); onNavigate?.(); }}
             >
-              <div className="flex items-center gap-2">
-                <Globe className="size-4 text-brand-orange shrink-0" />
-                <div className="flex flex-col">
-                  <span className="font-bold">{isArabic ? "الفرص العالمية" : "Global Opportunities"}</span>
-                  <span className="text-[11px] text-foreground/60">{isArabic ? "شبكة التجارة والأسواق الدولية" : "International trade & export network"}</span>
-                </div>
+              <div className="flex flex-col">
+                <span className="font-bold">{isArabic ? "الفرص العالمية" : "Global Opportunities"}</span>
+                <span className="text-[11px] text-foreground/60">{isArabic ? "شبكة التجارة والأسواق الدولية" : "International trade & export network"}</span>
               </div>
             </Link>
 
@@ -309,12 +306,9 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
               className={dropdownLink}
               onClick={() => { close(); onNavigate?.(); }}
             >
-              <div className="flex items-center gap-2">
-                <TrendingUp className="size-4 text-emerald-500 shrink-0" />
-                <div className="flex flex-col">
-                  <span className="font-bold">{isArabic ? "الشراكات والاستثمار" : "Investment & Partnerships"}</span>
-                  <span className="text-[11px] text-foreground/60">{isArabic ? "علاقات المستثمرين والتحالفات الكبرى" : "Investor relations & alliances"}</span>
-                </div>
+              <div className="flex flex-col">
+                <span className="font-bold">{isArabic ? "الشراكات والاستثمار" : "Investment & Partnerships"}</span>
+                <span className="text-[11px] text-foreground/60">{isArabic ? "علاقات المستثمرين والتحالفات الكبرى" : "Investor relations & alliances"}</span>
               </div>
             </Link>
 
@@ -323,62 +317,9 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
               className={dropdownLink}
               onClick={() => { close(); onNavigate?.(); }}
             >
-              <div className="flex items-center gap-2">
-                <FileText className="size-4 text-blue-500 shrink-0" />
-                <div className="flex flex-col">
-                  <span className="font-bold">{isArabic ? "مركز الوثائق" : "Document Center"}</span>
-                  <span className="text-[11px] text-foreground/60">{isArabic ? "الملفات المؤسسية والكتالوجات المعتمدة" : "Corporate profiles & catalogues"}</span>
-                </div>
-              </div>
-            </Link>
-          </div>
-        )}
-      </NavDropdown>
-      <NavDropdown
-        label={isArabic ? "تواصل معنا" : "Contact Us"}
-        className={cn(className, "whitespace-nowrap", isContactActive && navPillActive)}
-      >
-        {(close) => (
-          <div className="flex flex-col gap-1 p-1">
-            <Link
-              to="/contact"
-              className={dropdownLink}
-              onClick={() => { close(); onNavigate?.(); }}
-            >
-              <div className="flex items-center gap-2">
-                <MessageSquare className="size-4 text-brand-orange shrink-0" />
-                <div className="flex flex-col">
-                  <span className="font-bold">{isArabic ? "تواصل معنا" : "Contact Us"}</span>
-                  <span className="text-[11px] text-foreground/60">{isArabic ? "الاستفسارات العامة وطلبات الأعمال" : "General inquiries & business requests"}</span>
-                </div>
-              </div>
-            </Link>
-
-            <Link
-              to="/contact/complaints"
-              className={dropdownLink}
-              onClick={() => { close(); onNavigate?.(); }}
-            >
-              <div className="flex items-center gap-2">
-                <ShieldAlert className="size-4 text-amber-500 shrink-0" />
-                <div className="flex flex-col">
-                  <span className="font-bold">{isArabic ? "الشكاوى والمقترحات" : "Complaints & Suggestions"}</span>
-                  <span className="text-[11px] text-foreground/60">{isArabic ? "تقديم ومتابعة الشكاوى برقم مرجعي" : "Submit & track complaints with ref code"}</span>
-                </div>
-              </div>
-            </Link>
-
-            <Link
-              to="/contact/opportunities"
-              className={dropdownLink}
-              onClick={() => { close(); onNavigate?.(); }}
-            >
-              <div className="flex items-center gap-2">
-                <Sparkles className="size-4 text-emerald-500 shrink-0" />
-                <div className="flex flex-col">
-                  <span className="font-bold">{isArabic ? "اعرض فرصتك" : "Submit Your Opportunity"}</span>
-                  <span className="text-[11px] text-foreground/60">{isArabic ? "بوابة الشراكات والصفقات الاستثمارية" : "Partnership & investment portal"}</span>
-                </div>
+              <div className="flex flex-col">
+                <span className="font-bold">{isArabic ? "مركز الوثائق" : "Document Center"}</span>
+                <span className="text-[11px] text-foreground/60">{isArabic ? "الملفات المؤسسية والكتالوجات المعتمدة" : "Corporate profiles & catalogues"}</span>
               </div>
             </Link>
           </div>
@@ -391,6 +332,51 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
       >
         {messages.nav.joinUs}
       </Link>
+      <NavDropdown
+        label={isArabic ? "تواصل معنا" : "Contact Us"}
+        className={cn(
+          className,
+          "whitespace-nowrap !bg-brand-green !text-white hover:!bg-brand-orange hover:!text-white shadow-sm transition-all duration-300",
+          isContactActive && "!bg-brand-orange !text-white shadow-md"
+        )}
+      >
+        {(close) => (
+          <div className="flex flex-col gap-1 p-1">
+            <Link
+              to="/contact"
+              className={dropdownLink}
+              onClick={() => { close(); onNavigate?.(); }}
+            >
+              <div className="flex flex-col">
+                <span className="font-bold">{isArabic ? "تواصل معنا" : "Contact Us"}</span>
+                <span className="text-[11px] text-foreground/60">{isArabic ? "الاستفسارات العامة وطلبات الأعمال" : "General inquiries & business requests"}</span>
+              </div>
+            </Link>
+
+            <Link
+              to="/contact/complaints"
+              className={dropdownLink}
+              onClick={() => { close(); onNavigate?.(); }}
+            >
+              <div className="flex flex-col">
+                <span className="font-bold">{isArabic ? "الشكاوى والمقترحات" : "Complaints & Suggestions"}</span>
+                <span className="text-[11px] text-foreground/60">{isArabic ? "تقديم ومتابعة الشكاوى برقم مرجعي" : "Submit & track complaints with ref code"}</span>
+              </div>
+            </Link>
+
+            <Link
+              to="/contact/opportunities"
+              className={dropdownLink}
+              onClick={() => { close(); onNavigate?.(); }}
+            >
+              <div className="flex flex-col">
+                <span className="font-bold">{isArabic ? "اعرض فرصتك" : "Submit Your Opportunity"}</span>
+                <span className="text-[11px] text-foreground/60">{isArabic ? "بوابة الشراكات والصفقات الاستثمارية" : "Partnership & investment portal"}</span>
+              </div>
+            </Link>
+          </div>
+        )}
+      </NavDropdown>
     </>
   );
 
@@ -429,22 +415,9 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
               {primaryLinks(navPill)}
             </nav>
 
-            {/* Right: CTA + language */}
+            {/* Right: language switcher */}
             <div className="hidden items-center gap-3 xl:flex shrink-0">
               <LanguageSwitcher language={language} onChange={selectLanguage} />
-              <a
-                href="/#contact"
-                onClick={() => {
-                  const el = document.getElementById("contact");
-                  if (el) {
-                    el.scrollIntoView({ behavior: "smooth" });
-                  }
-                }}
-                className="group/cta inline-flex items-center gap-2 rounded-full bg-brand-green px-5 py-2.5 text-xs font-bold text-white transition-all duration-300 hover:bg-brand-orange hover:shadow-lg hover:shadow-brand-orange/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/50 active:scale-95"
-              >
-                <span>{isArabic ? "تواصل معنا" : "Contact Us"}</span>
-                <ArrowUpRight className="size-3.5 transition-transform duration-300 group-hover/cta:translate-x-1 group-hover/cta:-translate-y-1 rtl:rotate-90 rtl:group-hover/cta:-translate-x-1 rtl:group-hover/cta:-translate-y-1" />
-              </a>
             </div>
 
             {/* Mobile hamburger */}
