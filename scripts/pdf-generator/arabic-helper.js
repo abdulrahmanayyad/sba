@@ -16,3 +16,4 @@ export function formatArabicText(text) {
     return text;
   }
 }
+

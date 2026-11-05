@@ -1261,3 +1261,4 @@ generateAll().catch(err => {
   console.error('Fatal error during PDF generation:', err);
   process.exit(1);
 });
+
