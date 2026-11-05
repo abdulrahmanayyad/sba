@@ -190,25 +190,27 @@ const partnerCountries: PartnerCountry[] = [
 ];
 
 export function BusinessDashboard({ ar }: { ar: boolean }) {
-  const [selectedCountry, setSelectedCountry] = useState<PartnerCountry | null>(null);
+  const [selectedCountry, setSelectedCountry] = useState<PartnerCountry | null>(partnerCountries[0]);
   const [hoveredCountry, setHoveredCountry] = useState<string | null>(null);
 
   const t = (v: { en: string; ar: string }) => (ar ? v.ar : v.en);
 
-  const card = "rounded-3xl border border-white/20 bg-background/80 p-6 md:p-8 backdrop-blur-xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-[1.01] hover:border-brand-orange/40 active:scale-[0.99] cursor-pointer";
+  const card = "rounded-3xl border border-white/30 bg-background/60 p-6 md:p-8 backdrop-blur-2xl shadow-[0_12px_40px_rgba(0,0,0,0.06)] ring-1 ring-white/20 transition-all duration-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.12)] hover:border-brand-orange/40";
 
-  const activeCountry = selectedCountry ?? (hoveredCountry ? partnerCountries.find((c) => c.nameEn === hoveredCountry) ?? null : null);
+  const activeCountry = (hoveredCountry ? partnerCountries.find((c) => c.nameEn === hoveredCountry) ?? null : null) ?? selectedCountry ?? partnerCountries[0];
 
   return (
-    <section id="business-numbers" aria-labelledby="dash-heading" className="bg-page-alt pt-16 pb-4 scroll-mt-24 relative overflow-hidden">
-      {/* Background ambient lighting */}
-      <div className="pointer-events-none absolute -top-40 start-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-brand-green/5 blur-3xl rounded-full" />
+    <section id="business-numbers" aria-labelledby="dash-heading" className="relative py-16 scroll-mt-24 overflow-hidden">
+      {/* Dynamic Glassmorphic Ambient Background Lighting */}
+      <div className="pointer-events-none absolute inset-0 bg-radial-gradient from-brand-orange/5 via-brand-green/5 to-transparent blur-3xl opacity-70" />
+      <div className="pointer-events-none absolute -top-40 start-1/4 size-[500px] rounded-full bg-brand-orange/10 blur-[120px]" />
+      <div className="pointer-events-none absolute -bottom-40 end-1/4 size-[500px] rounded-full bg-brand-green/10 blur-[120px]" />
 
       <div className="site-container relative z-10">
         <Reveal className="max-w-3xl">
-          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 px-3.5 py-1 text-xs font-medium tracking-wide text-muted-foreground backdrop-blur-md mb-3">
+          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-4 py-1.5 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-3 shadow-xs">
             <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-            {ar ? "أداء المجموعة ورؤى الأعمال" : "Group Performance & Business Insights"}
+            <span className="font-bold text-brand-green">{ar ? "أداء المجموعة ورؤى الأعمال" : "Group Performance & Business Insights"}</span>
           </div>
           <h2 id="dash-heading" className="section-title">
             {ar ? "أعمالنا في أرقام" : "Our Business in Numbers"}
@@ -229,7 +231,7 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
             return (
               <div
                 key={idx}
-                className={cn(card, "flex flex-col justify-between group")}
+                className={cn(card, "flex flex-col justify-between group !p-6")}
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
@@ -264,458 +266,297 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
           })}
         </div>
 
-        {/* Geographic Presence: Side-by-Side White Map & Countries List */}
-        <div className={cn(card, "mt-8")}>
-          <div className="flex items-center justify-between flex-wrap gap-3 mb-6">
-            <div className="space-y-1.5">
+        {/* Geographic Presence: Countries-First Interactive Glass Showcase */}
+        <div className={cn(card, "mt-10 !p-8 sm:!p-10")}>
+          <div className="flex items-center justify-between flex-wrap gap-4 mb-8">
+            <div className="space-y-2">
               <span className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
                 <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-                <span>{ar ? "أسواقنا" : "Our Markets"}</span>
+                <span className="font-bold text-brand-green">{ar ? "انتشارنا العالمي" : "Our Global Reach"}</span>
               </span>
-              <h3 className="text-xl sm:text-2xl font-bold font-head">
-                {ar ? "أسواقنا وحضورنا الدولي" : "Our Markets & International Reach"}
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold font-head text-foreground">
+                {ar ? "الدول الشريكة والأسواق النشطة" : "Partner Countries & Active Markets"}
               </h3>
               <p className="text-xs sm:text-sm text-muted-foreground">
                 {ar
-                  ? "خريطة توضح شبكة الأسواق الدولية الحالية التي نتعامل معها."
-                  : "Interactive map showcasing our current international partner markets."}
+                  ? "أشر على أي دولة لعرض تفاصيل ونوع التعامل التجاري، ورؤية موقعها مباشرة على الخريطة التفاعلية."
+                  : "Hover or select any country to inspect partnership nature and visualize its geographic location."}
               </p>
             </div>
 
-            {activeCountry && (
-              <span className="inline-flex items-center gap-2 rounded-full border border-brand-orange/40 bg-brand-orange/10 px-3.5 py-1.5 text-xs font-bold text-brand-orange animate-in fade-in zoom-in-95 duration-200">
-                <span className="text-base">{activeCountry.flag}</span>
-                <span>{ar ? activeCountry.nameAr : activeCountry.nameEn}</span>
-                <span className="text-[10px] text-muted-foreground font-mono">({activeCountry.coords})</span>
+            <div className="flex items-center gap-2">
+              <span className="font-mono text-xs font-bold bg-brand-green/10 text-brand-green border border-brand-green/30 px-3 py-1.5 rounded-full">
+                {partnerCountries.length} {ar ? "دول استراتيجية" : "Strategic Countries"}
               </span>
-            )}
+            </div>
           </div>
 
-          {/* Side-by-Side Responsive Grid: White Map + Country List with Flags */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-            {/* 1. White Stationary Map Column (lg:col-span-7 xl:col-span-8) */}
-            <div className="lg:col-span-7 xl:col-span-8 flex flex-col">
-              <div
-                className="relative aspect-[16/10] sm:aspect-[16/11] lg:aspect-[16/11] w-full overflow-hidden rounded-3xl border border-white/15 bg-[#090D16] shadow-[0_12px_40px_rgba(0,0,0,0.35)] select-none font-sans"
-                role="region"
-                aria-label={ar ? "خريطة شبكة أسواقنا الحالية" : "Map of our current partner markets"}
-              >
-                {/* Top Badge */}
-                <div className="absolute start-3 top-3 z-30 flex items-center gap-2 rounded-full border border-white/15 bg-slate-900/85 px-3 py-1 text-xs font-bold text-white shadow-md backdrop-blur-md">
-                  <Globe className="size-3.5 text-brand-orange" />
-                  <span className="font-sans font-semibold tracking-tight text-[11px] text-slate-200">
-                    {ar ? "شبكة الأسواق الحالية" : "Current Markets Network"}
-                  </span>
-                </div>
-
-                {/* Fixed Vector Canvas (No transform shift or zoom jitter) */}
-                <div className="absolute inset-0 size-full">
-                  <svg
-                    viewBox="0 0 1000 600"
-                    className="size-full"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <defs>
-                      {/* Architectural tech dot grid */}
-                      <pattern id="white-map-grid" width="36" height="36" patternUnits="userSpaceOnUse">
-                        <circle cx="18" cy="18" r="0.8" fill="#38BDF8" opacity="0.18" />
-                      </pattern>
-                      <radialGradient id="ocean-glow" cx="58%" cy="45%" r="65%">
-                        <stop offset="0%" stopColor="#0F172A" />
-                        <stop offset="70%" stopColor="#090D16" />
-                        <stop offset="100%" stopColor="#040711" />
-                      </radialGradient>
-                    </defs>
-
-                    {/* High-Tech Ocean Base */}
-                    <rect width="1000" height="600" fill="url(#ocean-glow)" />
-                    <rect width="1000" height="600" fill="url(#white-map-grid)" />
-
-                    {/* Europe / Balkans / Romania / Bulgaria / Greece */}
-                    <path
-                      d="M260,110 Q320,60 410,70 Q490,50 560,90 Q620,120 590,170 Q540,200 500,190 Q460,225 430,215 Q390,200 360,170 Q300,180 260,140 Z"
-                      fill="#131B2E"
-                      stroke="#1E293B"
-                      strokeWidth="1.2"
-                    />
-
-                    {/* France */}
-                    <path
-                      d="M360,130 Q420,120 435,160 Q410,200 375,185 Q350,160 360,130 Z"
-                      fill={activeCountry?.nameEn === "France" ? "rgba(249, 115, 22, 0.3)" : "#1E293B"}
-                      stroke={activeCountry?.nameEn === "France" ? "#F97316" : "#334155"}
-                      strokeWidth={activeCountry?.nameEn === "France" ? 2.5 : 1}
-                      className="transition-colors duration-300"
-                    />
-
-                    {/* Italy Peninsula */}
-                    <path
-                      d="M455,165 Q485,180 475,230 Q455,240 450,210 Q450,175 455,165 Z"
-                      fill={activeCountry?.nameEn === "Italy" ? "rgba(249, 115, 22, 0.3)" : "#1E293B"}
-                      stroke={activeCountry?.nameEn === "Italy" ? "#F97316" : "#334155"}
-                      strokeWidth={activeCountry?.nameEn === "Italy" ? 2.5 : 1}
-                      className="transition-colors duration-300"
-                    />
-
-                    {/* Turkey / Anatolia */}
-                    <path
-                      d="M540,165 Q625,150 670,175 Q650,215 550,205 Q530,185 540,165 Z"
-                      fill={activeCountry?.nameEn === "Turkey" ? "rgba(249, 115, 22, 0.3)" : "#1E293B"}
-                      stroke={activeCountry?.nameEn === "Turkey" ? "#F97316" : "#334155"}
-                      strokeWidth={activeCountry?.nameEn === "Turkey" ? 2.5 : 1.2}
-                      className="transition-colors duration-300"
-                    />
-
-                    {/* Cyprus Island */}
-                    <path
-                      d="M615,225 Q635,220 642,225 Q628,235 615,225 Z"
-                      fill="#1E293B"
-                      stroke="#334155"
-                      strokeWidth="1"
-                    />
-
-                    {/* Crete Island */}
-                    <path
-                      d="M500,218 Q535,215 540,222 Q515,226 500,218 Z"
-                      fill="#1E293B"
-                      stroke="#334155"
-                      strokeWidth="1"
-                    />
-
-                    {/* Levant */}
-                    <path
-                      d="M635,225 Q660,225 665,270 Q640,280 635,250 Z"
-                      fill="#131B2E"
-                      stroke="#1E293B"
-                      strokeWidth="1"
-                    />
-
-                    {/* North Africa & Sahara Base */}
-                    <path
-                      d="M170,230 Q330,210 470,230 Q540,240 580,280 Q560,370 480,430 Q330,460 210,410 Q160,320 170,230 Z"
-                      fill="#101726"
-                      stroke="#1E293B"
-                      strokeWidth="1.2"
-                    />
-
-                    {/* Morocco */}
-                    <path
-                      d="M200,240 Q260,235 270,280 Q230,310 200,280 Z"
-                      fill={activeCountry?.nameEn === "Morocco" ? "rgba(249, 115, 22, 0.3)" : "#1E293B"}
-                      stroke={activeCountry?.nameEn === "Morocco" ? "#F97316" : "#334155"}
-                      strokeWidth={activeCountry?.nameEn === "Morocco" ? 2.5 : 1}
-                      className="transition-colors duration-300"
-                    />
-
-                    {/* Algeria */}
-                    <path
-                      d="M275,240 Q380,235 385,320 Q330,350 275,310 Z"
-                      fill={activeCountry?.nameEn === "Algeria" ? "rgba(249, 115, 22, 0.3)" : "#1E293B"}
-                      stroke={activeCountry?.nameEn === "Algeria" ? "#F97316" : "#334155"}
-                      strokeWidth={activeCountry?.nameEn === "Algeria" ? 2.5 : 1}
-                      className="transition-colors duration-300"
-                    />
-
-                    {/* Libya */}
-                    <path
-                      d="M390,240 Q495,240 495,330 Q440,350 390,320 Z"
-                      fill={activeCountry?.nameEn === "Libya" ? "rgba(249, 115, 22, 0.3)" : "#1E293B"}
-                      stroke={activeCountry?.nameEn === "Libya" ? "#F97316" : "#334155"}
-                      strokeWidth={activeCountry?.nameEn === "Libya" ? 2.5 : 1}
-                      className="transition-colors duration-300"
-                    />
-
-                    {/* Egypt */}
-                    <path
-                      d="M500,250 Q600,250 605,330 Q540,360 500,335 Z"
-                      fill={activeCountry?.nameEn === "Egypt" ? "rgba(249, 115, 22, 0.35)" : "#1E293B"}
-                      stroke={activeCountry?.nameEn === "Egypt" ? "#F97316" : "#10B981"}
-                      strokeWidth={activeCountry?.nameEn === "Egypt" ? 2.5 : 1.5}
-                      className="transition-colors duration-300"
-                    />
-
-                    {/* Arabian Peninsula */}
-                    <path
-                      d="M620,260 Q690,230 750,270 Q770,360 690,410 Q640,360 620,260 Z"
-                      fill="#101726"
-                      stroke="#1E293B"
-                      strokeWidth="1.2"
-                    />
-
-                    {/* Kuwait Region */}
-                    <circle
-                      cx="735"
-                      cy="255"
-                      r="13"
-                      fill={activeCountry?.nameEn === "Kuwait" ? "rgba(249, 115, 22, 0.3)" : "#1E293B"}
-                      stroke={activeCountry?.nameEn === "Kuwait" ? "#F97316" : "#334155"}
-                      strokeWidth={activeCountry?.nameEn === "Kuwait" ? 2.5 : 1}
-                      className="transition-colors duration-300"
-                    />
-
-                    {/* Mauritania */}
-                    <path
-                      d="M160,350 Q210,340 215,400 Q170,420 150,380 Z"
-                      fill={activeCountry?.nameEn === "Mauritania" ? "rgba(249, 115, 22, 0.3)" : "#1E293B"}
-                      stroke={activeCountry?.nameEn === "Mauritania" ? "#F97316" : "#334155"}
-                      strokeWidth={activeCountry?.nameEn === "Mauritania" ? 2.5 : 1}
-                      className="transition-colors duration-300"
-                    />
-
-                    {/* Red Sea Cutout */}
-                    <path
-                      d="M592,274 L608,295 L650,395 L638,400 L598,298 L588,276 Z"
-                      fill="#090D16"
-                      stroke="#1E293B"
-                      strokeWidth="0.8"
-                    />
-
-                    {/* Nile River & Nile Delta (Vivid Brand Green) */}
-                    <path
-                      d="M555,260 Q575,250 590,260 Q585,275 575,275 Q565,275 555,260 Z"
-                      fill="#10B981"
-                      stroke="#059669"
-                      strokeWidth="1"
-                    />
-                    <path
-                      d="M575,275 Q570,300 575,315 Q578,335 585,348 Q590,365 588,380 L590,410"
-                      fill="none"
-                      stroke="#10B981"
-                      strokeWidth="6"
-                      strokeLinecap="round"
-                      opacity="0.3"
-                    />
-                    <path
-                      d="M575,275 Q570,300 575,315 Q578,335 585,348 Q590,365 588,380 L590,410"
-                      fill="none"
-                      stroke="#10B981"
-                      strokeWidth="2.8"
-                      strokeLinecap="round"
-                    />
-                    <path d="M575,275 L565,262 M575,275 L582,261" fill="none" stroke="#10B981" strokeWidth="1.6" />
-
-                    {/* Subtle Transport / Maritime Connectors */}
-                    <g stroke="#38BDF8" strokeWidth="0.8" strokeDasharray="3 3" opacity="0.35" fill="none">
-                      <path d="M575,275 L475,230" />
-                      <path d="M575,275 L435,160" />
-                      <path d="M575,275 L570,155" />
-                      <path d="M575,275 L735,255" />
-                      <path d="M575,275 L495,330" />
-                      <path d="M495,330 L385,320 L270,280 L215,400" />
-                    </g>
-
-                    {/* Water Labels */}
-                    <text x="440" y="228" fontStyle="italic" fontSize="9" fill="#475569" letterSpacing="1.5">
-                      Mediterranean Sea
-                    </text>
-                    <text x="630" y="112" fontStyle="italic" fontSize="8" fill="#475569" letterSpacing="1.5">
-                      Black Sea
-                    </text>
-                    <text x="640" y="340" fontStyle="italic" fontSize="8" fill="#475569" letterSpacing="1.5">
-                      Red Sea
-                    </text>
-
-                    {/* Cairo / SBA Headquarters Puck */}
-                    <g
-                      id="sba-cairo-puck"
-                      className="cursor-pointer"
-                      onClick={() => setSelectedCountry(partnerCountries.find(c => c.nameEn === "Egypt") || null)}
+          {/* Interactive Layout: Side 1 (Interactive Countries Matrix) + Side 2 (Interactive Focused Map + Role Inspector) */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            {/* Countries Matrix: Professional Glass Cards */}
+            <div className="lg:col-span-7 flex flex-col gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {partnerCountries.map((c) => {
+                  const isCurrent = activeCountry?.nameEn === c.nameEn;
+                  return (
+                    <div
+                      key={c.nameEn}
+                      onMouseEnter={() => setHoveredCountry(c.nameEn)}
+                      onMouseLeave={() => setHoveredCountry(null)}
+                      onClick={() => setSelectedCountry(c)}
+                      className={cn(
+                        "group relative flex flex-col justify-between rounded-2xl border p-4 transition-all duration-300 cursor-pointer backdrop-blur-xl select-none",
+                        isCurrent
+                          ? "border-brand-orange bg-brand-orange/15 shadow-[0_8px_25px_rgba(249,115,22,0.2)] ring-1 ring-brand-orange scale-[1.02]"
+                          : "border-white/30 bg-background/50 hover:border-brand-orange/40 hover:bg-background/80 hover:scale-[1.01]"
+                      )}
                     >
-                      <circle cx="575" cy="275" r="18" fill="#F97316" opacity="0.25" className="animate-ping" />
-                      <circle cx="575" cy="275" r="10" fill="#F97316" opacity="0.35" />
-                      <circle cx="575" cy="275" r="5.5" fill="#090D16" stroke="#F97316" strokeWidth="2" />
-                      <circle cx="575" cy="275" r="3" fill="#F97316" />
-
-                      <text
-                        x="585"
-                        y="278"
-                        fontFamily="inherit"
-                        fontWeight="800"
-                        fontSize="11"
-                        fill="#FFFFFF"
-                        stroke="#090D16"
-                        strokeWidth="2.5"
-                        paintOrder="stroke fill"
-                      >
-                        Cairo
-                      </text>
-                      <text
-                        x="585"
-                        y="288"
-                        fontFamily="inherit"
-                        fontWeight="700"
-                        fontSize="8"
-                        fill="#FB923C"
-                      >
-                        HQ · المقر الرئيسي
-                      </text>
-                    </g>
-                  </svg>
-
-                  {/* Highlighting Pins for Verified Partner Countries */}
-                  {partnerCountries.map((c) => {
-                    const isActive = activeCountry?.nameEn === c.nameEn;
-                    const isEgypt = c.nameEn === "Egypt";
-                    return (
-                      <button
-                        key={c.nameEn}
-                        type="button"
-                        onMouseEnter={() => setHoveredCountry(c.nameEn)}
-                        onMouseLeave={() => setHoveredCountry(null)}
-                        onClick={() => setSelectedCountry((prev) => (prev?.nameEn === c.nameEn ? null : c))}
-                        className={cn(
-                          "group/pin absolute -translate-x-1/2 -translate-y-1/2 transition-all duration-300 focus-visible:outline-none cursor-pointer",
-                          isActive ? "z-40 scale-125" : "z-20 hover:scale-110",
-                          isEgypt && "mt-[-16px]"
-                        )}
-                        style={{ left: `${c.x}%`, top: `${c.y}%` }}
-                        aria-label={`${c.nameAr} - ${c.capitalAr}`}
-                      >
-                        <div className="relative flex flex-col items-center">
-                          {/* Pulsing ring on hover/active */}
-                          {isActive && (
-                            <span className="absolute -inset-2.5 rounded-full bg-brand-orange/40 animate-ping pointer-events-none" />
-                          )}
-                          <div
-                            className={cn(
-                              "flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-bold shadow-lg whitespace-nowrap transition-all duration-200 border",
-                              isActive
-                                ? "bg-brand-orange text-white border-orange-300 shadow-[0_0_20px_rgba(249,115,22,0.6)] ring-4 ring-brand-orange/40"
-                                : "bg-slate-900/90 text-slate-100 border-slate-700/80 hover:border-brand-orange hover:bg-slate-800 backdrop-blur-md"
-                            )}
-                          >
-                            <span
-                              className={cn(
-                                "size-2 rounded-full shrink-0",
-                                isActive ? "bg-white animate-pulse" : "bg-brand-orange"
-                              )}
-                            />
-                            <span className="text-xs leading-none">{c.flag}</span>
-                            <span className={ar ? "font-head font-medium text-[11px]" : "font-sans font-semibold"}>
+                      <div className="flex items-center justify-between gap-3">
+                        <div className="flex items-center gap-3">
+                          <span className="text-3xl drop-shadow-sm">{c.flag}</span>
+                          <div className="text-start">
+                            <h4 className={cn("font-bold text-base", isCurrent ? "text-brand-orange" : "text-foreground group-hover:text-brand-orange")}>
                               {ar ? c.nameAr : c.nameEn}
-                            </span>
-                          </div>
-                        </div>
-                      </button>
-                    );
-                  })}
-                </div>
-
-                {/* Bottom Attribution */}
-                <div className="absolute bottom-2.5 start-3 z-20 flex items-center gap-1.5 text-[10px] text-slate-400 font-sans font-medium">
-                  <span className="font-bold text-slate-200">SBA Global</span>
-                  <span>·</span>
-                  <span>{ar ? "الأسواق الحالية" : "Current Markets"}</span>
-                </div>
-              </div>
-            </div>
-
-            {/* 2. Side Column: Countries List with Flags beside names (lg:col-span-5 xl:col-span-4) */}
-            <div className="lg:col-span-5 xl:col-span-4 flex flex-col justify-between space-y-4">
-              <div>
-                <div className="flex items-center justify-between border-b border-border/60 pb-3 mb-3">
-                  <div>
-                    <h4 className="font-head text-base sm:text-lg font-bold text-foreground">
-                      {ar ? "الدول الشريكة والأسواق الحالية" : "Partner Countries & Current Markets"}
-                    </h4>
-                    <p className="text-xs text-muted-foreground mt-0.5">
-                      {ar ? "أشر على أي دولة لإبراز موقعها على الخريطة" : "Hover over any country to highlight on map"}
-                    </p>
-                  </div>
-                  <span className="font-mono text-xs font-bold bg-brand-green/10 text-brand-green-text border border-brand-green/30 px-2.5 py-1 rounded-full">
-                    {partnerCountries.length} {ar ? "دول" : "Countries"}
-                  </span>
-                </div>
-
-                {/* Active Country Detail Highlight Box */}
-                {activeCountry ? (
-                  <div className="rounded-2xl border border-brand-orange/40 bg-brand-orange/5 p-3.5 backdrop-blur-md mb-3 transition-all duration-200 animate-in fade-in zoom-in-95">
-                    <div className="flex items-center justify-between mb-1.5">
-                      <div className="flex items-center gap-2">
-                        <span className="text-2xl">{activeCountry.flag}</span>
-                        <div>
-                          <p className="font-head font-bold text-sm text-foreground">
-                            {ar ? activeCountry.nameAr : activeCountry.nameEn}
-                          </p>
-                          <p className="text-[11px] text-muted-foreground">
-                            {ar ? activeCountry.capitalAr : activeCountry.capitalEn} · <span className="font-mono text-[10px]">{activeCountry.coords}</span>
-                          </p>
-                        </div>
-                      </div>
-                      <span className="size-2 rounded-full bg-brand-orange animate-ping" />
-                    </div>
-                    <p className="text-xs text-muted-foreground leading-relaxed pt-1.5 border-t border-brand-orange/20">
-                      {ar ? activeCountry.roleAr : activeCountry.roleEn}
-                    </p>
-                  </div>
-                ) : (
-                  <div className="rounded-2xl border border-dashed border-border/80 bg-background/40 p-3 mb-3 text-center text-xs text-muted-foreground">
-                    {ar ? "مرر المؤشر فوق اسم أي دولة أو علامتها لمعاينة تفاصيل الشراكة" : "Hover over any country name or pin to inspect partnership details"}
-                  </div>
-                )}
-
-                {/* Countries List with Flags beside names — No Scrollbar, All visible */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-1.5 pe-1">
-                  {partnerCountries.map((c) => {
-                    const isSelected = activeCountry?.nameEn === c.nameEn;
-                    return (
-                      <div
-                        key={c.nameEn}
-                        onMouseEnter={() => setHoveredCountry(c.nameEn)}
-                        onMouseLeave={() => setHoveredCountry(null)}
-                        onClick={() => setSelectedCountry((prev) => (prev?.nameEn === c.nameEn ? null : c))}
-                        className={cn(
-                          "group flex items-center justify-between rounded-xl border p-2 text-xs font-semibold transition-all duration-200 cursor-pointer",
-                          isSelected
-                            ? "border-brand-orange bg-brand-orange text-white shadow-md shadow-brand-orange/20 scale-[1.01]"
-                            : "border-border/70 bg-background/60 text-foreground hover:border-brand-orange/50 hover:bg-brand-orange/10 hover:scale-[1.01]"
-                        )}
-                      >
-                        <div className="flex items-center gap-2.5 min-w-0">
-                          {/* Flag beside each country name */}
-                          <span className="text-lg shrink-0 leading-none">{c.flag}</span>
-                          <div className="min-w-0 text-start">
-                            <p className={cn("font-bold truncate", ar ? "font-head text-xs" : "text-xs")}>
-                              {ar ? c.nameAr : c.nameEn}
-                            </p>
-                            <p className={cn("text-[10px] truncate", isSelected ? "text-white/80" : "text-muted-foreground")}>
+                            </h4>
+                            <p className="text-xs text-muted-foreground">
                               {ar ? c.capitalAr : c.capitalEn}
                             </p>
                           </div>
                         </div>
 
-                        <div className="flex items-center gap-1.5 shrink-0">
-                          {c.nameEn === "Egypt" && (
-                            <span className={cn(
-                              "text-[9px] font-bold px-1.5 py-0.5 rounded-md uppercase tracking-wider",
-                              isSelected ? "bg-white/20 text-white" : "bg-brand-green/15 text-brand-green-text"
-                            )}>
-                              {ar ? "المقر" : "HQ"}
-                            </span>
-                          )}
-                          <span className={cn(
-                            "size-1.5 rounded-full transition-transform group-hover:scale-125",
-                            isSelected ? "bg-white animate-pulse" : "bg-brand-orange"
-                          )} />
-                        </div>
+                        {c.nameEn === "Egypt" ? (
+                          <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-brand-green/15 text-brand-green border border-brand-green/30">
+                            {ar ? "المقر الرئيسي" : "Global HQ"}
+                          </span>
+                        ) : (
+                          <span className="size-2 rounded-full bg-brand-orange/70 group-hover:scale-125 transition-transform" />
+                        )}
                       </div>
-                    );
-                  })}
+
+                      {/* Role Preview on Card */}
+                      <p className="mt-3 text-xs text-muted-foreground leading-relaxed line-clamp-2 pt-2.5 border-t border-border/40 text-start">
+                        {ar ? c.roleAr : c.roleEn}
+                      </p>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Verified international trade network statement */}
+              <div className="mt-2 rounded-2xl border border-white/20 bg-background/40 p-4 backdrop-blur-md text-start">
+                <div className="flex items-center gap-2 text-xs font-bold text-brand-orange">
+                  <CheckCircle2 className="size-4" />
+                  <span>{ar ? "معايير التجارة الدولية المعتمدة" : "Verified International Trade Standards"}</span>
+                </div>
+                <p className="mt-1 text-xs text-muted-foreground leading-relaxed">
+                  {ar
+                    ? "تدير مجموعة سامي بن عياد سلاسل إمداد وتصدير وشراكات تصنيع موثقة مع هذه الأسواق وفق أعلى مواصفات الجودة وشهادات المنشأ الرسمية."
+                    : "Sami Bin Ayyad Group manages certified supply chains, export programs, and manufacturing alliances across these markets conforming to global quality standards."}
+                </p>
+              </div>
+            </div>
+
+            {/* Focused Visual Map & Country Inspector */}
+            <div className="lg:col-span-5 flex flex-col gap-4">
+              {/* Highlight Details Box */}
+              <div className="rounded-2xl border border-brand-orange/30 bg-background/80 p-5 shadow-lg backdrop-blur-2xl ring-1 ring-brand-orange/20 text-start">
+                <div className="flex items-center justify-between mb-3 pb-3 border-b border-border/50">
+                  <div className="flex items-center gap-3">
+                    <span className="text-3xl">{activeCountry.flag}</span>
+                    <div>
+                      <h4 className="font-head font-extrabold text-lg text-foreground">
+                        {ar ? activeCountry.nameAr : activeCountry.nameEn}
+                      </h4>
+                      <p className="text-xs text-muted-foreground font-mono">
+                        {ar ? activeCountry.capitalAr : activeCountry.capitalEn} · {activeCountry.coords}
+                      </p>
+                    </div>
+                  </div>
+                  <span className="size-2.5 rounded-full bg-brand-orange animate-ping" />
+                </div>
+
+                <div className="space-y-1.5">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-brand-orange block">
+                    {ar ? "نوع التعامل ونطاق الشراكة:" : "Partnership Scope & Trade Activity:"}
+                  </span>
+                  <p className="text-xs sm:text-sm text-foreground/90 font-medium leading-relaxed">
+                    {ar ? activeCountry.roleAr : activeCountry.roleEn}
+                  </p>
                 </div>
               </div>
 
-              {/* Summary footprint card */}
-              <div className="rounded-2xl border border-white/20 bg-background/60 p-3.5 backdrop-blur-md mt-2">
-                <p className="text-xs font-bold text-foreground">
-                  {ar ? "شبكة عمليات وتجارة دولية موثقة" : "Targeted Commercial Reach"}
-                </p>
-                <p className="mt-1 text-[11px] text-muted-foreground leading-relaxed">
-                  {ar ? (
-                    <span>تتوسع أنشطة الاستيراد والتصدير والتوريد ل<span className="text-brand-orange font-bold">مجموعة سامي بن عياد</span> في هذه الدول وفق معايير الجودة والاتفاقيات الدولية.</span>
-                  ) : (
-                    <span><span className="text-brand-orange font-bold">SAMI BIN AYYAD GROUP</span> expands its import, export, and supply partnerships across these nations in accordance with international quality standards.</span>
-                  )}
-                </p>
+              {/* Dynamic Map Display Highlighting Selected Country */}
+              <div className="relative aspect-[16/11] w-full overflow-hidden rounded-2xl border border-white/20 bg-[#090D16] shadow-xl">
+                <svg viewBox="0 0 1000 600" className="size-full">
+                  <defs>
+                    <pattern id="matrix-map-grid" width="36" height="36" patternUnits="userSpaceOnUse">
+                      <circle cx="18" cy="18" r="0.8" fill="#38BDF8" opacity="0.18" />
+                    </pattern>
+                    <radialGradient id="ocean-glow-2" cx="58%" cy="45%" r="65%">
+                      <stop offset="0%" stopColor="#0F172A" />
+                      <stop offset="70%" stopColor="#090D16" />
+                      <stop offset="100%" stopColor="#040711" />
+                    </radialGradient>
+                  </defs>
+
+                  <rect width="1000" height="600" fill="url(#ocean-glow-2)" />
+                  <rect width="1000" height="600" fill="url(#matrix-map-grid)" />
+
+                  {/* Europe / Balkans */}
+                  <path
+                    d="M260,110 Q320,60 410,70 Q490,50 560,90 Q620,120 590,170 Q540,200 500,190 Q460,225 430,215 Q390,200 360,170 Q300,180 260,140 Z"
+                    fill="#131B2E"
+                    stroke="#1E293B"
+                    strokeWidth="1.2"
+                  />
+
+                  {/* France */}
+                  <path
+                    d="M360,130 Q420,120 435,160 Q410,200 375,185 Q350,160 360,130 Z"
+                    fill={activeCountry?.nameEn === "France" ? "rgba(249, 115, 22, 0.45)" : "#1E293B"}
+                    stroke={activeCountry?.nameEn === "France" ? "#F97316" : "#334155"}
+                    strokeWidth={activeCountry?.nameEn === "France" ? 3 : 1}
+                    className="transition-colors duration-300"
+                  />
+
+                  {/* Italy */}
+                  <path
+                    d="M455,165 Q485,180 475,230 Q455,240 450,210 Q450,175 455,165 Z"
+                    fill={activeCountry?.nameEn === "Italy" ? "rgba(249, 115, 22, 0.45)" : "#1E293B"}
+                    stroke={activeCountry?.nameEn === "Italy" ? "#F97316" : "#334155"}
+                    strokeWidth={activeCountry?.nameEn === "Italy" ? 3 : 1}
+                    className="transition-colors duration-300"
+                  />
+
+                  {/* Turkey */}
+                  <path
+                    d="M540,165 Q625,150 670,175 Q650,215 550,205 Q530,185 540,165 Z"
+                    fill={activeCountry?.nameEn === "Turkey" ? "rgba(249, 115, 22, 0.45)" : "#1E293B"}
+                    stroke={activeCountry?.nameEn === "Turkey" ? "#F97316" : "#334155"}
+                    strokeWidth={activeCountry?.nameEn === "Turkey" ? 3 : 1.2}
+                    className="transition-colors duration-300"
+                  />
+
+                  {/* North Africa Base */}
+                  <path
+                    d="M170,230 Q330,210 470,230 Q540,240 580,280 Q560,370 480,430 Q330,460 210,410 Q160,320 170,230 Z"
+                    fill="#101726"
+                    stroke="#1E293B"
+                    strokeWidth="1.2"
+                  />
+
+                  {/* Morocco */}
+                  <path
+                    d="M200,240 Q260,235 270,280 Q230,310 200,280 Z"
+                    fill={activeCountry?.nameEn === "Morocco" ? "rgba(249, 115, 22, 0.45)" : "#1E293B"}
+                    stroke={activeCountry?.nameEn === "Morocco" ? "#F97316" : "#334155"}
+                    strokeWidth={activeCountry?.nameEn === "Morocco" ? 3 : 1}
+                    className="transition-colors duration-300"
+                  />
+
+                  {/* Algeria */}
+                  <path
+                    d="M275,240 Q380,235 385,320 Q330,350 275,310 Z"
+                    fill={activeCountry?.nameEn === "Algeria" ? "rgba(249, 115, 22, 0.45)" : "#1E293B"}
+                    stroke={activeCountry?.nameEn === "Algeria" ? "#F97316" : "#334155"}
+                    strokeWidth={activeCountry?.nameEn === "Algeria" ? 3 : 1}
+                    className="transition-colors duration-300"
+                  />
+
+                  {/* Libya */}
+                  <path
+                    d="M390,240 Q495,240 495,330 Q440,350 390,320 Z"
+                    fill={activeCountry?.nameEn === "Libya" ? "rgba(249, 115, 22, 0.45)" : "#1E293B"}
+                    stroke={activeCountry?.nameEn === "Libya" ? "#F97316" : "#334155"}
+                    strokeWidth={activeCountry?.nameEn === "Libya" ? 3 : 1}
+                    className="transition-colors duration-300"
+                  />
+
+                  {/* Egypt */}
+                  <path
+                    d="M500,250 Q600,250 605,330 Q540,360 500,335 Z"
+                    fill={activeCountry?.nameEn === "Egypt" ? "rgba(249, 115, 22, 0.45)" : "#1E293B"}
+                    stroke={activeCountry?.nameEn === "Egypt" ? "#F97316" : "#10B981"}
+                    strokeWidth={activeCountry?.nameEn === "Egypt" ? 3 : 1.5}
+                    className="transition-colors duration-300"
+                  />
+
+                  {/* Arabian Peninsula */}
+                  <path
+                    d="M620,260 Q690,230 750,270 Q770,360 690,410 Q640,360 620,260 Z"
+                    fill="#101726"
+                    stroke="#1E293B"
+                    strokeWidth="1.2"
+                  />
+
+                  {/* Kuwait Region */}
+                  <circle
+                    cx="735"
+                    cy="255"
+                    r="16"
+                    fill={activeCountry?.nameEn === "Kuwait" ? "rgba(249, 115, 22, 0.45)" : "#1E293B"}
+                    stroke={activeCountry?.nameEn === "Kuwait" ? "#F97316" : "#334155"}
+                    strokeWidth={activeCountry?.nameEn === "Kuwait" ? 3 : 1}
+                    className="transition-colors duration-300"
+                  />
+
+                  {/* Mauritania */}
+                  <path
+                    d="M160,350 Q210,340 215,400 Q170,420 150,380 Z"
+                    fill={activeCountry?.nameEn === "Mauritania" ? "rgba(249, 115, 22, 0.45)" : "#1E293B"}
+                    stroke={activeCountry?.nameEn === "Mauritania" ? "#F97316" : "#334155"}
+                    strokeWidth={activeCountry?.nameEn === "Mauritania" ? 3 : 1}
+                    className="transition-colors duration-300"
+                  />
+
+                  {/* Nile Delta & River (Egypt HQ) */}
+                  <path
+                    d="M555,260 Q575,250 590,260 Q585,275 575,275 Q565,275 555,260 Z"
+                    fill="#10B981"
+                  />
+                  <path
+                    d="M575,275 Q570,300 575,315 Q578,335 585,348 Q590,365 588,380 L590,410"
+                    fill="none"
+                    stroke="#10B981"
+                    strokeWidth="2.8"
+                    strokeLinecap="round"
+                  />
+
+                  {/* Connectors */}
+                  <g stroke="#38BDF8" strokeWidth="0.8" strokeDasharray="3 3" opacity="0.35" fill="none">
+                    <path d="M575,275 L475,230" />
+                    <path d="M575,275 L435,160" />
+                    <path d="M575,275 L570,155" />
+                    <path d="M575,275 L735,255" />
+                    <path d="M575,275 L495,330" />
+                  </g>
+
+                  {/* Dynamic Active Country Highlight Dot */}
+                  {partnerCountries.map((c) => {
+                    const isTarget = activeCountry?.nameEn === c.nameEn;
+                    if (!isTarget) return null;
+                    const cx = (c.x / 100) * 1000;
+                    const cy = (c.y / 100) * 600;
+                    return (
+                      <g key={c.nameEn}>
+                        <circle cx={cx} cy={cy} r="24" fill="#F97316" opacity="0.3" className="animate-ping" />
+                        <circle cx={cx} cy={cy} r="14" fill="#F97316" opacity="0.4" />
+                        <circle cx={cx} cy={cy} r="7" fill="#FFFFFF" stroke="#F97316" strokeWidth="3" />
+                      </g>
+                    );
+                  })}
+                </svg>
+
+                {/* Country Location Pin Label on Map */}
+                <div
+                  className="absolute -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none transition-all duration-300"
+                  style={{ left: `${activeCountry.x}%`, top: `${activeCountry.y}%` }}
+                >
+                  <div className="flex items-center gap-1.5 rounded-full bg-brand-orange text-white px-3 py-1 text-xs font-bold shadow-xl border border-white/40 ring-4 ring-brand-orange/30 whitespace-nowrap">
+                    <span>{activeCountry.flag}</span>
+                    <span>{ar ? activeCountry.nameAr : activeCountry.nameEn}</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -733,10 +574,10 @@ export function WhatWeOfferSection({ ar }: { ar: boolean }) {
       <div className="mb-8">
         <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
           <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-          <span>{ar ? "ماذا نقدم" : "What We Offer"}</span>
+          <span>{ar ? "نظرة عامة على الخدمات" : "Services Overview"}</span>
         </div>
         <h3 className="text-2xl sm:text-3xl font-bold font-head">
-          {ar ? "ماذا نقدم" : "What We Do"}
+          {ar ? "نظرة عامة على الخدمات" : "Services Overview"}
         </h3>
         <p className="mt-1.5 text-sm text-muted-foreground max-w-2xl">
           {ar
