@@ -109,7 +109,7 @@ export const catalogueProducts: CatalogueProduct[] = [
     certifications: ["ISO 9001:2015", "WRAP Certified Facilities", "OEKO-TEX Class I & II"],
     specifications: [
       { labelEn: "Production Scope", labelAr: "نطاق الإنتاج", valueEn: "Knitwear, Wovens, Loungewear, Activewear, Denim & Dresses", valueAr: "تريكو، منسوجات، ملابس منزلية، ملابس رياضية، جينز وفساتين" },
-      { labelEn: "Capacity", labelAr: "الطاقة الإنتاجية", valueEn: "Over 350,000 units per month across dedicated lines", valueAr: "أكثر من 350,000 قطعة شهريًا عبر خطوط إنتاج متخصصة" },
+      { labelEn: "Capacity", labelAr: "الطاقة الإنتاجية", valueEn: "Up to 150,000 units per month nameplate capacity (100,000 operational)", valueAr: "طاقة استيعابية تصل إلى 150,000 قطعة شهريًا (100,000 قطعة تشغيلية)" },
       { labelEn: "Quality Assurance", labelAr: "فحص الجودة", valueEn: "AQL 1.5 / 2.5 inline and pre-shipment auditing", valueAr: "تفتيش مرحلي ونهائي قبل الشحن وفق معيار AQL 1.5 / 2.5" },
       { labelEn: "Incoterms Available", labelAr: "شروط التوريد", valueEn: "FOB Alexandria, CIF, EXW, DDP (upon agreement)", valueAr: "FOB الإسكندرية، CIF، EXW، DDP (حسب الاتفاق)" },
     ],

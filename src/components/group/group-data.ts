@@ -73,8 +73,8 @@ export const divisions: Division[] = [
     points: [
       { en: "+5,000 pieces/day · +100,000/month", ar: "+5,000 قطعة يوميًا · +100,000 شهريًا" },
       { en: "+15 lines · +250 machines", ar: "+15 خط إنتاج · +250 ماكينة" },
-      { en: "Dedicated classic shirt lines (30k/mo)", ar: "خطوط متخصصة للقمصان الكلاسيك (30 ألف/شهر)" },
-      { en: "Private label, FOB & +20,000 styles developed", ar: "علامات خاصة، برامج FOB، و+20,000 موديل" },
+      { en: "Dedicated classic shirt lines (45k/mo)", ar: "خطوط متخصصة للقمصان الكلاسيك (45 ألف/شهر)" },
+      { en: "Private label, FOB & +2,700 styles developed", ar: "علامات خاصة، برامج FOB، و+2,700 موديل" },
     ],
     link: "/apparel",
   },
@@ -159,7 +159,7 @@ export interface Stat {
 }
 
 export const stats: Stat[] = [
-  { value: "+20,000", label: "Garment models developed", labelAr: "موديل ملابس تم تطويرها" },
+  { value: "+2,700", label: "Garment models developed", labelAr: "موديل ملابس تم تطويرها" },
   { value: "+57", label: "Construction projects", labelAr: "مشروعًا إنشائيًا" },
   { value: "+540M", label: "EGP construction turnover", labelAr: "جنيه حجم أعمال المقاولات" },
   { value: "4", label: "Strategic sectors", labelAr: "قطاعات استراتيجية" },
@@ -174,7 +174,7 @@ export const capabilityStats: Stat[] = [
   { value: "+100,000", label: "Garments per month", labelAr: "قطعة ملابس شهريًا" },
   { value: "+15", label: "Production lines", labelAr: "خط إنتاج" },
   { value: "+250", label: "Industrial machines", labelAr: "ماكينة صناعية" },
-  { value: "+20,000", label: "Apparel styles developed", labelAr: "موديل ملابس تم تطويره" },
+  { value: "+2,700", label: "Apparel styles developed", labelAr: "موديل ملابس تم تطويره" },
 ];
 
 export interface SubsectorBrief {
@@ -352,8 +352,8 @@ export const sectorOverviews: SectorOverview[] = [
       {
         titleEn: "Dedicated Classic Shirt Lines",
         titleAr: "خطوط القمصان الكلاسيكية التخصصية",
-        descEn: "Specialized lines producing 30,000 classic formal shirts per month for prominent brands.",
-        descAr: "خط إنتاج متخصص لقمصان الرجال الكلاسيكية بطاقة 30,000 قميص شهريًا بجودة أوروبية.",
+        descEn: "Specialized lines producing 45,000 classic formal shirts per month for prominent brands.",
+        descAr: "خط إنتاج متخصص لقمصان الرجال الكلاسيكية بطاقة 45,000 قميص شهريًا بجودة أوروبية.",
       },
       {
         titleEn: "Private Label & FOB Export Programs",
@@ -454,7 +454,7 @@ export interface PerformanceEntry {
 
 // Illustrative placeholder values — to be replaced with verified figures.
 export const performance: PerformanceEntry[] = [
-  { sector: "Garment & Textiles", sectorAr: "الملابس والمنسوجات", figure: "+20,000", figureNote: "models developed · placeholder", figureNoteAr: "موديل تم تطويرها · بيانات مبدئية", work: 82, projects: 64, people: 78 },
+  { sector: "Garment & Textiles", sectorAr: "الملابس والمنسوجات", figure: "+2,700", figureNote: "models developed · verified", figureNoteAr: "موديل معتمد تم تطويره", work: 82, projects: 64, people: 78 },
   { sector: "Construction", sectorAr: "المقاولات", figure: "+57", figureNote: "projects · placeholder", figureNoteAr: "مشروعًا · بيانات مبدئية", work: 74, projects: 58, people: 66 },
   { sector: "Environment", sectorAr: "البيئة", figure: "$10M", figureNote: "max project volume · placeholder", figureNoteAr: "أقصى حجم مشروع · بيانات مبدئية", work: 52, projects: 44, people: 38 },
   { sector: "Research", sectorAr: "البحث العلمي", figure: "+4", figureNote: "published titles · placeholder", figureNoteAr: "إصدارات منشورة · بيانات مبدئية", work: 40, projects: 34, people: 26 },

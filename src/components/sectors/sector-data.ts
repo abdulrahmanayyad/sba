@@ -80,8 +80,8 @@ export const sectors: Record<SectorSlug, SectorPageData> = {
       {
         title: "Why Us",
         titleAr: "لماذا تختارنا",
-        body: "More than a manufacturing facility: an integrated textile-garment network, deep product development expertise with 20,000+ styles, flexible production lines, international delivery experience, and long-term partnership commitment.",
-        bodyAr: "أكثر من مجرد مصنع: منظومة تصنيع متكاملة تجمع بين الأقمشة وتصنيع الملابس، وخبرة تطوير أكثر من 20,000 موديل، ومرونة إنتاجية، وخبرة تصدير دولية، والتزام بالشراكات طويلة الأمد.",
+        body: "More than a manufacturing facility: an integrated textile-garment network, deep product development expertise with 2,700+ styles, flexible production lines, international delivery experience, and long-term partnership commitment.",
+        bodyAr: "أكثر من مجرد مصنع: منظومة تصنيع متكاملة تجمع بين الأقمشة وتصنيع الملابس، وخبرة تطوير أكثر من 2,700 موديل وتصميم صناعي معتمد، ومرونة إنتاجية، وخبرة تصدير دولية، والتزام بالشراكات طويلة الأمد.",
       },
       {
         title: "Our Products",
@@ -110,8 +110,8 @@ export const sectors: Record<SectorSlug, SectorPageData> = {
       {
         title: "Classic Shirt Factory",
         titleAr: "مصنع القمصان الكلاسيك",
-        body: "A dedicated manufacturing facility equipped with 100 specialized machines and a dedicated line producing up to 30,000 classic shirts monthly to strict international standards.",
-        bodyAr: "مصنع متخصص ومملوك للمجموعة لتصنيع القمصان الكلاسيك، يضم 100 ماكينة متخصصة وخط إنتاج مخصصًا بطاقة تصل إلى 30,000 قميص كلاسيك شهريًا وفق أعلى معايير الجودة.",
+        body: "A dedicated manufacturing facility equipped with 100 specialized machines and a dedicated line producing up to 45,000 classic shirts monthly to strict international standards.",
+        bodyAr: "مصنع متخصص ومملوك للمجموعة لتصنيع القمصان الكلاسيك، يضم 100 ماكينة متخصصة وخط إنتاج مخصصًا بطاقة تصل إلى 45,000 قميص كلاسيك شهريًا وفق أعلى معايير الجودة.",
       },
       {
         title: "Manufacturing Process",

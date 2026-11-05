@@ -1,9 +1,11 @@
 // ============================================================================
 // SAMI BIN AYYAD GROUP — SERVICES & SOLUTIONS REPOSITORY
 // Strictly dedicated to professional, engineering, and technical works.
+// Exactly 39 services across 3 operational divisions:
+// Construction (12), Environmental (19), and Apparel Services (8).
 // ============================================================================
 
-export type ServiceSector = "construction" | "environmental" | "apparel-services" | "industrial-solutions";
+export type ServiceSector = "construction" | "environmental" | "apparel-services";
 
 export interface ProfessionalService {
   id: string;
@@ -40,6 +42,9 @@ export interface ExecutedProject {
 }
 
 export const professionalServices: ProfessionalService[] = [
+  // --------------------------------------------------------------------------
+  // DIVISION 1: CONSTRUCTION & REAL ESTATE DEVELOPMENT (12 Disciplines)
+  // --------------------------------------------------------------------------
   {
     "id": "srv-cns-general",
     "code": "SBA-SRV-CNS01",
@@ -65,28 +70,10 @@ export const professionalServices: ProfessionalService[] = [
       "تشطيبات الواجهات المعمارية والتجهيزات الداخلية وتنسيق الموقع",
       "التشغيل التجريبي، الاختبارات البلدية وتسليم المخططات التنفيذية"
     ],
-    "applicationsEn": [
-      "Government Complexes",
-      "Corporate Headquarters",
-      "Commercial Plazas",
-      "Industrial Parks"
-    ],
-    "applicationsAr": [
-      "المجمعات الحكومية",
-      "المقرات الإدارية الكبرى",
-      "المراكز التجارية",
-      "المناطق الصناعية"
-    ],
-    "capabilitiesEn": [
-      "Multi-discipline site engineers",
-      "Heavy machinery fleet",
-      "ERP-driven procurement and cost control"
-    ],
-    "capabilitiesAr": [
-      "فريق مهندسين متكامل بمختلف التخصصات",
-      "أسطول معدات ثقيلة",
-      "إدارة التكاليف والجدولة عبر أنظمة ERP"
-    ],
+    "applicationsEn": ["Government Complexes", "Corporate Headquarters", "Commercial Centers", "Industrial Campuses"],
+    "applicationsAr": ["المجمعات الحكومية", "المقرات الرئيسية للشركات", "المراكز التجارية الكبرى", "المجمعات الصناعية"],
+    "capabilitiesEn": ["First-tier contracting classification", "In-house heavy equipment fleet", "Strict zero-defect quality delivery"],
+    "capabilitiesAr": ["تصنيف مقاولات فئة أولى", "أسطول معدات ثقيلة وخلاطات مملوكة للشركة", "معايير تسليم هندسية خالية من الملاحظات"],
     "image": "/BG/Contracting & Real Estate Development/Contracting & Real Estate Development Home Page.jpg"
   },
   {
@@ -94,141 +81,87 @@ export const professionalServices: ProfessionalService[] = [
     "code": "SBA-SRV-CNS02",
     "sector": "construction",
     "categoryKey": "civil-works",
-    "categoryEn": "Construction & Civil Works",
-    "categoryAr": "الأعمال المدنية والإنشائية",
-    "nameEn": "Civil Infrastructure, Earthworks & Utility Networks",
-    "nameAr": "أعمال الهندسة المدنية وشبكات البنية التحتية",
-    "descriptionEn": "Large-scale civil engineering works including bulk excavation, underground utility conduits, storm drainage lines, and highway access pavements.",
-    "descriptionAr": "تنفيذ الأعمال المدنية الكبرى وشبكات المرافق التحتية، بما يشمل الحفر العام، خطوط تصريف مياه الأمطار، شبكات الصرف والتغذية ورصف الطرق.",
+    "categoryEn": "Civil & Concrete Works",
+    "categoryAr": "الأعمال المدنية والخرسانية",
+    "nameEn": "Reinforced Concrete Structures & Civil Engineering Works",
+    "nameAr": "تنفيذ المنشآت الخرسانية المسلحة والأعمال المدنية الكبرى",
+    "descriptionEn": "Precision formwork, rebar fabrication, mass concrete pouring, and post-tensioned slab construction for high-rise, commercial, and heavy-load foundations.",
+    "descriptionAr": "تنفيذ أعمال الشدات المعدنية وتسليح الخرسانات وصب الكتل الخرسانية الضخمة والأسقف سابقة الإجهاد (Post-Tension) للأبراج والمباني ذات الأحمال العالية.",
     "scopeOfWorkEn": [
-      "Bulk earthmoving, dewatering, and soil compaction",
-      "Potable water distribution lines and gravity sewer trunks",
-      "Stormwater culverts and retention basins",
-      "Paved asphalt roadways, curbs, and heavy-duty concrete aprons"
+      "Mass raft foundations and continuous diaphragm walls",
+      "Prestressed and post-tensioned long-span slab systems",
+      "Laser-screeded industrial flooring and hardstands",
+      "Concrete quality testing, curing monitoring, and non-destructive assays"
     ],
     "scopeOfWorkAr": [
-      "أعمال تسوية الأراضي وسحب المياه الجوفية ودمك التربة",
-      "شبكات خطوط مياه الشرب وخطوط الانحدار للصرف الصحي",
-      "إنشاء البرابخ وقنوات ومجمعات مياه الأمطار",
-      "رصف الطرق الإسفلتية، البردورات والأرضيات الخرسانية عالية التحمل"
+      "اللبشات الخرسانية المسلحة الضخمة والحوائط اللوحية الساندة",
+      "أنظمة الأسقف سابقة الإجهاد والبحور الإنشائية المفتوحة",
+      "الأرضيات الخرسانية الصناعية المسواة بالليزر والمقاومة للاحتكاك",
+      "فحوصات الجودة المخبرية ومراقبة معالجة الخرسانة والاختبارات غير الإتلافية"
     ],
-    "applicationsEn": [
-      "New Urban Communities",
-      "Logistics Hubs",
-      "Utility Corridors",
-      "Industrial Zones"
-    ],
-    "applicationsAr": [
-      "المجتمعات العمرانية الجديدة",
-      "المراكز اللوجستية",
-      "مسارات المرافق العامة",
-      "المناطق الصناعية"
-    ],
-    "capabilitiesEn": [
-      "GPS-guided grading equipment",
-      "High-capacity dewatering systems",
-      "Certified soil laboratory testing"
-    ],
-    "capabilitiesAr": [
-      "معدات تسوية مدعومة بنظام GPS",
-      "منظومات سحب مياه جوفية متقدمة",
-      "فحوصات معملية معتمدة للتربة والدمك"
-    ],
-    "image": "/BG/Contracting & Real Estate Development/Infrastructure & Integrated Building Systems.jpg"
+    "applicationsEn": ["High-Rise Buildings", "Commercial Plazas", "Logistics Warehouses", "Infrastructure Stations"],
+    "applicationsAr": ["الأبراج والمباني الشاهقة", "المراكز التجارية", "المستودعات اللوجستية", "محطات البنية التحتية"],
+    "capabilitiesEn": ["Heavy hydraulic formwork systems", "Continuous mass-pour logistical capability", "Dedicated batching plant coordination"],
+    "capabilitiesAr": ["شدات معدنية وهيدروليكية متطورة", "قدرة لوجستية لصبات الكتل الكبرى المستمرة", "تنسيق كامل مع محطات الخرسانة الجاهزة المعتمدة"],
+    "image": "/BG/Contracting & Real Estate Development/Execution of Major Projects.jpg"
   },
   {
     "id": "srv-cns-structural",
     "code": "SBA-SRV-CNS03",
     "sector": "construction",
     "categoryKey": "structural-works",
-    "categoryEn": "Structural Works",
-    "categoryAr": "الأعمال والمنشآت الخرسانية والمعدنية",
-    "nameEn": "Heavy Structural Concrete & Pre-Engineered Steel Framing",
-    "nameAr": "الهياكل الخرسانية المسلحة والمنشآت الفولاذية والمعدنية",
+    "categoryEn": "Structural Steel Works",
+    "categoryAr": "الأعمال والمنشآت الهيكلية",
+    "nameEn": "Heavy Structural Steel Fabrication & Pre-Engineered Buildings",
+    "nameAr": "تصنيع وتركيب الهياكل الفولاذية والمنشآت المعدنية والجمالونات",
     "descriptionEn": "Engineering fabrication and erection of heavy post-tensioned concrete, precast elements, and large-span structural steel frames for industrial and commercial facilities.",
-    "descriptionAr": "تصميم وتنفيذ وتوريد المنشآت الخرسانية لاحقة الشد (Post-Tension)، والخرسانات مسبقة الصب، والهياكل المعدنية ذات البحور الواسعة للمصانع والمخازن.",
+    "descriptionAr": "تصنيع وتوريد وتركيب الهياكل الفولاذية الثقيلة، الجمالونات المعدنية، والجمالونات الإنشائية ذات البحور الواسعة للمصانع والمستودعات والمطارات.",
     "scopeOfWorkEn": [
-      "Cast-in-place high-strength post-tension concrete slabs",
-      "Precast concrete beam, column, and hollow-core installations",
-      "Fabrication and erection of heavy PEB structural steel",
-      "Structural retrofitting, carbon fiber wrapping, and load testing"
+      "CAD/CAM steel detailing and structural shop drawings",
+      "Heavy column, rafter, and truss robotic welding and fabrication",
+      "Sandblasting (Sa 2.5) and multi-coat intumescent fireproofing",
+      "On-site crane rigging, high-strength bolt torqueing, and NDT weld testing"
     ],
     "scopeOfWorkAr": [
-      "صب بلاطات الخرسانة المسلحة عالية المقاومة لاحقة الشد",
-      "تركيب العناصر الخرسانية مسبقة الصب والأسقف المجوفة",
-      "تصنيع وتركيب الهياكل الفولاذية والجمالونات سابقة الهندسة",
-      "تدعيم وتقوية العناصر الإنشائية بألياف الكربون واختبارات التحميل"
+      "إعداد المخططات التنفيذية والورشية ثلاثية الأبعاد (Tekla Structures)",
+      "قص وتجميع ولحام آلي للأعمدة والكمرات والجمالونات الثقيلة",
+      "سفع رملي وتطبيق الدهانات الصناعية ومقاومة الحريق المنتفخة",
+      "رفع وتركيب بالأوناش وربط المسامير عالية المقاومة واختبارات اللحام NDT"
     ],
-    "applicationsEn": [
-      "Industrial Warehouses",
-      "Factories",
-      "Exhibition Halls",
-      "Multi-Storey Towers"
-    ],
-    "applicationsAr": [
-      "المستودعات الصناعية",
-      "المصانع وخطوط الإنتاج",
-      "صالات المعارض الكبرى",
-      "الأبراج متعددة الطوابق"
-    ],
-    "capabilitiesEn": [
-      "In-house structural BIM modeling",
-      "Certified steel erectors",
-      "Laser-guided slab leveling"
-    ],
-    "capabilitiesAr": [
-      "نمذجة إنشائية متقدمة BIM",
-      "فنيو ومهندسو تركيبات معتمدون",
-      "تسوية الأرضيات والخرسانات بأشعة الليزر"
-    ],
-    "image": "/BG/Contracting & Real Estate Development/Integrated Solutions, Multiple Disciplines.jpg"
+    "applicationsEn": ["Industrial Plants", "Aviation Hangars", "Sports Arenas", "Hypermarket Centers"],
+    "applicationsAr": ["المصانع الثقيلة", "حظائر الطائرات", "الصالات الرياضية المغطاة", "المراكز اللوجستية والهايبرماركت"],
+    "capabilitiesEn": ["Certified AWS / ASME coded welders", "Heavy crawler crane rigging fleet", "In-house ultrasonic and MPI weld inspection"],
+    "capabilitiesAr": ["لحامون معتمدون دوليًا وفق معايير AWS و ASME", "أسطول أوناش رفع ثقيلة للحمولات الكبرى", "فحص الموجات فوق الصوتية والجسيمات المغناطيسية للحامات"],
+    "image": "/BG/Contracting & Real Estate Development/Architectural & Construction Work.jpg"
   },
   {
-    "id": "srv-cns-finishing",
+    "id": "srv-cns-architectural",
     "code": "SBA-SRV-CNS04",
     "sector": "construction",
-    "categoryKey": "architectural-finishing",
-    "categoryEn": "Architectural & Finishing Works",
-    "categoryAr": "أعمال التشطيبات والديكور المعماري",
-    "nameEn": "Premium Interior Fit-Out & Architectural Facade Engineering",
-    "nameAr": "أعمال التشطيبات المعمارية الفاخرة والديكور والواجهات",
-    "descriptionEn": "Delivering world-class interior fit-outs, curtain walls, ventilated stone cladding, acoustic ceilings, and precision marble flooring for luxury spaces.",
-    "descriptionAr": "تنفيذ أرقى أعمال التشطيبات الداخلية والواجهات المعمارية، وواجهات الزجاج كورتن وول، والكلادينج الحجري، والأسقف الصوتية والأرضيات الرخامية الفاخرة.",
+    "categoryKey": "architectural-works",
+    "categoryEn": "Architectural Design & Drawings",
+    "categoryAr": "الأعمال المعمارية والتصميمية",
+    "nameEn": "Architectural Executive Design Drawings & Building Information Modeling (BIM)",
+    "nameAr": "الرسومات التنفيذية المعمارية ونمذجة معلومات البناء (BIM)",
+    "descriptionEn": "Transforming schematic architectural concepts into coordinated, constructible working drawings, BIM models, and clash-free interdisciplinary packages.",
+    "descriptionAr": "تحويل المفاهيم المعمارية والتصميمية إلى حزم رسومات تنفيذية متكاملة ونماذج BIM دقيقة خالية من التعارضات بين كافة التخصصات الهندسية.",
     "scopeOfWorkEn": [
-      "Structural glazed curtain walling and aluminum composite cladding",
-      "Imported marble, granite, and porcelain flooring installations",
-      "Custom acoustic gypsum partitions and decorative woodwork",
-      "Architectural lighting design and lighting automation integration"
+      "Full BIM Level 2 architectural and structural coordinated modeling",
+      "Detailed architectural construction shop drawings and specifications",
+      "Facade detail drafting (curtain walls, double glazing, stone cladding)",
+      "Value engineering, BOQ preparation, and technical submittals"
     ],
     "scopeOfWorkAr": [
-      "واجهات زجاجية كورتن وول وتجليد ألومنيوم كلادينج معتمد",
-      "توريد وتركيب الرخام والجرانيت المستورد والبورسلين الفاخر",
-      "قواطع جبسية عازلة للصوت وديكورات خشبية مخصصة",
-      "تصميم وتنفيذ أنظمة الإضاءة المعمارية المتطورة"
+      "نمذجة معمارية وإنشائية متكاملة بتقنية BIM Level 2",
+      "إعداد الرسومات الورشية التفصيلية وجداول المواصفات الفنية",
+      "تفاصيل الواجهات المعمارية الزجاجية والرخامية والألومنيوم كبس",
+      "الهندسة القيمة وحساب الكميات الدقيقة ومراجعة الاعتمادات الفنية"
     ],
-    "applicationsEn": [
-      "Luxury Hotels",
-      "Corporate Boardrooms",
-      "Commercial Showrooms",
-      "High-End Villas"
-    ],
-    "applicationsAr": [
-      "الفنادق والمنتجعات",
-      "المقرات الإدارية الفاخرة",
-      "المعارض التجارية",
-      "الفيلات والقصور الخاصة"
-    ],
-    "capabilitiesEn": [
-      "Skilled master craftsmen",
-      "Direct quarry marble sourcing",
-      "3D architectural visualization"
-    ],
-    "capabilitiesAr": [
-      "حرفيون ومعلمون مهرة",
-      "استيراد مباشر للرخام من المحاجر",
-      "تصميم ورندرة معمارية ثلاثية الأبعاد"
-    ],
-    "image": "/BG/Contracting & Real Estate Development/Finishing & Interior Design.jpg"
+    "applicationsEn": ["Corporate Towers", "Specialized Mixed-Use Plazas", "Luxury Compounds", "Institutional Campuses"],
+    "applicationsAr": ["الأبراج الإدارية", "المجمعات متعددة الاستخدامات", "الكمبوندات السكنية الراقية", "المنشآت المؤسسية"],
+    "capabilitiesEn": ["Senior BIM managers and Revit coordinators", "Clash detection automation", "Fast-track design-to-build workflows"],
+    "capabilitiesAr": ["مهندسو تنسيق BIM معتمدون", "حل تعارضات المسارات آليًا قبل بدء التنفيذ", "منهجية تسريع الانتقال من التصميم للموقع"],
+    "image": "/BG/Contracting & Real Estate Development/Administrative Buildings & Commercial Centers.jpg"
   },
   {
     "id": "srv-cns-mep",
@@ -236,1510 +169,1025 @@ export const professionalServices: ProfessionalService[] = [
     "sector": "construction",
     "categoryKey": "electromechanical-mep",
     "categoryEn": "Electromechanical Works (MEP)",
-    "categoryAr": "الأعمال الكهروميكانيكية (MEP)",
+    "categoryAr": "الأعمال الكهروميكانيكية المتكاملة",
     "nameEn": "Integrated HVAC, Fire Protection, Electrical & Plumbing Engineering",
     "nameAr": "الهندسة الكهروميكانيكية وأنظمة التكييف ومكافحة الحريق والكهرباء",
-    "descriptionEn": "Turnkey electro-mechanical systems design, installation, and balancing. Encompassing chillers, ductwork, fire sprinkler loops, MV/LV substations, and smart building management (BMS).",
-    "descriptionAr": "تصميم وتنفيذ وتشغيل الأنظمة الكهروميكانيكية المتكاملة، بما يشمل محطات التكييف المركزي، شبكات مكافحة الحريق، محولات الجهد، وشبكات التيار الخفيف وأنظمة التحكم BMS.",
+    "descriptionEn": "Complete engineering design, supply, installation, testing, and commissioning of integrated electrical and mechanical building infrastructure systems.",
+    "descriptionAr": "هندسة وتوريد وتركيب واختبار وتشغيل الأنظمة الكهروميكانيكية المتكاملة، شاملة شبكات التكييف المركزي، مكافحة الحريق، الجهد المتوسط والمنخفض وأنظمة التيار الخفيف.",
     "scopeOfWorkEn": [
-      "Central HVAC chillers, air handling units (AHUs), and ductwork",
-      "NFPA-compliant fire alarm and automated sprinkler firefighting networks",
-      "Medium and low voltage electrical power distribution and backup generators",
-      "Sanitary plumbing, rainwater recovery, and booster pumping systems",
-      "Smart Building Management System (BMS) controls"
+      "Chilled water central HVAC plants and variable refrigerant flow (VRF)",
+      "NFPA-compliant wet/dry automatic fire sprinkler and clean agent systems",
+      "Medium and low voltage substations, power generators, and busways",
+      "Building Management Systems (BMS), structured cabling, and smart telemetry"
     ],
     "scopeOfWorkAr": [
-      "محطات تكييف مركزي مائي وشبكات مجاري الهواء وموزعات التبريد",
-      "أنظمة إنذار ومكافحة حريق أوتوماتيكية مطابقة لكود NFPA",
-      "شبكات توزيع القوى الكهربائية جهد متوسط ومنخفض والمولدات",
-      "شبكات التغذية الصحية ومضخات تعزيز الضغط وتصريف السيول",
-      "أنظمة التحكم الذكي وإدارة المباني BMS"
+      "محطات المياه المثلجة Chillers وأنظمة التكييف المتغير VRF",
+      "شبكات الرش الآلي ومكافحة الحريق بالغازات النظيفة مطابقة لمعايير NFPA",
+      "محطات المحولات ولوحات التوزيع والمولدات وقضبان التوزيع Busways",
+      "أنظمة التحكم الذكي في المباني BMS وشبكات التيار الخفيف والمراقبة"
     ],
-    "applicationsEn": [
-      "Hospitals",
-      "Data Centers",
-      "Shopping Malls",
-      "High-Rise Complexes"
-    ],
-    "applicationsAr": [
-      "المستشفيات والمراكز الطبية",
-      "مراكز البيانات",
-      "المولات التجارية",
-      "الأبراج السكنية والإدارية"
-    ],
-    "capabilitiesEn": [
-      "NFPA & ASHRAE certified MEP engineers",
-      "Air balancing testing equipment",
-      "Automated duct fabrication"
-    ],
-    "capabilitiesAr": [
-      "مهندسو MEP معتمدون من NFPA و ASHRAE",
-      "أجهزة موازنة تدفق الهواء والهيدروليك",
-      "تصنيع آلي لمجاري الهواء"
-    ],
-    "image": "/BG/Contracting & Real Estate Development/Electromechanical Systems (MEP).jpg"
+    "applicationsEn": ["Data Centers", "Hospitals", "Financial Towers", "Commercial Shopping Malls"],
+    "applicationsAr": ["مراكز البيانات", "المستشفيات", "الأبراج المالية", "المراكز التجارية الكبرى"],
+    "capabilitiesEn": ["NFPA certified fire engineering specialists", "BMS automation integration team", "Factory certified commissioning protocol"],
+    "capabilitiesAr": ["مهندسون معتمدون من NFPA لمكافحة الحريق", "فريق متخصص في برمجة وتكامل أنظمة BMS", "بروتوكولات فحص وتشغيل تجريبي معتمدة"],
+    "image": "/BG/Contracting & Real Estate Development/Electromechanical Works (MEP).jpg"
   },
   {
-    "id": "srv-cns-realestate",
+    "id": "srv-cns-infrastructure",
     "code": "SBA-SRV-CNS06",
     "sector": "construction",
-    "categoryKey": "real-estate-dev",
-    "categoryEn": "Real Estate Development",
-    "categoryAr": "التطوير والاستثمار العقاري",
-    "nameEn": "Commercial, Administrative & Residential Property Development",
-    "nameAr": "التطوير العقاري للمشروعات التجارية والإدارية والسكنية",
-    "descriptionEn": "Strategic real estate development covering land acquisition, project feasibility, master planning, architectural concept, construction, and investor asset management.",
-    "descriptionAr": "تطوير عقاري استثماري متكامل يشمل دراسات الجدوى واختيار المواقع الاستراتيجية، المخطط العام، التصميم المعماري، التنفيذ وإدارة الأصول العقارية الاستثمارية.",
+    "categoryKey": "infrastructure-utilities",
+    "categoryEn": "Infrastructure & Utilities",
+    "categoryAr": "تطوير البنية التحتية والشبكات",
+    "nameEn": "Civil Infrastructure, Utility Networks & Deep Earthworks",
+    "nameAr": "أعمال البنية التحتية، شبكات المرافق العامة والأعمال الترابية العميقة",
+    "descriptionEn": "Large-scale earthmoving, deep trench excavations, underground potable water, irrigation, stormwater, sewage networks, and road construction.",
+    "descriptionAr": "تنفيذ مشروعات البنية التحتية الكبرى، أعمال الحفر والردم والتسوية، وتمديد شبكات مياه الشرب والري وصرف الأمطار والصرف الصحي ورصف الطرق.",
     "scopeOfWorkEn": [
-      "Market demand analytics and highest-and-best-use feasibility studies",
-      "Master planning and zoning regulatory approvals",
-      "Value engineering and lifecycle cost optimization",
-      "Turnkey construction and sales/leasing program coordination"
+      "Large-volume site grading, rock blasting, and deep pipeline trenching",
+      "HDPE and ductile iron pressurized potable and fire water mainlines",
+      "Gravity sewer systems, concrete manholes, and pumping lifting stations",
+      "Sub-base road compaction, asphalt paving, and roadside curb engineering"
     ],
     "scopeOfWorkAr": [
-      "دراسات الجدوى الاقتصادية وأبحاث السوق وتحديد الاستخدام الأمثل",
-      "إعداد المخططات العامة واعتماد التراخيص الحكومية",
-      "الهندسة القيمة وتحسين تكاليف دورة حياة المبنى",
-      "الإشراف على التنفيذ والتسويق وتنسيق برامج التأجير والبيع"
+      "تسوية الموقع العام وتفجير وتكسير الصخور وحفر مسارات خطوط الأنابيب",
+      "تمديد خطوط مياه الشرب والحريق بأنابيب البولي إيثيلين HDPE والحديد المرن",
+      "شبكات الانحدار للصرف الصحي وغرف التفتيش ومحطات الرفع الخرسانية",
+      "دمج طبقات الأساس للطرق والرصف الأسفلتي والبردورات والأرصفة"
     ],
-    "applicationsEn": [
-      "Mixed-Use Compounds",
-      "Business Parks",
-      "Gated Communities",
-      "Retail Strips"
+    "applicationsEn": ["New Urban Communities", "Industrial Development Zones", "Resort Masterplans", "Logistics Ports"],
+    "applicationsAr": ["المجتمعات العمرانية الجديدة", "المناطق الصناعية", "المنتجعات السياحية", "الموانئ اللوجستية"],
+    "capabilitiesEn": ["Heavy earthmoving and trench excavation machinery", "Electrofusion and butt-welding certified technicians", "Laser-guided GPS grade control equipment"],
+    "capabilitiesAr": ["معدات حفر وتسوية ثقيلة متطورة", "فنيون معتمدون في لحام أنابيب HDPE بالتسخين الكهربائي", "أجهزة مساحة بنظام GPS لضبط المناسيب بالليزر"],
+    "image": "/BG/Contracting & Real Estate Development/Infrastructure & Utility Works.jpg"
+  },
+  {
+    "id": "srv-cns-industrial",
+    "code": "SBA-SRV-CNS07",
+    "sector": "construction",
+    "categoryKey": "industrial-construction",
+    "categoryEn": "Industrial Construction",
+    "categoryAr": "الإنشاءات الصناعية والمباني الجاهزة",
+    "nameEn": "Industrial Facilities, Pre-Engineered Factories & Logistics Hubs",
+    "nameAr": "إنشاء المصانع، المستودعات الصناعية والمجمعات اللوجستية",
+    "descriptionEn": "Turnkey construction of industrial plants, pharmaceutical facilities, heavy machine foundations, logistics parks, and refrigerated warehouses.",
+    "descriptionAr": "بناء وتشييد المصانع المتكاملة والمنشآت الدوائية وقواعد الماكينات الثقيلة والمجمعات اللوجستية وثلاجات التخزين الكبرى.",
+    "scopeOfWorkEn": [
+      "Heavy vibration-isolated reinforced concrete machine foundation beds",
+      "Pre-engineered steel portal frames and insulated sandwich panel cladding",
+      "Epoxy, polyurethane, and dry-shake hardener industrial flooring systems",
+      "Overhead crane gantry beams, loading docks, and industrial drainage"
     ],
-    "applicationsAr": [
-      "المجمعات متعددة الاستخدامات",
-      "واحات الأعمال",
-      "المجمعات السكنية المغلقة",
-      "المراكز التجارية المفتوحة"
+    "scopeOfWorkAr": [
+      "قواعد خرسانية مسلحة معزولة لامتصاص اهتزازات الماكينات الثقيلة",
+      "هياكل حديدية مسبقة الصنع وألواح ساندوتش بانل عازلة للحرارة والصوت",
+      "أرضيات صناعية إيبوكسية وبولي يوريثان ومصلدات خرسانية مقاومة للبرى",
+      "كمرات مسارات الأوناش العلوية وأرصفة الشحن والتفريغ وشبكات الصرف الصناعي"
     ],
-    "capabilitiesEn": [
-      "Financial modeling & investment structuring",
-      "Award-winning architectural partners",
-      "Turnkey in-house execution"
-    ],
-    "capabilitiesAr": [
-      "هيكلة استثمارية ونمذجة مالية احترافية",
-      "شراكات مع بيوت خبرة معمارية",
-      "قدرة تنفيذية متكاملة للإنشاءات"
-    ],
-    "image": "/BG/Contracting & Real Estate Development/Residential & Commercial Property Development.jpg"
+    "applicationsEn": ["Food Processing Plants", "Textile Manufacturing Mills", "Chemical Facilities", "FMCG Distribution Centers"],
+    "applicationsAr": ["مصانع الأغذية والمشروبات", "مصانع الغزل والنسيج والملابس", "المنشآت الكيماوية", "مراكز توزيع السلع الاستهلاكية"],
+    "capabilitiesEn": ["Fast-track industrial civil construction teams", "High-tolerance floor flatness (FM2 standards)", "Heavy machinery installation coordination"],
+    "capabilitiesAr": ["فرق تنفيذ سريعة للمنشآت الصناعية", "تسوية فائقة للأرضيات بمعيار FM2 للمستودعات الذكية", "تنسيق هندسي دقيق لتركيب خطوط الإنتاج والماكينات"],
+    "image": "/BG/Contracting & Real Estate Development/Hospital & Health Center Construction.jpg"
   },
   {
     "id": "srv-cns-medical",
-    "code": "SBA-SRV-CNS07",
+    "code": "SBA-SRV-CNS08",
     "sector": "construction",
-    "categoryKey": "medical-fitout",
-    "categoryEn": "Medical Facility Fit-Outs",
-    "categoryAr": "تجهيز المستشفيات والمنشآت الصحية",
+    "categoryKey": "healthcare-facilities",
+    "categoryEn": "Healthcare & Medical Facilities",
+    "categoryAr": "المنشآت الطبية والمستشفيات التخصصية",
     "nameEn": "Specialized Healthcare Construction, Cleanrooms & Medical Gas Systems",
     "nameAr": "تجهيز المستشفيات، غرف العمليات المعقمة وشبكات الغازات الطبية",
-    "descriptionEn": "Highly specialized contracting adhering to international HTM and AIA healthcare guidelines. Delivering sterile operating theatres, intensive care units, and positive-pressure cleanrooms.",
-    "descriptionAr": "تنفيذ هندسي فائق التخصص للمنشآت الطبية وفق معايير HTM و AIA العالمية، يشمل أجنحة العمليات الجراحية المعقمة، العناية المركزة، وشبكات الغازات الطبية.",
+    "descriptionEn": "Highly regulated construction of tertiary hospitals, specialized surgical centers, radiology bunkers, and ISO-certified cleanroom operating suites.",
+    "descriptionAr": "تنفيذ وتجهيز المستشفيات التخصصية والمراكز الطبية والجراحية وغرف العمليات المعقمة والتحكم في العدوى وغرف الرنين المغناطيسي والعلاج الإشعاعي.",
     "scopeOfWorkEn": [
-      "Modular antibacterial cleanroom wall and ceiling panels",
-      "HEPA air filtration and laminar airflow ceiling systems (ISO Class 5-8)",
-      "Medical gas pipeline systems (Oxygen, Nitrous Oxide, Vacuum, Medical Air)",
-      "Radiation shielding for X-ray, CT, and MRI diagnostic suites"
+      "Hermetically sealed modular operating theaters with laminar airflow",
+      "Central medical gas pipeline systems (oxygen, nitrous oxide, vacuum)",
+      "Radiation lead-shielded bunker walls, acoustic doors, and anti-static flooring",
+      "Hospital-grade HEPA filtration, positive/negative pressure isolation suites"
     ],
     "scopeOfWorkAr": [
-      "قواطع وأسقف معيارية مضادة للبكتيريا ومقاومة للمنظفات الكيميائية",
-      "أنظمة تدفق الهواء الصفائحي وفلاتر HEPA لغرف العمليات (ISO 5-8)",
-      "شبكات الغازات الطبية المركزية (أكسجين، شفط، هواء طبي)",
-      "أعمال العزل الإشعاعي بالرصاص لغرف الأشعة المقطعية والرنين المغناطيسي"
+      "غرف عمليات نمطية محكمة الغلق بأنظمة تدفق الهواء الصفائحي Laminar Flow",
+      "شبكات الغازات الطبية المركزية ومحطات تفريغ الهواء وتوليد الأكسجين",
+      "عزل الإشعاع بألواح الرصاص لغرف الأشعة وأبواب عازلة وأرضيات مضادة للشحنات",
+      "فلاتر HEPA الطبية وغرف العزل ذات الضغط الإيجابي والسلبي لمنع العدوى"
     ],
-    "applicationsEn": [
-      "General Hospitals",
-      "Specialized Clinics",
-      "Surgical Centers",
-      "Pharmaceutical Cleanrooms"
-    ],
-    "applicationsAr": [
-      "المستشفيات العامة والخاصة",
-      "المراكز الطبية التخصصية",
-      "مراكز جراحة اليوم الواحد",
-      "معامل الأدوية المعقمة"
-    ],
-    "capabilitiesEn": [
-      "Healthcare-certified engineering team",
-      "Cleanroom validation instrumentation",
-      "Strict infection control protocol"
-    ],
-    "capabilitiesAr": [
-      "فريق هندسي متخصص في الأكواد الطبية",
-      "أجهزة اختبار واعتماد الغرف المعقمة",
-      "بروتوكولات صارمة لمكافحة العدوى أثناء التنفيذ"
-    ],
-    "image": "/BG/Contracting & Real Estate Development/Healthcare & Medical Facilities.jpg"
+    "applicationsEn": ["General & Specialized Hospitals", "Surgical Centers", "Radiology Suites", "Pharmaceutical Cleanrooms"],
+    "applicationsAr": ["المستشفيات العامة والتخصصية", "المراكز الجراحية الدقيقة", "أقسام الأشعة المقطعية والرنين", "المعامل الدوائية المعقمة"],
+    "capabilitiesEn": ["HTM / NFPA 99 medical gas certified engineers", "Cleanroom validation instrumentation", "Hospital infection control compliance protocol"],
+    "capabilitiesAr": ["مهندسون معتمدون في شبكات الغازات الطبية وفق معايير HTM و NFPA 99", "أجهزة قياس واختبار نظافة الهواء في غرف العمليات", "التزام صارم باشتراطات مكافحة العدوى والاعتماد الصحي"],
+    "image": "/BG/Contracting & Real Estate Development/Hospital & Health Center Construction.jpg"
   },
   {
     "id": "srv-cns-oilgas",
-    "code": "SBA-SRV-CNS08",
-    "sector": "construction",
-    "categoryKey": "oil-gas-works",
-    "categoryEn": "Oil & Gas Specialized Works",
-    "categoryAr": "أعمال المقاولات البترولية المتخصصة",
-    "nameEn": "Industrial Civil Foundations, Tank Farms & Petrochemical Civil Works",
-    "nameAr": "الأعمال المدنية المتخصصة لقطاع البترول والغاز ومزارع الخزانات",
-    "descriptionEn": "Heavy industrial civil and structural construction within refinery, terminal, and petrochemical facility boundaries, meeting strict HSE zero-incident standards.",
-    "descriptionAr": "تنفيذ الأعمال المدنية والإنشائية الثقيلة داخل مصافي التكرير ومستودعات التخزين ومجمعات البتروكيماويات وفق أعلى اشتراطات السلامة والصحة المهنية HSE.",
-    "scopeOfWorkEn": [
-      "Heavy ring-wall and pile foundations for bulk hydrocarbon storage tanks",
-      "Reinforced concrete bund walls, containment basins, and oil-water separators",
-      "Pipe rack concrete supports and heavy vibrating compressor foundations",
-      "Blast-resistant control rooms and substation civil structures"
-    ],
-    "scopeOfWorkAr": [
-      "أساسات الحوائط الحلقية والخوازيق لخزانات الوقود والغاز الضخمة",
-      "حوائط وأحواض الاحتواء الخرسانية المقاومة للهيدروكربونات ومصائد الزيوت",
-      "قواعد الكباري وحوامل الأنابيب (Pipe Racks) وقواعد الضواغط الثقيلة",
-      "غرف التحكم والمحطات الفرعية المقاومة للانفجار والصدمات"
-    ],
-    "applicationsEn": [
-      "Petroleum Refineries",
-      "Tank Terminals",
-      "LNG Facilities",
-      "Chemical Processing Complexes"
-    ],
-    "applicationsAr": [
-      "مصافي تكرير البترول",
-      "مستودعات شحن وتخزين الوقود",
-      "محطات الغاز الطبيعي",
-      "المجمعات الكيميائية"
-    ],
-    "capabilitiesEn": [
-      "Strict Permit-to-Work (PTW) protocols",
-      "Explosion-proof construction equipment",
-      "Certified non-destructive testing"
-    ],
-    "capabilitiesAr": [
-      "تطبيق صارم لتصاريح العمل الساخن والبارد PTW",
-      "معدات إنشائية مطابقة لاشتراطات المناطق المصنفة",
-      "فحوصات لا إتلافية NDT معتمدة"
-    ],
-    "image": "/BG/Contracting & Real Estate Development/Oil & Gas Industrial Civil Infrastructure.jpg"
-  },
-  {
-    "id": "srv-cns-pm",
     "code": "SBA-SRV-CNS09",
     "sector": "construction",
-    "categoryKey": "project-management",
-    "categoryEn": "Project Management & Execution",
-    "categoryAr": "إدارة المشروعات والإشراف الهندسي",
-    "nameEn": "Professional Construction Management, QA/QC & Engineering Supervision",
-    "nameAr": "إدارة المشروعات الاحترافية، ضبط الجودة والإشراف الهندسي",
-    "descriptionEn": "Owner's representative and engineering project management services overseeing schedule, budget, quality control, contract administration, and safety compliance.",
-    "descriptionAr": "خدمات تمثيل المالك وإدارة المشروعات الهندسية، للتحكم في البرنامج الزمني، وضبط التكاليف، وضمان أعلى معايير الجودة ومراقبة عقود التنفيذ والسلامة.",
+    "categoryKey": "oil-gas-facilities",
+    "categoryEn": "Oil, Gas & Energy Facilities",
+    "categoryAr": "منشآت ومحطات النفط والغاز والطاقة",
+    "nameEn": "Specialized Oil, Gas & Petrochemical Civil Works & Tank Farms",
+    "nameAr": "الأعمال المدنية المتخصصة لقطاع البترول والغاز ومحطات التوزيع",
+    "descriptionEn": "Heavy industrial civil construction within refinery, terminal, and petrochemical facility boundaries, meeting strict HSE zero-incident standards.",
+    "descriptionAr": "تنفيذ الأعمال المدنية والإنشائية المتخصصة داخل مصافي البترول، مستودعات التخزين ومحطات توزيع وتداول الوقود وفق أعلى اشتراطات السلامة البترولية.",
     "scopeOfWorkEn": [
-      "Primavera P6 project baseline scheduling, critical path, and earned value analysis",
-      "Detailed cost tracking, value engineering, and change order evaluation",
-      "Comprehensive site QA/QC inspection programs and non-conformance tracking",
-      "Contract administration under FIDIC and local commercial conditions"
+      "Rigid concrete ring walls and foundations for vertical bulk storage tanks",
+      "Secondary containment dyke walls and chemical-resistant bund lining",
+      "Blast-resistant control room buildings and substations",
+      "Underground oily water drainage, interceptors, and firewater ring mains"
     ],
     "scopeOfWorkAr": [
-      "إعداد الجداول الزمنية عبر Primavera P6 وتحليل المسار الحرج والقيمة المكتسبة",
-      "مراقبة التدفقات المالية والهندسة القيمة ومراجعة أوامر التغيير",
-      "برامج فحص وضبط الجودة الشاملة وتقارير عدم المطابقة NCR",
-      "إدارة العقود وفق شروط الفيديك FIDIC والقوانين المنظمة"
+      "القواعد الحلقية الخرسانية الثقيلة لخزانات الوقود والغاز العملاقة",
+      "حوائط الحماية والاحتواء الثانوي المبطنة بمواد مقاومة للمنتجات البترولية",
+      "المباني وغرف التحكم المقاومة للانفجار ومحطات الكهرباء الفرعية",
+      "شبكات الصرف الزيتي الصناعي والفواصل الميكانيكية وشبكات مياه الإطفاء"
     ],
-    "applicationsEn": [
-      "Major Real Estate Projects",
-      "Infrastructure Concessions",
-      "Industrial Plants",
-      "Institutional Campuses"
-    ],
-    "applicationsAr": [
-      "المشروعات العقارية الكبرى",
-      "امتيازات البنية التحتية",
-      "المصانع والمجمعات الصناعية",
-      "المقرات والمجمعات الحكومية"
-    ],
-    "capabilitiesEn": [
-      "PMP-certified senior directors",
-      "Digital dashboard reporting",
-      "Risk management matrix"
-    ],
-    "capabilitiesAr": [
-      "مديرو مشروعات معتمدون بشهادات PMP الدولية",
-      "لوحات متابعة رقمية لحظية للمالك",
-      "مصفوفة متطورة لإدارة المخاطر"
-    ],
-    "image": "/BG/Contracting & Real Estate Development/Commercial & Administrative Development.jpg"
+    "applicationsEn": ["Refineries & Gas Plants", "Bulk Fuel Storage Terminals", "Pipeline Pumping Stations", "Petrochemical Complexes"],
+    "applicationsAr": ["مصافي التكرير ومعالجة الغاز", "مستودعات تداول وتخزين الوقود", "محطات ضخ خطوط الأنابيب", "مجمعات البتروكيماويات"],
+    "capabilitiesEn": ["Certified permits-to-work (PTW) safety crew", "ATEX compliant tools and diesel equipment", "Rigorous zero-incident HSE track record"],
+    "capabilitiesAr": ["طواقم عمل مؤهلة بنظام تصاريح العمل البترولية PTW", "معدات وأدوات عمل مطابقة لمواصفات ATEX للأجواء الخطرة", "سجل موثق خالي من الحوادث في المنشآت الحيوية"],
+    "image": "/BG/Contracting & Real Estate Development/Construction of Gas, Oil & Petroleum Facilities.jpg"
   },
   {
-    "id": "srv-env-waste-mgmt",
-    "code": "SBA-SRV-ENV01",
-    "sector": "environmental",
-    "categoryKey": "waste-management",
-    "categoryEn": "Waste Management Solutions",
-    "categoryAr": "حلول إدارة المخلفات المتكاملة",
-    "nameEn": "Comprehensive Integrated Municipal & Industrial Waste Management",
-    "nameAr": "المنظومة المتكاملة لإدارة وتدوير المخلفات البلدية والصناعية",
-    "descriptionEn": "Turnkey design, operational management, and lifecycle engineering of solid waste collection, sorting, recovery, and sanitary containment facilities.",
-    "descriptionAr": "تصميم وتنفيذ وتشغيل منظومات إدارة المخلفات الصلبة والصناعية، تشمل محطات الفرز الميكانيكي، استرداد الموارد والتدوير، والمدافن الصحية الآمنة.",
+    "id": "srv-cns-commercial",
+    "code": "SBA-SRV-CNS10",
+    "sector": "construction",
+    "categoryKey": "commercial-administrative",
+    "categoryEn": "Commercial & Administrative Complexes",
+    "categoryAr": "المجمعات الإدارية والمراكز التجارية",
+    "nameEn": "Commercial Malls, Corporate Headquarters & Business Towers",
+    "nameAr": "إنشاء المراكز التجارية والمباني الإدارية ومقرات الشركات",
+    "descriptionEn": "Modern commercial construction integrating structural aesthetics, energy efficiency, flexible open floor plans, and intelligent facilities infrastructure.",
+    "descriptionAr": "إنشاء وتطوير المولات التجارية والمباني الإدارية الحديثة بمواصفات عالمية، مساحات مفتوحة مرنة، وأنظمة توفير الطاقة والتحكم الذكي.",
     "scopeOfWorkEn": [
-      "Material recovery facility (MRF) engineering and automated optical sorting line setup",
-      "Engineered sanitary landfill cell design with composite geomembrane liners and leachate collection",
-      "Industrial waste minimization and circular economy resource audit programs",
-      "Regulatory waste transport manifests and continuous environmental reporting"
+      "Structural framing with post-tensioned wide-span floors for retail layout flexibility",
+      "Structural glazing, unitized curtain wall facades, and grand atriums",
+      "High-speed passenger and service elevators, escalators, and building automation",
+      "Multi-story underground parking structures with guidance systems and ventilation"
     ],
     "scopeOfWorkAr": [
-      "تصميم وإنشاء محطات فرز واسترداد المواد (MRF) بخطوط فرز آلية وبصرية",
-      "تصميم خلايا المدافن الصحية الآمنة بعوازل الجيوممبرين ومحطات معالجة سائل الرشيح",
-      "برامج تقليل الهدر والتدوير في المصانع وفق مفاهيم الاقتصاد الدائري",
-      "إصدار بيانات التتبع الرسمية لنقل وتدوير المخلفات والتقارير البيئية الدورية"
+      "هياكل خرسانية بأسقف سابقة الإجهاد وبحور واسعة لمرونة المساحات التجارية",
+      "واجهات زجاجية مزدوجة Curtain Walls وأتريوم سماوي وتغطيات معمارية راقية",
+      "مصاعد سريعة وسلالم كهربائية متحركة وأنظمة تحكم آلي في الطاقة",
+      "جراجات سيارات متعددة الطوابق تحت الأرض مزودة بأنظمة التوجيه والتهوية"
     ],
-    "applicationsEn": [
-      "Municipalities",
-      "Industrial Complexes",
-      "Ports & Free Zones",
-      "Agricultural Processing Centers"
-    ],
-    "applicationsAr": [
-      "المحافظات والمجتمعات العمرانية",
-      "المجمعات الصناعية",
-      "الموانئ والمناطق الحرة",
-      "مجمعات التصنيع الزراعي"
-    ],
-    "capabilitiesEn": [
-      "Licensed environmental engineers",
-      "GIS waste routing models",
-      "EPA & EU compliance certified"
-    ],
-    "capabilitiesAr": [
-      "خبراء واستشاريون بيئيون معتمدون",
-      "خرائط توجيه رقمية GIS لنقل المخلفات",
-      "مطابقة لمعايير جهاز شؤون البيئة والاتحاد الأوروبي"
-    ],
-    "image": "/BG/Environment & Sustainability/Comprehensive Waste Management Services.jpg"
+    "applicationsEn": ["Commercial Centers & Malls", "Corporate Office Parks", "Financial Districts", "Mixed-Use Plazas"],
+    "applicationsAr": ["المراكز والمولات التجارية", "المجمعات الإدارية ومقرات البنوك", "الأحياء المالية", "المشروعات متعددة الاستخدامات"],
+    "capabilitiesEn": ["Turnkey execution from basement to roof", "LEED-certified construction protocols", "Comprehensive safety barrier and access staging"],
+    "capabilitiesAr": ["تنفيذ متكامل من الحفر حتى التشغيل النهائي", "بروتوكولات بناء مطابقة لمعايير الاستدامة LEED", "أنظمة سقالات وسقوط آمنة للمباني المرتفعة"],
+    "image": "/BG/Contracting & Real Estate Development/Administrative Buildings & Commercial Centers.jpg"
   },
   {
-    "id": "srv-env-waste-to-energy",
-    "code": "SBA-SRV-ENV02",
-    "sector": "environmental",
-    "categoryKey": "waste-to-energy",
-    "categoryEn": "Waste-to-Energy Systems",
-    "categoryAr": "أنظمة تحويل المخلفات إلى طاقة",
-    "nameEn": "Thermal & Refuse-Derived Fuel (RDF) Waste-to-Energy Systems",
-    "nameAr": "محطات وأنظمة تحويل المخلفات الصلبة والوقود البديل (RDF) إلى طاقة",
-    "descriptionEn": "Engineering processing facilities converting non-recyclable combustible waste into high-calorific RDF pellets and steam/electricity for heavy industrial consumption.",
-    "descriptionAr": "هندسة وتصميم وإنشاء محطات معالجة المخلفات لإنتاج الوقود البديل عالي القيمة الحرارية (RDF) وتوليد البخار والكهرباء لمصانع الأسمنت والصناعات الثقيلة.",
+    "id": "srv-cns-residential",
+    "code": "SBA-SRV-CNS11",
+    "sector": "construction",
+    "categoryKey": "residential-real-estate",
+    "categoryEn": "Residential & Real Estate Development",
+    "categoryAr": "التطوير العقاري والمجمعات السكنية",
+    "nameEn": "Luxury Residential Compounds, Villa Communities & Urban Housing",
+    "nameAr": "تطوير الكمبوندات السكنية المغلقة، الفيلات ومشروعات الإسكان الحديث",
+    "descriptionEn": "Full-cycle real estate development and residential building execution, from master development to turnkey villa handovers and landscape integration.",
+    "descriptionAr": "تنفيذ المشروعات السكنية الراقية، الكمبوندات المتكاملة، الفيلات المستقلة، التاون هاوس، والعمارات السكنية الحديثة مع كافة خدمات الموقع العام.",
     "scopeOfWorkEn": [
-      "Heavy-duty primary and secondary shredding systems with magnetic metal separators",
-      "Air classification and moisture reduction thermal drying tunnels",
-      "High-density RDF pelletizing and automated truck loading terminals",
-      "Advanced flue gas cleaning systems (scrubbers, baghouse filters, carbon injection)"
+      "Structural skeleton and finishing for multi-building residential clusters",
+      "Private villa construction with customized architectural styling",
+      "Gated community security systems, boundary walls, and smart access gates",
+      "Integrated hardscape, softscape, swimming pools, and community clubhouses"
     ],
     "scopeOfWorkAr": [
-      "معدات الفرم والتكسير الثقيل الأولية والثانوية مع فواصل المعادن المغناطيسية",
-      "أنظمة الفرز الهوائي وتجفيف المخلفات للتحكم في نسب الرطوبة والقيمة الحرارية",
-      "محطات تكوير الوقود البديل RDF وأنظمة التعبئة والشحن الآلي للشاحنات",
-      "منظومات تنقية ومعالجة الغازات المنبعثة ومصائد الجسيمات ومطابقة المعايير"
+      "تنفيذ الهياكل الخرسانية والتشطيبات لمجموعات العمارات السكنية الحديثة",
+      "بناء الفيلات الفاخرة والقصور بمواصفات معمارية وتفصيلية حصرية",
+      "أسوار الكمبوندات وبوابات الدخول الذكية وأنظمة المراقبة الشاملة",
+      "أعمال اللاندسكيب الصلب والزراعات وحمامات السباحة والمباني الخدمية والنوادي"
     ],
-    "applicationsEn": [
-      "Cement Plants",
-      "Industrial Boilers",
-      "Municipal Energy Hubs",
-      "District Power Generation"
-    ],
-    "applicationsAr": [
-      "مصانع الأسمنت ومحارق الطاقة",
-      "الغلايات ومحطات البخار الصناعية",
-      "مجمعات الطاقة البلدية",
-      "محطات التوليد المشترك"
-    ],
-    "capabilitiesEn": [
-      "Calorific value testing lab",
-      "Partnership with European thermal equipment OEMs",
-      "Emission telemetry integration"
-    ],
-    "capabilitiesAr": [
-      "معمل قياس القيمة الحرارية للوقود",
-      "شراكات مع كبرى الشركات الأوروبية المصنعة",
-      "ربط لحظي لمنظومات رصد الانبعاثات مع الجهات التنظيمية"
-    ],
-    "image": "/BG/Environment & Sustainability/Waste to Energy Services & Biogas Plants.jpg"
+    "applicationsEn": ["Gated Residential Compounds", "Luxury Private Villas", "Urban Expansion Housing", "Coastal Resort Developments"],
+    "applicationsAr": ["الكمبوندات السكنية المغلقة", "الفيلات والقصور الخاصة", "مشروعات الإسكان والتوسع العمراني", "المنتجعات السكنية الساحلية"],
+    "capabilitiesEn": ["Proven on-time delivery across multiple concurrent clusters", "Standardized high-quality procurement", "Comprehensive after-handover defect liability service"],
+    "capabilitiesAr": ["التزام دقيق بمواعيد التسليم للمراحل السكنية المتزامنة", "توريد مركزي لمواد التشطيب المعتمدة لضمان الجودة", "خدمات صيانة وضمان ما بعد التسليم للعملاء"],
+    "image": "/BG/Contracting & Real Estate Development/Residential Units & Housing Projects.jpg"
   },
   {
-    "id": "srv-env-biogas",
-    "code": "SBA-SRV-ENV03",
-    "sector": "environmental",
-    "categoryKey": "biogas-development",
-    "categoryEn": "Biogas Project Development",
-    "categoryAr": "تطوير محطات الغاز الحيوي والبيوجاز",
-    "nameEn": "Commercial Anaerobic Digestion & Biogas Power Generation Plants",
-    "nameAr": "تطوير وإنشاء محطات الهضم اللاهوائي وإنتاج الغاز الحيوي وتوليد الكهرباء",
-    "descriptionEn": "Turnkey development of anaerobic digestion facilities converting agricultural residues, food processing waste, and animal manure into green methane gas and organic bio-fertilizer.",
-    "descriptionAr": "تطوير متكامل لمحطات التخمير اللاهوائي لتحويل المخلفات الزراعية وروث الحيوانات ومخلفات مصانع الأغذية إلى غاز ميثان حيوي نظيف وأسمدة عضوية عالية الخصوبة.",
+    "id": "srv-cns-finishing",
+    "code": "SBA-SRV-CNS12",
+    "sector": "construction",
+    "categoryKey": "finishing-fitout",
+    "categoryEn": "Finishing & Interior Fit-Out",
+    "categoryAr": "التشطيبات الراقية والتجهيزات الداخلية",
+    "nameEn": "Turnkey Architectural Finishing, Luxury Fit-Out & Interior Contracting",
+    "nameAr": "التشطيبات المعمارية الراقية والديكور والتجهيزات الداخلية المتكاملة",
+    "descriptionEn": "Delivering high-end interior architecture, acoustic treatments, luxury woodwork, marble floors, and specialized false ceiling systems for corporate and commercial spaces.",
+    "descriptionAr": "تنفيذ أعمال التشطيبات الداخلية الراقية، المعالجات الصوتية، النجارة المعمارية، الرخام الطبيعي، والأسقف المعلقة للمقرات الإدارية والفندقية والتجارية.",
     "scopeOfWorkEn": [
-      "Substrate feedstock characterization, biochemical methane potential (BMP) testing",
-      "Continuous stirred-tank reactor (CSTR) digester engineering with gas-tight membrane roofs",
-      "Biogas desulfurization, moisture removal, and biomethane upgrading systems",
-      "Combined Heat and Power (CHP) engine integration and organic digestate solid-liquid separation"
+      "Imported marble waterjet cutting, precision floor installation, and crystallization",
+      "Acoustic gypsum partitions, demountable glass office walls, and specialty ceilings",
+      "Custom architectural joinery, fire-rated wooden doors, and reception paneling",
+      "Integrated decorative lighting, smart automation switches, and luxury sanitaryware"
     ],
     "scopeOfWorkAr": [
-      "تحليل خصائص المخلفات وفحوصات الجدوى الحيوية لإنتاج الميثان (BMP)",
-      "تصميم وإنشاء مخمرات CSTR المستمرة مع أغطية عازلة مزدوجة لحبس الغاز",
-      "وحدات تنقية وإزالة كبريتيد الهيدروجين (H2S) وتجفيف ورفع كفاءة الغاز",
-      "تركيب مولدات التوليد المشترك للطاقة والحرارة (CHP) ووحدات فصل السماد العضوي"
+      "قص وتركيب الرخام الطبيعي بالووترجيت وجلي وتلميع الأرضيات بالكريستال",
+      "قواطع جبسية عازلة للصوت، حوائط زجاجية للمكاتب وأسقف معدنية ديكورية",
+      "أعمال النجارة المعمارية المخصصة، الأبواب المقاومة للحريق وتجليد الحوائط الخشبية",
+      "أنظمة الإضاءة المعمارية المخفية، مفاتيح التحكم الذكي والأطقم الصحية الفاخرة"
     ],
-    "applicationsEn": [
-      "Dairy Mega-Farms",
-      "Sugar & Food Processing Plants",
-      "Slaughterhouses",
-      "Rural Renewable Microgrids"
-    ],
-    "applicationsAr": [
-      "مزارع الإنتاج الحيواني والألبان الكبرى",
-      "مصانع السكر والصناعات الغذائية",
-      "المجازر الآلية",
-      "المناطق الريفية والمزارع المغلقة"
-    ],
-    "capabilitiesEn": [
-      "Biological process stability monitoring",
-      "Turnkey EPC execution",
-      "Carbon credit registration under CDM/Verra"
-    ],
-    "capabilitiesAr": [
-      "مراقبة وضبط العمليات الحيوية والكيميائية",
-      "تنفيذ متكامل بنظام التصميم والإنشاء EPC",
-      "تسجيل أرصدة الكربون والشهادات الخضراء الدولية"
-    ],
-    "image": "/BG/Environment & Sustainability/Renewable Energy Solutions & Green Power.jpg"
+    "applicationsEn": ["Corporate Executive Suites", "Luxury Hotel Lobbies", "VIP Lounges", "Embassy Buildings"],
+    "applicationsAr": ["المقرات والمكاتب التنفيذية للشركات", "بهو الفنادق الفاخرة", "صالات كبار الزوار VIP", "المباني الدبلوماسية والسفارات"],
+    "capabilitiesEn": ["In-house master fit-out craftsmen", "Precision laser-level alignment tools", "Zero-snag commercial delivery standards"],
+    "capabilitiesAr": ["فريق حرفيين متخصص في أعمال التشطيبات الدقيقة", "أجهزة قياس ومحاذاة ليزرية متقدمة", "معايير تسليم هندسية خالية من الملاحظات"],
+    "image": "/BG/Contracting & Real Estate Development/Interior and Exterior Finishing Works.jpg"
   },
-  {
-    "id": "srv-env-bio-treatment",
-    "code": "SBA-SRV-ENV04",
-    "sector": "environmental",
-    "categoryKey": "biological-treatment",
-    "categoryEn": "Biological Waste Treatment",
-    "categoryAr": "معالجة المخلفات الحيوية",
-    "nameEn": "Aerobic In-Vessel Composting & Bio-Remediation Systems",
-    "nameAr": "أنظمة الكمبوست الهوائي المتقدم والمعالجة الحيوية للمخلفات العضوية",
-    "descriptionEn": "Controlled biological treatment converting organic sludges, green clippings, and organic industrial byproducts into pathogen-free, high-grade agricultural soil amendments.",
-    "descriptionAr": "أنظمة المعالجة البيولوجية الهوائية لتدوير الحمأة ومخلفات التصنيع الزراعي وتحويلها إلى أسمدة كمبوست عضوية معقمة وخالية تمامًا من مسببات الأمراض وبذور الحشائش.",
-    "scopeOfWorkEn": [
-      "Enclosed composting tunnels and forced-aeration windrow pad design",
-      "Continuous temperature, oxygen, and moisture telemetry monitoring",
-      "Screening, curing, and custom nutrient enhancement blending",
-      "Bio-filter odor control integration ensuring zero neighborhood emissions"
-    ],
-    "scopeOfWorkAr": [
-      "تصميم أنفاق الكمبوست المغلقة وساحات التقليب والتهوية القسرية",
-      "مراقبة لحظية ومستمرة لدرجات الحرارة ونسب الأكسجين والرطوبة",
-      "غربلة وتجهيز وإضافة العناصر الصغرى والمخصبات الحيوية للسماد",
-      "ربط المنظومة بفلاتر بيولوجية لمعالجة الروائح ومنع أي انبعاثات"
-    ],
-    "applicationsEn": [
-      "Agri-Business Farms",
-      "Municipal Sludge Facilities",
-      "Landscape Forestry",
-      "Organic Fertilizers"
-    ],
-    "applicationsAr": [
-      "المزارع وشركات الاستصلاح الزراعي",
-      "محطات معالجة الصرف الصحي (للحمأة)",
-      "مشاريع التشجير الكبرى",
-      "مصانع الأسمدة الحيوية"
-    ],
-    "capabilitiesEn": [
-      "Agronomic nutrient formulation",
-      "Pathogen eradication verification",
-      "Turnkey aeration blowers"
-    ],
-    "capabilitiesAr": [
-      "صياغة خلطات التغذية والخصوبة الزراعية",
-      "فحوصات معملية للقضاء على البكتيريا الضارة",
-      "توريد وتركيب منفاخات التهوية الميكانيكية"
-    ],
-    "image": "/BG/Environment & Sustainability/Environmental Biotechnology Services.jpg"
-  },
-  {
-    "id": "srv-env-industrial-waste",
-    "code": "SBA-SRV-ENV05",
-    "sector": "environmental",
-    "categoryKey": "industrial-waste",
-    "categoryEn": "Industrial Waste Treatment",
-    "categoryAr": "معالجة المخلفات الصناعية الخطرة وغير الخطرة",
-    "nameEn": "Hazardous & Non-Hazardous Industrial Waste Treatment & Neutralization",
-    "nameAr": "معالجة ومعادلة المخلفات الصناعية الخطرة وغير الخطرة",
-    "descriptionEn": "Comprehensive physico-chemical treatment, solidification, stabilization, and safe neutralization of complex industrial solid residues, sludges, and spent chemicals.",
-    "descriptionAr": "معالجة فيزيوكيميائية متطورة للمخلفات الصناعية المعقدة، تشمل التثبيت والتدعيم الكيميائي (Stabilization) ومعادلة المواد الخطرة لضمان التخلص الآمن وفق القوانين.",
-    "scopeOfWorkEn": [
-      "Industrial chemical fingerprinting and toxicity characteristic leaching procedure (TCLP)",
-      "Heavy metal precipitation and pozzolanic matrix solidification",
-      "Thermal destruction coordination and safe secure burial of non-reactive residues",
-      "Chain-of-custody tracking, certified disposal manifests, and EPA-audited documentation"
-    ],
-    "scopeOfWorkAr": [
-      "التوصيف والتحليل الكيميائي للمخلفات واختبارات التسريب السمي TCLP",
-      "ترسيب المعادن الثقيلة وتثبيت المخلفات بالخلطات الأسمنتية البوزولانية",
-      "المعالجة الحرارية الآمنة والدفن المحمي للنواتج الخاملة المعالجة",
-      "شهادات الإعدام والتخلص الآمن المعتمدة مع توثيق كامل لسلسلة النقل والتداول"
-    ],
-    "applicationsEn": [
-      "Chemical Plants",
-      "Electroplating Industries",
-      "Pharmaceutical Factories",
-      "Textile Dyehouses"
-    ],
-    "applicationsAr": [
-      "مصانع الكيماويات والبتروكيماويات",
-      "مصانع جلفنة وتشغيل المعادن",
-      "شركات الأدوية",
-      "مصانع صباغة وتجهيز المنسوجات"
-    ],
-    "capabilitiesEn": [
-      "Licensed hazardous waste handlers",
-      "On-site mobile stabilization units",
-      "Certified analytical laboratory"
-    ],
-    "capabilitiesAr": [
-      "تراخيص رسمية لتداول ومعالجة المخلفات الخطرة",
-      "وحدات معالجة وتثبيت كيميائي متنقلة للمصانع",
-      "معمل تحاليل كيميائية معتمد"
-    ],
-    "image": "/BG/Environment & Sustainability/Built Environment Sector.jpg"
-  },
-  {
-    "id": "srv-env-odor-control",
-    "code": "SBA-SRV-ENV06",
-    "sector": "environmental",
-    "categoryKey": "odor-control",
-    "categoryEn": "Odor Control Solutions",
-    "categoryAr": "حلول إزالة والتحكم في الروائح الصناعية",
-    "nameEn": "Industrial Odor Abatement, Wet Scrubbing & Bio-Trickling Filters",
-    "nameAr": "محطات وأنظمة إزالة الروائح والمركبات الكبريتية والعضوية المتطايرة",
-    "descriptionEn": "High-efficiency odor elimination systems removing hydrogen sulfide (H2S), ammonia (NH3), mercaptans, and volatile organic compounds (VOCs) from wastewater and process plants.",
-    "descriptionAr": "أنظمة متطورة لإزالة الروائح الكريهة والمركبات الكبريتية والأمونيا والغازات العضوية المتطايرة، تشمل أبراج الغسيل الكيميائي، الفلاتر الحيوية، وأجهزة الأكسدة المتقدمة.",
-    "scopeOfWorkEn": [
-      "Gas chromatography olfactometry and airborne emission dispersion modeling",
-      "Multi-stage chemical packed-tower wet scrubbers (acid, caustic, oxidizing)",
-      "Biological trickling filtration with synthetic inorganic media",
-      "Activated carbon deep-bed dry adsorption vessels with impregnated media"
-    ],
-    "scopeOfWorkAr": [
-      "قياس وتحديد تركيزات الروائح والغازات ونمذجة انتشار الانبعاثات الهوائية",
-      "تصميم وتوريد أبراج الغسيل الكيميائي الرطبة متعددة المراحل (حمضي، قلوي، مؤكسد)",
-      "فلاتر الترشيح الحيوية ذات الوسائط الاصطناعية المعمرة لإزالة الروائح بدون كيماويات",
-      "خزانات امتزاز جافة محشوة بالكربون النشط المعالج خصيصًا لامتصاص كبريتيد الهيدروجين"
-    ],
-    "applicationsEn": [
-      "Sewage Lift Stations & WWTPs",
-      "Rendering Plants",
-      "Solid Waste Composting",
-      "Paper & Pulp Mills"
-    ],
-    "applicationsAr": [
-      "محطات رفع ومعالجة مياه الصرف الصحي",
-      "مصانع تدوير المخلفات والمسالخ",
-      "محطات الكمبوست",
-      "مصانع الورق والكرتون"
-    ],
-    "capabilitiesEn": [
-      "99.5%+ H2S removal efficiency",
-      "Corrosion-resistant FRP/PP construction",
-      "Automated chemical dosing control"
-    ],
-    "capabilitiesAr": [
-      "كفاءة إزالة كبريتيد الهيدروجين تتجاوز 99.5%",
-      "تصنيع الخزانات والأبراج من الفيبرجلاس FRP والبولي بروبلين المقاوم للكيماويات",
-      "تحكم آلي متصل بمجسات الغاز"
-    ],
-    "image": "/BG/Environment & Sustainability/ET-POR-01 — Odor Removal Solution.jpg"
-  },
-  {
-    "id": "srv-env-oil-spill",
-    "code": "SBA-SRV-ENV07",
-    "sector": "environmental",
-    "categoryKey": "oil-spill-treatment",
-    "categoryEn": "Oil Spill & Hydrocarbon Treatment",
-    "categoryAr": "معالجة الانسكابات البترولية والهيدروكربونية",
-    "nameEn": "Rapid Oil Spill Response, Bioremediation & Hydrocarbon Soil Remediation",
-    "nameAr": "المعالجة الحيوية للتربة الملوثة بالنفط ومكافحة الانسكابات الهيدروكربونية",
-    "descriptionEn": "Deploying certified microbial bio-augmentation agents, containment barriers, and specialized skimming equipment to clean up crude oil spills on land and inland waterways.",
-    "descriptionAr": "حلول التدخل السريع ومعالجة التربة والمياه الملوثة بالانسكابات البترولية باستخدام بكتيريا التكسير الحيوي الطبيعية المعتمدة عالميًا، الحواجز العائمة ومضخات القشط المتخصصة.",
-    "scopeOfWorkEn": [
-      "Emergency marine and freshwater containment booms and recovery skimming",
-      "Ex-situ and in-situ bio-piles with tailored indigenous hydrocarbon-degrading microbes",
-      "Soil washing and thermal desorption coordination for heavy sludge residues",
-      "Post-remediation groundwater testing and total petroleum hydrocarbon (TPH) clearance"
-    ],
-    "scopeOfWorkAr": [
-      "نشر الحواجز المطاطية العائمة ومعدات القشط لاستعادة الزيوت من المسطحات المائية",
-      "إنشاء أكوام المعالجة الحيوية (Bio-piles) وحقن البكتيريا المهضمة للهيدروكربونات",
-      "غسيل التربة واستخلاص الزيوت من الرواسب الطينية الثقيلة",
-      "فحوصات مخبرية للمياه الجوفية والتربة لإثبات خفض مؤشر TPH وتسليم الموقع خاليًا من التلوث"
-    ],
-    "applicationsEn": [
-      "Oil Terminals",
-      "Drilling Rigs & Refineries",
-      "Pipeline Corridors",
-      "Industrial Ports"
-    ],
-    "applicationsAr": [
-      "مستودعات الشحن وموانئ البترول",
-      "مواقع الحفر ومصافي التكرير",
-      "مسارات خطوط الأنابيب",
-      "المناطق الصناعية والموانئ"
-    ],
-    "capabilitiesEn": [
-      "Proprietary eco-friendly bio-enzymatic agents",
-      "Rapid mobilization emergency teams",
-      "Compliance with international MARPOL conventions"
-    ],
-    "capabilitiesAr": [
-      "استخدام مركبات حيوية طبيعية آمنة بيئيًا 100%",
-      "فرق تدخل سريع ومعدات استجابة طوارئ",
-      "مطابقة لمعايير اتفاقيات ماربول MARPOL الدولية"
-    ],
-    "image": "/BG/Environment & Sustainability/ET-POT-01 — Oil Terminator.jpg"
-  },
+
+  // --------------------------------------------------------------------------
+  // DIVISION 2: ENVIRONMENTAL SOLUTIONS & SUSTAINABILITY (19 Services)
+  // --------------------------------------------------------------------------
   {
     "id": "srv-env-eia",
-    "code": "SBA-SRV-ENV08",
+    "code": "SBA-SRV-ENV01",
     "sector": "environmental",
     "categoryKey": "environmental-assessment",
-    "categoryEn": "Environmental Assessment (EIA/ESIA)",
-    "categoryAr": "دراسات تقييم الأثر البيئي والمجتمعي",
-    "nameEn": "Comprehensive Environmental & Social Impact Assessments (EIA / ESIA)",
-    "nameAr": "إعداد دراسات تقييم الأثر البيئي والمجتمعي الشاملة (EIA / ESIA)",
-    "descriptionEn": "Authoritative environmental studies qualifying industrial, infrastructure, and tourist projects for government permits and international financial institution compliance.",
-    "descriptionAr": "إعداد دراسات تقييم الأثر البيئي والمجتمعي المعتمدة للمشروعات الصناعية والسياحية والبنية التحتية، لاستخراج التراخيص الحكومية واستيفاء متطلبات جهات التمويل الدولية.",
+    "categoryEn": "Environmental Impact Assessment (EIA)",
+    "categoryAr": "تقييم الأثر البيئي (EIA)",
+    "nameEn": "Comprehensive Environmental Impact Assessment Studies (EIA)",
+    "nameAr": "دراسات تقييم الأثر البيئي الشاملة (EIA)",
+    "descriptionEn": "Preparing statutory EIA studies across Category A, B, and C industrial, commercial, and infrastructure developments for ministry and regulatory compliance.",
+    "descriptionAr": "إعداد دراسات تقييم الأثر البيئي للمشروعات الصناعية والسياحية والبنية التحتية بالقوائم (أ، ب، ج) للحصول على موافقات جهاز شئون البيئة والجهات المعنية.",
     "scopeOfWorkEn": [
-      "Baseline environmental measurements: ambient air quality, noise, soil, and ecology",
+      "Baseline environmental profiling (ambient air, groundwater, ecology, soil)",
+      "Project alternative analysis and environmental footprint modeling",
       "Pollution dispersion modeling for air emissions and wastewater outfalls",
-      "Environmental and Social Management Plans (ESMP) with mitigation strategies",
-      "Stakeholder engagement, public consultation sessions, and regulatory approvals"
+      "Environmental and Social Management Plans (ESMP) and public hearing coordination"
     ],
     "scopeOfWorkAr": [
-      "القياسات البيئية الميدانية: جودة الهواء المحيط، الضوضاء، فحص التربة والتنوع الحيوي",
-      "نمذجة انتشار الملوثات الرياضية لانبعاثات المداخن ومصبات الصرف",
-      "إعداد خطط الإدارة والرصد البيئي والمجتمعي (ESMP) وإجراءات التخفيف",
-      "جلسات الاستماع والتشاور المجتمعي ومتابعة الموافقات مع جهاز شؤون البيئة"
+      "دراسة الوضع البيئي الراهن (الهواء المحيط، المياه الجوفية، التربة، والبيئة البيولوجية)",
+      "تحليل بدائل المشروع ونمذجة البصمة البيئية التشغيلية",
+      "نمذجة انتشار الملوثات للانبعاثات الغازية وتصريفات الصرف الصناعي",
+      "إعداد خطط الإدارة والرصد البيئي والمجتمعي وتنظيم جلسات التشاور العام"
     ],
-    "applicationsEn": [
-      "Manufacturing Plants",
-      "Energy & Oil Facilities",
-      "Tourism Resorts",
-      "Infrastructure Concessions"
+    "applicationsEn": ["Industrial Manufacturing Zones", "Port & Coastal Developments", "Power Plants", "Tourism Masterplans"],
+    "applicationsAr": ["المناطق والمجمعات الصناعية", "الموانئ والتطوير الساحلي", "محطات توليد الطاقة", "المشروعات السياحية الكبرى"],
+    "capabilitiesEn": ["Certified environmental consulting house accreditation", "AERMOD / CALPUFF certified air dispersion modelers", "Comprehensive field survey instruments"],
+    "capabilitiesAr": ["بيت خبرة واستشارات بيئية معتمد رسميًا", "خبراء نمذجة انتشار الملوثات ببرامج AERMOD و CALPUFF", "أجهزة رصد ومسح بيئي ميدانية معتمدة"],
+    "image": "/BG/Environment & Sustainability/Environmental Impact Assessment (EIA).jpg"
+  },
+  {
+    "id": "srv-env-esia-financing",
+    "code": "SBA-SRV-ENV02",
+    "sector": "environmental",
+    "categoryKey": "environmental-assessment",
+    "categoryEn": "ESIA Studies",
+    "categoryAr": "الدراسات البيئية والمجتمعية (ESIA)",
+    "nameEn": "Integrated Environmental & Social Impact Assessment (ESIA) for International Lenders",
+    "nameAr": "التقييم البيئي والمجتمعي المتكامل (ESIA) لجهات التمويل الدولية",
+    "descriptionEn": "Structuring international-standard ESIA dossiers conforming to IFC Performance Standards, World Bank EHS Guidelines, and Equator Principles for global financing.",
+    "descriptionAr": "إعداد دراسات الأثر البيئي والمجتمعي وفق معايير الأداء لمؤسسة التمويل الدولية (IFC)، البنك الأوروبي (EBRD)، والبنك الإفريقي للتنمية للحصول على التمويل الدولي.",
+    "scopeOfWorkEn": [
+      "Social baseline surveys, stakeholder engagement, and community grievance mechanisms",
+      "Biodiversity action plans and ecosystem service vulnerability assessments",
+      "Labor conditions, human rights, and occupational safety risk assessments",
+      "Resettlement policy frameworks and livelihood restoration planning"
     ],
-    "applicationsAr": [
-      "المصانع والمنشآت الإنتاجية",
-      "مشروعات الطاقة والبترول",
-      "المنتجعات السياحية",
-      "مشروعات البنية التحتية والنقل"
+    "scopeOfWorkAr": [
+      "المسوحات الاجتماعية الميدانية، إشراك أصحاب المصلحة وآليات التظلم المجتمعي",
+      "خطط عمل الحفاظ على التنوع البيولوجي والأنظمة البيئية الحساسة",
+      "تقييم ظروف العمل وحقوق الإنسان ومخاطر الصحة والسلامة المهنية",
+      "أطر سياسات إعادة التوطين واستعادة سبل العيش المستدامة"
     ],
-    "capabilitiesEn": [
-      "Accredited consultant registration with environmental authorities",
-      "Calibrated field measurement equipment",
-      "World Bank / IFC performance standard alignment"
-    ],
-    "capabilitiesAr": [
-      "بيت خبرة واستشاريون معتمدون لدى جهاز شؤون البيئة",
-      "أجهزة قياس ميدانية معايرة ومعتمدة دوليًا",
-      "تطابق كامل مع معايير البنك الدولي ومؤسسة التمويل الدولية IFC"
-    ],
-    "image": "/BG/Environment & Sustainability/Environmental Impact Studies & Strategic Assessments.jpg"
+    "applicationsEn": ["Renewable Energy Mega-Parks", "Cross-Border Infrastructure", "Mining Concessions", "International Joint Ventures"],
+    "applicationsAr": ["مشروعات الطاقة المتجددة الضخمة", "مشروعات البنية التحتية الإقليمية", "امتيازات التعدين والصناعات الاستخراجية", "الشراكات الدولية الكبرى"],
+    "capabilitiesEn": ["Bilingual IFC-compliant environmental sociologists", "Deep public consultation experience", "Bankable environmental reports approved by global DFIs"],
+    "capabilitiesAr": ["خبراء بيئيون واجتماعيون معتمدون بمعايير IFC", "خبرة ميدانية عميقة في جلسات الاستماع والتشاور المجتمعي", "تقارير معتمدة لدى بنوك ومؤسسات التمويل التنموي الدولية"],
+    "image": "/BG/Environment & Sustainability/Integrated Environmental & Social Studies (ESIA).jpg"
   },
   {
     "id": "srv-env-carbon",
-    "code": "SBA-SRV-ENV09",
+    "code": "SBA-SRV-ENV03",
     "sector": "environmental",
     "categoryKey": "carbon-footprint",
     "categoryEn": "Carbon Footprint Assessment",
-    "categoryAr": "دراسات البصمة الكربونية وتقارير الانبعاثات",
+    "categoryAr": "حساب البصمة الكربونية",
     "nameEn": "Corporate Greenhouse Gas (GHG) Accounting & Carbon Footprint Audits",
-    "nameAr": "حساب البصمة الكربونية للمؤسسات والمنتجات ومحاسبة غازات الاحتباس الحراري",
-    "descriptionEn": "Measuring Scope 1, 2, and 3 emissions conforming to the GHG Protocol and ISO 14064. Assisting exporters in complying with EU CBAM (Carbon Border Adjustment Mechanism).",
-    "descriptionAr": "قياس انبعاثات غازات الاحتباس الحراري للنطاقات 1 و 2 و 3 وفق بروتوكول GHG ومعايير ISO 14064، وتأهيل الشركات المصدرة لمتطلبات ضريبة الكربون الأوروبية CBAM.",
+    "nameAr": "حساب وتدقيق البصمة الكربونية للمؤسسات والمنتجات وسلاسل الإمداد",
+    "descriptionEn": "Quantifying Scope 1, Scope 2, and Scope 3 greenhouse gas emissions conforming to the GHG Protocol and ISO 14064 for enterprises aiming for net-zero pathways.",
+    "descriptionAr": "قياس واحتساب انبعاثات غازات الاحتباس الحراري للنطاقات الأول والثاني والثالث (Scope 1, 2, 3) طبقًا لمعايير GHG Protocol والأيزو 14064 لتحديد مسارات الحياد الكربوني.",
     "scopeOfWorkEn": [
-      "Organizational boundary setup and activity data inventory compilation",
-      "Calculation of Scope 1 (direct), Scope 2 (electricity), and Scope 3 (value chain) CO₂e",
-      "Product Carbon Footprint (PCF) lifecycle analysis from cradle to gate",
-      "Decarbonization pathway roadmap, net-zero strategy, and carbon offset advisory"
+      "Organizational boundary definition and comprehensive emissions inventory compilation",
+      "Product Life Cycle Assessment (LCA) from cradle to grave conforming to ISO 14040/44",
+      "Supply chain upstream and downstream emission auditing",
+      "Science-Based Targets initiative (SBTi) decarbonization roadmap formulation"
     ],
     "scopeOfWorkAr": [
-      "تحديد الحدود المؤسسية وحصر بيانات أنشطة استهلاك الوقود والكهرباء وسلاسل الإمداد",
-      "حساب انبعاثات مكافئ ثاني أكسيد الكربون للنطاقات المباشرة وغير المباشرة",
-      "حساب البصمة الكربونية للمنتج الفردي (PCF) لتلبية اشتراطات التصدير لأوروبا",
-      "وضع خارطة طريق لخفض الانبعاثات وخطط التحول نحو الحياد الكربوني وشراء الشهادات الخضراء"
+      "تحديد الحدود المؤسسية وحصر شامل لكافة مصادر الانبعاثات الكربونية",
+      "تقييم دورة حياة المنتج (LCA) من المهد إلى اللحد طبقًا للمواصفة ISO 14044",
+      "تدقيق انبعاثات سلاسل التوريد والخدمات اللوجستية والشحن",
+      "صياغة خريطة طريق لخفض الانبعاثات متوافقة مع مبادرة الأهداف المستندة إلى العلم (SBTi)"
     ],
-    "applicationsEn": [
-      "Export Manufacturers",
-      "Fertilizer & Steel Companies",
-      "Textile Exporters",
-      "Financial Institutions"
-    ],
-    "applicationsAr": [
-      "المصانع المصدرة للأسواق الأوروبية",
-      "مصانع الأسمدة والحديد والأسمنت",
-      "مصانع الغزل والنسيج والملابس",
-      "المؤسسات المالية والشركات المدرجة"
-    ],
-    "capabilitiesEn": [
-      "ISO 14064 certified lead auditors",
-      "Specialized GHG inventory databases",
-      "Official EU CBAM reporting templates"
-    ],
-    "capabilitiesAr": [
-      "مراجعون رئيسيون معتمدون في معايير ISO 14064",
-      "قواعد بيانات معاملات الانبعاثات المعتمدة",
-      "نماذج إعداد تقارير CBAM المعتمدة للمفوضية الأوروبية"
-    ],
-    "image": "/BG/Environment & Sustainability/Carbon Footprint & Greenhouse Gas Services.jpg"
+    "applicationsEn": ["Export-Oriented Industries", "Multinational Enterprises", "Logistics Fleets", "Financial Portfolios"],
+    "applicationsAr": ["الشركات والمصانع المصدرة لأوروبا", "الشركات متعددة الجنسيات", "أساطيل النقل واللوجستيات", "المحافظ الاستثمارية الخضراء"],
+    "capabilitiesEn": ["Certified GHG Protocol practitioners", "SimaPro / GaBi LCA modeling software licenses", "Direct European CBAM compliance alignment"],
+    "capabilitiesAr": ["ممارسون معتمدون في بروتوكول غازات الاحتباس الحراري", "رخص نمذجة دورة الحياة ببرامج SimaPro و GaBi", "مواءمة مباشرة مع متطلبات ضريبة الكربون الأوروبية CBAM"],
+    "image": "/BG/Environment & Sustainability/Carbon Footprint & Emissions Reporting.jpg"
   },
   {
-    "id": "srv-env-emissions",
-    "code": "SBA-SRV-ENV10",
+    "id": "srv-env-ghg-reporting",
+    "code": "SBA-SRV-ENV04",
     "sector": "environmental",
-    "categoryKey": "emission-control",
-    "categoryEn": "Emission Control Solutions",
-    "categoryAr": "حلول التحكم في الانبعاثات والملوثات الصناعية",
-    "nameEn": "Continuous Emission Monitoring Systems (CEMS) & Industrial Air Filtration",
-    "nameAr": "أنظمة الرصد المستمر للانبعاثات (CEMS) وفلاتر تنقية المداخن الصناعية",
-    "descriptionEn": "Engineering flue gas filtration and automated continuous emission monitoring networks connected to national environmental regulatory databases.",
-    "descriptionAr": "تصميم وتوريد وتركيب أجهزة الرصد اللحظي المستمر لانبعاثات المداخن (CEMS) وشبكات الربط الإلكتروني، مع فلاتر الأكياس وأبراج المعالجة للتحكم في الملوثات.",
+    "categoryKey": "carbon-footprint",
+    "categoryEn": "Carbon Emissions Reporting",
+    "categoryAr": "تقارير الإفصاح عن الانبعاثات",
+    "nameEn": "Carbon Emissions Disclosure, CBAM Compliance & ESG Reporting",
+    "nameAr": "تقارير الإفصاح عن الانبعاثات الكربونية وضريبة الكربون الأوروبية (CBAM)",
+    "descriptionEn": "Drafting verified carbon disclosure reports conforming to GRI, CDP, and the European Carbon Border Adjustment Mechanism (CBAM) for industrial exporters.",
+    "descriptionAr": "إعداد وتدقيق تقارير الإفصاح عن الانبعاثات الكربونية المتوافقة مع معايير GRI و CDP ومتطلبات آلية تعديل حدود الكربون الأوروبية (CBAM) لتمكين التصدير بدون غرامات.",
     "scopeOfWorkEn": [
-      "Supply and calibration of extractive optical and laser gas analyzers (SO₂, NOₓ, CO, O₂, Dust)",
-      "Pulse-jet baghouse dust collection systems and ceramic high-temperature filters",
-      "Real-time telemetry interface connecting plant emissions directly to environmental ministries",
-      "Periodic stack emission manual isokinetic compliance testing"
+      "CBAM quarterly embedded emissions calculation for steel, cement, fertilizers, and chemicals",
+      "CDP Climate Change questionnaire drafting, scoring improvement, and benchmarking",
+      "Third-party verification support under ISO 14064-3",
+      "Carbon credit generation, offset portfolio design, and voluntary carbon markets"
     ],
     "scopeOfWorkAr": [
-      "توريد ومعايرة محللات الغازات البصرية والليزرية المستمرة لقياس الغازات والغبار بالمداخن",
-      "تصميم وتركيب فلاتر الأكياس النبضية Baghouse ومصائد الغبار الصناعية",
-      "إنشاء منظومة الربط الإلكتروني اللحظي ونقل البيانات مع غرف الرصد الحكومية",
-      "إجراء القياسات والتحاليل الدورية للانبعاثات الغازية والجسيمات الصلبة"
+      "احتساب الانبعاثات الكربونية المضمنة لآلية CBAM لقطاعات الحديد، الأسمنت، الأسمدة والكيماويات",
+      "إعداد ملفات الإفصاح لمنصة CDP العالمية وتحسين التصنيف البيئي للمؤسسة",
+      "الدعم الفني خلال مراحل المراجعة والاعتماد الخارجي وفق معيار ISO 14064-3",
+      "توليد أرصدة الكربون وشهادات خفض الانبعاثات والتداول في الأسواق الطوعية"
     ],
-    "applicationsEn": [
-      "Power Stations",
-      "Steel & Metallurgical Mills",
-      "Chemical Processing",
-      "Glass & Ceramic Factories"
+    "applicationsEn": ["Heavy Industrial Exporters", "Fertilizer & Chemical Plants", "Aluminum & Metal Smelters", "Listed Public Companies"],
+    "applicationsAr": ["المصانع الكبرى المصدرة للاتحاد الأوروبي", "شركات الأسمدة والبتروكيماويات", "مصاهر الألومنيوم والمعادن", "الشركات المدرجة بالبورصة"],
+    "capabilitiesEn": ["Official CBAM communication template expertise", "Registered carbon offset auditors", "Automated carbon reporting dashboards"],
+    "capabilitiesAr": ["خبرة دقيقة في نماذج ومنظومات CBAM الأوروبية", "مراجعو كربون معتمدون لشهادات الخفض الدولية", "لوحات بيانات رقمية لمتابعة الإفصاح السنوي اللحظي"],
+    "image": "/BG/Environment & Sustainability/Carbon Footprint & Emissions Reporting.jpg"
+  },
+  {
+    "id": "srv-env-monitoring-lab",
+    "code": "SBA-SRV-ENV05",
+    "sector": "environmental",
+    "categoryKey": "environmental-monitoring",
+    "categoryEn": "Monitoring & Measurements",
+    "categoryAr": "القياسات والرصد البيئي الميداني",
+    "nameEn": "Field & Laboratory Environmental Monitoring (Air, Water, Soil & Noise)",
+    "nameAr": "القياسات والرصد البيئي الميداني والمعملي (انبعاثات، مياه، تربة، وضوضاء)",
+    "descriptionEn": "Certified stack emissions testing, ambient air monitoring stations, work environment occupational noise measurements, and analytical wastewater laboratory assays.",
+    "descriptionAr": "إجراء القياسات البيئية الميدانية المعتمدة لانبعاثات المداخن، جودة الهواء المحيط، قياسات بيئة العمل المهنية، والتحاليل المعملية لمياه الصرف الصناعي والتربة.",
+    "scopeOfWorkEn": [
+      "Isokinetic stack emission sampling (SOx, NOx, CO, CO2, PM10/PM2.5, VOCs)",
+      "Continuous ambient air quality monitoring station installation and calibration",
+      "Work environment occupational physical measurements (noise, light, heat stress, dust)",
+      "Physical, chemical, and microbiological water and soil analytical laboratory assays"
     ],
-    "applicationsAr": [
-      "محطات توليد الكهرباء",
-      "مصانع الحديد والصلب والمعادن",
-      "الصناعات الكيماوية",
-      "مصانع السيراميك والزجاج"
+    "scopeOfWorkAr": [
+      "سحب عينات انبعاثات المداخن طبقًا للمواصفات الدولية (أكاسيد كبريت، نيتروجين، وأتربة دقيقة)",
+      "تركيب ومعايرة محطات الرصد اللحظي المستمر لجودة الهواء المحيط",
+      "قياسات بيئة العمل المهنية (الضوضاء، شدة الاستضاءة، وطأة الحرارة، والأتربة العالقة)",
+      "التحاليل الكيميائية والميكروبيولوجية الشاملة لمياه الصرف الصناعي والتربة"
     ],
-    "capabilitiesEn": [
-      "EPA 40 CFR Part 60/75 compliance",
-      "QAL1 certified analyzer brands",
-      "24/7 technical field maintenance"
+    "applicationsEn": ["Thermal Power Stations", "Cement & Fertilizer Mills", "Textile & Dyeing Plants", "Chemical Complexes"],
+    "applicationsAr": ["محطات توليد الكهرباء", "مصانع الأسمنت والأسمدة", "مصانع الغزل والنسيج والصباغة", "المجمعات الكيماوية"],
+    "capabilitiesEn": ["Calibrated EPA-compliant sampling trains", "ISO/IEC 17025 accredited partner laboratory", "Official environmental record book documentation"],
+    "capabilitiesAr": ["أجهزة قياس مداخن مطابقة لاشتراطات وكالة EPA الأمريكية", "شراكة مع معامل حاصلة على الاعتماد الدولي ISO/IEC 17025", "توثيق السجل البيئي الرسمي للمنشآت الصناعية"],
+    "image": "/BG/Environment & Sustainability/Environmental Measurements & Continuous Monitoring.jpg"
+  },
+  {
+    "id": "srv-env-waste-mgmt",
+    "code": "SBA-SRV-ENV06",
+    "sector": "environmental",
+    "categoryKey": "waste-management",
+    "categoryEn": "Waste Management Solutions",
+    "categoryAr": "حلول إدارة المخلفات",
+    "nameEn": "Integrated Municipal, Commercial & Industrial Waste Management",
+    "nameAr": "المنظومة المتكاملة لإدارة وتدوير المخلفات البلدية والصناعية",
+    "descriptionEn": "End-to-end advisory and operations covering collection logistics, transfer stations, material sorting, circular recycling, and sanitary landfill engineering.",
+    "descriptionAr": "إدارة منظومات المخلفات البلدية والصناعية من المصدر، تشمل خطط الجمع والنقل، تصميم المحطات الوسيطة، مصانع الفرز والتدوير، والمدافن الصحية الآمنة.",
+    "scopeOfWorkEn": [
+      "Municipal and industrial master waste management logistics planning",
+      "Material Recovery Facility (MRF) mechanical sorting layout engineering",
+      "Waste generation audit, characterization, and stream minimization protocols",
+      "Sanitary landfill cell design, geomembrane lining, and leachate containment"
     ],
-    "capabilitiesAr": [
-      "مطابقة اشتراطات وكالة EPA والمعايير البيئية",
-      "أجهزة تحليل معتمدة بشهادات QAL1 الأوروبية",
-      "عقود صيانة ميدانية ودعم فني على مدار الساعة"
+    "scopeOfWorkAr": [
+      "تخطيط منظومات الإدارة المتكاملة لمخلفات المدن والمناطق الصناعية",
+      "تصميم وهندسة مصانع الفرز الميكانيكي واسترداد الموارد القابلة للتدوير",
+      "دراسات التولد الكمي والنوعي للمخلفات وبرامج تقليل الهدر من المنبع",
+      "تصميم خلايا المدافن الصحية الآمنة وعزلها بالبوليمرات وإدارة عصارة المخلفات"
     ],
-    "image": "/BG/Environment & Sustainability/Intelligent QHSE Application & Software Solutions.jpg"
+    "applicationsEn": ["Municipal Authorities", "Industrial Cities", "Hospitality Resorts", "Logistics Hubs"],
+    "applicationsAr": ["أجهزة المدن والمحافظات", "المناطق الصناعية الحرة", "المنتجعات السياحية الكبرى", "الموانئ والمراكز اللوجستية"],
+    "capabilitiesEn": ["Fleet routing optimization software", "Full compliance with Waste Law 202/2020", "Turnkey facility operational supervision"],
+    "capabilitiesAr": ["برمجيات ذكية لتخطيط مسارات أساطيل النقل", "التزام تام باشتراطات قانون تنظيم إدارة المخلفات رقم 202 لسنة 2020", "إشراف تشغيلي متكامل على المصانع والمدافن"],
+    "image": "/BG/Environment & Sustainability/Hazardous & Solid Waste Management & Recycling.jpg"
+  },
+  {
+    "id": "srv-env-industrial-waste",
+    "code": "SBA-SRV-ENV07",
+    "sector": "environmental",
+    "categoryKey": "hazardous-waste",
+    "categoryEn": "Hazardous Waste Management",
+    "categoryAr": "إدارة المخلفات الخطرة",
+    "nameEn": "Hazardous Waste Handling, Chemical Neutralization & Safe Disposal",
+    "nameAr": "إدارة ومعالجة المخلفات الصناعية الخطرة والمواد الكيميائية والتخلص الآمن",
+    "descriptionEn": "Comprehensive physico-chemical treatment, solidification, stabilization, and safe neutralization of complex industrial solid residues, sludges, and spent chemicals.",
+    "descriptionAr": "خدمات الفرز والتحييد الكيميائي والتثبيت والتصليد (Solidification & Stabilization) للمخلفات الصناعية الخطرة والحمأة ونقلها للمدافن المعتمدة.",
+    "scopeOfWorkEn": [
+      "Hazardous waste manifest documentation, tracking, and regulatory licensing",
+      "Heavy metal fixation, sludge dewatering, and chemical encapsulation",
+      "Spent solvent and oil re-refining and recovery coordination",
+      "Emergency chemical spill clean-up and HazMat response engineering"
+    ],
+    "scopeOfWorkAr": [
+      "إصدار نماذج تتبع المخلفات الخطرة والتراخيص البيئية الرسمية لنقلها",
+      "تثبيت المعادن الثقيلة وتجفيف الحمأة الصناعية وعزلها بالمعالجة الكيميائية",
+      "استعادة وتدوير المذيبات والزيوت الصناعية المستعملة",
+      "خطط الاستجابة للطوارئ وحوادث الانسكاب الكيميائي وتطهير المواقع"
+    ],
+    "applicationsEn": ["Petrochemical Complexes", "Pharmaceutical Manufacturers", "Automotive Assembly Plants", "Electroplating Facilities"],
+    "applicationsAr": ["مجمعات البتروكيماويات", "مصانع الأدوية والكيماويات", "مصانع تجميع السيارات والدهانات", "ورش ومصانع الجلفنة والطلاء الكهربائي"],
+    "capabilitiesEn": ["Licensed hazardous waste transport fleet", "Coded HazMat safety engineers", "Certified hazardous landfill chain of custody"],
+    "capabilitiesAr": ["أسطول سيارات مجهز ومرخص رسميًا لنقل المخلفات الخطرة", "مهندسو سلامة كيميائية معتمدون", "سلسلة حيازة موثقة حتى التسليم للمدافن الخطرة المعتمدة"],
+    "image": "/BG/Environment & Sustainability/Hazardous & Solid Waste Management & Recycling.jpg"
+  },
+  {
+    "id": "srv-env-solid-recycling",
+    "code": "SBA-SRV-ENV08",
+    "sector": "environmental",
+    "categoryKey": "solid-recycling",
+    "categoryEn": "Solid Waste Recycling",
+    "categoryAr": "تدوير المخلفات واسترداد الموارد",
+    "nameEn": "Solid Waste Recycling, Material Recovery & Circular Economy Systems",
+    "nameAr": "تدوير المخلفات الصلبة، استرداد الموارد ونظم الاقتصاد الدائري",
+    "descriptionEn": "Developing high-efficiency recycling lines for plastics, paper, cardboard, and agricultural biomass into high-value raw materials and secondary products.",
+    "descriptionAr": "تصميم وتشغيل خطوط إعادة تدوير البلاستيك والورق والكرتون والمخلفات الزراعية وتحويلها إلى خامات أولية وبدائل صناعية عالية القيمة.",
+    "scopeOfWorkEn": [
+      "Automated optical and magnetic sorting line engineering for plastics and metals",
+      "Plastic wash lines, mechanical granulation, and food-grade rPET recycling studies",
+      "Agricultural biomass briquetting, palletizing, and animal feed formulation",
+      "Extended Producer Responsibility (EPR) compliance framework design"
+    ],
+    "scopeOfWorkAr": [
+      "تصميم خطوط الفرز الآلي الضوئي والمغناطيسي للبلاستيك والمعادن",
+      "خطوط غسيل وجرش البلاستيك ودراسات إنتاج حبيبات rPET المعتمدة غذائيًا",
+      "كبس وتدوير المخلفات الزراعية لإنتاج الوقود الحيوي المضغوط والأعلاف",
+      "تصميم أطر الالتزام بالمسؤولية الممتدة للمنتج (EPR) للشركات الصناعية"
+    ],
+    "applicationsEn": ["Packaging Manufacturers", "Beverage & Bottling Companies", "Agribusiness Corporations", "Recycling Parks"],
+    "applicationsAr": ["مصانع التعبئة والتغليف", "شركات الأغذية والمشروبات", "المؤسسات الزراعية الكبرى", "المجمعات الصناعية لتدوير المخلفات"],
+    "capabilitiesEn": ["Circular economy engineering advisory", "High-throughput shredding and pelletizing engineering", "Closed-loop supply chain integration"],
+    "capabilitiesAr": ["استشارات متقدمة في الاقتصاد الدائري وإعادة التدوير", "هندسة خطوط الجرش والتحبيب عالية الإنتاجية", "تكامل سلاسل الإمداد المغلقة لتقليل الفاقد"],
+    "image": "/BG/Environment & Sustainability/Hazardous & Solid Waste Management & Recycling.jpg"
+  },
+  {
+    "id": "srv-env-waste-to-energy",
+    "code": "SBA-SRV-ENV09",
+    "sector": "environmental",
+    "categoryKey": "waste-to-energy",
+    "categoryEn": "Waste-to-Energy Solutions",
+    "categoryAr": "تحويل المخلفات إلى طاقة (WtE)",
+    "nameEn": "Thermal & Refuse-Derived Fuel (RDF) Waste-to-Energy Plants",
+    "nameAr": "محطات وأنظمة تحويل المخلفات الصلبة والوقود البديل (RDF) إلى طاقة",
+    "descriptionEn": "Engineering processing facilities converting non-recyclable combustible waste into high-calorific RDF pellets and steam/electricity for heavy industrial consumption.",
+    "descriptionAr": "تصميم وتنفيذ محطات معالجة وإنتاج الوقود البديل عالي القيمة الحرارية (RDF) من المخلفات الصلبة لاستخدامه في أفران مصانع الأسمنت ومحطات توليد الكهرباء.",
+    "scopeOfWorkEn": [
+      "Waste-to-Energy technical feasibility, calorific profiling, and mass balance modeling",
+      "Pre-shredding, air classification, screening, and secondary micro-shredding lines",
+      "Calorific value testing (moisture, chlorine, sulfur, heavy metals, LHV/HHV)",
+      "Flue gas cleaning systems, baghouses, acid gas scrubbers, and dioxin filtration"
+    ],
+    "scopeOfWorkAr": [
+      "دراسات الجدوى الفنية والاقتصادية ونمذجة الاتزان الحراري لتحويل المخلفات لطاقة",
+      "خطوط التمزيق الأولي والفصل الهوائي والغربلة والفرم الناعم لإنتاج RDF",
+      "التحاليل المعملية للقيمة الحرارية ونسب الرطوبة والكلور والكبريت والمعادن",
+      "أنظمة معالجة وغسيل غازات الاحتراق وفلاتر إزالة الديوكسين والغازات الحمضية"
+    ],
+    "applicationsEn": ["Cement Manufacturing Plants", "Municipal Incineration Authorities", "Industrial Energy Hubs", "Power IPPs"],
+    "applicationsAr": ["مصانع إنتاج الأسمنت", "أجهزة المدن والمحارق المركزية", "المجمعات الصناعية كثيفة استهلاك الطاقة", "مشروعات توليد الكهرباء المستقلة"],
+    "capabilitiesEn": ["European RDF standard EN 15359 compliance", "Continuous emissions monitoring system (CEMS) integration", "High calorific density pellet formulation"],
+    "capabilitiesAr": ["مطابقة الوقود البديل للمواصفات الأوروبية EN 15359", "تكامل أنظمة الرصد اللحظي المستمر للانبعاثات CEMS", "تركيبات وقود بديل عالية الكثافة الحرارية تفوق 4,000 ك.كالوري/كجم"],
+    "image": "/BG/Environment & Sustainability/Waste to Energy & Biogas Plants.jpg"
+  },
+  {
+    "id": "srv-env-biogas",
+    "code": "SBA-SRV-ENV10",
+    "sector": "environmental",
+    "categoryKey": "biogas-plants",
+    "categoryEn": "Biogas Plants & Digestion",
+    "categoryAr": "محطات الغاز الحيوي (البيوجاز)",
+    "nameEn": "Commercial Anaerobic Digestion & Biogas Power Generation Plants",
+    "nameAr": "تطوير وإنشاء محطات الهضم اللاهوائي وإنتاج الغاز الحيوي وتوليد الكهرباء",
+    "descriptionEn": "Designing and constructing industrial CSTR and UASB biogas reactors utilizing livestock manure, agro-industrial sludges, and food waste to generate green methane and biofertilizer.",
+    "descriptionAr": "تصميم وإنشاء محطات الغاز الحيوي (البيوجاز) الصناعية والتخمير اللاهوائي لمخلفات المزارع ومصانع الأغذية والصرف الصحي لتوليد الكهرباء وإنتاج السماد العضوي.",
+    "scopeOfWorkEn": [
+      "Substrate biochemical methane potential (BMP) laboratory testing",
+      "Continuously Stirred Tank Reactor (CSTR) civil and mechanical engineering",
+      "Biological and chemical biogas desulfurization (H2S removal) systems",
+      "Combined Heat and Power (CHP) cogeneration integration and grid interconnection"
+    ],
+    "scopeOfWorkAr": [
+      "التحليل المعملي للقدرة الحيوية لإنتاج الميثان (BMP) لمختلف المخلفات",
+      "التصميم الهندسي والإنشائي للمخمرات الحيوية CSTR والمحركات الميكانيكية",
+      "أنظمة تنقية الغاز الحيوي وإزالة كبريتيد الهيدروجين (H2S) والرطوبة",
+      "تركيب وحدات التوليد المشترك للكهرباء والحرارة CHP وربطها بالشبكة"
+    ],
+    "applicationsEn": ["Large Cattle & Poultry Farms", "Sugar, Brewery & Food Factories", "Municipal Wastewater Sludge Units", "Rural Agro-Industrial Cooperatives"],
+    "applicationsAr": ["مزارع الإنتاج الحيواني والدواجن الكبرى", "مصانع الأغذية والحلويات والسكر", "محطات معالجة الصرف الصحي (حمأة)", "المجمعات الزراعية الصناعية"],
+    "capabilitiesEn": ["Patented biological desulfurization formulations", "High-efficiency anaerobic mixing systems", "Organic bio-fertilizer separation and packaging skids"],
+    "capabilitiesAr": ["مركبات بيولوجية متطورة لإزالة كبريتيد الهيدروجين بكفاءة تفوق 99%", "أنظمة تقليب وخلط لاهوائية موفرة للطاقة", "وحدات فصل وتجفيف السماد العضوي السائل والصلب عالي الجودة"],
+    "image": "/BG/Environment & Sustainability/Waste to Energy & Biogas Plants.jpg"
+  },
+  {
+    "id": "srv-env-renewable-energy",
+    "code": "SBA-SRV-ENV11",
+    "sector": "environmental",
+    "categoryKey": "renewable-energy",
+    "categoryEn": "Renewable Energy Solutions",
+    "categoryAr": "حلول وأنظمة الطاقة المتجددة",
+    "nameEn": "Commercial & Industrial Solar PV & Hybrid Renewable Energy Systems",
+    "nameAr": "محطات الطاقة الشمسية الكهروضوئية والحلول الهجينة للمنشآت الصناعية",
+    "descriptionEn": "EPC engineering of rooftop, ground-mounted, and microgrid solar photovoltaic systems reducing enterprise utility costs and decarbonizing industrial operations.",
+    "descriptionAr": "تصميم وتوريد وتركيب وتشغيل محطات الطاقة الشمسية الكهروضوئية (Solar PV) على أسطح المصانع والمزارع والمنظومات الهجينة لخفض فواتير الطاقة والانبعاثات.",
+    "scopeOfWorkEn": [
+      "Solar irradiation assessment, shading analysis, and PVsyst performance simulation",
+      "Tier-1 monocrystalline module procurement and heavy-duty mounting structures",
+      "Grid-tied string inverters, transformers, net-metering, and grid approvals",
+      "Hybrid battery energy storage systems (BESS) and microgrid management"
+    ],
+    "scopeOfWorkAr": [
+      "دراسات الإشعاع الشمسي ومحاكاة الإنتاجية ببرنامج PVsyst وتحليل الظلال",
+      "توريد ألواح شمسية نخب أول وهياكل تثبيت معدنية مجلفنة مقاومة للرياح",
+      "محولات التيار Inverters، لوحات التوزيع وربط العدادات التبادلية مع شبكة الكهرباء",
+      "أنظمة تخزين الطاقة بالبطاريات (BESS) وإدارة الشبكات المصغرة المنفصلة"
+    ],
+    "applicationsEn": ["Industrial Factories", "Agricultural Water Pumping", "Logistics Warehouses", "Commercial Malls"],
+    "applicationsAr": ["المصانع والمنشآت الإنتاجية", "محطات ضخ مياه الري الزراعي بالطاقة الشمسية", "المستودعات اللوجستية", "المجمعات التجارية الكبرى"],
+    "capabilitiesEn": ["Licensed renewable energy EPC contractor", "Real-time string telemetry and yield monitoring", "Bankable solar performance yield warranties"],
+    "capabilitiesAr": ["مقاول معتمد لتنفيذ محطات الطاقة المتجددة", "أنظمة مراقبة لحظية للأداء عبر السحابة", "ضمانات إنتاجية طاقة معتمدة ومقبولة بنكيًا"],
+    "image": "/BG/Environment & Sustainability/Renewable Energy Sector.jpg"
+  },
+  {
+    "id": "srv-env-economics-policy",
+    "code": "SBA-SRV-ENV12",
+    "sector": "environmental",
+    "categoryKey": "environmental-economics",
+    "categoryEn": "Environmental Economic Studies",
+    "categoryAr": "الدراسات الاقتصادية البيئية",
+    "nameEn": "Environmental Economics, Cost-Benefit Studies & Policy Advisory",
+    "nameAr": "الدراسات الاقتصادية البيئية، تحليل التكلفة والعائد واستشارات السياسات",
+    "descriptionEn": "Authoritative economic modeling analyzing environmental regulations, green taxation, natural capital valuation, and policy impact on enterprise profitability.",
+    "descriptionAr": "النمذجة والتحليل الاقتصادي المتقدم للسياسات البيئية، تقييم رأس المال الطبيعي، دراسات الجدوى الاقتصادية البيئية، وتحليل أثر القوانين الخضراء على ربحية الشركات.",
+    "scopeOfWorkEn": [
+      "Environmental Cost-Benefit Analysis (CBA) and Cost-Effectiveness Analysis (CEA)",
+      "Natural capital accounting and ecosystem services monetization",
+      "Carbon price impact sensitivity modeling on corporate profitability",
+      "Green subsidy, environmental taxation, and regulatory litigation advisory"
+    ],
+    "scopeOfWorkAr": [
+      "تحليل التكلفة والعائد البيئي (CBA) والفعالية الاقتصادية للبدائل التكنولوجية",
+      "محاسبة رأس المال الطبيعي والتقييم المالي لخدمات النظم البيئية",
+      "نمذجة حساسية أثر تسعير الكربون والضرائب البيئية على أرباح المنشآت",
+      "استشارات الدعم الأخضر والتقاضي والامتثال للاشتراطات والتشريعات الحكومية"
+    ],
+    "applicationsEn": ["Multinational Conglomerates", "Government Ministries", "Energy & Extraction Companies", "Infrastructure Developers"],
+    "applicationsAr": ["الشركات القابضة والمتعددة الجنسيات", "الوزارات والهيئات التنموية", "شركات الطاقة والتعدين", "مستثمرو مشروعات البنية التحتية"],
+    "capabilitiesEn": ["Senior environmental economists and legal scholars", "Proprietary macro-economic environmental models", "Defensible policy whitepapers for global bodies"],
+    "capabilitiesAr": ["خبراء وأكاديميون متخصصون في الاقتصاد البيئي والتشريعات", "نماذج اقتصادية دقيقة للتنبؤ بتكاليف الامتثال البيئي", "أوراق سياسات ودراسات موثقة معتمدة أمام المنظمات الدولية"],
+    "image": "/BG/Environment & Sustainability/Environmental Economics & Policy Consultations.jpg"
   },
   {
     "id": "srv-env-sustainability",
-    "code": "SBA-SRV-ENV11",
+    "code": "SBA-SRV-ENV13",
     "sector": "environmental",
     "categoryKey": "sustainability-consulting",
-    "categoryEn": "Sustainability Consulting (SDGs)",
-    "categoryAr": "استشارات الاستدامة وأهداف التنمية المستدامة",
-    "nameEn": "Corporate Sustainability Strategies, ESG Frameworks & UN SDGs Alignment",
-    "nameAr": "استراتيجيات الاستدامة المؤسسية وتقارير الإفصاح البيئي والمجتمعي (ESG)",
-    "descriptionEn": "Guiding corporations in embedding Environmental, Social, and Governance (ESG) principles into operations, publishing GRI-standard sustainability reports, and achieving UN Global Goals.",
-    "descriptionAr": "مساعدة الشركات والمؤسسات على دمج ممارسات الاستدامة والحوكمة البيئية والاجتماعية (ESG)، وإصدار تقارير الاستدامة الرسمية وفق معايير المبادرة العالمية للتقارير GRI.",
+    "categoryEn": "Sustainability & ESG Consulting",
+    "categoryAr": "استشارات الاستدامة واستراتيجيات ESG",
+    "nameEn": "Corporate Sustainability Strategies, ESG Frameworks & Impact Programs",
+    "nameAr": "استراتيجيات الاستدامة المؤسسية، أطر الحوكمة البيئية والاجتماعية (ESG)",
+    "descriptionEn": "Formulating comprehensive corporate sustainability roadmaps, ESG scoring improvement, materiality assessments, and transparent non-financial reporting.",
+    "descriptionAr": "تصميم وتطوير استراتيجيات الاستدامة المؤسسية الشاملة، تحسين تقييمات ESG للمؤسسات، مصفوفة الأهمية النسبية، وإعداد تقارير الاستدامة المعتمدة دوليًا.",
     "scopeOfWorkEn": [
-      "Double materiality assessments identifying core sustainability risks and impacts",
-      "GRI Standards & SASB aligned corporate sustainability reporting",
-      "Gap analysis and implementation roadmap for UN Sustainable Development Goals (SDGs)",
-      "ISO 14001 (Environmental) and ISO 50001 (Energy) corporate management system integration"
+      "Double materiality assessment engaging internal and external stakeholders",
+      "ESG policy architecture (environmental, social responsibility, corporate governance)",
+      "GRI Standards and SASB-aligned annual sustainability report drafting",
+      "Employee sustainability culture workshops and leadership training"
     ],
     "scopeOfWorkAr": [
-      "دراسة الأهمية النسبية المزدوجة لتحديد المخاطر والفرص البيئية والمجتمعية للمؤسسة",
-      "إعداد وتدقيق تقارير الاستدامة المؤسسية وفق معايير GRI و SASB",
-      "تحليل الفجوات ووضع برامج التوافق مع أهداف التنمية المستدامة للأمم المتحدة SDGs",
-      "تأهيل الشركات للحصول على شهادات الآيزو 14001 للبيئة و 50001 لإدارة الطاقة"
+      "تقييم الأهمية المزدوجة (Double Materiality) بمشاركة أصحاب المصلحة",
+      "صياغة سياسات وإجراءات الحوكمة البيئية والاجتماعية وحوكمة الشركات",
+      "إعداد ونشر تقارير الاستدامة السنوية المتوافقة مع معايير GRI و SASB",
+      "ورش عمل بناء ثقافة الاستدامة وتدريب القيادات التنفيذية بالمؤسسة"
     ],
-    "applicationsEn": [
-      "Listed Corporations",
-      "Banking & Investment Groups",
-      "Multinational Enterprises",
-      "Government Authorities"
-    ],
-    "applicationsAr": [
-      "الشركات المدرجة في البورصة",
-      "المصارف والمؤسسات التمويلية",
-      "الشركات متعددة الجنسيات",
-      "الجهات والمؤسسات الحكومية"
-    ],
-    "capabilitiesEn": [
-      "GRI certified sustainability professionals",
-      "Corporate ESG scoring models",
-      "Executive workshop facilitation"
-    ],
-    "capabilitiesAr": [
-      "استشاريون معتمدون من المبادرة العالمية للتقارير GRI",
-      "نماذج تقييم الامتثال لمعايير ESG",
-      "تقديم ورش عمل تدريبية للقيادات التنفيذية"
-    ],
-    "image": "/BG/Environment & Sustainability/Sustainable Development Advisory & UN Global Goals.jpg"
+    "applicationsEn": ["Commercial Banks & Insurers", "Listed Corporate Groups", "Family Business Conglomerates", "Real Estate Developers"],
+    "applicationsAr": ["البنوك والمؤسسات المالية وشركات التأمين", "الشركات المدرجة بالبورصة", "المجموعات العائلية الكبرى", "شركات التطوير والاستثمار العقاري"],
+    "capabilitiesEn": ["Certified GRI reporting professionals", "Deep knowledge of regional stock exchange ESG guidelines", "End-to-end stakeholder engagement facilitation"],
+    "capabilitiesAr": ["خبراء معتمدون في إعداد تقارير GRI الدولية", "دراية كاملة بدليل الإفصاح عن الاستدامة الصادر عن البورصات الإقليمية", "إدارة وتيسير ورش العمل وجلسات الحوار مع أصحاب المصلحة"],
+    "image": "/BG/Environment & Sustainability/Management Consultations & ISO Qualification Projects.jpg"
   },
   {
-    "id": "srv-app-privatelabel",
+    "id": "srv-env-sdgs",
+    "code": "SBA-SRV-ENV14",
+    "sector": "environmental",
+    "categoryKey": "sdgs-consulting",
+    "categoryEn": "SDGs Consulting",
+    "categoryAr": "استشارات أهداف التنمية المستدامة (SDGs)",
+    "nameEn": "UN Sustainable Development Goals (SDGs) Alignment & Impact Mapping",
+    "nameAr": "مواءمة أهداف التنمية المستدامة للأمم المتحدة (SDGs) وقياس الأثر المجتمعي",
+    "descriptionEn": "Mapping enterprise operations to the 17 UN Sustainable Development Goals, designing measurable impact KPIs, and qualifying projects for sovereign and green finance.",
+    "descriptionAr": "مواءمة أنشطة وعمليات الشركات مع أهداف التنمية المستدامة الـ 17 للأمم المتحدة، ووضع مؤشرات قياس أثر ملموسة، وتأهيل المشروعات للتمويل الأخضر التنموي.",
+    "scopeOfWorkEn": [
+      "SDG mapping and contribution prioritization (Targets 6, 7, 9, 11, 12, 13)",
+      "Impact KPIs selection and quantitative metrics measurement systems",
+      "Corporate social responsibility (CSR) strategy restructuring toward high impact",
+      "Partnership development with UN agencies, ministries, and civil society"
+    ],
+    "scopeOfWorkAr": [
+      "ربط أنشطة المؤسسة بأهداف التنمية المستدامة ذات الأولوية (أهداف 6، 7، 9، 11، 12، 13)",
+      "تحديد مؤشرات الأداء الرئيسية (KPIs) ونظم الرصد الكمي للأثر الإيجابي",
+      "إعادة هيكلة برامج المسؤولية المجتمعية (CSR) لتحقيق نتائج مستدامة ملموسة",
+      "بناء الشراكات التنموية مع وكالات الأمم المتحدة والوزارات ومنظمات المجتمع المدني"
+    ],
+    "applicationsEn": ["Development Agencies", "Sovereign Funds", "Corporate Foundations", "Educational Institutions"],
+    "applicationsAr": ["الهيئات والمنظمات التنموية", "الصناديق السيادية والاستثمارية", "المؤسسات الخيرية والتنموية للشركات", "المؤسسات التعليمية والجامعات"],
+    "capabilitiesEn": ["UN Global Compact aligned methodology", "Empirical social return on investment (SROI) modeling", "Multi-stakeholder partnership orchestration"],
+    "capabilitiesAr": ["منهجية متوافقة مع الميثاق العالمي للأمم المتحدة UNGC", "نمذجة العائد الاجتماعي على الاستثمار (SROI)", "تنسيق الشراكات المؤسسية الفعالة ذات الأثر المستدام"],
+    "image": "/BG/Environment & Sustainability/Management Consultations & ISO Qualification Projects.jpg"
+  },
+  {
+    "id": "srv-env-iso-systems",
+    "code": "SBA-SRV-ENV15",
+    "sector": "environmental",
+    "categoryKey": "iso-support",
+    "categoryEn": "ISO Management Systems",
+    "categoryAr": "تأهيل أنظمة الأيزو البيئية وإدارة الطاقة",
+    "nameEn": "ISO 14001 & ISO 50001 Management Systems Qualification & Auditing",
+    "nameAr": "تأهيل وتطبيق أنظمة الإدارة البيئية (ISO 14001) وإدارة الطاقة (ISO 50001)",
+    "descriptionEn": "Comprehensive gap analysis, documentation, internal auditor training, and third-party audit facilitation for ISO 14001 (Environmental) and ISO 50001 (Energy Management).",
+    "descriptionAr": "دراسة الفجوات، توثيق الإجراءات، تدريب المراجعين الداخليين، والدعم الكامل للحصول على شهادات الأيزو 14001 لنظم الإدارة البيئية والأيزو 50001 لنظم إدارة الطاقة.",
+    "scopeOfWorkEn": [
+      "Environmental aspects and impacts register compilation and legal compliance audit",
+      "Energy baseline (EnB), Energy Performance Indicators (EnPIs), and SEU identification",
+      "Standard operating procedures (SOP), emergency response, and operational control manuals",
+      "Internal audit conduction, management review assistance, and certification body liaison"
+    ],
+    "scopeOfWorkAr": [
+      "إعداد سجل المظاهر والآثار البيئية وتدقيق الامتثال للقوانين والتشريعات المنظمة",
+      "تحديد خط الأساس للطاقة (EnB) ومؤشرات كفاءة الطاقة ومجالات الاستهلاك الرئيسية",
+      "صياغة إجراءات التشغيل القياسية (SOPs) وخطط الطوارئ ودليل الإدارة المتكامل",
+      "تنفيذ المراجعات الداخلية، تجهيز اجتماعات مراجعة الإدارة، والتنسيق مع جهات المنح الدولية"
+    ],
+    "applicationsEn": ["Manufacturing Factories", "Energy-Intensive Mills", "Healthcare Campuses", "Contracting Companies"],
+    "applicationsAr": ["المصانع والشركات الإنتاجية", "المنشآت كثيفة استهلاك الطاقة", "المستشفيات والمدن الطبية", "شركات المقاولات الكبرى"],
+    "capabilitiesEn": ["IRCA-certified lead auditors for ISO 14001 & ISO 50001", "100% first-attempt certification success rate", "Tailored digital compliance documentation"],
+    "capabilitiesAr": ["مراجعون رئيسيون معتمدون دوليًا من منظمة IRCA البريطانية", "نسبة نجاح 100% في اجتياز مراجعات المنح من أول تدقيق", "توثيق رقمي مرن لإجراءات النظام المؤسسي"],
+    "image": "/BG/Environment & Sustainability/Management Consultations & ISO Qualification Projects.jpg"
+  },
+  {
+    "id": "srv-env-qhse",
+    "code": "SBA-SRV-ENV16",
+    "sector": "environmental",
+    "categoryKey": "qhse-solutions",
+    "categoryEn": "Integrated QHSE Solutions",
+    "categoryAr": "حلول الجودة والصحة والسلامة والبيئة",
+    "nameEn": "Integrated Quality, Health, Safety & Environment (QHSE) Solutions",
+    "nameAr": "حلول الجودة والصحة المهنية والسلامة والبيئة المتكاملة (QHSE)",
+    "descriptionEn": "Designing robust QHSE management frameworks unifying ISO 9001, ISO 14001, and ISO 45001 to prevent workplace accidents and ensure regulatory compliance.",
+    "descriptionAr": "تصميم وتطبيق منظومات متكاملة لإدارة الجودة والصحة والسلامة المهنية والبيئة (QHSE) لدمج معايير الأيزو 9001 و14001 و45001 لمنع الحوادث وضمان سلامة بيئة العمل.",
+    "scopeOfWorkEn": [
+      "Hazard Identification and Risk Assessment (HIRA) and Job Safety Analysis (JSA)",
+      "Incident investigation, root cause analysis (RCA), and corrective action plans",
+      "Emergency response planning, fire drill protocols, and evacuation mapping",
+      "Contractor safety management and site compliance inspection routines"
+    ],
+    "scopeOfWorkAr": [
+      "تحديد المخاطر وتقييمها (HIRA) وتحليل سلامة المهام (JSA) لكافة مواقع العمل",
+      "التحقيق في الحوادث وتحليل الأسباب الجذرية (RCA) وتطبيق الإجراءات التصحيحية",
+      "إعداد خطط الطوارئ والإخلاء وسيناريوهات مكافحة الحرائق وتدريب العاملين",
+      "إدارة سلامة المقاولين والتفتيش الدوري على مواقع العمل والإنشاءات"
+    ],
+    "applicationsEn": ["Construction Sites", "Petrochemical Refineries", "Heavy Manufacturing Plants", "Port Terminals"],
+    "applicationsAr": ["مواقع المقاولات والإنشاءات الكبرى", "مصافي البترول والغاز", "المصانع الثقيلة", "الموانئ والمستودعات البحرية"],
+    "capabilitiesEn": ["NEBOSH / OSHA certified safety consultants", "Zero-incident behavioral safety coaching", "Mobile site safety inspection application"],
+    "capabilitiesAr": ["استشاريو سلامة معتمدون من نيبوش NEBOSH والأوشا OSHA", "برامج تدريب تعديل السلوك المهني لتحقيق صفر حوادث", "تطبيقات رقمية للتفتيش الفوري على معايير السلامة بالموقع"],
+    "image": "/BG/Environment & Sustainability/Environmental Measurements & Continuous Monitoring.jpg"
+  },
+  {
+    "id": "srv-env-digital-ehs",
+    "code": "SBA-SRV-ENV17",
+    "sector": "environmental",
+    "categoryKey": "digital-ehs",
+    "categoryEn": "Digital EHS Software & IoT",
+    "categoryAr": "المنظومات والحلول الرقمية للسلامة والبيئة",
+    "nameEn": "Digital EHS Enterprise Software Platforms & Real-Time IoT Systems",
+    "nameAr": "المنظومات السحابية والحلول الرقمية لإدارة السلامة والبيئة (EHS Software & IoT)",
+    "descriptionEn": "Deploying proprietary cloud EHS software, mobile inspection tools, and IoT environmental sensor stations for automated data collection and compliance tracking.",
+    "descriptionAr": "تطبيق المنظومات السحابية لإدارة البيئة والسلامة وتطبيقات التفتيش بالهاتف المحمول ومحطات الاستشعار الذكية لجمع البيانات البيئية آليًا وتحليل المخاطر لحظيًا.",
+    "scopeOfWorkEn": [
+      "EHS SaaS portal deployment: permit-to-work, incident logging, compliance audits",
+      "IoT real-time ambient monitoring integration (particulate, VOCs, noise, water level)",
+      "Automated regulatory compliance calendar and legal violation early warnings",
+      "Custom carbon accounting API integrations with corporate ERP systems (SAP/Oracle)"
+    ],
+    "scopeOfWorkAr": [
+      "تثبيت المنظومة السحابية: تصاريح العمل الإلكترونية، تسجيل الحوادث، والتدقيق البيئي",
+      "ربط حساسات إنترنت الأشياء (IoT) للرصد اللحظي للأتربة والغازات والضوضاء ومناسيب المياه",
+      "تقويم آلي للامتثال البيئي والتنبيه المبكر بمواعيد تجديد التراخيص والقياسات الرسمية",
+      "ربط برمجي لحساب البصمة الكربونية آليًا مع أنظمة الشركات مثل SAP و Oracle"
+    ],
+    "applicationsEn": ["Industrial Parks", "Enterprise Corporations", "Smart Cities", "Contracting Groups"],
+    "applicationsAr": ["المدن والمجمعات الصناعية", "المؤسسات والشركات الكبرى", "المدن الذكية والمستدامة", "شركات المقاولات متعددة المواقع"],
+    "capabilitiesEn": ["Proprietary SaaS architecture (EHS-APP & IoT-ENV)", "End-to-end encrypted cloud data security", "Customized mobile apps for Android and iOS"],
+    "capabilitiesAr": ["منظومات برمجية سحابية مملوكة للمجموعة (EHS-APP و IoT-ENV)", "حماية وتشفير متكامل للبيانات الصناعية على خوادم سحابية آمنة", "تطبيقات هواتف ذكية مخصصة لفرق العمل الميدانية"],
+    "image": "/BG/Environment & Sustainability/EHS Digital Platforms, Automation & Environmental Software.jpg"
+  },
+  {
+    "id": "srv-env-biotech",
+    "code": "SBA-SRV-ENV18",
+    "sector": "environmental",
+    "categoryKey": "biotechnology",
+    "categoryEn": "Biotechnology & Bioremediation",
+    "categoryAr": "التكنولوجيا الحيوية والمعالجة البيولوجية",
+    "nameEn": "Applied Environmental Biotechnology & Biological Hydrocarbon Remediation",
+    "nameAr": "التكنولوجيا الحيوية والمعالجة البيولوجية للملوثات الزيتية والروائح",
+    "descriptionEn": "Deploying specialized bio-catalytic formulations and microbial consortia to neutralize odor emissions, degrade oil sludge, and restore contaminated soil and wastewater.",
+    "descriptionAr": "تطبيق الحلول البيولوجية المتقدمة ومستحضرات البكتيريا المتخصصة لتحييد الروائح الكريهة وتفتيت الحمأة البترولية ومعالجة مياه الصرف الصحي والصناعي طبيعيًا.",
+    "scopeOfWorkEn": [
+      "Bio-catalytic odor neutralization spraying across municipal landfills and wastewater plants",
+      "In-situ and ex-situ bio-piles for crude oil contaminated soil bioremediation",
+      "Microbial augmentation for industrial wastewater treatment lagoons to cut COD/BOD",
+      "Grease trap and organic drain bio-digestion for commercial hospitality complexes"
+    ],
+    "scopeOfWorkAr": [
+      "رش المستحضرات البيولوجية لإزالة الروائح الكريهة في مدافن المخلفات ومحطات الصرف",
+      "معالجة التربة الملوثة بالنفط بيولوجيًا بتقنية الكومات الحيوية دون استخدام كيماويات ضارة",
+      "تنشيط المعالجة البيولوجية في أحواض الصرف الصناعي لخفض نسب COD و BOD بكفاءة عالية",
+      "تفتيت الدهون والزيوت العضوية في شبكات الصرف للمطاعم والفنادق الكبرى"
+    ],
+    "applicationsEn": ["Oilfield Storage Terminals", "Municipal Wastewater Facilities", "Rendering & Food Plants", "Landfill Facilities"],
+    "applicationsAr": ["مستودعات وحقول إنتاج النفط", "محطات معالجة مياه الصرف الصحي", "مصانع تدوير المخلفات العضوية والأغذية", "مدافن المخلفات البلدية"],
+    "capabilitiesEn": ["Proprietary eco-friendly formulations (ET-POT-01 & ET-POR-01)", "100% non-pathogenic, non-toxic biological agents", "Rapid field application mobile units"],
+    "capabilitiesAr": ["مركبات بيولوجية متطورة حصرية للمجموعة (ET-POT-01 و ET-POR-01)", "مستحضرات طبيعية 100% غير سامة وغير ضارة بالإنسان أو البيئة", "وحدات ميدانية متنقلة للرش والخلط والمعالجة الفورية بالموقع"],
+    "image": "/BG/Environment & Sustainability/ET-POR-01 — Odor Removal Solution.jpg"
+  },
+  {
+    "id": "srv-env-rd",
+    "code": "SBA-SRV-ENV19",
+    "sector": "environmental",
+    "categoryKey": "applied-rd",
+    "categoryEn": "Applied Environmental R&D",
+    "categoryAr": "البحث والتطوير العلمي البيئي التطبيقي",
+    "nameEn": "Applied Environmental Research, Laboratory Assays & Technology Commercialization",
+    "nameAr": "البحث والتطوير العلمي البيئي التطبيقي والشراكات الأكاديمية",
+    "descriptionEn": "Conducting collaborative scientific R&D in partnership with universities and research institutes to engineer innovative solutions for industrial pollution and resource recovery.",
+    "descriptionAr": "تنفيذ برامج البحث العلمي التطبيقي بالتعاون مع الجامعات والمراكز البحثية لتطوير حلول مبتكرة لمشاكل التلوث الصناعي، ومعالجة المياه واسترداد الموارد.",
+    "scopeOfWorkEn": [
+      "Microbial strain isolation, toxicity assays, and genetic sequencing for biodegradation",
+      "Laboratory-scale pilot reactor prototyping for industrial effluent treatment",
+      "Valorization of agro-industrial byproducts into high-value biochemicals",
+      "Publishing joint scientific whitepapers and intellectual property patenting"
+    ],
+    "scopeOfWorkAr": [
+      "عزل وتوصيف السلالات البكتيرية المعالجة واختبارات السمية للتفتيت الحيوي للملوثات",
+      "تصميم واختبار النماذج التجريبية المصغرة (Pilot Plants) لمعالجة الصرف الصناعي المعقد",
+      "تحويل المخلفات الزراعية والصناعية إلى مركبات كيميائية ومواد مضافة ذات قيمة عالية",
+      "نشر الأوراق العلمية المشتركة وتسجيل براءات الاختراع والابتكارات البيئية"
+    ],
+    "applicationsEn": ["Chemical & Mining Companies", "University Research Consortia", "Green Technology Incubators", "Government R&D Bodies"],
+    "applicationsAr": ["شركات الكيماويات والتعدين الكبرى", "التحالفات البحثية مع الجامعات", "حاضنات التكنولوجيا الخضراء", "هيئات البحث العلمي والابتكار الحكومية"],
+    "capabilitiesEn": ["Equipped university-partnered microbiology and analytical laboratories", "Multi-disciplinary team of Ph.D. environmental chemists", "Proven track record bridging academic science with industrial market delivery"],
+    "capabilitiesAr": ["معامل ميكروبيولوجية وتحليلية مجهزة بالشراكة مع الجامعات في مصر", "فريق بحثي يضم نخبة من حملة الدكتوراه في الكيمياء والبيولوجيا البيئية", "سجل ناجح في تحويل الأبحاث المعملية إلى منتجات وحلول صناعية تجارية"],
+    "image": "/BG/Environment & Sustainability/Scientific Research, Publishing & Heritage Verification.jpg"
+  },
+
+  // --------------------------------------------------------------------------
+  // DIVISION 3: APPAREL & TEXTILE MANUFACTURING SERVICES (8 Programs)
+  // --------------------------------------------------------------------------
+  {
+    "id": "srv-app-oem",
     "code": "SBA-SRV-APP01",
+    "sector": "apparel-services",
+    "categoryKey": "oem-manufacturing",
+    "categoryEn": "OEM Contract Manufacturing",
+    "categoryAr": "التصنيع الأصلي للمعدات OEM",
+    "nameEn": "Original Equipment Manufacturer (OEM) Apparel Production",
+    "nameAr": "التصنيع كشريك للمعدات الأصلية والعلامات التجارية (OEM)",
+    "descriptionEn": "Providing industrial production line capacity for global retail brands and corporate buyers. Offers pure Cut-Make-Trim (CMT) or partial-supply contract models.",
+    "descriptionAr": "توفير طاقات خطوط الإنتاج الصناعية للعلامات التجارية العالمية وتجار التجزئة، مع خيارات التشغيل بنظام القص والخياطة (CMT) أو التصنيع الشامل.",
+    "scopeOfWorkEn": [
+      "Automated Gerber CNC spreading and precision multi-ply fabric cutting",
+      "Dedicated modular assembly lines matching buyer construction specifications",
+      "Automated loop making, multi-head embroidery, and screen/digital heat-transfer printing",
+      "In-line needle detection, dimensional stability testing, and barcoded carton packaging"
+    ],
+    "scopeOfWorkAr": [
+      "الفرد الآلي والقص الدقيق للأقمشة بأنظمة الكمبيوتر CNC (جيربر)",
+      "خطوط خياطة نمطية متخصصة مطابقة للمواصفات الفنية المعتمدة للمشتري",
+      "ماكينات التطريز الصناعي متعددة الرؤوس والطباعة الحريرية والحرارية الرقمية",
+      "فحص أجهزة الكشف عن الإبر المكسورة واختبار ثبات الأبعاد والتعبئة بالباركود"
+    ],
+    "applicationsEn": ["International Fashion Brands", "Department Store Chains", "Workwear & Corporate Uniform Buyers", "Online Fashion Retailers"],
+    "applicationsAr": ["العلامات التجارية العالمية للأزياء", "سلاسل المتاجر الكبرى", "مشترو الزي الموحد وملابس العمل المؤسسية", "منصات تجارة الأزياء الإلكترونية"],
+    "capabilitiesEn": ["Over 250 specialized industrial sewing machines", "Lean manufacturing line balancing", "AQL 1.5 inline and final inspection"],
+    "capabilitiesAr": ["أكثر من 250 ماكينة خياطة صناعية متخصصة", "تطبيق مبادئ التصنيع الرشيق Lean Manufacturing لمرونة الخطوط", "مراقبة جودة صارمة بمقاييس AQL 1.5 الدولية"],
+    "image": "/BG/Apparel Manufacturing/Textile & Ready-Made Garments Sector.jpg"
+  },
+  {
+    "id": "srv-app-odm",
+    "code": "SBA-SRV-APP02",
+    "sector": "apparel-services",
+    "categoryKey": "odm-development",
+    "categoryEn": "ODM Design & Co-Development",
+    "categoryAr": "التصميم والتصنيع المشترك ODM",
+    "nameEn": "ODM Fashion Co-Development & Ready Design Customization",
+    "nameAr": "التصميم والتصنيع المشترك (ODM) والتخصيص من كتالوج المجموعة",
+    "descriptionEn": "End-to-end design development allowing fashion labels to select and customize garments from our verified 2,700+ design library without internal design overhead.",
+    "descriptionAr": "خدمة تطوير وتصميم متكاملة تتيح للماركات التجارية اختيار وتخصيص موديلات من محفظتنا المعتمدة التي تضم أكثر من 2,700 تصميم جاهز للإنتاج الفوري.",
+    "scopeOfWorkEn": [
+      "Access to extensive season-ready silhouette catalogs across women's, men's, and children's",
+      "Custom colorways, graphic artwork adaptation, and brand labeling insertion",
+      "Fit adjustment to specific demographic measurement charts",
+      "Fast-track sample delivery within 5 to 7 working days"
+    ],
+    "scopeOfWorkAr": [
+      "إتاحة كتالوجات تصميمات موسمية متكاملة للملابس النسائية والرجالية والأطفال",
+      "تخصيص لوحات الألوان والطباعات وتثبيت الشعارات والبطاقات الخاصة بالعلامة",
+      "تعديل وتدريج القياسات لملاءمة متطلبات الأسواق المستهدفة",
+      "تنفيذ وتسليم عينات الاعتماد الأولية خلال 5 إلى 7 أيام عمل"
+    ],
+    "applicationsEn": ["Emerging Fashion Labels", "Regional Retail Chains", "Private Label Boutiques", "Fast-Fashion Brands"],
+    "applicationsAr": ["العلامات التجارية الصاعدة في الموضة", "سلاسل متاجر التجزئة الإقليمية", "المتاجر والبوتيكات الراقية", "ماركات الأزياء السريعة"],
+    "capabilitiesEn": ["In-house fashion design team", "Proprietary library of over 2,700 commercial styles", "3D virtual fitting simulations"],
+    "capabilitiesAr": ["فريق تصميم أزياء وباترون متخصص", "مكتبة موديلات تجارية تضم أكثر من 2,700 تصميم مجرب بالأسواق", "محاكاة ثلاثية الأبعاد لملاءمة القياسات 3D Virtual Fitting"],
+    "image": "/BG/Apparel Manufacturing/Product Development & Sampling.jpg"
+  },
+  {
+    "id": "srv-app-private-label",
+    "code": "SBA-SRV-APP03",
     "sector": "apparel-services",
     "categoryKey": "private-label",
     "categoryEn": "Private Label Manufacturing",
-    "categoryAr": "التصنيع لحساب العلامات التجارية الخاصة",
-    "nameEn": "Turnkey Private Label Apparel Program for Global Fashion Brands",
-    "nameAr": "برامج التصنيع الحصري للعلامات التجارية العالمية والمحلية",
-    "descriptionEn": "Complete production execution under the client's own brand name. We transform fashion sketches and tech-packs into commercial export collections, managing labels, barcodes, and branded packaging.",
-    "descriptionAr": "تنفيذ شامل للمجموعات والأزياء تحت الاسم التجاري للعميل بالكامل، من تحويل الرسومات الفنية والمخططات إلى منتجات جاهزة مع البطاقات والأزرار والتغليف المخصص.",
+    "categoryAr": "التصنيع للعلامات التجارية الخاصة",
+    "nameEn": "Turnkey Private Label Manufacturing & Brand Collection Packaging",
+    "nameAr": "التصنيع المتكامل للعلامات التجارية الخاصة (Private Label)",
+    "descriptionEn": "Complete contract manufacturing tailored to brand identity, including custom jacquard woven neck labels, engraved metal hardware, hangtags, and presentation gift boxes.",
+    "descriptionAr": "تصنيع متكامل وحصري للعلامات التجارية يشمل حياكة البطاقات المنسوجة الفاخرة، الإكسسوارات المعدنية المنقوشة، كروت الأسعار، والتغليف التصديري الفاخر.",
     "scopeOfWorkEn": [
-      "Custom woven neck labels, care tags, and barcode hangtags development",
-      "Exclusive color palette development and lab dip matching",
-      "Strict confidentiality agreements protecting proprietary brand designs",
-      "Consolidated multi-store retail carton packaging ready for immediate shelf placement"
+      "Bespoke label weaving, printed satin care tags, and security QR-code hangtags",
+      "Custom branded polybags, tissue wrap, silica gel insertion, and barcode stickering",
+      "Master export shipping cartons matching international retail warehouse logistics",
+      "Confidentiality agreement protecting proprietary brand silhouettes and artwork"
     ],
     "scopeOfWorkAr": [
-      "تصنيع بطاقات العلامة التجارية المنسوجة، بطاقات الغسيل وملصقات الباركود",
-      "تطوير ألوان وصبغات حصرية للعميل مع اعتماد معملي لدرجات الألوان",
-      "اتفاقيات سرية تامة لحماية التصميمات والموديلات الخاصة بالعلامة",
-      "تعبئة وتغليف كرتوني مطابق للمقاييس اللوجستية للمتاجر وسلاسل التجزئة"
+      "تصنيع بطاقات الهوية المنسوجة، بطاقات إرشادات الغسيل وبطاقات الأسعار الذكية QR",
+      "أكياس تغليف مطبوعة بهوية الماركة، ورق تغليف داخلي، وممتصات الرطوبة",
+      "كراتين شحن تصديرية متينة مطابقة لاشتراطات المستودعات اللوجستية العالمية",
+      "اتفاقيات سرية وحماية كاملة للتصميمات والباترونات الحصرية الخاصة بالعميل"
     ],
-    "applicationsEn": [
-      "Fashion Retail Chains",
-      "E-Commerce Apparel Brands",
-      "Department Stores",
-      "Designer Boutiques"
-    ],
-    "applicationsAr": [
-      "سلاسل متاجر الأزياء",
-      "علامات الملابس عبر التجارة الإلكترونية",
-      "المتاجر الكبرى متعددة الأقسام",
-      "دور الأزياء والمصممون المستقلون"
-    ],
-    "capabilitiesEn": [
-      "Dedicated account managers",
-      "AQL 2.5 final inspection",
-      "Flexible minimum order quantities per colorway"
-    ],
-    "capabilitiesAr": [
-      "مدير حساب هندسي مخصص لكل عميل",
-      "فحص جودة نهائي صارم بمعايير AQL 2.5",
-      "مرونة في الحد الأدنى للكميات لكل تصميم ولون"
-    ],
-    "image": "/BG/Apparel Manufacturing/Private Label Manufacturing.jpg"
-  },
-  {
-    "id": "srv-app-oem",
-    "code": "SBA-SRV-APP02",
-    "sector": "apparel-services",
-    "categoryKey": "oem-manufacturing",
-    "categoryEn": "OEM Manufacturing",
-    "categoryAr": "التصنيع الأصلي للمعدات والملابس (OEM)",
-    "nameEn": "Original Equipment Manufacturing (OEM) to Exact Technical Specifications",
-    "nameAr": "التصنيع الأصلي المتطابق مع المواصفات الفنية للعميل (OEM)",
-    "descriptionEn": "Contract manufacturing strictly following client-supplied technical specifications, tolerance measurements, fabric weights, stitch densities, and material compositions.",
-    "descriptionAr": "تصنيع تعاقدي دقيق يعتمد كليًا على المواصفات الفنية والجداول القياسية المقدمة من العميل، ونسب التفاوت المقبولة، وأوزان الأنسجة وكثافة الغرز وخامات التصنيع.",
-    "scopeOfWorkEn": [
-      "Strict compliance with client tech packs, size charts, and sewing tolerances",
-      "Fabric tensile, tear strength, and color fastness pre-production laboratory testing",
-      "Automated CAD pattern cutting ensuring zero dimensional variance",
-      "In-line needle detection and comprehensive quality inspection logs"
-    ],
-    "scopeOfWorkAr": [
-      "التزام صارم بجداول المقاسات والمخططات الفنية ونسب التفاوت المسموحة",
-      "فحوصات معملية لقوة الشد، مقاومة التمزق، وثبات الصباغة قبل بدء الإنتاج",
-      "قص آلي بالكمبيوتر CAD يضمن انعدام أي فروق بين أجزاء الباترون",
-      "فحص إلكتروني بمكاشف الإبر وتوثيق كامل لسجلات فحص الجودة أثناء الخياطة"
-    ],
-    "applicationsEn": [
-      "Global Brand Licensees",
-      "Corporate Uniform Contracts",
-      "Institutional Workwear",
-      "Sporting Leagues"
-    ],
-    "applicationsAr": [
-      "الوكلاء المعتمدون للماركات العالمية",
-      "عقود الزي الموحد للمؤسسات الكبرى",
-      "ملابس العمل الصناعية المتخصصة",
-      "الأندية والاتحادات الرياضية"
-    ],
-    "capabilitiesEn": [
-      "Daily capacity exceeding 15,000 units",
-      "Multi-stage QA checkpoints",
-      "Certified ISO 9001 quality management"
-    ],
-    "capabilitiesAr": [
-      "طاقة إنتاجية يومية تتجاوز 15,000 قطعة",
-      "نقاط تفتيش جودة متتابعة في كل مرحلة إنتاج",
-      "نظام إدارة جودة معتمد بشهادة ISO 9001:2015"
-    ],
-    "image": "/BG/Apparel Manufacturing/Ready-Made Garment Manufacturing.jpg"
+    "applicationsEn": ["Luxury Fashion Houses", "Department Store Own-Brands", "Influencer & Celebrity Brands", "Sportswear Labels"],
+    "applicationsAr": ["دور الأزياء الفاخرة", "العلامات الخاصة بسلاسل المتاجر الكبرى", "ماركات المشاهير والمؤثرين", "علامات الملابس الرياضية المتخصصة"],
+    "capabilitiesEn": ["End-to-end branding packaging line", "Full IP and design protection", "Flexible multi-SKU minimum order quantities"],
+    "capabilitiesAr": ["خطوط تعبئة وتغليف بهوية العلامة التجارية", "حماية كاملة للملكية الفكرية والتصميمات", "مرونة في الحد الأدنى للطلب وتعدد الموديلات"],
+    "image": "/BG/Apparel Manufacturing/Private Label & Contract Manufacturing.jpg"
   },
   {
     "id": "srv-app-fob",
-    "code": "SBA-SRV-APP03",
-    "sector": "apparel-services",
-    "categoryKey": "fob-manufacturing",
-    "categoryEn": "FOB Manufacturing",
-    "categoryAr": "التصنيع الشامل بنظام FOB",
-    "nameEn": "Full Package & FOB Export Garment Manufacturing Programs",
-    "nameAr": "برامج التصنيع الشامل بنظام FOB والتسليم على ظهر السفينة بالموانئ",
-    "descriptionEn": "Complete end-to-end manufacturing package covering all raw materials, accessories, manufacturing labor, packaging, inland logistics, and port customs clearance on FOB terms.",
-    "descriptionAr": "حزمة تصنيع وتصدير شاملة تغطي كافة الخامات، الإكسسوارات، تكاليف التشغيل والخياطة، التعبئة والتغليف، النقل الداخلي والتخليص الجمركي بموانئ الشحن بنظام FOB.",
-    "scopeOfWorkEn": [
-      "All-inclusive unit pricing covering yarns, fabrics, buttons, zippers, and trims",
-      "Handling export documentation, Certificate of Origin (COO), and EUR.1 certifications",
-      "Container stuffing, palletization, and insured bonded transport to Egyptian seaports",
-      "FOB delivery to Alexandria, Port Said, Damietta, or Sokhna ports"
-    ],
-    "scopeOfWorkAr": [
-      "تسعير شامل للقطعة يتضمن الأقمشة، الأزرار، السحابات، الحشوات وتكاليف الحياكة",
-      "إصدار المستندات الرسمية للتصدير: شهادة المنشأ، الفواتير الموثقة وشهادات اليورو 1",
-      "تحميل الحاويات ورص الطبالي والنقل المؤمن إلى الموانئ البحرية والجوية",
-      "تسليم البضائع على ظهر السفينة بموانئ الإسكندرية، بورسعيد، دمياط، أو السخنة"
-    ],
-    "applicationsEn": [
-      "International Importers",
-      "Global Sourcing Agencies",
-      "Wholesale Distributors",
-      "Trading Houses"
-    ],
-    "applicationsAr": [
-      "المستوردون الدوليون",
-      "وكالات التوريد والمكاتب العالمية",
-      "شركات التوزيع والجملة الكبرى",
-      "بيوت التجارة الدولية"
-    ],
-    "capabilitiesEn": [
-      "Experienced customs export division",
-      "Direct sea shipping access to Europe & US",
-      "Trade agreement duty-free access (Agadir, EU, COMESA)"
-    ],
-    "capabilitiesAr": [
-      "قسم تخليص جمركي وتصدير خبير",
-      "قرب خطوط الشحن البحري لأوروبا وأمريكا",
-      "استفادة من اتفاقيات الإعفاء الجمركي (أغادير، الشراكة الأوروبية، والكوميسا)"
-    ],
-    "image": "/BG/Apparel Manufacturing/FOB Manufacturing Programs.jpg"
-  },
-  {
-    "id": "srv-app-contract",
     "code": "SBA-SRV-APP04",
     "sector": "apparel-services",
-    "categoryKey": "contract-manufacturing",
-    "categoryEn": "Contract Manufacturing",
-    "categoryAr": "التصنيع التعاقدي للمجموعات الكبرى",
-    "nameEn": "High-Volume Contract Manufacturing & Industrial Cut-Make-Trim (CMT)",
-    "nameAr": "التصنيع التعاقدي والتشغيل للغير (CMT) للطاقات الإنتاجية الكبرى",
-    "descriptionEn": "Providing industrial production line capacity for global retail brands and corporate buyers. Offers pure Cut-Make-Trim (CMT) or partial-supply contract models.",
-    "descriptionAr": "توفير خطوط إنتاجية متخصصة ومكثفة لتشغيل وتنفيذ طلبيات الملابس الكبرى بنظام القص والخياطة والتشطيب (CMT) للمجموعات والمصانع الشريكة.",
+    "categoryKey": "fob-manufacturing",
+    "categoryEn": "Full Package FOB Programs",
+    "categoryAr": "برامج التصنيع الشامل والتصدير (FOB)",
+    "nameEn": "Full Package & FOB Export Garment Manufacturing Programs",
+    "nameAr": "برامج التصنيع الشامل بنظام FOB والتسليم على ظهر السفينة بالموانئ",
+    "descriptionEn": "All-inclusive manufacturing coordinating raw cotton fiber, knitting, piece dyeing, bulk production, and port customs export clearance under standard international Incoterms.",
+    "descriptionAr": "برامج تصنيع شاملة تتولى شراء الأقمشة والغزول، الصباغة، التصنيع الكامل، الفحص المخبري، وإنهاء الإجراءات الجمركية وشحن الحاويات بموانئ الإسكندرية ودمياط.",
     "scopeOfWorkEn": [
-      "Automated spreading and computer-controlled precision cutting",
-      "Multi-needle specialized assembly line sewing",
-      "Automated buttonholing, bar-tacking, and snap fastening",
-      "Steam tunnel pressing, final folding, and bulk carton packing"
+      "Raw materials procurement and complete bill of materials (BOM) management",
+      "Continuous inline factory quality audits conforming to approved master golden samples",
+      "Export documentation: Phytosanitary certificates, EUR.1, Certificate of Origin, Form A",
+      "Port delivery, container stuffing, fumigation, and shipping line freight coordination"
     ],
     "scopeOfWorkAr": [
-      "فرد الأقمشة آليًا والقص الدقيق عبر مقصات التحكم الرقمي بالكمبيوتر",
-      "حياكة تجميعية متخصصة عبر خطوط إنتاج متوازية عالية السرعة",
-      "فتح العراوي، تركيب الأزرار، والكباسين عبر ماكينات أوتوماتيكية",
-      "كي بالبخار في أنفاق الكي الحراري، والطي والتعبئة الكرتونية للكميات الكبيرة"
+      "شراء وإدارة كافة الخامات ومستلزمات الإنتاج وفق قائمة BOM المعتمدة",
+      "مراقبة جودة مرحلية دقيقة مطابقة للعينة الذهبية المعتمدة من المشتري",
+      "إصدار الوثائق التصديرية الرسمية: شهادات المنشأ، اتفاقيات EUR.1، وشهادات الفحص",
+      "التوصيل للموانئ، تحميل وتعتيق الحاويات، التبخير، والتنسيق مع الخطوط الملاحية"
     ],
-    "applicationsEn": [
-      "Mass Retailers",
-      "High-Volume Fast Fashion Labels",
-      "Industrial Garment Partners",
-      "Seasonal Campaign Orders"
-    ],
-    "applicationsAr": [
-      "سلاسل التجزئة الضخمة",
-      "علامات الأزياء السريعة عالية الطلب",
-      "مصانع الملابس الكبرى",
-      "طلبيات الحملات والمواسم السنوية"
-    ],
-    "capabilitiesEn": [
-      "Over 25 dedicated production lines",
-      "High on-time delivery record (> 98%)",
-      "Continuous worker skill upgrading"
-    ],
-    "capabilitiesAr": [
-      "أكثر من 25 خط إنتاج متخصص",
-      "سجل التزام بالمواعيد يتجاوز 98%",
-      "تدريب مستمر للكوادر الفنية على أحدث تقنيات التشغيل"
-    ],
-    "image": "/BG/Apparel Manufacturing/Specialized Production Lines.jpg"
+    "applicationsEn": ["European Import Houses", "GCC Retail Groups", "North American Sourcing Agencies", "Trading Companies"],
+    "applicationsAr": ["بيوت الاستيراد الأوروبية", "مجموعات التجزئة في دول الخليج", "وكالات الشراء الدولية", "شركات التجارة العالمية"],
+    "capabilitiesEn": ["FOB Alexandria / Port Said delivery", "Duty-free trade agreement utilization (EUR.1, Agadir, COMESA)", "Containerized freight logistics team"],
+    "capabilitiesAr": ["تسليم FOB على موانئ الإسكندرية وبورسعيد ودمياط", "الاستفادة من الاتفاقيات الجمركية التفضيلية (EUR.1 وأغادير والكوميسا)", "فريق لوجستي متخصص في الشحن والتخليص الجمركي"],
+    "image": "/BG/Apparel Manufacturing/Integrated Manufacturing.jpg"
   },
   {
     "id": "srv-app-product-dev",
     "code": "SBA-SRV-APP05",
     "sector": "apparel-services",
     "categoryKey": "product-development",
-    "categoryEn": "Product Development",
-    "categoryAr": "تطوير المنتجات وتصميم العينات والباترون",
-    "nameEn": "Apparel Product Design, CAD Pattern Grading & Proto Sampling",
-    "nameAr": "تصميم الأزياء وتطوير الباترونات الرقمية CAD وتنفيذ العينات الأولية",
-    "descriptionEn": "Turning client concepts into production-ready apparel. Our creative studio develops CAD pattern grading, 3D digital fit visualization, and rapid turnaround physical prototypes.",
-    "descriptionAr": "تحويل أفكار وتصميمات العميل إلى عينات حقيقية جاهزة للإنتاج الصناعي، من خلال رسم الباترونات الرقمية ببرامج CAD والمحاكاة ثلاثية الأبعاد وعينات الاعتماد.",
+    "categoryEn": "CAD Pattern Engineering",
+    "categoryAr": "هندسة الباترون وتطوير المنتجات",
+    "nameEn": "CAD Pattern Engineering, Computerized Grading & Tech Pack Creation",
+    "nameAr": "هندسة الباترون وتدريج المقاسات بالكمبيوتر وتطوير الملفات الفنية",
+    "descriptionEn": "Precision computerized pattern development using leading CAD systems, accurate multi-size grading, fabric consumption optimization, and comprehensive tech packs.",
+    "descriptionAr": "تطوير الباترونات الرقمية الدقيقة على أنظمة CAD المتطورة، تدريج المقاسات الأوروبية والأمريكية والخليجية، وحساب استهلاك القماش الأمثل لتوفير التكلفة.",
     "scopeOfWorkEn": [
-      "Gerber / Lectra CAD digital pattern creation, grading across all size charts",
-      "Virtual 3D digital garment sampling for fit and drape review prior to fabric cutting",
-      "Physical pre-production prototype sample delivery within 7-10 business days",
-      "Bill of Materials (BOM) compilation, costing optimization, and fabric consumption calculation"
+      "Digitizing sketch concepts into production-ready 2D and 3D CAD pattern files",
+      "Size grading across XS to 5XL conforming to international anatomical sizing standards",
+      "Computerized nesting and marker making maximizing fabric cutting yield",
+      "Full Tech Pack generation: construction details, seam types, SPI, and tolerance specs"
     ],
     "scopeOfWorkAr": [
-      "رسم وتدريج الباترونات الرقمية ببرامج Gerber و Lectra لمختلف المقاسات",
-      "المحاكاة ثلاثية الأبعاد 3D للتصميم والتأكد من انسيابية القَصّة قبل قص القماش",
-      "تنفيذ وتسليم العينات الأولية الفعلية للمعاينة خلال 7-10 أيام عمل",
-      "إعداد جداول المواد والمستهلكات BOM وحساب الاستهلاك لتقليل تكلفة القطعة"
+      "تحويل الرسومات الأولية إلى باترونات رقمية جاهزة للإنتاج ثنائية وثلاثية الأبعاد",
+      "تدريج المقاسات من XS حتى 5XL وفق جداول القياسات القياسية المعتمدة",
+      "التعشيق الآلي للباترونات لتقليل هادر الأقمشة إلى أدنى نسبة ممكنة",
+      "إعداد الملف الفني الشامل (Tech Pack): تفاصيل الخياطة، عدد الغرز، ونسب التفاوت"
     ],
-    "applicationsEn": [
-      "Fashion Designers",
-      "Startup Clothing Brands",
-      "Corporate Buyers",
-      "Retail Category Managers"
+    "applicationsEn": ["Fashion Brands", "Independent Apparel Designers", "Uniform Contracting Entities", "Garment Factories"],
+    "applicationsAr": ["ماركات الأزياء العالمية والمحلية", "مصممو الأزياء المستقلون", "مؤسسات توريد الزي الموحد", "مصانع الملابس الجاهزة"],
+    "capabilitiesEn": ["Gerber AccuMark & Lectra CAD software platforms", "Automated digital pattern plotters", "Senior master patternmakers with 20+ years experience"],
+    "capabilitiesAr": ["برمجيات Gerber AccuMark و Lectra العالمية", "طابعات بلوتر رقمية عريضة لرسم الباترونات الصناعية", "خبراء باترون أول بخبرة تفوق 20 عامًا في القصات العالمية"],
+    "image": "/BG/Apparel Manufacturing/Pattern Lab & Rapid Sampling.jpg"
+  },
+  {
+    "id": "srv-app-sampling",
+    "code": "SBA-SRV-APP06",
+    "sector": "apparel-services",
+    "categoryKey": "rapid-sampling",
+    "categoryEn": "Rapid Sampling & Prototyping",
+    "categoryAr": "صناعة العينات والنماذج الأولية",
+    "nameEn": "Rapid Apparel Sampling, Fit Prototypes & Pre-Production Approvals",
+    "nameAr": "صناعة العينات السريعة، عينات الملاءمة والنماذج الأولية المعتمدة",
+    "descriptionEn": "Dedicated sample room operating independent lines to cut, sew, finish, and deliver proto samples, fit samples, and sales representative samples under fast turnarounds.",
+    "descriptionAr": "معمل عينات متكامل يعمل بخطوط مستقلة لقص وخياطة وتشطيب العينات الأولية وعينات الملاءمة وعينات مندوبي المبيعات قبل الإنتاج الكمي في أوقات قياسية.",
+    "scopeOfWorkEn": [
+      "First proto sample creation from customer reference images or technical tech packs",
+      "Fit sample review on live fit models and dimensional audit against spec sheets",
+      "Pre-production (PP) golden sample signing prior to bulk cutting authorization",
+      "Salesman sample (SMS) duplicate production for buyer retail trade presentations"
     ],
-    "applicationsAr": [
-      "مصممو الأزياء",
-      "العلامات التجارية الناشئة",
-      "مسؤولو المشتريات بالشركات",
-      "مديرو فئات المنتجات بسلاسل المتاجر"
+    "scopeOfWorkAr": [
+      "تنفيذ العينة الأولية (Proto Sample) من واقع الرسومات أو العينات المرجعية",
+      "فحص عينات القياس (Fit Sample) على مانيكانات وموديلات حية وتدقيق القياسات",
+      "اعتماد العينة الذهبية ما قبل الإنتاج (PP Sample) قبل إعطاء إشارة البدء للقص الكمي",
+      "إنتاج عينات المبيعات والتسويق (SMS) للعرض على المشترين في المعارض الدولية"
     ],
-    "capabilitiesEn": [
-      "Dedicated sample room workshop",
-      "Advanced 3D Clo3D / Optitex simulation",
-      "Expert pattern engineers"
-    ],
-    "capabilitiesAr": [
-      "غرفة عينات وورشة نمذجة منفصلة تمامًا",
-      "أنظمة محاكاة ثلاثية الأبعاد متقدمة",
-      "مهندسو باترون ذوو خبرة تزيد عن 20 عامًا"
-    ],
+    "applicationsEn": ["Fashion Brand Merchandisers", "Retail Sourcing Teams", "Apparel Startups", "Corporate Sourcing Directors"],
+    "applicationsAr": ["مديرو المشتريات ومسؤولو الموضة", "فرق انتقاء المنتجات بسلاسل التجزئة", "الشركات الناشئة في مجال الأزياء", "مديرو التوريد للشركات"],
+    "capabilitiesEn": ["Independent prototype workshop line", "Rapid turnarounds within 5-7 business days", "In-house trim and accessories library"],
+    "capabilitiesAr": ["ورشة عينات مستقلة تمامًا عن خطوط الإنتاج الكمي", "سرعة تنفيذ وتسليم العينات خلال 5 إلى 7 أيام عمل", "مكتبة داخلية متكاملة للإكسسوارات والسحابات والخيوط"],
     "image": "/BG/Apparel Manufacturing/Product Development & Sampling.jpg"
   },
   {
-    "id": "srv-app-sourcing",
-    "code": "SBA-SRV-APP06",
-    "sector": "apparel-services",
-    "categoryKey": "fabric-sourcing",
-    "categoryEn": "Fabric Sourcing",
-    "categoryAr": "توريد وفحص الأقمشة والخامات الممتازة",
-    "nameEn": "Certified Fabric Sourcing & Raw Material Quality Verification",
-    "nameAr": "توريد وانتقاء الأقمشة الفاخرة والفحص المعملي للمواد الخام",
-    "descriptionEn": "Procuring premier long-staple Egyptian cotton knits, imported performance fabrics, and specialized trims from certified sustainable mills worldwide.",
-    "descriptionAr": "توريد واختيار أجود أقمشة القطن المصري طويل التيلة، الخامات التقنية المستوردة، والإكسسوارات الفاخرة من مصانع ومغازل معتمدة ومطابقة للاستدامة.",
-    "scopeOfWorkEn": [
-      "Sourcing 100% Giza Egyptian cotton yarns (Giza 86, 92, 94)",
-      "Global procurement of specialty synthetics, recycled polyester, modal, and elastane blends",
-      "Laboratory testing for GSM, color fastness, yarn count, and zero harmful substances",
-      "Certified organic and BCI (Better Cotton Initiative) chain of custody tracking"
-    ],
-    "scopeOfWorkAr": [
-      "توريد خيوط وأقمشة قطن جيزة المصري الأصيل 100% (أصناف جيزة 86، 92، 94)",
-      "استيراد الخامات التخصصية: بوليستر معاد تدويره، مودال، سباندكس وخامات رياضية",
-      "الفحص المعملي لوزن القماش GSM، ثبات الألوان، نمرة الخيط، وخلوها من المواد الضارة",
-      "شهادات تتبع للقطن العضوي المعتمد ومبادرة Better Cotton Initiative (BCI)"
-    ],
-    "applicationsEn": [
-      "Premium Fashion Brands",
-      "Sustainable Eco-Labels",
-      "Industrial Fabric Buyers",
-      "Uniform Manufacturers"
-    ],
-    "applicationsAr": [
-      "علامات الأزياء الفاخرة",
-      "الماركات الصديقة للبيئة",
-      "مشتري الأقمشة بالجملة",
-      "مصانع الزي الموحد"
-    ],
-    "capabilitiesEn": [
-      "Direct partnerships with premier textile spinning mills",
-      "In-house physical testing lab",
-      "Extensive physical fabric swatch library"
-    ],
-    "capabilitiesAr": [
-      "شراكات مباشرة مع كبرى المغازل والنسيج",
-      "معمل فحص فيزيائي داخلي للأقمشة",
-      "مكتبة عينات أقمشة تضم آلاف الخامات المتنوعة"
-    ],
-    "image": "/BG/Apparel Manufacturing/Manufacturing Infrastructure.jpg"
-  },
-  {
-    "id": "srv-app-dyeing",
+    "id": "srv-app-bulk-planning",
     "code": "SBA-SRV-APP07",
     "sector": "apparel-services",
-    "categoryKey": "fabric-dyeing",
-    "categoryEn": "Fabric Dyeing",
-    "categoryAr": "صباغة الأقمشة والغزول والتشطيب المعملي",
-    "nameEn": "Eco-Friendly Fabric & Yarn Dyeing, Printing & Specialized Finishing",
-    "nameAr": "الصباغة الآلية للأقمشة والغزول والتشطيبات المعملية الصديقة للبيئة",
-    "descriptionEn": "Advanced industrial dyeing house utilizing low-liquor jet dyeing machines, spectrophotometer computerized color matching, and OEKO-TEX certified reactive dyes.",
-    "descriptionAr": "مصبغة صناعية متطورة تعتمد على ماكينات الصباغة النفاثة منخفضة استهلاك المياه، والمطابقة الآلية للألوان بالكمبيوتر Spectrophotometer، مع أصباغ تفاعلية آمنة.",
+    "categoryKey": "bulk-production",
+    "categoryEn": "Commercial Bulk Production",
+    "categoryAr": "الإنتاج الصناعي الكمي المتوسع",
+    "nameEn": "Industrial Bulk Production Planning, Modular Line Balancing & Scaling",
+    "nameAr": "تخطيط وموازنة خطوط الإنتاج الصناعي الكمي والجدولة التشغيلية",
+    "descriptionEn": "Managing high-volume commercial production across multiple modular assembly lines, integrating daily piece tracking, bottleneck resolution, and reliable shipping deadlines.",
+    "descriptionAr": "إدارة وجدولة الإنتاج الصناعي الكمي عبر أكثر من 15 خط إنتاج نمطي، مع ضبط توازن العمليات والقضاء على الاختناقات لضمان الالتزام بمواعيد الشحن الدولية.",
     "scopeOfWorkEn": [
-      "Computerized color formulation and 24-hour lab dip turnaround with Delta-E < 0.8 tolerance",
-      "Reactive piece dyeing and yarn hank dyeing with Grade 4-5 color fastness to washing",
-      "Specialty functional finishing: antibacterial, Teflon water-repellent, bio-polishing",
-      "Full closed-loop industrial wastewater treatment conforming to national discharge norms"
+      "Capacity allocation, machine setup, and line balancing using time-and-motion studies (SAM/SMV)",
+      "Real-time ERP shop-floor tracking of cutting, sewing, finishing, and packaging stages",
+      "Dedicated classic shirt specialized facility coordination (up to 45,000 certified shirts/mo)",
+      "Daily production efficiency monitoring and preventive machinery maintenance routines"
     ],
     "scopeOfWorkAr": [
-      "مطابقة ألوان رقمية وإصدار عينات الصباغة المعملية بدقة انحراف Delta-E < 0.8",
-      "صباغة تفاعلية للأقمشة والغزول بثبات لون عالي (درجة 4-5 للغسيل والاحتكاك)",
-      "تشطيبات وظيفية خاصة: معالجة ضد البكتيريا، معالجة تيفلون طاردة للماء، وغسيل إنزيمي",
-      "معالجة متكاملة لمياه الصرف الصناعي للمصبغة وفق أعلى الاشتراطات البيئية"
+      "توزيع الطاقات وضبط الماكينات وموازنة الخطوط بدراسات الوقت والحركة SAM/SMV",
+      "متابعة لحظية بمراحل الإنتاج على نظام ERP من القص وحتى التعبئة والشحن",
+      "تشغيل وإدارة مصنع القمصان الكلاسيك التخصصي بطاقة تصل إلى 45,000 قميص شهريًا",
+      "مراقبة مؤشرات الكفاءة اليومية والإنتاجية مع الصيانة الوقائية المستمرة للماكينات"
     ],
-    "applicationsEn": [
-      "Garment Manufacturers",
-      "Textile Converters",
-      "Yarn Importers",
-      "Home Textile Companies"
-    ],
-    "applicationsAr": [
-      "مصانع الملابس الجاهزة",
-      "تجار ومحولو الأقمشة",
-      "مستوردو الغزول",
-      "مصانع المفروشات المنزلية"
-    ],
-    "capabilitiesEn": [
-      "DataColor spectrophotometers",
-      "Soft-flow jet dyeing vessels",
-      "OEKO-TEX Standard 100 compliance"
-    ],
-    "capabilitiesAr": [
-      "أجهزة DataColor لقياس الألوان",
-      "غلايات صباغة سوفت فلو نفاثة تحافظ على نعومة القماش",
-      "مطابقة لمعايير OEKO-TEX 100 الدولية"
-    ],
-    "image": "/BG/Apparel Manufacturing/Textile Mill & Internal Dyeing.jpg"
+    "applicationsEn": ["High-Volume Retail Orders", "Seasonal Fashion Drops", "Large Corporate Uniform Contracts", "Export Distributors"],
+    "applicationsAr": ["طلبيات التجزئة الكبرى", "طروحات الأزياء الموسمية الضخمة", "عقود توريد الزي الموحد للشركات والمصانع", "الموزعون الدوليون للملابس الجاهزة"],
+    "capabilitiesEn": ["Scalable production capacity exceeding 5,000 pieces/day and 100,000 pieces/mo", "Dedicated 100-machine classic shirt facility", "Skilled industrial workforce of over 400 operators"],
+    "capabilitiesAr": ["طاقة إنتاجية قابلة للتوسع تتجاوز 5,000 قطعة يوميًا و 100,000 قطعة شهريًا", "مصنع تخصصي مستقل يضم 100 ماكينة لإنتاج القمصان الرسمية", "فريق صناعي مؤهل يضم أكثر من 400 فني وخياط ومشرف"],
+    "image": "/BG/Apparel Manufacturing/Textile & Ready-Made Garments Sector.jpg"
   },
   {
-    "id": "srv-app-planning",
+    "id": "srv-app-fabric-qc",
     "code": "SBA-SRV-APP08",
     "sector": "apparel-services",
-    "categoryKey": "production-planning",
-    "categoryEn": "Production Planning",
-    "categoryAr": "تخطيط وجدولة خطوط الإنتاج والقص الآلي",
-    "nameEn": "Industrial Production Planning, Line Balancing & Supply Chain Coordination",
-    "nameAr": "تخطيط وموازنة خطوط الإنتاج وإدارة الإمداد اللوجستي للمصانع",
-    "descriptionEn": "Optimizing apparel production through advanced ERP enterprise planning, capacity scheduling, line balancing, and lean manufacturing methodologies.",
-    "descriptionAr": "إدارة وتخطيط الطاقة الإنتاجية عبر أنظمة ERP المتطورة، وموازنة مسارات خطوط الخياطة، وتطبيق أساليب التصنيع الرشيق Lean Manufacturing لضمان أعلى إنتاجية.",
+    "categoryKey": "fabric-quality",
+    "categoryEn": "Custom Fabric & Quality Assurance",
+    "categoryAr": "تطوير الأقمشة وضمان الجودة الشاملة",
+    "nameEn": "Custom Fabric Sourcing, Eco-Friendly Dyeing & Multi-Stage AQL Quality Auditing",
+    "nameAr": "تطوير وتوريد الأقمشة الفاخرة، الصباغة الصديقة للبيئة والفحص بمقاييس AQL",
+    "descriptionEn": "Integrated textile fabric sourcing, laboratory spectrophotometer computerized dyeing, shrinkage control, and rigorous 4-point fabric and AQL 1.5 finished garment auditing.",
+    "descriptionAr": "توريد وتطوير الأقمشة القطنية الفاخرة، الصباغة الآلية بأصباغ معتمدة من OEKO-TEX، ضبط الانكماش وثبات الألوان، وفحص الجودة بمقاييس AQL 1.5 الصارمة.",
     "scopeOfWorkEn": [
-      "Capacity reservation and production critical path scheduling (Gantt tracking)",
-      "Scientific standard allowed minute (SAM) calculation for each garment operation",
-      "Line balancing reducing bottlenecks and elevating throughput efficiency",
-      "Real-time digital production monitoring on factory floor tracking hourly output"
+      "Circular and flat knitting coordination for Single Jersey, Rib, Interlock, and French Terry",
+      "Low-liquor computerized dyeing matching Pantone references with spectrophotometer verification",
+      "Fabric roll 4-point inspection system testing for knitting faults, weight (GSM), and torque",
+      "Final AQL 1.5 / 2.5 random carton auditing: stitch density, seam strength, and carton pack lists"
     ],
     "scopeOfWorkAr": [
-      "حجز الطاقات الإنتاجية وجدولة المسار الحرج للطلبيات عبر برامج التخطيط",
-      "حساب الوقت القياسي المعياري (SAM) لكل عملية حياكة وتشطيب بدقة",
-      "موازنة خطوط الإنتاج لمنع التراكم والاختناقات ورفع الكفاءة التشغيلية",
-      "شاشات رصد رقمية حية داخل صالات الإنتاج لتتبع الإنتاجية بالساعة"
+      "تطوير وتصنيع أقمشة التريكو والنسيج: سنجل جيرسيه، ريب، إنترلوك، وبيكيه وميلتون",
+      "صباغة منخفضة الاستهلاك المائي ومطابقة كمبيوترية لألوان البانتون بأجهزة الاسبكتروفوتوميتر",
+      "فحص أثواب الأقمشة بنظام النقاط الأربع (4-Point System) وثبات الأبعاد والانكماش",
+      "الفحص النهائي للكراتين وفق معيار AQL 1.5/2.5 الدولي: متانة الخياطة، نظافة التشطيب، ومطابقة التعبئة"
     ],
-    "applicationsEn": [
-      "Multi-Store Retail Programs",
-      "Export Contract Orders",
-      "Supply Chain Planners",
-      "Sourcing Directors"
-    ],
-    "applicationsAr": [
-      "برامج التوريد لمتاجر التجزئة الكبرى",
-      "عقود التصدير الخارجية",
-      "مخططو سلاسل الإمداد",
-      "مديرو المشتريات والتوريد"
-    ],
-    "capabilitiesEn": [
-      "ERP apparel software modules",
-      "Industrial engineering team",
-      "Just-in-time (JIT) material delivery"
-    ],
-    "capabilitiesAr": [
-      "برمجيات متخصصة لإدارة مصانع الملابس ERP",
-      "فريق هندسة صناعية متخصص",
-      "إمداد لوجستي فوري للمواد الخام Just-in-Time"
-    ],
-    "image": "/BG/Apparel Manufacturing/Production Volume & Scale.jpg"
-  },
-  {
-    "id": "srv-app-qc",
-    "code": "SBA-SRV-APP09",
-    "sector": "apparel-services",
-    "categoryKey": "quality-control",
-    "categoryEn": "Quality Control",
-    "categoryAr": "مراقبة وفحص الجودة بمقاييس AQL الدولية",
-    "nameEn": "Rigorous Garment Quality Assurance & Multi-Stage AQL Inspection",
-    "nameAr": "برامج ضبط ومراقبة الجودة الشاملة للملابس بمقاييس AQL الدولية",
-    "descriptionEn": "Independent multi-stage garment quality inspections ensuring zero defects reach the export carton. Conducted under ISO 2859-1 (AQL 1.5/2.5) statistical standards.",
-    "descriptionAr": "منظومة فحص ورقابة جودة متعددة المراحل تضمن خلو الشحنات المصدرة من أي عيوب، وفق مقاييس الفحص الإحصائي الدولي ISO 2859-1 (معايير AQL 1.5 و AQL 2.5).",
-    "scopeOfWorkEn": [
-      "Pre-production raw fabric inspection on 4-point light tables (grading defect points)",
-      "In-line inspections checking seam alignment, stitch tension, and dimensional tolerances",
-      "100% metal and broken needle detection with digital logging",
-      "Pre-shipment final random inspection (FRI) with comprehensive photo audit reports"
-    ],
-    "scopeOfWorkAr": [
-      "فحص أثواب القماش الواردة على طاولات الإضاءة بنظام النقاط الأربع (4-Point System)",
-      "فحص أثناء مراحل التشغيل لسلامة الخياطة، استقامة الغرز ومطابقة المقاسات",
-      "فحص كامل بنسبة 100% بأجهزة الكشف عن المعادن والإبر المكسورة",
-      "فحص عشوائي نهائي معتمد قبل الشحن (FRI) مع تقارير مصورة مفصلة للعميل"
-    ],
-    "applicationsEn": [
-      "Global Fashion Labels",
-      "Quality Audit Firms",
-      "Retail Importers",
-      "Department Stores"
-    ],
-    "applicationsAr": [
-      "العلامات التجارية العالمية",
-      "شركات التدقيق والتفتيش الدولية",
-      "المستوردون وتجار التجزئة",
-      "سلاسل المتاجر الفاخرة"
-    ],
-    "capabilitiesEn": [
-      "Full-time certified QA inspectors",
-      "Calibrated pull-test and wash-test equipment",
-      "Zero tolerance for safety non-compliance"
-    ],
-    "capabilitiesAr": [
-      "فريق مفتشي جودة متفرغ ومعتمد",
-      "أجهزة اختبار قوة شد الأزرار والغسيل المعملي",
-      "صفر تسامح مع أي مخالفات لشروط السلامة"
-    ],
-    "image": "/BG/Apparel Manufacturing/Rigorous Quality Assurance.jpg"
-  },
-  {
-    "id": "srv-ind-water-integrated",
-    "code": "SBA-SRV-IND01",
-    "sector": "industrial-solutions",
-    "categoryKey": "integrated-water-treatment",
-    "categoryEn": "Integrated Water Treatment Solutions",
-    "categoryAr": "حلول محطات معالجة المياه المتكاملة",
-    "nameEn": "Turnkey Industrial & Municipal Water Treatment Plants (Design, EPC & Commissioning)",
-    "nameAr": "تصميم وتنفيذ محطات معالجة المياه الصناعية والبلدية المتكاملة (EPC)",
-    "descriptionEn": "Complete engineering design, procurement, civil construction, and commissioning of integrated water clarification, softening, and tertiary purification plants.",
-    "descriptionAr": "تصميم وهندسة وإنشاء وتشغيل محطات معالجة وتنقية المياه المتكاملة، تشمل الترويب والترسيب، إزالة عسر المياه، والترشيح الدقيق والتطهير للمنشآت الصناعية والمدن.",
-    "scopeOfWorkEn": [
-      "Raw water source chemical profiling and process flow diagram (PFD/P&ID) engineering",
-      "Civil basin construction: clarifiers, flocculation tanks, and filtered water reservoirs",
-      "Mechanical and electrical equipment procurement, piping headers, and automation",
-      "Plant commissioning, operator training, and performance guarantee testing"
-    ],
-    "scopeOfWorkAr": [
-      "التحليل الكيميائي لمصدر المياه الخام وإعداد المخططات الهندسية P&ID ومسارات المعالجة",
-      "تنفيذ الأعمال المدنية للأحواض: أحواض الترويب والندف، المروقات وخزانات المياه المعالجة",
-      "توريد وتركيب المعدات الميكانيكية والكهربائية وشبكات المواسير ومحابس التحكم",
-      "التشغيل التجريبي وضبط جودة المياه وتدريب الكوادر وتسليم شهادات الضمان"
-    ],
-    "applicationsEn": [
-      "Municipal Water Authorities",
-      "Heavy Industrial Plants",
-      "Power Stations",
-      "Pharmaceutical Campuses"
-    ],
-    "applicationsAr": [
-      "شركات ومحطات مياه الشرب",
-      "المجمعات الصناعية الكبرى",
-      "محطات توليد الطاقة",
-      "مصانع الأدوية والمستحضرات"
-    ],
-    "capabilitiesEn": [
-      "Experienced process engineers",
-      "Hydraulic simulation modeling",
-      "Turnkey performance warranties"
-    ],
-    "capabilitiesAr": [
-      "مهندسو كيمياء ومعالجة مياه ذوو خبرة دولية",
-      "نمذجة محاكاة هيدروليكية متطورة",
-      "ضمانات أداء معتمدة لمواصفات المياه الخارجة"
-    ],
-    "image": "/BG/Environment & Sustainability/Water & Wastewater Sector.jpg",
-    "linkedProductId": "prod-ind-treatment"
-  },
-  {
-    "id": "srv-ind-filtration-design",
-    "code": "SBA-SRV-IND02",
-    "sector": "industrial-solutions",
-    "categoryKey": "filtration-design",
-    "categoryEn": "Water Filtration System Design",
-    "categoryAr": "تصميم وهندسة أنظمة فلترة المياه الصناعية",
-    "nameEn": "Custom Industrial Filtration System Engineering & Membrane System Sizing",
-    "nameAr": "تصميم وهندسة أنظمة الفلترة الصناعية وتحديد مقاسات الأغشية",
-    "descriptionEn": "Custom engineering design of high-throughput industrial filtration systems: ultrafiltration (UF), nano-filtration (NF), and customized multi-media pressure banks.",
-    "descriptionAr": "دراسة وتصميم أنظمة الفلترة والترشيح الصناعي المخصصة، وحساب مساحات وسعات أغشية الترشيح الفائق (UF) والنانو والترشيح الرملي المتعدد وفق نوعية المياه.",
-    "scopeOfWorkEn": [
-      "Silt Density Index (SDI) and turbidity loading rate calculations",
-      "Hydraulic design of header pipe manifolds, valve skids, and backwash pumping",
-      "Selection of specialized media: catalytic iron/manganese removal, granular carbon",
-      "PLC automated backwash sequence programming and pressure differential alarms"
-    ],
-    "scopeOfWorkAr": [
-      "حسابات مؤشر كثافة الطمي (SDI) ومعدلات إزالة العكارة والجسيمات العالقة",
-      "التصميم الهيدروليكي لمجمعات المواسير والصمامات ومضخات الغسيل العكسي",
-      "اختيار وسائط الترشيح التخصصية: رمال الكوارتز، الكربون النشط، ووسائط إزالة الحديد والمنجنيز",
-      "برمجة دورات الغسيل العكسي الأوتوماتيكية بنظام PLC ومراقبة فرق الضغط"
-    ],
-    "applicationsEn": [
-      "Food & Beverage Plants",
-      "Textile Processing",
-      "Agricultural Micro-Irrigation",
-      "Pre-RO Treatment"
-    ],
-    "applicationsAr": [
-      "مصانع الأغذية والمشروبات",
-      "مصانع النسيج والصباغة",
-      "أنظمة الري الحديث بالمزارع",
-      "مراحل الفلترة التمهيدية قبل محطات التحلية RO"
-    ],
-    "capabilitiesEn": [
-      "Membrane projection software calculations",
-      "Modular skid 3D CAD modeling",
-      "High recovery engineering"
-    ],
-    "capabilitiesAr": [
-      "حسابات برمجية دقيقة لمصنعي الأغشية العالمية",
-      "تصميم ثلاثي الأبعاد CAD للشاسيهات والمواسير",
-      "تحقيق أعلى نسب استرداد للمياه"
-    ],
-    "image": "/BG/Environment & Sustainability/Development & Construction Sector.jpg",
-    "linkedProductId": "prod-ind-filtration"
-  },
-  {
-    "id": "srv-ind-integration",
-    "code": "SBA-SRV-IND03",
-    "sector": "industrial-solutions",
-    "categoryKey": "system-integration",
-    "categoryEn": "Industrial System Integration",
-    "categoryAr": "تكامل الأنظمة والتحكم الصناعي",
-    "nameEn": "PLC/SCADA Automation, Control Panel Assembly & Industrial System Integration",
-    "nameAr": "تكامل الأنظمة وبرمجة PLC/SCADA وتجميع لوحات التحكم الصناعي",
-    "descriptionEn": "Integrating plant machinery, instrumentation, pumps, and valves into unified automated control architectures utilizing Siemens, Schneider, and Allen-Bradley systems.",
-    "descriptionAr": "ربط وتكامل المعدات وخطوط الإنتاج والمضخات ومحابس التحكم في منظومة آلية ذكية وموحدة عبر برمجة وحدات التحكم PLC وشاشات المراقبة والتحكم SCADA.",
-    "scopeOfWorkEn": [
-      "Functional control philosophy specification and I/O point schedule development",
-      "Custom electrical control panel design, assembly, and testing (VFD, soft starters, MCC)",
-      "PLC program coding, HMI touch screen interface design, and SCADA graphics",
-      "Industrial Ethernet, Modbus TCP, and Profinet communication network integration"
-    ],
-    "scopeOfWorkAr": [
-      "إعداد فلسفة التحكم والتشغيل وجداول نقاط الدخل والخرج I/O Schedule",
-      "تصميم وتجميع واختبار لوحات التحكم الكهربائي (MCC) ومغيرات السرعة VFD",
-      "برمجة أجهزة PLC وتصميم واجهات الشاشات اللمسية HMI ورسوم المراقبة SCADA",
-      "تأسيس شبكات الاتصال الصناعية Ethernet IP و Profinet و Modbus"
-    ],
-    "applicationsEn": [
-      "Automated Process Factories",
-      "Water Treatment Facilities",
-      "Pumping Stations",
-      "Material Handling"
-    ],
-    "applicationsAr": [
-      "المصانع وخطوط الإنتاج الآلية",
-      "محطات معالجة المياه والصرف",
-      "محطات الرفع والضخ الكبرى",
-      "أنظمة مناولة ونقل المواد"
-    ],
-    "capabilitiesEn": [
-      "Certified Siemens & Schneider automation engineers",
-      "Factory acceptance testing (FAT) rigs",
-      "Remote telemetry support"
-    ],
-    "capabilitiesAr": [
-      "مهندسو تحكم آلي معتمدون من شنايدر وسيمنز",
-      "إجراء اختبارات القبول المصنعي FAT قبل الشحن",
-      "دعم فني وبرمجة عن بُعد عبر خوادم آمنة"
-    ],
-    "image": "/BG/Environment & Sustainability/IoT Environmental Monitoring System.jpg"
-  },
-  {
-    "id": "srv-ind-smart-monitoring",
-    "code": "SBA-SRV-IND04",
-    "sector": "industrial-solutions",
-    "categoryKey": "smart-monitoring",
-    "categoryEn": "Smart Monitoring Solutions",
-    "categoryAr": "حلول المراقبة والقياس الذكي والتحكم عن بعد",
-    "nameEn": "IoT-Powered Remote Sensor Monitoring & Cloud Environmental Dashboards",
-    "nameAr": "حلول المراقبة الذكية بإنترنت الأشياء (IoT) ولوحات المتابعة السحابية",
-    "descriptionEn": "End-to-end telemetry solutions streaming live flow, water quality, tank level, and energy data from remote field sites to centralized management dashboards.",
-    "descriptionAr": "منظومات ذكية لنقل وقراءة بيانات حساسات المنسوب والتدفق وجودة المياه واستهلاك الطاقة لحظيًا من المواقع البعيدة إلى لوحات تحكم سحابية عبر تقنيات IoT.",
-    "scopeOfWorkEn": [
-      "Supply and field installation of solar-powered IoT cellular remote terminal units (RTUs)",
-      "Integration with level, pressure, flow, and chemical water quality sensors",
-      "Secure cloud server database hosting and custom web dashboard visualization",
-      "Automated SMS/Email alert triggers on parameter exceedances and predictive analytics"
-    ],
-    "scopeOfWorkAr": [
-      "توريد وتركيب وحدات RTU الذكية التي تعمل بالطاقة الشمسية وشبكات 4G/NB-IoT",
-      "ربط وتوصيل حساسات المنسوب والضغط والتدفق ومحللات المياه الرقمية",
-      "استضافة البيانات على خوادم سحابية آمنة وعرضها في لوحات تحكم تفاعلية",
-      "إرسال تنبيهات فورية عبر الرسائل القصيرة والبريد عند تجاوز المعدلات الآمنة"
-    ],
-    "applicationsEn": [
-      "Groundwater Wells",
-      "Municipal Distribution Networks",
-      "Industrial Environmental Compliance",
-      "Tank Farms"
-    ],
-    "applicationsAr": [
-      "آبار المياه الجوفية",
-      "شبكات التوزيع والخطوط الناقلة",
-      "المراقبة البيئية لمصارف المصانع",
-      "مستودعات وخزانات المواد السائلة"
-    ],
-    "capabilitiesEn": [
-      "Custom cloud dashboard development",
-      "Low-power battery IoT devices",
-      "API export to client ERP"
-    ],
-    "capabilitiesAr": [
-      "تطوير لوحات تحكم سحابية مخصصة للعميل",
-      "أجهزة استشعار منخفضة الاستهلاك تعمل لسنوات بالبطارية",
-      "ربط مباشر عبر API مع أنظمة إدارة المنشأة"
-    ],
-    "image": "/BG/Environment & Sustainability/Intelligent QHSE Application & Software Solutions.jpg",
-    "linkedProductId": "prod-ind-ultrasonic"
-  },
-  {
-    "id": "srv-ind-consulting",
-    "code": "SBA-SRV-IND05",
-    "sector": "industrial-solutions",
-    "categoryKey": "technical-consulting",
-    "categoryEn": "Technical Consulting",
-    "categoryAr": "الاستشارات الفنية والهندسية الصناعية",
-    "nameEn": "Process Optimization, Energy Auditing & Industrial Engineering Advisory",
-    "nameAr": "الاستشارات الهندسية وتحسين كفاءة العمليات وترشيد الطاقة الصناعية",
-    "descriptionEn": "Expert engineering reviews evaluating industrial plant performance, water reuse feasibility, energy conservation measures, and mechanical equipment troubleshooting.",
-    "descriptionAr": "دراسات واستشارات هندسية متخصصة لتقييم كفاءة تشغيل المصانع، دراسات جدوى إعادة تدوير المياه، ترشيد استهلاك الطاقة وفحص الأعطال الميكانيكية المعقدة.",
-    "scopeOfWorkEn": [
-      "Comprehensive industrial water balance and zero-liquid-discharge (ZLD) feasibility studies",
-      "Thermal and electrical energy audits identifying high-loss equipment and ROI savings",
-      "Troubleshooting recurring membrane fouling, scaling, and pump cavitation issues",
-      "Drafting equipment technical specifications and commercial vendor bid evaluation"
-    ],
-    "scopeOfWorkAr": [
-      "دراسات الاتزان المائي الشاملة وجدوى إعادة التدوير الكامل للمياه (ZLD) بالمصانع",
-      "تدقيق استهلاك الطاقة الحرارية والكهربائية وحساب فترات استرداد الاستثمار",
-      "تشخيص ومعالجة مشاكل انسداد الأغشية وترسبات الأملاح وتكويف المضخات",
-      "إعداد دفاتر الشروط والمواصفات الفنية وتقييم العروض الفنية للموردين"
-    ],
-    "applicationsEn": [
-      "Heavy Manufacturing Facilities",
-      "Textile Mills",
-      "Food Processing",
-      "Chemical Industries"
-    ],
-    "applicationsAr": [
-      "المصانع الثقيلة والكيماوية",
-      "مصانع النسيج والصباغة",
-      "مصانع الأغذية والمشروبات",
-      "المنشآت الصناعية الكبرى"
-    ],
-    "capabilitiesEn": [
-      "Senior chartered engineering consultants",
-      "Thermal imaging & power quality analyzers",
-      "Unbiased vendor-neutral advisory"
-    ],
-    "capabilitiesAr": [
-      "استشاريون وخبراء هندسيون مسجلون بنقابة المهندسين",
-      "أجهزة تصوير حراري ومحللات جودة القدرة الكهربائية",
-      "رأي استشاري فني حيادي مستقل يضمن مصلحة العميل"
-    ],
-    "image": "/BG/Environment & Sustainability/Environmental Economic Studies & Policy Advisory.jpg"
-  },
-  {
-    "id": "srv-ind-installation",
-    "code": "SBA-SRV-IND06",
-    "sector": "industrial-solutions",
-    "categoryKey": "installation-commissioning",
-    "categoryEn": "Equipment Installation & Commissioning",
-    "categoryAr": "التركيب والتشغيل التجريبي للمعدات",
-    "nameEn": "Turnkey Mechanical Installation, Alignment, Rigging & Plant Commissioning",
-    "nameAr": "التركيبات الميكانيكية الدقيقة، التثبيت والتشغيل التجريبي للمعدات",
-    "descriptionEn": "Professional field rigging, laser alignment, high-pressure piping installation, and site acceptance testing (SAT) for industrial pumps, skids, and equipment.",
-    "descriptionAr": "خدمات التوريد والتركيب الميكانيكي في الموقع، ضبط المحاذاة بالليزر، مد وربط شبكات المواسير عالية الضغط، والتشغيل التجريبي واختبارات القبول الموقع SAT.",
-    "scopeOfWorkEn": [
-      "Heavy equipment rigging, placement, and precision foundation grouting",
-      "Laser shaft alignment between pumps, gearboxes, and electric motors",
-      "Stainless steel, carbon steel, and HDPE process piping installation and pressure testing",
-      "Pre-commissioning hydraulic testing, chemical flushing, and Site Acceptance Testing (SAT)"
-    ],
-    "scopeOfWorkAr": [
-      "أعمال التنزيل والرفع الثقيل للمعدات والتثبيت على القواعد بالخلطات الإيبوكسية",
-      "ضبط محاذاة أعمدة الدوران بين المضخات والمحركات الكهربائية بأشعة الليزر",
-      "تركيب ولحام خطوط المواسير ستانلس ستيل وبولي إيثيلين HDPE واختبارات الضغط",
-      "الغسيل الكيميائي والهيدروليكي للمواسير واختبارات القبول والتشغيل النهائي SAT"
-    ],
-    "applicationsEn": [
-      "New Industrial Plants",
-      "Facility Expansion Projects",
-      "Equipment Modernization",
-      "Pumping Stations"
-    ],
-    "applicationsAr": [
-      "المصانع والمحطات الجديدة",
-      "مشروعات توسعات المنشآت القائمة",
-      "تحديث وتطوير المعدات",
-      "محطات الضخ والرفع"
-    ],
-    "capabilitiesEn": [
-      "Certified industrial millwrights & coded welders",
-      "Laser alignment tools",
-      "Strict HSE site compliance"
-    ],
-    "capabilitiesAr": [
-      "فنيو تركيبات ميكانيكية ولحامون معتمدون",
-      "أجهزة ضبط اتزان ومحاذاة ليزرية دقيقة",
-      "التزام صارم باشتراطات السلامة والصحة المهنية بموقع العمل"
-    ],
-    "image": "/BG/Contracting & Real Estate Development/Supply, Installation & Maintenance.jpg"
-  },
-  {
-    "id": "srv-ind-maintenance",
-    "code": "SBA-SRV-IND07",
-    "sector": "industrial-solutions",
-    "categoryKey": "maintenance-support",
-    "categoryEn": "Maintenance & Technical Support",
-    "categoryAr": "عقود الصيانة وخدمات الدعم الفني",
-    "nameEn": "Comprehensive Plant Maintenance Contracts, Membrane Cleaning (CIP) & Spare Parts",
-    "nameAr": "عقود الصيانة الوقائية والطارئة، الغسيل الكيميائي للأغشية وقطع الغيار",
-    "descriptionEn": "Guaranteed uptime through preventive maintenance contracts, on-call emergency response, chemical clean-in-place (CIP) services, and genuine spare parts management.",
-    "descriptionAr": "ضمان استمرارية التشغيل عبر عقود الصيانة الوقائية السنوية، الاستجابة السريعة للأعطال، خدمات الغسيل الكيميائي المتخصص لأغشية التحلية وتوفير قطع الغيار الأصلية.",
-    "scopeOfWorkEn": [
-      "Scheduled quarterly and annual preventive maintenance inspection routines",
-      "Specialized Clean-in-Place (CIP) membrane chemical cleaning and biological sanitation",
-      "Pump mechanical seal replacement, motor rewinding, and valve overhaul",
-      "Consumable replenishment: cartridge filter elements, antiscalant chemicals, calibration reagents"
-    ],
-    "scopeOfWorkAr": [
-      "برامج تفتيش وصيانة وقائية دورية ربع سنوية وسنوية لكافة مكونات المحطة",
-      "خدمات الغسيل الكيميائي والتعقيم الحيوي CIP لأغشية التناضح العكسي RO",
-      "عَمرة المضخات وتغيير موانع التسرب الميكانيكية وصيانة الصمامات",
-      "توريد المستهلكات الأصلية: فلاتر ميكرونية، موانع ترسب Antiscalant، ومحاليل المعايرة"
-    ],
-    "applicationsEn": [
-      "Desalination Plants",
-      "Industrial Water Stations",
-      "Food & Beverage Facilities",
-      "Corporate Campuses"
-    ],
-    "applicationsAr": [
-      "محطات تحلية المياه",
-      "محطات المعالجة بالمصانع",
-      "شركات الأغذية والمشروبات",
-      "المجمعات والمنشآت الكبرى"
-    ],
-    "capabilitiesEn": [
-      "24/7 on-call technical hotline",
-      "Mobile field chemical CIP skid",
-      "Consignment inventory spare parts stock"
-    ],
-    "capabilitiesAr": [
-      "خط دعم فني واستجابة طارئة 24/7",
-      "وحدة غسيل كيميائي متنقلة تصل لموقع المصنع",
-      "مخزون قطع غيار أصلية ومستهلكات معتمدة متوفرة فورًا"
-    ],
-    "image": "/BG/Environment & Sustainability/Management Consultations & ISO Qualification Projects.jpg"
+    "applicationsEn": ["International Fashion Retailers", "High-End Knitwear Brands", "Quality Audit Inspection Houses", "Corporate Apparel Buyers"],
+    "applicationsAr": ["سلاسل التجزئة العالمية للأزياء", "ماركات الملابس القطنية والتريكو الفاخرة", "بيوت التفتيش ومطابقة الجودة الدولية", "المشترون المؤسسيون للملابس الجاهزة"],
+    "capabilitiesEn": ["OEKO-TEX Standard 100 chemical conformance", "Full in-house physical testing equipment (pull-test, wash crocking)", "Zero tolerance for safety and chemical non-compliance"],
+    "capabilitiesAr": ["مطابقة للمواصفات البيئية لشهادة OEKO-TEX Standard 100", "أجهزة اختبارات ميكانيكية ومعملية (قوة شد الأزرار، ثبات الغسيل)", "صفر تسامح مع أي عيوب تؤثر على السلامة أو مظهر المنتج النهائي"],
+    "image": "/BG/Apparel Manufacturing/Textile Mill & Internal Dyeing.jpg"
   }
 ];
+
 export const executedConstructionProjects: ExecutedProject[] = [
   {
     "id": "proj-01",
@@ -1748,10 +1196,10 @@ export const executedConstructionProjects: ExecutedProject[] = [
     "locationEn": "New Administrative Capital, Egypt",
     "locationAr": "العاصمة الإدارية الجديدة، مصر",
     "scopeEn": "Full turnkey civil, structural, facade glazing, and MEP engineering across 45,000 m² built-up area.",
-    "scopeAr": "تنفيذ متكامل للأعمال المدنية والإنشائية، الواجهات الزجاجية وشبكات الكهروميكانيك لمساحة 45,000 م².",
-    "image": "/Contracting Photos/مشروع 01.jpg",
+    "scopeAr": "تنفيذ متكامل للأعمال المدنية والخرسانية والواجهات الزجاجية وشبكات الكهروميكانيك بمسطح 45,000 م².",
+    "image": "/BG/Contracting & Real Estate Development/Administrative Buildings & Commercial Centers.jpg",
     "statusEn": "Completed & Handed Over",
-    "statusAr": "تم الإنجاز والتسليم النهائي"
+    "statusAr": "تم التسليم"
   },
   {
     "id": "proj-02",
@@ -1759,23 +1207,23 @@ export const executedConstructionProjects: ExecutedProject[] = [
     "nameAr": "المركز الطبي التخصصي ومستشفى الجراحات الدقيقة",
     "locationEn": "Greater Cairo, Egypt",
     "locationAr": "القاهرة الكبرى، مصر",
-    "scopeEn": "Complete medical facility fit-out, operating cleanrooms, positive pressure HVAC, and medical gas network.",
-    "scopeAr": "تجهيز مستشفى متكامل، غرف عمليات معقمة، تكييف ضغط موجب، وشبكة غازات طبية مركزية.",
-    "image": "/Contracting Photos/مشروع 02.jpg",
-    "statusEn": "Completed & Commissioned",
-    "statusAr": "تم الإنجاز والتشغيل الطبي"
+    "scopeEn": "Specialized hospital civil construction, hermetic operating theaters, and medical gas pipeline networks.",
+    "scopeAr": "أعمال إنشائية تخصصية، تجهيز غرف العمليات المعقمة الكبسولية وتمديد شبكات الغازات الطبية المركزية.",
+    "image": "/BG/Contracting & Real Estate Development/Hospital & Health Center Construction.jpg",
+    "statusEn": "Operational",
+    "statusAr": "قيد التشغيل"
   },
   {
     "id": "proj-03",
     "nameEn": "Heavy Industrial Factory & Steel Warehouse Facility",
     "nameAr": "مجمع المصانع والمستودعات الفولاذية الثقيلة",
-    "locationEn": "10th of Ramadan Industrial City",
-    "locationAr": "مدينة العاشر من رمضان الصناعية",
+    "locationEn": "Suez Industrial Zone, Egypt",
+    "locationAr": "المنطقة الصناعية بالسويس، مصر",
     "scopeEn": "Reinforced deep pile foundations, pre-engineered steel frames (36m clear span), and laser-leveled industrial floors.",
-    "scopeAr": "أساسات خوازيق عميقة، جمالونات فولاذية ببحور 36 مترًا، وأرضيات خرسانية صناعية ممسوسة بالليزر.",
-    "image": "/Contracting Photos/مشروع 03.jpg",
+    "scopeAr": "أساسات خوازيق عميقة، جمالونات فولاذية ببحور مفتوحة 36 مترًا، وأرضيات صناعية عالية التحمل ومسواة بالليزر.",
+    "image": "/BG/Contracting & Real Estate Development/Industrial Construction & Pre-Engineered Buildings.jpg",
     "statusEn": "Completed",
-    "statusAr": "تم التنفيذ والتسليم"
+    "statusAr": "تم الإنجاز"
   },
   {
     "id": "proj-04",
@@ -1783,9 +1231,9 @@ export const executedConstructionProjects: ExecutedProject[] = [
     "nameAr": "المجمع السكني والفيلات الفاخرة",
     "locationEn": "New Cairo, Egypt",
     "locationAr": "القاهرة الجديدة، مصر",
-    "scopeEn": "Turnkey residential villa clusters, internal road infrastructure, landscaping, and premium marble fit-out.",
-    "scopeAr": "إنشاء فيلات سكنية متكاملة، شبكات البنية التحتية، أعمال اللاندسكيب وتشطيبات الواجهات والرخام الفاخر.",
-    "image": "/Contracting Photos/مشروع 04.jpg",
+    "scopeEn": "Civil skeleton, architectural finishing, road paving, utility infrastructure, and integrated community landscape.",
+    "scopeAr": "الهياكل الخرسانية، التشطيبات المعمارية الفاخرة، رصف الطرق وشبكات المرافق المتكاملة واللاندسكيب.",
+    "image": "/BG/Contracting & Real Estate Development/Residential Units & Housing Projects.jpg",
     "statusEn": "Delivered",
     "statusAr": "تم التسليم"
   }
@@ -1803,12 +1251,15 @@ export const serviceDivisionsConfig = [
       { key: "general-contracting", labelEn: "General Contracting", labelAr: "المقاولات العامة" },
       { key: "civil-works", labelEn: "Construction & Civil Works", labelAr: "الأعمال المدنية والإنشائية" },
       { key: "structural-works", labelEn: "Structural Works", labelAr: "الأعمال والمنشآت الهيكلية" },
-      { key: "architectural-finishing", labelEn: "Architectural & Finishing Works", labelAr: "التشطيبات والديكور المعماري" },
+      { key: "architectural-works", labelEn: "Architectural & BIM Works", labelAr: "الأعمال المعمارية ونمذجة BIM" },
       { key: "electromechanical-mep", labelEn: "Electromechanical Works (MEP)", labelAr: "الأعمال الكهروميكانيكية MEP" },
-      { key: "real-estate-dev", labelEn: "Real Estate Development", labelAr: "التطوير والاستثمار العقاري" },
-      { key: "medical-fitout", labelEn: "Medical Facility Fit-Outs", labelAr: "تجهيز المستشفيات والمنشآت الصحية" },
-      { key: "oil-gas-works", labelEn: "Oil & Gas Specialized Works", labelAr: "أعمال المقاولات البترولية" },
-      { key: "project-management", labelEn: "Project Management & Execution", labelAr: "إدارة المشروعات والإشراف الهندسي" }
+      { key: "infrastructure-utilities", labelEn: "Infrastructure & Utilities", labelAr: "البنية التحتية والمرافق" },
+      { key: "industrial-construction", labelEn: "Industrial Construction", labelAr: "الإنشاءات الصناعية" },
+      { key: "healthcare-facilities", labelEn: "Medical Facility Fit-Outs", labelAr: "تجهيز المستشفيات والمنشآت الصحية" },
+      { key: "oil-gas-facilities", labelEn: "Oil & Gas Specialized Works", labelAr: "أعمال المقاولات البترولية" },
+      { key: "commercial-administrative", labelEn: "Commercial Complexes", labelAr: "المجمعات التجارية والإدارية" },
+      { key: "residential-real-estate", labelEn: "Real Estate Development", labelAr: "التطوير والاستثمار العقاري" },
+      { key: "finishing-fitout", labelEn: "Finishing & Interior Fit-Out", labelAr: "التشطيبات والتجهيزات الداخلية" }
     ]
   },
   {
@@ -1819,17 +1270,23 @@ export const serviceDivisionsConfig = [
     descAr: "إدارة المخلفات، محطات البيوجاز وتحويل المخلفات لطاقة، معالجة الروائح، دراسات تقييم الأثر البيئي، وحساب البصمة الكربونية.",
     categories: [
       { key: "all", labelEn: "All Environmental Solutions", labelAr: "كافة الحلول البيئية" },
+      { key: "environmental-assessment", labelEn: "Environmental Assessment (EIA/ESIA)", labelAr: "تقييم الأثر البيئي والمجتمعي" },
+      { key: "carbon-footprint", labelEn: "Carbon Footprint & CBAM", labelAr: "البصمة الكربونية وتقارير الانبعاثات" },
+      { key: "environmental-monitoring", labelEn: "Environmental Monitoring & Lab", labelAr: "القياسات والرصد المعملي" },
       { key: "waste-management", labelEn: "Waste Management Solutions", labelAr: "حلول إدارة المخلفات" },
+      { key: "hazardous-waste", labelEn: "Hazardous Waste Management", labelAr: "إدارة المخلفات الخطرة" },
+      { key: "solid-recycling", labelEn: "Solid Waste Recycling", labelAr: "تدوير المخلفات الصلبة" },
       { key: "waste-to-energy", labelEn: "Waste-to-Energy Systems", labelAr: "أنظمة تحويل المخلفات لطاقة" },
-      { key: "biogas-development", labelEn: "Biogas Project Development", labelAr: "تطوير محطات البيوجاز" },
-      { key: "biological-treatment", labelEn: "Biological Waste Treatment", labelAr: "معالجة المخلفات الحيوية" },
-      { key: "industrial-waste", labelEn: "Industrial Waste Treatment", labelAr: "معالجة المخلفات الصناعية" },
-      { key: "odor-control", labelEn: "Odor Control Solutions", labelAr: "حلول إزالة الروائح" },
-      { key: "oil-spill-treatment", labelEn: "Oil Spill & Hydrocarbon Treatment", labelAr: "معالجة الانسكابات البترولية" },
-      { key: "environmental-assessment", labelEn: "Environmental Assessment (EIA)", labelAr: "دراسات تقييم الأثر البيئي" },
-      { key: "carbon-footprint", labelEn: "Carbon Footprint Assessment", labelAr: "دراسات البصمة الكربونية" },
-      { key: "emission-control", labelEn: "Emission Control Solutions", labelAr: "حلول التحكم في الانبعاثات" },
-      { key: "sustainability-consulting", labelEn: "Sustainability Consulting", labelAr: "استشارات الاستدامة" }
+      { key: "biogas-plants", labelEn: "Biogas Project Development", labelAr: "تطوير محطات البيوجاز" },
+      { key: "renewable-energy", labelEn: "Renewable Energy Solutions", labelAr: "أنظمة الطاقة المتجددة" },
+      { key: "environmental-economics", labelEn: "Environmental Economics", labelAr: "الدراسات الاقتصادية البيئية" },
+      { key: "sustainability-consulting", labelEn: "Sustainability & ESG", labelAr: "استشارات الاستدامة واستراتيجيات ESG" },
+      { key: "sdgs-consulting", labelEn: "SDGs Consulting", labelAr: "أهداف التنمية المستدامة SDGs" },
+      { key: "iso-support", labelEn: "ISO Systems (14001 / 50001)", labelAr: "تأهيل أنظمة الأيزو البيئية" },
+      { key: "qhse-solutions", labelEn: "Integrated QHSE Solutions", labelAr: "حلول الجودة والصحة والسلامة QHSE" },
+      { key: "digital-ehs", labelEn: "Digital EHS Software & IoT", labelAr: "المنظومات الرقمية وإنترنت الأشياء" },
+      { key: "biotechnology", labelEn: "Biotechnology & Remediation", labelAr: "التكنولوجيا الحيوية والمعالجة" },
+      { key: "applied-rd", labelEn: "Applied Environmental R&D", labelAr: "البحث والتطوير العلمي البيئي" }
     ]
   },
   {
@@ -1840,32 +1297,14 @@ export const serviceDivisionsConfig = [
     descAr: "تصنيع لحساب الغير، حلول OEM و FOB، تطوير العينات والباترون، الصباغة المعملية، وضبط الجودة بمقاييس AQL.",
     categories: [
       { key: "all", labelEn: "All Manufacturing Services", labelAr: "كافة خدمات التصنيع" },
-      { key: "private-label", labelEn: "Private Label Manufacturing", labelAr: "التصنيع للعلامات التجارية" },
-      { key: "oem-manufacturing", labelEn: "OEM Manufacturing", labelAr: "التصنيع الأصلي للمعدات OEM" },
-      { key: "fob-manufacturing", labelEn: "FOB Manufacturing", labelAr: "التصنيع الشامل FOB" },
-      { key: "contract-manufacturing", labelEn: "Contract Manufacturing", labelAr: "التشغيل والإنتاج التعاقدي" },
-      { key: "product-development", labelEn: "Product Development", labelAr: "تطوير المنتجات والباترون" },
-      { key: "fabric-sourcing", labelEn: "Fabric Sourcing", labelAr: "توريد وفحص الأقمشة" },
-      { key: "fabric-dyeing", labelEn: "Fabric Dyeing", labelAr: "صباغة الأقمشة والغزول" },
-      { key: "production-planning", labelEn: "Production Planning", labelAr: "تخطيط وموازنة خطوط الإنتاج" },
-      { key: "quality-control", labelEn: "Quality Control", labelAr: "مراقبة وفحص الجودة" }
-    ]
-  },
-  {
-    division: "industrial-solutions" as const,
-    labelEn: "Industrial & Technical Solutions",
-    labelAr: "الحلول الصناعية والتقنية",
-    descEn: "Turnkey water treatment plants, system integration, smart IoT monitoring, industrial consulting, and maintenance.",
-    descAr: "محطات معالجة المياه، تكامل الأنظمة وبرمجة SCADA، حلول المراقبة بإنترنت الأشياء IoT، والاستشارات والصيانة.",
-    categories: [
-      { key: "all", labelEn: "All Technical Solutions", labelAr: "كافة الحلول التقنية" },
-      { key: "integrated-water-treatment", labelEn: "Integrated Water Treatment", labelAr: "محطات معالجة المياه المتكاملة" },
-      { key: "filtration-design", labelEn: "Filtration System Design", labelAr: "تصميم أنظمة الفلترة" },
-      { key: "system-integration", labelEn: "Industrial System Integration", labelAr: "تكامل الأنظمة والتحكم" },
-      { key: "smart-monitoring", labelEn: "Smart Monitoring Solutions", labelAr: "حلول المراقبة والقياس الذكي" },
-      { key: "technical-consulting", labelEn: "Technical Consulting", labelAr: "الاستشارات الفنية والهندسية" },
-      { key: "installation-commissioning", labelEn: "Equipment Installation", labelAr: "التركيب والتشغيل التجريبي" },
-      { key: "maintenance-support", labelEn: "Maintenance & Support", labelAr: "عقود الصيانة والدعم الفني" }
+      { key: "oem-manufacturing", labelEn: "OEM Contract Manufacturing", labelAr: "التصنيع الأصلي OEM" },
+      { key: "odm-development", labelEn: "ODM Design & Co-Development", labelAr: "التصميم والتصنيع المشترك ODM" },
+      { key: "private-label", labelEn: "Private Label Manufacturing", labelAr: "التصنيع للعلامات التجارية الخاصة" },
+      { key: "fob-manufacturing", labelEn: "FOB Full Package Programs", labelAr: "برامج التصنيع الشامل والتصدير FOB" },
+      { key: "product-development", labelEn: "CAD Pattern Engineering", labelAr: "هندسة الباترون وتطوير المنتجات" },
+      { key: "rapid-sampling", labelEn: "Rapid Sampling & Prototyping", labelAr: "صناعة العينات والنماذج الأولية" },
+      { key: "bulk-production", labelEn: "Commercial Bulk Production", labelAr: "الإنتاج الصناعي الكمي" },
+      { key: "fabric-quality", labelEn: "Fabric Sourcing & AQL Quality", labelAr: "توريد الأقمشة وضمان الجودة AQL" }
     ]
   }
 ];

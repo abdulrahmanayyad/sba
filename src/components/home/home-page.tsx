@@ -59,7 +59,7 @@ const regions = [
 
 const whyItems = [
   ["Integrated Manufacturing", "Textile and garment capabilities within one broader production ecosystem."],
-  ["Product Development", "More than 20,000 developed women’s and children’s garment models."],
+  ["Product Development", "More than 2,700 developed women’s and children’s garment models."],
   ["Scalable Production", "15+ production lines, 250+ machines and 400+ workers."],
   ["International Experience", "Experience with brands and buyers across European, Arab and Turkish markets."],
   ["Flexibility", "Production programs adapted to product requirements, materials and order specifications."],
@@ -108,7 +108,7 @@ export function HomePage() {
               <p className="mt-5 max-w-md text-muted-foreground">{copy.scale.facilityBody}</p>
             </Reveal>
             <div className="grid sm:grid-cols-2">
-              {[["30,000", copy.scale.monthly], ["100", copy.scale.machines]].map(([value, label], index) => (
+              {[["45,000", copy.scale.monthly], ["100", copy.scale.machines]].map(([value, label], index) => (
                 <Reveal key={value} delay={index * 0.08} className="border-t border-border py-7 first:border-t-0 sm:border-l sm:border-t-0 sm:px-9 sm:first:border-l-0">
                   <strong data-count={value?.replaceAll(",", "")} className="home-scale-number font-head font-medium leading-none text-brand-green-text">{value}</strong>
                   <p className="mt-5 max-w-[15rem] text-sm text-muted-foreground">{label}</p>

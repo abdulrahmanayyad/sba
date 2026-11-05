@@ -268,14 +268,14 @@ export function ProductsCataloguePage() {
                 </div>
 
                 <div className="text-xs font-bold text-brand-orange uppercase tracking-wider mb-1 text-center">
-                  {ar ? "القسم الأول: السلع والمعدات" : "SECTION 01: GOODS & HARDWARE"}
+                  {ar ? "القسم الأول: السلع والمنتجات التصديرية" : "SECTION 01: PHYSICAL GOODS & EXPORT PRODUCTS"}
                 </div>
                 <h2 className="text-center font-head text-2xl sm:text-3xl font-black text-foreground group-hover:text-brand-orange transition-colors">
                   {ar ? "PRODUCTS | المنتجات" : "PRODUCTS"}
                 </h2>
 
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed text-center">
-                  "Explore our product portfolio across apparel, textiles, natural food products, and industrial equipment."
+                  "Explore our verified product portfolios across export-grade apparel, textiles, and natural food products."
                 </p>
 
                 <div className="mt-6 flex flex-wrap justify-center gap-2 text-xs">
@@ -283,10 +283,7 @@ export function ProductsCataloguePage() {
                     {ar ? "الملابس والمنسوجات" : "Apparel & Textiles"}
                   </span>
                   <span className="rounded-lg bg-secondary px-2.5 py-1 text-foreground/80 font-medium">
-                    {ar ? "الأغذية والمنتجات الطبيعية" : "Natural Foods"}
-                  </span>
-                  <span className="rounded-lg bg-secondary px-2.5 py-1 text-foreground/80 font-medium">
-                    {ar ? "المعدات والحساسات الصناعية" : "Industrial Hardware"}
+                    {ar ? "الأغذية والمنتجات الطبيعية" : "Natural & Food Products"}
                   </span>
                 </div>
               </div>
@@ -339,16 +336,13 @@ export function ProductsCataloguePage() {
 
                 <div className="mt-6 flex flex-wrap justify-center gap-2 text-xs">
                   <span className="rounded-lg bg-secondary px-2.5 py-1 text-foreground/80 font-medium">
-                    {ar ? "المقاولات والإنشاءات" : "Construction Contracting"}
+                    {ar ? "المقاولات والإنشاءات (12 تخصص)" : "Construction Contracting (12)"}
                   </span>
                   <span className="rounded-lg bg-secondary px-2.5 py-1 text-foreground/80 font-medium">
-                    {ar ? "الحلول البيئية والاستدامة" : "Environmental Systems"}
+                    {ar ? "الحلول البيئية والاستدامة (19 خدمة)" : "Environmental Systems (19)"}
                   </span>
                   <span className="rounded-lg bg-secondary px-2.5 py-1 text-foreground/80 font-medium">
-                    {ar ? "تصنيع الملابس (OEM/FOB)" : "Garment Manufacturing"}
-                  </span>
-                  <span className="rounded-lg bg-secondary px-2.5 py-1 text-foreground/80 font-medium">
-                    {ar ? "محطات معالجة المياه" : "Industrial Water EPC"}
+                    {ar ? "تصنيع الملابس (8 برامج OEM/FOB)" : "Garment Manufacturing (8)"}
                   </span>
                 </div>
               </div>
@@ -501,7 +495,6 @@ export function ProductsCataloguePage() {
                         >
                           {cfg.division === "apparel" && <Shirt className="size-4" />}
                           {cfg.division === "food" && <Utensils className="size-4" />}
-                          {cfg.division === "industrial" && <Wrench className="size-4" />}
                         </div>
                         <span className="text-[11px] font-mono font-bold text-muted-foreground">
                           {physicalProducts.filter((p) => p.sector === cfg.division).length}{" "}
@@ -787,7 +780,6 @@ export function ProductsCataloguePage() {
                           {cfg.division === "construction" && <Building2 className="size-4" />}
                           {cfg.division === "environmental" && <Leaf className="size-4" />}
                           {cfg.division === "apparel-services" && <Factory className="size-4" />}
-                          {cfg.division === "industrial-solutions" && <Wrench className="size-4" />}
                         </div>
                         <span className="text-[11px] font-mono font-bold text-muted-foreground">
                           {professionalServices.filter((s) => s.sector === cfg.division).length}{" "}
@@ -1008,11 +1000,11 @@ export function ProductsCataloguePage() {
                                   type="button"
                                   onClick={() => {
                                     setActiveMode("products");
-                                    setSelectedProductDivision("industrial");
+                                    setSelectedProductDivision("apparel");
                                   }}
                                   className="text-brand-orange font-bold hover:underline inline-flex items-center gap-1 cursor-pointer"
                                 >
-                                  <span>{ar ? "عرض المعدات" : "View Goods"}</span>
+                                  <span>{ar ? "عرض المنتجات" : "View Products"}</span>
                                   <ArrowUpRight className="size-3" />
                                 </button>
                               </div>

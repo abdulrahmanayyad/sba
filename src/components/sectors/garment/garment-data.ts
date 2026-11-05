@@ -89,8 +89,8 @@ export const garmentAboutData = {
       {
         title: "Product Development Expertise",
         titleAr: "خبرة في تطوير المنتجات",
-        desc: "Over 20,000 styles developed across women's and children's categories, giving our clients deep pattern and grading mastery.",
-        descAr: "تطوير أكثر من 20,000 موديل من الملابس الحريمي والأطفالي، وفهم عميق للقصات والخامات وتفاصيل التنفيذ.",
+        desc: "Over 2,700 styles developed across women's and children's categories, giving our clients deep pattern and grading mastery.",
+        descAr: "تطوير أكثر من 2,700 موديل من الملابس الحريمي والأطفالي، وفهم عميق للقصات والخامات وتفاصيل التنفيذ.",
       },
       {
         title: "Scalable Production Capacity",
@@ -221,8 +221,8 @@ export const garmentAboutData = {
       {
         categoryEn: "Style Development Output",
         categoryAr: "تطوير الموديلات الجديدة",
-        volumeEn: "+20,000",
-        volumeAr: "+20,000",
+        volumeEn: "+2,700",
+        volumeAr: "+2,700",
         notesEn: "models developed representing vast expertise in transforming ideas into products",
         notesAr: "موديل تم تطويره ويمثل هذا خبرة واسعة في تحويل الأفكار لمنتجات حقيقية",
       },
@@ -233,10 +233,10 @@ export const garmentAboutData = {
   experience: {
     heading: "Proven Experience & Style Development",
     headingAr: "خبراتنا وسجل تطوير الأزياء",
-    subtitle: "More than 20,000 styles developed across diverse fashion genres.",
-    subtitleAr: "أكثر من 20,000 موديل تم تطويره وتصنيعه عبر مختلف قطاعات الموضة والأزياء.",
-    overview: "Our cumulative track record in developing over 20,000 apparel styles demonstrates our thorough understanding of intricate garment silhouettes, fabric drapes, pattern engineering, and consumer preferences. From modestwear abayas and evening dresses to heavy-knit casualwear, technical activewear, and classic tailored shirts, we convert design references into commercially successful, repeatable bulk garments.",
-    overviewAr: "تعكس خبرتنا في تطوير أكثر من 20,000 موديل من الملابس الحريمي والأطفالي والرجالي معرفتنا العميقة بمختلف القصات والخامات والتصميمات واحتياجات الأسواق العالمية. ونعمل على تحويل الأفكار والمراجع التصميمية إلى منتجات قابلة للتصنيع التجاري بأعلى كفاءة، بدءًا من العبايات والأزياء المحتشمة وفساتين السهرة، وحتى الملابس الكاجوال والرياضية والقمصان الكلاسيكية.",
+    subtitle: "More than 2,700 styles developed across diverse fashion genres.",
+    subtitleAr: "أكثر من 2,700 موديل تم تطويره وتصنيعه عبر مختلف قطاعات الموضة والأزياء.",
+    overview: "Our cumulative track record in developing over 2,700 apparel styles demonstrates our thorough understanding of intricate garment silhouettes, fabric drapes, pattern engineering, and consumer preferences. From modestwear abayas and evening dresses to heavy-knit casualwear, technical activewear, and classic tailored shirts, we convert design references into commercially successful, repeatable bulk garments.",
+    overviewAr: "تعكس خبرتنا في تطوير أكثر من 2,700 موديل من الملابس الحريمي والأطفالي والرجالي معرفتنا العميقة بمختلف القصات والخامات والتصميمات واحتياجات الأسواق العالمية. ونعمل على تحويل الأفكار والمراجع التصميمية إلى منتجات قابلة للتصنيع التجاري بأعلى كفاءة، بدءًا من العبايات والأزياء المحتشمة وفساتين السهرة، وحتى الملابس الكاجوال والرياضية والقمصان الكلاسيكية.",
     pillars: [
       {
         title: "Women's & Modestwear",
@@ -904,8 +904,8 @@ export const garmentServicesExpanded: GarmentManufacturingService[] = [
     badgeAr: "من الفكرة للإنتاج · كتالوج الموديلات",
     titleEn: "ODM Development",
     titleAr: "التصميم والتصنيع المشترك (ODM)",
-    leadEn: "Complete concept creation where brands select and customize designs from our 20,000+ style library for private branding.",
-    leadAr: "خدمة تطوير وتصميم متكاملة تتيح للعلامات التجارية اختيار وتخصيص موديلات من محفظتنا التي تضم أكثر من 20,000 تصميم.",
+    leadEn: "Complete concept creation where brands select and customize designs from our 2,700+ style library for private branding.",
+    leadAr: "خدمة تطوير وتصميم متكاملة تتيح للعلامات التجارية اختيار وتخصيص موديلات من محفظتنا التي تضم أكثر من 2,700 تصميم.",
     descEn: "We provide comprehensive fashion development for brands needing fresh seasonal collections without maintaining internal design teams. Choose from our proven silhouette library, customize colors and trims, and launch under your own brand.",
     descAr: "نوفر حلًا متكاملًا للعلامات التجارية التي ترغب في إطلاق مجموعات أزياء جديدة دون الحاجة لفرق تصميم داخلية، عبر تعديل وتخصيص تصميماتنا الجاهزة بعلامتك التجارية.",
     capabilitiesEn: ["Trend-driven fashion design", "Silhouettes engineered for fit", "Rapid custom graphic application", "Commercial price-point engineering"],

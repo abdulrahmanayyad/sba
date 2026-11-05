@@ -261,8 +261,8 @@ export const investorDocuments: InvestorDocument[] = [
     categoryAr: "ملف القطاع الصناعي",
     fileSize: "5.1 MB",
     fileName: "SBA_Garment_Manufacturing_Export_Capacity.pdf",
-    descEn: "Machinery specifications, production capacities (+350,000 units/mo), international certifications (OEKO-TEX, ISO), and model library index.",
-    descAr: "مواصفات خطوط الإنتاج والقص والتطريز، الطاقات الشهرية (+350 ألف قطعة)، شهادات المطابقة الدولية، وفهرس مكتبة الموديلات.",
+    descEn: "Machinery specifications, production capacities (up to 150,000 units/mo), international certifications (OEKO-TEX, ISO), and model library index.",
+    descAr: "مواصفات خطوط الإنتاج والقص والتطريز، الطاقات الشهرية (تصل إلى 150,000 قطعة شهريًا)، شهادات المطابقة الدولية، وفهرس مكتبة الموديلات.",
   },
 ];
 

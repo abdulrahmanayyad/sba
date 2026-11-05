@@ -3,7 +3,7 @@
 // Strictly dedicated to tangible goods, equipment, and catalogues available for supply.
 // ============================================================================
 
-export type ProductDivision = "apparel" | "food" | "industrial";
+export type ProductDivision = "apparel" | "food";
 
 export interface ProductSpec {
   labelEn: string;
@@ -536,7 +536,7 @@ export const physicalProducts: PhysicalProduct[] = [
     ]
   },
   {
-    "id": "prod-food-oil",
+    "id": "prod-food-oil-evoo",
     "code": "SBA-PRD-OIL01",
     "sector": "food",
     "categoryKey": "olive-oil",
@@ -578,85 +578,223 @@ export const physicalProducts: PhysicalProduct[] = [
     ]
   },
   {
-    "id": "prod-food-dates",
+    "id": "prod-food-oil-virgin",
+    "code": "SBA-PRD-OIL02",
+    "sector": "food",
+    "categoryKey": "olive-oil",
+    "categoryEn": "Olive Oil",
+    "categoryAr": "زيت الزيتون",
+    "nameEn": "Pure Virgin & Organic Olive Oil for Culinary & Food Processing",
+    "nameAr": "زيت زيتون بكر طبيعي وعضوي للتصنيع الغذائي والطهي",
+    "taglineEn": "Natural mechanical extraction with acidity < 1.2%, ideal for gourmet canning, dressings, and institutional kitchens.",
+    "taglineAr": "مستخلص طبيعيًا بنسبة حموضة أقل من 1.2% مخصص لشركات الصناعات الغذائية والمطابخ الفندقية والتعبئة التجارية.",
+    "descriptionEn": "Delivers balanced flavor profiles and high smoke points for premium culinary and food manufacturing applications. Shipped with complete international laboratory analysis and phytosanitary certificates.",
+    "descriptionAr": "مثالي للصناعات الغذائية الراقية مثل تعليب التونة والمخللات والصلصات، ويتم شحنه مصحوبًا بشهادات التحليل المخبري وشهادات الصحة النباتية المعتمدة.",
+    "image": "/BG/Natural & Agri-Food Products/Olive Oil.jpg",
+    "originEn": "Egypt",
+    "originAr": "جمهورية مصر العربية",
+    "originFlag": "🇪🇬",
+    "moqEn": "5,000 Litres (bulk IBC containers)",
+    "moqAr": "5,000 لتر (حاويات وخزانات صناعية)",
+    "packagingEn": "1,000L food-grade IBC containers, 200L lined steel drums, or 20L Jerry cans.",
+    "packagingAr": "خزانات IBC سعة 1,000 لتر، براميل مبطنة 200 لتر، أو جراكين غذائية 20 لتر.",
+    "specifications": [
+      {
+        "labelEn": "Acidity",
+        "labelAr": "نسبة الحموضة",
+        "valueEn": "≤ 1.2% free oleic acid",
+        "valueAr": "أقل من أو يساوي 1.2% حمض أوليك حر"
+      },
+      {
+        "labelEn": "Purity Grade",
+        "labelAr": "درجة النقاء",
+        "valueEn": "100% unrefined pure virgin olive oil",
+        "valueAr": "زيت زيتون بكر نقي 100% غير مكرر"
+      }
+    ]
+  },
+  {
+    "id": "prod-food-dates-siwi",
     "code": "SBA-PRD-DAT01",
     "sector": "food",
     "categoryKey": "dates-palm",
     "categoryEn": "Dates & Palm Products",
     "categoryAr": "التمور ومنتجات النخيل",
-    "nameEn": "Premium Egyptian Medjool & Siwi Semi-Dry Dates",
-    "nameAr": "تمور المجدول الفاخرة والتمور السيوية نصف الجافة",
-    "taglineEn": "Jumbo Medjool and premium Siwi dates sorted by moisture, size, and skin separation.",
-    "taglineAr": "تمور مجدول جامبو وسيوية فاخرة مفرزة ومغسولة ومجففة وفق أرقى مواصفات التصدير.",
-    "descriptionEn": "Naturally grown in Egyptian oases and southern valleys. Packed with natural energy, dietary fiber, and essential minerals. Offered in whole with pit, pitted, or date paste formats.",
-    "descriptionAr": "مزروعة طبيعيًا في واحات مصر والوادي الجديد، تتميز بالحلاوة المتوازنة وخلوها من الإضافات الكيميائية. متوفرة كاملة بنوى، منزوعة النوى، أو في هيئة عجينة تمور للصناعات الغذائية.",
-    "image": "/BG/Natural & Agri-Food Products/Dates & Palm Products.jpg",
+    "nameEn": "Premium Egyptian Siwi Oasis Semi-Dry Dates",
+    "nameAr": "تمور الواحات السيوية الفاخرة نصف الجافة (صعيدي/سيوي)",
+    "taglineEn": "Selected Egyptian Siwi dates naturally cured, washed, calibrated, and packed under rigorous hygiene.",
+    "taglineAr": "تمور سيوية نخب أول مفرزة ومغسولة ومجففة طبيعيًا في واحة سيوة المشهورة بأجود أنواع النخيل.",
+    "descriptionEn": "Rich in natural dietary fiber and minerals with a distinctive caramel sweetness. Available loose, pressed in vacuum blocks, or pitted for retail and industrial confectionery.",
+    "descriptionAr": "تتميز بنكهة الكراميل الغنية وقوامها نصف الجاف الطري المناسب للاستهلاك المباشر أو الصناعات الغذائية، معقمة ومطابقة لأعلى اشتراطات سلامة الغذاء.",
+    "image": "/BG/Natural & Agri-Food Products/Dates.jpg",
     "originEn": "Egypt",
     "originAr": "جمهورية مصر العربية",
     "originFlag": "🇪🇬",
     "moqEn": "5 metric tons / 1 FCL",
     "moqAr": "5 أطنان مترية / حاوية تصدير",
-    "packagingEn": "1kg, 2kg, 5kg luxury retail cartons or 10kg bulk master boxes.",
-    "packagingAr": "عبوات كرتونية فاخرة 1، 2، 5 كجم أو كراتين توريد صناعي 10 كجم.",
+    "packagingEn": "500g/1kg/2kg branded retail cartons, or 10kg loose bulk master boxes.",
+    "packagingAr": "عبوات كرتونية تجارية 500 جم و1 و2 كجم أو كراتين توريد بالجملة 10 كجم.",
     "specifications": [
       {
-        "labelEn": "Grade Types",
-        "labelAr": "الدرجات المتاحة",
-        "valueEn": "Medjool (Jumbo, Large, Medium) & Siwi Grade A",
-        "valueAr": "مجدول (جامبو، كبير، متوسط) وسيوي نخب أول"
-      },
-      {
-        "labelEn": "Skin Separation",
-        "labelAr": "انفصال القشرة",
-        "valueEn": "Under 5% (Jumbo Medjool)",
-        "valueAr": "أقل من 5% لتمور المجدول الجامبو"
-      },
-      {
-        "labelEn": "Moisture Content",
+        "labelEn": "Moisture",
         "labelAr": "نسبة الرطوبة",
-        "valueEn": "18% - 22% (soft semi-dry)",
-        "valueAr": "من 18% إلى 22% نصف جاف طري"
+        "valueEn": "18% - 22% (soft semi-dry texture)",
+        "valueAr": "من 18% إلى 22% قوام نصف جاف طري"
+      },
+      {
+        "labelEn": "Defect Rate",
+        "labelAr": "نسبة العيوب",
+        "valueEn": "Under 2% visual defects",
+        "valueAr": "أقل من 2% خالية من التلف أو الحشرات"
       }
     ]
   },
   {
-    "id": "prod-food-herbs",
+    "id": "prod-food-dates-medjool",
+    "code": "SBA-PRD-DAT02",
+    "sector": "food",
+    "categoryKey": "dates-palm",
+    "categoryEn": "Dates & Palm Products",
+    "categoryAr": "التمور ومنتجات النخيل",
+    "nameEn": "Luxury Egyptian Jumbo & Super Jumbo Medjool Dates",
+    "nameAr": "تمور المجدول الملكية الفاخرة (جامبو وسوبر جامبو)",
+    "taglineEn": "The King of Dates: large plump fruit, thin translucent skin, and succulent honey-like flesh.",
+    "taglineAr": "ملك التمور بحجم حبة ضخم وقشرة رقيقة ومذاق عسلي فاخر، مصنف ومفرز بالليزر بدقة فائقة.",
+    "descriptionEn": "Grown in the sunny microclimates of Toshka and the New Valley. Sorted by computerized imaging for weight, caliber, and minimal skin separation (< 5%) for luxury export gifting and gourmet markets.",
+    "descriptionAr": "مزروعة في مزارع توشكا والوادي الجديد الحديثة، وتخضع لفرز إلكتروني متقدم لقياس الوزن ونسبة التصاق القشرة لتقديم منتج نخب ممتاز للأسواق الأوروبية والخليجية.",
+    "image": "/BG/Natural & Agri-Food Products/Dates & Palm Products.jpg",
+    "originEn": "Egypt",
+    "originAr": "جمهورية مصر العربية",
+    "originFlag": "🇪🇬",
+    "moqEn": "3 metric tons (refrigerated container)",
+    "moqAr": "3 أطنان مترية (حاوية مبردة)",
+    "packagingEn": "1kg and 2kg luxury gift boxes, or 5kg master boxes under strict temperature control.",
+    "packagingAr": "علب هدايا فاخرة 1 كجم و2 كجم، أو كراتين تصدير 5 كجم مبردة.",
+    "specifications": [
+      {
+        "labelEn": "Grades Available",
+        "labelAr": "الدرجات المتاحة",
+        "valueEn": "Super Jumbo (>27g), Jumbo (23-26g), Large (20-22g)",
+        "valueAr": "سوبر جامبو (>27 جم)، جامبو (23-26 جم)، كبير (20-22 جم)"
+      },
+      {
+        "labelEn": "Skin Separation",
+        "labelAr": "انفصال القشرة",
+        "valueEn": "< 5% (Grade Premium)",
+        "valueAr": "أقل من 5% للدرجة الممتازة الأولى"
+      }
+    ]
+  },
+  {
+    "id": "prod-food-dates-paste",
+    "code": "SBA-PRD-DAT03",
+    "sector": "food",
+    "categoryKey": "dates-palm",
+    "categoryEn": "Dates & Palm Products",
+    "categoryAr": "التمور ومنتجات النخيل",
+    "nameEn": "Pure Natural Date Paste & High-Brix Date Molasses (Silan)",
+    "nameAr": "عجينة التمر الطبيعية ودبس التمر الصافي عالي التركيز",
+    "taglineEn": "100% pure date puree and date syrup with zero added sugar or preservatives.",
+    "taglineAr": "مستخلص وعجينة تمور طبيعية 100% خالية من السكر المضاف أو المواد الحافظة لصناعات المخابز والحلويات.",
+    "descriptionEn": "Industrial-grade natural date ingredients for energy bar manufacturers, bakeries, ice-cream makers, and healthy snack producers. Smooth texture and calibrated Brix levels.",
+    "descriptionAr": "مكونات طبيعية مخصصة للمصانع والحلوانية لإنتاج ألواح الطاقة والبسكويت، تتميز بنعومة فائقة ونسبة تركيز سكريات طبيعية مضبوطة معمليًا.",
+    "image": "/BG/Natural & Agri-Food Products/Dates & Palm Products.jpg",
+    "originEn": "Egypt",
+    "originAr": "جمهورية مصر العربية",
+    "originFlag": "🇪🇬",
+    "moqEn": "2 metric tons",
+    "moqAr": "2 طن متري",
+    "packagingEn": "10kg block cartons lined with polyethylene, or 25kg/250kg aseptic drums for date syrup.",
+    "packagingAr": "قوالب كرتون مبطنة 10 كجم، أو براميل معقمة 25/250 كجم للدبس.",
+    "specifications": [
+      {
+        "labelEn": "Brix (Molasses)",
+        "labelAr": "درجة التركيز (الدبس)",
+        "valueEn": "72° - 75° Brix",
+        "valueAr": "من 72 إلى 75 بريكس"
+      },
+      {
+        "labelEn": "Additives",
+        "labelAr": "المواد المضافة",
+        "valueEn": "0% additives, 100% date fruit derived",
+        "valueAr": "خالٍ تمامًا من أي إضافات كيميائية أو سكر مضاف"
+      }
+    ]
+  },
+  {
+    "id": "prod-food-herbs-chamomile",
     "code": "SBA-PRD-HRB01",
     "sector": "food",
     "categoryKey": "herbs-plants",
     "categoryEn": "Herbs & Natural Plants",
     "categoryAr": "الأعشاب والنباتات الطبية",
-    "nameEn": "Organic Dried Egyptian Chamomile, Peppermint & Hibiscus",
-    "nameAr": "الأعشاب الطبية والعطرية (بابونج، نعناع، كركديه، ومردقوش)",
-    "taglineEn": "Hand-picked, sun-dried Egyptian botanical herbs sorted and steam-sterilized for tea and extraction.",
+    "nameEn": "Organic Dried Egyptian Chamomile Flowers, Peppermint & Marjoram",
+    "nameAr": "أزهار البابونج المصري المجفف، النعناع الفلفلي، والمردقوش العضوي",
+    "taglineEn": "Hand-picked, sun-dried Egyptian botanical herbs sorted and steam-sterilized for herbal teas and pharma.",
     "taglineAr": "أعشاب ونباتات طبية وعطرية مجففة طبيعيًا ومفرزة بالليزر ومبخرة وفق مواصفات التصدير لأوروبا والخليج.",
-    "descriptionEn": "Sourced from certified growers along the Nile. Rigorously inspected for heavy metals, pesticide residues, and essential oil levels. Available whole, crushed, or fine-cut for tea bags.",
-    "descriptionAr": "مستوردة من مزارع معتمدة بالفيوم وصعيد مصر، مفحوصة لنسب الزيوت العطرية ومتبقيات المبيدات والمعادن الثقيلة، ومتاحة أزهار كاملة أو مجروشة لأكياس الشاي.",
+    "descriptionEn": "Sourced from certified organic growers along the Nile basin in Fayoum and Beni Suef. Rigorously inspected for heavy metals, pesticide residues, and essential oil content. Available whole or TBC (tea-bag cut).",
+    "descriptionAr": "مستوردة من مزارع معتمدة بالفيوم وبني سويف، مفحوصة لنسب الزيوت العطرية ومتبقيات المبيدات والمعادن الثقيلة، ومتاحة أزهار كاملة أو مجروشة لأكياس الشاي.",
     "image": "/BG/Natural & Agri-Food Products/Aromatic Herbs & Natural Botanicals.jpg",
     "originEn": "Egypt",
     "originAr": "جمهورية مصر العربية",
     "originFlag": "🇪🇬",
-    "moqEn": "1 metric ton per herb",
+    "moqEn": "1 metric ton per variety",
     "moqAr": "1 طن متري لكل صنف عشب",
-    "packagingEn": "20-25 kg multi-wall craft paper bags or woven polypropylene bales.",
+    "packagingEn": "20-25 kg multi-wall kraft paper bags or compressed polypropylene bales.",
     "packagingAr": "أكياس كرافت متعددة الطبقات 20-25 كجم أو بالات بولي بروبلين محكمة.",
     "specifications": [
       {
         "labelEn": "Sterilization",
         "labelAr": "التعقيم",
-        "valueEn": "Steam sterilized or natural sun drying",
-        "valueAr": "تعقيم بالبخار الطبيعي أو تجفيف هوائي محمي"
+        "valueEn": "HTST Steam sterilized or controlled drying",
+        "valueAr": "تعقيم بالبخار بدرجة حرارة عالية أو تجفيف مضبوط"
       },
       {
         "labelEn": "Purity",
         "labelAr": "درجة النقاء",
-        "valueEn": "99% minimum botanical purity",
+        "valueEn": "≥ 99% minimum botanical purity",
         "valueAr": "99% حد أدنى للنقاء العشبي خالي من الشوائب"
       }
     ]
   },
   {
-    "id": "prod-food-spices",
+    "id": "prod-food-herbs-hibiscus",
+    "code": "SBA-PRD-HRB02",
+    "sector": "food",
+    "categoryKey": "herbs-plants",
+    "categoryEn": "Herbs & Natural Plants",
+    "categoryAr": "الأعشاب والنباتات الطبية",
+    "nameEn": "Whole Flower Egyptian Hibiscus (Karkadeh) & Dried Botanicals",
+    "nameAr": "كركديه مصري أزهار كاملة ممتازة ونباتات عطرية مجففة",
+    "taglineEn": "Deep crimson Egyptian Aswan-grade hibiscus sabdariffa with high anthocyanin and sour fruity notes.",
+    "taglineAr": "كركديه أسواني زاهي الحمرة كامل الكؤوس غني بمضادات الأكسدة وبنكهة حمضية منعشة ومطلوبة عالميًا.",
+    "descriptionEn": "Carefully sifted to remove dust and broken fragments. Perfect for cold brew beverages, herbal infusions, natural colorant extraction, and food processing.",
+    "descriptionAr": "مغربل بعناية لإزالة الأتربة والكسر، ومناسب للمشروبات المثلجة والساخنة، واستخلاص الصبغات الطبيعية الغذائية دون أي ملوثات.",
+    "image": "/BG/Natural & Agri-Food Products/Herbs & Natural Plants.jpg",
+    "originEn": "Egypt",
+    "originAr": "جمهورية مصر العربية",
+    "originFlag": "🇪🇬",
+    "moqEn": "2 metric tons",
+    "moqAr": "2 طن متري",
+    "packagingEn": "20 kg woven polypropylene bags with inner polyethylene moisture liner.",
+    "packagingAr": "أكياس منسوجة 20 كجم مع بطانة داخلية واقية من الرطوبة.",
+    "specifications": [
+      {
+        "labelEn": "Flower Integrity",
+        "labelAr": "سلامة الزهرة",
+        "valueEn": "Whole calyxes > 85%, fine sifted",
+        "valueAr": "كؤوس كاملة أكثر من 85% مع غربلة دقيقة"
+      },
+      {
+        "labelEn": "Anthocyanin Content",
+        "labelAr": "صبغة الأنثوسيانين",
+        "valueEn": "High natural color intensity (> 1.5%)",
+        "valueAr": "كثافة لونية طبيعية عالية (> 1.5%)"
+      }
+    ]
+  },
+  {
+    "id": "prod-food-spices-cumin",
     "code": "SBA-PRD-SPC01",
     "sector": "food",
     "categoryKey": "spices-seasonings",
@@ -692,19 +830,55 @@ export const physicalProducts: PhysicalProduct[] = [
     ]
   },
   {
-    "id": "prod-food-powder",
+    "id": "prod-food-spices-anise",
+    "code": "SBA-PRD-SPC02",
+    "sector": "food",
+    "categoryKey": "spices-seasonings",
+    "categoryEn": "Spices & Seasonings",
+    "categoryAr": "التوابل والبهارات",
+    "nameEn": "Selected Egyptian Anise Seeds & Nigella Sativa (Black Seed)",
+    "nameAr": "حبوب الينسون المصري الفاخر وحبة البركة الطبيعية (الحبة السوداء)",
+    "taglineEn": "Mechanically cleaned and color-sorted Egyptian anise and black cumin seeds with intense aroma.",
+    "taglineAr": "حبوب ينسون وحبة بركة طبيعية نظيفة ومفروزة ليزريًا بنسبة نقاء تتجاوز 99% ومناسبة للاستخدام الدوائي والغذائي.",
+    "descriptionEn": "Export-grade whole aromatic seeds known for therapeutic and culinary values. Shipped to pharmaceutical labs, herbal tea brands, and commercial bakeries across Europe and the GCC.",
+    "descriptionAr": "بذور زراعية ممتازة مشهورة بقيمتها الغذائية والعلاجية، يتم تصديرها إلى مصانع الدواء وماركات شاي الأعشاب والمخابز الكبرى في أوروبا والخليج العربي.",
+    "image": "/BG/Natural & Agri-Food Products/Spices and Seasonings.jpg",
+    "originEn": "Egypt",
+    "originAr": "جمهورية مصر العربية",
+    "originFlag": "🇪🇬",
+    "moqEn": "1 metric ton",
+    "moqAr": "1 طن متري",
+    "packagingEn": "25 kg multi-ply paper bags or 50kg PP sacks.",
+    "packagingAr": "أكياس ورقية متعددة الطبقات 25 كجم أو شكائر 50 كجم.",
+    "specifications": [
+      {
+        "labelEn": "Purity Level",
+        "labelAr": "نسبة النظافة والنقاء",
+        "valueEn": "≥ 99.5% machine-cleaned",
+        "valueAr": "99.5% نقاء ميكانيكي معقم ومفروز"
+      },
+      {
+        "labelEn": "Essential Oil",
+        "labelAr": "الزيت العطري",
+        "valueEn": "≥ 2.0% in aniseed",
+        "valueAr": "أكبر من أو يساوي 2.0% في الينسون"
+      }
+    ]
+  },
+  {
+    "id": "prod-food-powder-citrus",
     "code": "SBA-PRD-PWD01",
     "sector": "food",
     "categoryKey": "powdered-juices",
     "categoryEn": "Natural Powdered Juices & Ingredients",
     "categoryAr": "مستخلصات وبودرة العصائر الطبيعية والمكونات الغذائية",
-    "nameEn": "Spray-Dried Natural Fruit & Vegetable Powders & Instant Drink Bases",
-    "nameAr": "بودرة العصائر الطبيعية المجففة بالرذاذ والمكونات الغذائية الفورية",
-    "taglineEn": "100% natural spray-dried orange, lemon, pomegranate, and botanical drink powders.",
-    "taglineAr": "بودرة فواكه وعصائر مجففة بالرذاذ خالية من المواد الحافظة سريعة الذوبان للصناعات الغذائية والمشروبات.",
-    "descriptionEn": "Highly soluble powders retaining natural vitamins, color, and fruit notes. Ideal for instant drink mixes, bakery glazes, dairy flavoring, and nutritional formulations.",
-    "descriptionAr": "مساحيق سريعة الذوبان تحافظ على الفيتامينات واللون والرائحة الطبيعية للفاكهة، وتستخدم في خلطات العصائر الفورية، المعجنات، ومنتجات الألبان والأغذية الصحية.",
-    "image": "/BG/Natural & Agri-Food Products/Natural Powdered Juices & Ingredients.jpg",
+    "nameEn": "Spray-Dried Natural Orange & Lemon Juice Powders & Drink Bases",
+    "nameAr": "بودرة عصير البرتقال والليمون الطبيعية المجففة بالرذاذ وقواعد المشروبات",
+    "taglineEn": "100% natural spray-dried citrus powders retaining fresh aroma, vitamins, and instant cold-water solubility.",
+    "taglineAr": "بودرة عصائر حمضيات طبيعية مجففة بالرذاذ خالية من المواد الحافظة سريعة الذوبان للصناعات الغذائية والمشروبات.",
+    "descriptionEn": "Highly soluble fruit powders retaining natural Vitamin C, authentic citrus color, and juicy acidity. Ideal for instant drink sachets, confectionery fillings, bakery glazes, and dairy products.",
+    "descriptionAr": "مساحيق فواكه طبيعية سريعة الذوبان تحافظ على فيتامين C والنكهة الطازجة، وتستخدم في خلطات العصائر الفورية، السكاكر، المعجنات، ومنتجات الألبان والأغذية الصحية.",
+    "image": "/BG/Natural & Agri-Food Products/Natural Powdered Fruit & Vegetable Juices.jpg",
     "originEn": "Egypt",
     "originAr": "جمهورية مصر العربية",
     "originFlag": "🇪🇬",
@@ -728,206 +902,38 @@ export const physicalProducts: PhysicalProduct[] = [
     ]
   },
   {
-    "id": "prod-ind-ultrasonic",
-    "code": "SBA-PRD-ULT01",
-    "sector": "industrial",
-    "categoryKey": "ultrasonic-sensors",
-    "categoryEn": "Ultrasonic Sensors",
-    "categoryAr": "حساسات الموجات فوق الصوتية الصناعية",
-    "nameEn": "Industrial Non-Contact Ultrasonic Level & Flow Sensors",
-    "nameAr": "حساسات قياس المنسوب والتدفق بالموجات فوق الصوتية الصناعية",
-    "taglineEn": "High-precision IP68 non-contact measurement sensors for chemical tanks, open channels, and wastewater basins.",
-    "taglineAr": "حساسات متطورة لقياس منسوب وتدفق السوائل بدون تلامس وبدرجة حماية IP68 لخزانات الكيماويات والمياه.",
-    "descriptionEn": "Ruggedized ultrasonic transceivers delivering millimetric accuracy across harsh industrial environments. Features temperature compensation, Modbus RTU/4-20mA output, and anti-condensation PVDF transducers.",
-    "descriptionAr": "أجهزة استشعار بالموجات فوق الصوتية مصممة للبيئات الصناعية القاسية، توفر دقة قياس بالملم مع تعويض تلقائي لدرجات الحرارة ومخارج 4-20mA ومقاومة كاملة للأبخرة والكيماويات.",
-    "image": "/BG/Environment & Sustainability/IoT Environmental Monitoring System.jpg",
-    "originEn": "Germany / Partner Assembly",
-    "originAr": "ألمانيا / تجميع بمواصفات معتمدة",
-    "originFlag": "🇩🇪",
-    "moqEn": "2 units",
-    "moqAr": "قطعتان",
-    "packagingEn": "Individual anti-static padded enclosure box with calibration certificate.",
-    "packagingAr": "صندوق مضاد للكهرباء الساكنة مبطن مع شهادة معايرة معملية فردية.",
+    "id": "prod-food-powder-botanicals",
+    "code": "SBA-PRD-PWD02",
+    "sector": "food",
+    "categoryKey": "powdered-juices",
+    "categoryEn": "Natural Powdered Juices & Ingredients",
+    "categoryAr": "مستخلصات وبودرة العصائر الطبيعية والمكونات الغذائية",
+    "nameEn": "Instant Natural Botanical Drink Extracts (Hibiscus & Tamarind Powders)",
+    "nameAr": "مستخلصات وبودرة المشروبات العشبية الفورية (كركديه وتمر هندي وخروب)",
+    "taglineEn": "Standardized herbal extract powders for instant traditional beverage preparation and natural colorants.",
+    "taglineAr": "مستخلصات بودرة نباتية سريعة التحضير للمشروبات التراثية والطبيعية ومحسنات النكهة الغذائية.",
+    "descriptionEn": "Cold-soluble micro-fine botanical powders produced from selected natural infusions. Free from synthetic colorants or artificial flavor enhancers, offering ready formulation for beverage manufacturers.",
+    "descriptionAr": "بودرة نقية مستخلصة من الكركديه والتمر هندي والخروب، خالية من الألوان الصناعية وتمنح المشروبات نكهة طبيعية مركزة وسريعة التحضير للقطاعين الصناعي والتجاري.",
+    "image": "/BG/Natural & Agri-Food Products/Natural Powdered Juices & Ingredients.jpg",
+    "originEn": "Egypt",
+    "originAr": "جمهورية مصر العربية",
+    "originFlag": "🇪🇬",
+    "moqEn": "500 kg",
+    "moqAr": "500 كجم",
+    "packagingEn": "20 kg food-grade poly-lined aluminum drums or cartons.",
+    "packagingAr": "براميل أو كراتين ألومنيوم مبطنة غذائيًا سعة 20 كجم.",
     "specifications": [
       {
-        "labelEn": "Range",
-        "labelAr": "مدى القياس",
-        "valueEn": "0.2 m to 15 m (liquid level)",
-        "valueAr": "من 0.2 متر إلى 15 مترًا للمناسيب السائلة"
+        "labelEn": "Moisture Content",
+        "labelAr": "نسبة الرطوبة",
+        "valueEn": "< 4.5% moisture content",
+        "valueAr": "أقل من 4.5% لحفظ النكهة والخواص"
       },
       {
-        "labelEn": "Protection",
-        "labelAr": "معيار الحماية",
-        "valueEn": "IP68 / NEMA 6P (submersible transducer)",
-        "valueAr": "IP68 مع حماية كاملة ضد الغمر والأتربة"
-      },
-      {
-        "labelEn": "Outputs",
-        "labelAr": "مخارج الإشارة",
-        "valueEn": "4-20 mA HART & RS-485 Modbus",
-        "valueAr": "إشارة 4-20 مللي أمبير وبروتوكول Modbus RS-485"
-      }
-    ]
-  },
-  {
-    "id": "prod-ind-meters",
-    "code": "SBA-PRD-MTR01",
-    "sector": "industrial",
-    "categoryKey": "smart-meters",
-    "categoryEn": "Smart Measurement Devices",
-    "categoryAr": "أجهزة القياس الذكية",
-    "nameEn": "Electromagnetic & Multi-Parameter Smart Water Quality Meters",
-    "nameAr": "أجهزة القياس الذكية للتدفق وجودة المياه والمعايير البيئية",
-    "taglineEn": "In-line electromagnetic flowmeters and multi-parameter transmitters (pH, ORP, Conductivity, DO).",
-    "taglineAr": "عدادات تدفق كهرومغناطيسية ومحللات كيميائية متعددة المعايير لقياس الحموضة والتوصيلية الكهربية والأكسجين الذائب.",
-    "descriptionEn": "Certified industrial flowmeters and digital analytical transmitters with cloud IoT telemetry for continuous monitoring of municipal and industrial water networks.",
-    "descriptionAr": "عدادات قياس التدفق الكهرومغناطيسي وأجهزة التحليل الكيميائي الرقمية المزودة بوحدات اتصال إنترنت الأشياء IoT لمراقبة خطوط المياه الصناعية والبلدية.",
-    "image": "/BG/Environment & Sustainability/Environmental Measurements & Continuous Monitoring.jpg",
-    "originEn": "EU / Certified Global Partner",
-    "originAr": "الاتحاد الأوروبي / شريك صناعي معتمد",
-    "originFlag": "🇪🇺",
-    "moqEn": "1 unit",
-    "moqAr": "وحدة واحدة",
-    "packagingEn": "Reinforced wooden crating with inspection protocol.",
-    "packagingAr": "صناديق خشبية مقواة للشحن مع بروتوكول المعايرة الفنية.",
-    "specifications": [
-      {
-        "labelEn": "Accuracy",
-        "labelAr": "دقة القياس",
-        "valueEn": "± 0.2% of reading (Flowmeters)",
-        "valueAr": "± 0.2% من القراءة المقاسة لعدادات التدفق"
-      },
-      {
-        "labelEn": "Pipe Diameters",
-        "labelAr": "أقطار المواسير",
-        "valueEn": "DN15 to DN1200 flanged",
-        "valueAr": "من DN15 حتى DN1200 بفلنشات قياسية"
-      },
-      {
-        "labelEn": "Telemetry",
-        "labelAr": "الاتصال اللاسلكي",
-        "valueEn": "Integrated 4G/NB-IoT logger options",
-        "valueAr": "وحدات مدمجة تدعم شبكات 4G و NB-IoT"
-      }
-    ]
-  },
-  {
-    "id": "prod-ind-equipment",
-    "code": "SBA-PRD-EQP01",
-    "sector": "industrial",
-    "categoryKey": "industrial-equipment",
-    "categoryEn": "Industrial Equipment",
-    "categoryAr": "المعدات الصناعية والتشغيلية",
-    "nameEn": "Heavy-Duty Chemical Dosing Pumps & Aeration Blowers",
-    "nameAr": "مضخات حقن الكيماويات الدقيقة ومنفاخات التهوية الصناعية",
-    "taglineEn": "Diaphragm metering pumps, positive displacement blowers, and mechanical mixers for process plants.",
-    "taglineAr": "مضخات جرعات ومقاييس غشائية للكيماويات ومنفاخات هواء صناعية قوية لمحطات المعالجة والمصانع.",
-    "descriptionEn": "Supplying certified heavy-duty pumping equipment built for aggressive chemicals, acids, coagulants, and aeration basins in chemical and environmental facilities.",
-    "descriptionAr": "توريد معتمد لمعدات الضخ والتهوية والخلط الميكانيكي المصممة لتحمل الأحماض والكيماويات القاسية وأحواض التهوية في المنشآت الصناعية والبيئية.",
-    "image": "/BG/Environment & Sustainability/Renewable Energy Sector.jpg",
-    "originEn": "Italy / Germany",
-    "originAr": "إيطاليا / ألمانيا",
-    "originFlag": "🇮🇹",
-    "moqEn": "1 unit",
-    "moqAr": "وحدة واحدة",
-    "packagingEn": "Export wooden pallet with protective moisture wrap.",
-    "packagingAr": "طبلية خشبية للتصدير مغلفة بغطاء واقٍ من الرطوبة.",
-    "specifications": [
-      {
-        "labelEn": "Flow Capacity",
-        "labelAr": "معدل التدفق",
-        "valueEn": "1.0 L/h to 1,500 L/h dosing capacity",
-        "valueAr": "من 1 لتر/ساعة إلى 1,500 لتر/ساعة لحقن الكيماويات"
-      },
-      {
-        "labelEn": "Materials",
-        "labelAr": "خامات التصنيع",
-        "valueEn": "PVDF, PTFE, Hastelloy-C & SS316L",
-        "valueAr": "PVDF، تيفلون، سبيكة هاستيلوي وفولاذ ستانلس 316L"
-      }
-    ]
-  },
-  {
-    "id": "prod-ind-filtration",
-    "code": "SBA-PRD-FLT01",
-    "sector": "industrial",
-    "categoryKey": "filtration-equipment",
-    "categoryEn": "Water Filtration Equipment",
-    "categoryAr": "معدات فلترة وتنقية المياه",
-    "nameEn": "Commercial Multi-Media Sand & Activated Carbon Pressure Vessels",
-    "nameAr": "فلاتر وخزانات ضغط الوسائط المتعددة والكربون النشط",
-    "taglineEn": "ASME certified fiberglass (FRP) and epoxy-coated carbon steel pressurized filtration vessels.",
-    "taglineAr": "أوعية وفلاتر ترشيح مضغوطة من الفيبرجلاس FRP والفولاذ الكربوني المبطن لمعالجة وتنقية المياه.",
-    "descriptionEn": "Complete physical filtration vessels equipped with top/bottom distribution laterals, automatic multi-port control valves, and high-capacity gravel, sand, and granular carbon media.",
-    "descriptionAr": "خزانات وأوعية ترشيح فيزيائي كاملة مزودة بنجوم توزيع داخلية، وصمامات تحكم أوتوماتيكية متعددة المسارات، مع وسائط ترشيح عالية الكفاءة لإزالة العكارة والكلور والشوائب.",
-    "image": "/BG/Environment & Sustainability/Water & Wastewater Sector.jpg",
-    "originEn": "USA / Global Assembly",
-    "originAr": "الولايات المتحدة / تجميع عالمي",
-    "originFlag": "🇺🇸",
-    "moqEn": "1 system vessel",
-    "moqAr": "خزان / نظام واحد",
-    "packagingEn": "Heavy-duty skid mount with protective wrapping.",
-    "packagingAr": "تثبيت على قاعدة شاسيه حديدية مع تغليف حماية.",
-    "specifications": [
-      {
-        "labelEn": "Pressure Rating",
-        "labelAr": "ضغط التشغيل",
-        "valueEn": "10 bar (150 psi) test pressure",
-        "valueAr": "ضغط اختبار 10 بار (150 رطل/بوصة مربعة)"
-      },
-      {
-        "labelEn": "Diameters",
-        "labelAr": "الأقطار المتاحة",
-        "valueEn": "14 inches to 72 inches vessel diameter",
-        "valueAr": "من 14 بوصة إلى 72 بوصة قطر الوعاء"
-      },
-      {
-        "labelEn": "Control Valves",
-        "labelAr": "صمامات التحكم",
-        "valueEn": "Fleck / Clack digital automatic backwash valves",
-        "valueAr": "صمامات غسيل عكسي أوتوماتيكية رقمية معتمدة"
-      }
-    ]
-  },
-  {
-    "id": "prod-ind-treatment",
-    "code": "SBA-PRD-TRT01",
-    "sector": "industrial",
-    "categoryKey": "treatment-equipment",
-    "categoryEn": "Water Treatment Equipment",
-    "categoryAr": "معدات ووحدات معالجة المياه المادية",
-    "nameEn": "Skid-Mounted Reverse Osmosis (RO) Desalination Racks & UV Disinfection Units",
-    "nameAr": "وحدات تحلية المياه بالتناضح العكسي (RO) ووحدات التعقيم بالأشعة فوق البنفسجية",
-    "taglineEn": "Modular physical water treatment skids with high-rejection TFC membranes and stainless steel pressure housings.",
-    "taglineAr": "محطات ووحدات تنقية وتحلية مياه مدمجة على شاسيه ستانلس ستيل مع أغشية تناضح عكسي عالية العزل.",
-    "descriptionEn": "Factory pre-assembled and tested commercial and industrial physical desalination equipment. Includes high-pressure pumps, energy recovery devices, cartridge microfiltration, and clean-in-place (CIP) skids.",
-    "descriptionAr": "معدات تحلية وتطهير مياه مادية مجمعة ومختبرة مسبقًا في المصنع، تشمل مضخات ضغط عالي، أوعية ضغط من الستانلس ستيل، أنظمة تعقيم UV، وأجهزة غسيل كيميائي CIP.",
-    "image": "/BG/Environment & Sustainability/ET-POR-01 — Odor Removal Solution.jpg",
-    "originEn": "EU / Regional Modular Assembly",
-    "originAr": "الاتحاد الأوروبي / تجميع إقليمي معتمد",
-    "originFlag": "🇪🇺",
-    "moqEn": "1 unit",
-    "moqAr": "وحدة واحدة",
-    "packagingEn": "Export wooden crate with protective desiccant packaging.",
-    "packagingAr": "صندوق شحن خشبي معبأ بأكياس تجفيف وحماية كيميائية.",
-    "specifications": [
-      {
-        "labelEn": "Output Capacities",
-        "labelAr": "طاقات الإنتاج",
-        "valueEn": "5 m³/day to 500 m³/day modular output",
-        "valueAr": "من 5 م³/يوم حتى 500 م³/يوم للوحدات المدمجة"
-      },
-      {
-        "labelEn": "Membranes",
-        "labelAr": "نوع الأغشية",
-        "valueEn": "Dow FilmTec / Hydranautics 8-inch high-rejection",
-        "valueAr": "أغشية 8 بوصة داو فيلمتك أو هايدروناتيكس عالية العزل"
-      },
-      {
-        "labelEn": "Recovery Rate",
-        "labelAr": "نسبة الاسترداد",
-        "valueEn": "Up to 75% on brackish water",
-        "valueAr": "تصل إلى 75% للمياه متوسطة الملوحة"
+        "labelEn": "Color Index",
+        "labelAr": "درجة اللون",
+        "valueEn": "100% natural botanical pigment",
+        "valueAr": "صبغة نباتية طبيعية 100% بدون أي تلوين اصطناعي"
       }
     ]
   }
@@ -970,21 +976,6 @@ export const productCategoriesConfig = [
       { key: "herbs-plants", labelEn: "Herbs & Natural Plants", labelAr: "الأعشاب والنباتات الطبية" },
       { key: "spices-seasonings", labelEn: "Spices & Seasonings", labelAr: "التوابل والبهارات" },
       { key: "powdered-juices", labelEn: "Natural Powdered Juices & Ingredients", labelAr: "بودرة العصائر الطبيعية والمكونات" }
-    ]
-  },
-  {
-    division: "industrial" as const,
-    labelEn: "Industrial & Technical Products",
-    labelAr: "المنتجات والمعدات الصناعية والتقنية",
-    descEn: "Hardware and physical measurement instruments, dosing pumps, filtration vessels, and RO modular equipment.",
-    descAr: "حساسات صناعية، أجهزة قياس ذكية، مضخات جرعات، أوعية وفلاتر ترشيح، ووحدات تحلية فيزيائية قابلة للتوريد.",
-    categories: [
-      { key: "all", labelEn: "All Industrial Products", labelAr: "كافة المعدات الصناعية" },
-      { key: "ultrasonic-sensors", labelEn: "Ultrasonic Sensors", labelAr: "حساسات الموجات فوق الصوتية" },
-      { key: "smart-meters", labelEn: "Smart Measurement Devices", labelAr: "أجهزة القياس الذكية" },
-      { key: "industrial-equipment", labelEn: "Industrial Equipment", labelAr: "المعدات الصناعية والتشغيلية" },
-      { key: "filtration-equipment", labelEn: "Water Filtration Equipment", labelAr: "معدات فلترة وتنقية المياه" },
-      { key: "treatment-equipment", labelEn: "Water Treatment Equipment", labelAr: "معدات ووحدات معالجة المياه المادية" }
     ]
   }
 ];

@@ -31,9 +31,9 @@ const aggregateStats = [
     sector: "construction" as SectorId,
   },
   {
-    value: "+20,000",
+    value: "+2,700",
     labelEn: "Apparel Styles & Garment Designs",
-    labelAr: "موديل وتصميم ملابس تم تطويره",
+    labelAr: "موديل وتصميم ملابس معتمد للإنتاج",
     subEn: "Through specialized product development and ready-to-wear production lines.",
     subAr: "عبر أنشطة تطوير المنتجات المتخصصة وخطوط تصنيع الملابس الجاهزة.",
     sector: "garment" as SectorId,

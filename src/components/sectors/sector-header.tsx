@@ -128,16 +128,16 @@ export function SectorHeader({
                   to="/about"
                   className={cn(navPill, "hover:!text-brand-orange")}
                 >
-                  {ar ? "نبذة عنا" : "About Us"}
+                  {ar ? "من نحن" : "About Us"}
                 </Link>
 
                 <Link
                   to="/sectors/$sector"
                   params={{ sector: "construction" }}
                   search={{ tab: "sectors" }}
-                  className={cn(navPill, activeTab === "sectors" && "!text-brand-green bg-white/40 shadow-sm")}
+                  className={cn(navPill, (activeTab === "sectors" || activeTab === "about") && "!text-brand-green bg-white/40 shadow-sm")}
                 >
-                  {ar ? "قطاعاتنا" : "Our Sectors"}
+                  {ar ? "نظرة عامة" : "Overview"}
                 </Link>
 
                 <Link
@@ -171,17 +171,26 @@ export function SectorHeader({
                   search={{ tab: "start-project" }}
                   className={cn(navPill, "bg-brand-green text-white font-bold border border-brand-green hover:bg-brand-orange hover:border-brand-orange hover:text-white transition-all duration-300")}
                 >
-                  {ar ? "ابدأ مشروع" : "Start Project"}
+                  {ar ? "ابدأ مشروعك" : "Start Your Project"}
                 </Link>
               </>
             ) : isGarment ? (
-              /* Custom Garment Navigation: من نحن, قدراتنا, خدماتنا, مشاريعنا, انضم إلينا, ابدأ مشروع */
+              /* Custom Garment Navigation */
               <>
                 <Link
                   to="/about"
                   className={cn(navPill, "hover:!text-brand-orange")}
                 >
                   {ar ? "من نحن" : "About Us"}
+                </Link>
+
+                <Link
+                  to="/sectors/$sector"
+                  params={{ sector: "garment" }}
+                  search={{ tab: "about" }}
+                  className={cn(navPill, (activeTab === "about" || !searchTab) && "!text-brand-orange bg-white/40 shadow-sm")}
+                >
+                  {ar ? "نظرة عامة" : "Overview"}
                 </Link>
 
                 <Link
@@ -224,7 +233,7 @@ export function SectorHeader({
                   search={{ tab: "start-project" }}
                   className={cn(navPill, "bg-brand-green text-white font-bold border border-brand-green hover:bg-brand-orange hover:border-brand-orange hover:text-white transition-all duration-300")}
                 >
-                  {ar ? "ابدأ مشروع" : "Start Project"}
+                  {ar ? "ابدأ طلب تصنيع" : "Start Manufacturing"}
                 </Link>
               </>
             ) : isEnvironmental ? (
@@ -241,9 +250,9 @@ export function SectorHeader({
                   to="/sectors/$sector"
                   params={{ sector: "environmental" }}
                   search={{ tab: "sectors" }}
-                  className={cn(navPill, activeTab === "sectors" && "!text-brand-green bg-white/40 shadow-sm")}
+                  className={cn(navPill, (activeTab === "sectors" || activeTab === "about") && "!text-brand-green bg-white/40 shadow-sm")}
                 >
-                  {ar ? "قطاعاتنا" : "Our Sectors"}
+                  {ar ? "نظرة عامة" : "Overview"}
                 </Link>
 
                 <Link
@@ -277,26 +286,26 @@ export function SectorHeader({
                   search={{ tab: "start-consultation" }}
                   className={cn(navPill, "bg-brand-green text-white font-bold border border-brand-green hover:bg-brand-orange hover:border-brand-orange hover:text-white transition-all duration-300")}
                 >
-                  {ar ? "ابدأ استشارة" : "Start Consultation"}
+                  {ar ? "طلب استشارة" : "Request Consultation"}
                 </Link>
               </>
             ) : isFood ? (
-              /* Custom Food Navigation: نبذة عنا, قطاعاتنا, منتجاتنا, أسواقنا, انضم إلينا, اطلب منتج */
+              /* Custom Food Navigation */
               <>
                 <Link
                   to="/about"
                   className={cn(navPill, "hover:!text-brand-orange")}
                 >
-                  {ar ? "نبذة عنا" : "About Us"}
+                  {ar ? "من نحن" : "About Us"}
                 </Link>
 
                 <Link
                   to="/sectors/$sector"
                   params={{ sector: "food" }}
                   search={{ tab: "sectors" }}
-                  className={cn(navPill, activeTab === "sectors" && "!text-brand-orange bg-white/40 shadow-sm")}
+                  className={cn(navPill, (activeTab === "sectors" || activeTab === "about") && "!text-brand-orange bg-white/40 shadow-sm")}
                 >
-                  {ar ? "قطاعاتنا" : "Our Sectors"}
+                  {ar ? "نظرة عامة" : "Overview"}
                 </Link>
 
                 <Link
@@ -330,7 +339,7 @@ export function SectorHeader({
                   search={{ tab: "order-product" }}
                   className={cn(navPill, "bg-brand-green text-white font-bold border border-brand-green hover:bg-brand-orange hover:border-brand-orange hover:text-white transition-all duration-300")}
                 >
-                  {ar ? "اطلب منتج" : "Order Product"}
+                  {ar ? "طلب عرض توريد" : "Request Quotation"}
                 </Link>
               </>
             ) : (
@@ -522,16 +531,16 @@ export function SectorHeader({
                       onClick={() => setMenuOpen(false)}
                       className={mobileLinkStyle}
                     >
-                      {ar ? "نبذة عنا" : "About Us"}
+                      {ar ? "من نحن" : "About Us"}
                     </Link>
                     <Link
                       to="/sectors/$sector"
                       params={{ sector: "construction" }}
                       search={{ tab: "sectors" }}
                       onClick={() => setMenuOpen(false)}
-                      className={cn(mobileLinkStyle, activeTab === "sectors" && "!text-brand-green bg-white/40")}
+                      className={cn(mobileLinkStyle, (activeTab === "sectors" || activeTab === "about") && "!text-brand-green bg-white/40")}
                     >
-                      {ar ? "قطاعاتنا" : "Our Sectors"}
+                      {ar ? "نظرة عامة" : "Overview"}
                     </Link>
                     <Link
                       to="/sectors/$sector"
@@ -565,7 +574,7 @@ export function SectorHeader({
                       onClick={() => setMenuOpen(false)}
                       className={cn(mobileLinkStyle, "bg-brand-green !text-white font-bold hover:bg-brand-orange transition-colors")}
                     >
-                      {ar ? "ابدأ مشروع" : "Start Project"}
+                      {ar ? "ابدأ مشروعك" : "Start Your Project"}
                     </Link>
                   </>
                 ) : isGarment ? (
@@ -576,6 +585,15 @@ export function SectorHeader({
                       className={mobileLinkStyle}
                     >
                       {ar ? "من نحن" : "About Us"}
+                    </Link>
+                    <Link
+                      to="/sectors/$sector"
+                      params={{ sector: "garment" }}
+                      search={{ tab: "about" }}
+                      onClick={() => setMenuOpen(false)}
+                      className={cn(mobileLinkStyle, (activeTab === "about" || !searchTab) && "!text-brand-orange bg-white/40")}
+                    >
+                      {ar ? "نظرة عامة" : "Overview"}
                     </Link>
                     <Link
                       to="/sectors/$sector"
@@ -618,7 +636,7 @@ export function SectorHeader({
                       onClick={() => setMenuOpen(false)}
                       className={cn(mobileLinkStyle, "bg-brand-green !text-white font-bold hover:bg-brand-orange transition-colors")}
                     >
-                      {ar ? "ابدأ مشروع" : "Start Project"}
+                      {ar ? "ابدأ طلب تصنيع" : "Start Manufacturing"}
                     </Link>
                   </>
                 ) : isEnvironmental ? (
@@ -635,9 +653,9 @@ export function SectorHeader({
                       params={{ sector: "environmental" }}
                       search={{ tab: "sectors" }}
                       onClick={() => setMenuOpen(false)}
-                      className={cn(mobileLinkStyle, activeTab === "sectors" && "!text-brand-green bg-white/40")}
+                      className={cn(mobileLinkStyle, (activeTab === "sectors" || activeTab === "about") && "!text-brand-green bg-white/40")}
                     >
-                      {ar ? "قطاعاتنا" : "Our Sectors"}
+                      {ar ? "نظرة عامة" : "Overview"}
                     </Link>
                     <Link
                       to="/sectors/$sector"
@@ -671,7 +689,7 @@ export function SectorHeader({
                       onClick={() => setMenuOpen(false)}
                       className={cn(mobileLinkStyle, "bg-brand-green !text-white font-bold hover:bg-brand-orange transition-colors")}
                     >
-                      {ar ? "ابدأ استشارة" : "Start Consultation"}
+                      {ar ? "طلب استشارة" : "Request Consultation"}
                     </Link>
                   </>
                 ) : isFood ? (
@@ -681,16 +699,16 @@ export function SectorHeader({
                       onClick={() => setMenuOpen(false)}
                       className={mobileLinkStyle}
                     >
-                      {ar ? "نبذة عنا" : "About Us"}
+                      {ar ? "من نحن" : "About Us"}
                     </Link>
                     <Link
                       to="/sectors/$sector"
                       params={{ sector: "food" }}
                       search={{ tab: "sectors" }}
                       onClick={() => setMenuOpen(false)}
-                      className={cn(mobileLinkStyle, activeTab === "sectors" && "!text-brand-orange bg-white/40")}
+                      className={cn(mobileLinkStyle, (activeTab === "sectors" || activeTab === "about") && "!text-brand-orange bg-white/40")}
                     >
-                      {ar ? "قطاعاتنا" : "Our Sectors"}
+                      {ar ? "نظرة عامة" : "Overview"}
                     </Link>
                     <Link
                       to="/sectors/$sector"
@@ -724,7 +742,7 @@ export function SectorHeader({
                       onClick={() => setMenuOpen(false)}
                       className={cn(mobileLinkStyle, "bg-brand-green !text-white font-bold hover:bg-brand-orange transition-colors")}
                     >
-                      {ar ? "اطلب منتج" : "Order Product"}
+                      {ar ? "طلب عرض توريد" : "Request Quotation"}
                     </Link>
                   </>
                 ) : (
