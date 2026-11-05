@@ -23,6 +23,7 @@ import { Route as NewsRouteImport } from './routes/news'
 import { Route as PartnersRouteImport } from './routes/partners'
 import { Route as ProductsRouteImport } from './routes/products'
 import { Route as SectorsRouteImport } from './routes/sectors'
+import { Route as TradeRouteImport } from './routes/trade'
 import { Route as AdminInquiriesRouteImport } from './routes/admin.inquiries'
 import { Route as JoinIndexRouteImport } from './routes/join.index'
 import { Route as JoinConstructionRouteImport } from './routes/join.construction'
@@ -106,6 +107,11 @@ const SectorsRoute = SectorsRouteImport.update({
   path: '/sectors',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TradeRoute = TradeRouteImport.update({
+  id: '/trade',
+  path: '/trade',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdminInquiriesRoute = AdminInquiriesRouteImport.update({
   id: '/admin/inquiries',
   path: '/admin/inquiries',
@@ -182,6 +188,7 @@ export interface FileRoutesByFullPath {
   '/partners': typeof PartnersRoute
   '/products': typeof ProductsRoute
   '/sectors': typeof SectorsRouteWithChildren
+  '/trade': typeof TradeRoute
   '/admin/inquiries': typeof AdminInquiriesRoute
   '/join/construction': typeof JoinConstructionRoute
   '/join/garment': typeof JoinGarmentRoute
@@ -206,6 +213,7 @@ export interface FileRoutesByTo {
   '/investor-relations': typeof InvestorRelationsRoute
   '/partners': typeof PartnersRoute
   '/products': typeof ProductsRoute
+  '/trade': typeof TradeRoute
   '/admin/inquiries': typeof AdminInquiriesRoute
   '/join/construction': typeof JoinConstructionRoute
   '/join/garment': typeof JoinGarmentRoute
@@ -235,6 +243,7 @@ export interface FileRoutesById {
   '/partners': typeof PartnersRoute
   '/products': typeof ProductsRoute
   '/sectors': typeof SectorsRouteWithChildren
+  '/trade': typeof TradeRoute
   '/admin/inquiries': typeof AdminInquiriesRoute
   '/join/construction': typeof JoinConstructionRoute
   '/join/garment': typeof JoinGarmentRoute
@@ -265,6 +274,7 @@ export interface FileRouteTypes {
     | '/partners'
     | '/products'
     | '/sectors'
+    | '/trade'
     | '/admin/inquiries'
     | '/join/construction'
     | '/join/garment'
@@ -289,6 +299,7 @@ export interface FileRouteTypes {
     | '/investor-relations'
     | '/partners'
     | '/products'
+    | '/trade'
     | '/admin/inquiries'
     | '/join/construction'
     | '/join/garment'
@@ -317,6 +328,7 @@ export interface FileRouteTypes {
     | '/partners'
     | '/products'
     | '/sectors'
+    | '/trade'
     | '/admin/inquiries'
     | '/join/construction'
     | '/join/garment'
@@ -346,6 +358,7 @@ export interface RootRouteChildren {
   PartnersRoute: typeof PartnersRoute
   ProductsRoute: typeof ProductsRoute
   SectorsRoute: typeof SectorsRouteWithChildren
+  TradeRoute: typeof TradeRoute
   AdminInquiriesRoute: typeof AdminInquiriesRoute
 }
 
@@ -447,6 +460,13 @@ declare module '@tanstack/react-router' {
       path: '/sectors'
       fullPath: '/sectors'
       preLoaderRoute: typeof SectorsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/trade': {
+      id: '/trade'
+      path: '/trade'
+      fullPath: '/trade'
+      preLoaderRoute: typeof TradeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admin/inquiries': {
@@ -607,6 +627,7 @@ const rootRouteChildren: RootRouteChildren = {
   PartnersRoute: PartnersRoute,
   ProductsRoute: ProductsRoute,
   SectorsRoute: SectorsRouteWithChildren,
+  TradeRoute: TradeRoute,
   AdminInquiriesRoute: AdminInquiriesRoute,
 }
 export const routeTree = rootRouteImport

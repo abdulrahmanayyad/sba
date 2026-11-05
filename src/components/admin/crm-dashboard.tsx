@@ -57,6 +57,7 @@ import {
   INQUIRY_TYPE_CONFIG,
 } from "@/lib/crm-system";
 import { NewsCmsTab } from "./news-cms-tab";
+import { TradeCmsTab } from "./trade-cms-tab";
 
 export function CrmDashboard() {
   const { language } = useLanguage();
@@ -68,7 +69,7 @@ export function CrmDashboard() {
   const [pinError, setPinError] = useState(false);
 
   // Navigation View Tab
-  const [adminTab, setAdminTab] = useState<"inquiries" | "news">("inquiries");
+  const [adminTab, setAdminTab] = useState<"inquiries" | "news" | "trade">("inquiries");
 
   // Data & Filters
   const [inquiries, setInquiries] = useState<CrmInquiry[]>([]);
@@ -282,6 +283,18 @@ export function CrmDashboard() {
                   >
                     {ar ? "إدارة الأرشيف والتاريخ المؤسسي" : "News Archive & Legacy"}
                   </button>
+                  <button
+                    type="button"
+                    onClick={() => setAdminTab("trade")}
+                    className={cn(
+                      "rounded-full px-3.5 py-1 text-xs font-bold transition-all cursor-pointer",
+                      adminTab === "trade"
+                        ? "!bg-emerald-600 !text-white shadow-sm"
+                        : "text-muted-foreground hover:text-foreground"
+                    )}
+                  >
+                    {ar ? "التجارة الدولية واستيراد Excel" : "Global Trade & Excel CMS"}
+                  </button>
                 </div>
 
                 {adminTab === "inquiries" && (
@@ -303,6 +316,12 @@ export function CrmDashboard() {
             {adminTab === "news" && (
               <div className="mt-8">
                 <NewsCmsTab />
+              </div>
+            )}
+
+            {adminTab === "trade" && (
+              <div className="mt-8">
+                <TradeCmsTab />
               </div>
             )}
 

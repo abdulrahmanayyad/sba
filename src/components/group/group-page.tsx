@@ -15,6 +15,7 @@ import { aboutTabs, divisions, sectorOverviews, strategicPartners, whoWeServe } 
 import { SectorsShowcase } from "./sectors-showcase";
 import { JoinShowcase } from "./join-showcase";
 import { newsArticles } from "@/components/news/news-data";
+import { HomeTradeSection } from "@/components/home/home-trade-section";
 
 
 export function GroupPage() {
@@ -294,6 +295,9 @@ export function GroupPage() {
           </div>
         </Reveal>
       </section>
+
+      {/* International Trade Footprint Section (2025 Market Intelligence) */}
+      <HomeTradeSection ar={ar} />
 
       {/* Latest Corporate News & Industry Insights */}
       <section className="site-container py-14 bg-page-alt/50 rounded-3xl my-8 scroll-mt-24">

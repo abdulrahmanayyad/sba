@@ -183,6 +183,8 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
         document.title = "منتجاتنا — Sami Bin Ayyad";
       } else if (pathname === "/investor-relations") {
         document.title = "علاقات المستثمرين — Sami Bin Ayyad";
+      } else if (pathname === "/trade") {
+        document.title = "التجارة الدولية والأسواق العالمية — Sami Bin Ayyad";
       } else if (pathname === "/sectors") {
         document.title = "قطاعاتنا — Sami Bin Ayyad";
       } else if (sectorSlug) {
@@ -261,6 +263,13 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
         onClick={onNavigate}
       >
         {messages.nav.products}
+      </Link>
+      <Link
+        to="/trade"
+        className={cn(className, "whitespace-nowrap", pathname === "/trade" && navPillActive)}
+        onClick={onNavigate}
+      >
+        {isArabic ? "التجارة الدولية" : "Global Trade"}
       </Link>
       <Link
         to="/partners"
@@ -448,6 +457,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
                   <nav aria-label={messages.accessibility.footerNavigation} className="mt-4 grid gap-2.5">
                     <Link to="/about" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{messages.nav.about}</Link>
                     <Link to="/products" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{messages.nav.products}</Link>
+                    <Link to="/trade" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{isArabic ? "التجارة والأسواق الدولية" : "Global Trade & Markets"}</Link>
                     <Link to="/partners" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{messages.nav.partners}</Link>
                     <Link to="/investor-relations" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{isArabic ? "علاقات المستثمرين" : "Investor Relations"}</Link>
                     <Link to="/news" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{messages.nav.news}</Link>
