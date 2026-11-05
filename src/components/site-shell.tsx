@@ -1,4 +1,4 @@
-import { ArrowUpRight, ChevronDown, Facebook, Globe, Instagram, Linkedin, Mail, Menu, MessageSquare, Phone, ShieldAlert, Sparkles, X } from "lucide-react";
+import { ArrowUpRight, ChevronDown, Facebook, FileText, Globe, Handshake, Instagram, Linkedin, Mail, Menu, MessageSquare, Phone, ShieldAlert, Sparkles, TrendingUp, X } from "lucide-react";
 import { Link, useRouterState } from "@tanstack/react-router";
 
 import { SectorHeader } from "@/components/sectors/sector-header";
@@ -231,7 +231,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
   const isSectorsActive = pathname.startsWith("/sectors");
   const isProductsActive = pathname === "/products" || pathname === "/models";
   const isNewsActive = pathname === "/news";
-  const isInvestorActive = pathname === "/investor-relations";
+  const isMoreActive = pathname === "/trade" || pathname === "/investor-relations" || pathname === "/downloads";
   const isContactActive = pathname.startsWith("/contact") || pathname === "/complaints" || pathname === "/submit-opportunity";
 
   const primaryLinks = (className: string, onNavigate?: () => void) => (
@@ -271,20 +271,6 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
         {messages.nav.products}
       </Link>
       <Link
-        to="/trade"
-        className={cn(className, "whitespace-nowrap", pathname === "/trade" && navPillActive)}
-        onClick={onNavigate}
-      >
-        {isArabic ? "الفرص العالمية" : "Global Opportunities"}
-      </Link>
-      <Link
-        to="/investor-relations"
-        className={cn(className, "whitespace-nowrap", isInvestorActive && navPillActive)}
-        onClick={onNavigate}
-      >
-        {isArabic ? "الشراكات والاستثمار" : "Investment & Partnerships"}
-      </Link>
-      <Link
         to="/partners"
         className={cn(className, "whitespace-nowrap", isPartnersActive && navPillActive)}
         onClick={onNavigate}
@@ -298,13 +284,56 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
       >
         {messages.nav.news}
       </Link>
-      <Link
-        to="/downloads"
-        className={cn(className, "whitespace-nowrap", pathname === "/downloads" && navPillActive)}
-        onClick={onNavigate}
+      <NavDropdown
+        label={isArabic ? "المزيد" : "More"}
+        className={cn(className, "whitespace-nowrap", isMoreActive && navPillActive)}
       >
-        {isArabic ? "مركز الوثائق" : "Document Center"}
-      </Link>
+        {(close) => (
+          <div className="flex flex-col gap-1 p-1">
+            <Link
+              to="/trade"
+              className={dropdownLink}
+              onClick={() => { close(); onNavigate?.(); }}
+            >
+              <div className="flex items-center gap-2">
+                <Globe className="size-4 text-brand-orange shrink-0" />
+                <div className="flex flex-col">
+                  <span className="font-bold">{isArabic ? "الفرص العالمية" : "Global Opportunities"}</span>
+                  <span className="text-[11px] text-foreground/60">{isArabic ? "شبكة التجارة والأسواق الدولية" : "International trade & export network"}</span>
+                </div>
+              </div>
+            </Link>
+
+            <Link
+              to="/investor-relations"
+              className={dropdownLink}
+              onClick={() => { close(); onNavigate?.(); }}
+            >
+              <div className="flex items-center gap-2">
+                <TrendingUp className="size-4 text-emerald-500 shrink-0" />
+                <div className="flex flex-col">
+                  <span className="font-bold">{isArabic ? "الشراكات والاستثمار" : "Investment & Partnerships"}</span>
+                  <span className="text-[11px] text-foreground/60">{isArabic ? "علاقات المستثمرين والتحالفات الكبرى" : "Investor relations & alliances"}</span>
+                </div>
+              </div>
+            </Link>
+
+            <Link
+              to="/downloads"
+              className={dropdownLink}
+              onClick={() => { close(); onNavigate?.(); }}
+            >
+              <div className="flex items-center gap-2">
+                <FileText className="size-4 text-blue-500 shrink-0" />
+                <div className="flex flex-col">
+                  <span className="font-bold">{isArabic ? "مركز الوثائق" : "Document Center"}</span>
+                  <span className="text-[11px] text-foreground/60">{isArabic ? "الملفات المؤسسية والكتالوجات المعتمدة" : "Corporate profiles & catalogues"}</span>
+                </div>
+              </div>
+            </Link>
+          </div>
+        )}
+      </NavDropdown>
       <NavDropdown
         label={isArabic ? "تواصل معنا" : "Contact Us"}
         className={cn(className, "whitespace-nowrap", isContactActive && navPillActive)}
