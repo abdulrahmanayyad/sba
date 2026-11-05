@@ -69,7 +69,7 @@ export function PartnersPage() {
                     </span>
                   </div>
 
-                  <h3 className="font-head text-lg sm:text-xl font-bold text-foreground group-hover:text-brand-orange transition-colors duration-200">
+                  <h3 className="text-center font-head text-lg sm:text-xl font-bold text-foreground group-hover:text-brand-orange transition-colors duration-200">
                     {ar ? partner.nameAr : partner.name}
                   </h3>
 

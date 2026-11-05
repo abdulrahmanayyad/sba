@@ -267,18 +267,18 @@ export function ProductsCataloguePage() {
                   </span>
                 </div>
 
-                <div className="text-xs font-bold text-brand-orange uppercase tracking-wider mb-1">
+                <div className="text-xs font-bold text-brand-orange uppercase tracking-wider mb-1 text-center">
                   {ar ? "القسم الأول: السلع والمعدات" : "SECTION 01: GOODS & HARDWARE"}
                 </div>
-                <h2 className="font-head text-2xl sm:text-3xl font-black text-foreground group-hover:text-brand-orange transition-colors">
+                <h2 className="text-center font-head text-2xl sm:text-3xl font-black text-foreground group-hover:text-brand-orange transition-colors">
                   {ar ? "PRODUCTS | المنتجات" : "PRODUCTS"}
                 </h2>
 
-                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed text-center">
                   "Explore our product portfolio across apparel, textiles, natural food products, and industrial equipment."
                 </p>
 
-                <div className="mt-6 flex flex-wrap gap-2 text-xs">
+                <div className="mt-6 flex flex-wrap justify-center gap-2 text-xs">
                   <span className="rounded-lg bg-secondary px-2.5 py-1 text-foreground/80 font-medium">
                     {ar ? "الملابس والمنسوجات" : "Apparel & Textiles"}
                   </span>
@@ -294,12 +294,7 @@ export function ProductsCataloguePage() {
               <div className="mt-8 pt-6 border-t border-border/60 flex items-center justify-between">
                 <Button
                   type="button"
-                  className={cn(
-                    "rounded-full font-bold text-xs shadow-md transition-all",
-                    activeMode === "products"
-                      ? "bg-brand-orange text-white hover:bg-brand-orange/90"
-                      : "bg-secondary text-foreground hover:bg-brand-orange hover:text-white"
-                  )}
+                  className="rounded-full font-bold text-xs shadow-md transition-all duration-300 bg-brand-green text-white hover:bg-brand-orange"
                 >
                   <span>{ar ? "استكشف المنتجات" : "Explore Products"}</span>
                   <ArrowRight className="size-3.5 ms-2 rtl:rotate-180" />
@@ -331,18 +326,18 @@ export function ProductsCataloguePage() {
                   </span>
                 </div>
 
-                <div className="text-xs font-bold text-brand-green uppercase tracking-wider mb-1">
+                <div className="text-xs font-bold text-brand-green uppercase tracking-wider mb-1 text-center">
                   {ar ? "القسم الثاني: الأعمال والتعاقدات" : "SECTION 02: ENGINEERING & EPC"}
                 </div>
-                <h2 className="font-head text-2xl sm:text-3xl font-black text-foreground group-hover:text-brand-green transition-colors">
+                <h2 className="text-center font-head text-2xl sm:text-3xl font-black text-foreground group-hover:text-brand-green transition-colors">
                   {ar ? "SERVICES & SOLUTIONS | الخدمات والحلول" : "SERVICES & SOLUTIONS"}
                 </h2>
 
-                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed text-center">
                   "Discover our engineering, manufacturing, environmental, and technical capabilities."
                 </p>
 
-                <div className="mt-6 flex flex-wrap gap-2 text-xs">
+                <div className="mt-6 flex flex-wrap justify-center gap-2 text-xs">
                   <span className="rounded-lg bg-secondary px-2.5 py-1 text-foreground/80 font-medium">
                     {ar ? "المقاولات والإنشاءات" : "Construction Contracting"}
                   </span>
@@ -361,12 +356,7 @@ export function ProductsCataloguePage() {
               <div className="mt-8 pt-6 border-t border-border/60 flex items-center justify-between">
                 <Button
                   type="button"
-                  className={cn(
-                    "rounded-full font-bold text-xs shadow-md transition-all",
-                    activeMode === "services"
-                      ? "!bg-brand-green !text-white hover:!bg-brand-orange"
-                      : "bg-secondary text-foreground hover:bg-brand-green hover:text-white"
-                  )}
+                  className="rounded-full font-bold text-xs shadow-md transition-all duration-300 bg-brand-green text-white hover:bg-brand-orange"
                 >
                   <span>{ar ? "استكشف الخدمات والحلول" : "Explore Services"}</span>
                   <ArrowRight className="size-3.5 ms-2 rtl:rotate-180" />
@@ -588,7 +578,7 @@ export function ProductsCataloguePage() {
                   <div className="flex flex-wrap items-center gap-3 shrink-0">
                     <Button
                       asChild
-                      className="rounded-full !bg-brand-orange hover:!bg-brand-orange/90 text-white font-bold text-xs shadow-lg"
+                      className="rounded-full bg-brand-green hover:bg-brand-orange text-white font-bold text-xs shadow-lg transition-all duration-300"
                     >
                       <Link to="/models">
                         <span>{ar ? "فتح كتالوج الموديلات المصنعة" : "Open Garment Models Library"}</span>
@@ -651,11 +641,11 @@ export function ProductsCataloguePage() {
 
                       {/* Content */}
                       <div className="p-6">
-                        <h4 className="font-head text-base sm:text-lg font-bold text-foreground group-hover:text-brand-orange transition-colors leading-snug">
+                        <h4 className="text-center font-head text-base sm:text-lg font-bold text-foreground group-hover:text-brand-orange transition-colors leading-snug">
                           {ar ? product.nameAr : product.nameEn}
                         </h4>
 
-                        <p className="mt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed line-clamp-2">
+                        <p className="mt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed line-clamp-2 text-center">
                           {ar ? product.taglineAr : product.taglineEn}
                         </p>
 
@@ -687,10 +677,9 @@ export function ProductsCataloguePage() {
                     <div className="p-6 pt-0 border-t border-border/40 mt-2 flex items-center gap-2">
                       <Button
                         type="button"
-                        variant="outline"
                         size="sm"
                         onClick={() => setActiveProductDetail(product)}
-                        className="flex-1 rounded-full text-xs font-bold border-border hover:bg-secondary"
+                        className="flex-1 rounded-full text-xs font-bold bg-brand-green text-white hover:bg-brand-orange transition-all duration-300"
                       >
                         <ZoomIn className="size-3.5 me-1.5" />
                         <span>{ar ? "استعراض المواصفات" : "View Product"}</span>
@@ -704,7 +693,7 @@ export function ProductsCataloguePage() {
                           setIsRfqSubmitted(false);
                           setGeneratedRfqCode(`RFQ-SBA-${Math.floor(1000 + Math.random() * 9000)}`);
                         }}
-                        className="rounded-full !bg-brand-orange hover:!bg-brand-orange/90 text-white text-xs font-bold px-3.5"
+                        className="rounded-full bg-brand-green text-white hover:bg-brand-orange transition-all duration-300 text-xs font-bold px-3.5"
                       >
                         <Send className="size-3.5 me-1.5" />
                         <span>{ar ? "طلب عرض سعر" : "Quote"}</span>
@@ -919,10 +908,10 @@ export function ProductsCataloguePage() {
                       </div>
 
                       <div className="p-6">
-                        <h4 className="font-head text-lg font-bold text-foreground group-hover:text-brand-green transition-colors">
+                        <h4 className="text-center font-head text-lg font-bold text-foreground group-hover:text-brand-green transition-colors">
                           {ar ? proj.nameAr : proj.nameEn}
                         </h4>
-                        <p className="mt-3 text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                        <p className="mt-3 text-xs sm:text-sm text-muted-foreground leading-relaxed text-center">
                           {ar ? proj.scopeAr : proj.scopeEn}
                         </p>
                       </div>
@@ -974,11 +963,11 @@ export function ProductsCataloguePage() {
 
                           {/* Content */}
                           <div className="p-6">
-                            <h4 className="font-head text-base sm:text-lg font-bold text-foreground group-hover:text-brand-green transition-colors leading-snug">
+                            <h4 className="text-center font-head text-base sm:text-lg font-bold text-foreground group-hover:text-brand-green transition-colors leading-snug">
                               {ar ? service.nameAr : service.nameEn}
                             </h4>
 
-                            <p className="mt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed line-clamp-3">
+                            <p className="mt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed line-clamp-3 text-center">
                               {ar ? service.descriptionAr : service.descriptionEn}
                             </p>
 
@@ -1035,10 +1024,9 @@ export function ProductsCataloguePage() {
                         <div className="p-6 pt-0 border-t border-border/40 mt-2 flex items-center gap-2">
                           <Button
                             type="button"
-                            variant="outline"
                             size="sm"
                             onClick={() => setActiveServiceDetail(service)}
-                            className="flex-1 rounded-full text-xs font-bold border-border hover:bg-secondary"
+                            className="flex-1 rounded-full text-xs font-bold bg-brand-green text-white hover:bg-brand-orange transition-all duration-300"
                           >
                             <FileText className="size-3.5 me-1.5" />
                             <span>{ar ? "تفاصيل الحل ونطاق العمل" : "Scope Details"}</span>
@@ -1052,7 +1040,7 @@ export function ProductsCataloguePage() {
                               setIsConsultSubmitted(false);
                               setGeneratedConsultCode(`SRV-REQ-${Math.floor(1000 + Math.random() * 9000)}`);
                             }}
-                            className="rounded-full !bg-brand-green hover:!bg-brand-orange text-white text-xs font-bold px-3.5 transition-colors"
+                            className="rounded-full bg-brand-green hover:bg-brand-orange text-white text-xs font-bold px-3.5 transition-all duration-300"
                           >
                             <Briefcase className="size-3.5 me-1.5" />
                             <span>{ar ? "طلب استشارة" : "Consult"}</span>
@@ -1176,7 +1164,7 @@ export function ProductsCataloguePage() {
                     setIsRfqSubmitted(false);
                     setGeneratedRfqCode(`RFQ-SBA-${Math.floor(1000 + Math.random() * 9000)}`);
                   }}
-                  className="rounded-full !bg-brand-orange text-white hover:!bg-brand-orange/90 font-bold text-xs"
+                  className="rounded-full bg-brand-green text-white hover:bg-brand-orange font-bold text-xs transition-all duration-300"
                 >
                   <Send className="size-3.5 me-1.5" />
                   <span>{ar ? "طلب عرض سعر رسمي (RFQ)" : "Request Formal Quotation"}</span>
@@ -1446,7 +1434,7 @@ export function ProductsCataloguePage() {
 
                     <Button
                       type="submit"
-                      className="rounded-full !bg-brand-orange text-white hover:!bg-brand-orange/90 font-bold text-xs"
+                      className="rounded-full bg-brand-green text-white hover:bg-brand-orange font-bold text-xs transition-all duration-300"
                     >
                       <Send className="size-3.5 me-1.5" />
                       <span>{ar ? "إرسال طلب التسعير" : "Submit Quotation Request"}</span>

@@ -333,10 +333,10 @@ function FoodAboutTab({
                     </span>
                     <CheckCircle2 className="size-4 text-brand-green-text" />
                   </div>
-                  <h4 className="font-head text-base font-bold text-foreground mb-1 group-hover:text-brand-orange transition-colors">
+                  <h4 className="text-center font-head text-base font-bold text-foreground mb-1 group-hover:text-brand-orange transition-colors">
                     {ar ? v.titleAr : v.titleEn}
                   </h4>
-                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed text-center">
                     {ar ? v.descAr : v.descEn}
                   </p>
                 </div>
@@ -388,10 +388,10 @@ function FoodAboutTab({
                         </div>
                       </div>
 
-                      <h3 className="font-head text-lg sm:text-xl font-bold text-foreground mb-2 group-hover:text-brand-orange transition-colors">
+                      <h3 className="text-center font-head text-lg sm:text-xl font-bold text-foreground mb-2 group-hover:text-brand-orange transition-colors">
                         {ar ? sec.nameAr : sec.nameEn}
                       </h3>
-                      <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed mb-4">
+                      <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed mb-4 text-center">
                         {ar ? sec.descAr : sec.descEn}
                       </p>
 
@@ -409,7 +409,7 @@ function FoodAboutTab({
                       to="/sectors/$sector"
                       params={{ sector: "food" }}
                       search={{ tab: "products" }}
-                      className="inline-flex items-center justify-between rounded-2xl bg-secondary/80 px-4 py-2.5 text-xs font-bold text-foreground hover:bg-brand-orange hover:text-white transition-all duration-300"
+                      className="inline-flex items-center justify-between rounded-2xl bg-brand-green px-4 py-2.5 text-xs font-bold text-white hover:bg-brand-orange transition-all duration-300"
                     >
                       <span>{ar ? "استعراض الأصناف والمواصفات" : "View Items & Specs"}</span>
                       <ChevronRight className="size-4 rtl:rotate-180" />
@@ -911,10 +911,10 @@ function FoodAboutTab({
                       </div>
                     </div>
 
-                    <h4 className="font-head text-base font-bold text-foreground mb-1 group-hover:text-brand-orange transition-colors">
+                    <h4 className="text-center font-head text-base font-bold text-foreground mb-1 group-hover:text-brand-orange transition-colors">
                       {ar ? prod.nameAr : prod.nameEn}
                     </h4>
-                    <p className="text-xs text-muted-foreground leading-relaxed line-clamp-2 mb-3">
+                    <p className="text-xs text-muted-foreground leading-relaxed line-clamp-2 mb-3 text-center">
                       {ar ? prod.productOverviewAr : prod.productOverviewEn}
                     </p>
 
@@ -1939,7 +1939,7 @@ function FoodOrderProductTab({
 
             <Button
               type="submit"
-              className="w-full rounded-full bg-brand-orange py-4 text-sm font-bold text-white shadow-xl shadow-brand-orange/30 hover:bg-brand-green transition-all duration-300 hover:scale-[1.01] active:scale-95"
+              className="w-full rounded-full bg-brand-green py-4 text-sm font-bold text-white shadow-xl shadow-brand-green/30 hover:bg-brand-orange transition-all duration-300 hover:scale-[1.01] active:scale-95"
             >
               <Send className="size-4 me-2 rtl:rotate-180" />
               <span>{ar ? "تأكيد وإرسال طلب عرض التوريد (RFQ)" : "Confirm & Dispatch Supply Proposal (RFQ)"}</span>
@@ -2127,7 +2127,7 @@ function ProductDossierDialog({
               </button>
               <Button
                 onClick={() => onRequestQuotation(product)}
-                className="rounded-full bg-brand-orange px-6 py-2.5 text-xs font-bold text-white shadow-lg shadow-brand-orange/30 hover:bg-brand-green transition-all"
+                className="rounded-full bg-brand-green px-6 py-2.5 text-xs font-bold text-white shadow-lg shadow-brand-green/30 hover:bg-brand-orange transition-all"
               >
                 <Send className="size-3.5 me-1.5 rtl:rotate-180" />
                 <span>{ar ? "طلب عرض سعر لهذا المنتج" : "Request Quotation for Product"}</span>

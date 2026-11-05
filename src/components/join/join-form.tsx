@@ -387,21 +387,21 @@ Attached Files: ${files.map((f) => f.name).join(", ") || "None"}
             </div>
 
             <div className="mt-6 border-t border-border pt-6">
-              <h4 className="font-head text-sm font-bold text-foreground mb-3">
+              <h4 className="text-center font-head text-sm font-bold text-foreground mb-3">
                 {ar ? "بياناتك محفوظة جاهزة! يمكنك إرسالها مباشرة الآن عبر القنوات المعتمدة:" : "Your application data is intact! Send it directly through verified channels:"}
               </h4>
 
               <div className="grid gap-3 sm:grid-cols-2">
-                <Button asChild size="lg" className="rounded-2xl bg-brand-green hover:bg-brand-orange text-white w-full">
+                <Button asChild size="lg" className="rounded-2xl bg-brand-green hover:bg-brand-orange text-white w-full transition-all duration-300">
                   <a href={mailtoHref}>
                     <Mail className="size-4 me-2" />
                     {ar ? "إرسال بالبريد الإلكتروني الرسمي" : "Send via Official Email"}
                   </a>
                 </Button>
 
-                <Button asChild size="lg" variant="outline" className="rounded-2xl border-brand-green/40 hover:bg-brand-green/10 w-full">
+                <Button asChild size="lg" className="rounded-2xl bg-brand-green hover:bg-brand-orange text-white w-full transition-all duration-300">
                   <a href={whatsappHref} target="_blank" rel="noreferrer">
-                    <MessageCircle className="size-4 me-2 text-brand-green" />
+                    <MessageCircle className="size-4 me-2 text-white" />
                     {ar ? "إرسال فوري عبر واتساب" : "Send Instant via WhatsApp"}
                   </a>
                 </Button>

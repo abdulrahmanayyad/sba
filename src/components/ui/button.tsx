@@ -1,4 +1,4 @@
-﻿import * as React from "react";
+import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
 
@@ -9,16 +9,16 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
-        primary: "bg-primary text-primary-foreground hover:bg-primary-hover",
-        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border border-foreground bg-transparent hover:bg-foreground hover:text-background",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
-        nav: "text-foreground hover:text-brand-green",
-        language: "text-muted-foreground hover:text-foreground",
-        icon: "border border-border bg-transparent text-foreground hover:bg-secondary",
+        default: "!bg-brand-green !text-white hover:!bg-brand-orange hover:!text-white shadow-sm transition-all duration-300",
+        primary: "!bg-brand-green !text-white hover:!bg-brand-orange hover:!text-white shadow-sm transition-all duration-300",
+        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90 transition-all duration-300",
+        outline: "!bg-brand-green !text-white hover:!bg-brand-orange hover:!text-white border border-transparent shadow-sm transition-all duration-300",
+        secondary: "!bg-brand-green !text-white hover:!bg-brand-orange hover:!text-white shadow-sm transition-all duration-300",
+        ghost: "hover:bg-brand-green/10 hover:text-brand-green transition-all duration-300",
+        link: "text-brand-green underline-offset-4 hover:underline hover:text-brand-orange transition-all duration-300",
+        nav: "text-foreground hover:text-brand-orange transition-all duration-300",
+        language: "text-muted-foreground hover:text-foreground transition-all duration-300",
+        icon: "border border-border bg-white/70 backdrop-blur-md text-foreground hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-all duration-300",
       },
       size: {
         default: "h-9 px-4 py-2",

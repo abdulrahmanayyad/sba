@@ -230,7 +230,7 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
                 </Link>
               </Button>
 
-              <Button asChild variant="outline" size="default" className="rounded-full">
+              <Button asChild size="default" className="rounded-full bg-brand-green text-white hover:bg-brand-orange shadow-md transition-all duration-300">
                 <Link to="/sectors/$sector" params={{ sector: "construction" }} search={{ tab: "start-project" }}>
                   <span>{ar ? "ابدأ مشروعك معنا" : "Start Your Project"}</span>
                 </Link>
@@ -293,7 +293,7 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
                     </span>
                     <Wrench className="size-4 text-brand-orange" />
                   </div>
-                  <h3 className="font-head text-base sm:text-lg font-bold text-foreground">
+                  <h3 className="text-center font-head text-base sm:text-lg font-bold text-foreground">
                     {ar ? cap.titleAr : cap.titleEn}
                   </h3>
                   <p className="mt-2.5 text-xs sm:text-sm leading-relaxed text-muted-foreground">
@@ -325,7 +325,7 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
                 {ar ? "12 تخصصًا إنشائيًا وهندسيًا متكاملًا" : "12 Core Engineering & Construction Disciplines"}
               </h2>
             </div>
-            <Button asChild variant="outline" size="sm" className="rounded-full">
+            <Button asChild size="sm" className="rounded-full bg-brand-green text-white hover:bg-brand-orange transition-all duration-300">
               <Link to="/sectors/$sector" params={{ sector: "construction" }} search={{ tab: "services" }}>
                 <span>{ar ? "استعراض كافة الخدمات بالتفصيل" : "View All 12 Services Detailed"}</span>
                 <ArrowRight className="size-3.5 ms-1.5 rtl:rotate-180" />
@@ -344,7 +344,7 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
                     <span className="font-mono text-xs font-bold text-brand-orange">{srv.number}</span>
                     <Building className="size-3.5 text-muted-foreground" />
                   </div>
-                  <h4 className="font-head text-sm font-bold text-foreground line-clamp-1">
+                  <h4 className="text-center font-head text-sm font-bold text-foreground line-clamp-1">
                     {ar ? srv.titleAr : srv.title}
                   </h4>
                   <p className="mt-2 text-xs leading-relaxed text-muted-foreground line-clamp-3">
@@ -446,7 +446,7 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
                     <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-brand-green/10 font-mono text-xs font-bold text-brand-green-text group-hover:bg-brand-green group-hover:text-white transition-colors">
                       0{idx + 1}
                     </span>
-                    <h3 className="font-head text-base font-bold text-foreground group-hover:text-brand-green transition-colors">{ar ? pillar.titleAr : pillar.title}</h3>
+                    <h3 className="text-center font-head text-base font-bold text-foreground group-hover:text-brand-green transition-colors">{ar ? pillar.titleAr : pillar.title}</h3>
                   </div>
                   <p className="mt-4 text-sm leading-6 text-muted-foreground">{ar ? pillar.bodyAr : pillar.body}</p>
                 </div>
@@ -471,7 +471,7 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
               <Reveal key={step.number}>
                 <div className="flex h-full flex-col rounded-2xl border border-white/20 bg-background/60 p-6 backdrop-blur-xl shadow-sm transition-all duration-300 hover:scale-[1.03] hover:shadow-xl hover:border-brand-orange/60 active:scale-[0.98] cursor-pointer">
                   <span className="font-mono text-xs font-bold text-brand-orange-text">{step.number}</span>
-                  <h3 className="mt-2 font-head text-base font-semibold text-foreground">{ar ? step.titleAr : step.title}</h3>
+                  <h3 className="mt-2 text-center font-head text-base font-semibold text-foreground">{ar ? step.titleAr : step.title}</h3>
                   <p className="mt-3 text-xs leading-5 text-muted-foreground">{ar ? step.bodyAr : step.body}</p>
                 </div>
               </Reveal>
@@ -503,10 +503,10 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
                       </span>
                       <Award className="size-4 text-brand-orange" />
                     </div>
-                    <h4 className="font-head text-sm font-bold text-foreground">
+                    <h4 className="text-center font-head text-sm font-bold text-foreground">
                       {ar ? cred.titleAr : cred.titleEn}
                     </h4>
-                    <p className="text-[11px] text-brand-orange font-semibold mt-1">
+                    <p className="text-[11px] text-center text-brand-orange font-semibold mt-1">
                       {ar ? cred.issuerAr : cred.issuerEn}
                     </p>
                     <p className="mt-2.5 text-xs text-muted-foreground leading-relaxed">
@@ -566,10 +566,10 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
                       </div>
                     </div>
                     <div className="p-5">
-                      <h4 className="font-head text-base font-bold text-foreground line-clamp-1">
+                      <h4 className="text-center font-head text-base font-bold text-foreground line-clamp-1">
                         {ar ? proj.nameAr : proj.nameEn}
                       </h4>
-                      <p className="text-xs text-muted-foreground mt-1 line-clamp-1">
+                      <p className="text-xs text-muted-foreground mt-1 line-clamp-1 text-center">
                         {ar ? proj.clientAr : proj.clientEn}
                       </p>
                       <div className="mt-3 pt-3 border-t border-border flex items-center justify-between text-xs">
@@ -579,7 +579,7 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
                     </div>
                   </div>
                   <div className="p-5 pt-0">
-                    <Button asChild variant="outline" size="sm" className="w-full rounded-2xl text-xs font-bold">
+                    <Button asChild size="sm" className="w-full rounded-2xl text-xs font-bold bg-brand-green text-white hover:bg-brand-orange transition-all duration-300">
                       <Link to="/sectors/$sector" params={{ sector: "construction" }} search={{ tab: "projects" }}>
                         <span>{ar ? "تفاصيل وطلب التحقق" : "Details & Verify"}</span>
                         <ArrowRight className="size-3 ms-1 rtl:rotate-180" />
@@ -619,7 +619,7 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
                   </Link>
                 </Button>
 
-                <Button asChild variant="outline" size="lg" className="rounded-full">
+                <Button asChild size="lg" className="rounded-full bg-brand-green text-white hover:bg-brand-orange shadow-md transition-all duration-300">
                   <Link to="/sectors/$sector" params={{ sector: "construction" }} search={{ tab: "projects" }}>
                     <span>{ar ? "استعراض سابقة الأعمال المعتمدة" : "Review Track Record"}</span>
                   </Link>

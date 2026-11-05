@@ -1,4 +1,4 @@
-﻿import { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -59,7 +59,7 @@ export function JourneySection({ ar }: { ar: boolean }) {
                     0{idx + 1}
                   </span>
                 </div>
-                <h3 className="font-head text-lg font-bold text-foreground leading-snug">
+                <h3 className="text-center font-head text-lg font-bold text-foreground leading-snug">
                   {ar ? item.titleAr : item.title}
                 </h3>
               </div>

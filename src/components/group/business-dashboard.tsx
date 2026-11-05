@@ -748,12 +748,12 @@ export function WhatWeOfferSection({ ar }: { ar: boolean }) {
               key={s.id}
               className="rounded-3xl border border-white/20 bg-background/80 p-6 sm:p-8 backdrop-blur-2xl shadow-lg transition-all duration-300 hover:shadow-xl hover:border-brand-green/35 hover:scale-[1.005]"
             >
-              <div className="flex items-center justify-between flex-wrap gap-4 border-b border-border/60 pb-5 mb-6">
+              <div className="w-full text-center border-b border-border/60 pb-5 mb-6">
                 <div>
-                  <h4 className="font-head text-lg sm:text-xl font-bold text-foreground">
+                  <h4 className="text-center font-head text-lg sm:text-xl font-bold text-foreground">
                     {t(s.name)}
                   </h4>
-                  <span className={cn("text-xs font-bold text-brand-orange", ar ? "font-sans" : "font-mono")}>
+                  <span className={cn("text-xs font-bold text-brand-orange block mt-1", ar ? "font-sans" : "font-mono")}>
                     {data.items.length} {ar ? "خدمات ومشروعات رئيسية" : "Specialized Capabilities"}
                   </span>
                 </div>

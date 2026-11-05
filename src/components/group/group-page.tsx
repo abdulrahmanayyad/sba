@@ -87,7 +87,7 @@ export function GroupPage() {
                   {ar ? "استكشف قطاعاتنا" : "Explore Our Sectors"} <ArrowRight className="size-4 rtl:rotate-180" />
                 </a>
               </Button>
-              <Button asChild variant="outline" size="lg" className="rounded-full border-border bg-secondary/80 px-7 py-3 font-head text-sm font-bold transition-all duration-300 hover:bg-brand-orange hover:text-white hover:border-brand-orange hover:scale-105 active:scale-95 cursor-pointer">
+              <Button asChild size="lg" className="rounded-full bg-brand-green text-white hover:bg-brand-orange px-7 py-3 font-head text-sm font-bold transition-all duration-300 hover:scale-105 active:scale-95 shadow-md cursor-pointer">
                 <Link to="/about">
                   {ar ? "رحلة المجموعة وتاريخها" : "Our Group Story & History"}
                 </Link>
@@ -102,15 +102,15 @@ export function GroupPage() {
         <Reveal>
           <div className="grid gap-6 md:grid-cols-2">
             {/* Vision Card */}
-            <div className="group relative overflow-hidden rounded-3xl border border-white/25 bg-background/80 p-8 shadow-lg backdrop-blur-2xl transition-all duration-300 hover:scale-[1.01] hover:shadow-2xl hover:border-brand-orange/50">
+            <div className="group relative overflow-hidden rounded-3xl border border-white/25 bg-background/80 p-8 shadow-lg backdrop-blur-2xl transition-all duration-300 hover:scale-[1.01] hover:shadow-2xl hover:border-brand-orange/50 text-center">
               <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
                 <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
                 <span className="font-bold text-brand-green">{ar ? "رؤيتنا" : "Our Vision"}</span>
               </div>
-              <h3 className="font-head text-xl sm:text-2xl font-extrabold text-foreground leading-snug">
+              <h3 className="text-center font-head text-xl sm:text-2xl font-extrabold text-foreground leading-snug">
                 {ar ? "شريك موثوق وقيمة مستدامة للعملاء والشركاء" : "A Trusted Business Partner Creating Lasting Value"}
               </h3>
-              <p className="mt-4 text-sm sm:text-base leading-7 text-muted-foreground">
+              <p className="mt-4 text-sm sm:text-base leading-7 text-muted-foreground text-center">
                 {ar
                   ? "أن نكون شريكًا موثوقًا في القطاعات التي نعمل بها، وأن نبني أعمالًا قابلة للنمو تحقق قيمة للعملاء والشركاء."
                   : "To become a trusted business partner in our chosen sectors, building businesses that create lasting value for clients and partners."}
@@ -118,15 +118,15 @@ export function GroupPage() {
             </div>
 
             {/* Mission Card */}
-            <div className="group relative overflow-hidden rounded-3xl border border-white/25 bg-background/80 p-8 shadow-lg backdrop-blur-2xl transition-all duration-300 hover:scale-[1.01] hover:shadow-2xl hover:border-brand-orange/50">
+            <div className="group relative overflow-hidden rounded-3xl border border-white/25 bg-background/80 p-8 shadow-lg backdrop-blur-2xl transition-all duration-300 hover:scale-[1.01] hover:shadow-2xl hover:border-brand-orange/50 text-center">
               <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
                 <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
                 <span className="font-bold text-brand-green">{ar ? "رسالتنا" : "Our Mission"}</span>
               </div>
-              <h3 className="font-head text-xl sm:text-2xl font-extrabold text-foreground leading-snug">
+              <h3 className="text-center font-head text-xl sm:text-2xl font-extrabold text-foreground leading-snug">
                 {ar ? "تحويل الاحتياجات إلى نطاق عمل وحلول عملية" : "Translating Client Needs into Practical Solutions"}
               </h3>
-              <p className="mt-4 text-sm sm:text-base leading-7 text-muted-foreground">
+              <p className="mt-4 text-sm sm:text-base leading-7 text-muted-foreground text-center">
                 {ar
                   ? "تحويل احتياجات العملاء إلى نطاق عمل واضح وحلول قابلة للتنفيذ، من خلال تطوير الكفاءات وتحسين العمليات والاستخدام المسؤول للموارد."
                   : "To translate client needs into clearly defined work and practical solutions through capable teams, coordinated delivery and responsible use of resources."}
@@ -272,7 +272,7 @@ export function GroupPage() {
                     </span>
                     <Handshake className="size-4 text-brand-green" />
                   </div>
-                  <h3 className="font-head text-base font-bold text-foreground group-hover:text-brand-orange transition-colors">
+                  <h3 className="text-center font-head text-base font-bold text-foreground group-hover:text-brand-orange transition-colors">
                     {ar ? p.nameAr : p.name}
                   </h3>
                   <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
@@ -335,7 +335,7 @@ export function GroupPage() {
                     </div>
                   </div>
                   <div className="p-5 sm:p-6">
-                    <h3 className="font-head text-base sm:text-lg font-bold text-foreground leading-snug group-hover:text-brand-orange transition-colors">
+                    <h3 className="text-center font-head text-base sm:text-lg font-bold text-foreground leading-snug group-hover:text-brand-orange transition-colors">
                       {ar ? article.titleAr : article.titleEn}
                     </h3>
                     <p className="mt-2.5 text-xs sm:text-sm text-muted-foreground leading-relaxed line-clamp-3">
@@ -384,7 +384,7 @@ export function GroupPage() {
                     {ar ? "طلب اجتماع استثماري" : "Request Investment Meeting"} <ArrowRight className="size-4 rtl:rotate-180" />
                   </Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="rounded-full border-border bg-background/80 px-6 py-3 font-head text-xs sm:text-sm font-bold transition-all hover:bg-brand-orange hover:text-white hover:border-brand-orange cursor-pointer">
+                <Button asChild size="lg" className="rounded-full bg-brand-green text-white px-6 py-3 font-head text-xs sm:text-sm font-bold shadow-lg transition-all hover:bg-brand-orange hover:scale-105 active:scale-95 cursor-pointer">
                   <Link to="/partners">
                     {ar ? "استكشف نماذج التعاون" : "Explore Partnership Models"}
                   </Link>
@@ -417,12 +417,12 @@ export function GroupPage() {
                     {ar ? "بدء مشروع" : "Start a Project"}
                   </Link>
                 </Button>
-                <Button asChild size="sm" variant="outline" className="rounded-full border-border bg-secondary/80 text-xs font-bold hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-colors cursor-pointer">
+                <Button asChild size="sm" className="rounded-full bg-brand-green text-white text-xs font-bold hover:bg-brand-orange transition-colors cursor-pointer">
                   <Link to="/partners">
                     {ar ? "كن شريكًا" : "Become a Partner"}
                   </Link>
                 </Button>
-                <Button asChild size="sm" variant="outline" className="rounded-full border-border bg-secondary/80 text-xs font-bold hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-colors cursor-pointer">
+                <Button asChild size="sm" className="rounded-full bg-brand-green text-white text-xs font-bold hover:bg-brand-orange transition-colors cursor-pointer">
                   <Link to="/join/group">
                     {ar ? "فرص الاستثمار" : "Explore Investment"}
                   </Link>

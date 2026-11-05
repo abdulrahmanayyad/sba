@@ -301,7 +301,7 @@ export function NewsDetailPage({ slug }: { slug: string }) {
             {/* Related Sector Articles */}
             {relatedArticles.length > 0 && (
               <div className="rounded-3xl border border-white/20 bg-background/85 p-6 shadow-md backdrop-blur-xl">
-                <h3 className="font-head text-base font-bold text-foreground mb-4">
+                <h3 className="text-center font-head text-base font-bold text-foreground mb-4">
                   {ar ? "تقارير أخرى من نفس القطاع" : "Related Sector Reports"}
                 </h3>
 
@@ -324,9 +324,9 @@ export function NewsDetailPage({ slug }: { slug: string }) {
             )}
 
             {/* Media & Communications Desk */}
-            <div className="rounded-3xl border border-brand-green/30 bg-gradient-to-br from-brand-green/10 via-background/80 to-secondary/40 p-6 shadow-md backdrop-blur-xl">
+            <div className="rounded-3xl border border-brand-green/30 bg-gradient-to-br from-brand-green/10 via-background/80 to-secondary/40 p-6 shadow-md backdrop-blur-xl text-center">
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse inline-block mb-3" />
-              <h3 className="font-head text-base font-bold text-foreground">
+              <h3 className="text-center font-head text-base font-bold text-foreground">
                 {ar ? "المكتب الإعلامي والتواصل المؤسسي" : "Media & Corporate Inquiries"}
               </h3>
               <p className="mt-2 text-xs text-muted-foreground leading-relaxed">

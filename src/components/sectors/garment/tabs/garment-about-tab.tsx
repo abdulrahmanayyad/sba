@@ -122,7 +122,7 @@ export function GarmentAboutTab() {
                 </Link>
               </Button>
 
-              <Button asChild variant="outline" size="default" className="rounded-full">
+              <Button asChild size="default" className="rounded-full bg-brand-green text-white hover:bg-brand-orange shadow-md transition-all duration-300">
                 <Link to="/sectors/$sector" params={{ sector: "garment" }} search={{ tab: "start-project" }}>
                   <span>{ar ? "ابدأ طلب التصنيع والتوريد" : "Start Manufacturing Project"}</span>
                 </Link>
@@ -133,28 +133,28 @@ export function GarmentAboutTab() {
 
         {/* Vision & Mission Cards */}
         <div className="mt-8 grid gap-6 md:grid-cols-2">
-          <div className="group rounded-3xl border border-brand-green/30 bg-card/75 p-8 shadow-sm backdrop-blur-sm transition-all duration-300 hover:scale-[1.01] hover:border-brand-green hover:shadow-xl">
+          <div className="group rounded-3xl border border-brand-green/30 bg-card/75 p-8 shadow-sm backdrop-blur-sm transition-all duration-300 hover:scale-[1.01] hover:border-brand-green hover:shadow-xl text-center">
             <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3 py-0.5 text-xs font-bold text-brand-orange">
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
               <span>{ar ? whoWeAre.vision.titleAr : whoWeAre.vision.title}</span>
             </div>
-            <h3 className="mt-3 font-head text-xl font-bold text-foreground">
+            <h3 className="mt-3 text-center font-head text-xl font-bold text-foreground">
               {ar ? whoWeAre.vision.titleAr : whoWeAre.vision.title}
             </h3>
-            <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+            <p className="mt-3 text-sm text-muted-foreground leading-relaxed text-center">
               {ar ? whoWeAre.vision.descAr : whoWeAre.vision.desc}
             </p>
           </div>
 
-          <div className="group rounded-3xl border border-brand-green/30 bg-card/75 p-8 shadow-sm backdrop-blur-sm transition-all duration-300 hover:scale-[1.01] hover:border-brand-green hover:shadow-xl">
+          <div className="group rounded-3xl border border-brand-green/30 bg-card/75 p-8 shadow-sm backdrop-blur-sm transition-all duration-300 hover:scale-[1.01] hover:border-brand-green hover:shadow-xl text-center">
             <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3 py-0.5 text-xs font-bold text-brand-orange">
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
               <span>{ar ? whoWeAre.mission.titleAr : whoWeAre.mission.title}</span>
             </div>
-            <h3 className="mt-3 font-head text-xl font-bold text-foreground">
+            <h3 className="mt-3 text-center font-head text-xl font-bold text-foreground">
               {ar ? whoWeAre.mission.titleAr : whoWeAre.mission.title}
             </h3>
-            <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+            <p className="mt-3 text-sm text-muted-foreground leading-relaxed text-center">
               {ar ? whoWeAre.mission.descAr : whoWeAre.mission.desc}
             </p>
           </div>
@@ -184,8 +184,8 @@ export function GarmentAboutTab() {
               {capabilities.slice(0, 5).map((cap) => (
                 <div key={cap.id} className="rounded-2xl border border-border bg-secondary/30 p-4 backdrop-blur-md flex flex-col justify-between hover:border-brand-green transition-colors">
                   <div>
-                    <span className="font-mono text-xs font-bold text-brand-orange-text block mb-2">{cap.number}</span>
-                    <h4 className="font-head text-sm font-bold text-foreground">{ar ? cap.titleAr : cap.titleEn}</h4>
+                    <span className="font-mono text-xs font-bold text-brand-orange-text block mb-2 text-center">{cap.number}</span>
+                    <h4 className="text-center font-head text-sm font-bold text-foreground">{ar ? cap.titleAr : cap.titleEn}</h4>
                     <p className="mt-2 text-xs text-muted-foreground leading-relaxed line-clamp-3">{ar ? cap.leadAr : cap.leadEn}</p>
                   </div>
                 </div>
@@ -276,7 +276,7 @@ export function GarmentAboutTab() {
                       <span className="font-mono text-xs font-bold text-brand-green-text">{srv.number}</span>
                       <span className="text-[11px] font-bold text-brand-orange">{srv.id.toUpperCase()}</span>
                     </div>
-                    <h4 className="font-head text-base font-bold text-foreground group-hover:text-brand-green transition-colors">
+                    <h4 className="text-center font-head text-base font-bold text-foreground group-hover:text-brand-green transition-colors">
                       {ar ? srv.titleAr : srv.titleEn}
                     </h4>
                     <p className="mt-2 text-xs text-muted-foreground leading-relaxed line-clamp-3">
@@ -317,7 +317,7 @@ export function GarmentAboutTab() {
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {categories.map((cat) => (
               <div key={cat.id} className="group rounded-2xl border border-white/20 bg-background/70 p-5 backdrop-blur-xl shadow-sm transition hover:border-brand-orange hover:shadow-lg">
-                <h4 className="font-head text-sm font-bold text-foreground group-hover:text-brand-orange transition-colors">
+                <h4 className="text-center font-head text-sm font-bold text-foreground group-hover:text-brand-orange transition-colors">
                   {ar ? cat.nameAr : cat.nameEn}
                 </h4>
                 <p className="mt-1.5 text-xs text-muted-foreground leading-relaxed line-clamp-2">
@@ -516,7 +516,7 @@ export function GarmentAboutTab() {
                   </Link>
                 </Button>
 
-                <Button asChild variant="outline" size="lg" className="rounded-full">
+                <Button asChild size="lg" className="rounded-full bg-brand-green text-white hover:bg-brand-orange shadow-md transition-all duration-300">
                   <Link to="/models">
                     <span>{ar ? "تصفح كتالوج الموديلات (+2,700)" : "Browse Model Catalogue"}</span>
                   </Link>

@@ -97,9 +97,9 @@
   --card-foreground: oklch(0.244 0.039 175.5);
   --popover: oklch(0.975 0.003 166.5);
   --popover-foreground: oklch(0.244 0.039 175.5);
-  --primary: oklch(0.702 0.174 58.4);
-  --primary-hover: oklch(0.655 0.163 57.2);
-  --primary-foreground: oklch(0.244 0.039 175.5);
+  --primary: oklch(0.594 0.112 174.5);
+  --primary-hover: oklch(0.702 0.174 58.4);
+  --primary-foreground: #ffffff;
   --secondary: oklch(0.935 0.013 169.4);
   --secondary-foreground: oklch(0.244 0.039 175.5);
   --muted: oklch(0.935 0.013 169.4);
@@ -287,16 +287,45 @@ html[dir="rtl"] .footer-label {
 }
 
 .card-interactive,
-.interactive-card {
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+.interactive-card,
+.glass-card,
+[data-card] {
+  background: color-mix(in oklch, var(--background) 80%, transparent);
+  border: 1px solid color-mix(in oklch, var(--foreground) 12%, transparent);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  box-shadow: 0 14px 34px -18px color-mix(in oklch, var(--footer) 40%, transparent);
+  transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 300ms cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 300ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 @media (hover: hover) {
   .card-interactive:hover,
-  .interactive-card:hover {
-    transform: translateY(-3px) scale(1.01);
-    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.12);
-    border-color: rgba(224, 90, 43, 0.45);
+  .interactive-card:hover,
+  .glass-card:hover,
+  [data-card]:hover {
+    transform: translateY(-4px) scale(1.015);
+    box-shadow: 0 24px 48px -18px color-mix(in oklch, var(--footer) 50%, transparent);
+    border-color: var(--brand-orange);
   }
+}
+
+/* Ensure headings inside cards and boxes are centered */
+.glass-card h2,
+.glass-card h3,
+.glass-card h4,
+.card-interactive h2,
+.card-interactive h3,
+.card-interactive h4,
+.interactive-card h2,
+.interactive-card h3,
+.interactive-card h4,
+.card-title,
+[data-card] h2,
+[data-card] h3,
+[data-card] h4,
+[data-card-title] {
+  text-align: center;
 }
 @utility section-intro { max-width: 42rem; font-size: 1.125rem; line-height: 1.75; color: var(--muted-foreground); }
 @utility media-frame {
@@ -389,12 +418,13 @@ html[dir="rtl"] .home-scroll-progress { transform-origin: right; }
   box-shadow: 0 18px 40px -24px color-mix(in oklch, var(--footer) 45%, transparent);
 }
 @utility glass-card {
-  background: color-mix(in oklch, var(--background) 72%, transparent);
-  border: 1px solid color-mix(in oklch, var(--foreground) 10%, transparent);
-  backdrop-filter: blur(18px) saturate(140%);
+  background: color-mix(in oklch, var(--background) 76%, transparent);
+  border: 1px solid color-mix(in oklch, var(--foreground) 12%, transparent);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
   box-shadow: 0 18px 40px -24px color-mix(in oklch, var(--footer) 45%, transparent);
-  transition: transform 300ms ease, box-shadow 300ms ease, border-color 300ms ease;
-  @media (hover: hover) and (pointer: fine) { &:hover { transform: translateY(-4px); box-shadow: 0 28px 50px -24px color-mix(in oklch, var(--footer) 55%, transparent); border-color: var(--brand-green); } }
+  transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 300ms cubic-bezier(0.16, 1, 0.3, 1), border-color 300ms cubic-bezier(0.16, 1, 0.3, 1);
+  @media (hover: hover) and (pointer: fine) { &:hover { transform: translateY(-4px) scale(1.015); box-shadow: 0 28px 50px -24px color-mix(in oklch, var(--footer) 55%, transparent); border-color: var(--brand-orange); } }
 }
 @utility glass-dark {
   background: color-mix(in oklch, var(--footer) 45%, transparent);

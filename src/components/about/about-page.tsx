@@ -108,7 +108,7 @@ export function AboutPage() {
                     <span>{ar ? "تحميل الملف التعريفي للمجموعة (PDF)" : "Download Company Profile"}</span>
                   </a>
                 </Button>
-                <Button asChild variant="outline" size="default" className="rounded-full border-border bg-secondary/80 text-xs sm:text-sm font-bold hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-all cursor-pointer">
+                <Button asChild size="default" className="rounded-full bg-brand-green text-white text-xs sm:text-sm font-bold shadow-md hover:bg-brand-orange transition-all duration-300 cursor-pointer">
                   <Link to="/join/group">
                     {ar ? "فرص التعاون والشراكة" : "Cooperation Pathways"}
                   </Link>
@@ -153,10 +153,10 @@ export function AboutPage() {
                           {ar ? sector.tagAr : sector.tag}
                         </span>
                       </div>
-                      <h3 className="mt-3 font-head text-xl font-bold">
+                      <h3 className="mt-3 text-center font-head text-xl font-bold">
                         {ar ? sector.titleAr : sector.title}
                       </h3>
-                      <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                      <p className="mt-3 text-sm leading-6 text-muted-foreground text-center">
                         {ar ? sector.bodyAr : sector.body}
                       </p>
                     </div>
@@ -277,10 +277,10 @@ export function AboutPage() {
                             {ar ? sec.statusAr : sec.statusEn}
                           </span>
                         </div>
-                        <h4 className="font-head text-base font-bold text-foreground group-hover:text-brand-orange transition-colors">
+                        <h4 className="text-center font-head text-base font-bold text-foreground group-hover:text-brand-orange transition-colors">
                           {ar ? sec.nameAr : sec.nameEn}
                         </h4>
-                        <p className="mt-1 text-[11px] font-semibold text-brand-green">
+                        <p className="mt-1 text-center text-[11px] font-semibold text-brand-green">
                           {ar ? sec.rootsAr : sec.rootsEn}
                         </p>
                         <p className="mt-2.5 text-xs text-muted-foreground leading-relaxed">
@@ -358,10 +358,10 @@ export function AboutPage() {
                 <Reveal key={item.title} delay={index * 0.05}>
                   <div className="group flex h-full flex-col justify-between rounded-2xl border border-white/20 bg-background/60 p-6 backdrop-blur-xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-green/40 hover:shadow-md">
                     <div>
-                      <h3 className="font-head text-lg font-bold">
+                      <h3 className="text-center font-head text-lg font-bold">
                         {ar ? item.titleAr : item.title}
                       </h3>
-                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground text-center">
                         {ar ? item.bodyAr : item.body}
                       </p>
                     </div>
@@ -387,15 +387,15 @@ export function AboutPage() {
               <Reveal key={pillar.title} delay={idx * 0.06}>
                 <div className="flex h-full flex-col justify-between rounded-2xl border border-white/20 bg-background/60 p-6 backdrop-blur-xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-orange/40 hover:shadow-md">
                   <div>
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center justify-center gap-3">
                       <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-brand-orange/10 font-mono text-xs font-bold text-brand-orange">
                         0{idx + 1}
                       </span>
-                      <h3 className="font-head text-lg font-bold">
+                      <h3 className="text-center font-head text-lg font-bold">
                         {ar ? pillar.titleAr : pillar.title}
                       </h3>
                     </div>
-                    <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                    <p className="mt-3 text-sm leading-6 text-muted-foreground text-center">
                       {ar ? pillar.bodyAr : pillar.body}
                     </p>
                   </div>

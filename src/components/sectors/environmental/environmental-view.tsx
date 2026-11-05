@@ -118,7 +118,7 @@ export function EnvironmentalSectorView({ tab = "about" }: EnvironmentalViewProp
                   </Link>
                 </Button>
 
-                <Button asChild variant="outline" size="default" className="rounded-full border-white/40 text-white hover:bg-white/10">
+                <Button asChild size="default" className="rounded-full bg-brand-green text-white hover:bg-brand-orange transition-all duration-300 shadow-md">
                   <Link to="/sectors/$sector" params={{ sector: "environmental" }} search={{ tab: "start-consultation" }}>
                     <span>{ar ? "طلب استشارة بيئية" : "Request Consultation"}</span>
                   </Link>
@@ -209,7 +209,7 @@ function EnvironmentalAboutView({ ar }: { ar: boolean }) {
                 </Link>
               </Button>
 
-              <Button asChild variant="outline" size="default" className="rounded-full">
+              <Button asChild size="default" className="rounded-full bg-brand-green text-white hover:bg-brand-orange transition-all duration-300 shadow-md">
                 <Link to="/sectors/$sector" params={{ sector: "environmental" }} search={{ tab: "start-consultation" }}>
                   <span>{ar ? "ابدأ استشارتك الآن" : "Start Consultation"}</span>
                 </Link>
@@ -281,7 +281,7 @@ function EnvironmentalAboutView({ ar }: { ar: boolean }) {
                       {ar ? srv.categoryAr : srv.categoryEn}
                     </span>
                   </div>
-                  <h4 className="font-head text-base font-bold text-foreground group-hover:text-brand-green transition-colors">
+                  <h4 className="text-center font-head text-base font-bold text-foreground group-hover:text-brand-green transition-colors">
                     {ar ? srv.titleAr : srv.titleEn}
                   </h4>
                   <p className="mt-2 text-xs text-muted-foreground leading-relaxed line-clamp-3">
@@ -322,50 +322,50 @@ function EnvironmentalAboutView({ ar }: { ar: boolean }) {
             </div>
 
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              <div className="rounded-2xl border border-white/20 bg-background/60 p-6 backdrop-blur-xl">
-                <div className="size-10 rounded-xl bg-brand-green/10 flex items-center justify-center text-brand-green mb-3">
+              <div className="rounded-2xl border border-white/20 bg-background/60 p-6 backdrop-blur-xl text-center">
+                <div className="size-10 rounded-xl bg-brand-green/10 flex items-center justify-center text-brand-green mb-3 mx-auto">
                   <Zap className="size-5" />
                 </div>
-                <h4 className="font-head text-sm font-bold text-foreground">
+                <h4 className="text-center font-head text-sm font-bold text-foreground">
                   {ar ? "تكنولوجيا RSD للتخمير الجاف" : "Patented RSD Dry Digestion"}
                 </h4>
-                <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
+                <p className="mt-2 text-xs text-muted-foreground leading-relaxed text-center">
                   {ar ? "شراكة استراتيجية مع RENERGON السويسرية لمعالجة المخلفات الصلبة بدون مياه مضافة وإنتاج طاقة وكهرباء نظيفة." : "Patented Swiss dry fermentation converting solid manure and organic streams into renewable power and biochar."}
                 </p>
               </div>
 
-              <div className="rounded-2xl border border-white/20 bg-background/60 p-6 backdrop-blur-xl">
-                <div className="size-10 rounded-xl bg-brand-orange/10 flex items-center justify-center text-brand-orange mb-3">
+              <div className="rounded-2xl border border-white/20 bg-background/60 p-6 backdrop-blur-xl text-center">
+                <div className="size-10 rounded-xl bg-brand-orange/10 flex items-center justify-center text-brand-orange mb-3 mx-auto">
                   <Microscope className="size-5" />
                 </div>
-                <h4 className="font-head text-sm font-bold text-foreground">
+                <h4 className="text-center font-head text-sm font-bold text-foreground">
                   {ar ? "المعالجة البيولوجية الميكروبية" : "Microbial Bioremediation"}
                 </h4>
-                <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
+                <p className="mt-2 text-xs text-muted-foreground leading-relaxed text-center">
                   {ar ? "تحالف سلالات بكتيرية نافعة لتفكيك الهيدروكربونات والزيوت والتخلص الجذري من الروائح الكبريتية بالمواقع." : "Proprietary bacterial consortia degrading toxic hydrocarbons and industrial H₂S odors naturally."}
                 </p>
               </div>
 
-              <div className="rounded-2xl border border-white/20 bg-background/60 p-6 backdrop-blur-xl">
-                <div className="size-10 rounded-xl bg-brand-green/10 flex items-center justify-center text-brand-green mb-3">
+              <div className="rounded-2xl border border-white/20 bg-background/60 p-6 backdrop-blur-xl text-center">
+                <div className="size-10 rounded-xl bg-brand-green/10 flex items-center justify-center text-brand-green mb-3 mx-auto">
                   <Cpu className="size-5" />
                 </div>
-                <h4 className="font-head text-sm font-bold text-foreground">
+                <h4 className="text-center font-head text-sm font-bold text-foreground">
                   {ar ? "محطات الرصد اللحظي IoT" : "Autonomous IoT Telemetry"}
                 </h4>
-                <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
+                <p className="mt-2 text-xs text-muted-foreground leading-relaxed text-center">
                   {ar ? "محطات رصد شمسية ذكية لقياس جودة الهواء والغازات والضوضاء على مدار 24 ساعة مع إرسال تنبيهات تلقائية." : "Solar-powered 24/7 environmental stations streaming air, stack gas, and acoustic data directly to cloud dashboards."}
                 </p>
               </div>
 
-              <div className="rounded-2xl border border-white/20 bg-background/60 p-6 backdrop-blur-xl">
-                <div className="size-10 rounded-xl bg-brand-orange/10 flex items-center justify-center text-brand-orange mb-3">
+              <div className="rounded-2xl border border-white/20 bg-background/60 p-6 backdrop-blur-xl text-center">
+                <div className="size-10 rounded-xl bg-brand-orange/10 flex items-center justify-center text-brand-orange mb-3 mx-auto">
                   <ShieldCheck className="size-5" />
                 </div>
-                <h4 className="font-head text-sm font-bold text-foreground">
+                <h4 className="text-center font-head text-sm font-bold text-foreground">
                   {ar ? "منظومة EHS الرقمية السحابية" : "Cloud EHS SaaS Platform"}
                 </h4>
-                <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
+                <p className="mt-2 text-xs text-muted-foreground leading-relaxed text-center">
                   {ar ? "تطبيق ذكي بالتعاون مع تكنوسيت لإدارة السجلات القانونية والتفتيش الميداني وتتبع معايير السلامة دون أوراق." : "Enterprise digital software automating legal registers, audit checklists, and incident tracking across multi-site facilities."}
                 </p>
               </div>
@@ -410,16 +410,16 @@ function EnvironmentalAboutView({ ar }: { ar: boolean }) {
                     </span>
                   </div>
                   <div className="p-4 space-y-2">
-                    <h4 className="font-head text-sm font-bold text-foreground line-clamp-2">
+                    <h4 className="text-center font-head text-sm font-bold text-foreground line-clamp-2">
                       {ar ? prod.titleAr : prod.titleEn}
                     </h4>
-                    <p className="text-xs text-muted-foreground line-clamp-2 leading-relaxed">
+                    <p className="text-xs text-muted-foreground line-clamp-2 leading-relaxed text-center">
                       {ar ? prod.leadAr : prod.leadEn}
                     </p>
                   </div>
                 </div>
                 <div className="p-4 pt-0">
-                  <Button asChild variant="outline" size="sm" className="w-full text-xs rounded-xl border-brand-green/30 hover:bg-brand-green hover:text-white">
+                  <Button asChild size="sm" className="w-full text-xs rounded-xl bg-brand-green text-white hover:bg-brand-orange transition-all duration-300 shadow-sm">
                     <Link to="/sectors/$sector" params={{ sector: "environmental" }} search={{ tab: "products" }}>
                       <span>{ar ? "تفاصيل المنتج ونشرة البيانات" : "Datasheet & Quote"}</span>
                     </Link>
@@ -637,7 +637,7 @@ function EnvironmentalAboutView({ ar }: { ar: boolean }) {
                   </Link>
                 </Button>
 
-                <Button asChild variant="outline" size="lg" className="rounded-full">
+                <Button asChild size="lg" className="rounded-full bg-brand-green text-white hover:bg-brand-orange shadow-md transition-all duration-300">
                   <Link to="/sectors/$sector" params={{ sector: "environmental" }} search={{ tab: "services" }}>
                     <span>{ar ? "استعراض كافة الخدمات (19 خدمة)" : "Browse All 19 Services"}</span>
                   </Link>

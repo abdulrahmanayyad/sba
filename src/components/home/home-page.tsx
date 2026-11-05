@@ -1,4 +1,4 @@
-﻿import { useState } from "react";
+import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 
 import jzraLogo from "@/assets/jzra-logo-orange.png.asset.json";
@@ -88,7 +88,7 @@ export function HomePage() {
             <p data-hero-reveal className="mt-6 max-w-xl text-base leading-7 text-footer-foreground/85">{copy.hero.body}</p>
             <div data-hero-reveal className="mt-8 flex flex-wrap gap-3">
               <Button asChild variant="primary" size="lg"><Link to="/contact">{copy.hero.contact}</Link></Button>
-              <Button asChild variant="outline" size="lg" className="border-footer-muted bg-footer/20 text-footer-foreground hover:bg-footer-foreground hover:text-footer"><Link to="/models">{copy.hero.models}</Link></Button>
+              <Button asChild size="lg" className="rounded-full bg-brand-green text-white hover:bg-brand-orange transition-all duration-300"><Link to="/models">{copy.hero.models}</Link></Button>
             </div>
           </div>
           <div data-hero-reveal className="flex items-center justify-between border-t border-footer-line pt-5">
@@ -286,7 +286,7 @@ export function HomePage() {
           <p className="eyebrow text-footer-foreground">{copy.cta.eyebrow}</p>
           <div className="mt-5 grid gap-10 lg:grid-cols-[1.3fr_0.7fr] lg:items-end">
             <div><h2 className="section-title text-footer-foreground">{copy.cta.title}</h2><p className="mt-7 max-w-3xl text-lg text-footer-foreground/80">{copy.cta.body}</p></div>
-            <div className="flex flex-wrap gap-3 lg:justify-end"><Button asChild variant="primary" size="lg"><Link to="/contact">{copy.cta.contact}</Link></Button><Button asChild variant="outline" size="lg" className="border-footer-foreground text-footer-foreground hover:bg-footer-foreground hover:text-foreground"><a href="https://wa.me/201222238072" target="_blank" rel="noreferrer">{copy.cta.whatsapp}</a></Button></div>
+            <div className="flex flex-wrap gap-3 lg:justify-end"><Button asChild variant="primary" size="lg"><Link to="/contact">{copy.cta.contact}</Link></Button><Button asChild size="lg" className="rounded-full bg-brand-green text-white hover:bg-brand-orange transition-all duration-300"><a href="https://wa.me/201222238072" target="_blank" rel="noreferrer">{copy.cta.whatsapp}</a></Button></div>
           </div>
           <div className="mt-14 grid gap-8 border-t border-footer-foreground/25 pt-7 md:grid-cols-2"><div><p className="eyebrow text-footer-foreground/70">{copy.cta.moq}</p><p className="mt-3 text-footer-foreground/80">{copy.cta.moqBody}</p></div><div><p className="eyebrow text-footer-foreground/70">{copy.cta.phone}</p><a href="tel:+201222238072" className="mt-3 block font-head text-3xl" dir="ltr">+20 12 222 380 72</a></div></div>
         </div>
