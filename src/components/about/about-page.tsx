@@ -200,9 +200,9 @@ export function AboutPage() {
               <div className="group relative mx-auto max-w-2xl rounded-3xl border border-white/40 bg-background/85 p-8 sm:p-10 text-center shadow-[0_20px_50px_rgba(0,0,0,0.12)] backdrop-blur-2xl transition-all duration-300 hover:scale-[1.01] hover:border-brand-orange hover:shadow-[0_25px_60px_rgba(0,0,0,0.18)] ring-1 ring-white/30">
                 <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-4 py-1.5 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
                   <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
-                  <span className="font-bold text-brand-green">{ar ? "الكيان المؤسسي الموحد (الشركة الأم)" : "Unified Parent Holding Entity"}</span>
+                  <span className="font-bold text-brand-orange">{ar ? "الكيان المؤسسي الموحد (الشركة الأم)" : "Unified Parent Holding Entity"}</span>
                 </div>
-                <h3 className="font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold text-foreground text-center mt-2 leading-tight">
+                <h3 className="font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold text-brand-orange text-center mt-2 leading-tight">
                   {ar ? "مجموعة سامي بن عياد" : "SAMI BIN AYYAD GROUP"}
                 </h3>
                 <p className="mt-3 text-sm sm:text-base text-muted-foreground leading-relaxed text-center font-sans max-w-xl mx-auto">
