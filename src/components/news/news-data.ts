@@ -1,18 +1,50 @@
 // ============================================================================
-// SAMI BIN AYYAD GROUP — HISTORICAL CORPORATE NEWS ARCHIVE (2020–2026)
-// Complete verified database of 39 multi-sector corporate news and industry reports.
+// SAMI BIN AYYAD GROUP — HISTORICAL CORPORATE ARCHIVE & NEWS (1977–2026)
+// Complete verified database of 50 multi-sector records:
+//   - 7 Official Historical Milestones (1977–2023)
+//   - 3 Official Economic Indicators (OECD, NBE, IDSC)
+//   - 11 Historical Sector Insights & Market Reviews (2010–2020)
+//   - 39 Verified Corporate News & Sector Reports (2020–2026)
 // ============================================================================
+
+import {
+  HISTORICAL_ARTICLES_2010_2020,
+  OFFICIAL_TIMELINE_MILESTONES,
+  ECONOMIC_INDICATORS,
+  type LegacyMilestone,
+  type EconomicIndicator,
+  type HistoricalArticle
+} from "./legacy-data.ts";
+
+export {
+  OFFICIAL_TIMELINE_MILESTONES,
+  ECONOMIC_INDICATORS,
+  HISTORICAL_ARTICLES_2010_2020,
+  type LegacyMilestone,
+  type EconomicIndicator,
+  type HistoricalArticle
+};
 
 export type NewsSectorType =
   | "all"
   | "corporate"
   | "construction"
+  | "environmental"
   | "garment"
   | "food"
-  | "environmental";
+  | "heritage"
+  | "exhibitions"
+  | "insights";
 
-// Backward compatibility alias
 export type NewsCategoryType = NewsSectorType;
+
+export type NewsContentType =
+  | "corporate_milestone"
+  | "corporate_news"
+  | "industry_insight"
+  | "historical_review"
+  | "exhibition_event"
+  | "market_data";
 
 export interface NewsCategory {
   id: NewsSectorType;
@@ -24,46 +56,67 @@ export interface NewsCategory {
 
 export const newsCategories: NewsCategory[] = [
   {
-    "id": "all",
-    "titleEn": "All News & Historical Archive",
-    "titleAr": "كافة الأخبار والأرشيف التاريخي",
-    "descEn": "Complete historical timeline of business insights, industry exhibitions, and corporate milestones across all sectors (2020–2026).",
-    "descAr": "الأرشيف التاريخي الشامل لمتابعات الأسواق والمعارض المتخصصة والمحطات المؤسسية لكافة القطاعات (2020–2026)."
+    id: "all",
+    titleEn: "All News & Historical Archive",
+    titleAr: "كافة الأخبار والأرشيف الشامل",
+    descEn: "Complete historical timeline of corporate milestones, sector insights, and market reviews (2010–2026).",
+    descAr: "الأرشيف التوثيقي الشامل للمحطات المؤسسية، التحليلات القطاعية، ومتابعات الأسواق (2010–2026)."
   },
   {
-    "id": "corporate",
-    "titleEn": "Group News & Corporate Activities",
-    "titleAr": "أخبار شركة سامي بن عياد والأنشطة المؤسسية",
-    "descEn": "Strategic corporate developments, institutional milestones, market outreach, and multi-sector expansion under Sami Bin Ayyad Group.",
-    "descAr": "التطورات الاستراتيجية، المحطات المؤسسية، والتواصل مع الأسواق لأنشطة مجموعة سامي بن عياد وتطور منظومتها."
+    id: "corporate",
+    titleEn: "Corporate News & Activities",
+    titleAr: "أخبار المجموعة والأنشطة المؤسسية",
+    descEn: "Strategic corporate developments, institutional milestones, market outreach, and multi-sector expansion under Sami Bin Ayyad Group.",
+    descAr: "التطورات الاستراتيجية، المحطات المؤسسية، والتواصل مع الأسواق لأنشطة مجموعة سامي بن عياد وتطور منظومتها."
   },
   {
-    "id": "construction",
-    "titleEn": "Construction & Real Estate Development",
-    "titleAr": "قطاع المقاولات والتطوير العقاري",
-    "descEn": "Market observations, real estate exhibitions, urban developments, and contracting opportunities across commercial and civil works.",
-    "descAr": "متابعة السوق العقاري، معارض سيتي سكيب، المشروعات العمرانية الكبرى، وفرص أعمال المقاولات العامة والتشطيبات."
+    id: "construction",
+    titleEn: "Construction & Real Estate",
+    titleAr: "المقاولات والتطوير العقاري",
+    descEn: "Market observations, real estate exhibitions, urban developments, and contracting opportunities across commercial and civil works.",
+    descAr: "متابعة السوق العقاري، مشروعات البنية التحتية، المشروعات العمرانية الكبرى، وفرص أعمال المقاولات العامة والتشطيبات."
   },
   {
-    "id": "garment",
-    "titleEn": "Garment Manufacturing & Fashion",
-    "titleAr": "قطاع الملابس الجاهزة والمنسوجات والأزياء",
-    "descEn": "Textile machinery technologies, ready-made garment manufacturing lines, fashion trends, and supply chain expansion.",
-    "descAr": "تكنولوجيا صناعة الغزل والنسيج، خطوط تصنيع الملابس الجاهزة، اتجاهات الموضة العالمية، وسلاسل إمداد الأقمشة."
+    id: "environmental",
+    titleEn: "Environment & Sustainability",
+    titleAr: "البيئة والاستدامة",
+    descEn: "Environmental engineering, water treatment technologies, industrial sustainability studies, and clean energy transition.",
+    descAr: "الاستشارات والحلول البيئية، تكنولوجيا معالجة المياه والصرف الصناعي، والتحول نحو الطاقة النظيفة وخفض الانبعاثات."
   },
   {
-    "id": "food",
-    "titleEn": "Food & Natural Products",
-    "titleAr": "قطاع الأغذية والمنتجات الطبيعية",
-    "descEn": "Agri-food export supply, natural honey, dates, olive oil, and regional commercial trade across African and Arab markets.",
-    "descAr": "توريد وتصدير المنتجات الزراعية والغذائية الطبيعية، العسل، التمور، زيت الزيتون، والأعشاب، والتجارة الإقليمية."
+    id: "garment",
+    titleEn: "Manufacturing & Textiles",
+    titleAr: "التصنيع والملابس والمنسوجات",
+    descEn: "Textile machinery technologies, ready-made garment manufacturing lines, fashion trends, and supply chain expansion.",
+    descAr: "تكنولوجيا صناعة الغزل والنسيج، خطوط تصنيع الملابس الجاهزة، اتجاهات الموضة العالمية، وسلاسل إمداد الأقمشة والتصدير."
   },
   {
-    "id": "environmental",
-    "titleEn": "Environmental Sustainability & Energy",
-    "titleAr": "قطاع البيئة والاستدامة والطاقة",
-    "descEn": "Environmental engineering, water treatment technologies, industrial sustainability studies, and clean energy transition.",
-    "descAr": "الاستشارات والحلول البيئية، تكنولوجيا معالجة المياه والصرف الصناعي، والتحول نحو الطاقة النظيفة وخفض الانبعاثات."
+    id: "food",
+    titleEn: "Food & Trade",
+    titleAr: "الأغذية والتجارة",
+    descEn: "Agri-food export supply, natural honey, dates, olive oil, and regional commercial trade across African and Arab markets.",
+    descAr: "توريد وتصدير المنتجات الزراعية والغذائية الطبيعية، العسل، التمور، زيت الزيتون، والأعشاب، والتجارة الإقليمية."
+  },
+  {
+    id: "heritage",
+    titleEn: "Research & Heritage",
+    titleAr: "البحث العلمي وتطوير التراث",
+    descEn: "Applied research programs, heritage documentation, and cultural preservation initiatives.",
+    descAr: "برامج البحث العلمي التطبيقي، توثيق التراث، ومبادرات الحفاظ على الموروث الثقافي والتاريخي."
+  },
+  {
+    id: "exhibitions",
+    titleEn: "Exhibitions & Events",
+    titleAr: "المعارض والفعاليات",
+    descEn: "Specialized international expos, trade fairs, and industrial networking across MENA and global forums.",
+    descAr: "المعارض الدولية المتخصصة، الملتقيات الاقتصادية، والفعاليات الصناعية والتجارية."
+  },
+  {
+    id: "insights",
+    titleEn: "Market Insights & Historical Reviews",
+    titleAr: "رؤى وتحليلات السوق والأرشيف",
+    descEn: "In-depth sector analyses, historical market evolution, and macroeconomic supply chain studies.",
+    descAr: "دراسات تحليلية متعمقة لتطور الأسواق والقطاعات والتحولات الاقتصادية الكبرى (2010–2020)."
   }
 ];
 
@@ -75,7 +128,9 @@ export interface NewsArticle {
   categoryAr: string;
   categoryEn: string;
   year: number;
+  historicalRefYear?: number;
   publishedAt: string;
+  actualPublishDate?: string;
   dateEn: string;
   dateAr: string;
   eventDateEn?: string;
@@ -98,11 +153,54 @@ export interface NewsArticle {
   keywords: string[];
   featured?: boolean;
   type?: "external" | "insight";
+  contentType?: NewsContentType;
+  indicatorId?: string;
+  countryTagAr?: string;
+  countryTagEn?: string;
   sourceName?: string;
   sourceUrl?: string;
 }
 
-export const newsArticles: NewsArticle[] = [
+// Convert 11 Historical Analysis Articles (2010–2020) into NewsArticle format
+const historicalNewsArticles: NewsArticle[] = HISTORICAL_ARTICLES_2010_2020.map((h) => ({
+  id: h.id,
+  slug: h.slug,
+  sector: h.sector as NewsSectorType,
+  category: h.categoryEn,
+  categoryAr: h.categoryAr,
+  categoryEn: h.categoryEn,
+  year: h.historicalYear,
+  historicalRefYear: h.historicalYear,
+  publishedAt: h.publishedAt,
+  actualPublishDate: h.publishedAt,
+  dateAr: h.dateAr,
+  dateEn: h.dateEn,
+  readingTimeAr: h.readingTimeAr,
+  readingTimeEn: h.readingTimeEn,
+  titleAr: h.titleAr,
+  titleEn: h.titleEn,
+  excerptAr: h.excerptAr,
+  excerptEn: h.excerptEn,
+  bodyAr: h.bodyAr,
+  bodyEn: h.bodyEn,
+  image: h.image,
+  imageAltAr: h.imageAltAr,
+  imageAltEn: h.imageAltEn,
+  seoTitleAr: h.seoTitleAr,
+  seoTitleEn: h.seoTitleEn,
+  seoDescAr: h.seoDescAr,
+  seoDescEn: h.seoDescEn,
+  keywords: h.keywords,
+  type: "insight",
+  contentType: h.contentType,
+  indicatorId: h.indicatorId,
+  countryTagAr: "مصر",
+  countryTagEn: "Egypt",
+  sourceName: h.indicatorId ? "OECD / NBE Economic Data" : undefined
+}));
+
+// Base 39 Verified Corporate News & Sector Articles (2020–2026)
+const modernCorporateArticles: NewsArticle[] = [
   {
     "id": "sba-news-01",
     "slug": "expanding-market-insights-investment-opportunities-specialized-exhibitions-2020",
@@ -124,7 +222,7 @@ export const newsArticles: NewsArticle[] = [
     "excerptEn": "Within economic diversification efforts and exploring regional growth, founding business operations associated with Sami Bin Ayyad monitored specialized trade exhibitions and commercial forums.",
     "bodyAr": "في إطار التوجه نحو تنويع الأنشطة الاقتصادية واستكشاف فرص النمو في الأسواق المصرية والإقليمية، حرصت إدارة الأعمال المرتبطة بمجموعة سامي بن عياد على متابعة المعارض والمؤتمرات المتخصصة في عدد من القطاعات الحيوية.\n\nوقد مثلت هذه الزيارات فرصة للاطلاع على تطورات الأسواق، والتعرف على الشركات العاملة في مجالات الاستثمار والتصنيع والتجارة، ومتابعة الحلول والتقنيات الحديثة، إلى جانب توسيع دائرة التواصل المهني مع الموردين والمستثمرين وممثلي الشركات.",
     "bodyEn": "Within the framework of economic diversification and exploring long-term growth opportunities across Egyptian and regional markets, the predecessor business management associated with Sami Bin Ayyad maintained active engagement with specialized exhibitions and commercial conferences across vital industry sectors.\n\nThese professional field visits served as an essential platform to monitor market dynamics, connect with established enterprises across investment, manufacturing, and international trade, evaluate modern operational technologies, and cultivate professional networks with suppliers, institutional investors, and corporate leaders.",
-    "image": "/Main Home Page.jpg",
+    "image": "/sami_trade_real_images/sami-trade-news-01-general-contracting-expansion.png",
     "imageAltAr": "الاطلاع على الأسواق والفرص الاستثمارية في المعارض المتخصصة",
     "imageAltEn": "Reviewing market insights and strategic investment opportunities at specialized exhibitions",
     "seoTitleAr": "الاطلاع على الأسواق والفرص الاستثمارية عبر المعارض 2020 | مجموعة سامي بن عياد",
@@ -163,7 +261,7 @@ export const newsArticles: NewsArticle[] = [
     "excerptEn": "Predecessor operations continued monitoring major economic and industrial events uniting manufacturers, investors, and traders across regional markets.",
     "bodyAr": "واصلت المجموعة متابعة الفعاليات الاقتصادية والصناعية التي تجمع الشركات والمصنعين والمستثمرين من مختلف الأسواق، في إطار استراتيجية تستهدف التعرف على الفرص التجارية الجديدة وبناء قنوات تواصل مع الجهات الفاعلة في القطاعات المختلفة.\n\nوشملت الاهتمامات مجالات العقارات والإنشاءات والصناعات النسيجية والمنتجات التجارية، مع التركيز على متابعة تطورات الإنتاج والتوريد واتجاهات الطلب في الأسواق.",
     "bodyEn": "Predecessor commercial operations continued engaging with major economic and industrial forums bringing together corporate executives, manufacturers, and investors across diverse markets, supporting a strategic focus on identifying emerging commercial avenues and establishing direct dialogue with key industry stakeholders.\n\nKey areas of interest spanned real estate, construction contracting, textile manufacturing, and commercial trade, emphasizing production advancements, resilient supply channels, and evolving market demand patterns.",
-    "image": "/Join Us Background.jpg",
+    "image": "/sami_trade_real_images/sami-trade-news-02-mep-systems-projects.png",
     "imageAltAr": "تعزيز العلاقات المهنية والتجارية عبر الفعاليات الصناعية",
     "imageAltEn": "Strengthening professional commercial ties across industrial forums",
     "seoTitleAr": "تعزيز العلاقات المهنية والتجارية 2021 | مجموعة سامي بن عياد",
@@ -200,7 +298,7 @@ export const newsArticles: NewsArticle[] = [
     "excerptEn": "Commercial activities throughout 2022 prioritized inter-sectoral collaboration, exploring collaborative models across contracting, manufacturing, and natural commodities.",
     "bodyAr": "شهدت أنشطة الأعمال خلال عام 2022 اهتمامًا متزايدًا بتطوير العلاقات بين القطاعات الاقتصادية المختلفة، والاستفادة من فرص التعاون التي توفرها المعارض والمؤتمرات المتخصصة.\n\nوركزت المتابعة على رصد احتياجات الأسواق، والتعرف على نماذج الأعمال الجديدة، واستكشاف فرص التعاون مع الشركات العاملة في مجالات المقاولات والتصنيع والمنتجات الطبيعية والحلول البيئية، بما يدعم بناء منظومة أعمال متعددة الأنشطة.",
     "bodyEn": "Business activities throughout 2022 witnessed an accelerating focus on fostering synergistic ties across multiple economic sectors and leveraging collaborative prospects presented by specialized trade fairs and industry congresses.\n\nMonitoring efforts concentrated on mapping shifting market requirements, examining emerging business models, and assessing collaborative ventures with enterprises across construction contracting, manufacturing, natural commodities, and environmental solutions, laying the groundwork for a multi-sector enterprise ecosystem.",
-    "image": "/BG/Contracting & Real Estate Development/Integrated Solutions, Multiple Disciplines.jpg",
+    "image": "/sami_trade_real_images/sami-trade-news-03-medical-facilities-expansion.png",
     "imageAltAr": "تنوع الأنشطة وآفاق التعاون الاقتصادي المشترك",
     "imageAltEn": "Business diversification and cross-sector collaborative horizons",
     "seoTitleAr": "تنوع الأنشطة الاقتصادية وآفاق التعاون 2022 | مجموعة سامي بن عياد",
@@ -237,7 +335,7 @@ export const newsArticles: NewsArticle[] = [
     "excerptEn": "Following operational expansion, the institutional framework was formally established to coordinate operations across contracting, environment, garments, and natural products.",
     "bodyAr": "مع تطور الأنشطة وتنوع مجالات العمل، برزت أهمية توحيد الرؤية المؤسسية وتطوير منظومة متكاملة لإدارة الأعمال والشراكات.\n\nوجاءت هذه المرحلة لتعزيز الترابط بين أنشطة المقاولات والبيئة وتصنيع الملابس والمنتجات الطبيعية، مع الاهتمام بمتابعة الأسواق والمعارض المتخصصة واستكشاف فرص التعاون مع الشركات المحلية والدولية.",
     "bodyEn": "Following the progressive expansion and diversification of business lines, the necessity to unify the institutional vision and establish an integrated framework for managing operations and strategic partnerships became paramount.\n\nThis pivotal phase formally established and strengthened the cohesion among construction contracting, environmental engineering, garment manufacturing, and natural products, while maintaining rigorous market tracking, participating in specialized trade fairs, and evaluating cooperative engagements with reputable domestic and international corporations.",
-    "image": "/Main Home Page.jpg",
+    "image": "/sami_trade_real_images/sami-trade-news-04-real-estate-development.png",
     "imageAltAr": "تطوير المنظومة المؤسسية لمجموعة سامي بن عياد",
     "imageAltEn": "Institutional development under Sami Bin Ayyad Group",
     "seoTitleAr": "تطوير المنظومة المؤسسية 2023 | مجموعة سامي بن عياد",
@@ -275,7 +373,7 @@ export const newsArticles: NewsArticle[] = [
     "excerptEn": "Sami Bin Ayyad Group sustained active engagement with trade developments and industry exhibitions uniting manufacturers, suppliers, and investors.",
     "bodyAr": "واصلت مجموعة سامي بن عياد اهتمامها بمتابعة التطورات التجارية والصناعية، من خلال الاطلاع على المعارض المتخصصة والفعاليات التي تجمع المصنعين والموردين والمطورين والمستثمرين.\n\nوتركزت المتابعة على فرص تطوير العلاقات التجارية، واستكشاف قنوات التوريد والتصنيع، والتعرف على الاتجاهات الحديثة التي يمكن الاستفادة منها في تطوير أنشطة المجموعة وتوسيع نطاق أعمالها.",
     "bodyEn": "Sami Bin Ayyad Group maintained dedicated oversight of commercial and industrial developments through active engagement with specialized exhibitions and industry conventions uniting leading manufacturers, suppliers, developers, and institutional investors.\n\nOngoing initiatives focused on expanding commercial relations, evaluating resilient sourcing and manufacturing channels, and benchmarking modern industry standards to propel group capabilities and broaden cross-border operational capacity.",
-    "image": "/Join Us Background.jpg",
+    "image": "/sami_trade_real_images/sami-trade-news-05-infrastructure-utilities.png",
     "imageAltAr": "تعزيز الحضور التجاري والتوسع الإقليمي للمجموعة",
     "imageAltEn": "Enhancing corporate commercial footprint and regional trade",
     "seoTitleAr": "تعزيز الحضور التجاري الإقليمي والدولي 2024 | مجموعة سامي بن عياد",
@@ -312,7 +410,7 @@ export const newsArticles: NewsArticle[] = [
     "excerptEn": "Guided by durable long-term partnerships, the Group participated in specialized forums connecting operational capabilities with market demand.",
     "bodyAr": "ضمن توجهها نحو بناء علاقات تجارية طويلة الأجل، واصلت المجموعة متابعة الفعاليات والمعارض المتخصصة التي تتيح التواصل المباشر مع الشركات والمستثمرين ومقدمي الخدمات.\n\nوتعكس هذه التحركات اهتمام المجموعة بفتح مسارات جديدة للتعاون، وربط قدراتها التشغيلية باحتياجات الأسواق، وتعزيز فرص العمل المشترك في القطاعات الصناعية والتجارية والخدمية.",
     "bodyEn": "Guided by its strategic commitment to fostering durable, long-term commercial relationships, the Group continued its active participation in specialized forums and trade exhibitions that facilitate direct engagement with corporate peers, investors, and service providers.\n\nThese initiatives underscore the Group's proactive approach to cultivating collaborative pathways, aligning operational capabilities with real-time market requirements, and unlocking shared growth across industrial, commercial, and engineering service sectors.",
-    "image": "/Main Home Page.jpg",
+    "image": "/sami_trade_real_images/sami-trade-news-06-industrial-buildings-precast.png",
     "imageAltAr": "توسيع شبكة العلاقات المهنية والشراكات متعددة القطاعات",
     "imageAltEn": "Expanding corporate professional networks and multi-sector partnerships",
     "seoTitleAr": "توسيع شبكة العلاقات والشراكات الاستراتيجية 2025 | مجموعة سامي بن عياد",
@@ -349,7 +447,7 @@ export const newsArticles: NewsArticle[] = [
     "excerptEn": "The Group continues refining an integrated multi-sector operational model encompassing contracting, environmental solutions, apparel, and natural products.",
     "bodyAr": "تواصل المجموعة العمل على تطوير منظومة أعمال متكاملة تجمع بين المقاولات والتطوير العقاري، والحلول البيئية، وتصنيع الملابس، والمنتجات الطبيعية.\n\nوتأتي هذه المرحلة امتدادًا للتوجه نحو تعزيز التكامل بين الأنشطة، وتطوير العلاقات مع الشركاء، ومتابعة الفرص الاستثمارية والتجارية التي تدعم التوسع في الأسواق المحلية والدولية.",
     "bodyEn": "The Group continues to refine an integrated multi-sector operational model encompassing general contracting, real estate development, environmental engineering solutions, garment manufacturing, and natural products trade.\n\nThis continuous evolution represents an ongoing commitment to strengthening internal operational synergies, deepening alliances with key partners, and capitalizing on strategic investment and trade opportunities to sustain expansion across domestic and global markets.",
-    "image": "/Join Us Background.jpg",
+    "image": "/sami_trade_real_images/sami-trade-news-07-oil-gas-energy-facilities.png",
     "imageAltAr": "تعزيز التكامل بين قطاعات أعمال المجموعة لعام 2026",
     "imageAltEn": "Reinforcing cross-sector operational integration at Sami Bin Ayyad Group",
     "seoTitleAr": "تعزيز التكامل بين القطاعات وتطوير التعاون 2026 | مجموعة سامي بن عياد",
@@ -386,7 +484,7 @@ export const newsArticles: NewsArticle[] = [
     "excerptEn": "Professional field visits included tracking Sahara Expo 2020, an essential platform reviewing agricultural engineering, irrigation infrastructure, and productive equipment.",
     "bodyAr": "في إطار الاهتمام بمتابعة الأسواق والأنشطة الاقتصادية المختلفة، تضمنت أجندة الزيارات المهنية حضور معرض صحارى 2020، الذي يعد من أبرز الفعاليات المتخصصة في القطاع الزراعي والإنتاجي بمصر.\n\nوأتاحت الزيارة التعرف على الشركات المشاركة، ومتابعة المنتجات والحلول المقدمة، والاطلاع على فرص التعاون بين القطاعات الزراعية والصناعية والتجارية، إلى جانب التواصل مع الجهات العاملة في مجالات الإنتاج والتوريد.",
     "bodyEn": "As part of ongoing monitoring of market dynamics and productive economic activities, professional field visits included attending Sahara Expo 2020, widely recognized as a premier exhibition serving Egypt's agricultural, land development, and productive infrastructure sectors.\n\nThe visit provided a comprehensive overview of participating entities, introduced modern technological solutions and equipment, and explored cross-sectoral opportunities connecting agricultural, industrial, and commercial disciplines, while facilitating professional dialogue with key producers and supply chain operators.",
-    "image": "/BG/Environment & Sustainability/Agriculture Sector.jpg",
+    "image": "/sami_trade_real_images/sami-trade-news-08-commercial-complexes-malls.png",
     "imageAltAr": "معرض صحارى 2020 واستكشاف فرص القطاعات الإنتاجية",
     "imageAltEn": "Sahara Expo 2020 productive sector observation",
     "seoTitleAr": "متابعة معرض صحارى 2020 | قطاع المقاولات والتطوير",
@@ -423,7 +521,7 @@ export const newsArticles: NewsArticle[] = [
     "excerptEn": "Cityscape Egypt 2020 was closely observed to assess real estate investment dynamics, master-planned developments, and developer priorities across Egyptian markets.",
     "bodyAr": "ضمن الاهتمام بمتابعة سوق الاستثمار والتطوير العقاري في مصر، تمت متابعة معرض Cityscape Egypt 2020 للاطلاع على المشروعات العقارية المطروحة وتوجهات المطورين والشركات العاملة في السوق.\n\nوشملت محاور الاهتمام المشروعات السكنية والتجارية والإدارية، ومتابعة تطورات التخطيط العمراني، والاطلاع على الفرص المتاحة للتعاون مع المطورين وشركات الاستثمار العقاري ومقدمي الخدمات الهندسية.",
     "bodyEn": "In alignment with active tracking of Egypt's property development and capital investment sectors, Cityscape Egypt 2020 was closely monitored to evaluate flagship property launches and assess strategic priorities among leading master developers.\n\nFocal areas encompassed residential, commercial, and administrative developments, urban planning benchmarks, and prospective collaboration avenues with private and institutional developers, real estate investment trusts, and specialized engineering service providers.",
-    "image": "/BG/Contracting & Real Estate Development/Residential & Commercial Property Development.jpg",
+    "image": "/sami_trade_real_images/sami-trade-news-09-luxury-interior-decor.png",
     "imageAltAr": "متابعة سوق العقارات في معرض سيتي سكيب 2020",
     "imageAltEn": "Cityscape Egypt 2020 property market review",
     "seoTitleAr": "متابعة السوق العقاري في سيتي سكيب 2020 | قطاع المقاولات",
@@ -460,7 +558,7 @@ export const newsArticles: NewsArticle[] = [
     "excerptEn": "Engagement with Cityscape Egypt 2021 provided comprehensive visibility into architectural planning, smart residential complexes, and contracting opportunities.",
     "bodyAr": "ضمن الاهتمام بمتابعة سوق التطوير العقاري، جاءت متابعة فعاليات Cityscape Egypt 2021 للاطلاع على المشروعات الجديدة التي تقدمها شركات التطوير العقاري.\n\nكما أتاحت الفعالية التعرف على اتجاهات السوق في المشروعات السكنية والتجارية والإدارية، ومتابعة الحلول المعمارية والتخطيطية، والتعرف على فرص التعاون مع الشركات والمطورين في مجالات الإنشاءات والتطوير.",
     "bodyEn": "Continuing targeted surveillance of property development trends, engagement with Cityscape Egypt 2021 offered critical visibility into landmark projects introduced by tier-one property developers across Greater Cairo and emerging coastal hubs.\n\nThe exhibition facilitated in-depth analysis of prevailing market dynamics across residential, commercial, and mixed-use administrative complexes, sustainable architectural planning, and viable contracting partnerships supporting execution and infrastructure development.",
-    "image": "/BG/Contracting & Real Estate Development/Commercial & Administrative Development.jpg",
+    "image": "/sami_trade_real_images/sami-trade-news-10-engineering-project-management.png",
     "imageAltAr": "مشروعات التطوير العقاري في سيتي سكيب 2021",
     "imageAltEn": "Cityscape Egypt 2021 real estate investment trends",
     "seoTitleAr": "مشروعات سيتي سكيب 2021 واتجاهات الاستثمار | قطاع المقاولات",
@@ -497,7 +595,7 @@ export const newsArticles: NewsArticle[] = [
     "excerptEn": "Cityscape Egypt 2022 served as an observation venue to map developer expansion and contractor demand across specialized construction and finishing works.",
     "bodyAr": "في إطار متابعة حركة الاستثمار العقاري، تضمنت أجندة المتابعة معرض Cityscape Egypt 2022، حيث تم الاطلاع على مجموعة متنوعة من المشروعات العقارية والمجتمعات العمرانية الجديدة.\n\nوركزت المتابعة على التعرف على توجهات المطورين، ومتابعة الفرص الاستثمارية في المشروعات السكنية والتجارية والإدارية، إلى جانب التعرف على احتياجات السوق من خدمات المقاولات والتنفيذ والتشطيبات والأعمال الهندسية.",
     "bodyEn": "Within the framework of monitoring capital flows in real estate, Cityscape Egypt 2022 featured prominently on the professional observation agenda, offering comprehensive exposure to upcoming urban communities and integrated smart cities.\n\nMonitoring concentrated on developer expansion strategies, institutional investment opportunities across mixed-use developments, and identifying market requirements for specialized general contracting, MEP works, architectural fit-out, and advanced engineering execution.",
-    "image": "/BG/Contracting & Real Estate Development/Infrastructure & Integrated Building Systems.jpg",
+    "image": "/sami_trade_real_images/sami-trade-news-11-environmental-impact-assessment.png",
     "imageAltAr": "استكشاف فرص المقاولات والتشطيبات في سيتي سكيب 2022",
     "imageAltEn": "Exploring developer alliances at Cityscape Egypt 2022",
     "seoTitleAr": "فرص التعاون مع المطورين العقاريين في سيتي سكيب 2022 | قطاع المقاولات",
@@ -534,7 +632,7 @@ export const newsArticles: NewsArticle[] = [
     "excerptEn": "Cityscape Egypt 2023 presented strategic insights into smart fourth-generation cities, supporting SBA Group's expansion in general contracting and civil works.",
     "bodyAr": "استمرت متابعة تطورات السوق العقاري المصري من خلال فعاليات Cityscape Egypt 2023، التي جمعت عددًا من المطورين العقاريين والشركات الاستثمارية ومقدمي الخدمات المرتبطة بالتطوير العمراني.\n\nوقد مثلت الفعالية فرصة للتعرف على المشروعات الجديدة، ومتابعة توجهات الاستثمار في المدن الجديدة، والاطلاع على متطلبات التنفيذ والتطوير، بما يدعم رؤية المجموعة في توسيع نطاق التعاون في مجالات المقاولات والإنشاءات والتطوير العقاري.",
     "bodyEn": "Systematic tracking of Egyptian property trends continued through Cityscape Egypt 2023, convening major real estate developers, institutional investors, and urban infrastructure stakeholders.\n\nThe event served as a high-value forum to review groundbreaking projects in fourth-generation smart cities, evaluate capital deployment strategies, and identify technical execution standards, supporting Sami Bin Ayyad Group's vision to expand contracting alliances and civil engineering operations.",
-    "image": "/BG/Contracting & Real Estate Development/Residential Development & Luxury Villas.jpg",
+    "image": "/sami_trade_real_images/sami-trade-news-12-esia-social-assessment.png",
     "imageAltAr": "التوسع العمراني والمشروعات الجديدة في سيتي سكيب 2023",
     "imageAltEn": "Tracking urban expansion at Cityscape Egypt 2023",
     "seoTitleAr": "التوسع العمراني في سيتي سكيب 2023 | قطاع المقاولات والتطوير",
@@ -572,7 +670,7 @@ export const newsArticles: NewsArticle[] = [
     "excerptEn": "Professional market tracking encompassed Cityscape Egypt 2024 to examine high-spec commercial, residential, and engineering fit-out opportunities.",
     "bodyAr": "في إطار متابعة سوق التطوير العقاري، تضمنت الزيارات المهنية متابعة Cityscape Egypt 2024 للاطلاع على أحدث المشروعات السكنية والتجارية والإدارية، والتعرف على توجهات الشركات المطورة في السوق المصري.\n\nكما ركزت المتابعة على رصد الفرص المرتبطة بأعمال المقاولات والتشطيبات والتجهيزات الهندسية، والتعرف على احتياجات المشروعات الجديدة.",
     "bodyEn": "Professional market intelligence included active engagement with Cityscape Egypt 2024 to examine state-of-the-art residential, commercial, and administrative developments, analyzing strategic orientations of leading developers in Egypt's evolving real estate market.\n\nEmphasis was placed on mapping prime contracting requirements, specialized finishing and interior fit-out services, and electro-mechanical systems demand across newly commissioned developments.",
-    "image": "/BG/Contracting & Real Estate Development/Contracting & Real Estate Development Home Page.jpg",
+    "image": "/sami_trade_real_images/sami-trade-news-13-carbon-footprint-reporting.png",
     "imageAltAr": "فرص التطوير والاستثمار العقاري في سيتي سكيب 2024",
     "imageAltEn": "Cityscape Egypt 2024 property development prospects",
     "seoTitleAr": "فرص التطوير والاستثمار العقاري في سيتي سكيب 2024 | قطاع المقاولات",
@@ -609,7 +707,7 @@ export const newsArticles: NewsArticle[] = [
     "excerptEn": "Cityscape Egypt 2025 brought together major institutional developers, highlighting civil engineering execution and specialized finishing contracts.",
     "bodyAr": "تضمنت أجندة المتابعة المهنية لمجال التطوير العقاري معرض Cityscape Egypt 2025، الذي جمع شركات التطوير العقاري والمستثمرين والجهات المرتبطة بالسوق.\n\nوتركز الاهتمام على متابعة المشروعات السكنية والتجارية الجديدة، والتعرف على توجهات المطورين في المدن الجديدة، ومتابعة فرص التعاون في أعمال الإنشاءات والتطوير والتشطيبات والتجهيزات المتخصصة.",
     "bodyEn": "Professional industry monitoring encompassed Cityscape Egypt 2025, uniting institutional developers, private investors, and municipal planning bodies.\n\nAttention centered on premier residential communities and landmark commercial complexes in new administrative and coastal zones, alongside evaluating collaborative contracting opportunities encompassing turnkey civil construction, architectural fit-out, and specialized structural systems.",
-    "image": "/BG/Contracting & Real Estate Development/Commercial & Administrative Development.jpg",
+    "image": "/sami_trade_real_images/sami-trade-news-14-field-environmental-monitoring.png",
     "imageAltAr": "المشروعات العقارية الكبرى وفرص التعاون الإنشائي في سيتي سكيب 2025",
     "imageAltEn": "Mega real estate projects and contracting collaboration at Cityscape Egypt 2025",
     "seoTitleAr": "المشروعات العقارية الكبرى وفرص التعاون 2025 | قطاع المقاولات",
@@ -646,7 +744,7 @@ export const newsArticles: NewsArticle[] = [
     "excerptEn": "The Group maintained comprehensive oversight of property and contracting market dynamics, emphasizing master-planned developments and modern engineering execution.",
     "bodyAr": "واصلت المجموعة اهتمامها بمتابعة تطورات سوق العقارات والإنشاءات، مع التركيز على المشروعات الجديدة وتوجهات الاستثمار العمراني ومتطلبات تنفيذ المشروعات الحديثة.\n\nوشملت المتابعة الاهتمام بالحلول الهندسية وأساليب التنفيذ والتطوير، ومتابعة الفرص التي يمكن أن تتيح تعاونًا بين شركات المقاولات والمطورين والمستثمرين.",
     "bodyEn": "The Group maintained continuous oversight of property and contracting market dynamics, emphasizing upcoming master-planned communities, sustainable urban planning paradigms, and execution requirements for modern developments.\n\nFocus centered on advanced engineering techniques, modular construction workflows, and partnership frameworks uniting contracting firms, institutional developers, and private investors.",
-    "image": "/BG/Contracting & Real Estate Development/Integrated Solutions, Multiple Disciplines.jpg",
+    "image": "/sami_trade_real_images/sami-trade-news-15-integrated-waste-management.png",
     "imageAltAr": "مستقبل التطوير العمراني والفرص الاستثمارية في مصر 2026",
     "imageAltEn": "Future urban development and contracting outlook in Egypt 2026",
     "seoTitleAr": "مستقبل التطوير العمراني والفرص الاستثمارية 2026 | قطاع المقاولات",
@@ -683,7 +781,7 @@ export const newsArticles: NewsArticle[] = [
     "excerptEn": "Professional evaluations at Egy Stitch & Tex 2021 addressed automated sewing, embroidery, digital printing, and production line supplies.",
     "bodyAr": "في إطار الاهتمام بتطوير القدرات الصناعية ومتابعة أحدث تقنيات صناعة الملابس الجاهزة، تضمنت الزيارات المهنية متابعة معرض Egy Stitch & Tex 2021، الذي استعرض مجموعة متنوعة من ماكينات الخياطة والتطريز والطباعة ومستلزمات الإنتاج.\n\nوأتاحت الفعالية التعرف على التقنيات الحديثة المستخدمة في خطوط التصنيع، ومتابعة التطورات في المعدات والماكينات، والتعرف على الشركات المتخصصة في مستلزمات الصناعة، بما يدعم توجهات التطوير ورفع كفاءة العمليات الإنتاجية.",
     "bodyEn": "In pursuit of enhancing industrial capabilities and benchmarking cutting-edge technologies in ready-made garment production, professional field evaluations included visiting Egy Stitch & Tex 2021, showcasing automated sewing, industrial embroidery, digital textile printing, and specialized manufacturing inputs.\n\nThe event provided vital exposure to next-generation assembly lines, machine automation, and specialized auxiliary suppliers, laying foundations for scaling production efficiency and operational excellence.",
-    "image": "/BG/Apparel Manufacturing/Textile Mill & Internal Dyeing.jpg",
+    "image": "/sami_trade_real_images/sami-trade-news-16-hazardous-waste-chemicals.png",
     "imageAltAr": "تقنيات تصنيع الملابس والمنسوجات في معرض إيجي ستيتش آند تكس 2021",
     "imageAltEn": "Garment manufacturing technologies at Egy Stitch & Tex 2021",
     "seoTitleAr": "تقنيات تصنيع الملابس في Egy Stitch & Tex 2021 | قطاع الملابس",
@@ -720,7 +818,7 @@ export const newsArticles: NewsArticle[] = [
     "excerptEn": "Egy Stitch & Tex 2024 presented next-generation equipment for yarn spinning, fabric weaving, computerized dyeing, and finishing systems.",
     "bodyAr": "ضمن الاهتمام بتطوير قطاع تصنيع الملابس، تضمنت المتابعة المهنية فعاليات Egy Stitch & Tex 2024، الذي جمع شركات متخصصة في ماكينات الغزل والنسيج والخياطة والطباعة والصباغة والتجهيز.\n\nوركزت الزيارة على التعرف على أحدث المعدات والتقنيات، ومتابعة حلول تحسين كفاءة خطوط الإنتاج، والاطلاع على الخامات ومستلزمات التصنيع، إلى جانب توسيع دائرة التواصل مع الموردين والشركات الصناعية المتخصصة.",
     "bodyEn": "Supporting continuous modernization in garment manufacturing, professional engagements encompassed Egy Stitch & Tex 2024, convening international manufacturers specializing in yarn spinning, weaving, automated sewing, rotary and digital printing, dyeing, and fabric finishing.\n\nDiscussions and technical reviews centered on high-throughput machinery, line-balancing optimization, raw material sourcing, and cultivating direct channels with certified industrial textile suppliers.",
-    "image": "/BG/Apparel Manufacturing/Specialized Production Lines.jpg",
+    "image": "/sami_trade_real_images/sami-trade-news-17-waste-to-energy-projects.png",
     "imageAltAr": "ماكينات الغزل والنسيج في إيجي ستيتش 2024",
     "imageAltEn": "Spinning and textile solutions at Egy Stitch & Tex 2024",
     "seoTitleAr": "حلول الغزل والنسيج في Egy Stitch & Tex 2024 | قطاع الملابس",
@@ -757,7 +855,7 @@ export const newsArticles: NewsArticle[] = [
     "excerptEn": "Seasonal fashion intelligence focused on women's wear, childrenswear, and fabric blends, expanding B2B collaborations with brand owners.",
     "bodyAr": "في سياق متابعة اتجاهات صناعة الملابس والأزياء، اهتمت المجموعة بالاطلاع على المجموعات الجديدة واتجاهات التصميم والخامات وأساليب عرض المنتجات في الفعاليات المتخصصة.\n\nوشملت الاهتمامات متابعة احتياجات الأسواق المختلفة، والتعرف على توجهات الملابس النسائية والأطفال والملابس الكاجوال، ومتابعة فرص التعاون مع العلامات التجارية وتجار الجملة ومنافذ البيع.",
     "bodyEn": "Tracking seasonal shifts in fashion design and ready-to-wear apparel, the Group systematically evaluated upcoming collections, pattern trends, fabric blends, and retail merchandising at dedicated industry showcases.\n\nKey areas of assessment involved demographic preferences across women's apparel, childrenswear, and casual collections, alongside cultivating B2B supply agreements with private-label brands, wholesalers, and retail distributors.",
-    "image": "/BG/Apparel Manufacturing/Product Development & Sampling.jpg",
+    "image": "/sami_trade_real_images/sami-trade-news-18-biogas-renewable-solutions.png",
     "imageAltAr": "اتجاهات الموضة وتصميم الملابس الجاهزة",
     "imageAltEn": "Fashion trends and ready-made garment collections",
     "seoTitleAr": "اتجاهات صناعة الأزياء والملابس الجاهزة 2024 | قطاع الملابس",
@@ -794,7 +892,7 @@ export const newsArticles: NewsArticle[] = [
     "excerptEn": "Egypt Stitch & Tex 2025 presented specialized insights into premium yarns, organic textiles, digital finishing, and fabric sourcing.",
     "bodyAr": "مثلت فعاليات Egypt Stitch & Tex 2025 المتخصصة في تكنولوجيا النسيج فرصة للاطلاع على أحدث أنواع الأقمشة والغزول ومستلزمات التصنيع والتجهيز.\n\nوركزت المتابعة على التعرف على الخامات الجديدة، وتقنيات الطباعة والتجهيز، ومستلزمات خطوط الإنتاج، إلى جانب الاطلاع على حلول التوريد المتاحة والتواصل مع الشركات العاملة في سلاسل إمداد صناعة الملابس.",
     "bodyEn": "Participating in Egypt Stitch & Tex 2025 provided an authoritative forum to evaluate novel functional textiles, premium yarns, organic cotton blends, and advanced chemical finishing agents.\n\nEvaluations prioritized innovative fabric compositions, digital sublimation techniques, and production line accessories, while strengthening collaborative logistics ties with upstream and downstream textile supply chain operators.",
-    "image": "/BG/Apparel Manufacturing/Manufacturing Infrastructure.jpg",
+    "image": "/sami_trade_real_images/sami-trade-news-19-esg-sustainability-strategies.png",
     "imageAltAr": "الأقمشة والخامات في معرض إيجيبت ستيتش 2025",
     "imageAltEn": "Fabrics and textile raw materials at Egypt Stitch & Tex 2025",
     "seoTitleAr": "تطورات الأقمشة والخامات في Egypt Stitch & Tex 2025 | قطاع الملابس",
@@ -831,7 +929,7 @@ export const newsArticles: NewsArticle[] = [
     "excerptEn": "Cairo Fashion & Tex 2025 highlighted contemporary apparel trends, consumer-driven fabric selections, and B2B manufacturing contracts.",
     "bodyAr": "في إطار الاهتمام بمتابعة حركة سوق الأزياء والملابس الجاهزة، تضمنت أجندة المعارض المتخصصة متابعة Cairo Fashion & Tex 2025.\n\nوتركز الاهتمام على متابعة الموديلات والاتجاهات الجديدة، والتعرف على الخامات والتصميمات التي تلبي احتياجات الأسواق، إلى جانب الاطلاع على فرص التعاون بين المصنعين والعلامات التجارية والموزعين وتجار التجزئة.",
     "bodyEn": "Within ongoing market alignment for apparel and commercial textiles, the Group engaged with Cairo Fashion & Tex 2025, Egypt's established international exhibition for fashion and garments.\n\nThe review addressed emerging silhouette trends, consumer-driven fabric specifications, and commercial production agreements connecting primary manufacturers with domestic brand owners, regional distributors, and export retail networks.",
-    "image": "/BG/Apparel Manufacturing/Ready-Made Garment Manufacturing.jpg",
+    "image": "/sami_trade_real_images/sami-trade-news-20-iso-environmental-certification.png",
     "imageAltAr": "معرض كايرو فاشون آند تكس 2025 وتطورات صناعة الملابس",
     "imageAltEn": "Cairo Fashion & Tex 2025 apparel industry review",
     "seoTitleAr": "معرض كايرو فاشون آند تكس 2025 | قطاع الملابس والمنسوجات",
@@ -868,7 +966,7 @@ export const newsArticles: NewsArticle[] = [
     "excerptEn": "Egypt Stitch & Tex 2025 showcased throughput acceleration, high-precision finishing, and lean garment production lines.",
     "bodyAr": "تواصل الاهتمام بمتابعة التطور التكنولوجي في صناعة الملابس من خلال فعاليات Egypt Stitch & Tex 2025، التي تضم شركات متخصصة في ماكينات التصنيع والطباعة والنسيج ومستلزمات الإنتاج.\n\nوشملت مجالات الاهتمام التعرف على المعدات الحديثة، ومتابعة حلول زيادة الإنتاجية، وتحسين جودة التشطيب، وتقليل الفاقد، بما يدعم تطوير خطوط تصنيع الملابس الجاهزة وتعزيز القدرة التنافسية للمنتجات المصرية.",
     "bodyEn": "Continuous technological benchmark exercises continued at Egypt Stitch & Tex 2025, which hosted prominent international suppliers of automated cutting systems, precision sewing machinery, and digital finishing technologies.\n\nFocus concentrated on throughput optimization, smart finishing quality control, and lean manufacturing waste reduction, reinforcing production line performance and strengthening the competitive positioning of Egyptian apparel in global export markets.",
-    "image": "/BG/Apparel Manufacturing/Production Volume & Scale.jpg",
+    "image": "/sami_trade_real_images/sami-trade-news-21-hse-digital-solutions.png",
     "imageAltAr": "تطوير خطوط إنتاج تصنيع الملابس في إيجيبت ستيتش 2025",
     "imageAltEn": "Production line advancement at Egypt Stitch & Tex 2025",
     "seoTitleAr": "تطوير خطوط إنتاج الملابس في Egypt Stitch & Tex 2025 | قطاع الملابس",
@@ -905,7 +1003,7 @@ export const newsArticles: NewsArticle[] = [
     "excerptEn": "Egypt Stitch & Tex 2026 serves as a premier venue to examine automated assembly lines, eco-friendly printing, and smart textile machinery.",
     "bodyAr": "في إطار مواصلة متابعة التطورات الصناعية، يأتي معرض Egypt Stitch & Tex 2026 ضمن الفعاليات المتخصصة في تكنولوجيا الغزل والنسيج والملابس الجاهزة.\n\nوتشمل مجالات الاهتمام متابعة أحدث الماكينات وخطوط الإنتاج وتقنيات الطباعة والأقمشة ومستلزمات التصنيع، والتعرف على الاتجاهات التقنية التي تسهم في تطوير صناعة الملابس ورفع كفاءة الإنتاج.",
     "bodyEn": "As part of long-term industrial modernization, Egypt Stitch & Tex 2026 forms a focal event dedicated to advanced textile engineering, smart fabric handling, and ready-made garment innovation.\n\nCore technical review points encompass automated modular assembly systems, sustainable low-water printing technologies, and high-performance production line tooling designed to elevate manufacturing efficiency and precision.",
-    "image": "/BG/Apparel Manufacturing/Industrial Infrastructure.jpg",
+    "image": "/sami_trade_real_images/sami-trade-news-22-biotech-applied-research.png",
     "imageAltAr": "أحدث تكنولوجيات صناعة الملابس لعام 2026",
     "imageAltEn": "Cutting-edge garment manufacturing technologies 2026",
     "seoTitleAr": "أحدث تكنولوجيات صناعة الملابس في Egypt Stitch & Tex 2026 | قطاع الملابس",
@@ -942,7 +1040,7 @@ export const newsArticles: NewsArticle[] = [
     "excerptEn": "Food Africa 2020 provided valuable market perspective on agricultural trade, commercial food processing, and regional export demand.",
     "bodyAr": "في إطار الاهتمام بمتابعة أسواق الأغذية والمنتجات الطبيعية، جاءت متابعة معرض Food Africa 2020 للاطلاع على أحدث المنتجات الغذائية والزراعية، والتعرف على الشركات العاملة في مجالات التصنيع والتعبئة والتغليف والتوزيع.\n\nوقد أتاحت الفعالية التعرف على الفرص التجارية في الأسواق المصرية والأفريقية، ومتابعة احتياجات المستوردين والموزعين، واستكشاف إمكانات التعاون مع الموردين والمنتجين في مجالات المنتجات الطبيعية والمواد الغذائية.",
     "bodyEn": "Observing food and agricultural trade developments, professional engagements included monitoring Food Africa 2020 to review consumer trends, agricultural commodities, and processing and packaging innovations.\n\nThe exhibition provided actionable insights into commercial trade flows across Egyptian and African markets, buyer requirements for bulk and packaged goods, and collaborative procurement ties with regional producers of natural foods and agri-commodities.",
-    "image": "/BG/Natural & Agri-Food Products/Natural & Agri-Food Products Home Page.jpg",
+    "image": "/sami_trade_real_images/sami-trade-news-23-oem-manufacturing-partnership.png",
     "imageAltAr": "سوق الصناعات الغذائية والمنتجات الزراعية في فوود أفريكا 2020",
     "imageAltEn": "Food industries and agricultural commodities at Food Africa 2020",
     "seoTitleAr": "سوق الصناعات الغذائية في Food Africa 2020 | قطاع الأغذية",
@@ -979,7 +1077,7 @@ export const newsArticles: NewsArticle[] = [
     "excerptEn": "Food Africa 2021 offered strategic insights into wholesale food distribution, packaging lines, and expanding Arab and African supply channels.",
     "bodyAr": "تضمنت متابعة قطاع المنتجات الغذائية فعاليات Food Africa 2021، للتعرف على مجموعة متنوعة من المنتجات الغذائية ومستلزمات التصنيع والتعبئة والتغليف.\n\nوركزت المتابعة على استكشاف فرص التعاون مع الشركات المنتجة والموردين، ومتابعة اتجاهات الطلب في الأسواق الأفريقية والعربية، والتعرف على إمكانات تطوير قنوات التوزيع والتوريد للمنتجات الطبيعية والغذائية.",
     "bodyEn": "Industry tracking in food commodities extended to Food Africa 2021, examining agricultural derivatives, aseptic packaging systems, and wholesale distribution infrastructure.\n\nField meetings prioritized establishing supplier partnerships, evaluating surging demand in Arab and African markets, and assessing distribution logistics for premium natural food ingredients and staple agri-products.",
-    "image": "/BG/Natural & Agri-Food Products/Dates & Palm Products.jpg",
+    "image": "/sami_trade_real_images/sami-trade-news-24-odm-design-manufacturing.png",
     "imageAltAr": "استكشاف فرص التوريد والتجارة الغذائية في فوود أفريكا 2021",
     "imageAltEn": "Supply channels and commercial trade at Food Africa 2021",
     "seoTitleAr": "فرص التوريد والتعاون التجاري في Food Africa 2021 | قطاع الأغذية",
@@ -1016,7 +1114,7 @@ export const newsArticles: NewsArticle[] = [
     "excerptEn": "Food Africa 2022 highlighted natural honey, virgin olive oil, premium dates, aromatic herbs, and export packaging specifications.",
     "bodyAr": "في سياق الاهتمام بتوسيع قاعدة المنتجات الطبيعية والتجارية، مثلت فعاليات Food Africa 2022 فرصة للاطلاع على أحدث المنتجات المعروضة والتعرف على الشركات العاملة في مجالات الأغذية والمشروبات والصناعات الغذائية.\n\nوشملت مجالات الاهتمام منتجات العسل والزيوت والتمور والأعشاب والتوابل، إلى جانب متابعة حلول التعبئة والتغليف والتصدير والتوزيع، والتعرف على فرص التعاون في تجارة المنتجات الغذائية.",
     "bodyEn": "Expanding commercial focus across natural commodities, Food Africa 2022 presented strategic opportunities to evaluate leading suppliers and food processors in the Middle East and Africa.\n\nKey commodity reviews encompassed natural honey, virgin olive oils, premium date cultivars, aromatic herbs, and spices, alongside examining automated packaging, export compliance documentation, and HoReCa supply chain frameworks.",
-    "image": "/BG/Natural & Agri-Food Products/Honey & Bee Products.jpg",
+    "image": "/sami_trade_real_images/sami-trade-news-25-private-label-garments.png",
     "imageAltAr": "تجارة المنتجات الغذائية الطبيعية في فوود أفريكا 2022",
     "imageAltEn": "Natural food commodities and trade at Food Africa 2022",
     "seoTitleAr": "تجارة المنتجات الغذائية الطبيعية في Food Africa 2022 | قطاع الأغذية",
@@ -1054,7 +1152,7 @@ export const newsArticles: NewsArticle[] = [
     "excerptEn": "Food Africa 2023 facilitated direct engagements with growers and packhouses for natural honey, dates, olive oil, and organic botanicals.",
     "bodyAr": "تضمنت المتابعة المهنية المتخصصة في مجال المنتجات الغذائية فعاليات Food Africa 2023، التي تمثل منصة للتواصل بين المنتجين والمصنعين والمستوردين والموزعين.\n\nوقد ركزت المتابعة على التعرف على المنتجات الجديدة، ومتابعة التطورات في التعبئة والتغليف والتصنيع الغذائي، واستكشاف فرص التعاون في توريد المنتجات الطبيعية، بما يشمل العسل والتمور والزيوت والأعشاب والتوابل.",
     "bodyEn": "Professional trade engagement at Food Africa 2023 connected Sami Bin Ayyad Group with premier growers, commercial packhouses, and food import syndicates.\n\nWork sessions centered on value-added packaging, private label specifications, and expanding supply programs for raw honey, Medjool and dry dates, extra virgin olive oil, and organic medicinal herbs.",
-    "image": "/BG/Natural & Agri-Food Products/Olive Oil Grades.jpg",
+    "image": "/sami_trade_real_images/sami-trade-news-26-fob-export-programs.png",
     "imageAltAr": "سلاسل توريد الأغذية والمنتجات الطبيعية في فوود أفريكا 2023",
     "imageAltEn": "Food supply chains and natural commodities at Food Africa 2023",
     "seoTitleAr": "سلاسل توريد المنتجات الطبيعية في Food Africa 2023 | قطاع الأغذية",
@@ -1091,7 +1189,7 @@ export const newsArticles: NewsArticle[] = [
     "excerptEn": "Food Africa 2024 convened regional food exporters, mapping import regulations, bulk shipping, and distribution across African trade hubs.",
     "bodyAr": "في إطار متابعة فرص التوسع في الأسواق الإقليمية والدولية، تضمنت المتابعة المهنية فعاليات Food Africa 2024، التي جمعت شركات ومؤسسات متخصصة في الصناعات الغذائية والمشروبات والتجارة الزراعية.\n\nوشملت مجالات الاهتمام التعرف على المنتجات الجديدة، ومتابعة حلول التصنيع والتعبئة، والاطلاع على متطلبات التوريد للأسواق الأفريقية، والتواصل المهني مع الموردين والموزعين والشركات العاملة في مجال تجارة المنتجات الغذائية.",
     "bodyEn": "Strategic international expansion initiatives involved comprehensive participation in Food Africa 2024, uniting food and beverage conglomerates and agricultural trade authorities.\n\nEvaluations covered regional import regulations, shelf-life stabilization technologies, containerized bulk logistics, and building long-term contractual supply agreements with commercial distributors in West, East, and North African markets.",
-    "image": "/BG/Natural & Agri-Food Products/Aromatic Herbs & Natural Botanicals.jpg",
+    "image": "/sami_trade_real_images/sami-trade-news-27-pattern-engineering-lab.png",
     "imageAltAr": "التوسع في الأسواق الغذائية الأفريقية في فوود أفريكا 2024",
     "imageAltEn": "Regional food market expansion at Food Africa 2024",
     "seoTitleAr": "التوسع في الأسواق الغذائية الأفريقية في Food Africa 2024 | قطاع الأغذية",
@@ -1128,7 +1226,7 @@ export const newsArticles: NewsArticle[] = [
     "excerptEn": "Food Africa 2025 highlighted organic certifications, sustainable packaging, cold chain logistics, and wholesale export growth.",
     "bodyAr": "واصل قطاع المنتجات الطبيعية اهتمامه بمتابعة التطورات في صناعة الأغذية والتجارة الدولية، من خلال فعاليات Food Africa 2025.\n\nوركزت المتابعة على التعرف على أحدث المنتجات والابتكارات في مجالات الأغذية والمشروبات، ومتابعة تطورات سلاسل التوريد والتعبئة والتغليف، واستكشاف فرص التعاون مع الشركات المنتجة والموردين والموزعين.",
     "bodyEn": "The Natural & Agri-Food division sustained active engagement with evolving global consumer demands and international food standards through Food Africa 2025.\n\nThe review focused on certified organic certifications, cold-chain transport resilience, modern retail packaging solutions, and expanding strategic wholesale distribution networks across Arab Gulf and African trade corridors.",
-    "image": "/BG/Natural & Agri-Food Products/Spices & Seasonings.jpg",
+    "image": "/sami_trade_real_images/sami-trade-news-28-rapid-prototyping-samples.png",
     "imageAltAr": "اتجاهات الصناعات الغذائية في فوود أفريكا 2025",
     "imageAltEn": "Agri-food industry trends at Food Africa 2025",
     "seoTitleAr": "اتجاهات الصناعات الغذائية والتجارة الإقليمية 2025 | قطاع الأغذية",
@@ -1165,7 +1263,7 @@ export const newsArticles: NewsArticle[] = [
     "excerptEn": "EGYPS 2022 provided insights into hydrocarbons engineering, process safety, asset integrity, and industrial environmental standards.",
     "bodyAr": "في إطار الاهتمام بمتابعة الحلول والتقنيات المرتبطة بقطاع الطاقة والصناعات البترولية، تضمنت المتابعة المهنية فعاليات Egypt Petroleum Show 2022 (EGYPS).\n\nوأتاحت الفعالية الاطلاع على التقنيات الحديثة المستخدمة في قطاع البترول والغاز، ومتابعة الحلول الهندسية والتشغيلية، والتعرف على الشركات العاملة في مجالات الطاقة والخدمات الصناعية، إلى جانب متابعة التطورات المرتبطة بكفاءة التشغيل والسلامة والاستدامة البيئية.",
     "bodyEn": "Prioritizing technological advancements and industrial energy engineering, professional observation included attending the Egypt Petroleum Show 2022 (EGYPS).\n\nThe event provided an essential overview of state-of-the-art technologies in hydrocarbons and process engineering, industrial asset reliability, and specialized safety protocols, alongside monitoring environmental sustainability and operational efficiency in heavy industry.",
-    "image": "/BG/Environment & Sustainability/Oil & Gas Sector.jpg",
+    "image": "/sami_trade_real_images/sami-trade-news-29-mass-industrial-production.png",
     "imageAltAr": "تقنيات قطاع الطاقة والحلول الصناعية في إيجيبس 2022",
     "imageAltEn": "Energy sector solutions at EGYPS 2022",
     "seoTitleAr": "تطورات قطاع الطاقة في EGYPS 2022 | قطاع البيئة والاستدامة",
@@ -1202,7 +1300,7 @@ export const newsArticles: NewsArticle[] = [
     "excerptEn": "EGYPS 2023 showcased decarbonization methods, industrial flare mitigation, and operational tools reducing environmental impact.",
     "bodyAr": "شهدت متابعة قطاع الطاقة والبيئة اهتمامًا بالحلول التكنولوجية والتشغيلية المعروضة خلال فعاليات EGYPS 2023.\n\nوركزت المتابعة على التعرف على التطورات في مجالات الطاقة والبترول والغاز، ومتابعة الحلول التي تستهدف رفع الكفاءة التشغيلية وتقليل التأثيرات البيئية للأنشطة الصناعية، إلى جانب الاطلاع على تجارب الشركات المتخصصة في تقنيات الطاقة والخدمات المرتبطة بها.",
     "bodyEn": "Energy and environmental divisions actively monitored technological solutions presented during EGYPS 2023.\n\nObservations focused on decarbonization strategies, industrial flare gas recovery, wastewater treatment in chemical processing, and operational efficiency tools designed to minimize the ecological footprint of industrial complexes.",
-    "image": "/BG/Environment & Sustainability/Renewable Energy Sector.jpg",
+    "image": "/sami_trade_real_images/sami-trade-news-30-fabrics-dyeing-supply.png",
     "imageAltAr": "حلول الطاقة والتقنيات البيئية في إيجيبس 2023",
     "imageAltEn": "Energy and environmental technologies at EGYPS 2023",
     "seoTitleAr": "حلول الطاقة والتقنيات البيئية في EGYPS 2023 | قطاع البيئة",
@@ -1239,7 +1337,7 @@ export const newsArticles: NewsArticle[] = [
     "excerptEn": "WATREX Expo 2023 featured biological wastewater systems, industrial ZLD solutions, membrane desalination, and pumping engineering.",
     "bodyAr": "في إطار الاهتمام بتطوير الحلول البيئية ومتابعة تقنيات معالجة المياه، تضمنت المتابعة المهنية فعاليات WATREX Expo 2023، الذي جمع شركات ومؤسسات عاملة في مجالات المياه والصرف الصحي والمعالجة والتكنولوجيا البيئية.\n\nوشملت مجالات الاهتمام التعرف على أحدث أنظمة معالجة المياه، وتقنيات التحلية وإعادة الاستخدام، وحلول معالجة مياه الصرف الصناعي، ومتابعة المعدات والتقنيات المستخدمة في تطوير البنية التحتية للمياه.\n\nكما أتاحت الفعالية الاطلاع على تجارب الشركات المتخصصة والتعرف على فرص التعاون في تنفيذ الحلول البيئية والهندسية.",
     "bodyEn": "In alignment with developing environmental engineering solutions, professional field engagement encompassed WATREX Expo 2023, convening leading domestic and multinational firms specializing in water, wastewater, and desalination engineering.\n\nTechnical reviews covered biological wastewater treatment, reverse osmosis membrane desalination, zero liquid discharge (ZLD) systems for industrial plants, and advanced pump and valve infrastructure, unlocking collaborative opportunities in environmental contracting.",
-    "image": "/BG/Environment & Sustainability/Water & Wastewater Sector.jpg",
+    "image": "/sami_trade_real_images/sami-trade-news-31-pure-honey-beekeeping.png",
     "imageAltAr": "تقنيات معالجة المياه والصرف في معرض واتريكس 2023",
     "imageAltEn": "Water and wastewater treatment at WATREX Expo 2023",
     "seoTitleAr": "معالجة المياه والصرف في WATREX Expo 2023 | قطاع البيئة",
@@ -1276,7 +1374,7 @@ export const newsArticles: NewsArticle[] = [
     "excerptEn": "Cairo Water Week 2023 highlighted water stewardship studies, smart municipal recycling, and climate adaptation strategies.",
     "bodyAr": "ضمن الاهتمام بملفات الاستدامة وإدارة الموارد الطبيعية، جاءت متابعة فعاليات Cairo Water Week 2023 للاطلاع على أحدث الدراسات والحلول المتعلقة بإدارة المياه والتكيف مع التغيرات المناخية.\n\nوشملت محاور الاهتمام تقنيات إدارة الموارد المائية، ومعالجة المياه، وإعادة الاستخدام، والحلول المرتبطة بالاستدامة البيئية، إلى جانب متابعة المبادرات والتوجهات الدولية في إدارة المياه وتعزيز التعاون بين المؤسسات والشركات المتخصصة.",
     "bodyEn": "Emphasizing environmental sustainability and natural resource stewardship, engagement with Cairo Water Week 2023 reviewed scientific studies and policy frameworks addressing water security and climate change adaptation.\n\nKey themes addressed basin management, smart municipal metering, water reclamation in heavy industry, and cross-border initiatives strengthening public-private partnerships in water conservation.",
-    "image": "/BG/Environment & Sustainability/Sustainable Development Advisory & UN Global Goals.jpg",
+    "image": "/sami_trade_real_images/sami-trade-news-32-table-olives-export.png",
     "imageAltAr": "الابتكارات وحلول إدارة المياه في أسبوع القاهرة للمياه 2023",
     "imageAltEn": "Sustainable water innovations at Cairo Water Week 2023",
     "seoTitleAr": "أسبوع القاهرة للمياه 2023 والحلول المستدامة | قطاع البيئة",
@@ -1313,7 +1411,7 @@ export const newsArticles: NewsArticle[] = [
     "excerptEn": "EGYPES 2024 explored industrial decarbonization, hydrogen readiness, and transition engineering for major projects.",
     "bodyAr": "تضمنت المتابعة المهنية لقطاع الطاقة فعاليات EGYPES 2024، الذي يمثل منصة تجمع الشركات والمؤسسات المتخصصة في مجالات البترول والغاز والطاقة والخدمات الهندسية.\n\nوركزت المتابعة على التعرف على التقنيات الحديثة والحلول التشغيلية، ومتابعة تطورات الطاقة والتحول نحو حلول أكثر كفاءة واستدامة، إلى جانب الاطلاع على الفرص المتاحة للتعاون في المشروعات الصناعية والبيئية المرتبطة بالقطاع.",
     "bodyEn": "Energy sector monitoring included participation in the rebranded Egypt Energy Show (EGYPES 2024), uniting global leaders across energy, industrial decarbonization, and infrastructure engineering.\n\nDiscussions highlighted hydrogen readiness, industrial heat electrification, CCUS concepts, and engineering contracting opportunities that align group capabilities with transition-era industrial projects.",
-    "image": "/BG/Environment & Sustainability/Renewable Energy Solutions & Green Power.jpg",
+    "image": "/sami_trade_real_images/sami-trade-news-33-cold-pressed-olive-oil.png",
     "imageAltAr": "تقنيات الطاقة والتحول الصناعي في إيجيبس 2024",
     "imageAltEn": "Energy technologies and industrial transition at EGYPES 2024",
     "seoTitleAr": "تقنيات الطاقة والتحول الصناعي في EGYPES 2024 | قطاع البيئة",
@@ -1350,7 +1448,7 @@ export const newsArticles: NewsArticle[] = [
     "excerptEn": "Cairo Water Week 2024 emphasized desalination innovations, municipal water recycling, and hydrological climate resilience.",
     "bodyAr": "في إطار الاهتمام بالحلول البيئية المتكاملة، تضمنت المتابعة المهنية فعاليات Cairo Water Week 2024، التي تناولت العلاقة بين إدارة المياه والتغيرات المناخية وبناء المجتمعات القادرة على مواجهة التحديات البيئية.\n\nوقد شملت مجالات الاهتمام التعرف على الحلول الحديثة في معالجة المياه وتحلية المياه وإعادة الاستخدام، ومتابعة الابتكارات في إدارة الموارد المائية، والاطلاع على التجارب والمبادرات التي تدعم الاستدامة البيئية.",
     "bodyEn": "Continuing its environmental intelligence commitments, the Group monitored Cairo Water Week 2024, which explored the critical nexus between hydrological resilience, climate change, and sustainable community infrastructure.\n\nReview sessions analyzed solar-powered desalination, IoT-based groundwater monitoring, agricultural drainage recycling, and industrial effluent management standards.",
-    "image": "/BG/Environment & Sustainability/Environmental Measurements & Continuous Monitoring.jpg",
+    "image": "/sami_trade_real_images/sami-trade-news-34-premium-dates-supply.png",
     "imageAltAr": "إدارة المياه والاستدامة في أسبوع القاهرة للمياه 2024",
     "imageAltEn": "Water management and climate resilience at Cairo Water Week 2024",
     "seoTitleAr": "ابتكارات إدارة المياه في Cairo Water Week 2024 | قطاع البيئة",
@@ -1387,7 +1485,7 @@ export const newsArticles: NewsArticle[] = [
     "excerptEn": "EGYPES 2025 focused on operational efficiency in heavy industry, methane abatement, and environmental mitigation services.",
     "bodyAr": "تواصل الاهتمام بمتابعة التطورات في قطاع الطاقة من خلال فعاليات EGYPES 2025، التي جمعت مؤسسات وشركات متخصصة في مجالات البترول والغاز والطاقة والتكنولوجيا الصناعية.\n\nوركزت المتابعة على التعرف على الحلول الحديثة لرفع كفاءة العمليات الصناعية، ومتابعة التقنيات المرتبطة بالتحول الطاقي وخفض الانبعاثات، واستكشاف فرص التعاون مع الجهات العاملة في مجالات الطاقة والخدمات البيئية والهندسية.",
     "bodyEn": "Engagement with EGYPES 2025 reinforced the Group's dedication to monitoring low-carbon industrial transformations and cutting-edge energy engineering.\n\nCore assessments targeted industrial carbon accounting, methane abatement technologies, renewable microgrids for production facilities, and contractual alliances for environmental mitigation in manufacturing.",
-    "image": "/BG/Environment & Sustainability/Carbon Footprint & Greenhouse Gas Services.jpg",
+    "image": "/sami_trade_real_images/sami-trade-news-35-herbs-spices-export.png",
     "imageAltAr": "تكنولوجيا الطاقة وخفض الانبعاثات في إيجيبس 2025",
     "imageAltEn": "Energy efficiency and emissions reduction at EGYPES 2025",
     "seoTitleAr": "حلول الطاقة وخفض الانبعاثات في EGYPES 2025 | قطاع البيئة",
@@ -1424,7 +1522,7 @@ export const newsArticles: NewsArticle[] = [
     "excerptEn": "WATREX Expo 2025 highlighted closed-loop industrial water recycling, zero liquid discharge, and modular treatment plants.",
     "bodyAr": "ضمن الاهتمام بتطوير الحلول البيئية والتقنيات المرتبطة بإدارة الموارد، تضمنت المتابعة المهنية فعاليات WATREX Expo 2025، المتخصصة في تكنولوجيا المياه والصرف الصحي.\n\nوشملت مجالات الاهتمام أنظمة المعالجة الصناعية، وتقنيات إعادة تدوير المياه، وحلول التحلية، والمعدات المستخدمة في محطات المعالجة، إلى جانب متابعة الابتكارات التي تساعد المنشآت الصناعية على تحسين كفاءة استخدام الموارد والحد من الأثر البيئي.",
     "bodyEn": "Participating in WATREX Expo 2025 provided an authoritative forum for assessing state-of-the-art industrial wastewater treatment and closed-loop water recovery systems.\n\nEvaluations focused on tertiary electro-coagulation filtration, sludge-to-resource valorization, and modular wastewater plants enabling industrial facilities to meet rigorous environmental compliance standards while conserving fresh water.",
-    "image": "/BG/Environment & Sustainability/Comprehensive Waste Management Services.jpg",
+    "image": "/sami_trade_real_images/sami-trade-news-36-botanical-beverage-powders.png",
     "imageAltAr": "معالجة مياه الصرف الصناعي وإعادة التدوير في واتريكس 2025",
     "imageAltEn": "Industrial effluent treatment and water recycling at WATREX Expo 2025",
     "seoTitleAr": "معالجة مياه الصرف الصناعي في WATREX Expo 2025 | قطاع البيئة",
@@ -1461,7 +1559,7 @@ export const newsArticles: NewsArticle[] = [
     "excerptEn": "Cairo Water Week 2025 reviewed international climate adaptation frameworks, water infrastructure, and sustainable development goals.",
     "bodyAr": "في إطار متابعة التطورات العالمية في إدارة الموارد المائية والاستدامة، جاءت فعاليات Cairo Water Week 2025 ضمن الفعاليات المتخصصة التي تحظى باهتمام قطاع البيئة.\n\nوقد ركزت المتابعة على الحلول المبتكرة للتكيف مع التغيرات المناخية، وتحسين إدارة الموارد المائية، وتطوير البنية التحتية، وتعزيز كفاءة استخدام المياه، إلى جانب التعرف على المبادرات والتقنيات التي تدعم التنمية المستدامة.",
     "bodyEn": "Cairo Water Week 2025 formed a central event on the Environmental division's agenda, addressing regional water security under intensifying climatic variability.\n\nKey areas reviewed included nature-based flood defense infrastructure, cross-sectoral water stewardship benchmarks, and sustainable development goal (SDG 6) alignment models for large-scale industrial and agricultural developers.",
-    "image": "/BG/Environment & Sustainability/Environmental & Social Impact Assessments (ESIA).jpg",
+    "image": "/sami_trade_real_images/sami-trade-news-37-agricultural-commodities-trade.png",
     "imageAltAr": "الأمن المائي والاستدامة في أسبوع القاهرة للمياه 2025",
     "imageAltEn": "Water security and sustainability at Cairo Water Week 2025",
     "seoTitleAr": "الأمن المائي والاستدامة في Cairo Water Week 2025 | قطاع البيئة",
@@ -1498,7 +1596,7 @@ export const newsArticles: NewsArticle[] = [
     "excerptEn": "Egypt Energy Show 2026 provided visibility into low-emission energy infrastructure, biogas synthesis, and waste-to-energy solutions.",
     "bodyAr": "في سياق متابعة التطورات في قطاع الطاقة والصناعات المرتبطة به، تمثل فعاليات Egypt Energy Show 2026 منصة للاطلاع على الحلول الحديثة في مجالات الطاقة والبترول والغاز والتكنولوجيا الصناعية.\n\nوركزت المتابعة على استكشاف التقنيات التي تدعم كفاءة الطاقة، ومتابعة الابتكارات في حلول الطاقة منخفضة الانبعاثات، والتعرف على التوجهات الجديدة في تطوير البنية التحتية للطاقة وتعزيز التكامل بين القطاعات الصناعية والبيئية.",
     "bodyEn": "Attending Egypt Energy Show 2026 (EGYPES) provided critical vantage into the accelerated modernization of regional energy systems and sustainable infrastructure.\n\nDiscussions highlighted zero-emission biogas synthesis, smart waste-to-energy facilities, high-efficiency cogeneration plants, and the integration of environmental engineering solutions into legacy industrial frameworks.",
-    "image": "/BG/Environment & Sustainability/Waste to Energy Services & Biogas Plants.jpg",
+    "image": "/sami_trade_real_images/sami-trade-news-38-corporate-expansion-milestone.png",
     "imageAltAr": "التحول الطاقي والحلول المستدامة في معرض إيجيبت إنرجي شو 2026",
     "imageAltEn": "Energy transition and low-emission solutions at Egypt Energy Show 2026",
     "seoTitleAr": "التحول الطاقي في Egypt Energy Show 2026 | قطاع البيئة والاستدامة",
@@ -1535,7 +1633,7 @@ export const newsArticles: NewsArticle[] = [
     "excerptEn": "Cairo Water Week 2026 convened global water pioneers, examining digital twins, biological effluent treatment, and climate infrastructure.",
     "bodyAr": "واصل قطاع البيئة والاستدامة متابعة الفعاليات الدولية المتخصصة في إدارة الموارد المائية، من خلال الاهتمام بفعاليات Cairo Water Week 2026.\n\nوشملت محاور المتابعة تقنيات معالجة المياه وإعادة الاستخدام، والحلول المرتبطة بالتكيف المناخي، وتطوير البنية التحتية المائية، والابتكارات الرقمية في إدارة الموارد، إلى جانب متابعة فرص التعاون مع المؤسسات والشركات العاملة في مجال المياه والاستدامة.",
     "bodyEn": "The Environmental & Sustainability division sustained active alignment with global scientific discourse at Cairo Water Week 2026.\n\nFocal themes examined digital twin models for municipal water distribution, biological nutrient removal in industrial wastewater, climate-resilient water infrastructure, and collaborative agreements with international clean-tech partners.",
-    "image": "/BG/Environment & Sustainability/Environmental Biotechnology Services.jpg",
+    "image": "/sami_trade_real_images/sami-trade-news-39-international-trade-agreements.png",
     "imageAltAr": "الابتكارات الدولية في إدارة المياه بأسبوع القاهرة للمياه 2026",
     "imageAltEn": "International water innovations at Cairo Water Week 2026",
     "seoTitleAr": "الابتكارات المائية الدولية في Cairo Water Week 2026 | قطاع البيئة",
@@ -1556,6 +1654,17 @@ export const newsArticles: NewsArticle[] = [
 /**
  * Returns articles sorted from latest to oldest (default for global newsroom).
  */
+;
+
+// Unified Archive: Historical Sector Insights (2010–2020) + Modern Corporate News (2020–2026)
+export const newsArticles: NewsArticle[] = [
+  ...modernCorporateArticles,
+  ...historicalNewsArticles
+];
+
+/**
+ * Returns articles sorted from latest to oldest (default for global newsroom).
+ */
 export function getLatestNewsArticles(): NewsArticle[] {
   return [...newsArticles].sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
 }
@@ -1567,11 +1676,29 @@ export function getHistoricalNewsArticles(sector?: NewsSectorType): NewsArticle[
   const filtered = sector && sector !== "all" 
     ? newsArticles.filter((a) => a.sector === sector)
     : [...newsArticles];
-  return filtered.sort((a, b) => new Date(a.publishedAt).getTime() - new Date(b.publishedAt).getTime());
+  return filtered.sort((a, b) => (a.historicalRefYear || a.year) - (b.historicalRefYear || b.year));
 }
 
 /**
- * Available archive years
+ * Returns exclusively the 11 historical analysis articles (2010–2020).
  */
-export const ARCHIVE_YEARS = [2026, 2025, 2024, 2023, 2022, 2021, 2020] as const;
+export function getHistoricalAnalysisArticles(): NewsArticle[] {
+  return [...historicalNewsArticles].sort((a, b) => (a.historicalRefYear || a.year) - (b.historicalRefYear || b.year));
+}
+
+/**
+ * Returns exclusively the 39 corporate news articles (2020–2026).
+ */
+export function getModernCorporateArticles(): NewsArticle[] {
+  return [...modernCorporateArticles].sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
+}
+
+/**
+ * Available archive years spanning 2010 through 2026
+ */
+export const ARCHIVE_YEARS = [
+  2026, 2025, 2024, 2023, 2022, 2021, 2020,
+  2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011, 2010
+] as const;
+
 export type ArchiveYear = typeof ARCHIVE_YEARS[number];

@@ -56,6 +56,7 @@ import {
   INQUIRY_STATUS_CONFIG,
   INQUIRY_TYPE_CONFIG,
 } from "@/lib/crm-system";
+import { NewsCmsTab } from "./news-cms-tab";
 
 export function CrmDashboard() {
   const { language } = useLanguage();
@@ -65,6 +66,9 @@ export function CrmDashboard() {
   const [isAuthenticated, setIsAuthenticated] = useState(true);
   const [adminPin, setAdminPin] = useState("");
   const [pinError, setPinError] = useState(false);
+
+  // Navigation View Tab
+  const [adminTab, setAdminTab] = useState<"inquiries" | "news">("inquiries");
 
   // Data & Filters
   const [inquiries, setInquiries] = useState<CrmInquiry[]>([]);
@@ -251,21 +255,61 @@ export function CrmDashboard() {
                 </p>
               </div>
 
-              <div className="flex items-center gap-2">
-                <Button onClick={refreshData} variant="outline" size="sm" className="rounded-full gap-1.5 text-xs font-bold">
-                  <RefreshCw className="size-3.5" />
-                  <span>{ar ? "تحديث" : "Refresh"}</span>
-                </Button>
+              <div className="flex flex-wrap items-center gap-2">
+                {/* Admin Mode Switcher */}
+                <div className="flex items-center rounded-full bg-secondary/80 p-1 border border-border me-2">
+                  <button
+                    type="button"
+                    onClick={() => setAdminTab("inquiries")}
+                    className={cn(
+                      "rounded-full px-3.5 py-1 text-xs font-bold transition-all cursor-pointer",
+                      adminTab === "inquiries"
+                        ? "!bg-brand-green !text-white shadow-sm"
+                        : "text-muted-foreground hover:text-foreground"
+                    )}
+                  >
+                    {ar ? "طلبات الأعمال والـ CRM" : "Inquiries & CRM"}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setAdminTab("news")}
+                    className={cn(
+                      "rounded-full px-3.5 py-1 text-xs font-bold transition-all cursor-pointer",
+                      adminTab === "news"
+                        ? "!bg-brand-orange !text-white shadow-sm"
+                        : "text-muted-foreground hover:text-foreground"
+                    )}
+                  >
+                    {ar ? "إدارة الأرشيف والتاريخ المؤسسي" : "News Archive & Legacy"}
+                  </button>
+                </div>
 
-                <Button onClick={exportCsv} variant="primary" size="sm" className="rounded-full gap-1.5 text-xs font-bold">
-                  <Download className="size-3.5" />
-                  <span>{ar ? "تصدير التقرير (CSV)" : "Export Report (CSV)"}</span>
-                </Button>
+                {adminTab === "inquiries" && (
+                  <>
+                    <Button onClick={refreshData} variant="outline" size="sm" className="rounded-full gap-1.5 text-xs font-bold">
+                      <RefreshCw className="size-3.5" />
+                      <span>{ar ? "تحديث" : "Refresh"}</span>
+                    </Button>
+
+                    <Button onClick={exportCsv} variant="primary" size="sm" className="rounded-full gap-1.5 text-xs font-bold">
+                      <Download className="size-3.5" />
+                      <span>{ar ? "تصدير التقرير (CSV)" : "Export Report (CSV)"}</span>
+                    </Button>
+                  </>
+                )}
               </div>
             </div>
 
-            {/* 2. KPI METRICS CARDS */}
-            <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+            {adminTab === "news" && (
+              <div className="mt-8">
+                <NewsCmsTab />
+              </div>
+            )}
+
+            {adminTab === "inquiries" && (
+              <>
+                {/* 2. KPI METRICS CARDS */}
+                <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
               <div className="rounded-2xl border border-white/20 bg-background/80 p-4 shadow-sm backdrop-blur-md">
                 <div className="text-[11px] font-bold text-muted-foreground uppercase tracking-wider">
                   {ar ? "إجمالي الطلبات" : "Total Requests"}
@@ -327,10 +371,14 @@ export function CrmDashboard() {
                 </div>
               </div>
             </div>
-          </Reveal>
-        </div>
-      </section>
+          </>
+        )}
+      </Reveal>
+    </div>
+  </section>
 
+  {adminTab === "inquiries" && (
+    <>
       {/* 3. FILTERS & SEARCH BAR */}
       <section className="site-container py-6">
         <div className="rounded-3xl border border-white/20 bg-background/85 p-4 sm:p-5 shadow-md backdrop-blur-xl">
@@ -516,6 +564,8 @@ export function CrmDashboard() {
           </div>
         </div>
       </section>
+    </>
+  )}
 
       {/* =========================================================================
           5. INQUIRY ACTION & DETAIL MODAL

@@ -10,10 +10,13 @@ export const Route = createFileRoute("/news/$slug")({
     const canonical = `https://sami-trade.com/news/${params.slug}`;
     const imageUrl = article?.image ? (article.image.startsWith("http") ? article.image : `https://sami-trade.com${article.image}`) : "https://sami-trade.com/brand/logo.png";
 
+    const isHistoricalInsight = article?.contentType === "industry_insight" || article?.contentType === "historical_review";
+    const schemaType = isHistoricalInsight ? "Article" : "NewsArticle";
+
     const articleSchema = article
       ? {
           "@context": "https://schema.org",
-          "@type": "NewsArticle",
+          "@type": schemaType,
           mainEntityOfPage: {
             "@type": "WebPage",
             "@id": canonical,
@@ -69,10 +72,10 @@ export const Route = createFileRoute("/news/$slug")({
         : [],
     };
   },
-  component: NewsDetailRoute,
+  component: NewsDetailRouteComponent,
 });
 
-function NewsDetailRoute() {
+function NewsDetailRouteComponent() {
   const { slug } = Route.useParams();
   return <NewsDetailPage slug={slug} />;
 }

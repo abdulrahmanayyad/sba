@@ -19,6 +19,10 @@ import {
   Briefcase,
   History,
   Sparkles,
+  BarChart3,
+  ShieldCheck,
+  Globe2,
+  BookOpen
 } from "lucide-react";
 import { Reveal } from "@/components/home/reveal";
 import { Button } from "@/components/ui/button";
@@ -27,8 +31,10 @@ import { cn } from "@/lib/utils";
 import {
   newsArticles,
   newsCategories,
+  ECONOMIC_INDICATORS,
   type NewsSectorType,
   type NewsArticle,
+  type NewsContentType
 } from "./news-data";
 
 function getSectorIcon(sector: NewsSectorType) {
@@ -43,8 +49,48 @@ function getSectorIcon(sector: NewsSectorType) {
       return <Utensils className="size-3.5" />;
     case "environmental":
       return <Leaf className="size-3.5" />;
+    case "heritage":
+      return <BookOpen className="size-3.5" />;
+    case "exhibitions":
+      return <Globe2 className="size-3.5" />;
+    case "insights":
+      return <BarChart3 className="size-3.5" />;
     default:
       return <Layers className="size-3.5" />;
+  }
+}
+
+function getContentTypeBadge(type?: NewsContentType, ar?: boolean) {
+  switch (type) {
+    case "corporate_milestone":
+      return ar ? "محطة تاريخية مؤسسية" : "Corporate Milestone";
+    case "corporate_news":
+      return ar ? "خبر مؤسسي" : "Corporate News";
+    case "industry_insight":
+      return ar ? "تحليل قطاعي" : "Industry Insight";
+    case "historical_review":
+      return ar ? "مراجعة تاريخية" : "Historical Review";
+    case "exhibition_event":
+      return ar ? "معارض وفعاليات" : "Exhibition & Events";
+    case "market_data":
+      return ar ? "بيانات اقتصادية" : "Market Data";
+    default:
+      return ar ? "تقرير موثق" : "Documented Report";
+  }
+}
+
+function getSectorRoute(sector: NewsSectorType): string {
+  switch (sector) {
+    case "construction":
+      return "/sectors/construction";
+    case "environmental":
+      return "/sectors/environmental";
+    case "garment":
+      return "/sectors/garment";
+    case "food":
+      return "/sectors/food";
+    default:
+      return "/about";
   }
 }
 
@@ -55,9 +101,16 @@ export function NewsDetailPage({ slug }: { slug: string }) {
 
   const article: NewsArticle = newsArticles.find((a) => a.slug === slug) ?? newsArticles[0]!;
   const sectorInfo = newsCategories.find((c) => c.id === article.sector);
+  const isHistoricalInsight =
+    article.contentType === "industry_insight" || article.contentType === "historical_review";
+
+  // Linked economic indicator if any
+  const indicator = article.indicatorId
+    ? ECONOMIC_INDICATORS.find((ind) => ind.id === article.indicatorId)
+    : null;
 
   const relatedArticles = newsArticles
-    .filter((a) => a.id !== article.id && a.sector === article.sector)
+    .filter((a) => a.id !== article.id && (a.sector === article.sector || a.contentType === article.contentType))
     .slice(0, 3);
 
   const copyUrl = () => {
@@ -68,9 +121,11 @@ export function NewsDetailPage({ slug }: { slug: string }) {
     }
   };
 
+  const schemaType = isHistoricalInsight ? "Article" : "NewsArticle";
+
   const articleJsonLd = {
     "@context": "https://schema.org",
-    "@type": "NewsArticle",
+    "@type": schemaType,
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": `https://sami-trade.com/news/${article.slug}`,
@@ -86,7 +141,7 @@ export function NewsDetailPage({ slug }: { slug: string }) {
     ],
     author: {
       "@type": "Organization",
-      name: "Sami Bin Ayyad Group",
+      name: "Sami Bin Ayyad Group Corporate Communications",
       url: "https://sami-trade.com",
     },
     publisher: {
@@ -100,6 +155,8 @@ export function NewsDetailPage({ slug }: { slug: string }) {
     keywords: article.keywords?.join(", "),
     articleSection: article.categoryEn || article.sector,
   };
+
+  const refYear = article.historicalRefYear || article.year;
 
   return (
     <article className="w-full">
@@ -118,12 +175,12 @@ export function NewsDetailPage({ slug }: { slug: string }) {
             </Link>
             <span>/</span>
             <Link to="/news" className="hover:text-brand-orange transition-colors">
-              {ar ? "الأرشيف المؤسسي للأخبار" : "Corporate News Archive"}
+              {ar ? "الأرشيف التاريخي والأخبار" : "Corporate Legacy & Archive"}
             </Link>
             <span>/</span>
-            <span className="text-muted-foreground">
+            <Link to={getSectorRoute(article.sector)} className="hover:text-brand-orange transition-colors">
               {ar ? sectorInfo?.titleAr : sectorInfo?.titleEn}
-            </span>
+            </Link>
             <span>/</span>
             <span className="text-foreground truncate max-w-[200px] sm:max-w-xs font-bold">
               {ar ? article.titleAr : article.titleEn}
@@ -132,10 +189,16 @@ export function NewsDetailPage({ slug }: { slug: string }) {
 
           {/* Badges & Meta */}
           <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 mb-4">
-            {/* Year Badge */}
+            {/* Reference Year Badge */}
             <span className="inline-flex items-center gap-1 rounded-full bg-brand-orange px-3.5 py-1 text-xs font-black text-white shadow-sm font-mono">
               <History className="size-3" />
-              <span>{article.year}</span>
+              <span>{refYear}</span>
+            </span>
+
+            {/* Content Type Badge */}
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-secondary border border-border px-3 py-1 text-xs font-bold text-foreground">
+              {isHistoricalInsight ? <BarChart3 className="size-3 text-brand-orange" /> : <Sparkles className="size-3 text-brand-green" />}
+              <span>{getContentTypeBadge(article.contentType, ar)}</span>
             </span>
 
             {/* Sector Badge */}
@@ -145,7 +208,7 @@ export function NewsDetailPage({ slug }: { slug: string }) {
             </span>
 
             {/* Category Sub-badge */}
-            <span className="inline-flex items-center gap-1 rounded-full bg-secondary px-3 py-1 text-xs font-semibold text-foreground/85 border border-border">
+            <span className="inline-flex items-center gap-1 rounded-full bg-secondary/80 px-3 py-1 text-xs font-semibold text-foreground/85 border border-border">
               <Tag className="size-3 text-brand-orange" />
               <span>{ar ? article.categoryAr : article.categoryEn}</span>
             </span>
@@ -172,7 +235,7 @@ export function NewsDetailPage({ slug }: { slug: string }) {
           </div>
 
           {/* Headline */}
-          <h1 className="font-head text-2xl sm:text-4xl lg:text-5xl font-extrabold text-foreground leading-tight max-w-4xl tracking-tight">
+          <h1 className="text-center font-head text-2xl sm:text-4xl lg:text-5xl font-extrabold text-foreground leading-tight max-w-4xl tracking-tight">
             {ar ? article.titleAr : article.titleEn}
           </h1>
 
@@ -180,6 +243,18 @@ export function NewsDetailPage({ slug }: { slug: string }) {
           <p className="mt-6 text-base sm:text-xl text-muted-foreground leading-relaxed max-w-3xl border-s-4 border-brand-green ps-4">
             {ar ? article.excerptAr : article.excerptEn}
           </p>
+
+          {/* Editorial Notice for Historical Insights */}
+          {isHistoricalInsight && (
+            <div className="mt-6 p-3.5 rounded-2xl bg-secondary/50 border border-border/70 flex items-center gap-2.5 max-w-3xl text-xs text-muted-foreground">
+              <ShieldCheck className="size-4 text-brand-orange shrink-0" />
+              <span>
+                {ar
+                  ? "تنبيه تحريري: هذه المادة تمثل مراجعة تاريخية وتحليلاً قطاعيًا لتطور حركة السوق والصناعة خلال الفترة 2010–2020، وليست خبرًا عن مشروعات أو مشاركات محددة للمجموعة."
+                  : "Editorial Note: This article represents an industry insight and historical sector review examining economic market shifts during 2010–2020, rather than a corporate project record."}
+              </span>
+            </div>
+          )}
         </Reveal>
       </section>
 
@@ -198,17 +273,17 @@ export function NewsDetailPage({ slug }: { slug: string }) {
                 {ar ? article.categoryAr : article.categoryEn}
               </span>
               <span className="font-mono bg-black/50 px-3 py-1 rounded-full backdrop-blur-md border border-white/10">
-                {article.year}
+                {refYear}
               </span>
             </div>
           </div>
         </Reveal>
       </section>
 
-      {/* Main Body Content & Social Share Sidebar */}
+      {/* Main Body Content & Sidebar */}
       <section className="site-container pb-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
-          {/* Article Text */}
+          {/* Article Text Column */}
           <div className="lg:col-span-8">
             <div className="rounded-3xl border border-white/20 bg-background/85 p-6 sm:p-10 shadow-lg backdrop-blur-xl">
               <div className="space-y-6 text-foreground/90 leading-relaxed font-body text-base sm:text-lg">
@@ -218,6 +293,57 @@ export function NewsDetailPage({ slug }: { slug: string }) {
                   </p>
                 ))}
               </div>
+
+              {/* Embedded Economic Indicator Card (When Linked) */}
+              {indicator && (
+                <div className="mt-8 p-6 rounded-2xl border border-brand-green/40 bg-brand-green/5 backdrop-blur-md space-y-3">
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-green">
+                      <BarChart3 className="size-4" />
+                      <span>{ar ? "مؤشر اقتصادي موثق مرتبط بالموضوع" : "Verified Economic Benchmark"}</span>
+                    </span>
+                    <span className="rounded-full bg-brand-orange/15 text-brand-orange border border-brand-orange/30 text-[10px] font-bold font-mono px-2.5 py-0.5">
+                      {ar ? indicator.changeLabelAr : indicator.changeLabelEn}
+                    </span>
+                  </div>
+
+                  <h4 className="font-head text-base sm:text-lg font-bold text-foreground">
+                    {ar ? indicator.titleAr : indicator.titleEn}
+                  </h4>
+
+                  <div className="grid grid-cols-2 gap-3 p-3 rounded-xl bg-background/80 border border-border/60">
+                    <div>
+                      <span className="text-[10px] font-mono text-muted-foreground block">{ar ? "القيمة (2010)" : "Value (2010)"}</span>
+                      <span className="text-lg font-black font-mono text-foreground">{indicator.metric2010}</span>
+                    </div>
+                    <div className="border-s border-border ps-3">
+                      <span className="text-[10px] font-mono text-brand-green block">{ar ? "القيمة (2020)" : "Value (2020)"}</span>
+                      <span className="text-lg font-black font-mono text-brand-green">{indicator.metric2020}</span>
+                    </div>
+                  </div>
+
+                  <p className="text-xs text-muted-foreground leading-relaxed text-justify">
+                    {ar ? indicator.significanceAr : indicator.significanceEn}
+                  </p>
+
+                  <div className="pt-2 border-t border-border/50 flex flex-wrap items-center justify-between gap-2 text-[11px] text-muted-foreground">
+                    <span>
+                      {ar ? `المصدر المرجعي: ${indicator.sourceReportAr}` : `Source: ${indicator.sourceReportEn}`}
+                    </span>
+                    {indicator.sourceUrl && (
+                      <a
+                        href={indicator.sourceUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-brand-green font-bold hover:text-brand-orange transition-colors"
+                      >
+                        <span>{ar ? "زيارة التقرير الأصلي" : "View Official Report"}</span>
+                        <ExternalLink className="size-3" />
+                      </a>
+                    )}
+                  </div>
+                </div>
+              )}
 
               {/* Keywords Tag Cloud */}
               {article.keywords && article.keywords.length > 0 && (
@@ -242,7 +368,7 @@ export function NewsDetailPage({ slug }: { slug: string }) {
               <div className="mt-8 pt-6 border-t border-border/60 flex flex-wrap items-center justify-between gap-4">
                 <div className="flex items-center gap-2">
                   <span className="text-xs font-bold text-foreground me-1">
-                    {ar ? "مشاركة التقرير:" : "Share Article:"}
+                    {ar ? "مشاركة المقال:" : "Share Article:"}
                   </span>
                   <a
                     href={`https://wa.me/?text=${encodeURIComponent(
@@ -255,106 +381,99 @@ export function NewsDetailPage({ slug }: { slug: string }) {
                   >
                     <MessageCircle className="size-4" />
                   </a>
+                  <a
+                    href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(
+                      `https://sami-trade.com/news/${article.slug}`
+                    )}&text=${encodeURIComponent(ar ? article.titleAr : article.titleEn)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="size-8 rounded-full bg-secondary flex items-center justify-center text-foreground hover:bg-brand-green hover:text-white transition-colors"
+                    aria-label="Share on X"
+                  >
+                    <Share2 className="size-4" />
+                  </a>
                   <button
                     type="button"
                     onClick={copyUrl}
-                    className="h-8 px-3 rounded-full bg-secondary flex items-center gap-1.5 text-xs font-semibold text-foreground hover:bg-brand-green hover:text-white transition-colors cursor-pointer"
+                    className="size-8 rounded-full bg-secondary flex items-center justify-center text-foreground hover:bg-brand-green hover:text-white transition-colors cursor-pointer"
+                    aria-label="Copy Link"
                   >
-                    {copied ? <Check className="size-3.5 text-brand-green" /> : <Copy className="size-3.5" />}
-                    <span>{copied ? (ar ? "تم النسخ!" : "Copied!") : (ar ? "نسخ الرابط" : "Copy Link")}</span>
+                    {copied ? <Check className="size-4 text-brand-green" /> : <Copy className="size-4" />}
                   </button>
+                  {copied && (
+                    <span className="text-xs text-brand-green font-bold animate-in fade-in">
+                      {ar ? "تم نسخ الرابط!" : "Link copied!"}
+                    </span>
+                  )}
                 </div>
 
-                <Link
-                  to="/news"
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-green hover:text-brand-orange transition-colors"
-                >
-                  <ArrowLeft className="size-3.5 rtl:rotate-180" />
-                  <span>{ar ? "العودة لكافة أخبار الأرشيف" : "Back to Archive"}</span>
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          {/* Sidebar / Related Sector Articles */}
-          <div className="lg:col-span-4 space-y-6">
-            {/* Sector Badge Box */}
-            <div className="rounded-3xl border border-white/20 bg-background/85 p-6 shadow-md backdrop-blur-xl">
-              <div className="flex items-center gap-2.5 mb-3">
-                <div className="p-2 rounded-xl bg-brand-green/10 text-brand-green">
-                  {getSectorIcon(article.sector)}
-                </div>
-                <div>
-                  <h3 className="font-head text-base font-bold text-foreground">
-                    {ar ? sectorInfo?.titleAr : sectorInfo?.titleEn}
-                  </h3>
-                  <span className="text-[11px] font-mono text-muted-foreground">
-                    {ar ? "أرشيف القطاع" : "Sector Archive"}
-                  </span>
-                </div>
-              </div>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                {ar ? sectorInfo?.descAr : sectorInfo?.descEn}
-              </p>
-            </div>
-
-            {/* Related Sector Articles */}
-            {relatedArticles.length > 0 && (
-              <div className="rounded-3xl border border-white/20 bg-background/85 p-6 shadow-md backdrop-blur-xl">
-                <h3 className="text-center font-head text-base font-bold text-foreground mb-4">
-                  {ar ? "تقارير أخرى من نفس القطاع" : "Related Sector Reports"}
-                </h3>
-
-                <div className="space-y-4">
-                  {relatedArticles.map((rel) => (
-                    <div key={rel.id} className="group border-b border-border/50 pb-4 last:border-0 last:pb-0">
-                      <div className="flex items-center justify-between text-[10px] font-mono text-muted-foreground mb-1">
-                        <span>{ar ? rel.dateAr : rel.dateEn}</span>
-                        <span className="font-bold text-brand-orange">{rel.year}</span>
-                      </div>
-                      <h4 className="font-head text-xs sm:text-sm font-bold text-foreground group-hover:text-brand-orange transition-colors leading-snug">
-                        <Link to="/news/$slug" params={{ slug: rel.slug }}>
-                          {ar ? rel.titleAr : rel.titleEn}
-                        </Link>
-                      </h4>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* Media & Communications Desk */}
-            <div className="rounded-3xl border border-brand-green/30 bg-gradient-to-br from-brand-green/10 via-background/80 to-secondary/40 p-6 shadow-md backdrop-blur-xl text-center">
-              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse inline-block mb-3" />
-              <h3 className="text-center font-head text-base font-bold text-foreground">
-                {ar ? "المكتب الإعلامي والتواصل المؤسسي" : "Media & Corporate Inquiries"}
-              </h3>
-              <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
-                {ar ? (
-                  <>
-                    لأي استفسارات صحفية أو مقترحات شراكة مؤسسية متعلقة بأنشطة{" "}
-                    <span className="text-brand-orange font-bold">مجموعة سامي بن عياد</span>.
-                  </>
-                ) : (
-                  <>
-                    For press inquiries, editorial features, or institutional partnership proposals across{" "}
-                    <span className="text-brand-orange font-bold">SAMI BIN AYYAD GROUP</span>.
-                  </>
-                )}
-              </p>
-              <div className="mt-4">
                 <Button
                   asChild
-                  size="sm"
-                  className="w-full rounded-full !bg-brand-green text-white hover:!bg-brand-orange transition-all duration-300 font-bold text-xs"
+                  variant="outline"
+                  className="rounded-full text-xs font-bold hover:bg-brand-orange hover:text-white"
                 >
-                  <a href="mailto:info@sami-trade.com">
-                    <span>{ar ? "مراسلة الفريق الإعلامي" : "Contact Media Desk"}</span>
-                  </a>
+                  <Link to="/news">
+                    <ArrowLeft className="size-3.5 me-1.5 rtl:rotate-180" />
+                    <span>{ar ? "العودة للأرشيف الشامل" : "Back to Archive"}</span>
+                  </Link>
                 </Button>
               </div>
             </div>
           </div>
+
+          {/* Sidebar: Sector Highlights & Related Articles */}
+          <aside className="lg:col-span-4 space-y-6">
+            {/* Sector Navigation Card */}
+            <div className="rounded-3xl border border-white/20 bg-background/85 p-6 shadow-md backdrop-blur-xl">
+              <span className="text-xs font-bold text-brand-green uppercase tracking-wider block mb-2">
+                {ar ? "القطاع المرتبط" : "Associated Sector"}
+              </span>
+              <h3 className="text-center font-head text-lg font-extrabold text-foreground mb-2">
+                {ar ? sectorInfo?.titleAr : sectorInfo?.titleEn}
+              </h3>
+              <p className="text-xs text-muted-foreground leading-relaxed mb-4">
+                {ar ? sectorInfo?.descAr : sectorInfo?.descEn}
+              </p>
+              <Button
+                asChild
+                className="w-full rounded-full bg-brand-green hover:bg-brand-orange text-white text-xs font-bold shadow-md transition-all"
+              >
+                <Link to={getSectorRoute(article.sector)}>
+                  <span>{ar ? "استكشاف قدرات القطاع" : "Explore Sector Capabilities"}</span>
+                  <ArrowRight className="size-3.5 ms-2 rtl:rotate-180" />
+                </Link>
+              </Button>
+            </div>
+
+            {/* Related Articles */}
+            {relatedArticles.length > 0 && (
+              <div className="rounded-3xl border border-white/20 bg-background/85 p-6 shadow-md backdrop-blur-xl">
+                <span className="text-xs font-bold text-brand-orange uppercase tracking-wider block mb-4 flex items-center gap-1.5">
+                  <Sparkles className="size-3.5" />
+                  <span>{ar ? "مقالات وتقارير ذات صلة" : "Related Archive Entries"}</span>
+                </span>
+                <div className="space-y-4">
+                  {relatedArticles.map((rel) => (
+                    <Link
+                      key={rel.id}
+                      to="/news/$slug"
+                      params={{ slug: rel.slug }}
+                      className="group block p-3 rounded-2xl hover:bg-secondary/70 border border-transparent hover:border-border transition-all"
+                    >
+                      <div className="flex items-center gap-2 text-[10px] font-mono text-muted-foreground mb-1">
+                        <span className="font-bold text-brand-orange">{rel.historicalRefYear || rel.year}</span>
+                        <span>•</span>
+                        <span>{ar ? rel.categoryAr : rel.categoryEn}</span>
+                      </div>
+                      <h4 className="font-head text-xs font-bold text-foreground group-hover:text-brand-green transition-colors leading-snug line-clamp-2">
+                        {ar ? rel.titleAr : rel.titleEn}
+                      </h4>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </aside>
         </div>
       </section>
     </article>

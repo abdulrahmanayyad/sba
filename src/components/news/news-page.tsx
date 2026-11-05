@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo } from "react";
 import { Link } from "@tanstack/react-router";
 import {
   ArrowRight,
@@ -18,6 +18,9 @@ import {
   Check,
   Newspaper,
   BookOpen,
+  BarChart3,
+  Globe2,
+  FileText
 } from "lucide-react";
 import { Reveal } from "@/components/home/reveal";
 import { Button } from "@/components/ui/button";
@@ -29,7 +32,10 @@ import {
   ARCHIVE_YEARS,
   type NewsSectorType,
   type NewsArticle,
+  type NewsContentType
 } from "./news-data";
+import { CorporateTimeline } from "./corporate-timeline";
+import { EconomicIndicatorsWidget } from "./economic-indicators-widget";
 
 function SectionBadge({ title }: { title: string }) {
   return (
@@ -53,8 +59,33 @@ function getSectorIcon(sector: NewsSectorType) {
       return <Utensils className="size-3.5" />;
     case "environmental":
       return <Leaf className="size-3.5" />;
+    case "heritage":
+      return <BookOpen className="size-3.5" />;
+    case "exhibitions":
+      return <Globe2 className="size-3.5" />;
+    case "insights":
+      return <BarChart3 className="size-3.5" />;
     default:
       return <Layers className="size-3.5" />;
+  }
+}
+
+function getContentTypeLabel(type?: NewsContentType, ar?: boolean) {
+  switch (type) {
+    case "corporate_milestone":
+      return ar ? "محطة تاريخية مؤسسية" : "Corporate Milestone";
+    case "corporate_news":
+      return ar ? "خبر مؤسسي" : "Corporate News";
+    case "industry_insight":
+      return ar ? "تحليل قطاعي" : "Industry Insight";
+    case "historical_review":
+      return ar ? "مراجعة تاريخية" : "Historical Review";
+    case "exhibition_event":
+      return ar ? "معارض وفعاليات" : "Exhibitions & Events";
+    case "market_data":
+      return ar ? "بيانات اقتصادية" : "Market Data";
+    default:
+      return ar ? "تقرير موثق" : "Report";
   }
 }
 
@@ -62,18 +93,20 @@ export function NewsPage() {
   const { language } = useLanguage();
   const ar = language === "AR";
 
+  const [periodTab, setPeriodTab] = useState<"all" | "historical" | "modern">("all");
   const [selectedSector, setSelectedSector] = useState<NewsSectorType>("all");
   const [selectedYear, setSelectedYear] = useState<"all" | number>("all");
+  const [selectedContentType, setSelectedContentType] = useState<"all" | NewsContentType>("all");
   const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc");
   const [searchQuery, setSearchQuery] = useState("");
 
-  // When changing sector: if sector != 'all', default to oldest first (historical order); if 'all', default to newest first
+  // Handle Sector Change
   const handleSectorChange = (sector: NewsSectorType) => {
     setSelectedSector(sector);
     if (sector !== "all") {
-      setSortDirection("asc"); // Oldest to newest inside sector archive
+      setSortDirection("asc"); // Chronological order inside specific sector archive
     } else {
-      setSortDirection("desc"); // Newest first on main page
+      setSortDirection("desc"); // Newest first on main overview
     }
   };
 
@@ -91,7 +124,8 @@ export function NewsPage() {
     const counts: Record<number, number> = {};
     newsArticles.forEach((a) => {
       if (selectedSector === "all" || a.sector === selectedSector) {
-        counts[a.year] = (counts[a.year] || 0) + 1;
+        const y = a.historicalRefYear || a.year;
+        counts[y] = (counts[y] || 0) + 1;
       }
     });
     return counts;
@@ -100,11 +134,20 @@ export function NewsPage() {
   // Filtered and sorted articles
   const filteredArticles = useMemo(() => {
     const list = newsArticles.filter((article) => {
+      const artYear = article.historicalRefYear || article.year;
+
+      // Period Tab filter
+      if (periodTab === "historical" && (artYear < 2010 || artYear > 2020)) return false;
+      if (periodTab === "modern" && artYear < 2020) return false;
+
       // Sector filter
       if (selectedSector !== "all" && article.sector !== selectedSector) return false;
 
       // Year filter
-      if (selectedYear !== "all" && article.year !== selectedYear) return false;
+      if (selectedYear !== "all" && artYear !== selectedYear) return false;
+
+      // Content Type filter
+      if (selectedContentType !== "all" && article.contentType !== selectedContentType) return false;
 
       // Search query
       if (searchQuery.trim()) {
@@ -114,7 +157,7 @@ export function NewsPage() {
         const inBody = (ar ? article.bodyAr : article.bodyEn).toLowerCase().includes(q);
         const inCat = (article.categoryAr + " " + article.categoryEn).toLowerCase().includes(q);
         const inKeywords = article.keywords?.some((k) => k.toLowerCase().includes(q));
-        const inYear = article.year.toString().includes(q);
+        const inYear = artYear.toString().includes(q);
 
         if (!inTitle && !inExcerpt && !inBody && !inCat && !inKeywords && !inYear) return false;
       }
@@ -124,13 +167,19 @@ export function NewsPage() {
 
     // Chronological sorting
     return list.sort((a, b) => {
+      const yearA = a.historicalRefYear || a.year;
+      const yearB = b.historicalRefYear || b.year;
       const timeA = new Date(a.publishedAt).getTime();
       const timeB = new Date(b.publishedAt).getTime();
-      return sortDirection === "asc" ? timeA - timeB : timeB - timeA;
-    });
-  }, [selectedSector, selectedYear, sortDirection, searchQuery, ar]);
 
-  // Featured article (only when on 'all' with no active search/year filter)
+      if (sortDirection === "asc") {
+        return yearA !== yearB ? yearA - yearB : timeA - timeB;
+      }
+      return yearB !== yearA ? yearB - yearA : timeB - timeA;
+    });
+  }, [periodTab, selectedSector, selectedYear, selectedContentType, sortDirection, searchQuery, ar]);
+
+  // Featured Lead Article
   const featuredArticle = useMemo(() => {
     return newsArticles.find((a) => a.featured) || newsArticles[0];
   }, []);
@@ -141,7 +190,7 @@ export function NewsPage() {
 
   return (
     <div className="w-full">
-      {/* 1. Newsroom & Archive Hero */}
+      {/* 1. Newsroom & Archive Hero Header */}
       <section className="site-container pt-20 sm:pt-28 pb-10 scroll-mt-24">
         <Reveal>
           <div className="max-w-4xl">
@@ -150,45 +199,45 @@ export function NewsPage() {
                 <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
                 <span>{ar ? "مجموعة سامي بن عياد" : "SAMI BIN AYYAD GROUP"}</span>
               </span>
-              <SectionBadge title={ar ? "الأرشيف المؤسسي (2020–2026)" : "Corporate Archive (2020–2026)"} />
+              <SectionBadge title={ar ? "الأرشيف المؤسسي الشامل (1977–2026)" : "Corporate Legacy Archive (1977–2026)"} />
             </div>
 
             <h1 className="section-title text-3xl sm:text-5xl font-extrabold text-foreground leading-tight tracking-tight">
               {ar
-                ? "الأرشيف التاريخي لأخبار وأنشطة المجموعة"
-                : "Corporate News Archive & Sector Insights"}
+                ? "الأرشيف التاريخي والأنشطة المؤسسية والتحليلات القطاعية"
+                : "Corporate Legacy, Historical Archive & Sector Insights"}
             </h1>
 
             <p className="section-intro mt-4 max-w-3xl text-base sm:text-lg leading-relaxed text-muted-foreground">
               {ar
-                ? "سجل توثيقي لأنشطة المجموعة، متابعات الأسواق، المعارض المتخصصة، والشراكات الاستراتيجية متعددة القطاعات عبر الفترة من 2020 إلى 2026، موثقًا وفق أعلى معايير الشفافية والدقة المؤسسية."
-                : "A structured historical record of business activities, market intelligence, industry exhibitions, and strategic multi-sector alliances spanning 2020 through 2026, maintained with verified corporate accuracy."}
+                ? "منصة توثيقية متكاملة تستعرض الجذور التاريخية لأنشطة المجموعة منذ عام 1977، وتطور الكيانات المتخصصة في مصر والسعودية، والتحليلات القطاعية الموثقة (2010–2020)، وصولًا إلى التأسيس المؤسسي الجامع عام 2023 وأنشطة المجموعة الحديثة حتى 2026."
+                : "A unified institutional platform documenting operational roots from 1977, cross-border entity growth in Egypt and Saudi Arabia, sector insights (2010–2020), and unified corporate activities following the 2023 institutional integration."}
             </p>
 
             {/* Quick Metrics Bar */}
             <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-6 border-t border-border/60">
               <div className="rounded-2xl border border-border/80 bg-background/80 p-3.5 backdrop-blur-md">
-                <div className="text-xl sm:text-2xl font-black text-brand-orange font-mono">39</div>
+                <div className="text-xl sm:text-2xl font-black text-brand-orange font-mono">50</div>
                 <div className="text-[11px] font-medium text-muted-foreground mt-0.5">
-                  {ar ? "تقرير ومقال موثق" : "Documented Reports"}
+                  {ar ? "تقرير ومقال موثق" : "Documented Articles"}
                 </div>
               </div>
               <div className="rounded-2xl border border-border/80 bg-background/80 p-3.5 backdrop-blur-md">
-                <div className="text-xl sm:text-2xl font-black text-brand-green font-mono">5</div>
+                <div className="text-xl sm:text-2xl font-black text-brand-green font-mono">7</div>
                 <div className="text-[11px] font-medium text-muted-foreground mt-0.5">
-                  {ar ? "قطاعات اقتصادية رئيسية" : "Core Sectors"}
+                  {ar ? "محطات تاريخية (1977–2023)" : "Official Milestones"}
                 </div>
               </div>
               <div className="rounded-2xl border border-border/80 bg-background/80 p-3.5 backdrop-blur-md">
-                <div className="text-xl sm:text-2xl font-black text-foreground font-mono">7</div>
+                <div className="text-xl sm:text-2xl font-black text-foreground font-mono">3</div>
                 <div className="text-[11px] font-medium text-muted-foreground mt-0.5">
-                  {ar ? "سنوات توثيق (2020–2026)" : "Years of Coverage"}
+                  {ar ? "مؤشرات اقتصادية موثقة" : "Economic Indicators"}
                 </div>
               </div>
               <div className="rounded-2xl border border-border/80 bg-background/80 p-3.5 backdrop-blur-md">
-                <div className="text-xl sm:text-2xl font-black text-foreground font-mono">100%</div>
+                <div className="text-xl sm:text-2xl font-black text-foreground font-mono">1977</div>
                 <div className="text-[11px] font-medium text-muted-foreground mt-0.5">
-                  {ar ? "بيانات تاريخية محققة" : "Verified Records"}
+                  {ar ? "انطلاق الجذور الأولى" : "Operational Roots"}
                 </div>
               </div>
             </div>
@@ -196,7 +245,21 @@ export function NewsPage() {
         </Reveal>
       </section>
 
-      {/* 2. Featured Lead Article (Only when on 'all', no search, no year filter) */}
+      {/* 2. Official Corporate Legacy & Timeline Section */}
+      <section className="site-container pb-14">
+        <Reveal>
+          <CorporateTimeline />
+        </Reveal>
+      </section>
+
+      {/* 3. Economic Indicators Showcase (OECD / NBE) */}
+      <section className="site-container pb-14">
+        <Reveal>
+          <EconomicIndicatorsWidget />
+        </Reveal>
+      </section>
+
+      {/* 4. Featured Lead Article (When on 'all', no search) */}
       {selectedSector === "all" && selectedYear === "all" && !searchQuery && featuredArticle && (
         <section className="site-container pb-12">
           <Reveal>
@@ -214,7 +277,7 @@ export function NewsPage() {
                       {ar ? "محطة مؤسسية بارزة" : "Key Corporate Milestone"}
                     </span>
                     <span className="rounded-full bg-black/60 px-3 py-1 text-xs font-semibold text-white/90 backdrop-blur-md border border-white/20">
-                      {featuredArticle.year}
+                      {featuredArticle.historicalRefYear || featuredArticle.year}
                     </span>
                   </div>
                   <div className="absolute bottom-4 start-4 end-4">
@@ -262,7 +325,7 @@ export function NewsPage() {
                     </Button>
 
                     <span className="text-[11px] font-mono text-muted-foreground font-semibold">
-                      {featuredArticle.year}
+                      {featuredArticle.historicalRefYear || featuredArticle.year}
                     </span>
                   </div>
                 </div>
@@ -272,10 +335,59 @@ export function NewsPage() {
         </section>
       )}
 
-      {/* 3. Archive Controls: Sector Navigation, Year Timeline, Search & Sort */}
+      {/* 5. Archive Controls: Period Tabs, Sector Navigation, Year Timeline, Search & Sort */}
       <section className="site-container pb-8 scroll-mt-24" id="archive-controls">
         <div className="flex flex-col gap-6 rounded-3xl border border-white/20 bg-background/80 p-5 sm:p-7 shadow-lg backdrop-blur-xl">
-          {/* A. Search & Sort Row */}
+          {/* A. Period Filter Tabs (All vs Historical 2010-2020 vs Modern 2020-2026) */}
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 pb-4 border-b border-border/60">
+            <button
+              type="button"
+              onClick={() => {
+                setPeriodTab("all");
+                setSelectedYear("all");
+              }}
+              className={cn(
+                "rounded-full px-5 py-2 text-xs font-bold transition-all cursor-pointer shadow-sm",
+                periodTab === "all"
+                  ? "!bg-brand-orange !text-white shadow-md"
+                  : "border border-border/80 bg-secondary/80 text-foreground hover:bg-secondary"
+              )}
+            >
+              {ar ? "كافة الأرشيف والمحتوى (50 مادة)" : "Complete Archive (50 Records)"}
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setPeriodTab("historical");
+                setSelectedYear("all");
+              }}
+              className={cn(
+                "rounded-full px-5 py-2 text-xs font-bold transition-all cursor-pointer shadow-sm",
+                periodTab === "historical"
+                  ? "!bg-brand-orange !text-white shadow-md"
+                  : "border border-border/80 bg-secondary/80 text-foreground hover:bg-secondary"
+              )}
+            >
+              {ar ? "الأرشيف والتحليلات القطاعية (2010–2020)" : "Historical Sector Archive (2010–2020)"}
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setPeriodTab("modern");
+                setSelectedYear("all");
+              }}
+              className={cn(
+                "rounded-full px-5 py-2 text-xs font-bold transition-all cursor-pointer shadow-sm",
+                periodTab === "modern"
+                  ? "!bg-brand-orange !text-white shadow-md"
+                  : "border border-border/80 bg-secondary/80 text-foreground hover:bg-secondary"
+              )}
+            >
+              {ar ? "أخبار وتقارير المجموعة (2020–2026)" : "Corporate News & Reports (2020–2026)"}
+            </button>
+          </div>
+
+          {/* B. Search & Sort Row */}
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             {/* Search Input */}
             <div className="relative w-full md:w-96">
@@ -284,8 +396,8 @@ export function NewsPage() {
                 type="text"
                 placeholder={
                   ar
-                    ? "ابحث في عناوين الأخبار، المعارض، التقارير والسنوات..."
-                    : "Search news archive, exhibitions, topics, or years..."
+                    ? "ابحث في عناوين الأخبار، المعارض، التحليلات، والسنوات..."
+                    : "Search news archive, sector insights, topics, or years..."
                 }
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
@@ -306,8 +418,8 @@ export function NewsPage() {
             <div className="flex items-center justify-between md:justify-end gap-3 w-full md:w-auto">
               <span className="text-xs font-mono text-muted-foreground">
                 {ar
-                  ? `${filteredArticles.length} من أصل ${newsArticles.length} تقرير`
-                  : `Showing ${filteredArticles.length} of ${newsArticles.length} reports`}
+                  ? `${filteredArticles.length} من أصل ${newsArticles.length} مادة`
+                  : `Showing ${filteredArticles.length} of ${newsArticles.length} entries`}
               </span>
 
               <button
@@ -330,11 +442,11 @@ export function NewsPage() {
             </div>
           </div>
 
-          {/* B. Sector Categories (Exact Ordered List) */}
+          {/* C. Sector Categories (Exact 8 Categories) */}
           <div>
             <div className="text-[11px] font-bold text-muted-foreground uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
               <Layers className="size-3 text-brand-green" />
-              <span>{ar ? "تصنيف القطاعات الرئيسية" : "Main Sector Categories"}</span>
+              <span>{ar ? "تصنيف القطاعات والأنشطة" : "Sector & Topic Categories"}</span>
             </div>
             <div className="flex flex-wrap items-center gap-2">
               {newsCategories.map((cat) => {
@@ -368,11 +480,11 @@ export function NewsPage() {
             </div>
           </div>
 
-          {/* C. Year Timeline Filters (2020 – 2026) */}
+          {/* D. Year Timeline Filters (2010 – 2026) */}
           <div className="pt-2 border-t border-border/50">
             <div className="text-[11px] font-bold text-muted-foreground uppercase tracking-wider mb-2 flex items-center gap-1.5">
               <History className="size-3 text-brand-orange" />
-              <span>{ar ? "التسلسل الزمني للسنوات (2020–2026)" : "Timeline by Year (2020–2026)"}</span>
+              <span>{ar ? "التسلسل الزمني للسنوات المرجعية (2010–2026)" : "Timeline by Reference Year (2010–2026)"}</span>
             </div>
             <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
               <button
@@ -431,7 +543,7 @@ export function NewsPage() {
                   {getSectorIcon(activeSectorInfo.id)}
                 </div>
                 <div>
-                  <h3 className="font-head text-base sm:text-lg font-bold text-foreground">
+                  <h3 className="text-center font-head text-base sm:text-lg font-bold text-foreground">
                     {ar ? activeSectorInfo.titleAr : activeSectorInfo.titleEn}
                   </h3>
                   <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">
@@ -443,17 +555,17 @@ export function NewsPage() {
               <div className="flex items-center gap-2 self-start sm:self-auto shrink-0">
                 <span className="rounded-full bg-brand-green/15 text-brand-green font-bold font-mono text-xs px-3 py-1">
                   {ar
-                    ? `${filteredArticles.length} تقرير في الأرشيف`
-                    : `${filteredArticles.length} Archived Reports`}
+                    ? `${filteredArticles.length} مادة في الأرشيف`
+                    : `${filteredArticles.length} Archived Entries`}
                 </span>
                 <span className="rounded-full bg-secondary text-muted-foreground font-mono text-xs px-3 py-1 border border-border">
                   {sortDirection === "asc"
                     ? ar
-                      ? "تسلسل تاريخي: 2020 → 2026"
-                      : "Timeline: 2020 → 2026"
+                      ? "تسلسل تاريخي: الأقدم → الأحدث"
+                      : "Timeline: Oldest → Newest"
                     : ar
-                    ? "أحدث أولًا: 2026 → 2020"
-                    : "Recent First: 2026 → 2020"}
+                    ? "أحدث أولًا: الأحدث → الأقدم"
+                    : "Recent First: Newest → Oldest"}
                 </span>
               </div>
             </div>
@@ -461,96 +573,110 @@ export function NewsPage() {
         )}
       </section>
 
-      {/* 4. Articles Grid / Timeline View */}
+      {/* 6. Articles Grid */}
       <section className="site-container pb-24">
         {filteredArticles.length > 0 ? (
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {filteredArticles.map((article, idx) => (
-              <Reveal key={article.id} delay={Math.min(idx * 0.04, 0.4)}>
-                <article className="group h-full flex flex-col justify-between overflow-hidden rounded-3xl border border-white/25 bg-background/85 shadow-md backdrop-blur-xl transition-all duration-300 hover:scale-[1.015] hover:border-brand-green/60 hover:shadow-2xl">
-                  <div>
-                    {/* Image Banner with Year Pill */}
-                    <Link to="/news/$slug" params={{ slug: article.slug }}>
-                      <div className="relative aspect-[16/10] w-full overflow-hidden bg-secondary">
-                        <img
-                          src={article.image}
-                          alt={ar ? article.imageAltAr || article.titleAr : article.imageAltEn || article.titleEn}
-                          loading="lazy"
-                          className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+            {filteredArticles.map((article, idx) => {
+              const artYear = article.historicalRefYear || article.year;
+              const isHistorical = artYear < 2020;
+              return (
+                <Reveal key={article.id} delay={Math.min(idx * 0.03, 0.3)}>
+                  <article className="group h-full flex flex-col justify-between overflow-hidden rounded-3xl border border-white/25 bg-background/85 shadow-md backdrop-blur-xl transition-all duration-300 hover:scale-[1.015] hover:border-brand-green/60 hover:shadow-2xl">
+                    <div>
+                      {/* Image Banner with Year Pill */}
+                      <Link to="/news/$slug" params={{ slug: article.slug }}>
+                        <div className="relative aspect-[16/10] w-full overflow-hidden bg-secondary">
+                          <img
+                            src={article.image}
+                            alt={ar ? article.imageAltAr || article.titleAr : article.imageAltEn || article.titleEn}
+                            loading="lazy"
+                            className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
-                        {/* Badges Overlay */}
-                        <div className="absolute top-3 start-3 flex items-center gap-1.5">
-                          <span className="rounded-full bg-brand-orange px-3 py-0.5 text-[11px] font-black text-white shadow-md font-mono">
-                            {article.year}
+                          {/* Badges Overlay */}
+                          <div className="absolute top-3 start-3 flex flex-wrap items-center gap-1.5">
+                            <span className="rounded-full bg-brand-orange px-3 py-0.5 text-[11px] font-black text-white shadow-md font-mono">
+                              {artYear}
+                            </span>
+                            <span className="rounded-full bg-black/60 px-2.5 py-0.5 text-[10px] font-bold text-white/90 backdrop-blur-md border border-white/20">
+                              {ar ? article.categoryAr : article.categoryEn}
+                            </span>
+                          </div>
+
+                          {/* Content Type Pill */}
+                          <div className="absolute bottom-3 start-3">
+                            <span className="inline-flex items-center gap-1 text-[10px] font-bold text-white/95 bg-black/55 backdrop-blur-md px-2.5 py-0.5 rounded-full border border-white/15">
+                              {isHistorical ? (
+                                <BarChart3 className="size-2.5 text-brand-orange" />
+                              ) : (
+                                <Calendar className="size-2.5 text-brand-green" />
+                              )}
+                              <span>{getContentTypeLabel(article.contentType, ar)}</span>
+                            </span>
+                          </div>
+                        </div>
+                      </Link>
+
+                      {/* Content */}
+                      <div className="p-6">
+                        <div className="flex items-center justify-between gap-2 text-xs text-muted-foreground mb-3 font-mono">
+                          <span className="inline-flex items-center gap-1">
+                            <Calendar className="size-3 text-brand-orange" />
+                            <span>{ar ? article.dateAr : article.dateEn}</span>
                           </span>
-                          <span className="rounded-full bg-black/60 px-2.5 py-0.5 text-[10px] font-bold text-white/90 backdrop-blur-md border border-white/20">
-                            {ar ? article.categoryAr : article.categoryEn}
+                          <span className="inline-flex items-center gap-1">
+                            <Clock className="size-3 text-brand-green" />
+                            <span>{ar ? article.readingTimeAr : article.readingTimeEn}</span>
                           </span>
                         </div>
 
-                        {/* Event Date Tag if available */}
-                        {article.eventDateAr && (
-                          <div className="absolute bottom-3 start-3">
-                            <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-white/90 bg-black/50 backdrop-blur-md px-2.5 py-0.5 rounded-full border border-white/10">
-                              <Calendar className="size-2.5 text-brand-orange" />
-                              <span>{ar ? article.eventDateAr : article.eventDateEn}</span>
-                            </span>
-                          </div>
-                        )}
+                        <h3 className="text-center font-head text-base sm:text-lg font-bold text-foreground group-hover:text-brand-orange transition-colors leading-snug line-clamp-2">
+                          <Link to="/news/$slug" params={{ slug: article.slug }}>
+                            {ar ? article.titleAr : article.titleEn}
+                          </Link>
+                        </h3>
+
+                        <p className="mt-3 text-xs sm:text-sm text-muted-foreground leading-relaxed line-clamp-3">
+                          {ar ? article.excerptAr : article.excerptEn}
+                        </p>
                       </div>
-                    </Link>
-
-                    {/* Content */}
-                    <div className="p-6">
-                      <div className="flex items-center justify-between gap-2 text-xs text-muted-foreground mb-3 font-mono">
-                        <span className="inline-flex items-center gap-1">
-                          <Calendar className="size-3 text-brand-orange" />
-                          <span>{ar ? article.dateAr : article.dateEn}</span>
-                        </span>
-                        <span className="inline-flex items-center gap-1">
-                          <Clock className="size-3 text-brand-green" />
-                          <span>{ar ? article.readingTimeAr : article.readingTimeEn}</span>
-                        </span>
-                      </div>
-
-                      <h3 className="text-center font-head text-base sm:text-lg font-bold text-foreground group-hover:text-brand-orange transition-colors leading-snug line-clamp-2">
-                        <Link to="/news/$slug" params={{ slug: article.slug }}>
-                          {ar ? article.titleAr : article.titleEn}
-                        </Link>
-                      </h3>
-
-                      <p className="mt-3 text-xs sm:text-sm text-muted-foreground leading-relaxed line-clamp-3">
-                        {ar ? article.excerptAr : article.excerptEn}
-                      </p>
                     </div>
-                  </div>
 
-                  {/* Card Footer */}
-                  <div className="p-6 pt-0 border-t border-border/40 mt-4 flex items-center justify-between">
-                    <Link
-                      to="/news/$slug"
-                      params={{ slug: article.slug }}
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-green group-hover:text-brand-orange transition-colors"
-                    >
-                      <span>{ar ? "قراءة التقرير الكامل" : "Read Full Report"}</span>
-                      <ArrowRight className="size-3 rtl:rotate-180" />
-                    </Link>
+                    {/* Card Footer */}
+                    <div className="p-6 pt-0 border-t border-border/40 mt-4 flex items-center justify-between">
+                      <Link
+                        to="/news/$slug"
+                        params={{ slug: article.slug }}
+                        className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-green group-hover:text-brand-orange transition-colors"
+                      >
+                        <span>
+                          {isHistorical
+                            ? ar
+                              ? "قراءة التحليل القطاعي"
+                              : "Read Sector Review"
+                            : ar
+                            ? "قراءة التقرير الكامل"
+                            : "Read Full Report"}
+                        </span>
+                        <ArrowRight className="size-3 rtl:rotate-180" />
+                      </Link>
 
-                    <span className="text-[10px] font-mono font-bold text-muted-foreground/70">
-                      #{article.id.replace("sba-news-", "NEWS ")}
-                    </span>
-                  </div>
-                </article>
-              </Reveal>
-            ))}
+                      <span className="text-[10px] font-mono font-bold text-muted-foreground/70">
+                        #{article.id.replace("sba-news-", "NEWS ").replace("sba-hist-", "HIST ")}
+                      </span>
+                    </div>
+                  </article>
+                </Reveal>
+              );
+            })}
           </div>
         ) : (
           <div className="py-20 text-center rounded-3xl border border-dashed border-border bg-secondary/30">
             <History className="mx-auto size-12 text-muted-foreground/50 mb-3" />
-            <h3 className="font-head text-lg font-bold text-foreground">
-              {ar ? "لا توجد تقارير مطابقة لمعايير البحث" : "No matching archive entries"}
+            <h3 className="text-center font-head text-lg font-bold text-foreground">
+              {ar ? "لا توجد مواد مطابقة لمعايير البحث" : "No matching archive entries"}
             </h3>
             <p className="text-xs text-muted-foreground mt-1 max-w-sm mx-auto">
               {ar
@@ -562,8 +688,10 @@ export function NewsPage() {
               variant="outline"
               size="sm"
               onClick={() => {
+                setPeriodTab("all");
                 setSelectedSector("all");
                 setSelectedYear("all");
+                setSelectedContentType("all");
                 setSearchQuery("");
                 setSortDirection("desc");
               }}
