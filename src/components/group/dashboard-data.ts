@@ -6,7 +6,7 @@ type T = { en: string; ar: string };
 export const dashboardSectors: { id: SectorId; name: T; short: T }[] = [
   { id: "construction", name: { en: "Contracting & Real Estate Development", ar: "المقاولات والتطوير العقاري" }, short: { en: "Contracting", ar: "المقاولات" } },
   { id: "environmental", name: { en: "Environmental Solutions & Sustainability", ar: "الحلول البيئية والاستدامة" }, short: { en: "Environment", ar: "البيئة" } },
-  { id: "garment", name: { en: "Textile & Garment Manufacturing", ar: "صناعة النسيج والملابس" }, short: { en: "Garment Manufacturing", ar: "تصنيع الملابس" } },
+  { id: "garment", name: { en: "Textile & Garment Manufacturing", ar: "صناعة النسيج والملابس الجاهزة" }, short: { en: "Garment Manufacturing", ar: "تصنيع الملابس الجاهزة" } },
   { id: "food", name: { en: "Natural Products", ar: "المنتجات الطبيعية" }, short: { en: "Natural Products", ar: "المنتجات الطبيعية" } },
 ];
 

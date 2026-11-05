@@ -72,7 +72,7 @@ const tabs: ShowcaseTab[] = [
     slug: "garment",
     tab: "services",
     labelEn: "Garment Manufacturing",
-    labelAr: "تصنيع الملابس",
+    labelAr: "تصنيع الملابس الجاهزة",
     headlineEn: "Garment Manufacturing & Fashion Development",
     headlineAr: "تصنيع الملابس وتطوير الأزياء",
     subtitleEn: "Integrated Manufacturing for Brands & Global Markets",

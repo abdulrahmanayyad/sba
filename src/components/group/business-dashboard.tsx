@@ -296,14 +296,14 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
             {/* 1. White Stationary Map Column (lg:col-span-7 xl:col-span-8) */}
             <div className="lg:col-span-7 xl:col-span-8 flex flex-col">
               <div
-                className="relative aspect-[16/10] sm:aspect-[16/11] lg:aspect-[16/11] w-full overflow-hidden rounded-3xl border border-slate-200 dark:border-zinc-800 bg-[#FFFFFF] shadow-[0_8px_30px_rgba(0,0,0,0.06)] select-none font-sans"
+                className="relative aspect-[16/10] sm:aspect-[16/11] lg:aspect-[16/11] w-full overflow-hidden rounded-3xl border border-white/15 bg-[#090D16] shadow-[0_12px_40px_rgba(0,0,0,0.35)] select-none font-sans"
                 role="region"
                 aria-label={ar ? "خريطة شبكة أسواقنا الحالية" : "Map of our current partner markets"}
               >
                 {/* Top Badge */}
-                <div className="absolute start-3 top-3 z-30 flex items-center gap-2 rounded-full border border-slate-200 bg-white/95 px-3 py-1 text-xs font-bold text-slate-800 shadow-sm backdrop-blur-md">
+                <div className="absolute start-3 top-3 z-30 flex items-center gap-2 rounded-full border border-white/15 bg-slate-900/85 px-3 py-1 text-xs font-bold text-white shadow-md backdrop-blur-md">
                   <Globe className="size-3.5 text-brand-orange" />
-                  <span className="font-sans font-semibold tracking-tight text-[11px] text-slate-700">
+                  <span className="font-sans font-semibold tracking-tight text-[11px] text-slate-200">
                     {ar ? "شبكة الأسواق الحالية" : "Current Markets Network"}
                   </span>
                 </div>
@@ -316,29 +316,34 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <defs>
-                      {/* Subtle architectural dot grid */}
-                      <pattern id="white-map-grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                        <circle cx="20" cy="20" r="0.8" fill="#CBD5E1" opacity="0.6" />
+                      {/* Architectural tech dot grid */}
+                      <pattern id="white-map-grid" width="36" height="36" patternUnits="userSpaceOnUse">
+                        <circle cx="18" cy="18" r="0.8" fill="#38BDF8" opacity="0.18" />
                       </pattern>
+                      <radialGradient id="ocean-glow" cx="58%" cy="45%" r="65%">
+                        <stop offset="0%" stopColor="#0F172A" />
+                        <stop offset="70%" stopColor="#090D16" />
+                        <stop offset="100%" stopColor="#040711" />
+                      </radialGradient>
                     </defs>
 
-                    {/* White Ocean Base */}
-                    <rect width="1000" height="600" fill="#FFFFFF" />
+                    {/* High-Tech Ocean Base */}
+                    <rect width="1000" height="600" fill="url(#ocean-glow)" />
                     <rect width="1000" height="600" fill="url(#white-map-grid)" />
 
                     {/* Europe / Balkans / Romania / Bulgaria / Greece */}
                     <path
                       d="M260,110 Q320,60 410,70 Q490,50 560,90 Q620,120 590,170 Q540,200 500,190 Q460,225 430,215 Q390,200 360,170 Q300,180 260,140 Z"
-                      fill="#F1F5F9"
-                      stroke="#E2E8F0"
+                      fill="#131B2E"
+                      stroke="#1E293B"
                       strokeWidth="1.2"
                     />
 
                     {/* France */}
                     <path
                       d="M360,130 Q420,120 435,160 Q410,200 375,185 Q350,160 360,130 Z"
-                      fill={activeCountry?.nameEn === "France" ? "#FFEDD5" : "#E2E8F0"}
-                      stroke={activeCountry?.nameEn === "France" ? "#F97316" : "#CBD5E1"}
+                      fill={activeCountry?.nameEn === "France" ? "rgba(249, 115, 22, 0.3)" : "#1E293B"}
+                      stroke={activeCountry?.nameEn === "France" ? "#F97316" : "#334155"}
                       strokeWidth={activeCountry?.nameEn === "France" ? 2.5 : 1}
                       className="transition-colors duration-300"
                     />
@@ -346,8 +351,8 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
                     {/* Italy Peninsula */}
                     <path
                       d="M455,165 Q485,180 475,230 Q455,240 450,210 Q450,175 455,165 Z"
-                      fill={activeCountry?.nameEn === "Italy" ? "#FFEDD5" : "#E2E8F0"}
-                      stroke={activeCountry?.nameEn === "Italy" ? "#F97316" : "#CBD5E1"}
+                      fill={activeCountry?.nameEn === "Italy" ? "rgba(249, 115, 22, 0.3)" : "#1E293B"}
+                      stroke={activeCountry?.nameEn === "Italy" ? "#F97316" : "#334155"}
                       strokeWidth={activeCountry?.nameEn === "Italy" ? 2.5 : 1}
                       className="transition-colors duration-300"
                     />
@@ -355,8 +360,8 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
                     {/* Turkey / Anatolia */}
                     <path
                       d="M540,165 Q625,150 670,175 Q650,215 550,205 Q530,185 540,165 Z"
-                      fill={activeCountry?.nameEn === "Turkey" ? "#FFEDD5" : "#E2E8F0"}
-                      stroke={activeCountry?.nameEn === "Turkey" ? "#F97316" : "#CBD5E1"}
+                      fill={activeCountry?.nameEn === "Turkey" ? "rgba(249, 115, 22, 0.3)" : "#1E293B"}
+                      stroke={activeCountry?.nameEn === "Turkey" ? "#F97316" : "#334155"}
                       strokeWidth={activeCountry?.nameEn === "Turkey" ? 2.5 : 1.2}
                       className="transition-colors duration-300"
                     />
@@ -364,40 +369,40 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
                     {/* Cyprus Island */}
                     <path
                       d="M615,225 Q635,220 642,225 Q628,235 615,225 Z"
-                      fill="#E2E8F0"
-                      stroke="#CBD5E1"
+                      fill="#1E293B"
+                      stroke="#334155"
                       strokeWidth="1"
                     />
 
                     {/* Crete Island */}
                     <path
                       d="M500,218 Q535,215 540,222 Q515,226 500,218 Z"
-                      fill="#E2E8F0"
-                      stroke="#CBD5E1"
+                      fill="#1E293B"
+                      stroke="#334155"
                       strokeWidth="1"
                     />
 
                     {/* Levant */}
                     <path
                       d="M635,225 Q660,225 665,270 Q640,280 635,250 Z"
-                      fill="#F1F5F9"
-                      stroke="#E2E8F0"
+                      fill="#131B2E"
+                      stroke="#1E293B"
                       strokeWidth="1"
                     />
 
                     {/* North Africa & Sahara Base */}
                     <path
                       d="M170,230 Q330,210 470,230 Q540,240 580,280 Q560,370 480,430 Q330,460 210,410 Q160,320 170,230 Z"
-                      fill="#F8FAFC"
-                      stroke="#E2E8F0"
+                      fill="#101726"
+                      stroke="#1E293B"
                       strokeWidth="1.2"
                     />
 
                     {/* Morocco */}
                     <path
                       d="M200,240 Q260,235 270,280 Q230,310 200,280 Z"
-                      fill={activeCountry?.nameEn === "Morocco" ? "#FFEDD5" : "#F1F5F9"}
-                      stroke={activeCountry?.nameEn === "Morocco" ? "#F97316" : "#CBD5E1"}
+                      fill={activeCountry?.nameEn === "Morocco" ? "rgba(249, 115, 22, 0.3)" : "#1E293B"}
+                      stroke={activeCountry?.nameEn === "Morocco" ? "#F97316" : "#334155"}
                       strokeWidth={activeCountry?.nameEn === "Morocco" ? 2.5 : 1}
                       className="transition-colors duration-300"
                     />
@@ -405,8 +410,8 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
                     {/* Algeria */}
                     <path
                       d="M275,240 Q380,235 385,320 Q330,350 275,310 Z"
-                      fill={activeCountry?.nameEn === "Algeria" ? "#FFEDD5" : "#F1F5F9"}
-                      stroke={activeCountry?.nameEn === "Algeria" ? "#F97316" : "#CBD5E1"}
+                      fill={activeCountry?.nameEn === "Algeria" ? "rgba(249, 115, 22, 0.3)" : "#1E293B"}
+                      stroke={activeCountry?.nameEn === "Algeria" ? "#F97316" : "#334155"}
                       strokeWidth={activeCountry?.nameEn === "Algeria" ? 2.5 : 1}
                       className="transition-colors duration-300"
                     />
@@ -414,8 +419,8 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
                     {/* Libya */}
                     <path
                       d="M390,240 Q495,240 495,330 Q440,350 390,320 Z"
-                      fill={activeCountry?.nameEn === "Libya" ? "#FFEDD5" : "#F1F5F9"}
-                      stroke={activeCountry?.nameEn === "Libya" ? "#F97316" : "#CBD5E1"}
+                      fill={activeCountry?.nameEn === "Libya" ? "rgba(249, 115, 22, 0.3)" : "#1E293B"}
+                      stroke={activeCountry?.nameEn === "Libya" ? "#F97316" : "#334155"}
                       strokeWidth={activeCountry?.nameEn === "Libya" ? 2.5 : 1}
                       className="transition-colors duration-300"
                     />
@@ -423,17 +428,17 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
                     {/* Egypt */}
                     <path
                       d="M500,250 Q600,250 605,330 Q540,360 500,335 Z"
-                      fill={activeCountry?.nameEn === "Egypt" ? "#FFEDD5" : "#F1F5F9"}
-                      stroke={activeCountry?.nameEn === "Egypt" ? "#F97316" : "#CBD5E1"}
-                      strokeWidth={activeCountry?.nameEn === "Egypt" ? 2.5 : 1.2}
+                      fill={activeCountry?.nameEn === "Egypt" ? "rgba(249, 115, 22, 0.35)" : "#1E293B"}
+                      stroke={activeCountry?.nameEn === "Egypt" ? "#F97316" : "#10B981"}
+                      strokeWidth={activeCountry?.nameEn === "Egypt" ? 2.5 : 1.5}
                       className="transition-colors duration-300"
                     />
 
                     {/* Arabian Peninsula */}
                     <path
                       d="M620,260 Q690,230 750,270 Q770,360 690,410 Q640,360 620,260 Z"
-                      fill="#F8FAFC"
-                      stroke="#E2E8F0"
+                      fill="#101726"
+                      stroke="#1E293B"
                       strokeWidth="1.2"
                     />
 
@@ -442,8 +447,8 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
                       cx="735"
                       cy="255"
                       r="13"
-                      fill={activeCountry?.nameEn === "Kuwait" ? "#FFEDD5" : "#F1F5F9"}
-                      stroke={activeCountry?.nameEn === "Kuwait" ? "#F97316" : "#CBD5E1"}
+                      fill={activeCountry?.nameEn === "Kuwait" ? "rgba(249, 115, 22, 0.3)" : "#1E293B"}
+                      stroke={activeCountry?.nameEn === "Kuwait" ? "#F97316" : "#334155"}
                       strokeWidth={activeCountry?.nameEn === "Kuwait" ? 2.5 : 1}
                       className="transition-colors duration-300"
                     />
@@ -451,8 +456,8 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
                     {/* Mauritania */}
                     <path
                       d="M160,350 Q210,340 215,400 Q170,420 150,380 Z"
-                      fill={activeCountry?.nameEn === "Mauritania" ? "#FFEDD5" : "#F1F5F9"}
-                      stroke={activeCountry?.nameEn === "Mauritania" ? "#F97316" : "#CBD5E1"}
+                      fill={activeCountry?.nameEn === "Mauritania" ? "rgba(249, 115, 22, 0.3)" : "#1E293B"}
+                      stroke={activeCountry?.nameEn === "Mauritania" ? "#F97316" : "#334155"}
                       strokeWidth={activeCountry?.nameEn === "Mauritania" ? 2.5 : 1}
                       className="transition-colors duration-300"
                     />
@@ -460,8 +465,8 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
                     {/* Red Sea Cutout */}
                     <path
                       d="M592,274 L608,295 L650,395 L638,400 L598,298 L588,276 Z"
-                      fill="#FFFFFF"
-                      stroke="#E2E8F0"
+                      fill="#090D16"
+                      stroke="#1E293B"
                       strokeWidth="0.8"
                     />
 
@@ -475,10 +480,10 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
                     <path
                       d="M575,275 Q570,300 575,315 Q578,335 585,348 Q590,365 588,380 L590,410"
                       fill="none"
-                      stroke="#A7F3D0"
+                      stroke="#10B981"
                       strokeWidth="6"
                       strokeLinecap="round"
-                      opacity="0.4"
+                      opacity="0.3"
                     />
                     <path
                       d="M575,275 Q570,300 575,315 Q578,335 585,348 Q590,365 588,380 L590,410"
@@ -490,7 +495,7 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
                     <path d="M575,275 L565,262 M575,275 L582,261" fill="none" stroke="#10B981" strokeWidth="1.6" />
 
                     {/* Subtle Transport / Maritime Connectors */}
-                    <g stroke="#CBD5E1" strokeWidth="0.8" strokeDasharray="3 3" opacity="0.6" fill="none">
+                    <g stroke="#38BDF8" strokeWidth="0.8" strokeDasharray="3 3" opacity="0.35" fill="none">
                       <path d="M575,275 L475,230" />
                       <path d="M575,275 L435,160" />
                       <path d="M575,275 L570,155" />
@@ -500,13 +505,13 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
                     </g>
 
                     {/* Water Labels */}
-                    <text x="440" y="228" fontStyle="italic" fontSize="10" fill="#94A3B8" letterSpacing="1.5">
+                    <text x="440" y="228" fontStyle="italic" fontSize="9" fill="#475569" letterSpacing="1.5">
                       Mediterranean Sea
                     </text>
-                    <text x="630" y="112" fontStyle="italic" fontSize="9" fill="#94A3B8" letterSpacing="1.5">
+                    <text x="630" y="112" fontStyle="italic" fontSize="8" fill="#475569" letterSpacing="1.5">
                       Black Sea
                     </text>
-                    <text x="640" y="340" fontStyle="italic" fontSize="9" fill="#94A3B8" letterSpacing="1.5">
+                    <text x="640" y="340" fontStyle="italic" fontSize="8" fill="#475569" letterSpacing="1.5">
                       Red Sea
                     </text>
 
@@ -516,9 +521,9 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
                       className="cursor-pointer"
                       onClick={() => setSelectedCountry(partnerCountries.find(c => c.nameEn === "Egypt") || null)}
                     >
-                      <circle cx="575" cy="275" r="18" fill="#F97316" opacity="0.22" className="animate-ping" />
-                      <circle cx="575" cy="275" r="10" fill="#F97316" opacity="0.3" />
-                      <circle cx="575" cy="275" r="5.5" fill="#FFFFFF" stroke="#F97316" strokeWidth="2" />
+                      <circle cx="575" cy="275" r="18" fill="#F97316" opacity="0.25" className="animate-ping" />
+                      <circle cx="575" cy="275" r="10" fill="#F97316" opacity="0.35" />
+                      <circle cx="575" cy="275" r="5.5" fill="#090D16" stroke="#F97316" strokeWidth="2" />
                       <circle cx="575" cy="275" r="3" fill="#F97316" />
 
                       <text
@@ -527,9 +532,9 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
                         fontFamily="inherit"
                         fontWeight="800"
                         fontSize="11"
-                        fill="#0F172A"
-                        stroke="#FFFFFF"
-                        strokeWidth="3"
+                        fill="#FFFFFF"
+                        stroke="#090D16"
+                        strokeWidth="2.5"
                         paintOrder="stroke fill"
                       >
                         Cairo
@@ -540,7 +545,7 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
                         fontFamily="inherit"
                         fontWeight="700"
                         fontSize="8"
-                        fill="#EA580C"
+                        fill="#FB923C"
                       >
                         HQ · المقر الرئيسي
                       </text>
@@ -569,14 +574,14 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
                         <div className="relative flex flex-col items-center">
                           {/* Pulsing ring on hover/active */}
                           {isActive && (
-                            <span className="absolute -inset-2.5 rounded-full bg-brand-orange/35 animate-ping pointer-events-none" />
+                            <span className="absolute -inset-2.5 rounded-full bg-brand-orange/40 animate-ping pointer-events-none" />
                           )}
                           <div
                             className={cn(
-                              "flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-bold shadow-md whitespace-nowrap transition-all duration-200 border",
+                              "flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-bold shadow-lg whitespace-nowrap transition-all duration-200 border",
                               isActive
-                                ? "bg-brand-orange text-white border-white shadow-xl ring-4 ring-brand-orange/30"
-                                : "bg-white text-slate-800 border-slate-200 hover:border-brand-orange/60 hover:bg-orange-50/60"
+                                ? "bg-brand-orange text-white border-orange-300 shadow-[0_0_20px_rgba(249,115,22,0.6)] ring-4 ring-brand-orange/40"
+                                : "bg-slate-900/90 text-slate-100 border-slate-700/80 hover:border-brand-orange hover:bg-slate-800 backdrop-blur-md"
                             )}
                           >
                             <span
@@ -597,8 +602,8 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
                 </div>
 
                 {/* Bottom Attribution */}
-                <div className="absolute bottom-2.5 start-3 z-20 flex items-center gap-1.5 text-[10px] text-slate-500 font-sans font-medium">
-                  <span className="font-bold text-slate-700">SBA Global</span>
+                <div className="absolute bottom-2.5 start-3 z-20 flex items-center gap-1.5 text-[10px] text-slate-400 font-sans font-medium">
+                  <span className="font-bold text-slate-200">SBA Global</span>
                   <span>·</span>
                   <span>{ar ? "الأسواق الحالية" : "Current Markets"}</span>
                 </div>
@@ -735,8 +740,8 @@ export function WhatWeOfferSection({ ar }: { ar: boolean }) {
         </h3>
         <p className="mt-1.5 text-sm text-muted-foreground max-w-2xl">
           {ar
-            ? "قائمة شاملة ومفصلة بكافة المشروعات والخدمات والقدرات عبر كل قطاع من قطاعاتنا، معروضة بوضوح ومرونة."
-            : "A structured breakdown of all projects, capabilities, and specialized services delivered by each sector."}
+            ? "نقدم حلولًا ومنتجات متكاملة تلبي احتياجات مختلف القطاعات، ونحوّل الخبرة إلى قيمة مستدامة."
+            : "We deliver integrated solutions and products that meet the needs of diverse sectors, transforming expertise into sustainable value."}
         </p>
       </div>
 
@@ -748,12 +753,12 @@ export function WhatWeOfferSection({ ar }: { ar: boolean }) {
               key={s.id}
               className="rounded-3xl border border-white/20 bg-background/80 p-6 sm:p-8 backdrop-blur-2xl shadow-lg transition-all duration-300 hover:shadow-xl hover:border-brand-green/35 hover:scale-[1.005]"
             >
-              <div className="w-full text-center border-b border-border/60 pb-5 mb-6">
+              <div className="w-full text-start border-b border-border/60 pb-5 mb-6">
                 <div>
-                  <h4 className="text-center font-head text-lg sm:text-xl font-bold text-foreground">
+                  <h4 className="text-start font-head text-lg sm:text-xl font-bold text-foreground">
                     {t(s.name)}
                   </h4>
-                  <span className={cn("text-xs font-bold text-brand-orange block mt-1", ar ? "font-sans" : "font-mono")}>
+                  <span className={cn("text-xs font-bold text-brand-orange block mt-1 text-start", ar ? "font-sans" : "font-mono")}>
                     {data.items.length} {ar ? "خدمات ومشروعات رئيسية" : "Specialized Capabilities"}
                   </span>
                 </div>

@@ -59,11 +59,11 @@ export function JourneySection({ ar }: { ar: boolean }) {
                     0{idx + 1}
                   </span>
                 </div>
-                <h3 className="text-center font-head text-lg font-bold text-foreground leading-snug">
+                <h3 className="text-start font-head text-lg font-bold text-foreground leading-snug">
                   {ar ? item.titleAr : item.title}
                 </h3>
               </div>
-              <p className="mt-4 text-sm leading-relaxed text-muted-foreground border-t border-border/40 pt-4">
+              <p className="mt-4 text-sm leading-relaxed text-muted-foreground border-t border-border/40 pt-4 text-start">
                 {ar ? item.bodyAr : item.body}
               </p>
             </div>

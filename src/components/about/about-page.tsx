@@ -147,7 +147,7 @@ export function AboutPage() {
         <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-8 sm:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
           <Reveal className="mx-auto max-w-3xl text-center">
             <SectionBadge title={ar ? "ماذا نفعل" : "What We Do"} />
-            <h2 className="section-title mt-3">{ar ? whatWeDoData.titleAr : whatWeDoData.title}</h2>
+            <h2 className="section-title mt-3 text-center mx-auto">{ar ? whatWeDoData.titleAr : whatWeDoData.title}</h2>
             <p className="section-intro mx-auto mt-4">{highlightBrand(ar ? whatWeDoData.leadAr : whatWeDoData.lead)}</p>
           </Reveal>
 
@@ -166,7 +166,7 @@ export function AboutPage() {
                       <h3 className="mt-3 text-center font-head text-xl font-bold">
                         {ar ? sector.titleAr : sector.title}
                       </h3>
-                      <p className="mt-3 text-sm leading-6 text-muted-foreground text-center">
+                      <p className="mt-3 text-sm leading-6 text-muted-foreground text-center font-sans">
                         {ar ? sector.bodyAr : sector.body}
                       </p>
                     </div>
@@ -183,7 +183,7 @@ export function AboutPage() {
         <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-8 sm:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
           <Reveal className="mx-auto max-w-3xl text-center">
             <SectionBadge title={ar ? "الهيكل المؤسسي والحوكمة" : "Corporate Structure & Architecture"} />
-            <h2 className="section-title mt-3 text-xl sm:text-2xl lg:text-3xl">
+            <h2 className="section-title mt-3 text-center mx-auto text-xl sm:text-2xl lg:text-3xl">
               {ar ? "الهيكل المؤسسي للمجموعة والقطاعات التابعة" : "Group Institutional Structure & Subsidiary Operating Units"}
             </h2>
             <p className="section-intro mx-auto mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
@@ -198,13 +198,13 @@ export function AboutPage() {
             <div className="mt-12 max-w-5xl mx-auto">
               {/* Parent Holding Node — Glassmorphic & Interactive */}
               <div className="group relative mx-auto max-w-md rounded-3xl border border-white/30 bg-background/65 p-7 text-center shadow-2xl backdrop-blur-2xl transition-all duration-300 hover:scale-[1.02] hover:border-brand-orange hover:bg-background/85 hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] ring-1 ring-white/20 cursor-pointer">
-                <span className={cn("text-[11px] font-extrabold uppercase tracking-widest text-brand-orange", ar ? "font-head text-xs tracking-normal" : "font-mono")}>
+                <span className={cn("text-[11px] font-extrabold uppercase tracking-widest !text-black block text-center", ar ? "font-head text-xs tracking-normal" : "font-mono")}>
                   {ar ? "الكيان المؤسسي الموحد (الشركة الأم)" : "Unified Parent Holding Entity"}
                 </span>
-                <h3 className="font-head text-xl sm:text-2xl font-black text-brand-orange mt-1">
+                <h3 className="font-head text-xl sm:text-2xl font-black !text-black text-center mt-1">
                   {ar ? "مجموعة سامي بن عياد" : "SAMI BIN AYYAD GROUP"}
                 </h3>
-                <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
+                <p className="mt-2 text-xs text-muted-foreground leading-relaxed text-center font-sans">
                   {ar
                     ? "التوجيه الاستراتيجي، الحوكمة المؤسسية، إدارة رؤوس الأموال والتحالفات الدولية الكبرى"
                     : "Strategic Leadership, Group Governance, Capital Allocation & International Alliances"}
@@ -221,14 +221,11 @@ export function AboutPage() {
               </div>
 
               {/* Four Subsidiary Sectors */}
-              <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
                 {[
                   {
-                    icon: Building2,
                     nameAr: "قطاع المقاولات والتطوير العقاري",
                     nameEn: "Construction & Real Estate",
-                    statusAr: "كيان تشغيلي تابع",
-                    statusEn: "Operating Division",
                     rootsAr: "منذ 1977 · سجل موثق",
                     rootsEn: "Since 1977 · Documented Track Record",
                     descAr: "المقاولات العامة، المنشآت الطبية، التطوير العقاري، وشبكات البنية التحتية.",
@@ -236,11 +233,8 @@ export function AboutPage() {
                     link: "/sectors/construction",
                   },
                   {
-                    icon: Leaf,
                     nameAr: "قطاع البيئة والاستدامة",
                     nameEn: "Environment & Sustainability",
-                    statusAr: "استشارات وحلول هندسية",
-                    statusEn: "Engineering & Advisory",
                     rootsAr: "شراكات سويسرية ودولية",
                     rootsEn: "Swiss & Global Alliances",
                     descAr: "تقييم الأثر البيئي، محطات الغاز الحيوي، معالجة المياه، والامتثال البيئي.",
@@ -248,11 +242,8 @@ export function AboutPage() {
                     link: "/sectors/environmental",
                   },
                   {
-                    icon: Shirt,
                     nameAr: "قطاع تصنيع الملابس وتطوير الأزياء",
                     nameEn: "Garment Manufacturing",
-                    statusAr: "مجمع صناعي وخطوط تصدير",
-                    statusEn: "Industrial Production & Export",
                     rootsAr: "علامات خاصة + FOB متكامل",
                     rootsEn: "Private Label + Full FOB",
                     descAr: "تصنيع الملابس الجاهزة، هندسة الباترون، برامج التصدير، وخطوط القميص الكلاسيكي.",
@@ -260,11 +251,8 @@ export function AboutPage() {
                     link: "/sectors/garment",
                   },
                   {
-                    icon: Wheat,
                     nameAr: "قطاع المنتجات الطبيعية والغذائية",
                     nameEn: "Food & Agri-Products",
-                    statusAr: "توريد وتصدير دولي",
-                    statusEn: "Global Sourcing & Export",
                     rootsAr: "مصادر مصرية أصيلة موثقة",
                     rootsEn: "Certified Authentic Origins",
                     descAr: "عسل طبيعي، زيتون، زيت زيتون بكر، تمور فاخرة، وأعشاب وتوابل موثقة معمليًا.",
@@ -272,35 +260,26 @@ export function AboutPage() {
                     link: "/sectors/food",
                   },
                 ].map((sec, sIdx) => {
-                  const SecIcon = sec.icon;
                   return (
                     <div
                       key={sIdx}
-                      className="group flex flex-col justify-between rounded-2xl border border-white/30 bg-background/80 p-5 shadow-md backdrop-blur-xl transition-all duration-300 hover:scale-[1.02] hover:border-brand-green/60 hover:shadow-xl"
+                      className="group flex flex-col justify-between rounded-3xl border border-white/30 bg-background/80 p-7 sm:p-8 min-h-[240px] shadow-lg backdrop-blur-xl transition-all duration-300 hover:scale-[1.02] hover:border-brand-green/60 hover:shadow-2xl"
                     >
                       <div>
-                        <div className="flex items-center justify-between mb-3">
-                          <span className="flex size-9 items-center justify-center rounded-xl bg-brand-green/10 text-brand-green transition-transform group-hover:scale-110">
-                            <SecIcon className="size-4" />
-                          </span>
-                          <span className="font-mono text-[10px] font-bold text-brand-orange bg-brand-orange/10 px-2 py-0.5 rounded-full border border-brand-orange/20">
-                            {ar ? sec.statusAr : sec.statusEn}
-                          </span>
-                        </div>
-                        <h4 className="text-center font-head text-base font-bold text-foreground group-hover:text-brand-orange transition-colors">
+                        <h4 className="text-center font-head text-base sm:text-lg font-bold text-foreground group-hover:text-brand-orange transition-colors">
                           {ar ? sec.nameAr : sec.nameEn}
                         </h4>
-                        <p className="mt-1 text-center text-[11px] font-semibold text-brand-green">
+                        <p className="mt-1.5 text-center text-xs font-semibold text-brand-green">
                           {ar ? sec.rootsAr : sec.rootsEn}
                         </p>
-                        <p className="mt-2.5 text-xs text-muted-foreground leading-relaxed">
+                        <p className="mt-3.5 text-xs sm:text-sm text-muted-foreground leading-relaxed text-center font-sans">
                           {ar ? sec.descAr : sec.descEn}
                         </p>
                       </div>
-                      <div className="mt-4 pt-3 border-t border-border/40">
+                      <div className="mt-6 pt-4 border-t border-border/40 flex justify-center">
                         <Link
                           to={sec.link}
-                          className="inline-flex items-center gap-1.5 text-xs font-bold text-foreground hover:text-brand-orange transition-colors"
+                          className="inline-flex items-center gap-1.5 text-xs font-bold !text-brand-green hover:!text-brand-orange transition-colors"
                         >
                           <span>{ar ? "استكشف تفاصيل القطاع" : "View Division Details"}</span>
                           <ArrowRight className="size-3.5 rtl:rotate-180" />
@@ -357,7 +336,7 @@ export function AboutPage() {
         <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-8 sm:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
           <Reveal className="mx-auto max-w-3xl text-center">
             <SectionBadge title={ar ? "قيمنا" : "Our Values"} />
-            <h2 className="section-title mt-3">{ar ? ourValuesData.titleAr : ourValuesData.title}</h2>
+            <h2 className="section-title mt-3 text-center mx-auto">{ar ? ourValuesData.titleAr : ourValuesData.title}</h2>
             <p className="section-intro mx-auto mt-4">{highlightBrand(ar ? ourValuesData.leadAr : ourValuesData.lead)}</p>
           </Reveal>
 
@@ -371,7 +350,7 @@ export function AboutPage() {
                       <h3 className="text-center font-head text-lg font-bold">
                         {ar ? item.titleAr : item.title}
                       </h3>
-                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground text-center">
+                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground text-center font-sans">
                         {ar ? item.bodyAr : item.body}
                       </p>
                     </div>
@@ -388,7 +367,7 @@ export function AboutPage() {
         <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-8 sm:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
           <Reveal className="mx-auto max-w-3xl text-center">
             <SectionBadge title={ar ? "لماذا سامي بن عياد" : "Why Sami Bin Ayyad"} />
-            <h2 className="section-title mt-3">{ar ? whySbaData.titleAr : whySbaData.title}</h2>
+            <h2 className="section-title mt-3 text-center mx-auto">{ar ? whySbaData.titleAr : whySbaData.title}</h2>
             <p className="section-intro mx-auto mt-4">{highlightBrand(ar ? whySbaData.leadAr : whySbaData.lead)}</p>
           </Reveal>
 
@@ -405,7 +384,7 @@ export function AboutPage() {
                         {ar ? pillar.titleAr : pillar.title}
                       </h3>
                     </div>
-                    <p className="mt-3 text-sm leading-6 text-muted-foreground text-center">
+                    <p className="mt-3 text-sm leading-6 text-muted-foreground text-center font-sans">
                       {ar ? pillar.bodyAr : pillar.body}
                     </p>
                   </div>
@@ -437,7 +416,7 @@ export function AboutPage() {
         <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-8 sm:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
           <Reveal className="mx-auto max-w-3xl text-center">
             <SectionBadge title={ar ? "قيادة الشركة" : "Company Leadership"} />
-            <h2 className="section-title mt-3">{ar ? "قيادات تصنع الرؤية" : "The People Behind the Vision"}</h2>
+            <h2 className="section-title mt-3 text-center mx-auto">{ar ? "قيادات تصنع الرؤية" : "The People Behind the Vision"}</h2>
             <p className="section-intro mx-auto mt-3">
               {ar
                 ? "تقود المجموعة نخبة من المؤسسين والقياديين بخبرات متراكمة في إدارة الاستثمارات والتصنيع والخدمات البيئية والتطوير الأكاديمي."
@@ -460,7 +439,7 @@ export function AboutPage() {
         <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-8 sm:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
           <Reveal className="mx-auto max-w-3xl text-center">
             <SectionBadge title={ar ? "حوكمة الشركة" : "Company Governance"} />
-            <h2 className="section-title mt-3">{ar ? governanceData.titleAr : governanceData.title}</h2>
+            <h2 className="section-title mt-3 text-center mx-auto">{ar ? governanceData.titleAr : governanceData.title}</h2>
             <p className="section-intro mx-auto mt-4">{highlightBrand(ar ? governanceData.leadAr : governanceData.lead)}</p>
           </Reveal>
 
@@ -478,7 +457,7 @@ export function AboutPage() {
                     <h3 className="mt-4 font-head text-base font-bold">
                       {ar ? principle.titleAr : principle.title}
                     </h3>
-                    <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                    <p className="mt-2 text-sm leading-6 text-muted-foreground font-sans">
                       {ar ? principle.bodyAr : principle.body}
                     </p>
                   </div>
@@ -488,7 +467,7 @@ export function AboutPage() {
           </div>
 
           <Reveal delay={0.4} className="mx-auto mt-10 max-w-3xl">
-            <div className="rounded-2xl border border-white/20 bg-background/60 p-5 text-center text-sm font-medium leading-relaxed text-muted-foreground backdrop-blur-md">
+            <div className="rounded-2xl border border-white/20 bg-background/60 p-5 text-center text-sm font-medium leading-relaxed text-muted-foreground backdrop-blur-md font-sans">
               {ar ? governanceData.conclusionAr : governanceData.conclusion}
             </div>
           </Reveal>
@@ -500,7 +479,7 @@ export function AboutPage() {
         <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-8 sm:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
           <Reveal className="mx-auto max-w-3xl text-center">
             <SectionBadge title={ar ? "سياسات المجموعة" : "Group Policies"} />
-            <h2 className="section-title mt-3">{ar ? policiesData.titleAr : policiesData.title}</h2>
+            <h2 className="section-title mt-3 text-center mx-auto">{ar ? policiesData.titleAr : policiesData.title}</h2>
             <p className="section-intro mx-auto mt-4">{highlightBrand(ar ? policiesData.leadAr : policiesData.lead)}</p>
           </Reveal>
 
@@ -512,7 +491,7 @@ export function AboutPage() {
                     <h3 className="font-head text-base font-bold">
                       {ar ? policy.titleAr : policy.title}
                     </h3>
-                    <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                    <p className="mt-3 text-sm leading-6 text-muted-foreground font-sans">
                       {ar ? policy.bodyAr : policy.body}
                     </p>
                   </div>
@@ -522,7 +501,7 @@ export function AboutPage() {
           </div>
 
           <Reveal delay={0.3} className="mx-auto mt-12 max-w-3xl">
-            <div className="rounded-2xl border border-dashed border-border/80 bg-background/40 p-5 text-center text-xs font-medium leading-relaxed text-muted-foreground sm:text-sm backdrop-blur-md">
+            <div className="rounded-2xl border border-dashed border-border/80 bg-background/40 p-5 text-center text-xs font-medium leading-relaxed text-muted-foreground sm:text-sm backdrop-blur-md font-sans">
               {ar ? policiesData.disclaimerAr : policiesData.disclaimer}
             </div>
           </Reveal>
@@ -561,23 +540,23 @@ function LeaderCard({
         </div>
 
         {/* Info & Detailed Bio */}
-        <div className="flex flex-col justify-start">
-          <div className="mb-3">
+        <div className="flex flex-col justify-start text-start items-start w-full">
+          <div className="mb-3 text-start">
             <span
               className={cn(
-                "inline-block rounded-full bg-secondary/80 px-3.5 py-1 text-xs font-bold text-brand-orange border border-border backdrop-blur-md mb-2",
+                "inline-block rounded-full bg-secondary/80 px-3.5 py-1 text-xs font-bold text-brand-orange border border-border backdrop-blur-md mb-2 text-start",
                 ar ? "font-sans font-bold" : "font-mono uppercase tracking-wider text-[11px]"
               )}
             >
               {ar ? founder.roleAr : founder.role}
             </span>
-            <h3 className="font-head text-xl sm:text-2xl font-bold text-foreground">
+            <h3 className="font-head text-xl sm:text-2xl font-bold text-foreground text-start">
               {ar ? founder.nameAr : founder.name}
             </h3>
           </div>
 
-          <div className="border-t border-border/50 pt-4">
-            <p className="whitespace-pre-line text-sm sm:text-base leading-relaxed text-muted-foreground/95">
+          <div className="border-t border-border/50 pt-4 text-start w-full">
+            <p className="whitespace-pre-line text-sm sm:text-base leading-relaxed text-muted-foreground/95 text-start font-sans">
               {bio}
             </p>
           </div>

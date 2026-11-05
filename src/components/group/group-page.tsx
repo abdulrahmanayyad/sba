@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, Building2, Globe2, Handshake, Mail, MessageCircle, Newspaper, Sparkles, TrendingUp } from "lucide-react";
+import { ArrowRight, Building2, ExternalLink, Globe2, Handshake, Mail, MessageCircle, Newspaper, Sparkles, TrendingUp } from "lucide-react";
 
 const heroBg = "/BG/Main Home Page.jpg";
 import { Button } from "@/components/ui/button";
@@ -33,24 +33,19 @@ export function GroupPage() {
         <div className="group-hero-overlay absolute inset-0 bg-black/60 backdrop-blur-[1px]" />
         <div className="site-container relative flex min-h-[inherit] flex-col justify-center py-14 sm:py-20 z-10">
           <div>
-            <div data-hero-reveal className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/40 px-3.5 py-1 text-xs font-bold tracking-wide text-white backdrop-blur-md">
+            <div data-hero-reveal className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/95 px-3.5 py-1 text-xs font-bold tracking-wide backdrop-blur-md shadow-sm">
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-              <span className="font-bold text-brand-orange">{ar ? "مجموعة سامي بن عياد" : "SAMI BIN AYYAD GROUP"}</span>
+              <span className="font-bold !text-black">{ar ? "مجموعة سامي بن عياد" : "SAMI BIN AYYAD GROUP"}</span>
             </div>
             <h1 data-hero-reveal className="mt-4 max-w-4xl font-head text-[clamp(1.85rem,3.5vw,3rem)] font-extrabold leading-tight text-white drop-shadow-md">
               {ar ? messages.hero.titleAr : messages.hero.title}
             </h1>
             <p data-hero-reveal className="mt-3 max-w-3xl text-base sm:text-lg font-bold leading-relaxed text-brand-orange">{messages.hero.lead}</p>
             <div data-hero-reveal className="mt-6 flex flex-wrap items-center gap-3">
-              <Button asChild size="lg" className="rounded-full !bg-brand-green !text-white px-6 sm:px-7 py-3 font-head text-xs sm:text-sm font-bold shadow-lg transition-all duration-300 hover:!bg-brand-orange hover:scale-105 active:scale-95 cursor-pointer">
+              <Button asChild size="lg" className="rounded-full !bg-brand-green !text-white px-7 py-3 font-head text-xs sm:text-sm font-bold shadow-lg transition-all duration-300 hover:!bg-brand-orange hover:scale-105 active:scale-95 cursor-pointer">
                 <a href="#divisions">
                   {ar ? "استكشف قطاعاتنا" : "Explore Our Business Sectors"} <ArrowRight className="size-4 rtl:rotate-180" />
                 </a>
-              </Button>
-              <Button asChild size="lg" className="rounded-full !bg-brand-green !text-white px-6 sm:px-7 py-3 font-head text-xs sm:text-sm font-bold shadow-lg transition-all duration-300 hover:!bg-brand-orange hover:scale-105 active:scale-95 cursor-pointer">
-                <Link to="/join">
-                  {ar ? "فرص التعاون والأعمال" : "Discuss a Business Opportunity"}
-                </Link>
               </Button>
             </div>
           </div>
@@ -61,27 +56,27 @@ export function GroupPage() {
       <section className="site-container section-band">
         <Reveal>
           <div className="group relative mx-auto max-w-4xl overflow-hidden rounded-3xl border border-white/20 bg-background/75 p-8 sm:p-12 shadow-[0_12px_40px_rgba(0,0,0,0.08)] backdrop-blur-2xl transition-all duration-300 hover:scale-[1.01] hover:shadow-[0_20px_60px_rgba(0,0,0,0.12)] hover:border-brand-orange/40 text-center">
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-white/95 px-3.5 py-1 text-xs font-bold tracking-wide backdrop-blur-md shadow-sm">
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-              <span className="font-bold text-brand-orange">{ar ? "مجموعة سامي بن عياد" : "SAMI BIN AYYAD GROUP"}</span>
+              <span className="font-bold !text-black font-head">{ar ? "مجموعة سامي بن عياد" : "SAMI BIN AYYAD GROUP"}</span>
             </div>
-            <h2 className="section-title mt-2">{ar ? "نقود التقدم عبر القطاعات" : "Driving Progress Across Sectors"}</h2>
-            <div className="section-intro mx-auto mt-6 leading-relaxed max-w-3xl space-y-3">
+            <h2 className="section-title mt-2 text-center mx-auto">{ar ? "نقود التقدم عبر القطاعات" : "Driving Progress Across Sectors"}</h2>
+            <div className="section-intro mx-auto mt-6 leading-relaxed max-w-3xl space-y-3 text-start">
               {ar ? (
                 <>
-                  <p className="leading-relaxed">
+                  <p className="leading-relaxed text-start">
                     نطوّر أعمالًا رائدة في <span className="text-foreground font-bold">المقاولات والتطوير العقاري</span>، والبيئة والاستدامة، وتصنيع الملابس وتطوير الأزياء، والمنتجات الطبيعية والغذائية. يجمع عملنا بين الفهم العميق لمتطلبات العملاء وبناء شراكات تجارية موثوقة تستند إلى أعلى معايير الجودة والشفافية.
                   </p>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed text-start">
                     تستند المجموعة إلى خبرات مؤسسية وتنفيذية عريقة تمتد جذورها منذ عام <span className="font-bold text-foreground">1977</span> في قطاع الإنشاءات والمقاولات، وتوجت بتأسيس الكيان المؤسسي الموحد للمجموعة عام <span className="font-bold text-foreground">2023</span> لتكامل القدرات الصناعية والاستثمارية عبر 4 قطاعات رئيسية.
                   </p>
                 </>
               ) : (
                 <>
-                  <p className="leading-relaxed">
+                  <p className="leading-relaxed text-start">
                     Our operations span four integrated sectors: <span className="text-foreground font-bold">contracting and real estate development</span>, environment and sustainability, apparel manufacturing and fashion development, and natural agri-food products. We focus on delivering value, disciplined execution, and long-term corporate partnerships.
                   </p>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed text-start">
                     The Group builds upon foundational commercial and contracting experience dating back to <span className="font-bold text-foreground">1977</span>, formally unified into its institutional corporate structure in <span className="font-bold text-foreground">2023</span> to drive multidisciplinary growth across global markets.
                   </p>
                 </>
@@ -266,32 +261,63 @@ export function GroupPage() {
           </div>
 
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {strategicPartners.slice(0, 4).map((p, idx) => (
-              <div
-                key={p.id}
-                className="group relative rounded-3xl border border-white/20 bg-background/80 p-6 shadow-md backdrop-blur-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:border-brand-green flex flex-col justify-between"
-              >
-                <div>
-                  <div className="flex items-center justify-between gap-2 mb-3">
-                    <span className="font-mono text-xs font-bold text-brand-orange bg-brand-orange/10 px-2.5 py-0.5 rounded-full border border-brand-orange/20">
-                      {ar ? p.countryAr : p.country}
-                    </span>
-                    <Handshake className="size-4 text-brand-green" />
+            {strategicPartners.slice(0, 4).map((p, idx) => {
+              const partnerLinks: Record<string, string> = {
+                dianyingpu: "https://www.dyp-sensor.com",
+                jumptek: "https://www.jumptek.com",
+                renergon: "https://www.renergon-biogas.com",
+                technoset: "https://www.technoset.com",
+              };
+              const partnerShort: Record<string, string> = {
+                dianyingpu: "DYP Sensor",
+                jumptek: "JumpTek Water",
+                renergon: "RENERGON Biogas",
+                technoset: "TechnoSet Systems",
+              };
+              const url = partnerLinks[p.id] || "https://www.sami-trade.com/partners";
+              return (
+                <div
+                  key={p.id}
+                  className="group relative rounded-3xl border border-white/20 bg-background/80 p-6 shadow-md backdrop-blur-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:border-brand-green flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="flex items-center justify-between gap-2 mb-3">
+                      <span className={cn(
+                        "text-xs font-bold text-brand-orange bg-brand-orange/10 px-2.5 py-0.5 rounded-full border border-brand-orange/20",
+                        ar ? "font-sans" : "font-mono"
+                      )}>
+                        {ar ? p.countryAr : p.country}
+                      </span>
+                      <span className="inline-flex items-center gap-1 text-[11px] font-bold text-brand-green bg-brand-green/10 border border-brand-green/20 px-2 py-0.5 rounded-full">
+                        <Handshake className="size-3" />
+                        <span>{partnerShort[p.id] || "Partner"}</span>
+                      </span>
+                    </div>
+                    <h3 className="text-start font-head text-base font-bold text-foreground group-hover:text-brand-orange transition-colors">
+                      {ar ? p.nameAr : p.name}
+                    </h3>
+                    <p className="mt-2 text-xs text-muted-foreground leading-relaxed text-start">
+                      {ar ? p.descriptionAr : p.description}
+                    </p>
                   </div>
-                  <h3 className="text-center font-head text-base font-bold text-foreground group-hover:text-brand-orange transition-colors">
-                    {ar ? p.nameAr : p.name}
-                  </h3>
-                  <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
-                    {ar ? p.descriptionAr : p.description}
-                  </p>
+                  <div className="mt-4 pt-3 border-t border-border/40 flex items-center justify-between gap-2">
+                    <span className="text-[11px] font-semibold text-brand-green">
+                      {ar ? p.tagAr : p.tag}
+                    </span>
+                    <a
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-xs font-bold text-brand-orange hover:text-brand-green transition-colors"
+                      aria-label={`${ar ? p.nameAr : p.name} Official Website`}
+                    >
+                      <span>{ar ? "الموقع الرسمي" : "Official Website"}</span>
+                      <ExternalLink className="size-3" />
+                    </a>
+                  </div>
                 </div>
-                <div className="mt-4 pt-3 border-t border-border/40">
-                  <span className="text-[11px] font-semibold text-brand-green">
-                    {ar ? p.tagAr : p.tag}
-                  </span>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </Reveal>
       </section>
@@ -343,16 +369,16 @@ export function GroupPage() {
                       <span>{ar ? article.dateAr : article.dateEn}</span>
                     </div>
                   </div>
-                  <div className="p-5 sm:p-6">
-                    <h3 className="text-center font-head text-base sm:text-lg font-bold text-foreground leading-snug group-hover:text-brand-orange transition-colors">
+                  <div className="p-5 sm:p-6 text-start">
+                    <h3 className="text-start font-head text-base sm:text-lg font-bold text-foreground leading-snug group-hover:text-brand-orange transition-colors">
                       {ar ? article.titleAr : article.titleEn}
                     </h3>
-                    <p className="mt-2.5 text-xs sm:text-sm text-muted-foreground leading-relaxed line-clamp-3">
+                    <p className="mt-2.5 text-xs sm:text-sm text-muted-foreground leading-relaxed line-clamp-3 text-start">
                       {ar ? article.excerptAr : article.excerptEn}
                     </p>
                   </div>
                 </div>
-                <div className="p-5 sm:p-6 pt-0">
+                <div className="p-5 sm:p-6 pt-0 text-start">
                   <Link
                     to="/news/$slug"
                     params={{ slug: article.slug }}
@@ -379,7 +405,7 @@ export function GroupPage() {
                   <span>{ar ? "الاستثمار والشراكات الاستراتيجية" : "Investment & Strategic Alliances"}</span>
                 </div>
                 <h2 className="font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold text-foreground leading-tight">
-                  {ar ? "فرص استثمارية وشراكات تطوير عبر 4 قطاعات حيوية" : "Strategic Investment & Co-Development Opportunities"}
+                  {ar ? "فرص استثمارية وشراكات تطوير عبر عدة قطاعات حيوية" : "Strategic Investment & Co-Development Opportunities"}
                 </h2>
                 <p className="mt-3 text-sm sm:text-base text-muted-foreground leading-relaxed max-w-2xl">
                   {ar

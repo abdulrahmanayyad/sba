@@ -214,9 +214,9 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
   };
 
   const navPill =
-    "group relative inline-flex items-center gap-1 rounded-full px-4 py-2 text-sm font-bold tracking-wide text-foreground transition-all duration-300 hover:bg-white/40 hover:text-brand-orange hover:shadow-sm hover:backdrop-blur-md hover:-translate-y-0.5 active:translate-y-0";
+    "group relative inline-flex items-center gap-1 rounded-full px-3 2xl:px-4 py-2 text-xs 2xl:text-sm font-bold tracking-tight xl:tracking-normal text-foreground transition-all duration-300 hover:bg-white/40 hover:text-brand-orange hover:shadow-sm hover:backdrop-blur-md hover:-translate-y-0.5 active:translate-y-0";
   const navPillActive =
-    "group relative inline-flex items-center gap-1 rounded-full px-4 py-2 text-sm font-bold tracking-wide text-brand-orange bg-white/45 shadow-sm backdrop-blur-md -translate-y-0.5";
+    "group relative inline-flex items-center gap-1 rounded-full px-3 2xl:px-4 py-2 text-xs 2xl:text-sm font-bold tracking-tight xl:tracking-normal text-brand-orange bg-white/45 shadow-sm backdrop-blur-md -translate-y-0.5";
   const dropdownLink =
     "block rounded-[16px] px-4 py-2.5 text-sm font-semibold text-foreground transition-all duration-200 hover:bg-brand-orange/15 hover:text-brand-orange hover:translate-x-1 rtl:hover:-translate-x-1";
 
@@ -321,7 +321,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
         <header className="fixed inset-x-0 top-3 z-50 pointer-events-none px-4 flex justify-center transition-all duration-300">
           <div
             className={cn(
-              "pointer-events-auto mx-auto flex h-[62px] w-full max-w-6xl items-center justify-between gap-4 rounded-full px-5 transition-all duration-300",
+              "pointer-events-auto mx-auto flex h-[62px] w-full max-w-[1380px] items-center justify-between gap-2 lg:gap-4 rounded-full px-4 sm:px-6 transition-all duration-300",
               scrolled
                 ? "border border-white/25 bg-background/85 shadow-[0_16px_40px_rgba(0,0,0,0.18)] backdrop-blur-2xl ring-1 ring-white/10"
                 : "border border-white/15 bg-background/70 shadow-[0_10px_30px_rgba(0,0,0,0.08)] backdrop-blur-xl"
@@ -333,7 +333,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
             </Link>
 
             {/* Centered nav links */}
-            <nav aria-label={messages.accessibility.primaryNavigation} className="hidden items-center justify-center gap-x-1 xl:flex">
+            <nav aria-label={messages.accessibility.primaryNavigation} className="hidden items-center justify-center gap-x-0.5 2xl:gap-x-1 xl:flex">
               {primaryLinks(navPill)}
             </nav>
 

@@ -258,10 +258,6 @@ export const sectorOverviews: SectorOverview[] = [
         descAr: "أعمال مدنية متخصصة، حماية خطوط الغاز، غرف تخفيض الضغط، ومحطات تموين الوقود والغاز.",
       },
     ],
-    figures: [
-      { value: "+57", label: "Documented projects", labelAr: "مشروعًا موثقًا" },
-      { value: "+540", label: "EGP million+ recorded turnover", labelAr: "مليون جنيه حجم أعمال مسجل" },
-    ],
     cta: "Explore Our Projects",
     ctaAr: "استكشف مشروعاتنا",
     image: construction,
