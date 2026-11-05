@@ -195,32 +195,34 @@ export function AboutPage() {
 
           {/* Interactive Corporate Structure Diagram */}
           <Reveal delay={0.15}>
-            <div className="mt-12 max-w-5xl mx-auto">
-              {/* Parent Holding Node — Glassmorphic & Interactive */}
-              <div className="group relative mx-auto max-w-md rounded-3xl border border-white/30 bg-background/65 p-7 text-center shadow-2xl backdrop-blur-2xl transition-all duration-300 hover:scale-[1.02] hover:border-brand-orange hover:bg-background/85 hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] ring-1 ring-white/20 cursor-pointer">
-                <span className={cn("text-[11px] font-extrabold uppercase tracking-widest !text-black block text-center", ar ? "font-head text-xs tracking-normal" : "font-mono")}>
-                  {ar ? "الكيان المؤسسي الموحد (الشركة الأم)" : "Unified Parent Holding Entity"}
-                </span>
-                <h3 className="font-head text-xl sm:text-2xl font-black !text-black text-center mt-1">
+            <div className="mt-12 max-w-6xl mx-auto">
+              {/* Parent Holding Node — Glassmorphic, Larger & Prominent */}
+              <div className="group relative mx-auto max-w-2xl rounded-3xl border border-white/40 bg-background/85 p-8 sm:p-10 text-center shadow-[0_20px_50px_rgba(0,0,0,0.12)] backdrop-blur-2xl transition-all duration-300 hover:scale-[1.01] hover:border-brand-orange hover:shadow-[0_25px_60px_rgba(0,0,0,0.18)] ring-1 ring-white/30">
+                <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-4 py-1.5 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+                  <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
+                  <span className="font-bold text-brand-green">{ar ? "الكيان المؤسسي الموحد (الشركة الأم)" : "Unified Parent Holding Entity"}</span>
+                </div>
+                <h3 className="font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold text-foreground text-center mt-2 leading-tight">
                   {ar ? "مجموعة سامي بن عياد" : "SAMI BIN AYYAD GROUP"}
                 </h3>
-                <p className="mt-2 text-xs text-muted-foreground leading-relaxed text-center font-sans">
+                <p className="mt-3 text-sm sm:text-base text-muted-foreground leading-relaxed text-center font-sans max-w-xl mx-auto">
                   {ar
                     ? "التوجيه الاستراتيجي، الحوكمة المؤسسية، إدارة رؤوس الأموال والتحالفات الدولية الكبرى"
                     : "Strategic Leadership, Group Governance, Capital Allocation & International Alliances"}
                 </p>
-                <div className="mt-3 flex items-center justify-center gap-2 text-[11px] font-bold text-brand-green">
-                  <BadgeCheck className="size-4" />
+                <div className="mt-4 inline-flex items-center justify-center gap-2 rounded-full bg-brand-green/10 border border-brand-green/25 px-4 py-1.5 text-xs sm:text-sm font-bold text-brand-green">
+                  <BadgeCheck className="size-4.5 text-brand-green shrink-0" />
                   <span>{ar ? "تأسست رسميًا 2023 · جذور الخبرة منذ 1977" : "Formally Unified 2023 · Heritage Roots 1977"}</span>
                 </div>
               </div>
 
               {/* Connecting Branch Line */}
-              <div className="my-6 flex justify-center">
-                <div className="h-8 w-0.5 bg-gradient-to-b from-brand-green to-brand-orange/60" />
+              <div className="my-8 flex justify-center items-center flex-col">
+                <div className="h-10 w-0.5 bg-gradient-to-b from-brand-green via-brand-orange to-brand-green/60" />
+                <div className="size-2 rounded-full bg-brand-orange shadow-sm -mt-0.5" />
               </div>
 
-              {/* Four Subsidiary Sectors */}
+              {/* Four Subsidiary Sectors — Larger, Clearer, High-Visibility Cards */}
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
                 {[
                   {
@@ -231,6 +233,8 @@ export function AboutPage() {
                     descAr: "المقاولات العامة، المنشآت الطبية، التطوير العقاري، وشبكات البنية التحتية.",
                     descEn: "General contracting, healthcare facilities, real estate, and structural engineering.",
                     link: "/sectors/construction",
+                    icon: Building2,
+                    badgeColor: "bg-blue-500/10 text-blue-600 border-blue-500/20 dark:text-blue-400",
                   },
                   {
                     nameAr: "قطاع البيئة والاستدامة",
@@ -240,6 +244,8 @@ export function AboutPage() {
                     descAr: "تقييم الأثر البيئي، محطات الغاز الحيوي، معالجة المياه، والامتثال البيئي.",
                     descEn: "EIA studies, dry fermentation biogas, water filtration, and ESG compliance.",
                     link: "/sectors/environmental",
+                    icon: Leaf,
+                    badgeColor: "bg-emerald-500/10 text-emerald-600 border-emerald-500/20 dark:text-emerald-400",
                   },
                   {
                     nameAr: "قطاع تصنيع الملابس وتطوير الأزياء",
@@ -249,6 +255,8 @@ export function AboutPage() {
                     descAr: "تصنيع الملابس الجاهزة، هندسة الباترون، برامج التصدير، وخطوط القميص الكلاسيكي.",
                     descEn: "Ready-made garment manufacturing, pattern engineering, and international FOB programs.",
                     link: "/sectors/garment",
+                    icon: Shirt,
+                    badgeColor: "bg-amber-500/10 text-amber-600 border-amber-500/20 dark:text-amber-400",
                   },
                   {
                     nameAr: "قطاع المنتجات الطبيعية والغذائية",
@@ -258,31 +266,43 @@ export function AboutPage() {
                     descAr: "عسل طبيعي، زيتون، زيت زيتون بكر، تمور فاخرة، وأعشاب وتوابل موثقة معمليًا.",
                     descEn: "Natural honey, table olives, extra virgin olive oil, premium dates, and certified herbs.",
                     link: "/sectors/food",
+                    icon: Wheat,
+                    badgeColor: "bg-green-500/10 text-green-600 border-green-500/20 dark:text-green-400",
                   },
                 ].map((sec, sIdx) => {
+                  const Icon = sec.icon;
                   return (
                     <div
                       key={sIdx}
-                      className="group flex flex-col justify-between rounded-3xl border border-white/30 bg-background/80 p-7 sm:p-8 min-h-[240px] shadow-lg backdrop-blur-xl transition-all duration-300 hover:scale-[1.02] hover:border-brand-green/60 hover:shadow-2xl"
+                      className="group relative flex flex-col justify-between rounded-3xl border border-white/40 bg-background/85 p-7 sm:p-8 min-h-[300px] shadow-[0_12px_36px_rgba(0,0,0,0.08)] backdrop-blur-2xl transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:border-brand-orange hover:shadow-[0_20px_48px_rgba(0,0,0,0.14)]"
                     >
                       <div>
-                        <h4 className="text-center font-head text-base sm:text-lg font-bold text-foreground group-hover:text-brand-orange transition-colors">
+                        {/* Icon + Sector Badge */}
+                        <div className="flex items-center justify-between gap-2 mb-4">
+                          <div className="flex size-11 items-center justify-center rounded-2xl bg-brand-green/10 text-brand-green transition-transform duration-300 group-hover:scale-110 group-hover:bg-brand-orange/15 group-hover:text-brand-orange">
+                            <Icon className="size-5.5" />
+                          </div>
+                          <span className={cn("inline-flex items-center rounded-full border px-3 py-1 text-[11px] font-bold tracking-tight", sec.badgeColor)}>
+                            {ar ? sec.rootsAr : sec.rootsEn}
+                          </span>
+                        </div>
+
+                        <h4 className="font-head text-lg sm:text-xl font-bold text-foreground leading-snug group-hover:text-brand-orange transition-colors">
                           {ar ? sec.nameAr : sec.nameEn}
                         </h4>
-                        <p className="mt-1.5 text-center text-xs font-semibold text-brand-green">
-                          {ar ? sec.rootsAr : sec.rootsEn}
-                        </p>
-                        <p className="mt-3.5 text-xs sm:text-sm text-muted-foreground leading-relaxed text-center font-sans">
+
+                        <p className="mt-3.5 text-xs sm:text-sm text-muted-foreground leading-relaxed font-sans">
                           {ar ? sec.descAr : sec.descEn}
                         </p>
                       </div>
-                      <div className="mt-6 pt-4 border-t border-border/40 flex justify-center">
+
+                      <div className="mt-6 pt-4 border-t border-border/50 flex justify-between items-center">
                         <Link
                           to={sec.link}
-                          className="inline-flex items-center gap-1.5 text-xs font-bold !text-brand-green hover:!text-brand-orange transition-colors"
+                          className="group/link inline-flex items-center gap-2 text-xs sm:text-sm font-bold !text-brand-green hover:!text-brand-orange transition-colors"
                         >
                           <span>{ar ? "استكشف تفاصيل القطاع" : "View Division Details"}</span>
-                          <ArrowRight className="size-3.5 rtl:rotate-180" />
+                          <ArrowRight className="size-4 transition-transform duration-200 group-hover/link:translate-x-1 rtl:rotate-180 rtl:group-hover/link:-translate-x-1" />
                         </Link>
                       </div>
                     </div>
