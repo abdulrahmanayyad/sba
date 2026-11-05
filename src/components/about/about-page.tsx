@@ -228,70 +228,43 @@ export function AboutPage() {
                   {
                     nameAr: "قطاع المقاولات والتطوير العقاري",
                     nameEn: "Construction & Real Estate",
-                    rootsAr: "منذ 1977 · سجل موثق",
-                    rootsEn: "Since 1977 · Documented Track Record",
                     descAr: "المقاولات العامة، المنشآت الطبية، التطوير العقاري، وشبكات البنية التحتية.",
                     descEn: "General contracting, healthcare facilities, real estate, and structural engineering.",
                     link: "/sectors/construction",
-                    icon: Building2,
-                    badgeColor: "bg-blue-500/10 text-blue-600 border-blue-500/20 dark:text-blue-400",
                   },
                   {
                     nameAr: "قطاع البيئة والاستدامة",
                     nameEn: "Environment & Sustainability",
-                    rootsAr: "شراكات سويسرية ودولية",
-                    rootsEn: "Swiss & Global Alliances",
                     descAr: "تقييم الأثر البيئي، محطات الغاز الحيوي، معالجة المياه، والامتثال البيئي.",
                     descEn: "EIA studies, dry fermentation biogas, water filtration, and ESG compliance.",
                     link: "/sectors/environmental",
-                    icon: Leaf,
-                    badgeColor: "bg-emerald-500/10 text-emerald-600 border-emerald-500/20 dark:text-emerald-400",
                   },
                   {
                     nameAr: "قطاع تصنيع الملابس وتطوير الأزياء",
                     nameEn: "Garment Manufacturing",
-                    rootsAr: "علامات خاصة + FOB متكامل",
-                    rootsEn: "Private Label + Full FOB",
                     descAr: "تصنيع الملابس الجاهزة، هندسة الباترون، برامج التصدير، وخطوط القميص الكلاسيكي.",
                     descEn: "Ready-made garment manufacturing, pattern engineering, and international FOB programs.",
                     link: "/sectors/garment",
-                    icon: Shirt,
-                    badgeColor: "bg-amber-500/10 text-amber-600 border-amber-500/20 dark:text-amber-400",
                   },
                   {
                     nameAr: "قطاع المنتجات الطبيعية والغذائية",
                     nameEn: "Food & Agri-Products",
-                    rootsAr: "مصادر مصرية أصيلة موثقة",
-                    rootsEn: "Certified Authentic Origins",
                     descAr: "عسل طبيعي، زيتون، زيت زيتون بكر، تمور فاخرة، وأعشاب وتوابل موثقة معمليًا.",
                     descEn: "Natural honey, table olives, extra virgin olive oil, premium dates, and certified herbs.",
                     link: "/sectors/food",
-                    icon: Wheat,
-                    badgeColor: "bg-green-500/10 text-green-600 border-green-500/20 dark:text-green-400",
                   },
                 ].map((sec, sIdx) => {
-                  const Icon = sec.icon;
                   return (
                     <div
                       key={sIdx}
-                      className="group relative flex flex-col justify-between rounded-3xl border border-white/40 bg-background/85 p-7 sm:p-8 min-h-[300px] shadow-[0_12px_36px_rgba(0,0,0,0.08)] backdrop-blur-2xl transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:border-brand-orange hover:shadow-[0_20px_48px_rgba(0,0,0,0.14)]"
+                      className="group relative flex flex-col justify-between rounded-3xl border border-white/40 bg-background/85 p-7 sm:p-8 min-h-[260px] shadow-[0_12px_36px_rgba(0,0,0,0.08)] backdrop-blur-2xl transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:border-brand-orange hover:shadow-[0_20px_48px_rgba(0,0,0,0.14)]"
                     >
                       <div>
-                        {/* Icon + Sector Badge */}
-                        <div className="flex items-center justify-between gap-2 mb-4">
-                          <div className="flex size-11 items-center justify-center rounded-2xl bg-brand-green/10 text-brand-green transition-transform duration-300 group-hover:scale-110 group-hover:bg-brand-orange/15 group-hover:text-brand-orange">
-                            <Icon className="size-5.5" />
-                          </div>
-                          <span className={cn("inline-flex items-center rounded-full border px-3 py-1 text-[11px] font-bold tracking-tight", sec.badgeColor)}>
-                            {ar ? sec.rootsAr : sec.rootsEn}
-                          </span>
-                        </div>
-
                         <h4 className="font-head text-lg sm:text-xl font-bold text-foreground leading-snug group-hover:text-brand-orange transition-colors">
                           {ar ? sec.nameAr : sec.nameEn}
                         </h4>
 
-                        <p className="mt-3.5 text-xs sm:text-sm text-muted-foreground leading-relaxed font-sans">
+                        <p className="mt-4 text-xs sm:text-sm text-muted-foreground leading-relaxed font-sans">
                           {ar ? sec.descAr : sec.descEn}
                         </p>
                       </div>
