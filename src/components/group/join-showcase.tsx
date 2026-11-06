@@ -31,7 +31,7 @@ export function JoinShowcase() {
       {/* Single Dedicated Group Join Card */}
       <div className="mt-10">
         <div
-          className="group relative flex flex-col md:flex-row items-center justify-between gap-8 overflow-hidden rounded-3xl border border-white/25 bg-background/80 p-8 sm:p-12 shadow-lg backdrop-blur-xl transition-all duration-300 hover:shadow-2xl hover:border-brand-green/40 hover:scale-[1.01]"
+          className="group relative flex flex-col md:flex-row items-center justify-between gap-8 overflow-hidden rounded-3xl border border-white/40 bg-white/75 dark:bg-slate-900/70 p-8 sm:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.08)] backdrop-blur-3xl ring-1 ring-white/30 transition-all duration-500 hover:-translate-y-1.5 hover:scale-[1.01] hover:bg-white/90 dark:hover:bg-slate-900/85 hover:border-brand-green/50 hover:shadow-[0_30px_70px_rgba(0,0,0,0.16)]"
         >
           <div className="max-w-2xl">
             <p className="text-sm sm:text-base leading-7 text-muted-foreground">

@@ -55,7 +55,7 @@ export function GroupPage() {
       {/* Corporate introduction */}
       <section className="site-container section-band">
         <Reveal>
-          <div className="group relative mx-auto max-w-4xl overflow-hidden rounded-3xl border border-white/20 bg-background/75 p-8 sm:p-12 shadow-[0_12px_40px_rgba(0,0,0,0.08)] backdrop-blur-2xl transition-all duration-300 hover:scale-[1.01] hover:shadow-[0_20px_60px_rgba(0,0,0,0.12)] hover:border-brand-orange/40 text-center">
+          <div className="group relative mx-auto max-w-4xl overflow-hidden rounded-3xl border border-white/40 bg-white/75 dark:bg-slate-900/70 p-8 sm:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.08)] backdrop-blur-3xl ring-1 ring-white/30 transition-all duration-500 hover:-translate-y-1.5 hover:scale-[1.01] hover:bg-white/90 dark:hover:bg-slate-900/85 hover:shadow-[0_30px_70px_rgba(0,0,0,0.16)] hover:border-brand-orange/50 text-center">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-sm">
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
               <span className="font-bold text-brand-green font-head">{ar ? "مجموعة سامي بن عياد" : "SAMI BIN AYYAD GROUP"}</span>
@@ -103,7 +103,7 @@ export function GroupPage() {
         <Reveal>
           <div className="grid gap-6 md:grid-cols-2">
             {/* Vision Card */}
-            <div className="group relative overflow-hidden rounded-3xl border border-white/25 bg-background/80 p-8 shadow-lg backdrop-blur-2xl transition-all duration-300 hover:scale-[1.01] hover:shadow-2xl hover:border-brand-orange/50 text-center">
+            <div className="group relative overflow-hidden rounded-3xl border border-white/40 bg-white/75 dark:bg-slate-900/70 p-8 shadow-[0_16px_50px_rgba(0,0,0,0.08)] backdrop-blur-3xl ring-1 ring-white/30 transition-all duration-500 hover:-translate-y-1.5 hover:scale-[1.01] hover:bg-white/90 dark:hover:bg-slate-900/85 hover:shadow-[0_30px_70px_rgba(0,0,0,0.16)] hover:border-brand-orange/50 text-center">
               <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
                 <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
                 <span className="font-bold text-brand-green">{ar ? "رؤيتنا" : "Our Vision"}</span>
@@ -119,7 +119,7 @@ export function GroupPage() {
             </div>
 
             {/* Mission Card */}
-            <div className="group relative overflow-hidden rounded-3xl border border-white/25 bg-background/80 p-8 shadow-lg backdrop-blur-2xl transition-all duration-300 hover:scale-[1.01] hover:shadow-2xl hover:border-brand-orange/50 text-center">
+            <div className="group relative overflow-hidden rounded-3xl border border-white/40 bg-white/75 dark:bg-slate-900/70 p-8 shadow-[0_16px_50px_rgba(0,0,0,0.08)] backdrop-blur-3xl ring-1 ring-white/30 transition-all duration-500 hover:-translate-y-1.5 hover:scale-[1.01] hover:bg-white/90 dark:hover:bg-slate-900/85 hover:shadow-[0_30px_70px_rgba(0,0,0,0.16)] hover:border-brand-orange/50 text-center">
               <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
                 <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
                 <span className="font-bold text-brand-green">{ar ? "رسالتنا" : "Our Mission"}</span>
@@ -141,7 +141,7 @@ export function GroupPage() {
       <SectorsShowcase ar={ar} />
 
       {/* Sectors at a glance — one homepage showcase */}
-      <section id="divisions" aria-labelledby="sectors-heading" className="scroll-mt-24 bg-page-alt section-band">
+      <section id="divisions" aria-labelledby="sectors-heading" className="scroll-mt-24 section-band">
         <div className="site-container">
           <Reveal className="max-w-3xl">
             <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
@@ -155,7 +155,7 @@ export function GroupPage() {
             {sectorOverviews.map((sector, index) => (
               <article
                 key={sector.slug}
-                className="grid items-center gap-6 md:grid-cols-2 md:gap-10 lg:gap-14 rounded-3xl border border-white/20 bg-background/80 p-6 sm:p-10 shadow-lg backdrop-blur-2xl transition-all duration-300 hover:shadow-2xl hover:border-brand-orange/40"
+                className="grid items-center gap-6 md:grid-cols-2 md:gap-10 lg:gap-14 rounded-3xl border border-white/40 bg-white/75 dark:bg-slate-900/70 p-6 sm:p-10 shadow-[0_16px_50px_rgba(0,0,0,0.08)] backdrop-blur-3xl ring-1 ring-white/30 transition-all duration-500 hover:-translate-y-1 hover:scale-[1.01] hover:bg-white/90 dark:hover:bg-slate-900/85 hover:shadow-[0_24px_60px_rgba(0,0,0,0.14)] hover:border-brand-orange/40"
               >
                 <Reveal className={cn("overflow-hidden rounded-2xl shadow-sm", index % 2 === 1 && "md:order-2")}>
                   <img src={sector.image} alt={ar ? sector.headlineAr : sector.headline} loading="lazy" width={944} height={704} className="aspect-[4/3] w-full object-cover transition-transform duration-700 hover:scale-105 motion-reduce:transition-none" />
@@ -326,7 +326,7 @@ export function GroupPage() {
       <HomeTradeSection ar={ar} />
 
       {/* Latest Corporate News & Industry Insights */}
-      <section className="site-container py-14 bg-page-alt/50 rounded-3xl my-8 scroll-mt-24">
+      <section className="site-container py-14 rounded-3xl my-8 scroll-mt-24">
         <Reveal>
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
             <div>
@@ -354,7 +354,7 @@ export function GroupPage() {
             {newsArticles.slice(0, 3).map((article, idx) => (
               <article
                 key={article.id}
-                className="group relative rounded-3xl border border-white/20 bg-background/85 overflow-hidden shadow-md backdrop-blur-xl transition-all duration-300 hover:scale-[1.015] hover:shadow-2xl hover:border-brand-orange/40 flex flex-col justify-between"
+                className="group relative rounded-3xl border border-white/40 bg-white/75 dark:bg-slate-900/70 overflow-hidden shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-white/30 transition-all duration-500 hover:-translate-y-1.5 hover:scale-[1.015] hover:bg-white/90 dark:hover:bg-slate-900/85 hover:shadow-[0_25px_60px_rgba(0,0,0,0.14)] hover:border-brand-orange/40 flex flex-col justify-between"
               >
                 <div>
                   <div className="relative aspect-[16/10] w-full overflow-hidden bg-secondary">
@@ -397,7 +397,7 @@ export function GroupPage() {
       {/* Investment & Strategic Opportunities Section */}
       <section className="site-container py-12 scroll-mt-24">
         <Reveal>
-          <div className="group relative overflow-hidden rounded-3xl border border-white/30 bg-background/70 p-8 sm:p-12 shadow-xl backdrop-blur-2xl transition-all duration-300 hover:scale-[1.01] hover:border-brand-orange/50 hover:shadow-2xl">
+          <div className="group relative overflow-hidden rounded-3xl border border-white/40 bg-white/75 dark:bg-slate-900/70 p-8 sm:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.08)] backdrop-blur-3xl ring-1 ring-white/30 transition-all duration-500 hover:-translate-y-1.5 hover:scale-[1.01] hover:bg-white/90 dark:hover:bg-slate-900/85 hover:border-brand-orange/50 hover:shadow-[0_30px_70px_rgba(0,0,0,0.16)]">
             <div className="grid gap-6 lg:grid-cols-12 items-center">
               <div className="lg:col-span-8">
                 <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
@@ -435,7 +435,7 @@ export function GroupPage() {
 
       {/* Final CTA — Interactive Glassmorphic Island matching Footer */}
       <section id="contact" className="relative px-4 pb-10 pt-4 text-foreground scroll-mt-24">
-        <div className="mx-auto max-w-6xl overflow-hidden rounded-3xl border border-white/20 bg-background/75 p-8 sm:p-12 shadow-[0_8px_40px_rgba(0,0,0,0.18)] backdrop-blur-2xl transition-all duration-300 hover:scale-[1.01] hover:shadow-2xl hover:border-brand-green/40">
+        <div className="mx-auto max-w-6xl overflow-hidden rounded-3xl border border-white/40 bg-white/75 dark:bg-slate-900/70 p-8 sm:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.08)] backdrop-blur-3xl ring-1 ring-white/30 transition-all duration-500 hover:-translate-y-1.5 hover:scale-[1.01] hover:bg-white/90 dark:hover:bg-slate-900/85 hover:border-brand-green/40 hover:shadow-[0_30px_70px_rgba(0,0,0,0.16)]">
           <div className="grid gap-8 lg:grid-cols-[1.2fr_1fr] items-center">
             <div>
               <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
