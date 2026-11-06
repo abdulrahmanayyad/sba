@@ -520,25 +520,26 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
                 <div>
                   <h2 className="font-head text-sm font-bold uppercase tracking-wider text-brand-orange">{messages.footer.company}</h2>
                   <nav aria-label={messages.accessibility.footerNavigation} className="mt-4 grid gap-2.5">
-                    <Link to="/about" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{messages.nav.about}</Link>
-                    <Link to="/products" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{messages.nav.products}</Link>
-                    <Link to="/trade" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{isArabic ? "التجارة والأسواق الدولية" : "Global Trade & Markets"}</Link>
-                    <Link to="/partners" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{messages.nav.partners}</Link>
-                    <Link to="/investor-relations" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{isArabic ? "علاقات المستثمرين" : "Investor Relations"}</Link>
-                    <Link to="/news" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{messages.nav.news}</Link>
-                    <Link to="/downloads" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{isArabic ? "مركز التحميلات والملفات" : "Downloads Center"}</Link>
-                    <Link to="/contact" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{isArabic ? "تواصل معنا" : "Contact Us"}</Link>
-                    <Link to="/contact/complaints" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{isArabic ? "الشكاوى والمقترحات" : "Complaints & Feedback"}</Link>
-                    <Link to="/contact/opportunities" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{isArabic ? "اعرض فرصتك الاستثمارية" : "Submit Your Opportunity"}</Link>
-                    <Link to="/join/group" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{messages.nav.joinUs}</Link>
+                    <Link to="/about" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{isArabic ? "نبذة عنا" : messages.nav.about}</Link>
+                    <Link to="/products" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{isArabic ? "منتجاتنا" : messages.nav.products}</Link>
+                    <Link to="/partners" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{isArabic ? "شركاؤنا" : messages.nav.partners}</Link>
+                    <Link to="/news" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{isArabic ? "أخبارنا" : messages.nav.news}</Link>
+                    <Link to="/trade" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{isArabic ? "الفرص" : "Opportunities"}</Link>
+                    <Link to="/investor-relations" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{isArabic ? "الشراكات" : "Partnerships"}</Link>
+                    <Link to="/downloads" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{isArabic ? "الوثائق" : "Documents"}</Link>
                   </nav>
                 </div>
                 <div>
                   <h2 className="font-head text-sm font-bold uppercase tracking-wider text-brand-orange">{messages.footer.contact}</h2>
                   <div className="mt-4 grid gap-2.5 justify-items-start">
-                    <a className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange" href="tel:+201222238072" dir="ltr">+20 12 222 380 72</a>
-                    <a className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange" href="tel:+201222238073" dir="ltr">+20 12 222 380 73</a>
-                    <a className="break-all text-xs font-bold text-foreground transition-colors hover:text-brand-orange" href="mailto:info@sami-trade.com">info@sami-trade.com</a>
+                    <Link to="/contact" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{isArabic ? "تواصل معنا" : "Contact Us"}</Link>
+                    <Link to="/contact/complaints" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{isArabic ? "الشكاوى" : "Complaints"}</Link>
+                    <Link to="/contact/opportunities" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{isArabic ? "اعرض فرصتك" : "Submit Your Opportunity"}</Link>
+                    <div className="mt-2 pt-2.5 border-t border-border/40 grid gap-2.5 w-full justify-items-start">
+                      <a className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange" href="tel:+201222238072" dir="ltr">+20 12 222 380 72</a>
+                      <a className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange" href="tel:+201222238073" dir="ltr">+20 12 222 380 73</a>
+                      <a className="break-all text-xs font-bold text-foreground transition-colors hover:text-brand-orange" href="mailto:info@sami-trade.com">info@sami-trade.com</a>
+                    </div>
                     {/* Social icons below email */}
                     <div className="mt-3 flex gap-3">
                       {socialLinks.map(([name, href]) => (
