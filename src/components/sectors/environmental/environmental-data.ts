@@ -61,7 +61,7 @@ export const environmentalAboutData = {
     badgeEn: "Our Vision",
     badgeAr: "رؤيتنا",
     titleEn: "The Environmental Partner of Choice",
-    titleAr: "الخيار البيئي الأول عالميًا",
+    titleAr: "الشريك البيئي المفضل والموثوق",
     bodyEn: "Our vision is to be the environmental company of choice, to assist in solving the future environmental issues upon the strength of our Research & Development in Africa and worldwide.",
     bodyAr: "رؤيتنا هي أن نكون الشركة البيئية الخيار الأول والشريك المفضل، للمساهمة في حل القضايا البيئية المستقبلية اعتمادًا على قوة أبحاثنا وتطويرنا العلمي في أفريقيا وحول العالم.",
   },
@@ -361,10 +361,10 @@ export const environmentalServicesData = {
       titleAr: "خدمات تحويل المخلفات إلى طاقة ومحطات الغاز الحيوي",
       leadEn: "Turnkey technology solutions turning organic waste into renewable power, compost, and fertilizers",
       leadAr: "حلول تكنولوجية متكاملة لتحويل المخلفات العضوية إلى طاقة نظيفة وسماد عضوي عالي الجودة",
-      bodyEn: "Sami Bin Ayyad for Sustainable Environmental Services & Renewable Energy (Egypt) conducted a professional partnership with leading European company RENERGON International AG (Switzerland), creating an alliance to lead the biogas production & waste-to-energy plant industry in Egypt. Utilizing RENERGON's patented RSD (Simultaneous Digestion) dry fermentation technology, we build and operate small, medium, and large-scale plants converting municipal solid waste (MSW), food, agricultural, animal, and chicken manure into clean energy and bio-products.",
-      bodyAr: "عقدت سامي بن عياد شراكة استراتيجية مع شركة رينرجون إنترناشيونال السويسرية (RENERGON International AG)، الرائدة أوروبيًا، لتشكيل تحالف يقود صناعة إنتاج البيوجاز ومحطات تحويل المخلفات إلى طاقة في مصر. نعتمد على تكنولوجيا RSD الحاصلة على براءة اختراع للتخمير الجاف (Dry fermentation)، لإنشاء وتشغيل محطات بمختلف السعات لمعالجة المخلفات البلدية والزراعية ومخلفات الدواجن والحيوانات وتحويلها لطاقة وموارد ذات قيمة عالية.",
+      bodyEn: "Sami Bin Ayyad for Sustainable Environmental Services & Renewable Energy (Egypt) conducted a professional partnership with leading European company RENERGON International AG (Switzerland), creating an alliance to lead the biogas production & waste-to-energy plant industry in Egypt. Utilizing RENERGON's Swiss/EP patent-registered RSD (Simultaneous Digestion) dry fermentation technology, we build and operate small, medium, and large-scale plants converting municipal solid waste (MSW), food, agricultural, animal, and chicken manure into clean energy and bio-products.",
+      bodyAr: "عقدت سامي بن عياد شراكة استراتيجية مع شركة رينرجون إنترناشيونال السويسرية (RENERGON International AG)، الرائدة أوروبيًا، لتشكيل تحالف يقود صناعة إنتاج البيوجاز ومحطات تحويل المخلفات إلى طاقة في مصر. نعتمد على تكنولوجيا RSD السويسرية المسجلة للتخمير الجاف (Dry fermentation)، لإنشاء وتشغيل محطات بمختلف السعات لمعالجة المخلفات البلدية والزراعية ومخلفات الدواجن والحيوانات وتحويلها لطاقة وموارد ذات قيمة عالية.",
       features: [
-        { en: "RSD patented dry anaerobic digestion technology", ar: "تكنولوجيا التخمير الجاف اللاهوائي RSD الحاصلة على براءة اختراع" },
+        { en: "RSD dry anaerobic digestion technology (Swiss/EP Patent Family by RENERGON AG)", ar: "تكنولوجيا التخمير الجاف اللاهوائي RSD المعتمدة دولياً (براءة اختراع سويسرية/أوروبية RENERGON AG)" },
         { en: "Turnkey engineering, construction & operation for small, medium & large plants", ar: "حلول تسليم مفتاح تشمل التصميم والتنفيذ والتشغيل لكافة السعات" },
         { en: "Value extraction creating Biofuel, Biogas, Renewable Energy, Compost, Fertilizer & Biochar", ar: "إنتاج الوقود الحيوي، البيوجاز، الكهرباء النظيفة، الكمبوست، السماد، والبيوتشار" },
         { en: "Treating up to 60% of municipal and agro waste streams naturally", ar: "معالجة ما يصل إلى 60% من تيارات المخلفات البلدية والزراعية يوميًا" },
@@ -1712,8 +1712,8 @@ export interface EnvironmentalExpert {
 export const environmentalExpertsData: EnvironmentalExpert[] = [
   {
     id: "expert-01",
-    nameEn: "Dr. A. Ezzat, Ph.D.",
-    nameAr: "د. أ. عزت (دكتوراه في العلوم البيئية)",
+    nameEn: "Dr. Ahmed Ezzat, Ph.D.",
+    nameAr: "د. أحمد عزت (دكتوراه في العلوم البيئية)",
     roleEn: "Senior Environmental & EIA Principal Consultant",
     roleAr: "استشاري أول دراسات الأثر البيئي والتراخيص الرسمية",
     credentialsEn: "Ph.D. in Environmental Science, Registered EEAA Lead Environmental Consultant",
@@ -1724,8 +1724,8 @@ export const environmentalExpertsData: EnvironmentalExpert[] = [
   },
   {
     id: "expert-02",
-    nameEn: "Eng. M. El-Sayed, M.Sc.",
-    nameAr: "م. م. السيد (ماجستير الهندسة البيئية)",
+    nameEn: "Eng. Mohamed El-Sayed, M.Sc.",
+    nameAr: "م. محمد السيد (ماجستير الهندسة البيئية)",
     roleEn: "Lead Bioprocess & Waste-to-Energy Engineering Specialist",
     roleAr: "كبير مهندسي محطات الطاقة والغاز الحيوي والعمليات الحيوية",
     credentialsEn: "M.Sc. in Biochemical Engineering, Certified WtE & Biogas Plant Designer (Switzerland Alliance)",
@@ -1736,8 +1736,8 @@ export const environmentalExpertsData: EnvironmentalExpert[] = [
   },
   {
     id: "expert-03",
-    nameEn: "Chem. S. Mahmoud",
-    nameAr: "كيميائي س. محمود",
+    nameEn: "Chem. Sameh Mahmoud",
+    nameAr: "كيميائي سامح محمود",
     roleEn: "Chief Analytical Chemist & Environmental Measurements Lead",
     roleAr: "رئيس قطاع التحاليل الكيميائية والقياسات البيئية والمعايرة",
     credentialsEn: "B.Sc. in Applied Chemistry, Certified Stack Emissions & Indoor Air Specialist (EPA Protocols)",
@@ -1748,8 +1748,8 @@ export const environmentalExpertsData: EnvironmentalExpert[] = [
   },
   {
     id: "expert-04",
-    nameEn: "Eng. T. Radwan, Lead Auditor",
-    nameAr: "م. ط. رضوان (كبير مراجعي الجودة والسلامة)",
+    nameEn: "Eng. Tarek Radwan, Lead Auditor",
+    nameAr: "م. طارق رضوان (كبير مراجعي الجودة والسلامة)",
     roleEn: "Senior QHSE & Sustainability Systems Advisor",
     roleAr: "استشاري أول أنظمة QHSE والاستدامة وتطبيقات السلامة الرقمية",
     credentialsEn: "IRCA Certified Lead Auditor for ISO 14001, ISO 45001 & ISO 9001",
@@ -1792,10 +1792,10 @@ export const environmentalImpactMetrics = {
     },
     {
       metric: "100%",
-      unitEn: "Statutory Approval Rate",
-      unitAr: "نسبة اعتماد حكومي",
-      labelEn: "Regulatory Approval Rate for EIA Studies",
-      labelAr: "نسبة استصدار الموافقات الرسمية لدراسات EIA"
+      unitEn: "Delivered Projects",
+      unitAr: "للمشروعات المكتملة",
+      labelEn: "Regulatory Approval Rate for EIA Studies (40+ Delivered Projects)",
+      labelAr: "نسبة استصدار الموافقات الرسمية لدراسات EIA (أكثر من 40 دراسة معتمدة)"
     }
   ],
   sdgsAlignment: [

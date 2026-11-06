@@ -580,13 +580,13 @@ export function WhatWeOfferSection({ ar }: { ar: boolean }) {
         </h3>
         <p className="mt-1.5 text-sm text-muted-foreground max-w-2xl">
           {ar
-            ? "نقدم حلولًا ومنتجات متكاملة تلبي احتياجات مختلف القطاعات، ونحوّل الخبرة إلى قيمة مستدامة."
-            : "We deliver integrated solutions and products that meet the needs of diverse sectors, transforming expertise into sustainable value."}
+            ? "نقدم حلولًا وخدمات هندسية وتعاقدية وتصنيعية متكاملة تلبي احتياجات مختلف القطاعات، ونحوّل الخبرة إلى قيمة مستدامة."
+            : "We deliver integrated engineering, contracting, and specialized manufacturing services that transform expertise into sustainable value."}
         </p>
       </div>
 
       <div className="grid gap-6">
-        {dashboardSectors.map((s) => {
+        {dashboardSectors.filter((s) => s.id !== "food").map((s) => {
           const data = activities[s.id];
           return (
             <div

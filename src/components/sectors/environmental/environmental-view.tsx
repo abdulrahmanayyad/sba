@@ -183,7 +183,7 @@ function EnvironmentalAboutView({ ar }: { ar: boolean }) {
             <div className="rounded-2xl border border-white/20 bg-background/80 p-5 shadow-sm backdrop-blur-md text-center">
               <div className="font-head text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">100%</div>
               <div className="mt-1 text-xs font-bold text-muted-foreground uppercase tracking-wider">
-                {ar ? "نسبة اعتماد دراسات EIA" : "Statutory EIA Approval"}
+                {ar ? "اعتماد دراسات EIA (40+ مشروع)" : "EIA Approval (40+ Projects)"}
               </div>
             </div>
           </div>
@@ -292,7 +292,7 @@ function EnvironmentalAboutView({ ar }: { ar: boolean }) {
                   <Link
                     to="/sectors/$sector"
                     params={{ sector: "environmental" }}
-                    search={{ tab: "services" }}
+                    search={{ tab: "services", service: srv.id }}
                     className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-orange hover:underline"
                   >
                     <span>{ar ? "التفاصيل والمخرجات" : "View Deliverables"}</span>
@@ -680,7 +680,7 @@ function EnvironmentalSectorsView({ ar }: { ar: boolean }) {
                       <p className="mt-1 text-sm font-medium text-brand-green-text">{ar ? sec.taglineAr : sec.taglineEn}</p>
                     </div>
                     <Button asChild size="sm" variant="outline" className="rounded-full self-start">
-                      <Link to="/sectors/$sector" params={{ sector: "environmental" }} search={{ tab: "start-consultation" }}>
+                      <Link to="/sectors/$sector" params={{ sector: "environmental" }} search={{ tab: "start-consultation", sector: sec.id }}>
                         <span>{ar ? "طلب استشارة للقطاع" : "Sector Consultation"}</span>
                         <ChevronRight className="size-3.5 ms-1 rtl:rotate-180" />
                       </Link>
@@ -717,6 +717,17 @@ function EnvironmentalServicesView({ ar }: { ar: boolean }) {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [activeService, setActiveService] = useState<EnvironmentalServiceDetailed | null>(null);
+
+  const requestedServiceId = useRouterState({
+    select: (s) => (s.location.search as Record<string, string>)["service"],
+  });
+
+  useEffect(() => {
+    if (requestedServiceId && !activeService) {
+      const match = detailedEnvironmentalServices.find((s) => s.id === requestedServiceId);
+      if (match) setActiveService(match);
+    }
+  }, [requestedServiceId, activeService]);
 
   const categories = [
     { id: "all", titleEn: "All Services (19)", titleAr: "كافة الخدمات (19)" },
@@ -804,6 +815,7 @@ function EnvironmentalServicesView({ ar }: { ar: boolean }) {
             {filteredServices.map((service, idx) => (
               <Reveal key={service.id} delay={idx * 0.03}>
                 <div
+                  id={`service-${service.id}`}
                   onClick={() => setActiveService(service)}
                   className="group flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-white/20 bg-background/70 p-6 backdrop-blur-xl shadow-sm transition hover:-translate-y-1 hover:border-brand-green/60 hover:shadow-xl cursor-pointer"
                 >

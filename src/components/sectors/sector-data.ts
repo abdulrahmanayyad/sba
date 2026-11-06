@@ -55,7 +55,7 @@ export const sectors: Record<SectorSlug, SectorPageData> = {
     tagline: "Integrated manufacturing solutions for fashion brands and global markets, from product development to production and export preparation.",
     taglineAr: "حلول تصنيع متكاملة للعلامات التجارية والأسواق العالمية، من تطوير المنتج إلى الإنتاج والتجهيز للتصدير.",
     intro: "SAMI BIN AYYAD GROUP delivers integrated apparel manufacturing solutions, combining product development, diverse production capabilities, manufacturing management, and quality control. With a specialization in women’s and children’s apparel alongside men’s clothing, we support fashion brands, importers, and international buyers through flexible manufacturing programs tailored to each project.",
-    introAr: "نقدم من خلال قطاع الملابس في مجموعة سامي بن عياد حلولًا متكاملة لتصنيع الملابس، تجمع بين تطوير المنتجات، والقدرات الإنتاجية المتنوعة، وإدارة التصنيع، ومراقبة الجودة. نتخصص في الملابس الحريمي والأطفالي، إلى جانب الملابس الرجالية، وندعم العلامات التجارية والمستوردين والعملاء الدوليين من خلال برامج تصنيع مرنة تتوافق مع متطلبات كل مشروع.",
+    introAr: "نقدم من خلال قطاع الملابس في مجموعة سامي بن عياد حلولًا متكاملة لتصنيع الملابس، تجمع بين تطوير المنتجات، والقدرات الإنتاجية المتنوعة، وإدارة التصنيع، ومراقبة الجودة. نتخصص في الملابس النسائية وملابس الأطفال، إلى جانب الملابس الرجالية، وندعم العلامات التجارية والمستوردين والعملاء الدوليين من خلال برامج تصنيع مرنة تتوافق مع متطلبات كل مشروع.",
     sections: [
       {
         title: "Who We Are",
@@ -87,9 +87,9 @@ export const sectors: Record<SectorSlug, SectorPageData> = {
         title: "Our Products",
         titleAr: "منتجاتنا",
         body: "We manufacture across apparel categories: Women's (dresses, abayas, modestwear, sets, tunics, sleepwear, sportswear), Men's (classic shirts, polos, t-shirts, casual pants, hoodies), and Children's (tops, sets, dresses, sleepwear, hoodies).",
-        bodyAr: "نصنع لمختلف فئات الأزياء: الملابس الحريمي (الفساتين، العبايات، الملابس المحتشمة، الأطقم، التونيكات، السهرة، الرياضة)، والملابس الرجالية (القمصان الكلاسيك، البولو، التيشيرتات، البنطلونات، الهوديز)، وملابس الأطفال (الأطقم، الفساتين، الكاجوال، والرياضة).",
+        bodyAr: "نصنع لمختلف فئات الأزياء: الملابس النسائية (الفساتين، العبايات، الملابس المحتشمة، الأطقم، التونيكات، السهرة، الرياضة)، والملابس الرجالية (القمصان الكلاسيك، البولو، التيشيرتات، البنطلونات، الهوديز)، وملابس الأطفال (الأطقم، الفساتين، الكاجوال، والرياضة).",
         items: [
-          { label: "Women's Apparel & Modestwear", labelAr: "الملابس الحريمي والأزياء المحتشمة" },
+          { label: "Women's Apparel & Modestwear", labelAr: "الملابس النسائية والأزياء المحتشمة" },
           { label: "Men's Apparel & Classic Shirts", labelAr: "الملابس الرجالية والقمصان الكلاسيك" },
           { label: "Children's Wear & Coordinated Sets", labelAr: "ملابس الأطفال والأطقم المتناسقة" },
           { label: "Custom Category Development", labelAr: "تطوير فئات وتصميمات مخصصة" },

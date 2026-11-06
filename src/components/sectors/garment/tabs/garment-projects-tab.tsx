@@ -31,6 +31,17 @@ function cleanModelTitle(title: string) {
   return cleaned || title;
 }
 
+function getModelDisplayTitle(item: ProjectShowcaseItem, ar: boolean) {
+  const cleaned = cleanModelTitle(item.title);
+  if (ar) {
+    if (item.categoryKey === "couple") return `طقم كابلز متناسق (${item.title})`;
+    if (cleaned.startsWith("Men")) return `موديل رجالي (${item.title})`;
+    if (cleaned.toLowerCase().startsWith("kid")) return `موديل أطفال (${item.title})`;
+    return `${item.categoryAr} — ${item.title}`;
+  }
+  return item.title;
+}
+
 export function GarmentProjectsTab() {
   const { language } = useLanguage();
   const ar = language === "AR";
@@ -51,7 +62,7 @@ export function GarmentProjectsTab() {
 
   const categories = useMemo(() => [
     { key: "all", labelEn: "All Categories", labelAr: "كافة الفئات", count: garmentProjectItems.length },
-    { key: "women", labelEn: "Women's Collection", labelAr: "أزياء حريمي", count: garmentProjectItems.filter(i => i.categoryKey === "women").length },
+    { key: "women", labelEn: "Women's Collection", labelAr: "أزياء نسائية", count: garmentProjectItems.filter(i => i.categoryKey === "women").length },
     { key: "men", labelEn: "Men's Collection & Shirts", labelAr: "ملابس رجالية وقمصان", count: garmentProjectItems.filter(i => i.categoryKey === "men").length },
     { key: "kids", labelEn: "Children's Collection", labelAr: "ملابس أطفال ومواليد", count: garmentProjectItems.filter(i => i.categoryKey === "kids").length },
     { key: "couple", labelEn: "Couple & Sets", labelAr: "أطقم كابلز متناسقة", count: garmentProjectItems.filter(i => i.categoryKey === "couple").length },
@@ -251,7 +262,7 @@ export function GarmentProjectsTab() {
                       {ar ? clMeta.ar : clMeta.en}
                     </span>
                     <h3 className="font-head text-xs font-bold leading-tight line-clamp-1 drop-shadow-sm">
-                      {cleanModelTitle(item.title)}
+                      {getModelDisplayTitle(item, ar)}
                     </h3>
                   </div>
                 </div>
@@ -340,7 +351,7 @@ export function GarmentProjectsTab() {
                     </div>
 
                     <h3 className="font-head text-2xl font-bold text-foreground">
-                      {cleanModelTitle(selectedItem.title)}
+                      {getModelDisplayTitle(selectedItem, ar)}
                     </h3>
                     <p className="text-xs font-medium text-muted-foreground mt-1">
                       {ar ? `الفئة: ${selectedItem.categoryAr}` : `Category: ${selectedItem.categoryEn}`}

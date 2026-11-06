@@ -60,7 +60,7 @@ export function SectorContactSection({ ar, sector }: SectorContactSectionProps) 
             <a data-email-contact href="mailto:info@sami-trade.com">
               <span data-email-icon className="flex size-10 sm:size-12 shrink-0 items-center justify-center rounded-full bg-[#0066CC]/15 text-[#0066CC]"><Mail aria-hidden="true" className="size-4 sm:size-5" /></span>
               <span data-email-copy className="min-w-0 flex-1 overflow-hidden">
-                <span className="block font-head text-xs sm:text-sm font-bold text-foreground/80">{ar ? "البريد الإلكتروني الرسمي" : "Official Email"}</span>
+                <span className="block font-head text-xs sm:text-sm font-bold text-foreground/80">{ar ? "البريد الإلكتروني الرسمي: " : "Official Email: "}</span>
                 <span dir="ltr" className="mt-1 block break-all font-head text-sm sm:text-base font-bold text-foreground">info@sami-trade.com</span>
               </span>
               <span data-email-arrow className="shrink-0 text-[#0066CC]"><ArrowRight aria-hidden="true" className="size-4 sm:size-5 rtl:rotate-180" /></span>
@@ -71,7 +71,7 @@ export function SectorContactSection({ ar, sector }: SectorContactSectionProps) 
             <a href={WHATSAPP_URL} target="_blank" rel="noreferrer">
               <span className="flex size-10 sm:size-12 shrink-0 items-center justify-center rounded-full bg-[#25D366]/15 text-[#25D366]"><MessageCircle aria-hidden="true" className="size-4 sm:size-5" /></span>
               <span className="min-w-0 flex-1">
-                <span className="block font-head text-xs sm:text-sm font-bold text-foreground/80">WhatsApp Direct</span>
+                <span className="block font-head text-xs sm:text-sm font-bold text-foreground/80">WhatsApp Direct: </span>
                 <span dir="ltr" className="mt-1 block font-head text-sm sm:text-base font-bold text-foreground">+20 12 222 380 72</span>
               </span>
               <span className="shrink-0 text-[#25D366]"><ArrowRight aria-hidden="true" className="size-4 sm:size-5 rtl:rotate-180" /></span>

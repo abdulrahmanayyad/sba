@@ -1,6 +1,6 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useRouterState } from "@tanstack/react-router";
 import { ArrowRight, Award, Briefcase, Building, Calendar, CheckCircle2, ChevronRight, Clock, Cpu, Download, FileCheck, FileText, HardHat, Layers, MapPin, MessageCircle, Phone, Search, ShieldAlert, ShieldCheck, Sparkles, Trophy, Truck, Users, Wrench, ZoomIn } from "lucide-react";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import { Reveal } from "@/components/home/reveal";
 import { Button } from "@/components/ui/button";
@@ -389,6 +389,7 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
                     to="/sectors/$sector"
                     params={{ sector: "construction" }}
                     search={{ tab: "services" }}
+                    hash={`service-${srv.id}`}
                     className="text-xs font-bold text-brand-green hover:text-brand-orange flex items-center justify-between"
                   >
                     <span>{ar ? "نطاق العمل والقدرات" : "Explore Scope"}</span>
@@ -775,7 +776,10 @@ function ConstructionServicesView({ ar }: { ar: boolean }) {
               const cardImg = ("image" in service && service.image) ? (service.image as string) : constructionHeroData.image;
               return (
                 <Reveal key={service.id} delay={idx * 0.05}>
-                  <div className="group flex h-full flex-col overflow-hidden rounded-3xl border border-white/20 bg-background/60 backdrop-blur-xl shadow-sm transition hover:border-brand-green/60 hover:shadow-xl">
+                  <div
+                    id={`service-${service.id}`}
+                    className="group flex h-full flex-col overflow-hidden rounded-3xl border border-white/20 bg-background/60 backdrop-blur-xl shadow-sm transition hover:border-brand-green/60 hover:shadow-xl"
+                  >
                     <div className="relative aspect-[16/9] w-full overflow-hidden bg-secondary">
                       <img
                         src={cardImg}
@@ -806,6 +810,15 @@ function ConstructionServicesView({ ar }: { ar: boolean }) {
                             ))}
                           </ul>
                         </div>
+                      </div>
+
+                      <div className="mt-6 pt-4 border-t border-border flex items-center justify-between">
+                        <Button asChild size="sm" className="rounded-full bg-brand-green text-white hover:bg-brand-orange transition-colors">
+                          <Link to="/sectors/$sector" params={{ sector: "construction" }} search={{ tab: "start-project", service: service.id }}>
+                            <span>{ar ? "طلب مقايسة وعرض سعر لهذه الخدمة" : "Request Proposal for this Service"}</span>
+                            <ArrowRight className="size-3.5 ms-2 rtl:rotate-180" />
+                          </Link>
+                        </Button>
                       </div>
                     </div>
                   </div>
@@ -984,10 +997,17 @@ function ConstructionProjectsView({ ar }: { ar: boolean }) {
                       </div>
 
                       {/* Zoom icon hint */}
-                      <div className="absolute bottom-3 end-3 flex items-center gap-1 text-[11px] font-medium text-white/90 bg-black/50 px-2 py-0.5 rounded-md backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity">
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setActiveProject(proj);
+                        }}
+                        className="absolute bottom-3 end-3 flex items-center gap-1 text-[11px] font-medium text-white/90 bg-black/50 px-2 py-0.5 rounded-md backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer border border-white/20"
+                      >
                         <ZoomIn className="size-3" />
                         <span>{ar ? "عرض الصورة" : "Enlarge"}</span>
-                      </div>
+                      </button>
                     </div>
 
                     {/* Card Content */}
@@ -1020,13 +1040,13 @@ function ConstructionProjectsView({ ar }: { ar: boolean }) {
                     <div className="flex items-center justify-between text-muted-foreground text-[11px]">
                       <span className="flex items-center gap-1">
                         <Calendar className="size-3 text-muted-foreground" />
-                        <span>{ar ? "تاريخ التعاقد:" : "Date:"}</span>
+                        <span>{ar ? "تاريخ التعاقد: " : "Date: "}</span>
                       </span>
                       <span className="font-sans font-medium">{proj.contractDate}</span>
                     </div>
 
                     <div className="flex items-center justify-between pt-1 border-t border-border/40">
-                      <span className="font-semibold text-foreground">{ar ? "القيمة التعاقدية:" : "Contract Value:"}</span>
+                      <span className="font-semibold text-foreground">{ar ? "القيمة التعاقدية: " : "Contract Value: "}</span>
                       <span className="font-head font-bold text-brand-orange drop-shadow-sm">
                         {ar ? proj.valueAr : proj.valueEn}
                       </span>
@@ -1035,16 +1055,22 @@ function ConstructionProjectsView({ ar }: { ar: boolean }) {
                     {/* Verification Action Button */}
                     <div className="pt-2 border-t border-border/40">
                       <Button
+                        asChild
                         size="sm"
                         variant="ghost"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setVerificationModalProject(proj);
-                        }}
-                        className="w-full h-8 rounded-xl bg-brand-green/10 hover:bg-brand-green hover:text-white text-brand-green-text text-[11px] font-head font-bold flex items-center justify-center gap-1.5 transition-all"
+                        className="w-full h-8 rounded-xl bg-brand-green/10 hover:bg-brand-green hover:text-white text-brand-green-text text-[11px] font-head font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer"
                       >
-                        <ShieldCheck className="size-3.5" />
-                        <span>{ar ? "طلب التحقق من المشروع" : "Request Project Verification"}</span>
+                        <a
+                          href={`#verify-${proj.id}`}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            setVerificationModalProject(proj);
+                          }}
+                        >
+                          <ShieldCheck className="size-3.5" />
+                          <span>{ar ? "طلب التحقق من المشروع" : "Request Project Verification"}</span>
+                        </a>
                       </Button>
                     </div>
                   </div>
@@ -1121,19 +1147,19 @@ function ConstructionProjectsView({ ar }: { ar: boolean }) {
               {/* Project Meta Details */}
               <div className="grid gap-3 sm:grid-cols-2 rounded-2xl border border-border/80 bg-muted/30 p-4 text-xs">
                 <div>
-                  <span className="text-muted-foreground font-medium block">{ar ? "جهة الإسناد:" : "Client:"}</span>
+                  <span className="text-muted-foreground font-medium block">{ar ? "جهة الإسناد: " : "Client: "}</span>
                   <span className="font-semibold text-foreground text-sm">{ar ? activeProject.clientAr : activeProject.clientEn}</span>
                 </div>
                 <div>
-                  <span className="text-muted-foreground font-medium block">{ar ? "موقع المشروع:" : "Location:"}</span>
+                  <span className="text-muted-foreground font-medium block">{ar ? "موقع المشروع: " : "Location: "}</span>
                   <span className="font-semibold text-foreground text-sm">{ar ? activeProject.locationAr : activeProject.locationEn}</span>
                 </div>
                 <div>
-                  <span className="text-muted-foreground font-medium block">{ar ? "تاريخ التعاقد:" : "Contract Date:"}</span>
+                  <span className="text-muted-foreground font-medium block">{ar ? "تاريخ التعاقد: " : "Contract Date: "}</span>
                   <span className="font-sans font-semibold text-foreground text-sm">{activeProject.contractDate}</span>
                 </div>
                 <div>
-                  <span className="text-muted-foreground font-medium block">{ar ? "القيمة التعاقدية:" : "Contract Value:"}</span>
+                  <span className="text-muted-foreground font-medium block">{ar ? "القيمة التعاقدية: " : "Contract Value: "}</span>
                   <span className="font-head font-bold text-brand-orange text-sm">{ar ? activeProject.valueAr : activeProject.valueEn}</span>
                 </div>
               </div>
@@ -1163,16 +1189,22 @@ function ConstructionProjectsView({ ar }: { ar: boolean }) {
                 </p>
                 <div className="flex flex-wrap items-center gap-2 pt-1">
                   <Button
+                    asChild
                     size="sm"
-                    onClick={() => {
-                      const p = activeProject;
-                      setActiveProject(null);
-                      setVerificationModalProject(p);
-                    }}
-                    className="rounded-full bg-brand-green hover:bg-brand-orange text-white text-xs font-head font-bold gap-1.5 shadow-sm"
+                    className="rounded-full bg-brand-green hover:bg-brand-orange text-white text-xs font-head font-bold gap-1.5 shadow-sm cursor-pointer"
                   >
-                    <ShieldCheck className="size-3.5" />
-                    <span>{ar ? "طلب التحقق من المشروع" : "Request Project Verification"}</span>
+                    <a
+                      href={`#verify-${activeProject.id}`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        const p = activeProject;
+                        setActiveProject(null);
+                        setVerificationModalProject(p);
+                      }}
+                    >
+                      <ShieldCheck className="size-3.5" />
+                      <span>{ar ? "طلب التحقق من المشروع" : "Request Project Verification"}</span>
+                    </a>
                   </Button>
                   <Button
                     variant="outline"
@@ -1208,6 +1240,16 @@ function ConstructionProjectsView({ ar }: { ar: boolean }) {
 function ConstructionStartProjectView({ ar }: { ar: boolean }) {
   const [step, setStep] = useState(1);
   const totalSteps = 5;
+
+  const requestedServiceId = useRouterState({
+    select: (s) => (s.location.search as Record<string, string>)["service"],
+  });
+
+  const matchedService = useMemo(() => {
+    if (!requestedServiceId) return null;
+    return constructionServicesData.services.find((s) => s.id === requestedServiceId);
+  }, [requestedServiceId]);
+
   const [form, setForm] = useState({
     projectName: "",
     projectType: "",
@@ -1230,6 +1272,18 @@ function ConstructionStartProjectView({ ar }: { ar: boolean }) {
     submitted: false,
     refNum: "",
   });
+
+  useEffect(() => {
+    if (matchedService) {
+      const sName = ar ? matchedService.titleAr : matchedService.title;
+      setForm((p) => ({
+        ...p,
+        services: p.services.includes(sName) ? p.services : [sName, ...p.services],
+        scopeNotes: p.scopeNotes || (ar ? `طلب دراسة ومقايسة تنفيذية لخدمة: ${matchedService.titleAr}` : `Inquiry for service: ${matchedService.title}`),
+      }));
+    }
+  }, [matchedService, ar]);
+
   const up = (k: string, v: unknown) => setForm((p) => ({ ...p, [k]: v }));
 
   const projectTypes = ar
@@ -1325,6 +1379,21 @@ function ConstructionStartProjectView({ ar }: { ar: boolean }) {
       </div>
 
       <div className="mx-auto max-w-3xl rounded-3xl border border-white/30 bg-background/80 p-8 sm:p-10 backdrop-blur-2xl shadow-xl">
+        {matchedService && (
+          <div className="mb-6 rounded-2xl border border-brand-green/40 bg-brand-green/10 p-4 flex items-center justify-between gap-3">
+            <div className="flex items-center gap-2.5">
+              <Building className="size-5 text-brand-green shrink-0" />
+              <div>
+                <p className="text-xs font-bold text-foreground">
+                  {ar ? `الخدمة المحددة: ${matchedService.titleAr}` : `Selected Service: ${matchedService.title}`}
+                </p>
+                <p className="text-[11px] text-muted-foreground mt-0.5">{ar ? matchedService.leadAr : matchedService.lead}</p>
+              </div>
+            </div>
+            <span className="font-mono text-xs font-bold text-brand-orange shrink-0">{matchedService.number}</span>
+          </div>
+        )}
+
         {step === 1 && (
           <div className="space-y-5">
             <h3 className="font-head text-lg font-bold text-foreground">{ar ? "معلومات المشروع" : "Project Information"}</h3>

@@ -307,11 +307,11 @@ export function PartnersPage() {
 
           <div className="flex flex-col gap-3.5">
             <Button asChild size="lg" className="w-full bg-brand-green text-white hover:bg-brand-orange transition-all duration-300 font-bold text-sm shadow-md cursor-pointer">
-              <a href="#become-partner">
+              <Link to="/contact/opportunities">
                 <Handshake className="size-4 me-2" />
                 <span>{ar ? "قدّم مقترح شراكة" : "Submit a partnership proposal"}</span>
                 <ArrowRight className="size-4 ms-2 rtl:rotate-180" />
-              </a>
+              </Link>
             </Button>
 
             <Button asChild variant="ghost" className="group relative h-auto w-full justify-start gap-4 overflow-hidden rounded-2xl border border-[#0066CC]/30 bg-[#0066CC]/5 p-4 text-start whitespace-normal hover:border-[#0066CC] hover:bg-[#0066CC]/15 hover:shadow-lg sm:p-5 backdrop-blur-md transition-all duration-300 hover:scale-[1.01] active:scale-[0.98]">

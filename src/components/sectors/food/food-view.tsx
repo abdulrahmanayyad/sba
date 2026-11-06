@@ -101,6 +101,12 @@ const sectorIcons: Record<string, typeof Flower> = {
   "other-agri": Wheat,
 };
 
+function formatShortMoq(moq: string): string {
+  if (!moq) return "";
+  const primary = moq.split(/\s+(?:أو|or)\s+/i)[0].trim();
+  return primary.replace(/\s*\([^)]*\)/g, "").trim();
+}
+
 export function FoodSectorView({ tab = "about" }: FoodViewProps) {
   const { language } = useLanguage();
   const ar = language === "AR";
@@ -367,8 +373,8 @@ function FoodAboutTab({
               </h2>
               <p className="text-sm sm:text-base text-muted-foreground">
                 {ar
-                  ? "تغطية شاملة لـ 6 فئات تصديرية أساسية تجمع بين أصالة المحاصيل المصرية ومصادر التوريد المعتمدة."
-                  : "Comprehensive coverage across 6 core export categories bridging authentic Egyptian origins and verified supply channels."}
+                  ? "تغطية شاملة لـ 7 فئات تصديرية أساسية تجمع بين أصالة المحاصيل المصرية ومصادر التوريد المعتمدة."
+                  : "Comprehensive coverage across 7 core export categories bridging authentic Egyptian origins and verified supply channels."}
               </p>
             </div>
           </Reveal>
@@ -915,8 +921,8 @@ function FoodAboutTab({
                         <span className="rounded-full bg-black/60 px-2.5 py-0.5 backdrop-blur-md">
                           {ar ? prod.countryOfOriginAr : prod.countryOfOriginEn}
                         </span>
-                        <span className="font-bold text-brand-orange bg-black/60 px-2 py-0.5 rounded-full">
-                          MOQ: {ar ? prod.minOrderQuantityAr.slice(0, 15) : prod.minOrderQuantityEn.slice(0, 15)}
+                        <span className="font-bold text-brand-orange bg-black/60 px-2 py-0.5 rounded-full whitespace-nowrap">
+                          MOQ: {formatShortMoq(ar ? prod.minOrderQuantityAr : prod.minOrderQuantityEn)}
                         </span>
                       </div>
                     </div>
@@ -1233,8 +1239,8 @@ function FoodProductsTab({
                     </span>
                   </div>
                   <div className="absolute bottom-2.5 start-2.5 end-2.5 flex items-center justify-between text-white text-[11px]">
-                    <span className="font-bold text-brand-orange bg-black/60 px-2 py-0.5 rounded-full backdrop-blur-md">
-                      MOQ: {ar ? prod.minOrderQuantityAr.slice(0, 16) : prod.minOrderQuantityEn.slice(0, 16)}
+                    <span className="font-bold text-brand-orange bg-black/60 px-2 py-0.5 rounded-full backdrop-blur-md whitespace-nowrap">
+                      MOQ: {formatShortMoq(ar ? prod.minOrderQuantityAr : prod.minOrderQuantityEn)}
                     </span>
                   </div>
                 </div>

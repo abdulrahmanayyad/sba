@@ -47,7 +47,7 @@ export const garmentAboutData = {
         title: "Apparel Manufacturing",
         titleAr: "تصنيع الملابس الجاهزة",
         desc: "Manufacturing women's, men's, and children's apparel to approved technical specifications and strict quality benchmarks.",
-        descAr: "إنتاج متكامل للملابس الحريمي، الرجالي، والأطفالي وفق المواصفات الفنية المعتمدة وأعلى معايير الجودة.",
+        descAr: "إنتاج متكامل للملابس النسائية، الرجالية، والأطفال وفق المواصفات الفنية المعتمدة وأعلى معايير الجودة.",
       },
       {
         id: "development",
@@ -90,7 +90,7 @@ export const garmentAboutData = {
         title: "Product Development Expertise",
         titleAr: "خبرة في تطوير المنتجات",
         desc: "Over 2,700 styles developed across women's and children's categories, giving our clients deep pattern and grading mastery.",
-        descAr: "تطوير أكثر من 2,700 موديل من الملابس الحريمي والأطفالي، وفهم عميق للقصات والخامات وتفاصيل التنفيذ.",
+        descAr: "تطوير أكثر من 2,700 موديل من الملابس النسائية وملابس الأطفال، وفهم عميق للقصات والخامات وتفاصيل التنفيذ.",
       },
       {
         title: "Scalable Production Capacity",
@@ -200,7 +200,7 @@ export const garmentAboutData = {
         volumeEn: "+100,000",
         volumeAr: "+100,000",
         notesEn: "pieces / month across women's, men's, kids', and loungewear",
-        notesAr: "قطعة شهريًا تشمل الأزياء الحريمي، الرجالي، الأطفالي، والمنزلي",
+        notesAr: "قطعة شهريًا تشمل الأزياء النسائية، الرجالية، الأطفال، والمنزلية",
       },
       {
         categoryEn: "Specialized Production Lines",
@@ -236,11 +236,11 @@ export const garmentAboutData = {
     subtitle: "More than 2,700 styles developed across diverse fashion genres.",
     subtitleAr: "أكثر من 2,700 موديل تم تطويره وتصنيعه عبر مختلف قطاعات الموضة والأزياء.",
     overview: "Our cumulative track record in developing over 2,700 apparel styles demonstrates our thorough understanding of intricate garment silhouettes, fabric drapes, pattern engineering, and consumer preferences. From modestwear abayas and evening dresses to heavy-knit casualwear, technical activewear, and classic tailored shirts, we convert design references into commercially successful, repeatable bulk garments.",
-    overviewAr: "تعكس خبرتنا في تطوير أكثر من 2,700 موديل من الملابس الحريمي والأطفالي والرجالي معرفتنا العميقة بمختلف القصات والخامات والتصميمات واحتياجات الأسواق العالمية. ونعمل على تحويل الأفكار والمراجع التصميمية إلى منتجات قابلة للتصنيع التجاري بأعلى كفاءة، بدءًا من العبايات والأزياء المحتشمة وفساتين السهرة، وحتى الملابس الكاجوال والرياضية والقمصان الكلاسيكية.",
+    overviewAr: "تعكس خبرتنا في تطوير أكثر من 2,700 موديل من الملابس النسائية وملابس الأطفال والرجالي معرفتنا العميقة بمختلف القصات والخامات والتصميمات واحتياجات الأسواق العالمية. ونعمل على تحويل الأفكار والمراجع التصميمية إلى منتجات قابلة للتصنيع التجاري بأعلى كفاءة، بدءًا من العبايات والأزياء المحتشمة وفساتين السهرة، وحتى الملابس الكاجوال والرياضية والقمصان الكلاسيكية.",
     pillars: [
       {
         title: "Women's & Modestwear",
-        titleAr: "الأزياء الحريمي والمحتشمة",
+        titleAr: "الأزياء النسائية والمحتشمة",
         desc: "Dresses, abayas, maxi wear, coordinated two-piece sets, tunics, skirts, jumpsuits, eveningwear, homewear, and activewear.",
         descAr: "الفساتين، العبايات، الملابس المحتشمة، الأطقم المتناسقة، التونيكات، فساتين السهرة، والملابس المنزلية والكاجوال.",
       },
@@ -320,11 +320,11 @@ export const garmentServicesDetailed = [
     titleEn: "Apparel Manufacturing",
     titleAr: "تصنيع الملابس الجاهزة",
     taglineEn: "Comprehensive mass production across women's, men's, and children's categories.",
-    taglineAr: "إنتاج كمي متكامل لمختلف فئات الملابس الحريمي، الرجالي، والأطفالي.",
+    taglineAr: "إنتاج كمي متكامل لمختلف فئات الملابس النسائية، الرجالية، والأطفال.",
     descriptionEn: "We execute industrial garment manufacturing backed by dedicated production lines and specialized machinery. Every production run is mapped to your technical drawings, stitch requirements, tolerance tables, and approved pre-production samples.",
     descriptionAr: "نقوم بتنفيذ عمليات تصنيع الملابس الجاهزة بالاعتماد على خطوط إنتاج متخصصة وماكينات حديثة. ويتم ضبط كل تشغيلة إنتاجية وفق الرسومات الفنية، وجداول المقاسات، والمواصفات المعتمدة.",
     scopeEn: ["Women's formal, casual & modest fashion", "Men's shirts, trousers, polo & streetwear", "Children's wear, baby clothing & matching sets", "Strict inline and final AQL 2.5 inspections"],
-    scopeAr: ["أزياء حريمي كاجوال، كلاسيك، وأزياء محتشمة", "ملابس رجالية وقمصان وبولو وملابس كاجوال", "ملابس أطفال وأطقم خروج وملابس مواليد", "فحص جودة مرحلي ونهائي وفق معايير AQL 2.5"],
+    scopeAr: ["أزياء نسائية كاجوال، كلاسيك، وأزياء محتشمة", "ملابس رجالية وقمصان وبولو وملابس كاجوال", "ملابس أطفال وأطقم خروج وملابس مواليد", "فحص جودة مرحلي ونهائي وفق معايير AQL 2.5"],
   },
   {
     id: "product-development",
@@ -695,7 +695,7 @@ export const garmentProductCategories: GarmentCategoryItem[] = [
   {
     id: "womens-wear",
     nameEn: "Women's Wear",
-    nameAr: "الأزياء النسائية والحريمي",
+    nameAr: "الأزياء النسائية العصرية",
     descriptionEn: "Dresses, modestwear, abayas, co-ord two-piece sets, tunics, and contemporary skirts.",
     descriptionAr: "فساتين، عبايات وأزياء محتشمة، أطقم خروج متناسقة، وتونيكات عصرية بخامات راقية.",
     itemsEn: ["Casual & Evening Dresses", "Modestwear & Abayas", "Co-ord Two-Piece Sets", "Tunics & Blouses"],

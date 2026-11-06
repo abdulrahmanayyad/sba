@@ -214,6 +214,23 @@ export function NewsPage() {
                 : "A unified institutional platform documenting operational roots from 1977, cross-border entity growth in Egypt and Saudi Arabia, sector insights (2010–2020), and unified corporate activities following the 2023 institutional integration."}
             </p>
 
+            {/* Archival Editorial Note for Pre-2023 Articles */}
+            <div className="mt-5 rounded-2xl border border-brand-orange/30 bg-brand-orange/5 p-4 text-xs leading-relaxed text-muted-foreground flex items-start gap-3">
+              <span className="p-1 rounded-lg bg-brand-orange/15 text-brand-orange shrink-0 mt-0.5">
+                <History className="size-4" />
+              </span>
+              <div>
+                <strong className="text-foreground font-bold block mb-0.5">
+                  {ar ? "ملاحظة توثيقية للأرشيف:" : "Archival Lineage Note:"}
+                </strong>
+                <span>
+                  {ar
+                    ? "التقارير والمراجعات القطاعية المؤرخة قبل عام 2023 توثق أنشطة الكيانات المؤسسة ومشاريعها المتخصصة قبل توحيدها الشامل تحت مظلة مجموعة سامي بن عياد عام 2023 (امتدادًا للجذور المهنية القائمة منذ 1977)."
+                    : "Archival Note: Reports and sector reviews dated prior to 2023 document the operational milestones and market engagements of predecessor founding entities prior to their formal unification under Sami Bin Ayyad Group in 2023, building on foundational roots established since 1977."}
+                </span>
+              </div>
+            </div>
+
             {/* Quick Metrics Bar */}
             <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-6 border-t border-border/60">
               <div className="rounded-2xl border border-border/80 bg-background/80 p-3.5 backdrop-blur-md">

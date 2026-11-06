@@ -1,5 +1,5 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { 
   Building2, 
   ChevronRight, 
@@ -19,7 +19,7 @@ import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/i18n/language-context";
 import { WHATSAPP_URL } from "@/lib/process-steps";
 import { cn } from "@/lib/utils";
-import { garmentHeroData, garmentServicesDetailed } from "./garment-data";
+import { garmentHeroData, garmentServicesDetailed, garmentServicesExpanded } from "./garment-data";
 
 import { GarmentAboutTab } from "./tabs/garment-about-tab";
 import { GarmentServicesTab } from "./tabs/garment-services-tab";
@@ -74,7 +74,7 @@ export function GarmentSectorView({ tab = "about" }: GarmentViewProps) {
       en: "Our Projects",
       ar: "مشاريعنا",
       descEn: "Over 550 documented styles across women, men, kids & matching sets",
-      descAr: "أكثر من 550 تصميمًا موثقًا عبر الحريمي والرجالي والأطفال والكابلز",
+      descAr: "أكثر من 550 تصميمًا موثقًا عبر الأزياء النسائية والرجالية والأطفال والأطقم المتناسقة",
     },
     partners: {
       en: "Our Partners",
@@ -192,6 +192,11 @@ function GarmentStartProjectView() {
     select: (s) => (s.location.search as Record<string, string>)["service"],
   });
 
+  const matchedService = useMemo(() => {
+    if (!requestedServiceId) return null;
+    return garmentServicesExpanded.find((s) => s.id === requestedServiceId);
+  }, [requestedServiceId]);
+
   const [form, setForm] = useState({
     // Stage 1: Product Information
     productCategory: "",
@@ -228,11 +233,20 @@ function GarmentStartProjectView() {
     refNum: "",
   });
 
+  useEffect(() => {
+    if (matchedService) {
+      setForm((p) => ({
+        ...p,
+        modelDescription: p.modelDescription || (ar ? `طلب دراسة وتصنيع لبرنامج: ${matchedService.titleAr}` : `Manufacturing inquiry for: ${matchedService.titleEn}`),
+      }));
+    }
+  }, [matchedService, ar]);
+
   const up = (k: string, v: unknown) => setForm((p) => ({ ...p, [k]: v }));
 
   const categories = ar
     ? [
-        "ملابس حريمي ونسائية (Women's Wear)",
+        "ملابس نسائية (Women's Wear)",
         "ملابس رجالية (Men's Wear)",
         "أزياء الأطفال والمواليد (Kids & Baby Wear)",
         "ملابس كاجوال يومية (Casual Wear)",
@@ -384,6 +398,18 @@ function GarmentStartProjectView() {
       </div>
 
       <div className="mx-auto max-w-3xl rounded-3xl border border-white/30 bg-background/80 p-6 sm:p-10 backdrop-blur-2xl shadow-xl">
+        {matchedService && (
+          <div className="mb-6 rounded-2xl border border-brand-green/40 bg-brand-green/10 p-4 flex items-center justify-between gap-3">
+            <div>
+              <p className="text-xs font-bold text-foreground">
+                {ar ? `البرنامج المختار: ${matchedService.titleAr}` : `Selected Program: ${matchedService.titleEn}`}
+              </p>
+              <p className="text-[11px] text-muted-foreground mt-0.5">{ar ? matchedService.leadAr : matchedService.leadEn}</p>
+            </div>
+            <span className="font-mono text-xs font-bold text-brand-orange shrink-0">{matchedService.number}</span>
+          </div>
+        )}
+
         {/* STAGE 1 – PRODUCT INFORMATION */}
         {step === 1 && (
           <div className="space-y-6">

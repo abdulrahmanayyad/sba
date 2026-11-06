@@ -244,14 +244,14 @@ export function NewsDetailPage({ slug }: { slug: string }) {
             {ar ? article.excerptAr : article.excerptEn}
           </p>
 
-          {/* Editorial Notice for Historical Insights */}
-          {isHistoricalInsight && (
-            <div className="mt-6 p-3.5 rounded-2xl bg-secondary/50 border border-border/70 flex items-center gap-2.5 max-w-3xl text-xs text-muted-foreground">
-              <ShieldCheck className="size-4 text-brand-orange shrink-0" />
+          {/* Editorial Notice for Pre-2023 Articles */}
+          {article.year < 2023 && (
+            <div className="mt-6 p-4 rounded-2xl bg-brand-orange/5 border border-brand-orange/30 flex items-start gap-3 max-w-3xl text-xs text-muted-foreground text-start">
+              <History className="size-4 text-brand-orange shrink-0 mt-0.5" />
               <span>
                 {ar
-                  ? "تنبيه تحريري: هذه المادة تمثل مراجعة تاريخية وتحليلاً قطاعيًا لتطور حركة السوق والصناعة خلال الفترة 2010–2020، وليست خبرًا عن مشروعات أو مشاركات محددة للمجموعة."
-                  : "Editorial Note: This article represents an industry insight and historical sector review examining economic market shifts during 2010–2020, rather than a corporate project record."}
+                  ? "ملاحظة توثيقية للأرشيف: هذه المادة مؤرخة قبل عام 2023 وتوثق أنشطة ومتابعات الكيانات المؤسسة ومشاريعها قبل التوحيد الشامل تحت مظلة مجموعة سامي بن عياد عام 2023 (امتدادًا للجذور المهنية القائمة منذ 1977)."
+                  : "Archival Note: This record predates 2023 and documents the operations and market engagements of predecessor founding entities prior to their formal unification under Sami Bin Ayyad Group in 2023, building on foundational roots established since 1977."}
               </span>
             </div>
           )}

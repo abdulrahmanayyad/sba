@@ -14,7 +14,7 @@ import { AnimatedStatistic } from "@/components/site/animated-statistic";
 import { aboutTabs, divisions, sectorOverviews, strategicPartners, whoWeServe } from "./group-data";
 import { SectorsShowcase } from "./sectors-showcase";
 import { JoinShowcase } from "./join-showcase";
-import { newsArticles } from "@/components/news/news-data";
+import { getLatestNewsArticles } from "@/components/news/news-data";
 import { HomeTradeSection } from "@/components/home/home-trade-section";
 
 
@@ -355,7 +355,7 @@ export function GroupPage() {
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
-            {newsArticles.slice(0, 3).map((article, idx) => (
+            {getLatestNewsArticles().slice(0, 3).map((article, idx) => (
               <article
                 key={article.id}
                 className="glass-box-interactive rounded-3xl flex flex-col justify-between cursor-pointer"
@@ -473,10 +473,10 @@ export function GroupPage() {
 
             <div className="min-w-0 flex flex-col gap-4">
               <Button asChild variant="ghost" className="group relative h-auto w-full justify-start gap-4 overflow-hidden rounded-2xl border border-[#0066CC]/30 bg-[#0066CC]/5 p-5 text-start whitespace-normal hover:border-[#0066CC] hover:bg-[#0066CC]/15 hover:shadow-lg sm:p-6 backdrop-blur-md transition-all duration-300 hover:scale-[1.01] active:scale-[0.98]">
-                <a data-email-contact href="mailto:info@sami-trade.com">
+                <a data-email-contact href="mailto:info@sami-trade.com" aria-label={ar ? "البريد الإلكتروني الرسمي: info@sami-trade.com" : "Official Email: info@sami-trade.com"}>
                   <span data-email-icon className="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#0066CC]/15 text-[#0066CC]"><Mail aria-hidden="true" className="size-5" /></span>
                   <span data-email-copy className="min-w-0 flex-1">
-                    <span className="block font-head text-sm font-bold text-foreground/80">{ar ? "البريد الإلكتروني الرسمي" : "Official Email"}</span>
+                    <span className="block font-head text-sm font-bold text-foreground/80">{ar ? "البريد الإلكتروني الرسمي: " : "Official Email: "}</span>
                     <span dir="ltr" className="mt-1 block break-all font-head text-base font-bold text-foreground sm:text-lg">info@sami-trade.com</span>
                   </span>
                   <span data-email-arrow className="shrink-0 text-[#0066CC]"><ArrowRight aria-hidden="true" className="size-5 rtl:rotate-180" /></span>
@@ -484,10 +484,10 @@ export function GroupPage() {
               </Button>
 
               <Button asChild variant="ghost" className="group relative h-auto w-full justify-start gap-4 overflow-hidden rounded-2xl border border-[#25D366]/30 bg-[#25D366]/5 p-5 text-start whitespace-normal hover:border-[#25D366] hover:bg-[#25D366]/15 hover:shadow-lg sm:p-6 backdrop-blur-md transition-all duration-300 hover:scale-[1.01] active:scale-[0.98]">
-                <a href={WHATSAPP_URL} target="_blank" rel="noreferrer">
+                <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" aria-label="WhatsApp Direct: +20 12 222 380 72">
                   <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#25D366]/15 text-[#25D366]"><MessageCircle aria-hidden="true" className="size-5" /></span>
                   <span className="min-w-0 flex-1">
-                    <span className="block font-head text-sm font-bold text-foreground/80">WhatsApp Direct</span>
+                    <span className="block font-head text-sm font-bold text-foreground/80">WhatsApp Direct: </span>
                     <span dir="ltr" className="mt-1 block font-head text-base font-bold text-foreground sm:text-lg">+20 12 222 380 72</span>
                   </span>
                   <span className="shrink-0 text-[#25D366]"><ArrowRight aria-hidden="true" className="size-5 rtl:rotate-180" /></span>

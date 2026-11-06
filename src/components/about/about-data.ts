@@ -70,7 +70,7 @@ export const whatWeDoData = {
       tag: "Design & Manufacturing",
       tagAr: "تصنيع وتطوير",
       body: "Specializes in women's and children's garment manufacturing, customer-driven product development, full-package contract manufacturing, and FOB programs, alongside fabric knitting and dyeing to ensure production efficiency, product quality, and reliable delivery.",
-      bodyAr: "يتخصص في تصنيع الملابس الحريمي وملابس الأطفال، وتطوير المنتجات وفق متطلبات الأسواق والعملاء، وتقديم خدمات التصنيع التعاقدي وبرامج FOB، إلى جانب تصنيع الأقمشة والصباغة، بما يدعم كفاءة الإنتاج وجودة المنتجات والالتزام بمتطلبات التوريد.",
+      bodyAr: "يتخصص في تصنيع الملابس النسائية وملابس الأطفال، وتطوير المنتجات وفق متطلبات الأسواق والعملاء، وتقديم خدمات التصنيع التعاقدي وبرامج FOB، إلى جانب تصنيع الأقمشة والصباغة، بما يدعم كفاءة الإنتاج وجودة المنتجات والالتزام بمتطلبات التوريد.",
     },
     {
       title: "Natural Products",

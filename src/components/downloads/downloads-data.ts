@@ -448,7 +448,7 @@ export const allCorporateDownloads: DownloadItem[] = [
     titleEn: "Natural Products & Food Trading Profile (EN)",
     titleAr: "دليل قطاع المنتجات الطبيعية والتوريد الغذائي (إنجليزي)",
     descriptionEn: "Sourcing capabilities, NFSA-licensed hubs, 6 export commodity categories, laboratory certificates, and global supply models.",
-    descriptionAr: "القدرات التوريدية، محطات الفرز المعتمدة، 6 فئات تصديرية زراعية، وشهادات سلامة الغذاء الدولية.",
+    descriptionAr: "القدرات التوريدية، محطات الفرز المعتمدة، 7 فئات تصديرية زراعية، وشهادات سلامة الغذاء الدولية.",
     sector: "food",
     sectorEn: "Natural & Food Products",
     sectorAr: "المنتجات الطبيعية والغذائية",

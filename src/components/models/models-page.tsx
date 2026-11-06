@@ -24,6 +24,30 @@ import { allProducts, type ProductCategory, type ProductItem } from "@/lib/all-p
 
 const PAGE_SIZE = 24;
 
+export const SUBCATEGORY_LABELS_AR: Record<string, string> = {
+  "Casual": "كاجوال",
+  "Cotton Sets": "أطقم قطنية",
+  "Jeans Sets": "أطقم جينز",
+  "Jumpsuit": "جمبسوت",
+  "Long Suites": "أطقم وبدل طويلة",
+  "Short Suites": "أطقم وبدل قصيرة",
+  "Shirts & Blouses": "قمصان وبلوزات",
+  "Blouses": "بلوزات",
+  "Suites": "بدل وأطقم",
+  "T-Shirts": "تي شيرتات",
+  "Dresses": "فساتين",
+  "Home Wear": "ملابس منزل وبيجامات",
+  "Kids Wear": "أزياء أطفال",
+  "Lingerie": "لانجيري وملابس نوم",
+  "Soirée": "فساتين سهرة وسواريه",
+};
+
+export function getSubcategoryLabel(sub: string, ar: boolean): string {
+  if (!sub) return "";
+  if (ar) return SUBCATEGORY_LABELS_AR[sub] || sub;
+  return sub;
+}
+
 interface CategoryConfig {
   key: ProductCategory;
   labelEn: string;
@@ -217,7 +241,7 @@ export function ModelsPage() {
                       : "bg-secondary/60 text-foreground hover:bg-secondary hover:text-brand-orange"
                   )}
                 >
-                  <span>{ar ? cat.labelAr : cat.labelEn}</span>
+                  <span>{ar ? cat.labelAr : cat.labelEn}</span>{" "}
                   <span
                     className={cn(
                       "rounded-full px-2 py-0.5 font-mono text-[11px]",
@@ -300,10 +324,10 @@ export function ModelsPage() {
                 }}
                 className="rounded-full border border-border bg-background/70 px-4 py-2 text-xs font-semibold text-foreground focus:border-brand-green focus:outline-none"
               >
-                <option value="all">{ar ? "كافة الأنواع" : "All Subcategories"}</option>
+                <option value="all">{ar ? "كافة الأنواع والتصنيفات" : "All Subcategories"}</option>
                 {availableSubcategories.map((sub) => (
                   <option key={sub} value={sub}>
-                    {sub}
+                    {getSubcategoryLabel(sub, ar)}
                   </option>
                 ))}
               </select>
@@ -392,9 +416,9 @@ export function ModelsPage() {
 
                 {/* Meta details footer */}
                 <div className="p-3">
-                  <div className="flex items-center justify-between gap-1 mb-2">
+                  <div className="flex items-center justify-between gap-1 mb-1">
                     <span className="text-[11px] font-bold text-foreground line-clamp-1 group-hover:text-brand-green transition-colors">
-                      {item.subcategory || item.code}
+                      {ar ? getSubcategoryLabel(item.subcategory, true) : (item.subcategory || item.code)}
                     </span>
                     {item.age && (
                       <span className="shrink-0 rounded-md bg-secondary px-1.5 py-0.5 font-mono text-[9px] font-semibold text-muted-foreground">
@@ -402,6 +426,9 @@ export function ModelsPage() {
                       </span>
                     )}
                   </div>
+                  <p className="text-[10px] font-mono text-muted-foreground font-semibold mb-2">
+                    {ar ? `الموديل: ${item.code}` : `Ref: ${item.code}`}
+                  </p>
 
                   <Button
                     size="sm"
@@ -510,11 +537,13 @@ export function ModelsPage() {
                   {activeItem.code}
                 </span>
                 <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">
-                  {activeItem.category} {activeItem.age ? `• ${activeItem.age} yrs` : ""}
+                  {getSubcategoryLabel(activeItem.subcategory, ar)} {activeItem.age ? `• ${activeItem.age} ${ar ? "سنوات" : "yrs"}` : ""}
                 </span>
               </div>
               <DialogTitle className="font-head text-xl font-bold text-foreground">
-                {activeItem.subcategory || activeItem.code}
+                {ar
+                  ? `${getSubcategoryLabel(activeItem.subcategory, true)} — موديل ${activeItem.code}`
+                  : `${activeItem.subcategory || "Style"} — Model ${activeItem.code}`}
               </DialogTitle>
             </DialogHeader>
 

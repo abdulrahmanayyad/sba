@@ -40,6 +40,7 @@ export function GarmentServicesTab() {
             {services.map((service) => (
               <div
                 key={service.id}
+                id={`service-${service.id}`}
                 className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-border bg-card/60 backdrop-blur-md shadow-sm transition-all duration-300 hover:border-brand-green/60 hover:shadow-xl hover:scale-[1.01]"
               >
                 <div className="relative aspect-[16/9] w-full overflow-hidden bg-secondary">

@@ -70,16 +70,22 @@ export function VerifiedProjectsBanner({ ar, onRequestOpen }: VerifiedProjectsBa
             </span>
             <div className="flex flex-col sm:flex-row lg:flex-col gap-2.5 w-full">
               <Button
+                asChild
                 variant="outline"
                 size="sm"
-                onClick={() => {
-                  const el = document.getElementById("projects-grid-anchor");
-                  el?.scrollIntoView({ behavior: "smooth" });
-                }}
-                className="rounded-full border-brand-green text-brand-green-text hover:bg-brand-green hover:text-white text-xs font-head font-bold w-full justify-center"
+                className="rounded-full border-brand-green text-brand-green-text hover:bg-brand-green hover:text-white text-xs font-head font-bold w-full justify-center cursor-pointer"
               >
-                <FileSearch className="size-3.5 me-1.5" />
-                {ar ? "استعراض المشروعات الموثقة" : "Explore Verified Projects"}
+                <a
+                  href="#projects-grid-anchor"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const el = document.getElementById("projects-grid-anchor");
+                    el?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                >
+                  <FileSearch className="size-3.5 me-1.5" />
+                  <span>{ar ? "استعراض المشروعات الموثقة" : "Explore Verified Projects"}</span>
+                </a>
               </Button>
             </div>
           </div>

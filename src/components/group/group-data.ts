@@ -69,7 +69,7 @@ export const divisions: Division[] = [
     tagline: "Integrated manufacturing solutions for fashion brands and global markets, from product development to production and export preparation.",
     taglineAr: "حلول تصنيع متكاملة للعلامات التجارية والأسواق العالمية، من تطوير المنتج إلى الإنتاج والتجهيز للتصدير.",
     body: "Integrated ready-made garment manufacturing: product development, diverse production capabilities, manufacturing management, and quality control, specializing in women's, children's, and men's apparel.",
-    bodyAr: "حلول متكاملة لتصنيع الملابس الجاهزة تجمع بين تطوير المنتجات والقدرات الإنتاجية المتنوعة وإدارة التصنيع ومراقبة الجودة، مع تخصص في الملابس الحريمي والأطفالي والرجالية.",
+    bodyAr: "حلول متكاملة لتصنيع الملابس الجاهزة تجمع بين تطوير المنتجات والقدرات الإنتاجية المتنوعة وإدارة التصنيع ومراقبة الجودة، مع تخصص في الملابس النسائية والأطفالي والرجالية.",
     points: [
       { en: "+5,000 pieces/day · +100,000/month", ar: "+5,000 قطعة يوميًا · +100,000 شهريًا" },
       { en: "+15 lines · +250 machines", ar: "+15 خط إنتاج · +250 ماكينة" },

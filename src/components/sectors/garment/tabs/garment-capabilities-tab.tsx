@@ -264,6 +264,113 @@ export function GarmentCapabilitiesTab() {
           </div>
         </Reveal>
       </div>
+
+      {/* 5. Garment B2B Technical Terms Glossary */}
+      <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
+        <Reveal>
+          <div className="text-center max-w-3xl mx-auto mb-10">
+            <SectionBadge title={ar ? "دليل المصطلحات الفنية والتجارية" : "B2B Technical Glossary"} />
+            <h2 className="section-title mt-3">
+              {ar ? "دليل مصطلحات تصنيع وتصدير الملابس B2B" : "Garment Manufacturing & Trade Terminology"}
+            </h2>
+            <p className="section-intro mt-3">
+              {ar
+                ? "شرح مبسط وموثق لأهم المصطلحات التعاقدية والمعايير الفنية المستخدمة في صناعة وتصدير الملابس الجاهزة."
+                : "A concise reference guide to key commercial frameworks, quality standards, and technical abbreviations used in our manufacturing."}
+            </p>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                term: "FOB (Free On Board)",
+                badge: ar ? "شحن تعاقدي شامل" : "Trade Term",
+                descAr: "التسليم على ظهر السفينة: يشمل تصنيع المنتج بالكامل وتجهيزه وإنهاء التخليص الجمركي وشحنه في الميناء المصري دون أعباء تشغيلية على المشتري.",
+                descEn: "Free On Board: Supplier covers fabric, full manufacturing, packaging, and export customs clearance up to loading on the vessel in Egypt.",
+              },
+              {
+                term: "OEM (Original Equipment Manufacturer)",
+                badge: ar ? "تصنيع تعاقدي" : "Production Model",
+                descAr: "التصنيع كشريك للمعدات الأصلية: نقوم بتصنيع الموديلات بالكامل وفق التصميمات والمواصفات المعتمدة من العميل وتغليفها تحت علامته التجارية.",
+                descEn: "Original Equipment Manufacturer: Full production precisely mapped to client-provided design sheets, tech packs, and brand specifications.",
+              },
+              {
+                term: "ODM (Original Design Manufacturer)",
+                badge: ar ? "تصميم وتصنيع" : "Design & Make",
+                descAr: "التصميم والتصنيع المشترك: نقوم بتطوير أفكار التصميم والباترونات والخامات لتقديم مجموعات أزياء جاهزة متكاملة يعتمدها العميل مباشرة.",
+                descEn: "Original Design Manufacturer: Turnkey model where SBA develops designs, patterns, and fabric swatches for client brand selection.",
+              },
+              {
+                term: "Private Label",
+                badge: ar ? "العلامات الخاصة" : "Branding",
+                descAr: "التصنيع للعلامات التجارية الخاصة: إنتاج حصري يحمل ملصقات العميل وهوية علامته التجارية (Labels, Hangtags, Barcodes, Custom Polybags).",
+                descEn: "Custom production branded with client-specific woven labels, care tags, barcodes, and custom export packaging.",
+              },
+              {
+                term: "Tech Pack (Technical Package)",
+                badge: ar ? "الملف الفني" : "Engineering",
+                descAr: "الملف الفني الشامل للموديل: الوثيقة الهندسية التي تحدد جداول المقاسات الدقيقة (Grading)، ونوع الغرز، والمواد، وتفاصيل الخياطة.",
+                descEn: "The master technical blueprint specifying exact measurement grading tables, stitching details, tolerances, and fabric construction.",
+              },
+              {
+                term: "PP Sample (Pre-Production)",
+                badge: ar ? "عينة الاعتماد" : "Sampling",
+                descAr: "عينة ما قبل الإنتاج: القطعة النموذجية المصنوعة من القماش والإكسسوارات الفعلية للحصول على الاعتماد النهائي قبل تشغيل خطوط الإنتاج الكمي.",
+                descEn: "Pre-Production Sample crafted from production-grade fabric and trims, submitted for final client sign-off before cutting bulk fabric.",
+              },
+              {
+                term: "AQL 2.5 (Acceptable Quality Limit)",
+                badge: ar ? "معيار فحص الجودة" : "Quality Standard",
+                descAr: "مستوى الجودة المقبول 2.5: المعيار الإحصائي الدولي الصارم المعتمد لفحص العينات العشوائية أثناء مراحل التشغيل وقبل الشحن لضمان خلو الطلبيات من العيوب.",
+                descEn: "Acceptable Quality Limit: Strict statistical sampling standard (Level II, Major 2.5) governing inline inspections and pre-shipment audits.",
+              },
+              {
+                term: "Lab Dips (Color Matching)",
+                badge: ar ? "معايرة الألوان" : "Dyeing Lab",
+                descAr: "عينات مطابقة الألوان معمليًا: اختبارات صباغة معملية دقيقة على عينات قماش صغيرة لمطابقة كود لون بانتون المعتمد قبل صباغة بالات الأقمشة الكبرى.",
+                descEn: "Controlled lab-scale fabric dye test swatches formulated to match client-specified Pantone references under standard illuminants.",
+              },
+              {
+                term: "GSM (Grams per Square Meter)",
+                badge: ar ? "وزن وكثافة القماش" : "Fabric Weight",
+                descAr: "وزن القماش بالجرام لكل متر مربع: المعيار العلمي لتحديد سماكة وخفة النسيج وملاءمته للاستخدام الموسمي (مثال: 160-220 GSM للتيشيرت).",
+                descEn: "Grams per Square Meter: Quantitative fabric density metric determining seasonal weight, drape, and structural performance.",
+              },
+              {
+                term: "RFID (Radio-Frequency Identification)",
+                badge: ar ? "التتبع الذكي" : "Smart Logistics",
+                descAr: "شرائح التعريف بالترددات اللاسلكية: تقنية ذكية مدمجة في ليبل الملابس لتنظيم الجرد السريع وسلاسل الإمداد بالمتاجر والمنصات اللوجستية الكبرى.",
+                descEn: "Embedded radio-frequency tags in care labels or hangtags enabling automated inventory tracking and supply-chain reconciliation.",
+              },
+              {
+                term: "EUR-1 Movement Certificate",
+                badge: ar ? "شهادة تفضيلية" : "Trade Certificate",
+                descAr: "شهادة المنشأ التفضيلية EUR-1: وثيقة رسمية تمنح الصادرات المصرية إعفاءً جمركياً كاملاً (0% جمارك) عند دخول أسواق دول الاتحاد الأوروبي.",
+                descEn: "Preferential origin certificate granting Egyptian garment exports 0% customs duty access across all European Union member states.",
+              },
+            ].map((item, idx) => (
+              <div
+                key={idx}
+                className="rounded-2xl border border-border/80 bg-card/60 p-5 shadow-xs backdrop-blur-md flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex items-center justify-between gap-2 mb-2">
+                    <span className="font-mono text-xs font-bold text-brand-green bg-brand-green/10 px-2.5 py-0.5 rounded-full">
+                      {item.badge}
+                    </span>
+                  </div>
+                  <h4 className="font-head text-sm font-bold text-foreground">
+                    {item.term}
+                  </h4>
+                  <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
+                    {ar ? item.descAr : item.descEn}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </Reveal>
+      </div>
     </div>
   );
 }
