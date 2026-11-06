@@ -1,13 +1,28 @@
-﻿import { createFileRoute, notFound } from "@tanstack/react-router";
+import { createFileRoute, notFound } from "@tanstack/react-router";
 
 import { ModelDetailPage } from "@/components/models/model-detail-page";
+import { allProducts } from "@/lib/all-products-data";
 import { modelsQueryOptions } from "@/lib/models";
 
 export const Route = createFileRoute("/models/$code")({
   loader: async ({ context, params }) => {
-    const models = await context.queryClient.ensureQueryData(modelsQueryOptions);
-    if (!models.some((model) => model.code.toLowerCase() === params.code.toLowerCase())) throw notFound();
-    return { code: params.code };
+    // 1. Check verified 2,727 production models library
+    const inAll = allProducts.some((p) => p.code.toLowerCase() === params.code.toLowerCase());
+    if (inAll) {
+      return { code: params.code };
+    }
+
+    // 2. Fallback to mock query
+    try {
+      const models = await context.queryClient.ensureQueryData(modelsQueryOptions);
+      if (models.some((model) => model.code.toLowerCase() === params.code.toLowerCase())) {
+        return { code: params.code };
+      }
+    } catch {
+      // Continue to notFound
+    }
+
+    throw notFound();
   },
   head: ({ loaderData }) => {
     if (!loaderData) {
@@ -20,10 +35,10 @@ export const Route = createFileRoute("/models/$code")({
     }
     return {
       meta: [
-        { title: `${loaderData.code} — Model Library — SBA | Sami Bin Ayyad Group` },
-        { name: "description", content: "Production-ready model specifications, technical sheet, available customizations and similar models from SBA." },
-        { property: "og:title", content: `${loaderData.code} — SBA Model Library` },
-        { property: "og:description", content: "Production-ready model specifications, technical sheet and available customizations." },
+        { title: `Quote Request for Model ${loaderData.code} — SBA Apparel Manufacturing` },
+        { name: "description", content: `Request official B2B manufacturing quotation, tech pack grading, and export FOB/OEM terms for style ${loaderData.code} from Sami Bin Ayyad Group.` },
+        { property: "og:title", content: `Model ${loaderData.code} — SBA Manufacturing Quotation` },
+        { property: "og:description", content: `Request official custom private-label manufacturing quotation for model ${loaderData.code}.` },
         { property: "og:type", content: "website" },
         { name: "twitter:card", content: "summary_large_image" },
       ],

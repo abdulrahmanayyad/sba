@@ -48,7 +48,7 @@ async function generateAll() {
         'Construction, Contracting & Real Estate Development (12 specialized engineering disciplines)',
         'Environmental Solutions & Sustainability (19 consultancy, compliance & clean tech services)',
         'Apparel Manufacturing & Fashion Development (15+ production lines, 250+ specialized machines, +2,700 models)',
-        'Natural Products & Food Trading (6 export categories, NFSA certified processing hubs)',
+        'Natural Products & Food Trading (7 export categories: Honey, Olives, Olive Oil, Dates, Herbs, Spices, Juices; NFSA certified processing hubs)',
       ],
       highlightBorder: true,
     });
@@ -169,7 +169,7 @@ async function generateAll() {
         { ar: 'المقاولات والتطوير العقاري (12 تخصصًا هندسيًا وتنفيذيًا متكاملًا)' },
         { ar: 'الخدمات البيئية المستدامة والطاقة النظيفة (19 خدمة استشارية وتكنولوجية)' },
         { ar: 'تصنيع الملابس الجاهزة (15+ خط إنتاج، 250+ ماكينة، ومكتبة تضم +2,700 تصميم)' },
-        { ar: 'المنتجات الطبيعية والتوريد الغذائي (6 فئات تصديرية بمحطات معتمدة من سلامة الغذاء)' },
+        { ar: 'المنتجات الطبيعية والتوريد الغذائي (7 فئات تصديرية بمحطات معتمدة من سلامة الغذاء: عسل، زيتون، زيت زيتون، تمور، أعشاب، توابل، عصائر)' },
       ],
       highlightBorder: true,
     });

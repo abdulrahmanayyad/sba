@@ -43,6 +43,7 @@ import { cn } from "@/lib/utils";
 import { highlightBrand } from "@/components/site/brand-text";
 import { SectorContactSection } from "@/components/site/sector-contact-section";
 import { AnimatedStatistic } from "@/components/site/animated-statistic";
+import { submitCentralForm } from "@/lib/central-form-dispatch";
 import { JoinPage } from "@/components/join/join-page";
 import {
   Dialog,
@@ -1540,6 +1541,28 @@ function FoodOrderProductTab({
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const randomCode = `FOOD-2026-${Math.floor(1000 + Math.random() * 9000)}`;
+
+    submitCentralForm({
+      formType: "food_rfq",
+      name: formData.contactPerson,
+      company: formData.companyName || undefined,
+      email: formData.email,
+      phone: formData.phone,
+      country: formData.destinationCountry,
+      sector: "food",
+      serviceOrProduct: formData.productName || formData.category,
+      message: `[Natural Food Products RFQ / Quotation Request]\n\nCategory: ${formData.category}\nProduct Name: ${formData.productName}\nQuantity: ${formData.quantityValue} ${formData.quantityUnit}\nPackaging: ${formData.packagingType}\nDestination: ${formData.destinationCountry}${formData.destinationPort ? ` (Port: ${formData.destinationPort})` : ""}\nIncoterms: ${formData.incoterms}\nSchedule: ${formData.deliverySchedule}\nBusiness Type: ${formData.businessType}\nJob Title: ${formData.jobTitle}\nSample Requested: ${formData.sampleRequested}${formData.sampleAddress ? ` (${formData.sampleAddress})` : ""}\n\nSpecs & Notes:\n${formData.specifications}\n${formData.additionalNotes}`,
+      metadata: {
+        category: formData.category,
+        productName: formData.productName,
+        quantity: `${formData.quantityValue} ${formData.quantityUnit}`,
+        packagingType: formData.packagingType,
+        destinationCountry: formData.destinationCountry,
+        incoterms: formData.incoterms,
+        sampleRequested: formData.sampleRequested,
+      },
+    }).catch(console.error);
+
     setQuotationCode(randomCode);
     setSubmitted(true);
   };

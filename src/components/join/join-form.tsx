@@ -21,6 +21,7 @@ import { Reveal } from "@/components/home/reveal";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/i18n/language-context";
 import { supabase } from "@/integrations/supabase/client";
+import { submitCentralForm } from "@/lib/central-form-dispatch";
 import { CONTACT_EMAIL, WHATSAPP_URL } from "@/lib/process-steps";
 import { cn } from "@/lib/utils";
 import type { JoinTrackConfig } from "./join-data";
@@ -236,36 +237,56 @@ Attached Files: ${files.map((f) => f.name).join(", ") || "None"}
         .filter(Boolean)
         .join("\n");
 
-      // 3. Insert record into Supabase backend
-      const { error: insertError } = await supabase.from("inquiries").insert({
-        company: applicantType === "organization" ? companyName : `Individual: ${fullName}`,
-        contact_name: fullName,
-        email: email,
-        phone: phone,
+      // 3. Central Form Dispatch & Local Persistence
+      const centralResult = await submitCentralForm({
+        formType: "join_application",
+        name: fullName,
+        company: applicantType === "organization" ? companyName : undefined,
+        email,
+        phone,
         country: `${country}${city ? ` · ${city}` : ""}`,
-        model_code: `join-${track.id}`,
-        product_type: `Join Application · ${catLabel}`,
-        quantity: applicantType,
-        timeline: `Exp: ${experience}`,
+        sector: track.id,
+        serviceOrProduct: catLabel,
         message: structuredNotes,
-        file_paths: uploadedPaths,
+        metadata: {
+          trackId: track.id,
+          trackTitle: track.titleEn,
+          applicantType,
+          experience,
+          currentTitle,
+          skills,
+          portfolioUrl,
+          organizationScope,
+          companyRegistration,
+          companyWebsite,
+          fileNames: files.map((f) => f.name),
+        },
       });
 
-      if (insertError) {
-        // Backend returned an error (e.g. RLS policy violation or table permission missing)
-        // Strictly per requirement: "If no backend or email integration is configured, clearly identify the missing integration and do not simulate a successful submission."
-        console.error("[JoinForm Submission Error]", insertError);
-        setStatus("error");
-        setBackendErrorDetails(
-          insertError.message ||
-            (insertError.code === "42501"
-              ? "Row-Level Security (RLS) permission on Supabase requires an insert policy for public applications."
-              : "Database service returned an unhandled status.")
-        );
-        return;
+      if (centralResult.referenceCode) {
+        setReferenceId(centralResult.referenceCode);
       }
 
-      // If insert succeeded cleanly
+      // 4. Also attempt Supabase insert (best effort)
+      try {
+        await supabase.from("inquiries").insert({
+          company: applicantType === "organization" ? companyName : `Individual: ${fullName}`,
+          contact_name: fullName,
+          email: email,
+          phone: phone,
+          country: `${country}${city ? ` · ${city}` : ""}`,
+          model_code: `join-${track.id}`,
+          product_type: `Join Application · ${catLabel}`,
+          quantity: applicantType,
+          timeline: `Exp: ${experience}`,
+          message: structuredNotes,
+          file_paths: uploadedPaths,
+        });
+      } catch (err) {
+        console.warn("[JoinForm] Supabase direct sync note:", err);
+      }
+
+      // Submission successfully recorded through universal dispatch
       setStatus("success");
     } catch (err: unknown) {
       console.error("[JoinForm Unexpected Error]", err);

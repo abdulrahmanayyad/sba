@@ -19,6 +19,7 @@ import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/i18n/language-context";
 import { WHATSAPP_URL } from "@/lib/process-steps";
 import { cn } from "@/lib/utils";
+import { submitCentralForm } from "@/lib/central-form-dispatch";
 import { garmentHeroData, garmentServicesDetailed, garmentServicesExpanded } from "./garment-data";
 
 import { GarmentAboutTab } from "./tabs/garment-about-tab";
@@ -320,6 +321,28 @@ function GarmentStartProjectView() {
 
   const handleSubmit = () => {
     const ref = "GAR-" + new Date().getFullYear() + "-" + Math.floor(1000 + Math.random() * 9000);
+
+    submitCentralForm({
+      formType: "garment_b2b",
+      name: form.contactPerson,
+      company: form.companyName || undefined,
+      email: form.email,
+      phone: form.phone,
+      country: form.destinationCountry,
+      sector: "garment",
+      serviceOrProduct: form.productCategory || form.productType,
+      message: `[Garment OEM/B2B Manufacturing Brief]\n\nProduct Category: ${form.productCategory}\nProduct Type: ${form.productType}\nEstimated Qty: ${form.estimatedQuantity}\nTarget Price: ${form.targetPrice} ${form.currency}\nCooperation: ${form.cooperationType}\nDelivery Date: ${form.deliveryDate}\nDestination: ${form.destinationCountry}\nFabric: ${form.fabricType} (${form.gsm} GSM, ${form.composition})\nSizes: ${form.sizes.join(", ")}\nEmbellishment: ${form.printingEmbroidery.join(", ")}\nPackaging: ${form.labelsPackaging.join(", ")}\nJob Title: ${form.jobTitle}\n\nModel Description / Notes:\n${form.modelDescription}\n${form.additionalNotes}`,
+      metadata: {
+        productCategory: form.productCategory,
+        productType: form.productType,
+        estimatedQuantity: form.estimatedQuantity,
+        cooperationType: form.cooperationType,
+        fabricType: form.fabricType,
+        destinationCountry: form.destinationCountry,
+        sizes: form.sizes,
+      },
+    }).catch(console.error);
+
     setForm((p) => ({ ...p, submitted: true, refNum: ref }));
   };
 

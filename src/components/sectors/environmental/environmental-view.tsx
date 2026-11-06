@@ -46,6 +46,7 @@ import { useLanguage } from "@/i18n/language-context";
 import { cn } from "@/lib/utils";
 import { highlightBrand } from "@/components/site/brand-text";
 import { SectorContactSection } from "@/components/site/sector-contact-section";
+import { submitCentralForm } from "@/lib/central-form-dispatch";
 import { JoinPage } from "@/components/join/join-page";
 import {
   environmentalAboutData,
@@ -617,7 +618,7 @@ function EnvironmentalAboutView({ ar }: { ar: boolean }) {
           <Reveal>
             <div className="max-w-3xl mx-auto">
               <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-3">
-                <Sparkles className="size-3.5 text-brand-orange" />
+                <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
                 <span>{ar ? "استشارات بيئية موثوقة" : "Certified Environmental Consultation"}</span>
               </div>
               <h2 className="text-2xl sm:text-4xl font-extrabold font-head text-foreground">
@@ -1425,6 +1426,29 @@ function EnvironmentalStartConsultationView({ ar }: { ar: boolean }) {
 
   const handleSubmit = () => {
     const ref = "ENV-" + new Date().getFullYear() + "-" + Math.floor(1000 + Math.random() * 9000);
+
+    submitCentralForm({
+      formType: "environmental_consultation",
+      name: form.contactPerson,
+      company: form.companyName || undefined,
+      email: form.email,
+      phone: form.phone,
+      country: form.country,
+      sector: "environmental",
+      serviceOrProduct: form.consultationType || form.requiredStudyType,
+      message: `[Environmental Consultation Request]\n\nConsultation Type: ${form.consultationType}\nStudy Type: ${form.requiredStudyType}\nIndustrial Sector: ${form.industrialSector}\nActivity Nature: ${form.activityNature}\nLocation: ${form.facilityLocation}\nScale: ${form.facilityScale}\nJob Title: ${form.jobTitle}\nTarget Date: ${form.expectedTargetDate}\nBudget Range: ${form.budgetRange}\nDeliverables: ${form.requiredDeliverables.join(", ")}\n\nProblem / Scope Description:\n${form.environmentalProblem}`,
+      metadata: {
+        consultationType: form.consultationType,
+        requiredStudyType: form.requiredStudyType,
+        industrialSector: form.industrialSector,
+        activityNature: form.activityNature,
+        facilityLocation: form.facilityLocation,
+        facilityScale: form.facilityScale,
+        requiredDeliverables: form.requiredDeliverables,
+        budgetRange: form.budgetRange,
+      },
+    }).catch(console.error);
+
     setForm((p) => ({ ...p, submitted: true, refNum: ref }));
   };
 

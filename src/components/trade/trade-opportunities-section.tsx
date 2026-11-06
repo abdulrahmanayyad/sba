@@ -14,6 +14,8 @@ import {
   Check
 } from "lucide-react";
 import { TRADE_OPPORTUNITIES } from "@/lib/trade-data";
+import { submitCentralForm } from "@/lib/central-form-dispatch";
+import { Button } from "@/components/ui/button";
 
 interface TradeOpportunitiesSectionProps {
   ar?: boolean;
@@ -40,6 +42,27 @@ export function TradeOpportunitiesSection({ ar = true }: TradeOpportunitiesSecti
 
   const handleSubmitProposal = (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (selectedOpp) {
+      submitCentralForm({
+        formType: "trade_supplier_bid",
+        name: supplierName,
+        company: supplierCompany || undefined,
+        email: supplierEmail,
+        phone: supplierPhone,
+        country: selectedOpp.destinationMarketEn,
+        sector: "trade",
+        serviceOrProduct: `${selectedOpp.id} - ${selectedOpp.productEn}`,
+        message: `[Trade Supply Proposal / Bid]\n\nOpportunity: ${selectedOpp.id} - ${selectedOpp.productEn} (${selectedOpp.productAr})\nDestination Market: ${selectedOpp.destinationMarketEn} / ${selectedOpp.destinationMarketAr}\nQuantity Requested: ${selectedOpp.quantityEn}\nProposed Price Quote: ${supplierPriceQuote}\n\nSupplier Notes:\n${supplierNotes}`,
+        metadata: {
+          opportunityId: selectedOpp.id,
+          productEn: selectedOpp.productEn,
+          productAr: selectedOpp.productAr,
+          priceQuote: supplierPriceQuote,
+        },
+      }).catch(console.error);
+    }
+
     setIsSubmitted(true);
   };
 
@@ -64,7 +87,7 @@ export function TradeOpportunitiesSection({ ar = true }: TradeOpportunitiesSecti
           </div>
 
           <div className="flex items-center gap-2 rounded-2xl border border-emerald-500/30 bg-emerald-500/10 px-4 py-3 text-emerald-300">
-            <Sparkles className="size-5 shrink-0" />
+            <span className="size-2 rounded-full bg-brand-orange animate-pulse shrink-0" />
             <span className="text-xs font-bold">
               {ar ? "6 فرص تجارية كبرى متاحة للتعاقد" : "6 Major Trade Opportunities"}
             </span>
@@ -145,15 +168,15 @@ export function TradeOpportunitiesSection({ ar = true }: TradeOpportunitiesSecti
             </div>
 
             {/* CTA Button */}
-            <div className="mt-6 pt-4 border-t border-white/10">
-              <button
+            <div className="mt-6 pt-4 border-t border-border/40">
+              <Button
                 type="button"
                 onClick={() => handleOpenProposal(opp)}
-                className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-700 px-4 py-2.5 text-xs font-bold text-white shadow-md transition-all hover:from-emerald-500 hover:to-teal-600 hover:shadow-emerald-900/30 active:scale-95"
+                className="w-full rounded-full text-xs font-bold shadow-md cursor-pointer"
               >
-                <Send className="size-3.5" />
+                <Send className="size-3.5 me-2" />
                 <span>{ar ? "قدّم عرض توريد لهذه الفرصة" : "Submit Supply Proposal"}</span>
-              </button>
+              </Button>
             </div>
           </div>
         ))}

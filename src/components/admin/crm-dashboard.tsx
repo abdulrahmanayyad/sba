@@ -59,6 +59,7 @@ import {
 import { NewsCmsTab } from "./news-cms-tab";
 import { TradeCmsTab } from "./trade-cms-tab";
 import { ContactPortalCmsTab } from "./contact-portal-cms-tab";
+import { CentralSubmissionsTab } from "./central-submissions-tab";
 
 export function CrmDashboard() {
   const { language } = useLanguage();
@@ -70,7 +71,7 @@ export function CrmDashboard() {
   const [pinError, setPinError] = useState(false);
 
   // Navigation View Tab
-  const [adminTab, setAdminTab] = useState<"contact_portal" | "inquiries" | "news" | "trade">("contact_portal");
+  const [adminTab, setAdminTab] = useState<"central_inbox" | "contact_portal" | "inquiries" | "news" | "trade">("central_inbox");
 
   // Data & Filters
   const [inquiries, setInquiries] = useState<CrmInquiry[]>([]);
@@ -262,6 +263,19 @@ export function CrmDashboard() {
                 <div className="flex flex-wrap items-center rounded-2xl bg-secondary/80 p-1 border border-border me-2 gap-1">
                   <button
                     type="button"
+                    onClick={() => setAdminTab("central_inbox")}
+                    className={cn(
+                      "rounded-xl px-3.5 py-1 text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5",
+                      adminTab === "central_inbox"
+                        ? "!bg-brand-green !text-white shadow-sm"
+                        : "text-muted-foreground hover:text-foreground"
+                    )}
+                  >
+                    <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+                    <span>{ar ? "الوارد المركزي الموحد (Live)" : "Central Live Inbox"}</span>
+                  </button>
+                  <button
+                    type="button"
                     onClick={() => setAdminTab("contact_portal")}
                     className={cn(
                       "rounded-xl px-3.5 py-1 text-xs font-bold transition-all cursor-pointer",
@@ -325,6 +339,12 @@ export function CrmDashboard() {
                 )}
               </div>
             </div>
+
+            {adminTab === "central_inbox" && (
+              <div className="mt-8">
+                <CentralSubmissionsTab ar={ar} />
+              </div>
+            )}
 
             {adminTab === "news" && (
               <div className="mt-8">

@@ -1,4 +1,4 @@
-import { ArrowRight, Building2, CheckCircle2, Download, Factory, FileUp, Globe2, Handshake, Mail, MessageCircle, Send, ShieldCheck, Sparkles, TrendingUp, Truck, UploadCloud } from "lucide-react";
+import { ArrowRight, Building2, CheckCircle2, Copy, Download, Factory, FileUp, Globe2, Handshake, Mail, MessageCircle, Send, ShieldCheck, Sparkles, TrendingUp, Truck, UploadCloud } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Reveal } from "@/components/home/reveal";
@@ -8,10 +8,51 @@ import { PartnersSlider } from "@/components/group/partners-slider";
 import { strategicPartners } from "@/components/group/group-data";
 import { WHATSAPP_URL } from "@/lib/process-steps";
 import { cn } from "@/lib/utils";
+import { submitCentralForm, buildOwnerWhatsAppFollowupUrl } from "@/lib/central-form-dispatch";
 
 export function PartnersPage() {
   const { language } = useLanguage();
   const ar = language === "AR";
+
+  // Partner Form State
+  const [partnerForm, setPartnerForm] = useState({
+    companyName: "",
+    country: "",
+    sector: "construction",
+    website: "",
+    email: "",
+    phone: "",
+    proposal: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submissionRef, setSubmissionRef] = useState("");
+  const [copiedRef, setCopiedRef] = useState(false);
+
+  const handlePartnerSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const submission = await submitCentralForm({
+      formType: "partnership_application",
+      name: partnerForm.companyName,
+      company: partnerForm.companyName,
+      email: partnerForm.email,
+      phone: partnerForm.phone,
+      country: partnerForm.country,
+      sector: partnerForm.sector,
+      serviceOrProduct: partnerForm.sector,
+      message: `[Strategic Partnership Proposal]\n\nCompany: ${partnerForm.companyName}\nCountry: ${partnerForm.country}\nTarget Sector: ${partnerForm.sector}\nWebsite: ${partnerForm.website || "N/A"}\n\nProposal:\n${partnerForm.proposal}`,
+      metadata: {
+        website: partnerForm.website,
+        sector: partnerForm.sector,
+      },
+    });
+
+    setSubmissionRef(submission.referenceCode);
+    setIsSubmitted(true);
+    setIsSubmitting(false);
+  };
 
   const partnerCountryFlags: Record<string, string> = {
     China: "🇨🇳",
@@ -165,124 +206,199 @@ export function PartnersPage() {
             </div>
 
             {/* Proposal Submission Form */}
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                alert(ar ? "تم استلام مقترح الشراكة بنجاح! سيتواصل معك فريق تطوير الأعمال بالمجموعة." : "Your partnership proposal has been received! Our business development team will contact you shortly.");
-              }}
-              className="mt-10 space-y-5 rounded-2xl border border-border/80 bg-background/60 p-6 sm:p-8 backdrop-blur-xl"
-            >
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div>
-                  <label className="block text-xs font-bold text-foreground mb-1.5">
-                    {ar ? "اسم الشركة / الكيان المؤسسي *" : "Company / Entity Name *"}
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    placeholder={ar ? "مثال: شركة الحلول الصناعية" : "e.g. Industrial Solutions Corp."}
-                    className="w-full rounded-xl border border-border bg-background/90 px-3.5 py-2.5 text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand-green shadow-inner"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-bold text-foreground mb-1.5">
-                    {ar ? "الدولة والمقر الرئيسي *" : "Country & Headquarters *"}
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    placeholder={ar ? "مثال: مصر، السعودية، الصين، الإمارات..." : "e.g. Egypt, UAE, China, Germany..."}
-                    className="w-full rounded-xl border border-border bg-background/90 px-3.5 py-2.5 text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand-green shadow-inner"
-                  />
-                </div>
-              </div>
-
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div>
-                  <label className="block text-xs font-bold text-foreground mb-1.5">
-                    {ar ? "قطاع الشراكة المستهدف *" : "Target Partnership Sector *"}
-                  </label>
-                  <select
-                    required
-                    className="w-full rounded-xl border border-border bg-background/90 px-3.5 py-2.5 text-xs text-foreground focus:outline-none focus:ring-2 focus:ring-brand-green shadow-inner"
-                  >
-                    <option value="construction">{ar ? "المقاولات والتطوير العقاري" : "Construction & Real Estate"}</option>
-                    <option value="environmental">{ar ? "البيئة والاستدامة وإعادة التدوير" : "Environment & Sustainability"}</option>
-                    <option value="garment">{ar ? "تصنيع الملابس وتطوير الأزياء" : "Garment Manufacturing & Apparel"}</option>
-                    <option value="food">{ar ? "المنتجات الطبيعية والغذائية والتصدير" : "Natural & Agri-Food Products"}</option>
-                    <option value="group-alliances">{ar ? "تحالف استراتيجي عام على مستوى المجموعة" : "Group-Wide Strategic Alliance"}</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-xs font-bold text-foreground mb-1.5">
-                    {ar ? "الموقع الإلكتروني الرسمي للشركة" : "Official Website URL"}
-                  </label>
-                  <input
-                    type="url"
-                    placeholder="https://company.com"
-                    className="w-full rounded-xl border border-border bg-background/90 px-3.5 py-2.5 text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand-green shadow-inner"
-                  />
-                </div>
-              </div>
-
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div>
-                  <label className="block text-xs font-bold text-foreground mb-1.5">
-                    {ar ? "البريد الإلكتروني المهني للتواصل *" : "Official Contact Email *"}
-                  </label>
-                  <input
-                    type="email"
-                    required
-                    placeholder="partnerships@company.com"
-                    className="w-full rounded-xl border border-border bg-background/90 px-3.5 py-2.5 text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand-green shadow-inner"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-bold text-foreground mb-1.5">
-                    {ar ? "رقم الهاتف / واتساب مباشر *" : "Phone / Direct WhatsApp *"}
-                  </label>
-                  <input
-                    type="tel"
-                    required
-                    placeholder="+20 ..."
-                    className="w-full rounded-xl border border-border bg-background/90 px-3.5 py-2.5 text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand-green shadow-inner"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-xs font-bold text-foreground mb-1.5">
-                  {ar ? "ملخص مقترح الشراكة ونطاق التعاون *" : "Partnership Proposal & Scope of Cooperation *"}
-                </label>
-                <textarea
-                  required
-                  rows={4}
-                  placeholder={ar ? "صف بإيجاز طبيعة التعاون المقترح، القيمة المضافة لقطاعات المجموعة، والأسواق المستهدفة..." : "Briefly outline the proposed collaboration, value added to our sectors, and target geographic markets..."}
-                  className="w-full rounded-xl border border-border bg-background/90 p-3 text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand-green shadow-inner"
-                />
-              </div>
-
-              {/* Secure Attachment upload note */}
-              <div className="flex items-center gap-3 rounded-xl border border-dashed border-border/80 bg-secondary/30 p-3.5 text-xs text-muted-foreground">
-                <UploadCloud className="size-5 text-brand-orange shrink-0" />
-                <span>
+            {isSubmitted ? (
+              <div className="mt-10 rounded-3xl border border-brand-green/30 bg-brand-green/10 p-8 sm:p-10 text-center shadow-xl backdrop-blur-xl">
+                <CheckCircle2 className="mx-auto size-12 text-brand-green animate-bounce" />
+                <h3 className="mt-4 text-xl font-bold text-foreground">
+                  {ar ? "تم استلام مقترح الشراكة بنجاح!" : "Partnership Proposal Received!"}
+                </h3>
+                {submissionRef && (
+                  <div className="mt-3 inline-flex items-center gap-2 rounded-xl bg-background/80 px-4 py-1.5 border border-brand-green/30 text-xs font-mono font-bold text-foreground">
+                    <span>{ar ? `رقم الطلب المرجعي: ${submissionRef}` : `Reference: ${submissionRef}`}</span>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        navigator.clipboard.writeText(submissionRef);
+                        setCopiedRef(true);
+                        setTimeout(() => setCopiedRef(false), 2000);
+                      }}
+                      className="text-brand-orange hover:text-brand-orange/80"
+                      title={ar ? "نسخ المرجع" : "Copy"}
+                    >
+                      <Copy className="size-3.5" />
+                    </button>
+                    {copiedRef && <span className="text-[10px] text-brand-green">{ar ? "تم النسخ" : "Copied"}</span>}
+                  </div>
+                )}
+                <p className="mt-3 text-xs sm:text-sm text-muted-foreground leading-relaxed max-w-lg mx-auto">
                   {ar
-                    ? "يمكنك إرفاق الملف التعريفي للشركة لاحقًا عبر البريد الرسمي أو مراسلة فريقنا على info@sami-trade.com"
-                    : "Company profiles and NDA agreements can also be shared directly with our desk at info@sami-trade.com"}
-                </span>
+                    ? "شكرًا لاهتمامكم بالتعاون مع مجموعة سامي بن عياد. تم تسجيل ملفكم رسميًا وسيقوم فريق تطوير الأعمال والتحالفات الاستراتيجية بمراجعة المقترح والتواصل معكم خلال 48 ساعة عمل."
+                    : "Thank you for exploring partnership with Sami Bin Ayyad Group. Your proposal has been logged with our Business Development Office and an alliance officer will contact you within 48 business hours."}
+                </p>
+                <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+                  <a
+                    href={buildOwnerWhatsAppFollowupUrl(
+                      submissionRef,
+                      "partnership_application",
+                      partnerForm.companyName,
+                      partnerForm.country
+                    )}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full bg-brand-green px-5 py-2.5 text-xs font-bold text-white transition hover:bg-brand-orange shadow-md"
+                  >
+                    <MessageCircle className="size-4" />
+                    <span>{ar ? "متابعة فورية عبر الواتساب" : "Direct WhatsApp Follow-up"}</span>
+                  </a>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => setIsSubmitted(false)}
+                    className="rounded-full text-xs font-bold"
+                  >
+                    {ar ? "إرسال مقترح آخر" : "Submit Another Proposal"}
+                  </Button>
+                </div>
               </div>
+            ) : (
+              <form
+                onSubmit={handlePartnerSubmit}
+                className="mt-10 space-y-5 rounded-2xl border border-border/80 bg-background/60 p-6 sm:p-8 backdrop-blur-xl"
+              >
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div>
+                    <label className="block text-xs font-bold text-foreground mb-1.5">
+                      {ar ? "اسم الشركة / الكيان المؤسسي *" : "Company / Entity Name *"}
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      value={partnerForm.companyName}
+                      onChange={(e) => setPartnerForm({ ...partnerForm, companyName: e.target.value })}
+                      placeholder={ar ? "مثال: شركة الحلول الصناعية" : "e.g. Industrial Solutions Corp."}
+                      className="w-full rounded-xl border border-border bg-background/90 px-3.5 py-2.5 text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand-green shadow-inner"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold text-foreground mb-1.5">
+                      {ar ? "الدولة والمقر الرئيسي *" : "Country & Headquarters *"}
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      value={partnerForm.country}
+                      onChange={(e) => setPartnerForm({ ...partnerForm, country: e.target.value })}
+                      placeholder={ar ? "مثال: مصر، السعودية، الصين، الإمارات..." : "e.g. Egypt, UAE, China, Germany..."}
+                      className="w-full rounded-xl border border-border bg-background/90 px-3.5 py-2.5 text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand-green shadow-inner"
+                    />
+                  </div>
+                </div>
 
-              <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
-                <Button type="submit" size="lg" className="w-full sm:w-auto rounded-full bg-brand-green text-white hover:bg-brand-orange font-bold text-xs sm:text-sm px-8 py-3 shadow-md transition-all cursor-pointer">
-                  <Send className="size-4 me-2" />
-                  <span>{ar ? "إرسال مقترح الشراكة رسميًا" : "Submit Formal Proposal"}</span>
-                </Button>
-                <span className="text-[11px] text-muted-foreground flex items-center gap-1.5">
-                  <ShieldCheck className="size-3.5 text-brand-green" />
-                  {ar ? "تخضع جميع الطلبات لسياسة السرية المهنية" : "All submissions are bound by corporate NDA ethics"}
-                </span>
-              </div>
-            </form>
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div>
+                    <label className="block text-xs font-bold text-foreground mb-1.5">
+                      {ar ? "قطاع الشراكة المستهدف *" : "Target Partnership Sector *"}
+                    </label>
+                    <select
+                      required
+                      value={partnerForm.sector}
+                      onChange={(e) => setPartnerForm({ ...partnerForm, sector: e.target.value })}
+                      className="w-full rounded-xl border border-border bg-background/90 px-3.5 py-2.5 text-xs text-foreground focus:outline-none focus:ring-2 focus:ring-brand-green shadow-inner"
+                    >
+                      <option value="construction">{ar ? "المقاولات والتطوير العقاري" : "Construction & Real Estate"}</option>
+                      <option value="environmental">{ar ? "البيئة والاستدامة وإعادة التدوير" : "Environment & Sustainability"}</option>
+                      <option value="garment">{ar ? "تصنيع الملابس وتطوير الأزياء" : "Garment Manufacturing & Apparel"}</option>
+                      <option value="food">{ar ? "المنتجات الطبيعية والغذائية والتصدير" : "Natural & Agri-Food Products"}</option>
+                      <option value="group-alliances">{ar ? "تحالف استراتيجي عام على مستوى المجموعة" : "Group-Wide Strategic Alliance"}</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold text-foreground mb-1.5">
+                      {ar ? "الموقع الإلكتروني الرسمي للشركة" : "Official Website URL"}
+                    </label>
+                    <input
+                      type="url"
+                      value={partnerForm.website}
+                      onChange={(e) => setPartnerForm({ ...partnerForm, website: e.target.value })}
+                      placeholder="https://company.com"
+                      className="w-full rounded-xl border border-border bg-background/90 px-3.5 py-2.5 text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand-green shadow-inner"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div>
+                    <label className="block text-xs font-bold text-foreground mb-1.5">
+                      {ar ? "البريد الإلكتروني المهني للتواصل *" : "Official Contact Email *"}
+                    </label>
+                    <input
+                      type="email"
+                      required
+                      value={partnerForm.email}
+                      onChange={(e) => setPartnerForm({ ...partnerForm, email: e.target.value })}
+                      placeholder="partnerships@company.com"
+                      className="w-full rounded-xl border border-border bg-background/90 px-3.5 py-2.5 text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand-green shadow-inner"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold text-foreground mb-1.5">
+                      {ar ? "رقم الهاتف / واتساب مباشر *" : "Phone / Direct WhatsApp *"}
+                    </label>
+                    <input
+                      type="tel"
+                      required
+                      value={partnerForm.phone}
+                      onChange={(e) => setPartnerForm({ ...partnerForm, phone: e.target.value })}
+                      placeholder="+20 ..."
+                      className="w-full rounded-xl border border-border bg-background/90 px-3.5 py-2.5 text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand-green shadow-inner"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold text-foreground mb-1.5">
+                    {ar ? "ملخص مقترح الشراكة ونطاق التعاون *" : "Partnership Proposal & Scope of Cooperation *"}
+                  </label>
+                  <textarea
+                    required
+                    rows={4}
+                    value={partnerForm.proposal}
+                    onChange={(e) => setPartnerForm({ ...partnerForm, proposal: e.target.value })}
+                    placeholder={ar ? "صف بإيجاز طبيعة التعاون المقترح، القيمة المضافة لقطاعات المجموعة، والأسواق المستهدفة..." : "Briefly outline the proposed collaboration, value added to our sectors, and target geographic markets..."}
+                    className="w-full rounded-xl border border-border bg-background/90 p-3 text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand-green shadow-inner"
+                  />
+                </div>
+
+                {/* Secure Attachment upload note */}
+                <div className="flex items-center gap-3 rounded-xl border border-dashed border-border/80 bg-secondary/30 p-3.5 text-xs text-muted-foreground">
+                  <UploadCloud className="size-5 text-brand-orange shrink-0" />
+                  <span>
+                    {ar
+                      ? "يمكنك إرفاق الملف التعريفي للشركة لاحقًا عبر البريد الرسمي أو مراسلة فريقنا على info@sami-trade.com"
+                      : "Company profiles and NDA agreements can also be shared directly with our desk at info@sami-trade.com"}
+                  </span>
+                </div>
+
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
+                  <Button
+                    type="submit"
+                    disabled={isSubmitting}
+                    size="lg"
+                    className="w-full sm:w-auto rounded-full bg-brand-green text-white hover:bg-brand-orange font-bold text-xs sm:text-sm px-8 py-3 shadow-md transition-all cursor-pointer"
+                  >
+                    <Send className="size-4 me-2" />
+                    <span>{isSubmitting ? (ar ? "جاري الإرسال..." : "Submitting...") : (ar ? "إرسال مقترح الشراكة رسميًا" : "Submit Formal Proposal")}</span>
+                  </Button>
+                </div>
+              </form>
+            )}
+
+            <div className="mt-6 flex items-center justify-center">
+              <span className="text-[11px] text-muted-foreground flex items-center gap-1.5">
+                <ShieldCheck className="size-3.5 text-brand-green" />
+                {ar ? "تخضع جميع الطلبات لسياسة السرية المهنية" : "All submissions are bound by corporate NDA ethics"}
+              </span>
+            </div>
           </Reveal>
         </div>
       </section>

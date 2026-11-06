@@ -8,6 +8,7 @@ import {
   Calendar,
   CheckCircle2,
   ChevronRight,
+  Copy,
   Download,
   FileCheck,
   FileText,
@@ -35,6 +36,7 @@ import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/i18n/language-context";
 import { CONTACT_EMAIL, WHATSAPP_URL } from "@/lib/process-steps";
 import { cn } from "@/lib/utils";
+import { submitCentralForm, buildOwnerWhatsAppFollowupUrl } from "@/lib/central-form-dispatch";
 import {
   investmentOverviewData,
   investmentModels,
@@ -62,6 +64,9 @@ export function InvestorRelationsPage() {
     ndaAgreed: true,
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submissionRef, setSubmissionRef] = useState<string>("");
+  const [copiedRef, setCopiedRef] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleDownloadDoc = (doc: InvestorDocument) => {
     const docMap: Record<string, string> = {
@@ -81,25 +86,31 @@ export function InvestorRelationsPage() {
     document.body.removeChild(a);
   };
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
+
+    const submission = await submitCentralForm({
+      formType: "investor_interest",
+      name: inquiryForm.investorName,
+      company: inquiryForm.organization,
+      email: inquiryForm.email,
+      phone: inquiryForm.phone,
+      country: inquiryForm.country,
+      sector: inquiryForm.preferredSector,
+      serviceOrProduct: selectedOpportunity || inquiryForm.investmentType,
+      message: `[Investor Dialogue Request]\n\nTarget Opportunity: ${selectedOpportunity || "General Strategic Co-Investment"}\nStructure: ${inquiryForm.investmentType}\nTarget Sector: ${inquiryForm.preferredSector}\nTimeframe: ${inquiryForm.timeframe}\nNDA Agreed: ${inquiryForm.ndaAgreed ? "Yes" : "No"}\n\nNotes:\n${inquiryForm.notes}`,
+      metadata: {
+        opportunity: selectedOpportunity,
+        investmentType: inquiryForm.investmentType,
+        timeframe: inquiryForm.timeframe,
+        ndaAgreed: inquiryForm.ndaAgreed,
+      },
+    });
+
+    setSubmissionRef(submission.referenceCode);
     setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setInquiryForm({
-        investorName: "",
-        organization: "",
-        country: "",
-        email: "",
-        phone: "",
-        preferredSector: "all",
-        investmentType: "jv",
-        timeframe: "3-6-months",
-        notes: "",
-        ndaAgreed: true,
-      });
-      setSelectedOpportunity("");
-    }, 4500);
+    setIsSubmitting(false);
   };
 
   const getWhatsappMeetingUrl = () => {
@@ -458,16 +469,58 @@ export function InvestorRelationsPage() {
           </Reveal>
 
           {isSubmitted ? (
-            <div className="max-w-xl mx-auto rounded-3xl bg-brand-green/10 border border-brand-green/30 p-10 text-center">
+            <div className="max-w-xl mx-auto rounded-3xl bg-brand-green/10 border border-brand-green/30 p-10 text-center shadow-xl backdrop-blur-xl">
               <CheckCircle2 className="mx-auto size-14 text-brand-green animate-bounce" />
               <h3 className="mt-4 text-xl font-bold text-foreground">
                 {ar ? "تم استلام استفساركم الاستثماري بنجاح" : "Institutional Inquiry Received"}
               </h3>
-              <p className="mt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed">
+              {submissionRef && (
+                <div className="mt-3 inline-flex items-center gap-2 rounded-xl bg-background/80 px-4 py-1.5 border border-brand-green/30 text-xs font-mono font-bold text-foreground">
+                  <span>{ar ? `رقم المرجع الاستثماري: ${submissionRef}` : `IR Reference: ${submissionRef}`}</span>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      navigator.clipboard.writeText(submissionRef);
+                      setCopiedRef(true);
+                      setTimeout(() => setCopiedRef(false), 2000);
+                    }}
+                    className="text-brand-orange hover:text-brand-orange/80"
+                    title={ar ? "نسخ المرجع" : "Copy"}
+                  >
+                    <Copy className="size-3.5" />
+                  </button>
+                  {copiedRef && <span className="text-[10px] text-brand-green">{ar ? "تم النسخ" : "Copied"}</span>}
+                </div>
+              )}
+              <p className="mt-3 text-xs sm:text-sm text-muted-foreground leading-relaxed">
                 {ar
                   ? "شكرًا لتواصلكم. تم توجيه طلبكم مباشرة إلى مكتب الرئيس التنفيذي وإدارة الاستراتيجية، وسيتواصل معكم فريق علاقات المستثمرين لتحديد موعد الاجتماع خلال يومي عمل."
                   : "Thank you for your interest. Your inquiry has been routed to the Executive Office & Corporate Strategy Team. Our IR representative will follow up within two business days to schedule the discussion."}
               </p>
+              <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+                <a
+                  href={buildOwnerWhatsAppFollowupUrl(
+                    submissionRef,
+                    "investor_interest",
+                    inquiryForm.investorName,
+                    inquiryForm.organization
+                  )}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full bg-brand-green px-5 py-2.5 text-xs font-bold text-white transition hover:bg-brand-orange shadow-md"
+                >
+                  <MessageCircle className="size-4" />
+                  <span>{ar ? "متابعة مباشرة عبر الواتساب" : "Direct WhatsApp Follow-up"}</span>
+                </a>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setIsSubmitted(false)}
+                  className="rounded-full text-xs font-bold"
+                >
+                  {ar ? "إرسال استفسار إضافي" : "Submit Another Inquiry"}
+                </Button>
+              </div>
             </div>
           ) : (
             <form onSubmit={handleFormSubmit} className="max-w-3xl mx-auto space-y-4">

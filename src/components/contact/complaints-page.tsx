@@ -32,6 +32,7 @@ import {
   COMPLAINT_CATEGORIES_MAP,
   COMPLAINT_STATUSES_MAP,
 } from "@/lib/contact-portal-system";
+import { submitCentralForm } from "@/lib/central-form-dispatch";
 
 export function ComplaintsPage() {
   const { language } = useLanguage();
@@ -108,6 +109,27 @@ export function ComplaintsPage() {
     if (!validate()) return;
 
     setIsSubmitting(true);
+
+    submitCentralForm({
+      formType: "complaint",
+      name: fullName,
+      company: company || undefined,
+      email,
+      phone,
+      country,
+      sector: sector || undefined,
+      serviceOrProduct: subject,
+      message: `[Complaint Category: ${category}] | [Priority: ${priority}]\n[Relationship: ${relationship}]\n[Subsidiary: ${subsidiary || "N/A"}] | [Department: ${department || "N/A"}]\n[Date: ${incidentDate || "N/A"}] | [Location: ${incidentLocation || "N/A"}]\n[Existing Ref: ${referenceNumber || "N/A"}]\n\n[Description]:\n${description}\n\n[Desired Resolution]:\n${desiredResolution || "Standard Review"}`,
+      metadata: {
+        category,
+        priority,
+        relationship,
+        subsidiary,
+        department,
+        attachments: attachments.map((a) => a.name),
+      },
+    }).catch(console.error);
+
     setTimeout(() => {
       const created = contactPortalSystem.submitComplaint({
         category,

@@ -10,6 +10,7 @@ import { WHATSAPP_URL } from "@/lib/process-steps";
 import { cn } from "@/lib/utils";
 import { highlightBrand } from "@/components/site/brand-text";
 import { SectorContactSection } from "@/components/site/sector-contact-section";
+import { submitCentralForm } from "@/lib/central-form-dispatch";
 import {
   constructionAboutData,
   constructionHeroData,
@@ -633,7 +634,7 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
           <Reveal>
             <div className="max-w-3xl mx-auto">
               <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-3">
-                <Sparkles className="size-3.5 text-brand-orange" />
+                <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
                 <span>{ar ? "ابدأ دراسة وتنفيذ مشروعك" : "Start Your Construction Project"}</span>
               </div>
               <h2 className="text-2xl sm:text-4xl font-extrabold font-head text-foreground">
@@ -1305,6 +1306,29 @@ function ConstructionStartProjectView({ ar }: { ar: boolean }) {
 
   const handleSubmit = () => {
     const ref = "CP-" + Date.now().toString(36).toUpperCase();
+
+    submitCentralForm({
+      formType: "construction_proposal",
+      name: form.contact,
+      company: form.company || undefined,
+      email: form.email,
+      phone: form.phone,
+      country: form.country,
+      sector: "construction",
+      serviceOrProduct: form.projectName || form.projectType,
+      message: `[Construction Project Brief]\n\nProject Name: ${form.projectName}\nProject Type: ${form.projectType}\nLocation: ${form.projectLocation}\nServices: ${form.services.join(", ")}\nContract Type: ${form.contractType}\nBudget: ${form.budget} ${form.currency}\nTimeline: ${form.startDate} to ${form.endDate}\nJob Title: ${form.title}\nWebsite: ${form.website}\n\nScope Notes:\n${form.scopeNotes}`,
+      metadata: {
+        projectType: form.projectType,
+        projectLocation: form.projectLocation,
+        services: form.services,
+        budget: form.budget,
+        currency: form.currency,
+        startDate: form.startDate,
+        endDate: form.endDate,
+        contractType: form.contractType,
+      },
+    }).catch(console.error);
+
     setForm((p) => ({ ...p, submitted: true, refNum: ref }));
   };
 

@@ -431,15 +431,14 @@ export function ModelsPage() {
                   </p>
 
                   <Button
+                    asChild
                     size="sm"
-                    variant="outline"
-                    className="w-full h-7 text-[10px] font-bold rounded-xl border-brand-green/30 bg-brand-green/5 text-brand-green-text hover:bg-brand-green hover:text-white transition-all py-0 px-2"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setActiveItem(item);
-                    }}
+                    className="w-full h-7 text-[10px] font-bold rounded-xl bg-brand-green text-white hover:bg-brand-orange transition-all py-0 px-2 shadow-sm"
+                    onClick={(e) => e.stopPropagation()}
                   >
-                    {ar ? "اطلب هذا التصميم" : "Order Design"}
+                    <Link to="/models/$code" params={{ code: item.code }}>
+                      {ar ? "اطلب هذا التصميم" : "Order Design"}
+                    </Link>
                   </Button>
                 </div>
               </div>
@@ -565,9 +564,8 @@ export function ModelsPage() {
                   className="flex-1 rounded-full bg-brand-green hover:bg-brand-orange text-white font-head font-bold shadow-md transition-all duration-300"
                 >
                   <Link
-                    to="/sectors/$sector"
-                    params={{ sector: "garment" }}
-                    search={{ tab: "start-project" }}
+                    to="/models/$code"
+                    params={{ code: activeItem.code }}
                     onClick={() => setActiveItem(null)}
                   >
                     <Send className="size-4 me-2" />

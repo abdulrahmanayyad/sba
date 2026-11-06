@@ -29,7 +29,7 @@ export function TradeWorldMap({ ar = true, onSelectCountry }: TradeWorldMapProps
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [activeCountry, setActiveCountry] = useState<CountryTradeProfile | null>(
-    COUNTRY_PROFILES[0] || null
+    () => COUNTRY_PROFILES.find((c) => c.code === "SAU") || COUNTRY_PROFILES[0] || null
   );
 
   const continents = useMemo(() => [
@@ -427,11 +427,11 @@ export function TradeWorldMap({ ar = true, onSelectCountry }: TradeWorldMapProps
               </div>
 
               {/* Action Button */}
-              <div className="mt-6 pt-3 border-t border-white/10">
+              <div className="mt-6 pt-3 border-t border-border/40">
                 <a
                   href="#market-directory"
                   onClick={() => handleCountryClick(activeCountry)}
-                  className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-700 px-4 py-2.5 text-xs font-bold text-white shadow-md transition-all hover:from-emerald-500 hover:to-teal-600 hover:shadow-emerald-900/30 active:scale-95"
+                  className="flex w-full items-center justify-center gap-2 rounded-full bg-brand-green px-4 py-2.5 text-xs font-bold text-white shadow-md transition-all hover:bg-brand-orange hover:-translate-y-0.5 active:scale-95"
                 >
                   <span>{ar ? "عرض الملف التجاري الكامل للدولة" : "View Full Country Profile"}</span>
                   <ChevronRight className="size-4 rtl:rotate-180" />

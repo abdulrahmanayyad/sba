@@ -32,6 +32,7 @@ import {
   OPPORTUNITY_TYPES_MAP,
   OPPORTUNITY_STAGES_MAP,
 } from "@/lib/contact-portal-system";
+import { submitCentralForm } from "@/lib/central-form-dispatch";
 
 export function SubmitOpportunityPage() {
   const { language } = useLanguage();
@@ -165,6 +166,29 @@ export function SubmitOpportunityPage() {
     if (!validateStep(6)) return;
 
     setIsSubmitting(true);
+
+    submitCentralForm({
+      formType: "opportunity_proposal",
+      name: fullName,
+      company: company || undefined,
+      email,
+      phone,
+      country: `${country}${city ? ` · ${city}` : ""}`,
+      sector,
+      serviceOrProduct: projectName,
+      message: `[Opportunity: ${projectName}]\n[Type: ${opportunityType}] | [Stage: ${stage}]\n[Location: ${projectCountry || "N/A"}${projectCity ? `, ${projectCity}` : ""}]\n[Estimated Value: ${estimatedValue || "N/A"} ${currency}]\n[Required Investment: ${requiredInvestment || "N/A"} ${currency}]\n[Structure: ${investmentStructure || "N/A"}] | [Revenue Model: ${revenueModel || "N/A"}]\n[Duration: ${projectDuration || "N/A"}] | [Share: ${partnershipShare || "N/A"}]\n[Requirements: ${selectedRequirements.join(", ")}]\n\nDescription:\n${description}`,
+      metadata: {
+        opportunityType,
+        stage,
+        projectName,
+        estimatedValue,
+        requiredInvestment,
+        currency,
+        selectedRequirements,
+        attachments: attachments.map((a) => a.name),
+      },
+    }).catch(console.error);
+
     setTimeout(() => {
       const created = contactPortalSystem.submitOpportunity({
         type: opportunityType,
@@ -229,7 +253,7 @@ export function SubmitOpportunityPage() {
       <section className="relative overflow-hidden py-16 sm:py-20 bg-gradient-to-b from-secondary/40 via-background to-background">
         <div className="site-container relative z-10 text-center max-w-4xl mx-auto">
           <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-4 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-4 shadow-sm">
-            <Sparkles className="size-3.5 text-brand-orange animate-pulse" />
+            <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
             <span className="!text-black font-head">{ar ? "بوابة الاستثمار وتطوير الأعمال" : "Strategic Co-Development Portal"}</span>
           </div>
 
@@ -813,10 +837,7 @@ export function SubmitOpportunityPage() {
                   {isSubmitting ? (
                     <span>{ar ? "جاري تسجيل الفرصة..." : "Submitting Opportunity..."}</span>
                   ) : (
-                    <span className="flex items-center gap-2">
-                      <Sparkles className="size-4" />
-                      <span>{ar ? "تقديم الفرصة" : "Present Your Opportunity"}</span>
-                    </span>
+                    <span>{ar ? "تقديم الفرصة" : "Present Your Opportunity"}</span>
                   )}
                 </Button>
               )}

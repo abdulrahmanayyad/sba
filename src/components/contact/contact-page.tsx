@@ -31,6 +31,7 @@ import {
   type ContactInquiryType,
   INQUIRY_TYPES_MAP,
 } from "@/lib/contact-portal-system";
+import { submitCentralForm } from "@/lib/central-form-dispatch";
 import { WHATSAPP_URL } from "@/lib/process-steps";
 
 export function ContactPage() {
@@ -91,6 +92,26 @@ export function ContactPage() {
     if (!validate()) return;
 
     setIsSubmitting(true);
+
+    submitCentralForm({
+      formType: "general_contact",
+      name: fullName,
+      company: company || undefined,
+      email,
+      phone,
+      country: `${country}${city ? ` · ${city}` : ""}`,
+      sector: sector || undefined,
+      serviceOrProduct: subject,
+      message: `[Inquiry Type: ${inquiryType}]\n[Subject: ${subject}]\n[Job Title: ${jobTitle || "N/A"}]\n[Budget: ${expectedBudget || "N/A"}]\n[Timeline: ${expectedTimeline || "N/A"}]\n[Contact Preference: ${preferredContact}]\n\n${message}`,
+      metadata: {
+        inquiryType,
+        subject,
+        expectedBudget,
+        expectedTimeline,
+        attachments: attachments.map((a) => a.name),
+      },
+    }).catch(console.error);
+
     setTimeout(() => {
       const created = contactPortalSystem.submitInquiry({
         type: inquiryType,
