@@ -32,7 +32,7 @@ export function HomeTradeSection({ ar = true }: HomeTradeSectionProps) {
             </div>
 
             <div className="space-y-3">
-              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight text-foreground leading-tight">
+              <h2 className="font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-foreground leading-tight">
                 {ar ? "نربط الأسواق ونصنع الفرص التجارية" : "Connecting Markets. Delivering Opportunities."}
               </h2>
               <p className="text-sm sm:text-base text-muted-foreground leading-relaxed font-medium">
