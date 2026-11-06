@@ -24,6 +24,7 @@ import { Route as NewsRouteImport } from './routes/news'
 import { Route as PartnersRouteImport } from './routes/partners'
 import { Route as ProductsRouteImport } from './routes/products'
 import { Route as SectorsRouteImport } from './routes/sectors'
+import { Route as ServicesRouteImport } from './routes/services'
 import { Route as SubmitOpportunityRouteImport } from './routes/submit-opportunity'
 import { Route as TradeRouteImport } from './routes/trade'
 import { Route as AdminInquiriesRouteImport } from './routes/admin.inquiries'
@@ -115,6 +116,11 @@ const ProductsRoute = ProductsRouteImport.update({
 const SectorsRoute = SectorsRouteImport.update({
   id: '/sectors',
   path: '/sectors',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SubmitOpportunityRoute = SubmitOpportunityRouteImport.update({
@@ -219,6 +225,7 @@ export interface FileRoutesByFullPath {
   '/partners': typeof PartnersRoute
   '/products': typeof ProductsRoute
   '/sectors': typeof SectorsRouteWithChildren
+  '/services': typeof ServicesRoute
   '/submit-opportunity': typeof SubmitOpportunityRoute
   '/trade': typeof TradeRoute
   '/admin/inquiries': typeof AdminInquiriesRoute
@@ -248,6 +255,7 @@ export interface FileRoutesByTo {
   '/investor-relations': typeof InvestorRelationsRoute
   '/partners': typeof PartnersRoute
   '/products': typeof ProductsRoute
+  '/services': typeof ServicesRoute
   '/submit-opportunity': typeof SubmitOpportunityRoute
   '/trade': typeof TradeRoute
   '/admin/inquiries': typeof AdminInquiriesRoute
@@ -283,6 +291,7 @@ export interface FileRoutesById {
   '/partners': typeof PartnersRoute
   '/products': typeof ProductsRoute
   '/sectors': typeof SectorsRouteWithChildren
+  '/services': typeof ServicesRoute
   '/submit-opportunity': typeof SubmitOpportunityRoute
   '/trade': typeof TradeRoute
   '/admin/inquiries': typeof AdminInquiriesRoute
@@ -319,6 +328,7 @@ export interface FileRouteTypes {
     | '/partners'
     | '/products'
     | '/sectors'
+    | '/services'
     | '/submit-opportunity'
     | '/trade'
     | '/admin/inquiries'
@@ -348,6 +358,7 @@ export interface FileRouteTypes {
     | '/investor-relations'
     | '/partners'
     | '/products'
+    | '/services'
     | '/submit-opportunity'
     | '/trade'
     | '/admin/inquiries'
@@ -382,6 +393,7 @@ export interface FileRouteTypes {
     | '/partners'
     | '/products'
     | '/sectors'
+    | '/services'
     | '/submit-opportunity'
     | '/trade'
     | '/admin/inquiries'
@@ -417,6 +429,7 @@ export interface RootRouteChildren {
   PartnersRoute: typeof PartnersRoute
   ProductsRoute: typeof ProductsRoute
   SectorsRoute: typeof SectorsRouteWithChildren
+  ServicesRoute: typeof ServicesRoute
   SubmitOpportunityRoute: typeof SubmitOpportunityRoute
   TradeRoute: typeof TradeRoute
   AdminInquiriesRoute: typeof AdminInquiriesRoute
@@ -527,6 +540,13 @@ declare module '@tanstack/react-router' {
       path: '/sectors'
       fullPath: '/sectors'
       preLoaderRoute: typeof SectorsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/submit-opportunity': {
@@ -738,6 +758,7 @@ const rootRouteChildren: RootRouteChildren = {
   PartnersRoute: PartnersRoute,
   ProductsRoute: ProductsRoute,
   SectorsRoute: SectorsRouteWithChildren,
+  ServicesRoute: ServicesRoute,
   SubmitOpportunityRoute: SubmitOpportunityRoute,
   TradeRoute: TradeRoute,
   AdminInquiriesRoute: AdminInquiriesRoute,
