@@ -195,20 +195,15 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
 
   const t = (v: { en: string; ar: string }) => (ar ? v.ar : v.en);
 
-  const card = "group/card relative rounded-3xl border border-white/40 bg-white/70 dark:bg-slate-900/60 p-6 md:p-8 backdrop-blur-2xl shadow-[0_12px_40px_rgba(0,0,0,0.06)] ring-1 ring-white/30 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.015] hover:bg-white/90 dark:hover:bg-slate-900/80 hover:shadow-[0_24px_60px_rgba(0,0,0,0.14)] hover:border-brand-orange/50 active:translate-y-0 cursor-pointer";
+  const card = "group/card relative rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-6 md:p-8 backdrop-blur-2xl shadow-[0_12px_40px_rgba(0,0,0,0.04)] ring-1 ring-white/30 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.015] hover:bg-white/60 dark:hover:bg-white/20 hover:shadow-[0_24px_60px_rgba(0,0,0,0.08)] hover:border-brand-orange/50 active:translate-y-0 cursor-pointer";
 
   const activeCountry = (hoveredCountry ? partnerCountries.find((c) => c.nameEn === hoveredCountry) ?? null : null) ?? selectedCountry ?? partnerCountries[0];
 
   return (
     <section id="business-numbers" aria-labelledby="dash-heading" className="relative py-16 scroll-mt-24 overflow-hidden">
-      {/* Dynamic Glassmorphic Ambient Background Lighting */}
-      <div className="pointer-events-none absolute inset-0 bg-radial-gradient from-brand-orange/5 via-brand-green/5 to-transparent blur-3xl opacity-70" />
-      <div className="pointer-events-none absolute -top-40 start-1/4 size-[500px] rounded-full bg-brand-orange/10 blur-[120px]" />
-      <div className="pointer-events-none absolute -bottom-40 end-1/4 size-[500px] rounded-full bg-brand-green/10 blur-[120px]" />
-
       <div className="site-container relative z-10">
         <Reveal>
-          <div className="group relative mx-auto mb-10 overflow-hidden rounded-3xl border border-white/40 bg-white/75 dark:bg-slate-900/70 p-8 sm:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.08)] backdrop-blur-3xl ring-1 ring-white/30 transition-all duration-500 hover:-translate-y-1.5 hover:scale-[1.01] hover:bg-white/90 dark:hover:bg-slate-900/85 hover:shadow-[0_30px_70px_rgba(0,0,0,0.16)] hover:border-brand-orange/50 text-start">
+          <div className="group relative mx-auto mb-10 overflow-hidden rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-8 sm:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.05)] backdrop-blur-3xl ring-1 ring-white/30 transition-all duration-500 hover:-translate-y-1.5 hover:scale-[1.01] hover:bg-white/60 dark:hover:bg-white/20 hover:shadow-[0_25px_60px_rgba(0,0,0,0.1)] hover:border-brand-orange/50 text-start">
             <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-4 py-1.5 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-3 shadow-xs">
               <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
               <span className="font-bold text-brand-green">{ar ? "أداء المجموعة ورؤى الأعمال" : "Group Performance & Business Insights"}</span>

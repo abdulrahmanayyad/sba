@@ -134,7 +134,7 @@ export function SectorsShowcase({ ar }: { ar: boolean }) {
       aria-label={ar ? "نظرة عامة على القطاعات" : "Sectors Overview"}
       className="relative px-4 py-12 text-foreground"
     >
-      <div className="mx-auto max-w-6xl overflow-hidden rounded-3xl border border-white/40 bg-white/75 dark:bg-slate-900/70 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.08)] backdrop-blur-3xl ring-1 ring-white/30 transition-all duration-500 hover:-translate-y-1 hover:scale-[1.005] hover:bg-white/90 dark:hover:bg-slate-900/85 hover:border-brand-orange/40 hover:shadow-[0_25px_65px_rgba(0,0,0,0.14)]">
+      <div className="mx-auto max-w-6xl overflow-hidden rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.05)] backdrop-blur-3xl ring-1 ring-white/30 transition-all duration-500 hover:-translate-y-1 hover:scale-[1.005] hover:bg-white/60 dark:hover:bg-white/20 hover:border-brand-orange/40 hover:shadow-[0_24px_60px_rgba(0,0,0,0.1)]">
         <div className="grid gap-10 lg:grid-cols-[minmax(280px,360px)_1fr] lg:gap-16">
 
           {/* ── LEFT: Tab Navigation + CTA ── */}
