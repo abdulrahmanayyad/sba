@@ -33,9 +33,9 @@ export function GroupPage() {
         <div className="group-hero-overlay absolute inset-0 bg-black/60 backdrop-blur-[1px]" />
         <div className="site-container relative flex min-h-[inherit] flex-col justify-center py-14 sm:py-20 z-10">
           <div>
-            <div data-hero-reveal className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-sm">
+            <div data-hero-reveal className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/60 bg-white/90 px-4 py-1.5 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-sm">
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-              <span className="font-bold text-brand-green">{ar ? "مجموعة سامي بن عياد" : "SAMI BIN AYYAD GROUP"}</span>
+              <span className="font-bold text-black font-head">{ar ? "مجموعة سامي بن عياد - الصفحة الرئيسية" : "SAMI BIN AYYAD GROUP - Homepage"}</span>
             </div>
             <h1 data-hero-reveal className="mt-4 max-w-4xl font-head text-[clamp(1.85rem,3.5vw,3rem)] font-extrabold leading-tight text-white drop-shadow-md">
               {ar ? messages.hero.titleAr : messages.hero.title}
