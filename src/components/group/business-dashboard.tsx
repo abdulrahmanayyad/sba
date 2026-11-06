@@ -195,7 +195,7 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
 
   const t = (v: { en: string; ar: string }) => (ar ? v.ar : v.en);
 
-  const card = "rounded-3xl border border-white/30 bg-background/60 p-6 md:p-8 backdrop-blur-2xl shadow-[0_12px_40px_rgba(0,0,0,0.06)] ring-1 ring-white/20 transition-all duration-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.12)] hover:border-brand-orange/40";
+  const card = "group/card relative rounded-3xl border border-white/40 bg-white/70 dark:bg-slate-900/60 p-6 md:p-8 backdrop-blur-2xl shadow-[0_12px_40px_rgba(0,0,0,0.06)] ring-1 ring-white/30 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.015] hover:bg-white/90 dark:hover:bg-slate-900/80 hover:shadow-[0_24px_60px_rgba(0,0,0,0.14)] hover:border-brand-orange/50 active:translate-y-0 cursor-pointer";
 
   const activeCountry = (hoveredCountry ? partnerCountries.find((c) => c.nameEn === hoveredCountry) ?? null : null) ?? selectedCountry ?? partnerCountries[0];
 
@@ -207,21 +207,23 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
       <div className="pointer-events-none absolute -bottom-40 end-1/4 size-[500px] rounded-full bg-brand-green/10 blur-[120px]" />
 
       <div className="site-container relative z-10">
-        <Reveal className="max-w-3xl">
-          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-4 py-1.5 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-3 shadow-xs">
-            <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-            <span className="font-bold text-brand-green">{ar ? "أداء المجموعة ورؤى الأعمال" : "Group Performance & Business Insights"}</span>
+        <Reveal>
+          <div className="group relative mx-auto mb-10 overflow-hidden rounded-3xl border border-white/40 bg-white/75 dark:bg-slate-900/70 p-8 sm:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.08)] backdrop-blur-3xl ring-1 ring-white/30 transition-all duration-500 hover:-translate-y-1.5 hover:scale-[1.01] hover:bg-white/90 dark:hover:bg-slate-900/85 hover:shadow-[0_30px_70px_rgba(0,0,0,0.16)] hover:border-brand-orange/50 text-start">
+            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-4 py-1.5 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-3 shadow-xs">
+              <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
+              <span className="font-bold text-brand-green">{ar ? "أداء المجموعة ورؤى الأعمال" : "Group Performance & Business Insights"}</span>
+            </div>
+            <h2 id="dash-heading" className="section-title text-start">
+              {ar ? "أعمالنا في أرقام" : "Our Business in Numbers"}
+            </h2>
+            <p className="section-intro mt-4 text-start max-w-3xl">
+              {ar ? (
+                <span>تعرّف على حجم عملياتنا المتكاملة، والمشروعات الموثقة التي ننفذها، والأسواق التي نخدمها عبر قطاعات <span className="text-brand-orange font-bold">مجموعة سامي بن عياد</span>.</span>
+              ) : (
+                <span>Explore the scale of our integrated operations, documented projects delivered, and markets served across <span className="text-brand-orange font-bold">SAMI BIN AYYAD GROUP</span>.</span>
+              )}
+            </p>
           </div>
-          <h2 id="dash-heading" className="section-title">
-            {ar ? "أعمالنا في أرقام" : "Our Business in Numbers"}
-          </h2>
-          <p className="section-intro mt-4">
-            {ar ? (
-              <span>تعرّف على حجم عملياتنا المتكاملة، والمشروعات الموثقة التي ننفذها، والأسواق التي نخدمها عبر قطاعات <span className="text-brand-orange">مجموعة سامي بن عياد</span>.</span>
-            ) : (
-              <span>Explore the scale of our integrated operations, documented projects delivered, and markets served across <span className="text-brand-orange">SAMI BIN AYYAD GROUP</span>.</span>
-            )}
-          </p>
         </Reveal>
 
         {/* Aggregated Group Statistics Grid */}
