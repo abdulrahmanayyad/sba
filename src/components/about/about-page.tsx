@@ -180,7 +180,7 @@ export function AboutPage() {
 
       {/* 2.5 Corporate Structure & Architecture Diagram */}
       <section id="structure" className="site-container py-12 scroll-mt-24">
-        <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-8 sm:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
+        <div className="overflow-hidden rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-8 sm:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.05)] backdrop-blur-3xl ring-1 ring-white/30">
           <Reveal className="mx-auto max-w-3xl text-center">
             <SectionBadge title={ar ? "الهيكل المؤسسي والحوكمة" : "Corporate Structure & Architecture"} />
             <h2 className="section-title mt-3 text-center mx-auto text-xl sm:text-2xl lg:text-3xl">
@@ -197,10 +197,10 @@ export function AboutPage() {
           <Reveal delay={0.15}>
             <div className="mt-12 max-w-6xl mx-auto">
               {/* Parent Holding Node — Glassmorphic, Larger & Prominent */}
-              <div className="group relative mx-auto max-w-2xl rounded-3xl border border-white/40 bg-background/85 p-8 sm:p-10 text-center shadow-[0_20px_50px_rgba(0,0,0,0.12)] backdrop-blur-2xl transition-all duration-300 hover:scale-[1.01] hover:border-brand-orange hover:shadow-[0_25px_60px_rgba(0,0,0,0.18)] ring-1 ring-white/30">
-                <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-4 py-1.5 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+              <div className="group relative mx-auto max-w-2xl rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-8 sm:p-10 text-center shadow-[0_16px_50px_rgba(0,0,0,0.05)] backdrop-blur-3xl transition-all duration-500 hover:-translate-y-1.5 hover:scale-[1.01] hover:bg-white/60 dark:hover:bg-white/20 hover:border-brand-orange/50 hover:shadow-[0_25px_60px_rgba(0,0,0,0.1)] ring-1 ring-white/30">
+                <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/50 dark:bg-white/15 px-4 py-1.5 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
                   <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
-                  <span className="font-bold text-brand-orange">{ar ? "الكيان المؤسسي الموحد (الشركة الأم)" : "Unified Parent Holding Entity"}</span>
+                  <span className="font-bold text-black dark:text-white">{ar ? "الكيان المؤسسي الموحد (الشركة الأم)" : "Unified Parent Holding Entity"}</span>
                 </div>
                 <h3 className="font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold text-brand-orange text-center mt-2 leading-tight">
                   {ar ? "مجموعة سامي بن عياد" : "SAMI BIN AYYAD GROUP"}
@@ -257,7 +257,7 @@ export function AboutPage() {
                   return (
                     <div
                       key={sIdx}
-                      className="group relative flex flex-col justify-between rounded-3xl border border-white/40 bg-background/85 p-7 sm:p-8 min-h-[260px] shadow-[0_12px_36px_rgba(0,0,0,0.08)] backdrop-blur-2xl transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:border-brand-orange hover:shadow-[0_20px_48px_rgba(0,0,0,0.14)]"
+                      className="group relative flex flex-col justify-between rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-7 sm:p-8 min-h-[260px] shadow-[0_12px_36px_rgba(0,0,0,0.05)] backdrop-blur-3xl ring-1 ring-white/30 transition-all duration-500 hover:scale-[1.02] hover:-translate-y-1.5 hover:bg-white/60 dark:hover:bg-white/20 hover:border-brand-orange/50 hover:shadow-[0_20px_48px_rgba(0,0,0,0.1)]"
                     >
                       <div>
                         <h4 className="font-head text-lg sm:text-xl font-bold text-foreground leading-snug group-hover:text-brand-orange transition-colors">
