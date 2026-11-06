@@ -156,17 +156,17 @@ export function AboutPage() {
               const Icon = sectorIcons[index] ?? Layers;
               return (
                 <Reveal key={sector.title} delay={index * 0.08}>
-                  <div className="flex h-full flex-col justify-between rounded-2xl border border-white/20 bg-background/60 p-6 backdrop-blur-xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-green/40 hover:shadow-lg">
+                  <div className="group flex h-full flex-col justify-between rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-6 sm:p-7 backdrop-blur-2xl shadow-[0_10px_35px_rgba(0,0,0,0.04)] ring-1 ring-white/30 transition-all duration-300 hover:-translate-y-1.5 hover:scale-[1.015] hover:bg-white/60 dark:hover:bg-white/20 hover:shadow-xl hover:border-brand-green/50 cursor-pointer">
                     <div>
                       <div className="flex items-center justify-center text-center">
-                        <span className="rounded-full bg-secondary px-3 py-1 text-[11px] font-semibold text-muted-foreground">
+                        <span className="rounded-full border border-white/50 bg-white/50 dark:bg-white/15 px-3.5 py-1 text-[11px] font-bold text-brand-orange shadow-xs backdrop-blur-md">
                           {ar ? sector.tagAr : sector.tag}
                         </span>
                       </div>
-                      <h3 className="mt-3 text-center font-head text-xl font-bold">
+                      <h3 className="mt-3 text-center font-head text-xl font-bold text-foreground group-hover:text-brand-green transition-colors">
                         {ar ? sector.titleAr : sector.title}
                       </h3>
-                      <p className="mt-3 text-sm leading-6 text-muted-foreground text-center font-sans">
+                      <p className="mt-3 text-sm leading-relaxed text-muted-foreground text-center font-sans">
                         {ar ? sector.bodyAr : sector.body}
                       </p>
                     </div>
