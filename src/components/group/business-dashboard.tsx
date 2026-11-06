@@ -202,61 +202,64 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
   return (
     <section id="business-numbers" aria-labelledby="dash-heading" className="relative py-16 scroll-mt-24 overflow-hidden">
       <div className="site-container relative z-10">
+        {/* Unified Group Performance & Business Numbers Box */}
         <Reveal>
-          <div className="group relative mx-auto mb-10 overflow-hidden rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-8 sm:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.05)] backdrop-blur-3xl ring-1 ring-white/30 transition-all duration-500 hover:-translate-y-1.5 hover:scale-[1.01] hover:bg-white/60 dark:hover:bg-white/20 hover:shadow-[0_25px_60px_rgba(0,0,0,0.1)] hover:border-brand-orange/50 text-start">
-            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-4 py-1.5 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-3 shadow-xs">
-              <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
-              <span className="font-bold text-brand-green">{ar ? "أداء المجموعة ورؤى الأعمال" : "Group Performance & Business Insights"}</span>
+          <div className="group relative mx-auto overflow-hidden rounded-[36px] border border-white/50 bg-white/40 dark:bg-white/10 p-8 sm:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.05)] backdrop-blur-3xl ring-1 ring-white/30 transition-all duration-500 hover:-translate-y-1.5 hover:scale-[1.008] hover:bg-white/60 dark:hover:bg-white/20 hover:shadow-[0_25px_60px_rgba(0,0,0,0.1)] hover:border-brand-orange/50 text-start">
+            <div className="max-w-3xl">
+              <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-4 py-1.5 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-3 shadow-xs">
+                <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
+                <span className="font-bold text-brand-green">{ar ? "أداء المجموعة ورؤى الأعمال" : "Group Performance & Business Insights"}</span>
+              </div>
+              <h2 id="dash-heading" className="font-head text-xl sm:text-2xl lg:text-3xl font-extrabold text-foreground leading-snug">
+                {ar ? "أعمالنا في أرقام" : "Our Business in Numbers"}
+              </h2>
+              <p className="mt-3 text-sm sm:text-base text-muted-foreground leading-relaxed text-start max-w-3xl">
+                {ar ? (
+                  <span>تعرّف على حجم عملياتنا المتكاملة، والمشروعات الموثقة التي ننفذها، والأسواق التي نخدمها عبر قطاعات <span className="text-brand-orange font-bold">مجموعة سامي بن عياد</span>.</span>
+                ) : (
+                  <span>Explore the scale of our integrated operations, documented projects delivered, and markets served across <span className="text-brand-orange font-bold">SAMI BIN AYYAD GROUP</span>.</span>
+                )}
+              </p>
             </div>
-            <h2 id="dash-heading" className="section-title text-start">
-              {ar ? "أعمالنا في أرقام" : "Our Business in Numbers"}
-            </h2>
-            <p className="section-intro mt-4 text-start max-w-3xl">
-              {ar ? (
-                <span>تعرّف على حجم عملياتنا المتكاملة، والمشروعات الموثقة التي ننفذها، والأسواق التي نخدمها عبر قطاعات <span className="text-brand-orange font-bold">مجموعة سامي بن عياد</span>.</span>
-              ) : (
-                <span>Explore the scale of our integrated operations, documented projects delivered, and markets served across <span className="text-brand-orange font-bold">SAMI BIN AYYAD GROUP</span>.</span>
-              )}
-            </p>
+
+            {/* Aggregated Group Statistics Grid inside the same unified glass card */}
+            <div className="mt-8 pt-8 border-t border-border/50 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+              {aggregateStats.map((stat, idx) => {
+                const Icon = icons[stat.sector];
+                return (
+                  <div
+                    key={idx}
+                    className="group/stat relative rounded-2xl border border-white/50 bg-white/50 dark:bg-white/15 p-5 backdrop-blur-xl shadow-xs transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:bg-white/80 dark:hover:bg-white/25 hover:border-brand-orange/50 hover:shadow-md cursor-pointer flex flex-col justify-between"
+                  >
+                    <div>
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="flex size-9 items-center justify-center rounded-xl bg-brand-green/10 text-brand-green-text transition-transform duration-300 group-hover/stat:scale-110">
+                          <Icon className="size-4.5" />
+                        </span>
+                        <span className="font-mono text-[11px] font-bold text-muted-foreground/70 border border-border/60 rounded-full px-2 py-0.5">
+                          0{idx + 1}
+                        </span>
+                      </div>
+                      {/* Milestones-style gradient and font size matching Our Journey */}
+                      <div
+                        className="font-head text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm flex items-center gap-1 text-start"
+                        dir={ar ? "rtl" : "ltr"}
+                      >
+                        <AnimatedStatistic value={stat.value} />
+                      </div>
+                      <h3 className="mt-2.5 text-xs sm:text-sm font-bold text-foreground">
+                        {ar ? stat.labelAr : stat.labelEn}
+                      </h3>
+                    </div>
+                    <p className="mt-3 text-[11px] leading-relaxed text-muted-foreground border-t border-border/40 pt-2.5">
+                      {ar ? stat.subAr : stat.subEn}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </Reveal>
-
-        {/* Aggregated Group Statistics Grid */}
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
-          {aggregateStats.map((stat, idx) => {
-            const Icon = icons[stat.sector];
-            return (
-              <div
-                key={idx}
-                className={cn(card, "flex flex-col justify-between group !p-6")}
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="flex size-10 items-center justify-center rounded-2xl bg-brand-green/10 text-brand-green-text transition-transform duration-300 group-hover:scale-110">
-                      <Icon className="size-5" />
-                    </span>
-                    <span className="font-mono text-xs font-bold text-muted-foreground/70 border border-border/60 rounded-full px-2.5 py-0.5">
-                      0{idx + 1}
-                    </span>
-                  </div>
-                  {/* Milestones-style gradient and font size matching Our Journey */}
-                  <div
-                    className="font-head text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm flex items-center gap-1 text-start"
-                    dir={ar ? "rtl" : "ltr"}
-                  >
-                    <AnimatedStatistic value={stat.value} />
-                  </div>
-                  <h3 className="mt-3 text-sm sm:text-base font-bold text-foreground">
-                    {ar ? stat.labelAr : stat.labelEn}
-                  </h3>
-                </div>
-                <p className="mt-3 text-xs leading-relaxed text-muted-foreground border-t border-border/50 pt-3">
-                  {ar ? stat.subAr : stat.subEn}
-                </p>
-              </div>
-            );
-          })}
-        </div>
 
         {/* Geographic Presence: Countries-First Interactive Glass Showcase */}
         <div className={cn(card, "mt-10 !p-8 sm:!p-10")}>
