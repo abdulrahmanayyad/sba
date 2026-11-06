@@ -18,7 +18,7 @@ export function JoinShowcase() {
           <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
           <span>{ar ? "انضم إلينا" : "Careers & Partnerships"}</span>
         </div>
-        <h2 className="section-title">
+        <h2 className="font-head text-xl sm:text-2xl lg:text-3xl font-extrabold text-foreground leading-snug">
           {ar ? "شاركنا بناء المستقبل وصناعة القيمة" : "Build What's Next with SAMI BIN AYYAD GROUP"}
         </h2>
         <p className="section-intro mt-4">

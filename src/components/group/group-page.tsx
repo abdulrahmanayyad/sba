@@ -330,7 +330,7 @@ export function GroupPage() {
                 <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
                 <span>{ar ? "المركز الإعلامي" : "News & Media"}</span>
               </div>
-              <h2 className="section-title text-2xl sm:text-3xl lg:text-4xl">
+              <h2 className="font-head text-xl sm:text-2xl lg:text-3xl font-extrabold text-foreground leading-snug">
                 {ar ? "آخر أخبار ورؤى المجموعة" : "Latest News & Insights"}
               </h2>
               <p className="section-intro mt-2 max-w-2xl text-sm sm:text-base">
@@ -400,7 +400,7 @@ export function GroupPage() {
                   <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
                   <span>{ar ? "الاستثمار والشراكات الاستراتيجية" : "Investment & Strategic Alliances"}</span>
                 </div>
-                <h2 className="font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold text-foreground leading-tight">
+                <h2 className="font-head text-xl sm:text-2xl lg:text-3xl font-extrabold text-foreground leading-snug">
                   {ar ? "فرص استثمارية وشراكات تطوير عبر عدة قطاعات حيوية" : "Strategic Investment & Co-Development Opportunities"}
                 </h2>
                 <p className="mt-3 text-sm sm:text-base text-muted-foreground leading-relaxed max-w-2xl">
