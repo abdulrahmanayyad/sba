@@ -22,7 +22,7 @@ export function HomeTradeSection({ ar = true }: HomeTradeSectionProps) {
 
   return (
     <section className="site-container section-band">
-      <div className="group relative overflow-hidden rounded-[36px] border border-white/50 bg-white/40 dark:bg-white/10 p-8 sm:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.05)] backdrop-blur-3xl ring-1 ring-white/30 transition-all duration-500 hover:-translate-y-1.5 hover:scale-[1.01] hover:bg-white/60 dark:hover:bg-white/20 hover:border-brand-orange/50 hover:shadow-[0_25px_60px_rgba(0,0,0,0.1)]">
+      <div className="glass-box-interactive rounded-[36px] p-8 sm:p-12 cursor-pointer">
         <div className="relative z-10 flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
           {/* Left Column: Heading, Badges, CTA */}
           <div className="max-w-2xl space-y-6 text-start">

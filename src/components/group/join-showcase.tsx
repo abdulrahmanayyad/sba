@@ -31,32 +31,34 @@ export function JoinShowcase() {
       {/* Single Dedicated Group Join Card */}
       <div className="mt-10">
         <div
-          className="group relative flex flex-col md:flex-row items-center justify-between gap-8 overflow-hidden rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-8 sm:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.05)] backdrop-blur-3xl ring-1 ring-white/30 transition-all duration-500 hover:-translate-y-1.5 hover:scale-[1.01] hover:bg-white/60 dark:hover:bg-white/20 hover:border-brand-green/50 hover:shadow-[0_25px_60px_rgba(0,0,0,0.1)]"
+          className="glass-box-interactive rounded-3xl p-8 sm:p-12 cursor-pointer"
         >
-          <div className="max-w-2xl">
-            <p className="text-sm sm:text-base leading-7 text-muted-foreground">
-              {ar ? track.descriptionAr : track.descriptionEn}
-            </p>
-
-            <div className="mt-5 pt-4 border-t border-border/60">
-              <p className="text-xs sm:text-sm font-semibold text-foreground/80">
-                <span className="text-brand-orange">{ar ? "المستهدفون: " : "Focus: "}</span>
-                {(ar ? track.targetAudienceAr : track.targetAudienceEn).join(" · ")}
+          <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 w-full">
+            <div className="max-w-2xl">
+              <p className="text-sm sm:text-base leading-7 text-muted-foreground">
+                {ar ? track.descriptionAr : track.descriptionEn}
               </p>
-            </div>
-          </div>
 
-          <div className="shrink-0 w-full md:w-auto">
-            <Button
-              asChild
-              size="lg"
-              className="w-full md:w-auto rounded-full bg-brand-green hover:bg-brand-orange text-white font-head font-bold shadow-md transition-all px-8 py-3.5 hover:scale-105 active:scale-95"
-            >
-              <Link to="/join/group">
-                <span>{ar ? "تقديم الطلب والمستندات" : "Explore & Apply"}</span>
-                <ArrowRight className="size-4 ms-2 rtl:rotate-180" />
-              </Link>
-            </Button>
+              <div className="mt-5 pt-4 border-t border-border/60">
+                <p className="text-xs sm:text-sm font-semibold text-foreground/80">
+                  <span className="text-brand-orange">{ar ? "المستهدفون: " : "Focus: "}</span>
+                  {(ar ? track.targetAudienceAr : track.targetAudienceEn).join(" · ")}
+                </p>
+              </div>
+            </div>
+
+            <div className="shrink-0 w-full md:w-auto">
+              <Button
+                asChild
+                size="lg"
+                className="w-full md:w-auto rounded-full bg-brand-green hover:bg-brand-orange text-white font-head font-bold shadow-md transition-all px-8 py-3.5 hover:scale-105 active:scale-95"
+              >
+                <Link to="/join/group">
+                  <span>{ar ? "تقديم الطلب والمستندات" : "Explore & Apply"}</span>
+                  <ArrowRight className="size-4 ms-2 rtl:rotate-180" />
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </div>

@@ -55,44 +55,46 @@ export function GroupPage() {
       {/* Corporate introduction */}
       <section className="site-container section-band">
         <Reveal>
-          <div className="group relative mx-auto max-w-4xl overflow-hidden rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-8 sm:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.05)] backdrop-blur-3xl ring-1 ring-white/30 transition-all duration-500 hover:-translate-y-1.5 hover:scale-[1.01] hover:bg-white/60 dark:hover:bg-white/20 hover:shadow-[0_25px_60px_rgba(0,0,0,0.1)] hover:border-brand-orange/50 text-center">
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/40 dark:bg-white/10 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
-              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-              <span className="font-bold text-brand-green font-head">{ar ? "مجموعة سامي بن عياد" : "SAMI BIN AYYAD GROUP"}</span>
-            </div>
-            <h2 className="section-title mt-2 text-center mx-auto">{ar ? "نقود التقدم عبر القطاعات" : "Driving Progress Across Sectors"}</h2>
-            <div className="section-intro mx-auto mt-6 leading-relaxed max-w-3xl space-y-3 text-start">
-              {ar ? (
-                <>
-                  <p className="leading-relaxed text-start">
-                    نطوّر أعمالًا رائدة في المقاولات والتطوير العقاري، والبيئة والاستدامة، وتصنيع الملابس وتطوير الأزياء، والمنتجات الطبيعية والغذائية. يجمع عملنا بين الفهم العميق لمتطلبات العملاء وبناء شراكات تجارية موثوقة تستند إلى أعلى معايير الجودة والشفافية.
-                  </p>
-                  <p className="text-sm text-muted-foreground leading-relaxed text-start">
-                    تستند المجموعة إلى خبرات مؤسسية وتنفيذية عريقة تمتد جذورها منذ عام <span className="font-bold text-foreground">1977</span> في قطاع الإنشاءات والمقاولات، وتوجت بتأسيس الكيان المؤسسي الموحد للمجموعة عام <span className="font-bold text-foreground">2023</span> لتكامل القدرات الصناعية والاستثمارية عبر 4 قطاعات رئيسية.
-                  </p>
-                </>
-              ) : (
-                <>
-                  <p className="leading-relaxed text-start">
-                    Our operations span four integrated sectors: contracting and real estate development, environment and sustainability, apparel manufacturing and fashion development, and natural agri-food products. We focus on delivering value, disciplined execution, and long-term corporate partnerships.
-                  </p>
-                  <p className="text-sm text-muted-foreground leading-relaxed text-start">
-                    The Group builds upon foundational commercial and contracting experience dating back to <span className="font-bold text-foreground">1977</span>, formally unified into its institutional corporate structure in <span className="font-bold text-foreground">2023</span> to drive multidisciplinary growth across global markets.
-                  </p>
-                </>
-              )}
-            </div>
-            <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <Button asChild size="lg" className="group relative inline-flex items-center justify-center gap-2 rounded-full !bg-brand-green !text-white px-7 py-3 font-head text-sm font-bold shadow-lg transition-all duration-300 hover:!bg-brand-orange hover:shadow-brand-orange/30 hover:scale-105 active:scale-95 cursor-pointer">
-                <a href="#divisions">
-                  {ar ? "استكشف قطاعاتنا" : "Explore Our Sectors"} <ArrowRight className="size-4 rtl:rotate-180" />
-                </a>
-              </Button>
-              <Button asChild size="lg" className="rounded-full bg-brand-green text-white hover:bg-brand-orange px-7 py-3 font-head text-sm font-bold transition-all duration-300 hover:scale-105 active:scale-95 shadow-md cursor-pointer">
-                <Link to="/about">
-                  {ar ? "رحلة المجموعة وتاريخها" : "Our Group Story & History"}
-                </Link>
-              </Button>
+          <div className="glass-box-interactive group mx-auto max-w-4xl rounded-3xl p-8 sm:p-12 text-center cursor-pointer">
+            <div className="relative z-10">
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/40 dark:bg-white/10 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
+                <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+                <span className="font-bold text-brand-green font-head">{ar ? "مجموعة سامي بن عياد" : "SAMI BIN AYYAD GROUP"}</span>
+              </div>
+              <h2 className="section-title mt-2 text-center mx-auto">{ar ? "نقود التقدم عبر القطاعات" : "Driving Progress Across Sectors"}</h2>
+              <div className="section-intro mx-auto mt-6 leading-relaxed max-w-3xl space-y-3 text-start">
+                {ar ? (
+                  <>
+                    <p className="leading-relaxed text-start">
+                      نطوّر أعمالًا رائدة في المقاولات والتطوير العقاري، والبيئة والاستدامة، وتصنيع الملابس وتطوير الأزياء، والمنتجات الطبيعية والغذائية. يجمع عملنا بين الفهم العميق لمتطلبات العملاء وبناء شراكات تجارية موثوقة تستند إلى أعلى معايير الجودة والشفافية.
+                    </p>
+                    <p className="text-sm text-muted-foreground leading-relaxed text-start">
+                      تستند المجموعة إلى خبرات مؤسسية وتنفيذية عريقة تمتد جذورها منذ عام <span className="font-bold text-foreground">1977</span> في قطاع الإنشاءات والمقاولات، وتوجت بتأسيس الكيان المؤسسي الموحد للمجموعة عام <span className="font-bold text-foreground">2023</span> لتكامل القدرات الصناعية والاستثمارية عبر 4 قطاعات رئيسية.
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <p className="leading-relaxed text-start">
+                      Our operations span four integrated sectors: contracting and real estate development, environment and sustainability, apparel manufacturing and fashion development, and natural agri-food products. We focus on delivering value, disciplined execution, and long-term corporate partnerships.
+                    </p>
+                    <p className="text-sm text-muted-foreground leading-relaxed text-start">
+                      The Group builds upon foundational commercial and contracting experience dating back to <span className="font-bold text-foreground">1977</span>, formally unified into its institutional corporate structure in <span className="font-bold text-foreground">2023</span> to drive multidisciplinary growth across global markets.
+                    </p>
+                  </>
+                )}
+              </div>
+              <div className="mt-8 flex flex-wrap justify-center gap-3">
+                <Button asChild size="lg" className="group relative inline-flex items-center justify-center gap-2 rounded-full !bg-brand-green !text-white px-7 py-3 font-head text-sm font-bold shadow-lg transition-all duration-300 hover:!bg-brand-orange hover:shadow-brand-orange/30 hover:scale-105 active:scale-95 cursor-pointer">
+                  <a href="#divisions">
+                    {ar ? "استكشف قطاعاتنا" : "Explore Our Sectors"} <ArrowRight className="size-4 rtl:rotate-180" />
+                  </a>
+                </Button>
+                <Button asChild size="lg" className="rounded-full bg-brand-green text-white hover:bg-brand-orange px-7 py-3 font-head text-sm font-bold transition-all duration-300 hover:scale-105 active:scale-95 shadow-md cursor-pointer">
+                  <Link to="/about">
+                    {ar ? "رحلة المجموعة وتاريخها" : "Our Group Story & History"}
+                  </Link>
+                </Button>
+              </div>
             </div>
           </div>
         </Reveal>
@@ -103,35 +105,39 @@ export function GroupPage() {
         <Reveal>
           <div className="grid gap-6 md:grid-cols-2">
             {/* Vision Card */}
-            <div className="group relative overflow-hidden rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-8 shadow-[0_16px_50px_rgba(0,0,0,0.05)] backdrop-blur-3xl ring-1 ring-white/30 transition-all duration-500 hover:-translate-y-1.5 hover:scale-[1.01] hover:bg-white/60 dark:hover:bg-white/20 hover:shadow-[0_25px_60px_rgba(0,0,0,0.1)] hover:border-brand-orange/50 text-center">
-              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/40 dark:bg-white/10 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
-                <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-                <span className="font-bold text-brand-green">{ar ? "رؤيتنا" : "Our Vision"}</span>
+            <div className="glass-box-interactive group rounded-3xl p-8 text-center cursor-pointer">
+              <div className="relative z-10">
+                <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/40 dark:bg-white/10 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
+                  <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+                  <span className="font-bold text-brand-green">{ar ? "رؤيتنا" : "Our Vision"}</span>
+                </div>
+                <h3 className="text-center font-head text-xl sm:text-2xl font-extrabold text-foreground leading-snug">
+                  {ar ? "شريك موثوق وقيمة مستدامة للعملاء والشركاء" : "A Trusted Business Partner Creating Lasting Value"}
+                </h3>
+                <p className="mt-4 text-sm sm:text-base leading-7 text-muted-foreground text-center">
+                  {ar
+                    ? "أن نكون شريكًا موثوقًا في القطاعات التي نعمل بها، وأن نبني أعمالًا قابلة للنمو تحقق قيمة للعملاء والشركاء."
+                    : "To become a trusted business partner in our chosen sectors, building businesses that create lasting value for clients and partners."}
+                </p>
               </div>
-              <h3 className="text-center font-head text-xl sm:text-2xl font-extrabold text-foreground leading-snug">
-                {ar ? "شريك موثوق وقيمة مستدامة للعملاء والشركاء" : "A Trusted Business Partner Creating Lasting Value"}
-              </h3>
-              <p className="mt-4 text-sm sm:text-base leading-7 text-muted-foreground text-center">
-                {ar
-                  ? "أن نكون شريكًا موثوقًا في القطاعات التي نعمل بها، وأن نبني أعمالًا قابلة للنمو تحقق قيمة للعملاء والشركاء."
-                  : "To become a trusted business partner in our chosen sectors, building businesses that create lasting value for clients and partners."}
-              </p>
             </div>
 
             {/* Mission Card */}
-            <div className="group relative overflow-hidden rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-8 shadow-[0_16px_50px_rgba(0,0,0,0.05)] backdrop-blur-3xl ring-1 ring-white/30 transition-all duration-500 hover:-translate-y-1.5 hover:scale-[1.01] hover:bg-white/60 dark:hover:bg-white/20 hover:shadow-[0_25px_60px_rgba(0,0,0,0.1)] hover:border-brand-orange/50 text-center">
-              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/40 dark:bg-white/10 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
-                <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-                <span className="font-bold text-brand-green">{ar ? "رسالتنا" : "Our Mission"}</span>
+            <div className="glass-box-interactive group rounded-3xl p-8 text-center cursor-pointer">
+              <div className="relative z-10">
+                <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/40 dark:bg-white/10 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
+                  <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+                  <span className="font-bold text-brand-green">{ar ? "رسالتنا" : "Our Mission"}</span>
+                </div>
+                <h3 className="text-center font-head text-xl sm:text-2xl font-extrabold text-foreground leading-snug">
+                  {ar ? "تحويل الاحتياجات إلى نطاق عمل وحلول عملية" : "Translating Client Needs into Practical Solutions"}
+                </h3>
+                <p className="mt-4 text-sm sm:text-base leading-7 text-muted-foreground text-center">
+                  {ar
+                    ? "تحويل احتياجات العملاء إلى نطاق عمل واضح وحلول قابلة للتنفيذ، من خلال تطوير الكفاءات وتحسين العمليات والاستخدام المسؤول للموارد."
+                    : "To translate client needs into clearly defined work and practical solutions through capable teams, coordinated delivery and responsible use of resources."}
+                </p>
               </div>
-              <h3 className="text-center font-head text-xl sm:text-2xl font-extrabold text-foreground leading-snug">
-                {ar ? "تحويل الاحتياجات إلى نطاق عمل وحلول عملية" : "Translating Client Needs into Practical Solutions"}
-              </h3>
-              <p className="mt-4 text-sm sm:text-base leading-7 text-muted-foreground text-center">
-                {ar
-                  ? "تحويل احتياجات العملاء إلى نطاق عمل واضح وحلول قابلة للتنفيذ، من خلال تطوير الكفاءات وتحسين العمليات والاستخدام المسؤول للموارد."
-                  : "To translate client needs into clearly defined work and practical solutions through capable teams, coordinated delivery and responsible use of resources."}
-              </p>
             </div>
           </div>
         </Reveal>
@@ -155,7 +161,7 @@ export function GroupPage() {
             {sectorOverviews.map((sector, index) => (
               <article
                 key={sector.slug}
-                className="grid items-center gap-6 md:grid-cols-2 md:gap-10 lg:gap-14 rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-6 sm:p-10 shadow-[0_16px_50px_rgba(0,0,0,0.05)] backdrop-blur-3xl ring-1 ring-white/30 transition-all duration-500 hover:-translate-y-1 hover:scale-[1.01] hover:bg-white/60 dark:hover:bg-white/20 hover:shadow-[0_24px_60px_rgba(0,0,0,0.1)] hover:border-brand-orange/40"
+                className="glass-box-interactive grid items-center gap-6 md:grid-cols-2 md:gap-10 lg:gap-14 rounded-3xl p-6 sm:p-10 cursor-pointer"
               >
                 <Reveal className={cn("overflow-hidden rounded-2xl shadow-sm", index % 2 === 1 && "md:order-2")}>
                   <img src={sector.image} alt={ar ? sector.headlineAr : sector.headline} loading="lazy" width={944} height={704} className="aspect-[4/3] w-full object-cover transition-transform duration-700 hover:scale-105 motion-reduce:transition-none" />
@@ -274,42 +280,44 @@ export function GroupPage() {
               return (
                 <div
                   key={p.id}
-                  className="group relative rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-6 shadow-[0_12px_40px_rgba(0,0,0,0.05)] backdrop-blur-2xl ring-1 ring-white/30 transition-all duration-500 hover:-translate-y-1.5 hover:scale-[1.02] hover:bg-white/60 dark:hover:bg-white/20 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] hover:border-brand-green flex flex-col justify-between cursor-pointer"
+                  className="glass-box-interactive rounded-3xl p-6 flex flex-col justify-between cursor-pointer"
                 >
-                  <div>
-                    <div className="flex items-center justify-between gap-2 mb-3">
-                      <span className={cn(
-                        "text-xs font-bold text-brand-orange bg-brand-orange/10 px-2.5 py-0.5 rounded-full border border-brand-orange/20",
-                        ar ? "font-sans" : "font-mono"
-                      )}>
-                        {ar ? p.countryAr : p.country}
-                      </span>
-                      <span className="inline-flex items-center gap-1 text-[11px] font-bold text-brand-green bg-brand-green/10 border border-brand-green/20 px-2 py-0.5 rounded-full">
-                        <Handshake className="size-3" />
-                        <span>{partnerShort[p.id] || "Partner"}</span>
-                      </span>
+                  <div className="relative z-10 flex flex-col justify-between h-full">
+                    <div>
+                      <div className="flex items-center justify-between gap-2 mb-3">
+                        <span className={cn(
+                          "text-xs font-bold text-brand-orange bg-brand-orange/10 px-2.5 py-0.5 rounded-full border border-brand-orange/20",
+                          ar ? "font-sans" : "font-mono"
+                        )}>
+                          {ar ? p.countryAr : p.country}
+                        </span>
+                        <span className="inline-flex items-center gap-1 text-[11px] font-bold text-brand-green bg-brand-green/10 border border-brand-green/20 px-2 py-0.5 rounded-full">
+                          <Handshake className="size-3" />
+                          <span>{partnerShort[p.id] || "Partner"}</span>
+                        </span>
+                      </div>
+                      <h3 className="text-start font-head text-base font-bold text-foreground group-hover:text-brand-orange transition-colors">
+                        {ar ? p.nameAr : p.name}
+                      </h3>
+                      <p className="mt-2 text-xs text-muted-foreground leading-relaxed text-start">
+                        {ar ? p.descriptionAr : p.description}
+                      </p>
                     </div>
-                    <h3 className="text-start font-head text-base font-bold text-foreground group-hover:text-brand-orange transition-colors">
-                      {ar ? p.nameAr : p.name}
-                    </h3>
-                    <p className="mt-2 text-xs text-muted-foreground leading-relaxed text-start">
-                      {ar ? p.descriptionAr : p.description}
-                    </p>
-                  </div>
-                  <div className="mt-4 pt-3 border-t border-border/40 flex items-center justify-between gap-2">
-                    <span className="text-[11px] font-semibold text-brand-green">
-                      {ar ? p.tagAr : p.tag}
-                    </span>
-                    <a
-                      href={url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-xs font-bold text-brand-orange hover:text-brand-green transition-colors"
-                      aria-label={`${ar ? p.nameAr : p.name} Official Website`}
-                    >
-                      <span>{ar ? "الموقع الرسمي" : "Official Website"}</span>
-                      <ExternalLink className="size-3" />
-                    </a>
+                    <div className="mt-4 pt-3 border-t border-border/40 flex items-center justify-between gap-2">
+                      <span className="text-[11px] font-semibold text-brand-green">
+                        {ar ? p.tagAr : p.tag}
+                      </span>
+                      <a
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-xs font-bold text-brand-orange hover:text-brand-green transition-colors"
+                        aria-label={`${ar ? p.nameAr : p.name} Official Website`}
+                      >
+                        <span>{ar ? "الموقع الرسمي" : "Official Website"}</span>
+                        <ExternalLink className="size-3" />
+                      </a>
+                    </div>
                   </div>
                 </div>
               );
@@ -350,39 +358,41 @@ export function GroupPage() {
             {newsArticles.slice(0, 3).map((article, idx) => (
               <article
                 key={article.id}
-                className="group relative rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 overflow-hidden shadow-[0_16px_50px_rgba(0,0,0,0.05)] backdrop-blur-2xl ring-1 ring-white/30 transition-all duration-500 hover:-translate-y-1.5 hover:scale-[1.015] hover:bg-white/60 dark:hover:bg-white/20 hover:shadow-[0_25px_60px_rgba(0,0,0,0.1)] hover:border-brand-orange/40 flex flex-col justify-between"
+                className="glass-box-interactive rounded-3xl flex flex-col justify-between cursor-pointer"
               >
-                <div>
-                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-secondary">
-                    <img
-                      src={article.image}
-                      alt={ar ? article.titleAr : article.titleEn}
-                      loading="lazy"
-                      className="size-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                    <div className="absolute top-3 start-3 inline-flex items-center gap-1.5 rounded-full bg-black/60 px-3 py-1 text-[11px] font-bold text-white backdrop-blur-md">
-                      <Newspaper className="size-3" />
-                      <span>{ar ? article.dateAr : article.dateEn}</span>
+                <div className="relative z-10 flex flex-col justify-between h-full">
+                  <div>
+                    <div className="relative aspect-[16/10] w-full overflow-hidden bg-secondary">
+                      <img
+                        src={article.image}
+                        alt={ar ? article.titleAr : article.titleEn}
+                        loading="lazy"
+                        className="size-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                      <div className="absolute top-3 start-3 inline-flex items-center gap-1.5 rounded-full bg-black/60 px-3 py-1 text-[11px] font-bold text-white backdrop-blur-md">
+                        <Newspaper className="size-3" />
+                        <span>{ar ? article.dateAr : article.dateEn}</span>
+                      </div>
+                    </div>
+                    <div className="p-5 sm:p-6 text-start">
+                      <h3 className="text-start font-head text-base sm:text-lg font-bold text-foreground leading-snug group-hover:text-brand-orange transition-colors">
+                        {ar ? article.titleAr : article.titleEn}
+                      </h3>
+                      <p className="mt-2.5 text-xs sm:text-sm text-muted-foreground leading-relaxed line-clamp-3 text-start">
+                        {ar ? article.excerptAr : article.excerptEn}
+                      </p>
                     </div>
                   </div>
-                  <div className="p-5 sm:p-6 text-start">
-                    <h3 className="text-start font-head text-base sm:text-lg font-bold text-foreground leading-snug group-hover:text-brand-orange transition-colors">
-                      {ar ? article.titleAr : article.titleEn}
-                    </h3>
-                    <p className="mt-2.5 text-xs sm:text-sm text-muted-foreground leading-relaxed line-clamp-3 text-start">
-                      {ar ? article.excerptAr : article.excerptEn}
-                    </p>
+                  <div className="p-5 sm:p-6 pt-0 text-start">
+                    <Link
+                      to="/news/$slug"
+                      params={{ slug: article.slug }}
+                      className="inline-flex items-center gap-2 text-xs font-bold text-brand-green group-hover:text-brand-orange transition-colors"
+                    >
+                      <span>{ar ? "قراءة التحليل والمقال" : "Read Full Article"}</span>
+                      <ArrowRight className="size-3.5 rtl:rotate-180" />
+                    </Link>
                   </div>
-                </div>
-                <div className="p-5 sm:p-6 pt-0 text-start">
-                  <Link
-                    to="/news/$slug"
-                    params={{ slug: article.slug }}
-                    className="inline-flex items-center gap-2 text-xs font-bold text-brand-green group-hover:text-brand-orange transition-colors"
-                  >
-                    <span>{ar ? "قراءة التحليل والمقال" : "Read Full Article"}</span>
-                    <ArrowRight className="size-3.5 rtl:rotate-180" />
-                  </Link>
                 </div>
               </article>
             ))}
@@ -393,8 +403,8 @@ export function GroupPage() {
       {/* Investment & Strategic Opportunities Section */}
       <section className="site-container py-12 scroll-mt-24">
         <Reveal>
-          <div className="group relative overflow-hidden rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-8 sm:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.05)] backdrop-blur-3xl ring-1 ring-white/30 transition-all duration-500 hover:-translate-y-1.5 hover:scale-[1.01] hover:bg-white/60 dark:hover:bg-white/20 hover:border-brand-orange/50 hover:shadow-[0_25px_60px_rgba(0,0,0,0.1)]">
-            <div className="grid gap-6 lg:grid-cols-12 items-center">
+          <div className="glass-box-interactive rounded-3xl p-8 sm:p-12 cursor-pointer">
+            <div className="relative z-10 grid gap-6 lg:grid-cols-12 items-center">
               <div className="lg:col-span-8">
                 <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/40 dark:bg-white/10 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
                   <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
@@ -431,8 +441,8 @@ export function GroupPage() {
 
       {/* Final CTA — Interactive Glassmorphic Island matching Footer */}
       <section id="contact" className="relative px-4 pb-10 pt-4 text-foreground scroll-mt-24">
-        <div className="mx-auto max-w-6xl overflow-hidden rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-8 sm:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.05)] backdrop-blur-3xl ring-1 ring-white/30 transition-all duration-500 hover:-translate-y-1.5 hover:scale-[1.01] hover:bg-white/60 dark:hover:bg-white/20 hover:border-brand-green/40 hover:shadow-[0_25px_60px_rgba(0,0,0,0.1)]">
-          <div className="grid gap-8 lg:grid-cols-[1.2fr_1fr] items-center">
+        <div className="glass-box-interactive mx-auto max-w-6xl rounded-3xl p-8 sm:p-12 cursor-pointer">
+          <div className="relative z-10 grid gap-8 lg:grid-cols-[1.2fr_1fr] items-center">
             <div>
               <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/40 dark:bg-white/10 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
                 <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />

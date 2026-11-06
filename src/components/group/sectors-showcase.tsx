@@ -134,8 +134,8 @@ export function SectorsShowcase({ ar }: { ar: boolean }) {
       aria-label={ar ? "نظرة عامة على القطاعات" : "Sectors Overview"}
       className="relative px-4 py-12 text-foreground"
     >
-      <div className="mx-auto max-w-6xl overflow-hidden rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.05)] backdrop-blur-3xl ring-1 ring-white/30 transition-all duration-500 hover:-translate-y-1 hover:scale-[1.005] hover:bg-white/60 dark:hover:bg-white/20 hover:border-brand-orange/40 hover:shadow-[0_24px_60px_rgba(0,0,0,0.1)]">
-        <div className="grid gap-10 lg:grid-cols-[minmax(280px,360px)_1fr] lg:gap-16">
+      <div className="glass-box-interactive mx-auto max-w-6xl rounded-3xl p-6 md:p-12">
+        <div className="relative z-10 grid gap-10 lg:grid-cols-[minmax(280px,360px)_1fr] lg:gap-16">
 
           {/* ── LEFT: Tab Navigation + CTA ── */}
           <div className="flex flex-col lg:border-e lg:border-border/60 lg:pe-10">
@@ -217,51 +217,53 @@ export function SectorsShowcase({ ar }: { ar: boolean }) {
             aria-labelledby={`showcase-tab-${current.id}`}
             ref={contentRef}
             className={cn(
-              "flex flex-col justify-between rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-8 md:p-12 shadow-[0_12px_40px_rgba(0,0,0,0.05)] backdrop-blur-3xl ring-1 ring-white/30 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)]",
+              "glass-box-interactive flex flex-col justify-between rounded-3xl p-8 md:p-12",
               animating ? "opacity-0 translate-y-3" : "opacity-100 translate-y-0"
             )}
             style={{ transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)" }}
           >
-            <div className="space-y-5">
-              {/* Main Headline */}
-              <h2 className="font-head font-bold leading-tight text-foreground text-2xl sm:text-3xl md:text-4xl">
-                {ar ? current.headlineAr : current.headlineEn}
-              </h2>
+            <div className="relative z-10 flex flex-col justify-between h-full">
+              <div className="space-y-5">
+                {/* Main Headline */}
+                <h2 className="font-head font-bold leading-tight text-foreground text-2xl sm:text-3xl md:text-4xl">
+                  {ar ? current.headlineAr : current.headlineEn}
+                </h2>
 
-              {/* Subtitle */}
-              <p className="text-base md:text-lg font-bold text-brand-orange">
-                {ar ? current.subtitleAr : current.subtitleEn}
-              </p>
+                {/* Subtitle */}
+                <p className="text-base md:text-lg font-bold text-brand-orange">
+                  {ar ? current.subtitleAr : current.subtitleEn}
+                </p>
 
-              {/* Body */}
-              <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground font-medium sm:text-base">
-                {ar ? current.bodyAr : current.bodyEn}
-              </p>
+                {/* Body */}
+                <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground font-medium sm:text-base">
+                  {ar ? current.bodyAr : current.bodyEn}
+                </p>
 
-              {/* Pills / Capabilities */}
-              <div className="flex flex-wrap gap-2 pt-2">
-                {(ar ? current.pillsAr : current.pillsEn).map((pill) => (
-                  <span
-                    key={pill}
-                    className="rounded-full border border-white/50 bg-white/50 dark:bg-white/15 px-4 py-1.5 text-xs font-semibold text-foreground backdrop-blur-md shadow-xs transition-all duration-300 hover:border-brand-orange/60 hover:bg-white/80 hover:text-brand-orange hover:scale-105 hover:-translate-y-0.5"
-                  >
-                    {pill}
-                  </span>
-                ))}
+                {/* Pills / Capabilities */}
+                <div className="flex flex-wrap gap-2 pt-2">
+                  {(ar ? current.pillsAr : current.pillsEn).map((pill) => (
+                    <span
+                      key={pill}
+                      className="rounded-full border border-white/50 bg-white/50 dark:bg-white/15 px-4 py-1.5 text-xs font-semibold text-foreground backdrop-blur-md shadow-xs transition-all duration-300 hover:border-brand-orange/60 hover:bg-white/80 hover:text-brand-orange hover:scale-105 hover:-translate-y-0.5"
+                    >
+                      {pill}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
 
-            {/* Explore CTA */}
-            <div className="mt-8 pt-6 border-t border-border/60 flex items-center justify-start">
-              <Link
-                to="/sectors/$sector"
-                params={{ sector: current.slug }}
-                search={current.tab ? { tab: current.tab } : {}}
-                className="group relative inline-flex items-center justify-center gap-2 rounded-full !bg-brand-green !text-white px-6 py-2.5 font-head text-sm font-bold shadow-lg transition-all duration-300 hover:!bg-brand-orange hover:shadow-brand-orange/30 hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/50 cursor-pointer"
-              >
-                <span>{ar ? current.ctaAr : current.ctaEn}</span>
-                <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 rtl:rotate-90 rtl:group-hover:-translate-x-0.5" />
-              </Link>
+              {/* Explore CTA */}
+              <div className="mt-8 pt-6 border-t border-border/60 flex items-center justify-start">
+                <Link
+                  to="/sectors/$sector"
+                  params={{ sector: current.slug }}
+                  search={current.tab ? { tab: current.tab } : {}}
+                  className="group relative inline-flex items-center justify-center gap-2 rounded-full !bg-brand-green !text-white px-6 py-2.5 font-head text-sm font-bold shadow-lg transition-all duration-300 hover:!bg-brand-orange hover:shadow-brand-orange/30 hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/50 cursor-pointer"
+                >
+                  <span>{ar ? current.ctaAr : current.ctaEn}</span>
+                  <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 rtl:rotate-90 rtl:group-hover:-translate-x-0.5" />
+                </Link>
+              </div>
             </div>
           </div>
 
