@@ -171,7 +171,7 @@ export function GroupPage() {
                   {sector.subsectors && (
                     <div className="mt-4 grid gap-3 sm:grid-cols-2">
                       {sector.subsectors.map((sub, sIdx) => (
-                        <div key={sIdx} className="rounded-xl border border-white/20 bg-secondary/50 p-3.5 backdrop-blur-md transition hover:border-brand-green/30">
+                        <div key={sIdx} className="rounded-xl border border-white/50 bg-white/40 dark:bg-white/10 p-3.5 backdrop-blur-md transition-all duration-300 hover:border-brand-green/40 hover:bg-white/60 dark:hover:bg-white/20 hover:scale-[1.02]">
                           <p className="font-head text-xs sm:text-sm font-bold text-foreground">
                             {ar ? sub.titleAr : sub.titleEn}
                           </p>
@@ -278,7 +278,7 @@ export function GroupPage() {
               return (
                 <div
                   key={p.id}
-                  className="group relative rounded-3xl border border-white/20 bg-background/80 p-6 shadow-md backdrop-blur-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:border-brand-green flex flex-col justify-between"
+                  className="group relative rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-6 shadow-[0_12px_40px_rgba(0,0,0,0.05)] backdrop-blur-2xl ring-1 ring-white/30 transition-all duration-500 hover:-translate-y-1.5 hover:scale-[1.02] hover:bg-white/60 dark:hover:bg-white/20 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] hover:border-brand-green flex flex-col justify-between cursor-pointer"
                 >
                   <div>
                     <div className="flex items-center justify-between gap-2 mb-3">

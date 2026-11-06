@@ -27,7 +27,7 @@ export function JourneySection({ ar }: { ar: boolean }) {
 
   return (
     <div>
-      <section ref={ref} className="journey-section overflow-hidden bg-page-alt py-16 lg:flex lg:h-screen lg:flex-col lg:justify-center lg:py-0 relative">
+      <section ref={ref} className="journey-section overflow-hidden bg-transparent py-16 lg:flex lg:h-screen lg:flex-col lg:justify-center lg:py-0 relative">
         <div className="site-container relative z-10">
           <div className="group relative mx-auto mb-4 overflow-hidden rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-7 sm:p-10 shadow-[0_16px_50px_rgba(0,0,0,0.05)] backdrop-blur-3xl ring-1 ring-white/30 transition-all duration-500 hover:-translate-y-1.5 hover:scale-[1.01] hover:bg-white/60 dark:hover:bg-white/20 hover:shadow-[0_25px_60px_rgba(0,0,0,0.1)] hover:border-brand-orange/50 text-start">
             <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-4 py-1.5 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
@@ -50,7 +50,7 @@ export function JourneySection({ ar }: { ar: boolean }) {
           {journey.map((item, idx) => (
             <div
               key={item.year}
-              className="group relative rounded-3xl border border-white/20 bg-background/80 p-7 shadow-lg backdrop-blur-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:border-brand-orange/40 lg:w-[380px] lg:shrink-0 flex flex-col justify-between"
+              className="group relative rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-7 shadow-[0_12px_40px_rgba(0,0,0,0.05)] backdrop-blur-3xl ring-1 ring-white/30 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] hover:bg-white/60 dark:hover:bg-white/20 hover:shadow-[0_25px_60px_rgba(0,0,0,0.1)] hover:border-brand-orange/50 lg:w-[380px] lg:shrink-0 flex flex-col justify-between cursor-pointer"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">

@@ -305,7 +305,7 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
                         "group relative flex flex-col justify-between rounded-2xl border p-4 transition-all duration-300 cursor-pointer backdrop-blur-xl select-none",
                         isCurrent
                           ? "border-brand-orange bg-brand-orange/15 shadow-[0_8px_25px_rgba(249,115,22,0.2)] ring-1 ring-brand-orange scale-[1.02]"
-                          : "border-white/30 bg-background/50 hover:border-brand-orange/40 hover:bg-background/80 hover:scale-[1.01]"
+                          : "border-white/50 bg-white/40 dark:bg-white/10 hover:border-brand-orange/50 hover:bg-white/60 dark:hover:bg-white/20 hover:scale-[1.02] hover:-translate-y-0.5 shadow-sm hover:shadow-md"
                       )}
                     >
                       <div className="flex items-center justify-between gap-3">
@@ -340,7 +340,7 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
               </div>
 
               {/* Verified international trade network statement */}
-              <div className="mt-2 rounded-2xl border border-white/20 bg-background/40 p-4 backdrop-blur-md text-start">
+              <div className="mt-2 rounded-2xl border border-white/50 bg-white/40 dark:bg-white/10 p-4 backdrop-blur-2xl ring-1 ring-white/30 text-start transition-all duration-300 hover:bg-white/60 dark:hover:bg-white/20">
                 <div className="flex items-center gap-2 text-xs font-bold text-brand-orange">
                   <CheckCircle2 className="size-4" />
                   <span>{ar ? "معايير التجارة الدولية المعتمدة" : "Verified International Trade Standards"}</span>
@@ -356,7 +356,7 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
             {/* Focused Visual Map & Country Inspector */}
             <div className="lg:col-span-5 flex flex-col gap-4">
               {/* Highlight Details Box */}
-              <div className="rounded-2xl border border-brand-orange/30 bg-background/80 p-5 shadow-lg backdrop-blur-2xl ring-1 ring-brand-orange/20 text-start">
+              <div className="rounded-2xl border border-brand-orange/40 bg-white/50 dark:bg-white/10 p-5 shadow-lg backdrop-blur-2xl ring-1 ring-brand-orange/20 text-start transition-all duration-300 hover:scale-[1.01] hover:bg-white/70 dark:hover:bg-white/20">
                 <div className="flex items-center justify-between mb-3 pb-3 border-b border-border/50">
                   <div className="flex items-center gap-3">
                     <span className="text-3xl">{activeCountry.flag}</span>
@@ -589,7 +589,7 @@ export function WhatWeOfferSection({ ar }: { ar: boolean }) {
           return (
             <div
               key={s.id}
-              className="rounded-3xl border border-white/20 bg-background/80 p-6 sm:p-8 backdrop-blur-2xl shadow-lg transition-all duration-300 hover:shadow-xl hover:border-brand-green/35 hover:scale-[1.005]"
+              className="rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-6 sm:p-8 backdrop-blur-3xl shadow-[0_12px_40px_rgba(0,0,0,0.04)] ring-1 ring-white/30 transition-all duration-500 hover:-translate-y-1.5 hover:scale-[1.01] hover:bg-white/60 dark:hover:bg-white/20 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] hover:border-brand-green/50"
             >
               <div className="w-full text-start border-b border-border/60 pb-5 mb-6">
                 <div>
@@ -607,7 +607,7 @@ export function WhatWeOfferSection({ ar }: { ar: boolean }) {
                 {data.items.map((item) => (
                   <div
                     key={item.en}
-                    className="group flex items-center gap-2.5 rounded-2xl border border-white/25 bg-background/70 px-4 py-2.5 shadow-sm backdrop-blur-md transition-all duration-200 hover:border-brand-green hover:bg-brand-green/10 hover:scale-[1.02] active:scale-95 cursor-pointer"
+                    className="group flex items-center gap-2.5 rounded-2xl border border-white/50 bg-white/50 dark:bg-white/15 px-4 py-2.5 shadow-sm backdrop-blur-md transition-all duration-300 hover:border-brand-green hover:bg-white/80 hover:scale-105 active:scale-95 cursor-pointer"
                   >
                     <CheckCircle2 className="size-4 shrink-0 text-brand-green-text transition-transform group-hover:scale-110" />
                     <span className="text-xs sm:text-sm font-semibold text-foreground/90 leading-snug">

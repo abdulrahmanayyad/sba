@@ -217,7 +217,7 @@ export function SectorsShowcase({ ar }: { ar: boolean }) {
             aria-labelledby={`showcase-tab-${current.id}`}
             ref={contentRef}
             className={cn(
-              "flex flex-col justify-between rounded-2xl border border-border/80 bg-secondary/40 p-8 md:p-12 shadow-sm backdrop-blur-xl transition-all duration-300",
+              "flex flex-col justify-between rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-8 md:p-12 shadow-[0_12px_40px_rgba(0,0,0,0.05)] backdrop-blur-3xl ring-1 ring-white/30 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)]",
               animating ? "opacity-0 translate-y-3" : "opacity-100 translate-y-0"
             )}
             style={{ transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)" }}
@@ -243,7 +243,7 @@ export function SectorsShowcase({ ar }: { ar: boolean }) {
                 {(ar ? current.pillsAr : current.pillsEn).map((pill) => (
                   <span
                     key={pill}
-                    className="rounded-full border border-border/70 bg-background/80 px-4 py-1.5 text-xs font-semibold text-foreground backdrop-blur-md shadow-xs transition-colors duration-200 hover:border-brand-orange/50 hover:text-brand-orange"
+                    className="rounded-full border border-white/50 bg-white/50 dark:bg-white/15 px-4 py-1.5 text-xs font-semibold text-foreground backdrop-blur-md shadow-xs transition-all duration-300 hover:border-brand-orange/60 hover:bg-white/80 hover:text-brand-orange hover:scale-105 hover:-translate-y-0.5"
                   >
                     {pill}
                   </span>
