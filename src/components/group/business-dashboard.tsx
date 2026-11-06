@@ -239,14 +239,9 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
                       0{idx + 1}
                     </span>
                   </div>
-                  {/* Milestones-style gradient and font size */}
+                  {/* Milestones-style gradient and font size matching Our Journey */}
                   <div
-                    className={cn(
-                      "font-head drop-shadow-sm flex items-center gap-1 text-start",
-                      (stat.sector === "construction" || stat.sector === "garment")
-                        ? "text-2xl sm:text-3xl font-black text-brand-orange tracking-tight"
-                        : "text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500"
-                    )}
+                    className="font-head text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm flex items-center gap-1 text-start"
                     dir={ar ? "rtl" : "ltr"}
                   >
                     <AnimatedStatistic value={stat.value} />

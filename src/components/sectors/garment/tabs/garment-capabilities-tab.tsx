@@ -88,7 +88,7 @@ export function GarmentCapabilitiesTab() {
                     {cap.type === "available" && <Sparkles className="size-4 text-brand-orange" />}
                   </div>
 
-                  <div className="font-head text-3xl sm:text-4xl font-black text-brand-orange">
+                  <div className="font-head text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">
                     {ar ? cap.numberAr : cap.numberEn}
                   </div>
                   <div className="text-xs font-bold text-brand-green mt-1">
@@ -194,7 +194,7 @@ export function GarmentCapabilitiesTab() {
               <p className="section-intro mt-3">{ar ? shirtFacility.subtitleAr : shirtFacility.subtitleEn}</p>
             </div>
             <div className="rounded-2xl border border-brand-orange/40 bg-brand-orange/10 p-5 text-center shrink-0">
-              <div className="text-2xl sm:text-3xl font-black text-brand-orange">{ar ? shirtFacility.monthlyCapacityAr : shirtFacility.monthlyCapacityEn}</div>
+              <div className="font-head text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">{ar ? shirtFacility.monthlyCapacityAr : shirtFacility.monthlyCapacityEn}</div>
               <div className="text-xs font-bold text-muted-foreground uppercase mt-1">{ar ? "طاقة الخط المعتمدة شهريًا" : "Certified Monthly Capacity"}</div>
             </div>
           </div>
@@ -219,7 +219,7 @@ export function GarmentCapabilitiesTab() {
           <div className="grid gap-4 sm:grid-cols-3 rounded-2xl border border-border/80 bg-secondary/30 p-6">
             {shirtFacility.qualityBenchmarks.map((qb, idx) => (
               <div key={idx} className="text-center sm:text-start">
-                <div className="font-head text-2xl font-black text-brand-green">{qb.metric}</div>
+                <div className="font-head text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">{qb.metric}</div>
                 <div className="text-xs font-bold text-foreground mt-0.5">{ar ? qb.labelAr : qb.labelEn}</div>
                 <p className="text-[11px] text-muted-foreground mt-1 leading-snug">{ar ? qb.descAr : qb.descEn}</p>
               </div>

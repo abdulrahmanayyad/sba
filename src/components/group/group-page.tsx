@@ -186,16 +186,12 @@ export function GroupPage() {
                   {sector.figures && (
                     <div data-stagger className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
                       {sector.figures.map((figure) => {
-                        const isProminent = sector.slug === "construction" || sector.slug === "garment";
                         return (
                           <div key={figure.label} className="border-t border-border pt-3">
                             <p
                               className={cn(
-                                "font-head transition-all drop-shadow-sm",
-                                ar ? "text-right" : "text-left",
-                                isProminent
-                                  ? "text-2xl sm:text-3xl font-black text-brand-orange tracking-tight"
-                                  : "text-xl sm:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500"
+                                "font-head text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm transition-all",
+                                ar ? "text-right" : "text-left"
                               )}
                             >
                               <AnimatedStatistic value={figure.value} />

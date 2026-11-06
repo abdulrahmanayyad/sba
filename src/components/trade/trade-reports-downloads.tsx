@@ -318,19 +318,19 @@ export function TradeReportsDownloads({ ar = true }: TradeReportsDownloadsProps)
                   </h4>
                   <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
                     <div className="rounded-xl border border-white/10 bg-white/5 p-4 text-center">
-                      <span className="text-2xl font-black text-brand-orange">47</span>
+                      <span className="font-head text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">47</span>
                       <p className="text-xs text-muted-foreground mt-1">{ar ? "دولة مسجلة" : "Documented Countries"}</p>
                     </div>
                     <div className="rounded-xl border border-white/10 bg-white/5 p-4 text-center">
-                      <span className="text-2xl font-black text-emerald-400">179</span>
+                      <span className="font-head text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">179</span>
                       <p className="text-xs text-muted-foreground mt-1">{ar ? "استفسار تجاري موثق" : "Recorded Inquiries"}</p>
                     </div>
                     <div className="rounded-xl border border-white/10 bg-white/5 p-4 text-center">
-                      <span className="text-2xl font-black text-amber-400">66</span>
+                      <span className="font-head text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">66</span>
                       <p className="text-xs text-muted-foreground mt-1">{ar ? "استفسارات التمور" : "Dates Inquiries"}</p>
                     </div>
                     <div className="rounded-xl border border-white/10 bg-white/5 p-4 text-center">
-                      <span className="text-2xl font-black text-teal-400">113</span>
+                      <span className="font-head text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">113</span>
                       <p className="text-xs text-muted-foreground mt-1">{ar ? "استفسارات سلع متنوعة" : "Diversified Inquiries"}</p>
                     </div>
                   </div>

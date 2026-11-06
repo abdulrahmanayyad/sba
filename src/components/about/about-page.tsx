@@ -88,7 +88,7 @@ export function AboutPage() {
                 {whoWeAreData.stats.map((stat) => (
                   <div key={stat.value} className={ar ? "text-right" : "text-left"}>
                     <p className={cn(
-                      "font-head text-2xl sm:text-3xl font-black text-brand-orange drop-shadow-sm tracking-tight",
+                      "font-head text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm",
                       ar ? "text-right" : "text-left"
                     )}>
                       <AnimatedStatistic value={stat.value} />

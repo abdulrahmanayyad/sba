@@ -160,28 +160,28 @@ function EnvironmentalAboutView({ ar }: { ar: boolean }) {
           {/* Key Metrics Dashboard */}
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:gap-4 mb-8">
             <div className="rounded-2xl border border-white/20 bg-background/80 p-5 shadow-sm backdrop-blur-md text-center">
-              <div className="text-2xl sm:text-3xl font-black text-brand-green">19</div>
+              <div className="font-head text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">19</div>
               <div className="mt-1 text-xs font-bold text-muted-foreground uppercase tracking-wider">
                 {ar ? "تخصصًا وخدمة بيئية متكاملة" : "Core Disciplines"}
               </div>
             </div>
 
             <div className="rounded-2xl border border-white/20 bg-background/80 p-5 shadow-sm backdrop-blur-md text-center">
-              <div className="text-2xl sm:text-3xl font-black text-brand-orange">RENERGON</div>
+              <div className="font-head text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">RENERGON</div>
               <div className="mt-1 text-xs font-bold text-muted-foreground uppercase tracking-wider">
                 {ar ? "تحالف سويسري حصري للبيوجاز" : "Swiss Strategic Alliance"}
               </div>
             </div>
 
             <div className="rounded-2xl border border-white/20 bg-background/80 p-5 shadow-sm backdrop-blur-md text-center">
-              <div className="text-2xl sm:text-3xl font-black text-brand-green">185K+</div>
+              <div className="font-head text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">185K+</div>
               <div className="mt-1 text-xs font-bold text-muted-foreground uppercase tracking-wider">
                 {ar ? "طن مكافئ كربون تم تجنبه" : "Tons CO₂e Mitigated"}
               </div>
             </div>
 
             <div className="rounded-2xl border border-white/20 bg-background/80 p-5 shadow-sm backdrop-blur-md text-center">
-              <div className="text-2xl sm:text-3xl font-black text-brand-orange">100%</div>
+              <div className="font-head text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">100%</div>
               <div className="mt-1 text-xs font-bold text-muted-foreground uppercase tracking-wider">
                 {ar ? "نسبة اعتماد دراسات EIA" : "Statutory EIA Approval"}
               </div>
@@ -588,7 +588,7 @@ function EnvironmentalAboutView({ ar }: { ar: boolean }) {
           <div className="grid grid-cols-2 gap-4 lg:grid-cols-4 mb-10">
             {impact.kpis.map((kpi, idx) => (
               <div key={idx} className="rounded-2xl border border-white/20 bg-background/80 p-5 shadow-sm backdrop-blur-md text-center">
-                <div className="text-2xl sm:text-3xl font-black text-brand-green">{kpi.metric}</div>
+                <div className="font-head text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">{kpi.metric}</div>
                 <div className="text-xs font-bold text-brand-orange mt-0.5">{ar ? kpi.unitAr : kpi.unitEn}</div>
                 <div className="mt-2 text-xs text-muted-foreground leading-snug">{ar ? kpi.labelAr : kpi.labelEn}</div>
               </div>

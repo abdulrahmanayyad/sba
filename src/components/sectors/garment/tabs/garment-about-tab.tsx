@@ -68,28 +68,28 @@ export function GarmentAboutTab() {
           {/* Key Metrics Dashboard */}
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:gap-4 mb-8">
             <div className="rounded-2xl border border-white/20 bg-background/80 p-5 shadow-sm backdrop-blur-md text-center">
-              <div className="text-2xl sm:text-3xl font-black text-brand-orange">+40 {ar ? "عامًا" : "Years"}</div>
+              <div className="font-head text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">+40 {ar ? "عامًا" : "Years"}</div>
               <div className="mt-1 text-xs font-bold text-muted-foreground uppercase tracking-wider">
                 {ar ? "خبرة تصنيعية ممتدة" : "Industrial Heritage"}
               </div>
             </div>
 
             <div className="rounded-2xl border border-white/20 bg-background/80 p-5 shadow-sm backdrop-blur-md text-center">
-              <div className="text-2xl sm:text-3xl font-black text-brand-green">15</div>
+              <div className="font-head text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">15</div>
               <div className="mt-1 text-xs font-bold text-muted-foreground uppercase tracking-wider">
                 {ar ? "خط إنتاج تخصصي" : "Active Production Lines"}
               </div>
             </div>
 
             <div className="rounded-2xl border border-white/20 bg-background/80 p-5 shadow-sm backdrop-blur-md text-center">
-              <div className="text-2xl sm:text-3xl font-black text-brand-orange">100K+</div>
+              <div className="font-head text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">100K+</div>
               <div className="mt-1 text-xs font-bold text-muted-foreground uppercase tracking-wider">
                 {ar ? "قطعة شهريًا طاقة فعلية" : "Actual Monthly Output"}
               </div>
             </div>
 
             <div className="rounded-2xl border border-white/20 bg-background/80 p-5 shadow-sm backdrop-blur-md text-center">
-              <div className="text-2xl sm:text-3xl font-black text-brand-green">250+</div>
+              <div className="font-head text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">250+</div>
               <div className="mt-1 text-xs font-bold text-muted-foreground uppercase tracking-wider">
                 {ar ? "ماكينة إلكترونية متقدمة" : "Advanced Machines"}
               </div>
@@ -226,7 +226,7 @@ export function GarmentAboutTab() {
                     {cap.type === "available" && <Sparkles className="size-4 text-brand-orange" />}
                   </div>
 
-                  <div className="font-head text-3xl sm:text-4xl font-black text-brand-orange">
+                  <div className="font-head text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">
                     {ar ? cap.numberAr : cap.numberEn}
                   </div>
                   <div className="text-xs font-bold text-brand-green mt-1">
@@ -427,7 +427,7 @@ export function GarmentAboutTab() {
                   <p className="text-xs text-muted-foreground mt-0.5">{ar ? shirtFacility.noteAr : shirtFacility.noteEn}</p>
                 </div>
                 <div className="text-center sm:text-end shrink-0">
-                  <div className="text-2xl font-black text-brand-orange">{ar ? shirtFacility.monthlyCapacityAr : shirtFacility.monthlyCapacityEn}</div>
+                  <div className="font-head text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">{ar ? shirtFacility.monthlyCapacityAr : shirtFacility.monthlyCapacityEn}</div>
                   <div className="text-[11px] font-bold text-muted-foreground uppercase">{ar ? "طاقة الخط المعتمدة" : "Certified Line Capacity"}</div>
                 </div>
               </div>

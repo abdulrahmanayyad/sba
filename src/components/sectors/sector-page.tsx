@@ -176,7 +176,7 @@ export function SectorPage({ sector }: { sector: SectorPageData }) {
                 >
                   <p
                     className={cn(
-                      "font-head text-3xl sm:text-4xl font-black text-brand-orange drop-shadow-sm tracking-tight",
+                      "font-head text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm",
                       ar ? "text-right" : "text-left"
                     )}
                   >
