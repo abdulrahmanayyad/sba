@@ -141,7 +141,7 @@ export function SectorsShowcase({ ar }: { ar: boolean }) {
           <div className="flex flex-col lg:border-e lg:border-border/60 lg:pe-10">
             {/* Title / Eyebrow */}
             <div className="mb-8">
-              <span className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/40 dark:bg-white/10 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
                 <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
                 {ar ? "نظرة عامة على القطاعات" : "Sectors Overview"}
               </span>
@@ -165,7 +165,7 @@ export function SectorsShowcase({ ar }: { ar: boolean }) {
                       "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/50",
                       isActive
                         ? "bg-brand-green/10 text-brand-green shadow-sm backdrop-blur-md border border-brand-green/30"
-                        : "text-foreground/75 hover:bg-secondary hover:text-foreground border border-transparent"
+                        : "text-foreground/75 hover:bg-white/40 dark:hover:bg-white/10 hover:text-foreground border border-transparent"
                     )}
                   >
                     <span

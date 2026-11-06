@@ -26,13 +26,13 @@ export function HomeTradeSection({ ar = true }: HomeTradeSectionProps) {
         <div className="relative z-10 flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
           {/* Left Column: Heading, Badges, CTA */}
           <div className="max-w-2xl space-y-6 text-start">
-            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-4 py-1.5 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/40 dark:bg-white/10 px-4 py-1.5 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
               <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
               <span className="font-bold text-brand-green">{ar ? "انتشارنا العالمي" : "Our Global Reach"}</span>
             </div>
 
             <div className="space-y-3">
-              <h2 className="font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-foreground leading-tight">
+              <h2 className="font-head text-xl sm:text-2xl lg:text-3xl font-extrabold text-foreground leading-snug">
                 {ar ? "نربط الأسواق ونصنع الفرص التجارية" : "Connecting Markets. Delivering Opportunities."}
               </h2>
               <p className="text-sm sm:text-base text-muted-foreground leading-relaxed font-medium">
