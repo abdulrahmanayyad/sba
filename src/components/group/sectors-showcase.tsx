@@ -244,7 +244,7 @@ export function SectorsShowcase({ ar }: { ar: boolean }) {
                   {(ar ? current.pillsAr : current.pillsEn).map((pill) => (
                     <span
                       key={pill}
-                      className="rounded-full border border-white/50 bg-white/50 dark:bg-white/15 px-4 py-1.5 text-xs font-semibold text-foreground backdrop-blur-md shadow-xs transition-all duration-300 hover:border-brand-orange/60 hover:bg-white/80 hover:text-brand-orange hover:scale-105 hover:-translate-y-0.5"
+                      className="rounded-full border border-white/50 bg-white/50 dark:bg-white/15 px-4 py-1.5 text-xs font-semibold text-foreground backdrop-blur-md shadow-xs transition-all duration-300 hover:border-white/80 hover:bg-white/80 hover:scale-105 hover:-translate-y-0.5"
                     >
                       {pill}
                     </span>

@@ -51,7 +51,7 @@ export function HomeTradeSection({ ar = true }: HomeTradeSectionProps) {
                 {featuredCountries.map((c) => (
                   <span
                     key={c.code}
-                    className="inline-flex items-center gap-1.5 rounded-full border border-white/50 bg-white/50 dark:bg-white/15 px-3 py-1 text-xs text-foreground backdrop-blur-md shadow-xs transition-all duration-300 hover:scale-105 hover:bg-white/80 hover:border-brand-orange/50"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-white/50 bg-white/50 dark:bg-white/15 px-3 py-1 text-xs text-foreground backdrop-blur-md shadow-xs transition-all duration-300 hover:scale-105 hover:bg-white/80 hover:border-white/80"
                   >
                     <span>{c.flag}</span>
                     <span className="font-semibold">{ar ? c.nameAr : c.nameEn}</span>
@@ -81,7 +81,7 @@ export function HomeTradeSection({ ar = true }: HomeTradeSectionProps) {
 
           {/* Right Column: 4 Key Metric Cards */}
           <div className="grid grid-cols-2 gap-3.5 sm:gap-4 lg:w-[420px] shrink-0">
-            <div className="rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-5 backdrop-blur-2xl text-start shadow-[0_8px_30px_rgba(0,0,0,0.04)] ring-1 ring-white/30 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:bg-white/60 dark:hover:bg-white/20 hover:border-brand-orange/50 hover:shadow-lg cursor-pointer">
+            <div className="rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-5 backdrop-blur-2xl text-start shadow-[0_8px_30px_rgba(0,0,0,0.04)] ring-1 ring-white/30 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:bg-white/60 dark:hover:bg-white/20 hover:border-white/80 hover:shadow-lg cursor-pointer">
               <span className="font-head text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">47</span>
               <h4 className="text-xs font-bold text-foreground mt-1">
                 {ar ? "دولة مسجلة في الاستفسارات" : "Documented Countries"}
@@ -91,7 +91,7 @@ export function HomeTradeSection({ ar = true }: HomeTradeSectionProps) {
               </p>
             </div>
 
-            <div className="rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-5 backdrop-blur-2xl text-start shadow-[0_8px_30px_rgba(0,0,0,0.04)] ring-1 ring-white/30 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:bg-white/60 dark:hover:bg-white/20 hover:border-brand-green/50 hover:shadow-lg cursor-pointer">
+            <div className="rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-5 backdrop-blur-2xl text-start shadow-[0_8px_30px_rgba(0,0,0,0.04)] ring-1 ring-white/30 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:bg-white/60 dark:hover:bg-white/20 hover:border-white/80 hover:shadow-lg cursor-pointer">
               <span className="font-head text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">179</span>
               <h4 className="text-xs font-bold text-foreground mt-1">
                 {ar ? "سجل استفسار تجاري موثق" : "Recorded Inquiries"}
@@ -101,7 +101,7 @@ export function HomeTradeSection({ ar = true }: HomeTradeSectionProps) {
               </p>
             </div>
 
-            <div className="rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-5 backdrop-blur-2xl text-start shadow-[0_8px_30px_rgba(0,0,0,0.04)] ring-1 ring-white/30 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:bg-white/60 dark:hover:bg-white/20 hover:border-amber-500/50 hover:shadow-lg cursor-pointer">
+            <div className="rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-5 backdrop-blur-2xl text-start shadow-[0_8px_30px_rgba(0,0,0,0.04)] ring-1 ring-white/30 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:bg-white/60 dark:hover:bg-white/20 hover:border-white/80 hover:shadow-lg cursor-pointer">
               <span className="font-head text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">66</span>
               <h4 className="text-xs font-bold text-foreground mt-1">
                 {ar ? "طلبات التمور ومنتجاتها" : "Dates Inquiries"}
@@ -111,7 +111,7 @@ export function HomeTradeSection({ ar = true }: HomeTradeSectionProps) {
               </p>
             </div>
 
-            <div className="rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-5 backdrop-blur-2xl text-start shadow-[0_8px_30px_rgba(0,0,0,0.04)] ring-1 ring-white/30 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:bg-white/60 dark:hover:bg-white/20 hover:border-teal-500/50 hover:shadow-lg cursor-pointer">
+            <div className="rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-5 backdrop-blur-2xl text-start shadow-[0_8px_30px_rgba(0,0,0,0.04)] ring-1 ring-white/30 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:bg-white/60 dark:hover:bg-white/20 hover:border-white/80 hover:shadow-lg cursor-pointer">
               <span className="font-head text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">113</span>
               <h4 className="text-xs font-bold text-foreground mt-1">
                 {ar ? "سلع ومحاصيل متنوعة" : "Diversified Commodities"}

@@ -195,7 +195,7 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
 
   const t = (v: { en: string; ar: string }) => (ar ? v.ar : v.en);
 
-  const card = "group/card relative rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-6 md:p-8 backdrop-blur-2xl shadow-[0_12px_40px_rgba(0,0,0,0.04)] ring-1 ring-white/30 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.015] hover:bg-white/60 dark:hover:bg-white/20 hover:shadow-[0_24px_60px_rgba(0,0,0,0.08)] hover:border-brand-orange/50 active:translate-y-0 cursor-pointer";
+  const card = "group/card relative rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-6 md:p-8 backdrop-blur-2xl shadow-[0_12px_40px_rgba(0,0,0,0.04)] ring-1 ring-white/30 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.015] hover:bg-white/60 dark:hover:bg-white/20 hover:shadow-[0_24px_60px_rgba(0,0,0,0.08)] hover:border-white/80 active:translate-y-0 cursor-pointer";
 
   const activeCountry = (hoveredCountry ? partnerCountries.find((c) => c.nameEn === hoveredCountry) ?? null : null) ?? selectedCountry ?? partnerCountries[0];
 
@@ -230,7 +230,7 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
                   return (
                     <div
                       key={idx}
-                      className="group/stat relative rounded-2xl border border-white/50 bg-white/50 dark:bg-white/15 p-5 backdrop-blur-xl shadow-xs transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:bg-white/80 dark:hover:bg-white/25 hover:border-brand-orange/50 hover:shadow-md cursor-pointer flex flex-col justify-between"
+                      className="group/stat relative rounded-2xl border border-white/50 bg-white/50 dark:bg-white/15 p-5 backdrop-blur-xl shadow-xs transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:bg-white/80 dark:hover:bg-white/25 hover:border-white/80 hover:shadow-md cursor-pointer flex flex-col justify-between"
                     >
                       <div>
                         <div className="flex items-center justify-between mb-3">
@@ -306,7 +306,7 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
                         "group relative flex flex-col justify-between rounded-2xl border p-4 transition-all duration-300 cursor-pointer backdrop-blur-xl select-none",
                         isCurrent
                           ? "border-brand-orange bg-brand-orange/15 shadow-[0_8px_25px_rgba(249,115,22,0.2)] ring-1 ring-brand-orange scale-[1.02]"
-                          : "border-white/50 bg-white/40 dark:bg-white/10 hover:border-brand-orange/50 hover:bg-white/60 dark:hover:bg-white/20 hover:scale-[1.02] hover:-translate-y-0.5 shadow-sm hover:shadow-md"
+                          : "border-white/50 bg-white/40 dark:bg-white/10 hover:border-white/80 hover:bg-white/60 dark:hover:bg-white/20 hover:scale-[1.02] hover:-translate-y-0.5 shadow-sm hover:shadow-md"
                       )}
                     >
                       <div className="flex items-center justify-between gap-3">
@@ -610,7 +610,7 @@ export function WhatWeOfferSection({ ar }: { ar: boolean }) {
                   {data.items.map((item) => (
                     <div
                       key={item.en}
-                      className="group flex items-center gap-2.5 rounded-2xl border border-white/50 bg-white/50 dark:bg-white/15 px-4 py-2.5 shadow-sm backdrop-blur-md transition-all duration-300 hover:border-brand-green hover:bg-white/80 hover:scale-105 active:scale-95 cursor-pointer"
+                      className="group flex items-center gap-2.5 rounded-2xl border border-white/50 bg-white/50 dark:bg-white/15 px-4 py-2.5 shadow-sm backdrop-blur-md transition-all duration-300 hover:border-white/80 hover:bg-white/80 hover:scale-105 active:scale-95 cursor-pointer"
                     >
                       <CheckCircle2 className="size-4 shrink-0 text-brand-green-text transition-transform group-hover:scale-110" />
                       <span className="text-xs sm:text-sm font-semibold text-foreground/90 leading-snug">

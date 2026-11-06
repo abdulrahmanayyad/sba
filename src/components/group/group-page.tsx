@@ -177,7 +177,7 @@ export function GroupPage() {
                   {sector.subsectors && (
                     <div className="mt-4 grid gap-3 sm:grid-cols-2">
                       {sector.subsectors.map((sub, sIdx) => (
-                        <div key={sIdx} className="rounded-xl border border-white/50 bg-white/40 dark:bg-white/10 p-3.5 backdrop-blur-md transition-all duration-300 hover:border-brand-green/40 hover:bg-white/60 dark:hover:bg-white/20 hover:scale-[1.02]">
+                        <div key={sIdx} className="rounded-xl border border-white/50 bg-white/40 dark:bg-white/10 p-3.5 backdrop-blur-md transition-all duration-300 hover:border-white/80 hover:bg-white/60 dark:hover:bg-white/20 hover:scale-[1.02]">
                           <p className="font-head text-xs sm:text-sm font-bold text-foreground">
                             {ar ? sub.titleAr : sub.titleEn}
                           </p>
