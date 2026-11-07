@@ -1,16 +1,8 @@
 import { useState } from "react";
 import {
-  Building2,
-  Gem,
-  Utensils,
-  BookOpen,
-  Leaf,
-  Layers,
-  Calendar,
   CheckCircle2,
   ChevronRight,
   ChevronLeft,
-  Sparkles,
   MapPin,
   ArrowRight
 } from "lucide-react";
@@ -21,28 +13,6 @@ import {
   OFFICIAL_TIMELINE_MILESTONES,
   type LegacyMilestone
 } from "./legacy-data";
-
-function getMilestoneIcon(type: LegacyMilestone["iconType"], isActive: boolean) {
-  const iconClass = cn("size-5 transition-transform duration-300", isActive && "scale-110");
-  switch (type) {
-    case "construction":
-      return <Building2 className={iconClass} />;
-    case "real_estate":
-      return <Building2 className={iconClass} />;
-    case "gold":
-      return <Gem className={iconClass} />;
-    case "food":
-      return <Utensils className={iconClass} />;
-    case "heritage":
-      return <BookOpen className={iconClass} />;
-    case "environment":
-      return <Leaf className={iconClass} />;
-    case "integration":
-      return <Layers className={iconClass} />;
-    default:
-      return <Sparkles className={iconClass} />;
-  }
-}
 
 export function CorporateTimeline() {
   const { language } = useLanguage();
@@ -165,6 +135,7 @@ export function CorporateTimeline() {
             {OFFICIAL_TIMELINE_MILESTONES.map((m, idx) => {
               const isSelected = m.year === activeYear;
               const isPast = idx <= activeIndex;
+              const isLast = idx === OFFICIAL_TIMELINE_MILESTONES.length - 1;
               return (
                 <button
                   key={m.year}
@@ -172,7 +143,7 @@ export function CorporateTimeline() {
                   onClick={() => setActiveYear(m.year)}
                   className="group relative z-10 flex flex-col items-center flex-1 transition-all cursor-pointer focus:outline-none"
                 >
-                  {/* Circle Node */}
+                  {/* Square Node */}
                   <div
                     className={cn(
                       "size-14 rounded-2xl flex items-center justify-center transition-all duration-300 shadow-md",
@@ -183,7 +154,11 @@ export function CorporateTimeline() {
                         : "border border-border/80 bg-secondary/80 text-muted-foreground hover:bg-secondary hover:text-foreground"
                     )}
                   >
-                    {getMilestoneIcon(m.iconType, isSelected)}
+                    {!isLast ? (
+                      <ArrowRight className="size-5 transition-transform duration-300 rtl:rotate-180 group-hover:scale-110" />
+                    ) : (
+                      <CheckCircle2 className="size-5 transition-transform duration-300 group-hover:scale-110" />
+                    )}
                   </div>
 
                   {/* Year Tag */}
@@ -196,18 +171,6 @@ export function CorporateTimeline() {
                     )}
                   >
                     {m.year}
-                  </span>
-
-                  {/* Country Pill */}
-                  <span
-                    className={cn(
-                      "mt-0.5 text-[10px] font-bold px-2 py-0.5 rounded-full transition-colors",
-                      isSelected
-                        ? "bg-brand-orange/15 text-brand-orange"
-                        : "bg-secondary text-muted-foreground"
-                    )}
-                  >
-                    {ar ? m.countryAr : m.countryEn}
                   </span>
                 </button>
               );
