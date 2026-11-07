@@ -156,7 +156,7 @@ export function AboutPage() {
               const Icon = sectorIcons[index] ?? Layers;
               return (
                 <Reveal key={sector.title} delay={index * 0.08}>
-                  <div className="group flex h-full flex-col justify-between rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-6 sm:p-7 backdrop-blur-2xl shadow-[0_10px_35px_rgba(0,0,0,0.04)] ring-1 ring-white/30 transition-all duration-300 hover:-translate-y-1 hover:bg-white/60 dark:hover:bg-white/20 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)] hover:border-brand-green/50 cursor-pointer">
+                  <div className="group flex h-full flex-col justify-between rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-6 sm:p-7 backdrop-blur-2xl shadow-[0_10px_35px_rgba(0,0,0,0.04)] ring-1 ring-white/30 transition-all duration-300 hover:-translate-y-1 hover:bg-white/60 dark:hover:bg-white/20 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)] cursor-pointer">
                     <div>
                       <div className="flex items-center justify-center text-center">
                         <span className="rounded-full border border-white/50 bg-white/50 dark:bg-white/15 px-3.5 py-1 text-[11px] font-bold text-brand-orange shadow-xs backdrop-blur-md">
@@ -257,7 +257,7 @@ export function AboutPage() {
                   return (
                     <div
                       key={sIdx}
-                      className="group relative flex flex-col justify-between rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-7 sm:p-8 min-h-[260px] shadow-[0_12px_36px_rgba(0,0,0,0.05)] backdrop-blur-3xl ring-1 ring-white/30 transition-all duration-300 hover:-translate-y-1 hover:bg-white/60 dark:hover:bg-white/20 hover:border-brand-green/50 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)]"
+                      className="group relative flex flex-col justify-between rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-7 sm:p-8 min-h-[260px] shadow-[0_12px_36px_rgba(0,0,0,0.05)] backdrop-blur-3xl ring-1 ring-white/30 transition-all duration-300 hover:-translate-y-1 hover:bg-white/60 dark:hover:bg-white/20 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)]"
                     >
                       <div>
                         <h4 className="font-head text-lg sm:text-xl font-bold text-foreground leading-snug group-hover:text-brand-green transition-colors">
@@ -306,7 +306,7 @@ export function AboutPage() {
             <div className="grid gap-4 sm:grid-cols-2 lg:col-span-7">
               {ourApproachData.steps.map((step, idx) => (
                 <Reveal key={step.num} delay={idx * 0.08}>
-                  <div className="h-full rounded-2xl border border-white/20 bg-background/60 p-6 backdrop-blur-xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-green/40 hover:shadow-md">
+                  <div className="h-full rounded-2xl border border-white/20 bg-background/60 p-6 backdrop-blur-xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
                     <span className="font-mono text-xs font-bold text-brand-orange">
                       {ar ? step.num : `STEP ${step.num}`}
                     </span>
@@ -338,7 +338,7 @@ export function AboutPage() {
               const Icon = valueIcons[index] ?? CheckCircle2;
               return (
                 <Reveal key={item.title} delay={index * 0.05}>
-                  <div className="group flex h-full flex-col justify-between rounded-2xl border border-white/20 bg-background/60 p-6 backdrop-blur-xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-green/40 hover:shadow-md">
+                  <div className="group flex h-full flex-col justify-between rounded-2xl border border-white/20 bg-background/60 p-6 backdrop-blur-xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
                     <div>
                       <h3 className="text-center font-head text-lg font-bold">
                         {ar ? item.titleAr : item.title}
@@ -367,7 +367,7 @@ export function AboutPage() {
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {whySbaData.pillars.map((pillar, idx) => (
               <Reveal key={pillar.title} delay={idx * 0.06}>
-                <div className="flex h-full flex-col justify-between rounded-2xl border border-white/20 bg-background/60 p-6 backdrop-blur-xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-green/40 hover:shadow-md">
+                <div className="flex h-full flex-col justify-between rounded-2xl border border-white/20 bg-background/60 p-6 backdrop-blur-xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
                   <div>
                     <div className="flex items-center justify-center gap-3">
                       <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-brand-orange/10 font-mono text-xs font-bold text-brand-orange">
@@ -387,7 +387,7 @@ export function AboutPage() {
 
             {/* Conclusion card */}
             <Reveal delay={0.45} className="sm:col-span-2 lg:col-span-1">
-              <div className="flex h-full flex-col justify-center items-center text-center rounded-2xl border border-brand-green/30 bg-gradient-to-br from-brand-green/10 via-background/60 to-background/80 p-6 backdrop-blur-xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-green/50 hover:shadow-lg">
+              <div className="flex h-full flex-col justify-center items-center text-center rounded-2xl border border-white/30 bg-background/80 p-6 backdrop-blur-xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
                 <h3 className="font-head text-lg sm:text-xl font-extrabold text-foreground">
                   {ar ? "تواصل معنا لبدء الشراكة" : "Connect with Us to Partner"}
                 </h3>
@@ -439,7 +439,7 @@ export function AboutPage() {
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {governanceData.principles.map((principle, idx) => (
               <Reveal key={principle.title} delay={idx * 0.05}>
-                <div className="flex h-full flex-col justify-between rounded-2xl border border-white/20 bg-background/60 p-6 backdrop-blur-xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-green/40 hover:shadow-md">
+                <div className="flex h-full flex-col justify-between rounded-2xl border border-white/20 bg-background/60 p-6 backdrop-blur-xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
                   <div>
                     <div className="flex items-center justify-between">
                       <span className="flex size-9 items-center justify-center rounded-lg bg-secondary text-xs font-bold text-brand-green">
@@ -479,7 +479,7 @@ export function AboutPage() {
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {policiesData.items.map((policy, idx) => (
               <Reveal key={policy.title} delay={idx * 0.04}>
-                <div className="flex h-full flex-col justify-between rounded-2xl border border-white/20 bg-background/60 p-6 backdrop-blur-xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-green/40 hover:shadow-md">
+                <div className="flex h-full flex-col justify-between rounded-2xl border border-white/20 bg-background/60 p-6 backdrop-blur-xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
                   <div>
                     <h3 className="font-head text-base font-bold">
                       {ar ? policy.titleAr : policy.title}

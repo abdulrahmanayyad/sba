@@ -126,7 +126,7 @@ export function TradeReportsDownloads({ ar = true }: TradeReportsDownloadsProps)
         {reportsList.map((rep) => (
           <div
             key={rep.id}
-            className="group flex flex-col justify-between rounded-3xl border border-white/15 bg-background/60 p-6 backdrop-blur-xl transition-all duration-300 hover:border-brand-green/60 hover:bg-background/80 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)] hover:-translate-y-1"
+            className="group flex flex-col justify-between rounded-3xl border border-white/15 bg-background/60 p-6 backdrop-blur-xl transition-all duration-300 hover:bg-background/80 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)] hover:-translate-y-1"
           >
             <div>
               <div className="flex items-center justify-between border-b border-white/10 pb-3">

@@ -183,7 +183,7 @@ export function ProductsCataloguePage() {
                     "rounded-2xl p-6 text-start transition-all duration-500 cursor-pointer border flex flex-col justify-center backdrop-blur-xl",
                     isSelected
                       ? "border-brand-green/60 bg-background/80 shadow-[0_12px_28px_-6px_rgba(22,135,108,0.25)] ring-1 ring-brand-green/50"
-                      : "border-border/80 bg-background/50 hover:bg-background/80 hover:-translate-y-1 hover:border-brand-green/40 hover:shadow-[0_12px_28px_-6px_rgba(22,135,108,0.22)]"
+                      : "border-border/80 bg-background/50 hover:bg-background/80 hover:-translate-y-1 hover:shadow-[0_12px_28px_-6px_rgba(22,135,108,0.22)]"
                   )}
                 >
                   <h4 className={cn("font-head text-base sm:text-lg font-bold transition-colors", isSelected ? "text-brand-green-text" : "text-foreground")}>
@@ -278,7 +278,7 @@ export function ProductsCataloguePage() {
             {filteredProducts.map((product) => (
               <div
                 key={product.id}
-                className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-white/20 bg-background/85 shadow-md backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-brand-green/60 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)]"
+                className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-white/20 bg-background/85 shadow-md backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)]"
               >
                 <div>
                   {/* Product Image */}

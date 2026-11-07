@@ -422,7 +422,7 @@ export function ModelsPage() {
               <div
                 key={item.id}
                 onClick={() => setActiveItem(item)}
-                className="group relative flex flex-col overflow-hidden rounded-2xl sm:rounded-3xl border border-white/30 bg-background/70 shadow-sm backdrop-blur-xl transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-green/50 hover:shadow-xl cursor-pointer"
+                className="group relative flex flex-col overflow-hidden rounded-2xl sm:rounded-3xl border border-white/30 bg-background/70 shadow-sm backdrop-blur-xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl cursor-pointer"
               >
                 {/* Image Container with 3:4 Fashion Ratio */}
                 <div className="relative aspect-[3/4] w-full overflow-hidden bg-muted/40">

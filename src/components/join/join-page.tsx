@@ -60,7 +60,7 @@ export function JoinPage({ trackId }: JoinPageProps) {
           {/* SIDEBAR: Track Overview, Target Audiences & Direct Recruitment Contacts */}
           <aside className="space-y-6 lg:sticky lg:top-36">
             {/* Track Info Card */}
-            <div className="rounded-3xl border border-white/40 bg-background/80 p-6 sm:p-8 shadow-sm backdrop-blur-2xl space-y-6 transition-all duration-300 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)] hover:border-brand-green/50 hover:-translate-y-1">
+            <div className="rounded-3xl border border-white/40 bg-background/80 p-6 sm:p-8 shadow-sm backdrop-blur-2xl space-y-6 transition-all duration-300 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)] hover:-translate-y-1">
               <div>
                 <span className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground">
                   <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
@@ -104,7 +104,7 @@ export function JoinPage({ trackId }: JoinPageProps) {
             </div>
 
             {/* Direct Contact Card */}
-            <div className="rounded-3xl border border-white/40 bg-gradient-to-br from-background/90 to-secondary/50 p-6 shadow-sm backdrop-blur-xl space-y-4 transition-all duration-300 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)] hover:border-brand-green/50 hover:-translate-y-1">
+            <div className="rounded-3xl border border-white/40 bg-gradient-to-br from-background/90 to-secondary/50 p-6 shadow-sm backdrop-blur-xl space-y-4 transition-all duration-300 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)] hover:-translate-y-1">
               <h4 className="font-head text-sm font-bold text-foreground">
                 {ar ? "استفسارات التوظيف المباشر:" : "Direct Recruitment Inquiries:"}
               </h4>

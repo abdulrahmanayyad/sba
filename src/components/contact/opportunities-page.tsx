@@ -688,7 +688,7 @@ export function SubmitOpportunityPage() {
                   </p>
                 </div>
 
-                <label className="flex flex-col items-center justify-center p-8 rounded-2xl border-2 border-dashed border-border hover:border-brand-green/60 bg-secondary/30 hover:bg-secondary/50 cursor-pointer transition-all">
+                <label className="flex flex-col items-center justify-center p-8 rounded-2xl border-2 border-dashed border-border hover:border-foreground/30 bg-secondary/30 hover:bg-secondary/50 cursor-pointer transition-all">
                   <Upload className="size-8 text-brand-green mb-2" />
                   <span className="text-xs sm:text-sm font-bold text-foreground">
                     {ar ? "انقر لاختيار ملفات العرض التقديمي والدراسات" : "Click to select pitch presentation & files"}

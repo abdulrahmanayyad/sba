@@ -389,7 +389,7 @@ export function ContactPage() {
                 </Link>
                 <Link
                   to="/contact/opportunities"
-                  className="flex items-center justify-between p-3 rounded-2xl border border-border bg-secondary/40 hover:bg-brand-green/10 hover:border-brand-green/40 transition-all text-xs font-bold"
+                  className="flex items-center justify-between p-3 rounded-2xl border border-border bg-secondary/40 hover:bg-secondary/70 transition-all text-xs font-bold"
                 >
                   <span className="flex items-center gap-2 text-foreground">
                     <Building2 className="size-4 text-brand-green" />
@@ -657,7 +657,7 @@ export function ContactPage() {
                       : "Accepted formats: PDF, DOC, DOCX, XLS, XLSX, JPG, PNG (Max 15MB per file)"}
                   </p>
 
-                  <label className="flex flex-col items-center justify-center p-6 rounded-2xl border-2 border-dashed border-border hover:border-brand-green/60 bg-secondary/30 hover:bg-secondary/50 cursor-pointer transition-all">
+                  <label className="flex flex-col items-center justify-center p-6 rounded-2xl border-2 border-dashed border-border hover:border-foreground/30 bg-secondary/30 hover:bg-secondary/50 cursor-pointer transition-all">
                     <Upload className="size-6 text-brand-green mb-2" />
                     <span className="text-xs font-bold text-foreground">
                       {ar ? "انقر لاختيار الملفات من جهازك" : "Click to select files"}

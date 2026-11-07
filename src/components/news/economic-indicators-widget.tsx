@@ -60,7 +60,7 @@ export function EconomicIndicatorsWidget() {
           {ECONOMIC_INDICATORS.map((ind) => (
             <div
               key={ind.id}
-              className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-border/80 bg-background/90 p-6 shadow-sm transition-all duration-300 hover:border-brand-green/60 hover:shadow-xl hover:bg-background"
+              className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-border/80 bg-background/90 p-6 shadow-sm transition-all duration-300 hover:shadow-xl hover:bg-background"
             >
               <div>
                 {/* Header */}

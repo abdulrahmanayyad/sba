@@ -349,7 +349,7 @@ export function SectorPage({ sector }: { sector: SectorPageData }) {
                       key={slug}
                       to="/sectors/$sector"
                       params={{ sector: slug }}
-                      className="group overflow-hidden rounded-2xl border border-border bg-card/60 p-4 backdrop-blur-md transition hover:-translate-y-1 hover:border-brand-green/60 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)]"
+                      className="group overflow-hidden rounded-2xl border border-border bg-card/60 p-4 backdrop-blur-md transition hover:-translate-y-1 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)]"
                     >
                       <div className="relative aspect-[16/10] overflow-hidden rounded-xl bg-secondary">
                         <img

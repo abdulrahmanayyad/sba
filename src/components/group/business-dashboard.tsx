@@ -195,7 +195,7 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
 
   const t = (v: { en: string; ar: string }) => (ar ? v.ar : v.en);
 
-  const card = "group/card relative rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-6 md:p-8 backdrop-blur-2xl shadow-[0_12px_40px_rgba(0,0,0,0.04)] ring-1 ring-white/30 transition-all duration-300 hover:-translate-y-1 hover:bg-white/60 dark:hover:bg-white/20 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)] hover:border-brand-green/60 active:translate-y-0 cursor-pointer";
+  const card = "group/card relative rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-6 md:p-8 backdrop-blur-2xl shadow-[0_12px_40px_rgba(0,0,0,0.04)] ring-1 ring-white/30 transition-all duration-300 hover:-translate-y-1 hover:bg-white/60 dark:hover:bg-white/20 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)] active:translate-y-0 cursor-pointer";
 
   const activeCountry = (hoveredCountry ? partnerCountries.find((c) => c.nameEn === hoveredCountry) ?? null : null) ?? selectedCountry ?? partnerCountries[0];
 
@@ -230,7 +230,7 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
                   return (
                     <div
                       key={idx}
-                      className="group/stat relative rounded-2xl border border-white/50 bg-white/50 dark:bg-white/15 p-5 backdrop-blur-xl shadow-xs transition-all duration-300 hover:-translate-y-1 hover:bg-white/80 dark:hover:bg-white/25 hover:border-brand-green/60 hover:shadow-lg cursor-pointer flex flex-col justify-between"
+                      className="group/stat relative rounded-2xl border border-white/50 bg-white/50 dark:bg-white/15 p-5 backdrop-blur-xl shadow-xs transition-all duration-300 hover:-translate-y-1 hover:bg-white/80 dark:hover:bg-white/25 hover:shadow-lg cursor-pointer flex flex-col justify-between"
                     >
                       <div>
                         <div className="flex items-center justify-between mb-3">
@@ -306,7 +306,7 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
                         "group relative flex flex-col justify-between rounded-2xl border p-4 transition-all duration-300 cursor-pointer backdrop-blur-xl select-none",
                         isCurrent
                           ? "border-brand-green bg-brand-green/15 shadow-[0_8px_25px_rgba(22,135,108,0.2)] ring-1 ring-brand-green"
-                          : "border-white/50 bg-white/40 dark:bg-white/10 hover:border-brand-green/60 hover:bg-white/60 dark:hover:bg-white/20 hover:-translate-y-0.5 shadow-sm hover:shadow-md"
+                          : "border-white/50 bg-white/40 dark:bg-white/10 hover:bg-white/60 dark:hover:bg-white/20 hover:-translate-y-0.5 shadow-sm hover:shadow-md"
                       )}
                     >
                       <div className="flex items-center justify-between gap-3">
@@ -357,7 +357,7 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
             {/* Focused Visual Map & Country Inspector */}
             <div className="lg:col-span-5 flex flex-col gap-4">
               {/* Highlight Details Box */}
-              <div className="rounded-2xl border border-brand-green/40 bg-white/50 dark:bg-white/10 p-5 shadow-lg backdrop-blur-2xl ring-1 ring-brand-green/20 text-start transition-all duration-300 hover:-translate-y-1 hover:border-brand-green/60 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)] hover:bg-white/70 dark:hover:bg-white/20">
+              <div className="rounded-2xl border border-white/50 bg-white/50 dark:bg-white/10 p-5 shadow-lg backdrop-blur-2xl ring-1 ring-white/20 text-start transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)] hover:bg-white/70 dark:hover:bg-white/20">
                 <div className="flex items-center justify-between mb-3 pb-3 border-b border-border/50">
                   <div className="flex items-center gap-3">
                     <span className="text-3xl">{activeCountry.flag}</span>

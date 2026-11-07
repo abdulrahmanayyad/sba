@@ -113,7 +113,7 @@ export function PartnersPage() {
         <div className="grid gap-6 md:grid-cols-2">
           {strategicPartners.map((partner, idx) => (
             <Reveal key={partner.id} delay={idx * 0.06}>
-              <div className="glass-card group flex h-full flex-col justify-between rounded-3xl border border-white/30 bg-background/85 p-6 sm:p-8 shadow-md backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-brand-green/60 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)] active:translate-y-0 cursor-pointer">
+              <div className="glass-card group flex h-full flex-col justify-between rounded-3xl border border-white/30 bg-background/85 p-6 sm:p-8 shadow-md backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)] active:translate-y-0 cursor-pointer">
                 <div>
                   <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
                     <span className="inline-flex items-center gap-1.5 rounded-full border border-brand-green/30 bg-brand-green/10 px-3 py-1 text-xs font-bold text-brand-green">

@@ -208,7 +208,7 @@ export function ServicesCataloguePage() {
                     "rounded-2xl p-4 text-start transition-all cursor-pointer border flex flex-col justify-between",
                     isSelected
                       ? "border-brand-green bg-brand-green/10 shadow-md ring-1 ring-brand-green"
-                      : "border-border/80 bg-background hover:bg-secondary/50 hover:border-brand-green/40"
+                      : "border-border/80 bg-background hover:bg-secondary/50"
                   )}
                 >
                   <div className="flex items-center justify-between mb-2">
@@ -292,7 +292,7 @@ export function ServicesCataloguePage() {
                         "rounded-full px-3.5 py-1.5 text-xs font-bold transition-all cursor-pointer",
                         isActive
                           ? "bg-brand-green text-white shadow-sm"
-                          : "border border-border/80 bg-background text-foreground hover:bg-secondary hover:border-brand-green/40"
+                          : "border border-border/80 bg-background text-foreground hover:bg-secondary"
                       )}
                     >
                       {ar ? cat.labelAr : cat.labelEn}
@@ -320,7 +320,7 @@ export function ServicesCataloguePage() {
               {executedConstructionProjects.map((proj) => (
                 <div
                   key={proj.id}
-                  className="group overflow-hidden rounded-3xl border border-white/20 bg-background/85 shadow-md backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-brand-green/60 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)]"
+                  className="group overflow-hidden rounded-3xl border border-white/20 bg-background/85 shadow-md backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)]"
                 >
                   <div className="relative aspect-[16/10] w-full overflow-hidden bg-secondary">
                     <img
@@ -368,7 +368,7 @@ export function ServicesCataloguePage() {
                 {filteredServices.map((service) => (
                   <div
                     key={service.id}
-                    className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-white/20 bg-background/85 shadow-md backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-brand-green/60 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)]"
+                    className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-white/20 bg-background/85 shadow-md backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)]"
                   >
                     <div>
                       {/* Service Image Banner */}

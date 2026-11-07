@@ -59,7 +59,7 @@ export function JoinIndexPage() {
             const track = joinTracks[id];
             return (
               <Reveal key={id} delay={idx * 0.08}>
-                <div className="group flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-white/25 bg-background/80 shadow-lg backdrop-blur-2xl transition-all duration-300 hover:shadow-2xl hover:border-brand-green/50 hover:-translate-y-1.5">
+                <div className="group flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-white/25 bg-background/80 shadow-lg backdrop-blur-2xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1.5">
                   <div className="relative aspect-[16/10] overflow-hidden bg-secondary">
                     <img
                       src={track.heroImage}

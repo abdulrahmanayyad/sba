@@ -339,7 +339,7 @@ html[dir="rtl"] .footer-label {
   }
 }
 
-/* 2. Inner cards and standalone cards: calm translateY(-3px) identical to Our Values card + glowing green aura */
+/* 2. Inner cards and standalone cards: calm translateY(-3px) interactivity WITHOUT green border */
 @media (hover: hover) {
   :is(.card-interactive, .interactive-card, .glass-card, [data-card]):not(
     :has(:is(.card-interactive, .interactive-card, .glass-card, .glass-box-interactive, [data-card], .group\/stat, [data-inner-card], article, .subsector-card, [data-journey-track], form, table, nav))
@@ -347,10 +347,25 @@ html[dir="rtl"] .footer-label {
   .group\/stat:hover,
   [data-inner-card]:hover {
     transform: translateY(-3px) !important;
-    border-color: var(--brand-green) !important;
+    border-color: rgba(255, 255, 255, 0.8) !important;
     box-shadow: 0 14px 32px -8px rgba(22, 135, 108, 0.22),
-                0 0 0 1px rgba(22, 135, 108, 0.35) inset,
-                0 0 20px -4px rgba(22, 135, 108, 0.25) !important;
+                0 0 0 1px rgba(255, 255, 255, 0.35) inset,
+                0 0 20px -4px rgba(22, 135, 108, 0.2) !important;
+  }
+
+  /* Universal cancellation of green borders on hover across all boxes site-wide */
+  :is(
+    [class*="hover:border-brand-green"],
+    [class*="group-hover:border-brand-green"],
+    .card-interactive,
+    .interactive-card,
+    .glass-card,
+    .glass-box-interactive,
+    [data-card],
+    [data-inner-card],
+    .group\/stat
+  ):hover {
+    border-color: rgba(255, 255, 255, 0.8) !important;
   }
 }
 
@@ -361,8 +376,8 @@ html[dir="rtl"] .footer-label {
 .group\/stat:active,
 [data-inner-card]:active {
   transform: translateY(-1.5px) !important;
-  border-color: var(--brand-green) !important;
-  box-shadow: 0 10px 22px -6px rgba(22, 135, 108, 0.2) !important;
+  border-color: rgba(255, 255, 255, 0.8) !important;
+  box-shadow: 0 10px 22px -6px rgba(22, 135, 108, 0.18) !important;
 }
 
 /* Unified card title hover color (Green) across the entire site */
@@ -504,7 +519,7 @@ html[dir="rtl"] .home-scroll-progress { transform-origin: right; }
     &:hover {
       transform: translateY(-3px);
       box-shadow: 0 14px 32px -8px rgba(22, 135, 108, 0.22), 0 0 20px -4px rgba(22, 135, 108, 0.25);
-      border-color: rgba(22, 135, 108, 0.65);
+      border-color: rgba(255, 255, 255, 0.8);
     }
   }
 }
@@ -609,15 +624,15 @@ html[dir="rtl"] .home-scroll-progress { transform-origin: right; }
                 border-color 500ms cubic-bezier(0.16, 1, 0.3, 1) !important;
   }
 
-  /* Inner and standalone boxes: calm -translate-y-1 (-3px) and glowing green aura */
+  /* Inner and standalone boxes: calm -translate-y-1 (-3px) and glowing green aura, no green border frame */
   .glass-box-interactive:not(
     :has(:is(.glass-box-interactive, .glass-card, .card-interactive, [data-card], .group\/stat, [data-inner-card], article, .subsector-card, [data-journey-track], form, table, nav))
   ):hover {
     transform: translateY(-3px) !important;
     background-color: rgba(255, 255, 255, 0.52);
-    border-color: var(--brand-green) !important;
+    border-color: rgba(255, 255, 255, 0.8) !important;
     box-shadow: 0 16px 36px -8px rgba(22, 135, 108, 0.22),
-                0 0 0 1px rgba(22, 135, 108, 0.35) inset,
+                0 0 0 1px rgba(255, 255, 255, 0.4) inset,
                 0 0 22px -4px rgba(22, 135, 108, 0.26) !important;
   }
 }
@@ -626,7 +641,7 @@ html[dir="rtl"] .home-scroll-progress { transform-origin: right; }
   :has(:is(.glass-box-interactive, .glass-card, .card-interactive, [data-card]))
 ):active {
   transform: translateY(-1.5px) !important;
-  border-color: var(--brand-green) !important;
+  border-color: rgba(255, 255, 255, 0.8) !important;
   box-shadow: 0 12px 24px -6px rgba(22, 135, 108, 0.2) !important;
 }
 
@@ -655,10 +670,39 @@ html[dir="rtl"] .home-scroll-progress { transform-origin: right; }
   ):hover {
     transform: translateY(-3px) !important;
     background-color: rgba(255, 255, 255, 0.09) !important;
-    border-color: var(--brand-green) !important;
+    border-color: rgba(255, 255, 255, 0.25) !important;
     box-shadow: 0 20px 40px -8px rgba(22, 135, 108, 0.35),
-                0 0 0 1px rgba(22, 135, 108, 0.5) inset,
+                0 0 0 1px rgba(255, 255, 255, 0.2) inset,
                 0 0 26px -4px rgba(22, 135, 108, 0.3) !important;
+  }
+}
+
+/* Site-wide override: Never show green border around boxes or cards when hovering */
+@media (hover: hover) {
+  :is(
+    [class*="hover:border-brand-green"],
+    [class*="group-hover:border-brand-green"],
+    .card-interactive,
+    .interactive-card,
+    .glass-card,
+    [data-card],
+    [data-inner-card],
+    .group\/stat
+  ):hover {
+    border-color: rgba(255, 255, 255, 0.8) !important;
+  }
+
+  .dark :is(
+    [class*="hover:border-brand-green"],
+    [class*="group-hover:border-brand-green"],
+    .card-interactive,
+    .interactive-card,
+    .glass-card,
+    [data-card],
+    [data-inner-card],
+    .group\/stat
+  ):hover {
+    border-color: rgba(255, 255, 255, 0.25) !important;
   }
 }
 

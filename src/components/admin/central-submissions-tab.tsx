@@ -261,7 +261,7 @@ export function CentralSubmissionsTab({ ar }: { ar: boolean }) {
             return (
               <div
                 key={item.id}
-                className="group flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-2xl border border-white/20 bg-background/70 p-4 sm:p-5 backdrop-blur-xl shadow-md transition-all duration-300 hover:border-brand-green/60 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)] hover:-translate-y-1"
+                className="group flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-2xl border border-white/20 bg-background/70 p-4 sm:p-5 backdrop-blur-xl shadow-md transition-all duration-300 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)] hover:-translate-y-1"
               >
                 <div className="flex items-start gap-3.5">
                   {/* Photo if model RFQ */}

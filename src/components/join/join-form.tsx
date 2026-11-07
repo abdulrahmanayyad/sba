@@ -787,7 +787,7 @@ Attached Files: ${files.map((f) => f.name).join(", ") || "None"}
                     : "Company Profile, Portfolio & Pre-qualification Dossier"}
               </label>
 
-              <div className="relative rounded-2xl border-2 border-dashed border-border bg-secondary/20 p-6 text-center hover:border-brand-green/50 transition-colors">
+              <div className="relative rounded-2xl border-2 border-dashed border-border bg-secondary/20 p-6 text-center hover:border-foreground/30 transition-colors">
                 <input
                   type="file"
                   multiple
