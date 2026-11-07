@@ -570,7 +570,7 @@ export const founders = [
   },
   {
     role: "Founder & Chief Executive Officer",
-    roleAr: "المؤسس والرئيس التنفيذي | Founder & Chief Executive Officer",
+    roleAr: "المؤسس والرئيس التنفيذي",
     name: "Dr. Abdelhakam Mashhour",
     nameAr: "د. عبد الحكم مشهور",
     image: "/Leadership/Abdelhakam Mashhour.jpg",
@@ -588,7 +588,7 @@ export const founders = [
   },
   {
     role: "Founder & Business Development Director",
-    roleAr: "المؤسس ومدير تطوير الأعمال | Founder & Business Development Director",
+    roleAr: "المؤسس ومدير تطوير الأعمال",
     name: "Dr. Abdullah Sami Bin Ayyad",
     nameAr: "د. عبد الله سامي بن عياد",
     image: "/Leadership/Abdullah Bin Ayyad.jpg",
