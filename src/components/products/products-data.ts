@@ -1271,7 +1271,7 @@ export const productCategoriesConfig = [
     labelEn: "Natural & Food Products",
     labelAr: "المنتجات الطبيعية والغذائية",
     descEn: "Export-grade natural honey, table olives, extra virgin olive oil, premium dates, and botanical ingredients.",
-    descAr: "عسل نحل طبيعي، زيتون مائدة، زيت زيتون بكر ممتاز، تمور فاخرة، وأعشاب وتوابل زراعية معتمدة.",
+    descAr: "عسل نحل طبيعي ومشتقاته، زيتون مائدة، زيت زيتون بكر، تمور بأنواعها، وأعشاب وتوابل طبيعية.",
     categories: [
       { key: "all", labelEn: "All Products", labelAr: "كافة المنتجات" },
       { key: "honey-bee", labelEn: "Natural Honey & Bee Products", labelAr: "عسل النحل ومنتجات النحل" },
