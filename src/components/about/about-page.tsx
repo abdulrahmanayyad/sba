@@ -191,9 +191,9 @@ export function AboutPage() {
           {/* Interactive Corporate Structure Diagram */}
           <Reveal delay={0.15}>
             <div className="mt-12 max-w-6xl mx-auto">
-              {/* Parent Holding Node — Glassmorphic, Larger & Prominent */}
-              <div className="group relative mx-auto max-w-2xl rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-8 sm:p-10 text-center shadow-[0_16px_50px_rgba(0,0,0,0.05)] backdrop-blur-3xl transition-all duration-500 hover:-translate-y-0.5 hover:bg-white/60 dark:hover:bg-white/20 hover:border-white/80 hover:shadow-[0_20px_48px_-12px_rgba(0,0,0,0.1)] ring-1 ring-white/30">
-                <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
+              {/* Parent Holding Node — Integrated directly into the main container */}
+              <div className="mx-auto max-w-3xl text-center">
+                <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-4 py-1.5 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
                   <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
                   <span>{ar ? "الكيان المؤسسي الموحد (الشركة الأم)" : "Unified Parent Holding Entity"}</span>
                 </div>
