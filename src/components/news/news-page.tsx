@@ -441,59 +441,6 @@ export function NewsPage() {
               })}
             </div>
           </div>
-
-          {/* D. Year Timeline Filters (2010 – 2026) */}
-          <div className="pt-2 border-t border-border/50">
-            <div className="text-[11px] font-bold text-muted-foreground uppercase tracking-wider mb-2 flex items-center gap-1.5">
-              <History className="size-3 text-brand-orange" />
-              <span>{ar ? "التسلسل الزمني للسنوات المرجعية (2010–2026)" : "Timeline by Reference Year (2010–2026)"}</span>
-            </div>
-            <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
-              <button
-                type="button"
-                onClick={() => setSelectedYear("all")}
-                className={cn(
-                  "rounded-full px-3.5 py-1 text-xs font-bold transition-all cursor-pointer",
-                  selectedYear === "all"
-                    ? "!bg-brand-orange !text-white shadow-sm"
-                    : "border border-border/70 bg-secondary/50 text-foreground hover:bg-secondary"
-                )}
-              >
-                {ar ? "كافة الأعوام" : "All Years"}
-              </button>
-
-              {ARCHIVE_YEARS.map((yr) => {
-                const isActive = selectedYear === yr;
-                const yrCount = yearCounts[yr] || 0;
-                return (
-                  <button
-                    key={yr}
-                    type="button"
-                    onClick={() => setSelectedYear(yr)}
-                    disabled={yrCount === 0}
-                    className={cn(
-                      "inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-bold transition-all cursor-pointer",
-                      isActive
-                        ? "!bg-brand-orange !text-white shadow-sm"
-                        : yrCount > 0
-                        ? "border border-border/70 bg-background text-foreground hover:border-brand-orange/40 hover:bg-secondary"
-                        : "opacity-40 border border-border/30 bg-secondary/30 text-muted-foreground cursor-not-allowed"
-                    )}
-                  >
-                    <span>{yr}</span>
-                    <span
-                      className={cn(
-                        "text-[10px] rounded-full px-1 py-0 font-medium",
-                        isActive ? "bg-white/20 text-white" : "text-muted-foreground"
-                      )}
-                    >
-                      ({yrCount})
-                    </span>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
         </div>
 
         {/* Dedicated Sector Banner when a specific sector is selected */}
