@@ -1,8 +1,8 @@
 // ============================================================================
 // SAMI BIN AYYAD GROUP — SERVICES & SOLUTIONS REPOSITORY
 // Strictly dedicated to professional, engineering, and technical works.
-// Exactly 38 services across 3 operational divisions:
-// Construction (12), Environmental (19), and Apparel Services (7).
+// Exactly 39 services across 3 operational divisions:
+// Construction (12), Environmental (19), and Apparel Services (8).
 // ============================================================================
 
 export type ServiceSector = "construction" | "environmental" | "apparel-services";
@@ -1156,6 +1156,57 @@ export const professionalServices: ProfessionalService[] = [
     "capabilitiesEn": ["OEKO-TEX Standard 100 chemical conformance", "Full in-house physical testing equipment (pull-test, wash crocking)", "Zero tolerance for safety and chemical non-compliance"],
     "capabilitiesAr": ["مطابقة للمواصفات البيئية لشهادة OEKO-TEX Standard 100", "أجهزة اختبارات ميكانيكية ومعملية (قوة شد الأزرار، ثبات الغسيل)", "صفر تسامح مع أي عيوب تؤثر على السلامة أو مظهر المنتج النهائي"],
     "image": "/BG/Apparel Manufacturing/Textile Mill & Internal Dyeing.jpg"
+  },
+  {
+    "id": "srv-app-cm",
+    "code": "SBA-SRV-APP08",
+    "sector": "apparel-services",
+    "categoryKey": "cm-manufacturing",
+    "categoryEn": "CM Manufacturing (Cut & Make)",
+    "categoryAr": "التصنيع بنظام CM",
+    "nameEn": "CM Manufacturing – Cut & Make",
+    "nameAr": "التصنيع بنظام CM",
+    "descriptionEn": "Providing specialized Cut & Make (CM) apparel manufacturing services where the client supplies all fabrics, trims, and accessories, while our factory executes fabric spreading, precision cutting, sewing, assembly, finishing, and strict quality control conforming to approved technical specifications.",
+    "descriptionAr": "نقدم خدمات تصنيع الملابس بنظام CM، حيث يتولى العميل توفير الأقمشة والخامات والإكسسوارات اللازمة للإنتاج، بينما نتولى تنفيذ العمليات التصنيعية داخل المصنع، بدءًا من القص وتجهيز المكونات، مرورًا بالخياطة والتجميع، وصولًا إلى التشطيب ومراقبة الجودة، وفق العينات والمواصفات الفنية المعتمدة.",
+    "scopeOfWorkEn": [
+      "Receiving and inspecting client-supplied fabrics, materials, and accessories against specifications",
+      "Fabric spreading, CAD pattern preparation, and precision cutting",
+      "Garment sewing and assembly conforming strictly to approved designs and tech packs",
+      "Finishing, measurement verification, and workmanship quality checks",
+      "Final AQL quality inspection and packaging according to client requirements"
+    ],
+    "scopeOfWorkAr": [
+      "استلام الأقمشة والخامات ومراجعة مطابقتها للمواصفات",
+      "فرد الأقمشة وإعداد الباترونات وتجهيز عمليات القص",
+      "تنفيذ عمليات الخياطة والتجميع وفق التصميمات المعتمدة",
+      "التشطيب ومراجعة المقاسات وجودة التنفيذ",
+      "الفحص النهائي والتعبئة وفق متطلبات العميل"
+    ],
+    "applicationsEn": [
+      "Fashion Brands & Apparel Retailers",
+      "Clothing Importers & Distribution Companies",
+      "Businesses & Designers with In-House Material Sourcing",
+      "Companies Seeking Dedicated Technical Manufacturing Capacity"
+    ],
+    "applicationsAr": [
+      "العلامات التجارية وتجار الملابس",
+      "شركات الاستيراد والتوزيع التي تمتلك الخامات ومستلزمات الإنتاج",
+      "الشركات والمصممون الباحثون عن طاقة تصنيعية متخصصة لتنفيذ طلبياتهم",
+      "سلاسل التجزئة التي تدير توريد الأقمشة والإكسسوارات داخلياً"
+    ],
+    "capabilitiesEn": [
+      "Pricing based on product type, style complexity, and volume, excluding fabric costs",
+      "Flexible adaptation to client-provided reference samples, technical specs, and size charts",
+      "Precision automated spreading and cutting reducing fabric waste to a minimum",
+      "Multi-stage in-line quality audits ensuring zero-defect assembly"
+    ],
+    "capabilitiesAr": [
+      "احتساب تكلفة التصنيع وفق نوع المنتج، وتعقيد الموديل، وحجم الكميات، دون تكلفة الخامات",
+      "جاهزية لاستقبال الأقمشة والخامات والإكسسوارات، والعينات المرجعية وجداول المقاسات المعتمدة",
+      "خطوط فرد وقص آلية دقيقة تضمن أعلى كفاءة استغلال للأقمشة وتقليل الهادر",
+      "رقابة جودة متعددة المراحل وفحص نهائي يضمن مطابقة تامة لمواصفات العميل"
+    ],
+    "image": "/BG/Apparel Manufacturing/Integrated Manufacturing.jpg"
   }
 ];
 
@@ -1272,6 +1323,7 @@ export const serviceDivisionsConfig = [
       { key: "odm-development", labelEn: "ODM Design & Co-Development", labelAr: "التصميم والتصنيع المشترك ODM" },
       { key: "private-label", labelEn: "Private Label Manufacturing", labelAr: "التصنيع للعلامات التجارية الخاصة" },
       { key: "fob-manufacturing", labelEn: "FOB Full Package Programs", labelAr: "برامج التصنيع الشامل والتصدير FOB" },
+      { key: "cm-manufacturing", labelEn: "CM Manufacturing (Cut & Make)", labelAr: "التصنيع بنظام CM" },
       { key: "product-development", labelEn: "CAD Pattern Engineering", labelAr: "هندسة الباترون وتطوير المنتجات" },
       { key: "rapid-sampling", labelEn: "Rapid Sampling & Prototyping", labelAr: "صناعة العينات والنماذج الأولية" },
       { key: "fabric-quality", labelEn: "Fabric Sourcing & AQL Quality", labelAr: "توريد الأقمشة وضمان الجودة AQL" }

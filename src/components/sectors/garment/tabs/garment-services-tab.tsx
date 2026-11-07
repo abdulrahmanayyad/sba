@@ -27,12 +27,12 @@ export function GarmentServicesTab() {
           <div className="max-w-3xl">
             <SectionBadge title={ar ? "خدمات التصنيع والتوريد B2B" : "Manufacturing Services"} />
             <h2 className="section-title mt-3">
-              {ar ? "8 برامج تصنيع وتوريد متكاملة تلبي احتياجات العلامات التجارية" : "8 Turnkey B2B Manufacturing & Sourcing Programs"}
+              {ar ? "9 برامج تصنيع وتوريد متكاملة تلبي احتياجات العلامات التجارية" : "9 Turnkey B2B Manufacturing & Sourcing Programs"}
             </h2>
             <p className="section-intro mt-4">
               {ar
-                ? "سواء كنت تبحث عن تصنيع بعلامتك الخاصة (Private Label)، أو برامج توريد شاملة (FOB)، أو تصنيع تعاقدي (OEM)، نوفر لك المرونة الصناعية والانضباط الزمني والجودة القياسية."
-                : "From complete Private Label execution and turnkey FOB programs to high-volume OEM contract production, our manufacturing ecosystem scales with your brand requirements."}
+                ? "سواء كنت تبحث عن تصنيع بعلامتك الخاصة (Private Label)، أو برامج توريد شاملة (FOB)، أو تصنيع تعاقدي (OEM)، أو تشغيل بنظام (CM)، نوفر لك المرونة الصناعية والانضباط الزمني والجودة القياسية."
+                : "From complete Private Label execution, turnkey FOB, and Cut & Make (CM) to high-volume OEM contract production, our manufacturing ecosystem scales with your brand requirements."}
             </p>
           </div>
 

@@ -289,6 +289,7 @@ function GarmentStartProjectView() {
 
   const cooperationTypes = [
     { id: "FOB", titleEn: "FOB Manufacturing (Full Package from yarn to export port)", titleAr: "تصنيع شامل FOB (من القماش حتى ميناء التصدير)" },
+    { id: "CM", titleEn: "CM Manufacturing (Cut & Make – Client-supplied fabrics)", titleAr: "تصنيع بنظام CM (قص وتشغيل بخامات العميل)" },
     { id: "Private-Label", titleEn: "Private Label (Custom collection with your full branding)", titleAr: "علامة تجارية خاصة Private Label (هوية وتغليف مخصص)" },
     { id: "OEM", titleEn: "OEM Contract Manufacturing (Strict client specs execution)", titleAr: "تصنيع تعاقدي OEM (تنفيذ مواصفات العميل الدقيقة)" },
     { id: "ODM", titleEn: "ODM Development (Select & customize from our 2,700+ catalog)", titleAr: "تصميم مشترك ODM (اختيار وتعديل من كتالوج المجموعة)" },

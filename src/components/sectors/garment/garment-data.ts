@@ -1015,6 +1015,43 @@ export const garmentServicesExpanded: GarmentManufacturingService[] = [
     deliverablesEn: ["Approved Lab-Dip Color Swatches", "Fabric Technical Spec Sheet (Weight, Width, Shrinkage)", "Bulk Fabric Mill Roll Delivery"],
     deliverablesAr: ["عينات ألوان الصباغة المعتمدة (Lab Dips)", "بطاقة المواصفات الفنية للقماش (الوزن، العرض، نسبة الانكماش)", "توريد أثواب الأقمشة المعتمدة لصالة القص"],
     image: "/BG/Apparel Manufacturing/Textile Mill & Internal Dyeing.jpg"
+  },
+  {
+    id: "cm-manufacturing",
+    number: "09",
+    badgeEn: "Cut & Make (CM) · Client-Supplied Materials",
+    badgeAr: "تصنيع بنظام CM · قص وتشغيل",
+    titleEn: "CM Manufacturing – Cut & Make",
+    titleAr: "التصنيع بنظام CM (Cut & Make)",
+    leadEn: "Full in-house cut, make, assembly, and finishing operations utilizing client-supplied fabrics, trims, and technical specifications.",
+    leadAr: "تنفيذ العمليات التصنيعية المتكاملة بدءًا من القص والخياطة وحتى التشطيب والفحص بخامات ومستلزمات إنتاج يوردها العميل.",
+    descEn: "We provide dedicated Cut & Make (CM) apparel manufacturing. The client supplies the fabrics, materials, and trims, while our factory executes fabric inspection, CAD spreading, precision cutting, sewing assembly, finishing, and final quality control adhering to approved samples.",
+    descAr: "نقدم خدمات تصنيع الملابس بنظام CM، حيث يتولى العميل توفير الأقمشة والخامات والإكسسوارات اللازمة للإنتاج، بينما نتولى تنفيذ العمليات التصنيعية داخل المصنع، بدءًا من القص وتجهيز المكونات، مرورًا بالخياطة والتجميع، وصولًا إلى التشطيب ومراقبة الجودة، وفق العينات والمواصفات الفنية المعتمدة.",
+    capabilitiesEn: [
+      "Receiving and inspecting client-supplied fabrics and accessories",
+      "Fabric spreading, CAD marker nesting, and high-precision cutting",
+      "Garment sewing and assembly strictly conforming to approved designs",
+      "Finishing, measurement audits, and final AQL quality packaging",
+      "Pricing based on product type and complexity, excluding fabric costs"
+    ],
+    capabilitiesAr: [
+      "استلام الأقمشة والخامات ومراجعة مطابقتها للمواصفات الفنية",
+      "فرد الأقمشة وإعداد الباترونات وتجهيز عمليات القص الآلي الدقيق",
+      "تنفيذ عمليات الخياطة والتجميع وفق التصميمات والعينات المعتمدة",
+      "التشطيب ومراجعة المقاسات والفحص النهائي والتعبئة وفق متطلبات العميل",
+      "احتساب تكلفة التصنيع وفق نوع المنتج وتعقيد الموديل والكميات دون تكلفة الخامات"
+    ],
+    deliverablesEn: [
+      "Finished garments packed to client specifications",
+      "Detailed fabric consumption and cutting yield report",
+      "AQL final quality inspection sign-off certificate"
+    ],
+    deliverablesAr: [
+      "ملابس تامة الصنع ومعبأة وفق متطلبات ومواصفات العميل",
+      "تقرير مراجعة استهلاك الأقمشة ونسب كفاءة القص والهادر",
+      "شهادة الفحص النهائي ومطابقة الجودة بمقاييس AQL المعتمدة"
+    ],
+    image: "/BG/Apparel Manufacturing/Integrated Manufacturing.jpg"
   }
 ];
 
