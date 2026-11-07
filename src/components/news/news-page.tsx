@@ -214,8 +214,8 @@ export function NewsPage() {
               </div>
             </div>
 
-            {/* B. Main Headline (Refined, smaller and proportional) */}
-            <h1 className="font-head text-xl sm:text-2xl lg:text-3xl font-bold text-white leading-snug tracking-tight text-start drop-shadow-md max-w-4xl">
+            {/* B. Main Headline (Refined and prominent) */}
+            <h1 className="font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white leading-snug tracking-tight text-start drop-shadow-md max-w-4xl">
               {ar
                 ? "الأرشيف التاريخي والأنشطة المؤسسية والتحليلات القطاعية"
                 : "Corporate Legacy, Historical Archive & Sector Insights"}
