@@ -189,16 +189,16 @@ export function NewsPage() {
 
   return (
     <div className="w-full">
-      {/* 1. Newsroom & Archive Hero Header (Full-bleed Background like Home Page) */}
-      <section className="relative w-full overflow-hidden text-white pt-24 sm:pt-32 pb-16 sm:pb-20 mb-12 border-b border-border/40">
-        {/* Full-width background image & overlay */}
+      {/* 1. Newsroom & Archive Hero Header (Clean Full-width Background like Home Page) */}
+      <section className="relative w-full overflow-hidden text-white pt-24 sm:pt-32 pb-16 sm:pb-20 mb-12">
+        {/* Full-width background image & overlay (identical to Home hero) */}
         <img
           src="/BG/Main Home Page.jpg"
           alt={ar ? "أرشيف مجموعة سامي بن عياد" : "Sami Bin Ayyad Group Archive"}
           className="absolute inset-0 size-full object-cover object-center pointer-events-none select-none"
           fetchPriority="high"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/75 to-background pointer-events-none" />
+        <div className="group-hero-overlay absolute inset-0 bg-black/60 backdrop-blur-[1px] pointer-events-none" />
 
         <div className="site-container relative z-10 flex flex-col justify-center">
           <Reveal>
@@ -228,13 +228,13 @@ export function NewsPage() {
                 : "A unified institutional platform documenting operational roots from 1977, cross-border entity growth in Egypt and Saudi Arabia, sector insights (2010–2020), and unified corporate activities following the 2023 institutional integration."}
             </p>
 
-            {/* D. Archival Note Box at the Bottom of Hero */}
-            <div className="mt-10 rounded-2xl border border-white/20 bg-black/55 p-4 sm:p-5 backdrop-blur-md shadow-lg max-w-4xl text-start">
+            {/* D. Archival Lineage Note — Directly on background without box */}
+            <div className="mt-8 max-w-4xl text-start">
               <h4 className="text-brand-orange font-bold text-xs sm:text-sm mb-1.5 text-start flex items-center gap-1.5">
                 <span className="size-1.5 rounded-full bg-brand-orange" />
                 <span>{ar ? "ملاحظة توثيقية للأرشيف:" : "Archival Lineage Note:"}</span>
               </h4>
-              <p className="text-[11px] sm:text-xs text-white/85 leading-relaxed text-start">
+              <p className="text-[11px] sm:text-xs text-white/90 leading-relaxed text-start drop-shadow-sm">
                 {ar
                   ? "التقارير والمراجعات القطاعية المؤرخة قبل عام 2023 توثق أنشطة الكيانات المؤسسة ومشاريعها المتخصصة قبل توحيدها الشامل تحت مظلة مجموعة سامي بن عياد عام 2023 (امتدادًا للجذور المهنية القائمة منذ 1977)."
                   : "Reports and sector reviews dated prior to 2023 document the operational milestones and market engagements of predecessor founding entities prior to their formal unification under Sami Bin Ayyad Group in 2023, building on foundational roots established since 1977."}
