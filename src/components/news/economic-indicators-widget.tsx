@@ -16,7 +16,7 @@ export function EconomicIndicatorsWidget() {
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
               <span>{ar ? "مؤشرات السوق وتطور القطاعات" : "MARKET DATA & INDUSTRY INDICATORS"}</span>
             </div>
-            <h3 className="text-center font-head text-2xl sm:text-3xl font-extrabold text-foreground leading-snug">
+            <h3 className="text-center font-head text-2xl sm:text-3xl font-bold text-foreground leading-snug">
               {ar
                 ? "مؤشرات نمو القطاعات الاقتصادية الموثقة (2010–2020)"
                 : "Verified Economic & Sectoral Benchmarks (2010–2020)"}
@@ -28,7 +28,7 @@ export function EconomicIndicatorsWidget() {
             </p>
           </div>
 
-          <div className="inline-flex items-center gap-2 text-[11px] font-medium text-muted-foreground bg-secondary/60 px-3.5 py-1.5 rounded-xl border border-border">
+          <div className="inline-flex items-center gap-2 text-xs font-medium text-muted-foreground bg-secondary/60 px-3.5 py-1.5 rounded-xl border border-border">
             <span>{ar ? "بيانات مرجعية خارجية محققة" : "Verified Third-Party Data"}</span>
           </div>
         </div>
@@ -43,37 +43,37 @@ export function EconomicIndicatorsWidget() {
               <div>
                 {/* Header */}
                 <div className="flex items-center justify-end gap-3 mb-4">
-                  <span className="rounded-full bg-brand-orange/10 text-brand-orange border border-brand-orange/20 text-[10px] font-bold font-mono px-2.5 py-0.5">
+                  <span className="rounded-full bg-brand-orange/10 text-brand-orange border border-brand-orange/20 text-xs font-bold px-3 py-1">
                     {ar ? ind.changeLabelAr : ind.changeLabelEn}
                   </span>
                 </div>
 
-                <h4 className="font-head text-base font-bold text-foreground leading-snug group-hover:text-brand-green transition-colors">
+                <h4 className="text-base sm:text-lg font-bold text-foreground leading-snug group-hover:text-brand-green transition-colors">
                   {ar ? ind.titleAr : ind.titleEn}
                 </h4>
 
                 {/* Metrics Comparison Box */}
                 <div className="mt-5 grid grid-cols-2 gap-3 p-3.5 rounded-xl bg-secondary/60 border border-border/50">
                   <div>
-                    <span className="text-[10px] font-mono font-medium text-muted-foreground block">
+                    <span className="text-xs font-medium text-muted-foreground block">
                       {ar ? "القيمة (2010)" : "Value (2010)"}
                     </span>
-                    <span className="text-lg sm:text-xl font-black font-mono text-foreground mt-0.5 block">
+                    <span className="text-lg sm:text-xl font-bold text-foreground mt-0.5 block">
                       {ind.metric2010}
                     </span>
                   </div>
                   <div className="border-s border-border/60 ps-3">
-                    <span className="text-[10px] font-mono font-medium text-brand-green block">
+                    <span className="text-xs font-medium text-brand-green block">
                       {ar ? "القيمة (2020)" : "Value (2020)"}
                     </span>
-                    <span className="text-lg sm:text-xl font-black font-mono text-brand-green mt-0.5 block">
+                    <span className="text-lg sm:text-xl font-bold text-brand-green mt-0.5 block">
                       {ind.metric2020}
                     </span>
                   </div>
                 </div>
 
                 {/* Significance Text */}
-                <p className="mt-4 text-xs text-muted-foreground leading-relaxed text-justify">
+                <p className="mt-4 text-xs sm:text-sm text-muted-foreground leading-relaxed text-start">
                   <span className="font-semibold text-foreground">
                     {ar ? "الدلالة الاقتصادية: " : "Significance: "}
                   </span>
@@ -83,7 +83,7 @@ export function EconomicIndicatorsWidget() {
 
               {/* Source & Related Articles Footer */}
               <div className="mt-6 pt-4 border-t border-border/60 space-y-2">
-                <div className="flex items-center justify-between gap-2 text-[11px] text-muted-foreground">
+                <div className="flex items-center justify-between gap-2 text-xs text-muted-foreground">
                   <span className="truncate font-medium">
                     {ar ? ind.sourceNameAr : ind.sourceNameEn}
                   </span>
@@ -102,13 +102,13 @@ export function EconomicIndicatorsWidget() {
 
                 {/* Linked Historical Articles */}
                 <div className="flex flex-wrap items-center gap-1.5 pt-1">
-                  <span className="text-[10px] text-muted-foreground">
+                  <span className="text-xs text-muted-foreground">
                     {ar ? "تحليلات ذات صلة:" : "Related Insights:"}
                   </span>
                   {ind.relatedArticleIds.map((artId) => (
                     <span
                       key={artId}
-                      className="rounded bg-secondary px-1.5 py-0.5 text-[10px] font-mono text-foreground/80 font-bold"
+                      className="rounded bg-secondary px-2 py-0.5 text-xs font-mono text-foreground/80 font-bold"
                     >
                       #{artId.toUpperCase()}
                     </span>
@@ -120,7 +120,7 @@ export function EconomicIndicatorsWidget() {
         </div>
 
         {/* Footnote on Data Responsibility */}
-        <div className="mt-6 p-3.5 rounded-xl bg-secondary/40 border border-border/60 text-[11px] text-muted-foreground">
+        <div className="mt-6 p-3.5 rounded-xl bg-secondary/40 border border-border/60 text-xs text-muted-foreground leading-relaxed">
           <span>
             {ar
               ? "تنويه توثيقي: هذه المؤشرات مأخوذة من مراجعات رسمية لمنظمة OECD والبنك الأهلي المصري ومركز المعلومات، ولا تمثل إحصاءات داخلية خاصة بمجموعة سامي بن عياد."
