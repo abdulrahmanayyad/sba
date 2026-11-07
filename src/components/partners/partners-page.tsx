@@ -184,8 +184,8 @@ export function PartnersPage() {
           </h2>
           <p className="section-intro mt-3 max-w-3xl">
             {ar
-              ? "نعمل جنبًا إلى جنب مع كبرى العلامات التجارية، والمطورين، والشركاء الصناعيين عبر قطاعات المقاولات وتصنيع الملابس والحلول البيئية والمنتجات الطبيعية."
-              : "Working alongside premier brands, infrastructure developers, and industrial partners across construction, apparel, environment, and natural products."}
+              ? "نعمل جنبًا إلى جنب مع كبرى العلامات التجارية، والمطورين، والشركاء الصناعيين عبر القطاعات المختلفة."
+              : "Working alongside premier brands, developers, and industrial partners across various sectors."}
           </p>
         </Reveal>
 
