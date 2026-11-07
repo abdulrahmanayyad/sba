@@ -110,7 +110,7 @@ export function AboutPage() {
                     rel="noopener noreferrer"
                   >
                     <Download className="size-4" />
-                    <span>{ar ? "تحميل الملف التعريفي الشامل (PDF)" : "Download Company Profile"}</span>
+                    <span>{ar ? "تحميل الملف التعريفي الشامل" : "Download Company Profile"}</span>
                   </a>
                 </Button>
                 <Button asChild size="default" className="rounded-full bg-brand-green text-white text-xs sm:text-sm font-bold shadow-md hover:bg-brand-orange transition-all duration-300 cursor-pointer">
