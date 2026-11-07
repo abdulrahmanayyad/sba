@@ -40,33 +40,33 @@ export function CorporateTimeline() {
   return (
     <div className="w-full">
       {/* 1. Legacy Heritage Intro Hero */}
-      <div className="relative overflow-hidden rounded-3xl border border-white/50 dark:border-white/15 bg-white/50 dark:bg-white/10 p-6 sm:p-10 lg:p-12 shadow-lg backdrop-blur-xl transition-all duration-300 hover:border-white/80 dark:hover:border-white/20 hover:bg-white/70 dark:hover:bg-white/15 hover:shadow-xl">
-        <div className="relative z-10 max-w-4xl mx-auto text-center">
+      <div className="relative overflow-hidden rounded-2xl border border-white/50 dark:border-white/15 bg-white/50 dark:bg-white/10 p-5 sm:p-7 lg:p-8 shadow-lg backdrop-blur-xl transition-all duration-300 hover:border-white/80 dark:hover:border-white/20 hover:bg-white/70 dark:hover:bg-white/15 hover:shadow-xl max-w-3xl mx-auto">
+        <div className="relative z-10 text-center">
           {/* Top Pill */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-4">
+          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-3">
             <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
             <span>{ar ? "إرثنا وتطور أعمالنا" : "OUR LEGACY & BUSINESS EVOLUTION"}</span>
           </div>
 
-          <h2 className="text-center font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold text-foreground tracking-tight leading-tight">
+          <h2 className="text-center font-head text-xl sm:text-2xl lg:text-3xl font-bold text-foreground tracking-tight leading-snug">
             {ar ? "من الجذور الأولى إلى التكامل المؤسسي" : "From Business Foundations to Institutional Integration"}
           </h2>
 
-          <p className="mt-6 text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed text-justify sm:text-center">
+          <p className="mt-4 text-xs sm:text-sm lg:text-base text-muted-foreground leading-relaxed text-justify sm:text-center">
             {ar
               ? "تمتد جذور أنشطة مجموعة سامي بن عياد إلى عام 1977، عبر مسيرة من تأسيس وتطوير كيانات متخصصة في قطاعات اقتصادية متنوعة داخل مصر والمملكة العربية السعودية. بدأت المسيرة في مجالات العقارات والمقاولات والتشطيبات المعمارية، ثم امتدت إلى السوق السعودي من خلال تأسيس كيان متخصص في المقاولات والتطوير العقاري والتشطيبات الكبرى. وتواصلت مسيرة التوسع بتأسيس كيانات متخصصة في تجارة الذهب والمجوهرات، وتجارة المواد الغذائية بالجملة، والبحث العلمي وتطوير التراث، وصولًا إلى تأسيس شركة البيئة المستدامة عام 2018."
               : "The operational roots of Sami Bin Ayyad Group trace back to 1977, through a sustained journey of establishing and developing specialized business entities across diverse economic sectors in Egypt and Saudi Arabia. The journey commenced in real estate, general contracting, and architectural finishing, subsequently expanding into the Saudi market through the foundation of an enterprise dedicated to contracting, real estate development, and major turnkey finishing projects. Expansion continued through specialized ventures in gold and jewelry trading, wholesale food commodities, and scientific research and heritage development, culminating in the establishment of the Sustainable Environment company in 2018."}
           </p>
 
-          <p className="mt-4 text-sm sm:text-base text-foreground/90 leading-relaxed font-medium text-justify sm:text-center">
+          <p className="mt-3 text-xs sm:text-sm lg:text-base text-foreground/90 leading-relaxed font-medium text-justify sm:text-center">
             {ar
               ? "وفي عام 2023، شهدت هذه المسيرة مرحلة التكامل المؤسسي من خلال تأسيس الكيان الجامع الذي وحد الأنشطة والكيانات المختلفة تحت مظلة مؤسسية واحدة، لتقديم منظومة أعمال متعددة القطاعات والخدمات. ومن خلال هذا التطور، تجمع المجموعة بين إرث ممتد من الخبرة والتنوع، ورؤية مؤسسية تستهدف بناء فرص جديدة للتوسع والاستثمار."
               : "In 2023, this multi-decade evolution reached full institutional integration with the founding of the unified holding group, consolidating previously established entities and activities under a single corporate umbrella to deliver a multi-sector, multi-service enterprise system. Through this strategic evolution, the Group bridges decades of operational expertise with forward-looking corporate governance aimed at unlocking international investment and partnership opportunities."}
           </p>
 
           {/* Closing Motto Tag */}
-          <div className="mt-8 pt-6 border-t border-border/60 flex items-center justify-center">
-            <span className="inline-flex items-center justify-center rounded-2xl bg-brand-green text-white hover:bg-brand-orange px-6 py-3 text-xs sm:text-sm font-bold tracking-wide shadow-md transition-all duration-300 cursor-default select-none">
+          <div className="mt-6 pt-5 border-t border-border/60 flex items-center justify-center">
+            <span className="inline-flex items-center justify-center rounded-2xl bg-brand-green text-white hover:bg-brand-orange px-5 py-2.5 text-xs sm:text-sm font-bold tracking-wide shadow-md transition-all duration-300 cursor-default select-none">
               <span>
                 {ar
                   ? "من عقود من الخبرة إلى مجموعة أعمال متكاملة."
