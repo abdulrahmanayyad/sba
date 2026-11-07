@@ -118,11 +118,6 @@ export function AboutPage() {
                     <span>{ar ? "مركز الوثائق والتحميلات" : "Downloads Center"}</span>
                   </Link>
                 </Button>
-                <Button asChild size="default" className="rounded-full bg-brand-green text-white text-xs sm:text-sm font-bold shadow-md hover:bg-brand-orange transition-all duration-300 cursor-pointer">
-                  <Link to="/join/group">
-                    {ar ? "فرص التعاون والشراكة" : "Cooperation Pathways"}
-                  </Link>
-                </Button>
               </div>
             </Reveal>
 
