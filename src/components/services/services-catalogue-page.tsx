@@ -98,8 +98,8 @@ export function ServicesCataloguePage() {
 
             <p className="mt-4 max-w-3xl mx-auto text-base sm:text-lg text-muted-foreground leading-relaxed text-center">
               {ar
-                ? "دليل القدرات التنفيذية والتعاقدية لمجموعة سامي بن عياد عبر المقاولات العامة والإنشاءات، الأنظمة والحلول البيئية المستدامة، وبرامج التصنيع التعاقدي للملابس (OEM/FOB)."
-                : "Comprehensive directory of Sami Bin Ayyad Group's turnkey engineering, EPC contracting, and industrial solutions across Construction, Environmental Engineering, and Apparel OEM Programs."}
+                ? "دليل القدرات التنفيذية لمجموعة سامي بن عياد عبر المقاولات العامة والإنشاءات، الأنظمة والحلول البيئية المستدامة، وبرامج التصنيع للملابس الجاهزة."
+                : "Comprehensive directory of Sami Bin Ayyad Group's turnkey engineering, EPC contracting, and industrial solutions across Construction, Environmental Engineering, and Ready-Made Garments."}
             </p>
           </div>
         </Reveal>
