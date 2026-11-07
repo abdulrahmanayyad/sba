@@ -203,8 +203,8 @@ export function ModelsPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-footer via-footer/85 to-footer/65" />
         <div className="site-container relative w-full py-16 md:py-24 z-10">
           <Reveal>
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/40 px-4 py-1.5 text-xs font-bold tracking-wide text-white backdrop-blur-md">
-              <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
               <span>{ar ? "مجموعة سامي بن عياد · كتالوج ومكتبة المنتجات" : "SAMI BIN AYYAD · Product Catalogue & Model Library"}</span>
             </div>
 

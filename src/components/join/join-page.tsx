@@ -35,8 +35,8 @@ export function JoinPage({ trackId }: JoinPageProps) {
         <div className="site-container relative w-full py-16 sm:py-24 z-10">
           <Reveal>
             {trackId !== "group" && (
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/40 px-4 py-1.5 text-xs font-bold tracking-wide text-white backdrop-blur-md mb-3">
-                <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
+              <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-3">
+                <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
                 <span>{ar ? track.eyebrowAr : track.eyebrowEn}</span>
               </div>
             )}

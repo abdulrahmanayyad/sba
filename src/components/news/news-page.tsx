@@ -195,14 +195,14 @@ export function NewsPage() {
         <Reveal>
           <div className="max-w-4xl">
             <div className="flex flex-wrap items-center gap-2 mb-3">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-brand-orange/30 bg-brand-orange/10 px-3.5 py-1 text-xs font-bold text-brand-orange">
+              <span className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
                 <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
                 <span>{ar ? "مجموعة سامي بن عياد" : "SAMI BIN AYYAD GROUP"}</span>
               </span>
               <SectionBadge title={ar ? "الأرشيف المؤسسي الشامل (1977–2026)" : "Corporate Legacy Archive (1977–2026)"} />
             </div>
 
-            <h1 className="section-title text-3xl sm:text-5xl font-extrabold text-foreground leading-tight tracking-tight">
+            <h1 className="section-title text-2xl sm:text-3xl lg:text-4xl font-extrabold text-foreground leading-tight tracking-tight">
               {ar
                 ? "الأرشيف التاريخي والأنشطة المؤسسية والتحليلات القطاعية"
                 : "Corporate Legacy, Historical Archive & Sector Insights"}
@@ -280,7 +280,7 @@ export function NewsPage() {
       {selectedSector === "all" && selectedYear === "all" && !searchQuery && featuredArticle && (
         <section className="site-container pb-12">
           <Reveal>
-            <div className="group relative overflow-hidden rounded-3xl border border-white/30 bg-background/85 shadow-xl backdrop-blur-2xl transition-all duration-300 hover:shadow-2xl hover:border-brand-green/60">
+            <div className="group relative overflow-hidden rounded-3xl border border-white/30 bg-background/85 shadow-xl backdrop-blur-2xl transition-all duration-500 hover:-translate-y-0.5 hover:border-white/80 hover:shadow-[0_20px_48px_-12px_rgba(0,0,0,0.1)]">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 items-center">
                 <div className="lg:col-span-7 relative aspect-[16/10] lg:aspect-[16/11] w-full overflow-hidden bg-secondary">
                   <img

@@ -248,12 +248,13 @@ export function ProductsCataloguePage() {
 
         {/* Special Garment Catalogue Launcher (When in Apparel Division) */}
         {selectedProductDivision === "apparel" && (
-          <div className="mb-10 overflow-hidden rounded-3xl border border-brand-orange/40 bg-gradient-to-r from-brand-orange/15 via-background to-brand-green/10 p-6 sm:p-8 shadow-xl backdrop-blur-xl">
+          <div className="mb-10 overflow-hidden rounded-3xl border border-border/80 bg-background/80 p-6 sm:p-8 shadow-xl backdrop-blur-2xl transition-all duration-500 hover:-translate-y-0.5 hover:shadow-2xl">
             <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
               <div className="max-w-2xl">
                 <div className="flex items-center gap-2 mb-2">
-                  <span className="rounded-full bg-brand-orange px-3 py-0.5 text-xs font-bold text-white">
-                    {ar ? "مكتبة الموديلات المصنعة" : "Garment Catalogue"}
+                  <span className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3 py-1 text-xs font-bold text-foreground backdrop-blur-md">
+                    <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+                    <span>{ar ? "مكتبة الموديلات المصنعة" : "Garment Catalogue"}</span>
                   </span>
                   <span className="text-xs font-bold text-foreground">
                     {ar ? "+2,700 موديل جاهز للإنتاج" : "2,700+ Production-Ready Models"}

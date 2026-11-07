@@ -316,8 +316,8 @@ Attached Files: ${files.map((f) => f.name).join(", ") || "None"}
               <CheckCircle2 className="size-10" />
             </div>
 
-            <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground">
-              <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
+            <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
               <span>{referenceId}</span>
             </div>
 

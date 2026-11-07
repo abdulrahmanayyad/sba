@@ -328,7 +328,7 @@ function FoodAboutTab({
 
         {/* Approach */}
         <Reveal>
-          <div className="group rounded-3xl border border-white/20 bg-gradient-to-br from-background/90 via-background/70 to-secondary/30 p-6 sm:p-8 lg:p-10 shadow-lg backdrop-blur-2xl mb-12 transition-all duration-300 hover:scale-[1.01] hover:-translate-y-1 hover:shadow-2xl hover:border-brand-green cursor-pointer">
+          <div className="group rounded-3xl border border-white/20 bg-background/80 p-6 sm:p-8 lg:p-10 shadow-lg backdrop-blur-2xl mb-12 transition-all duration-500 hover:-translate-y-0.5 hover:shadow-2xl">
             <div className="mb-4">
               <SectionBadge title={ar ? "نهجنا" : "Our Approach"} />
             </div>
@@ -665,10 +665,10 @@ function FoodAboutTab({
         <div className="grid gap-6 md:grid-cols-2 mb-8">
           {/* Active Markets Card */}
           <Reveal>
-            <div className="rounded-3xl border border-emerald-500/30 bg-emerald-950/20 p-6 sm:p-8 backdrop-blur-xl">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="size-2.5 rounded-full bg-emerald-400 animate-pulse" />
-                <h3 className="font-head text-lg sm:text-xl font-bold text-foreground">
+            <div className="rounded-3xl border border-white/30 bg-background/70 p-6 sm:p-8 backdrop-blur-2xl transition-all duration-500 hover:-translate-y-1 hover:border-brand-green/40 hover:shadow-[0_12px_28px_-6px_rgba(22,135,108,0.22)]">
+              <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+                <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+                <h3 className="font-head text-sm font-bold text-foreground">
                   {ar ? "الأسواق الحالية (يتم التوريد إليها بالفعل)" : "Active Export Markets (Current)"}
                 </h3>
               </div>
@@ -694,7 +694,7 @@ function FoodAboutTab({
                 to="/sectors/$sector"
                 params={{ sector: "food" }}
                 search={{ tab: "markets" }}
-                className="text-xs font-bold text-emerald-400 hover:text-emerald-300 inline-flex items-center gap-1"
+                className="text-xs font-bold text-brand-green-text hover:underline inline-flex items-center gap-1"
               >
                 <span>{ar ? "عرض تفاصيل الأسواق الحالية ومؤشرات 2024" : "View active markets & 2024 trade indicators"}</span>
                 <ArrowRight className="size-3.5 rtl:rotate-180" />
@@ -704,10 +704,10 @@ function FoodAboutTab({
 
           {/* Target Expansion Markets Card */}
           <Reveal delay={0.1}>
-            <div className="rounded-3xl border border-brand-orange/30 bg-brand-orange/10 p-6 sm:p-8 backdrop-blur-xl">
-              <div className="flex items-center gap-2 mb-3">
-                <Globe className="size-4 text-brand-orange" />
-                <h3 className="font-head text-lg sm:text-xl font-bold text-foreground">
+            <div className="rounded-3xl border border-white/30 bg-background/70 p-6 sm:p-8 backdrop-blur-2xl transition-all duration-500 hover:-translate-y-1 hover:border-brand-green/40 hover:shadow-[0_12px_28px_-6px_rgba(22,135,108,0.22)]">
+              <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+                <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+                <h3 className="font-head text-sm font-bold text-foreground">
                   {ar ? "الأسواق المستهدفة (برامج التوسع الدولي)" : "Target Expansion Markets"}
                 </h3>
               </div>
@@ -961,13 +961,10 @@ function FoodAboutTab({
       {/* SECTION 10: Request a Supply Quotation Hero CTA */}
       <section className="site-container py-16 sm:py-24">
         <Reveal>
-          <div className="rounded-3xl border border-brand-orange/40 bg-gradient-to-br from-background/95 via-background/80 to-secondary/60 p-8 sm:p-14 shadow-2xl backdrop-blur-2xl text-center relative overflow-hidden">
-            <div className="absolute -top-24 -end-24 size-96 rounded-full bg-brand-orange/10 blur-3xl pointer-events-none" />
-            <div className="absolute -bottom-24 -start-24 size-96 rounded-full bg-brand-green/10 blur-3xl pointer-events-none" />
-
+          <div className="rounded-3xl border border-border/80 bg-background/80 p-8 sm:p-14 shadow-xl backdrop-blur-2xl text-center relative overflow-hidden transition-all duration-500 hover:-translate-y-0.5 hover:shadow-2xl">
             <div className="relative z-10 max-w-3xl mx-auto">
               <SectionBadge title={ar ? "10. اطلب عرض توريد" : "10. Start Your Supply Order"} />
-              <h2 className="font-head text-3xl sm:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight">
+              <h2 className="font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold text-foreground mt-4 mb-4 tracking-tight">
                 {ar ? "هل تبحث عن شريك توريد غذائي معتمد دوليًا؟" : "Looking for an Accredited International Food Supply Partner?"}
               </h2>
               <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-8 max-w-2xl mx-auto">

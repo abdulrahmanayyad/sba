@@ -34,8 +34,8 @@ export function JoinIndexPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-footer via-footer/90 to-footer/75" />
         <div className="site-container relative w-full py-16 sm:py-24 z-10 text-center max-w-4xl mx-auto">
           <Reveal>
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/40 px-4 py-1.5 text-xs font-bold tracking-wide text-white backdrop-blur-md mb-4">
-              <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
+            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-4">
+              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
               <span>{ar ? "بوابات التوظيف والشراكات الاستراتيجية" : "Careers & Strategic Partnerships"}</span>
             </div>
 

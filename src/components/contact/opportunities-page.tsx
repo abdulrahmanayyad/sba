@@ -252,12 +252,12 @@ export function SubmitOpportunityPage() {
       {/* Hero Header */}
       <section className="relative overflow-hidden py-16 sm:py-20 bg-gradient-to-b from-secondary/40 via-background to-background">
         <div className="site-container relative z-10 text-center max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-4 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-4 shadow-sm">
-            <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
-            <span className="!text-black font-head">{ar ? "بوابة الاستثمار وتطوير الأعمال" : "Strategic Co-Development Portal"}</span>
+          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-4 shadow-sm">
+            <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+            <span>{ar ? "بوابة الاستثمار وتطوير الأعمال" : "Strategic Co-Development Portal"}</span>
           </div>
 
-          <h1 className="font-head text-3xl sm:text-4xl lg:text-5xl font-black text-foreground tracking-tight leading-tight">
+          <h1 className="font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold text-foreground tracking-tight leading-tight">
             {ar ? "اعرض فرصتك" : "Submit Your Opportunity"}
           </h1>
 

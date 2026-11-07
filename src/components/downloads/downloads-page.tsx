@@ -44,8 +44,8 @@ export function DownloadsPage() {
       <section className="relative w-full overflow-hidden text-footer-foreground min-h-[45vh] flex items-center bg-gradient-to-b from-brand-green-dark via-brand-green to-background">
         <div className="site-container relative w-full py-16 sm:py-24 z-10">
           <Reveal>
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/40 px-4 py-1.5 text-xs font-bold tracking-wide text-white backdrop-blur-md">
-              <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
               <span>{ar ? "مجموعة سامي بن عياد · مركز الوثائق المؤسسية" : "SAMI BIN AYYAD GROUP · Corporate Documentation Center"}</span>
             </div>
 

@@ -98,8 +98,8 @@ export function EnvironmentalSectorView({ tab = "about" }: EnvironmentalViewProp
           <div className="absolute inset-0 bg-gradient-to-t from-footer via-footer/80 to-footer/65" />
           <div className="site-container relative w-full py-20 sm:py-28 z-10">
             <Reveal>
-              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/40 px-4 py-1.5 text-xs font-bold tracking-wide text-white backdrop-blur-md">
-                <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+                <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
                 <span>{ar ? environmentalHeroData.companyAr : environmentalHeroData.company}</span>
               </div>
 
@@ -190,7 +190,7 @@ function EnvironmentalAboutView({ ar }: { ar: boolean }) {
           </div>
 
           {/* Executive Corporate Intro Box */}
-          <div className="group relative mx-auto max-w-4xl overflow-hidden rounded-3xl border border-white/20 bg-background/75 p-8 sm:p-12 shadow-[0_12px_40px_rgba(0,0,0,0.08)] backdrop-blur-2xl transition-all duration-300 hover:scale-[1.01] hover:border-brand-green/40 text-center">
+          <div className="group relative mx-auto max-w-4xl overflow-hidden rounded-3xl border border-white/20 bg-background/75 p-8 sm:p-12 shadow-[0_12px_40px_rgba(0,0,0,0.08)] backdrop-blur-2xl transition-all duration-500 hover:-translate-y-0.5 hover:shadow-2xl text-center">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
               <span>{ar ? data.whoWeAre.badgeAr : data.whoWeAre.badgeEn}</span>
@@ -224,10 +224,10 @@ function EnvironmentalAboutView({ ar }: { ar: boolean }) {
       <section className="site-container">
         <Reveal>
           <div className="grid gap-6 md:grid-cols-2">
-            <div className="group relative overflow-hidden rounded-3xl border border-white/30 bg-background/70 p-8 sm:p-10 shadow-md backdrop-blur-2xl transition-all duration-300 hover:scale-[1.02] hover:border-brand-green/60 hover:shadow-xl">
+            <div className="group relative overflow-hidden rounded-3xl border border-white/30 bg-background/70 p-8 sm:p-10 shadow-md backdrop-blur-2xl transition-all duration-500 hover:-translate-y-1 hover:border-brand-green/40 hover:shadow-[0_12px_28px_-6px_rgba(22,135,108,0.22)]">
               <div className="mb-4">
                 <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
-                  <span className="size-1.5 rounded-full bg-brand-green animate-pulse" />
+                  <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
                   <span>{ar ? data.vision.badgeAr : data.vision.badgeEn}</span>
                 </div>
               </div>
@@ -235,7 +235,7 @@ function EnvironmentalAboutView({ ar }: { ar: boolean }) {
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">{ar ? data.vision.bodyAr : data.vision.bodyEn}</p>
             </div>
 
-            <div className="group relative overflow-hidden rounded-3xl border border-white/30 bg-background/70 p-8 sm:p-10 shadow-md backdrop-blur-2xl transition-all duration-300 hover:scale-[1.02] hover:border-brand-orange/60 hover:shadow-xl">
+            <div className="group relative overflow-hidden rounded-3xl border border-white/30 bg-background/70 p-8 sm:p-10 shadow-md backdrop-blur-2xl transition-all duration-500 hover:-translate-y-1 hover:border-brand-green/40 hover:shadow-[0_12px_28px_-6px_rgba(22,135,108,0.22)]">
               <div className="mb-4">
                 <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
                   <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
@@ -614,11 +614,11 @@ function EnvironmentalAboutView({ ar }: { ar: boolean }) {
 
       {/* 10. REQUEST A CONSULTATION CTA */}
       <section className="site-container">
-        <div className="overflow-hidden rounded-3xl border border-brand-green/30 bg-gradient-to-br from-brand-green/10 via-background to-brand-orange/5 p-8 sm:p-14 text-center shadow-xl backdrop-blur-2xl">
+        <div className="overflow-hidden rounded-3xl border border-border/80 bg-background/80 p-8 sm:p-14 text-center shadow-xl backdrop-blur-2xl transition-all duration-500 hover:-translate-y-0.5 hover:shadow-2xl">
           <Reveal>
             <div className="max-w-3xl mx-auto">
               <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-3">
-                <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
+                <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
                 <span>{ar ? "استشارات بيئية موثوقة" : "Certified Environmental Consultation"}</span>
               </div>
               <h2 className="text-2xl sm:text-4xl font-extrabold font-head text-foreground">

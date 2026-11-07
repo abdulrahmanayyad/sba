@@ -125,7 +125,7 @@ export function SectorPage({ sector }: { sector: SectorPageData }) {
         <div className="site-container relative w-full py-16 md:py-24">
           <Reveal>
             <div className="flex flex-wrap items-center gap-2 text-xs font-medium">
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/40 px-3.5 py-1 text-xs font-bold tracking-wide text-white backdrop-blur-md">
+              <span className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
                 <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
                 <span>{sector.companyAr ? (ar ? sector.companyAr : sector.company) : (ar ? "مجموعة سامي بن عياد" : "SAMI BIN AYYAD GROUP")}</span>
               </span>

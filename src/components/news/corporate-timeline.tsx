@@ -78,12 +78,12 @@ export function CorporateTimeline() {
 
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           {/* Top Pill */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-brand-orange/30 bg-brand-orange/10 px-4 py-1.5 text-xs font-bold text-brand-orange mb-4">
-            <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
+          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-4">
+            <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
             <span>{ar ? "إرثنا وتطور أعمالنا | 1977–2026" : "OUR LEGACY & BUSINESS EVOLUTION"}</span>
           </div>
 
-          <h2 className="text-center font-head text-2xl sm:text-4xl lg:text-5xl font-black text-foreground tracking-tight leading-tight">
+          <h2 className="text-center font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold text-foreground tracking-tight leading-tight">
             {ar ? "من الجذور الأولى إلى التكامل المؤسسي" : "From Business Foundations to Institutional Integration"}
           </h2>
 

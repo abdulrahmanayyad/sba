@@ -197,10 +197,10 @@ export function AboutPage() {
           <Reveal delay={0.15}>
             <div className="mt-12 max-w-6xl mx-auto">
               {/* Parent Holding Node — Glassmorphic, Larger & Prominent */}
-              <div className="group relative mx-auto max-w-2xl rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-8 sm:p-10 text-center shadow-[0_16px_50px_rgba(0,0,0,0.05)] backdrop-blur-3xl transition-all duration-300 hover:-translate-y-1 hover:bg-white/60 dark:hover:bg-white/20 hover:border-brand-green/50 hover:shadow-[0_18px_45px_-12px_rgba(22,135,108,0.22)] ring-1 ring-white/30">
-                <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/50 dark:bg-white/15 px-4 py-1.5 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
-                  <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
-                  <span className="font-bold text-black dark:text-white">{ar ? "الكيان المؤسسي الموحد (الشركة الأم)" : "Unified Parent Holding Entity"}</span>
+              <div className="group relative mx-auto max-w-2xl rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-8 sm:p-10 text-center shadow-[0_16px_50px_rgba(0,0,0,0.05)] backdrop-blur-3xl transition-all duration-500 hover:-translate-y-0.5 hover:bg-white/60 dark:hover:bg-white/20 hover:border-white/80 hover:shadow-[0_20px_48px_-12px_rgba(0,0,0,0.1)] ring-1 ring-white/30">
+                <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
+                  <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+                  <span>{ar ? "الكيان المؤسسي الموحد (الشركة الأم)" : "Unified Parent Holding Entity"}</span>
                 </div>
                 <h3 className="font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold text-brand-orange text-center mt-2 leading-tight">
                   {ar ? "مجموعة سامي بن عياد" : "SAMI BIN AYYAD GROUP"}
@@ -514,7 +514,7 @@ function LeaderCard({
   const bio = ar ? founder.bioAr : founder.bio;
 
   return (
-    <div className="glass-card group rounded-3xl border border-white/30 bg-background/85 p-6 sm:p-8 shadow-md backdrop-blur-xl transition-all duration-300 hover:shadow-xl hover:border-brand-green/40">
+    <div className="glass-card group rounded-3xl border border-white/30 bg-background/85 p-6 sm:p-8 shadow-md backdrop-blur-xl transition-all duration-500 hover:-translate-y-0.5 hover:border-white/80 hover:shadow-[0_20px_48px_-12px_rgba(0,0,0,0.1)]">
       <div className="grid gap-6 sm:grid-cols-[180px_1fr] md:grid-cols-[220px_1fr] lg:grid-cols-[240px_1fr] items-start">
         {/* Photo container */}
         <div className="relative aspect-[3/4] w-full max-w-[240px] mx-auto sm:mx-0 overflow-hidden rounded-2xl border border-brand-green/20 bg-gradient-to-br from-brand-green/10 via-background to-brand-orange/10 shadow-sm">

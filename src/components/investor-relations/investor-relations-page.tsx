@@ -131,7 +131,7 @@ export function InvestorRelationsPage() {
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
               <span>{ar ? investmentOverviewData.hero.badgeAr : investmentOverviewData.hero.badgeEn}</span>
             </div>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground font-head max-w-4xl leading-tight">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-foreground font-head max-w-4xl leading-tight">
               {ar ? investmentOverviewData.hero.titleAr : investmentOverviewData.hero.titleEn}
             </h1>
             <p className="mt-5 max-w-3xl text-sm sm:text-base lg:text-lg leading-relaxed text-muted-foreground">

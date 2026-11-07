@@ -117,8 +117,8 @@ export function GarmentSectorView({ tab = "about" }: GarmentViewProps) {
           <div className="absolute inset-0 bg-gradient-to-t from-footer via-footer/80 to-footer/65" />
           <div className="site-container relative w-full py-20 sm:py-28 z-10">
             <Reveal>
-              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/40 px-4 py-1.5 text-xs font-bold tracking-wide text-white backdrop-blur-md">
-                <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+                <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
                 <span>{ar ? garmentHeroData.companyAr : garmentHeroData.company}</span>
               </div>
 

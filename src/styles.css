@@ -323,22 +323,26 @@ html[dir="rtl"] .footer-label {
               background-color 300ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* 1. Large parent boxes containing inner small cards stay stationary, subtly interactive */
+/* 1. Large parent boxes containing inner small cards/data: subtle, smooth depth prominence, strictly NO green shadow */
 @media (hover: hover) {
   :is(.card-interactive, .interactive-card, .glass-card, .glass-box-interactive, [data-card]):has(
-    :is(.card-interactive, .interactive-card, .glass-card, .glass-box-interactive, [data-card], .group\/stat, [data-inner-card], article, .subsector-card, [data-journey-track])
+    :is(.card-interactive, .interactive-card, .glass-card, .glass-box-interactive, [data-card], .group\/stat, [data-inner-card], article, .subsector-card, [data-journey-track], form, table, nav)
   ):hover {
-    transform: none !important;
-    border-color: rgba(22, 135, 108, 0.38) !important;
+    transform: translateY(-2px) !important;
+    border-color: rgba(255, 255, 255, 0.8) !important;
     background-color: rgba(255, 255, 255, 0.52);
-    box-shadow: 0 18px 45px -12px rgba(0, 0, 0, 0.06), 0 0 25px -6px rgba(22, 135, 108, 0.12), 0 0 0 1px rgba(22, 135, 108, 0.22) inset !important;
+    box-shadow: 0 20px 48px -12px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.4) inset !important;
+    transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 500ms cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 500ms cubic-bezier(0.16, 1, 0.3, 1),
+                background-color 500ms cubic-bezier(0.16, 1, 0.3, 1) !important;
   }
 }
 
 /* 2. Inner cards and standalone cards: calm translateY(-3px) identical to Our Values card + glowing green aura */
 @media (hover: hover) {
   :is(.card-interactive, .interactive-card, .glass-card, [data-card]):not(
-    :has(:is(.card-interactive, .interactive-card, .glass-card, .glass-box-interactive, [data-card], .group\/stat, [data-inner-card], article, .subsector-card, [data-journey-track]))
+    :has(:is(.card-interactive, .interactive-card, .glass-card, .glass-box-interactive, [data-card], .group\/stat, [data-inner-card], article, .subsector-card, [data-journey-track], form, table, nav))
   ):hover,
   .group\/stat:hover,
   [data-inner-card]:hover {
@@ -591,21 +595,23 @@ html[dir="rtl"] .home-scroll-progress { transform-origin: right; }
 }
 
 @media (hover: hover) {
-  /* Large parent boxes with inner cards: stay stationary, gently illuminated */
+  /* Large parent boxes with inner cards/data: subtle, smooth depth prominence, strictly NO green shadow */
   .glass-box-interactive:has(
-    :is(.glass-box-interactive, .glass-card, .card-interactive, [data-card], .group\/stat, [data-inner-card], article, .subsector-card, [data-journey-track])
+    :is(.glass-box-interactive, .glass-card, .card-interactive, [data-card], .group\/stat, [data-inner-card], article, .subsector-card, [data-journey-track], form, table, nav)
   ):hover {
-    transform: none !important;
-    background-color: rgba(255, 255, 255, 0.48);
-    border-color: rgba(22, 135, 108, 0.4) !important;
-    box-shadow: 0 18px 45px -12px rgba(0, 0, 0, 0.06),
-                0 0 24px -6px rgba(22, 135, 108, 0.12),
-                0 0 0 1px rgba(22, 135, 108, 0.22) inset !important;
+    transform: translateY(-2px) !important;
+    background-color: rgba(255, 255, 255, 0.52);
+    border-color: rgba(255, 255, 255, 0.85) !important;
+    box-shadow: 0 20px 48px -12px rgba(0, 0, 0, 0.08),
+                0 0 0 1px rgba(255, 255, 255, 0.4) inset !important;
+    transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 500ms cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 500ms cubic-bezier(0.16, 1, 0.3, 1) !important;
   }
 
   /* Inner and standalone boxes: calm -translate-y-1 (-3px) and glowing green aura */
   .glass-box-interactive:not(
-    :has(:is(.glass-box-interactive, .glass-card, .card-interactive, [data-card], .group\/stat, [data-inner-card], article, .subsector-card, [data-journey-track]))
+    :has(:is(.glass-box-interactive, .glass-card, .card-interactive, [data-card], .group\/stat, [data-inner-card], article, .subsector-card, [data-journey-track], form, table, nav))
   ):hover {
     transform: translateY(-3px) !important;
     background-color: rgba(255, 255, 255, 0.52);
@@ -633,17 +639,19 @@ html[dir="rtl"] .home-scroll-progress { transform-origin: right; }
 
 @media (hover: hover) {
   .dark .glass-box-interactive:has(
-    :is(.glass-box-interactive, .glass-card, .card-interactive, [data-card], .group\/stat, article, .subsector-card, [data-journey-track])
+    :is(.glass-box-interactive, .glass-card, .card-interactive, [data-card], .group\/stat, article, .subsector-card, [data-journey-track], form, table, nav)
   ):hover {
-    transform: none !important;
+    transform: translateY(-2px) !important;
     background-color: rgba(255, 255, 255, 0.07) !important;
-    border-color: rgba(22, 135, 108, 0.45) !important;
-    box-shadow: 0 20px 48px -12px rgba(0, 0, 0, 0.4),
-                0 0 24px -4px rgba(22, 135, 108, 0.18) !important;
+    border-color: rgba(255, 255, 255, 0.22) !important;
+    box-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.45) !important;
+    transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 500ms cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 500ms cubic-bezier(0.16, 1, 0.3, 1) !important;
   }
 
   .dark .glass-box-interactive:not(
-    :has(:is(.glass-box-interactive, .glass-card, .card-interactive, [data-card], .group\/stat, article, .subsector-card, [data-journey-track]))
+    :has(:is(.glass-box-interactive, .glass-card, .card-interactive, [data-card], .group\/stat, article, .subsector-card, [data-journey-track], form, table, nav))
   ):hover {
     transform: translateY(-3px) !important;
     background-color: rgba(255, 255, 255, 0.09) !important;

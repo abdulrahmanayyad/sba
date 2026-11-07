@@ -128,8 +128,8 @@ export function CentralSubmissionsTab({ ar }: { ar: boolean }) {
       {/* Header & Controls */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between rounded-3xl border border-white/20 bg-background/70 p-6 backdrop-blur-2xl shadow-xl">
         <div>
-          <div className="inline-flex items-center gap-2 rounded-full border border-brand-green/30 bg-brand-green/10 px-3 py-1 text-xs font-bold text-brand-green mb-1.5">
-            <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
+          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-1.5">
+            <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
             <span>{ar ? "صندوق الوارد المركزي الموحد" : "Central Dispatch Inbox"}</span>
           </div>
           <h2 className="text-xl sm:text-2xl font-black text-foreground">

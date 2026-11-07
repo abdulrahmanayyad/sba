@@ -69,7 +69,7 @@ export function PartnersPage() {
             <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
             <span>{ar ? "التعاون التقني والتجاري" : "Technical and Commercial Cooperation"}</span>
           </div>
-          <h1 className="section-title mt-2 text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground">
+          <h1 className="section-title mt-2 text-2xl sm:text-3xl lg:text-4xl font-extrabold text-foreground">
             {ar ? "التعاون التقني والتجاري" : "Technical and Commercial Cooperation"}
           </h1>
           <p className="section-intro mt-4 max-w-3xl leading-relaxed text-muted-foreground sm:text-lg">
@@ -405,7 +405,7 @@ export function PartnersPage() {
 
       {/* 5. Discuss a Partnership CTA Box */}
       <section className="site-container py-12">
-        <div className="mx-auto max-w-5xl overflow-hidden rounded-3xl border border-white/20 bg-background/80 p-8 sm:p-12 shadow-[0_8px_40px_rgba(0,0,0,0.18)] backdrop-blur-2xl grid gap-8 lg:grid-cols-[1.3fr_1fr] items-center transition-all duration-300 hover:border-brand-green/40 hover:shadow-[0_20px_48px_-12px_rgba(0,0,0,0.12),0_0_24px_-6px_rgba(22,135,108,0.12)]">
+        <div className="mx-auto max-w-5xl overflow-hidden rounded-3xl border border-white/20 bg-background/80 p-8 sm:p-12 shadow-[0_8px_40px_rgba(0,0,0,0.18)] backdrop-blur-2xl grid gap-8 lg:grid-cols-[1.3fr_1fr] items-center transition-all duration-500 hover:-translate-y-0.5 hover:border-white/80 hover:shadow-[0_20px_48px_-12px_rgba(0,0,0,0.1)]">
           <div>
             <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />

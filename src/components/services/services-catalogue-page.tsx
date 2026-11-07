@@ -94,16 +94,12 @@ export function ServicesCataloguePage() {
       <section className="site-container pt-20 sm:pt-28 pb-8 scroll-mt-24">
         <Reveal>
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/40 dark:bg-white/10 px-4 py-1.5 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-4 shadow-xs">
-              <span className="size-2 rounded-full bg-brand-green animate-pulse" />
-              <span>{ar ? "مجموعة سامي بن عياد" : "SAMI BIN AYYAD GROUP"}</span>
-              <span className="text-muted-foreground">•</span>
-              <span className="text-brand-green font-bold font-mono">
-                {ar ? `${totalServicesCount} خدمة وحل هندسي معتمد` : `${totalServicesCount} Verified Engineering Solutions`}
-              </span>
+            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-4">
+              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+              <span>{ar ? "دليل الخدمات الهندسية" : "Engineering Services Directory"}</span>
             </div>
 
-            <h1 className="font-head text-3xl sm:text-5xl lg:text-6xl font-extrabold text-foreground leading-tight tracking-tight">
+            <h1 className="font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold text-foreground leading-tight tracking-tight">
               {ar ? (
                 <>
                   دليل <span className="text-brand-green">الخدمات الهندسية</span> والحلول{" "}
@@ -324,7 +320,7 @@ export function ServicesCataloguePage() {
               {executedConstructionProjects.map((proj) => (
                 <div
                   key={proj.id}
-                  className="group overflow-hidden rounded-3xl border border-white/20 bg-background/85 shadow-md backdrop-blur-xl transition-all duration-300 hover:border-brand-green/60 hover:shadow-2xl"
+                  className="group overflow-hidden rounded-3xl border border-white/20 bg-background/85 shadow-md backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-brand-green/60 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)]"
                 >
                   <div className="relative aspect-[16/10] w-full overflow-hidden bg-secondary">
                     <img

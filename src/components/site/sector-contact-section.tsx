@@ -42,7 +42,7 @@ export function SectorContactSection({ ar, sector }: SectorContactSectionProps) 
 
   return (
     <section id="contact" className="site-container scroll-mt-24 pt-8">
-      <div className="mx-auto max-w-6xl overflow-hidden rounded-3xl border border-white/20 bg-background/75 p-5 sm:p-8 lg:p-12 shadow-[0_8px_40px_rgba(0,0,0,0.18)] backdrop-blur-2xl grid gap-6 sm:gap-8 lg:grid-cols-[1.2fr_1fr] items-center transition-all duration-300 hover:shadow-2xl hover:border-brand-green/40">
+      <div className="mx-auto max-w-6xl overflow-hidden rounded-3xl border border-white/20 bg-background/75 p-5 sm:p-8 lg:p-12 shadow-[0_8px_40px_rgba(0,0,0,0.18)] backdrop-blur-2xl grid gap-6 sm:gap-8 lg:grid-cols-[1.2fr_1fr] items-center transition-all duration-500 hover:-translate-y-0.5 hover:border-white/80 hover:shadow-[0_20px_48px_-12px_rgba(0,0,0,0.1)]">
         <div>
           <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
             <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />

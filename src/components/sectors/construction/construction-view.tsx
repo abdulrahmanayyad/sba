@@ -133,7 +133,7 @@ export function ConstructionSectorView({ tab = "about", token }: ConstructionVie
           <div className="site-container relative w-full py-20 sm:py-28 z-10">
             <Reveal>
               <div className="flex flex-wrap items-center gap-2 text-xs font-medium mb-4">
-                <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/40 px-3.5 py-1 text-xs font-bold tracking-wide text-white backdrop-blur-md">
+                <span className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
                   <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
                   <span>{ar ? "مجموعة سامي بن عياد · قطاع المقاولات والتطوير العقاري" : "SAMI BIN AYYAD · Contracting & Real Estate Development"}</span>
                 </span>
@@ -244,7 +244,7 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
           </div>
 
           {/* Executive Corporate Intro Box */}
-          <div className="group relative mx-auto max-w-4xl overflow-hidden rounded-3xl border border-white/20 bg-background/75 p-8 sm:p-12 shadow-[0_12px_40px_rgba(0,0,0,0.08)] backdrop-blur-2xl transition-all duration-300 hover:scale-[1.01] hover:border-brand-green/40 text-center">
+          <div className="group relative mx-auto max-w-4xl overflow-hidden rounded-3xl border border-white/20 bg-background/75 p-8 sm:p-12 shadow-[0_12px_40px_rgba(0,0,0,0.08)] backdrop-blur-2xl transition-all duration-500 hover:-translate-y-0.5 hover:border-white/80 hover:shadow-[0_20px_48px_-12px_rgba(0,0,0,0.1)] text-center">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
               <span>{ar ? "نظرة عامة على القطاع" : "Sector Overview"}</span>
@@ -278,7 +278,7 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
       <section className="site-container">
         <Reveal>
           <div className="grid gap-6 md:grid-cols-2">
-            <div className="group relative overflow-hidden rounded-3xl border border-white/30 bg-background/70 p-8 sm:p-10 shadow-md backdrop-blur-2xl transition-all duration-300 hover:scale-[1.02] hover:border-brand-orange/60 hover:shadow-xl">
+            <div className="group relative overflow-hidden rounded-3xl border border-white/30 bg-background/70 p-8 sm:p-10 shadow-md backdrop-blur-2xl transition-all duration-300 hover:-translate-y-1 hover:border-brand-green/60 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)]">
               <div className="mb-4">
                 <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
                   <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
@@ -290,7 +290,7 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
               </p>
             </div>
 
-            <div className="group relative overflow-hidden rounded-3xl border border-white/30 bg-background/70 p-8 sm:p-10 shadow-md backdrop-blur-2xl transition-all duration-300 hover:scale-[1.02] hover:border-brand-green/60 hover:shadow-xl">
+            <div className="group relative overflow-hidden rounded-3xl border border-white/30 bg-background/70 p-8 sm:p-10 shadow-md backdrop-blur-2xl transition-all duration-300 hover:-translate-y-1 hover:border-brand-green/60 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)]">
               <div className="mb-4">
                 <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
                   <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
@@ -630,11 +630,11 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
 
       {/* 10. START YOUR PROJECT CTA */}
       <section className="site-container pb-8">
-        <div className="rounded-3xl border border-brand-green/30 bg-gradient-to-r from-brand-green/15 via-background to-brand-orange/15 p-8 sm:p-12 backdrop-blur-2xl text-center shadow-xl">
+        <div className="rounded-3xl border border-border/80 bg-background/80 p-8 sm:p-12 backdrop-blur-2xl text-center shadow-xl transition-all duration-500 hover:-translate-y-0.5 hover:shadow-2xl">
           <Reveal>
             <div className="max-w-3xl mx-auto">
               <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-3">
-                <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
+                <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
                 <span>{ar ? "ابدأ دراسة وتنفيذ مشروعك" : "Start Your Construction Project"}</span>
               </div>
               <h2 className="text-2xl sm:text-4xl font-extrabold font-head text-foreground">
