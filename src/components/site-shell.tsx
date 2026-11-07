@@ -503,20 +503,20 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
           {/* Subtle background image */}
           <img src={hero} alt="" aria-hidden="true" loading="lazy" className="pointer-events-none absolute inset-0 size-full scale-110 object-cover opacity-8 blur-2xl" />
           <div className="relative px-6 py-10 md:px-10 md:py-12">
-            {/* Main grid */}
-            <div className="grid gap-10 lg:grid-cols-[1.1fr_2.2fr] lg:gap-14 xl:gap-20">
+            {/* Main grid / layout */}
+            <div className="flex flex-col lg:flex-row lg:justify-between items-start gap-10 lg:gap-14 xl:gap-16">
               {/* Brand column */}
-              <div>
+              <div className="max-w-sm">
                 <img src={currentLogo} alt={isArabic ? "سامي بن عياد" : "SBA"} className="h-11 w-auto" />
-                <p className="mt-5 max-w-sm text-sm font-bold leading-6 text-brand-orange">{messages.footer.descriptor}</p>
+                <p className="mt-5 text-sm font-bold leading-6 text-brand-orange">{messages.footer.descriptor}</p>
                 <p className={cn("mt-4 font-bold text-brand-orange", isArabic ? "font-sans text-xs tracking-normal" : "font-mono text-[10px] uppercase tracking-[0.18em]")}>{messages.footer.addressLabel}</p>
-                <p className="mt-1.5 max-w-sm text-xs font-semibold leading-5 text-foreground/90">{messages.footer.address}</p>
+                <p className="mt-1.5 text-xs font-semibold leading-5 text-foreground/90">{messages.footer.address}</p>
               </div>
 
-              {/* Links columns with balanced spacing */}
-              <div className="flex flex-col sm:flex-row sm:justify-between items-start gap-10 sm:gap-8 md:gap-10 lg:gap-12">
+              {/* Links columns with cohesive, compact spacing */}
+              <div className="flex flex-col sm:flex-row items-start gap-8 sm:gap-6 md:gap-8 lg:gap-10 shrink-0">
                 {/* 1. Sectors Column */}
-                <div className="space-y-4 min-w-[130px]">
+                <div className="space-y-4 min-w-[120px]">
                   <h2 className="font-head text-sm font-bold uppercase tracking-wider text-brand-orange">{messages.footer.sectors}</h2>
                   <nav aria-label={messages.accessibility.footerNavigation} className="grid gap-2.5">
                     {sectorKeys.map((key) => (
@@ -526,7 +526,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
                 </div>
 
                 {/* 2. Company Column */}
-                <div className="space-y-4 min-w-[120px]">
+                <div className="space-y-4 min-w-[110px]">
                   <h2 className="font-head text-sm font-bold uppercase tracking-wider text-brand-orange">{messages.footer.company}</h2>
                   <nav aria-label={messages.accessibility.footerNavigation} className="grid gap-2.5">
                     <Link to="/about" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange leading-snug">{isArabic ? "نبذة عنا" : messages.nav.about}</Link>
@@ -541,7 +541,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
                 </div>
 
                 {/* 3. Contact Column */}
-                <div className="space-y-4 min-w-[170px] max-w-[260px]">
+                <div className="space-y-4 min-w-[150px] max-w-[240px]">
                   <h2 className="font-head text-sm font-bold uppercase tracking-wider text-brand-orange">{messages.footer.contact}</h2>
                   <div className="grid gap-2.5 justify-items-start">
                     <Link to="/contact" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange leading-snug">{isArabic ? "تواصل معنا" : "Contact Us"}</Link>
