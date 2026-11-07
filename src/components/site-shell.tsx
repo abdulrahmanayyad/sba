@@ -521,50 +521,50 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
                 </div>
               </div>
 
-              {/* Links columns with cohesive, compact spacing */}
-              <div className="flex flex-col sm:flex-row items-start gap-8 sm:gap-6 md:gap-8 lg:gap-10 shrink-0">
+              {/* Links columns with cohesive, balanced spacing & larger legible fonts */}
+              <div className="flex flex-col sm:flex-row items-start gap-8 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-14 shrink-0">
                 {/* 1. Sectors Column */}
-                <div className="space-y-4 min-w-[120px]">
-                  <h2 className="font-head text-sm font-bold uppercase tracking-wider text-brand-orange">{messages.footer.sectors}</h2>
-                  <nav aria-label={messages.accessibility.footerNavigation} className="grid gap-2.5">
+                <div className="space-y-4 min-w-[140px] sm:min-w-[160px]">
+                  <h2 className="font-head text-base sm:text-lg font-extrabold uppercase tracking-wider text-brand-orange">{messages.footer.sectors}</h2>
+                  <nav aria-label={messages.accessibility.footerNavigation} className="grid gap-3">
                     {sectorKeys.map((key) => (
-                      <Link key={key} to="/sectors/$sector" params={{ sector: key }} className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange leading-snug">{messages.sectorsMenu[key]}</Link>
+                      <Link key={key} to="/sectors/$sector" params={{ sector: key }} className="text-sm font-semibold text-foreground/95 transition-colors hover:text-brand-orange leading-snug py-0.5">{messages.sectorsMenu[key]}</Link>
                     ))}
                   </nav>
                 </div>
 
                 {/* 2. Company Column */}
-                <div className="space-y-4 min-w-[110px]">
-                  <h2 className="font-head text-sm font-bold uppercase tracking-wider text-brand-orange">{messages.footer.company}</h2>
-                  <nav aria-label={messages.accessibility.footerNavigation} className="grid gap-2.5">
-                    <Link to="/about" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange leading-snug">{isArabic ? "نبذة عنا" : messages.nav.about}</Link>
-                    <Link to="/products" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange leading-snug">{isArabic ? "منتجاتنا" : messages.nav.products}</Link>
-                    <Link to="/services" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange leading-snug">{isArabic ? "خدماتنا" : "Our Services"}</Link>
-                    <Link to="/partners" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange leading-snug">{isArabic ? "شركاؤنا" : messages.nav.partners}</Link>
-                    <Link to="/news" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange leading-snug">{isArabic ? "أخبارنا" : messages.nav.news}</Link>
-                    <Link to="/trade" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange leading-snug">{isArabic ? "الفرص" : "Opportunities"}</Link>
-                    <Link to="/investor-relations" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange leading-snug">{isArabic ? "الشراكات" : "Partnerships"}</Link>
-                    <Link to="/downloads" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange leading-snug">{isArabic ? "الوثائق" : "Documents"}</Link>
+                <div className="space-y-4 min-w-[125px] sm:min-w-[140px]">
+                  <h2 className="font-head text-base sm:text-lg font-extrabold uppercase tracking-wider text-brand-orange">{messages.footer.company}</h2>
+                  <nav aria-label={messages.accessibility.footerNavigation} className="grid gap-3">
+                    <Link to="/about" className="text-sm font-semibold text-foreground/95 transition-colors hover:text-brand-orange leading-snug py-0.5">{isArabic ? "نبذة عنا" : messages.nav.about}</Link>
+                    <Link to="/products" className="text-sm font-semibold text-foreground/95 transition-colors hover:text-brand-orange leading-snug py-0.5">{isArabic ? "منتجاتنا" : messages.nav.products}</Link>
+                    <Link to="/services" className="text-sm font-semibold text-foreground/95 transition-colors hover:text-brand-orange leading-snug py-0.5">{isArabic ? "خدماتنا" : "Our Services"}</Link>
+                    <Link to="/partners" className="text-sm font-semibold text-foreground/95 transition-colors hover:text-brand-orange leading-snug py-0.5">{isArabic ? "شركاؤنا" : messages.nav.partners}</Link>
+                    <Link to="/news" className="text-sm font-semibold text-foreground/95 transition-colors hover:text-brand-orange leading-snug py-0.5">{isArabic ? "أخبارنا" : messages.nav.news}</Link>
+                    <Link to="/trade" className="text-sm font-semibold text-foreground/95 transition-colors hover:text-brand-orange leading-snug py-0.5">{isArabic ? "الفرص" : "Opportunities"}</Link>
+                    <Link to="/investor-relations" className="text-sm font-semibold text-foreground/95 transition-colors hover:text-brand-orange leading-snug py-0.5">{isArabic ? "الشراكات" : "Partnerships"}</Link>
+                    <Link to="/downloads" className="text-sm font-semibold text-foreground/95 transition-colors hover:text-brand-orange leading-snug py-0.5">{isArabic ? "الوثائق" : "Documents"}</Link>
                   </nav>
                 </div>
 
                 {/* 3. Contact Column */}
-                <div className="space-y-4 min-w-[150px] max-w-[240px]">
-                  <h2 className="font-head text-sm font-bold uppercase tracking-wider text-brand-orange">{messages.footer.contact}</h2>
-                  <div className="grid gap-2.5 justify-items-start">
-                    <Link to="/contact" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange leading-snug">{isArabic ? "تواصل معنا" : "Contact Us"}</Link>
-                    <Link to="/contact/complaints" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange leading-snug">{isArabic ? "الشكاوى" : "Complaints"}</Link>
-                    <Link to="/contact/opportunities" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange leading-snug">{isArabic ? "اعرض فرصتك" : "Submit Your Opportunity"}</Link>
-                    <div className="mt-1 pt-2.5 border-t border-border/40 grid gap-2 w-full justify-items-start">
-                      <a className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange" href="tel:+201222238072" dir="ltr">+20 12 222 380 72</a>
-                      <a className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange" href="tel:+201222238073" dir="ltr">+20 12 222 380 73</a>
-                      <a className="break-all text-xs font-bold text-foreground transition-colors hover:text-brand-orange" href="mailto:info@sami-trade.com">info@sami-trade.com</a>
+                <div className="space-y-4 min-w-[170px] sm:min-w-[200px] max-w-[280px]">
+                  <h2 className="font-head text-base sm:text-lg font-extrabold uppercase tracking-wider text-brand-orange">{messages.footer.contact}</h2>
+                  <div className="grid gap-3 justify-items-start">
+                    <Link to="/contact" className="text-sm font-semibold text-foreground/95 transition-colors hover:text-brand-orange leading-snug py-0.5">{isArabic ? "تواصل معنا" : "Contact Us"}</Link>
+                    <Link to="/contact/complaints" className="text-sm font-semibold text-foreground/95 transition-colors hover:text-brand-orange leading-snug py-0.5">{isArabic ? "الشكاوى" : "Complaints"}</Link>
+                    <Link to="/contact/opportunities" className="text-sm font-semibold text-foreground/95 transition-colors hover:text-brand-orange leading-snug py-0.5">{isArabic ? "اعرض فرصتك" : "Submit Your Opportunity"}</Link>
+                    <div className="mt-1 pt-3 border-t border-border/40 grid gap-2.5 w-full justify-items-start">
+                      <a className="text-sm font-bold text-foreground/95 transition-colors hover:text-brand-orange" href="tel:+201222238072" dir="ltr">+20 12 222 380 72</a>
+                      <a className="text-sm font-bold text-foreground/95 transition-colors hover:text-brand-orange" href="tel:+201222238073" dir="ltr">+20 12 222 380 73</a>
+                      <a className="break-all text-sm font-semibold text-foreground/95 transition-colors hover:text-brand-orange" href="mailto:info@sami-trade.com">info@sami-trade.com</a>
                     </div>
                     {/* Social icons below email */}
-                    <div className="mt-2 flex gap-2.5">
+                    <div className="mt-2.5 flex gap-3">
                       {socialLinks.map(([name, href]) => (
                         <a key={name} href={href} target="_blank" rel="noreferrer" aria-label={name}
-                          className="inline-flex items-center justify-center rounded-full bg-brand-green/10 p-2 text-brand-green transition-all duration-200 hover:bg-brand-orange/20 hover:text-brand-orange hover:scale-110">
+                          className="inline-flex items-center justify-center rounded-full bg-brand-green/10 p-2.5 text-brand-green transition-all duration-200 hover:bg-brand-orange/20 hover:text-brand-orange hover:scale-110">
                           {name === "Facebook" && <Facebook aria-hidden="true" className="size-4" />}
                           {name === "Instagram" && <Instagram aria-hidden="true" className="size-4" />}
                           {name === "LinkedIn" && <Linkedin aria-hidden="true" className="size-4" />}
