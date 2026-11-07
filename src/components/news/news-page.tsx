@@ -214,22 +214,22 @@ export function NewsPage() {
               </div>
             </div>
 
-            {/* B. Center Main Headline */}
-            <h1 className="font-head text-2xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight text-center drop-shadow-md max-w-5xl mx-auto">
+            {/* B. Main Headline (Aligned to start) */}
+            <h1 className="font-head text-2xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight text-start drop-shadow-md max-w-5xl">
               {ar
                 ? "الأرشيف التاريخي والأنشطة المؤسسية والتحليلات القطاعية"
                 : "Corporate Legacy, Historical Archive & Sector Insights"}
             </h1>
 
-            {/* C. Center Intro Paragraph */}
-            <p className="mt-5 max-w-4xl mx-auto text-sm sm:text-base lg:text-lg leading-relaxed text-white/90 text-center drop-shadow-sm">
+            {/* C. Intro Paragraph (Aligned to start) */}
+            <p className="mt-5 max-w-4xl text-sm sm:text-base lg:text-lg leading-relaxed text-white/90 text-start drop-shadow-sm">
               {ar
                 ? "منصة توثيقية متكاملة تستعرض الجذور التاريخية لأنشطة المجموعة منذ عام 1977، وتطور الكيانات المتخصصة في مصر والسعودية، والتحليلات القطاعية الموثقة (2010–2020)، وصولًا إلى التأسيس المؤسسي الجامع عام 2023 وأنشطة المجموعة الحديثة حتى 2026."
                 : "A unified institutional platform documenting operational roots from 1977, cross-border entity growth in Egypt and Saudi Arabia, sector insights (2010–2020), and unified corporate activities following the 2023 institutional integration."}
             </p>
 
             {/* D. Archival Note Box at the Bottom of Hero */}
-            <div className="mt-10 rounded-2xl border border-white/20 bg-black/55 p-4 sm:p-5 backdrop-blur-md shadow-lg max-w-4xl mx-auto text-start">
+            <div className="mt-10 rounded-2xl border border-white/20 bg-black/55 p-4 sm:p-5 backdrop-blur-md shadow-lg max-w-4xl text-start">
               <h4 className="text-brand-orange font-bold text-xs sm:text-sm mb-1.5 text-start flex items-center gap-1.5">
                 <span className="size-1.5 rounded-full bg-brand-orange" />
                 <span>{ar ? "ملاحظة توثيقية للأرشيف:" : "Archival Lineage Note:"}</span>
