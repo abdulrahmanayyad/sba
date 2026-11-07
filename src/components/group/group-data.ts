@@ -482,6 +482,8 @@ export interface StrategicPartner {
   descriptionAr: string;
   tag: string;
   tagAr: string;
+  logo: string;
+  websiteUrl: string;
 }
 
 export const strategicPartners: StrategicPartner[] = [
@@ -497,6 +499,8 @@ export const strategicPartners: StrategicPartner[] = [
       "تقنيات حساسات الموجات فوق الصوتية وتطبيقات القياس. يُبيّن نطاق التعاون والكيان المتعاقد.",
     tag: "Ultrasonic Sensors & Measurement",
     tagAr: "حساسات الموجات فوق الصوتية وحلول القياس",
+    logo: "/partners/dyp-logo.svg",
+    websiteUrl: "https://www.dyp-sensor.com/",
   },
   {
     id: "jumptek",
@@ -510,6 +514,8 @@ export const strategicPartners: StrategicPartner[] = [
       "منتجات ومكونات معالجة وتنقية المياه. يُحدد نطاق المنتجات المتاحة وشروط التوريد وخدمات الدعم وفق الاتفاق.",
     tag: "Water Filtration & Components",
     tagAr: "تنقية ومعالجة المياه والمكونات الفنية",
+    logo: "/partners/jumptek-logo.svg",
+    websiteUrl: "http://www.nbjumptek.com/",
   },
   {
     id: "renergon",
@@ -523,6 +529,8 @@ export const strategicPartners: StrategicPartner[] = [
       "تقنيات الغاز الحيوي ومعالجة المخلفات العضوية. تُعرض العلاقة مع بيان الجهة المصرية المتعاقدة ونطاق التعاون الساري.",
     tag: "Biogas & Dry Fermentation Technology",
     tagAr: "الغاز الحيوي وتكنولوجيا التخمير الجاف",
+    logo: "/partners/renergon-logo.svg",
+    websiteUrl: "https://renergon-biogas.com/",
   },
   {
     id: "technoset",
@@ -536,6 +544,8 @@ export const strategicPartners: StrategicPartner[] = [
       "حلول برمجية وتطبيقات إدارة الأعمال والجودة والسلامة والبيئة. تُحدد وظائف الحلول المتاحة ومسؤوليات التطوير والدعم في نطاق كل مشروع.",
     tag: "Business Applications & QHSE",
     tagAr: "حلول برمجية وتطبيقات إدارة الأعمال والـ QHSE",
+    logo: "/partners/technoset-logo.svg",
+    websiteUrl: "https://envirotaqa.com/",
   },
 ];
 

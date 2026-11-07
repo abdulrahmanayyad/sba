@@ -1,4 +1,4 @@
-import { ArrowRight, Building2, CheckCircle2, Copy, Download, Factory, FileUp, Globe2, Handshake, Mail, MessageCircle, Send, ShieldCheck, Sparkles, TrendingUp, Truck, UploadCloud } from "lucide-react";
+import { ArrowRight, Building2, CheckCircle2, Copy, Download, ExternalLink, Factory, FileUp, Globe2, Handshake, Mail, MessageCircle, Send, ShieldCheck, Sparkles, TrendingUp, Truck, UploadCloud } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Reveal } from "@/components/home/reveal";
@@ -113,7 +113,7 @@ export function PartnersPage() {
         <div className="grid gap-6 md:grid-cols-2">
           {strategicPartners.map((partner, idx) => (
             <Reveal key={partner.id} delay={idx * 0.06}>
-              <div className="glass-card group flex h-full flex-col justify-between rounded-3xl border border-white/30 bg-background/85 p-6 sm:p-8 shadow-md backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)] active:translate-y-0 cursor-pointer">
+              <div className="glass-card group flex h-full flex-col justify-between rounded-3xl border border-white/30 bg-background/85 p-6 sm:p-8 shadow-md backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)] active:translate-y-0">
                 <div>
                   <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
                     <span className="inline-flex items-center gap-1.5 rounded-full border border-brand-green/30 bg-brand-green/10 px-3 py-1 text-xs font-bold text-brand-green">
@@ -125,20 +125,46 @@ export function PartnersPage() {
                     </span>
                   </div>
 
-                  <h3 className="text-center font-head text-lg sm:text-xl font-bold text-foreground group-hover:text-brand-orange transition-colors duration-200">
-                    {ar ? partner.nameAr : partner.name}
-                  </h3>
+                  {/* Partner Official Verified Logo */}
+                  <div className="my-4 flex h-24 w-full items-center justify-center rounded-2xl border border-border/60 bg-white p-4 shadow-xs transition duration-300 group-hover:border-brand-green/50 group-hover:shadow-md">
+                    <img
+                      src={partner.logo}
+                      alt={partner.name}
+                      loading="lazy"
+                      className="max-h-14 max-w-full object-contain filter transition duration-300 group-hover:scale-105"
+                    />
+                  </div>
 
-                  <p className="mt-4 text-xs sm:text-sm leading-relaxed text-muted-foreground/95">
+                  <div className="flex items-center justify-center gap-2 text-center">
+                    <h3 className="font-head text-base sm:text-lg font-bold text-foreground group-hover:text-brand-orange transition-colors duration-200">
+                      {ar ? partner.nameAr : partner.name}
+                    </h3>
+                    <ShieldCheck className="size-4 text-brand-green shrink-0" aria-label="Verified Partner" />
+                  </div>
+
+                  <p className="mt-3 text-xs sm:text-sm leading-relaxed text-muted-foreground/95 text-start">
                     {ar ? partner.descriptionAr : partner.description}
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-border/60 flex items-center justify-between">
-                  <span className="text-[11px] font-semibold text-muted-foreground uppercase tracking-wider font-body">
-                    {ar ? "شريك استراتيجي معتمد" : "Verified Strategic Alliance"}
-                  </span>
-                  <span className="size-2 rounded-full bg-brand-green animate-pulse" />
+                <div className="mt-6 pt-4 border-t border-border/60 flex items-center justify-between gap-2">
+                  <div className="flex items-center gap-1.5">
+                    <span className="size-2 rounded-full bg-brand-green animate-pulse" />
+                    <span className="text-[11px] font-semibold text-muted-foreground uppercase tracking-wider font-body">
+                      {ar ? "شريك استراتيجي معتمد" : "Verified Strategic Alliance"}
+                    </span>
+                  </div>
+
+                  <a
+                    href={partner.websiteUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-orange hover:text-brand-green transition-colors"
+                    aria-label={`${ar ? partner.nameAr : partner.name} Official Website`}
+                  >
+                    <span>{ar ? "الموقع الرسمي" : "Official Website"}</span>
+                    <ExternalLink className="size-3.5 rtl:rotate-180" />
+                  </a>
                 </div>
               </div>
             </Reveal>

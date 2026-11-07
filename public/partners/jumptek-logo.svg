@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 72" fill="none" width="100%" height="100%">
+  <!-- Icon: Water Droplet & Dynamic Filtration Layers -->
+  <g transform="translate(10, 8)">
+    <defs>
+      <linearGradient id="jumptekGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#0284C7" />
+        <stop offset="100%" stop-color="#0369A1" />
+      </linearGradient>
+    </defs>
+    <!-- Stylized Water Droplet Leaf -->
+    <path d="M 24 6 C 24 6 10 24 10 35 C 10 43.8 16.3 51 24 51 C 31.7 51 38 43.8 38 35 C 38 24 24 6 24 6 Z" fill="url(#jumptekGrad)" />
+    <!-- Dynamic Internal Wave Curve -->
+    <path d="M 14 36 C 18 31 24 40 30 35 C 33 32.5 35 34 37 36" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.9" />
+    <circle cx="21" cy="24" r="2.5" fill="#FFFFFF" opacity="0.8" />
+  </g>
+
+  <!-- Typography -->
+  <g transform="translate(64, 12)">
+    <!-- Wordmark JumpTek -->
+    <text x="0" y="27" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="26" fill="#0F172A" letter-spacing="0.5">Jump<tspan fill="#0284C7">Tek</tspan></text>
+    
+    <!-- Subtitle: Ningbo JumpTek Water Tech -->
+    <text x="1" y="42" font-family="system-ui, -apple-system, sans-serif" font-weight="600" font-size="9" fill="#64748B" letter-spacing="1.2">NINGBO JUMPTEK CO., LTD.</text>
+  </g>
+</svg>
+

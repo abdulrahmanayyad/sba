@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 72" fill="none" width="100%" height="100%">
+  <!-- Icon: Renewable Biogas & Circular Energy Emblem -->
+  <g transform="translate(10, 8)">
+    <defs>
+      <linearGradient id="renergyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#4B942F" />
+        <stop offset="100%" stop-color="#2E7D32" />
+      </linearGradient>
+    </defs>
+    <!-- Outer Bio-Energy Arcs -->
+    <circle cx="26" cy="28" r="23" stroke="#E2E8F0" stroke-width="2" fill="none" />
+    <path d="M 26 5 A 23 23 0 0 1 49 28" stroke="url(#renergyGrad)" stroke-width="4" stroke-linecap="round" fill="none" />
+    <path d="M 26 51 A 23 23 0 0 1 3 28" stroke="url(#renergyGrad)" stroke-width="4" stroke-linecap="round" fill="none" />
+    
+    <!-- Organic Leaf / Flame Silhouette at Center -->
+    <path d="M 26 14 C 20 22 20 32 26 38 C 32 32 32 22 26 14 Z" fill="url(#renergyGrad)" />
+    <!-- Center Swiss cross badge or dot -->
+    <circle cx="26" cy="28" r="2" fill="#FFFFFF" />
+  </g>
+
+  <!-- Typography -->
+  <g transform="translate(70, 12)">
+    <!-- Wordmark RENERGON -->
+    <text x="0" y="27" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="24" fill="#0F172A" letter-spacing="2">RENERGON</text>
+    <circle cx="166" cy="24" r="3" fill="#4B942F" />
+    
+    <!-- Subtitle: Switzerland / Energy From Waste -->
+    <text x="1" y="42" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="9" fill="#4B942F" letter-spacing="1.5">SWITZERLAND <tspan fill="#64748B" font-weight="500">· BIOGAS TECH</tspan></text>
+  </g>
+</svg>
+

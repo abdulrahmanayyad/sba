@@ -263,63 +263,69 @@ export function GroupPage() {
           </div>
 
           <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
-            {strategicPartners
-              .filter((p) => p.id === "dianyingpu" || p.id === "jumptek")
-              .map((p) => {
-                const partnerLinks: Record<string, string> = {
-                  dianyingpu: "https://www.dyp-sensor.com/",
-                  jumptek: "https://www.jumptek.com/",
-                };
-                const partnerShort: Record<string, string> = {
-                  dianyingpu: "DYP Sensor",
-                  jumptek: "JumpTek Water",
-                };
-                const url = partnerLinks[p.id] || "https://www.sami-trade.com/partners";
-                return (
-                  <div
-                    key={p.id}
-                    className="glass-box-interactive rounded-3xl p-6 sm:p-8 flex flex-col justify-between cursor-pointer transition-all duration-300"
-                  >
-                    <div className="relative z-10 flex flex-col justify-between h-full">
-                      <div>
-                        <div className="flex items-center justify-between gap-2 mb-3">
-                          <span className={cn(
-                            "text-xs font-bold text-brand-orange bg-brand-orange/10 px-2.5 py-0.5 rounded-full border border-brand-orange/20",
-                            ar ? "font-sans" : "font-mono"
-                          )}>
-                            {ar ? p.countryAr : p.country}
-                          </span>
-                          <span className="inline-flex items-center gap-1 text-[11px] font-bold text-brand-green bg-brand-green/10 border border-brand-green/20 px-2.5 py-0.5 rounded-full">
-                            <Handshake className="size-3" />
-                            <span>{partnerShort[p.id] || "Partner"}</span>
-                          </span>
-                        </div>
+            {strategicPartners.map((p) => {
+              const url = p.websiteUrl || "https://www.sami-trade.com/partners";
+              return (
+                <div
+                  key={p.id}
+                  className="glass-box-interactive rounded-3xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 hover:shadow-xl group"
+                >
+                  <div className="relative z-10 flex flex-col justify-between h-full">
+                    <div>
+                      <div className="flex items-center justify-between gap-2 mb-3">
+                        <span className={cn(
+                          "text-xs font-bold text-brand-orange bg-brand-orange/10 px-2.5 py-0.5 rounded-full border border-brand-orange/20",
+                          ar ? "font-sans" : "font-mono"
+                        )}>
+                          {ar ? p.countryAr : p.country}
+                        </span>
+                        <span className="inline-flex items-center gap-1 text-[11px] font-bold text-brand-green bg-brand-green/10 border border-brand-green/20 px-2.5 py-0.5 rounded-full">
+                          <Handshake className="size-3" />
+                          <span>{ar ? "شريك معتمد" : "Verified Partner"}</span>
+                        </span>
+                      </div>
+
+                      {/* Partner Official Verified Logo */}
+                      <div className="my-3 flex h-20 w-full items-center justify-center rounded-2xl border border-border/60 bg-white p-3 shadow-xs transition duration-300 group-hover:border-brand-green/50">
+                        <img
+                          src={p.logo}
+                          alt={p.name}
+                          loading="lazy"
+                          className="max-h-12 max-w-full object-contain filter transition duration-300 group-hover:scale-105"
+                        />
+                      </div>
+
+                      <div className="flex items-center gap-1.5 mt-2">
                         <h3 className="text-start font-head text-base sm:text-lg font-bold text-foreground group-hover:text-brand-green transition-colors">
                           {ar ? p.nameAr : p.name}
                         </h3>
-                        <p className="mt-2.5 text-xs sm:text-sm text-muted-foreground leading-relaxed text-start">
-                          {ar ? p.descriptionAr : p.description}
-                        </p>
+                        <ShieldCheck className="size-4 text-brand-green shrink-0" aria-label="Verified Partner" />
                       </div>
-                      <div className="mt-5 pt-3.5 border-t border-border/40 flex items-center justify-between gap-2">
-                        <span className="text-xs font-semibold text-brand-green">
-                          {ar ? p.tagAr : p.tag}
-                        </span>
-                        <a
-                          href={url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-orange hover:text-brand-green transition-colors"
-                          aria-label={`${ar ? p.nameAr : p.name} Official Website`}
-                        >
-                          <span>{ar ? "الموقع الرسمي" : "Official Website"}</span>
-                          <ExternalLink className="size-3" />
-                        </a>
-                      </div>
+
+                      <p className="mt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed text-start">
+                        {ar ? p.descriptionAr : p.description}
+                      </p>
+                    </div>
+
+                    <div className="mt-5 pt-3.5 border-t border-border/40 flex items-center justify-between gap-2">
+                      <span className="text-xs font-semibold text-brand-green">
+                        {ar ? p.tagAr : p.tag}
+                      </span>
+                      <a
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-orange hover:text-brand-green transition-colors"
+                        aria-label={`${ar ? p.nameAr : p.name} Official Website`}
+                      >
+                        <span>{ar ? "الموقع الرسمي" : "Official Website"}</span>
+                        <ExternalLink className="size-3 rtl:rotate-180" />
+                      </a>
                     </div>
                   </div>
-                );
-              })}
+                </div>
+              );
+            })}
           </div>
         </Reveal>
       </section>
