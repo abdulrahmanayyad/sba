@@ -211,15 +211,15 @@ export function NewsPage() {
             </p>
 
             {/* Archival Editorial Note for Pre-2023 Articles */}
-            <div className="mt-6 rounded-2xl border border-white/20 bg-background/60 p-4 sm:p-5 text-xs sm:text-sm leading-relaxed text-muted-foreground backdrop-blur-xl shadow-xs transition-all duration-300 hover:border-brand-green/40 hover:bg-background/80 hover:shadow-sm text-justify sm:text-center max-w-4xl mx-auto">
-              <strong className="text-foreground font-bold block mb-1">
+            <div className="mt-6 rounded-2xl border border-white/20 bg-background/60 p-4 sm:p-5 text-xs sm:text-sm leading-relaxed text-muted-foreground backdrop-blur-xl shadow-xs transition-all duration-300 hover:border-brand-green/40 hover:bg-background/80 hover:shadow-sm text-start max-w-4xl mx-auto">
+              <strong className="text-foreground font-bold block mb-1 text-start">
                 {ar ? "ملاحظة توثيقية للأرشيف:" : "Archival Lineage Note:"}
               </strong>
-              <span>
+              <p className="text-start leading-relaxed">
                 {ar
                   ? "التقارير والمراجعات القطاعية المؤرخة قبل عام 2023 توثق أنشطة الكيانات المؤسسة ومشاريعها المتخصصة قبل توحيدها الشامل تحت مظلة مجموعة سامي بن عياد عام 2023 (امتدادًا للجذور المهنية القائمة منذ 1977)."
                   : "Archival Note: Reports and sector reviews dated prior to 2023 document the operational milestones and market engagements of predecessor founding entities prior to their formal unification under Sami Bin Ayyad Group in 2023, building on foundational roots established since 1977."}
-              </span>
+              </p>
             </div>
           </div>
         </Reveal>
