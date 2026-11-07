@@ -9,7 +9,14 @@ export function EconomicIndicatorsWidget() {
 
   return (
     <section className="w-full">
-      <div className="rounded-3xl border border-white/50 dark:border-white/15 bg-white/50 dark:bg-white/10 p-6 sm:p-10 shadow-lg backdrop-blur-xl">
+      <div className="relative rounded-3xl border border-white/50 dark:border-white/15 bg-white/50 dark:bg-white/10 p-6 sm:p-10 shadow-lg backdrop-blur-xl">
+        {/* Top-Left Verified Reference Badge */}
+        <div className="flex justify-end rtl:justify-end ltr:justify-start sm:block sm:absolute sm:top-8 sm:left-8 lg:top-10 lg:left-10 mb-4 sm:mb-0 z-10">
+          <div className="inline-flex items-center gap-2 rounded-xl bg-brand-green px-3.5 py-1.5 text-xs font-bold text-white shadow-sm border border-brand-green/30">
+            <span>{ar ? "بيانات مرجعية خارجية محققة" : "Verified Third-Party Data"}</span>
+          </div>
+        </div>
+
         <div className="flex flex-col items-center text-center gap-4 mb-8 pb-6 border-b border-border/60">
           <div className="w-full text-center">
             <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-3">
@@ -26,10 +33,6 @@ export function EconomicIndicatorsWidget() {
                 ? "بيانات اقتصادية وإحصائية موثقة استنادًا إلى تقارير منظمة التعاون الاقتصادي والتنمية (OECD) والبنك الأهلي المصري ومركز المعلومات ودعم اتخاذ القرار (IDSC)، تعكس التحولات الهيكلية للقطاعات المرتبطة بأنشطة المجموعة."
                 : "Documented economic metrics from the OECD, National Bank of Egypt (NBE), and Egyptian Cabinet IDSC, tracking structural shifts across industrial sectors."}
             </p>
-          </div>
-
-          <div className="inline-flex items-center gap-2 text-xs font-medium text-muted-foreground bg-secondary/60 px-3.5 py-1.5 rounded-xl border border-border">
-            <span>{ar ? "بيانات مرجعية خارجية محققة" : "Verified Third-Party Data"}</span>
           </div>
         </div>
 
