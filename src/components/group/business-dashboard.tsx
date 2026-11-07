@@ -207,9 +207,9 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
           <div className="glass-box-interactive mx-auto rounded-[36px] p-8 sm:p-12 text-start cursor-pointer">
             <div className="relative z-10">
               <div className="max-w-3xl">
-                <div className="inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/40 dark:bg-white/10 px-4 py-1.5 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-3 shadow-xs">
-                  <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
-                  <span className="font-bold text-brand-green">{ar ? "أداء المجموعة ورؤى الأعمال" : "Group Performance & Business Insights"}</span>
+                <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-3">
+                  <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+                  <span>{ar ? "أداء المجموعة ورؤى الأعمال" : "Group Performance & Business Insights"}</span>
                 </div>
                 <h2 id="dash-heading" className="font-head text-xl sm:text-2xl lg:text-3xl font-extrabold text-foreground leading-snug">
                   {ar ? "أعمالنا في أرقام" : "Our Business in Numbers"}
@@ -268,9 +268,9 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
           <div className="relative z-10">
           <div className="flex items-center justify-between flex-wrap gap-4 mb-8">
             <div className="space-y-2">
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/40 dark:bg-white/10 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
+              <span className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
                 <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-                <span className="font-bold text-brand-green">{ar ? "انتشارنا العالمي" : "Our Global Reach"}</span>
+                <span>{ar ? "انتشارنا العالمي" : "Our Global Reach"}</span>
               </span>
               <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold font-head text-foreground">
                 {ar ? "الدول الشريكة والأسواق النشطة" : "Partner Countries & Active Markets"}
@@ -571,7 +571,7 @@ export function WhatWeOfferSection({ ar }: { ar: boolean }) {
   return (
     <section id="what-we-offer" className="site-container py-12 scroll-mt-24">
       <div className="mb-8">
-        <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/40 dark:bg-white/10 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
+        <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
           <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
           <span>{ar ? "نظرة عامة على الخدمات" : "Services Overview"}</span>
         </div>

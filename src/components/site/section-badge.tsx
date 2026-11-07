@@ -15,10 +15,10 @@ export interface SectionBadgeProps {
  */
 export function SectionBadge({ title, className, dotClassName }: SectionBadgeProps) {
   return (
-    <div className={cn("inline-flex items-center gap-2 bg-transparent px-0 py-1 text-xs font-bold tracking-wide text-brand-green-text", className)}>
-      <span className={cn("size-2 rounded-full bg-brand-orange animate-pulse shrink-0", dotClassName)} />
-      <span className="font-head">{title}</span>
-    </div>
+    <span className={cn("inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md", className)}>
+      <span className={cn("size-1.5 rounded-full bg-brand-orange animate-pulse shrink-0", dotClassName)} />
+      <span>{title}</span>
+    </span>
   );
 }
 

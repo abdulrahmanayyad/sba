@@ -33,9 +33,9 @@ export function GroupPage() {
         <div className="group-hero-overlay absolute inset-0 bg-black/60 backdrop-blur-[1px]" />
         <div className="site-container relative flex min-h-[inherit] flex-col justify-center py-14 sm:py-20 z-10">
           <div>
-            <div data-hero-reveal className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/40 dark:bg-white/10 px-4 py-1.5 text-xs font-bold tracking-wide backdrop-blur-md shadow-sm">
+            <div data-hero-reveal className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-              <span className="font-bold text-black dark:text-white font-head">{ar ? "مجموعة سامي بن عياد - الصفحة الرئيسية" : "SAMI BIN AYYAD GROUP - Homepage"}</span>
+              <span>{ar ? "مجموعة سامي بن عياد - الصفحة الرئيسية" : "SAMI BIN AYYAD GROUP - Homepage"}</span>
             </div>
             <h1 data-hero-reveal className="mt-4 max-w-4xl font-head text-[clamp(1.85rem,3.5vw,3rem)] font-extrabold leading-tight text-white drop-shadow-md">
               {ar ? messages.hero.titleAr : messages.hero.title}
@@ -57,9 +57,9 @@ export function GroupPage() {
         <Reveal>
           <div className="glass-box-interactive group mx-auto max-w-4xl rounded-3xl p-8 sm:p-12 text-center cursor-pointer">
             <div className="relative z-10">
-              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/40 dark:bg-white/10 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
                 <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-                <span className="font-bold text-brand-green font-head">{ar ? "مجموعة سامي بن عياد" : "SAMI BIN AYYAD GROUP"}</span>
+                <span>{ar ? "مجموعة سامي بن عياد" : "SAMI BIN AYYAD GROUP"}</span>
               </div>
               <h2 className="section-title mt-2 text-center mx-auto">{ar ? "نقود التقدم عبر القطاعات" : "Driving Progress Across Sectors"}</h2>
               <div className="section-intro mx-auto mt-6 leading-relaxed max-w-3xl space-y-3 text-start">
@@ -107,9 +107,9 @@ export function GroupPage() {
             {/* Vision Card */}
             <div className="glass-box-interactive group rounded-3xl p-8 text-center cursor-pointer">
               <div className="relative z-10">
-                <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/40 dark:bg-white/10 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
+                <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
                   <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-                  <span className="font-bold text-brand-green">{ar ? "رؤيتنا" : "Our Vision"}</span>
+                  <span>{ar ? "رؤيتنا" : "Our Vision"}</span>
                 </div>
                 <h3 className="text-center font-head text-xl sm:text-2xl font-extrabold text-foreground leading-snug">
                   {ar ? "شريك موثوق وقيمة مستدامة للعملاء والشركاء" : "A Trusted Business Partner Creating Lasting Value"}
@@ -125,9 +125,9 @@ export function GroupPage() {
             {/* Mission Card */}
             <div className="glass-box-interactive group rounded-3xl p-8 text-center cursor-pointer">
               <div className="relative z-10">
-                <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/40 dark:bg-white/10 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
+                <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
                   <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-                  <span className="font-bold text-brand-green">{ar ? "رسالتنا" : "Our Mission"}</span>
+                  <span>{ar ? "رسالتنا" : "Our Mission"}</span>
                 </div>
                 <h3 className="text-center font-head text-xl sm:text-2xl font-extrabold text-foreground leading-snug">
                   {ar ? "تحويل الاحتياجات إلى نطاق عمل وحلول عملية" : "Translating Client Needs into Practical Solutions"}
@@ -150,7 +150,7 @@ export function GroupPage() {
       <section id="divisions" aria-labelledby="sectors-heading" className="scroll-mt-24 section-band">
         <div className="site-container">
           <Reveal className="max-w-3xl">
-            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/40 dark:bg-white/10 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
+            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
               <span>{messages.nav.sectors}</span>
             </div>
@@ -242,7 +242,7 @@ export function GroupPage() {
         <Reveal>
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
             <div>
-              <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/40 dark:bg-white/10 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
+              <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
                 <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
                 <span>{ar ? "تحالفاتنا وشراكاتنا" : "Our Strategic Partners"}</span>
               </div>
@@ -334,7 +334,7 @@ export function GroupPage() {
         <Reveal>
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
             <div>
-              <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/40 dark:bg-white/10 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
+              <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
                 <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
                 <span>{ar ? "المركز الإعلامي" : "News & Media"}</span>
               </div>
@@ -406,7 +406,7 @@ export function GroupPage() {
           <div className="glass-box-interactive rounded-3xl p-8 sm:p-12 cursor-pointer">
             <div className="relative z-10 grid gap-6 lg:grid-cols-12 items-center">
               <div className="lg:col-span-8">
-                <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/40 dark:bg-white/10 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
+                <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
                   <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
                   <span>{ar ? "الاستثمار والشراكات الاستراتيجية" : "Investment & Strategic Alliances"}</span>
                 </div>
@@ -444,7 +444,7 @@ export function GroupPage() {
         <div className="glass-box-interactive mx-auto max-w-6xl rounded-3xl p-8 sm:p-12 cursor-pointer">
           <div className="relative z-10 grid gap-8 lg:grid-cols-[1.2fr_1fr] items-center">
             <div>
-              <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/40 dark:bg-white/10 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
+              <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
                 <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
                 <span>{ar ? "تواصل وشراكات الأعمال" : "Business & Partnership Connect"}</span>
               </div>

@@ -32,9 +32,9 @@ export function JourneySection({ ar }: { ar: boolean }) {
           {/* Header Glass Box */}
           <div className="glass-box-interactive mx-auto mb-4 rounded-3xl p-7 sm:p-10 text-start cursor-pointer">
             <div className="relative z-10">
-              <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/40 dark:bg-white/10 px-4 py-1.5 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
-                <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
-                <span className="font-bold text-brand-green">{ar ? "رحلتنا وتاريخنا" : "Our Journey & Legacy"}</span>
+              <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+                <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+                <span>{ar ? "رحلتنا وتاريخنا" : "Our Journey & Legacy"}</span>
               </div>
               <h2 className="font-head text-xl sm:text-2xl lg:text-3xl font-extrabold text-foreground leading-snug text-start">
                 {ar ? "محطات بنت مسيرة المجموعة" : "Milestones that built the group"}

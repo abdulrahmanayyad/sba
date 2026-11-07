@@ -18,7 +18,7 @@ export function JoinShowcase() {
           <div className="relative z-10">
             {/* Header portion */}
             <div className="max-w-3xl text-start">
-              <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/40 dark:bg-white/10 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
+              <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
                 <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
                 <span>{ar ? "انضم إلينا" : "Careers & Partnerships"}</span>
               </div>
