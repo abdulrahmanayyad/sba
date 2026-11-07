@@ -35,7 +35,7 @@ export function GroupPage() {
           <div>
             <div data-hero-reveal className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-              <span>{ar ? "مجموعة سامي بن عياد - الصفحة الرئيسية" : "SAMI BIN AYYAD GROUP - Homepage"}</span>
+              <span>{ar ? "مجموعة سامي بن عياد" : "SAMI BIN AYYAD GROUP"}</span>
             </div>
             <h1 data-hero-reveal className="mt-4 max-w-4xl font-head text-[clamp(1.85rem,3.5vw,3rem)] font-extrabold leading-tight text-white drop-shadow-md">
               {ar ? messages.hero.titleAr : messages.hero.title}
