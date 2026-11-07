@@ -499,7 +499,7 @@ export const strategicPartners: StrategicPartner[] = [
       "تقنيات حساسات الموجات فوق الصوتية وتطبيقات القياس. يُبيّن نطاق التعاون والكيان المتعاقد.",
     tag: "Ultrasonic Sensors & Measurement",
     tagAr: "حساسات الموجات فوق الصوتية وحلول القياس",
-    logo: "/partners/dyp-logo.svg",
+    logo: "/partners/dyp-logo.png",
     websiteUrl: "https://www.dypcn.com/",
   },
   {
@@ -514,7 +514,7 @@ export const strategicPartners: StrategicPartner[] = [
       "منتجات ومكونات معالجة وتنقية المياه. يُحدد نطاق المنتجات المتاحة وشروط التوريد وخدمات الدعم وفق الاتفاق.",
     tag: "Water Filtration & Components",
     tagAr: "تنقية ومعالجة المياه والمكونات الفنية",
-    logo: "/partners/jumptek-logo.svg",
+    logo: "/partners/jumptek-logo.jpg",
     websiteUrl: "http://www.nbjumptek.com/",
   },
   {
