@@ -115,7 +115,7 @@ export function HomeTradeSection({ ar = true }: HomeTradeSectionProps) {
         <div className="mt-8 pt-4 border-t border-border/40 text-start text-[11px] text-muted-foreground">
           <span className="font-semibold text-brand-orange">{ar ? "تنويه توثيقي: " : "Notice: "}</span>
           {ar
-            ? "هذه الأرقام تمثل طلبات شراء مسجلة في طلبات المشترين الدوليين، ولا تمثل بالضرورة أوامر شراء مؤكدة أو عقودًا منفذة أو شحنات مكتملة."
+            ? "تمثل هذه الأرقام طلبات شراء واردة ومسجلة ضمن متطلبات المشترين الدوليين، ولا تعني بالضرورة صدور أوامر شراء مؤكدة أو إبرام عقود تجارية أو إتمام عمليات توريد وشحن."
             : TRADE_STATS.legalDisclaimerEn}
         </div>
       </div>

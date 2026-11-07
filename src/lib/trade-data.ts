@@ -5296,8 +5296,8 @@ export const TRADE_STATS = {
   continentsCount: 6,
   verifiedPartnersCount: 8,
   reportingPeriod: '2025',
-  legalDisclaimerAr: 'هذه الأرقام تمثل طلبات شراء مسجلة في طلبات المشترين الدوليين، ولا تمثل بالضرورة أوامر شراء مؤكدة أو عقودًا منفذة أو شحنات مكتملة.',
-  legalDisclaimerEn: 'These figures represent commercial inquiries and quantities recorded in international buyer inquiries during 2025, and do not necessarily represent confirmed purchase orders, executed contracts, or completed shipments.'
+  legalDisclaimerAr: 'تمثل هذه الأرقام طلبات شراء واردة ومسجلة ضمن متطلبات المشترين الدوليين، ولا تعني بالضرورة صدور أوامر شراء مؤكدة أو إبرام عقود تجارية أو إتمام عمليات توريد وشحن.',
+  legalDisclaimerEn: 'These figures represent purchase requests received and recorded within international buyer requirements, and do not necessarily imply confirmed purchase orders, executed commercial contracts, or completed supply and shipping operations.'
 };
 
 // Documented Buyer Requirements with exact quantities explicitly stated in the source files

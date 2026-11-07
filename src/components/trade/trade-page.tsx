@@ -126,8 +126,8 @@ export function TradePage({ ar = true }: TradePageProps) {
               </strong>
               <span>
                 {ar
-                  ? "هذه الأرقام تمثل كميات واستفسارات مسجلة في طلبات المشترين الدوليين لعام 2025، ولا تمثل بالضرورة أوامر شراء مؤكدة أو عقوداً منفذة أو شحنات مكتملة."
-                  : "These figures represent recorded quantities and inquiry requests from international buyers in 2025, and do not necessarily represent confirmed purchase orders, executed contracts, or completed shipments."}
+                  ? "تمثل هذه الأرقام طلبات شراء واردة ومسجلة ضمن متطلبات المشترين الدوليين، ولا تعني بالضرورة صدور أوامر شراء مؤكدة أو إبرام عقود تجارية أو إتمام عمليات توريد وشحن."
+                  : "These figures represent purchase requests received and recorded within international buyer requirements, and do not necessarily imply confirmed purchase orders, executed commercial contracts, or completed supply and shipping operations."}
               </span>
             </div>
           </div>
