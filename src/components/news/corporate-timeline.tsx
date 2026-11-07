@@ -127,9 +127,9 @@ export function CorporateTimeline() {
         </div>
 
         {/* Milestone Steps Selector: Horizontal on desktop, scrollable/wrapped on mobile */}
-        <div className="relative mb-10 pb-4 overflow-x-auto no-scrollbar">
+        <div className="relative mb-8 py-5 px-3 overflow-x-auto no-scrollbar">
           {/* Track line behind nodes */}
-          <div className="hidden lg:block absolute top-7 start-8 end-8 h-1 bg-border/60 -z-0" />
+          <div className="hidden lg:block absolute top-12 start-10 end-10 h-1 bg-border/60 -z-0" />
 
           <div className="flex items-center justify-between min-w-[700px] lg:min-w-0 gap-3 px-2">
             {OFFICIAL_TIMELINE_MILESTONES.map((m, idx) => {
@@ -141,17 +141,17 @@ export function CorporateTimeline() {
                   key={m.year}
                   type="button"
                   onClick={() => setActiveYear(m.year)}
-                  className="group relative z-10 flex flex-col items-center flex-1 transition-all cursor-pointer focus:outline-none"
+                  className="group relative z-10 flex flex-col items-center flex-1 transition-all cursor-pointer focus:outline-none py-1"
                 >
                   {/* Square Node */}
                   <div
                     className={cn(
                       "size-14 rounded-2xl flex items-center justify-center transition-all duration-300 shadow-md",
                       isSelected
-                        ? "!bg-brand-orange text-white shadow-brand-orange/40 scale-110 ring-4 ring-brand-orange/20"
+                        ? "!bg-brand-orange text-white shadow-lg shadow-brand-orange/30 scale-105 ring-4 ring-brand-orange/25"
                         : isPast
-                        ? "!bg-brand-green text-white hover:bg-brand-orange hover:scale-105"
-                        : "border border-border/80 bg-secondary/80 text-muted-foreground hover:bg-secondary hover:text-foreground"
+                        ? "!bg-brand-green text-white hover:bg-brand-orange hover:scale-105 hover:shadow-lg"
+                        : "border border-border/80 bg-secondary/80 text-muted-foreground hover:bg-secondary hover:text-foreground hover:scale-105"
                     )}
                   >
                     {!isLast ? (
