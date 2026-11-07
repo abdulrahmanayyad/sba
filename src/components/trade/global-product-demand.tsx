@@ -100,7 +100,7 @@ export function GlobalProductDemand({ ar = true, onInquireProduct }: GlobalProdu
           return (
             <div
               key={idx}
-              className="group flex flex-col justify-between rounded-3xl border border-white/15 bg-background/60 p-5 backdrop-blur-xl transition-all duration-300 hover:bg-background/80 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)] hover:-translate-y-1"
+              className="interactive-card glass-box-interactive group flex flex-col justify-between rounded-3xl border border-white/15 bg-background/60 p-5 backdrop-blur-xl transition-all duration-300 hover:bg-background/80 hover:shadow-xl hover:-translate-y-1"
             >
               <div>
                 {/* Product Titles */}

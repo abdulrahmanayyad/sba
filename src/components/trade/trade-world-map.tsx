@@ -138,51 +138,51 @@ export function TradeWorldMap({ ar = true, onSelectCountry }: TradeWorldMapProps
       {/* Main Map Box & Country Drawer */}
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
         {/* Map Canvas */}
-        <div className="relative overflow-hidden rounded-3xl border border-white/15 bg-gradient-to-br from-slate-950 via-slate-900 to-emerald-950/40 p-4 shadow-2xl backdrop-blur-2xl lg:col-span-8">
+        <div className="relative overflow-hidden rounded-3xl border border-white/20 bg-background/50 p-4 shadow-2xl backdrop-blur-2xl lg:col-span-8 interactive-card glass-box-interactive transition-all duration-300">
           {/* Subtle Grid Lines Overlay */}
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:24px_24px] opacity-40" />
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(currentColor_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.04]" />
           
           {/* Map Header with Stats */}
           <div className="relative z-10 mb-2 flex flex-wrap items-center justify-between gap-2 border-b border-white/10 pb-3">
             <div className="flex items-center gap-2">
-              <span className="flex size-2.5 rounded-full bg-emerald-400 animate-pulse" />
-              <h3 className="text-sm font-bold text-white">
-                {ar ? "خريطة انتشار استفسارات التجارة الدولية 2025" : "Global Commercial Inquiries Map 2025"}
+              <span className="flex size-2.5 rounded-full bg-emerald-500 animate-pulse" />
+              <h3 className="text-sm font-bold text-foreground">
+                {ar ? "خريطة انتشار طلبات التجارة الدولية 2025" : "Global Commercial Purchase Requests Map 2025"}
               </h3>
-              <span className="rounded-full bg-emerald-500/20 px-2 py-0.5 text-[11px] font-semibold text-emerald-300">
+              <span className="rounded-full bg-emerald-500/20 px-2 py-0.5 text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">
                 {filteredCountries.length} {ar ? "دولة نشطة" : "Active Markets"}
               </span>
             </div>
 
             {/* Marker Legend */}
-            <div className="flex items-center gap-3 text-[11px] text-white/70">
+            <div className="flex items-center gap-3 text-[11px] text-foreground/80 font-medium">
               <span className="flex items-center gap-1.5">
-                <span className="size-2 rounded-full bg-amber-400" />
+                <span className="size-2 rounded-full bg-emerald-500" />
                 {ar ? "تمور" : "Dates"}
               </span>
               <span className="flex items-center gap-1.5">
-                <span className="size-2 rounded-full bg-emerald-400" />
-                {ar ? "سلع متنوعة" : "Diversified"}
+                <span className="size-2 rounded-full bg-brand-orange" />
+                {ar ? "سلع غذائية" : "Food Products"}
               </span>
               <span className="flex items-center gap-1.5">
-                <span className="size-2.5 rounded-full bg-brand-orange ring-2 ring-white/30" />
+                <span className="size-2.5 rounded-full bg-teal-500 ring-2 ring-white/30" />
                 {ar ? "مشترك" : "Both"}
               </span>
             </div>
           </div>
 
           {/* SVG Map Canvas */}
-          <div className="relative aspect-[2/1] w-full min-h-[360px] overflow-hidden rounded-2xl bg-slate-950/70 border border-white/5">
+          <div className="relative aspect-[2/1] w-full min-h-[360px] overflow-hidden rounded-2xl bg-background/40 border border-white/15 backdrop-blur-md">
             <svg
               viewBox="0 0 1000 500"
               className="h-full w-full select-none"
-              style={{ filter: "drop-shadow(0 2px 8px rgba(0,0,0,0.5))" }}
+              style={{ filter: "drop-shadow(0 2px 8px rgba(0,0,0,0.15))" }}
             >
               {/* Simplified world background continents silhouettes */}
               <defs>
                 <radialGradient id="landGrad" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stopColor="#1e293b" stopOpacity="0.8" />
-                  <stop offset="100%" stopColor="#0f172a" stopOpacity="0.9" />
+                  <stop offset="0%" stopColor="currentColor" stopOpacity="0.14" />
+                  <stop offset="100%" stopColor="currentColor" stopOpacity="0.06" />
                 </radialGradient>
                 <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
                   <feGaussianBlur stdDeviation="3" result="blur" />
@@ -191,59 +191,59 @@ export function TradeWorldMap({ ar = true, onSelectCountry }: TradeWorldMapProps
               </defs>
 
               {/* Equator & Meridians Reference Grids */}
-              <line x1="0" y1="250" x2="1000" y2="250" stroke="#ffffff10" strokeDasharray="4 4" />
-              <line x1="500" y1="0" x2="500" y2="500" stroke="#ffffff10" strokeDasharray="4 4" />
-              <line x1="250" y1="0" x2="250" y2="500" stroke="#ffffff08" strokeDasharray="2 4" />
-              <line x1="750" y1="0" x2="750" y2="500" stroke="#ffffff08" strokeDasharray="2 4" />
+              <line x1="0" y1="250" x2="1000" y2="250" stroke="currentColor" strokeOpacity="0.12" strokeDasharray="4 4" />
+              <line x1="500" y1="0" x2="500" y2="500" stroke="currentColor" strokeOpacity="0.12" strokeDasharray="4 4" />
+              <line x1="250" y1="0" x2="250" y2="500" stroke="currentColor" strokeOpacity="0.08" strokeDasharray="2 4" />
+              <line x1="750" y1="0" x2="750" y2="500" stroke="currentColor" strokeOpacity="0.08" strokeDasharray="2 4" />
 
               {/* Approximate World Landmass Shapes for Context */}
               {/* North America */}
               <path
                 d="M120 70 Q 200 60, 280 80 T 320 180 Q 240 240, 180 200 Z"
                 fill="url(#landGrad)"
-                stroke="#334155"
+                stroke="currentColor"
+                strokeOpacity="0.2"
                 strokeWidth="0.8"
-                opacity="0.6"
               />
               {/* South America */}
               <path
                 d="M240 240 Q 320 280, 290 400 T 220 440 Q 200 320, 240 240 Z"
                 fill="url(#landGrad)"
-                stroke="#334155"
+                stroke="currentColor"
+                strokeOpacity="0.2"
                 strokeWidth="0.8"
-                opacity="0.6"
               />
               {/* Europe */}
               <path
                 d="M460 70 Q 560 60, 540 140 T 470 170 Q 440 120, 460 70 Z"
                 fill="url(#landGrad)"
-                stroke="#334155"
+                stroke="currentColor"
+                strokeOpacity="0.2"
                 strokeWidth="0.8"
-                opacity="0.6"
               />
               {/* Africa */}
               <path
                 d="M470 180 Q 560 170, 570 280 T 520 400 Q 450 320, 470 180 Z"
                 fill="url(#landGrad)"
-                stroke="#334155"
+                stroke="currentColor"
+                strokeOpacity="0.2"
                 strokeWidth="0.8"
-                opacity="0.6"
               />
               {/* Asia */}
               <path
                 d="M560 60 Q 820 60, 840 200 T 700 300 Q 580 240, 560 60 Z"
                 fill="url(#landGrad)"
-                stroke="#334155"
+                stroke="currentColor"
+                strokeOpacity="0.2"
                 strokeWidth="0.8"
-                opacity="0.6"
               />
               {/* Australia */}
               <path
                 d="M780 340 Q 880 340, 870 420 T 770 410 Q 760 360, 780 340 Z"
                 fill="url(#landGrad)"
-                stroke="#334155"
+                stroke="currentColor"
+                strokeOpacity="0.2"
                 strokeWidth="0.8"
-                opacity="0.6"
               />
 
               {/* Country Interactive Pins */}
@@ -254,10 +254,10 @@ export function TradeWorldMap({ ar = true, onSelectCountry }: TradeWorldMapProps
                 const isDateOnly = c.dateInquiriesCount > 0 && c.diversifiedInquiriesCount === 0;
 
                 const pinColor = isBoth
-                  ? "#ea580c" // brand orange
+                  ? "#0d9488" // teal for both
                   : isDateOnly
-                  ? "#fbbf24" // amber
-                  : "#10b981"; // emerald
+                  ? "#10b981" // emerald green for dates
+                  : "#ea580c"; // brand orange for food commodities
 
                 const size = isSelected ? 12 : Math.min(10, Math.max(5, Math.sqrt(c.totalInquiries) * 2.5));
 
@@ -321,17 +321,17 @@ export function TradeWorldMap({ ar = true, onSelectCountry }: TradeWorldMapProps
             </svg>
 
             {/* Quick Map Controls Floating in Bottom Corner */}
-            <div className="absolute bottom-3 end-3 flex items-center gap-1.5 rounded-full border border-white/15 bg-black/60 px-3 py-1 text-[11px] text-white/80 backdrop-blur-md">
+            <div className="absolute bottom-3 end-3 flex items-center gap-1.5 rounded-full border border-white/20 bg-background/80 px-3 py-1 text-[11px] text-foreground backdrop-blur-md shadow-md">
               <Globe className="size-3.5 text-brand-orange" />
               <span>{filteredCountries.length} / 47 {ar ? "دولة مدرجة" : "Countries"}</span>
             </div>
           </div>
 
-          {/* Compliance Disclaimer Notice */}
-          <div className="mt-3 flex items-start gap-2 rounded-xl border border-amber-500/20 bg-amber-500/10 p-2.5 text-xs text-amber-200/90">
-            <AlertCircle className="size-4 shrink-0 text-amber-400 mt-0.5" />
+          {/* Compliance Disclaimer Notice as Glass Box */}
+          <div className="mt-3 flex items-start gap-2 rounded-xl border border-white/20 bg-background/50 p-2.5 text-xs text-muted-foreground backdrop-blur-md">
+            <AlertCircle className="size-4 shrink-0 text-brand-orange mt-0.5" />
             <p className="leading-relaxed">
-              <strong className="font-semibold text-amber-300">
+              <strong className="font-semibold text-foreground">
                 {ar ? "تنويه توثيقي رسمي: " : "Official Documentary Notice: "}
               </strong>
               {ar ? TRADE_STATS.legalDisclaimerAr : TRADE_STATS.legalDisclaimerEn}
@@ -342,7 +342,7 @@ export function TradeWorldMap({ ar = true, onSelectCountry }: TradeWorldMapProps
         {/* Selected Country Profile Drawer */}
         <div className="lg:col-span-4 flex flex-col">
           {activeCountry ? (
-            <div className="flex h-full flex-col justify-between rounded-3xl border border-white/20 bg-background/70 p-5 shadow-2xl backdrop-blur-2xl ring-1 ring-white/10">
+            <div className="interactive-card glass-box-interactive flex h-full flex-col justify-between rounded-3xl border border-white/20 bg-background/70 p-5 shadow-2xl backdrop-blur-2xl ring-1 ring-white/10 transition-all duration-300">
               <div>
                 {/* Header */}
                 <div className="flex items-center justify-between border-b border-white/10 pb-4">
@@ -355,32 +355,32 @@ export function TradeWorldMap({ ar = true, onSelectCountry }: TradeWorldMapProps
                         {ar ? activeCountry.nameAr : activeCountry.nameEn}
                       </h4>
                       <p className="text-xs text-muted-foreground">
-                        {ar ? activeCountry.continentAr : activeCountry.continent} • {activeCountry.code}
+                        {ar ? activeCountry.continentAr : activeCountry.continent} • {activeCountry.flag}
                       </p>
                     </div>
                   </div>
 
                   <span className="rounded-full bg-brand-orange/20 px-3 py-1 text-xs font-bold text-brand-orange">
-                    {activeCountry.totalInquiries} {ar ? "طلب استفسار" : "Inquiries"}
+                    {activeCountry.totalInquiries} {ar ? "طلب شراء" : "Purchase Requests"}
                   </span>
                 </div>
 
                 {/* Inquiries Breakdown */}
                 <div className="grid grid-cols-2 gap-2 py-4">
-                  <div className="rounded-2xl border border-amber-500/20 bg-amber-500/5 p-3">
-                    <span className="text-[11px] font-semibold text-amber-500">
-                      {ar ? "تمور ومنتجاتها" : "Dates Inquiries"}
+                  <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/10 p-3">
+                    <span className="text-[11px] font-bold text-emerald-600 dark:text-emerald-400">
+                      {ar ? "تمور ومنتجاتها" : "Dates & Products"}
                     </span>
                     <p className="mt-1 text-xl font-black text-foreground">
-                      {activeCountry.dateInquiriesCount}
+                      {activeCountry.dateInquiriesCount} <span className="text-xs font-semibold text-muted-foreground">{ar ? "طلب شراء" : "requests"}</span>
                     </p>
                   </div>
-                  <div className="rounded-2xl border border-emerald-500/20 bg-emerald-500/5 p-3">
-                    <span className="text-[11px] font-semibold text-emerald-500">
-                      {ar ? "سلع ومنتجات متنوعة" : "Diversified Products"}
+                  <div className="rounded-2xl border border-brand-orange/30 bg-brand-orange/10 p-3">
+                    <span className="text-[11px] font-bold text-brand-orange">
+                      {ar ? "سلع غذائية" : "Food Commodities"}
                     </span>
                     <p className="mt-1 text-xl font-black text-foreground">
-                      {activeCountry.diversifiedInquiriesCount}
+                      {activeCountry.diversifiedInquiriesCount} <span className="text-xs font-semibold text-muted-foreground">{ar ? "طلب شراء" : "requests"}</span>
                     </p>
                   </div>
                 </div>

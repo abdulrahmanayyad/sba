@@ -187,16 +187,16 @@ export function BusinessNetworkSection({ ar = true }: BusinessNetworkSectionProp
                   className="rounded-full border border-white/20 bg-background/70 px-3 py-1.5 text-xs font-semibold text-foreground focus:border-brand-orange focus:outline-none"
                 >
                   <option value="all" className="bg-background text-foreground">
-                    {ar ? "كافة الاستفسارات (179)" : "All Inquiries (179)"}
+                    {ar ? "كافة طلبات الشراء (179)" : "All Purchase Requests (179)"}
                   </option>
                   <option value="recurring" className="bg-background text-foreground">
                     {ar ? "طلبات دورية متكررة" : "Recurring Demand"}
                   </option>
                   <option value="dates" className="bg-background text-foreground">
-                    {ar ? "استفسارات التمور" : "Dates Inquiries"}
+                    {ar ? "طلبات شراء التمور" : "Dates Purchase Requests"}
                   </option>
                   <option value="commodities" className="bg-background text-foreground">
-                    {ar ? "استفسارات سلع متنوعة" : "Diversified Inquiries"}
+                    {ar ? "طلبات السلع الغذائية" : "Food Commodities Requests"}
                   </option>
                 </select>
               </div>

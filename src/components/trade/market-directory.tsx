@@ -99,13 +99,13 @@ export function MarketDirectory({ ar = true, selectedCountryCode }: MarketDirect
             className="rounded-full border border-white/20 bg-background/70 px-4 py-2 text-xs font-semibold text-foreground focus:border-brand-orange focus:outline-none"
           >
             <option value="all" className="bg-background text-foreground">
-              {ar ? "كافة فئات الطلبات" : "All Inquiry Types"}
+              {ar ? "كافة فئات طلبات الشراء" : "All Inquiry Types"}
             </option>
             <option value="dates" className="bg-background text-foreground">
-              {ar ? "استفسارات التمور فقط" : "Dates Only"}
+              {ar ? "طلبات شراء التمور فقط" : "Dates Only"}
             </option>
             <option value="diversified" className="bg-background text-foreground">
-              {ar ? "استفسارات سلع متنوعة فقط" : "Diversified Products Only"}
+              {ar ? "طلبات السلع الغذائية فقط" : "Food Products Only"}
             </option>
           </select>
         </div>
@@ -117,7 +117,7 @@ export function MarketDirectory({ ar = true, selectedCountryCode }: MarketDirect
           {ar ? `عرض ${filteredCountries.length} من أصل 47 دولة مستوردة ومسجلة في قاعدة 2025` : `Showing ${filteredCountries.length} of 47 documented markets`}
         </span>
         <span className="font-semibold text-brand-orange">
-          {ar ? "بيانات موثقة من طلبات الاستفسار الرسمية" : "Verified from official inquiry records"}
+          {ar ? "بيانات موثقة من طلبات الشراء الرسمية" : "Verified from official inquiry records"}
         </span>
       </div>
 
@@ -130,10 +130,10 @@ export function MarketDirectory({ ar = true, selectedCountryCode }: MarketDirect
           return (
             <div
               key={country.code}
-              className={`group flex flex-col justify-between rounded-3xl border transition-all duration-300 ${
+              className={`interactive-card glass-box-interactive group flex flex-col justify-between rounded-3xl border transition-all duration-300 ${
                 isExpanded
                   ? "border-brand-orange/60 bg-background/90 shadow-2xl ring-2 ring-brand-orange/20 md:col-span-2 lg:col-span-3"
-                  : "border-white/15 bg-background/60 hover:border-white/30 hover:bg-background/80 hover:shadow-xl"
+                  : "border-white/15 bg-background/60 hover:border-white/30 hover:bg-background/80 hover:-translate-y-1 hover:shadow-xl"
               } p-5 backdrop-blur-xl`}
             >
               {/* Card Header */}
@@ -148,27 +148,27 @@ export function MarketDirectory({ ar = true, selectedCountryCode }: MarketDirect
                         {ar ? country.nameAr : country.nameEn}
                       </h4>
                       <p className="text-xs text-muted-foreground">
-                        {ar ? country.continentAr : country.continent} • {country.code}
+                        {ar ? country.continentAr : country.continent} • {country.flag}
                       </p>
                     </div>
                   </div>
 
-                  <span className="flex items-center gap-1 rounded-full bg-emerald-500/15 px-3 py-1 text-xs font-bold text-emerald-400">
+                  <span className="flex items-center gap-1 rounded-full bg-emerald-500/15 px-3 py-1 text-xs font-bold text-emerald-600 dark:text-emerald-400 border border-emerald-500/25">
                     <TrendingUp className="size-3" />
-                    <span>{country.totalInquiries} {ar ? "استفسار" : "Inquiries"}</span>
+                    <span>{country.totalInquiries} {ar ? "طلب شراء" : "Inquiries"}</span>
                   </span>
                 </div>
 
                 {/* Badges breakdown */}
                 <div className="mt-3 flex flex-wrap gap-1.5 text-[11px]">
                   {country.dateInquiriesCount > 0 && (
-                    <span className="rounded-full bg-amber-500/15 px-2.5 py-0.5 font-medium text-amber-400 border border-amber-500/20">
-                      {ar ? `تمور: ${country.dateInquiriesCount}` : `Dates: ${country.dateInquiriesCount}`}
+                    <span className="rounded-full bg-emerald-500/15 px-2.5 py-0.5 font-bold text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">
+                      {ar ? `تمور: ${country.dateInquiriesCount} طلبات شراء` : `Dates: ${country.dateInquiriesCount}`}
                     </span>
                   )}
                   {country.diversifiedInquiriesCount > 0 && (
-                    <span className="rounded-full bg-teal-500/15 px-2.5 py-0.5 font-medium text-teal-400 border border-teal-500/20">
-                      {ar ? `سلع زراعية: ${country.diversifiedInquiriesCount}` : `Diversified: ${country.diversifiedInquiriesCount}`}
+                    <span className="rounded-full bg-brand-orange/15 px-2.5 py-0.5 font-bold text-brand-orange border border-brand-orange/30">
+                      {ar ? `سلع غذائية: ${country.diversifiedInquiriesCount} طلبات شراء` : `Food: ${country.diversifiedInquiriesCount}`}
                     </span>
                   )}
                 </div>
@@ -199,7 +199,7 @@ export function MarketDirectory({ ar = true, selectedCountryCode }: MarketDirect
                 {isExpanded && (
                   <div className="mt-6 space-y-4 border-t border-white/10 pt-4 animate-in fade-in duration-300">
                     <h5 className="text-xs font-bold text-brand-orange uppercase tracking-wider">
-                      {ar ? "سجل الاستفسارات التفصيلي المسجل:" : "Detailed Inquiry Records Log:"}
+                      {ar ? "سجل طلبات الشراء التفصيلي المسجل:" : "Detailed Purchase Records Log:"}
                     </h5>
 
                     <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
@@ -276,8 +276,8 @@ export function MarketDirectory({ ar = true, selectedCountryCode }: MarketDirect
                       ? "إغلاق السجل التفصيلي"
                       : "Collapse Details"
                     : ar
-                    ? `عرض كافة الاستفسارات (${country.totalInquiries})`
-                    : `View Full Inquiries (${country.totalInquiries})`}
+                    ? `عرض كافة طلبات الشراء (${country.totalInquiries})`
+                    : `View Full Purchase Requests (${country.totalInquiries})`}
                 </span>
                 {isExpanded ? <ChevronUp className="size-4" /> : <ChevronDown className="size-4" />}
               </button>

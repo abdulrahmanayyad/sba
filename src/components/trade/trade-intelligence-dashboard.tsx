@@ -119,7 +119,7 @@ export function TradeIntelligenceDashboard({ ar = true }: TradeIntelligenceDashb
             {DOCUMENTED_BUYER_REQUIREMENTS.map((req) => (
               <div
                 key={req.id}
-                className="group relative flex flex-col justify-between rounded-3xl border border-white/15 bg-background/60 p-5 backdrop-blur-xl transition-all duration-300 hover:bg-background/80 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)] hover:-translate-y-1"
+                className="interactive-card glass-box-interactive group relative flex flex-col justify-between rounded-3xl border border-white/15 bg-background/60 p-5 backdrop-blur-xl transition-all duration-300 hover:bg-background/80 hover:shadow-xl hover:-translate-y-1"
               >
                 <div>
                   {/* Top Bar */}
@@ -164,7 +164,7 @@ export function TradeIntelligenceDashboard({ ar = true }: TradeIntelligenceDashb
                       <span className="font-semibold text-foreground">{req.terms}</span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span>{ar ? "تاريخ تسجيل الاستفسار:" : "Inquiry Date:"}</span>
+                      <span>{ar ? "تاريخ تسجيل الطلب:" : "Request Date:"}</span>
                       <span className="font-mono">{req.inquiryDate}</span>
                     </div>
                   </div>
@@ -172,8 +172,8 @@ export function TradeIntelligenceDashboard({ ar = true }: TradeIntelligenceDashb
 
                 {/* Status Badge */}
                 <div className="mt-5 pt-3 border-t border-white/10 flex items-center justify-between text-xs">
-                  <span className="rounded-full bg-amber-500/15 px-2.5 py-0.5 text-[11px] font-bold text-amber-400 border border-amber-500/20">
-                    {ar ? "طلب استفسار مسجل" : "Recorded Inquiry"}
+                  <span className="rounded-full bg-emerald-500/15 px-2.5 py-0.5 text-[11px] font-bold text-emerald-600 dark:text-emerald-400 border border-emerald-500/25">
+                    {ar ? "طلب شراء مسجل" : "Recorded Purchase Request"}
                   </span>
                   <a
                     href="#trade-opportunities"
@@ -231,7 +231,7 @@ export function TradeIntelligenceDashboard({ ar = true }: TradeIntelligenceDashb
                           <span>{ar ? c.nameAr : c.nameEn}</span>
                         </span>
                         <span className="font-mono text-brand-orange">
-                          {c.totalInquiries} {ar ? "استفسار" : "inquiries"}
+                          {c.totalInquiries} {ar ? "طلبات شراء" : "purchase requests"}
                         </span>
                       </div>
                       <div className="h-2 w-full overflow-hidden rounded-full bg-white/10">
@@ -252,10 +252,10 @@ export function TradeIntelligenceDashboard({ ar = true }: TradeIntelligenceDashb
                 <div className="flex items-center gap-2">
                   <Layers className="size-5 text-emerald-400" />
                   <h4 className="text-base font-bold text-foreground">
-                    {ar ? "توزيع الاستفسارات حسب فئات المنتجات" : "Inquiries by Product Category"}
+                    {ar ? "توزيع طلبات الشراء حسب فئات المنتجات" : "Purchase Requests by Product Category"}
                   </h4>
                 </div>
-                <span className="text-xs text-muted-foreground">179 {ar ? "استفسار إجمالي" : "Total"}</span>
+                <span className="text-xs text-muted-foreground">179 {ar ? "طلب شراء إجمالي" : "Total Requests"}</span>
               </div>
 
               <div className="space-y-3.5">
@@ -282,7 +282,7 @@ export function TradeIntelligenceDashboard({ ar = true }: TradeIntelligenceDashb
                 <div className="flex items-center gap-2">
                   <Calendar className="size-5 text-brand-orange" />
                   <h4 className="text-base font-bold text-foreground">
-                    {ar ? "المسار الزمني الشهري لتدفق استفسارات المشترين (2025)" : "Monthly Inquiries Timeline (2025)"}
+                    {ar ? "المسار الزمني الشهري لتدفق طلبات الشراء للمشترين (2025)" : "Monthly Purchase Requests Timeline (2025)"}
                   </h4>
                 </div>
                 <span className="text-xs font-bold text-emerald-400">
