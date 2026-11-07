@@ -98,23 +98,19 @@ export function ProductsCataloguePage() {
       <section className="site-container pt-20 sm:pt-28 pb-8">
         <Reveal>
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-4 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-4">
-              <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
-              <span>{ar ? "مجموعة سامي بن عياد" : "SAMI BIN AYYAD GROUP"}</span>
-              <span className="text-muted-foreground">•</span>
-              <span className="text-brand-orange font-bold font-mono">
-                {ar ? `${totalProductsCount} منتج مادي معتمد` : `${totalProductsCount} Verified Products`}
-              </span>
+            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-4">
+              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+              <span>{ar ? "مكتبة الكتالوجات" : "Catalogue Library"}</span>
             </div>
 
-            <h1 className="font-head text-3xl sm:text-5xl lg:text-6xl font-extrabold text-foreground leading-tight tracking-tight">
+            <h1 className="font-head text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-foreground leading-tight tracking-tight whitespace-nowrap overflow-hidden text-ellipsis">
               {ar ? (
                 <>
-                  محفظة <span className="text-brand-orange">المنتجات المادية</span> المعتمدة للتوريد والتصدير
+                  محفظة <span className="text-brand-orange">المنتجات المعتمدة</span> للتوريد والتصدير
                 </>
               ) : (
                 <>
-                  Verified <span className="text-brand-orange">Physical Products</span> Catalogue
+                  Verified <span className="text-brand-orange">Products Portfolio</span> for Supply & Export
                 </>
               )}
             </h1>
@@ -124,37 +120,6 @@ export function ProductsCataloguePage() {
                 ? "تصفح السلع والمنتجات المادية المعتمدة من مجموعة سامي بن عياد عبر قطاعي الملابس والمنسوجات والمنتجات الغذائية الطبيعية، مع إمكانية استعراض المواصفات الفنية المعتمدة وطلب عروض أسعار التوريد والتصدير الرسمية."
                 : "Explore Sami Bin Ayyad Group's verified tangible product lines across Apparel & Textiles and Natural Agri-Food, complete with detailed technical datasheets and official export quotation capabilities."}
             </p>
-
-            {/* SERVICES REDIRECT CTA BANNER */}
-            <div className="mt-8 mx-auto max-w-3xl rounded-2xl border border-white/50 bg-white/40 dark:bg-white/10 p-4 sm:p-5 backdrop-blur-xl shadow-xs flex flex-col sm:flex-row items-center justify-between gap-4 text-start">
-              <div className="flex items-center gap-3">
-                <span className="p-2.5 rounded-xl bg-brand-green/15 text-brand-green shrink-0">
-                  <Wrench className="size-5" />
-                </span>
-                <div>
-                  <p className="text-xs sm:text-sm font-bold text-foreground">
-                    {ar
-                      ? "هل تبحث عن الخدمات الهندسية والحلول التعاقدية للمجموعة؟"
-                      : "Looking for our engineering services & turnkey EPC solutions?"}
-                  </p>
-                  <p className="text-[11px] text-muted-foreground mt-0.5">
-                    {ar
-                      ? "المقاولات والإنشاءات، الأنظمة والحلول البيئية، وبرامج تصنيع الملابس (39 خدمة وحل معتمد)"
-                      : "Construction contracting, environmental systems, and garment manufacturing programs (39 verified solutions)"}
-                  </p>
-                </div>
-              </div>
-              <Button
-                asChild
-                size="sm"
-                className="rounded-full !bg-brand-green hover:!bg-brand-orange text-white text-xs font-bold px-5 shrink-0 shadow-xs transition-all duration-300 cursor-pointer"
-              >
-                <Link to="/services">
-                  <span>{ar ? "استكشف دليل الخدمات" : "Explore Services"}</span>
-                  <ArrowRight className="size-3.5 ms-1.5 rtl:rotate-180" />
-                </Link>
-              </Button>
-            </div>
           </div>
         </Reveal>
       </section>

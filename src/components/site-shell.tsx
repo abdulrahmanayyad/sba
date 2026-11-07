@@ -183,6 +183,8 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
         document.title = "شركاؤنا — Sami Bin Ayyad";
       } else if (pathname === "/products") {
         document.title = "منتجاتنا — Sami Bin Ayyad";
+      } else if (pathname === "/services") {
+        document.title = "خدماتنا — Sami Bin Ayyad";
       } else if (pathname === "/investor-relations") {
         document.title = "علاقات المستثمرين — Sami Bin Ayyad";
       } else if (pathname === "/trade") {
@@ -228,6 +230,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
   const isAboutActive = pathname === "/about";
   const isSectorsActive = pathname.startsWith("/sectors");
   const isProductsActive = pathname === "/products" || pathname === "/models";
+  const isServicesActive = pathname === "/services";
   const isNewsActive = pathname === "/news";
   const isMoreActive = pathname === "/trade" || pathname === "/investor-relations" || pathname === "/downloads";
   const isContactActive = pathname.startsWith("/contact") || pathname === "/complaints" || pathname === "/submit-opportunity";
@@ -267,6 +270,13 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
         onClick={onNavigate}
       >
         {messages.nav.products}
+      </Link>
+      <Link
+        to="/services"
+        className={cn(className, "whitespace-nowrap", isServicesActive && navPillActive)}
+        onClick={onNavigate}
+      >
+        {isArabic ? "خدماتنا" : "Services"}
       </Link>
       <Link
         to="/partners"
