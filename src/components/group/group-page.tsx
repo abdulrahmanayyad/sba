@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, Building2, ExternalLink, Globe2, Handshake, Mail, MessageCircle, Newspaper, Sparkles, TrendingUp } from "lucide-react";
+import { ArrowRight, Building2, ExternalLink, Globe2, Handshake, Mail, MessageCircle, Newspaper, ShieldCheck, Sparkles, TrendingUp } from "lucide-react";
 
 const heroBg = "/BG/Main Home Page.jpg";
 import { Button } from "@/components/ui/button";
