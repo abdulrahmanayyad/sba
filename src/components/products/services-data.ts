@@ -991,7 +991,7 @@ export const professionalServices: ProfessionalService[] = [
     "categoryEn": "ODM Design & Co-Development",
     "categoryAr": "التصميم والتصنيع المشترك ODM",
     "nameEn": "ODM Fashion Co-Development & Ready Design Customization",
-    "nameAr": "التصنيع من محفطة الموديلات المعتمدة ODM",
+    "nameAr": "التصنيع من محفظة الموديلات المعتمدة ODM",
     "descriptionEn": "End-to-end design development allowing fashion labels to select and customize garments from our verified 2,700+ design library without internal design overhead.",
     "descriptionAr": "خدمة تطوير وتصميم متكاملة تتيح للماركات التجارية اختيار وتخصيص موديلات من محفظتنا المعتمدة التي تضم أكثر من 2,700 تصميم جاهز للإنتاج الفوري.",
     "scopeOfWorkEn": [
