@@ -394,14 +394,8 @@ export function NewsPage() {
               )}
             </div>
 
-            {/* Sort Toggle & Result Count */}
-            <div className="flex items-center justify-between md:justify-end gap-3 w-full md:w-auto">
-              <span className="text-xs text-muted-foreground font-medium">
-                {ar
-                  ? `${filteredArticles.length} من أصل ${newsArticles.length} مادة`
-                  : `Showing ${filteredArticles.length} of ${newsArticles.length} entries`}
-              </span>
-
+            {/* Sort Toggle */}
+            <div className="flex items-center justify-end w-full md:w-auto">
               <button
                 type="button"
                 onClick={() => setSortDirection((prev) => (prev === "asc" ? "desc" : "asc"))}
