@@ -74,8 +74,8 @@ export function PartnersPage() {
           </h1>
           <p className="section-intro mt-4 max-w-3xl leading-relaxed text-muted-foreground sm:text-lg">
             {ar
-              ? "نعمل على تطوير علاقات تعاون تدعم احتياجات عملائنا في التصنيع والتوريد والحلول البيئية والتقنية. ويُحدد نطاق كل علاقة بحسب الاتفاق القائم والمنتجات أو الخدمات المشمولة والأسواق المستهدفة."
-              : "We develop relationships that support manufacturing, sourcing and environmental technology requirements. The scope of each relationship depends on the relevant agreement, participating entity, products and markets."}
+              ? "نعمل على تطوير علاقات تعاون تدعم احتياجات عملائنا في عدة قطاعات. ويُحدد نطاق كل علاقة بحسب الاتفاق القائم والمنتجات أو الخدمات المشمولة والأسواق المستهدفة."
+              : "We develop cooperation relationships that support our clients' needs across multiple sectors. The scope of each relationship depends on the existing agreement, participating entity, products or services covered, and target markets."}
           </p>
 
           <div className="mt-6 flex flex-wrap items-center gap-3">
