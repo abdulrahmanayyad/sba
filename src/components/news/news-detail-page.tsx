@@ -448,9 +448,8 @@ export function NewsDetailPage({ slug }: { slug: string }) {
             {/* Related Articles */}
             {relatedArticles.length > 0 && (
               <div className="rounded-3xl border border-white/20 bg-background/85 p-6 shadow-md backdrop-blur-xl">
-                <span className="text-xs font-bold text-brand-orange uppercase tracking-wider block mb-4 flex items-center gap-1.5">
-                  <Sparkles className="size-3.5" />
-                  <span>{ar ? "مقالات وتقارير ذات صلة" : "Related Archive Entries"}</span>
+                <span className="text-xs font-bold text-brand-orange uppercase tracking-wider block mb-4">
+                  {ar ? "مقالات وتقارير ذات صلة" : "Related Archive Entries"}
                 </span>
                 <div className="space-y-4">
                   {relatedArticles.map((rel) => (
