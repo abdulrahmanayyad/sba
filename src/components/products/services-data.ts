@@ -397,133 +397,75 @@ export const professionalServices: ProfessionalService[] = [
   },
 
   // --------------------------------------------------------------------------
-  // DIVISION 2: ENVIRONMENTAL SOLUTIONS & SUSTAINABILITY (19 Services)
+  // DIVISION 2: ENVIRONMENTAL SOLUTIONS & SUSTAINABILITY (17 Services)
   // --------------------------------------------------------------------------
   {
-    "id": "srv-env-eia",
+    "id": "srv-env-assessment",
     "code": "SBA-SRV-ENV01",
     "sector": "environmental",
     "categoryKey": "environmental-assessment",
-    "categoryEn": "Environmental Impact Assessment (EIA)",
-    "categoryAr": "تقييم الأثر البيئي (EIA)",
-    "nameEn": "Comprehensive Environmental Impact Assessment Studies (EIA)",
-    "nameAr": "دراسات تقييم الأثر البيئي (EIA)",
-    "descriptionEn": "Preparing statutory EIA studies across Category A, B, and C industrial, commercial, and infrastructure developments for ministry and regulatory compliance.",
-    "descriptionAr": "إعداد دراسات تقييم الأثر البيئي للمشروعات الصناعية والسياحية والبنية التحتية بالقوائم (أ، ب، ج) للحصول على موافقات جهاز شئون البيئة والجهات المعنية.",
+    "categoryEn": "Environmental Assessment (EIA/ESIA)",
+    "categoryAr": "تقييم الأثر البيئي والمجتمعي",
+    "nameEn": "Environmental Assessment (EIA/ESIA)",
+    "nameAr": "تقييم الأثر البيئي والمجتمعي",
+    "descriptionEn": "Preparing statutory EIA and international-standard ESIA studies across industrial, infrastructure, and commercial sectors conforming to national environmental agencies and international financing standards (IFC / World Bank).",
+    "descriptionAr": "إعداد دراسات تقييم الأثر البيئي (EIA) والأثر البيئي والمجتمعي (ESIA) للمشروعات الصناعية والسياحية والبنية التحتية، وفق اشتراطات الجهات الرسمية ومعايير التمويل الدولية (IFC / World Bank).",
     "scopeOfWorkEn": [
       "Baseline environmental profiling (ambient air, groundwater, ecology, soil)",
-      "Project alternative analysis and environmental footprint modeling",
-      "Pollution dispersion modeling for air emissions and wastewater outfalls",
-      "Environmental and Social Management Plans (ESMP) and public hearing coordination"
+      "Statutory EIA studies across Category A, B, and C for ministry and regulatory compliance",
+      "Integrated ESIA dossiers conforming to IFC Performance Standards and Equator Principles",
+      "Environmental and Social Management Plans (ESMP) and public hearing stakeholder coordination"
     ],
     "scopeOfWorkAr": [
       "دراسة الوضع البيئي الراهن (الهواء المحيط، المياه الجوفية، التربة، والبيئة البيولوجية)",
-      "تحليل بدائل المشروع ونمذجة البصمة البيئية التشغيلية",
-      "نمذجة انتشار الملوثات للانبعاثات الغازية وتصريفات الصرف الصناعي",
-      "إعداد خطط الإدارة والرصد البيئي والمجتمعي وتنظيم جلسات التشاور العام"
+      "إعداد دراسات تقييم الأثر البيئي للمشروعات بالقوائم (أ، ب، ج) للحصول على موافقات جهاز شئون البيئة",
+      "إعداد دراسات الأثر البيئي والمجتمعي (ESIA) وفق معايير الأداء لمؤسسة التمويل الدولية (IFC)",
+      "إعداد خطط الإدارة والرصد البيئي والمجتمعي وتنظيم جلسات التشاور العام وجلسات الاستماع"
     ],
-    "applicationsEn": ["Industrial Manufacturing Zones", "Port & Coastal Developments", "Power Plants", "Tourism Masterplans"],
-    "applicationsAr": ["المناطق والمجمعات الصناعية", "الموانئ والتطوير الساحلي", "محطات توليد الطاقة", "المشروعات السياحية الكبرى"],
-    "capabilitiesEn": ["Certified environmental consulting house accreditation", "AERMOD / CALPUFF certified air dispersion modelers", "Comprehensive field survey instruments"],
-    "capabilitiesAr": ["بيت خبرة واستشارات بيئية معتمد رسميًا", "خبراء نمذجة انتشار الملوثات ببرامج AERMOD و CALPUFF", "أجهزة رصد ومسح بيئي ميدانية معتمدة"],
+    "applicationsEn": ["Industrial Manufacturing Zones", "Port & Coastal Developments", "Renewable Energy Mega-Parks", "Tourism Masterplans"],
+    "applicationsAr": ["المناطق والمجمعات الصناعية", "الموانئ والتطوير الساحلي", "مشروعات الطاقة المتجددة الكبرى", "المشروعات السياحية والعمرانية"],
+    "capabilitiesEn": ["Certified environmental consulting house accreditation", "AERMOD / CALPUFF certified air dispersion modelers", "Bankable environmental reports approved by global DFIs"],
+    "capabilitiesAr": ["بيت خبرة واستشارات بيئية معتمد رسميًا", "خبراء نمذجة انتشار الملوثات ببرامج AERMOD و CALPUFF", "تقارير معتمدة لدى بنوك ومؤسسات التمويل الدولية"],
     "image": "/BG/Environment & Sustainability/Environmental Impact Assessment (EIA).jpg"
   },
   {
-    "id": "srv-env-esia-financing",
+    "id": "srv-env-carbon",
     "code": "SBA-SRV-ENV02",
     "sector": "environmental",
-    "categoryKey": "environmental-assessment",
-    "categoryEn": "ESIA Studies",
-    "categoryAr": "الدراسات البيئية والمجتمعية (ESIA)",
-    "nameEn": "Integrated Environmental & Social Impact Assessment (ESIA) for International Lenders",
-    "nameAr": "الدراسات البيئية والمجتمعية (ESIA)",
-    "descriptionEn": "Structuring international-standard ESIA dossiers conforming to IFC Performance Standards, World Bank EHS Guidelines, and Equator Principles for global financing.",
-    "descriptionAr": "إعداد دراسات الأثر البيئي والمجتمعي وفق معايير الأداء لمؤسسة التمويل الدولية (IFC)، البنك الأوروبي (EBRD)، والبنك الإفريقي للتنمية للحصول على التمويل الدولي.",
-    "scopeOfWorkEn": [
-      "Social baseline surveys, stakeholder engagement, and community grievance mechanisms",
-      "Biodiversity action plans and ecosystem service vulnerability assessments",
-      "Labor conditions, human rights, and occupational safety risk assessments",
-      "Resettlement policy frameworks and livelihood restoration planning"
-    ],
-    "scopeOfWorkAr": [
-      "المسوحات الاجتماعية الميدانية، إشراك أصحاب المصلحة وآليات التظلم المجتمعي",
-      "خطط عمل الحفاظ على التنوع البيولوجي والأنظمة البيئية الحساسة",
-      "تقييم ظروف العمل وحقوق الإنسان ومخاطر الصحة والسلامة المهنية",
-      "أطر سياسات إعادة التوطين واستعادة سبل العيش المستدامة"
-    ],
-    "applicationsEn": ["Renewable Energy Mega-Parks", "Cross-Border Infrastructure", "Mining Concessions", "International Joint Ventures"],
-    "applicationsAr": ["مشروعات الطاقة المتجددة الضخمة", "مشروعات البنية التحتية الإقليمية", "امتيازات التعدين والصناعات الاستخراجية", "الشراكات الدولية الكبرى"],
-    "capabilitiesEn": ["Bilingual IFC-compliant environmental sociologists", "Deep public consultation experience", "Bankable environmental reports approved by global DFIs"],
-    "capabilitiesAr": ["خبراء بيئيون واجتماعيون معتمدون بمعايير IFC", "خبرة ميدانية عميقة في جلسات الاستماع والتشاور المجتمعي", "تقارير معتمدة لدى بنوك ومؤسسات التمويل التنموي الدولية"],
-    "image": "/BG/Environment & Sustainability/Integrated Environmental & Social Studies (ESIA).jpg"
-  },
-  {
-    "id": "srv-env-carbon",
-    "code": "SBA-SRV-ENV03",
-    "sector": "environmental",
     "categoryKey": "carbon-footprint",
-    "categoryEn": "Carbon Footprint Assessment",
-    "categoryAr": "حساب البصمة الكربونية",
-    "nameEn": "Corporate Greenhouse Gas (GHG) Accounting & Carbon Footprint Audits",
-    "nameAr": "حساب وتدقيق البصمة الكربونية",
-    "descriptionEn": "Quantifying Scope 1, Scope 2, and Scope 3 greenhouse gas emissions conforming to the GHG Protocol and ISO 14064 for enterprises aiming for net-zero pathways.",
-    "descriptionAr": "قياس واحتساب انبعاثات غازات الاحتباس الحراري للنطاقات الأول والثاني والثالث (Scope 1, 2, 3) طبقًا لمعايير GHG Protocol والأيزو 14064 لتحديد مسارات الحياد الكربوني.",
+    "categoryEn": "Carbon Footprint & CBAM",
+    "categoryAr": "البصمة الكربونية وتقارير الانبعاثات",
+    "nameEn": "Carbon Footprint & CBAM",
+    "nameAr": "البصمة الكربونية وتقارير الانبعاثات",
+    "descriptionEn": "Quantifying Scope 1, 2, and 3 GHG emissions, conducting product Life Cycle Assessments (LCA), and preparing European Carbon Border Adjustment Mechanism (CBAM) compliance dossiers and verified carbon disclosures.",
+    "descriptionAr": "قياس واحتساب انبعاثات غازات الاحتباس الحراري للنطاقات (Scope 1, 2, 3)، تقييم دورة حياة المنتج (LCA)، وإعداد ملفات الامتثال لضريبة الكربون الأوروبية (CBAM) وتقارير الإفصاح المعتمدة.",
     "scopeOfWorkEn": [
-      "Organizational boundary definition and comprehensive emissions inventory compilation",
+      "Corporate GHG accounting (Scope 1, Scope 2, Scope 3) conforming to GHG Protocol and ISO 14064",
       "Product Life Cycle Assessment (LCA) from cradle to grave conforming to ISO 14040/44",
-      "Supply chain upstream and downstream emission auditing",
-      "Science-Based Targets initiative (SBTi) decarbonization roadmap formulation"
+      "European CBAM embedded emissions calculation, quarterly reporting, and exporter compliance",
+      "Carbon emissions disclosure (CDP, GRI), SBTi net-zero roadmaps, and carbon credit generation"
     ],
     "scopeOfWorkAr": [
-      "تحديد الحدود المؤسسية وحصر شامل لكافة مصادر الانبعاثات الكربونية",
-      "تقييم دورة حياة المنتج (LCA) من المهد إلى اللحد طبقًا للمواصفة ISO 14044",
-      "تدقيق انبعاثات سلاسل التوريد والخدمات اللوجستية والشحن",
-      "صياغة خريطة طريق لخفض الانبعاثات متوافقة مع مبادرة الأهداف المستندة إلى العلم (SBTi)"
+      "قياس انبعاثات غازات الاحتباس الحراري للنطاقات 1 و2 و3 طبقًا لـ GHG Protocol والأيزو 14064",
+      "تقييم دورة حياة المنتج (LCA) من المهد إلى اللحد طبقًا للمواصفة القياسية ISO 14044",
+      "احتساب الانبعاثات المضمنة وإعداد تقارير آلية تعديل حدود الكربون الأوروبية (CBAM)",
+      "إعداد ملفات الإفصاح لمنصة CDP ومعايير GRI وصياغة خريطة طريق الحياد الكربوني"
     ],
-    "applicationsEn": ["Export-Oriented Industries", "Multinational Enterprises", "Logistics Fleets", "Financial Portfolios"],
-    "applicationsAr": ["الشركات والمصانع المصدرة لأوروبا", "الشركات متعددة الجنسيات", "أساطيل النقل واللوجستيات", "المحافظ الاستثمارية الخضراء"],
+    "applicationsEn": ["Heavy Industrial Exporters", "Fertilizer & Chemical Plants", "Aluminum & Steel Smelters", "Multinational Enterprises"],
+    "applicationsAr": ["المصانع والشركات المصدرة لأوروبا", "شركات الأسمدة والبتروكيماويات", "مصاهر الألومنيوم والحديد والصلب", "الشركات الكبرى وسلاسل الإمداد"],
     "capabilitiesEn": ["Certified GHG Protocol practitioners", "SimaPro / GaBi LCA modeling software licenses", "Direct European CBAM compliance alignment"],
     "capabilitiesAr": ["ممارسون معتمدون في بروتوكول غازات الاحتباس الحراري", "رخص نمذجة دورة الحياة ببرامج SimaPro و GaBi", "مواءمة مباشرة مع متطلبات ضريبة الكربون الأوروبية CBAM"],
-    "image": "/BG/Environment & Sustainability/Carbon Footprint & Emissions Reporting.jpg"
-  },
-  {
-    "id": "srv-env-ghg-reporting",
-    "code": "SBA-SRV-ENV04",
-    "sector": "environmental",
-    "categoryKey": "carbon-footprint",
-    "categoryEn": "Carbon Emissions Reporting",
-    "categoryAr": "تقارير الإفصاح عن الانبعاثات",
-    "nameEn": "Carbon Emissions Disclosure, CBAM Compliance & ESG Reporting",
-    "nameAr": "تقارير الانبعاثات الكربونية والكربون الأوروبية (CBAM)",
-    "descriptionEn": "Drafting verified carbon disclosure reports conforming to GRI, CDP, and the European Carbon Border Adjustment Mechanism (CBAM) for industrial exporters.",
-    "descriptionAr": "إعداد وتدقيق تقارير الإفصاح عن الانبعاثات الكربونية المتوافقة مع معايير GRI و CDP ومتطلبات آلية تعديل حدود الكربون الأوروبية (CBAM) لتمكين التصدير بدون غرامات.",
-    "scopeOfWorkEn": [
-      "CBAM quarterly embedded emissions calculation for steel, cement, fertilizers, and chemicals",
-      "CDP Climate Change questionnaire drafting, scoring improvement, and benchmarking",
-      "Third-party verification support under ISO 14064-3",
-      "Carbon credit generation, offset portfolio design, and voluntary carbon markets"
-    ],
-    "scopeOfWorkAr": [
-      "احتساب الانبعاثات الكربونية المضمنة لآلية CBAM لقطاعات الحديد، الأسمنت، الأسمدة والكيماويات",
-      "إعداد ملفات الإفصاح لمنصة CDP العالمية وتحسين التصنيف البيئي للمؤسسة",
-      "الدعم الفني خلال مراحل المراجعة والاعتماد الخارجي وفق معيار ISO 14064-3",
-      "توليد أرصدة الكربون وشهادات خفض الانبعاثات والتداول في الأسواق الطوعية"
-    ],
-    "applicationsEn": ["Heavy Industrial Exporters", "Fertilizer & Chemical Plants", "Aluminum & Metal Smelters", "Listed Public Companies"],
-    "applicationsAr": ["المصانع الكبرى المصدرة للاتحاد الأوروبي", "شركات الأسمدة والبتروكيماويات", "مصاهر الألومنيوم والمعادن", "الشركات المدرجة بالبورصة"],
-    "capabilitiesEn": ["Official CBAM communication template expertise", "Registered carbon offset auditors", "Automated carbon reporting dashboards"],
-    "capabilitiesAr": ["خبرة دقيقة في نماذج ومنظومات CBAM الأوروبية", "مراجعو كربون معتمدون لشهادات الخفض الدولية", "لوحات بيانات رقمية لمتابعة الإفصاح السنوي اللحظي"],
-    "image": "/BG/Environment & Sustainability/Carbon Footprint & Emissions Reporting.jpg"
+    "image": "/BG/Environment & Sustainability/Carbon Footprint & Greenhouse Gas Services.jpg"
   },
   {
     "id": "srv-env-monitoring-lab",
-    "code": "SBA-SRV-ENV05",
+    "code": "SBA-SRV-ENV03",
     "sector": "environmental",
     "categoryKey": "environmental-monitoring",
-    "categoryEn": "Monitoring & Measurements",
-    "categoryAr": "القياسات والرصد البيئي الميداني",
-    "nameEn": "Field & Laboratory Environmental Monitoring (Air, Water, Soil & Noise)",
-    "nameAr": "القياسات والرصد البيئي الميداني والمعملي",
+    "categoryEn": "Environmental Monitoring & Lab",
+    "categoryAr": "القياسات والرصد المعملي",
+    "nameEn": "Environmental Monitoring & Lab",
+    "nameAr": "القياسات والرصد المعملي",
     "descriptionEn": "Certified stack emissions testing, ambient air monitoring stations, work environment occupational noise measurements, and analytical wastewater laboratory assays.",
     "descriptionAr": "إجراء القياسات البيئية الميدانية المعتمدة لانبعاثات المداخن، جودة الهواء المحيط، قياسات بيئة العمل المهنية، والتحاليل المعملية لمياه الصرف الصناعي والتربة.",
     "scopeOfWorkEn": [
@@ -546,13 +488,13 @@ export const professionalServices: ProfessionalService[] = [
   },
   {
     "id": "srv-env-waste-mgmt",
-    "code": "SBA-SRV-ENV06",
+    "code": "SBA-SRV-ENV04",
     "sector": "environmental",
     "categoryKey": "waste-management",
     "categoryEn": "Waste Management Solutions",
     "categoryAr": "حلول إدارة المخلفات",
-    "nameEn": "Integrated Municipal, Commercial & Industrial Waste Management",
-    "nameAr": "منظومة إدارة وتدوير المخلفات",
+    "nameEn": "Waste Management Solutions",
+    "nameAr": "حلول إدارة المخلفات",
     "descriptionEn": "End-to-end advisory and operations covering collection logistics, transfer stations, material sorting, circular recycling, and sanitary landfill engineering.",
     "descriptionAr": "إدارة منظومات المخلفات البلدية والصناعية من المصدر، تشمل خطط الجمع والنقل، تصميم المحطات الوسيطة، مصانع الفرز والتدوير، والمدافن الصحية الآمنة.",
     "scopeOfWorkEn": [
@@ -571,17 +513,17 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["أجهزة المدن والمحافظات", "المناطق الصناعية الحرة", "المنتجعات السياحية الكبرى", "الموانئ والمراكز اللوجستية"],
     "capabilitiesEn": ["Fleet routing optimization software", "Full compliance with Waste Law 202/2020", "Turnkey facility operational supervision"],
     "capabilitiesAr": ["برمجيات ذكية لتخطيط مسارات أساطيل النقل", "التزام تام باشتراطات قانون تنظيم إدارة المخلفات رقم 202 لسنة 2020", "إشراف تشغيلي متكامل على المصانع والمدافن"],
-    "image": "/BG/Environment & Sustainability/Hazardous & Solid Waste Management & Recycling.jpg"
+    "image": "/BG/Environment & Sustainability/Comprehensive Waste Management Services.jpg"
   },
   {
     "id": "srv-env-industrial-waste",
-    "code": "SBA-SRV-ENV07",
+    "code": "SBA-SRV-ENV05",
     "sector": "environmental",
     "categoryKey": "hazardous-waste",
     "categoryEn": "Hazardous Waste Management",
     "categoryAr": "إدارة المخلفات الخطرة",
-    "nameEn": "Hazardous Waste Handling, Chemical Neutralization & Safe Disposal",
-    "nameAr": "إدارة ومعالجة المخلفات الخطرة",
+    "nameEn": "Hazardous Waste Management",
+    "nameAr": "إدارة المخلفات الخطرة",
     "descriptionEn": "Comprehensive physico-chemical treatment, solidification, stabilization, and safe neutralization of complex industrial solid residues, sludges, and spent chemicals.",
     "descriptionAr": "خدمات الفرز والتحييد الكيميائي والتثبيت والتصليد (Solidification & Stabilization) للمخلفات الصناعية الخطرة والحمأة ونقلها للمدافن المعتمدة.",
     "scopeOfWorkEn": [
@@ -604,13 +546,13 @@ export const professionalServices: ProfessionalService[] = [
   },
   {
     "id": "srv-env-solid-recycling",
-    "code": "SBA-SRV-ENV08",
+    "code": "SBA-SRV-ENV06",
     "sector": "environmental",
     "categoryKey": "solid-recycling",
     "categoryEn": "Solid Waste Recycling",
-    "categoryAr": "تدوير المخلفات واسترداد الموارد",
-    "nameEn": "Solid Waste Recycling, Material Recovery & Circular Economy Systems",
-    "nameAr": "تدوير المخلفات واسترداد الموارد",
+    "categoryAr": "تدوير المخلفات الصلبة",
+    "nameEn": "Solid Waste Recycling",
+    "nameAr": "تدوير المخلفات الصلبة",
     "descriptionEn": "Developing high-efficiency recycling lines for plastics, paper, cardboard, and agricultural biomass into high-value raw materials and secondary products.",
     "descriptionAr": "تصميم وتشغيل خطوط إعادة تدوير البلاستيك والورق والكرتون والمخلفات الزراعية وتحويلها إلى خامات أولية وبدائل صناعية عالية القيمة.",
     "scopeOfWorkEn": [
@@ -633,13 +575,13 @@ export const professionalServices: ProfessionalService[] = [
   },
   {
     "id": "srv-env-waste-to-energy",
-    "code": "SBA-SRV-ENV09",
+    "code": "SBA-SRV-ENV07",
     "sector": "environmental",
     "categoryKey": "waste-to-energy",
-    "categoryEn": "Waste-to-Energy Solutions",
-    "categoryAr": "تحويل المخلفات إلى طاقة (WtE)",
-    "nameEn": "Waste & Fuel-to-Energy Systems",
-    "nameAr": "أنظمة تحويل المخلفات والوقود إلى طاقة",
+    "categoryEn": "Waste-to-Energy Systems",
+    "categoryAr": "أنظمة تحويل المخلفات لطاقة",
+    "nameEn": "Waste-to-Energy Systems",
+    "nameAr": "أنظمة تحويل المخلفات لطاقة",
     "descriptionEn": "Engineering processing facilities converting non-recyclable combustible waste into high-calorific RDF pellets and steam/electricity for heavy industrial consumption.",
     "descriptionAr": "تصميم وتنفيذ محطات معالجة وإنتاج الوقود البديل عالي القيمة الحرارية (RDF) من المخلفات الصلبة لاستخدامه في أفران مصانع الأسمنت ومحطات توليد الكهرباء.",
     "scopeOfWorkEn": [
@@ -658,17 +600,17 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["مصانع إنتاج الأسمنت", "أجهزة المدن والمحارق المركزية", "المجمعات الصناعية كثيفة استهلاك الطاقة", "مشروعات توليد الكهرباء المستقلة"],
     "capabilitiesEn": ["European RDF standard EN 15359 compliance", "Continuous emissions monitoring system (CEMS) integration", "High calorific density pellet formulation"],
     "capabilitiesAr": ["مطابقة الوقود البديل للمواصفات الأوروبية EN 15359", "تكامل أنظمة الرصد اللحظي المستمر للانبعاثات CEMS", "تركيبات وقود بديل عالية الكثافة الحرارية تفوق 4,000 ك.كالوري/كجم"],
-    "image": "/BG/Environment & Sustainability/Waste to Energy & Biogas Plants.jpg"
+    "image": "/BG/Environment & Sustainability/Waste to Energy Services & Biogas Plants.jpg"
   },
   {
     "id": "srv-env-biogas",
-    "code": "SBA-SRV-ENV10",
+    "code": "SBA-SRV-ENV08",
     "sector": "environmental",
     "categoryKey": "biogas-plants",
-    "categoryEn": "Biogas Plants & Digestion",
-    "categoryAr": "محطات الغاز الحيوي (البيوجاز)",
-    "nameEn": "Anaerobic Digestion & Biogas Plants Engineering",
-    "nameAr": "إنشاء محطات الهضم اللاهوائي وإنتاج الغاز الحيوي",
+    "categoryEn": "Biogas Project Development",
+    "categoryAr": "تطوير محطات البيوجاز",
+    "nameEn": "Biogas Project Development",
+    "nameAr": "تطوير محطات البيوجاز",
     "descriptionEn": "Designing and constructing industrial CSTR and UASB biogas reactors utilizing livestock manure, agro-industrial sludges, and food waste to generate green methane and biofertilizer.",
     "descriptionAr": "تصميم وإنشاء محطات الغاز الحيوي (البيوجاز) الصناعية والتخمير اللاهوائي لمخلفات المزارع ومصانع الأغذية والصرف الصحي لتوليد الكهرباء وإنتاج السماد العضوي.",
     "scopeOfWorkEn": [
@@ -691,13 +633,13 @@ export const professionalServices: ProfessionalService[] = [
   },
   {
     "id": "srv-env-renewable-energy",
-    "code": "SBA-SRV-ENV11",
+    "code": "SBA-SRV-ENV09",
     "sector": "environmental",
     "categoryKey": "renewable-energy",
     "categoryEn": "Renewable Energy Solutions",
-    "categoryAr": "حلول وأنظمة الطاقة المتجددة",
-    "nameEn": "Solar PV Plants for Industrial Facilities",
-    "nameAr": "محطات الطاقة الشمسية للمنشآت الصناعية",
+    "categoryAr": "أنظمة الطاقة المتجددة",
+    "nameEn": "Renewable Energy Solutions",
+    "nameAr": "أنظمة الطاقة المتجددة",
     "descriptionEn": "EPC engineering of rooftop, ground-mounted, and microgrid solar photovoltaic systems reducing enterprise utility costs and decarbonizing industrial operations.",
     "descriptionAr": "تصميم وتوريد وتركيب وتشغيل محطات الطاقة الشمسية الكهروضوئية (Solar PV) على أسطح المصانع والمزارع والمنظومات الهجينة لخفض فواتير الطاقة والانبعاثات.",
     "scopeOfWorkEn": [
@@ -720,12 +662,12 @@ export const professionalServices: ProfessionalService[] = [
   },
   {
     "id": "srv-env-economics-policy",
-    "code": "SBA-SRV-ENV12",
+    "code": "SBA-SRV-ENV10",
     "sector": "environmental",
     "categoryKey": "environmental-economics",
-    "categoryEn": "Environmental Economic Studies",
+    "categoryEn": "Environmental Economics",
     "categoryAr": "الدراسات الاقتصادية البيئية",
-    "nameEn": "Environmental Economics, Cost-Benefit Studies & Policy Advisory",
+    "nameEn": "Environmental Economics",
     "nameAr": "الدراسات الاقتصادية البيئية",
     "descriptionEn": "Authoritative economic modeling analyzing environmental regulations, green taxation, natural capital valuation, and policy impact on enterprise profitability.",
     "descriptionAr": "النمذجة والتحليل الاقتصادي المتقدم للسياسات البيئية، تقييم رأس المال الطبيعي، دراسات الجدوى الاقتصادية البيئية، وتحليل أثر القوانين الخضراء على ربحية الشركات.",
@@ -745,17 +687,17 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["الشركات القابضة والمتعددة الجنسيات", "الوزارات والهيئات التنموية", "شركات الطاقة والتعدين", "مستثمرو مشروعات البنية التحتية"],
     "capabilitiesEn": ["Senior environmental economists and legal scholars", "Proprietary macro-economic environmental models", "Defensible policy whitepapers for global bodies"],
     "capabilitiesAr": ["خبراء وأكاديميون متخصصون في الاقتصاد البيئي والتشريعات", "نماذج اقتصادية دقيقة للتنبؤ بتكاليف الامتثال البيئي", "أوراق سياسات ودراسات موثقة معتمدة أمام المنظمات الدولية"],
-    "image": "/BG/Environment & Sustainability/Environmental Economics & Policy Consultations.jpg"
+    "image": "/BG/Environment & Sustainability/Environmental Economic Studies & Policy Advisory.jpg"
   },
   {
     "id": "srv-env-sustainability",
-    "code": "SBA-SRV-ENV13",
+    "code": "SBA-SRV-ENV11",
     "sector": "environmental",
     "categoryKey": "sustainability-consulting",
-    "categoryEn": "Sustainability & ESG Consulting",
+    "categoryEn": "Sustainability & ESG",
     "categoryAr": "استشارات الاستدامة واستراتيجيات ESG",
-    "nameEn": "Corporate Sustainability Strategies, ESG Frameworks & Impact Programs",
-    "nameAr": "استراتيجيات الاستدامة واستراتيجيات (ESG)",
+    "nameEn": "Sustainability & ESG",
+    "nameAr": "استشارات الاستدامة واستراتيجيات ESG",
     "descriptionEn": "Formulating comprehensive corporate sustainability roadmaps, ESG scoring improvement, materiality assessments, and transparent non-financial reporting.",
     "descriptionAr": "تصميم وتطوير استراتيجيات الاستدامة المؤسسية الشاملة، تحسين تقييمات ESG للمؤسسات، مصفوفة الأهمية النسبية، وإعداد تقارير الاستدامة المعتمدة دوليًا.",
     "scopeOfWorkEn": [
@@ -778,13 +720,13 @@ export const professionalServices: ProfessionalService[] = [
   },
   {
     "id": "srv-env-sdgs",
-    "code": "SBA-SRV-ENV14",
+    "code": "SBA-SRV-ENV12",
     "sector": "environmental",
     "categoryKey": "sdgs-consulting",
     "categoryEn": "SDGs Consulting",
-    "categoryAr": "استشارات أهداف التنمية المستدامة (SDGs)",
-    "nameEn": "UN Sustainable Development Goals (SDGs) Alignment & Impact Mapping",
-    "nameAr": "استشارات أهداف التنمية المستدامة (SDGs)",
+    "categoryAr": "أهداف التنمية المستدامة SDGs",
+    "nameEn": "SDGs Consulting",
+    "nameAr": "أهداف التنمية المستدامة SDGs",
     "descriptionEn": "Mapping enterprise operations to the 17 UN Sustainable Development Goals, designing measurable impact KPIs, and qualifying projects for sovereign and green finance.",
     "descriptionAr": "مواءمة أنشطة وعمليات الشركات مع أهداف التنمية المستدامة الـ 17 للأمم المتحدة، ووضع مؤشرات قياس أثر ملموسة، وتأهيل المشروعات للتمويل الأخضر التنموي.",
     "scopeOfWorkEn": [
@@ -803,17 +745,17 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["الهيئات والمنظمات التنموية", "الصناديق السيادية والاستثمارية", "المؤسسات الخيرية والتنموية للشركات", "المؤسسات التعليمية والجامعات"],
     "capabilitiesEn": ["UN Global Compact aligned methodology", "Empirical social return on investment (SROI) modeling", "Multi-stakeholder partnership orchestration"],
     "capabilitiesAr": ["منهجية متوافقة مع الميثاق العالمي للأمم المتحدة UNGC", "نمذجة العائد الاجتماعي على الاستثمار (SROI)", "تنسيق الشراكات المؤسسية الفعالة ذات الأثر المستدام"],
-    "image": "/BG/Environment & Sustainability/Management Consultations & ISO Qualification Projects.jpg"
+    "image": "/BG/Environment & Sustainability/Sustainable Development Advisory & UN Global Goals.jpg"
   },
   {
     "id": "srv-env-iso-systems",
-    "code": "SBA-SRV-ENV15",
+    "code": "SBA-SRV-ENV13",
     "sector": "environmental",
     "categoryKey": "iso-support",
-    "categoryEn": "ISO Management Systems",
-    "categoryAr": "تأهيل أنظمة الأيزو البيئية وإدارة الطاقة",
-    "nameEn": "ISO 14001 & ISO 50001 Management Systems Qualification & Auditing",
-    "nameAr": "تأهيل أنظمة الأيزو البيئية وإدارة الطاقة",
+    "categoryEn": "ISO Systems (14001 / 50001)",
+    "categoryAr": "تأهيل أنظمة الأيزو البيئية",
+    "nameEn": "ISO Systems (14001 / 50001)",
+    "nameAr": "تأهيل أنظمة الأيزو البيئية",
     "descriptionEn": "Comprehensive gap analysis, documentation, internal auditor training, and third-party audit facilitation for ISO 14001 (Environmental) and ISO 50001 (Energy Management).",
     "descriptionAr": "دراسة الفجوات، توثيق الإجراءات، تدريب المراجعين الداخليين، والدعم الكامل للحصول على شهادات الأيزو 14001 لنظم الإدارة البيئية والأيزو 50001 لنظم إدارة الطاقة.",
     "scopeOfWorkEn": [
@@ -836,13 +778,13 @@ export const professionalServices: ProfessionalService[] = [
   },
   {
     "id": "srv-env-qhse",
-    "code": "SBA-SRV-ENV16",
+    "code": "SBA-SRV-ENV14",
     "sector": "environmental",
     "categoryKey": "qhse-solutions",
     "categoryEn": "Integrated QHSE Solutions",
-    "categoryAr": "حلول الجودة والصحة والسلامة والبيئة",
-    "nameEn": "Integrated Quality, Health, Safety & Environment (QHSE) Solutions",
-    "nameAr": "حلول الجودة والصحة والسلامة والبيئة",
+    "categoryAr": "حلول الجودة والصحة والسلامة QHSE",
+    "nameEn": "Integrated QHSE Solutions",
+    "nameAr": "حلول الجودة والصحة والسلامة QHSE",
     "descriptionEn": "Designing robust QHSE management frameworks unifying ISO 9001, ISO 14001, and ISO 45001 to prevent workplace accidents and ensure regulatory compliance.",
     "descriptionAr": "تصميم وتطبيق منظومات متكاملة لإدارة الجودة والصحة والسلامة المهنية والبيئة (QHSE) لدمج معايير الأيزو 9001 و14001 و45001 لمنع الحوادث وضمان سلامة بيئة العمل.",
     "scopeOfWorkEn": [
@@ -861,17 +803,17 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["مواقع المقاولات والإنشاءات الكبرى", "مصافي البترول والغاز", "المصانع الثقيلة", "الموانئ والمستودعات البحرية"],
     "capabilitiesEn": ["NEBOSH / OSHA certified safety consultants", "Zero-incident behavioral safety coaching", "Mobile site safety inspection application"],
     "capabilitiesAr": ["استشاريو سلامة معتمدون من نيبوش NEBOSH والأوشا OSHA", "برامج تدريب تعديل السلوك المهني لتحقيق صفر حوادث", "تطبيقات رقمية للتفتيش الفوري على معايير السلامة بالموقع"],
-    "image": "/BG/Environment & Sustainability/Environmental Measurements & Continuous Monitoring.jpg"
+    "image": "/BG/Environment & Sustainability/Intelligent QHSE Application & Software Solutions.jpg"
   },
   {
     "id": "srv-env-digital-ehs",
-    "code": "SBA-SRV-ENV17",
+    "code": "SBA-SRV-ENV15",
     "sector": "environmental",
     "categoryKey": "digital-ehs",
     "categoryEn": "Digital EHS Software & IoT",
-    "categoryAr": "المنظومات والحلول الرقمية للسلامة والبيئة",
-    "nameEn": "Digital EHS Enterprise Software Platforms & Real-Time IoT Systems",
-    "nameAr": "المنظومات والحلول الرقمية للسلامة والبيئة",
+    "categoryAr": "المنظومات الرقمية وإنترنت الأشياء",
+    "nameEn": "Digital EHS Software & IoT",
+    "nameAr": "المنظومات الرقمية وإنترنت الأشياء",
     "descriptionEn": "Deploying proprietary cloud EHS software, mobile inspection tools, and IoT environmental sensor stations for automated data collection and compliance tracking.",
     "descriptionAr": "تطبيق المنظومات السحابية لإدارة البيئة والسلامة وتطبيقات التفتيش بالهاتف المحمول ومحطات الاستشعار الذكية لجمع البيانات البيئية آليًا وتحليل المخاطر لحظيًا.",
     "scopeOfWorkEn": [
@@ -890,17 +832,17 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["المدن والمجمعات الصناعية", "المؤسسات والشركات الكبرى", "المدن الذكية والمستدامة", "شركات المقاولات متعددة المواقع"],
     "capabilitiesEn": ["Proprietary SaaS architecture (EHS-APP & IoT-ENV)", "End-to-end encrypted cloud data security", "Customized mobile apps for Android and iOS"],
     "capabilitiesAr": ["منظومات برمجية سحابية مملوكة للمجموعة (EHS-APP و IoT-ENV)", "حماية وتشفير متكامل للبيانات الصناعية على خوادم سحابية آمنة", "تطبيقات هواتف ذكية مخصصة لفرق العمل الميدانية"],
-    "image": "/BG/Environment & Sustainability/EHS Digital Platforms, Automation & Environmental Software.jpg"
+    "image": "/BG/Environment & Sustainability/IoT Environmental Monitoring System.jpg"
   },
   {
     "id": "srv-env-biotech",
-    "code": "SBA-SRV-ENV18",
+    "code": "SBA-SRV-ENV16",
     "sector": "environmental",
     "categoryKey": "biotechnology",
-    "categoryEn": "Biotechnology & Bioremediation",
-    "categoryAr": "التكنولوجيا الحيوية والمعالجة البيولوجية",
-    "nameEn": "Applied Environmental Biotechnology & Biological Hydrocarbon Remediation",
-    "nameAr": "التكنولوجيا الحيوية والمعالجة البيولوجية",
+    "categoryEn": "Biotechnology & Remediation",
+    "categoryAr": "التكنولوجيا الحيوية والمعالجة",
+    "nameEn": "Biotechnology & Remediation",
+    "nameAr": "التكنولوجيا الحيوية والمعالجة",
     "descriptionEn": "Deploying specialized bio-catalytic formulations and microbial consortia to neutralize odor emissions, degrade oil sludge, and restore contaminated soil and wastewater.",
     "descriptionAr": "تطبيق الحلول البيولوجية المتقدمة ومستحضرات البكتيريا المتخصصة لتحييد الروائح الكريهة وتفتيت الحمأة البترولية ومعالجة مياه الصرف الصحي والصناعي طبيعيًا.",
     "scopeOfWorkEn": [
@@ -919,17 +861,17 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["مستودعات وحقول إنتاج النفط", "محطات معالجة مياه الصرف الصحي", "مصانع تدوير المخلفات العضوية والأغذية", "مدافن المخلفات البلدية"],
     "capabilitiesEn": ["Proprietary eco-friendly formulations (ET-POT-01 & ET-POR-01)", "100% non-pathogenic, non-toxic biological agents", "Rapid field application mobile units"],
     "capabilitiesAr": ["مركبات بيولوجية متطورة حصرية للمجموعة (ET-POT-01 و ET-POR-01)", "مستحضرات طبيعية 100% غير سامة وغير ضارة بالإنسان أو البيئة", "وحدات ميدانية متنقلة للرش والخلط والمعالجة الفورية بالموقع"],
-    "image": "/BG/Environment & Sustainability/ET-POR-01 — Odor Removal Solution.jpg"
+    "image": "/BG/Environment & Sustainability/Environmental Biotechnology Services.jpg"
   },
   {
     "id": "srv-env-rd",
-    "code": "SBA-SRV-ENV19",
+    "code": "SBA-SRV-ENV17",
     "sector": "environmental",
     "categoryKey": "applied-rd",
     "categoryEn": "Applied Environmental R&D",
-    "categoryAr": "البحث والتطوير العلمي البيئي التطبيقي",
-    "nameEn": "Applied Environmental Research, Laboratory Assays & Technology Commercialization",
-    "nameAr": "البحث والتطوير العلمي البيئي التطبيقي",
+    "categoryAr": "البحث والتطوير العلمي البيئي",
+    "nameEn": "Applied Environmental R&D",
+    "nameAr": "البحث والتطوير العلمي البيئي",
     "descriptionEn": "Conducting collaborative scientific R&D in partnership with universities and research institutes to engineer innovative solutions for industrial pollution and resource recovery.",
     "descriptionAr": "تنفيذ برامج البحث العلمي التطبيقي بالتعاون مع الجامعات والمراكز البحثية لتطوير حلول مبتكرة لمشاكل التلوث الصناعي، ومعالجة المياه واسترداد الموارد.",
     "scopeOfWorkEn": [
@@ -948,11 +890,11 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["شركات الكيماويات والتعدين الكبرى", "التحالفات البحثية مع الجامعات", "حاضنات التكنولوجيا الخضراء", "هيئات البحث العلمي والابتكار الحكومية"],
     "capabilitiesEn": ["Equipped university-partnered microbiology and analytical laboratories", "Multi-disciplinary team of Ph.D. environmental chemists", "Proven track record bridging academic science with industrial market delivery"],
     "capabilitiesAr": ["معامل ميكروبيولوجية وتحليلية مجهزة بالشراكة مع الجامعات في مصر", "فريق بحثي يضم نخبة من حملة الدكتوراه في الكيمياء والبيولوجيا البيئية", "سجل ناجح في تحويل الأبحاث المعملية إلى منتجات وحلول صناعية تجارية"],
-    "image": "/BG/Environment & Sustainability/Scientific Research, Publishing & Heritage Verification.jpg"
+    "image": "/BG/Environment & Sustainability/Research & Development & Environmental Software Solutions.jpg"
   },
 
   // --------------------------------------------------------------------------
-  // DIVISION 3: APPAREL & TEXTILE MANUFACTURING SERVICES (7 Programs)
+  // DIVISION 3: APPAREL & TEXTILE MANUFACTURING SERVICES (8 Programs)
   // --------------------------------------------------------------------------
   {
     "id": "srv-app-oem",
