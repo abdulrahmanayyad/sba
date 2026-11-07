@@ -187,27 +187,24 @@ export function CorporateTimeline() {
           </div>
         </div>
 
-        {/* 3. Active Milestone Detail Card */}
+        {/* 3. Active Milestone Detail (Integrated directly in main container) */}
         <div
           key={activeYear}
-          className="relative overflow-hidden rounded-2xl border border-white/40 dark:border-white/10 bg-white/40 dark:bg-white/5 p-6 sm:p-8 backdrop-blur-xl shadow-md transition-all duration-300 animate-in fade-in"
+          className="mt-8 pt-8 border-t border-border/60 space-y-3.5 transition-all duration-300 animate-in fade-in"
         >
-          {/* Active Milestone Content */}
-          <div className="space-y-3">
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="rounded-full bg-brand-orange px-3.5 py-1 text-xs font-black font-mono text-white shadow-sm">
-                {activeMilestone.year}
-              </span>
-            </div>
-
-            <h4 className="font-head text-xl sm:text-2xl font-black text-foreground leading-snug">
-              {ar ? activeMilestone.titleAr : activeMilestone.titleEn}
-            </h4>
-
-            <p className="text-sm sm:text-base text-foreground/85 leading-relaxed text-justify">
-              {ar ? activeMilestone.detailAr : activeMilestone.detailEn}
-            </p>
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="rounded-full bg-brand-orange px-3.5 py-1 text-xs font-black font-mono text-white shadow-xs">
+              {activeMilestone.year}
+            </span>
           </div>
+
+          <h4 className="font-head text-xl sm:text-2xl font-bold text-foreground leading-snug">
+            {ar ? activeMilestone.titleAr : activeMilestone.titleEn}
+          </h4>
+
+          <p className="text-sm sm:text-base text-foreground/85 leading-relaxed text-justify sm:text-start">
+            {ar ? activeMilestone.detailAr : activeMilestone.detailEn}
+          </p>
         </div>
       </div>
     </div>
