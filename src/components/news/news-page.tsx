@@ -214,15 +214,15 @@ export function NewsPage() {
               </div>
             </div>
 
-            {/* B. Main Headline (Aligned to start) */}
-            <h1 className="font-head text-2xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight text-start drop-shadow-md max-w-5xl">
+            {/* B. Main Headline (Refined, smaller and proportional) */}
+            <h1 className="font-head text-xl sm:text-2xl lg:text-3xl font-bold text-white leading-snug tracking-tight text-start drop-shadow-md max-w-4xl">
               {ar
                 ? "الأرشيف التاريخي والأنشطة المؤسسية والتحليلات القطاعية"
                 : "Corporate Legacy, Historical Archive & Sector Insights"}
             </h1>
 
             {/* C. Intro Paragraph (Aligned to start) */}
-            <p className="mt-5 max-w-4xl text-sm sm:text-base lg:text-lg leading-relaxed text-white/90 text-start drop-shadow-sm">
+            <p className="mt-3.5 max-w-4xl text-sm sm:text-base leading-relaxed text-white/90 text-start drop-shadow-sm">
               {ar
                 ? "منصة توثيقية متكاملة تستعرض الجذور التاريخية لأنشطة المجموعة منذ عام 1977، وتطور الكيانات المتخصصة في مصر والسعودية، والتحليلات القطاعية الموثقة (2010–2020)، وصولًا إلى التأسيس المؤسسي الجامع عام 2023 وأنشطة المجموعة الحديثة حتى 2026."
                 : "A unified institutional platform documenting operational roots from 1977, cross-border entity growth in Egypt and Saudi Arabia, sector insights (2010–2020), and unified corporate activities following the 2023 institutional integration."}
