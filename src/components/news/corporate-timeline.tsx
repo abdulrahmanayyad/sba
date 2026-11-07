@@ -12,7 +12,6 @@ import {
   ChevronLeft,
   Sparkles,
   MapPin,
-  Clock,
   ArrowRight
 } from "lucide-react";
 import { Reveal } from "@/components/home/reveal";
@@ -217,50 +216,31 @@ export function CorporateTimeline() {
         </div>
 
         {/* 3. Active Milestone Detail Card */}
-        <div className="relative overflow-hidden rounded-2xl border border-brand-green/30 bg-gradient-to-br from-brand-green/5 via-background to-secondary/30 p-6 sm:p-8 backdrop-blur-md transition-all duration-500">
-          <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
-            {/* Active Milestone Content */}
-            <div className="space-y-3 flex-1">
-              {!activeMilestone.isIntegrationMilestone && (
-                <div className="flex flex-wrap items-center gap-2">
-                  <span className="rounded-full bg-brand-orange px-3.5 py-1 text-xs font-black font-mono text-white shadow-sm">
-                    {activeMilestone.year}
-                  </span>
-                  <span className="inline-flex items-center gap-1 rounded-full bg-secondary border border-border px-3 py-1 text-xs font-bold text-foreground">
-                    <MapPin className="size-3 text-brand-green" />
-                    <span>{ar ? activeMilestone.countryAr : activeMilestone.countryEn}</span>
-                  </span>
-                  <span className="inline-flex items-center gap-1 rounded-full bg-brand-green/10 text-brand-green border border-brand-green/30 px-3 py-1 text-xs font-bold">
-                    <span>{ar ? activeMilestone.sectorTagAr : activeMilestone.sectorTagEn}</span>
-                  </span>
-                </div>
-              )}
-
-              <h4 className="font-head text-xl sm:text-2xl font-black text-foreground leading-snug">
-                {ar ? activeMilestone.titleAr : activeMilestone.titleEn}
-              </h4>
-
-              <p className="text-sm sm:text-base text-foreground/85 leading-relaxed text-justify">
-                {ar ? activeMilestone.detailAr : activeMilestone.detailEn}
-              </p>
-            </div>
-
-            {/* Quick Context Card */}
-            <div className="lg:w-80 rounded-xl border border-border/80 bg-background/90 p-4 shrink-0 space-y-2.5">
-              <div className="text-[11px] font-bold text-muted-foreground uppercase tracking-wider flex items-center gap-1.5">
-                <Clock className="size-3 text-brand-orange" />
-                <span>{ar ? "الموقع والدلالة الاستراتيجية" : "Strategic Significance"}</span>
-              </div>
-              <div className="text-xs text-foreground/90 font-medium leading-relaxed">
-                {ar ? activeMilestone.summaryAr : activeMilestone.summaryEn}
-              </div>
-              <div className="pt-2 border-t border-border/50 flex items-center justify-between text-[11px] font-mono text-muted-foreground">
-                <span>{ar ? "النطاق الجغرافي:" : "Scope:"}</span>
-                <span className="font-bold text-foreground">
-                  {ar ? activeMilestone.countryAr : activeMilestone.countryEn}
+        <div className="relative overflow-hidden rounded-2xl border border-white/40 dark:border-white/10 bg-white/40 dark:bg-white/5 p-6 sm:p-8 backdrop-blur-xl shadow-md transition-all duration-500">
+          {/* Active Milestone Content */}
+          <div className="space-y-3">
+            {!activeMilestone.isIntegrationMilestone && (
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="rounded-full bg-brand-orange px-3.5 py-1 text-xs font-black font-mono text-white shadow-sm">
+                  {activeMilestone.year}
+                </span>
+                <span className="inline-flex items-center gap-1 rounded-full bg-secondary border border-border px-3 py-1 text-xs font-bold text-foreground">
+                  <MapPin className="size-3 text-brand-green" />
+                  <span>{ar ? activeMilestone.countryAr : activeMilestone.countryEn}</span>
+                </span>
+                <span className="inline-flex items-center gap-1 rounded-full bg-brand-green/10 text-brand-green border border-brand-green/30 px-3 py-1 text-xs font-bold">
+                  <span>{ar ? activeMilestone.sectorTagAr : activeMilestone.sectorTagEn}</span>
                 </span>
               </div>
-            </div>
+            )}
+
+            <h4 className="font-head text-xl sm:text-2xl font-black text-foreground leading-snug">
+              {ar ? activeMilestone.titleAr : activeMilestone.titleEn}
+            </h4>
+
+            <p className="text-sm sm:text-base text-foreground/85 leading-relaxed text-justify">
+              {ar ? activeMilestone.detailAr : activeMilestone.detailEn}
+            </p>
           </div>
         </div>
       </div>
