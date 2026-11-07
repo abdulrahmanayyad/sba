@@ -222,16 +222,10 @@ export function ProductsCataloguePage() {
               <span>{ar ? "مكتبة الكتالوجات" : "Catalogue Library"}</span>
             </div>
 
-            <h1 className="font-head text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-foreground leading-tight tracking-tight text-center mx-auto">
-              {ar ? (
-                <>
-                  محفظة <span className="text-brand-orange">المنتجات المعتمدة</span> للتوريد والتصدير
-                </>
-              ) : (
-                <>
-                  Verified <span className="text-brand-orange">Products Portfolio</span> for Supply & Export
-                </>
-              )}
+            <h1 className="font-head text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-black dark:text-white leading-tight tracking-tight text-center mx-auto">
+              {ar
+                ? "محفظة المنتجات المعتمدة للتوريد والتصدير"
+                : "Verified Products Portfolio for Supply & Export"}
             </h1>
 
             <p className="mt-4 max-w-3xl mx-auto text-base sm:text-lg text-muted-foreground leading-relaxed">
