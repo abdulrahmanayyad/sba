@@ -101,8 +101,8 @@ export function ProductsCataloguePage() {
         titleEn: "Section 1: Kids & Baby Wear",
         subtitleAr: "5 تصنيفات معتمدة للتصنيع والتوريد (كاجوال، أندر وير، هوم وير، رياضي وأطقم تمارين، حديثي الولادة)",
         subtitleEn: "5 certified manufacturing lines (Casual, Underwear, Homewear, Sportswear, Newborn)",
-        badgeAr: "حديثو الولادة حتى 12 سنة",
-        badgeEn: "Newborn to 12 Years",
+        badgeAr: "أزياء أطفالي",
+        badgeEn: "Kids' Wear",
         products: filteredProducts.filter((p) => p.mainDepartmentEn === "Kids & Baby Wear"),
       },
       {
@@ -111,8 +111,8 @@ export function ProductsCataloguePage() {
         titleEn: "Section 2: Women’s Wear",
         subtitleAr: "3 تصنيفات معتمدة ومخصصة (الأندر وير، الهوم وير والبيجامات، واللانجري)",
         subtitleEn: "3 certified lines (Underwear, Homewear & Pyjamas, Lingerie)",
-        badgeAr: "ملابس نسائية فاخرة",
-        badgeEn: "Women's Essentials & Lingerie",
+        badgeAr: "أزياء نسائية",
+        badgeEn: "Women's Wear",
         products: filteredProducts.filter((p) => p.mainDepartmentEn === "Women's Wear"),
       },
       {
@@ -121,8 +121,8 @@ export function ProductsCataloguePage() {
         titleEn: "Section 3: Men’s Wear",
         subtitleAr: "5 تصنيفات متكاملة (الكاجوال، الكلاسيك، القمصان الرسمي، الهوم وير، الرياضي وأطقم التمرين)",
         subtitleEn: "5 comprehensive categories (Casual, Classic, Formal Shirts, Homewear, Sportswear & Gym)",
-        badgeAr: "أزياء رجالية متكاملة",
-        badgeEn: "Men's Full Range",
+        badgeAr: "أزياء رجالية",
+        badgeEn: "Men's Wear",
         products: filteredProducts.filter((p) => p.mainDepartmentEn === "Men's Wear"),
       },
     ];
@@ -438,7 +438,7 @@ export function ProductsCataloguePage() {
                       </p>
                     </div>
                   </div>
-                  <span className="inline-flex items-center self-start sm:self-auto rounded-full bg-secondary/80 px-3 py-1 text-[11px] font-bold text-foreground border border-border shrink-0">
+                  <span className="inline-flex items-center self-start sm:self-auto rounded-xl bg-brand-green px-3.5 py-1.5 text-xs font-bold text-white shadow-xs shrink-0">
                     {ar ? sec.badgeAr : sec.badgeEn}
                   </span>
                 </div>
