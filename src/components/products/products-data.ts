@@ -1252,7 +1252,7 @@ export const productCategoriesConfig = [
     labelEn: "Ready-Made Garments",
     labelAr: "منتجات الملابس الجاهزة",
     descEn: "Export-certified ready-made garments across Kids & Baby, Women, and Men wear for international buyers, brands, and wholesalers.",
-    descAr: "حلول تصنيع وتصدير الملابس الجاهزة المعتمدة للأطفال والنساء والرجال، موجهة للعلامات التجارية والمستوردين وتجار الجملة دولياً.",
+    descAr: "حلول تصنيع الملابس الجاهزة للأطفال والنساء والرجال، موجهة للعلامات التجارية والمستوردين وتجار الجملة",
     categories: [
       { key: "all", labelEn: "All Products", labelAr: "كافة المنتجات" },
       { key: "kids-wear", labelEn: "Kids & Baby Wear", labelAr: "ملابس الأطفال" },
