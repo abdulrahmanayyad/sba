@@ -25,8 +25,8 @@ export function EconomicIndicatorsWidget() {
             </div>
             <h3 className="text-center font-head text-2xl sm:text-3xl font-bold text-foreground leading-snug">
               {ar
-                ? "مؤشرات نمو القطاعات الاقتصادية الموثقة (2010–2020)"
-                : "Verified Economic & Sectoral Benchmarks (2010–2020)"}
+                ? "مؤشرات نمو القطاعات الاقتصادية الموثقة"
+                : "Verified Economic & Sectoral Benchmarks"}
             </h3>
             <p className="mt-3 text-xs sm:text-sm text-muted-foreground leading-relaxed text-center mx-auto max-w-full whitespace-normal lg:whitespace-nowrap">
               {ar
