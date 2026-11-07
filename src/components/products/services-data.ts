@@ -668,7 +668,7 @@ export const professionalServices: ProfessionalService[] = [
     "categoryEn": "Biogas Plants & Digestion",
     "categoryAr": "محطات الغاز الحيوي (البيوجاز)",
     "nameEn": "Commercial Anaerobic Digestion & Biogas Power Generation Plants",
-    "nameAr": "إنشاء محطات الهضم اللاهوائي وإنتاج الغاز الحيوي وتوليد الكهرباء",
+    "nameAr": "إنشاء محطات الهضم اللاهوائي وإنتاج الغاز الحيوي",
     "descriptionEn": "Designing and constructing industrial CSTR and UASB biogas reactors utilizing livestock manure, agro-industrial sludges, and food waste to generate green methane and biofertilizer.",
     "descriptionAr": "تصميم وإنشاء محطات الغاز الحيوي (البيوجاز) الصناعية والتخمير اللاهوائي لمخلفات المزارع ومصانع الأغذية والصرف الصحي لتوليد الكهرباء وإنتاج السماد العضوي.",
     "scopeOfWorkEn": [
