@@ -71,10 +71,7 @@ export function CorporateTimeline() {
   return (
     <div className="w-full">
       {/* 1. Legacy Heritage Intro Hero */}
-      <div className="relative overflow-hidden rounded-3xl border border-white/20 bg-background/60 p-6 sm:p-10 lg:p-12 shadow-xl backdrop-blur-2xl transition-all duration-500 hover:border-white/40 hover:bg-background/80 hover:shadow-2xl">
-        <div className="absolute -top-24 -end-24 size-96 rounded-full bg-brand-green/10 blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-24 -start-24 size-96 rounded-full bg-brand-orange/10 blur-3xl pointer-events-none" />
-
+      <div className="relative overflow-hidden rounded-3xl border border-white/50 dark:border-white/15 bg-white/50 dark:bg-white/10 p-6 sm:p-10 lg:p-12 shadow-lg backdrop-blur-xl transition-all duration-300 hover:border-white/80 dark:hover:border-white/20 hover:bg-white/70 dark:hover:bg-white/15 hover:shadow-xl">
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           {/* Top Pill */}
           <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-4">
