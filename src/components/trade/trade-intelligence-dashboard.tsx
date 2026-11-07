@@ -119,7 +119,7 @@ export function TradeIntelligenceDashboard({ ar = true }: TradeIntelligenceDashb
             {DOCUMENTED_BUYER_REQUIREMENTS.map((req) => (
               <div
                 key={req.id}
-                className="group relative flex flex-col justify-between rounded-3xl border border-white/15 bg-background/60 p-5 backdrop-blur-xl transition-all duration-300 hover:border-brand-orange/50 hover:bg-background/80 hover:shadow-2xl"
+                className="group relative flex flex-col justify-between rounded-3xl border border-white/15 bg-background/60 p-5 backdrop-blur-xl transition-all duration-300 hover:border-brand-green/60 hover:bg-background/80 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)] hover:-translate-y-1"
               >
                 <div>
                   {/* Top Bar */}

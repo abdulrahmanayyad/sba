@@ -156,7 +156,7 @@ export function AboutPage() {
               const Icon = sectorIcons[index] ?? Layers;
               return (
                 <Reveal key={sector.title} delay={index * 0.08}>
-                  <div className="group flex h-full flex-col justify-between rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-6 sm:p-7 backdrop-blur-2xl shadow-[0_10px_35px_rgba(0,0,0,0.04)] ring-1 ring-white/30 transition-all duration-300 hover:-translate-y-1.5 hover:scale-[1.015] hover:bg-white/60 dark:hover:bg-white/20 hover:shadow-xl hover:border-brand-green/50 cursor-pointer">
+                  <div className="group flex h-full flex-col justify-between rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-6 sm:p-7 backdrop-blur-2xl shadow-[0_10px_35px_rgba(0,0,0,0.04)] ring-1 ring-white/30 transition-all duration-300 hover:-translate-y-1 hover:bg-white/60 dark:hover:bg-white/20 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)] hover:border-brand-green/50 cursor-pointer">
                     <div>
                       <div className="flex items-center justify-center text-center">
                         <span className="rounded-full border border-white/50 bg-white/50 dark:bg-white/15 px-3.5 py-1 text-[11px] font-bold text-brand-orange shadow-xs backdrop-blur-md">
@@ -197,7 +197,7 @@ export function AboutPage() {
           <Reveal delay={0.15}>
             <div className="mt-12 max-w-6xl mx-auto">
               {/* Parent Holding Node — Glassmorphic, Larger & Prominent */}
-              <div className="group relative mx-auto max-w-2xl rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-8 sm:p-10 text-center shadow-[0_16px_50px_rgba(0,0,0,0.05)] backdrop-blur-3xl transition-all duration-500 hover:-translate-y-1.5 hover:scale-[1.01] hover:bg-white/60 dark:hover:bg-white/20 hover:border-brand-orange/50 hover:shadow-[0_25px_60px_rgba(0,0,0,0.1)] ring-1 ring-white/30">
+              <div className="group relative mx-auto max-w-2xl rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-8 sm:p-10 text-center shadow-[0_16px_50px_rgba(0,0,0,0.05)] backdrop-blur-3xl transition-all duration-300 hover:-translate-y-1 hover:bg-white/60 dark:hover:bg-white/20 hover:border-brand-green/50 hover:shadow-[0_18px_45px_-12px_rgba(22,135,108,0.22)] ring-1 ring-white/30">
                 <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/50 dark:bg-white/15 px-4 py-1.5 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
                   <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
                   <span className="font-bold text-black dark:text-white">{ar ? "الكيان المؤسسي الموحد (الشركة الأم)" : "Unified Parent Holding Entity"}</span>
@@ -257,10 +257,10 @@ export function AboutPage() {
                   return (
                     <div
                       key={sIdx}
-                      className="group relative flex flex-col justify-between rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-7 sm:p-8 min-h-[260px] shadow-[0_12px_36px_rgba(0,0,0,0.05)] backdrop-blur-3xl ring-1 ring-white/30 transition-all duration-500 hover:scale-[1.02] hover:-translate-y-1.5 hover:bg-white/60 dark:hover:bg-white/20 hover:border-brand-orange/50 hover:shadow-[0_20px_48px_rgba(0,0,0,0.1)]"
+                      className="group relative flex flex-col justify-between rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-7 sm:p-8 min-h-[260px] shadow-[0_12px_36px_rgba(0,0,0,0.05)] backdrop-blur-3xl ring-1 ring-white/30 transition-all duration-300 hover:-translate-y-1 hover:bg-white/60 dark:hover:bg-white/20 hover:border-brand-green/50 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)]"
                     >
                       <div>
-                        <h4 className="font-head text-lg sm:text-xl font-bold text-foreground leading-snug group-hover:text-brand-orange transition-colors">
+                        <h4 className="font-head text-lg sm:text-xl font-bold text-foreground leading-snug group-hover:text-brand-green transition-colors">
                           {ar ? sec.nameAr : sec.nameEn}
                         </h4>
 
@@ -306,7 +306,7 @@ export function AboutPage() {
             <div className="grid gap-4 sm:grid-cols-2 lg:col-span-7">
               {ourApproachData.steps.map((step, idx) => (
                 <Reveal key={step.num} delay={idx * 0.08}>
-                  <div className="h-full rounded-2xl border border-white/20 bg-background/60 p-6 backdrop-blur-xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-orange/40 hover:shadow-md">
+                  <div className="h-full rounded-2xl border border-white/20 bg-background/60 p-6 backdrop-blur-xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-green/40 hover:shadow-md">
                     <span className="font-mono text-xs font-bold text-brand-orange">
                       {ar ? step.num : `STEP ${step.num}`}
                     </span>
@@ -367,7 +367,7 @@ export function AboutPage() {
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {whySbaData.pillars.map((pillar, idx) => (
               <Reveal key={pillar.title} delay={idx * 0.06}>
-                <div className="flex h-full flex-col justify-between rounded-2xl border border-white/20 bg-background/60 p-6 backdrop-blur-xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-orange/40 hover:shadow-md">
+                <div className="flex h-full flex-col justify-between rounded-2xl border border-white/20 bg-background/60 p-6 backdrop-blur-xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-green/40 hover:shadow-md">
                   <div>
                     <div className="flex items-center justify-center gap-3">
                       <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-brand-orange/10 font-mono text-xs font-bold text-brand-orange">
@@ -387,7 +387,7 @@ export function AboutPage() {
 
             {/* Conclusion card */}
             <Reveal delay={0.45} className="sm:col-span-2 lg:col-span-1">
-              <div className="flex h-full flex-col justify-center items-center text-center rounded-2xl border border-brand-green/30 bg-gradient-to-br from-brand-green/10 via-background/60 to-background/80 p-6 backdrop-blur-xl shadow-sm transition-all duration-300 hover:scale-[1.01] hover:border-brand-orange/40 hover:shadow-lg">
+              <div className="flex h-full flex-col justify-center items-center text-center rounded-2xl border border-brand-green/30 bg-gradient-to-br from-brand-green/10 via-background/60 to-background/80 p-6 backdrop-blur-xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-green/50 hover:shadow-lg">
                 <h3 className="font-head text-lg sm:text-xl font-extrabold text-foreground">
                   {ar ? "تواصل معنا لبدء الشراكة" : "Connect with Us to Partner"}
                 </h3>

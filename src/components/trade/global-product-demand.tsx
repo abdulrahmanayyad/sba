@@ -100,13 +100,13 @@ export function GlobalProductDemand({ ar = true, onInquireProduct }: GlobalProdu
           return (
             <div
               key={idx}
-              className="group flex flex-col justify-between rounded-3xl border border-white/15 bg-background/60 p-5 backdrop-blur-xl transition-all duration-300 hover:border-brand-orange/40 hover:bg-background/80 hover:shadow-2xl hover:-translate-y-1"
+              className="group flex flex-col justify-between rounded-3xl border border-white/15 bg-background/60 p-5 backdrop-blur-xl transition-all duration-300 hover:border-brand-green/60 hover:bg-background/80 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)] hover:-translate-y-1"
             >
               <div>
                 {/* Product Titles */}
                 <div className="flex items-start justify-between gap-3 border-b border-white/10 pb-3">
                   <div>
-                    <h4 className="text-base font-bold text-foreground group-hover:text-brand-orange transition-colors">
+                    <h4 className="text-base font-bold text-foreground group-hover:text-brand-green transition-colors">
                       {prod.nameAr}
                     </h4>
                     <p className="text-xs text-muted-foreground font-medium">

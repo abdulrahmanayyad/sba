@@ -181,7 +181,7 @@ export function InvestorRelationsPage() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {investmentOverviewData.pillars.map((pillar, idx) => (
             <Reveal key={idx} delay={idx * 0.08}>
-              <div className="glass-card flex h-full flex-col justify-between rounded-3xl border border-white/30 bg-background/85 p-6 shadow-md backdrop-blur-xl transition-all duration-300 hover:scale-[1.02] hover:border-brand-green/60 hover:shadow-xl">
+              <div className="glass-card flex h-full flex-col justify-between rounded-3xl border border-white/30 bg-background/85 p-6 shadow-md backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-brand-green/60 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)]">
                 <div>
                   <div className="flex items-center justify-between mb-4">
                     <span className="size-8 rounded-2xl bg-brand-green/10 flex items-center justify-center text-brand-green font-bold text-xs">
@@ -267,7 +267,7 @@ export function InvestorRelationsPage() {
         <div className="grid gap-6 md:grid-cols-2">
           {investmentOpportunities.map((opp, idx) => (
             <Reveal key={opp.id} delay={idx * 0.08}>
-              <div className="glass-card flex h-full flex-col justify-between rounded-3xl border border-white/30 bg-background/85 p-6 sm:p-8 shadow-md backdrop-blur-xl transition-all duration-300 hover:scale-[1.01] hover:border-brand-green/60 hover:shadow-2xl">
+              <div className="glass-card flex h-full flex-col justify-between rounded-3xl border border-white/30 bg-background/85 p-6 sm:p-8 shadow-md backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-brand-green/60 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)]">
                 <div>
                   <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
                     <span className="inline-flex items-center gap-1.5 rounded-full border border-brand-green/30 bg-brand-green/10 px-3 py-1 text-xs font-bold text-brand-green">

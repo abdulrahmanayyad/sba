@@ -200,7 +200,7 @@ export function DownloadsPage() {
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {filteredDownloads.map((doc, idx) => (
               <Reveal key={doc.id} delay={idx * 0.04}>
-                <div className="glass-card group flex h-full flex-col justify-between rounded-3xl border border-white/40 bg-background/85 p-6 shadow-md backdrop-blur-xl transition-all duration-300 hover:scale-[1.01] hover:border-brand-green/60 hover:shadow-2xl">
+                <div className="glass-card group flex h-full flex-col justify-between rounded-3xl border border-white/40 bg-background/85 p-6 shadow-md backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-brand-green/60 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)]">
                   <div>
                     {/* Top Badges */}
                     <div className="flex items-center justify-between gap-2 mb-3">

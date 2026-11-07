@@ -372,7 +372,7 @@ export function ServicesCataloguePage() {
                 {filteredServices.map((service) => (
                   <div
                     key={service.id}
-                    className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-white/20 bg-background/85 shadow-md backdrop-blur-xl transition-all duration-300 hover:scale-[1.015] hover:border-brand-green/60 hover:shadow-2xl"
+                    className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-white/20 bg-background/85 shadow-md backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-brand-green/60 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)]"
                   >
                     <div>
                       {/* Service Image Banner */}

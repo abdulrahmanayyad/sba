@@ -336,7 +336,7 @@ export function ProductsCataloguePage() {
             {filteredProducts.map((product) => (
               <div
                 key={product.id}
-                className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-white/20 bg-background/85 shadow-md backdrop-blur-xl transition-all duration-300 hover:scale-[1.015] hover:border-brand-orange/60 hover:shadow-2xl"
+                className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-white/20 bg-background/85 shadow-md backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-brand-green/60 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)]"
               >
                 <div>
                   {/* Product Image */}
@@ -373,7 +373,7 @@ export function ProductsCataloguePage() {
 
                   {/* Content */}
                   <div className="p-6">
-                    <h4 className="text-center font-head text-base sm:text-lg font-bold text-foreground group-hover:text-brand-orange transition-colors leading-snug">
+                    <h4 className="text-center font-head text-base sm:text-lg font-bold text-foreground group-hover:text-brand-green transition-colors leading-snug">
                       {ar ? product.nameAr : product.nameEn}
                     </h4>
 

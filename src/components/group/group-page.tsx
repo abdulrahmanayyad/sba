@@ -177,7 +177,7 @@ export function GroupPage() {
                   {sector.subsectors && (
                     <div className="mt-4 grid gap-3 sm:grid-cols-2">
                       {sector.subsectors.map((sub, sIdx) => (
-                        <div key={sIdx} className="rounded-xl border border-white/50 bg-white/40 dark:bg-white/10 p-3.5 backdrop-blur-md transition-all duration-300 hover:border-white/80 hover:bg-white/60 dark:hover:bg-white/20 hover:scale-[1.02]">
+                        <div key={sIdx} className="rounded-xl border border-white/50 bg-white/40 dark:bg-white/10 p-3.5 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-brand-green/60 hover:shadow-md hover:bg-white/60 dark:hover:bg-white/20">
                           <p className="font-head text-xs sm:text-sm font-bold text-foreground">
                             {ar ? sub.titleAr : sub.titleEn}
                           </p>
@@ -296,7 +296,7 @@ export function GroupPage() {
                           <span>{partnerShort[p.id] || "Partner"}</span>
                         </span>
                       </div>
-                      <h3 className="text-start font-head text-base font-bold text-foreground group-hover:text-brand-orange transition-colors">
+                      <h3 className="text-start font-head text-base font-bold text-foreground group-hover:text-brand-green transition-colors">
                         {ar ? p.nameAr : p.name}
                       </h3>
                       <p className="mt-2 text-xs text-muted-foreground leading-relaxed text-start">
@@ -375,7 +375,7 @@ export function GroupPage() {
                       </div>
                     </div>
                     <div className="p-5 sm:p-6 text-start">
-                      <h3 className="text-start font-head text-base sm:text-lg font-bold text-foreground leading-snug group-hover:text-brand-orange transition-colors">
+                      <h3 className="text-start font-head text-base sm:text-lg font-bold text-foreground leading-snug group-hover:text-brand-green transition-colors">
                         {ar ? article.titleAr : article.titleEn}
                       </h3>
                       <p className="mt-2.5 text-xs sm:text-sm text-muted-foreground leading-relaxed line-clamp-3 text-start">
@@ -387,7 +387,7 @@ export function GroupPage() {
                     <Link
                       to="/news/$slug"
                       params={{ slug: article.slug }}
-                      className="inline-flex items-center gap-2 text-xs font-bold text-brand-green group-hover:text-brand-orange transition-colors"
+                      className="inline-flex items-center gap-2 text-xs font-bold text-brand-green group-hover:text-brand-green transition-colors"
                     >
                       <span>{ar ? "قراءة التحليل والمقال" : "Read Full Article"}</span>
                       <ArrowRight className="size-3.5 rtl:rotate-180" />

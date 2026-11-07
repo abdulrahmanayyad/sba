@@ -907,7 +907,7 @@ function FoodAboutTab({
               <Reveal key={prod.id} delay={idx * 0.05}>
                 <div
                   onClick={() => onOpenProductDossier(prod)}
-                  className="group rounded-3xl border border-white/30 bg-background/90 p-5 shadow-sm backdrop-blur-xl h-full flex flex-col justify-between hover:border-brand-orange hover:shadow-2xl hover:-translate-y-1 transition-all cursor-pointer"
+                  className="group rounded-3xl border border-white/30 bg-background/90 p-5 shadow-sm backdrop-blur-xl h-full flex flex-col justify-between hover:border-brand-green hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)] hover:-translate-y-1 transition-all cursor-pointer"
                 >
                   <div>
                     <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl mb-4 bg-secondary">

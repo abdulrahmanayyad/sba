@@ -113,7 +113,7 @@ export function PartnersPage() {
         <div className="grid gap-6 md:grid-cols-2">
           {strategicPartners.map((partner, idx) => (
             <Reveal key={partner.id} delay={idx * 0.06}>
-              <div className="glass-card group flex h-full flex-col justify-between rounded-3xl border border-white/30 bg-background/85 p-6 sm:p-8 shadow-md backdrop-blur-xl transition-all duration-300 hover:scale-[1.01] hover:border-brand-green/60 hover:shadow-2xl active:scale-[0.99] cursor-pointer">
+              <div className="glass-card group flex h-full flex-col justify-between rounded-3xl border border-white/30 bg-background/85 p-6 sm:p-8 shadow-md backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-brand-green/60 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)] active:translate-y-0 cursor-pointer">
                 <div>
                   <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
                     <span className="inline-flex items-center gap-1.5 rounded-full border border-brand-green/30 bg-brand-green/10 px-3 py-1 text-xs font-bold text-brand-green">
@@ -405,7 +405,7 @@ export function PartnersPage() {
 
       {/* 5. Discuss a Partnership CTA Box */}
       <section className="site-container py-12">
-        <div className="mx-auto max-w-5xl overflow-hidden rounded-3xl border border-white/20 bg-background/80 p-8 sm:p-12 shadow-[0_8px_40px_rgba(0,0,0,0.18)] backdrop-blur-2xl grid gap-8 lg:grid-cols-[1.3fr_1fr] items-center transition-all duration-300 hover:scale-[1.01] hover:shadow-2xl hover:border-brand-green/40">
+        <div className="mx-auto max-w-5xl overflow-hidden rounded-3xl border border-white/20 bg-background/80 p-8 sm:p-12 shadow-[0_8px_40px_rgba(0,0,0,0.18)] backdrop-blur-2xl grid gap-8 lg:grid-cols-[1.3fr_1fr] items-center transition-all duration-300 hover:border-brand-green/40 hover:shadow-[0_20px_48px_-12px_rgba(0,0,0,0.12),0_0_24px_-6px_rgba(22,135,108,0.12)]">
           <div>
             <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />

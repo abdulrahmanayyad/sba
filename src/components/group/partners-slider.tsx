@@ -75,7 +75,7 @@ export function PartnersSlider({ ar }: { ar: boolean }) {
           return (
             <div
               key={audience.en}
-              className="group relative overflow-hidden rounded-3xl border border-white/25 bg-background/80 p-6 sm:p-7 shadow-lg backdrop-blur-xl transition-all duration-500 hover:shadow-2xl hover:border-brand-green/50 hover:scale-[1.02] flex flex-col justify-between"
+              className="group relative overflow-hidden rounded-3xl border border-white/25 bg-background/80 p-6 sm:p-7 shadow-lg backdrop-blur-xl transition-all duration-300 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)] hover:border-brand-green/50 hover:-translate-y-1 flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between gap-3 mb-4">

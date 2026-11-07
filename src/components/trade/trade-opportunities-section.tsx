@@ -100,7 +100,7 @@ export function TradeOpportunitiesSection({ ar = true }: TradeOpportunitiesSecti
         {TRADE_OPPORTUNITIES.map((opp) => (
           <div
             key={opp.id}
-            className="group relative flex flex-col justify-between rounded-3xl border border-white/15 bg-background/60 p-6 backdrop-blur-xl shadow-xl transition-all duration-300 hover:border-brand-orange hover:bg-background/80 hover:shadow-2xl hover:-translate-y-1"
+            className="group relative flex flex-col justify-between rounded-3xl border border-white/15 bg-background/60 p-6 backdrop-blur-xl shadow-xl transition-all duration-300 hover:border-brand-green/60 hover:bg-background/80 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)] hover:-translate-y-1"
           >
             <div>
               {/* Top Meta */}
@@ -115,7 +115,7 @@ export function TradeOpportunitiesSection({ ar = true }: TradeOpportunitiesSecti
 
               {/* Product & Destination */}
               <div className="mt-3.5 space-y-1">
-                <h4 className="text-lg font-bold text-foreground group-hover:text-brand-orange transition-colors">
+                <h4 className="text-lg font-bold text-foreground group-hover:text-brand-green transition-colors">
                   {ar ? opp.productAr : opp.productEn}
                 </h4>
                 <div className="flex items-center gap-1.5 text-xs text-muted-foreground font-medium">
