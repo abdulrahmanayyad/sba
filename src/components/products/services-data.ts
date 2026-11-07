@@ -697,7 +697,7 @@ export const professionalServices: ProfessionalService[] = [
     "categoryEn": "Renewable Energy Solutions",
     "categoryAr": "حلول وأنظمة الطاقة المتجددة",
     "nameEn": "Commercial & Industrial Solar PV & Hybrid Renewable Energy Systems",
-    "nameAr": "محطات الطاقة الشمسية الكهروضوئية والحلول الهجينة للمنشآت الصناعية",
+    "nameAr": "محطات الطاقة الشمسية الكهروضوئية للمنشآت الصناعية",
     "descriptionEn": "EPC engineering of rooftop, ground-mounted, and microgrid solar photovoltaic systems reducing enterprise utility costs and decarbonizing industrial operations.",
     "descriptionAr": "تصميم وتوريد وتركيب وتشغيل محطات الطاقة الشمسية الكهروضوئية (Solar PV) على أسطح المصانع والمزارع والمنظومات الهجينة لخفض فواتير الطاقة والانبعاثات.",
     "scopeOfWorkEn": [
