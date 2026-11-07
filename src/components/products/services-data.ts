@@ -1218,7 +1218,7 @@ export const serviceDivisionsConfig = [
     descEn: "Turnkey general contracting, civil infrastructure, structural engineering, medical fit-outs, and project management.",
     descAr: "مقاولات عامة متكاملة، بنية تحتية، منشآت خرسانية ومعدنية، تجهيزات طبية وإشراف هندسي.",
     categories: [
-      { key: "all", labelEn: "All Construction Services", labelAr: "كافة خدمات المقاولات" },
+      { key: "all", labelEn: "All Services", labelAr: "كافة الخدمات" },
       { key: "general-contracting", labelEn: "General Contracting", labelAr: "المقاولات العامة" },
       { key: "civil-works", labelEn: "Construction & Civil Works", labelAr: "الأعمال المدنية والإنشائية" },
       { key: "structural-works", labelEn: "Structural Works", labelAr: "الأعمال والمنشآت الهيكلية" },
@@ -1240,7 +1240,7 @@ export const serviceDivisionsConfig = [
     descEn: "Comprehensive waste management, biogas systems, odor control, bio-remediation, EIA studies, and carbon footprint assessments.",
     descAr: "إدارة المخلفات، محطات البيوجاز وتحويل المخلفات لطاقة، معالجة الروائح، دراسات تقييم الأثر البيئي، وحساب البصمة الكربونية.",
     categories: [
-      { key: "all", labelEn: "All Environmental Solutions", labelAr: "كافة الحلول البيئية" },
+      { key: "all", labelEn: "All Services", labelAr: "كافة الخدمات" },
       { key: "environmental-assessment", labelEn: "Environmental Assessment (EIA/ESIA)", labelAr: "تقييم الأثر البيئي والمجتمعي" },
       { key: "carbon-footprint", labelEn: "Carbon Footprint & CBAM", labelAr: "البصمة الكربونية وتقارير الانبعاثات" },
       { key: "environmental-monitoring", labelEn: "Environmental Monitoring & Lab", labelAr: "القياسات والرصد المعملي" },
@@ -1267,7 +1267,7 @@ export const serviceDivisionsConfig = [
     descEn: "Private label programs, OEM/FOB manufacturing, CAD sampling, fabric dyeing, and certified quality control.",
     descAr: "تصنيع لحساب الغير، حلول OEM و FOB، تطوير العينات والباترون، الصباغة المعملية، وضبط الجودة بمقاييس AQL.",
     categories: [
-      { key: "all", labelEn: "All Manufacturing Services", labelAr: "كافة خدمات التصنيع" },
+      { key: "all", labelEn: "All Services", labelAr: "كافة الخدمات" },
       { key: "oem-manufacturing", labelEn: "OEM Contract Manufacturing", labelAr: "التصنيع الأصلي OEM" },
       { key: "odm-development", labelEn: "ODM Design & Co-Development", labelAr: "التصميم والتصنيع المشترك ODM" },
       { key: "private-label", labelEn: "Private Label Manufacturing", labelAr: "التصنيع للعلامات التجارية الخاصة" },

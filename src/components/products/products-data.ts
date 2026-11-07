@@ -880,7 +880,7 @@ export const physicalProducts: PhysicalProduct[] = [
     "categoryEn": "Natural Honey & Bee Products",
     "categoryAr": "عسل النحل الطبيعي ومنتجات النحل",
     "nameEn": "100% Pure Raw Egyptian Clover & Citrus Honey",
-    "nameAr": "عسل نحل طبيعي نقي 100% (برسيم وموالح وسدر)",
+    "nameAr": "عسل النحل",
     "taglineEn": "Unpasteurized, lab-certified pure natural honey harvested from private organic apiaries.",
     "taglineAr": "عسل نحل خام غير مبستر مفحوص معمليًا وخالٍ من بقايا المضادات والسكر المضاف.",
     "descriptionEn": "Pure natural honey harvested along the fertile Nile Valley. Tested for enzyme activity, low HMF, and pollen purity. Available in wholesale drums or retail glass jars with private labeling.",
@@ -922,7 +922,7 @@ export const physicalProducts: PhysicalProduct[] = [
     "categoryEn": "Olives & Olive Products",
     "categoryAr": "الزيتون ومنتجات الزيتون",
     "nameEn": "Egyptian Table Olives (Kalamata, Manzanilla & Picual)",
-    "nameAr": "زيتون مائدة مصري فاخر (كلاماتا، منزانيللا، وبيكوال)",
+    "nameAr": "الزيتون المصري",
     "taglineEn": "Whole, pitted, sliced, and stuffed table olives cured naturally in light brine.",
     "taglineAr": "زيتون مائدة كامل، مخلي، شرائح، ومحشو بالجزر والفلفل، مخلل طبيعيًا في محلول ملحي متوازن.",
     "descriptionEn": "Carefully handpicked from Mediterranean coastal groves and Siwa Oasis. Processed under strict hygiene and calibrated for size counts, firmness, and rich taste.",
@@ -958,7 +958,7 @@ export const physicalProducts: PhysicalProduct[] = [
     "categoryEn": "Olive Oil",
     "categoryAr": "زيت الزيتون",
     "nameEn": "Cold-Pressed Extra Virgin Olive Oil (Acidity < 0.5%)",
-    "nameAr": "زيت زيتون بكر ممتاز معصور على البارد (حموضة < 0.5%)",
+    "nameAr": "زيت زيتون بكر عصر على البارد",
     "taglineEn": "First cold-extraction virgin olive oil with rich polyphenols, golden-green hue, and fruity aroma.",
     "taglineAr": "عصرة أولى على البارد بدون معالجة حرارية أو كيميائية، غني بمضادات الأكسدة وبنكهة فاكهية متوازنة.",
     "descriptionEn": "Extracted exclusively by mechanical means within 24 hours of harvest. Free from chemical solvents, with acidity strictly under 0.5% and low peroxide values conforming to IOC standards.",
@@ -1000,7 +1000,7 @@ export const physicalProducts: PhysicalProduct[] = [
     "categoryEn": "Olive Oil",
     "categoryAr": "زيت الزيتون",
     "nameEn": "Pure Virgin & Organic Olive Oil for Culinary & Food Processing",
-    "nameAr": "زيت زيتون بكر طبيعي وعضوي للتصنيع الغذائي والطهي",
+    "nameAr": "زيت زيتون بكر طبيعي",
     "taglineEn": "Natural mechanical extraction with acidity < 1.2%, ideal for gourmet canning, dressings, and institutional kitchens.",
     "taglineAr": "مستخلص طبيعيًا بنسبة حموضة أقل من 1.2% مخصص لشركات الصناعات الغذائية والمطابخ الفندقية والتعبئة التجارية.",
     "descriptionEn": "Delivers balanced flavor profiles and high smoke points for premium culinary and food manufacturing applications. Shipped with complete international laboratory analysis and phytosanitary certificates.",
@@ -1036,7 +1036,7 @@ export const physicalProducts: PhysicalProduct[] = [
     "categoryEn": "Dates & Palm Products",
     "categoryAr": "التمور ومنتجات النخيل",
     "nameEn": "Premium Egyptian Siwi Oasis Semi-Dry Dates",
-    "nameAr": "تمور الواحات السيوية الفاخرة نصف الجافة (صعيدي/سيوي)",
+    "nameAr": "تمور الواحات نصف الجافة (صعيدي/سيوي)",
     "taglineEn": "Selected Egyptian Siwi dates naturally cured, washed, calibrated, and packed under rigorous hygiene.",
     "taglineAr": "تمور سيوية نخب أول مفرزة ومغسولة ومجففة طبيعيًا في واحة سيوة المشهورة بأجود أنواع النخيل.",
     "descriptionEn": "Rich in natural dietary fiber and minerals with a distinctive caramel sweetness. Available loose, pressed in vacuum blocks, or pitted for retail and industrial confectionery.",
@@ -1072,7 +1072,7 @@ export const physicalProducts: PhysicalProduct[] = [
     "categoryEn": "Dates & Palm Products",
     "categoryAr": "التمور ومنتجات النخيل",
     "nameEn": "Luxury Egyptian Jumbo & Super Jumbo Medjool Dates",
-    "nameAr": "تمور المجدول الملكية الفاخرة (جامبو وسوبر جامبو)",
+    "nameAr": "تمور المجدول (جامبو وسوبر جامبو)",
     "taglineEn": "The King of Dates: large plump fruit, thin translucent skin, and succulent honey-like flesh.",
     "taglineAr": "ملك التمور بحجم حبة ضخم وقشرة رقيقة ومذاق عسلي فاخر، مصنف ومفرز بالليزر بدقة فائقة.",
     "descriptionEn": "Grown in the sunny microclimates of Toshka and the New Valley. Sorted by computerized imaging for weight, caliber, and minimal skin separation (< 5%) for luxury export gifting and gourmet markets.",
@@ -1108,7 +1108,7 @@ export const physicalProducts: PhysicalProduct[] = [
     "categoryEn": "Dates & Palm Products",
     "categoryAr": "التمور ومنتجات النخيل",
     "nameEn": "Pure Natural Date Paste & High-Brix Date Molasses (Silan)",
-    "nameAr": "عجينة التمر الطبيعية ودبس التمر الصافي عالي التركيز",
+    "nameAr": "عجينة التمر ودبس التمر",
     "taglineEn": "100% pure date puree and date syrup with zero added sugar or preservatives.",
     "taglineAr": "مستخلص وعجينة تمور طبيعية 100% خالية من السكر المضاف أو المواد الحافظة لصناعات المخابز والحلويات.",
     "descriptionEn": "Industrial-grade natural date ingredients for energy bar manufacturers, bakeries, ice-cream makers, and healthy snack producers. Smooth texture and calibrated Brix levels.",
@@ -1144,7 +1144,7 @@ export const physicalProducts: PhysicalProduct[] = [
     "categoryEn": "Herbs & Natural Plants",
     "categoryAr": "الأعشاب والنباتات الطبية",
     "nameEn": "Organic Dried Egyptian Chamomile Flowers, Peppermint & Marjoram",
-    "nameAr": "أزهار البابونج المصري المجفف، النعناع الفلفلي، والمردقوش العضوي",
+    "nameAr": "الأعشاب والنباتات الطبية",
     "taglineEn": "Hand-picked, sun-dried Egyptian botanical herbs sorted and steam-sterilized for herbal teas and pharma.",
     "taglineAr": "أعشاب ونباتات طبية وعطرية مجففة طبيعيًا ومفرزة بالليزر ومبخرة وفق مواصفات التصدير لأوروبا والخليج.",
     "descriptionEn": "Sourced from certified organic growers along the Nile basin in Fayoum and Beni Suef. Rigorously inspected for heavy metals, pesticide residues, and essential oil content. Available whole or TBC (tea-bag cut).",
@@ -1173,42 +1173,6 @@ export const physicalProducts: PhysicalProduct[] = [
     ]
   },
   {
-    "id": "prod-food-herbs-hibiscus",
-    "code": "SBA-PRD-HRB02",
-    "sector": "food",
-    "categoryKey": "herbs-plants",
-    "categoryEn": "Herbs & Natural Plants",
-    "categoryAr": "الأعشاب والنباتات الطبية",
-    "nameEn": "Whole Flower Egyptian Hibiscus (Karkadeh) & Dried Botanicals",
-    "nameAr": "كركديه مصري أزهار كاملة ممتازة ونباتات عطرية مجففة",
-    "taglineEn": "Deep crimson Egyptian Aswan-grade hibiscus sabdariffa with high anthocyanin and sour fruity notes.",
-    "taglineAr": "كركديه أسواني زاهي الحمرة كامل الكؤوس غني بمضادات الأكسدة وبنكهة حمضية منعشة ومطلوبة عالميًا.",
-    "descriptionEn": "Carefully sifted to remove dust and broken fragments. Perfect for cold brew beverages, herbal infusions, natural colorant extraction, and food processing.",
-    "descriptionAr": "مغربل بعناية لإزالة الأتربة والكسر، ومناسب للمشروبات المثلجة والساخنة، واستخلاص الصبغات الطبيعية الغذائية دون أي ملوثات.",
-    "image": "/BG/Natural & Agri-Food Products/Herbs & Natural Plants.jpg",
-    "originEn": "Egypt",
-    "originAr": "جمهورية مصر العربية",
-    "originFlag": "🇪🇬",
-    "moqEn": "2 metric tons",
-    "moqAr": "2 طن متري",
-    "packagingEn": "20 kg woven polypropylene bags with inner polyethylene moisture liner.",
-    "packagingAr": "أكياس منسوجة 20 كجم مع بطانة داخلية واقية من الرطوبة.",
-    "specifications": [
-      {
-        "labelEn": "Flower Integrity",
-        "labelAr": "سلامة الزهرة",
-        "valueEn": "Whole calyxes > 85%, fine sifted",
-        "valueAr": "كؤوس كاملة أكثر من 85% مع غربلة دقيقة"
-      },
-      {
-        "labelEn": "Anthocyanin Content",
-        "labelAr": "صبغة الأنثوسيانين",
-        "valueEn": "High natural color intensity (> 1.5%)",
-        "valueAr": "كثافة لونية طبيعية عالية (> 1.5%)"
-      }
-    ]
-  },
-  {
     "id": "prod-food-spices-cumin",
     "code": "SBA-PRD-SPC01",
     "sector": "food",
@@ -1216,7 +1180,7 @@ export const physicalProducts: PhysicalProduct[] = [
     "categoryEn": "Spices & Seasonings",
     "categoryAr": "التوابل والبهارات",
     "nameEn": "Premium Whole & Ground Spices (Cumin, Coriander & Fennel)",
-    "nameAr": "توابل وبهارات طبيعية حب ومطحونة (كمون، كزبرة، شمر، وينسون)",
+    "nameAr": "التوابل والبهارات",
     "taglineEn": "Aromatic Egyptian culinary spices with high volatile oil content and deep pungent aromas.",
     "taglineAr": "بهارات وتوابل زراعية غنية بالزيوت الطيارة، مفرزة آليًا ونظيفة جاهزة للتعبئة أو الصناعات الغذائية.",
     "descriptionEn": "Commercial bulk supply of whole seeds and fine ground culinary spices for spice mills, food manufacturers, and retail packers worldwide.",
@@ -1245,42 +1209,6 @@ export const physicalProducts: PhysicalProduct[] = [
     ]
   },
   {
-    "id": "prod-food-spices-anise",
-    "code": "SBA-PRD-SPC02",
-    "sector": "food",
-    "categoryKey": "spices-seasonings",
-    "categoryEn": "Spices & Seasonings",
-    "categoryAr": "التوابل والبهارات",
-    "nameEn": "Selected Egyptian Anise Seeds & Nigella Sativa (Black Seed)",
-    "nameAr": "حبوب الينسون المصري الفاخر وحبة البركة الطبيعية (الحبة السوداء)",
-    "taglineEn": "Mechanically cleaned and color-sorted Egyptian anise and black cumin seeds with intense aroma.",
-    "taglineAr": "حبوب ينسون وحبة بركة طبيعية نظيفة ومفروزة ليزريًا بنسبة نقاء تتجاوز 99% ومناسبة للاستخدام الدوائي والغذائي.",
-    "descriptionEn": "Export-grade whole aromatic seeds known for therapeutic and culinary values. Shipped to pharmaceutical labs, herbal tea brands, and commercial bakeries across Europe and the GCC.",
-    "descriptionAr": "بذور زراعية ممتازة مشهورة بقيمتها الغذائية والعلاجية، يتم تصديرها إلى مصانع الدواء وماركات شاي الأعشاب والمخابز الكبرى في أوروبا والخليج العربي.",
-    "image": "/BG/Natural & Agri-Food Products/Spices and Seasonings.jpg",
-    "originEn": "Egypt",
-    "originAr": "جمهورية مصر العربية",
-    "originFlag": "🇪🇬",
-    "moqEn": "1 metric ton",
-    "moqAr": "1 طن متري",
-    "packagingEn": "25 kg multi-ply paper bags or 50kg PP sacks.",
-    "packagingAr": "أكياس ورقية متعددة الطبقات 25 كجم أو شكائر 50 كجم.",
-    "specifications": [
-      {
-        "labelEn": "Purity Level",
-        "labelAr": "نسبة النظافة والنقاء",
-        "valueEn": "≥ 99.5% machine-cleaned",
-        "valueAr": "99.5% نقاء ميكانيكي معقم ومفروز"
-      },
-      {
-        "labelEn": "Essential Oil",
-        "labelAr": "الزيت العطري",
-        "valueEn": "≥ 2.0% in aniseed",
-        "valueAr": "أكبر من أو يساوي 2.0% في الينسون"
-      }
-    ]
-  },
-  {
     "id": "prod-food-powder-citrus",
     "code": "SBA-PRD-PWD01",
     "sector": "food",
@@ -1288,7 +1216,7 @@ export const physicalProducts: PhysicalProduct[] = [
     "categoryEn": "Natural Powdered Juices & Ingredients",
     "categoryAr": "مستخلصات وبودرة العصائر الطبيعية والمكونات الغذائية",
     "nameEn": "Spray-Dried Natural Orange & Lemon Juice Powders & Drink Bases",
-    "nameAr": "بودرة عصير البرتقال والليمون الطبيعية المجففة بالرذاذ وقواعد المشروبات",
+    "nameAr": "بودرة العصائر الطبيعية",
     "taglineEn": "100% natural spray-dried citrus powders retaining fresh aroma, vitamins, and instant cold-water solubility.",
     "taglineAr": "بودرة عصائر حمضيات طبيعية مجففة بالرذاذ خالية من المواد الحافظة سريعة الذوبان للصناعات الغذائية والمشروبات.",
     "descriptionEn": "Highly soluble fruit powders retaining natural Vitamin C, authentic citrus color, and juicy acidity. Ideal for instant drink sachets, confectionery fillings, bakery glazes, and dairy products.",
@@ -1313,42 +1241,6 @@ export const physicalProducts: PhysicalProduct[] = [
         "labelAr": "المادة الحاملة",
         "valueEn": "Non-GMO Maltodextrin (< 5%) or Pure Fruit",
         "valueAr": "مالتوديكسترين غير معدل وراثيًا أو فاكهة مركزة نقية"
-      }
-    ]
-  },
-  {
-    "id": "prod-food-powder-botanicals",
-    "code": "SBA-PRD-PWD02",
-    "sector": "food",
-    "categoryKey": "powdered-juices",
-    "categoryEn": "Natural Powdered Juices & Ingredients",
-    "categoryAr": "مستخلصات وبودرة العصائر الطبيعية والمكونات الغذائية",
-    "nameEn": "Instant Natural Botanical Drink Extracts (Hibiscus & Tamarind Powders)",
-    "nameAr": "مستخلصات وبودرة المشروبات العشبية الفورية (كركديه وتمر هندي وخروب)",
-    "taglineEn": "Standardized herbal extract powders for instant traditional beverage preparation and natural colorants.",
-    "taglineAr": "مستخلصات بودرة نباتية سريعة التحضير للمشروبات التراثية والطبيعية ومحسنات النكهة الغذائية.",
-    "descriptionEn": "Cold-soluble micro-fine botanical powders produced from selected natural infusions. Free from synthetic colorants or artificial flavor enhancers, offering ready formulation for beverage manufacturers.",
-    "descriptionAr": "بودرة نقية مستخلصة من الكركديه والتمر هندي والخروب، خالية من الألوان الصناعية وتمنح المشروبات نكهة طبيعية مركزة وسريعة التحضير للقطاعين الصناعي والتجاري.",
-    "image": "/BG/Natural & Agri-Food Products/Natural Powdered Juices & Ingredients.jpg",
-    "originEn": "Egypt",
-    "originAr": "جمهورية مصر العربية",
-    "originFlag": "🇪🇬",
-    "moqEn": "500 kg",
-    "moqAr": "500 كجم",
-    "packagingEn": "20 kg food-grade poly-lined aluminum drums or cartons.",
-    "packagingAr": "براميل أو كراتين ألومنيوم مبطنة غذائيًا سعة 20 كجم.",
-    "specifications": [
-      {
-        "labelEn": "Moisture Content",
-        "labelAr": "نسبة الرطوبة",
-        "valueEn": "< 4.5% moisture content",
-        "valueAr": "أقل من 4.5% لحفظ النكهة والخواص"
-      },
-      {
-        "labelEn": "Color Index",
-        "labelAr": "درجة اللون",
-        "valueEn": "100% natural botanical pigment",
-        "valueAr": "صبغة نباتية طبيعية 100% بدون أي تلوين اصطناعي"
       }
     ]
   }
@@ -1381,7 +1273,7 @@ export const productCategoriesConfig = [
     descEn: "Export-grade natural honey, table olives, extra virgin olive oil, premium dates, and botanical ingredients.",
     descAr: "عسل نحل طبيعي، زيتون مائدة، زيت زيتون بكر ممتاز، تمور فاخرة، وأعشاب وتوابل زراعية معتمدة.",
     categories: [
-      { key: "all", labelEn: "All Food Products", labelAr: "كافة المنتجات الغذائية" },
+      { key: "all", labelEn: "All Products", labelAr: "كافة المنتجات" },
       { key: "honey-bee", labelEn: "Natural Honey & Bee Products", labelAr: "عسل النحل ومنتجات النحل" },
       { key: "olives-products", labelEn: "Olives & Olive Products", labelAr: "الزيتون ومنتجات الزيتون" },
       { key: "olive-oil", labelEn: "Olive Oil", labelAr: "زيت الزيتون" },

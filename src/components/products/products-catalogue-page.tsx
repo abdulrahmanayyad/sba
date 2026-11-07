@@ -144,28 +144,6 @@ export function ProductsCataloguePage() {
             loading="lazy"
             className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-
-          {/* Code & Origin Flags */}
-          <div className="absolute top-3 start-3 flex items-center gap-1.5">
-            <span className="rounded-full bg-black/70 px-2.5 py-0.5 text-[10px] font-mono font-bold text-white backdrop-blur-md border border-white/20">
-              {product.code}
-            </span>
-          </div>
-
-          <div className="absolute top-3 end-3">
-            <span className="rounded-full bg-black/60 px-2.5 py-0.5 text-xs text-white backdrop-blur-md border border-white/20 flex items-center gap-1 font-medium">
-              <span>{product.originFlag}</span>
-              <span className="text-[10px]">{ar ? product.originAr : product.originEn}</span>
-            </span>
-          </div>
-
-          {/* Category Tag */}
-          <div className="absolute bottom-3 start-3">
-            <span className="rounded-full bg-brand-orange px-2.5 py-0.5 text-[10px] font-bold text-white shadow-sm">
-              {ar ? product.categoryAr : product.categoryEn}
-            </span>
-          </div>
         </div>
 
         {/* Content */}
@@ -289,7 +267,7 @@ export function ProductsCataloguePage() {
                 <Button asChild size="sm" className="rounded-full !bg-brand-green !text-white hover:!bg-brand-orange text-xs font-bold shadow-xs cursor-pointer">
                   <a href="/downloads/SBA_Complete_Products_Portfolio_EN.pdf" download="SBA_Complete_Products_Portfolio_EN.pdf" target="_blank" rel="noopener noreferrer">
                     <Download className="size-3.5 me-1.5" />
-                    <span>{ar ? "تحميل كتالوج المنتجات المجمع (PDF)" : "Download Product Portfolio (PDF)"}</span>
+                    <span>{ar ? "تحميل كتالوج المنتجات" : "Download Products Catalogue"}</span>
                   </a>
                 </Button>
               </div>
