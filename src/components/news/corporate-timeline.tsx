@@ -3,7 +3,6 @@ import {
   CheckCircle2,
   ChevronRight,
   ChevronLeft,
-  MapPin,
   ArrowRight
 } from "lucide-react";
 import { Reveal } from "@/components/home/reveal";
@@ -187,17 +186,6 @@ export function CorporateTimeline() {
                 <span className="rounded-full bg-brand-orange px-3.5 py-1 text-xs font-black font-mono text-white shadow-sm">
                   {activeMilestone.year}
                 </span>
-                {activeMilestone.year !== 1977 && (
-                  <>
-                    <span className="inline-flex items-center gap-1 rounded-full bg-secondary border border-border px-3 py-1 text-xs font-bold text-foreground">
-                      <MapPin className="size-3 text-brand-green" />
-                      <span>{ar ? activeMilestone.countryAr : activeMilestone.countryEn}</span>
-                    </span>
-                    <span className="inline-flex items-center gap-1 rounded-full bg-brand-green/10 text-brand-green border border-brand-green/30 px-3 py-1 text-xs font-bold">
-                      <span>{ar ? activeMilestone.sectorTagAr : activeMilestone.sectorTagEn}</span>
-                    </span>
-                  </>
-                )}
               </div>
             )}
 
