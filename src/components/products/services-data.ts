@@ -1071,95 +1071,8 @@ export const professionalServices: ProfessionalService[] = [
     "image": "/BG/Apparel Manufacturing/Integrated Manufacturing.jpg"
   },
   {
-    "id": "srv-app-product-dev",
-    "code": "SBA-SRV-APP05",
-    "sector": "apparel-services",
-    "categoryKey": "product-development",
-    "categoryEn": "CAD Pattern Engineering",
-    "categoryAr": "هندسة الباترون وتطوير المنتجات",
-    "nameEn": "CAD Pattern Engineering, Computerized Grading & Tech Pack Creation",
-    "nameAr": "تنفيذ الباترونات وتطوير الملفات التقنية",
-    "descriptionEn": "Precision computerized pattern development using leading CAD systems, accurate multi-size grading, fabric consumption optimization, and comprehensive tech packs.",
-    "descriptionAr": "تطوير الباترونات الرقمية الدقيقة على أنظمة CAD المتطورة، تدريج المقاسات الأوروبية والأمريكية والخليجية، وحساب استهلاك القماش الأمثل لتوفير التكلفة.",
-    "scopeOfWorkEn": [
-      "Digitizing sketch concepts into production-ready 2D and 3D CAD pattern files",
-      "Size grading across XS to 5XL conforming to international anatomical sizing standards",
-      "Computerized nesting and marker making maximizing fabric cutting yield",
-      "Full Tech Pack generation: construction details, seam types, SPI, and tolerance specs"
-    ],
-    "scopeOfWorkAr": [
-      "تحويل الرسومات الأولية إلى باترونات رقمية جاهزة للإنتاج ثنائية وثلاثية الأبعاد",
-      "تدريج المقاسات من XS حتى 5XL وفق جداول القياسات القياسية المعتمدة",
-      "التعشيق الآلي للباترونات لتقليل هادر الأقمشة إلى أدنى نسبة ممكنة",
-      "إعداد الملف الفني الشامل (Tech Pack): تفاصيل الخياطة، عدد الغرز، ونسب التفاوت"
-    ],
-    "applicationsEn": ["Fashion Brands", "Independent Apparel Designers", "Uniform Contracting Entities", "Garment Factories"],
-    "applicationsAr": ["ماركات الأزياء العالمية والمحلية", "مصممو الأزياء المستقلون", "مؤسسات توريد الزي الموحد", "مصانع الملابس الجاهزة"],
-    "capabilitiesEn": ["Gerber AccuMark & Lectra CAD software platforms", "Automated digital pattern plotters", "Senior master patternmakers with 20+ years experience"],
-    "capabilitiesAr": ["برمجيات Gerber AccuMark و Lectra العالمية", "طابعات بلوتر رقمية عريضة لرسم الباترونات الصناعية", "خبراء باترون أول بخبرة تفوق 20 عامًا في القصات العالمية"],
-    "image": "/BG/Apparel Manufacturing/Pattern Lab & Rapid Sampling.jpg"
-  },
-  {
-    "id": "srv-app-sampling",
-    "code": "SBA-SRV-APP06",
-    "sector": "apparel-services",
-    "categoryKey": "rapid-sampling",
-    "categoryEn": "Rapid Sampling & Prototyping",
-    "categoryAr": "صناعة العينات والنماذج الأولية",
-    "nameEn": "Rapid Apparel Sampling, Fit Prototypes & Pre-Production Approvals",
-    "nameAr": "تنفيذ العينات والنماذج الأولية",
-    "descriptionEn": "Dedicated sample room operating independent lines to cut, sew, finish, and deliver proto samples, fit samples, and sales representative samples under fast turnarounds.",
-    "descriptionAr": "معمل عينات متكامل يعمل بخطوط مستقلة لقص وخياطة وتشطيب العينات الأولية وعينات الملاءمة وعينات مندوبي المبيعات قبل الإنتاج الكمي في أوقات قياسية.",
-    "scopeOfWorkEn": [
-      "First proto sample creation from customer reference images or technical tech packs",
-      "Fit sample review on live fit models and dimensional audit against spec sheets",
-      "Pre-production (PP) golden sample signing prior to bulk cutting authorization",
-      "Salesman sample (SMS) duplicate production for buyer retail trade presentations"
-    ],
-    "scopeOfWorkAr": [
-      "تنفيذ العينة الأولية (Proto Sample) من واقع الرسومات أو العينات المرجعية",
-      "فحص عينات القياس (Fit Sample) على مانيكانات وموديلات حية وتدقيق القياسات",
-      "اعتماد العينة الذهبية ما قبل الإنتاج (PP Sample) قبل إعطاء إشارة البدء للقص الكمي",
-      "إنتاج عينات المبيعات والتسويق (SMS) للعرض على المشترين في المعارض الدولية"
-    ],
-    "applicationsEn": ["Fashion Brand Merchandisers", "Retail Sourcing Teams", "Apparel Startups", "Corporate Sourcing Directors"],
-    "applicationsAr": ["مديرو المشتريات ومسؤولو الموضة", "فرق انتقاء المنتجات بسلاسل التجزئة", "الشركات الناشئة في مجال الأزياء", "مديرو التوريد للشركات"],
-    "capabilitiesEn": ["Independent prototype workshop line", "Rapid turnarounds within 5-7 business days", "In-house trim and accessories library"],
-    "capabilitiesAr": ["ورشة عينات مستقلة تمامًا عن خطوط الإنتاج الكمي", "سرعة تنفيذ وتسليم العينات خلال 5 إلى 7 أيام عمل", "مكتبة داخلية متكاملة للإكسسوارات والسحابات والخيوط"],
-    "image": "/BG/Apparel Manufacturing/Product Development & Sampling.jpg"
-  },
-  {
-    "id": "srv-app-fabric-qc",
-    "code": "SBA-SRV-APP07",
-    "sector": "apparel-services",
-    "categoryKey": "fabric-quality",
-    "categoryEn": "Custom Fabric & Quality Assurance",
-    "categoryAr": "تطوير الأقمشة وضمان الجودة الشاملة",
-    "nameEn": "Custom Fabric Sourcing, Eco-Friendly Dyeing & Multi-Stage AQL Quality Auditing",
-    "nameAr": "تطوير وتوريد الأقمشة وصباغتها",
-    "descriptionEn": "Integrated textile fabric sourcing, laboratory spectrophotometer computerized dyeing, shrinkage control, and rigorous 4-point fabric and AQL 1.5 finished garment auditing.",
-    "descriptionAr": "توريد وتطوير الأقمشة القطنية الفاخرة، الصباغة الآلية بأصباغ معتمدة من OEKO-TEX، ضبط الانكماش وثبات الألوان، وفحص الجودة بمقاييس AQL 1.5 الصارمة.",
-    "scopeOfWorkEn": [
-      "Circular and flat knitting coordination for Single Jersey, Rib, Interlock, and French Terry",
-      "Low-liquor computerized dyeing matching Pantone references with spectrophotometer verification",
-      "Fabric roll 4-point inspection system testing for knitting faults, weight (GSM), and torque",
-      "Final AQL 1.5 / 2.5 random carton auditing: stitch density, seam strength, and carton pack lists"
-    ],
-    "scopeOfWorkAr": [
-      "تطوير وتصنيع أقمشة التريكو والنسيج: سنجل جيرسيه، ريب، إنترلوك، وبيكيه وميلتون",
-      "صباغة منخفضة الاستهلاك المائي ومطابقة كمبيوترية لألوان البانتون بأجهزة الاسبكتروفوتوميتر",
-      "فحص أثواب الأقمشة بنظام النقاط الأربع (4-Point System) وثبات الأبعاد والانكماش",
-      "الفحص النهائي للكراتين وفق معيار AQL 1.5/2.5 الدولي: متانة الخياطة، نظافة التشطيب، ومطابقة التعبئة"
-    ],
-    "applicationsEn": ["International Fashion Retailers", "High-End Knitwear Brands", "Quality Audit Inspection Houses", "Corporate Apparel Buyers"],
-    "applicationsAr": ["سلاسل التجزئة العالمية للأزياء", "ماركات الملابس القطنية والتريكو الفاخرة", "بيوت التفتيش ومطابقة الجودة الدولية", "المشترون المؤسسيون للملابس الجاهزة"],
-    "capabilitiesEn": ["OEKO-TEX Standard 100 chemical conformance", "Full in-house physical testing equipment (pull-test, wash crocking)", "Zero tolerance for safety and chemical non-compliance"],
-    "capabilitiesAr": ["مطابقة للمواصفات البيئية لشهادة OEKO-TEX Standard 100", "أجهزة اختبارات ميكانيكية ومعملية (قوة شد الأزرار، ثبات الغسيل)", "صفر تسامح مع أي عيوب تؤثر على السلامة أو مظهر المنتج النهائي"],
-    "image": "/BG/Apparel Manufacturing/Textile Mill & Internal Dyeing.jpg"
-  },
-  {
     "id": "srv-app-cm",
-    "code": "SBA-SRV-APP08",
+    "code": "SBA-SRV-APP05",
     "sector": "apparel-services",
     "categoryKey": "cm-manufacturing",
     "categoryEn": "CM Manufacturing (Cut & Make)",
@@ -1207,6 +1120,93 @@ export const professionalServices: ProfessionalService[] = [
       "رقابة جودة متعددة المراحل وفحص نهائي يضمن مطابقة تامة لمواصفات العميل"
     ],
     "image": "/BG/Apparel Manufacturing/Integrated Manufacturing.jpg"
+  },
+  {
+    "id": "srv-app-product-dev",
+    "code": "SBA-SRV-APP06",
+    "sector": "apparel-services",
+    "categoryKey": "product-development",
+    "categoryEn": "CAD Pattern Engineering",
+    "categoryAr": "هندسة الباترون وتطوير المنتجات",
+    "nameEn": "CAD Pattern Engineering, Computerized Grading & Tech Pack Creation",
+    "nameAr": "تنفيذ الباترونات وتطوير الملفات التقنية",
+    "descriptionEn": "Precision computerized pattern development using leading CAD systems, accurate multi-size grading, fabric consumption optimization, and comprehensive tech packs.",
+    "descriptionAr": "تطوير الباترونات الرقمية الدقيقة على أنظمة CAD المتطورة، تدريج المقاسات الأوروبية والأمريكية والخليجية، وحساب استهلاك القماش الأمثل لتوفير التكلفة.",
+    "scopeOfWorkEn": [
+      "Digitizing sketch concepts into production-ready 2D and 3D CAD pattern files",
+      "Size grading across XS to 5XL conforming to international anatomical sizing standards",
+      "Computerized nesting and marker making maximizing fabric cutting yield",
+      "Full Tech Pack generation: construction details, seam types, SPI, and tolerance specs"
+    ],
+    "scopeOfWorkAr": [
+      "تحويل الرسومات الأولية إلى باترونات رقمية جاهزة للإنتاج ثنائية وثلاثية الأبعاد",
+      "تدريج المقاسات من XS حتى 5XL وفق جداول القياسات القياسية المعتمدة",
+      "التعشيق الآلي للباترونات لتقليل هادر الأقمشة إلى أدنى نسبة ممكنة",
+      "إعداد الملف الفني الشامل (Tech Pack): تفاصيل الخياطة، عدد الغرز، ونسب التفاوت"
+    ],
+    "applicationsEn": ["Fashion Brands", "Independent Apparel Designers", "Uniform Contracting Entities", "Garment Factories"],
+    "applicationsAr": ["ماركات الأزياء العالمية والمحلية", "مصممو الأزياء المستقلون", "مؤسسات توريد الزي الموحد", "مصانع الملابس الجاهزة"],
+    "capabilitiesEn": ["Gerber AccuMark & Lectra CAD software platforms", "Automated digital pattern plotters", "Senior master patternmakers with 20+ years experience"],
+    "capabilitiesAr": ["برمجيات Gerber AccuMark و Lectra العالمية", "طابعات بلوتر رقمية عريضة لرسم الباترونات الصناعية", "خبراء باترون أول بخبرة تفوق 20 عامًا في القصات العالمية"],
+    "image": "/BG/Apparel Manufacturing/Pattern Lab & Rapid Sampling.jpg"
+  },
+  {
+    "id": "srv-app-sampling",
+    "code": "SBA-SRV-APP07",
+    "sector": "apparel-services",
+    "categoryKey": "rapid-sampling",
+    "categoryEn": "Rapid Sampling & Prototyping",
+    "categoryAr": "صناعة العينات والنماذج الأولية",
+    "nameEn": "Rapid Apparel Sampling, Fit Prototypes & Pre-Production Approvals",
+    "nameAr": "تنفيذ العينات والنماذج الأولية",
+    "descriptionEn": "Dedicated sample room operating independent lines to cut, sew, finish, and deliver proto samples, fit samples, and sales representative samples under fast turnarounds.",
+    "descriptionAr": "معمل عينات متكامل يعمل بخطوط مستقلة لقص وخياطة وتشطيب العينات الأولية وعينات الملاءمة وعينات مندوبي المبيعات قبل الإنتاج الكمي في أوقات قياسية.",
+    "scopeOfWorkEn": [
+      "First proto sample creation from customer reference images or technical tech packs",
+      "Fit sample review on live fit models and dimensional audit against spec sheets",
+      "Pre-production (PP) golden sample signing prior to bulk cutting authorization",
+      "Salesman sample (SMS) duplicate production for buyer retail trade presentations"
+    ],
+    "scopeOfWorkAr": [
+      "تنفيذ العينة الأولية (Proto Sample) من واقع الرسومات أو العينات المرجعية",
+      "فحص عينات القياس (Fit Sample) على مانيكانات وموديلات حية وتدقيق القياسات",
+      "اعتماد العينة الذهبية ما قبل الإنتاج (PP Sample) قبل إعطاء إشارة البدء للقص الكمي",
+      "إنتاج عينات المبيعات والتسويق (SMS) للعرض على المشترين في المعارض الدولية"
+    ],
+    "applicationsEn": ["Fashion Brand Merchandisers", "Retail Sourcing Teams", "Apparel Startups", "Corporate Sourcing Directors"],
+    "applicationsAr": ["مديرو المشتريات ومسؤولو الموضة", "فرق انتقاء المنتجات بسلاسل التجزئة", "الشركات الناشئة في مجال الأزياء", "مديرو التوريد للشركات"],
+    "capabilitiesEn": ["Independent prototype workshop line", "Rapid turnarounds within 5-7 business days", "In-house trim and accessories library"],
+    "capabilitiesAr": ["ورشة عينات مستقلة تمامًا عن خطوط الإنتاج الكمي", "سرعة تنفيذ وتسليم العينات خلال 5 إلى 7 أيام عمل", "مكتبة داخلية متكاملة للإكسسوارات والسحابات والخيوط"],
+    "image": "/BG/Apparel Manufacturing/Product Development & Sampling.jpg"
+  },
+  {
+    "id": "srv-app-fabric-qc",
+    "code": "SBA-SRV-APP08",
+    "sector": "apparel-services",
+    "categoryKey": "fabric-quality",
+    "categoryEn": "Custom Fabric & Quality Assurance",
+    "categoryAr": "تطوير الأقمشة وضمان الجودة الشاملة",
+    "nameEn": "Custom Fabric Sourcing, Eco-Friendly Dyeing & Multi-Stage AQL Quality Auditing",
+    "nameAr": "تطوير وتوريد الأقمشة وصباغتها",
+    "descriptionEn": "Integrated textile fabric sourcing, laboratory spectrophotometer computerized dyeing, shrinkage control, and rigorous 4-point fabric and AQL 1.5 finished garment auditing.",
+    "descriptionAr": "توريد وتطوير الأقمشة القطنية الفاخرة، الصباغة الآلية بأصباغ معتمدة من OEKO-TEX، ضبط الانكماش وثبات الألوان، وفحص الجودة بمقاييس AQL 1.5 الصارمة.",
+    "scopeOfWorkEn": [
+      "Circular and flat knitting coordination for Single Jersey, Rib, Interlock, and French Terry",
+      "Low-liquor computerized dyeing matching Pantone references with spectrophotometer verification",
+      "Fabric roll 4-point inspection system testing for knitting faults, weight (GSM), and torque",
+      "Final AQL 1.5 / 2.5 random carton auditing: stitch density, seam strength, and carton pack lists"
+    ],
+    "scopeOfWorkAr": [
+      "تطوير وتصنيع أقمشة التريكو والنسيج: سنجل جيرسيه، ريب، إنترلوك، وبيكيه وميلتون",
+      "صباغة منخفضة الاستهلاك المائي ومطابقة كمبيوترية لألوان البانتون بأجهزة الاسبكتروفوتوميتر",
+      "فحص أثواب الأقمشة بنظام النقاط الأربع (4-Point System) وثبات الأبعاد والانكماش",
+      "الفحص النهائي للكراتين وفق معيار AQL 1.5/2.5 الدولي: متانة الخياطة، نظافة التشطيب، ومطابقة التعبئة"
+    ],
+    "applicationsEn": ["International Fashion Retailers", "High-End Knitwear Brands", "Quality Audit Inspection Houses", "Corporate Apparel Buyers"],
+    "applicationsAr": ["سلاسل التجزئة العالمية للأزياء", "ماركات الملابس القطنية والتريكو الفاخرة", "بيوت التفتيش ومطابقة الجودة الدولية", "المشترون المؤسسيون للملابس الجاهزة"],
+    "capabilitiesEn": ["OEKO-TEX Standard 100 chemical conformance", "Full in-house physical testing equipment (pull-test, wash crocking)", "Zero tolerance for safety and chemical non-compliance"],
+    "capabilitiesAr": ["مطابقة للمواصفات البيئية لشهادة OEKO-TEX Standard 100", "أجهزة اختبارات ميكانيكية ومعملية (قوة شد الأزرار، ثبات الغسيل)", "صفر تسامح مع أي عيوب تؤثر على السلامة أو مظهر المنتج النهائي"],
+    "image": "/BG/Apparel Manufacturing/Textile Mill & Internal Dyeing.jpg"
   }
 ];
 
