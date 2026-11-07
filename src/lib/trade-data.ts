@@ -5296,7 +5296,7 @@ export const TRADE_STATS = {
   continentsCount: 6,
   verifiedPartnersCount: 8,
   reportingPeriod: '2025',
-  legalDisclaimerAr: 'هذه الأرقام تمثل كميات واستفسارات مسجلة في طلبات المشترين الدوليين لعام 2025، ولا تمثل بالضرورة أوامر شراء مؤكدة أو عقوداً منفذة أو شحنات مكتملة.',
+  legalDisclaimerAr: 'هذه الأرقام تمثل طلبات شراء مسجلة في طلبات المشترين الدوليين، ولا تمثل بالضرورة أوامر شراء مؤكدة أو عقودًا منفذة أو شحنات مكتملة.',
   legalDisclaimerEn: 'These figures represent commercial inquiries and quantities recorded in international buyer inquiries during 2025, and do not necessarily represent confirmed purchase orders, executed contracts, or completed shipments.'
 };
 

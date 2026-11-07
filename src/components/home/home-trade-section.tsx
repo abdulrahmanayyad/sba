@@ -37,8 +37,8 @@ export function HomeTradeSection({ ar = true }: HomeTradeSectionProps) {
               </h2>
               <p className="text-sm sm:text-base text-muted-foreground leading-relaxed font-medium">
                 {ar
-                  ? "شبكة تجارية عالمية ممتدة عبر 47 دولة حول العالم سجلت 179 استفساراً تجارياً موثقاً للتمور الفاخرة والتوابل والخضروات والمحاصيل الزراعية الاستراتيجية لعام 2025."
-                  : "An international commercial network across 47 countries documenting 179 verified buyer inquiries for premium dates, spices, vegetables, and strategic agricultural commodities in 2025."}
+                  ? "شبكة تجارية عالمية ممتدة عبر 47 دولة حول العالم سجلت 179 طلبات شراء موثقة للمنتجات الغذائية لعام 2025."
+                  : "An international commercial network across 47 countries documenting 179 verified purchase orders and buyer requirements for food products in 2025."}
               </p>
             </div>
 
@@ -81,44 +81,32 @@ export function HomeTradeSection({ ar = true }: HomeTradeSectionProps) {
 
           {/* Right Column: 4 Key Metric Cards */}
           <div className="grid grid-cols-2 gap-3.5 sm:gap-4 lg:w-[420px] shrink-0">
-            <div className="rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-5 backdrop-blur-2xl text-start shadow-[0_8px_30px_rgba(0,0,0,0.04)] ring-1 ring-white/30 transition-all duration-300 hover:-translate-y-1 hover:bg-white/60 dark:hover:bg-white/20 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)] cursor-pointer">
+            <div className="rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-5 backdrop-blur-2xl text-start shadow-[0_8px_30px_rgba(0,0,0,0.04)] ring-1 ring-white/30 transition-all duration-300 hover:-translate-y-1 hover:bg-white/60 dark:hover:bg-white/20 hover:shadow-md cursor-pointer flex flex-col justify-center">
               <span className="font-head text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">47</span>
-              <h4 className="text-xs font-bold text-foreground mt-1">
-                {ar ? "دولة مسجلة في الاستفسارات" : "Documented Countries"}
+              <h4 className="text-xs font-bold text-foreground mt-1.5 leading-snug">
+                {ar ? "دولة مسجلة لطلبات شراء" : "Documented Destination Markets"}
               </h4>
-              <p className="text-[11px] text-muted-foreground mt-0.5">
-                {ar ? "عبر 5 قارات دولية" : "Across 5 continents"}
-              </p>
             </div>
 
-            <div className="rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-5 backdrop-blur-2xl text-start shadow-[0_8px_30px_rgba(0,0,0,0.04)] ring-1 ring-white/30 transition-all duration-300 hover:-translate-y-1 hover:bg-white/60 dark:hover:bg-white/20 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)] cursor-pointer">
+            <div className="rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-5 backdrop-blur-2xl text-start shadow-[0_8px_30px_rgba(0,0,0,0.04)] ring-1 ring-white/30 transition-all duration-300 hover:-translate-y-1 hover:bg-white/60 dark:hover:bg-white/20 hover:shadow-md cursor-pointer flex flex-col justify-center">
               <span className="font-head text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">179</span>
-              <h4 className="text-xs font-bold text-foreground mt-1">
-                {ar ? "سجل استفسار تجاري موثق" : "Recorded Inquiries"}
+              <h4 className="text-xs font-bold text-foreground mt-1.5 leading-snug">
+                {ar ? "سجل طلبات شراء تجارية موثقة" : "Recorded Commercial Purchase Requests"}
               </h4>
-              <p className="text-[11px] text-muted-foreground mt-0.5">
-                {ar ? "بيانات موثقة لعام 2025" : "Verified 2025 dataset"}
-              </p>
             </div>
 
-            <div className="rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-5 backdrop-blur-2xl text-start shadow-[0_8px_30px_rgba(0,0,0,0.04)] ring-1 ring-white/30 transition-all duration-300 hover:-translate-y-1 hover:bg-white/60 dark:hover:bg-white/20 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)] cursor-pointer">
+            <div className="rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-5 backdrop-blur-2xl text-start shadow-[0_8px_30px_rgba(0,0,0,0.04)] ring-1 ring-white/30 transition-all duration-300 hover:-translate-y-1 hover:bg-white/60 dark:hover:bg-white/20 hover:shadow-md cursor-pointer flex flex-col justify-center">
               <span className="font-head text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">66</span>
-              <h4 className="text-xs font-bold text-foreground mt-1">
-                {ar ? "طلبات التمور ومنتجاتها" : "Dates Inquiries"}
+              <h4 className="text-xs font-bold text-foreground mt-1.5 leading-snug">
+                {ar ? "طلبات التمور ومنتجاتها" : "Dates Purchase Requests"}
               </h4>
-              <p className="text-[11px] text-muted-foreground mt-0.5">
-                {ar ? "عجوة، مجدول، سكري..." : "Ajwa, Medjool, etc."}
-              </p>
             </div>
 
-            <div className="rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-5 backdrop-blur-2xl text-start shadow-[0_8px_30px_rgba(0,0,0,0.04)] ring-1 ring-white/30 transition-all duration-300 hover:-translate-y-1 hover:bg-white/60 dark:hover:bg-white/20 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)] cursor-pointer">
+            <div className="rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-5 backdrop-blur-2xl text-start shadow-[0_8px_30px_rgba(0,0,0,0.04)] ring-1 ring-white/30 transition-all duration-300 hover:-translate-y-1 hover:bg-white/60 dark:hover:bg-white/20 hover:shadow-md cursor-pointer flex flex-col justify-center">
               <span className="font-head text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">113</span>
-              <h4 className="text-xs font-bold text-foreground mt-1">
-                {ar ? "سلع ومحاصيل متنوعة" : "Diversified Commodities"}
+              <h4 className="text-xs font-bold text-foreground mt-1.5 leading-snug">
+                {ar ? "سلع ومحاصيل متنوعة" : "Diversified Food Commodities"}
               </h4>
-              <p className="text-[11px] text-muted-foreground mt-0.5">
-                {ar ? "توابل، خضار، بذور، أعشاب" : "Spices, crops, seeds"}
-              </p>
             </div>
           </div>
         </div>
@@ -126,7 +114,9 @@ export function HomeTradeSection({ ar = true }: HomeTradeSectionProps) {
         {/* Footer Disclaimer Strip */}
         <div className="mt-8 pt-4 border-t border-border/40 text-start text-[11px] text-muted-foreground">
           <span className="font-semibold text-brand-orange">{ar ? "تنويه توثيقي: " : "Notice: "}</span>
-          {ar ? TRADE_STATS.legalDisclaimerAr : TRADE_STATS.legalDisclaimerEn}
+          {ar
+            ? "هذه الأرقام تمثل طلبات شراء مسجلة في طلبات المشترين الدوليين، ولا تمثل بالضرورة أوامر شراء مؤكدة أو عقودًا منفذة أو شحنات مكتملة."
+            : TRADE_STATS.legalDisclaimerEn}
         </div>
       </div>
     </section>
