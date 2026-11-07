@@ -97,30 +97,30 @@ export function ProductsCataloguePage() {
     return [
       {
         key: "kids",
-        titleAr: "القسم الأول: ملابس الأطفال والأطفال الرضع (Kids & Baby Wear)",
+        titleAr: "القسم الأول: ملابس الأطفال والرضع",
         titleEn: "Section 1: Kids & Baby Wear",
-        subtitleAr: "5 تصنيفات معتمدة للتصنيع والتوريد (كاجوال، ملابس داخلية، ملابس منزلية، ملابس رياضية، ملابس رضع)",
-        subtitleEn: "5 certified manufacturing lines (Casual, Underwear, Homewear, Sportswear, Baby Clothing)",
+        subtitleAr: "5 تصنيفات معتمدة للتصنيع والتوريد (كاجوال، أندر وير، هوم وير، رياضي وأطقم تمارين، حديثي الولادة)",
+        subtitleEn: "5 certified manufacturing lines (Casual, Underwear, Homewear, Sportswear, Newborn)",
         badgeAr: "حديثو الولادة حتى 12 سنة",
         badgeEn: "Newborn to 12 Years",
         products: filteredProducts.filter((p) => p.mainDepartmentEn === "Kids & Baby Wear"),
       },
       {
         key: "women",
-        titleAr: "القسم الثاني: الملابس النسائية (Women’s Wear)",
+        titleAr: "القسم الثاني: الملابس النسائية",
         titleEn: "Section 2: Women’s Wear",
-        subtitleAr: "3 تصنيفات معتمدة ومخصصة (الملابس الداخلية اليومية، الملابس المنزلية والبيجامات، اللانجري الفاخر)",
-        subtitleEn: "3 certified lines (Everyday Underwear, Homewear & Pyjamas, Luxury Lingerie)",
+        subtitleAr: "3 تصنيفات معتمدة ومخصصة (الأندر وير، الهوم وير والبيجامات، واللانجري)",
+        subtitleEn: "3 certified lines (Underwear, Homewear & Pyjamas, Lingerie)",
         badgeAr: "ملابس نسائية فاخرة",
         badgeEn: "Women's Essentials & Lingerie",
         products: filteredProducts.filter((p) => p.mainDepartmentEn === "Women's Wear"),
       },
       {
         key: "men",
-        titleAr: "القسم الثالث: الملابس الرجالية (Men’s Wear)",
+        titleAr: "القسم الثالث: الملابس الرجالية",
         titleEn: "Section 3: Men’s Wear",
-        subtitleAr: "5 تصنيفات متكاملة (الكاجوال، الكلاسيكية والبدلات، القمصان، الملابس المنزلية، والملابس الرياضية)",
-        subtitleEn: "5 comprehensive categories (Casual, Classic Suiting, Shirts, Homewear, Sportswear)",
+        subtitleAr: "5 تصنيفات متكاملة (الكاجوال، الكلاسيك، القمصان الرسمي، الهوم وير، الرياضي وأطقم التمرين)",
+        subtitleEn: "5 comprehensive categories (Casual, Classic, Formal Shirts, Homewear, Sportswear & Gym)",
         badgeAr: "أزياء رجالية متكاملة",
         badgeEn: "Men's Full Range",
         products: filteredProducts.filter((p) => p.mainDepartmentEn === "Men's Wear"),
@@ -257,9 +257,15 @@ export function ProductsCataloguePage() {
             </h1>
 
             <p className="mt-4 max-w-3xl mx-auto text-base sm:text-lg text-muted-foreground leading-relaxed">
-              {ar
-                ? "تصفح السلع والمنتجات المادية المعتمدة من مجموعة سامي بن عياد عبر قطاعي الملابس والمنسوجات والمنتجات الغذائية الطبيعية، مع إمكانية استعراض المواصفات الفنية المعتمدة وطلب عروض أسعار التوريد والتصدير الرسمية."
-                : "Explore Sami Bin Ayyad Group's verified tangible product lines across Apparel & Textiles and Natural Agri-Food, complete with detailed technical datasheets and official export quotation capabilities."}
+              {ar ? (
+                <>
+                  تصفح السلع والمنتجات المادية المعتمدة من <span className="text-brand-orange font-bold">مجموعة سامي بن عياد</span> عبر قطاعي الملابس والمنسوجات والمنتجات الغذائية الطبيعية، مع إمكانية استعراض المواصفات الفنية المعتمدة وطلب عروض أسعار التوريد والتصدير الرسمية.
+                </>
+              ) : (
+                <>
+                  Explore <span className="text-brand-orange font-bold">Sami Bin Ayyad Group</span>'s verified tangible product lines across Apparel & Textiles and Natural Agri-Food, complete with detailed technical datasheets and official export quotation capabilities.
+                </>
+              )}
             </p>
           </div>
         </Reveal>
@@ -277,7 +283,7 @@ export function ProductsCataloguePage() {
                 {ar ? "كتالوج المنتجات" : "PRODUCTS CATALOGUE"}
               </span>
               <h3 className="font-head text-2xl font-black text-foreground">
-                {ar ? "اختر تصنيف المنتجات للتصفح والتوريد" : "Select Product Category"}
+                {ar ? "اختر تصنيف المنتجات" : "Select Product Category"}
               </h3>
               <div className="mt-2 flex items-center gap-2">
                 <Button asChild size="sm" className="rounded-full !bg-brand-green !text-white hover:!bg-brand-orange text-xs font-bold shadow-xs cursor-pointer">
@@ -382,9 +388,6 @@ export function ProductsCataloguePage() {
                   <span className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3 py-1 text-xs font-bold text-foreground backdrop-blur-md">
                     <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
                     <span>{ar ? "مكتبة الموديلات الجاهزة" : "Ready Models Library"}</span>
-                  </span>
-                  <span className="text-xs font-bold text-foreground">
-                    {ar ? "+2,700 موديل جاهز للإنتاج" : "2,700+ Production-Ready Models"}
                   </span>
                 </div>
                 <h3 className="font-head text-xl sm:text-2xl font-black text-foreground">
