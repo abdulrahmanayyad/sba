@@ -418,9 +418,10 @@ export function NewsPage() {
 
           {/* C. Sector Categories (Exact 8 Categories) */}
           <div>
-            <div className="text-[11px] font-bold text-muted-foreground uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
-              <Layers className="size-3 text-brand-green" />
-              <span>{ar ? "تصنيف القطاعات والأنشطة" : "Sector & Topic Categories"}</span>
+            <div className="mb-3">
+              <SectionBadge>
+                <span>{ar ? "تصنيف القطاعات والأنشطة" : "Sector & Topic Categories"}</span>
+              </SectionBadge>
             </div>
             <div className="flex flex-wrap items-center gap-2">
               {newsCategories.map((cat) => {
