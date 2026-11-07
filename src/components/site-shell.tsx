@@ -499,57 +499,61 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
 
       {/* Glassmorphic Floating Island Footer */}
       <footer className="relative px-4 pb-6 pt-4 text-footer-foreground">
-        <div className="mx-auto max-w-6xl overflow-hidden rounded-3xl border border-white/20 bg-background/70 shadow-[0_8px_40px_rgba(0,0,0,0.18)] backdrop-blur-2xl">
+        <div className="mx-auto max-w-7xl overflow-hidden rounded-3xl border border-white/20 bg-background/70 shadow-[0_8px_40px_rgba(0,0,0,0.18)] backdrop-blur-2xl">
           {/* Subtle background image */}
           <img src={hero} alt="" aria-hidden="true" loading="lazy" className="pointer-events-none absolute inset-0 size-full scale-110 object-cover opacity-8 blur-2xl" />
           <div className="relative px-6 py-10 md:px-10 md:py-12">
             {/* Main grid */}
-            <div className="grid gap-10 lg:grid-cols-[1.2fr_2fr] lg:gap-16">
+            <div className="grid gap-10 lg:grid-cols-[1.1fr_2.2fr] lg:gap-14 xl:gap-20">
               {/* Brand column */}
               <div>
                 <img src={currentLogo} alt={isArabic ? "سامي بن عياد" : "SBA"} className="h-11 w-auto" />
                 <p className="mt-5 max-w-sm text-sm font-bold leading-6 text-brand-orange">{messages.footer.descriptor}</p>
                 <p className={cn("mt-4 font-bold text-brand-orange", isArabic ? "font-sans text-xs tracking-normal" : "font-mono text-[10px] uppercase tracking-[0.18em]")}>{messages.footer.addressLabel}</p>
                 <p className="mt-1.5 max-w-sm text-xs font-semibold leading-5 text-foreground/90">{messages.footer.address}</p>
-
-
               </div>
 
-              {/* Links grid */}
-              <div className="grid gap-8 sm:grid-cols-3">
-                <div>
+              {/* Links columns with balanced spacing */}
+              <div className="flex flex-col sm:flex-row sm:justify-between items-start gap-10 sm:gap-8 md:gap-10 lg:gap-12">
+                {/* 1. Sectors Column */}
+                <div className="space-y-4 min-w-[130px]">
                   <h2 className="font-head text-sm font-bold uppercase tracking-wider text-brand-orange">{messages.footer.sectors}</h2>
-                  <nav aria-label={messages.accessibility.footerNavigation} className="mt-4 grid gap-2.5">
+                  <nav aria-label={messages.accessibility.footerNavigation} className="grid gap-2.5">
                     {sectorKeys.map((key) => (
-                      <Link key={key} to="/sectors/$sector" params={{ sector: key }} className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{messages.sectorsMenu[key]}</Link>
+                      <Link key={key} to="/sectors/$sector" params={{ sector: key }} className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange leading-snug">{messages.sectorsMenu[key]}</Link>
                     ))}
                   </nav>
                 </div>
-                <div>
+
+                {/* 2. Company Column */}
+                <div className="space-y-4 min-w-[120px]">
                   <h2 className="font-head text-sm font-bold uppercase tracking-wider text-brand-orange">{messages.footer.company}</h2>
-                  <nav aria-label={messages.accessibility.footerNavigation} className="mt-4 grid gap-2.5">
-                    <Link to="/about" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{isArabic ? "نبذة عنا" : messages.nav.about}</Link>
-                    <Link to="/products" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{isArabic ? "منتجاتنا" : messages.nav.products}</Link>
-                    <Link to="/partners" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{isArabic ? "شركاؤنا" : messages.nav.partners}</Link>
-                    <Link to="/news" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{isArabic ? "أخبارنا" : messages.nav.news}</Link>
-                    <Link to="/trade" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{isArabic ? "الفرص" : "Opportunities"}</Link>
-                    <Link to="/investor-relations" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{isArabic ? "الشراكات" : "Partnerships"}</Link>
-                    <Link to="/downloads" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{isArabic ? "الوثائق" : "Documents"}</Link>
+                  <nav aria-label={messages.accessibility.footerNavigation} className="grid gap-2.5">
+                    <Link to="/about" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange leading-snug">{isArabic ? "نبذة عنا" : messages.nav.about}</Link>
+                    <Link to="/products" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange leading-snug">{isArabic ? "منتجاتنا" : messages.nav.products}</Link>
+                    <Link to="/services" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange leading-snug">{isArabic ? "خدماتنا" : "Our Services"}</Link>
+                    <Link to="/partners" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange leading-snug">{isArabic ? "شركاؤنا" : messages.nav.partners}</Link>
+                    <Link to="/news" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange leading-snug">{isArabic ? "أخبارنا" : messages.nav.news}</Link>
+                    <Link to="/trade" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange leading-snug">{isArabic ? "الفرص" : "Opportunities"}</Link>
+                    <Link to="/investor-relations" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange leading-snug">{isArabic ? "الشراكات" : "Partnerships"}</Link>
+                    <Link to="/downloads" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange leading-snug">{isArabic ? "الوثائق" : "Documents"}</Link>
                   </nav>
                 </div>
-                <div>
+
+                {/* 3. Contact Column */}
+                <div className="space-y-4 min-w-[170px] max-w-[260px]">
                   <h2 className="font-head text-sm font-bold uppercase tracking-wider text-brand-orange">{messages.footer.contact}</h2>
-                  <div className="mt-4 grid gap-2.5 justify-items-start">
-                    <Link to="/contact" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{isArabic ? "تواصل معنا" : "Contact Us"}</Link>
-                    <Link to="/contact/complaints" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{isArabic ? "الشكاوى" : "Complaints"}</Link>
-                    <Link to="/contact/opportunities" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange">{isArabic ? "اعرض فرصتك" : "Submit Your Opportunity"}</Link>
-                    <div className="mt-2 pt-2.5 border-t border-border/40 grid gap-2.5 w-full justify-items-start">
+                  <div className="grid gap-2.5 justify-items-start">
+                    <Link to="/contact" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange leading-snug">{isArabic ? "تواصل معنا" : "Contact Us"}</Link>
+                    <Link to="/contact/complaints" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange leading-snug">{isArabic ? "الشكاوى" : "Complaints"}</Link>
+                    <Link to="/contact/opportunities" className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange leading-snug">{isArabic ? "اعرض فرصتك" : "Submit Your Opportunity"}</Link>
+                    <div className="mt-1 pt-2.5 border-t border-border/40 grid gap-2 w-full justify-items-start">
                       <a className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange" href="tel:+201222238072" dir="ltr">+20 12 222 380 72</a>
                       <a className="text-xs font-bold text-foreground transition-colors hover:text-brand-orange" href="tel:+201222238073" dir="ltr">+20 12 222 380 73</a>
                       <a className="break-all text-xs font-bold text-foreground transition-colors hover:text-brand-orange" href="mailto:info@sami-trade.com">info@sami-trade.com</a>
                     </div>
                     {/* Social icons below email */}
-                    <div className="mt-3 flex gap-3">
+                    <div className="mt-2 flex gap-2.5">
                       {socialLinks.map(([name, href]) => (
                         <a key={name} href={href} target="_blank" rel="noreferrer" aria-label={name}
                           className="inline-flex items-center justify-center rounded-full bg-brand-green/10 p-2 text-brand-green transition-all duration-200 hover:bg-brand-orange/20 hover:text-brand-orange hover:scale-110">
