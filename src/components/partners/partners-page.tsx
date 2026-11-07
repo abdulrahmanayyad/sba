@@ -135,7 +135,7 @@ export function PartnersPage() {
                 </div>
 
                 <div className="mt-6 pt-4 border-t border-border/60 flex items-center justify-between">
-                  <span className="text-[11px] font-bold text-muted-foreground uppercase tracking-wider font-mono">
+                  <span className="text-[11px] font-semibold text-muted-foreground uppercase tracking-wider font-body">
                     {ar ? "شريك استراتيجي معتمد" : "Verified Strategic Alliance"}
                   </span>
                   <span className="size-2 rounded-full bg-brand-green animate-pulse" />
