@@ -276,13 +276,13 @@ export function NewsPage() {
                         <span>{ar ? featuredArticle.categoryAr : featuredArticle.categoryEn}</span>
                       </span>
                       <span>•</span>
-                      <span className="inline-flex items-center gap-1 font-mono text-[11px]">
+                      <span className="inline-flex items-center gap-1 text-[11px]">
                         <Clock className="size-3 text-brand-orange" />
                         <span>{ar ? featuredArticle.readingTimeAr : featuredArticle.readingTimeEn}</span>
                       </span>
                     </div>
 
-                    <h2 className="font-head text-2xl sm:text-3xl font-extrabold text-foreground group-hover:text-brand-green transition-colors leading-snug">
+                    <h2 className="font-head text-2xl sm:text-3xl font-bold text-foreground group-hover:text-brand-green transition-colors leading-snug">
                       <Link to="/news/$slug" params={{ slug: featuredArticle.slug }}>
                         {ar ? featuredArticle.titleAr : featuredArticle.titleEn}
                       </Link>
@@ -304,7 +304,7 @@ export function NewsPage() {
                       </Link>
                     </Button>
 
-                    <span className="text-[11px] font-mono text-muted-foreground font-semibold">
+                    <span className="text-[11px] text-muted-foreground font-bold">
                       {featuredArticle.historicalRefYear || featuredArticle.year}
                     </span>
                   </div>
@@ -396,7 +396,7 @@ export function NewsPage() {
 
             {/* Sort Toggle & Result Count */}
             <div className="flex items-center justify-between md:justify-end gap-3 w-full md:w-auto">
-              <span className="text-xs font-mono text-muted-foreground">
+              <span className="text-xs text-muted-foreground font-medium">
                 {ar
                   ? `${filteredArticles.length} من أصل ${newsArticles.length} مادة`
                   : `Showing ${filteredArticles.length} of ${newsArticles.length} entries`}
@@ -448,7 +448,7 @@ export function NewsPage() {
                     <span>{ar ? cat.titleAr : cat.titleEn}</span>
                     <span
                       className={cn(
-                        "rounded-full px-1.5 py-0.2 text-[10px] font-mono",
+                        "rounded-full px-1.5 py-0.2 text-[10px] font-bold",
                         isActive ? "bg-white/20 text-white" : "bg-secondary text-muted-foreground"
                       )}
                     >
@@ -471,7 +471,7 @@ export function NewsPage() {
                 type="button"
                 onClick={() => setSelectedYear("all")}
                 className={cn(
-                  "rounded-full px-3.5 py-1 text-xs font-bold transition-all cursor-pointer font-mono",
+                  "rounded-full px-3.5 py-1 text-xs font-bold transition-all cursor-pointer",
                   selectedYear === "all"
                     ? "!bg-brand-orange !text-white shadow-sm"
                     : "border border-border/70 bg-secondary/50 text-foreground hover:bg-secondary"
@@ -490,7 +490,7 @@ export function NewsPage() {
                     onClick={() => setSelectedYear(yr)}
                     disabled={yrCount === 0}
                     className={cn(
-                      "inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-bold transition-all cursor-pointer font-mono",
+                      "inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-bold transition-all cursor-pointer",
                       isActive
                         ? "!bg-brand-orange !text-white shadow-sm"
                         : yrCount > 0
@@ -501,7 +501,7 @@ export function NewsPage() {
                     <span>{yr}</span>
                     <span
                       className={cn(
-                        "text-[10px] rounded-full px-1 py-0",
+                        "text-[10px] rounded-full px-1 py-0 font-medium",
                         isActive ? "bg-white/20 text-white" : "text-muted-foreground"
                       )}
                     >
@@ -533,12 +533,12 @@ export function NewsPage() {
               </div>
 
               <div className="flex items-center gap-2 self-start sm:self-auto shrink-0">
-                <span className="rounded-full bg-brand-green/15 text-brand-green font-bold font-mono text-xs px-3 py-1">
+                <span className="rounded-full bg-brand-green/15 text-brand-green font-bold text-xs px-3 py-1">
                   {ar
                     ? `${filteredArticles.length} مادة في الأرشيف`
                     : `${filteredArticles.length} Archived Entries`}
                 </span>
-                <span className="rounded-full bg-secondary text-muted-foreground font-mono text-xs px-3 py-1 border border-border">
+                <span className="rounded-full bg-secondary text-muted-foreground font-bold text-xs px-3 py-1 border border-border">
                   {sortDirection === "asc"
                     ? ar
                       ? "تسلسل تاريخي: الأقدم → الأحدث"
@@ -577,7 +577,7 @@ export function NewsPage() {
 
                           {/* Badges Overlay */}
                           <div className="absolute top-3 start-3 flex flex-wrap items-center gap-1.5">
-                            <span className="rounded-full bg-brand-orange px-3 py-0.5 text-[11px] font-black text-white shadow-md font-mono">
+                            <span className="rounded-full bg-brand-orange px-3 py-0.5 text-[11px] font-bold text-white shadow-md">
                               {artYear}
                             </span>
                             <span className="rounded-full bg-black/60 px-2.5 py-0.5 text-[10px] font-bold text-white/90 backdrop-blur-md border border-white/20">
@@ -601,7 +601,7 @@ export function NewsPage() {
 
                       {/* Content */}
                       <div className="p-6">
-                        <div className="flex items-center justify-between gap-2 text-xs text-muted-foreground mb-3 font-mono">
+                        <div className="flex items-center justify-between gap-2 text-xs text-muted-foreground mb-3 font-medium">
                           <span className="inline-flex items-center gap-1">
                             <Calendar className="size-3 text-brand-orange" />
                             <span>{ar ? article.dateAr : article.dateEn}</span>
@@ -643,7 +643,7 @@ export function NewsPage() {
                         <ArrowRight className="size-3 rtl:rotate-180" />
                       </Link>
 
-                      <span className="text-[10px] font-mono font-bold text-muted-foreground/70">
+                      <span className="text-[10px] font-bold text-muted-foreground/70">
                         #{article.id.replace("sba-news-", "NEWS ").replace("sba-hist-", "HIST ")}
                       </span>
                     </div>

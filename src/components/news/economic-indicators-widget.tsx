@@ -111,7 +111,7 @@ export function EconomicIndicatorsWidget() {
                   {ind.relatedArticleIds.map((artId) => (
                     <span
                       key={artId}
-                      className="rounded bg-secondary px-2 py-0.5 text-xs font-mono text-foreground/80 font-bold"
+                      className="rounded bg-secondary px-2 py-0.5 text-xs text-foreground/80 font-bold"
                     >
                       #{artId.toUpperCase()}
                     </span>

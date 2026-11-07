@@ -190,7 +190,7 @@ export function NewsDetailPage({ slug }: { slug: string }) {
           {/* Badges & Meta */}
           <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 mb-4">
             {/* Reference Year Badge */}
-            <span className="inline-flex items-center gap-1 rounded-full bg-brand-orange px-3.5 py-1 text-xs font-black text-white shadow-sm font-mono">
+            <span className="inline-flex items-center gap-1 rounded-full bg-brand-orange px-3.5 py-1 text-xs font-bold text-white shadow-sm">
               <History className="size-3" />
               <span>{refYear}</span>
             </span>
@@ -214,28 +214,28 @@ export function NewsDetailPage({ slug }: { slug: string }) {
             </span>
 
             {/* Publication Date */}
-            <span className="inline-flex items-center gap-1 text-xs text-muted-foreground font-mono">
+            <span className="inline-flex items-center gap-1 text-xs text-muted-foreground font-medium">
               <Calendar className="size-3.5 text-brand-orange" />
               <span>{ar ? `تاريخ النشر: ${article.dateAr}` : `Published: ${article.dateEn}`}</span>
             </span>
 
             {/* Event Date where available */}
             {article.eventDateAr && (
-              <span className="inline-flex items-center gap-1 text-xs text-muted-foreground font-mono bg-secondary/60 px-2.5 py-0.5 rounded-full border border-border/60">
+              <span className="inline-flex items-center gap-1 text-xs text-muted-foreground font-medium bg-secondary/60 px-2.5 py-0.5 rounded-full border border-border/60">
                 <Calendar className="size-3 text-brand-green" />
                 <span>{ar ? `تاريخ الفعالية: ${article.eventDateAr}` : `Event Date: ${article.eventDateEn}`}</span>
               </span>
             )}
 
             {/* Reading Time */}
-            <span className="inline-flex items-center gap-1 text-xs text-muted-foreground font-mono">
+            <span className="inline-flex items-center gap-1 text-xs text-muted-foreground font-medium">
               <Clock className="size-3 text-brand-green" />
               <span>{ar ? article.readingTimeAr : article.readingTimeEn}</span>
             </span>
           </div>
 
           {/* Headline */}
-          <h1 className="text-center font-head text-2xl sm:text-4xl lg:text-5xl font-extrabold text-foreground leading-tight max-w-4xl tracking-tight">
+          <h1 className="text-center font-head text-2xl sm:text-4xl lg:text-5xl font-bold text-foreground leading-tight max-w-4xl tracking-tight">
             {ar ? article.titleAr : article.titleEn}
           </h1>
 
@@ -272,7 +272,7 @@ export function NewsDetailPage({ slug }: { slug: string }) {
               <span className="font-semibold bg-black/50 px-3 py-1 rounded-full backdrop-blur-md border border-white/10">
                 {ar ? article.categoryAr : article.categoryEn}
               </span>
-              <span className="font-mono bg-black/50 px-3 py-1 rounded-full backdrop-blur-md border border-white/10">
+              <span className="font-bold bg-black/50 px-3 py-1 rounded-full backdrop-blur-md border border-white/10">
                 {refYear}
               </span>
             </div>
@@ -302,7 +302,7 @@ export function NewsDetailPage({ slug }: { slug: string }) {
                       <BarChart3 className="size-4" />
                       <span>{ar ? "مؤشر اقتصادي موثق مرتبط بالموضوع" : "Verified Economic Benchmark"}</span>
                     </span>
-                    <span className="rounded-full bg-brand-orange/15 text-brand-orange border border-brand-orange/30 text-[10px] font-bold font-mono px-2.5 py-0.5">
+                    <span className="rounded-full bg-brand-orange/15 text-brand-orange border border-brand-orange/30 text-[10px] font-bold px-2.5 py-0.5">
                       {ar ? indicator.changeLabelAr : indicator.changeLabelEn}
                     </span>
                   </div>
@@ -313,12 +313,12 @@ export function NewsDetailPage({ slug }: { slug: string }) {
 
                   <div className="grid grid-cols-2 gap-3 p-3 rounded-xl bg-background/80 border border-border/60">
                     <div>
-                      <span className="text-[10px] font-mono text-muted-foreground block">{ar ? "القيمة (2010)" : "Value (2010)"}</span>
-                      <span className="text-lg font-black font-mono text-foreground">{indicator.metric2010}</span>
+                      <span className="text-[10px] text-muted-foreground block font-medium">{ar ? "القيمة (2010)" : "Value (2010)"}</span>
+                      <span className="text-lg font-bold text-foreground">{indicator.metric2010}</span>
                     </div>
                     <div className="border-s border-border ps-3">
-                      <span className="text-[10px] font-mono text-brand-green block">{ar ? "القيمة (2020)" : "Value (2020)"}</span>
-                      <span className="text-lg font-black font-mono text-brand-green">{indicator.metric2020}</span>
+                      <span className="text-[10px] text-brand-green block font-medium">{ar ? "القيمة (2020)" : "Value (2020)"}</span>
+                      <span className="text-lg font-bold text-brand-green">{indicator.metric2020}</span>
                     </div>
                   </div>
 
@@ -428,7 +428,7 @@ export function NewsDetailPage({ slug }: { slug: string }) {
               <span className="text-xs font-bold text-brand-green uppercase tracking-wider block mb-2">
                 {ar ? "القطاع المرتبط" : "Associated Sector"}
               </span>
-              <h3 className="text-center font-head text-lg font-extrabold text-foreground mb-2">
+              <h3 className="text-center font-head text-lg font-bold text-foreground mb-2">
                 {ar ? sectorInfo?.titleAr : sectorInfo?.titleEn}
               </h3>
               <p className="text-xs text-muted-foreground leading-relaxed mb-4">
@@ -460,7 +460,7 @@ export function NewsDetailPage({ slug }: { slug: string }) {
                       params={{ slug: rel.slug }}
                       className="group block p-3 rounded-2xl hover:bg-secondary/70 border border-transparent hover:border-border transition-all"
                     >
-                      <div className="flex items-center gap-2 text-[10px] font-mono text-muted-foreground mb-1">
+                      <div className="flex items-center gap-2 text-[10px] text-muted-foreground mb-1">
                         <span className="font-bold text-brand-orange">{rel.historicalRefYear || rel.year}</span>
                         <span>•</span>
                         <span>{ar ? rel.categoryAr : rel.categoryEn}</span>

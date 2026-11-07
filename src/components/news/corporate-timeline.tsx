@@ -94,7 +94,7 @@ export function CorporateTimeline() {
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
               <span>{ar ? "التسلسل الزمني الرسمي (1977–2023)" : "Official Historical Timeline (1977–2023)"}</span>
             </div>
-            <h3 className="text-center sm:text-start font-head text-xl sm:text-2xl font-extrabold text-foreground">
+            <h3 className="text-center sm:text-start font-head text-xl sm:text-2xl font-bold text-foreground">
               {ar ? "محطات التطور المؤسسي للمجموعة" : "Institutional Evolution of the Group"}
             </h3>
           </div>
@@ -110,7 +110,7 @@ export function CorporateTimeline() {
             >
               <ChevronLeft className="size-4 rtl:rotate-180" />
             </button>
-            <span className="text-xs font-mono font-bold text-muted-foreground px-2">
+            <span className="text-xs font-bold text-muted-foreground px-2">
               {activeIndex + 1} / {OFFICIAL_TIMELINE_MILESTONES.length}
             </span>
             <button
@@ -163,9 +163,9 @@ export function CorporateTimeline() {
                   {/* Year Tag */}
                   <span
                     className={cn(
-                      "mt-2 text-xs font-black font-mono tracking-tight transition-all duration-300",
+                      "mt-2 text-xs font-bold tracking-tight transition-all duration-300",
                       isSelected
-                        ? "text-brand-orange font-bold text-sm scale-105"
+                        ? "text-brand-orange text-sm scale-105"
                         : "text-foreground group-hover:text-brand-orange group-hover:scale-105"
                     )}
                   >
@@ -193,7 +193,7 @@ export function CorporateTimeline() {
           className="mt-8 pt-8 border-t border-border/60 space-y-3.5 transition-all duration-300 animate-in fade-in"
         >
           <div className="flex flex-wrap items-center gap-2">
-            <span className="rounded-full bg-brand-orange px-3.5 py-1 text-xs font-black font-mono text-white shadow-xs">
+            <span className="rounded-full bg-brand-orange px-3.5 py-1 text-xs font-bold text-white shadow-xs">
               {activeMilestone.year}
             </span>
           </div>
