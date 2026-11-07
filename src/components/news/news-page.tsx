@@ -327,13 +327,13 @@ export function NewsPage() {
                 setSelectedYear("all");
               }}
               className={cn(
-                "rounded-full px-5 py-2 text-xs font-bold transition-all cursor-pointer shadow-sm",
+                "rounded-full px-5 py-2 text-xs font-bold transition-all duration-300 cursor-pointer shadow-sm",
                 periodTab === "all"
-                  ? "!bg-brand-orange !text-white shadow-md"
-                  : "border border-border/80 bg-secondary/80 text-foreground hover:bg-secondary"
+                  ? "!bg-brand-green !text-white hover:!bg-brand-orange shadow-md"
+                  : "border border-border/80 bg-secondary/80 text-foreground hover:!bg-brand-orange hover:!text-white"
               )}
             >
-              {ar ? "كافة الأرشيف والمحتوى (50 مادة)" : "Complete Archive (50 Records)"}
+              {ar ? "كافة الأرشيف والمحتوى" : "Complete Archive"}
             </button>
             <button
               type="button"
