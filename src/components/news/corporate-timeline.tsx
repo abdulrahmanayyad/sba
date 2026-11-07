@@ -8,7 +8,6 @@ import {
   Layers,
   Calendar,
   CheckCircle2,
-  ShieldCheck,
   ChevronRight,
   ChevronLeft,
   Sparkles,
@@ -72,7 +71,7 @@ export function CorporateTimeline() {
   return (
     <div className="w-full">
       {/* 1. Legacy Heritage Intro Hero */}
-      <div className="relative overflow-hidden rounded-3xl border border-white/20 bg-gradient-to-br from-background/95 via-background/90 to-brand-green/5 p-6 sm:p-10 lg:p-12 shadow-xl backdrop-blur-2xl">
+      <div className="relative overflow-hidden rounded-3xl border border-white/20 bg-background/60 p-6 sm:p-10 lg:p-12 shadow-xl backdrop-blur-2xl transition-all duration-500 hover:border-white/40 hover:bg-background/80 hover:shadow-2xl">
         <div className="absolute -top-24 -end-24 size-96 rounded-full bg-brand-green/10 blur-3xl pointer-events-none" />
         <div className="absolute -bottom-24 -start-24 size-96 rounded-full bg-brand-orange/10 blur-3xl pointer-events-none" />
 
@@ -80,7 +79,7 @@ export function CorporateTimeline() {
           {/* Top Pill */}
           <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-4">
             <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-            <span>{ar ? "إرثنا وتطور أعمالنا | 1977–2026" : "OUR LEGACY & BUSINESS EVOLUTION"}</span>
+            <span>{ar ? "إرثنا وتطور أعمالنا" : "OUR LEGACY & BUSINESS EVOLUTION"}</span>
           </div>
 
           <h2 className="text-center font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold text-foreground tracking-tight leading-tight">
@@ -101,8 +100,7 @@ export function CorporateTimeline() {
 
           {/* Closing Motto Tag */}
           <div className="mt-8 pt-6 border-t border-border/60 flex items-center justify-center">
-            <span className="inline-flex items-center gap-2 rounded-2xl bg-secondary/80 border border-border px-5 py-2.5 text-xs sm:text-sm font-black tracking-wide text-foreground shadow-sm">
-              <ShieldCheck className="size-4 text-brand-green" />
+            <span className="inline-flex items-center justify-center rounded-2xl bg-brand-green text-white hover:bg-brand-orange px-6 py-3 text-xs sm:text-sm font-bold tracking-wide shadow-md transition-all duration-300 cursor-default select-none">
               <span>
                 {ar
                   ? "من عقود من الخبرة إلى مجموعة أعمال متكاملة."
@@ -127,10 +125,11 @@ export function CorporateTimeline() {
       <div className="mt-12 rounded-3xl border border-white/20 bg-background/85 p-6 sm:p-10 shadow-lg backdrop-blur-xl">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
           <div>
-            <span className="text-xs font-bold text-brand-orange uppercase tracking-wider block mb-1">
-              {ar ? "التسلسل الزمني الرسمي (1977–2023)" : "Official Historical Timeline (1977–2023)"}
-            </span>
-            <h3 className="text-center font-head text-xl sm:text-2xl font-extrabold text-foreground">
+            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-2">
+              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+              <span>{ar ? "التسلسل الزمني الرسمي (1977–2023)" : "Official Historical Timeline (1977–2023)"}</span>
+            </div>
+            <h3 className="text-center sm:text-start font-head text-xl sm:text-2xl font-extrabold text-foreground">
               {ar ? "محطات التطور المؤسسي والامتداد الجغرافي" : "Institutional Evolution & Geographic Expansion"}
             </h3>
           </div>

@@ -193,70 +193,33 @@ export function NewsPage() {
       {/* 1. Newsroom & Archive Hero Header */}
       <section className="site-container pt-20 sm:pt-28 pb-10 scroll-mt-24">
         <Reveal>
-          <div className="max-w-4xl">
+          <div className="w-full">
             <div className="flex flex-wrap items-center gap-2 mb-3">
-              <span className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
-                <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-                <span>{ar ? "مجموعة سامي بن عياد" : "SAMI BIN AYYAD GROUP"}</span>
-              </span>
-              <SectionBadge title={ar ? "الأرشيف المؤسسي الشامل (1977–2026)" : "Corporate Legacy Archive (1977–2026)"} />
+              <SectionBadge title={ar ? "الأرشيف المؤسسي الشامل" : "Comprehensive Institutional Archive"} />
             </div>
 
-            <h1 className="section-title text-2xl sm:text-3xl lg:text-4xl font-extrabold text-foreground leading-tight tracking-tight">
+            <h1 className="section-title text-xl sm:text-2xl lg:text-3xl font-bold text-foreground leading-snug tracking-tight">
               {ar
                 ? "الأرشيف التاريخي والأنشطة المؤسسية والتحليلات القطاعية"
                 : "Corporate Legacy, Historical Archive & Sector Insights"}
             </h1>
 
-            <p className="section-intro mt-4 max-w-3xl text-base sm:text-lg leading-relaxed text-muted-foreground">
+            <p className="section-intro mt-4 w-full text-sm sm:text-base leading-relaxed text-muted-foreground">
               {ar
                 ? "منصة توثيقية متكاملة تستعرض الجذور التاريخية لأنشطة المجموعة منذ عام 1977، وتطور الكيانات المتخصصة في مصر والسعودية، والتحليلات القطاعية الموثقة (2010–2020)، وصولًا إلى التأسيس المؤسسي الجامع عام 2023 وأنشطة المجموعة الحديثة حتى 2026."
                 : "A unified institutional platform documenting operational roots from 1977, cross-border entity growth in Egypt and Saudi Arabia, sector insights (2010–2020), and unified corporate activities following the 2023 institutional integration."}
             </p>
 
             {/* Archival Editorial Note for Pre-2023 Articles */}
-            <div className="mt-5 rounded-2xl border border-brand-orange/30 bg-brand-orange/5 p-4 text-xs leading-relaxed text-muted-foreground flex items-start gap-3">
-              <span className="p-1 rounded-lg bg-brand-orange/15 text-brand-orange shrink-0 mt-0.5">
-                <History className="size-4" />
+            <div className="mt-6 rounded-2xl border border-white/20 bg-background/60 p-5 text-xs sm:text-sm leading-relaxed text-muted-foreground backdrop-blur-xl shadow-sm transition-all duration-300 hover:border-brand-green/40 hover:bg-background/80 hover:shadow-md">
+              <strong className="text-foreground font-bold block mb-1">
+                {ar ? "ملاحظة توثيقية للأرشيف:" : "Archival Lineage Note:"}
+              </strong>
+              <span>
+                {ar
+                  ? "التقارير والمراجعات القطاعية المؤرخة قبل عام 2023 توثق أنشطة الكيانات المؤسسة ومشاريعها المتخصصة قبل توحيدها الشامل تحت مظلة مجموعة سامي بن عياد عام 2023 (امتدادًا للجذور المهنية القائمة منذ 1977)."
+                  : "Archival Note: Reports and sector reviews dated prior to 2023 document the operational milestones and market engagements of predecessor founding entities prior to their formal unification under Sami Bin Ayyad Group in 2023, building on foundational roots established since 1977."}
               </span>
-              <div>
-                <strong className="text-foreground font-bold block mb-0.5">
-                  {ar ? "ملاحظة توثيقية للأرشيف:" : "Archival Lineage Note:"}
-                </strong>
-                <span>
-                  {ar
-                    ? "التقارير والمراجعات القطاعية المؤرخة قبل عام 2023 توثق أنشطة الكيانات المؤسسة ومشاريعها المتخصصة قبل توحيدها الشامل تحت مظلة مجموعة سامي بن عياد عام 2023 (امتدادًا للجذور المهنية القائمة منذ 1977)."
-                    : "Archival Note: Reports and sector reviews dated prior to 2023 document the operational milestones and market engagements of predecessor founding entities prior to their formal unification under Sami Bin Ayyad Group in 2023, building on foundational roots established since 1977."}
-                </span>
-              </div>
-            </div>
-
-            {/* Quick Metrics Bar */}
-            <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-6 border-t border-border/60">
-              <div className="rounded-2xl border border-border/80 bg-background/80 p-3.5 backdrop-blur-md">
-                <div className="text-xl sm:text-2xl font-black text-brand-orange font-mono">50</div>
-                <div className="text-[11px] font-medium text-muted-foreground mt-0.5">
-                  {ar ? "تقرير ومقال موثق" : "Documented Articles"}
-                </div>
-              </div>
-              <div className="rounded-2xl border border-border/80 bg-background/80 p-3.5 backdrop-blur-md">
-                <div className="text-xl sm:text-2xl font-black text-brand-green font-mono">7</div>
-                <div className="text-[11px] font-medium text-muted-foreground mt-0.5">
-                  {ar ? "محطات تاريخية (1977–2023)" : "Official Milestones"}
-                </div>
-              </div>
-              <div className="rounded-2xl border border-border/80 bg-background/80 p-3.5 backdrop-blur-md">
-                <div className="text-xl sm:text-2xl font-black text-foreground font-mono">3</div>
-                <div className="text-[11px] font-medium text-muted-foreground mt-0.5">
-                  {ar ? "مؤشرات اقتصادية موثقة" : "Economic Indicators"}
-                </div>
-              </div>
-              <div className="rounded-2xl border border-border/80 bg-background/80 p-3.5 backdrop-blur-md">
-                <div className="text-xl sm:text-2xl font-black text-foreground font-mono">1977</div>
-                <div className="text-[11px] font-medium text-muted-foreground mt-0.5">
-                  {ar ? "انطلاق الجذور الأولى" : "Operational Roots"}
-                </div>
-              </div>
             </div>
           </div>
         </Reveal>
