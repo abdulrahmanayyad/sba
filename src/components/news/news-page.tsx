@@ -420,11 +420,6 @@ export function NewsPage() {
 
           {/* C. Sector Categories (Exact 8 Categories) */}
           <div>
-            <div className="mb-3">
-              <SectionBadge>
-                <span>{ar ? "تصنيف القطاعات والأنشطة" : "Sector & Topic Categories"}</span>
-              </SectionBadge>
-            </div>
             <div className="flex flex-wrap items-center gap-2">
               {newsCategories.map((cat) => {
                 const isActive = selectedSector === cat.id;
