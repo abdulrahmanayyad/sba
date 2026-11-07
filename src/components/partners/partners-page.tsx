@@ -82,13 +82,13 @@ export function PartnersPage() {
             <Button asChild size="default" className="rounded-full !bg-brand-green !text-white hover:!bg-brand-orange text-xs sm:text-sm font-bold shadow-md cursor-pointer">
               <a href="/downloads/SBA_Corporate_Capabilities_EN.pdf" download="SBA_Corporate_Capabilities_EN.pdf" target="_blank" rel="noopener noreferrer">
                 <Download className="size-4 me-1.5" />
-                <span>{ar ? "تحميل بيان القدرات المؤسسية (PDF)" : "Download Capabilities Statement (PDF)"}</span>
+                <span>{ar ? "تحميل بيان القدرات المؤسسية" : "Download Capabilities Statement"}</span>
               </a>
             </Button>
             <Button asChild size="default" className="rounded-full !bg-brand-green !text-white hover:!bg-brand-orange text-xs sm:text-sm font-bold shadow-md cursor-pointer">
               <a href="/downloads/SBA_Business_And_Partnership_Overview_EN.pdf" download="SBA_Business_And_Partnership_Overview_EN.pdf" target="_blank" rel="noopener noreferrer">
                 <Download className="size-4 me-1.5" />
-                <span>{ar ? "مذكرة الشراكات والاستثمار (PDF)" : "Partnership Overview (PDF)"}</span>
+                <span>{ar ? "مذكرة الشراكات والاستثمار" : "Partnership Overview"}</span>
               </a>
             </Button>
           </div>
