@@ -1,7 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import {
   TrendingUp,
-  BarChart3,
   ExternalLink,
   ShieldCheck,
   Building2,
@@ -30,11 +29,11 @@ export function EconomicIndicatorsWidget() {
 
   return (
     <section className="w-full">
-      <div className="rounded-3xl border border-white/20 bg-background/85 p-6 sm:p-10 shadow-lg backdrop-blur-xl">
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-8 pb-6 border-b border-border/60">
-          <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-brand-green/30 bg-brand-green/10 px-3.5 py-1 text-xs font-bold text-brand-green-text mb-3">
-              <BarChart3 className="size-3.5" />
+      <div className="rounded-3xl border border-white/50 dark:border-white/15 bg-white/50 dark:bg-white/10 p-6 sm:p-10 shadow-lg backdrop-blur-xl">
+        <div className="flex flex-col items-center text-center gap-4 mb-8 pb-6 border-b border-border/60">
+          <div className="w-full text-center">
+            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-3">
+              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
               <span>{ar ? "مؤشرات السوق وتطور القطاعات" : "MARKET DATA & INDUSTRY INDICATORS"}</span>
             </div>
             <h3 className="text-center font-head text-2xl sm:text-3xl font-extrabold text-foreground leading-snug">
@@ -42,14 +41,14 @@ export function EconomicIndicatorsWidget() {
                 ? "مؤشرات نمو القطاعات الاقتصادية الموثقة (2010–2020)"
                 : "Verified Economic & Sectoral Benchmarks (2010–2020)"}
             </h3>
-            <p className="mt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed">
+            <p className="mt-3 text-xs sm:text-sm text-muted-foreground leading-relaxed text-center mx-auto max-w-full whitespace-normal lg:whitespace-nowrap">
               {ar
                 ? "بيانات اقتصادية وإحصائية موثقة استنادًا إلى تقارير منظمة التعاون الاقتصادي والتنمية (OECD) والبنك الأهلي المصري ومركز المعلومات ودعم اتخاذ القرار (IDSC)، تعكس التحولات الهيكلية للقطاعات المرتبطة بأنشطة المجموعة."
                 : "Documented economic metrics from the OECD, National Bank of Egypt (NBE), and Egyptian Cabinet IDSC, tracking structural shifts across industrial sectors."}
             </p>
           </div>
 
-          <div className="flex items-center gap-2 self-start lg:self-auto shrink-0 text-[11px] font-medium text-muted-foreground bg-secondary/60 px-3.5 py-2 rounded-xl border border-border">
+          <div className="inline-flex items-center gap-2 text-[11px] font-medium text-muted-foreground bg-secondary/60 px-3.5 py-1.5 rounded-xl border border-border">
             <ShieldCheck className="size-4 text-brand-green shrink-0" />
             <span>{ar ? "بيانات مرجعية خارجية محققة" : "Verified Third-Party Data"}</span>
           </div>
