@@ -1,27 +1,7 @@
 import { Link } from "@tanstack/react-router";
-import {
-  TrendingUp,
-  ExternalLink,
-  ShieldCheck,
-  Building2,
-  Utensils,
-  Factory,
-  ArrowUpRight,
-  FileText
-} from "lucide-react";
 import { Reveal } from "@/components/home/reveal";
 import { useLanguage } from "@/i18n/language-context";
 import { ECONOMIC_INDICATORS, type EconomicIndicator } from "./legacy-data";
-
-function getIndicatorIcon(id: string) {
-  if (id.includes("exports")) {
-    return <Factory className="size-5 text-brand-green" />;
-  }
-  if (id.includes("food")) {
-    return <Utensils className="size-5 text-brand-orange" />;
-  }
-  return <Building2 className="size-5 text-brand-green" />;
-}
 
 export function EconomicIndicatorsWidget() {
   const { language } = useLanguage();
@@ -49,7 +29,6 @@ export function EconomicIndicatorsWidget() {
           </div>
 
           <div className="inline-flex items-center gap-2 text-[11px] font-medium text-muted-foreground bg-secondary/60 px-3.5 py-1.5 rounded-xl border border-border">
-            <ShieldCheck className="size-4 text-brand-green shrink-0" />
             <span>{ar ? "بيانات مرجعية خارجية محققة" : "Verified Third-Party Data"}</span>
           </div>
         </div>
@@ -63,10 +42,7 @@ export function EconomicIndicatorsWidget() {
             >
               <div>
                 {/* Header */}
-                <div className="flex items-center justify-between gap-3 mb-4">
-                  <div className="size-10 rounded-xl bg-secondary flex items-center justify-center">
-                    {getIndicatorIcon(ind.id)}
-                  </div>
+                <div className="flex items-center justify-end gap-3 mb-4">
                   <span className="rounded-full bg-brand-orange/10 text-brand-orange border border-brand-orange/20 text-[10px] font-bold font-mono px-2.5 py-0.5">
                     {ar ? ind.changeLabelAr : ind.changeLabelEn}
                   </span>
@@ -120,7 +96,6 @@ export function EconomicIndicatorsWidget() {
                       title={ar ? "المصدر الأصلي" : "Original Source"}
                     >
                       <span>{ar ? "المصدر" : "Source"}</span>
-                      <ExternalLink className="size-3" />
                     </a>
                   )}
                 </div>
@@ -145,8 +120,7 @@ export function EconomicIndicatorsWidget() {
         </div>
 
         {/* Footnote on Data Responsibility */}
-        <div className="mt-6 p-3 rounded-xl bg-secondary/40 border border-border/60 flex items-center gap-2 text-[11px] text-muted-foreground">
-          <ShieldCheck className="size-4 text-brand-green shrink-0" />
+        <div className="mt-6 p-3.5 rounded-xl bg-secondary/40 border border-border/60 text-[11px] text-muted-foreground">
           <span>
             {ar
               ? "تنويه توثيقي: هذه المؤشرات مأخوذة من مراجعات رسمية لمنظمة OECD والبنك الأهلي المصري ومركز المعلومات، ولا تمثل إحصاءات داخلية خاصة بمجموعة سامي بن عياد."
