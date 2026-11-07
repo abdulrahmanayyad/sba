@@ -3,16 +3,11 @@ import { Link } from "@tanstack/react-router";
 import {
   ArrowRight,
   Briefcase,
-  Building2,
   Check,
   CheckCircle2,
   Download,
-  Factory,
   FileText,
   Filter,
-  Leaf,
-  MapPin,
-  Package,
   Search,
   Send,
   ShieldCheck,
@@ -33,7 +28,6 @@ import { cn } from "@/lib/utils";
 
 import {
   professionalServices,
-  executedConstructionProjects,
   serviceDivisionsConfig,
   type ProfessionalService,
   type ServiceSector,
@@ -46,7 +40,6 @@ export function ServicesCataloguePage() {
   const [selectedServiceSector, setSelectedServiceSector] = useState<ServiceSector>("construction");
   const [selectedServiceCategory, setSelectedServiceCategory] = useState<string>("all");
   const [serviceSearchQuery, setServiceSearchQuery] = useState("");
-  const [constructionTab, setConstructionTab] = useState<"services" | "projects">("services");
   const [activeServiceDetail, setActiveServiceDetail] = useState<ProfessionalService | null>(null);
   const [consultationTargetService, setConsultationTargetService] = useState<ProfessionalService | null>(null);
 
@@ -96,51 +89,18 @@ export function ServicesCataloguePage() {
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-4">
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-              <span>{ar ? "دليل الخدمات الهندسية" : "Engineering Services Directory"}</span>
+              <span>{ar ? "دليل الخدمات" : "Services Directory"}</span>
             </div>
 
-            <h1 className="font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold text-foreground leading-tight tracking-tight">
-              {ar ? (
-                <>
-                  دليل <span className="text-brand-green">الخدمات الهندسية</span> والحلول{" "}
-                  <span className="text-brand-orange">التعاقدية المتكاملة</span>
-                </>
-              ) : (
-                <>
-                  Engineering <span className="text-brand-green">Services & Turnkey</span> Solutions{" "}
-                  <span className="text-brand-orange">Directory</span>
-                </>
-              )}
+            <h1 className="font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold text-black dark:text-white text-center leading-tight tracking-tight">
+              {ar ? "دليل الخدمات والحلول المتكاملة" : "Services & Integrated Solutions Directory"}
             </h1>
 
-            <p className="mt-4 max-w-3xl mx-auto text-base sm:text-lg text-muted-foreground leading-relaxed">
+            <p className="mt-4 max-w-3xl mx-auto text-base sm:text-lg text-muted-foreground leading-relaxed text-center">
               {ar
                 ? "دليل القدرات التنفيذية والتعاقدية لمجموعة سامي بن عياد عبر المقاولات العامة والإنشاءات، الأنظمة والحلول البيئية المستدامة، وبرامج التصنيع التعاقدي للملابس (OEM/FOB)."
                 : "Comprehensive directory of Sami Bin Ayyad Group's turnkey engineering, EPC contracting, and industrial solutions across Construction, Environmental Engineering, and Apparel OEM Programs."}
             </p>
-
-            {/* Link to Products Catalogue CTA */}
-            <div className="mt-8 mx-auto max-w-2xl rounded-2xl border border-white/50 bg-white/40 dark:bg-white/10 p-4 sm:p-5 backdrop-blur-xl shadow-xs flex flex-col sm:flex-row items-center justify-between gap-4 text-start">
-              <div className="flex items-center gap-3">
-                <span className="p-2 rounded-xl bg-brand-orange/15 text-brand-orange shrink-0">
-                  <Package className="size-5" />
-                </span>
-                <div>
-                  <p className="text-xs sm:text-sm font-bold text-foreground">
-                    {ar ? "هل تبحث عن المنتجات المادية والسلع التصديرية؟" : "Looking for our physical products & export goods?"}
-                  </p>
-                  <p className="text-[11px] text-muted-foreground mt-0.5">
-                    {ar ? "الملابس والمنسوجات، والأغذية والمنتجات الطبيعية (24 منتجًا معتمدًا)" : "Apparel & Textiles, and Natural Food Products (24 verified SKUs)"}
-                  </p>
-                </div>
-              </div>
-              <Button asChild size="sm" className="rounded-full bg-brand-orange hover:bg-brand-green text-white text-xs font-bold px-5 shrink-0 shadow-xs transition-all duration-300 cursor-pointer">
-                <Link to="/products">
-                  <span>{ar ? "كتالوج المنتجات" : "Product Catalog"}</span>
-                  <ArrowRight className="size-3.5 ms-1.5 rtl:rotate-180" />
-                </Link>
-              </Button>
-            </div>
           </div>
         </Reveal>
       </section>
@@ -152,16 +112,16 @@ export function ServicesCataloguePage() {
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-border/60 pb-6">
             <div>
               <span className="text-xs font-bold text-brand-green uppercase tracking-wider block mb-1">
-                {ar ? "دليل القدرات والحلول الهندسية" : "ENGINEERING & SERVICES DIRECTORY"}
+                {ar ? "دليل الخدمات" : "SERVICES DIRECTORY"}
               </span>
               <h3 className="font-head text-2xl font-black text-foreground">
-                {ar ? "اختر قطاع الأعمال للاطلاع على القدرات والحلول" : "Select Engineering & Service Sector"}
+                {ar ? "اختر قطاع الأعمال" : "Select Business Sector"}
               </h3>
               <div className="mt-2 flex items-center gap-2">
                 <Button asChild size="sm" className="rounded-full !bg-brand-green !text-white hover:!bg-brand-orange text-xs font-bold shadow-xs cursor-pointer">
                   <a href="/downloads/SBA_Services_And_Solutions_Portfolio_EN.pdf" download="SBA_Services_And_Solutions_Portfolio_EN.pdf" target="_blank" rel="noopener noreferrer">
                     <Download className="size-3.5 me-1.5" />
-                    <span>{ar ? "تحميل دليل الخدمات والحلول (39 تخصصًا)" : "Download Services Portfolio (PDF)"}</span>
+                    <span>{ar ? "تحميل دليل الخدمات" : "Download Services Portfolio (PDF)"}</span>
                   </a>
                 </Button>
               </div>
@@ -200,37 +160,18 @@ export function ServicesCataloguePage() {
                   onClick={() => {
                     setSelectedServiceSector(cfg.division);
                     setSelectedServiceCategory("all");
-                    if (cfg.division === "construction") {
-                      setConstructionTab("services");
-                    }
                   }}
                   className={cn(
-                    "rounded-2xl p-4 text-start transition-all cursor-pointer border flex flex-col justify-between",
+                    "rounded-2xl p-5 text-start transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer border flex flex-col justify-between",
                     isSelected
                       ? "border-brand-green bg-brand-green/10 shadow-md ring-1 ring-brand-green"
-                      : "border-border/80 bg-background hover:bg-secondary/50"
+                      : "border-border/80 bg-background/80 hover:bg-secondary/50"
                   )}
                 >
-                  <div className="flex items-center justify-between mb-2">
-                    <div
-                      className={cn(
-                        "p-2 rounded-xl",
-                        isSelected ? "bg-brand-green text-white" : "bg-secondary text-foreground"
-                      )}
-                    >
-                      {cfg.division === "construction" && <Building2 className="size-4" />}
-                      {cfg.division === "environmental" && <Leaf className="size-4" />}
-                      {cfg.division === "apparel-services" && <Factory className="size-4" />}
-                    </div>
-                    <span className="text-[11px] font-mono font-bold text-muted-foreground">
-                      {professionalServices.filter((s) => s.sector === cfg.division).length}{" "}
-                      {ar ? "خدمة" : "services"}
-                    </span>
-                  </div>
-                  <h4 className="font-head text-sm font-bold text-foreground">
+                  <h4 className="font-head text-base font-bold text-foreground mb-1">
                     {ar ? cfg.labelAr : cfg.labelEn}
                   </h4>
-                  <p className="text-[11px] text-muted-foreground mt-1 line-clamp-2 leading-relaxed">
+                  <p className="text-xs text-muted-foreground line-clamp-2 leading-relaxed">
                     {ar ? cfg.descAr : cfg.descEn}
                   </p>
                 </button>
@@ -238,43 +179,8 @@ export function ServicesCataloguePage() {
             })}
           </div>
 
-          {/* Construction Special Switch: Services vs Our Projects */}
-          {selectedServiceSector === "construction" && (
-            <div className="pt-2 flex items-center gap-2">
-              <button
-                type="button"
-                onClick={() => setConstructionTab("services")}
-                className={cn(
-                  "rounded-full px-4 py-1.5 text-xs font-bold transition-all cursor-pointer",
-                  constructionTab === "services"
-                    ? "bg-brand-green text-white shadow-sm"
-                    : "border border-border bg-secondary/50 text-foreground"
-                )}
-              >
-                {ar ? "خدمات وقدرات المقاولات (9 خدمات)" : "Contracting Services & Capabilities"}
-              </button>
-
-              <button
-                type="button"
-                onClick={() => setConstructionTab("projects")}
-                className={cn(
-                  "rounded-full px-4 py-1.5 text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5",
-                  constructionTab === "projects"
-                    ? "!bg-brand-orange text-white shadow-sm"
-                    : "border border-border bg-secondary/50 text-foreground hover:border-brand-orange/40"
-                )}
-              >
-                <Building2 className="size-3.5" />
-                <span>{ar ? "مشروعاتنا المنفذة (Our Projects)" : "Our Executed Projects"}</span>
-                <span className="text-[10px] bg-white/20 px-1.5 py-0.2 rounded-full font-mono">
-                  {executedConstructionProjects.length}
-                </span>
-              </button>
-            </div>
-          )}
-
           {/* Category Pills inside current Service Division */}
-          {currentServiceDivisionConfig && (selectedServiceSector !== "construction" || constructionTab === "services") && (
+          {currentServiceDivisionConfig && (
             <div className="pt-2">
               <div className="text-[11px] font-bold text-muted-foreground uppercase tracking-wider mb-2 flex items-center gap-1.5">
                 <Filter className="size-3 text-brand-green" />
@@ -304,177 +210,114 @@ export function ServicesCataloguePage() {
           )}
         </div>
 
-        {/* Construction -> Our Projects */}
-        {selectedServiceSector === "construction" && constructionTab === "projects" ? (
-          <div>
-            <div className="mb-6 flex items-center justify-between">
-              <h3 className="font-head text-xl font-bold text-foreground">
-                {ar ? "مشروعات المقاولات المنفذة والمعتمدة" : "Executed Construction Projects Portfolio"}
-              </h3>
-              <span className="text-xs font-mono text-muted-foreground">
-                {ar ? `${executedConstructionProjects.length} مشروعات موثقة` : `${executedConstructionProjects.length} Verified Projects`}
-              </span>
-            </div>
+        {/* Standard Service Cards Grid */}
+        <div>
+          <div className="mb-6 flex items-center justify-between">
+            <span className="text-xs font-body text-muted-foreground font-semibold">
+              {ar
+                ? `عرض ${filteredServices.length} من أصل ${professionalServices.filter((s) => s.sector === selectedServiceSector).length} خدمة`
+                : `Showing ${filteredServices.length} of ${professionalServices.filter((s) => s.sector === selectedServiceSector).length} services`}
+            </span>
+          </div>
 
-            <div className="grid gap-6 sm:grid-cols-2">
-              {executedConstructionProjects.map((proj) => (
+          {filteredServices.length > 0 ? (
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {filteredServices.map((service) => (
                 <div
-                  key={proj.id}
-                  className="group overflow-hidden rounded-3xl border border-white/20 bg-background/85 shadow-md backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)]"
+                  key={service.id}
+                  className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-white/20 bg-background/85 shadow-md backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)]"
                 >
-                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-secondary">
-                    <img
-                      src={proj.image}
-                      alt={ar ? proj.nameAr : proj.nameEn}
-                      className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                    <div className="absolute top-3 start-3">
-                      <span className="rounded-full bg-brand-green px-3 py-1 text-xs font-bold text-white shadow-sm">
-                        {ar ? proj.statusAr : proj.statusEn}
-                      </span>
+                  <div>
+                    {/* Service Image Banner */}
+                    <div className="relative aspect-[16/10] w-full overflow-hidden bg-secondary">
+                      <img
+                        src={service.image}
+                        alt={ar ? service.nameAr : service.nameEn}
+                        loading="lazy"
+                        className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
                     </div>
-                    <div className="absolute bottom-3 start-3 end-3 flex items-center gap-1.5 text-white/90 text-xs font-medium">
-                      <MapPin className="size-3.5 text-brand-orange shrink-0" />
-                      <span className="truncate">{ar ? proj.locationAr : proj.locationEn}</span>
+
+                    {/* Content */}
+                    <div className="p-6">
+                      <h4 className="text-center font-head text-base sm:text-lg font-bold text-foreground group-hover:text-brand-green transition-colors leading-snug">
+                        {ar ? service.nameAr : service.nameEn}
+                      </h4>
+
+                      <p className="mt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed line-clamp-3 text-center">
+                        {ar ? service.descriptionAr : service.descriptionEn}
+                      </p>
+
+                      {/* Scope of Work Preview */}
+                      <div className="mt-4 pt-3 border-t border-border/50">
+                        <span className="text-[11px] font-bold text-foreground block mb-2">
+                          {ar ? "نطاق الأعمال الرئيسي:" : "Core Scope of Work:"}
+                        </span>
+                        <ul className="space-y-1.5 text-[11px] text-muted-foreground">
+                          {(ar ? service.scopeOfWorkAr : service.scopeOfWorkEn).slice(0, 2).map((item, iIdx) => (
+                            <li key={iIdx} className="flex items-start gap-1.5">
+                              <span className="size-1 rounded-full bg-brand-green mt-1.5 shrink-0" />
+                              <span className="line-clamp-1">{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* Applications Chips */}
+                      <div className="mt-3 pt-2 flex flex-wrap gap-1">
+                        {(ar ? service.applicationsAr : service.applicationsEn).slice(0, 3).map((app, aIdx) => (
+                          <span
+                            key={aIdx}
+                            className="rounded-md bg-secondary/80 px-2 py-0.5 text-[10px] text-muted-foreground font-medium"
+                          >
+                            {app}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
 
-                  <div className="p-6">
-                    <h4 className="text-center font-head text-lg font-bold text-foreground group-hover:text-brand-green transition-colors">
-                      {ar ? proj.nameAr : proj.nameEn}
-                    </h4>
-                    <p className="mt-3 text-xs sm:text-sm text-muted-foreground leading-relaxed text-center">
-                      {ar ? proj.scopeAr : proj.scopeEn}
-                    </p>
+                  {/* Card Actions */}
+                  <div className="p-6 pt-0 border-t border-border/40 mt-2 flex items-center gap-2">
+                    <Button
+                      type="button"
+                      size="sm"
+                      onClick={() => setActiveServiceDetail(service)}
+                      className="flex-1 rounded-full text-xs font-bold bg-brand-green text-white hover:bg-brand-orange transition-all duration-300"
+                    >
+                      <FileText className="size-3.5 me-1.5" />
+                      <span>{ar ? "تفاصيل الحل ونطاق العمل" : "Scope Details"}</span>
+                    </Button>
+
+                    <Button
+                      type="button"
+                      size="sm"
+                      onClick={() => {
+                        setConsultationTargetService(service);
+                        setIsConsultSubmitted(false);
+                        setGeneratedConsultCode(`SRV-REQ-${Math.floor(1000 + Math.random() * 9000)}`);
+                      }}
+                      className="rounded-full bg-brand-green hover:bg-brand-orange text-white text-xs font-bold px-3.5 transition-all duration-300"
+                    >
+                      <Briefcase className="size-3.5 me-1.5" />
+                      <span>{ar ? "طلب استشارة" : "Consult"}</span>
+                    </Button>
                   </div>
                 </div>
               ))}
             </div>
-          </div>
-        ) : (
-          /* Standard Service Cards Grid */
-          <div>
-            <div className="mb-6 flex items-center justify-between">
-              <span className="text-xs font-mono text-muted-foreground font-semibold">
-                {ar
-                  ? `عرض ${filteredServices.length} من أصل ${professionalServices.filter((s) => s.sector === selectedServiceSector).length} خدمة وحل هندسي`
-                  : `Showing ${filteredServices.length} of ${professionalServices.filter((s) => s.sector === selectedServiceSector).length} engineering solutions`}
-              </span>
+          ) : (
+            <div className="py-20 text-center rounded-3xl border border-dashed border-border bg-secondary/30">
+              <Wrench className="mx-auto size-12 text-muted-foreground/50 mb-3" />
+              <h4 className="font-head text-base font-bold text-foreground">
+                {ar ? "لا توجد خدمات مطابقة للبحث" : "No services found"}
+              </h4>
+              <p className="text-xs text-muted-foreground mt-1">
+                {ar ? "جرّب تغيير كلمات البحث أو اختيار قطاع آخر." : "Try adjusting your search query or choosing another service sector."}
+              </p>
             </div>
-
-            {filteredServices.length > 0 ? (
-              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                {filteredServices.map((service) => (
-                  <div
-                    key={service.id}
-                    className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-white/20 bg-background/85 shadow-md backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)]"
-                  >
-                    <div>
-                      {/* Service Image Banner */}
-                      <div className="relative aspect-[16/10] w-full overflow-hidden bg-secondary">
-                        <img
-                          src={service.image}
-                          alt={ar ? service.nameAr : service.nameEn}
-                          loading="lazy"
-                          className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-
-                        <div className="absolute top-3 start-3">
-                          <span className="rounded-full bg-black/70 px-2.5 py-0.5 text-[10px] font-mono font-bold text-white backdrop-blur-md border border-white/20">
-                            {service.code}
-                          </span>
-                        </div>
-
-                        <div className="absolute bottom-3 start-3">
-                          <span className="rounded-full bg-brand-green px-2.5 py-0.5 text-[10px] font-bold text-white shadow-sm">
-                            {ar ? service.categoryAr : service.categoryEn}
-                          </span>
-                        </div>
-                      </div>
-
-                      {/* Content */}
-                      <div className="p-6">
-                        <h4 className="text-center font-head text-base sm:text-lg font-bold text-foreground group-hover:text-brand-green transition-colors leading-snug">
-                          {ar ? service.nameAr : service.nameEn}
-                        </h4>
-
-                        <p className="mt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed line-clamp-3 text-center">
-                          {ar ? service.descriptionAr : service.descriptionEn}
-                        </p>
-
-                        {/* Scope of Work Preview */}
-                        <div className="mt-4 pt-3 border-t border-border/50">
-                          <span className="text-[11px] font-bold text-foreground block mb-2">
-                            {ar ? "نطاق الأعمال الرئيسي:" : "Core Scope of Work:"}
-                          </span>
-                          <ul className="space-y-1.5 text-[11px] text-muted-foreground">
-                            {(ar ? service.scopeOfWorkAr : service.scopeOfWorkEn).slice(0, 2).map((item, iIdx) => (
-                              <li key={iIdx} className="flex items-start gap-1.5">
-                                <span className="size-1 rounded-full bg-brand-green mt-1.5 shrink-0" />
-                                <span className="line-clamp-1">{item}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-
-                        {/* Applications Chips */}
-                        <div className="mt-3 pt-2 flex flex-wrap gap-1">
-                          {(ar ? service.applicationsAr : service.applicationsEn).slice(0, 3).map((app, aIdx) => (
-                            <span
-                              key={aIdx}
-                              className="rounded-md bg-secondary/80 px-2 py-0.5 text-[10px] text-muted-foreground font-medium"
-                            >
-                              {app}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Card Actions */}
-                    <div className="p-6 pt-0 border-t border-border/40 mt-2 flex items-center gap-2">
-                      <Button
-                        type="button"
-                        size="sm"
-                        onClick={() => setActiveServiceDetail(service)}
-                        className="flex-1 rounded-full text-xs font-bold bg-brand-green text-white hover:bg-brand-orange transition-all duration-300"
-                      >
-                        <FileText className="size-3.5 me-1.5" />
-                        <span>{ar ? "تفاصيل الحل ونطاق العمل" : "Scope Details"}</span>
-                      </Button>
-
-                      <Button
-                        type="button"
-                        size="sm"
-                        onClick={() => {
-                          setConsultationTargetService(service);
-                          setIsConsultSubmitted(false);
-                          setGeneratedConsultCode(`SRV-REQ-${Math.floor(1000 + Math.random() * 9000)}`);
-                        }}
-                        className="rounded-full bg-brand-green hover:bg-brand-orange text-white text-xs font-bold px-3.5 transition-all duration-300"
-                      >
-                        <Briefcase className="size-3.5 me-1.5" />
-                        <span>{ar ? "طلب استشارة" : "Consult"}</span>
-                      </Button>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <div className="py-20 text-center rounded-3xl border border-dashed border-border bg-secondary/30">
-                <Wrench className="mx-auto size-12 text-muted-foreground/50 mb-3" />
-                <h4 className="font-head text-base font-bold text-foreground">
-                  {ar ? "لا توجد خدمات مطابقة للبحث" : "No services found"}
-                </h4>
-                <p className="text-xs text-muted-foreground mt-1">
-                  {ar ? "جرّب تغيير كلمات البحث أو اختيار قطاع آخر." : "Try adjusting your search query or choosing another service sector."}
-                </p>
-              </div>
-            )}
-          </div>
-        )}
+          )}
+        </div>
       </section>
 
       {/* DIALOG: SERVICE & SOLUTION SCOPE DETAILS MODAL */}

@@ -1,8 +1,8 @@
 // ============================================================================
 // SAMI BIN AYYAD GROUP — SERVICES & SOLUTIONS REPOSITORY
 // Strictly dedicated to professional, engineering, and technical works.
-// Exactly 39 services across 3 operational divisions:
-// Construction (12), Environmental (19), and Apparel Services (8).
+// Exactly 38 services across 3 operational divisions:
+// Construction (12), Environmental (19), and Apparel Services (7).
 // ============================================================================
 
 export type ServiceSector = "construction" | "environmental" | "apparel-services";
@@ -53,7 +53,7 @@ export const professionalServices: ProfessionalService[] = [
     "categoryEn": "General Contracting",
     "categoryAr": "المقاولات العامة",
     "nameEn": "Turnkey General Contracting & Engineering Construction",
-    "nameAr": "المقاولات العامة المتكاملة والتنفيذ الهندسي الشامل",
+    "nameAr": "المقاولات العامة والتنفيذ الهندسي",
     "descriptionEn": "Comprehensive main contractor services executing complex commercial, institutional, and infrastructure projects from groundbreaking to final handover with single-source accountability.",
     "descriptionAr": "خدمات المقاول العام المتكامل لتنفيذ المشروعات الكبرى والمؤسسية والبنية التحتية، بدءًا من أعمال الحفر والأساسات وحتى التسليم النهائي تحت إدارة هندسية موحدة.",
     "scopeOfWorkEn": [
@@ -84,7 +84,7 @@ export const professionalServices: ProfessionalService[] = [
     "categoryEn": "Civil & Concrete Works",
     "categoryAr": "الأعمال المدنية والخرسانية",
     "nameEn": "Reinforced Concrete Structures & Civil Engineering Works",
-    "nameAr": "تنفيذ المنشآت الخرسانية المسلحة والأعمال المدنية الكبرى",
+    "nameAr": "الأعمال المدنية والخرسانية",
     "descriptionEn": "Precision formwork, rebar fabrication, mass concrete pouring, and post-tensioned slab construction for high-rise, commercial, and heavy-load foundations.",
     "descriptionAr": "تنفيذ أعمال الشدات المعدنية وتسليح الخرسانات وصب الكتل الخرسانية الضخمة والأسقف سابقة الإجهاد (Post-Tension) للأبراج والمباني ذات الأحمال العالية.",
     "scopeOfWorkEn": [
@@ -113,7 +113,7 @@ export const professionalServices: ProfessionalService[] = [
     "categoryEn": "Structural Steel Works",
     "categoryAr": "الأعمال والمنشآت الهيكلية",
     "nameEn": "Heavy Structural Steel Fabrication & Pre-Engineered Buildings",
-    "nameAr": "تصنيع وتركيب الهياكل الفولاذية والمنشآت المعدنية والجمالونات",
+    "nameAr": "الأعمال والمنشآت الهيكلية",
     "descriptionEn": "Engineering fabrication and erection of heavy post-tensioned concrete, precast elements, and large-span structural steel frames for industrial and commercial facilities.",
     "descriptionAr": "تصنيع وتوريد وتركيب الهياكل الفولاذية الثقيلة، الجمالونات المعدنية، والجمالونات الإنشائية ذات البحور الواسعة للمصانع والمستودعات والمطارات.",
     "scopeOfWorkEn": [
@@ -142,7 +142,7 @@ export const professionalServices: ProfessionalService[] = [
     "categoryEn": "Architectural Design & Drawings",
     "categoryAr": "الأعمال المعمارية والتصميمية",
     "nameEn": "Architectural Executive Design Drawings & Building Information Modeling (BIM)",
-    "nameAr": "الرسومات التنفيذية المعمارية ونمذجة معلومات البناء (BIM)",
+    "nameAr": "الأعمال المعمارية والتصميمية",
     "descriptionEn": "Transforming schematic architectural concepts into coordinated, constructible working drawings, BIM models, and clash-free interdisciplinary packages.",
     "descriptionAr": "تحويل المفاهيم المعمارية والتصميمية إلى حزم رسومات تنفيذية متكاملة ونماذج BIM دقيقة خالية من التعارضات بين كافة التخصصات الهندسية.",
     "scopeOfWorkEn": [
@@ -171,7 +171,7 @@ export const professionalServices: ProfessionalService[] = [
     "categoryEn": "Electromechanical Works (MEP)",
     "categoryAr": "الأعمال الكهروميكانيكية المتكاملة",
     "nameEn": "Integrated HVAC, Fire Protection, Electrical & Plumbing Engineering",
-    "nameAr": "الهندسة الكهروميكانيكية وأنظمة التكييف ومكافحة الحريق والكهرباء",
+    "nameAr": "الأعمال الكهروميكانيكية المتكاملة",
     "descriptionEn": "Complete engineering design, supply, installation, testing, and commissioning of integrated electrical and mechanical building infrastructure systems.",
     "descriptionAr": "هندسة وتوريد وتركيب واختبار وتشغيل الأنظمة الكهروميكانيكية المتكاملة، شاملة شبكات التكييف المركزي، مكافحة الحريق، الجهد المتوسط والمنخفض وأنظمة التيار الخفيف.",
     "scopeOfWorkEn": [
@@ -200,7 +200,7 @@ export const professionalServices: ProfessionalService[] = [
     "categoryEn": "Infrastructure & Utilities",
     "categoryAr": "تطوير البنية التحتية والشبكات",
     "nameEn": "Civil Infrastructure, Utility Networks & Deep Earthworks",
-    "nameAr": "أعمال البنية التحتية، شبكات المرافق العامة والأعمال الترابية العميقة",
+    "nameAr": "تطوير البنية التحتية والشبكات",
     "descriptionEn": "Large-scale earthmoving, deep trench excavations, underground potable water, irrigation, stormwater, sewage networks, and road construction.",
     "descriptionAr": "تنفيذ مشروعات البنية التحتية الكبرى، أعمال الحفر والردم والتسوية، وتمديد شبكات مياه الشرب والري وصرف الأمطار والصرف الصحي ورصف الطرق.",
     "scopeOfWorkEn": [
@@ -229,7 +229,7 @@ export const professionalServices: ProfessionalService[] = [
     "categoryEn": "Industrial Construction",
     "categoryAr": "الإنشاءات الصناعية والمباني الجاهزة",
     "nameEn": "Industrial Facilities, Pre-Engineered Factories & Logistics Hubs",
-    "nameAr": "إنشاء المصانع، المستودعات الصناعية والمجمعات اللوجستية",
+    "nameAr": "الإنشاءات الصناعية والمباني الجاهزة",
     "descriptionEn": "Turnkey construction of industrial plants, pharmaceutical facilities, heavy machine foundations, logistics parks, and refrigerated warehouses.",
     "descriptionAr": "بناء وتشييد المصانع المتكاملة والمنشآت الدوائية وقواعد الماكينات الثقيلة والمجمعات اللوجستية وثلاجات التخزين الكبرى.",
     "scopeOfWorkEn": [
@@ -258,7 +258,7 @@ export const professionalServices: ProfessionalService[] = [
     "categoryEn": "Healthcare & Medical Facilities",
     "categoryAr": "المنشآت الطبية والمستشفيات التخصصية",
     "nameEn": "Specialized Healthcare Construction, Cleanrooms & Medical Gas Systems",
-    "nameAr": "تجهيز المستشفيات، غرف العمليات المعقمة وشبكات الغازات الطبية",
+    "nameAr": "المنشآت الطبية والمستشفيات التخصصية",
     "descriptionEn": "Highly regulated construction of tertiary hospitals, specialized surgical centers, radiology bunkers, and ISO-certified cleanroom operating suites.",
     "descriptionAr": "تنفيذ وتجهيز المستشفيات التخصصية والمراكز الطبية والجراحية وغرف العمليات المعقمة والتحكم في العدوى وغرف الرنين المغناطيسي والعلاج الإشعاعي.",
     "scopeOfWorkEn": [
@@ -287,7 +287,7 @@ export const professionalServices: ProfessionalService[] = [
     "categoryEn": "Oil, Gas & Energy Facilities",
     "categoryAr": "منشآت ومحطات النفط والغاز والطاقة",
     "nameEn": "Specialized Oil, Gas & Petrochemical Civil Works & Tank Farms",
-    "nameAr": "الأعمال المدنية المتخصصة لقطاع البترول والغاز ومحطات التوزيع",
+    "nameAr": "منشآت ومحطات النفط والغاز والطاقة",
     "descriptionEn": "Heavy industrial civil construction within refinery, terminal, and petrochemical facility boundaries, meeting strict HSE zero-incident standards.",
     "descriptionAr": "تنفيذ الأعمال المدنية والإنشائية المتخصصة داخل مصافي البترول، مستودعات التخزين ومحطات توزيع وتداول الوقود وفق أعلى اشتراطات السلامة البترولية.",
     "scopeOfWorkEn": [
@@ -316,7 +316,7 @@ export const professionalServices: ProfessionalService[] = [
     "categoryEn": "Commercial & Administrative Complexes",
     "categoryAr": "المجمعات الإدارية والمراكز التجارية",
     "nameEn": "Commercial Malls, Corporate Headquarters & Business Towers",
-    "nameAr": "إنشاء المراكز التجارية والمباني الإدارية ومقرات الشركات",
+    "nameAr": "المجمعات الإدارية والمراكز التجارية",
     "descriptionEn": "Modern commercial construction integrating structural aesthetics, energy efficiency, flexible open floor plans, and intelligent facilities infrastructure.",
     "descriptionAr": "إنشاء وتطوير المولات التجارية والمباني الإدارية الحديثة بمواصفات عالمية، مساحات مفتوحة مرنة، وأنظمة توفير الطاقة والتحكم الذكي.",
     "scopeOfWorkEn": [
@@ -345,7 +345,7 @@ export const professionalServices: ProfessionalService[] = [
     "categoryEn": "Residential & Real Estate Development",
     "categoryAr": "التطوير العقاري والمجمعات السكنية",
     "nameEn": "Luxury Residential Compounds, Villa Communities & Urban Housing",
-    "nameAr": "تطوير الكمبوندات السكنية المغلقة، الفيلات ومشروعات الإسكان الحديث",
+    "nameAr": "التطوير العقاري والمجمعات السكنية",
     "descriptionEn": "Full-cycle real estate development and residential building execution, from master development to turnkey villa handovers and landscape integration.",
     "descriptionAr": "تنفيذ المشروعات السكنية الراقية، الكمبوندات المتكاملة، الفيلات المستقلة، التاون هاوس، والعمارات السكنية الحديثة مع كافة خدمات الموقع العام.",
     "scopeOfWorkEn": [
@@ -374,7 +374,7 @@ export const professionalServices: ProfessionalService[] = [
     "categoryEn": "Finishing & Interior Fit-Out",
     "categoryAr": "التشطيبات الراقية والتجهيزات الداخلية",
     "nameEn": "Turnkey Architectural Finishing, Luxury Fit-Out & Interior Contracting",
-    "nameAr": "التشطيبات المعمارية الراقية والديكور والتجهيزات الداخلية المتكاملة",
+    "nameAr": "التشطيبات الراقية والتجهيزات الداخلية",
     "descriptionEn": "Delivering high-end interior architecture, acoustic treatments, luxury woodwork, marble floors, and specialized false ceiling systems for corporate and commercial spaces.",
     "descriptionAr": "تنفيذ أعمال التشطيبات الداخلية الراقية، المعالجات الصوتية، النجارة المعمارية، الرخام الطبيعي، والأسقف المعلقة للمقرات الإدارية والفندقية والتجارية.",
     "scopeOfWorkEn": [
@@ -407,7 +407,7 @@ export const professionalServices: ProfessionalService[] = [
     "categoryEn": "Environmental Impact Assessment (EIA)",
     "categoryAr": "تقييم الأثر البيئي (EIA)",
     "nameEn": "Comprehensive Environmental Impact Assessment Studies (EIA)",
-    "nameAr": "دراسات تقييم الأثر البيئي الشاملة (EIA)",
+    "nameAr": "دراسات تقييم الأثر البيئي (EIA)",
     "descriptionEn": "Preparing statutory EIA studies across Category A, B, and C industrial, commercial, and infrastructure developments for ministry and regulatory compliance.",
     "descriptionAr": "إعداد دراسات تقييم الأثر البيئي للمشروعات الصناعية والسياحية والبنية التحتية بالقوائم (أ، ب، ج) للحصول على موافقات جهاز شئون البيئة والجهات المعنية.",
     "scopeOfWorkEn": [
@@ -436,7 +436,7 @@ export const professionalServices: ProfessionalService[] = [
     "categoryEn": "ESIA Studies",
     "categoryAr": "الدراسات البيئية والمجتمعية (ESIA)",
     "nameEn": "Integrated Environmental & Social Impact Assessment (ESIA) for International Lenders",
-    "nameAr": "التقييم البيئي والمجتمعي المتكامل (ESIA) لجهات التمويل الدولية",
+    "nameAr": "الدراسات البيئية والمجتمعية (ESIA)",
     "descriptionEn": "Structuring international-standard ESIA dossiers conforming to IFC Performance Standards, World Bank EHS Guidelines, and Equator Principles for global financing.",
     "descriptionAr": "إعداد دراسات الأثر البيئي والمجتمعي وفق معايير الأداء لمؤسسة التمويل الدولية (IFC)، البنك الأوروبي (EBRD)، والبنك الإفريقي للتنمية للحصول على التمويل الدولي.",
     "scopeOfWorkEn": [
@@ -465,7 +465,7 @@ export const professionalServices: ProfessionalService[] = [
     "categoryEn": "Carbon Footprint Assessment",
     "categoryAr": "حساب البصمة الكربونية",
     "nameEn": "Corporate Greenhouse Gas (GHG) Accounting & Carbon Footprint Audits",
-    "nameAr": "حساب وتدقيق البصمة الكربونية للمؤسسات والمنتجات وسلاسل الإمداد",
+    "nameAr": "حساب وتدقيق البصمة الكربونية",
     "descriptionEn": "Quantifying Scope 1, Scope 2, and Scope 3 greenhouse gas emissions conforming to the GHG Protocol and ISO 14064 for enterprises aiming for net-zero pathways.",
     "descriptionAr": "قياس واحتساب انبعاثات غازات الاحتباس الحراري للنطاقات الأول والثاني والثالث (Scope 1, 2, 3) طبقًا لمعايير GHG Protocol والأيزو 14064 لتحديد مسارات الحياد الكربوني.",
     "scopeOfWorkEn": [
@@ -494,7 +494,7 @@ export const professionalServices: ProfessionalService[] = [
     "categoryEn": "Carbon Emissions Reporting",
     "categoryAr": "تقارير الإفصاح عن الانبعاثات",
     "nameEn": "Carbon Emissions Disclosure, CBAM Compliance & ESG Reporting",
-    "nameAr": "تقارير الإفصاح عن الانبعاثات الكربونية وضريبة الكربون الأوروبية (CBAM)",
+    "nameAr": "تقارير الانبعاثات الكربونية والكربون الأوروبية (CBAM)",
     "descriptionEn": "Drafting verified carbon disclosure reports conforming to GRI, CDP, and the European Carbon Border Adjustment Mechanism (CBAM) for industrial exporters.",
     "descriptionAr": "إعداد وتدقيق تقارير الإفصاح عن الانبعاثات الكربونية المتوافقة مع معايير GRI و CDP ومتطلبات آلية تعديل حدود الكربون الأوروبية (CBAM) لتمكين التصدير بدون غرامات.",
     "scopeOfWorkEn": [
@@ -523,7 +523,7 @@ export const professionalServices: ProfessionalService[] = [
     "categoryEn": "Monitoring & Measurements",
     "categoryAr": "القياسات والرصد البيئي الميداني",
     "nameEn": "Field & Laboratory Environmental Monitoring (Air, Water, Soil & Noise)",
-    "nameAr": "القياسات والرصد البيئي الميداني والمعملي (انبعاثات، مياه، تربة، وضوضاء)",
+    "nameAr": "القياسات والرصد البيئي الميداني والمعملي",
     "descriptionEn": "Certified stack emissions testing, ambient air monitoring stations, work environment occupational noise measurements, and analytical wastewater laboratory assays.",
     "descriptionAr": "إجراء القياسات البيئية الميدانية المعتمدة لانبعاثات المداخن، جودة الهواء المحيط، قياسات بيئة العمل المهنية، والتحاليل المعملية لمياه الصرف الصناعي والتربة.",
     "scopeOfWorkEn": [
@@ -552,7 +552,7 @@ export const professionalServices: ProfessionalService[] = [
     "categoryEn": "Waste Management Solutions",
     "categoryAr": "حلول إدارة المخلفات",
     "nameEn": "Integrated Municipal, Commercial & Industrial Waste Management",
-    "nameAr": "المنظومة المتكاملة لإدارة وتدوير المخلفات البلدية والصناعية",
+    "nameAr": "منظومة إدارة وتدوير المخلفات",
     "descriptionEn": "End-to-end advisory and operations covering collection logistics, transfer stations, material sorting, circular recycling, and sanitary landfill engineering.",
     "descriptionAr": "إدارة منظومات المخلفات البلدية والصناعية من المصدر، تشمل خطط الجمع والنقل، تصميم المحطات الوسيطة، مصانع الفرز والتدوير، والمدافن الصحية الآمنة.",
     "scopeOfWorkEn": [
@@ -581,7 +581,7 @@ export const professionalServices: ProfessionalService[] = [
     "categoryEn": "Hazardous Waste Management",
     "categoryAr": "إدارة المخلفات الخطرة",
     "nameEn": "Hazardous Waste Handling, Chemical Neutralization & Safe Disposal",
-    "nameAr": "إدارة ومعالجة المخلفات الصناعية الخطرة والمواد الكيميائية والتخلص الآمن",
+    "nameAr": "إدارة ومعالجة المخلفات الخطرة",
     "descriptionEn": "Comprehensive physico-chemical treatment, solidification, stabilization, and safe neutralization of complex industrial solid residues, sludges, and spent chemicals.",
     "descriptionAr": "خدمات الفرز والتحييد الكيميائي والتثبيت والتصليد (Solidification & Stabilization) للمخلفات الصناعية الخطرة والحمأة ونقلها للمدافن المعتمدة.",
     "scopeOfWorkEn": [
@@ -610,7 +610,7 @@ export const professionalServices: ProfessionalService[] = [
     "categoryEn": "Solid Waste Recycling",
     "categoryAr": "تدوير المخلفات واسترداد الموارد",
     "nameEn": "Solid Waste Recycling, Material Recovery & Circular Economy Systems",
-    "nameAr": "تدوير المخلفات الصلبة، استرداد الموارد ونظم الاقتصاد الدائري",
+    "nameAr": "تدوير المخلفات واسترداد الموارد",
     "descriptionEn": "Developing high-efficiency recycling lines for plastics, paper, cardboard, and agricultural biomass into high-value raw materials and secondary products.",
     "descriptionAr": "تصميم وتشغيل خطوط إعادة تدوير البلاستيك والورق والكرتون والمخلفات الزراعية وتحويلها إلى خامات أولية وبدائل صناعية عالية القيمة.",
     "scopeOfWorkEn": [
@@ -639,7 +639,7 @@ export const professionalServices: ProfessionalService[] = [
     "categoryEn": "Waste-to-Energy Solutions",
     "categoryAr": "تحويل المخلفات إلى طاقة (WtE)",
     "nameEn": "Thermal & Refuse-Derived Fuel (RDF) Waste-to-Energy Plants",
-    "nameAr": "محطات وأنظمة تحويل المخلفات الصلبة والوقود البديل (RDF) إلى طاقة",
+    "nameAr": "أنظمة تحويل المخلفات الصلبة والوقود البديل إلى طاقة",
     "descriptionEn": "Engineering processing facilities converting non-recyclable combustible waste into high-calorific RDF pellets and steam/electricity for heavy industrial consumption.",
     "descriptionAr": "تصميم وتنفيذ محطات معالجة وإنتاج الوقود البديل عالي القيمة الحرارية (RDF) من المخلفات الصلبة لاستخدامه في أفران مصانع الأسمنت ومحطات توليد الكهرباء.",
     "scopeOfWorkEn": [
@@ -668,7 +668,7 @@ export const professionalServices: ProfessionalService[] = [
     "categoryEn": "Biogas Plants & Digestion",
     "categoryAr": "محطات الغاز الحيوي (البيوجاز)",
     "nameEn": "Commercial Anaerobic Digestion & Biogas Power Generation Plants",
-    "nameAr": "تطوير وإنشاء محطات الهضم اللاهوائي وإنتاج الغاز الحيوي وتوليد الكهرباء",
+    "nameAr": "إنشاء محطات الهضم اللاهوائي وإنتاج الغاز الحيوي وتوليد الكهرباء",
     "descriptionEn": "Designing and constructing industrial CSTR and UASB biogas reactors utilizing livestock manure, agro-industrial sludges, and food waste to generate green methane and biofertilizer.",
     "descriptionAr": "تصميم وإنشاء محطات الغاز الحيوي (البيوجاز) الصناعية والتخمير اللاهوائي لمخلفات المزارع ومصانع الأغذية والصرف الصحي لتوليد الكهرباء وإنتاج السماد العضوي.",
     "scopeOfWorkEn": [
@@ -726,7 +726,7 @@ export const professionalServices: ProfessionalService[] = [
     "categoryEn": "Environmental Economic Studies",
     "categoryAr": "الدراسات الاقتصادية البيئية",
     "nameEn": "Environmental Economics, Cost-Benefit Studies & Policy Advisory",
-    "nameAr": "الدراسات الاقتصادية البيئية، تحليل التكلفة والعائد واستشارات السياسات",
+    "nameAr": "الدراسات الاقتصادية البيئية",
     "descriptionEn": "Authoritative economic modeling analyzing environmental regulations, green taxation, natural capital valuation, and policy impact on enterprise profitability.",
     "descriptionAr": "النمذجة والتحليل الاقتصادي المتقدم للسياسات البيئية، تقييم رأس المال الطبيعي، دراسات الجدوى الاقتصادية البيئية، وتحليل أثر القوانين الخضراء على ربحية الشركات.",
     "scopeOfWorkEn": [
@@ -755,7 +755,7 @@ export const professionalServices: ProfessionalService[] = [
     "categoryEn": "Sustainability & ESG Consulting",
     "categoryAr": "استشارات الاستدامة واستراتيجيات ESG",
     "nameEn": "Corporate Sustainability Strategies, ESG Frameworks & Impact Programs",
-    "nameAr": "استراتيجيات الاستدامة المؤسسية، أطر الحوكمة البيئية والاجتماعية (ESG)",
+    "nameAr": "استراتيجيات الاستدامة واستراتيجيات (ESG)",
     "descriptionEn": "Formulating comprehensive corporate sustainability roadmaps, ESG scoring improvement, materiality assessments, and transparent non-financial reporting.",
     "descriptionAr": "تصميم وتطوير استراتيجيات الاستدامة المؤسسية الشاملة، تحسين تقييمات ESG للمؤسسات، مصفوفة الأهمية النسبية، وإعداد تقارير الاستدامة المعتمدة دوليًا.",
     "scopeOfWorkEn": [
@@ -784,7 +784,7 @@ export const professionalServices: ProfessionalService[] = [
     "categoryEn": "SDGs Consulting",
     "categoryAr": "استشارات أهداف التنمية المستدامة (SDGs)",
     "nameEn": "UN Sustainable Development Goals (SDGs) Alignment & Impact Mapping",
-    "nameAr": "مواءمة أهداف التنمية المستدامة للأمم المتحدة (SDGs) وقياس الأثر المجتمعي",
+    "nameAr": "استشارات أهداف التنمية المستدامة (SDGs)",
     "descriptionEn": "Mapping enterprise operations to the 17 UN Sustainable Development Goals, designing measurable impact KPIs, and qualifying projects for sovereign and green finance.",
     "descriptionAr": "مواءمة أنشطة وعمليات الشركات مع أهداف التنمية المستدامة الـ 17 للأمم المتحدة، ووضع مؤشرات قياس أثر ملموسة، وتأهيل المشروعات للتمويل الأخضر التنموي.",
     "scopeOfWorkEn": [
@@ -813,7 +813,7 @@ export const professionalServices: ProfessionalService[] = [
     "categoryEn": "ISO Management Systems",
     "categoryAr": "تأهيل أنظمة الأيزو البيئية وإدارة الطاقة",
     "nameEn": "ISO 14001 & ISO 50001 Management Systems Qualification & Auditing",
-    "nameAr": "تأهيل وتطبيق أنظمة الإدارة البيئية (ISO 14001) وإدارة الطاقة (ISO 50001)",
+    "nameAr": "تأهيل أنظمة الأيزو البيئية وإدارة الطاقة",
     "descriptionEn": "Comprehensive gap analysis, documentation, internal auditor training, and third-party audit facilitation for ISO 14001 (Environmental) and ISO 50001 (Energy Management).",
     "descriptionAr": "دراسة الفجوات، توثيق الإجراءات، تدريب المراجعين الداخليين، والدعم الكامل للحصول على شهادات الأيزو 14001 لنظم الإدارة البيئية والأيزو 50001 لنظم إدارة الطاقة.",
     "scopeOfWorkEn": [
@@ -842,7 +842,7 @@ export const professionalServices: ProfessionalService[] = [
     "categoryEn": "Integrated QHSE Solutions",
     "categoryAr": "حلول الجودة والصحة والسلامة والبيئة",
     "nameEn": "Integrated Quality, Health, Safety & Environment (QHSE) Solutions",
-    "nameAr": "حلول الجودة والصحة المهنية والسلامة والبيئة المتكاملة (QHSE)",
+    "nameAr": "حلول الجودة والصحة والسلامة والبيئة",
     "descriptionEn": "Designing robust QHSE management frameworks unifying ISO 9001, ISO 14001, and ISO 45001 to prevent workplace accidents and ensure regulatory compliance.",
     "descriptionAr": "تصميم وتطبيق منظومات متكاملة لإدارة الجودة والصحة والسلامة المهنية والبيئة (QHSE) لدمج معايير الأيزو 9001 و14001 و45001 لمنع الحوادث وضمان سلامة بيئة العمل.",
     "scopeOfWorkEn": [
@@ -871,7 +871,7 @@ export const professionalServices: ProfessionalService[] = [
     "categoryEn": "Digital EHS Software & IoT",
     "categoryAr": "المنظومات والحلول الرقمية للسلامة والبيئة",
     "nameEn": "Digital EHS Enterprise Software Platforms & Real-Time IoT Systems",
-    "nameAr": "المنظومات السحابية والحلول الرقمية لإدارة السلامة والبيئة (EHS Software & IoT)",
+    "nameAr": "المنظومات والحلول الرقمية للسلامة والبيئة",
     "descriptionEn": "Deploying proprietary cloud EHS software, mobile inspection tools, and IoT environmental sensor stations for automated data collection and compliance tracking.",
     "descriptionAr": "تطبيق المنظومات السحابية لإدارة البيئة والسلامة وتطبيقات التفتيش بالهاتف المحمول ومحطات الاستشعار الذكية لجمع البيانات البيئية آليًا وتحليل المخاطر لحظيًا.",
     "scopeOfWorkEn": [
@@ -900,7 +900,7 @@ export const professionalServices: ProfessionalService[] = [
     "categoryEn": "Biotechnology & Bioremediation",
     "categoryAr": "التكنولوجيا الحيوية والمعالجة البيولوجية",
     "nameEn": "Applied Environmental Biotechnology & Biological Hydrocarbon Remediation",
-    "nameAr": "التكنولوجيا الحيوية والمعالجة البيولوجية للملوثات الزيتية والروائح",
+    "nameAr": "التكنولوجيا الحيوية والمعالجة البيولوجية",
     "descriptionEn": "Deploying specialized bio-catalytic formulations and microbial consortia to neutralize odor emissions, degrade oil sludge, and restore contaminated soil and wastewater.",
     "descriptionAr": "تطبيق الحلول البيولوجية المتقدمة ومستحضرات البكتيريا المتخصصة لتحييد الروائح الكريهة وتفتيت الحمأة البترولية ومعالجة مياه الصرف الصحي والصناعي طبيعيًا.",
     "scopeOfWorkEn": [
@@ -929,7 +929,7 @@ export const professionalServices: ProfessionalService[] = [
     "categoryEn": "Applied Environmental R&D",
     "categoryAr": "البحث والتطوير العلمي البيئي التطبيقي",
     "nameEn": "Applied Environmental Research, Laboratory Assays & Technology Commercialization",
-    "nameAr": "البحث والتطوير العلمي البيئي التطبيقي والشراكات الأكاديمية",
+    "nameAr": "البحث والتطوير العلمي البيئي التطبيقي",
     "descriptionEn": "Conducting collaborative scientific R&D in partnership with universities and research institutes to engineer innovative solutions for industrial pollution and resource recovery.",
     "descriptionAr": "تنفيذ برامج البحث العلمي التطبيقي بالتعاون مع الجامعات والمراكز البحثية لتطوير حلول مبتكرة لمشاكل التلوث الصناعي، ومعالجة المياه واسترداد الموارد.",
     "scopeOfWorkEn": [
@@ -952,7 +952,7 @@ export const professionalServices: ProfessionalService[] = [
   },
 
   // --------------------------------------------------------------------------
-  // DIVISION 3: APPAREL & TEXTILE MANUFACTURING SERVICES (8 Programs)
+  // DIVISION 3: APPAREL & TEXTILE MANUFACTURING SERVICES (7 Programs)
   // --------------------------------------------------------------------------
   {
     "id": "srv-app-oem",
@@ -962,7 +962,7 @@ export const professionalServices: ProfessionalService[] = [
     "categoryEn": "OEM Contract Manufacturing",
     "categoryAr": "التصنيع الأصلي للمعدات OEM",
     "nameEn": "Original Equipment Manufacturer (OEM) Apparel Production",
-    "nameAr": "التصنيع كشريك للمعدات الأصلية والعلامات التجارية (OEM)",
+    "nameAr": "التصنيع بمواصفات العلامات التجارية OEM",
     "descriptionEn": "Providing industrial production line capacity for global retail brands and corporate buyers. Offers pure Cut-Make-Trim (CMT) or partial-supply contract models.",
     "descriptionAr": "توفير طاقات خطوط الإنتاج الصناعية للعلامات التجارية العالمية وتجار التجزئة، مع خيارات التشغيل بنظام القص والخياطة (CMT) أو التصنيع الشامل.",
     "scopeOfWorkEn": [
@@ -991,7 +991,7 @@ export const professionalServices: ProfessionalService[] = [
     "categoryEn": "ODM Design & Co-Development",
     "categoryAr": "التصميم والتصنيع المشترك ODM",
     "nameEn": "ODM Fashion Co-Development & Ready Design Customization",
-    "nameAr": "التصميم والتصنيع المشترك (ODM) والتخصيص من كتالوج المجموعة",
+    "nameAr": "التصنيع من محفطة الموديلات المعتمدة ODM",
     "descriptionEn": "End-to-end design development allowing fashion labels to select and customize garments from our verified 2,700+ design library without internal design overhead.",
     "descriptionAr": "خدمة تطوير وتصميم متكاملة تتيح للماركات التجارية اختيار وتخصيص موديلات من محفظتنا المعتمدة التي تضم أكثر من 2,700 تصميم جاهز للإنتاج الفوري.",
     "scopeOfWorkEn": [
@@ -1020,7 +1020,7 @@ export const professionalServices: ProfessionalService[] = [
     "categoryEn": "Private Label Manufacturing",
     "categoryAr": "التصنيع للعلامات التجارية الخاصة",
     "nameEn": "Turnkey Private Label Manufacturing & Brand Collection Packaging",
-    "nameAr": "التصنيع المتكامل للعلامات التجارية الخاصة (Private Label)",
+    "nameAr": "التصنيع للعلامات التجارية الخاصة",
     "descriptionEn": "Complete contract manufacturing tailored to brand identity, including custom jacquard woven neck labels, engraved metal hardware, hangtags, and presentation gift boxes.",
     "descriptionAr": "تصنيع متكامل وحصري للعلامات التجارية يشمل حياكة البطاقات المنسوجة الفاخرة، الإكسسوارات المعدنية المنقوشة، كروت الأسعار، والتغليف التصديري الفاخر.",
     "scopeOfWorkEn": [
@@ -1049,7 +1049,7 @@ export const professionalServices: ProfessionalService[] = [
     "categoryEn": "Full Package FOB Programs",
     "categoryAr": "برامج التصنيع الشامل والتصدير (FOB)",
     "nameEn": "Full Package & FOB Export Garment Manufacturing Programs",
-    "nameAr": "برامج التصنيع الشامل بنظام FOB والتسليم على ظهر السفينة بالموانئ",
+    "nameAr": "التصنيع الشامل بنظام FOB",
     "descriptionEn": "All-inclusive manufacturing coordinating raw cotton fiber, knitting, piece dyeing, bulk production, and port customs export clearance under standard international Incoterms.",
     "descriptionAr": "برامج تصنيع شاملة تتولى شراء الأقمشة والغزول، الصباغة، التصنيع الكامل، الفحص المخبري، وإنهاء الإجراءات الجمركية وشحن الحاويات بموانئ الإسكندرية ودمياط.",
     "scopeOfWorkEn": [
@@ -1078,7 +1078,7 @@ export const professionalServices: ProfessionalService[] = [
     "categoryEn": "CAD Pattern Engineering",
     "categoryAr": "هندسة الباترون وتطوير المنتجات",
     "nameEn": "CAD Pattern Engineering, Computerized Grading & Tech Pack Creation",
-    "nameAr": "هندسة الباترون وتدريج المقاسات بالكمبيوتر وتطوير الملفات الفنية",
+    "nameAr": "تنفيذ الباترونات وتطوير الملفات التقنية",
     "descriptionEn": "Precision computerized pattern development using leading CAD systems, accurate multi-size grading, fabric consumption optimization, and comprehensive tech packs.",
     "descriptionAr": "تطوير الباترونات الرقمية الدقيقة على أنظمة CAD المتطورة، تدريج المقاسات الأوروبية والأمريكية والخليجية، وحساب استهلاك القماش الأمثل لتوفير التكلفة.",
     "scopeOfWorkEn": [
@@ -1107,7 +1107,7 @@ export const professionalServices: ProfessionalService[] = [
     "categoryEn": "Rapid Sampling & Prototyping",
     "categoryAr": "صناعة العينات والنماذج الأولية",
     "nameEn": "Rapid Apparel Sampling, Fit Prototypes & Pre-Production Approvals",
-    "nameAr": "صناعة العينات السريعة، عينات الملاءمة والنماذج الأولية المعتمدة",
+    "nameAr": "تنفيذ العينات والنماذج الأولية",
     "descriptionEn": "Dedicated sample room operating independent lines to cut, sew, finish, and deliver proto samples, fit samples, and sales representative samples under fast turnarounds.",
     "descriptionAr": "معمل عينات متكامل يعمل بخطوط مستقلة لقص وخياطة وتشطيب العينات الأولية وعينات الملاءمة وعينات مندوبي المبيعات قبل الإنتاج الكمي في أوقات قياسية.",
     "scopeOfWorkEn": [
@@ -1129,43 +1129,14 @@ export const professionalServices: ProfessionalService[] = [
     "image": "/BG/Apparel Manufacturing/Product Development & Sampling.jpg"
   },
   {
-    "id": "srv-app-bulk-planning",
-    "code": "SBA-SRV-APP07",
-    "sector": "apparel-services",
-    "categoryKey": "bulk-production",
-    "categoryEn": "Commercial Bulk Production",
-    "categoryAr": "الإنتاج الصناعي الكمي المتوسع",
-    "nameEn": "Industrial Bulk Production Planning, Modular Line Balancing & Scaling",
-    "nameAr": "تخطيط وموازنة خطوط الإنتاج الصناعي الكمي والجدولة التشغيلية",
-    "descriptionEn": "Managing high-volume commercial production across multiple modular assembly lines, integrating daily piece tracking, bottleneck resolution, and reliable shipping deadlines.",
-    "descriptionAr": "إدارة وجدولة الإنتاج الصناعي الكمي عبر أكثر من 15 خط إنتاج نمطي، مع ضبط توازن العمليات والقضاء على الاختناقات لضمان الالتزام بمواعيد الشحن الدولية.",
-    "scopeOfWorkEn": [
-      "Capacity allocation, machine setup, and line balancing using time-and-motion studies (SAM/SMV)",
-      "Real-time ERP shop-floor tracking of cutting, sewing, finishing, and packaging stages",
-      "Dedicated classic shirt specialized facility coordination (up to 45,000 certified shirts/mo)",
-      "Daily production efficiency monitoring and preventive machinery maintenance routines"
-    ],
-    "scopeOfWorkAr": [
-      "توزيع الطاقات وضبط الماكينات وموازنة الخطوط بدراسات الوقت والحركة SAM/SMV",
-      "متابعة لحظية بمراحل الإنتاج على نظام ERP من القص وحتى التعبئة والشحن",
-      "تشغيل وإدارة مصنع القمصان الكلاسيك التخصصي بطاقة تصل إلى 45,000 قميص شهريًا",
-      "مراقبة مؤشرات الكفاءة اليومية والإنتاجية مع الصيانة الوقائية المستمرة للماكينات"
-    ],
-    "applicationsEn": ["High-Volume Retail Orders", "Seasonal Fashion Drops", "Large Corporate Uniform Contracts", "Export Distributors"],
-    "applicationsAr": ["طلبيات التجزئة الكبرى", "طروحات الأزياء الموسمية الضخمة", "عقود توريد الزي الموحد للشركات والمصانع", "الموزعون الدوليون للملابس الجاهزة"],
-    "capabilitiesEn": ["Scalable production capacity exceeding 5,000 pieces/day and 100,000 pieces/mo", "Dedicated 100-machine classic shirt facility", "Skilled industrial workforce of over 400 operators"],
-    "capabilitiesAr": ["طاقة إنتاجية قابلة للتوسع تتجاوز 5,000 قطعة يوميًا و 100,000 قطعة شهريًا", "مصنع تخصصي مستقل يضم 100 ماكينة لإنتاج القمصان الرسمية", "فريق صناعي مؤهل يضم أكثر من 400 فني وخياط ومشرف"],
-    "image": "/BG/Apparel Manufacturing/Textile & Ready-Made Garments Sector.jpg"
-  },
-  {
     "id": "srv-app-fabric-qc",
-    "code": "SBA-SRV-APP08",
+    "code": "SBA-SRV-APP07",
     "sector": "apparel-services",
     "categoryKey": "fabric-quality",
     "categoryEn": "Custom Fabric & Quality Assurance",
     "categoryAr": "تطوير الأقمشة وضمان الجودة الشاملة",
     "nameEn": "Custom Fabric Sourcing, Eco-Friendly Dyeing & Multi-Stage AQL Quality Auditing",
-    "nameAr": "تطوير وتوريد الأقمشة الفاخرة، الصباغة الصديقة للبيئة والفحص بمقاييس AQL",
+    "nameAr": "تطوير وتوريد الأقمشة وصباغتها",
     "descriptionEn": "Integrated textile fabric sourcing, laboratory spectrophotometer computerized dyeing, shrinkage control, and rigorous 4-point fabric and AQL 1.5 finished garment auditing.",
     "descriptionAr": "توريد وتطوير الأقمشة القطنية الفاخرة، الصباغة الآلية بأصباغ معتمدة من OEKO-TEX، ضبط الانكماش وثبات الألوان، وفحص الجودة بمقاييس AQL 1.5 الصارمة.",
     "scopeOfWorkEn": [
@@ -1265,7 +1236,7 @@ export const serviceDivisionsConfig = [
   {
     division: "environmental" as const,
     labelEn: "Environmental Solutions",
-    labelAr: "الحلول البيئية والاستدامة",
+    labelAr: "خدمات الحلول البيئية والاستدامة",
     descEn: "Comprehensive waste management, biogas systems, odor control, bio-remediation, EIA studies, and carbon footprint assessments.",
     descAr: "إدارة المخلفات، محطات البيوجاز وتحويل المخلفات لطاقة، معالجة الروائح، دراسات تقييم الأثر البيئي، وحساب البصمة الكربونية.",
     categories: [
@@ -1292,7 +1263,7 @@ export const serviceDivisionsConfig = [
   {
     division: "apparel-services" as const,
     labelEn: "Apparel Manufacturing Services",
-    labelAr: "خدمات تصنيع الملابس",
+    labelAr: "خدمات تصنيع الملابس الجاهزة",
     descEn: "Private label programs, OEM/FOB manufacturing, CAD sampling, fabric dyeing, and certified quality control.",
     descAr: "تصنيع لحساب الغير، حلول OEM و FOB، تطوير العينات والباترون، الصباغة المعملية، وضبط الجودة بمقاييس AQL.",
     categories: [
@@ -1303,7 +1274,6 @@ export const serviceDivisionsConfig = [
       { key: "fob-manufacturing", labelEn: "FOB Full Package Programs", labelAr: "برامج التصنيع الشامل والتصدير FOB" },
       { key: "product-development", labelEn: "CAD Pattern Engineering", labelAr: "هندسة الباترون وتطوير المنتجات" },
       { key: "rapid-sampling", labelEn: "Rapid Sampling & Prototyping", labelAr: "صناعة العينات والنماذج الأولية" },
-      { key: "bulk-production", labelEn: "Commercial Bulk Production", labelAr: "الإنتاج الصناعي الكمي" },
       { key: "fabric-quality", labelEn: "Fabric Sourcing & AQL Quality", labelAr: "توريد الأقمشة وضمان الجودة AQL" }
     ]
   }
