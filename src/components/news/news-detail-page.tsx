@@ -235,12 +235,12 @@ export function NewsDetailPage({ slug }: { slug: string }) {
           </div>
 
           {/* Headline */}
-          <h1 className="text-start font-head text-2xl sm:text-4xl lg:text-5xl font-bold text-foreground leading-tight max-w-4xl tracking-tight">
+          <h1 className="text-start font-head text-xl sm:text-2xl lg:text-3xl font-bold text-foreground leading-snug sm:leading-snug lg:leading-normal max-w-4xl tracking-tight">
             {ar ? article.titleAr : article.titleEn}
           </h1>
 
           {/* Lead / Excerpt */}
-          <p className="mt-6 text-base sm:text-xl text-muted-foreground leading-relaxed max-w-3xl border-s-4 border-brand-green ps-4 text-start">
+          <p className="mt-4 text-base sm:text-lg text-muted-foreground leading-relaxed max-w-3xl border-s-4 border-brand-green ps-4 text-start">
             {ar ? article.excerptAr : article.excerptEn}
           </p>
 

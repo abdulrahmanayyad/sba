@@ -282,7 +282,7 @@ export function NewsPage() {
                       </span>
                     </div>
 
-                    <h2 className="font-head text-2xl sm:text-3xl font-bold text-foreground group-hover:text-brand-green transition-colors leading-snug text-start">
+                    <h2 className="font-head text-lg sm:text-xl lg:text-2xl font-bold text-foreground group-hover:text-brand-green transition-colors leading-snug text-start">
                       <Link to="/news/$slug" params={{ slug: featuredArticle.slug }}>
                         {ar ? featuredArticle.titleAr : featuredArticle.titleEn}
                       </Link>
