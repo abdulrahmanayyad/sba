@@ -597,7 +597,7 @@ export const founders = [
   },
   {
     role: "Chief Financial Officer (CFO)",
-    roleAr: "المدير المالي | Chief Financial Officer (CFO)",
+    roleAr: "المدير المالي",
     name: "Dr. Abdulaziz Sami Bin Ayyad",
     nameAr: "د. عبد العزيز سامي بن عياد",
     image: "/Leadership/Abdulaziz Bin Ayyad.jpg",
