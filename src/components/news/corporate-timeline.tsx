@@ -140,37 +140,47 @@ export function CorporateTimeline() {
                   key={m.year}
                   type="button"
                   onClick={() => setActiveYear(m.year)}
-                  className="group relative z-10 flex flex-col items-center flex-1 transition-all cursor-pointer focus:outline-none py-1"
+                  className="group relative z-10 flex flex-col items-center flex-1 transition-all duration-300 cursor-pointer focus:outline-none py-1 hover:-translate-y-1.5 active:scale-95"
                 >
                   {/* Square Node */}
                   <div
                     className={cn(
                       "size-14 rounded-2xl flex items-center justify-center transition-all duration-300 shadow-md",
                       isSelected
-                        ? "!bg-brand-orange text-white shadow-lg shadow-brand-orange/30 scale-105 ring-4 ring-brand-orange/25"
+                        ? "!bg-brand-orange text-white shadow-xl shadow-brand-orange/40 scale-105 ring-4 ring-brand-orange/30 ring-offset-2 ring-offset-background"
                         : isPast
-                        ? "!bg-brand-green text-white hover:bg-brand-orange hover:scale-105 hover:shadow-lg"
-                        : "border border-border/80 bg-secondary/80 text-muted-foreground hover:bg-secondary hover:text-foreground hover:scale-105"
+                        ? "!bg-brand-green text-white hover:!bg-brand-orange hover:shadow-lg hover:shadow-brand-orange/25 group-hover:scale-105"
+                        : "border border-border/80 bg-secondary/80 text-muted-foreground hover:bg-secondary hover:text-foreground group-hover:scale-105"
                     )}
                   >
                     {!isLast ? (
-                      <ArrowRight className="size-5 transition-transform duration-300 rtl:rotate-180 group-hover:scale-110" />
+                      <ArrowRight className="size-5 transition-transform duration-300 rtl:rotate-180 group-hover:scale-110 rtl:group-hover:-translate-x-1 group-hover:translate-x-1" />
                     ) : (
-                      <CheckCircle2 className="size-5 transition-transform duration-300 group-hover:scale-110" />
+                      <CheckCircle2 className="size-5 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12" />
                     )}
                   </div>
 
                   {/* Year Tag */}
                   <span
                     className={cn(
-                      "mt-2 text-xs font-black font-mono tracking-tight transition-colors",
+                      "mt-2 text-xs font-black font-mono tracking-tight transition-all duration-300",
                       isSelected
                         ? "text-brand-orange font-bold text-sm scale-105"
-                        : "text-foreground group-hover:text-brand-orange"
+                        : "text-foreground group-hover:text-brand-orange group-hover:scale-105"
                     )}
                   >
                     {m.year}
                   </span>
+
+                  {/* Animated Active Indicator Dot */}
+                  <span
+                    className={cn(
+                      "size-1.5 rounded-full transition-all duration-300 mt-1",
+                      isSelected
+                        ? "bg-brand-orange scale-100 shadow-xs shadow-brand-orange animate-pulse"
+                        : "opacity-0 scale-0"
+                    )}
+                  />
                 </button>
               );
             })}
@@ -178,7 +188,10 @@ export function CorporateTimeline() {
         </div>
 
         {/* 3. Active Milestone Detail Card */}
-        <div className="relative overflow-hidden rounded-2xl border border-white/40 dark:border-white/10 bg-white/40 dark:bg-white/5 p-6 sm:p-8 backdrop-blur-xl shadow-md transition-all duration-500">
+        <div
+          key={activeYear}
+          className="relative overflow-hidden rounded-2xl border border-white/40 dark:border-white/10 bg-white/40 dark:bg-white/5 p-6 sm:p-8 backdrop-blur-xl shadow-md transition-all duration-300 animate-in fade-in"
+        >
           {/* Active Milestone Content */}
           <div className="space-y-3">
             <div className="flex flex-wrap items-center gap-2">
