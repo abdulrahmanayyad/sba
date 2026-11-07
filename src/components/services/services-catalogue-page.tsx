@@ -121,7 +121,7 @@ export function ServicesCataloguePage() {
                 <Button asChild size="sm" className="rounded-full !bg-brand-green !text-white hover:!bg-brand-orange text-xs font-bold shadow-xs cursor-pointer">
                   <a href="/downloads/SBA_Services_And_Solutions_Portfolio_EN.pdf" download="SBA_Services_And_Solutions_Portfolio_EN.pdf" target="_blank" rel="noopener noreferrer">
                     <Download className="size-3.5 me-1.5" />
-                    <span>{ar ? "تحميل دليل الخدمات" : "Download Services Portfolio (PDF)"}</span>
+                    <span>{ar ? "تحميل دليل الخدمات" : "Download Services Directory"}</span>
                   </a>
                 </Button>
               </div>
