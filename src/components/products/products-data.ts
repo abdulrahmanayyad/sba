@@ -17,8 +17,11 @@ export interface PhysicalProduct {
   code: string;
   sector: ProductDivision;
   categoryKey: string;
+  categoryKeys?: string[];
   categoryEn: string;
   categoryAr: string;
+  mainDepartmentEn?: string;
+  mainDepartmentAr?: string;
   nameEn: string;
   nameAr: string;
   taglineEn: string;
@@ -37,423 +40,835 @@ export interface PhysicalProduct {
 }
 
 export const physicalProducts: PhysicalProduct[] = [
+  // ==========================================================================
+  // SECTION 1: ملابس الأطفال والأطفال الرضع (KIDS & BABY WEAR)
+  // ==========================================================================
   {
-    "id": "prod-gar-women",
-    "code": "SBA-PRD-WMN01",
-    "sector": "apparel",
-    "categoryKey": "womens-wear",
-    "categoryEn": "Women's Wear",
-    "categoryAr": "الملابس النسائية",
-    "nameEn": "Women's Contemporary Fashion & Ready-to-Wear Line",
-    "nameAr": "تشكيلة الملابس النسائية العصرية والجاهزة",
-    "taglineEn": "Refined women's blouses, trousers, tailored sets, and seasonal collections crafted from premium Egyptian fabrics.",
-    "taglineAr": "بلوزات، بناطيل، أطقم نسائية مصممة بأعلى معايير الأناقة والراحة من أجود خامات القطن والكتان.",
-    "descriptionEn": "A comprehensive manufacturing line for contemporary women's apparel. Includes woven and knit blouses, relaxed-fit pants, and coordinated two-piece sets designed for everyday elegance and durability.",
-    "descriptionAr": "خط تصنيع متكامل للملابس النسائية العصرية، يشمل بلوزات قماش وتريكو، بناطيل كاجوال ورسمية، وأطقم متناسقة مصممة لتوفير أقصى درجات الأناقة والراحة اليومية.",
-    "image": "/Categories/Kids/Casual/summer/Casual - (8-14) (1).jpg",
-    "originEn": "Egypt",
-    "originAr": "جمهورية مصر العربية",
-    "originFlag": "🇪🇬",
-    "moqEn": "300 pcs / style",
-    "moqAr": "300 قطعة / تصميم",
-    "packagingEn": "Individual polybag with custom hanger and export carton packing.",
-    "packagingAr": "تغليف فردي في كيس شفاف مع شماعة مخصصة وكراتين تصدير مقواة.",
-    "specifications": [
+    id: "prod-gar-kid-casual",
+    code: "SBA-PRD-KID-CAS01",
+    sector: "apparel",
+    categoryKey: "kids-wear",
+    categoryKeys: ["kids-wear", "casual-wear"],
+    categoryEn: "Kids & Baby Wear",
+    categoryAr: "ملابس الأطفال والرضع",
+    mainDepartmentEn: "Kids & Baby Wear",
+    mainDepartmentAr: "ملابس الأطفال والرضع",
+    nameEn: "Kids Everyday Casual Wear Collection",
+    nameAr: "ملابس الأطفال اليومية (كاجوال)",
+    taglineEn: "Kids t-shirts, denim & cotton pants, shorts, casual shirts, 2/3-piece sets, jackets, and fleece hoodies.",
+    taglineAr: "تيشيرتات، بناطيل جينز وقطنية، شورتات، قمصان كاجوال، أطقم يومية قطعتين وثلاث قطع، سترات وهوديز.",
+    descriptionEn: "A comprehensive casual apparel manufacturing line for children: graphic & basic tees, comfort-stretch denim and twill trousers, shorts, button-down casual shirts, coordinated 2-piece and 3-piece daily sets, light jackets, and French terry/fleece hoodies designed for maximum durability and active play.",
+    descriptionAr: "خط تصنيع متكامل لملابس الأطفال اليومية الكاجوال، يشمل تيشيرتات أطفال مطبوعة وسادة، بناطيل جينز وأقمشة قطنية مرنة، شورتات، قمصان كاجوال، أطقم يومية قطعتين وثلاث قطع، جاكيتات وسترات أطفال، وهوديز وسويت شيرت مريحة وعالية التحمل للحركة والنشاط اليومي.",
+    image: "/Summer/Casual/2-5/Summer - Casual - (2-5) (1).jpg",
+    originEn: "Egypt",
+    originAr: "جمهورية مصر العربية",
+    originFlag: "🇪🇬",
+    moqEn: "400 pcs / style",
+    moqAr: "400 قطعة / تصميم",
+    packagingEn: "Individual barcode polybag inside 5-ply export master cartons.",
+    packagingAr: "تغليف فردي في كيس شفاف بباركود داخل كراتين تصدير خماسية الطبقات.",
+    specifications: [
       {
-        "labelEn": "Material",
-        "labelAr": "الخامة",
-        "valueEn": "Cotton-Linen, Viscose & Poplin blends",
-        "valueAr": "خلائط قطن-كتان، فيسكوز وبوبلين عالي النعومة"
+        labelEn: "Included Products",
+        labelAr: "المنتجات المشمولة",
+        valueEn: "Tees, denim & twill pants, shorts, casual shirts, 2/3-piece daily sets, jackets, hoodies & sweatshirts",
+        valueAr: "تيشيرتات، بناطيل جينز وقطن، شورتات، قمصان كاجوال، أطقم يومية قطعتين وثلاث قطع، جاكيتات، هوديز وسويت شيرت"
       },
       {
-        "labelEn": "Sizes",
-        "labelAr": "المقاسات",
-        "valueEn": "S, M, L, XL, XXL (European & US sizing)",
-        "valueAr": "S, M, L, XL, XXL (مقاسات أوروبية وأمريكية)"
+        labelEn: "Fabric Composition",
+        labelAr: "الخامات وتركيب الأقمشة",
+        valueEn: "100% Cotton, Combed Cotton, Cotton/Poly, Denim, French Terry, Fleece",
+        valueAr: "قطن 100%، قطن ممشط، قطن وبوليستر، جينز، French Terry، Fleece"
       },
       {
-        "labelEn": "Colourways",
-        "labelAr": "خيارات الألوان",
-        "valueEn": "12+ seasonal pantones with reactive dyeing",
-        "valueAr": "أكثر من 12 لونًا موسميًا مع صباغة تفاعلية ثابتة"
+        labelEn: "Fabric Weights (GSM)",
+        labelAr: "أوزان الأقمشة",
+        valueEn: "160 to 320 GSM (by style and season)",
+        valueAr: "من 160 إلى 320 جم/م² (وفق الموديل والموسم)"
       },
       {
-        "labelEn": "Customization",
-        "labelAr": "التخصيص",
-        "valueEn": "Private label tag, custom embroidery and buttons",
-        "valueAr": "إضافة علامة العميل التجارية، تطريز وأزرار خاصة"
+        labelEn: "Age Groups",
+        labelAr: "الفئات العمرية",
+        valueEn: "0-24 Months, 2-6 Years, 6-12 Years",
+        valueAr: "حديثو الولادة حتى 24 شهرًا، من 2 إلى 6 سنوات، من 6 إلى 12 سنة"
+      },
+      {
+        labelEn: "Colourways",
+        labelAr: "خيارات الألوان",
+        valueEn: "Extensive seasonal Pantone range with eco-friendly reactive dyes",
+        valueAr: "تشكيلة ألوان صيفية وشتوية غنية مع صباغة تفاعلية ثابتة وآمنة"
+      },
+      {
+        labelEn: "Private Label",
+        labelAr: "التخصيص والعلامات الخاصة",
+        valueEn: "Screen print, HD puff embroidery, custom trims & private labelling",
+        valueAr: "طباعة سلك سكرين، تطريز نافخ عالي الدقة، وإضافة علامات العميل التجارية"
       }
     ]
   },
   {
-    "id": "prod-gar-men",
-    "code": "SBA-PRD-MEN01",
-    "sector": "apparel",
-    "categoryKey": "mens-wear",
-    "categoryEn": "Men's Wear",
-    "categoryAr": "ملابس رجالية",
-    "nameEn": "Men's Premium Cotton Polos, Shirts & Chinos",
-    "nameAr": "قمصان بولو وبناطيل تشينو رجالية فاخرة",
-    "taglineEn": "Heavyweight combed cotton polos, business-casual oxford shirts, and comfort stretch trousers.",
-    "taglineAr": "قمصان بولو قطنية فاخرة، قمصان أكسفورد كاجوال وبناطيل قطنية مرنة عالية التحمل.",
-    "descriptionEn": "Precision-tailored men's apparel crafted for long-lasting fit and shape retention. Features double-pique knits, mother-of-pearl style buttons, and anti-wrinkle finishing.",
-    "descriptionAr": "أزياء رجالية مصممة ومحاكة بدقة فائقة للحفاظ على القوام والشكل بعد تكرار الغسيل. تشمل أقمشة البيكيه المزدوج، وياقات مقواة، ومعالجة مقاومة للتجعد.",
-    "image": "/Categories/Kids/Casual/summer/Casual - (8-14) (10).jpg",
-    "originEn": "Egypt",
-    "originAr": "جمهورية مصر العربية",
-    "originFlag": "🇪🇬",
-    "moqEn": "500 pcs / style",
-    "moqAr": "500 قطعة / تصميم",
-    "packagingEn": "Folded in polybag with collar support in master carton (48 pcs).",
-    "packagingAr": "مطوية في كيس شفاف مع دعامات الياقة في كرتونة رئيسية (48 قطعة).",
-    "specifications": [
+    id: "prod-gar-kid-underwear",
+    code: "SBA-PRD-KID-UND01",
+    sector: "apparel",
+    categoryKey: "kids-wear",
+    categoryKeys: ["kids-wear", "underwear"],
+    categoryEn: "Kids & Baby Wear",
+    categoryAr: "ملابس الأطفال والرضع",
+    mainDepartmentEn: "Kids & Baby Wear",
+    mainDepartmentAr: "ملابس الأطفال والرضع",
+    nameEn: "Kids & Infants Pure Cotton Underwear Line",
+    nameAr: "الملابس الداخلية للأطفال والرضع",
+    taglineEn: "Combed cotton undershirts, boys boxers, girls panties, daily cotton sets, and infant base layers.",
+    taglineAr: "فانلات داخلية، بوكسرات أولاد، ملابس داخلية بنات، أطقم داخلية قطنية، وملابس داخلية للرضع.",
+    descriptionEn: "Precision manufacturing of children's intimates: pure combed cotton undershirts, comfortable boys' boxer briefs, girls' briefs and camisoles, matching sets, and gentle infant undergarments produced with skin-friendly flatlock seams and non-irritating waistbands.",
+    descriptionAr: "مجموعة تصنيع متخصصة في الملابس الداخلية للأطفال والرضع، تشمل فانلات داخلية قطنية، بوكسرات أولاد مريحة، سراويل وفانلات داخلية بنات، أطقم داخلية قطنية متناسقة، وملابس داخلية للأطفال الرضع بحياكة مسطحة ناعمة لا تسبب أي احتكاك أو حساسية للبشرة.",
+    image: "/Categories/Kids/001.jpg",
+    originEn: "Egypt",
+    originAr: "جمهورية مصر العربية",
+    originFlag: "🇪🇬",
+    moqEn: "1,000 pcs / style",
+    moqAr: "1,000 قطعة / تصميم",
+    packagingEn: "Multi-pack box (2-3 pcs) or hygienic sealed polybags in export master cartons.",
+    packagingAr: "عبوات متعددة (2-3 قطع) أو أكياس معقمة محكمة الإغلاق داخل كراتين التصدير.",
+    specifications: [
       {
-        "labelEn": "Fabric",
-        "labelAr": "نوع القماش",
-        "valueEn": "100% Giza Egyptian Cotton (220 GSM)",
-        "valueAr": "قطن جيزة مصري 100% (وزن 220 جم/م²)"
+        labelEn: "Included Products",
+        labelAr: "المنتجات المشمولة",
+        valueEn: "Undershirts, boys boxers, girls underwear/panties, cotton matching sets, infant base layers",
+        valueAr: "فانلات داخلية، بوكسرات أولاد، ملابس داخلية بنات، أطقم داخلية قطنية، ملابس داخلية للرضع"
       },
       {
-        "labelEn": "Finish",
-        "labelAr": "المعالجة",
-        "valueEn": "Bio-washed, anti-pilling and pre-shrunk",
-        "valueAr": "غسيل حيوي، معالجة ضد الوبر وضد الانكماش"
+        labelEn: "Fabric Composition",
+        labelAr: "الخامات وتركيب الأقمشة",
+        valueEn: "100% Combed Cotton, Cotton with Elastane, ultra-soft daily fabrics",
+        valueAr: "قطن ممشط 100%، قطن مع إيلاستين، أقمشة ناعمة ومريحة للاستخدام اليومي"
       },
       {
-        "labelEn": "Sizes",
-        "labelAr": "المقاسات",
-        "valueEn": "S to 3XL",
-        "valueAr": "من S إلى 3XL"
+        labelEn: "Fabric Weights (GSM)",
+        labelAr: "أوزان الأقمشة",
+        valueEn: "140 to 180 GSM fine single jersey",
+        valueAr: "من 140 إلى 180 جم/م² سنجل جيرسيه فائق النعومة والتهوية"
+      },
+      {
+        labelEn: "Age Groups",
+        labelAr: "الفئات العمرية",
+        valueEn: "0-24 Months, 2-6 Years, 6-12 Years",
+        valueAr: "حديثو الولادة حتى 24 شهرًا، من 2 إلى 6 سنوات، من 6 إلى 12 سنة"
+      },
+      {
+        labelEn: "Finishing & Comfort",
+        labelAr: "التشطيب ومعايير الراحة",
+        valueEn: "Tagless heat-transfer labels, gentle elastic bands, flatlock anti-chafing seams",
+        valueAr: "ملصقات رقبة مطبوعة حرارياً (Tagless)، أستك ناعم مبطن، وحياكة مسطحة مانعة للاحتكاك"
+      },
+      {
+        labelEn: "Private Label",
+        labelAr: "التخصيص والعلامات الخاصة",
+        valueEn: "Custom multi-pack packaging, custom elastic jacquard with brand logo",
+        valueAr: "تغليف مخصص متعدد القطع، وإمكانية إضافة شعار العميل على أستك الخصر"
       }
     ]
   },
   {
-    "id": "prod-gar-kids",
-    "code": "SBA-PRD-KID01",
-    "sector": "apparel",
-    "categoryKey": "kids-wear",
-    "categoryEn": "Kids & Baby Wear",
-    "categoryAr": "ملابس الأطفال والرضع",
-    "nameEn": "Hypoallergenic Organic Cotton Baby & Kids Collection",
-    "nameAr": "تشكيلة ملابس الأطفال والرضع من القطن العضوي الآمن",
-    "taglineEn": "OEKO-TEX certified baby rompers, sleepsuits, and kids daily sets with nickel-free closures.",
-    "taglineAr": "أطقم وسالوبيتات أطفال معتمدة بشهادة OEKO-TEX 100، كباسين خالية من النيكل وأقمشة فائقة النعومة.",
-    "descriptionEn": "Designed exclusively for sensitive young skin. Features tagless labels, expandable lap shoulders, and ultra-soft interlock cotton knits resistant to repeated washing.",
-    "descriptionAr": "مصممة خصيصًا لبشرة الأطفال الحساسة، بملصقات مطبوعة بدون حواف خشنة، وفتحات رقبة مرنة، وأقمشة إنترلوك قطنية فائقة النعومة ومقاومة للغسيل المتكرر.",
-    "image": "/Categories/Kids/Casual/summer/Casual - (2-5) (1).jpg",
-    "originEn": "Egypt",
-    "originAr": "جمهورية مصر العربية",
-    "originFlag": "🇪🇬",
-    "moqEn": "500 pcs / style",
-    "moqAr": "500 قطعة / تصميم",
-    "packagingEn": "Hanger pack or polybag with child-safety ventilation holes.",
-    "packagingAr": "تغليف علاقة أو أكياس مع فتحات تهوية مطابقة لمعايير سلامة الأطفال.",
-    "specifications": [
+    id: "prod-gar-kid-homewear",
+    code: "SBA-PRD-KID-HMW01",
+    sector: "apparel",
+    categoryKey: "kids-wear",
+    categoryKeys: ["kids-wear", "homewear"],
+    categoryEn: "Kids & Baby Wear",
+    categoryAr: "ملابس الأطفال والرضع",
+    mainDepartmentEn: "Kids & Baby Wear",
+    mainDepartmentAr: "ملابس الأطفال والرضع",
+    nameEn: "Kids & Children Homewear & Pyjamas Collection",
+    nameAr: "الملابس المنزلية والبيجامات للأطفال",
+    taglineEn: "Kids pyjamas, summer sleep sets, warm winter nightwear, cotton loungewear, and relaxation sets.",
+    taglineAr: "بيجامات أطفال، أطقم نوم صيفية، أطقم نوم شتوية دافئة، أطقم منزلية قطنية، وملابس استرخاء.",
+    descriptionEn: "Comprehensive kids loungewear line: lightweight summer short pyjamas, cozy long winter sleepwear, cotton lounge sets, and relaxation wear made of pure cotton, modal, soft jersey, interlock, and warm fleece for deep rest.",
+    descriptionAr: "خط إنتاج متكامل للملابس المنزلية وأطقم النوم للأطفال، يشمل بيجامات أطفال صيفية خفيفة، أطقم نوم شتوية دافئة، أطقم منزلية قطنية مريحة، وملابس استرخاء مصنعة من القطن والمودال والإنترلوك والفليس لمنح الأطفال نومًا مريحًا وراحة دائمة في المنزل.",
+    image: "/Categories/Kids/1247 - 1248.jpg",
+    originEn: "Egypt",
+    originAr: "جمهورية مصر العربية",
+    originFlag: "🇪🇬",
+    moqEn: "300 sets / style",
+    moqAr: "300 طقم / تصميم",
+    packagingEn: "Hanger pack or polybag with branded ribbon insert in export cartons.",
+    packagingAr: "تغليف شماعة أو كيس شفاف مع شريط أنيق وبطاقة العلامة التجارية داخل كراتين التصدير.",
+    specifications: [
       {
-        "labelEn": "Certification",
-        "labelAr": "الشهادات",
-        "valueEn": "OEKO-TEX Standard 100 Class 1 (Baby)",
-        "valueAr": "معيار OEKO-TEX 100 الفئة الأولى المخصصة للرضع"
+        labelEn: "Included Products",
+        labelAr: "المنتجات المشمولة",
+        valueEn: "Kids pyjamas, summer sleep sets, winter warm sleepwear, cotton home sets, loungewear",
+        valueAr: "بيجامات أطفال، أطقم نوم صيفية، أطقم نوم شتوية، أطقم منزلية قطنية، ملابس استرخاء"
       },
       {
-        "labelEn": "Age Groups",
-        "labelAr": "الأعمار",
-        "valueEn": "0-24 months, 2-6 years, 6-12 years",
-        "valueAr": "0-24 شهرًا، 2-6 سنوات، 6-12 سنة"
+        labelEn: "Fabric Composition",
+        labelAr: "الخامات وتركيب الأقمشة",
+        valueEn: "100% Cotton, Cotton Modal, Jersey, Interlock, Fleece",
+        valueAr: "قطن 100%، قطن مودال، Jersey، Interlock، Fleece"
       },
       {
-        "labelEn": "Snaps & Trims",
-        "labelAr": "الملحقات والكباسين",
-        "valueEn": "Prym nickel-free snaps & non-toxic dyes",
-        "valueAr": "كباسين ألمانية خالية من النيكل وصبغات غير سامة"
+        labelEn: "Fabric Weights (GSM)",
+        labelAr: "أوزان الأقمشة",
+        valueEn: "160 to 280 GSM (summer lightweight to winter fleece)",
+        valueAr: "من 160 إلى 280 جم/م² (أوزان صيفية خفيفة وخامات شتوية دافئة)"
+      },
+      {
+        labelEn: "Age Groups",
+        labelAr: "الفئات العمرية",
+        valueEn: "0-24 Months, 2-6 Years, 6-12 Years",
+        valueAr: "حديثو الولادة حتى 24 شهرًا، من 2 إلى 6 سنوات، من 6 إلى 12 سنة"
+      },
+      {
+        labelEn: "Comfort Features",
+        labelAr: "مواصفات الراحة",
+        valueEn: "Ribbed non-binding cuffs, adjustable soft drawstrings, breathable thermal balance",
+        valueAr: "أساور مطاطية ناعمة، أحزمة خصر مريحة غير ضاغطة، وتنظيم حراري مريح"
+      },
+      {
+        labelEn: "Private Label",
+        labelAr: "التخصيص والعلامات الخاصة",
+        valueEn: "Custom all-over prints, embroidery, hangtags, and branded presentation packaging",
+        valueAr: "طباعة نقشات كاملة، تطريزات مخصصة، وبطاقات وتغليف خاص بالعميل"
       }
     ]
   },
   {
-    "id": "prod-gar-casual",
-    "code": "SBA-PRD-CAS01",
-    "sector": "apparel",
-    "categoryKey": "casual-wear",
-    "categoryEn": "Casual Wear",
-    "categoryAr": "ملابس كاجوال يومية",
-    "nameEn": "Everyday Casual Sets, Hoodies & Denim Wear",
-    "nameAr": "أطقم الكاجوال اليومية والسترات وهوديز",
-    "taglineEn": "Heavyweight French terry hoodies, printed tees, and relaxed denim bottoms.",
-    "taglineAr": "هوديز وسويت شيرت خامة فرينش تيري قطنية فاخرة، تيشرتات مطبوعة وبناطيل جينز مريحة.",
-    "descriptionEn": "High-volume casual fashion line utilizing combed compact yarns. Supports screen printing, puff embroidery, pigment dye washes, and custom silicon softeners.",
-    "descriptionAr": "خط إنتاج كاجوال عالي الطاقة يعتمد على خيوط القطن الممشط، ويدعم الطباعة الحريرية والنافخة، والغسيل الصبغي المتطور والمعالجة بالسليكون المنعم.",
-    "image": "/Categories/Kids/Casual/summer/Casual - (6-12) (1).jpg",
-    "originEn": "Egypt",
-    "originAr": "جمهورية مصر العربية",
-    "originFlag": "🇪🇬",
-    "moqEn": "400 pcs / style",
-    "moqAr": "400 قطعة / تصميم",
-    "packagingEn": "Folded in barcode polybags inside export 5-ply cartons.",
-    "packagingAr": "مطوية في أكياس بباركود داخل كراتين تصدير خماسية الطبقات.",
-    "specifications": [
+    id: "prod-gar-kid-sportswear",
+    code: "SBA-PRD-KID-SPT01",
+    sector: "apparel",
+    categoryKey: "kids-wear",
+    categoryKeys: ["kids-wear", "sportswear"],
+    categoryEn: "Kids & Baby Wear",
+    categoryAr: "ملابس الأطفال والرضع",
+    mainDepartmentEn: "Kids & Baby Wear",
+    mainDepartmentAr: "ملابس الأطفال والرضع",
+    nameEn: "Kids Athletic Activewear & Sportswear Sets",
+    nameAr: "الملابس الرياضية وأطقم التمارين للأطفال",
+    taglineEn: "Children's tracksuits, athletic tees, training bottoms, sports shorts, jackets, and activewear.",
+    taglineAr: "أطقم رياضية، تيشيرتات رياضية، بناطيل رياضية، شورتات، جاكيتات رياضية، وملابس تدريب وحركة.",
+    descriptionEn: "Engineered activewear collection for boys and girls: 2-piece tracksuits, quick-dry training t-shirts, flexible sweatpants, athletic shorts, and zip jackets tailored from breathable Polyester/Spandex blends that allow full freedom of movement.",
+    descriptionAr: "تشكيلة أزياء رياضية للأطفال مخصصة للأنشطة والتدريب البدني، تشمل ترنجات وأطقم رياضية قطعتين، تيشيرتات رياضية طاردة للرطوبة، بناطيل تدريب مريحة، شورتات رياضية، جاكيتات تدريب بسحاب، وملابس حركة وتدريب بخامات مرنة سريعة الجفاف تدعم حركة الأطفال بنشاط.",
+    image: "/Winter/Casual/Boys/3-6/Winter - Casual - (3-6) (1).jpg",
+    originEn: "Egypt",
+    originAr: "جمهورية مصر العربية",
+    originFlag: "🇪🇬",
+    moqEn: "300 pcs / style",
+    moqAr: "300 قطعة / تصميم",
+    packagingEn: "Individual zipper polybag with hangtag and export master carton.",
+    packagingAr: "كيس شفاف بسحاب فردي مع بطاقة المقاسات وكرتون تصدير مقوى.",
+    specifications: [
       {
-        "labelEn": "Fabric Weights",
-        "labelAr": "أوزان الأقمشة",
-        "valueEn": "180 GSM (Tees) to 360 GSM (Terry Hoodies)",
-        "valueAr": "180 جم (تيشرتات) إلى 360 جم (هوديز ثقيلة)"
+        labelEn: "Included Products",
+        labelAr: "المنتجات المشمولة",
+        valueEn: "Tracksuits, athletic t-shirts, training pants, sports shorts, active jackets, movement wear",
+        valueAr: "أطقم رياضية، تيشيرتات رياضية، بناطيل رياضية، شورتات رياضية، جاكيتات رياضية، ملابس تدريب وحركة"
       },
       {
-        "labelEn": "Printing Options",
-        "labelAr": "تقنيات الطباعة",
-        "valueEn": "Plastisol, Water-based, Discharge & DTF",
-        "valueAr": "بلاستيزول، صبغات مائية، تفريغ وطباعة DTF"
+        labelEn: "Fabric Composition",
+        labelAr: "الخامات وتركيب الأقمشة",
+        valueEn: "Polyester, Polyester / Spandex, Quick-Dry textiles, flexible motion knits",
+        valueAr: "Polyester، Polyester / Spandex، أقمشة سريعة الجفاف، وأقمشة مرنة مناسبة للحركة"
+      },
+      {
+        labelEn: "Fabric Weights (GSM)",
+        labelAr: "أوزان الأقمشة",
+        valueEn: "180 to 260 GSM",
+        valueAr: "من 180 إلى 260 جم/م²"
+      },
+      {
+        labelEn: "Age Groups",
+        labelAr: "الفئات العمرية",
+        valueEn: "2-6 Years, 6-12 Years, Junior sizing",
+        valueAr: "من 2 إلى 6 سنوات، من 6 إلى 12 سنة، ومقاسات الناشئين"
+      },
+      {
+        labelEn: "Performance Features",
+        labelAr: "الخصائص التقنية",
+        valueEn: "4-way mechanical stretch, fast moisture wicking, breathable ventilation panels",
+        valueAr: "مرونة رباعية الاتجاهات، سرعة طرد الرطوبة والعرق، وألواح تهوية مدمجة"
+      },
+      {
+        labelEn: "Private Label",
+        labelAr: "التخصيص والعلامات الخاصة",
+        valueEn: "Heat-sealed reflective logos, customized club crests, and branded zipper pulls",
+        valueAr: "شعارات عاكسة للضوء مدمجة حرارياً، شعارات أندية مخصصة، وسحابات تحمل علامة العميل"
       }
     ]
   },
   {
-    "id": "prod-gar-homewear",
-    "code": "SBA-PRD-HMW01",
-    "sector": "apparel",
-    "categoryKey": "homewear",
-    "categoryEn": "Homewear & Pyjamas",
-    "categoryAr": "الملابس المنزلية والبيجامات",
-    "nameEn": "Ultra-Soft Cotton & Modal Loungewear & Pyjama Sets",
-    "nameAr": "أطقم ملابس منزلية وبيجامات قطنية ومودال فائقة النعومة",
-    "taglineEn": "Breathable homewear sets offering supreme relaxation, thermal balance, and luxury handfeel.",
-    "taglineAr": "بيجامات وملابس بيت تجمع بين الملمس الحريري والتهوية الفائقة والمرونة العالية لراحة تدوم طوال اليوم.",
-    "descriptionEn": "Manufactured from combed modal-cotton blends and soft waffle knits. Designed with elasticated drawstrings, non-binding cuffs, and smooth flatlock stitching.",
-    "descriptionAr": "مصنوعة من مزيج القطن والمودال الفاخر وأقمشة الوافل المريحة، ومزودة بأربطة مطاطية مريحة ودرزات مسطحة تمنع الاحتكاك وتمنح راحة لا تضاهى.",
-    "image": "/Categories/Kids/Casual/summer/Casual - (8-14) (15).jpg",
-    "originEn": "Egypt",
-    "originAr": "جمهورية مصر العربية",
-    "originFlag": "🇪🇬",
-    "moqEn": "300 sets / style",
-    "moqAr": "300 طقم / تصميم",
-    "packagingEn": "Polybag with branded ribbon wrap and hangtag.",
-    "packagingAr": "تغليف أنيق في أكياس شفافة مع شريط تعبئة وبطاقة العلامة.",
-    "specifications": [
+    id: "prod-gar-kid-baby",
+    code: "SBA-PRD-KID-BBY01",
+    sector: "apparel",
+    categoryKey: "kids-wear",
+    categoryKeys: ["kids-wear"],
+    categoryEn: "Kids & Baby Wear",
+    categoryAr: "ملابس الأطفال والرضع",
+    mainDepartmentEn: "Kids & Baby Wear",
+    mainDepartmentAr: "ملابس الأطفال والرضع",
+    nameEn: "Newborn & Baby Clothing Essentials Collection",
+    nameAr: "ملابس الرضع وحديثي الولادة (بيبي)",
+    taglineEn: "Baby rompers, bodysuits, newborn starter sets, infant pyjamas, daily cottons, and outdoor sets.",
+    taglineAr: "سالوبيتات، بودي سوت، أطقم حديثي الولادة، بيجامات الرضع، ملابس قطنية يومية، وأطقم خروج.",
+    descriptionEn: "Gentle, certified infant apparel collection for babies aged 0 to 24 months: full-length snap rompers, expandable lap-neck bodysuits, hospital-take-home starter sets, baby pyjamas, soft daily cottons, and cute outdoor sets crafted from 100% hypoallergenic and organic combed cotton.",
+    descriptionAr: "مجموعة رعاية متكاملة لحديثي الولادة والرضع من عمر يوم حتى 24 شهرًا، تضم سالوبيتات بكباسين سفلية وأمامية، بودي سوت بفتحات عنق مرنة، أطقم استقبال حديثي الولادة، بيجامات مريحة، ملابس قطنية يومية، وأطقم خروج للأطفال الرضع مصنعة من قطن خالص 100% وقطن عضوي فائق النعومة لسلامة بشرة الطفل.",
+    image: "/Summer/Casual/2-5/Summer - Casual - (2-5) (2).jpg",
+    originEn: "Egypt",
+    originAr: "جمهورية مصر العربية",
+    originFlag: "🇪🇬",
+    moqEn: "500 pcs / style",
+    moqAr: "500 قطعة / تصميم",
+    packagingEn: "Baby-safe vented polybag or gift box with non-toxic certified trims.",
+    packagingAr: "أكياس آمنة بفتحات تهوية معتمدة للرضع أو علب هدايا أنيقة داخل كراتين تصدير.",
+    specifications: [
       {
-        "labelEn": "Composition",
-        "labelAr": "التركيب",
-        "valueEn": "50% Modal / 50% Combed Cotton or 100% Cotton",
-        "valueAr": "50% مودال / 50% قطن ممشط أو 100% قطن خالص"
+        labelEn: "Included Products",
+        labelAr: "المنتجات المشمولة",
+        valueEn: "Salopettes / rompers, bodysuits, newborn starter sets, infant pyjamas, daily cottons, outdoor sets",
+        valueAr: "سالوبيتات، بودي سوت، أطقم حديثي الولادة، بيجامات الرضع، ملابس قطنية يومية، أطقم خروج للرضع"
       },
       {
-        "labelEn": "Features",
-        "labelAr": "المميزات",
-        "valueEn": "Breathable, thermal regulating, wrinkle resistant",
-        "valueAr": "تنظيم حراري طبيعي، مقاوم للتجعد وسهل الغسيل"
+        labelEn: "Fabric Composition",
+        labelAr: "الخامات وتركيب الأقمشة",
+        valueEn: "100% Cotton, Organic Cotton when available, ultra-gentle baby knits",
+        valueAr: "قطن 100%، Organic Cotton (قطن عضوي عند توافره)، أقمشة ناعمة مناسبة لبشرة الرضع"
+      },
+      {
+        labelEn: "Fabric Weights (GSM)",
+        labelAr: "أوزان الأقمشة",
+        valueEn: "160 to 210 GSM hypoallergenic interlock & rib",
+        valueAr: "من 160 إلى 210 جم/م² إنترلوك وريب فائق النعومة ضد التحسس"
+      },
+      {
+        labelEn: "Age Groups",
+        labelAr: "الفئات العمرية",
+        valueEn: "Newborn up to 24 Months (0-3m, 3-6m, 6-12m, 12-24m)",
+        valueAr: "حديثو الولادة حتى 24 شهرًا (0-3، 3-6، 6-12، 12-24 شهرًا)"
+      },
+      {
+        labelEn: "Safety Standards",
+        labelAr: "معايير السلامة والأمان",
+        valueEn: "Nickel-free snap closures, lead-free trims, tagless collar prints",
+        valueAr: "كباسين وأزرار خالية تمامًا من النيكل، ملصقات مطبوعة بدون حواف خشنة، وصبغات آمنة"
+      },
+      {
+        labelEn: "Private Label",
+        labelAr: "التخصيص والعلامات الخاصة",
+        valueEn: "Custom gift sets, embroidered monograms, custom branded ribbons and box packaging",
+        valueAr: "أطقم هدايا للمواليد، تطريزات مخصصة مبطنة، وتغليف أنيق بعلامة العميل التجارية"
+      }
+    ]
+  },
+
+  // ==========================================================================
+  // SECTION 2: الملابس النسائية (WOMEN'S WEAR)
+  // (Exclusively 3 categories: Underwear, Homewear, Lingerie. Casual & Soiree strictly removed)
+  // ==========================================================================
+  {
+    id: "prod-gar-wmn-underwear",
+    code: "SBA-PRD-WMN-UND01",
+    sector: "apparel",
+    categoryKey: "womens-wear",
+    categoryKeys: ["womens-wear", "underwear"],
+    categoryEn: "Women's Wear",
+    categoryAr: "الملابس النسائية",
+    mainDepartmentEn: "Women's Wear",
+    mainDepartmentAr: "الملابس النسائية",
+    nameEn: "Women's Everyday Cotton & Seamless Underwear Line",
+    nameAr: "الملابس الداخلية النسائية (يومي وسيليس)",
+    taglineEn: "Women's basic underwear sets, bras, panties, shorts, undershirts, cotton intimates, and seamless sets.",
+    taglineAr: "أطقم داخلية نسائية، حمالات صدر، سراويل داخلية، شورتات، فانلات نسائية، وأطقم سيمليس بدون درزات.",
+    descriptionEn: "A dedicated manufacturing line for everyday women's underwear: combed cotton multi-pack panties (bikini, hipster, brief), wireless and comfort everyday bras, inner shorts, cotton undershirts, and seamless circular-knitted basic sets providing irritation-free comfort and supreme breathability.",
+    descriptionAr: "خط تصنيع متكامل للملابس الداخلية النسائية اليومية، يشمل أطقم داخلية نسائية، حمالات صدر مريحة (Bras)، سراويل داخلية متنوعة القَصّات (Panties)، شورتات داخلية، فانلات نسائية قطنية، وأطقم داخلية بدون درزات بارزة (Seamless) مصنعة بأحدث تقنيات الحياكة الدائرية لضمان نعومة تامة طوال اليوم.",
+    image: "/Categories/Lingerie/1001.jpeg",
+    originEn: "Egypt",
+    originAr: "جمهورية مصر العربية",
+    originFlag: "🇪🇬",
+    moqEn: "1,000 pcs / model",
+    moqAr: "1,000 قطعة / موديل",
+    packagingEn: "Multi-pack branded boxes (2-3 pcs) or luxury hanging display cards.",
+    packagingAr: "علب كرتونية فاخرة متعددة القطع (2-3 قطع) أو أكياس شفافة بشماعة عرض.",
+    specifications: [
+      {
+        labelEn: "Included Products",
+        labelAr: "المنتجات المشمولة",
+        valueEn: "Underwear sets, Bras, Panties, Inner shorts, Undershirts / camisoles, Cotton intimates, Seamless sets",
+        valueAr: "أطقم داخلية نسائية، حمالات صدر (Bras)، سراويل داخلية (Panties)، شورتات داخلية، فانلات نسائية، ملابس قطنية، أطقم بدون درزات (Seamless)"
+      },
+      {
+        labelEn: "Fabric Composition",
+        labelAr: "الخامات وتركيب الأقمشة",
+        valueEn: "100% Cotton, Cotton / Elastane, Microfiber, Modal, Seamless Knitted Fabrics",
+        valueAr: "قطن 100%، Cotton / Elastane، Microfiber، Modal، Seamless Knitted Fabrics"
+      },
+      {
+        labelEn: "Fabric Weights (GSM)",
+        labelAr: "أوزان الأقمشة",
+        valueEn: "140 to 190 GSM fine gauge circular knits",
+        valueAr: "من 140 إلى 190 جم/م² حياكة دائرية فائقة الدقة والنعومة"
+      },
+      {
+        labelEn: "Available Sizes",
+        labelAr: "المقاسات المتاحة",
+        valueEn: "XS, S, M, L, XL, XXL (European & US sizing charts)",
+        valueAr: "XS, S, M, L, XL, XXL (مطابقة لجداول المقاسات الأوروبية والأمريكية)"
+      },
+      {
+        labelEn: "Available Colours",
+        labelAr: "خيارات الألوان",
+        valueEn: "Essential neutrals (Optical White, Black, Nude, Beige, Skin) and seasonal pastels",
+        valueAr: "ألوان أساسية محايدة (أبيض، أسود، نيود، بيج) بالإضافة إلى درجات الباستيل الموسمية"
+      },
+      {
+        labelEn: "Private Label",
+        labelAr: "التخصيص والعلامات الخاصة",
+        valueEn: "Custom jacquard elastic waistbands, heat-transfer branding, multi-pack box packaging",
+        valueAr: "أستك جاكار مطاطي بشعار العميل، ملصقات مطبوعة بالترانسفير، وتغليف علب مخصص"
       }
     ]
   },
   {
-    "id": "prod-gar-classic",
-    "code": "SBA-PRD-CLS01",
-    "sector": "apparel",
-    "categoryKey": "classic-wear",
-    "categoryEn": "Classic Wear",
-    "categoryAr": "الملابس الكلاسيكية",
-    "nameEn": "Men's & Women's Classic Formal Shirts & Trousers",
-    "nameAr": "القمصان والبناطيل الكلاسيكية والرسمية",
-    "taglineEn": "Crisp formal shirts with fusible collar stays and structured classic trousers.",
-    "taglineAr": "قمصان رسمية كلاسيكية مع ياقات مقواة وبناطيل قماشية رسمية أنيقة لرجال الأعمال والمؤسسات.",
-    "descriptionEn": "Engineered for executive corporate wear and uniform programs. Uses compact single-fold and two-ply fine yarns for a sleek, crisp visual drape and easy-iron performance.",
-    "descriptionAr": "مخصصة للمناسبات الرسمية ومجموعات الزي الموحد للشركات. تعتمد على خيوط قطنية فائقة النعومة ومزدوجة تمنح القميص مظهرًا مصقولًا وخصائص سهلة الكي.",
-    "image": "/Categories/Kids/Casual/summer/Casual - (8-14) (20).jpg",
-    "originEn": "Egypt",
-    "originAr": "جمهورية مصر العربية",
-    "originFlag": "🇪🇬",
-    "moqEn": "400 pcs / style",
-    "moqAr": "400 قطعة / تصميم",
-    "packagingEn": "Standard carton box with collar butterfly inserts.",
-    "packagingAr": "تعبئة رسمية بكرتونة مع مشابك تثبيت ودعامات ياقة ورقية.",
-    "specifications": [
+    id: "prod-gar-wmn-homewear",
+    code: "SBA-PRD-WMN-HMW01",
+    sector: "apparel",
+    categoryKey: "womens-wear",
+    categoryKeys: ["womens-wear", "homewear"],
+    categoryEn: "Women's Wear",
+    categoryAr: "الملابس النسائية",
+    mainDepartmentEn: "Women's Wear",
+    mainDepartmentAr: "الملابس النسائية",
+    nameEn: "Women's Premium Homewear, Pyjamas & Loungewear",
+    nameAr: "الملابس المنزلية والبيجامات النسائية",
+    taglineEn: "Women's pyjamas, 2-piece and 3-piece home sets, loungewear, summer light sets, winter sets, and robes.",
+    taglineAr: "بيجامات نسائية، أطقم منزلية قطعتين وثلاث قطع، ملابس استرخاء، أطقم صيفية خفيفة وشتوية، وروب منزلي.",
+    descriptionEn: "Refined women's homewear and loungewear collection: stylish 2-piece and 3-piece indoor sets, lightweight summer pyjamas, warm fleece and interlock winter sets, relaxed loungewear, and comfortable wrap robes crafted from premium modal, combed cotton, and viscose.",
+    descriptionAr: "تشكيلة راقية من الملابس المنزلية والبيجامات النسائية المصممة للراحة والأناقة، تشمل بيجامات نسائية عصرية، أطقم منزلية قطعتين وثلاث قطع، ملابس استرخاء (Loungewear)، أطقم صيفية خفيفة، أطقم شتوية دافئة، وروب منزلي بأقمشة ناعمة من القطن والمودال والفيسكوز الفاخر.",
+    image: "/Categories/Home Wear/2003 (1).jpg",
+    originEn: "Egypt",
+    originAr: "جمهورية مصر العربية",
+    originFlag: "🇪🇬",
+    moqEn: "300 sets / style",
+    moqAr: "300 طقم / تصميم",
+    packagingEn: "Polybag with branded presentation ribbon and export master cartons.",
+    packagingAr: "تغليف أنيق في كيس شفاف بشريط تعبئة وبطاقة العلامة مع كراتين تصدير.",
+    specifications: [
       {
-        "labelEn": "Yarn Count",
-        "labelAr": "نمرة الخيط",
-        "valueEn": "60/1 to 100/2 Compact Giza Cotton",
-        "valueAr": "من 60/1 إلى 100/2 قطن جيزة كومباكت"
+        labelEn: "Included Products",
+        labelAr: "المنتجات المشمولة",
+        valueEn: "Women's pyjamas, 2-piece home sets, 3-piece home sets, loungewear, summer light sets, winter sets, robes",
+        valueAr: "بيجامات نسائية، أطقم منزلية قطعتين، أطقم منزلية ثلاث قطع، ملابس استرخاء (Loungewear)، أطقم صيفية خفيفة، أطقم شتوية، روب منزلي"
       },
       {
-        "labelEn": "Fit Types",
-        "labelAr": "أنواع القَصّات",
-        "valueEn": "Slim Fit, Regular Fit, Tailored Fit",
-        "valueAr": "سليم فيت، قَصّة عادية، وتفصيل مخصص"
+        labelEn: "Fabric Composition",
+        labelAr: "الخامات وتركيب الأقمشة",
+        valueEn: "Cotton, Modal, Cotton / Polyester, Viscose, Jersey, Interlock, Fleece",
+        valueAr: "Cotton، Modal، Cotton / Polyester، Viscose، Jersey، Interlock، Fleece"
+      },
+      {
+        labelEn: "Fabric Weights (GSM)",
+        labelAr: "أوزان الأقمشة",
+        valueEn: "150 to 260 GSM (summer modal-jersey to warm winter interlock/fleece)",
+        valueAr: "من 150 إلى 260 جم/م² (مودال وجيرسيه صيفي خفيف حتى الإنترلوك والفليس الشتوي)"
+      },
+      {
+        labelEn: "Available Sizes",
+        labelAr: "المقاسات المتاحة",
+        valueEn: "S, M, L, XL, XXL and Plus Sizes (relaxed and tailored fits)",
+        valueAr: "S, M, L, XL, XXL ومقاسات خاصة (قَصّات مريحة وتفصيل مضبوط)"
+      },
+      {
+        labelEn: "Fabric Features",
+        labelAr: "مميزات الأقمشة",
+        valueEn: "Supreme thermal balance, silky soft handfeel, pre-shrunk, wash-durable colors",
+        valueAr: "تنظيم حراري طبيعي، ملمس حريري ناعم، معالجة ضد الانكماش وثبات الألوان"
+      },
+      {
+        labelEn: "Private Label",
+        labelAr: "التخصيص والعلامات الخاصة",
+        valueEn: "Custom embroidery, lace accents, brand labels, and branded gift wrapping",
+        valueAr: "تطريزات خاصة، لمسات دانتيل راقية، علامات الماركة وتغليف هدايا مخصص"
       }
     ]
   },
   {
-    "id": "prod-gar-sport",
-    "code": "SBA-PRD-SPT01",
-    "sector": "apparel",
-    "categoryKey": "sportswear",
-    "categoryEn": "Sportswear & Activewear",
-    "categoryAr": "الملابس الرياضية",
-    "nameEn": "High-Performance Moisture-Wicking Activewear",
-    "nameAr": "ملابس رياضية عالية الأداء بتقنية طرد الرطوبة والجفاف السريع",
-    "taglineEn": "Technical athletic jerseys, compression tights, and training shorts with 4-way stretch.",
-    "taglineAr": "تيشرتات رياضية تقنية، شورتات وبناطيل تمارين مرنة بأربع اتجاهات مع تقنية سريعة الجفاف.",
-    "descriptionEn": "Designed for intense athletic performance. Incorporates breathable mesh panels, antimicrobial yarn treatments, and heat-sealed reflective logos for nighttime visibility.",
-    "descriptionAr": "مصممة للأداء الرياضي الشاق، بألواح شبكية للتهوية ومعالجة ضد البكتيريا والروائح، وشعارات عاكسة للضوء مدمجة حراريًا.",
-    "image": "/Categories/Kids/Casual/summer/Casual - (8-14) (25).jpg",
-    "originEn": "Egypt",
-    "originAr": "جمهورية مصر العربية",
-    "originFlag": "🇪🇬",
-    "moqEn": "300 pcs / style",
-    "moqAr": "300 قطعة / تصميم",
-    "packagingEn": "Zipper polybag with silica gel and barcode.",
-    "packagingAr": "كيس بولي بروبلين بسحاب مع حبيبات سيليكا للحماية وملصق باركود.",
-    "specifications": [
+    id: "prod-gar-wmn-lingerie",
+    code: "SBA-PRD-WMN-LNG01",
+    sector: "apparel",
+    categoryKey: "womens-wear",
+    categoryKeys: ["womens-wear", "womens-lingerie"],
+    categoryEn: "Women's Wear",
+    categoryAr: "الملابس النسائية",
+    mainDepartmentEn: "Women's Wear",
+    mainDepartmentAr: "الملابس النسائية",
+    nameEn: "Women's Luxury Lingerie & Fine Nightwear Collection",
+    nameAr: "اللانجري النسائي وأطقم النوم الفاخرة",
+    taglineEn: "Luxury lingerie sets, nightwear chemises, bridal robes, bodysuits, satin sets, lace sets, and separates.",
+    taglineAr: "أطقم لانجري فاخرة، قمصان نوم، روب لانجري، بودي سوت، أطقم ساتان ودانتيل، وقطع لانجري منفصلة.",
+    descriptionEn: "Specialized luxury lingerie manufacturing division: satin bridal and nightwear sets, French lace chemises, sheer bodysuits, delicate wrap robes, satin coordinates, fine mesh designs, and luxury separates produced under strict quality standards for premium retail brands.",
+    descriptionAr: "وحدة تصنيع متخصصة في اللانجري النسائي الفاخر، تشمل أطقم لانجري راقية، قمصان نوم (Nightwear)، روب لانجري أنيق، بودي سوت (Bodysuits)، أطقم ساتان ملكي، أطقم دانتيل مطرزة بدقة، وقطع لانجري منفصلة مصممة بأعلى معايير الإتقان لدور الأزياء وماركات اللانجري العالمية.",
+    image: "/Categories/Lingerie/1005.jpeg",
+    originEn: "Egypt",
+    originAr: "جمهورية مصر العربية",
+    originFlag: "🇪🇬",
+    moqEn: "500 pcs / style",
+    moqAr: "500 قطعة / تصميم",
+    packagingEn: "Luxury presentation gift box or boutique garment bag with custom hangtags.",
+    packagingAr: "صندوق هدايا فاخر أو كيس بوتيك أنيق مع بطاقات العلامة التجارية الخاصة.",
+    specifications: [
       {
-        "labelEn": "Tech Fabric",
-        "labelAr": "الخامة التقنية",
-        "valueEn": "Polyester-Spandex (88/12) with QuickDry tech",
-        "valueAr": "بوليستر مع سباندكس (88/12) بتقنية الجفاف الفوري"
+        labelEn: "Included Products",
+        labelAr: "المنتجات المشمولة",
+        valueEn: "Lingerie sets, Nightwear / chemises, Lingerie robes, Bodysuits, Satin sets, Lace sets, Luxury separates",
+        valueAr: "أطقم لانجري، قمصان نوم (Nightwear)، روب لانجري، Bodysuits، أطقم ساتان، أطقم دانتيل، قطع لانجري منفصلة"
       },
       {
-        "labelEn": "Stretch",
-        "labelAr": "المرونة",
-        "valueEn": "4-way mechanical stretch and recovery",
-        "valueAr": "تمدد ميكانيكي رباعي الاتجاهات وعودة للقوام"
+        labelEn: "Fabric Composition",
+        labelAr: "الخامات وتركيب الأقمشة",
+        valueEn: "Satin, Lace, Microfiber, Mesh, Tulle, Viscose",
+        valueAr: "Satin، Lace، Microfiber، Mesh، Tulle، Viscose"
+      },
+      {
+        labelEn: "Fabric Weights (GSM)",
+        labelAr: "أوزان الأقمشة",
+        valueEn: "90 to 160 GSM lightweight flowing luxury textiles",
+        valueAr: "من 90 إلى 160 جم/م² أقمشة حريرية خفيفة وانسيابية"
+      },
+      {
+        labelEn: "Available Sizes",
+        labelAr: "المقاسات المتاحة",
+        valueEn: "XS, S, M, L, XL (precision cup and body grading)",
+        valueAr: "XS, S, M, L, XL (تدريج قياسات دقيق ومضبوط للصدر والقوام)"
+      },
+      {
+        labelEn: "Available Colours",
+        labelAr: "خيارات الألوان",
+        valueEn: "Classic Black, Deep Red, Off-White, Champagne, Blush, Emerald, Royal Navy",
+        valueAr: "أسود ملكي، أحمر كلاسيكي، أوف وايت، شامبين، وردي ناعم، زمردي، وكحلي ملكي"
+      },
+      {
+        labelEn: "Private Label",
+        labelAr: "التخصيص والعلامات الخاصة",
+        valueEn: "Bespoke pattern development, private label satin labels, branded boutique boxes",
+        valueAr: "تطوير باترونات حصرية، علامات ساتان مطرزة بالاسم، وعلب بوتيك فاخرة"
+      }
+    ]
+  },
+
+  // ==========================================================================
+  // SECTION 3: الملابس الرجالية (MEN'S WEAR)
+  // (5 categories: Casual, Classic, Shirts, Homewear, Sportswear)
+  // ==========================================================================
+  {
+    id: "prod-gar-men-casual",
+    code: "SBA-PRD-MEN-CAS01",
+    sector: "apparel",
+    categoryKey: "mens-wear",
+    categoryKeys: ["mens-wear", "casual-wear"],
+    categoryEn: "Men's Wear",
+    categoryAr: "ملابس رجالية",
+    mainDepartmentEn: "Men's Wear",
+    mainDepartmentAr: "الملابس الرجالية",
+    nameEn: "Men's Casual Wear, Polos, Chinos & Hoodies",
+    nameAr: "الملابس الرجالية الكاجوال (بولو، تيشيرتات، وتشينو)",
+    taglineEn: "Men's t-shirts, polo shirts, chino pants, casual trousers, shorts, hoodies, sweatshirts, and casual jackets.",
+    taglineAr: "تيشيرتات رجالية، بولو، بناطيل تشينو، بناطيل كاجوال، شورتات، هوديز، سويت شيرت، وجاكيتات كاجوال.",
+    descriptionEn: "Full-scale casual apparel production for men: heavy combed cotton t-shirts, double-pique polo shirts, stretch cotton chino trousers, casual shorts, heavyweight French terry hoodies, crewneck sweatshirts, and casual utility jackets crafted for all-day comfort and long-lasting shape retention.",
+    descriptionAr: "خط إنتاج كاجوال رجالي متكامل، يضم تيشيرتات قطنية فاخرة، قمصان بولو (Polo Shirts) بيكيه مزدوج، بناطيل تشينو (Chino Pants) كاجوال مرنة، شورتات رجالية، هوديز وسويت شيرت خامة فرينش تيري وفليس ثقيلة، وجاكيتات كاجوال أنيقة تجمع بين المتانة والراحة اليومية.",
+    image: "/BG/Apparel Manufacturing/Specialized Production Lines.jpg",
+    originEn: "Egypt",
+    originAr: "جمهورية مصر العربية",
+    originFlag: "🇪🇬",
+    moqEn: "400 pcs / style",
+    moqAr: "400 قطعة / تصميم",
+    packagingEn: "Folded in barcode polybag, 36-48 pcs per export master carton.",
+    packagingAr: "تغليف فردي في كيس شفاف بباركود، 36-48 قطعة لكل كرتونة تصدير رئيسية.",
+    specifications: [
+      {
+        labelEn: "Included Products",
+        labelAr: "المنتجات المشمولة",
+        valueEn: "T-shirts, Polo shirts, Chino pants, Casual trousers, Shorts, Hoodies, Sweatshirts, Casual jackets",
+        valueAr: "تيشيرتات رجالية، بولو رجالي (Polo Shirts)، بناطيل تشينو، بناطيل كاجوال، شورتات رجالية، هوديز، سويت شيرت، جاكيتات كاجوال"
+      },
+      {
+        labelEn: "Fabric Composition",
+        labelAr: "الخامات وتركيب الأقمشة",
+        valueEn: "Cotton, Piqué Cotton, Cotton / Elastane, French Terry, Fleece, Twill, Denim",
+        valueAr: "Cotton، Piqué Cotton، Cotton / Elastane، French Terry، Fleece، Twill، Denim"
+      },
+      {
+        labelEn: "Fabric Weights (GSM)",
+        labelAr: "أوزان الأقمشة",
+        valueEn: "180 to 380 GSM (light tees to heavyweight winter hoodies)",
+        valueAr: "من 180 إلى 380 جم/م² (من التيشيرتات الصيفية حتى الهوديز الشتوية الثقيلة)"
+      },
+      {
+        labelEn: "Available Sizes",
+        labelAr: "المقاسات المتاحة",
+        valueEn: "S, M, L, XL, XXL, 3XL (Regular Fit & Slim Fit)",
+        valueAr: "S, M, L, XL, XXL, 3XL (قَصّة عادية مريحة وقَصّة سليم)"
+      },
+      {
+        labelEn: "Finishing & Washes",
+        labelAr: "المعالجة والغسيل",
+        valueEn: "Bio-wash, anti-pilling treatment, silicon softeners, pre-shrunk",
+        valueAr: "غسيل حيوي، معالجة ضد الوبر وضد الانكماش، ومعالجة بالسيليكون المنعم"
+      },
+      {
+        labelEn: "Private Label",
+        labelAr: "التخصيص والعلامات الخاصة",
+        valueEn: "Screen print, HD embroidery, custom leather patches, branded metal buttons",
+        valueAr: "طباعة سلك سكرين، تطريز عالي الدقة، بادجات جلدية، وأزرار معدنية مخصصة"
       }
     ]
   },
   {
-    "id": "prod-gar-lingerie",
-    "code": "SBA-PRD-LNG01",
-    "sector": "apparel",
-    "categoryKey": "underwear-lingerie",
-    "categoryEn": "Underwear & Lingerie",
-    "categoryAr": "الملابس الداخلية واللانجري",
-    "nameEn": "Fine Cotton Underwear & Seamless Lingerie Line",
-    "nameAr": "الملابس الداخلية القطنية الفاخرة واللانجري بدون درزات",
-    "taglineEn": "100% fine Egyptian cotton undershirts, boxers, and seamless women's intimates.",
-    "taglineAr": "ملابس داخلية قطنية رجالية ونسائية فائقة النعومة بدون درزات بارزة توفر راحة تامة طوال اليوم.",
-    "descriptionEn": "Produced on specialized circular knitting machines with ultra-fine gauge. Flat elastic waistbands, soft-edge bindings, and gentle dyes for continuous skin comfort.",
-    "descriptionAr": "تُنتج على ماكينات تريكو دائرية حديثة بدون درزات جانبية، مع أستك مرن ومريح وأصباغ عضوية لا تسبب أي تحسس.",
-    "image": "/Categories/Lingerie/Lingerie (1).jpg",
-    "originEn": "Egypt",
-    "originAr": "جمهورية مصر العربية",
-    "originFlag": "🇪🇬",
-    "moqEn": "1,000 pcs / model",
-    "moqAr": "1,000 قطعة / موديل",
-    "packagingEn": "Multi-pack box (2-3 pcs) or luxury hanging card.",
-    "packagingAr": "علب كرتونية فاخرة (2-3 قطع) أو أكياس فردية مع شماعة عرض.",
-    "specifications": [
+    id: "prod-gar-men-classic",
+    code: "SBA-PRD-MEN-CLS01",
+    sector: "apparel",
+    categoryKey: "mens-wear",
+    categoryKeys: ["mens-wear", "classic-wear"],
+    categoryEn: "Men's Wear",
+    categoryAr: "ملابس رجالية",
+    mainDepartmentEn: "Men's Wear",
+    mainDepartmentAr: "الملابس الرجالية",
+    nameEn: "Men's Classic Suiting, Blazers & Formal Trousers",
+    nameAr: "الملابس الرجالية الكلاسيكية والبدلات والسترات",
+    taglineEn: "Classic trousers, tailored suits, formal blazers, waistcoats, formal sets, and executive business attire.",
+    taglineAr: "بناطيل كلاسيكية، بدلات رجالية، سترات رسمية (Blazers)، صديري رجالي، وأطقم رجال الأعمال.",
+    descriptionEn: "Precision tailored classic menswear: structured 2-piece and 3-piece business suits, refined executive blazers, crease-resistant tailored trousers, formal waistcoats, and corporate uniform lines engineered with premium wool blends, polyester-viscose, and stretch suiting textiles.",
+    descriptionAr: "وحدة حياكة وتفصيل الأزياء الكلاسيكية والرسمية للرجال: تشمل بدلات رجالية كاملة قطعتين وثلاث قطع، سترات رسمية (Blazers) أنيقة، بناطيل كلاسيكية مقواة ومقاومة للتجعد، صديري رجالي (Waistcoats)، وأطقم رجال الأعمال المصنعة من خامات الصوف والمخاليط الفاخرة لمظهر رسمي متميز.",
+    image: "/BG/Apparel Manufacturing/Private Label Manufacturing.jpg",
+    originEn: "Egypt",
+    originAr: "جمهورية مصر العربية",
+    originFlag: "🇪🇬",
+    moqEn: "300 pcs / style",
+    moqAr: "300 قطعة / تصميم",
+    packagingEn: "Garment suit cover with heavy hanger in protective export wardrobe carton.",
+    packagingAr: "كفر بدلة واقٍ بسحاب مع شماعة متينة داخل كرتونة شحن وحفظ الملابس الرسمية.",
+    specifications: [
       {
-        "labelEn": "Knitting",
-        "labelAr": "نوع الحياكة",
-        "valueEn": "Seamless tube body knits (fine gauge)",
-        "valueAr": "حياكة دائرية مفرغة بدون درزات جانبية"
+        labelEn: "Included Products",
+        labelAr: "المنتجات المشمولة",
+        valueEn: "Classic trousers, Men's suits (2 & 3 piece), Blazers, Waistcoats, Formal executive business sets",
+        valueAr: "بناطيل كلاسيكية، بدلات رجالية، سترات رسمية (Blazers)، صديري رجالي (Waistcoats)، أطقم رسمية، ملابس رجال الأعمال"
       },
       {
-        "labelEn": "Elastic",
-        "labelAr": "الأستك والخصر",
-        "valueEn": "Jacquard woven plush-back waistband",
-        "valueAr": "أستك جاكار مطاطي ناعم الملمس مبطن"
+        labelEn: "Fabric Composition",
+        labelAr: "الخامات وتركيب الأقمشة",
+        valueEn: "Wool Blends, Polyester / Viscose, Cotton Twill, Stretch Suiting Fabrics",
+        valueAr: "Wool Blends، Polyester / Viscose، Cotton Twill، Stretch Suiting Fabrics"
+      },
+      {
+        labelEn: "Fabric Weights (GSM)",
+        labelAr: "أوزان الأقمشة",
+        valueEn: "240 to 340 GSM suiting fabrics",
+        valueAr: "من 240 إلى 340 جم/م² أقمشة بدل رسمية فاخرة"
+      },
+      {
+        labelEn: "Available Sizes",
+        labelAr: "المقاسات المتاحة",
+        valueEn: "EU 46 to 60 (Regular Fit, Slim Fit, Tailored Fit)",
+        valueAr: "من 46 إلى 60 أوروبي (Regular Fit, Slim Fit, Tailored Fit)"
+      },
+      {
+        labelEn: "Tailoring Details",
+        labelAr: "تفاصيل الخياطة والتشطيب",
+        valueEn: "Fused collar & lapel interfacing, interior satin lining, functional horn/resin buttons",
+        valueAr: "تقوية الياقات والصدر بكنافاس متين، بطانة داخلية ساتان، وأزرار قرنية وراتنجية أنيقة"
+      },
+      {
+        labelEn: "Private Label",
+        labelAr: "التخصيص والعلامات الخاصة",
+        valueEn: "Corporate uniform branding, custom sleeve labels, branded suit covers",
+        valueAr: "برامج الزي الموحد للشركات، بطاقات أكمام مخصصة، وأغلفة بدل بشعار العميل"
       }
     ]
   },
   {
-    "id": "prod-gar-evening",
-    "code": "SBA-PRD-EVN01",
-    "sector": "apparel",
-    "categoryKey": "evening-wear",
-    "categoryEn": "Evening Wear",
-    "categoryAr": "فساتين السهرة والسواريه",
-    "nameEn": "Evening Gowns, Cocktail Dresses & Soirée Collections",
-    "nameAr": "فساتين السهرة والمناسبات والأزياء الراقية (سواريه)",
-    "taglineEn": "Opulent satin, chiffon, and hand-embroidered evening dresses for formal occasions.",
-    "taglineAr": "تصميمات فساتين سهرة راقية تعتمد على الساتان الملكي والشيفون والتطريز الدقيق للمناسبات الخاصة.",
-    "descriptionEn": "Dedicated couture and special occasion manufacturing unit. Features built-in corsetry, hand-placed crystal and bead work, and fine French lace trims.",
-    "descriptionAr": "وحدة تصنيع مخصصة لفساتين المناسبات الراقية، تشمل كورسيهات داخلية مثبتة، تطريز يدوي متقن بالخرز والكريستال، وأقمشة دانتيل وشيفون فرنسي.",
-    "image": "/Categories/Soirée/Soirée (1).jpg",
-    "originEn": "Egypt",
-    "originAr": "جمهورية مصر العربية",
-    "originFlag": "🇪🇬",
-    "moqEn": "100 pcs / style",
-    "moqAr": "100 قطعة / تصميم",
-    "packagingEn": "Garment suit bag with zipper in protective wardrobe carton.",
-    "packagingAr": "حقيبة قماشية بسحاب لحفظ الفستان داخل كرتونة مخصصة للملابس الراقية.",
-    "specifications": [
+    id: "prod-gar-men-shirts",
+    code: "SBA-PRD-MEN-SHT01",
+    sector: "apparel",
+    categoryKey: "mens-wear",
+    categoryKeys: ["mens-wear", "mens-shirts"],
+    categoryEn: "Men's Wear",
+    categoryAr: "ملابس رجالية",
+    mainDepartmentEn: "Men's Wear",
+    mainDepartmentAr: "الملابس الرجالية",
+    nameEn: "Men's Formal & Casual Cotton Shirts Line",
+    nameAr: "القمصان الرجالية الرسمية والكاجوال",
+    taglineEn: "Formal dress shirts, Oxford shirts, casual button-downs, long & short sleeves, solids, stripes & custom designs.",
+    taglineAr: "قمصان رسمية، قمصان أكسفورد، قمصان كاجوال، أكمام طويلة وقصيرة، سادة ومخططة وتصميمات مخصصة.",
+    descriptionEn: "Dedicated shirt manufacturing department: crisp executive dress shirts with fusible collars, washed casual Oxford shirts, linen summer shirts, long and short-sleeve options in solid colors, stripes, and checks, crafted from world-renowned Egyptian cotton and fine poplin.",
+    descriptionAr: "قسم تصنيع متخصص في القمصان الرجالية: يشمل قمصان رسمية لرجال الأعمال بياقات مقواة (Formal Shirts)، قمصان أكسفورد (Oxford Shirts)، قمصان كاجوال عصرية، قمصان بأكمام طويلة وأكمام قصيرة، موديلات سادة ومخططة ومربعات، وتصميمات مخصصة بالكامل للعلامات التجارية من أجود خامات القطن المصري والبوبلين والكتان.",
+    image: "/BG/Apparel Manufacturing/Product Development & Sampling.jpg",
+    originEn: "Egypt",
+    originAr: "جمهورية مصر العربية",
+    originFlag: "🇪🇬",
+    moqEn: "400 pcs / style",
+    moqAr: "400 قطعة / تصميم",
+    packagingEn: "Individual shirt box or polybag with collar inserts and plastic clips.",
+    packagingAr: "تعبئة فردية داخل علبة قميص فاخرة أو كيس شفاف مع دعامات ياقة ومشابك تثبيت.",
+    specifications: [
       {
-        "labelEn": "Fabrics",
-        "labelAr": "الأقمشة",
-        "valueEn": "Silk Satin, Chiffon, Tulle, Crepe & Lace",
-        "valueAr": "ساتان حريري، شيفون، تول، كريب ودانتيل"
+        labelEn: "Included Products",
+        labelAr: "المنتجات المشمولة",
+        valueEn: "Formal dress shirts, Oxford shirts, Casual shirts, Long-sleeve shirts, Short-sleeve shirts, Solids & stripes, Custom brand shirts",
+        valueAr: "قمصان رسمية (Formal Shirts)، قمصان أكسفورد (Oxford Shirts)، قمصان كاجوال، قمصان بأكمام طويلة، قمصان بأكمام قصيرة، قمصان سادة ومخططة، قمصان بتصميمات مخصصة"
       },
       {
-        "labelEn": "Finishing",
-        "labelAr": "التشطيب",
-        "valueEn": "Hand-embroidery, invisible YKK zipper, lining",
-        "valueAr": "تطريز يدوي دقيق، سحاب YKK مخفي وبطانة داخلية ناعمة"
+        labelEn: "Fabric Composition",
+        labelAr: "الخامات وتركيب الأقمشة",
+        valueEn: "Egyptian Cotton, Poplin, Oxford Fabric, Twill, Linen, Cotton Blends",
+        valueAr: "Egyptian Cotton، Poplin، Oxford Fabric، Twill، Linen، Cotton Blends"
+      },
+      {
+        labelEn: "Yarn Count & Weights",
+        labelAr: "نمرة الخيط والوزن",
+        valueEn: "60/1 to 100/2 Compact Egyptian Giza yarns (110 - 150 GSM)",
+        valueAr: "من 60/1 إلى 100/2 قطن جيزة كومباكت فاخر (وزن 110 إلى 150 جم/م²)"
+      },
+      {
+        labelEn: "Available Sizes",
+        labelAr: "المقاسات المتاحة",
+        valueEn: "Collar sizes 14.5\" to 18.5\" (S to 3XL in Slim Fit, Tailored Fit, Regular Fit)",
+        valueAr: "قياس الياقة من 14.5 إلى 18.5 بوصة (من S إلى 3XL بقَصّات سليم، مفصلة، وعادية)"
+      },
+      {
+        labelEn: "Collar & Cuff Styles",
+        labelAr: "أنماط الياقات والأساور",
+        valueEn: "Classic spread, Cutaway, Button-down collars; Single and French double cuffs",
+        valueAr: "ياقة كلاسيكية مفرودة، ياقة إيطالية، زر أسفل الياقة، أساور عادية وأساور فرنسية للكبك"
+      },
+      {
+        labelEn: "Private Label",
+        labelAr: "التخصيص والعلامات الخاصة",
+        valueEn: "Mother-of-pearl engraved buttons, custom woven labels, branded luxury gift boxes",
+        valueAr: "أزرار صدفية محفورة باسم الماركة، علامات منسوجة راقية، وعلب هدايا فاخرة"
       }
     ]
   },
   {
-    "id": "prod-gar-abaya",
-    "code": "SBA-PRD-ABY01",
-    "sector": "apparel",
-    "categoryKey": "abayas",
-    "categoryEn": "Abayas",
-    "categoryAr": "العبايات والأزياء المحتشمة",
-    "nameEn": "Luxury Modest Abayas, Kaftans & Khaleeji Capes",
-    "nameAr": "العبايات الخليجية الفاخرة والقفطان والأزياء المحتشمة",
-    "taglineEn": "Tailored from premium Nada, crepe, and linen fabrics with refined sleeve detailing and matching sheilas.",
-    "taglineAr": "مفصلة من أقمشة ندى الفاخرة والكريب الملكي، مع تطريز راقٍ على الأكمام وشيلات متناسقة.",
-    "descriptionEn": "Crafted for Gulf and international modest fashion markets. Characterized by deep rich blacks, lightweight breathability in hot climates, and impeccable draping.",
-    "descriptionAr": "مخصصة للأسواق الخليجية والدولية لأزياء المحتشمات، وتتميز بسواد داكن غني، وأقمشة خفيفة مناسبة للأجواء الحارة وانسيابية مريحة.",
-    "image": "/Categories/Kids/Dresses/winter/Winter - Dresses - (3-6) (1).jpg",
-    "originEn": "Egypt",
-    "originAr": "جمهورية مصر العربية",
-    "originFlag": "🇪🇬",
-    "moqEn": "150 pcs / style",
-    "moqAr": "150 قطعة / تصميم",
-    "packagingEn": "Luxury branded gift box or protective garment bag.",
-    "packagingAr": "صندوق هدايا فاخر أو كيس ملابس أنيق مع الشيلة المتطابقة.",
-    "specifications": [
+    id: "prod-gar-men-homewear",
+    code: "SBA-PRD-MEN-HMW01",
+    sector: "apparel",
+    categoryKey: "mens-wear",
+    categoryKeys: ["mens-wear", "homewear"],
+    categoryEn: "Men's Wear",
+    categoryAr: "ملابس رجالية",
+    mainDepartmentEn: "Men's Wear",
+    mainDepartmentAr: "الملابس الرجالية",
+    nameEn: "Men's Cotton Homewear & Pyjama Sets",
+    nameAr: "الملابس المنزلية والبيجامات الرجالية",
+    taglineEn: "Men's pyjamas, indoor sets, lounge pants, home t-shirts, lounge shorts, summer and winter sleepwear.",
+    taglineAr: "بيجامات رجالية، أطقم منزلية، بناطيل منزلية، تيشيرتات منزلية، شورتات، وملابس نوم صيفية وشتوية.",
+    descriptionEn: "Comfort-engineered men's loungewear and pyjama collection: coordinated 2-piece sleep sets, lightweight summer shorts and tees, warm winter interlock pants, relaxed fit home t-shirts, and lounge trousers made of soft combed cotton, modal, and breathable jersey.",
+    descriptionAr: "مجموعة الملابس المنزلية والبيجامات الرجالية المصممة لتوفير أقصى درجات الاسترخاء: تضم بيجامات رجالية قطنية متكاملة، أطقم منزلية مريحة قطعتين، بناطيل منزلية مرنة بأربطة، تيشيرتات منزلية خفيفة، شورتات نوم، وملابس نوم صيفية وشتوية بخامات القطن والمودال والإنترلوك عالي النعومة والتهوية.",
+    image: "/BG/Apparel Manufacturing/Ready-Made Garment Manufacturing.jpg",
+    originEn: "Egypt",
+    originAr: "جمهورية مصر العربية",
+    originFlag: "🇪🇬",
+    moqEn: "300 sets / style",
+    moqAr: "300 طقم / تصميم",
+    packagingEn: "Polybag with branded presentation insert or box packaging.",
+    packagingAr: "كيس شفاف أنيق مع بطاقة تعريف أو علبة كرتونية للهدايا.",
+    specifications: [
       {
-        "labelEn": "Fabric Source",
-        "labelAr": "نوع القماش",
-        "valueEn": "Premium Royal Crepe & Nada Fabric",
-        "valueAr": "كريب ملكي كوري وأقمشة ندى الممتازة"
+        labelEn: "Included Products",
+        labelAr: "المنتجات المشمولة",
+        valueEn: "Men's pyjamas, Home sets, Lounge pants, Home t-shirts, Lounge shorts, Summer and winter sleepwear",
+        valueAr: "بيجامات رجالية، أطقم منزلية، بناطيل منزلية، تيشيرتات منزلية، شورتات منزلية، ملابس نوم صيفية وشتوية"
       },
       {
-        "labelEn": "Color",
-        "labelAr": "اللون",
-        "valueEn": "Jet Deep Black (Color-fast)",
-        "valueAr": "أسود فاحم عميق وثابت لا يبهت"
+        labelEn: "Fabric Composition",
+        labelAr: "الخامات وتركيب الأقمشة",
+        valueEn: "Cotton, Modal, Jersey, Interlock, Cotton / Polyester",
+        valueAr: "Cotton، Modal، Jersey، Interlock، Cotton / Polyester"
+      },
+      {
+        labelEn: "Fabric Weights (GSM)",
+        labelAr: "أوزان الأقمشة",
+        valueEn: "160 to 240 GSM breathable knits",
+        valueAr: "من 160 إلى 240 جم/م² تريكو قطني ناعم وعالي التهوية"
+      },
+      {
+        labelEn: "Available Sizes",
+        labelAr: "المقاسات المتاحة",
+        valueEn: "M, L, XL, XXL, 3XL (comfort relaxed fit)",
+        valueAr: "M, L, XL, XXL, 3XL (قَصّات استرخاء مريحة)"
+      },
+      {
+        labelEn: "Comfort Details",
+        labelAr: "تفاصيل الراحة والتشطيب",
+        valueEn: "Adjustable drawstring waistband, side slash pockets, non-binding ankle cuffs",
+        valueAr: "خصر مطاطي برباط قابل للضبط، جيوب جانبية عملية، وأساور أرجل ناعمة غير ضاغطة"
+      },
+      {
+        labelEn: "Private Label",
+        labelAr: "التخصيص والعلامات الخاصة",
+        valueEn: "Yarn-dyed woven plaids, screen prints, embroidered chest crests, and private boxing",
+        valueAr: "أقمشة كاروهات مصبوغة في الغزل، طباعة ونقشات، وتطريز وتغليف خاص بالعميل"
       }
     ]
   },
   {
-    "id": "prod-gar-fabrics",
-    "code": "SBA-PRD-FAB01",
-    "sector": "apparel",
-    "categoryKey": "fabrics-textiles",
-    "categoryEn": "Fabrics & Textiles",
-    "categoryAr": "الأقمشة والمنسوجات",
-    "nameEn": "Woven & Knitted Industrial Raw Fabrics & Yarns",
-    "nameAr": "الأقمشة النسيجية والتريكو الخام والغزول الصناعية",
-    "taglineEn": "Wholesale fabric rolls including Single Jersey, Interlock, Rib, Piqué, French Terry and Poplin.",
-    "taglineAr": "توريد أثواب وأقمشة قطنية خام ومصبوغة بالجملة: سنجل جيرسيه، إنترلوك، ريب، بيكيه، وبوبلين.",
-    "descriptionEn": "Direct supply of certified circular-knitted and shuttle-woven fabrics for garment factories and fashion houses. Fully tested for yarn count, tensile strength, and color fastness.",
-    "descriptionAr": "توريد مباشر لأثواب الأقمشة التريكو والنسيج لمصانع الملابس ودور الأزياء، مع اختبارات الجودة المعتمدة لشد الخيط وثبات الألوان ونسب الانكماش.",
-    "image": "/BG/Apparel Manufacturing/Textile Mill & Internal Dyeing.jpg",
-    "originEn": "Egypt",
-    "originAr": "جمهورية مصر العربية",
-    "originFlag": "🇪🇬",
-    "moqEn": "500 kg / colour / quality",
-    "moqAr": "500 كجم / لون / نوع قماش",
-    "packagingEn": "Standard roll packaging with plastic outer wrap and lot labels.",
-    "packagingAr": "لفائف وأثواب قماش ملفوفة ببلاستيك واقٍ مع بطاقات بيانات الدفعة.",
-    "specifications": [
+    id: "prod-gar-men-sportswear",
+    code: "SBA-PRD-MEN-SPT01",
+    sector: "apparel",
+    categoryKey: "mens-wear",
+    categoryKeys: ["mens-wear", "sportswear"],
+    categoryEn: "Men's Wear",
+    categoryAr: "ملابس رجالية",
+    mainDepartmentEn: "Men's Wear",
+    mainDepartmentAr: "الملابس الرجالية",
+    nameEn: "Men's Athletic Sportswear & Gym Training Wear",
+    nameAr: "الملابس الرياضية وملابس الجيم والتدريب للرجال",
+    taglineEn: "Full tracksuits, athletic tees, workout pants, training shorts, athletic jackets, gym and running wear.",
+    taglineAr: "أطقم رياضية، تيشيرتات رياضية، بناطيل تدريب، شورتات رياضية، جاكيتات رياضية، ملابس جيم وجري.",
+    descriptionEn: "High-performance men's athletic activewear: full coordinated tracksuits, moisture-wicking gym t-shirts, flexible workout joggers, running shorts with inner compression, training zip-ups, and athletic jackets engineered with 4-way stretch and rapid moisture management.",
+    descriptionAr: "خط إنتاج متطور للملابس الرياضية الرجالية وملابس التدريب والجيم: يشمل ترنجات وأطقم رياضية كاملة، تيشيرتات تدريب وجري بتقنية طرد الرطوبة، بناطيل تدريب مرنة (Joggers)، شورتات رياضية، جاكيتات تمرين بسحاب، وملابس لياقة بدنية مصنعة من أقمشة البوليستر والسباندكس والنايلون المرنة بأربع اتجاهات.",
+    image: "/BG/Apparel Manufacturing/Production Volume & Scale.jpg",
+    originEn: "Egypt",
+    originAr: "جمهورية مصر العربية",
+    originFlag: "🇪🇬",
+    moqEn: "300 pcs / style",
+    moqAr: "300 قطعة / تصميم",
+    packagingEn: "Zipper athletic polybag with venting and barcode hangtag.",
+    packagingAr: "كيس رياضي بسحاب مع فتحات تهوية وبطاقة باركود للمواصفات.",
+    specifications: [
       {
-        "labelEn": "Widths",
-        "labelAr": "عرض القماش",
-        "valueEn": "160 cm to 220 cm open-width or tubular",
-        "valueAr": "160 سم إلى 220 سم مفتوح أو أسطواني"
+        labelEn: "Included Products",
+        labelAr: "المنتجات المشمولة",
+        valueEn: "Tracksuits, Athletic t-shirts, Training pants / joggers, Sports shorts, Athletic jackets, Gym wear, Running & training gear",
+        valueAr: "أطقم رياضية، تيشيرتات رياضية، بناطيل تدريب، شورتات رياضية، جاكيتات رياضية، ملابس جيم، ملابس جري وتدريب"
       },
       {
-        "labelEn": "Weights",
-        "labelAr": "الأوزان",
-        "valueEn": "120 GSM to 420 GSM",
-        "valueAr": "من 120 إلى 420 جم/م²"
+        labelEn: "Fabric Composition",
+        labelAr: "الخامات وتركيب الأقمشة",
+        valueEn: "Polyester, Polyester / Spandex, Nylon / Elastane, Quick-Dry performance textiles, 4-way stretch fabrics",
+        valueAr: "Polyester، Polyester / Spandex، Nylon / Elastane، أقمشة سريعة الجفاف، أقمشة مرنة بأربع اتجاهات"
+      },
+      {
+        labelEn: "Fabric Weights (GSM)",
+        labelAr: "أوزان الأقمشة",
+        valueEn: "160 to 280 GSM (lightweight training tops to structured warm-up tracksuits)",
+        valueAr: "من 160 إلى 280 جم/م² (من تيشيرتات الجري الخفيفة حتى ترنجات التدريب والإحماء)"
+      },
+      {
+        labelEn: "Available Sizes",
+        labelAr: "المقاسات المتاحة",
+        valueEn: "S, M, L, XL, XXL, 3XL (Athletic Fit & Performance Fit)",
+        valueAr: "S, M, L, XL, XXL, 3XL (قَصّة رياضية مريحة وقَصّة تدريب محكمة)"
+      },
+      {
+        labelEn: "Performance Features",
+        labelAr: "المواصفات التقنية",
+        valueEn: "Rapid dry, 4-way mechanical recovery stretch, anti-odor antimicrobial yarn, reinforced flatlock seams",
+        valueAr: "جفاف فوري، تمدد رباعي واستعادة القوام، معالجة ضد الروائح والبكتيريا، وحياكة مسطحة معززة"
+      },
+      {
+        labelEn: "Private Label",
+        labelAr: "التخصيص والعلامات الخاصة",
+        valueEn: "Custom heat-transfer logos, silicone brand patches, customized club colors and numbering",
+        valueAr: "طباعة فينيل حراري لشعار العميل، بادجات سيليكون بارزة، وألوان وترقيم مخصص للفرق والأندية"
       }
     ]
   },
@@ -944,21 +1359,19 @@ export const productCategoriesConfig = [
     division: "apparel" as const,
     labelEn: "Ready-Made Garments",
     labelAr: "منتجات الملابس الجاهزة",
-    descEn: "Ready-to-wear fashion lines, uniforms, and fine Egyptian cotton garments ready for supply and export.",
-    descAr: "أزياء جاهزة، ملابس أطفال ونساء ورجال، ومنسوجات قطنية فاخرة جاهزة للتوريد والتصدير الدولي.",
+    descEn: "Export-certified ready-made garments across Kids & Baby, Women, and Men wear for international buyers, brands, and wholesalers.",
+    descAr: "حلول تصنيع وتصدير الملابس الجاهزة المعتمدة للأطفال والنساء والرجال، موجهة للعلامات التجارية والمستوردين وتجار الجملة دولياً.",
     categories: [
       { key: "all", labelEn: "All Apparel", labelAr: "كافة منتجات الملابس" },
+      { key: "kids-wear", labelEn: "Kids & Baby Wear", labelAr: "ملابس الأطفال" },
       { key: "womens-wear", labelEn: "Women's Wear", labelAr: "الملابس النسائية" },
-      { key: "mens-wear", labelEn: "Men's Wear", labelAr: "ملابس رجالية" },
-      { key: "kids-wear", labelEn: "Kids & Baby Wear", labelAr: "ملابس الأطفال والرضع" },
-      { key: "casual-wear", labelEn: "Casual Wear", labelAr: "ملابس كاجوال يومية" },
-      { key: "homewear", labelEn: "Homewear", labelAr: "الملابس المنزلية والبيجامات" },
-      { key: "classic-wear", labelEn: "Classic Wear", labelAr: "الملابس الكلاسيكية" },
+      { key: "mens-wear", labelEn: "Men's Wear", labelAr: "الملابس الرجالية" },
+      { key: "underwear", labelEn: "Underwear", labelAr: "الملابس الداخلية" },
+      { key: "homewear", labelEn: "Homewear", labelAr: "الملابس المنزلية" },
       { key: "sportswear", labelEn: "Sportswear", labelAr: "الملابس الرياضية" },
-      { key: "underwear-lingerie", labelEn: "Underwear & Lingerie", labelAr: "الملابس الداخلية واللانجري" },
-      { key: "evening-wear", labelEn: "Evening Wear", labelAr: "فساتين السهرة والسواريه" },
-      { key: "abayas", labelEn: "Abayas", labelAr: "العبايات والأزياء المحتشمة" },
-      { key: "fabrics-textiles", labelEn: "Fabrics & Textiles", labelAr: "الأقمشة والمنسوجات" }
+      { key: "classic-wear", labelEn: "Classic Wear", labelAr: "الملابس الكلاسيكية" },
+      { key: "mens-shirts", labelEn: "Men's Shirts", labelAr: "القمصان الرجالية" },
+      { key: "womens-lingerie", labelEn: "Women's Lingerie", labelAr: "اللانجري النسائي" }
     ]
   },
   {

@@ -60,9 +60,12 @@ export function ProductsCataloguePage() {
       // Division filter
       if (p.sector !== selectedProductDivision) return false;
 
-      // Category filter
-      if (selectedProductCategory !== "all" && p.categoryKey !== selectedProductCategory) {
-        return false;
+      // Category filter (supports primary categoryKey and categoryKeys array)
+      if (selectedProductCategory !== "all") {
+        const matchesCat =
+          p.categoryKey === selectedProductCategory ||
+          (p.categoryKeys && p.categoryKeys.includes(selectedProductCategory));
+        if (!matchesCat) return false;
       }
 
       // Search Query
@@ -71,9 +74,13 @@ export function ProductsCataloguePage() {
         const inName = (p.nameAr + " " + p.nameEn).toLowerCase().includes(q);
         const inCode = p.code.toLowerCase().includes(q);
         const inDesc = (p.descriptionAr + " " + p.descriptionEn).toLowerCase().includes(q);
+        const inTag = (p.taglineAr + " " + p.taglineEn).toLowerCase().includes(q);
         const inOrigin = (p.originAr + " " + p.originEn).toLowerCase().includes(q);
         const inCat = (p.categoryAr + " " + p.categoryEn).toLowerCase().includes(q);
-        if (!inName && !inCode && !inDesc && !inOrigin && !inCat) return false;
+        const inSpecs = p.specifications?.some((s) =>
+          (s.labelAr + " " + s.labelEn + " " + s.valueAr + " " + s.valueEn).toLowerCase().includes(q)
+        );
+        if (!inName && !inCode && !inDesc && !inTag && !inOrigin && !inCat && !inSpecs) return false;
       }
 
       return true;
@@ -85,7 +92,144 @@ export function ProductsCataloguePage() {
     return productCategoriesConfig.find((c) => c.division === selectedProductDivision);
   }, [selectedProductDivision]);
 
+  // Apparel Sections (Strictly ordered: Kids -> Women -> Men)
+  const apparelSections = useMemo(() => {
+    return [
+      {
+        key: "kids",
+        titleAr: "القسم الأول: ملابس الأطفال والأطفال الرضع (Kids & Baby Wear)",
+        titleEn: "Section 1: Kids & Baby Wear",
+        subtitleAr: "5 تصنيفات معتمدة للتصنيع والتوريد (كاجوال، ملابس داخلية، ملابس منزلية، ملابس رياضية، ملابس رضع)",
+        subtitleEn: "5 certified manufacturing lines (Casual, Underwear, Homewear, Sportswear, Baby Clothing)",
+        badgeAr: "حديثو الولادة حتى 12 سنة",
+        badgeEn: "Newborn to 12 Years",
+        products: filteredProducts.filter((p) => p.mainDepartmentEn === "Kids & Baby Wear"),
+      },
+      {
+        key: "women",
+        titleAr: "القسم الثاني: الملابس النسائية (Women’s Wear)",
+        titleEn: "Section 2: Women’s Wear",
+        subtitleAr: "3 تصنيفات معتمدة ومخصصة (الملابس الداخلية اليومية، الملابس المنزلية والبيجامات، اللانجري الفاخر)",
+        subtitleEn: "3 certified lines (Everyday Underwear, Homewear & Pyjamas, Luxury Lingerie)",
+        badgeAr: "ملابس نسائية فاخرة",
+        badgeEn: "Women's Essentials & Lingerie",
+        products: filteredProducts.filter((p) => p.mainDepartmentEn === "Women's Wear"),
+      },
+      {
+        key: "men",
+        titleAr: "القسم الثالث: الملابس الرجالية (Men’s Wear)",
+        titleEn: "Section 3: Men’s Wear",
+        subtitleAr: "5 تصنيفات متكاملة (الكاجوال، الكلاسيكية والبدلات، القمصان، الملابس المنزلية، والملابس الرياضية)",
+        subtitleEn: "5 comprehensive categories (Casual, Classic Suiting, Shirts, Homewear, Sportswear)",
+        badgeAr: "أزياء رجالية متكاملة",
+        badgeEn: "Men's Full Range",
+        products: filteredProducts.filter((p) => p.mainDepartmentEn === "Men's Wear"),
+      },
+    ];
+  }, [filteredProducts]);
+
   const totalProductsCount = physicalProducts.length;
+
+  const renderProductCard = (product: PhysicalProduct) => (
+    <div
+      key={product.id}
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-white/20 bg-background/85 shadow-md backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)]"
+    >
+      <div>
+        {/* Product Image */}
+        <div className="relative aspect-[16/11] w-full overflow-hidden bg-secondary">
+          <img
+            src={product.image}
+            alt={ar ? product.nameAr : product.nameEn}
+            loading="lazy"
+            className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+
+          {/* Code & Origin Flags */}
+          <div className="absolute top-3 start-3 flex items-center gap-1.5">
+            <span className="rounded-full bg-black/70 px-2.5 py-0.5 text-[10px] font-mono font-bold text-white backdrop-blur-md border border-white/20">
+              {product.code}
+            </span>
+          </div>
+
+          <div className="absolute top-3 end-3">
+            <span className="rounded-full bg-black/60 px-2.5 py-0.5 text-xs text-white backdrop-blur-md border border-white/20 flex items-center gap-1 font-medium">
+              <span>{product.originFlag}</span>
+              <span className="text-[10px]">{ar ? product.originAr : product.originEn}</span>
+            </span>
+          </div>
+
+          {/* Category Tag */}
+          <div className="absolute bottom-3 start-3">
+            <span className="rounded-full bg-brand-orange px-2.5 py-0.5 text-[10px] font-bold text-white shadow-sm">
+              {ar ? product.categoryAr : product.categoryEn}
+            </span>
+          </div>
+        </div>
+
+        {/* Content */}
+        <div className="p-6">
+          <h4 className="text-center font-head text-base sm:text-lg font-bold text-foreground group-hover:text-brand-green transition-colors leading-snug">
+            {ar ? product.nameAr : product.nameEn}
+          </h4>
+
+          <p className="mt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed line-clamp-2 text-center">
+            {ar ? product.taglineAr : product.taglineEn}
+          </p>
+
+          {/* Key Specifications Preview */}
+          <div className="mt-4 pt-3 border-t border-border/50 space-y-1.5">
+            {product.specifications.slice(0, 3).map((sp, sIdx) => (
+              <div key={sIdx} className="flex items-center justify-between text-[11px]">
+                <span className="text-muted-foreground font-medium shrink-0">
+                  {ar ? sp.labelAr : sp.labelEn}:
+                </span>
+                <span className="text-foreground font-semibold truncate max-w-[170px] text-end">
+                  {ar ? sp.valueAr : sp.valueEn}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          {/* MOQ & Packaging */}
+          <div className="mt-3 rounded-xl bg-secondary/50 p-2.5 text-[11px] space-y-1">
+            <div className="flex items-center justify-between">
+              <span className="text-muted-foreground">{ar ? "الحد الأدنى للطلب:" : "MOQ:"}</span>
+              <span className="font-bold text-brand-orange">{ar ? product.moqAr : product.moqEn}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Card Actions */}
+      <div className="p-6 pt-0 border-t border-border/40 mt-2 flex items-center gap-2">
+        <Button
+          type="button"
+          size="sm"
+          onClick={() => setActiveProductDetail(product)}
+          className="flex-1 rounded-full text-xs font-bold bg-brand-green text-white hover:bg-brand-orange transition-all duration-300 cursor-pointer"
+        >
+          <ZoomIn className="size-3.5 me-1.5" />
+          <span>{ar ? "استعراض المواصفات" : "View Product"}</span>
+        </Button>
+
+        <Button
+          type="button"
+          size="sm"
+          onClick={() => {
+            setRfqTargetProduct(product);
+            setIsRfqSubmitted(false);
+            setGeneratedRfqCode(`RFQ-SBA-${Math.floor(1000 + Math.random() * 9000)}`);
+          }}
+          className="rounded-full bg-brand-green text-white hover:bg-brand-orange transition-all duration-300 text-xs font-bold px-3.5 cursor-pointer"
+        >
+          <Send className="size-3.5 me-1.5" />
+          <span>{ar ? "طلب عرض سعر" : "Quote"}</span>
+        </Button>
+      </div>
+    </div>
+  );
 
   return (
     <div className="w-full">
@@ -273,108 +417,38 @@ export function ProductsCataloguePage() {
         </div>
 
         {/* Products Grid */}
-        {filteredProducts.length > 0 ? (
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {filteredProducts.map((product) => (
-              <div
-                key={product.id}
-                className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-white/20 bg-background/85 shadow-md backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)]"
-              >
-                <div>
-                  {/* Product Image */}
-                  <div className="relative aspect-[16/11] w-full overflow-hidden bg-secondary">
-                    <img
-                      src={product.image}
-                      alt={ar ? product.nameAr : product.nameEn}
-                      loading="lazy"
-                      className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-
-                    {/* Code & Origin Flags */}
-                    <div className="absolute top-3 start-3 flex items-center gap-1.5">
-                      <span className="rounded-full bg-black/70 px-2.5 py-0.5 text-[10px] font-mono font-bold text-white backdrop-blur-md border border-white/20">
-                        {product.code}
-                      </span>
-                    </div>
-
-                    <div className="absolute top-3 end-3">
-                      <span className="rounded-full bg-black/60 px-2.5 py-0.5 text-xs text-white backdrop-blur-md border border-white/20 flex items-center gap-1 font-medium">
-                        <span>{product.originFlag}</span>
-                        <span className="text-[10px]">{ar ? product.originAr : product.originEn}</span>
-                      </span>
-                    </div>
-
-                    {/* Category Tag */}
-                    <div className="absolute bottom-3 start-3">
-                      <span className="rounded-full bg-brand-orange px-2.5 py-0.5 text-[10px] font-bold text-white shadow-sm">
-                        {ar ? product.categoryAr : product.categoryEn}
-                      </span>
+        {selectedProductDivision === "apparel" && selectedProductCategory === "all" && !productSearchQuery.trim() ? (
+          <div className="space-y-12">
+            {apparelSections.map((sec, secIdx) => (
+              <div key={sec.key} className="space-y-6">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 rounded-2xl border border-white/20 bg-background/70 p-4 sm:p-5 backdrop-blur-xl shadow-xs">
+                  <div className="flex items-center gap-3">
+                    <span className="flex size-8 items-center justify-center rounded-xl bg-brand-green/10 text-brand-green border border-brand-green/25 font-bold text-xs shrink-0">
+                      {secIdx + 1}
+                    </span>
+                    <div>
+                      <h3 className="font-head text-base sm:text-lg md:text-xl font-bold text-foreground">
+                        {ar ? sec.titleAr : sec.titleEn}
+                      </h3>
+                      <p className="text-xs text-muted-foreground mt-0.5 leading-relaxed">
+                        {ar ? sec.subtitleAr : sec.subtitleEn}
+                      </p>
                     </div>
                   </div>
-
-                  {/* Content */}
-                  <div className="p-6">
-                    <h4 className="text-center font-head text-base sm:text-lg font-bold text-foreground group-hover:text-brand-green transition-colors leading-snug">
-                      {ar ? product.nameAr : product.nameEn}
-                    </h4>
-
-                    <p className="mt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed line-clamp-2 text-center">
-                      {ar ? product.taglineAr : product.taglineEn}
-                    </p>
-
-                    {/* Key Specifications Preview */}
-                    <div className="mt-4 pt-3 border-t border-border/50 space-y-1.5">
-                      {product.specifications.slice(0, 2).map((sp, sIdx) => (
-                        <div key={sIdx} className="flex items-center justify-between text-[11px]">
-                          <span className="text-muted-foreground font-medium">
-                            {ar ? sp.labelAr : sp.labelEn}:
-                          </span>
-                          <span className="text-foreground font-semibold truncate max-w-[160px]">
-                            {ar ? sp.valueAr : sp.valueEn}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* MOQ & Packaging */}
-                    <div className="mt-3 rounded-xl bg-secondary/50 p-2.5 text-[11px] space-y-1">
-                      <div className="flex items-center justify-between">
-                        <span className="text-muted-foreground">{ar ? "الحد الأدنى للطلب:" : "MOQ:"}</span>
-                        <span className="font-bold text-brand-orange">{ar ? product.moqAr : product.moqEn}</span>
-                      </div>
-                    </div>
-                  </div>
+                  <span className="inline-flex items-center self-start sm:self-auto rounded-full bg-secondary/80 px-3 py-1 text-[11px] font-bold text-foreground border border-border shrink-0">
+                    {ar ? sec.badgeAr : sec.badgeEn}
+                  </span>
                 </div>
 
-                {/* Card Actions */}
-                <div className="p-6 pt-0 border-t border-border/40 mt-2 flex items-center gap-2">
-                  <Button
-                    type="button"
-                    size="sm"
-                    onClick={() => setActiveProductDetail(product)}
-                    className="flex-1 rounded-full text-xs font-bold bg-brand-green text-white hover:bg-brand-orange transition-all duration-300"
-                  >
-                    <ZoomIn className="size-3.5 me-1.5" />
-                    <span>{ar ? "استعراض المواصفات" : "View Product"}</span>
-                  </Button>
-
-                  <Button
-                    type="button"
-                    size="sm"
-                    onClick={() => {
-                      setRfqTargetProduct(product);
-                      setIsRfqSubmitted(false);
-                      setGeneratedRfqCode(`RFQ-SBA-${Math.floor(1000 + Math.random() * 9000)}`);
-                    }}
-                    className="rounded-full bg-brand-green text-white hover:bg-brand-orange transition-all duration-300 text-xs font-bold px-3.5"
-                  >
-                    <Send className="size-3.5 me-1.5" />
-                    <span>{ar ? "طلب عرض سعر" : "Quote"}</span>
-                  </Button>
+                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                  {sec.products.map(renderProductCard)}
                 </div>
               </div>
             ))}
+          </div>
+        ) : filteredProducts.length > 0 ? (
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {filteredProducts.map(renderProductCard)}
           </div>
         ) : (
           <div className="py-20 text-center rounded-3xl border border-dashed border-border bg-secondary/30">
@@ -466,6 +540,16 @@ export function ProductsCataloguePage() {
                       {ar ? activeProductDetail.packagingAr : activeProductDetail.packagingEn}
                     </span>
                   </div>
+                </div>
+
+                {/* Customization Guarantee Note */}
+                <div className="rounded-xl border border-brand-green/30 bg-brand-green/5 p-3 text-[11px] text-muted-foreground leading-relaxed">
+                  <span className="font-bold text-brand-green block mb-0.5">
+                    {ar ? "إمكانية التخصيص الكامل للعلامات التجارية والمستوردين:" : "Full Private Label & Bespoke Customization:"}
+                  </span>
+                  {ar
+                    ? "الأوزان والخامات ونسب الخلط والمقاسات والألوان قابلة للتخصيص الكامل وفقًا لمتطلبات العميل عند الاتفاق والتعاقد."
+                    : "Fabric compositions, GSM weights, size charts, and colours can be fully customized according to client and brand requirements upon agreement."}
                 </div>
 
                 <div className="pt-4 flex items-center justify-between gap-3">
