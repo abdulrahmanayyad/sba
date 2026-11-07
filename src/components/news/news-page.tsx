@@ -426,29 +426,19 @@ export function NewsPage() {
             <div className="flex flex-wrap items-center gap-2">
               {newsCategories.map((cat) => {
                 const isActive = selectedSector === cat.id;
-                const count = sectorCounts[cat.id] ?? 0;
                 return (
                   <button
                     key={cat.id}
                     type="button"
                     onClick={() => handleSectorChange(cat.id)}
                     className={cn(
-                      "inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-bold transition-all duration-200 cursor-pointer shadow-sm",
+                      "rounded-full px-4 py-2 text-xs font-bold transition-all duration-200 cursor-pointer shadow-sm",
                       isActive
                         ? "!bg-brand-green !text-white shadow-md border border-brand-green"
                         : "border border-border/80 bg-background/90 text-foreground hover:border-brand-orange/50 hover:bg-secondary"
                     )}
                   >
-                    {getSectorIcon(cat.id)}
                     <span>{ar ? cat.titleAr : cat.titleEn}</span>
-                    <span
-                      className={cn(
-                        "rounded-full px-1.5 py-0.2 text-[10px] font-bold",
-                        isActive ? "bg-white/20 text-white" : "bg-secondary text-muted-foreground"
-                      )}
-                    >
-                      {count}
-                    </span>
                   </button>
                 );
               })}
