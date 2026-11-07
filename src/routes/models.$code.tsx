@@ -6,8 +6,12 @@ import { modelsQueryOptions } from "@/lib/models";
 
 export const Route = createFileRoute("/models/$code")({
   loader: async ({ context, params }) => {
-    // 1. Check verified 2,727 production models library
-    const inAll = allProducts.some((p) => p.code.toLowerCase() === params.code.toLowerCase());
+    // 1. Check verified production models library
+    const inAll = allProducts.some(
+      (p) =>
+        p.code.toLowerCase() === params.code.toLowerCase() ||
+        p.originalCode?.toLowerCase() === params.code.toLowerCase()
+    );
     if (inAll) {
       return { code: params.code };
     }

@@ -36,7 +36,11 @@ export function ModelDetailPage({ code }: ModelDetailPageProps) {
 
   // Find model from production library
   const modelItem = useMemo<ProductItem | null>(() => {
-    const found = allProducts.find((p) => p.code.toLowerCase() === code.toLowerCase());
+    const found = allProducts.find(
+      (p) =>
+        p.code.toLowerCase() === code.toLowerCase() ||
+        p.originalCode?.toLowerCase() === code.toLowerCase()
+    );
     if (found) return found;
     return null;
   }, [code]);
@@ -138,7 +142,7 @@ export function ModelDetailPage({ code }: ModelDetailPageProps) {
           className="flex items-center gap-2 text-xs font-semibold text-muted-foreground"
         >
           <Link to="/models" className="hover:text-brand-orange transition-colors">
-            {ar ? "كتالوج الموديلات (+2,700)" : "Apparel Model Library"}
+            {ar ? "كتالوج الملابس الجاهزة" : "Ready-Made Garments Catalogue"}
           </Link>
           <ChevronRight className="size-3.5 rtl:rotate-180" />
           <span className="text-foreground font-mono font-bold">{currentModel.code}</span>
@@ -166,7 +170,12 @@ export function ModelDetailPage({ code }: ModelDetailPageProps) {
                   </div>
                   <div className="absolute bottom-3 end-3 rounded-full bg-black/60 px-3 py-1 text-[11px] font-bold text-white backdrop-blur-md">
                     <span>{subcategoryDisplay}</span>
-                    {currentModel.age && <span> • {currentModel.age} {ar ? "سنوات" : "yrs"}</span>}
+                    {currentModel.age && (
+                      <span>
+                        {" • "}
+                        {currentModel.age === "adults" ? (ar ? "البالغين" : "Adults") : `${currentModel.age} ${ar ? "سنوات" : "yrs"}`}
+                      </span>
+                    )}
                   </div>
                 </div>
 
