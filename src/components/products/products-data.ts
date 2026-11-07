@@ -1255,15 +1255,9 @@ export const productCategoriesConfig = [
     descAr: "حلول تصنيع الملابس الجاهزة للأطفال والنساء والرجال، موجهة للعلامات التجارية والمستوردين وتجار الجملة",
     categories: [
       { key: "all", labelEn: "All Products", labelAr: "كافة المنتجات" },
-      { key: "kids-wear", labelEn: "Kids & Baby Wear", labelAr: "ملابس الأطفال" },
-      { key: "womens-wear", labelEn: "Women's Wear", labelAr: "الملابس النسائية" },
-      { key: "mens-wear", labelEn: "Men's Wear", labelAr: "الملابس الرجالية" },
-      { key: "underwear", labelEn: "Underwear", labelAr: "الملابس الداخلية" },
-      { key: "homewear", labelEn: "Homewear", labelAr: "الملابس المنزلية" },
-      { key: "sportswear", labelEn: "Sportswear", labelAr: "الملابس الرياضية" },
-      { key: "classic-wear", labelEn: "Classic Wear", labelAr: "الملابس الكلاسيكية" },
-      { key: "mens-shirts", labelEn: "Men's Shirts", labelAr: "القمصان الرجالية" },
-      { key: "womens-lingerie", labelEn: "Women's Lingerie", labelAr: "اللانجري النسائي" }
+      { key: "kids-wear", labelEn: "Kids' Wear", labelAr: "أطفالي" },
+      { key: "womens-wear", labelEn: "Women's Wear", labelAr: "حريمي" },
+      { key: "mens-wear", labelEn: "Men's Wear", labelAr: "رجالي" }
     ]
   },
   {
