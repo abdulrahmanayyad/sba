@@ -942,9 +942,9 @@ export const physicalProducts: PhysicalProduct[] = [
 export const productCategoriesConfig = [
   {
     division: "apparel" as const,
-    labelEn: "Apparel & Textile Products",
-    labelAr: "منتجات الملابس والمنسوجات",
-    descEn: "Ready-to-wear fashion lines, uniforms, and fine Egyptian cotton textiles ready for supply and export.",
+    labelEn: "Ready-Made Garments",
+    labelAr: "منتجات الملابس الجاهزة",
+    descEn: "Ready-to-wear fashion lines, uniforms, and fine Egyptian cotton garments ready for supply and export.",
     descAr: "أزياء جاهزة، ملابس أطفال ونساء ورجال، ومنسوجات قطنية فاخرة جاهزة للتوريد والتصدير الدولي.",
     categories: [
       { key: "all", labelEn: "All Apparel", labelAr: "كافة منتجات الملابس" },

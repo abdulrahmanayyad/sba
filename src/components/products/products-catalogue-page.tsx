@@ -4,12 +4,9 @@ import {
   ArrowRight,
   Check,
   Download,
-  Filter,
   Package,
   Search,
   Send,
-  Shirt,
-  Utensils,
   Wrench,
   ZoomIn,
 } from "lucide-react";
@@ -103,7 +100,7 @@ export function ProductsCataloguePage() {
               <span>{ar ? "مكتبة الكتالوجات" : "Catalogue Library"}</span>
             </div>
 
-            <h1 className="font-head text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-foreground leading-tight tracking-tight whitespace-nowrap overflow-hidden text-ellipsis">
+            <h1 className="font-head text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-foreground leading-tight tracking-tight text-center mx-auto">
               {ar ? (
                 <>
                   محفظة <span className="text-brand-orange">المنتجات المعتمدة</span> للتوريد والتصدير
@@ -133,7 +130,7 @@ export function ProductsCataloguePage() {
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-border/60 pb-6">
             <div>
               <span className="text-xs font-bold text-brand-orange uppercase tracking-wider block mb-1">
-                {ar ? "كتالوج المنتجات المادية" : "PHYSICAL PRODUCT CATALOGUE"}
+                {ar ? "كتالوج المنتجات" : "PRODUCTS CATALOGUE"}
               </span>
               <h3 className="font-head text-2xl font-black text-foreground">
                 {ar ? "اختر تصنيف المنتجات للتصفح والتوريد" : "Select Product Category"}
@@ -183,31 +180,16 @@ export function ProductsCataloguePage() {
                     setSelectedProductCategory("all");
                   }}
                   className={cn(
-                    "rounded-2xl p-5 text-start transition-all cursor-pointer border flex flex-col justify-between",
+                    "rounded-2xl p-6 text-start transition-all duration-500 cursor-pointer border flex flex-col justify-center backdrop-blur-xl",
                     isSelected
-                      ? "border-brand-orange bg-brand-orange/10 shadow-md ring-1 ring-brand-orange"
-                      : "border-border/80 bg-background hover:bg-secondary/50 hover:border-brand-orange/40"
+                      ? "border-brand-green/60 bg-background/80 shadow-[0_12px_28px_-6px_rgba(22,135,108,0.25)] ring-1 ring-brand-green/50"
+                      : "border-border/80 bg-background/50 hover:bg-background/80 hover:-translate-y-1 hover:border-brand-green/40 hover:shadow-[0_12px_28px_-6px_rgba(22,135,108,0.22)]"
                   )}
                 >
-                  <div className="flex items-center justify-between mb-3">
-                    <div
-                      className={cn(
-                        "p-2.5 rounded-xl",
-                        isSelected ? "bg-brand-orange text-white" : "bg-secondary text-foreground"
-                      )}
-                    >
-                      {cfg.division === "apparel" && <Shirt className="size-5" />}
-                      {cfg.division === "food" && <Utensils className="size-5" />}
-                    </div>
-                    <span className="text-xs font-mono font-bold text-muted-foreground">
-                      {physicalProducts.filter((p) => p.sector === cfg.division).length}{" "}
-                      {ar ? "منتج مادي" : "items"}
-                    </span>
-                  </div>
-                  <h4 className="font-head text-base font-bold text-foreground">
+                  <h4 className={cn("font-head text-base sm:text-lg font-bold transition-colors", isSelected ? "text-brand-green-text" : "text-foreground")}>
                     {ar ? cfg.labelAr : cfg.labelEn}
                   </h4>
-                  <p className="text-xs text-muted-foreground mt-1 line-clamp-2 leading-relaxed">
+                  <p className="text-xs text-muted-foreground mt-1.5 line-clamp-2 leading-relaxed">
                     {ar ? cfg.descAr : cfg.descEn}
                   </p>
                 </button>
@@ -218,9 +200,10 @@ export function ProductsCataloguePage() {
           {/* Category Pills inside current Division */}
           {currentProductDivisionConfig && (
             <div className="pt-2">
-              <div className="text-[11px] font-bold text-muted-foreground uppercase tracking-wider mb-2 flex items-center gap-1.5">
-                <Filter className="size-3 text-brand-orange" />
-                <span>{ar ? "الفئات الفرعية للمنتجات:" : "Subcategories:"}</span>
+              <div className="mb-3">
+                <span className="inline-flex items-center rounded-xl bg-brand-green px-3.5 py-1.5 text-xs font-bold text-white border border-brand-green transition-all duration-300 hover:bg-brand-orange hover:border-brand-orange shadow-xs cursor-default">
+                  {ar ? "فئات المنتجات" : "Product Categories"}
+                </span>
               </div>
               <div className="flex flex-wrap gap-1.5 sm:gap-2">
                 {currentProductDivisionConfig.categories.map((cat) => {
@@ -254,22 +237,15 @@ export function ProductsCataloguePage() {
                 <div className="flex items-center gap-2 mb-2">
                   <span className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3 py-1 text-xs font-bold text-foreground backdrop-blur-md">
                     <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-                    <span>{ar ? "مكتبة الموديلات المصنعة" : "Garment Catalogue"}</span>
+                    <span>{ar ? "مكتبة الموديلات الجاهزة" : "Ready Models Library"}</span>
                   </span>
                   <span className="text-xs font-bold text-foreground">
                     {ar ? "+2,700 موديل جاهز للإنتاج" : "2,700+ Production-Ready Models"}
                   </span>
                 </div>
                 <h3 className="font-head text-xl sm:text-2xl font-black text-foreground">
-                  {ar
-                    ? "تصفح كتالوج موديلات الملابس الكامل واستفسر عن تصنيع أي موديل"
-                    : "Browse Full Production Garment Models & Request Custom Manufacturing"}
+                  {ar ? "تصفح الموديلات الجاهزة" : "Browse Ready Models"}
                 </h3>
-                <p className="mt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                  {ar
-                    ? "تحتفظ مجموعة سامي بن عياد بمكتبة شاملة تضم آلاف الموديلات المصنعة للأطفال والناشئين والنساء والرجال، شاملة كود كل موديل وصوره ومقاساته وخاماته مع إمكانية تصنيعه للعلامات الخاصة."
-                    : "Browse our comprehensive ready-to-manufacture catalogue containing thousands of designs across children, youth, women, and men, with full photos, codes, and private-label customization options."}
-                </p>
               </div>
 
               <div className="flex flex-wrap items-center gap-3 shrink-0">
@@ -278,7 +254,7 @@ export function ProductsCataloguePage() {
                   className="rounded-full bg-brand-green hover:bg-brand-orange text-white font-bold text-xs shadow-lg transition-all duration-300"
                 >
                   <Link to="/models">
-                    <span>{ar ? "فتح كتالوج الموديلات المصنعة" : "Open Garment Models Library"}</span>
+                    <span>{ar ? "كتالوج الموديلات الجاهزة" : "Ready Models Catalogue"}</span>
                     <ArrowRight className="size-3.5 ms-2 rtl:rotate-180" />
                   </Link>
                 </Button>
@@ -289,10 +265,10 @@ export function ProductsCataloguePage() {
 
         {/* Products Grid Controls */}
         <div className="mb-6 flex items-center justify-between">
-          <span className="text-xs font-mono text-muted-foreground font-semibold">
+          <span className="text-xs font-body font-semibold text-muted-foreground">
             {ar
-              ? `عرض ${filteredProducts.length} من أصل ${physicalProducts.filter((p) => p.sector === selectedProductDivision).length} منتج مادي`
-              : `Showing ${filteredProducts.length} of ${physicalProducts.filter((p) => p.sector === selectedProductDivision).length} physical items`}
+              ? `عرض ${filteredProducts.length} من أصل ${physicalProducts.filter((p) => p.sector === selectedProductDivision).length} منتج`
+              : `Showing ${filteredProducts.length} of ${physicalProducts.filter((p) => p.sector === selectedProductDivision).length} products`}
           </span>
         </div>
 
