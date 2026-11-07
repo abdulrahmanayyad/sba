@@ -48,14 +48,12 @@ function NavDropdown({
       onKeyDown={(event) => { if (event.key === "Escape") close(); }}
       onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) close(); }}
     >
-      <Button
-        variant="ghost"
-        size="bare"
+      <button
         type="button"
         aria-expanded={open}
         className={cn(
           className,
-          "flex items-center gap-1",
+          "flex items-center gap-1 cursor-pointer transition-all duration-300",
           open && "bg-white/40 text-brand-orange shadow-sm backdrop-blur-md"
         )}
         onClick={(event) => {
@@ -65,7 +63,7 @@ function NavDropdown({
       >
         <span>{label}</span>
         <ChevronDown aria-hidden="true" className={cn("size-3 transition-transform duration-200", open && "rotate-180")} />
-      </Button>
+      </button>
       {open && (
         <div className="absolute top-full z-50 min-w-64 pt-2.5 start-0">
           <div

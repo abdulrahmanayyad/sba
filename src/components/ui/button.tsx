@@ -14,7 +14,7 @@ const buttonVariants = cva(
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90 shadow-sm hover:shadow-md",
         outline: "!bg-brand-green !text-white hover:!bg-brand-orange hover:!text-white border border-transparent shadow-sm hover:shadow-md",
         secondary: "!bg-brand-green !text-white hover:!bg-brand-orange hover:!text-white shadow-sm hover:shadow-md",
-        ghost: "!bg-brand-green/10 !text-brand-green hover:!bg-brand-orange hover:!text-white",
+        ghost: "text-foreground hover:bg-white/40 hover:text-brand-orange",
         link: "text-brand-green underline-offset-4 hover:underline hover:text-brand-orange hover:translate-y-0 hover:scale-100",
         nav: "text-foreground hover:text-brand-orange hover:translate-y-0 hover:scale-100",
         language: "text-muted-foreground hover:text-foreground hover:translate-y-0 hover:scale-100",
