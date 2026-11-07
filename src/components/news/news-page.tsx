@@ -511,12 +511,7 @@ export function NewsPage() {
 
                           {/* Content Type Pill */}
                           <div className="absolute bottom-3 start-3">
-                            <span className="inline-flex items-center gap-1 text-[10px] font-bold text-white/95 bg-black/55 backdrop-blur-md px-2.5 py-0.5 rounded-full border border-white/15">
-                              {isHistorical ? (
-                                <BarChart3 className="size-2.5 text-brand-orange" />
-                              ) : (
-                                <Calendar className="size-2.5 text-brand-green" />
-                              )}
+                            <span className="inline-flex items-center text-[10px] font-bold text-white/95 bg-black/55 backdrop-blur-md px-2.5 py-0.5 rounded-full border border-white/15">
                               <span>{getContentTypeLabel(article.contentType, ar)}</span>
                             </span>
                           </div>

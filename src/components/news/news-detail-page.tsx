@@ -18,7 +18,6 @@ import {
   Leaf,
   Briefcase,
   History,
-  Sparkles,
   BarChart3,
   ShieldCheck,
   Globe2,
@@ -196,8 +195,7 @@ export function NewsDetailPage({ slug }: { slug: string }) {
             </span>
 
             {/* Content Type Badge */}
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-secondary border border-border px-3 py-1 text-xs font-bold text-foreground">
-              {isHistoricalInsight ? <BarChart3 className="size-3 text-brand-orange" /> : <Sparkles className="size-3 text-brand-green" />}
+            <span className="inline-flex items-center rounded-full bg-secondary border border-border px-3 py-1 text-xs font-bold text-foreground">
               <span>{getContentTypeBadge(article.contentType, ar)}</span>
             </span>
 
