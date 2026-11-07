@@ -536,8 +536,8 @@ export const strategicPartners: StrategicPartner[] = [
     id: "technoset",
     name: "TechnoSet",
     nameAr: "شركة تكنوسيت (TechnoSet)",
-    country: "Regional / GCC",
-    countryAr: "الشرق الأوسط والخليج",
+    country: "Malaysia",
+    countryAr: "ماليزيا",
     description:
       "Business applications and digital management solutions. The functions, implementation scope and support responsibilities relevant to the services offered are described in the profile.",
     descriptionAr:
