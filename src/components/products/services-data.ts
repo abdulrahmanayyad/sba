@@ -639,7 +639,7 @@ export const professionalServices: ProfessionalService[] = [
     "categoryEn": "Waste-to-Energy Solutions",
     "categoryAr": "تحويل المخلفات إلى طاقة (WtE)",
     "nameEn": "Thermal & Refuse-Derived Fuel (RDF) Waste-to-Energy Plants",
-    "nameAr": "أنظمة تحويل المخلفات الصلبة والوقود البديل إلى طاقة",
+    "nameAr": "أنظمة تحويل المخلفات والوقود إلى طاقة",
     "descriptionEn": "Engineering processing facilities converting non-recyclable combustible waste into high-calorific RDF pellets and steam/electricity for heavy industrial consumption.",
     "descriptionAr": "تصميم وتنفيذ محطات معالجة وإنتاج الوقود البديل عالي القيمة الحرارية (RDF) من المخلفات الصلبة لاستخدامه في أفران مصانع الأسمنت ومحطات توليد الكهرباء.",
     "scopeOfWorkEn": [
