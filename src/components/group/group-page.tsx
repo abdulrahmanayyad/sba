@@ -40,7 +40,7 @@ export function GroupPage() {
             <h1 data-hero-reveal className="mt-4 max-w-4xl font-head text-[clamp(1.85rem,3.5vw,3rem)] font-extrabold leading-tight text-white drop-shadow-md">
               {ar ? messages.hero.titleAr : messages.hero.title}
             </h1>
-            <p data-hero-reveal className="mt-3 max-w-3xl text-base sm:text-lg font-bold leading-relaxed text-brand-orange">{messages.hero.lead}</p>
+            <p data-hero-reveal className="mt-3 max-w-3xl text-base sm:text-lg font-bold leading-relaxed text-black drop-shadow-[0_1px_2px_rgba(255,255,255,0.4)]">{messages.hero.lead}</p>
             <div data-hero-reveal className="mt-6 flex flex-wrap items-center gap-3">
               <Button asChild size="lg" className="rounded-full !bg-brand-green !text-white px-7 py-3 font-head text-xs sm:text-sm font-bold shadow-lg transition-all duration-300 hover:!bg-brand-orange hover:scale-105 active:scale-95 cursor-pointer">
                 <a href="#divisions">
