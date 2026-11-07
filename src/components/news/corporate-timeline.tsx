@@ -112,7 +112,7 @@ export function CorporateTimeline() {
               {ar ? "ملاحظة توثيقية هامة: " : "Documentary Clarification: "}
             </span>
             {ar
-              ? "يوضح السجل التاريخي أن عام 1977 يمثل انطلاق جذور الأنشطة المهنية والتنفيذية الأولى، بينما يمثل عام 2023 تأسيس الكيان المؤسسي الجامع الموحد للمجموعة."
+              ? "يوضح السجل التاريخي أن عام 1977 يمثل انطلاق جذور الأنشطة المهنية والتنفيذية الأولى، بينما يمثل عام 2023 تأسيس الكيان المؤسسي الموحد للمجموعة."
               : "1977 marks the operational inception of foundational contracting activities; 2023 marks the legal founding and institutional integration of the unified holding group."}
           </div>
         </div>
@@ -219,24 +219,22 @@ export function CorporateTimeline() {
         {/* 3. Active Milestone Detail Card */}
         <div className="relative overflow-hidden rounded-2xl border border-brand-green/30 bg-gradient-to-br from-brand-green/5 via-background to-secondary/30 p-6 sm:p-8 backdrop-blur-md transition-all duration-500">
           <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
+            {/* Active Milestone Content */}
             <div className="space-y-3 flex-1">
-              <div className="flex flex-wrap items-center gap-2">
-                <span className="rounded-full bg-brand-orange px-3.5 py-1 text-xs font-black font-mono text-white shadow-sm">
-                  {activeMilestone.year}
-                </span>
-                <span className="inline-flex items-center gap-1 rounded-full bg-secondary border border-border px-3 py-1 text-xs font-bold text-foreground">
-                  <MapPin className="size-3 text-brand-green" />
-                  <span>{ar ? activeMilestone.countryAr : activeMilestone.countryEn}</span>
-                </span>
-                <span className="inline-flex items-center gap-1 rounded-full bg-brand-green/10 text-brand-green border border-brand-green/30 px-3 py-1 text-xs font-bold">
-                  <span>{ar ? activeMilestone.sectorTagAr : activeMilestone.sectorTagEn}</span>
-                </span>
-                {activeMilestone.isIntegrationMilestone && (
-                  <span className="rounded-full bg-brand-green px-3 py-1 text-xs font-black text-white shadow-sm">
-                    {ar ? "محطة التكامل المؤسسي الموحد" : "Institutional Integration"}
+              {!activeMilestone.isIntegrationMilestone && (
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="rounded-full bg-brand-orange px-3.5 py-1 text-xs font-black font-mono text-white shadow-sm">
+                    {activeMilestone.year}
                   </span>
-                )}
-              </div>
+                  <span className="inline-flex items-center gap-1 rounded-full bg-secondary border border-border px-3 py-1 text-xs font-bold text-foreground">
+                    <MapPin className="size-3 text-brand-green" />
+                    <span>{ar ? activeMilestone.countryAr : activeMilestone.countryEn}</span>
+                  </span>
+                  <span className="inline-flex items-center gap-1 rounded-full bg-brand-green/10 text-brand-green border border-brand-green/30 px-3 py-1 text-xs font-bold">
+                    <span>{ar ? activeMilestone.sectorTagAr : activeMilestone.sectorTagEn}</span>
+                  </span>
+                </div>
+              )}
 
               <h4 className="font-head text-xl sm:text-2xl font-black text-foreground leading-snug">
                 {ar ? activeMilestone.titleAr : activeMilestone.titleEn}
