@@ -282,13 +282,13 @@ export function NewsPage() {
                       </span>
                     </div>
 
-                    <h2 className="font-head text-2xl sm:text-3xl font-bold text-foreground group-hover:text-brand-green transition-colors leading-snug">
+                    <h2 className="font-head text-2xl sm:text-3xl font-bold text-foreground group-hover:text-brand-green transition-colors leading-snug text-start">
                       <Link to="/news/$slug" params={{ slug: featuredArticle.slug }}>
                         {ar ? featuredArticle.titleAr : featuredArticle.titleEn}
                       </Link>
                     </h2>
 
-                    <p className="mt-4 text-sm sm:text-base text-muted-foreground leading-relaxed line-clamp-3">
+                    <p className="mt-4 text-sm sm:text-base text-muted-foreground leading-relaxed line-clamp-3 text-start">
                       {ar ? featuredArticle.excerptAr : featuredArticle.excerptEn}
                     </p>
                   </div>
@@ -523,10 +523,10 @@ export function NewsPage() {
                   {getSectorIcon(activeSectorInfo.id)}
                 </div>
                 <div>
-                  <h3 className="text-center font-head text-base sm:text-lg font-bold text-foreground">
+                  <h3 className="text-start font-head text-base sm:text-lg font-bold text-foreground">
                     {ar ? activeSectorInfo.titleAr : activeSectorInfo.titleEn}
                   </h3>
-                  <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">
+                  <p className="text-xs sm:text-sm text-muted-foreground mt-0.5 text-start">
                     {ar ? activeSectorInfo.descAr : activeSectorInfo.descEn}
                   </p>
                 </div>
@@ -612,13 +612,13 @@ export function NewsPage() {
                           </span>
                         </div>
 
-                        <h3 className="text-center font-head text-base sm:text-lg font-bold text-foreground group-hover:text-brand-orange transition-colors leading-snug line-clamp-2">
+                        <h3 className="text-start font-head text-base sm:text-lg font-bold text-foreground group-hover:text-brand-orange transition-colors leading-snug line-clamp-2">
                           <Link to="/news/$slug" params={{ slug: article.slug }}>
                             {ar ? article.titleAr : article.titleEn}
                           </Link>
                         </h3>
 
-                        <p className="mt-3 text-xs sm:text-sm text-muted-foreground leading-relaxed line-clamp-3">
+                        <p className="mt-3 text-xs sm:text-sm text-muted-foreground leading-relaxed line-clamp-3 text-start">
                           {ar ? article.excerptAr : article.excerptEn}
                         </p>
                       </div>

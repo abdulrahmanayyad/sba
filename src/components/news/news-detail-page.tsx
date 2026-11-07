@@ -235,12 +235,12 @@ export function NewsDetailPage({ slug }: { slug: string }) {
           </div>
 
           {/* Headline */}
-          <h1 className="text-center font-head text-2xl sm:text-4xl lg:text-5xl font-bold text-foreground leading-tight max-w-4xl tracking-tight">
+          <h1 className="text-start font-head text-2xl sm:text-4xl lg:text-5xl font-bold text-foreground leading-tight max-w-4xl tracking-tight">
             {ar ? article.titleAr : article.titleEn}
           </h1>
 
           {/* Lead / Excerpt */}
-          <p className="mt-6 text-base sm:text-xl text-muted-foreground leading-relaxed max-w-3xl border-s-4 border-brand-green ps-4">
+          <p className="mt-6 text-base sm:text-xl text-muted-foreground leading-relaxed max-w-3xl border-s-4 border-brand-green ps-4 text-start">
             {ar ? article.excerptAr : article.excerptEn}
           </p>
 
@@ -288,7 +288,7 @@ export function NewsDetailPage({ slug }: { slug: string }) {
             <div className="rounded-3xl border border-white/20 bg-background/85 p-6 sm:p-10 shadow-lg backdrop-blur-xl">
               <div className="space-y-6 text-foreground/90 leading-relaxed font-body text-base sm:text-lg">
                 {(ar ? article.bodyAr : article.bodyEn).split("\n\n").map((paragraph, pIdx) => (
-                  <p key={pIdx} className="leading-relaxed text-justify">
+                  <p key={pIdx} className="leading-relaxed text-start">
                     {paragraph}
                   </p>
                 ))}
@@ -307,7 +307,7 @@ export function NewsDetailPage({ slug }: { slug: string }) {
                     </span>
                   </div>
 
-                  <h4 className="font-head text-base sm:text-lg font-bold text-foreground">
+                  <h4 className="font-head text-base sm:text-lg font-bold text-foreground text-start">
                     {ar ? indicator.titleAr : indicator.titleEn}
                   </h4>
 
@@ -322,7 +322,7 @@ export function NewsDetailPage({ slug }: { slug: string }) {
                     </div>
                   </div>
 
-                  <p className="text-xs text-muted-foreground leading-relaxed text-justify">
+                  <p className="text-xs text-muted-foreground leading-relaxed text-start">
                     {ar ? indicator.significanceAr : indicator.significanceEn}
                   </p>
 
@@ -428,10 +428,10 @@ export function NewsDetailPage({ slug }: { slug: string }) {
               <span className="text-xs font-bold text-brand-green uppercase tracking-wider block mb-2">
                 {ar ? "القطاع المرتبط" : "Associated Sector"}
               </span>
-              <h3 className="text-center font-head text-lg font-bold text-foreground mb-2">
+              <h3 className="text-start font-head text-lg font-bold text-foreground mb-2">
                 {ar ? sectorInfo?.titleAr : sectorInfo?.titleEn}
               </h3>
-              <p className="text-xs text-muted-foreground leading-relaxed mb-4">
+              <p className="text-xs text-muted-foreground leading-relaxed mb-4 text-start">
                 {ar ? sectorInfo?.descAr : sectorInfo?.descEn}
               </p>
               <Button
