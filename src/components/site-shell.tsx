@@ -505,12 +505,20 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
           <div className="relative px-6 py-10 md:px-10 md:py-12">
             {/* Main grid / layout */}
             <div className="flex flex-col lg:flex-row lg:justify-between items-start gap-10 lg:gap-14 xl:gap-16">
-              {/* Brand column */}
-              <div className="max-w-sm">
-                <img src={currentLogo} alt={isArabic ? "سامي بن عياد" : "SBA"} className="h-11 w-auto" />
-                <p className="mt-5 text-sm font-bold leading-6 text-brand-orange">{messages.footer.descriptor}</p>
-                <p className={cn("mt-4 font-bold text-brand-orange", isArabic ? "font-sans text-xs tracking-normal" : "font-mono text-[10px] uppercase tracking-[0.18em]")}>{messages.footer.addressLabel}</p>
-                <p className="mt-1.5 text-xs font-semibold leading-5 text-foreground/90">{messages.footer.address}</p>
+              {/* Brand column — Enlarged & prominent to fill visual space gracefully */}
+              <div className="max-w-md lg:max-w-lg xl:max-w-xl">
+                <img src={currentLogo} alt={isArabic ? "سامي بن عياد" : "SBA"} className="h-14 sm:h-16 lg:h-[68px] w-auto object-contain" />
+                <p className="mt-4 text-base sm:text-lg lg:text-xl font-extrabold font-head leading-snug text-brand-orange">
+                  {messages.footer.descriptor}
+                </p>
+                <div className="mt-4 pt-3.5 border-t border-border/40">
+                  <p className={cn("font-bold text-brand-orange", isArabic ? "font-head text-xs sm:text-sm tracking-normal" : "font-mono text-xs uppercase tracking-[0.14em]")}>
+                    {messages.footer.addressLabel}
+                  </p>
+                  <p className="mt-1.5 text-xs sm:text-sm font-medium leading-relaxed text-foreground/90 max-w-lg">
+                    {messages.footer.address}
+                  </p>
+                </div>
               </div>
 
               {/* Links columns with cohesive, compact spacing */}
