@@ -96,7 +96,7 @@ export function CorporateTimeline() {
               <span>{ar ? "التسلسل الزمني الرسمي (1977–2023)" : "Official Historical Timeline (1977–2023)"}</span>
             </div>
             <h3 className="text-center sm:text-start font-head text-xl sm:text-2xl font-extrabold text-foreground">
-              {ar ? "محطات التطور المؤسسي والامتداد الجغرافي" : "Institutional Evolution & Geographic Expansion"}
+              {ar ? "محطات التطور المؤسسي للمجموعة" : "Institutional Evolution of the Group"}
             </h3>
           </div>
 
