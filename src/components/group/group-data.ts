@@ -500,7 +500,7 @@ export const strategicPartners: StrategicPartner[] = [
     tag: "Ultrasonic Sensors & Measurement",
     tagAr: "حساسات الموجات فوق الصوتية وحلول القياس",
     logo: "/partners/dyp-logo.svg",
-    websiteUrl: "https://www.dyp-sensor.com/",
+    websiteUrl: "https://www.dypcn.com/",
   },
   {
     id: "jumptek",
