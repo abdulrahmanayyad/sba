@@ -545,7 +545,7 @@ export const strategicPartners: StrategicPartner[] = [
     tag: "Business Applications & QHSE",
     tagAr: "حلول برمجية وتطبيقات إدارة الأعمال والـ QHSE",
     logo: "/partners/technoset-logo.svg",
-    websiteUrl: "https://envirotaqa.com/",
+    websiteUrl: "https://techno-set.com/",
   },
 ];
 
