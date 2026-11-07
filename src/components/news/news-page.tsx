@@ -189,9 +189,9 @@ export function NewsPage() {
 
   return (
     <div className="w-full">
-      {/* 1. Newsroom & Archive Hero Header (Clean Full-width Background like Home Page) */}
-      <section className="relative w-full overflow-hidden text-white pt-24 sm:pt-32 pb-16 sm:pb-20 mb-12">
-        {/* Full-width background image & overlay (identical to Home hero) */}
+      {/* 1. Newsroom & Archive Hero Header (Clean Full-width & Full-height Background like Home Page) */}
+      <section className="relative w-full min-h-[calc(100svh-76px)] overflow-hidden text-white flex flex-col justify-center mb-12">
+        {/* Full-width & Full-height background image & overlay */}
         <img
           src="/BG/Main Home Page.jpg"
           alt={ar ? "أرشيف مجموعة سامي بن عياد" : "Sami Bin Ayyad Group Archive"}
@@ -200,7 +200,7 @@ export function NewsPage() {
         />
         <div className="group-hero-overlay absolute inset-0 bg-black/60 backdrop-blur-[1px] pointer-events-none" />
 
-        <div className="site-container relative z-10 flex flex-col justify-center">
+        <div className="site-container relative z-10 flex min-h-[inherit] flex-col justify-center py-16 sm:py-24">
           <Reveal>
             {/* A. Small Top Headline (Right in Arabic / RTL, Left in English / LTR) */}
             <div className="flex items-center justify-start mb-6">
