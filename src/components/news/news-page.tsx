@@ -369,8 +369,8 @@ export function NewsPage() {
 
           {/* B. Search & Sort Row */}
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            {/* Search Input */}
-            <div className="relative w-full md:w-96">
+            {/* Search Input (Left in Arabic / RTL, Right in English / LTR) */}
+            <div className="relative w-full md:w-96 order-1 md:order-2">
               <Search className="absolute start-3.5 top-1/2 -translate-y-1/2 size-4 text-muted-foreground" />
               <input
                 type="text"
@@ -394,8 +394,8 @@ export function NewsPage() {
               )}
             </div>
 
-            {/* Sort Toggle */}
-            <div className="flex items-center justify-end w-full md:w-auto">
+            {/* Sort Toggle (Right in Arabic / RTL, Left in English / LTR) */}
+            <div className="flex items-center justify-start w-full md:w-auto order-2 md:order-1">
               <button
                 type="button"
                 onClick={() => setSortDirection((prev) => (prev === "asc" ? "desc" : "asc"))}
