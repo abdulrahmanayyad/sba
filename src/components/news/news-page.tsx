@@ -544,7 +544,7 @@ export function NewsPage() {
                     </div>
 
                     {/* Card Footer */}
-                    <div className="p-6 pt-0 border-t border-border/40 mt-4 flex items-center justify-between">
+                    <div className="px-6 py-4.5 border-t border-border/40 flex items-center justify-between">
                       <Link
                         to="/news/$slug"
                         params={{ slug: article.slug }}
