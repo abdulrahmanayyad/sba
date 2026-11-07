@@ -367,52 +367,54 @@ export function NewsPage() {
             </button>
           </div>
 
-          {/* B. Search & Sort Row */}
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            {/* Search Input (Left in Arabic / RTL, Right in English / LTR) */}
-            <div className="relative w-full md:w-96 order-1 md:order-2">
-              <Search className="absolute start-3.5 top-1/2 -translate-y-1/2 size-4 text-muted-foreground" />
-              <input
-                type="text"
-                placeholder={
-                  ar
-                    ? "ابحث في عناوين الأخبار، المعارض، التحليلات، والسنوات..."
-                    : "Search news archive, sector insights, topics, or years..."
-                }
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full rounded-full border border-border bg-secondary/50 py-2.5 ps-10 pe-4 text-xs font-medium text-foreground placeholder:text-muted-foreground shadow-inner focus:border-brand-green focus:bg-background focus:outline-none focus:ring-1 focus:ring-brand-green transition-all"
-              />
-              {searchQuery && (
+          {/* B. Search & Sort Stack (Positioned on Left in Arabic / RTL, Right in English / LTR) */}
+          <div className="flex justify-end w-full">
+            <div className="w-full md:w-96 flex flex-col gap-2.5">
+              {/* Search Input */}
+              <div className="relative w-full">
+                <Search className="absolute start-3.5 top-1/2 -translate-y-1/2 size-4 text-muted-foreground" />
+                <input
+                  type="text"
+                  placeholder={
+                    ar
+                      ? "ابحث في عناوين الأخبار، المعارض، التحليلات، والسنوات..."
+                      : "Search news archive, sector insights, topics, or years..."
+                  }
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full rounded-full border border-border bg-secondary/50 py-2.5 ps-10 pe-4 text-xs font-medium text-foreground placeholder:text-muted-foreground shadow-inner focus:border-brand-green focus:bg-background focus:outline-none focus:ring-1 focus:ring-brand-green transition-all"
+                />
+                {searchQuery && (
+                  <button
+                    type="button"
+                    onClick={() => setSearchQuery("")}
+                    className="absolute end-3.5 top-1/2 -translate-y-1/2 text-xs text-muted-foreground hover:text-foreground cursor-pointer"
+                  >
+                    ✕
+                  </button>
+                )}
+              </div>
+
+              {/* Sort Filter Under Search Box */}
+              <div className="flex items-center justify-start">
                 <button
                   type="button"
-                  onClick={() => setSearchQuery("")}
-                  className="absolute end-3.5 top-1/2 -translate-y-1/2 text-xs text-muted-foreground hover:text-foreground cursor-pointer"
+                  onClick={() => setSortDirection((prev) => (prev === "asc" ? "desc" : "asc"))}
+                  className="inline-flex items-center gap-1.5 rounded-full border border-border bg-secondary/80 px-4 py-1.5 text-xs font-bold text-foreground hover:border-brand-orange/60 hover:bg-secondary transition-all cursor-pointer shadow-sm"
+                  title={ar ? "تغيير ترتيب التسلسل الزمني" : "Toggle chronological order"}
                 >
-                  ✕
+                  <ArrowUpDown className="size-3.5 text-brand-orange" />
+                  <span>
+                    {sortDirection === "asc"
+                      ? ar
+                        ? "الترتيب: من الأقدم للأحدث"
+                        : "Sort: Oldest to Newest"
+                      : ar
+                      ? "الترتيب: من الأحدث للأقدم"
+                      : "Sort: Newest to Oldest"}
+                  </span>
                 </button>
-              )}
-            </div>
-
-            {/* Sort Toggle (Right in Arabic / RTL, Left in English / LTR) */}
-            <div className="flex items-center justify-start w-full md:w-auto order-2 md:order-1">
-              <button
-                type="button"
-                onClick={() => setSortDirection((prev) => (prev === "asc" ? "desc" : "asc"))}
-                className="inline-flex items-center gap-1.5 rounded-full border border-border bg-secondary/80 px-4 py-2 text-xs font-bold text-foreground hover:border-brand-orange/60 hover:bg-secondary transition-all cursor-pointer shadow-sm"
-                title={ar ? "تغيير ترتيب التسلسل الزمني" : "Toggle chronological order"}
-              >
-                <ArrowUpDown className="size-3.5 text-brand-orange" />
-                <span>
-                  {sortDirection === "asc"
-                    ? ar
-                      ? "الترتيب: من الأقدم للأحدث"
-                      : "Sort: Oldest to Newest"
-                    : ar
-                    ? "الترتيب: من الأحدث للأقدم"
-                    : "Sort: Newest to Oldest"}
-                </span>
-              </button>
+              </div>
             </div>
           </div>
 
