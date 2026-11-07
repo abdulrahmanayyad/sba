@@ -181,13 +181,11 @@ export function CorporateTimeline() {
         <div className="relative overflow-hidden rounded-2xl border border-white/40 dark:border-white/10 bg-white/40 dark:bg-white/5 p-6 sm:p-8 backdrop-blur-xl shadow-md transition-all duration-500">
           {/* Active Milestone Content */}
           <div className="space-y-3">
-            {!activeMilestone.isIntegrationMilestone && (
-              <div className="flex flex-wrap items-center gap-2">
-                <span className="rounded-full bg-brand-orange px-3.5 py-1 text-xs font-black font-mono text-white shadow-sm">
-                  {activeMilestone.year}
-                </span>
-              </div>
-            )}
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="rounded-full bg-brand-orange px-3.5 py-1 text-xs font-black font-mono text-white shadow-sm">
+                {activeMilestone.year}
+              </span>
+            </div>
 
             <h4 className="font-head text-xl sm:text-2xl font-black text-foreground leading-snug">
               {ar ? activeMilestone.titleAr : activeMilestone.titleEn}
