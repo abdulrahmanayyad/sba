@@ -240,88 +240,79 @@ export function GroupPage() {
       {/* Verified Strategic Alliances Section */}
       <section className="site-container py-14 scroll-mt-24">
         <Reveal>
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
-            <div>
-              <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
-                <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-                <span>{ar ? "تحالفاتنا وشراكاتنا" : "Our Strategic Partners"}</span>
-              </div>
-              <h2 className="section-title text-2xl sm:text-3xl lg:text-4xl">
-                {ar ? "شراكات استراتيجية وتقنية دولية" : "Strategic & Technological Alliances"}
-              </h2>
-              <p className="section-intro mt-2 max-w-2xl text-sm sm:text-base">
-                {ar
-                  ? "شبكة موثقة من التحالفات الصناعية والتكنولوجية العالمية تدعم الابتكار والقدرات التشغيلية للمجموعة."
-                  : "Verified global alliances driving technological innovation and expanding our operational capabilities."}
-              </p>
+          <div className="mb-8">
+            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+              <span>{ar ? "تحالفاتنا وشراكاتنا" : "Our Strategic Partners"}</span>
             </div>
-            <Button asChild size="default" className="rounded-full !bg-brand-green !text-white px-5 py-2 text-xs font-bold shadow-md transition-all duration-300 hover:!bg-brand-orange hover:scale-105 active:scale-95 shrink-0 cursor-pointer">
-              <Link to="/partners">
-                {ar ? "عرض كافة الشركاء" : "View All Partners"} <ArrowRight className="size-3.5 rtl:rotate-180" />
-              </Link>
-            </Button>
+            <h2 className="section-title text-2xl sm:text-3xl lg:text-4xl">
+              {ar ? "شراكات استراتيجية وتقنية دولية" : "Strategic & Technological Alliances"}
+            </h2>
+            <p className="section-intro mt-2 max-w-2xl text-sm sm:text-base">
+              {ar
+                ? "شبكة موثقة من التحالفات الصناعية والتكنولوجية العالمية تدعم الابتكار والقدرات التشغيلية للمجموعة."
+                : "Verified global alliances driving technological innovation and expanding our operational capabilities."}
+            </p>
           </div>
 
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {strategicPartners.slice(0, 4).map((p, idx) => {
-              const partnerLinks: Record<string, string> = {
-                dianyingpu: "https://www.dyp-sensor.com",
-                jumptek: "https://www.jumptek.com",
-                renergon: "https://www.renergon-biogas.com",
-                technoset: "https://www.technoset.com",
-              };
-              const partnerShort: Record<string, string> = {
-                dianyingpu: "DYP Sensor",
-                jumptek: "JumpTek Water",
-                renergon: "RENERGON Biogas",
-                technoset: "TechnoSet Systems",
-              };
-              const url = partnerLinks[p.id] || "https://www.sami-trade.com/partners";
-              return (
-                <div
-                  key={p.id}
-                  className="glass-box-interactive rounded-3xl p-6 flex flex-col justify-between cursor-pointer"
-                >
-                  <div className="relative z-10 flex flex-col justify-between h-full">
-                    <div>
-                      <div className="flex items-center justify-between gap-2 mb-3">
-                        <span className={cn(
-                          "text-xs font-bold text-brand-orange bg-brand-orange/10 px-2.5 py-0.5 rounded-full border border-brand-orange/20",
-                          ar ? "font-sans" : "font-mono"
-                        )}>
-                          {ar ? p.countryAr : p.country}
-                        </span>
-                        <span className="inline-flex items-center gap-1 text-[11px] font-bold text-brand-green bg-brand-green/10 border border-brand-green/20 px-2 py-0.5 rounded-full">
-                          <Handshake className="size-3" />
-                          <span>{partnerShort[p.id] || "Partner"}</span>
-                        </span>
+          <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
+            {strategicPartners
+              .filter((p) => p.id === "dianyingpu" || p.id === "jumptek")
+              .map((p) => {
+                const partnerLinks: Record<string, string> = {
+                  dianyingpu: "https://www.dyp-sensor.com/",
+                  jumptek: "https://www.jumptek.com/",
+                };
+                const partnerShort: Record<string, string> = {
+                  dianyingpu: "DYP Sensor",
+                  jumptek: "JumpTek Water",
+                };
+                const url = partnerLinks[p.id] || "https://www.sami-trade.com/partners";
+                return (
+                  <div
+                    key={p.id}
+                    className="glass-box-interactive rounded-3xl p-6 sm:p-8 flex flex-col justify-between cursor-pointer transition-all duration-300"
+                  >
+                    <div className="relative z-10 flex flex-col justify-between h-full">
+                      <div>
+                        <div className="flex items-center justify-between gap-2 mb-3">
+                          <span className={cn(
+                            "text-xs font-bold text-brand-orange bg-brand-orange/10 px-2.5 py-0.5 rounded-full border border-brand-orange/20",
+                            ar ? "font-sans" : "font-mono"
+                          )}>
+                            {ar ? p.countryAr : p.country}
+                          </span>
+                          <span className="inline-flex items-center gap-1 text-[11px] font-bold text-brand-green bg-brand-green/10 border border-brand-green/20 px-2.5 py-0.5 rounded-full">
+                            <Handshake className="size-3" />
+                            <span>{partnerShort[p.id] || "Partner"}</span>
+                          </span>
+                        </div>
+                        <h3 className="text-start font-head text-base sm:text-lg font-bold text-foreground group-hover:text-brand-green transition-colors">
+                          {ar ? p.nameAr : p.name}
+                        </h3>
+                        <p className="mt-2.5 text-xs sm:text-sm text-muted-foreground leading-relaxed text-start">
+                          {ar ? p.descriptionAr : p.description}
+                        </p>
                       </div>
-                      <h3 className="text-start font-head text-base font-bold text-foreground group-hover:text-brand-green transition-colors">
-                        {ar ? p.nameAr : p.name}
-                      </h3>
-                      <p className="mt-2 text-xs text-muted-foreground leading-relaxed text-start">
-                        {ar ? p.descriptionAr : p.description}
-                      </p>
-                    </div>
-                    <div className="mt-4 pt-3 border-t border-border/40 flex items-center justify-between gap-2">
-                      <span className="text-[11px] font-semibold text-brand-green">
-                        {ar ? p.tagAr : p.tag}
-                      </span>
-                      <a
-                        href={url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 text-xs font-bold text-brand-orange hover:text-brand-green transition-colors"
-                        aria-label={`${ar ? p.nameAr : p.name} Official Website`}
-                      >
-                        <span>{ar ? "الموقع الرسمي" : "Official Website"}</span>
-                        <ExternalLink className="size-3" />
-                      </a>
+                      <div className="mt-5 pt-3.5 border-t border-border/40 flex items-center justify-between gap-2">
+                        <span className="text-xs font-semibold text-brand-green">
+                          {ar ? p.tagAr : p.tag}
+                        </span>
+                        <a
+                          href={url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-orange hover:text-brand-green transition-colors"
+                          aria-label={`${ar ? p.nameAr : p.name} Official Website`}
+                        >
+                          <span>{ar ? "الموقع الرسمي" : "Official Website"}</span>
+                          <ExternalLink className="size-3" />
+                        </a>
+                      </div>
                     </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
           </div>
         </Reveal>
       </section>
