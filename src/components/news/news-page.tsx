@@ -193,25 +193,25 @@ export function NewsPage() {
       {/* 1. Newsroom & Archive Hero Header */}
       <section className="site-container pt-20 sm:pt-28 pb-10 scroll-mt-24">
         <Reveal>
-          <div className="w-full">
-            <div className="flex flex-wrap items-center gap-2 mb-3">
+          <div className="relative overflow-hidden rounded-2xl border border-white/50 dark:border-white/15 bg-white/50 dark:bg-white/10 p-6 sm:p-8 lg:py-8 lg:px-12 shadow-lg backdrop-blur-xl transition-all duration-300 hover:border-white/80 dark:hover:border-white/20 hover:bg-white/70 dark:hover:bg-white/15 hover:shadow-xl max-w-5xl mx-auto text-center">
+            <div className="flex justify-center items-center mb-3">
               <SectionBadge title={ar ? "الأرشيف المؤسسي الشامل" : "Comprehensive Institutional Archive"} />
             </div>
 
-            <h1 className="section-title text-xl sm:text-2xl lg:text-3xl font-bold text-foreground leading-snug tracking-tight">
+            <h1 className="section-title text-xl sm:text-2xl lg:text-3xl font-bold text-foreground leading-snug tracking-tight text-center">
               {ar
                 ? "الأرشيف التاريخي والأنشطة المؤسسية والتحليلات القطاعية"
                 : "Corporate Legacy, Historical Archive & Sector Insights"}
             </h1>
 
-            <p className="section-intro mt-4 w-full text-sm sm:text-base leading-relaxed text-muted-foreground">
+            <p className="section-intro mt-4 max-w-4xl mx-auto text-sm sm:text-base leading-relaxed text-muted-foreground text-center">
               {ar
                 ? "منصة توثيقية متكاملة تستعرض الجذور التاريخية لأنشطة المجموعة منذ عام 1977، وتطور الكيانات المتخصصة في مصر والسعودية، والتحليلات القطاعية الموثقة (2010–2020)، وصولًا إلى التأسيس المؤسسي الجامع عام 2023 وأنشطة المجموعة الحديثة حتى 2026."
                 : "A unified institutional platform documenting operational roots from 1977, cross-border entity growth in Egypt and Saudi Arabia, sector insights (2010–2020), and unified corporate activities following the 2023 institutional integration."}
             </p>
 
             {/* Archival Editorial Note for Pre-2023 Articles */}
-            <div className="mt-6 rounded-2xl border border-white/20 bg-background/60 p-5 text-xs sm:text-sm leading-relaxed text-muted-foreground backdrop-blur-xl shadow-sm transition-all duration-300 hover:border-brand-green/40 hover:bg-background/80 hover:shadow-md">
+            <div className="mt-6 rounded-2xl border border-white/20 bg-background/60 p-4 sm:p-5 text-xs sm:text-sm leading-relaxed text-muted-foreground backdrop-blur-xl shadow-xs transition-all duration-300 hover:border-brand-green/40 hover:bg-background/80 hover:shadow-sm text-justify sm:text-center max-w-4xl mx-auto">
               <strong className="text-foreground font-bold block mb-1">
                 {ar ? "ملاحظة توثيقية للأرشيف:" : "Archival Lineage Note:"}
               </strong>
