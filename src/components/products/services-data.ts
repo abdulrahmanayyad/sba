@@ -52,8 +52,8 @@ export const professionalServices: ProfessionalService[] = [
     "categoryKey": "general-contracting",
     "categoryEn": "General Contracting",
     "categoryAr": "المقاولات العامة",
-    "nameEn": "Turnkey General Contracting & Engineering Construction",
-    "nameAr": "المقاولات العامة والتنفيذ الهندسي",
+    "nameEn": "General Contracting",
+    "nameAr": "المقاولات العامة",
     "descriptionEn": "Comprehensive main contractor services executing complex commercial, institutional, and infrastructure projects from groundbreaking to final handover with single-source accountability.",
     "descriptionAr": "خدمات المقاول العام المتكامل لتنفيذ المشروعات الكبرى والمؤسسية والبنية التحتية، بدءًا من أعمال الحفر والأساسات وحتى التسليم النهائي تحت إدارة هندسية موحدة.",
     "scopeOfWorkEn": [
@@ -81,10 +81,10 @@ export const professionalServices: ProfessionalService[] = [
     "code": "SBA-SRV-CNS02",
     "sector": "construction",
     "categoryKey": "civil-works",
-    "categoryEn": "Civil & Concrete Works",
-    "categoryAr": "الأعمال المدنية والخرسانية",
-    "nameEn": "Reinforced Concrete Structures & Civil Engineering Works",
-    "nameAr": "الأعمال المدنية والخرسانية",
+    "categoryEn": "Construction & Civil Works",
+    "categoryAr": "الأعمال المدنية والإنشائية",
+    "nameEn": "Construction & Civil Works",
+    "nameAr": "الأعمال المدنية والإنشائية",
     "descriptionEn": "Precision formwork, rebar fabrication, mass concrete pouring, and post-tensioned slab construction for high-rise, commercial, and heavy-load foundations.",
     "descriptionAr": "تنفيذ أعمال الشدات المعدنية وتسليح الخرسانات وصب الكتل الخرسانية الضخمة والأسقف سابقة الإجهاد (Post-Tension) للأبراج والمباني ذات الأحمال العالية.",
     "scopeOfWorkEn": [
@@ -103,16 +103,16 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["الأبراج والمباني الشاهقة", "المراكز التجارية", "المستودعات اللوجستية", "محطات البنية التحتية"],
     "capabilitiesEn": ["Heavy hydraulic formwork systems", "Continuous mass-pour logistical capability", "Dedicated batching plant coordination"],
     "capabilitiesAr": ["شدات معدنية وهيدروليكية متطورة", "قدرة لوجستية لصبات الكتل الكبرى المستمرة", "تنسيق كامل مع محطات الخرسانة الجاهزة المعتمدة"],
-    "image": "/BG/Contracting & Real Estate Development/Execution of Major Projects.jpg"
+    "image": "/BG/Contracting & Real Estate Development/Residential & Commercial Property Development.jpg"
   },
   {
     "id": "srv-cns-structural",
     "code": "SBA-SRV-CNS03",
     "sector": "construction",
     "categoryKey": "structural-works",
-    "categoryEn": "Structural Steel Works",
+    "categoryEn": "Structural Works",
     "categoryAr": "الأعمال والمنشآت الهيكلية",
-    "nameEn": "Heavy Structural Steel Fabrication & Pre-Engineered Buildings",
+    "nameEn": "Structural Works",
     "nameAr": "الأعمال والمنشآت الهيكلية",
     "descriptionEn": "Engineering fabrication and erection of heavy post-tensioned concrete, precast elements, and large-span structural steel frames for industrial and commercial facilities.",
     "descriptionAr": "تصنيع وتوريد وتركيب الهياكل الفولاذية الثقيلة، الجمالونات المعدنية، والجمالونات الإنشائية ذات البحور الواسعة للمصانع والمستودعات والمطارات.",
@@ -132,17 +132,17 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["المصانع الثقيلة", "حظائر الطائرات", "الصالات الرياضية المغطاة", "المراكز اللوجستية والهايبرماركت"],
     "capabilitiesEn": ["Certified AWS / ASME coded welders", "Heavy crawler crane rigging fleet", "In-house ultrasonic and MPI weld inspection"],
     "capabilitiesAr": ["لحامون معتمدون دوليًا وفق معايير AWS و ASME", "أسطول أوناش رفع ثقيلة للحمولات الكبرى", "فحص الموجات فوق الصوتية والجسيمات المغناطيسية للحامات"],
-    "image": "/BG/Contracting & Real Estate Development/Architectural & Construction Work.jpg"
+    "image": "/BG/Contracting & Real Estate Development/Supply, Installation & Maintenance.jpg"
   },
   {
     "id": "srv-cns-architectural",
     "code": "SBA-SRV-CNS04",
     "sector": "construction",
     "categoryKey": "architectural-works",
-    "categoryEn": "Architectural Design & Drawings",
-    "categoryAr": "الأعمال المعمارية والتصميمية",
-    "nameEn": "Architectural & Design Works",
-    "nameAr": "الأعمال المعمارية والتصميمية",
+    "categoryEn": "Architectural & BIM Works",
+    "categoryAr": "الأعمال المعمارية ونمذجة BIM",
+    "nameEn": "Architectural & BIM Works",
+    "nameAr": "الأعمال المعمارية ونمذجة BIM",
     "descriptionEn": "Transforming schematic architectural concepts into coordinated, constructible working drawings, BIM models, and clash-free interdisciplinary packages.",
     "descriptionAr": "تحويل المفاهيم المعمارية والتصميمية إلى حزم رسومات تنفيذية متكاملة ونماذج BIM دقيقة خالية من التعارضات بين كافة التخصصات الهندسية.",
     "scopeOfWorkEn": [
@@ -161,7 +161,7 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["الأبراج الإدارية", "المجمعات متعددة الاستخدامات", "الكمبوندات السكنية الراقية", "المنشآت المؤسسية"],
     "capabilitiesEn": ["Senior BIM managers and Revit coordinators", "Clash detection automation", "Fast-track design-to-build workflows"],
     "capabilitiesAr": ["مهندسو تنسيق BIM معتمدون", "حل تعارضات المسارات آليًا قبل بدء التنفيذ", "منهجية تسريع الانتقال من التصميم للموقع"],
-    "image": "/BG/Contracting & Real Estate Development/Administrative Buildings & Commercial Centers.jpg"
+    "image": "/BG/Contracting & Real Estate Development/Integrated Solutions, Multiple Disciplines.jpg"
   },
   {
     "id": "srv-cns-mep",
@@ -169,9 +169,9 @@ export const professionalServices: ProfessionalService[] = [
     "sector": "construction",
     "categoryKey": "electromechanical-mep",
     "categoryEn": "Electromechanical Works (MEP)",
-    "categoryAr": "الأعمال الكهروميكانيكية المتكاملة",
-    "nameEn": "Integrated HVAC, Fire Protection, Electrical & Plumbing Engineering",
-    "nameAr": "الأعمال الكهروميكانيكية المتكاملة",
+    "categoryAr": "الأعمال الكهروميكانيكية MEP",
+    "nameEn": "Electromechanical Works (MEP)",
+    "nameAr": "الأعمال الكهروميكانيكية MEP",
     "descriptionEn": "Complete engineering design, supply, installation, testing, and commissioning of integrated electrical and mechanical building infrastructure systems.",
     "descriptionAr": "هندسة وتوريد وتركيب واختبار وتشغيل الأنظمة الكهروميكانيكية المتكاملة، شاملة شبكات التكييف المركزي، مكافحة الحريق، الجهد المتوسط والمنخفض وأنظمة التيار الخفيف.",
     "scopeOfWorkEn": [
@@ -190,7 +190,7 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["مراكز البيانات", "المستشفيات", "الأبراج المالية", "المراكز التجارية الكبرى"],
     "capabilitiesEn": ["NFPA certified fire engineering specialists", "BMS automation integration team", "Factory certified commissioning protocol"],
     "capabilitiesAr": ["مهندسون معتمدون من NFPA لمكافحة الحريق", "فريق متخصص في برمجة وتكامل أنظمة BMS", "بروتوكولات فحص وتشغيل تجريبي معتمدة"],
-    "image": "/BG/Contracting & Real Estate Development/Electromechanical Works (MEP).jpg"
+    "image": "/BG/Contracting & Real Estate Development/Electromechanical Systems (MEP).jpg"
   },
   {
     "id": "srv-cns-infrastructure",
@@ -198,9 +198,9 @@ export const professionalServices: ProfessionalService[] = [
     "sector": "construction",
     "categoryKey": "infrastructure-utilities",
     "categoryEn": "Infrastructure & Utilities",
-    "categoryAr": "تطوير البنية التحتية والشبكات",
-    "nameEn": "Civil Infrastructure, Utility Networks & Deep Earthworks",
-    "nameAr": "تطوير البنية التحتية والشبكات",
+    "categoryAr": "البنية التحتية والمرافق",
+    "nameEn": "Infrastructure & Utilities",
+    "nameAr": "البنية التحتية والمرافق",
     "descriptionEn": "Large-scale earthmoving, deep trench excavations, underground potable water, irrigation, stormwater, sewage networks, and road construction.",
     "descriptionAr": "تنفيذ مشروعات البنية التحتية الكبرى، أعمال الحفر والردم والتسوية، وتمديد شبكات مياه الشرب والري وصرف الأمطار والصرف الصحي ورصف الطرق.",
     "scopeOfWorkEn": [
@@ -219,7 +219,7 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["المجتمعات العمرانية الجديدة", "المناطق الصناعية", "المنتجعات السياحية", "الموانئ اللوجستية"],
     "capabilitiesEn": ["Heavy earthmoving and trench excavation machinery", "Electrofusion and butt-welding certified technicians", "Laser-guided GPS grade control equipment"],
     "capabilitiesAr": ["معدات حفر وتسوية ثقيلة متطورة", "فنيون معتمدون في لحام أنابيب HDPE بالتسخين الكهربائي", "أجهزة مساحة بنظام GPS لضبط المناسيب بالليزر"],
-    "image": "/BG/Contracting & Real Estate Development/Infrastructure & Utility Works.jpg"
+    "image": "/BG/Contracting & Real Estate Development/Infrastructure & Integrated Building Systems.jpg"
   },
   {
     "id": "srv-cns-industrial",
@@ -227,9 +227,9 @@ export const professionalServices: ProfessionalService[] = [
     "sector": "construction",
     "categoryKey": "industrial-construction",
     "categoryEn": "Industrial Construction",
-    "categoryAr": "الإنشاءات الصناعية والمباني الجاهزة",
-    "nameEn": "Industrial Facilities, Pre-Engineered Factories & Logistics Hubs",
-    "nameAr": "الإنشاءات الصناعية والمباني الجاهزة",
+    "categoryAr": "الإنشاءات الصناعية",
+    "nameEn": "Industrial Construction",
+    "nameAr": "الإنشاءات الصناعية",
     "descriptionEn": "Turnkey construction of industrial plants, pharmaceutical facilities, heavy machine foundations, logistics parks, and refrigerated warehouses.",
     "descriptionAr": "بناء وتشييد المصانع المتكاملة والمنشآت الدوائية وقواعد الماكينات الثقيلة والمجمعات اللوجستية وثلاجات التخزين الكبرى.",
     "scopeOfWorkEn": [
@@ -248,17 +248,17 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["مصانع الأغذية والمشروبات", "مصانع الغزل والنسيج والملابس", "المنشآت الكيماوية", "مراكز توزيع السلع الاستهلاكية"],
     "capabilitiesEn": ["Fast-track industrial civil construction teams", "High-tolerance floor flatness (FM2 standards)", "Heavy machinery installation coordination"],
     "capabilitiesAr": ["فرق تنفيذ سريعة للمنشآت الصناعية", "تسوية فائقة للأرضيات بمعيار FM2 للمستودعات الذكية", "تنسيق هندسي دقيق لتركيب خطوط الإنتاج والماكينات"],
-    "image": "/BG/Contracting & Real Estate Development/Hospital & Health Center Construction.jpg"
+    "image": "/BG/Contracting & Real Estate Development/Oil & Gas Industrial Civil Infrastructure.jpg"
   },
   {
     "id": "srv-cns-medical",
     "code": "SBA-SRV-CNS08",
     "sector": "construction",
     "categoryKey": "healthcare-facilities",
-    "categoryEn": "Healthcare & Medical Facilities",
-    "categoryAr": "المنشآت الطبية والمستشفيات التخصصية",
-    "nameEn": "Specialized Healthcare Construction, Cleanrooms & Medical Gas Systems",
-    "nameAr": "المنشآت الطبية والمستشفيات التخصصية",
+    "categoryEn": "Medical Facility Fit-Outs",
+    "categoryAr": "تجهيز المستشفيات والمنشآت الصحية",
+    "nameEn": "Medical Facility Fit-Outs",
+    "nameAr": "تجهيز المستشفيات والمنشآت الصحية",
     "descriptionEn": "Highly regulated construction of tertiary hospitals, specialized surgical centers, radiology bunkers, and ISO-certified cleanroom operating suites.",
     "descriptionAr": "تنفيذ وتجهيز المستشفيات التخصصية والمراكز الطبية والجراحية وغرف العمليات المعقمة والتحكم في العدوى وغرف الرنين المغناطيسي والعلاج الإشعاعي.",
     "scopeOfWorkEn": [
@@ -277,17 +277,17 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["المستشفيات العامة والتخصصية", "المراكز الجراحية الدقيقة", "أقسام الأشعة المقطعية والرنين", "المعامل الدوائية المعقمة"],
     "capabilitiesEn": ["HTM / NFPA 99 medical gas certified engineers", "Cleanroom validation instrumentation", "Hospital infection control compliance protocol"],
     "capabilitiesAr": ["مهندسون معتمدون في شبكات الغازات الطبية وفق معايير HTM و NFPA 99", "أجهزة قياس واختبار نظافة الهواء في غرف العمليات", "التزام صارم باشتراطات مكافحة العدوى والاعتماد الصحي"],
-    "image": "/BG/Contracting & Real Estate Development/Hospital & Health Center Construction.jpg"
+    "image": "/BG/Contracting & Real Estate Development/Healthcare Facilities & Medical Fit-Out.jpg"
   },
   {
     "id": "srv-cns-oilgas",
     "code": "SBA-SRV-CNS09",
     "sector": "construction",
     "categoryKey": "oil-gas-facilities",
-    "categoryEn": "Oil, Gas & Energy Facilities",
-    "categoryAr": "منشآت ومحطات النفط والغاز والطاقة",
-    "nameEn": "Specialized Oil, Gas & Petrochemical Civil Works & Tank Farms",
-    "nameAr": "منشآت ومحطات النفط والغاز والطاقة",
+    "categoryEn": "Oil & Gas Specialized Works",
+    "categoryAr": "أعمال المقاولات البترولية",
+    "nameEn": "Oil & Gas Specialized Works",
+    "nameAr": "أعمال المقاولات البترولية",
     "descriptionEn": "Heavy industrial civil construction within refinery, terminal, and petrochemical facility boundaries, meeting strict HSE zero-incident standards.",
     "descriptionAr": "تنفيذ الأعمال المدنية والإنشائية المتخصصة داخل مصافي البترول، مستودعات التخزين ومحطات توزيع وتداول الوقود وفق أعلى اشتراطات السلامة البترولية.",
     "scopeOfWorkEn": [
@@ -306,17 +306,17 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["مصافي التكرير ومعالجة الغاز", "مستودعات تداول وتخزين الوقود", "محطات ضخ خطوط الأنابيب", "مجمعات البتروكيماويات"],
     "capabilitiesEn": ["Certified permits-to-work (PTW) safety crew", "ATEX compliant tools and diesel equipment", "Rigorous zero-incident HSE track record"],
     "capabilitiesAr": ["طواقم عمل مؤهلة بنظام تصاريح العمل البترولية PTW", "معدات وأدوات عمل مطابقة لمواصفات ATEX للأجواء الخطرة", "سجل موثق خالي من الحوادث في المنشآت الحيوية"],
-    "image": "/BG/Contracting & Real Estate Development/Construction of Gas, Oil & Petroleum Facilities.jpg"
+    "image": "/BG/Contracting & Real Estate Development/Oil & Gas Specialized Construction.jpg"
   },
   {
     "id": "srv-cns-commercial",
     "code": "SBA-SRV-CNS10",
     "sector": "construction",
     "categoryKey": "commercial-administrative",
-    "categoryEn": "Commercial & Administrative Complexes",
-    "categoryAr": "المجمعات الإدارية والمراكز التجارية",
-    "nameEn": "Commercial Malls, Corporate Headquarters & Business Towers",
-    "nameAr": "المجمعات الإدارية والمراكز التجارية",
+    "categoryEn": "Commercial Complexes",
+    "categoryAr": "المجمعات التجارية والإدارية",
+    "nameEn": "Commercial Complexes",
+    "nameAr": "المجمعات التجارية والإدارية",
     "descriptionEn": "Modern commercial construction integrating structural aesthetics, energy efficiency, flexible open floor plans, and intelligent facilities infrastructure.",
     "descriptionAr": "إنشاء وتطوير المولات التجارية والمباني الإدارية الحديثة بمواصفات عالمية، مساحات مفتوحة مرنة، وأنظمة توفير الطاقة والتحكم الذكي.",
     "scopeOfWorkEn": [
@@ -335,17 +335,17 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["المراكز والمولات التجارية", "المجمعات الإدارية ومقرات البنوك", "الأحياء المالية", "المشروعات متعددة الاستخدامات"],
     "capabilitiesEn": ["Turnkey execution from basement to roof", "LEED-certified construction protocols", "Comprehensive safety barrier and access staging"],
     "capabilitiesAr": ["تنفيذ متكامل من الحفر حتى التشغيل النهائي", "بروتوكولات بناء مطابقة لمعايير الاستدامة LEED", "أنظمة سقالات وسقوط آمنة للمباني المرتفعة"],
-    "image": "/BG/Contracting & Real Estate Development/Administrative Buildings & Commercial Centers.jpg"
+    "image": "/BG/Contracting & Real Estate Development/Commercial & Administrative Development.jpg"
   },
   {
     "id": "srv-cns-residential",
     "code": "SBA-SRV-CNS11",
     "sector": "construction",
     "categoryKey": "residential-real-estate",
-    "categoryEn": "Residential & Real Estate Development",
-    "categoryAr": "التطوير العقاري والمجمعات السكنية",
-    "nameEn": "Luxury Residential Compounds, Villa Communities & Urban Housing",
-    "nameAr": "التطوير العقاري والمجمعات السكنية",
+    "categoryEn": "Real Estate Development",
+    "categoryAr": "التطوير والاستثمار العقاري",
+    "nameEn": "Real Estate Development",
+    "nameAr": "التطوير والاستثمار العقاري",
     "descriptionEn": "Full-cycle real estate development and residential building execution, from master development to turnkey villa handovers and landscape integration.",
     "descriptionAr": "تنفيذ المشروعات السكنية الراقية، الكمبوندات المتكاملة، الفيلات المستقلة، التاون هاوس، والعمارات السكنية الحديثة مع كافة خدمات الموقع العام.",
     "scopeOfWorkEn": [
@@ -364,7 +364,7 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["الكمبوندات السكنية المغلقة", "الفيلات والقصور الخاصة", "مشروعات الإسكان والتوسع العمراني", "المنتجعات السكنية الساحلية"],
     "capabilitiesEn": ["Proven on-time delivery across multiple concurrent clusters", "Standardized high-quality procurement", "Comprehensive after-handover defect liability service"],
     "capabilitiesAr": ["التزام دقيق بمواعيد التسليم للمراحل السكنية المتزامنة", "توريد مركزي لمواد التشطيب المعتمدة لضمان الجودة", "خدمات صيانة وضمان ما بعد التسليم للعملاء"],
-    "image": "/BG/Contracting & Real Estate Development/Residential Units & Housing Projects.jpg"
+    "image": "/BG/Contracting & Real Estate Development/Residential Development & Luxury Villas.jpg"
   },
   {
     "id": "srv-cns-finishing",
@@ -372,9 +372,9 @@ export const professionalServices: ProfessionalService[] = [
     "sector": "construction",
     "categoryKey": "finishing-fitout",
     "categoryEn": "Finishing & Interior Fit-Out",
-    "categoryAr": "التشطيبات الراقية والتجهيزات الداخلية",
-    "nameEn": "Turnkey Architectural Finishing, Luxury Fit-Out & Interior Contracting",
-    "nameAr": "التشطيبات الراقية والتجهيزات الداخلية",
+    "categoryAr": "التشطيبات والتجهيزات الداخلية",
+    "nameEn": "Finishing & Interior Fit-Out",
+    "nameAr": "التشطيبات والتجهيزات الداخلية",
     "descriptionEn": "Delivering high-end interior architecture, acoustic treatments, luxury woodwork, marble floors, and specialized false ceiling systems for corporate and commercial spaces.",
     "descriptionAr": "تنفيذ أعمال التشطيبات الداخلية الراقية، المعالجات الصوتية، النجارة المعمارية، الرخام الطبيعي، والأسقف المعلقة للمقرات الإدارية والفندقية والتجارية.",
     "scopeOfWorkEn": [
@@ -393,7 +393,7 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["المقرات والمكاتب التنفيذية للشركات", "بهو الفنادق الفاخرة", "صالات كبار الزوار VIP", "المباني الدبلوماسية والسفارات"],
     "capabilitiesEn": ["In-house master fit-out craftsmen", "Precision laser-level alignment tools", "Zero-snag commercial delivery standards"],
     "capabilitiesAr": ["فريق حرفيين متخصص في أعمال التشطيبات الدقيقة", "أجهزة قياس ومحاذاة ليزرية متقدمة", "معايير تسليم هندسية خالية من الملاحظات"],
-    "image": "/BG/Contracting & Real Estate Development/Interior and Exterior Finishing Works.jpg"
+    "image": "/BG/Contracting & Real Estate Development/Finishing & Interior Design.jpg"
   },
 
   // --------------------------------------------------------------------------
