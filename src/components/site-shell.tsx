@@ -276,7 +276,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
         className={cn(className, "whitespace-nowrap", isServicesActive && navPillActive)}
         onClick={onNavigate}
       >
-        {isArabic ? "خدماتنا" : "Services"}
+        {messages.nav.services || (isArabic ? "خدماتنا" : "Our Services")}
       </Link>
       <Link
         to="/partners"
