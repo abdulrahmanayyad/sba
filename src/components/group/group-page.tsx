@@ -240,19 +240,26 @@ export function GroupPage() {
       {/* Verified Strategic Alliances Section */}
       <section className="site-container py-14 scroll-mt-24">
         <Reveal>
-          <div className="mb-8">
-            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
-              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-              <span>{ar ? "تحالفاتنا وشراكاتنا" : "Our Strategic Partners"}</span>
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+            <div>
+              <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+                <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+                <span>{ar ? "تحالفاتنا وشراكاتنا" : "Our Strategic Partners"}</span>
+              </div>
+              <h2 className="section-title text-2xl sm:text-3xl lg:text-4xl">
+                {ar ? "شراكات استراتيجية وتقنية دولية" : "Strategic & Technological Alliances"}
+              </h2>
+              <p className="section-intro mt-2 max-w-2xl text-sm sm:text-base">
+                {ar
+                  ? "شبكة موثقة من التحالفات الصناعية والتكنولوجية العالمية تدعم الابتكار والقدرات التشغيلية للمجموعة."
+                  : "Verified global alliances driving technological innovation and expanding our operational capabilities."}
+              </p>
             </div>
-            <h2 className="section-title text-2xl sm:text-3xl lg:text-4xl">
-              {ar ? "شراكات استراتيجية وتقنية دولية" : "Strategic & Technological Alliances"}
-            </h2>
-            <p className="section-intro mt-2 max-w-2xl text-sm sm:text-base">
-              {ar
-                ? "شبكة موثقة من التحالفات الصناعية والتكنولوجية العالمية تدعم الابتكار والقدرات التشغيلية للمجموعة."
-                : "Verified global alliances driving technological innovation and expanding our operational capabilities."}
-            </p>
+            <Button asChild size="default" className="rounded-full !bg-brand-green !text-white px-5 py-2.5 text-xs font-bold shadow-md transition-all duration-300 hover:!bg-brand-orange hover:scale-105 active:scale-95 shrink-0 cursor-pointer">
+              <Link to="/partners">
+                {ar ? "عرض كافة الشركاء" : "View All Partners"} <ArrowRight className="size-3.5 rtl:rotate-180" />
+              </Link>
+            </Button>
           </div>
 
           <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
