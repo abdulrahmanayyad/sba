@@ -560,8 +560,8 @@ export const whoWeServe: ClientMarket[] = [
 
 export const founders = [
   {
-    role: "Chairman of the Board",
-    roleAr: "رئيس مجلس الإدارة | Chairman",
+    role: "Founder & Chairman of the Board",
+    roleAr: "المؤسس ورئيس مجلس الإدارة",
     name: "Sheikh Sami Bin Ayyad",
     nameAr: "الشيخ سامي بن عياد",
     image: "/Leadership/Sami Bin Ayyad.jpg",
