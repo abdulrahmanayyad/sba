@@ -5625,7 +5625,7 @@ export const PRODUCT_DEMAND_PORTFOLIO: DemandCategory[] = [
         specs: 'محصودة بعناية مع التبريد المباشر بعد القطف',
         packaging: 'صناديق ريفروفر 4كجم مع حوامل حماية',
         markets: ['قطر', 'الهند', 'المملكة المتحدة'],
-        quantity: '20 طن متري أسبوعياً',
+        quantity: '20 طن متري أسبوعي',
         quantityEn: '20 Metric Tons Weekly',
         documentedId: 'DAT-09'
       },
@@ -5900,7 +5900,7 @@ export const PRODUCT_DEMAND_PORTFOLIO: DemandCategory[] = [
         specs: 'أقطار 50-70مم و 70-90مم، قشرة جافة صلبة',
         packaging: 'أكياس شبكية 10كجم و25كجم وحاويات مبردة',
         markets: ['الإمارات العربية المتحدة', 'هولندا', 'مصر', 'ألمانيا'],
-        quantity: '100 طن متري أسبوعياً',
+        quantity: '100 طن متري أسبوعي',
         quantityEn: '100 Metric Tons Weekly',
         documentedId: 'VEG-02'
       },
