@@ -109,7 +109,7 @@ export function GlobalProductDemand({ ar = true, onInquireProduct }: GlobalProdu
                     </p>
                   </div>
 
-                  <span className="rounded-full bg-emerald-500/15 px-2.5 py-0.5 text-[11px] font-bold text-emerald-400">
+                  <span className="inline-flex items-center justify-center rounded-xl border border-brand-green bg-brand-green px-2.5 py-1 text-[11px] font-bold text-white shadow-xs transition-colors duration-300 hover:bg-brand-orange hover:border-brand-orange">
                     {ar ? "مطلوب دوليًا" : "In Demand"}
                   </span>
                 </div>
