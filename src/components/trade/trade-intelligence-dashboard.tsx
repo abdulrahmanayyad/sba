@@ -51,7 +51,7 @@ export function TradeIntelligenceDashboard({ ar = true }: TradeIntelligenceDashb
           <span>{ar ? "القسم الرابع: اتجاه السوق التجاري" : "Section 4: Commercial Market Trends"}</span>
         </div>
         <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5 leading-snug">
-          {ar ? "ذكاء السوق واتجاهات الطلب التجاري" : "Market Demand & Trade Intelligence"}
+          {ar ? "اتجاه الطلب التجاري" : "Commercial Demand Trends"}
         </h2>
         <p className="text-xs sm:text-sm text-muted-foreground mt-2.5 sm:mt-3 leading-relaxed max-w-4xl">
           {ar
