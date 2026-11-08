@@ -149,9 +149,6 @@ export function MarketDirectory({ ar = true, selectedCountryCode }: MarketDirect
             ? `عرض ${visibleCountries.length} من أصل ${filteredCountries.length} دولة مستوردة`
             : `Showing ${visibleCountries.length} of ${filteredCountries.length} documented markets`}
         </span>
-        <span className="inline-flex items-center justify-center rounded-xl border border-brand-green/40 bg-brand-green/15 px-3 py-1.5 font-bold text-brand-green shadow-xs">
-          {ar ? "بيانات موثقة من طلبات الشراء الرسمية" : "Verified from official inquiry records"}
-        </span>
       </div>
 
       {/* Countries Cards Grid */}
