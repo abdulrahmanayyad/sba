@@ -96,24 +96,13 @@ export function TradeReportsDownloads({ ar = true }: TradeReportsDownloadsProps)
 
   return (
     <div className="interactive-card glass-box-interactive w-full rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl backdrop-blur-2xl transition-all duration-300">
-      {/* Section 7 Title & Description */}
-      <div>
-        <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
+      {/* Section 7 Badge */}
+      <div className="flex items-center justify-between">
+        <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
           <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
           <span>{ar ? "القسم السابع: التوثيق والتحميلات" : "Section 7: Reports & Documentation"}</span>
         </div>
-        <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5 leading-snug">
-          {ar ? "تقارير ودراسات التجارة الدولية الرسمية (PDF)" : "Official Trade Reports & PDFs"}
-        </h2>
-        <p className="text-xs sm:text-sm text-muted-foreground mt-2.5 sm:mt-3 leading-relaxed max-w-4xl">
-          {ar
-            ? "مكتبة التقارير التنفيذية الخمسة الموثقة، مهيأة للتحميل والطباعة وفق الهوية البصرية للمجموعة."
-            : "Comprehensive library of five executive trade reports, ready for PDF export and high-resolution printing."}
-        </p>
       </div>
-
-      {/* Divider */}
-      <div className="border-t border-border/40 dark:border-white/10" />
 
       {/* Header Banner */}
       <div className="rounded-2xl border border-white/15 bg-background/50 p-6 sm:p-8 backdrop-blur-xl shadow-inner transition-all duration-300">
