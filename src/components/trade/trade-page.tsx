@@ -5,6 +5,7 @@ import { MarketDirectory } from "./market-directory";
 import { GlobalProductDemand } from "./global-product-demand";
 import { TradeIntelligenceDashboard } from "./trade-intelligence-dashboard";
 import { BusinessNetworkSection } from "./business-network-section";
+import { BuyerInquiriesSection } from "./buyer-inquiries-section";
 import { TradeOpportunitiesSection } from "./trade-opportunities-section";
 import { TradeReportsDownloads } from "./trade-reports-downloads";
 import { TRADE_STATS, COUNTRY_PROFILES, CountryTradeProfile } from "@/lib/trade-data";
@@ -140,7 +141,12 @@ export function TradePage({ ar = true }: TradePageProps) {
           <BusinessNetworkSection ar={ar} />
         </section>
 
-        {/* Section 7: Downloadable Reports */}
+        {/* Section 7: International Buyer Inquiries Log */}
+        <section id="buyer-inquiries" className="scroll-mt-32 space-y-6">
+          <BuyerInquiriesSection ar={ar} />
+        </section>
+
+        {/* Section 8: Downloadable Reports */}
         <section id="trade-reports" className="scroll-mt-32 space-y-6">
           <TradeReportsDownloads ar={ar} />
         </section>
