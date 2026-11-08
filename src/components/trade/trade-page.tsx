@@ -1,17 +1,5 @@
 import React, { useState } from "react";
-import { 
-  Globe, 
-  TrendingUp, 
-  ShieldCheck, 
-  Package, 
-  MapPin, 
-  Briefcase, 
-  FileText, 
-  Sparkles, 
-  Layers, 
-  AlertCircle,
-  ArrowDown
-} from "lucide-react";
+import { AlertCircle } from "lucide-react";
 import { TradeWorldMap } from "./trade-world-map";
 import { MarketDirectory } from "./market-directory";
 import { GlobalProductDemand } from "./global-product-demand";
@@ -27,16 +15,6 @@ interface TradePageProps {
 
 export function TradePage({ ar = true }: TradePageProps) {
   const [selectedCountryCode, setSelectedCountryCode] = useState<string | undefined>(undefined);
-
-  const navItems = [
-    { id: "world-map", labelAr: "الخريطة التفاعلية", labelEn: "World Map" },
-    { id: "market-directory", labelAr: "دليل الأسواق", labelEn: "Market Directory" },
-    { id: "product-demand", labelAr: "المنتجات المطلوبة", labelEn: "Product Demand" },
-    { id: "trade-intelligence", labelAr: "ذكاء السوق والمتطلبات", labelEn: "Trade Intelligence" },
-    { id: "business-network", labelAr: "شبكتنا الدولية", labelEn: "Business Network" },
-    { id: "trade-opportunities", labelAr: "الفرص التجارية", labelEn: "Trade Opportunities" },
-    { id: "trade-reports", labelAr: "التقارير والتحميلات", labelEn: "Reports & Downloads" },
-  ];
 
   const handleCountrySelect = (country: CountryTradeProfile) => {
     setSelectedCountryCode(country.code);
@@ -133,21 +111,6 @@ export function TradePage({ ar = true }: TradePageProps) {
           </div>
         </div>
       </section>
-
-      {/* Sticky Quick-Nav Bar */}
-      <div className="sticky top-20 z-40 px-4 py-2 flex justify-center pointer-events-none">
-        <div className="pointer-events-auto flex items-center gap-1.5 overflow-x-auto rounded-full border border-white/20 bg-background/85 px-4 py-2 shadow-2xl backdrop-blur-2xl scrollbar-none max-w-full">
-          {navItems.map((item) => (
-            <a
-              key={item.id}
-              href={`#${item.id}`}
-              className="whitespace-nowrap rounded-full px-3 py-1.5 text-xs font-bold text-foreground/80 transition-all hover:bg-white/10 hover:text-brand-orange"
-            >
-              {ar ? item.labelAr : item.labelEn}
-            </a>
-          ))}
-        </div>
-      </div>
 
       {/* Main Content Sections */}
       <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 space-y-24 mt-12">
