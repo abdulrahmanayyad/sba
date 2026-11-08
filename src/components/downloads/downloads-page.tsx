@@ -1,10 +1,11 @@
 import { useState, useMemo, useEffect } from "react";
-import { Download, ExternalLink, FileText, Filter, Globe2, Layers, Search, ShieldCheck } from "lucide-react";
+import { Download, ExternalLink, FileText, Filter, Globe2, Layers, Search, ShieldCheck, Mail, MessageCircle } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { Reveal } from "@/components/home/reveal";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/i18n/language-context";
 import { allCorporateDownloads, downloadCategories, downloadSectors, DownloadItem } from "./downloads-data";
+import { WHATSAPP_URL, CONTACT_EMAIL } from "@/lib/process-steps";
 import { cn } from "@/lib/utils";
 
 export function DownloadsPage() {
@@ -283,32 +284,109 @@ export function DownloadsPage() {
       {/* 4. Custom Document Request Banner (Interactive Glass Card) */}
       <section className="site-container pb-20">
         <Reveal>
-          <div className="glass-box-interactive group rounded-3xl p-8 sm:p-12 relative overflow-hidden transition-all duration-300 text-start cursor-pointer">
-            <div className="relative z-10 max-w-2xl text-start">
-              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
-                <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-                <span>
-                  {ar ? "استفسارات المستندات الخاصة والمناقصات" : "Custom Tender & Technical Submittals"}
-                </span>
+          <div className="glass-box-interactive group rounded-3xl p-8 sm:p-12 relative overflow-hidden transition-all duration-300 text-start">
+            <div className="relative z-10 grid gap-8 lg:grid-cols-[1.25fr,0.75fr] lg:items-center">
+              {/* Main Content (Right in Arabic RTL) */}
+              <div className="space-y-4 text-start">
+                <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+                  <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+                  <span>
+                    {ar ? "استفسارات المستندات الخاصة والمناقصات" : "Custom Tender & Technical Submittals"}
+                  </span>
+                </div>
+                <h2 className="font-head text-2xl sm:text-3xl font-extrabold text-foreground">
+                  {ar ? "هل تحتاج إلى مستند مخصص لمشروع أو مناقصة معينة؟" : "Need a Tailored Specification Dossier for Your Tender?"}
+                </h2>
+                <p className="text-xs sm:text-sm leading-relaxed text-muted-foreground max-w-2xl">
+                  {ar
+                    ? "يتولى مكتب الدعم الفني والتجاري للمجموعة إعداد المستندات الهندسية، وشهادات تحليل المختبرات (COA)، وجداول الكميات المخصصة لكبرى المشروعات والمناقصات الدولية."
+                    : "Our technical and commercial engineering desk prepares bespoke project dossiers, laboratory analysis certificates (COA), and specialized technical submittals for major international tenders."}
+                </p>
+
+                {/* Direct Contact Details in Right Column */}
+                <div className="pt-2 flex flex-wrap items-center gap-3">
+                  <a
+                    href={`mailto:${CONTACT_EMAIL}`}
+                    className="inline-flex items-center gap-2 rounded-xl border border-border/80 bg-background/80 px-3.5 py-2 text-xs font-semibold text-foreground shadow-xs backdrop-blur-md transition-all duration-300 hover:border-brand-orange hover:bg-brand-orange/10 hover:text-brand-orange"
+                  >
+                    <Mail className="size-4 text-brand-orange" />
+                    <span>{ar ? "البريد الرسمي:" : "Official Email:"}</span>
+                    <span dir="ltr" className="font-mono font-bold">{CONTACT_EMAIL}</span>
+                  </a>
+
+                  <a
+                    href={WHATSAPP_URL}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-xl border border-[#25D366]/30 bg-[#25D366]/10 px-3.5 py-2 text-xs font-semibold text-foreground shadow-xs backdrop-blur-md transition-all duration-300 hover:border-[#25D366] hover:bg-[#25D366]/20 hover:text-[#25D366]"
+                  >
+                    <MessageCircle className="size-4 text-[#25D366]" />
+                    <span>{ar ? "واتساب الرسمي:" : "Official WhatsApp:"}</span>
+                    <span dir="ltr" className="font-mono font-bold">+20 12 222 380 72</span>
+                  </a>
+                </div>
+
+                <div className="pt-2 flex flex-wrap gap-3">
+                  <Button
+                    asChild
+                    size="lg"
+                    className="rounded-full !bg-brand-green !text-white hover:!bg-brand-orange px-7 py-3 font-head text-xs sm:text-sm font-bold shadow-md transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer"
+                  >
+                    <Link to="/contact">
+                      {ar ? "التواصل مع الإدارة التجارية" : "Contact Commercial Desk"}
+                    </Link>
+                  </Button>
+                </div>
               </div>
-              <h2 className="font-head text-2xl sm:text-3xl font-extrabold text-foreground">
-                {ar ? "هل تحتاج إلى مستند مخصص لمشروع أو مناقصة معينة؟" : "Need a Tailored Specification Dossier for Your Tender?"}
-              </h2>
-              <p className="mt-3 text-xs sm:text-sm leading-relaxed text-muted-foreground">
-                {ar
-                  ? "يتولى مكتب الدعم الفني والتجاري للمجموعة إعداد المستندات الهندسية، وشهادات تحليل المختبرات (COA)، وجداول الكميات المخصصة لكبرى المشروعات والمناقصات الدولية."
-                  : "Our technical and commercial engineering desk prepares bespoke project dossiers, laboratory analysis certificates (COA), and specialized technical submittals for major international tenders."}
-              </p>
-              <div className="mt-6 flex flex-wrap gap-3">
-                <Button
-                  asChild
-                  size="lg"
-                  className="rounded-full !bg-brand-green !text-white hover:!bg-brand-orange px-7 py-3 font-head text-xs sm:text-sm font-bold shadow-md transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer"
-                >
-                  <Link to="/contact">
-                    {ar ? "التواصل مع الإدارة التجارية" : "Contact Commercial Desk"}
-                  </Link>
-                </Button>
+
+              {/* Contact Box on Side */}
+              <div className="rounded-2xl border border-white/15 bg-background/70 p-6 backdrop-blur-xl shadow-xl space-y-4">
+                <div className="border-b border-white/10 pb-3">
+                  <h3 className="font-head text-sm sm:text-base font-bold text-foreground">
+                    {ar ? "قنوات الدعم الفني والمناقصات" : "Tender & Engineering Desk"}
+                  </h3>
+                  <p className="text-xs text-muted-foreground mt-0.5">
+                    {ar ? "تواصل مباشر مع فريق الاعتماد والمستندات" : "Direct response for technical specs & submittals"}
+                  </p>
+                </div>
+
+                <div className="space-y-3">
+                  <a
+                    href={`mailto:${CONTACT_EMAIL}`}
+                    className="group/item flex items-center gap-3 rounded-xl border border-border/80 bg-background/90 p-3 transition-all duration-300 hover:border-brand-orange hover:bg-brand-orange/5"
+                  >
+                    <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-brand-orange/15 text-brand-orange">
+                      <Mail className="size-4" />
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <span className="block text-[11px] font-medium text-muted-foreground">
+                        {ar ? "البريد الإلكتروني الرسمي" : "Official Email"}
+                      </span>
+                      <span dir="ltr" className="block font-mono text-xs font-bold text-foreground group-hover/item:text-brand-orange transition-colors break-all">
+                        {CONTACT_EMAIL}
+                      </span>
+                    </div>
+                  </a>
+
+                  <a
+                    href={WHATSAPP_URL}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group/item flex items-center gap-3 rounded-xl border border-[#25D366]/30 bg-[#25D366]/5 p-3 transition-all duration-300 hover:border-[#25D366] hover:bg-[#25D366]/15"
+                  >
+                    <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-[#25D366]/20 text-[#25D366]">
+                      <MessageCircle className="size-4" />
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <span className="block text-[11px] font-medium text-muted-foreground">
+                        {ar ? "رقم الواتساب الرسمي" : "Official WhatsApp"}
+                      </span>
+                      <span dir="ltr" className="block font-head text-xs sm:text-sm font-bold text-foreground group-hover/item:text-[#25D366] transition-colors">
+                        +20 12 222 380 72
+                      </span>
+                    </div>
+                  </a>
+                </div>
               </div>
             </div>
           </div>

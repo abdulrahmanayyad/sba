@@ -6401,20 +6401,22 @@ export const VERIFIED_TRADE_PARTNERS = [
     productsSuppliedEn: 'Certified Industrial Workwear, Merchandising & Uniforms',
     relationshipStatus: 'Contracted Business Partner',
     relationshipStatusAr: 'شريك تجاري متعاقد رسمي',
-    establishedYear: 2024
+    establishedYear: 2026,
+    establishedTextAr: 'منذ عام 2026'
   },
   {
     companyName: 'Fontebasso Hospital Group',
     countryAr: 'إيطاليا',
     countryEn: 'Italy',
     countryFlag: '🇮🇹',
-    sectorAr: 'منتجات النسيج وملابس الأطفال والمنسوجات المنزلية',
-    sectorEn: 'Textiles, Baby Products & Home Garments',
+    sectorAr: 'مستلزمات المستشفيات والفنادق',
+    sectorEn: 'Hospital & Hotel Supplies',
     productsSuppliedAr: 'مريلات ومستلزمات أطفال قطنية وتصنيع خاص OEM',
     productsSuppliedEn: 'Cotton Baby Bibs, Accessories & OEM Garments',
     relationshipStatus: 'Active Commercial Contract',
-    relationshipStatusAr: 'عقد تصنيع وتوريد سارٍ',
-    establishedYear: 2025
+    relationshipStatusAr: 'عقد تصنيع وتوريد ساري',
+    establishedYear: 2026,
+    establishedTextAr: 'منذ 2026'
   }
 ];
 

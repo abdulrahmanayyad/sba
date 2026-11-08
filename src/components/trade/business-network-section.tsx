@@ -43,7 +43,7 @@ export function BusinessNetworkSection({ ar = true }: BusinessNetworkSectionProp
                   <span>{partner.countryFlag}</span>
                   <span>{ar ? partner.countryAr : partner.countryEn}</span>
                   <span>•</span>
-                  <span>{ar ? `منذ ${partner.establishedYear}` : `Since ${partner.establishedYear}`}</span>
+                  <span>{ar ? ((partner as any).establishedTextAr || `منذ ${partner.establishedYear}`) : `Since ${partner.establishedYear}`}</span>
                 </p>
               </div>
 
