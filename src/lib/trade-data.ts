@@ -5611,8 +5611,8 @@ export const PRODUCT_DEMAND_PORTFOLIO = [
   },
   {
     categoryKey: 'herbs_powders',
-    categoryNameAr: 'الأعشاب والمستخلصات والمساحيق',
-    categoryNameEn: 'Herbs, Extracts & Powders',
+    categoryNameAr: 'الأعشاب والمستخلصات',
+    categoryNameEn: 'Herbs & Extracts',
     icon: 'Feather',
     totalInquiries: 22,
     subProducts: [
