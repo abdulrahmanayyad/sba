@@ -212,7 +212,7 @@ export function NewsDetailPage({ slug }: { slug: string }) {
           </div>
 
           {/* Headline */}
-          <h1 className="text-start font-head text-xl sm:text-2xl lg:text-3xl font-bold text-foreground leading-snug sm:leading-snug lg:leading-normal max-w-4xl tracking-tight">
+          <h1 className="text-start font-head text-lg sm:text-xl md:text-2xl lg:text-[1.65rem] xl:text-[1.85rem] font-bold text-foreground leading-snug sm:leading-snug lg:leading-snug w-full max-w-none tracking-tight">
             {ar ? article.titleAr : article.titleEn}
           </h1>
 
