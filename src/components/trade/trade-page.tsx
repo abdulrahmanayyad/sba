@@ -71,7 +71,7 @@ export function TradePage({ ar = true }: TradePageProps) {
               <div className="interactive-card glass-box-interactive group rounded-3xl border border-white/20 bg-black/40 p-5 shadow-md backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer">
                 <span className="font-head text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">179</span>
                 <p className="text-xs font-bold text-white mt-1">
-                  {ar ? "سجل استفسار تجاري موثق" : "Recorded Commercial Inquiries"}
+                  {ar ? "سجل طلبات شرائية موثقة" : "Recorded Purchase Inquiries"}
                 </p>
                 <span className="text-[11px] text-white/70 block mt-0.5">
                   {ar ? "سجلات أصلية لعام 2025" : "2025 Original Verified Records"}
