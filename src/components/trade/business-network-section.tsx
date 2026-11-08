@@ -49,11 +49,6 @@ export function BusinessNetworkSection({ ar = true }: BusinessNetworkSectionProp
         <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5 leading-snug">
           {ar ? "شبكتنا التجارية الدولية" : "Our International Business Network"}
         </h2>
-        <p className="text-xs sm:text-sm text-muted-foreground mt-2.5 sm:mt-3 leading-relaxed max-w-4xl">
-          {ar
-            ? "فصل كامل وصارم بين الشركاء والعملاء المتعاقد معهم فعليًا، وبين استفسارات المشترين قيد التفاوض والتدقيق."
-            : "Strict separation between verified contracted clients/partners and privacy-protected buyer inquiries."}
-        </p>
       </div>
 
       {/* Divider */}
