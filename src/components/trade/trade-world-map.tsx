@@ -164,19 +164,10 @@ export function TradeWorldMap({ ar = true, onSelectCountry }: TradeWorldMapProps
               </span>
             </div>
 
-            {/* Marker Legend */}
-            <div className="flex items-center gap-3 text-[11px] text-foreground/80 font-medium">
-              <span className="flex items-center gap-1.5">
-                <span className="size-2 rounded-full bg-emerald-500" />
-                {ar ? "تمور" : "Dates"}
-              </span>
-              <span className="flex items-center gap-1.5">
-                <span className="size-2 rounded-full bg-brand-orange" />
-                {ar ? "سلع غذائية" : "Food Products"}
-              </span>
-              <span className="flex items-center gap-1.5">
-                <span className="size-2.5 rounded-full bg-teal-500 ring-2 ring-white/30" />
-                {ar ? "مشترك" : "Both"}
+            {/* Header Status & Indicator */}
+            <div className="flex items-center gap-2 text-[11px] text-foreground/80 font-medium">
+              <span className="flex items-center gap-1.5 rounded-full bg-brand-green/15 border border-brand-green/30 px-2.5 py-0.5 text-brand-green font-bold">
+                <span>{ar ? "أعلام الأسواق الدولية" : "International Market Flags"}</span>
               </span>
             </div>
           </div>
@@ -256,20 +247,10 @@ export function TradeWorldMap({ ar = true, onSelectCountry }: TradeWorldMapProps
                 strokeWidth="0.8"
               />
 
-              {/* Country Interactive Pins */}
+              {/* Country Interactive Flags on Map */}
               {filteredCountries.map((c) => {
                 const { x, y } = getMapCoordinates(c.lat, c.lng);
                 const isSelected = activeCountry?.code === c.code;
-                const isBoth = c.dateInquiriesCount > 0 && c.diversifiedInquiriesCount > 0;
-                const isDateOnly = c.dateInquiriesCount > 0 && c.diversifiedInquiriesCount === 0;
-
-                const pinColor = isBoth
-                  ? "#0d9488" // teal for both
-                  : isDateOnly
-                  ? "#10b981" // emerald green for dates
-                  : "#ea580c"; // brand orange for food commodities
-
-                const size = isSelected ? 12 : Math.min(10, Math.max(5, Math.sqrt(c.totalInquiries) * 2.5));
 
                 return (
                   <g
@@ -277,52 +258,53 @@ export function TradeWorldMap({ ar = true, onSelectCountry }: TradeWorldMapProps
                     className="cursor-pointer transition-all duration-300"
                     onClick={() => handleCountryClick(c)}
                   >
-                    {/* Pulsing ring on selected country */}
+                    {/* Pulsing aura on selected country */}
                     {isSelected && (
-                      <circle
-                        cx={x}
-                        cy={y}
-                        r={size + 8}
-                        fill="none"
-                        stroke={pinColor}
-                        strokeWidth="1.5"
-                        strokeOpacity="0.8"
-                        className="animate-ping"
-                      />
+                      <>
+                        <circle
+                          cx={x}
+                          cy={y}
+                          r={18}
+                          fill="none"
+                          stroke="var(--brand-green, #10b981)"
+                          strokeWidth="2"
+                          strokeOpacity="0.8"
+                          className="animate-ping"
+                        />
+                        <circle
+                          cx={x}
+                          cy={y}
+                          r={15}
+                          fill="var(--brand-green, #10b981)"
+                          fillOpacity="0.25"
+                        />
+                      </>
                     )}
 
-                    {/* Outer glow aura */}
-                    <circle
-                      cx={x}
-                      cy={y}
-                      r={size + 4}
-                      fill={pinColor}
-                      fillOpacity={isSelected ? "0.4" : "0.2"}
-                    />
+                    {/* Country National Flag */}
+                    <text
+                      x={x}
+                      y={y}
+                      textAnchor="middle"
+                      dominantBaseline="central"
+                      fontSize={isSelected ? "20" : "14"}
+                      className="select-none transition-transform hover:scale-135 drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]"
+                    >
+                      {c.flag}
+                    </text>
 
-                    {/* Main marker circle */}
-                    <circle
-                      cx={x}
-                      cy={y}
-                      r={size}
-                      fill={pinColor}
-                      stroke="#ffffff"
-                      strokeWidth={isSelected ? "2" : "1"}
-                      className="hover:scale-125 transition-transform"
-                    />
-
-                    {/* Label for high-inquiry or active countries */}
+                    {/* Label for selected or high-inquiry countries */}
                     {(isSelected || c.totalInquiries >= 5) && (
                       <text
                         x={x}
-                        y={y - size - 4}
+                        y={y - (isSelected ? 16 : 12)}
                         textAnchor="middle"
-                        fill="#ffffff"
+                        fill={isSelected ? "var(--brand-green, #22c55e)" : "#ffffff"}
                         fontSize={isSelected ? "11" : "9"}
-                        fontWeight={isSelected ? "bold" : "600"}
-                        className="pointer-events-none drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)]"
+                        fontWeight="bold"
+                        className="pointer-events-none drop-shadow-[0_1px_3px_rgba(0,0,0,0.95)]"
                       >
-                        {c.flag} {ar ? c.nameAr : c.nameEn} ({c.totalInquiries})
+                        {ar ? c.nameAr : c.nameEn} ({c.totalInquiries})
                       </text>
                     )}
                   </g>
@@ -376,8 +358,8 @@ export function TradeWorldMap({ ar = true, onSelectCountry }: TradeWorldMapProps
                     onClick={() => handleCountryClick(c)}
                     className={`flex items-center gap-2 rounded-xl border px-3 py-2.5 text-xs font-bold transition-all text-start cursor-pointer ${
                       isSelected
-                        ? "border-brand-orange bg-brand-orange/20 text-brand-orange shadow-sm scale-[1.02]"
-                        : "border-white/10 bg-white/5 text-foreground hover:border-brand-orange/40 hover:bg-white/10"
+                        ? "border-brand-green bg-brand-green/20 text-brand-green shadow-sm scale-[1.02]"
+                        : "border-white/10 bg-white/5 text-foreground hover:border-brand-green/40 hover:bg-white/10"
                     }`}
                   >
                     <span className="text-lg shrink-0" role="img" aria-label={c.nameEn}>
