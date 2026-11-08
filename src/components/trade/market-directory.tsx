@@ -112,11 +112,11 @@ export function MarketDirectory({ ar = true, selectedCountryCode }: MarketDirect
       </div>
 
       {/* Directory Count Header */}
-      <div className="flex items-center justify-between px-2 text-xs text-muted-foreground">
+      <div className="flex flex-wrap items-center justify-between gap-2 px-2 text-xs text-muted-foreground">
         <span>
           {ar ? `عرض ${filteredCountries.length} من أصل 47 دولة مستوردة` : `Showing ${filteredCountries.length} of 47 documented markets`}
         </span>
-        <span className="font-semibold text-brand-orange">
+        <span className="inline-flex items-center justify-center rounded-xl border border-brand-green/40 bg-brand-green/15 px-3 py-1.5 font-bold text-brand-green shadow-xs">
           {ar ? "بيانات موثقة من طلبات الشراء الرسمية" : "Verified from official inquiry records"}
         </span>
       </div>
