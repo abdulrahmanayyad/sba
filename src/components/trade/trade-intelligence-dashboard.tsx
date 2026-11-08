@@ -18,12 +18,12 @@ export function TradeIntelligenceDashboard({ ar = true }: TradeIntelligenceDashb
 
   // Category distribution
   const categoryStats = [
-    { nameAr: "التمور ومنتجاتها", nameEn: "Dates & Products", count: 66, percentage: 37, color: "bg-amber-500" },
-    { nameAr: "التوابل والبهارات", nameEn: "Spices & Seasonings", count: 38, percentage: 21, color: "bg-emerald-500" },
-    { nameAr: "الخضروات الطازجة", nameEn: "Fresh Vegetables", count: 34, percentage: 19, color: "bg-teal-500" },
-    { nameAr: "البذور والحبوب والمكسرات", nameEn: "Seeds, Grains & Nuts", count: 26, percentage: 15, color: "bg-brand-orange" },
-    { nameAr: "الأعشاب والمستخلصات", nameEn: "Herbs & Extracts", count: 22, percentage: 12, color: "bg-indigo-500" },
-    { nameAr: "الفواكه والسلع المتنوعة", nameEn: "Fruits & Commodities", count: 19, percentage: 11, color: "bg-rose-500" },
+    { nameAr: "التمور ومنتجاتها", nameEn: "Dates & Products", count: 66, percentage: 37, color: "bg-brand-green" },
+    { nameAr: "التوابل والبهارات", nameEn: "Spices & Seasonings", count: 38, percentage: 21, color: "bg-brand-green" },
+    { nameAr: "الخضروات الطازجة", nameEn: "Fresh Vegetables", count: 34, percentage: 19, color: "bg-brand-green" },
+    { nameAr: "البذور والحبوب والمكسرات", nameEn: "Seeds, Grains & Nuts", count: 26, percentage: 15, color: "bg-brand-green" },
+    { nameAr: "الأعشاب والمستخلصات", nameEn: "Herbs & Extracts", count: 22, percentage: 12, color: "bg-brand-green" },
+    { nameAr: "الفواكه والسلع المتنوعة", nameEn: "Fruits & Commodities", count: 19, percentage: 11, color: "bg-brand-green" },
   ];
 
   // Monthly trends (2025)
@@ -102,7 +102,7 @@ export function TradeIntelligenceDashboard({ ar = true }: TradeIntelligenceDashb
                     </div>
                     <div className="h-2 w-full overflow-hidden rounded-full bg-white/10">
                       <div
-                        className="h-full rounded-full bg-gradient-to-r from-emerald-500 to-teal-400 transition-all duration-500"
+                        className="h-full rounded-full bg-brand-green transition-all duration-500"
                         style={{ width: `${pct}%` }}
                       />
                     </div>
@@ -116,7 +116,7 @@ export function TradeIntelligenceDashboard({ ar = true }: TradeIntelligenceDashb
           <div className="rounded-3xl border border-white/15 bg-background/60 p-6 shadow-xl backdrop-blur-xl lg:col-span-6">
             <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-4">
               <div className="flex items-center gap-2">
-                <Layers className="size-5 text-emerald-400" />
+                <Layers className="size-5 text-brand-green" />
                 <h4 className="text-base font-bold text-foreground">
                   {ar ? "توزيع طلبات الشراء حسب فئات المنتجات" : "Purchase Requests by Product Category"}
                 </h4>
@@ -151,7 +151,7 @@ export function TradeIntelligenceDashboard({ ar = true }: TradeIntelligenceDashb
                   {ar ? "المسار الزمني الشهري لتدفق طلبات الشراء للمشترين (2025)" : "Monthly Purchase Requests Timeline (2025)"}
                 </h4>
               </div>
-              <span className="rounded-md bg-emerald-400 px-2.5 py-1 text-xs font-bold text-black border border-emerald-500/30 shadow-xs">
+              <span className="rounded-md bg-brand-green px-2.5 py-1 text-xs font-bold text-black border border-brand-green/30 shadow-xs">
                 {ar ? "ذروة الطلبات: أبريل 2025" : "Peak Demand: April 2025"}
               </span>
             </div>
@@ -163,15 +163,15 @@ export function TradeIntelligenceDashboard({ ar = true }: TradeIntelligenceDashb
 
                 return (
                   <div key={idx} className="flex flex-col items-center gap-2 h-full justify-end group">
-                    <span className="text-[10px] font-mono text-muted-foreground group-hover:text-brand-orange">
+                    <span className={`text-[10px] font-mono ${isPeak ? "text-brand-orange font-bold" : "text-muted-foreground group-hover:text-brand-green"}`}>
                       {m.count}
                     </span>
                     <div className="w-full max-w-[36px] bg-white/10 rounded-t-xl overflow-hidden h-full flex items-end">
                       <div
                         className={`w-full rounded-t-xl transition-all duration-500 ${
                           isPeak
-                            ? "bg-gradient-to-t from-brand-orange to-amber-400 shadow-lg shadow-brand-orange/30"
-                            : "bg-gradient-to-t from-emerald-600 to-teal-400 group-hover:from-emerald-500 group-hover:to-teal-300"
+                            ? "bg-brand-orange shadow-md shadow-brand-orange/30"
+                            : "bg-brand-green group-hover:brightness-110"
                         }`}
                         style={{ height: `${heightPct}%` }}
                       />
