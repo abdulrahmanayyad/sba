@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { 
   BarChart3, 
-  TrendingUp, 
   Calendar, 
   Package, 
   Globe, 
@@ -108,23 +107,14 @@ export function TradeIntelligenceDashboard({ ar = true }: TradeIntelligenceDashb
         <div className="space-y-6 pt-2">
           {/* Header Banner */}
           <div className="rounded-2xl border border-white/15 bg-background/50 p-6 sm:p-8 backdrop-blur-xl shadow-inner transition-all duration-300">
-            <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-              <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-amber-500 dark:text-amber-400 flex items-center gap-1.5">
-                  <ShieldAlert className="size-4" />
-                  {ar ? "بيانات كميات رسمية مسجلة" : "Explicitly Documented Quantities"}
-                </span>
-                <h3 className="text-2xl font-black text-foreground mt-1">
-                  {ar ? "متطلبات المشترين والكميات الموثقة رسميًا" : "Documented Buyer Requirements & Quantities"}
-                </h3>
-              </div>
-
-              <div className="flex items-center gap-2 rounded-2xl border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-amber-500 dark:text-amber-300">
-                <TrendingUp className="size-5 shrink-0" />
-                <span className="text-xs font-bold">
-                  {ar ? "12 طلبًا بـ كميات محددة صراحة" : "12 Explicitly Documented Orders"}
-                </span>
-              </div>
+            <div>
+              <span className="text-xs font-bold uppercase tracking-wider text-amber-500 dark:text-amber-400 flex items-center gap-1.5">
+                <ShieldAlert className="size-4" />
+                {ar ? "بيانات كميات رسمية مسجلة" : "Explicitly Documented Quantities"}
+              </span>
+              <h3 className="text-2xl font-black text-foreground mt-1">
+                {ar ? "متطلبات المشترين والكميات الموثقة رسميًا" : "Documented Buyer Requirements & Quantities"}
+              </h3>
             </div>
           </div>
 
