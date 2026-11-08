@@ -51,11 +51,6 @@ export function BuyerInquiriesSection({ ar = true }: BuyerInquiriesSectionProps)
             <h3 className="text-xl font-black text-foreground mt-1">
               {ar ? "سجل استفسارات وطلبات المشترين الدوليين" : "Official Commercial Buyer Inquiries Registry"}
             </h3>
-            <p className="text-xs text-muted-foreground mt-1 max-w-2xl leading-relaxed">
-              {ar
-                ? "عرض مهني للاستفسارات التجارية المسجلة في ملفات الإكسل الرسمية لعام 2025. حمايةً للخصوصية وسرية الأعمال، لا يتم نشر أرقام الهواتف أو البريد الإلكتروني الشخصي للمشترين."
-                : "Professional log of commercial buyer inquiries from official 2025 records. Personal contact details are protected and confidential."}
-            </p>
           </div>
 
           {/* Search and Filters */}
