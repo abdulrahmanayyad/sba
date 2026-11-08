@@ -476,3 +476,4 @@ function translateBuyerDetailsEn(val: string): string {
     .replace(/  +/g, ' ')
     .trim();
 }
+

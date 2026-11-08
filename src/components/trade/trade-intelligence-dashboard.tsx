@@ -48,7 +48,7 @@ export function TradeIntelligenceDashboard({ ar = true }: TradeIntelligenceDashb
       <div>
         <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
           <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-          <span>{ar ? "القسم الرابع: ذكاء السوق والكميات" : "Section 4: Market Intelligence"}</span>
+          <span>{ar ? "القسم الرابع: اتجاه السوق التجاري" : "Section 4: Commercial Market Trends"}</span>
         </div>
         <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5 leading-snug">
           {ar ? "ذكاء السوق واتجاهات الطلب التجاري" : "Market Demand & Trade Intelligence"}
