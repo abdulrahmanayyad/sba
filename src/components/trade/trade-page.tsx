@@ -142,7 +142,7 @@ export function TradePage({ ar = true }: TradePageProps) {
               <span>{ar ? "القسم الثاني: دليل الأسواق" : "Section 2: Market Directory"}</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5">
-              {ar ? "دليل الأسواق والطلب الدولي (47 دولة)" : "Our Markets & International Demand"}
+              {ar ? "دليل الأسواق والطلب الدولي" : "Our Markets & International Demand"}
             </h2>
             <p className="text-xs text-muted-foreground mt-1">
               {ar
