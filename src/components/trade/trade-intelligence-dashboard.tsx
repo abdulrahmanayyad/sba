@@ -186,21 +186,6 @@ export function TradeIntelligenceDashboard({ ar = true }: TradeIntelligenceDashb
               </div>
             ))}
           </div>
-
-          {/* Legal Compliance Disclaimer Banner */}
-          <div className="glass-box-interactive interactive-card rounded-3xl p-6 text-xs leading-relaxed shadow-xl cursor-pointer transition-all duration-300 border-amber-500/30">
-            <div className="flex items-start gap-3.5">
-              <ShieldAlert className="size-5 shrink-0 text-amber-500 dark:text-amber-400 mt-0.5" />
-              <div>
-                <strong className="font-bold text-amber-600 dark:text-amber-300 block mb-1 text-sm">
-                  {ar ? "إخلاء مسؤولية توثيقي وقانوني معتمد:" : "Mandatory Documentary Disclaimer:"}
-                </strong>
-                <p className="text-foreground/85 dark:text-amber-100/90 leading-relaxed text-xs">
-                  {ar ? TRADE_STATS.legalDisclaimerAr : TRADE_STATS.legalDisclaimerEn}
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
       ) : (
         /* Section 4 Part A: Analytics & Intelligence */
