@@ -189,7 +189,7 @@ export function GlobalProductDemand({ ar = true, onInquireProduct }: GlobalProdu
                             className="inline-flex items-center gap-1 rounded-lg border border-white/10 bg-white/5 px-2 py-0.5 text-[11px] text-foreground"
                           >
                             <span>{meta?.flag || "🌐"}</span>
-                            <span>{m}</span>
+                            <span>{ar ? m : (meta?.en || m)}</span>
                           </span>
                         );
                       })}

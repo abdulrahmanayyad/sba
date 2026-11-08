@@ -2,8 +2,10 @@ import React, { useState, useMemo } from "react";
 import { 
   Globe, 
   Search, 
-  AlertCircle
+  AlertCircle,
+  ChevronDown
 } from "lucide-react";
+import { cn } from "@/lib/utils";
 import { 
   COUNTRY_PROFILES, 
   TRADE_STATS, 
@@ -136,9 +138,10 @@ export function TradeWorldMap({ ar = true, onSelectCountry }: TradeWorldMapProps
             <button
               type="button"
               onClick={() => setIsCategoryOpen(!isCategoryOpen)}
-              className="rounded-xl border border-foreground/25 bg-background/95 px-4 py-1.5 text-xs font-semibold text-foreground shadow-sm hover:border-brand-orange focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 cursor-pointer transition-all flex items-center justify-center min-w-[110px]"
+              className="rounded-xl border border-foreground/25 bg-background/95 px-3.5 py-1.5 text-xs font-semibold text-foreground shadow-sm hover:border-brand-orange focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 cursor-pointer transition-all flex items-center justify-between gap-2 min-w-[125px]"
             >
               <span>{ar ? (categories.find((c) => c.id === selectedCategory)?.labelAr || "كافة القطاعات") : (categories.find((c) => c.id === selectedCategory)?.labelEn || "All Inquiries")}</span>
+              <ChevronDown className={cn("size-3.5 text-muted-foreground transition-transform duration-200", isCategoryOpen && "rotate-180 text-brand-orange")} />
             </button>
 
             {isCategoryOpen && (

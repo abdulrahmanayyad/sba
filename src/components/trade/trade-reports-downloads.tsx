@@ -35,7 +35,7 @@ export function TradeReportsDownloads({ ar = true }: TradeReportsDownloadsProps)
       descEn: "Comprehensive analysis of 47 destination markets and 179 recorded buyer inquiries across five continents.",
       pages: "12 صفحة موثقة",
       pagesEn: "12 Documented Pages",
-      size: "2.4 MB",
+      size: "2.4MB",
       date: "نوفمبر 2025",
       dateEn: "November 2025"
     },
@@ -47,7 +47,7 @@ export function TradeReportsDownloads({ ar = true }: TradeReportsDownloadsProps)
       descEn: "Detailed country-by-country profiles covering requested commodities, documented quantities, and terms.",
       pages: "18 صفحة مفصلة",
       pagesEn: "18 Detailed Pages",
-      size: "3.1 MB",
+      size: "3.1MB",
       date: "نوفمبر 2025",
       dateEn: "November 2025"
     },
@@ -59,7 +59,7 @@ export function TradeReportsDownloads({ ar = true }: TradeReportsDownloadsProps)
       descEn: "Specialized taxonomy and demand study across seven agricultural and food product categories.",
       pages: "14 صفحة متخصصة",
       pagesEn: "14 Analytical Pages",
-      size: "2.8 MB",
+      size: "2.8MB",
       date: "نوفمبر 2025",
       dateEn: "November 2025"
     },
@@ -71,7 +71,7 @@ export function TradeReportsDownloads({ ar = true }: TradeReportsDownloadsProps)
       descEn: "Exhaustive registry of the 12 explicitly quantified buyer inquiries, recurring weekly/monthly supply contracts.",
       pages: "8 صفحات تنفيذية",
       pagesEn: "8 Executive Pages",
-      size: "1.9 MB",
+      size: "1.9MB",
       date: "نوفمبر 2025",
       dateEn: "November 2025"
     },
@@ -83,7 +83,7 @@ export function TradeReportsDownloads({ ar = true }: TradeReportsDownloadsProps)
       descEn: "Technical specifications, packaging terms, and supply guidelines for open international trade opportunities.",
       pages: "10 صفحات تعاقدية",
       pagesEn: "10 Commercial Pages",
-      size: "2.2 MB",
+      size: "2.2MB",
       date: "نوفمبر 2025",
       dateEn: "November 2025"
     }
@@ -95,34 +95,32 @@ export function TradeReportsDownloads({ ar = true }: TradeReportsDownloadsProps)
 
   return (
     <div className="interactive-card glass-box-interactive w-full rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl backdrop-blur-2xl transition-all duration-300">
-      {/* Section 8 Badge */}
-      <div className="flex items-center justify-between">
-        <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
+      {/* Section 8 Title & Description Header */}
+      <div>
+        <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
           <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
           <span>{ar ? "القسم الثامن: التوثيق والتحميلات" : "Section 8: Reports & Documentation"}</span>
         </div>
-      </div>
-
-      {/* Header Banner */}
-      <div className="rounded-2xl border border-white/15 bg-background/50 p-6 sm:p-8 backdrop-blur-xl shadow-inner transition-all duration-300">
         <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
           <div>
-            <h3 className="text-xl sm:text-2xl font-black text-foreground">
+            <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5 leading-snug">
               {ar ? "تقارير ودراسات التجارة الدولية" : "International Trade Reports & Studies"}
-            </h3>
-            <p className="text-xs text-muted-foreground mt-1 max-w-2xl leading-relaxed">
+            </h2>
+            <p className="text-xs sm:text-sm text-muted-foreground mt-2.5 sm:mt-3 leading-relaxed max-w-4xl">
               {ar
                 ? "تقارير مهنية موثقة تتضمن الجداول الإحصائية الكاملة، وقوائم الأسواق، ودراسات الطلب."
                 : "Professional downloadable corporate reports featuring comprehensive statistics, market matrices, and demand audits."}
             </p>
           </div>
-
-          <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-2.5 text-xs text-muted-foreground shrink-0">
+          <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-2 text-xs text-muted-foreground shrink-0">
             <span className="text-foreground font-bold">{ar ? "فترة البيانات: " : "Data Period: "}</span>
             <span className="font-mono text-brand-orange">2025 Comprehensive</span>
           </div>
         </div>
       </div>
+
+      {/* Divider */}
+      <div className="border-t border-border/40 dark:border-white/10" />
 
       {/* Reports Grid */}
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -136,7 +134,7 @@ export function TradeReportsDownloads({ ar = true }: TradeReportsDownloadsProps)
                 <span className="flex size-10 items-center justify-center rounded-2xl bg-brand-orange/15 text-brand-orange">
                   <FileText className="size-5" />
                 </span>
-                <span className="rounded-full bg-white/10 px-2.5 py-0.5 text-[11px] font-mono font-medium text-foreground">
+                <span dir="ltr" className="inline-flex items-center rounded-full bg-white/10 px-2.5 py-0.5 text-[11px] font-mono font-medium text-foreground">
                   {rep.size}
                 </span>
               </div>

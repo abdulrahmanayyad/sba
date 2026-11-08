@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Users, Search, Filter, ChevronDown, ChevronUp } from "lucide-react";
 import { ALL_INQUIRIES } from "@/lib/trade-data";
-import { PRODUCT_EN_MAP } from "@/lib/trade-inquiry-translations";
+import { PRODUCT_EN_MAP, VARIETY_EN_MAP, formatQuantity } from "@/lib/trade-inquiry-translations";
 
 interface BuyerInquiriesSectionProps {
   ar?: boolean;
@@ -65,28 +65,31 @@ export function BuyerInquiriesSection({ ar = true }: BuyerInquiriesSectionProps)
               />
             </div>
 
-            <select
-              value={statusFilter}
-              onChange={(e) => {
-                setStatusFilter(e.target.value);
-                setShowAll(false);
-              }}
-              className="appearance-none [appearance:none] [-webkit-appearance:none] [-moz-appearance:none] [&::-ms-expand]:hidden rounded-xl border border-foreground/25 bg-background/95 px-3 py-2 text-xs font-semibold text-foreground shadow-sm hover:border-brand-orange focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 cursor-pointer transition-all"
-              style={{ WebkitAppearance: "none", MozAppearance: "none", appearance: "none", backgroundImage: "none" }}
-            >
-              <option value="all" className="bg-background text-foreground">
-                {ar ? "كافة طلبات الشراء (179)" : "All Purchase Requests (179)"}
-              </option>
-              <option value="recurring" className="bg-background text-foreground">
-                {ar ? "طلبات دورية متكررة" : "Recurring Demand"}
-              </option>
-              <option value="dates" className="bg-background text-foreground">
-                {ar ? "طلبات شراء التمور" : "Dates Purchase Requests"}
-              </option>
-              <option value="commodities" className="bg-background text-foreground">
-                {ar ? "طلبات السلع الغذائية" : "Food Commodities Requests"}
-              </option>
-            </select>
+            <div className="relative inline-flex items-center">
+              <select
+                value={statusFilter}
+                onChange={(e) => {
+                  setStatusFilter(e.target.value);
+                  setShowAll(false);
+                }}
+                className="appearance-none [appearance:none] [-webkit-appearance:none] [-moz-appearance:none] [&::-ms-expand]:hidden rounded-xl border border-foreground/25 bg-background/95 ps-3.5 pe-8 py-2 text-xs font-semibold text-foreground shadow-sm hover:border-brand-orange focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 cursor-pointer transition-all"
+                style={{ WebkitAppearance: "none", MozAppearance: "none", appearance: "none", backgroundImage: "none" }}
+              >
+                <option value="all" className="bg-background text-foreground">
+                  {ar ? "كافة طلبات الشراء" : "All Purchase Requests"}
+                </option>
+                <option value="recurring" className="bg-background text-foreground">
+                  {ar ? "طلبات دورية متكررة" : "Recurring Demand Orders"}
+                </option>
+                <option value="dates" className="bg-background text-foreground">
+                  {ar ? "طلبات شراء التمور" : "Dates & Date Products"}
+                </option>
+                <option value="commodities" className="bg-background text-foreground">
+                  {ar ? "طلبات السلع الغذائية" : "Food Commodities"}
+                </option>
+              </select>
+              <ChevronDown className="pointer-events-none absolute end-2.5 top-1/2 -translate-y-1/2 size-3.5 text-muted-foreground" />
+            </div>
           </div>
         </div>
       </div>
@@ -123,19 +126,23 @@ export function BuyerInquiriesSection({ ar = true }: BuyerInquiriesSectionProps)
 
             <div className="text-foreground font-semibold">
               {ar ? inq.productNameAr : (PRODUCT_EN_MAP[inq.productNameAr] || inq.productNameAr)}
-              {inq.variety && <span className="text-amber-500 dark:text-amber-400 ms-1">({inq.variety})</span>}
+              {inq.variety && (
+                <span className="text-amber-500 dark:text-amber-400 ms-1 font-medium">
+                  ({ar ? inq.variety : (VARIETY_EN_MAP[inq.variety] || inq.variety)})
+                </span>
+              )}
             </div>
 
             {inq.quantityRequested && (
               <p className="text-brand-green font-semibold">
-                {ar ? "الكمية المطلوبة:" : "Qty:"} {inq.quantityRequested}
+                {ar ? "الكمية المطلوبة:" : "Required Quantity:"} {ar ? inq.quantityRequested : formatQuantity(inq.quantityRequested, false)}
               </p>
             )}
 
             <div className="pt-2 text-[11px] text-muted-foreground border-t border-white/5 flex items-center justify-between">
               <span>{ar ? inq.buyerTypeAr : inq.buyerTypeEn}</span>
               <span className="text-[10px] text-black dark:text-black font-bold">
-                {ar ? "قيد التدقيق والتسعير" : "Pending Verification"}
+                {ar ? "قيد التدقيق والتسعير" : "Pending Verification & Pricing"}
               </span>
             </div>
           </div>

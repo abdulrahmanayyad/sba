@@ -218,9 +218,9 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
   };
 
   const navPill =
-    "group relative inline-flex items-center gap-0.5 sm:gap-1 rounded-full px-2 2xl:px-2.5 py-1.5 text-xs 2xl:text-sm font-bold tracking-tight xl:tracking-normal text-foreground transition-all duration-300 hover:bg-white/40 hover:text-brand-orange hover:shadow-sm hover:backdrop-blur-md hover:-translate-y-0.5 active:translate-y-0";
+    "group relative inline-flex items-center gap-1 rounded-full px-2.5 2xl:px-3 py-1.5 text-[13px] 2xl:text-sm font-bold tracking-tight xl:tracking-normal text-foreground transition-all duration-300 hover:bg-white/40 hover:text-brand-orange hover:shadow-sm hover:backdrop-blur-md hover:-translate-y-0.5 active:translate-y-0";
   const navPillActive =
-    "group relative inline-flex items-center gap-0.5 sm:gap-1 rounded-full px-2 2xl:px-2.5 py-1.5 text-xs 2xl:text-sm font-bold tracking-tight xl:tracking-normal text-brand-orange bg-white/45 shadow-sm backdrop-blur-md -translate-y-0.5";
+    "group relative inline-flex items-center gap-1 rounded-full px-2.5 2xl:px-3 py-1.5 text-[13px] 2xl:text-sm font-bold tracking-tight xl:tracking-normal text-brand-orange bg-white/45 shadow-sm backdrop-blur-md -translate-y-0.5";
   const dropdownLink =
     "block rounded-[16px] px-4 py-2.5 text-sm font-semibold text-foreground transition-all duration-200 hover:bg-brand-orange/15 hover:text-brand-orange hover:translate-x-1 rtl:hover:-translate-x-1";
 
@@ -404,10 +404,10 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
           language={<LanguageSwitcher language={language} onChange={selectLanguage} />}
         />
       ) : (
-        <header className="fixed inset-x-0 top-3 z-50 pointer-events-none px-4 sm:px-8 xl:px-14 flex justify-center transition-all duration-300">
+        <header className="fixed inset-x-0 top-3 z-50 pointer-events-none px-4 sm:px-8 xl:px-12 flex justify-center transition-all duration-300">
           <div
             className={cn(
-              "pointer-events-auto mx-auto flex h-[62px] w-full max-w-[1360px] items-center justify-between gap-1.5 lg:gap-3 rounded-full px-3 sm:px-4 transition-all duration-300",
+              "pointer-events-auto mx-auto flex h-[62px] w-full max-w-[1260px] items-center justify-between gap-1.5 lg:gap-3 rounded-full px-4 sm:px-5 transition-all duration-300",
               scrolled
                 ? "border border-white/25 bg-background/85 shadow-[0_16px_40px_rgba(0,0,0,0.18)] backdrop-blur-2xl ring-1 ring-white/10"
                 : "border border-white/15 bg-background/70 shadow-[0_10px_30px_rgba(0,0,0,0.08)] backdrop-blur-xl"

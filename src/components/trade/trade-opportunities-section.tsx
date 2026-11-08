@@ -67,29 +67,24 @@ export function TradeOpportunitiesSection({ ar = true }: TradeOpportunitiesSecti
 
   return (
     <div id="trade-opportunities" className="interactive-card glass-box-interactive w-full rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl backdrop-blur-2xl transition-all duration-300">
-      {/* Section 4 Badge */}
-      <div className="flex items-center justify-between">
-        <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
+      {/* Section 4 Title & Description Header */}
+      <div>
+        <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
           <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
           <span>{ar ? "القسم الرابع: الفرص التجارية" : "Section 4: Trade Opportunities"}</span>
         </div>
+        <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5 leading-snug">
+          {ar ? "متطلبات الشراء الدولية المفتوحة" : "Open International Purchase Requirements"}
+        </h2>
+        <p className="text-xs sm:text-sm text-muted-foreground mt-2.5 sm:mt-3 leading-relaxed max-w-4xl">
+          {ar
+            ? "فرص تجارية وطلبات شراء موثقة من مشترين ومستوردين دوليين، تتيح المجموعة للمنتجين والمزارعين والموردين المؤهلين تقديم عروض أسعارهم وتوفير الكميات المطلوبة وفق المواصفات الدولية."
+            : "Documented commercial buyer requirements. Qualified suppliers and producers can submit competitive supply proposals and capacity quotes."}
+        </p>
       </div>
 
-      {/* Commercial Supply & Partnership Gate Banner */}
-      <div className="rounded-2xl border border-white/15 bg-background/50 p-6 sm:p-8 backdrop-blur-xl shadow-inner transition-all duration-300">
-        <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-          <div>
-            <h3 className="text-xl sm:text-2xl font-black text-foreground">
-              {ar ? "متطلبات الشراء الدولية المفتوحة" : "Open International Purchase Requirements"}
-            </h3>
-            <p className="text-xs text-muted-foreground mt-1 max-w-2xl leading-relaxed">
-              {ar
-                ? "فرص تجارية وطلبات شراء موثقة من مشترين ومستوردين دوليين، تتيح المجموعة للمنتجين والمزارعين والموردين المؤهلين تقديم عروض أسعارهم وتوفير الكميات المطلوبة وفق المواصفات الدولية."
-                : "Documented commercial buyer requirements. Qualified suppliers and producers can submit competitive supply proposals and capacity quotes."}
-            </p>
-          </div>
-        </div>
-      </div>
+      {/* Divider */}
+      <div className="border-t border-border/40 dark:border-white/10" />
 
       {/* Opportunities Cards Grid */}
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 pt-2">

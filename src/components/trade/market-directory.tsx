@@ -98,7 +98,7 @@ export function MarketDirectory({ ar = true, selectedCountryCode }: MarketDirect
         <p className="text-xs sm:text-sm text-muted-foreground mt-2.5 sm:mt-3 leading-relaxed max-w-4xl">
           {ar
             ? "بطاقات تفاعلية موسعة لكل دولة تتضمن قوائم السلع المطلوبة، المواصفات المسجلة، والكميات المحددة."
-            : "Dedicated expandable profiles for all 47 countries detailing products requested, quantities, and dates."}
+            : "Dedicated interactive profiles for all 47 destination markets detailing requested commodities, documented specifications, and commercial supply volumes."}
         </p>
       </div>
 
@@ -122,36 +122,42 @@ export function MarketDirectory({ ar = true, selectedCountryCode }: MarketDirect
         {/* Filters */}
         <div className="flex flex-wrap items-center gap-2">
           {/* Continent */}
-          <select
-            value={continentFilter}
-            onChange={(e) => setContinentFilter(e.target.value)}
-            className="appearance-none [appearance:none] [-webkit-appearance:none] [-moz-appearance:none] [&::-ms-expand]:hidden rounded-xl border border-foreground/25 bg-background/95 px-4 py-2 text-xs font-semibold text-foreground shadow-sm hover:border-brand-orange focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 cursor-pointer transition-all"
-            style={{ WebkitAppearance: "none", MozAppearance: "none", appearance: "none", backgroundImage: "none" }}
-          >
-            {continents.map((cnt) => (
-              <option key={cnt.id} value={cnt.id} className="bg-background text-foreground">
-                {ar ? cnt.nameAr : cnt.nameEn}
-              </option>
-            ))}
-          </select>
+          <div className="relative inline-flex items-center">
+            <select
+              value={continentFilter}
+              onChange={(e) => setContinentFilter(e.target.value)}
+              className="appearance-none [appearance:none] [-webkit-appearance:none] [-moz-appearance:none] [&::-ms-expand]:hidden rounded-xl border border-foreground/25 bg-background/95 ps-4 pe-8 py-2 text-xs font-semibold text-foreground shadow-sm hover:border-brand-orange focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 cursor-pointer transition-all"
+              style={{ WebkitAppearance: "none", MozAppearance: "none", appearance: "none", backgroundImage: "none" }}
+            >
+              {continents.map((cnt) => (
+                <option key={cnt.id} value={cnt.id} className="bg-background text-foreground">
+                  {ar ? cnt.nameAr : cnt.nameEn}
+                </option>
+              ))}
+            </select>
+            <ChevronDown className="pointer-events-none absolute end-2.5 top-1/2 -translate-y-1/2 size-3.5 text-muted-foreground" />
+          </div>
 
           {/* Type */}
-          <select
-            value={categoryFilter}
-            onChange={(e) => setCategoryFilter(e.target.value)}
-            className="appearance-none [appearance:none] [-webkit-appearance:none] [-moz-appearance:none] [&::-ms-expand]:hidden rounded-xl border border-foreground/25 bg-background/95 px-4 py-2 text-xs font-semibold text-foreground shadow-sm hover:border-brand-orange focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 cursor-pointer transition-all"
-            style={{ WebkitAppearance: "none", MozAppearance: "none", appearance: "none", backgroundImage: "none" }}
-          >
-            <option value="all" className="bg-background text-foreground">
-              {ar ? "كافة فئات طلبات الشراء" : "All Inquiry Types"}
-            </option>
-            <option value="dates" className="bg-background text-foreground">
-              {ar ? "طلبات شراء التمور فقط" : "Dates Only"}
-            </option>
-            <option value="diversified" className="bg-background text-foreground">
-              {ar ? "طلبات السلع الغذائية فقط" : "Food Products Only"}
-            </option>
-          </select>
+          <div className="relative inline-flex items-center">
+            <select
+              value={categoryFilter}
+              onChange={(e) => setCategoryFilter(e.target.value)}
+              className="appearance-none [appearance:none] [-webkit-appearance:none] [-moz-appearance:none] [&::-ms-expand]:hidden rounded-xl border border-foreground/25 bg-background/95 ps-4 pe-8 py-2 text-xs font-semibold text-foreground shadow-sm hover:border-brand-orange focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 cursor-pointer transition-all"
+              style={{ WebkitAppearance: "none", MozAppearance: "none", appearance: "none", backgroundImage: "none" }}
+            >
+              <option value="all" className="bg-background text-foreground">
+                {ar ? "كافة فئات طلبات الشراء" : "All Inquiry Categories"}
+              </option>
+              <option value="dates" className="bg-background text-foreground">
+                {ar ? "طلبات شراء التمور فقط" : "Dates & Date Products Only"}
+              </option>
+              <option value="diversified" className="bg-background text-foreground">
+                {ar ? "طلبات السلع الغذائية فقط" : "Food Commodities Only"}
+              </option>
+            </select>
+            <ChevronDown className="pointer-events-none absolute end-2.5 top-1/2 -translate-y-1/2 size-3.5 text-muted-foreground" />
+          </div>
         </div>
       </div>
 

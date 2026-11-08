@@ -8,27 +8,24 @@ interface BusinessNetworkSectionProps {
 export function BusinessNetworkSection({ ar = true }: BusinessNetworkSectionProps) {
   return (
     <div id="business-network" className="interactive-card glass-box-interactive w-full rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl backdrop-blur-2xl transition-all duration-300">
-      {/* Section 6 Title & Header */}
+      {/* Section 6 Title & Description Header */}
       <div>
-        <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
+        <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
           <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
           <span>{ar ? "القسم السادس: شبكة الأعمال" : "Section 6: Business Network"}</span>
         </div>
+        <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5 leading-snug">
+          {ar ? "الشركاء والعملاء التجاريون المعتمدون" : "Verified Clients & Contracted Business Partners"}
+        </h2>
+        <p className="text-xs sm:text-sm text-muted-foreground mt-2.5 sm:mt-3 leading-relaxed max-w-4xl">
+          {ar
+            ? "هذا القسم مخصص حصريًا للشركات والمؤسسات التي ترتبط مع المجموعة بعقود تجارية رسمية سارية، أو تعاملات تصنيع وتوريد منفذة وموثقة."
+            : "Strictly reserved for entities with verified ongoing commercial contracts, active supply agreements, or executed corporate partnerships."}
+        </p>
       </div>
 
-      {/* Verified Partners Banner */}
-      <div className="rounded-2xl border border-white/15 bg-background/50 p-6 sm:p-8 backdrop-blur-xl shadow-inner transition-all duration-300">
-        <div>
-          <h3 className="text-xl sm:text-2xl font-black text-foreground">
-            {ar ? "الشركاء والعملاء التجاريون المعتمدون" : "Verified Clients & Contracted Business Partners"}
-          </h3>
-          <p className="text-xs text-muted-foreground mt-1 max-w-2xl leading-relaxed">
-            {ar
-              ? "هذا القسم مخصص حصريًا للشركات والمؤسسات التي ترتبط مع المجموعة بعقود تجارية رسمية سارية، أو تعاملات تصنيع وتوريد منفذة وموثقة."
-              : "Strictly reserved for entities with verified ongoing commercial contracts, active supply agreements, or executed corporate partnerships."}
-          </p>
-        </div>
-      </div>
+      {/* Divider */}
+      <div className="border-t border-border/40 dark:border-white/10" />
 
       {/* Partners Cards */}
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
