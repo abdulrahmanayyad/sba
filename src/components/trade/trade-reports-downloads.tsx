@@ -117,7 +117,7 @@ export function TradeReportsDownloads({ ar = true }: TradeReportsDownloadsProps)
             </h3>
             <p className="text-xs text-muted-foreground mt-1 max-w-2xl leading-relaxed">
               {ar
-                ? "تقارير مهنية موثقة تتضمن الجداول الإحصائية الكاملة، وقوائم الأسواق، ودراسات الطلب، مصممة وفق الهوية المؤسسية الرسمية لمجموعة سامي بن عياد."
+                ? "تقارير مهنية موثقة تتضمن الجداول الإحصائية الكاملة، وقوائم الأسواق، ودراسات الطلب."
                 : "Professional downloadable corporate reports featuring comprehensive statistics, market matrices, and demand audits."}
             </p>
           </div>
