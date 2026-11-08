@@ -293,8 +293,8 @@ export function TradeReportsDownloads({ ar = true }: TradeReportsDownloadsProps)
                           <th className="p-2.5">الدولة</th>
                           <th className="p-2.5">القارة</th>
                           <th className="p-2.5">إجمالي الاستفسارات</th>
-                          <th className="p-2.5">استفسارات التمور</th>
-                          <th className="p-2.5">استفسارات السلع المتنوعة</th>
+                          <th className="p-2.5">طلبات شراء التمور</th>
+                          <th className="p-2.5">طلبات شراء السلع المتنوعة</th>
                         </tr>
                       </thead>
                       <tbody className="divide-y divide-white/10">
