@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { 
-  Sparkles, 
   Package, 
   Globe, 
   Layers, 
@@ -67,8 +66,7 @@ export function GlobalProductDemand({ ar = true, onInquireProduct }: GlobalProdu
       {/* Category Overview Banner & Search */}
       <div className="flex flex-col gap-4 rounded-3xl border border-white/15 bg-gradient-to-r from-background/80 via-background/60 to-emerald-950/20 p-6 shadow-xl backdrop-blur-2xl md:flex-row md:items-center md:justify-between">
         <div>
-          <div className="flex items-center gap-2 text-brand-orange text-xs font-bold uppercase tracking-wider mb-1">
-            <Sparkles className="size-4" />
+          <div className="text-brand-orange text-xs font-bold uppercase tracking-wider mb-1">
             <span>{ar ? "فئة التصدير والطلب الدولي" : "Export & Global Demand Category"}</span>
           </div>
           <h3 className="text-xl font-black text-foreground">
