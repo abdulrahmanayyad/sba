@@ -320,12 +320,6 @@ export function TradeWorldMap({ ar = true, onSelectCountry }: TradeWorldMapProps
                 );
               })}
             </svg>
-
-            {/* Quick Map Controls Floating in Bottom Corner */}
-            <div className="absolute bottom-3 end-3 flex items-center gap-1.5 rounded-full border border-white/20 bg-background/80 px-3 py-1 text-[11px] text-foreground backdrop-blur-md shadow-md">
-              <Globe className="size-3.5 text-brand-orange" />
-              <span>{filteredCountries.length} / 47 {ar ? "دولة مدرجة" : "Countries"}</span>
-            </div>
           </div>
 
           {/* Compliance Disclaimer Notice as Glass Box */}
