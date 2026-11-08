@@ -14,6 +14,18 @@ import {
   Tag
 } from "lucide-react";
 import { COUNTRY_PROFILES, ALL_INQUIRIES, CountryTradeProfile } from "@/lib/trade-data";
+import {
+  isValidInfo,
+  cleanText,
+  PRODUCT_EN_MAP,
+  formatShippingTerms,
+  formatPaymentTerms,
+  formatQuantity,
+  formatSpecs,
+  formatVariety,
+  formatBuyerDetails,
+  PORT_EN_MAP,
+} from "@/lib/trade-inquiry-translations";
 
 interface MarketDirectoryProps {
   ar?: boolean;
@@ -236,63 +248,100 @@ export function MarketDirectory({ ar = true, selectedCountryCode }: MarketDirect
                       {ar ? "سجل طلبات الشراء التفصيلي المسجل:" : "Detailed Purchase Records Log:"}
                     </h5>
 
-                    <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
-                      {countryInquiries.map((inq, iIdx) => (
-                        <div
-                          key={inq.id || iIdx}
-                          className="rounded-2xl border border-white/10 bg-black/20 p-3.5 text-xs space-y-2"
-                        >
-                          <div className="flex items-center justify-between text-[11px] text-muted-foreground">
-                            <span className="font-mono text-brand-orange font-bold">{inq.id}</span>
-                            <span className="flex items-center gap-1">
-                              <Calendar className="size-3" />
-                              {inq.inquiryDate}
-                            </span>
-                          </div>
+                    <div className="grid grid-cols-1 gap-3.5 md:grid-cols-2">
+                      {countryInquiries.map((inq, iIdx) => {
+                        const productTitle = ar
+                          ? cleanText(inq.productNameAr)
+                          : PRODUCT_EN_MAP[cleanText(inq.productNameAr)] || inq.categoryNameEn || cleanText(inq.productNameAr);
+                        const varietyTitle = isValidInfo(inq.variety) ? formatVariety(inq.variety, ar) : null;
+                        const qtyDisplay = isValidInfo(inq.quantityRequested) ? formatQuantity(inq.quantityRequested, ar) : null;
+                        const specsDisplay = isValidInfo(inq.specifications) ? formatSpecs(inq.specifications, ar) : null;
+                        const buyerDetailsDisplay = isValidInfo(inq.buyerDetails) ? formatBuyerDetails(inq.buyerDetails, ar) : null;
+                        const shippingDisplay = formatShippingTerms(inq.shippingTerms, ar);
+                        const paymentDisplay = formatPaymentTerms(inq.paymentTerms, ar);
+                        const portDisplay = isValidInfo(inq.destinationPort)
+                          ? (ar ? cleanText(inq.destinationPort) : (PORT_EN_MAP[cleanText(inq.destinationPort)] || cleanText(inq.destinationPort)))
+                          : null;
+                        const buyerTypeDisplay = ar ? cleanText(inq.buyerTypeAr) : cleanText(inq.buyerTypeEn);
 
-                          <div className="font-bold text-foreground text-sm">
-                            {inq.productNameAr}
-                            {inq.variety && <span className="text-amber-400 ms-1">({inq.variety})</span>}
-                          </div>
-
-                          {inq.quantityRequested && (
-                            <div className="text-emerald-400 font-semibold flex items-center gap-1.5">
-                              <Package className="size-3.5" />
-                              <span>{ar ? "الكمية:" : "Qty:"} {inq.quantityRequested}</span>
+                        return (
+                          <div
+                            key={inq.id || iIdx}
+                            className="group/inq relative rounded-2xl border border-black/15 bg-white/80 dark:bg-white/70 backdrop-blur-xl p-4 text-xs space-y-3 shadow-md transition-all duration-300 hover:bg-white/95 hover:border-black/35 hover:shadow-xl hover:-translate-y-0.5 text-black font-sans"
+                          >
+                            <div className="flex items-center justify-between text-[11px] font-sans">
+                              <span className="font-mono text-black font-extrabold bg-black/5 px-2 py-0.5 rounded border border-black/10">
+                                {inq.id}
+                              </span>
+                              <span className="flex items-center gap-1.5 font-bold text-black">
+                                <Calendar className="size-3.5 text-black shrink-0" />
+                                {inq.inquiryDate}
+                              </span>
                             </div>
-                          )}
 
-                          {inq.specifications && (
-                            <p className="text-muted-foreground leading-relaxed">
-                              <strong>{ar ? "المواصفات:" : "Specs:"}</strong> {inq.specifications}
-                            </p>
-                          )}
+                            <div className="font-bold text-black text-sm leading-snug">
+                              {productTitle}
+                              {varietyTitle && (
+                                <span className="text-black font-semibold ms-1.5">
+                                  ({varietyTitle})
+                                </span>
+                              )}
+                            </div>
 
-                          {inq.buyerDetails && (
-                            <p className="text-muted-foreground leading-relaxed italic border-s-2 border-white/20 ps-2">
-                              "{inq.buyerDetails.slice(0, 150)}..."
-                            </p>
-                          )}
+                            {qtyDisplay && (
+                              <div className="text-black font-bold flex items-center gap-1.5 text-xs">
+                                <Package className="size-3.5 text-black shrink-0" />
+                                <span>
+                                  {ar ? "الكمية:" : "Quantity:"} {qtyDisplay}
+                                </span>
+                              </div>
+                            )}
 
-                          <div className="flex flex-wrap gap-2 text-[10px] text-muted-foreground pt-1">
-                            {inq.shippingTerms && (
-                              <span className="rounded bg-white/10 px-1.5 py-0.5">
-                                {inq.shippingTerms}
-                              </span>
+                            {specsDisplay && (
+                              <div className="text-black font-medium leading-relaxed">
+                                <strong className="font-bold text-black me-1">
+                                  {ar ? "المواصفات:" : "Specifications:"}
+                                </strong>
+                                <span className="text-black">{specsDisplay}</span>
+                              </div>
                             )}
-                            {inq.paymentTerms && (
-                              <span className="rounded bg-white/10 px-1.5 py-0.5">
-                                {inq.paymentTerms}
-                              </span>
+
+                            {buyerDetailsDisplay && (
+                              <div className="text-black font-medium leading-relaxed border-s-2 border-black/30 ps-3 bg-black/[0.04] p-3 rounded-e-xl">
+                                <strong className="block font-bold text-black mb-1">
+                                  {ar ? "بيانات ومتطلبات المشتري:" : "Buyer Requirements & Details:"}
+                                </strong>
+                                <p className="whitespace-pre-line text-black font-normal">
+                                  {buyerDetailsDisplay}
+                                </p>
+                              </div>
                             )}
-                            {inq.destinationPort && (
-                              <span className="rounded bg-white/10 px-1.5 py-0.5">
-                                📍 {inq.destinationPort}
-                              </span>
-                            )}
+
+                            <div className="flex flex-wrap gap-2 text-[11px] pt-1">
+                              {shippingDisplay && (
+                                <span className="rounded-lg border border-black/15 bg-black/5 px-2.5 py-1 font-bold text-black">
+                                  {shippingDisplay}
+                                </span>
+                              )}
+                              {paymentDisplay && (
+                                <span className="rounded-lg border border-black/15 bg-black/5 px-2.5 py-1 font-bold text-black">
+                                  {paymentDisplay}
+                                </span>
+                              )}
+                              {portDisplay && (
+                                <span className="rounded-lg border border-black/15 bg-black/5 px-2.5 py-1 font-bold text-black">
+                                  📍 {portDisplay}
+                                </span>
+                              )}
+                              {buyerTypeDisplay && (
+                                <span className="rounded-lg border border-black/15 bg-black/5 px-2.5 py-1 font-bold text-black">
+                                  {buyerTypeDisplay}
+                                </span>
+                              )}
+                            </div>
                           </div>
-                        </div>
-                      ))}
+                        );
+                      })}
                     </div>
                   </div>
                 )}
