@@ -35,57 +35,63 @@ export function GlobalProductDemand({ ar = true, onInquireProduct }: GlobalProdu
 
   return (
     <div className="w-full space-y-8">
-      {/* Category Tabs Header */}
-      <div className="flex flex-wrap items-center gap-2.5 pb-2">
-        {PRODUCT_DEMAND_PORTFOLIO.map((cat) => {
-          const isActive = activeCategory === cat.categoryKey;
-          return (
-            <button
-              key={cat.categoryKey}
-              type="button"
-              onClick={() => {
-                setActiveCategory(cat.categoryKey);
-                setSearchProduct("");
-              }}
-              className={`interactive-card glass-box-interactive flex shrink-0 items-center gap-2 rounded-2xl px-5 py-3 text-xs font-bold transition-all duration-300 cursor-pointer ${
-                isActive
-                  ? "border-2 border-brand-green bg-brand-green/20 text-brand-green shadow-lg shadow-brand-green/20 scale-[1.03] backdrop-blur-xl"
-                  : "border border-white/20 bg-background/60 text-foreground/85 hover:border-white/40 hover:bg-background/85 hover:text-foreground hover:-translate-y-0.5 shadow-sm backdrop-blur-xl"
-              }`}
-            >
-              <Package className="size-4 shrink-0" />
-              <span>{ar ? cat.categoryNameAr : cat.categoryNameEn}</span>
-            </button>
-          );
-        })}
-      </div>
-
-      {/* Category Overview Banner & Search */}
-      <div className="interactive-card glass-box-interactive flex flex-col gap-4 rounded-3xl border border-white/20 bg-background/60 p-6 shadow-xl backdrop-blur-2xl transition-all duration-300 hover:bg-background/80 hover:shadow-2xl md:flex-row md:items-center md:justify-between">
-        <div>
-          <div className="text-brand-orange text-xs font-bold uppercase tracking-wider mb-1">
-            <span>{ar ? "فئة التصدير والطلب الدولي" : "Export & Global Demand Category"}</span>
-          </div>
-          <h3 className="text-xl font-black text-foreground">
-            {ar ? currentCat.categoryNameAr : currentCat.categoryNameEn}
-          </h3>
-          <p className="mt-1 text-xs text-muted-foreground max-w-xl">
-            {ar
-              ? `تم تسجيل وتوثيق طلب شراء لـ ${currentCat.subProducts.length} صنف أساسي ضمن هذه الفئة عبر أكثر من 20 دولة مستوردة خلال عام 2025`
-              : `Documented demand and purchase inquiries across ${currentCat.subProducts.length} core product lines from international buyers during 2025.`}
-          </p>
+      {/* Unified Category Selection, Overview Banner & Search in a Single Glass Box */}
+      <div className="interactive-card glass-box-interactive rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl backdrop-blur-2xl transition-all duration-300">
+        {/* Category Tabs Header */}
+        <div className="flex flex-wrap items-center gap-2.5">
+          {PRODUCT_DEMAND_PORTFOLIO.map((cat) => {
+            const isActive = activeCategory === cat.categoryKey;
+            return (
+              <button
+                key={cat.categoryKey}
+                type="button"
+                onClick={() => {
+                  setActiveCategory(cat.categoryKey);
+                  setSearchProduct("");
+                }}
+                className={`flex shrink-0 items-center gap-2 rounded-2xl px-5 py-3 text-xs font-bold transition-all duration-300 cursor-pointer ${
+                  isActive
+                    ? "border-2 border-brand-green bg-brand-green text-white shadow-lg shadow-brand-green/20 scale-[1.03]"
+                    : "border border-border/60 bg-background/50 text-foreground/80 hover:border-brand-green/50 hover:bg-background/80 hover:text-foreground hover:-translate-y-0.5 shadow-sm"
+                }`}
+              >
+                <Package className="size-4 shrink-0" />
+                <span>{ar ? cat.categoryNameAr : cat.categoryNameEn}</span>
+              </button>
+            );
+          })}
         </div>
 
-        {/* Product Search Inside Category */}
-        <div className="relative min-w-[240px]">
-          <Search className="absolute start-3.5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
-          <input
-            type="text"
-            value={searchProduct}
-            onChange={(e) => setSearchProduct(e.target.value)}
-            placeholder={ar ? "ابحث عن صنف أو مواصفة..." : "Search product or spec..."}
-            className="w-full rounded-xl border border-foreground/25 bg-background/95 py-2 pe-4 ps-10 text-xs text-foreground placeholder:text-muted-foreground shadow-sm focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 transition-all"
-          />
+        {/* Divider */}
+        <div className="border-t border-border/40 dark:border-white/10" />
+
+        {/* Active Category Overview & Search */}
+        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <div>
+            <div className="text-brand-orange text-xs font-bold uppercase tracking-wider mb-1">
+              <span>{ar ? "فئة التصدير والطلب الدولي" : "Export & Global Demand Category"}</span>
+            </div>
+            <h3 className="text-xl sm:text-2xl font-black text-foreground">
+              {ar ? currentCat.categoryNameAr : currentCat.categoryNameEn}
+            </h3>
+            <p className="mt-1 text-xs sm:text-sm text-muted-foreground max-w-xl leading-relaxed">
+              {ar
+                ? `تم تسجيل وتوثيق طلب شراء لـ ${currentCat.subProducts.length} صنف أساسي ضمن هذه الفئة عبر أكثر من 20 دولة مستوردة خلال عام 2025`
+                : `Documented demand and purchase inquiries across ${currentCat.subProducts.length} core product lines from international buyers during 2025.`}
+            </p>
+          </div>
+
+          {/* Product Search Inside Category */}
+          <div className="relative min-w-[240px] sm:min-w-[280px]">
+            <Search className="absolute start-3.5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
+            <input
+              type="text"
+              value={searchProduct}
+              onChange={(e) => setSearchProduct(e.target.value)}
+              placeholder={ar ? "ابحث عن صنف أو مواصفة..." : "Search product or spec..."}
+              className="w-full rounded-xl border border-foreground/25 bg-background/95 py-2 pe-4 ps-10 text-xs text-foreground placeholder:text-muted-foreground shadow-sm focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 transition-all"
+            />
+          </div>
         </div>
       </div>
 
