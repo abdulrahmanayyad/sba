@@ -122,21 +122,6 @@ export function TradePage({ ar = true }: TradePageProps) {
         </div>
         {/* Section 1: Interactive World Map */}
         <section id="world-map" className="scroll-mt-32 space-y-6">
-          <div className="interactive-card glass-box-interactive rounded-3xl p-6 sm:p-8 shadow-md backdrop-blur-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer">
-            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
-              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-              <span>{ar ? "القسم الأول: الخريطة التفاعلية" : "Section 1: Interactive Map"}</span>
-            </div>
-            <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5 leading-snug">
-              {ar ? "خريطة الانتشار التجاري للأسواق الدولية" : "Global Trade Footprint Map"}
-            </h2>
-            <p className="text-xs sm:text-sm text-muted-foreground mt-2.5 sm:mt-3 leading-relaxed">
-              {ar
-                ? "تحديد بصري تفاعلي لـ 47 دولة تم تسجيل طلبات شراء تجارية خلال عام 2025 مصنفة حسب القارات ونوع السلعة."
-                : "Interactive visualization of 47 destination markets representing 2025 recorded commercial purchase requests."}
-            </p>
-          </div>
-
           <TradeWorldMap ar={ar} onSelectCountry={handleCountrySelect} />
         </section>
 

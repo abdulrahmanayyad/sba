@@ -88,50 +88,72 @@ export function TradeWorldMap({ ar = true, onSelectCountry }: TradeWorldMapProps
 
   return (
     <div className="w-full space-y-6">
-      {/* Filters Bar */}
-      <div className="interactive-card glass-box-interactive flex flex-col gap-4 rounded-3xl p-4 sm:p-5 shadow-lg backdrop-blur-xl md:flex-row md:items-center md:justify-between transition-all duration-300">
-        {/* Continent Pills */}
-        <div className="flex flex-wrap items-center gap-1.5 overflow-x-auto pb-1 md:pb-0">
-          {continents.map((cont) => (
-            <button
-              key={cont.id}
-              type="button"
-              onClick={() => setSelectedContinent(cont.id)}
-              className={`rounded-full px-3.5 py-1.5 text-xs font-semibold transition-all ${
-                selectedContinent === cont.id
-                  ? "bg-brand-orange text-white shadow-md shadow-brand-orange/20 scale-105"
-                  : "bg-white/10 text-foreground/80 hover:bg-white/20 hover:text-foreground"
-              }`}
-            >
-              {ar ? cont.labelAr : cont.labelEn}
-            </button>
-          ))}
+      {/* Unified Section 1 Header & Controls Glass Box */}
+      <div className="interactive-card glass-box-interactive rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl backdrop-blur-2xl transition-all duration-300">
+        {/* Title & Description */}
+        <div>
+          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
+            <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+            <span>{ar ? "القسم الأول: الخريطة التفاعلية" : "Section 1: Interactive Map"}</span>
+          </div>
+          <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5 leading-snug">
+            {ar ? "خريطة الانتشار التجاري للأسواق الدولية" : "Global Trade Footprint Map"}
+          </h2>
+          <p className="text-xs sm:text-sm text-muted-foreground mt-2.5 sm:mt-3 leading-relaxed max-w-4xl">
+            {ar
+              ? "تحديد بصري تفاعلي لـ 47 دولة تم تسجيل طلبات شراء تجارية خلال عام 2025 مصنفة حسب القارات ونوع السلعة."
+              : "Interactive visualization of 47 destination markets representing 2025 recorded commercial purchase requests."}
+          </p>
         </div>
 
-        {/* Category & Search */}
-        <div className="flex flex-wrap items-center gap-2">
-          <div className="relative min-w-[200px]">
-            <Search className="absolute start-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder={ar ? "ابحث بالدولة أو المنتج..." : "Search country or product..."}
-              className="w-full rounded-xl border border-foreground/25 bg-background/95 py-1.5 pe-4 ps-9 text-xs text-foreground placeholder:text-muted-foreground shadow-sm focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 transition-all"
-            />
+        {/* Divider */}
+        <div className="border-t border-border/40 dark:border-white/10" />
+
+        {/* Filters Bar */}
+        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          {/* Continent Pills */}
+          <div className="flex flex-wrap items-center gap-1.5 overflow-x-auto pb-1 md:pb-0">
+            {continents.map((cont) => (
+              <button
+                key={cont.id}
+                type="button"
+                onClick={() => setSelectedContinent(cont.id)}
+                className={`rounded-full px-3.5 py-1.5 text-xs font-semibold transition-all cursor-pointer ${
+                  selectedContinent === cont.id
+                    ? "bg-brand-orange text-white shadow-md shadow-brand-orange/20 scale-105"
+                    : "bg-white/10 text-foreground/80 hover:bg-white/20 hover:text-foreground"
+                }`}
+              >
+                {ar ? cont.labelAr : cont.labelEn}
+              </button>
+            ))}
           </div>
 
-          <select
-            value={selectedCategory}
-            onChange={(e) => setSelectedCategory(e.target.value)}
-            className="rounded-xl border border-foreground/25 bg-background/95 px-3 py-1.5 text-xs font-medium text-foreground shadow-sm hover:border-brand-orange focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 cursor-pointer transition-all"
-          >
-            {categories.map((cat) => (
-              <option key={cat.id} value={cat.id} className="bg-background text-foreground">
-                {ar ? cat.labelAr : cat.labelEn}
-              </option>
-            ))}
-          </select>
+          {/* Category & Search */}
+          <div className="flex flex-wrap items-center gap-2">
+            <div className="relative min-w-[200px]">
+              <Search className="absolute start-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder={ar ? "ابحث بالدولة أو المنتج..." : "Search country or product..."}
+                className="w-full rounded-xl border border-foreground/25 bg-background/95 py-1.5 pe-4 ps-9 text-xs text-foreground placeholder:text-muted-foreground shadow-sm focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 transition-all"
+              />
+            </div>
+
+            <select
+              value={selectedCategory}
+              onChange={(e) => setSelectedCategory(e.target.value)}
+              className="rounded-xl border border-foreground/25 bg-background/95 px-3 py-1.5 text-xs font-medium text-foreground shadow-sm hover:border-brand-orange focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 cursor-pointer transition-all"
+            >
+              {categories.map((cat) => (
+                <option key={cat.id} value={cat.id} className="bg-background text-foreground">
+                  {ar ? cat.labelAr : cat.labelEn}
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
       </div>
 
