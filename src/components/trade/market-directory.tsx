@@ -74,9 +74,28 @@ export function MarketDirectory({ ar = true, selectedCountryCode }: MarketDirect
   }, [showAll, filteredCountries]);
 
   return (
-    <div id="market-directory" className="w-full space-y-6">
+    <div id="market-directory" className="interactive-card glass-box-interactive w-full rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl backdrop-blur-2xl transition-all duration-300">
+      {/* Section 2 Title & Description Header */}
+      <div>
+        <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
+          <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+          <span>{ar ? "القسم الثاني: دليل الأسواق" : "Section 2: Market Directory"}</span>
+        </div>
+        <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5 leading-snug">
+          {ar ? "دليل الأسواق والطلب الدولي" : "Our Markets & International Demand"}
+        </h2>
+        <p className="text-xs sm:text-sm text-muted-foreground mt-2.5 sm:mt-3 leading-relaxed max-w-4xl">
+          {ar
+            ? "بطاقات تفاعلية موسعة لكل دولة تتضمن قوائم السلع المطلوبة، المواصفات المسجلة، والكميات المحددة."
+            : "Dedicated expandable profiles for all 47 countries detailing products requested, quantities, and dates."}
+        </p>
+      </div>
+
+      {/* Divider */}
+      <div className="border-t border-border/40 dark:border-white/10" />
+
       {/* Directory Search & Filters */}
-      <div className="interactive-card glass-box-interactive flex flex-col gap-4 rounded-3xl p-5 sm:p-6 shadow-xl backdrop-blur-xl md:flex-row md:items-center md:justify-between transition-all duration-300">
+      <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         {/* Search */}
         <div className="relative flex-1 max-w-md">
           <Search className="absolute start-3.5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />

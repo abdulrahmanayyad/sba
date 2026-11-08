@@ -127,21 +127,6 @@ export function TradePage({ ar = true }: TradePageProps) {
 
         {/* Section 2: International Market Directory */}
         <section id="market-directory" className="scroll-mt-32 space-y-6">
-          <div className="interactive-card glass-box-interactive rounded-3xl p-6 sm:p-8 shadow-md backdrop-blur-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer">
-            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
-              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-              <span>{ar ? "القسم الثاني: دليل الأسواق" : "Section 2: Market Directory"}</span>
-            </div>
-            <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5 leading-snug">
-              {ar ? "دليل الأسواق والطلب الدولي" : "Our Markets & International Demand"}
-            </h2>
-            <p className="text-xs sm:text-sm text-muted-foreground mt-2.5 sm:mt-3 leading-relaxed">
-              {ar
-                ? "بطاقات تفاعلية موسعة لكل دولة تتضمن قوائم السلع المطلوبة، المواصفات المسجلة، والكميات المحددة."
-                : "Dedicated expandable profiles for all 47 countries detailing products requested, quantities, and dates."}
-            </p>
-          </div>
-
           <MarketDirectory ar={ar} selectedCountryCode={selectedCountryCode} />
         </section>
 
