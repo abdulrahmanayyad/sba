@@ -200,36 +200,40 @@ export function NewsPage() {
         />
         <div className="group-hero-overlay absolute inset-0 bg-black/60 backdrop-blur-[1px] pointer-events-none" />
 
-        <div className="site-container relative z-10 flex min-h-[inherit] flex-col justify-center py-16 sm:py-24">
-          <Reveal>
-            {/* A. Small Top Headline (Right in Arabic / RTL, Left in English / LTR) */}
-            <div className="flex items-center justify-start mb-6">
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/50 px-4 py-1.5 text-xs font-bold tracking-wide text-white/95 backdrop-blur-md shadow-md">
-                <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-                <span>
-                  {ar
-                    ? "مجموعة سامي بن عياد · الأرشيف المؤسسي الشامل"
-                    : "Sami Bin Ayyad Group · Comprehensive Institutional Archive"}
-                </span>
+        <div className="site-container relative z-10 flex min-h-[inherit] flex-col justify-between pt-16 sm:pt-24 pb-8 sm:pb-12">
+          <div className="my-auto">
+            <Reveal>
+              {/* A. Small Top Headline (Right in Arabic / RTL, Left in English / LTR) */}
+              <div className="flex items-center justify-start mb-6">
+                <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/50 px-4 py-1.5 text-xs font-bold tracking-wide text-white/95 backdrop-blur-md shadow-md">
+                  <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+                  <span>
+                    {ar
+                      ? "مجموعة سامي بن عياد · الأرشيف المؤسسي الشامل"
+                      : "Sami Bin Ayyad Group · Comprehensive Institutional Archive"}
+                  </span>
+                </div>
               </div>
-            </div>
 
-            {/* B. Main Headline (Refined and prominent) */}
-            <h1 className="font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white leading-snug tracking-tight text-start drop-shadow-md max-w-4xl">
-              {ar
-                ? "الأرشيف التاريخي والأنشطة المؤسسية والتحليلات القطاعية"
-                : "Corporate Legacy, Historical Archive & Sector Insights"}
-            </h1>
+              {/* B. Main Headline (Refined and prominent) */}
+              <h1 className="font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white leading-snug tracking-tight text-start drop-shadow-md max-w-4xl">
+                {ar
+                  ? "الأرشيف التاريخي والأنشطة المؤسسية والتحليلات القطاعية"
+                  : "Corporate Legacy, Historical Archive & Sector Insights"}
+              </h1>
 
-            {/* C. Intro Paragraph (Aligned to start) */}
-            <p className="mt-3.5 max-w-4xl text-sm sm:text-base leading-relaxed text-white/90 text-start drop-shadow-sm">
-              {ar
-                ? "منصة توثيقية متكاملة تستعرض الجذور التاريخية لأنشطة المجموعة منذ عام 1977، وتطور الكيانات المتخصصة في مصر والسعودية، والتحليلات القطاعية الموثقة (2010–2020)، وصولًا إلى التأسيس المؤسسي الجامع عام 2023 وأنشطة المجموعة الحديثة حتى 2026."
-                : "A unified institutional platform documenting operational roots from 1977, cross-border entity growth in Egypt and Saudi Arabia, sector insights (2010–2020), and unified corporate activities following the 2023 institutional integration."}
-            </p>
+              {/* C. Intro Paragraph (Aligned to start) */}
+              <p className="mt-3.5 max-w-4xl text-sm sm:text-base leading-relaxed text-white/90 text-start drop-shadow-sm">
+                {ar
+                  ? "منصة توثيقية متكاملة تستعرض الجذور التاريخية لأنشطة المجموعة منذ عام 1977، وتطور الكيانات المتخصصة في مصر والسعودية، والتحليلات القطاعية الموثقة (2010–2020)، وصولًا إلى التأسيس المؤسسي الجامع عام 2023 وأنشطة المجموعة الحديثة حتى 2026."
+                  : "A unified institutional platform documenting operational roots from 1977, cross-border entity growth in Egypt and Saudi Arabia, sector insights (2010–2020), and unified corporate activities following the 2023 institutional integration."}
+              </p>
+            </Reveal>
+          </div>
 
-            {/* D. Archival Lineage Note — In a single line directly on background */}
-            <div className="mt-8 w-full text-start">
+          {/* D. Archival Lineage Note — Positioned at the bottom of the hero image */}
+          <div className="mt-8 pt-4 w-full text-start">
+            <Reveal>
               <h4 className="text-brand-orange font-bold text-xs sm:text-sm mb-1.5 text-start flex items-center gap-1.5">
                 <span className="size-1.5 rounded-full bg-brand-orange" />
                 <span>{ar ? "ملاحظة توثيقية للأرشيف:" : "Archival Lineage Note:"}</span>
@@ -239,8 +243,8 @@ export function NewsPage() {
                   ? "التقارير والمراجعات القطاعية المؤرخة قبل عام 2023 توثق أنشطة الكيانات المؤسسة ومشاريعها المتخصصة قبل توحيدها الشامل تحت مظلة مجموعة سامي بن عياد عام 2023 (امتدادًا للجذور المهنية القائمة منذ 1977)."
                   : "Reports and sector reviews dated prior to 2023 document the operational milestones and market engagements of predecessor founding entities prior to their formal unification under Sami Bin Ayyad Group in 2023, building on foundational roots established since 1977."}
               </p>
-            </div>
-          </Reveal>
+            </Reveal>
+          </div>
         </div>
       </section>
 
