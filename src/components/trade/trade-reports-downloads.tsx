@@ -113,7 +113,7 @@ export function TradeReportsDownloads({ ar = true }: TradeReportsDownloadsProps)
               {ar ? "مركز التقارير والتوثيق الرسمي" : "Official Documentation Center"}
             </span>
             <h3 className="text-xl sm:text-2xl font-black text-foreground mt-1">
-              {ar ? "تقارير ودراسات التجارة الدولية والطلب العالمي (PDF)" : "International Trade Reports & Intelligence (PDF)"}
+              {ar ? "تقارير ودراسات التجارة الدولية" : "International Trade Reports & Studies"}
             </h3>
             <p className="text-xs text-muted-foreground mt-1 max-w-2xl leading-relaxed">
               {ar
