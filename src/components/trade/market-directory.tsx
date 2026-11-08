@@ -310,16 +310,16 @@ export function MarketDirectory({ ar = true, selectedCountryCode }: MarketDirect
           <button
             type="button"
             onClick={() => setShowAll((prev) => !prev)}
-            className="group inline-flex items-center gap-2 rounded-2xl border border-foreground/25 bg-background/95 px-8 py-3.5 text-sm font-bold text-foreground shadow-md backdrop-blur-xl transition-all duration-300 hover:border-brand-orange hover:text-brand-orange hover:shadow-xl cursor-pointer"
+            className="group inline-flex items-center gap-2 rounded-xl border border-brand-green bg-brand-green px-8 py-3 text-sm font-bold text-white shadow-md transition-all duration-300 hover:bg-brand-orange hover:border-brand-orange hover:text-white hover:shadow-xl hover:-translate-y-0.5 active:scale-95 cursor-pointer"
           >
             <span>
               {showAll
                 ? ar
-                  ? "عرض أقل (أول 9 دول)"
-                  : "Show Less (First 9)"
+                  ? "عرض أقل"
+                  : "Show Less"
                 : ar
-                ? `رؤية المزيد (${filteredCountries.length - 9} دولة إضافية)`
-                : `View More (${filteredCountries.length - 9} More Countries)`}
+                ? "رؤية المزيد"
+                : "View More"}
             </span>
             {showAll ? (
               <ChevronUp className="size-4 transition-transform group-hover:-translate-y-0.5" />
