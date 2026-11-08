@@ -134,7 +134,8 @@ export function TradeWorldMap({ ar = true, onSelectCountry }: TradeWorldMapProps
           <select
             value={selectedCategory}
             onChange={(e) => setSelectedCategory(e.target.value)}
-            className="appearance-none rounded-xl border border-foreground/25 bg-background/95 px-4 py-1.5 text-xs font-medium text-foreground shadow-sm hover:border-brand-orange focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 cursor-pointer transition-all text-center"
+            className="appearance-none [appearance:none] [-webkit-appearance:none] [-moz-appearance:none] [&::-ms-expand]:hidden rounded-xl border border-foreground/25 bg-background/95 px-4 py-1.5 text-xs font-medium text-foreground shadow-sm hover:border-brand-orange focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 cursor-pointer transition-all text-center"
+            style={{ WebkitAppearance: "none", MozAppearance: "none", appearance: "none", backgroundImage: "none" }}
           >
             {categories.map((cat) => (
               <option key={cat.id} value={cat.id} className="bg-background text-foreground">

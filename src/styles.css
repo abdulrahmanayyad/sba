@@ -143,6 +143,17 @@
     border-color: var(--color-border);
   }
 
+  select {
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    background-image: none !important;
+  }
+
+  select::-ms-expand {
+    display: none !important;
+  }
+
   html[dir="rtl"],
   html[lang="ar"],
   [dir="rtl"],
