@@ -105,7 +105,7 @@ export function BuyerInquiriesSection({ ar = true }: BuyerInquiriesSectionProps)
                 />
                 <span>{ar ? inq.countryAr : inq.countryEn}</span>
               </span>
-              <span className="rounded-md bg-emerald-400 px-2 py-0.5 text-[10px] font-bold text-black border border-emerald-500/30 shadow-xs">
+              <span className="rounded-lg border border-brand-green bg-brand-green px-2.5 py-0.5 text-[10px] font-bold text-white shadow-xs">
                 {inq.isRecurring ? (ar ? "طلب دوري متكرر" : "Recurring Demand") : (ar ? inq.inquiryStatusAr || inq.inquiryStatus : inq.inquiryStatus)}
               </span>
             </div>
