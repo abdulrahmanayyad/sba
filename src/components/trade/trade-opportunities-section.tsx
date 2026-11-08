@@ -80,7 +80,7 @@ export function TradeOpportunitiesSection({ ar = true }: TradeOpportunitiesSecti
         <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
           <div>
             <h3 className="text-xl sm:text-2xl font-black text-foreground">
-              {ar ? "الفرص التجارية ومتطلبات الشراء الدولية المفتوحة للتوريد" : "International Trade Opportunities & Bidding"}
+              {ar ? "متطلبات الشراء الدولية المفتوحة" : "Open International Purchase Requirements"}
             </h3>
             <p className="text-xs text-muted-foreground mt-1 max-w-2xl leading-relaxed">
               {ar
