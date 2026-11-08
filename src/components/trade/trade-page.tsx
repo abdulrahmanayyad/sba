@@ -44,7 +44,7 @@ export function TradePage({ ar = true }: TradePageProps) {
 
             {/* Main Headings */}
             <div className="space-y-3">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black tracking-tight text-white leading-tight drop-shadow-md">
+              <h1 className="font-head text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight text-white leading-snug drop-shadow-md">
                 {ar ? "نربط الأسواق العالمية، ونصنع الفرص التجارية الموثوقة" : "Connecting Global Markets, Delivering Real Trade Opportunities"}
               </h1>
 
