@@ -176,39 +176,18 @@ export function NewsDetailPage({ slug }: { slug: string }) {
             <Link to="/news" className="hover:text-brand-orange transition-colors">
               {ar ? "الأرشيف التاريخي والأخبار" : "Corporate Legacy & Archive"}
             </Link>
-            <span>/</span>
-            <Link to={getSectorRoute(article.sector)} className="hover:text-brand-orange transition-colors">
-              {ar ? sectorInfo?.titleAr : sectorInfo?.titleEn}
-            </Link>
-            <span>/</span>
-            <span className="text-foreground truncate max-w-[200px] sm:max-w-xs font-bold">
-              {ar ? article.titleAr : article.titleEn}
-            </span>
           </nav>
 
           {/* Badges & Meta */}
           <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 mb-4">
-            {/* Reference Year Badge */}
-            <span className="inline-flex items-center gap-1 rounded-full bg-brand-orange px-3.5 py-1 text-xs font-bold text-white shadow-sm">
-              <History className="size-3" />
+            {/* Reference Year Badge (Without Icon) */}
+            <span className="inline-flex items-center rounded-full bg-brand-orange px-3.5 py-1 text-xs font-bold text-white shadow-sm">
               <span>{refYear}</span>
             </span>
 
             {/* Content Type Badge */}
             <span className="inline-flex items-center rounded-full bg-secondary border border-border px-3 py-1 text-xs font-bold text-foreground">
               <span>{getContentTypeBadge(article.contentType, ar)}</span>
-            </span>
-
-            {/* Sector Badge */}
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-green/10 border border-brand-green/30 px-3.5 py-1 text-xs font-bold text-brand-green-text">
-              {getSectorIcon(article.sector)}
-              <span>{ar ? sectorInfo?.titleAr : sectorInfo?.titleEn}</span>
-            </span>
-
-            {/* Category Sub-badge */}
-            <span className="inline-flex items-center gap-1 rounded-full bg-secondary/80 px-3 py-1 text-xs font-semibold text-foreground/85 border border-border">
-              <Tag className="size-3 text-brand-orange" />
-              <span>{ar ? article.categoryAr : article.categoryEn}</span>
             </span>
 
             {/* Publication Date */}
