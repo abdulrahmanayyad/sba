@@ -9,8 +9,7 @@ import {
   Globe, 
   Package, 
   TrendingUp,
-  X,
-  FileCheck
+  X
 } from "lucide-react";
 import { 
   TRADE_STATS, 
@@ -108,11 +107,7 @@ export function TradeReportsDownloads({ ar = true }: TradeReportsDownloadsProps)
       <div className="rounded-2xl border border-white/15 bg-background/50 p-6 sm:p-8 backdrop-blur-xl shadow-inner transition-all duration-300">
         <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
           <div>
-            <span className="text-xs font-bold uppercase tracking-wider text-emerald-500 dark:text-emerald-400 flex items-center gap-1.5">
-              <FileCheck className="size-4" />
-              {ar ? "مركز التقارير والتوثيق الرسمي" : "Official Documentation Center"}
-            </span>
-            <h3 className="text-xl sm:text-2xl font-black text-foreground mt-1">
+            <h3 className="text-xl sm:text-2xl font-black text-foreground">
               {ar ? "تقارير ودراسات التجارة الدولية" : "International Trade Reports & Studies"}
             </h3>
             <p className="text-xs text-muted-foreground mt-1 max-w-2xl leading-relaxed">
