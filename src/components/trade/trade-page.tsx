@@ -117,9 +117,10 @@ export function TradePage({ ar = true }: TradePageProps) {
         {/* Section 1: Interactive World Map */}
         <section id="world-map" className="scroll-mt-32 space-y-6">
           <div className="border-s-4 border-brand-orange ps-4">
-            <span className="text-xs font-bold uppercase tracking-wider text-brand-orange">
-              {ar ? "القسم الأول: الخريطة التفاعلية" : "Section 1: Interactive Map"}
-            </span>
+            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
+              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+              <span>{ar ? "القسم الأول: الخريطة التفاعلية" : "Section 1: Interactive Map"}</span>
+            </div>
             <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5">
               {ar ? "خريطة الانتشار التجاري للأسواق الدولية" : "Global Trade Footprint Map"}
             </h2>
@@ -136,9 +137,10 @@ export function TradePage({ ar = true }: TradePageProps) {
         {/* Section 2: International Market Directory */}
         <section id="market-directory" className="scroll-mt-32 space-y-6">
           <div className="border-s-4 border-black dark:border-white ps-4">
-            <span className="text-xs font-bold uppercase tracking-wider text-black dark:text-white">
-              {ar ? "القسم الثاني: دليل الأسواق" : "Section 2: Market Directory"}
-            </span>
+            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-black/30 dark:border-white/30 bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-black dark:text-white backdrop-blur-md shadow-xs">
+              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+              <span>{ar ? "القسم الثاني: دليل الأسواق" : "Section 2: Market Directory"}</span>
+            </div>
             <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5">
               {ar ? "دليل الأسواق والطلب الدولي (47 دولة)" : "Our Markets & International Demand"}
             </h2>
@@ -155,9 +157,10 @@ export function TradePage({ ar = true }: TradePageProps) {
         {/* Section 3: Global Product Demand */}
         <section id="product-demand" className="scroll-mt-32 space-y-6">
           <div className="border-s-4 border-amber-500 ps-4">
-            <span className="text-xs font-bold uppercase tracking-wider text-amber-400">
-              {ar ? "القسم الثالث: محفظة السلع" : "Section 3: Product Portfolio"}
-            </span>
+            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
+              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+              <span>{ar ? "القسم الثالث: محفظة السلع" : "Section 3: Product Portfolio"}</span>
+            </div>
             <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5">
               {ar ? "المنتجات المطلوبة في الأسواق العالمية" : "Global Product Demand Portfolio"}
             </h2>
@@ -174,9 +177,10 @@ export function TradePage({ ar = true }: TradePageProps) {
         {/* Section 4: Trade Intelligence & Documented Quantities */}
         <section id="trade-intelligence" className="scroll-mt-32 space-y-6">
           <div className="border-s-4 border-brand-orange ps-4">
-            <span className="text-xs font-bold uppercase tracking-wider text-brand-orange">
-              {ar ? "القسم الرابع: ذكاء السوق والكميات" : "Section 4: Market Intelligence"}
-            </span>
+            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
+              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+              <span>{ar ? "القسم الرابع: ذكاء السوق والكميات" : "Section 4: Market Intelligence"}</span>
+            </div>
             <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5">
               {ar ? "ذكاء السوق ومتطلبات المشترين الموثقة" : "Market Demand & Trade Intelligence"}
             </h2>
@@ -193,9 +197,10 @@ export function TradePage({ ar = true }: TradePageProps) {
         {/* Section 5: Our International Business Network */}
         <section id="business-network" className="scroll-mt-32 space-y-6">
           <div className="border-s-4 border-teal-500 ps-4">
-            <span className="text-xs font-bold uppercase tracking-wider text-teal-400">
-              {ar ? "القسم الخامس: شبكة الأعمال" : "Section 5: Business Network"}
-            </span>
+            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
+              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+              <span>{ar ? "القسم الخامس: شبكة الأعمال" : "Section 5: Business Network"}</span>
+            </div>
             <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5">
               {ar ? "شبكتنا التجارية الدولية" : "Our International Business Network"}
             </h2>
@@ -212,9 +217,10 @@ export function TradePage({ ar = true }: TradePageProps) {
         {/* Section 6: International Trade Opportunities */}
         <section id="trade-opportunities" className="scroll-mt-32 space-y-6">
           <div className="border-s-4 border-emerald-500 ps-4">
-            <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">
-              {ar ? "القسم السادس: الفرص التجارية" : "Section 6: Trade Opportunities"}
-            </span>
+            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
+              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+              <span>{ar ? "القسم السادس: الفرص التجارية" : "Section 6: Trade Opportunities"}</span>
+            </div>
             <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5">
               {ar ? "الفرص التجارية وعروض التوريد المفتوحة" : "International Trade Opportunities"}
             </h2>
@@ -231,9 +237,10 @@ export function TradePage({ ar = true }: TradePageProps) {
         {/* Section 7: Downloadable Reports */}
         <section id="trade-reports" className="scroll-mt-32 space-y-6">
           <div className="border-s-4 border-indigo-500 ps-4">
-            <span className="text-xs font-bold uppercase tracking-wider text-indigo-400">
-              {ar ? "القسم السابع: التوثيق والتحميلات" : "Section 7: Reports & Documentation"}
-            </span>
+            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
+              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+              <span>{ar ? "القسم السابع: التوثيق والتحميلات" : "Section 7: Reports & Documentation"}</span>
+            </div>
             <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5">
               {ar ? "تقارير ودراسات التجارة الدولية الرسمية (PDF)" : "Official Trade Reports & PDFs"}
             </h2>
