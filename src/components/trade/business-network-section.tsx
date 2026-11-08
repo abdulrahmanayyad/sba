@@ -39,7 +39,26 @@ export function BusinessNetworkSection({ ar = true }: BusinessNetworkSectionProp
   });
 
   return (
-    <div className="w-full space-y-8">
+    <div id="business-network" className="interactive-card glass-box-interactive w-full rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl backdrop-blur-2xl transition-all duration-300">
+      {/* Section 5 Title & Description Header */}
+      <div>
+        <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
+          <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+          <span>{ar ? "القسم الخامس: شبكة الأعمال" : "Section 5: Business Network"}</span>
+        </div>
+        <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5 leading-snug">
+          {ar ? "شبكتنا التجارية الدولية" : "Our International Business Network"}
+        </h2>
+        <p className="text-xs sm:text-sm text-muted-foreground mt-2.5 sm:mt-3 leading-relaxed max-w-4xl">
+          {ar
+            ? "فصل كامل وصارم بين الشركاء والعملاء المتعاقد معهم فعليًا، وبين استفسارات المشترين قيد التفاوض والتدقيق."
+            : "Strict separation between verified contracted clients/partners and privacy-protected buyer inquiries."}
+        </p>
+      </div>
+
+      {/* Divider */}
+      <div className="border-t border-border/40 dark:border-white/10" />
+
       {/* Category Selection Tabs */}
       <div className="flex justify-center">
         <div className="inline-flex rounded-full border border-white/20 bg-background/70 p-1.5 backdrop-blur-xl shadow-lg">
@@ -73,8 +92,8 @@ export function BusinessNetworkSection({ ar = true }: BusinessNetworkSectionProp
 
       {activeNetworkTab === "partners" ? (
         /* Category A: Verified Clients & Business Partners */
-        <div className="space-y-6">
-          <div className="glass-box-interactive interactive-card rounded-3xl p-6 sm:p-8 backdrop-blur-2xl cursor-pointer transition-all duration-300">
+        <div className="space-y-6 pt-2">
+          <div className="rounded-2xl border border-white/15 bg-background/50 p-6 sm:p-8 backdrop-blur-xl shadow-inner transition-all duration-300">
             <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
               <div>
                 <span className="text-xs font-bold uppercase tracking-wider text-emerald-500 dark:text-emerald-400 flex items-center gap-1.5">
@@ -153,8 +172,8 @@ export function BusinessNetworkSection({ ar = true }: BusinessNetworkSectionProp
         </div>
       ) : (
         /* Category B: International Buyer Inquiries */
-        <div className="space-y-6">
-          <div className="glass-box-interactive interactive-card rounded-3xl p-6 sm:p-8 backdrop-blur-2xl cursor-pointer transition-all duration-300">
+        <div className="space-y-6 pt-2">
+          <div className="rounded-2xl border border-white/15 bg-background/50 p-6 sm:p-8 backdrop-blur-xl shadow-inner transition-all duration-300">
             <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
               <div>
                 <span className="text-xs font-bold uppercase tracking-wider text-amber-400 flex items-center gap-1.5">

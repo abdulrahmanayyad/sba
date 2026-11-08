@@ -138,21 +138,6 @@ export function TradePage({ ar = true }: TradePageProps) {
 
         {/* Section 5: Our International Business Network */}
         <section id="business-network" className="scroll-mt-32 space-y-6">
-          <div className="interactive-card glass-box-interactive rounded-3xl p-6 sm:p-8 shadow-md backdrop-blur-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer">
-            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
-              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-              <span>{ar ? "القسم الخامس: شبكة الأعمال" : "Section 5: Business Network"}</span>
-            </div>
-            <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5 leading-snug">
-              {ar ? "شبكتنا التجارية الدولية" : "Our International Business Network"}
-            </h2>
-            <p className="text-xs sm:text-sm text-muted-foreground mt-2.5 sm:mt-3 leading-relaxed">
-              {ar
-                ? "فصل كامل وصارم بين الشركاء والعملاء المتعاقد معهم فعليًا، وبين استفسارات المشترين قيد التفاوض والتدقيق."
-                : "Strict separation between verified contracted clients/partners and privacy-protected buyer inquiries."}
-            </p>
-          </div>
-
           <BusinessNetworkSection ar={ar} />
         </section>
 
