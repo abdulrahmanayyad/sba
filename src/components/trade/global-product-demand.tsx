@@ -140,15 +140,9 @@ export function GlobalProductDemand({ ar = true, onInquireProduct }: GlobalProdu
                     </p>
                   </div>
 
-                  {prod.isDocumentedOrder ? (
-                    <span className="inline-flex shrink-0 items-center justify-center rounded-xl border border-amber-500/40 bg-amber-500/15 px-2.5 py-1 text-[11px] font-bold text-amber-400 shadow-xs">
-                      {ar ? "كمية موثقة رسميًا" : "Documented Volume"}
-                    </span>
-                  ) : (
-                    <span className="inline-flex shrink-0 items-center justify-center rounded-xl border border-brand-green bg-brand-green px-2.5 py-1 text-[11px] font-bold text-white shadow-xs transition-colors duration-300 hover:bg-brand-orange hover:border-brand-orange">
-                      {ar ? "مطلوب دوليًا" : "In Demand"}
-                    </span>
-                  )}
+                  <span className="inline-flex shrink-0 items-center justify-center rounded-xl border border-brand-green bg-brand-green px-2.5 py-1 text-[11px] font-bold text-white shadow-xs transition-colors duration-300 hover:bg-brand-orange hover:border-brand-orange">
+                    {ar ? "مطلوب دوليًا" : "In Demand"}
+                  </span>
                 </div>
 
                 {/* Specifications & Packaging */}
