@@ -90,7 +90,9 @@ export function BuyerInquiriesSection({ ar = true }: BuyerInquiriesSectionProps)
             className="rounded-2xl border border-white/10 bg-background/60 p-4 text-xs backdrop-blur-md space-y-2.5 hover:border-brand-orange/40 transition-colors shadow-sm"
           >
             <div className="flex items-center justify-between text-[11px] text-muted-foreground">
-              <span className="font-mono font-bold text-brand-orange">{inq.id}</span>
+              <span className="inline-flex items-center rounded-lg border border-brand-orange bg-brand-orange px-2.5 py-0.5 font-mono text-xs font-bold text-white shadow-xs">
+                {inq.id}
+              </span>
               <span>{inq.inquiryDate}</span>
             </div>
 
@@ -123,7 +125,7 @@ export function BuyerInquiriesSection({ ar = true }: BuyerInquiriesSectionProps)
 
             <div className="pt-2 text-[11px] text-muted-foreground border-t border-white/5 flex items-center justify-between">
               <span>{ar ? inq.buyerTypeAr : inq.buyerTypeEn}</span>
-              <span className="text-[10px] text-amber-500 dark:text-amber-400 font-medium">
+              <span className="text-[10px] text-black dark:text-black font-bold">
                 {ar ? "قيد التدقيق والتسعير" : "Pending Verification"}
               </span>
             </div>

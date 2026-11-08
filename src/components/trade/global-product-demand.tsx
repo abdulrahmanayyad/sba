@@ -134,7 +134,7 @@ export function GlobalProductDemand({ ar = true, onInquireProduct }: GlobalProdu
                       </p>
                     </div>
                     {prod.documentedId && (
-                      <span className="shrink-0 font-mono text-[11px] font-bold text-brand-orange bg-brand-orange/15 border border-brand-orange/30 px-2.5 py-1 rounded-md shadow-xs self-start">
+                      <span className="shrink-0 inline-flex items-center rounded-lg border border-brand-orange bg-brand-orange px-2.5 py-1 font-mono text-xs font-bold text-white shadow-xs self-start">
                         {prod.documentedId}
                       </span>
                     )}

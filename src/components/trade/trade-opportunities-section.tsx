@@ -101,7 +101,7 @@ export function TradeOpportunitiesSection({ ar = true }: TradeOpportunitiesSecti
             <div>
               {/* Top Meta */}
               <div className="flex items-center justify-between border-b border-white/10 pb-3">
-                <span className="inline-flex items-center rounded-lg border border-brand-green bg-brand-green px-2.5 py-1 font-mono text-xs font-bold text-white shadow-xs">
+                <span className="inline-flex items-center rounded-lg border border-brand-orange bg-brand-orange px-2.5 py-1 font-mono text-xs font-bold text-white shadow-xs">
                   {opp.id}
                 </span>
                 <span className="rounded-xl border border-brand-green bg-brand-green px-2.5 py-1 text-[11px] font-bold text-white shadow-xs">
@@ -215,7 +215,7 @@ export function TradeOpportunitiesSection({ ar = true }: TradeOpportunitiesSecti
             ) : (
               <div>
                 <div className="border-b border-white/10 pb-4 mb-4">
-                  <span className="font-mono text-xs font-bold text-brand-orange">
+                  <span className="inline-flex items-center rounded-lg border border-brand-orange bg-brand-orange px-2.5 py-0.5 font-mono text-xs font-bold text-white shadow-xs">
                     {selectedOpp.id}
                   </span>
                   <h4 className="text-lg font-bold text-foreground mt-1">
