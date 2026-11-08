@@ -234,7 +234,7 @@ export function BusinessNetworkSection({ ar = true }: BusinessNetworkSectionProp
                     <span>{inq.countryFlag}</span>
                     <span>{ar ? inq.countryAr : inq.countryEn}</span>
                   </span>
-                  <span className="rounded-full bg-amber-500/15 px-2 py-0.5 text-[10px] font-bold text-amber-400 border border-amber-500/20">
+                  <span className="rounded-md bg-emerald-400 px-2 py-0.5 text-[10px] font-bold text-black border border-emerald-500/30 shadow-xs">
                     {inq.isRecurring ? (ar ? "طلب دوري متكرر" : "Recurring Demand") : inq.inquiryStatus}
                   </span>
                 </div>
