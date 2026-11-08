@@ -89,7 +89,7 @@ export function TradeWorldMap({ ar = true, onSelectCountry }: TradeWorldMapProps
   return (
     <div className="w-full space-y-6">
       {/* Filters Bar */}
-      <div className="flex flex-col gap-4 rounded-2xl border border-white/20 bg-background/60 p-4 backdrop-blur-xl shadow-lg md:flex-row md:items-center md:justify-between">
+      <div className="interactive-card glass-box-interactive flex flex-col gap-4 rounded-3xl p-4 sm:p-5 shadow-lg backdrop-blur-xl md:flex-row md:items-center md:justify-between transition-all duration-300">
         {/* Continent Pills */}
         <div className="flex flex-wrap items-center gap-1.5 overflow-x-auto pb-1 md:pb-0">
           {continents.map((cont) => (

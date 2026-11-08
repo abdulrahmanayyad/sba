@@ -76,7 +76,7 @@ export function MarketDirectory({ ar = true, selectedCountryCode }: MarketDirect
   return (
     <div id="market-directory" className="w-full space-y-6">
       {/* Directory Search & Filters */}
-      <div className="flex flex-col gap-4 rounded-3xl border border-white/20 bg-background/60 p-5 shadow-xl backdrop-blur-xl md:flex-row md:items-center md:justify-between">
+      <div className="interactive-card glass-box-interactive flex flex-col gap-4 rounded-3xl p-5 sm:p-6 shadow-xl backdrop-blur-xl md:flex-row md:items-center md:justify-between transition-all duration-300">
         {/* Search */}
         <div className="relative flex-1 max-w-md">
           <Search className="absolute start-3.5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />

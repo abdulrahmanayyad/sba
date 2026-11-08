@@ -122,7 +122,7 @@ export function TradePage({ ar = true }: TradePageProps) {
         </div>
         {/* Section 1: Interactive World Map */}
         <section id="world-map" className="scroll-mt-32 space-y-6">
-          <div className="border-s-4 border-brand-orange ps-4">
+          <div className="interactive-card glass-box-interactive rounded-3xl p-6 sm:p-8 shadow-md backdrop-blur-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer">
             <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
               <span>{ar ? "القسم الأول: الخريطة التفاعلية" : "Section 1: Interactive Map"}</span>
@@ -142,8 +142,8 @@ export function TradePage({ ar = true }: TradePageProps) {
 
         {/* Section 2: International Market Directory */}
         <section id="market-directory" className="scroll-mt-32 space-y-6">
-          <div className="border-s-4 border-black dark:border-white ps-4">
-            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-black/30 dark:border-white/30 bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-black dark:text-white backdrop-blur-md shadow-xs">
+          <div className="interactive-card glass-box-interactive rounded-3xl p-6 sm:p-8 shadow-md backdrop-blur-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer">
+            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
               <span>{ar ? "القسم الثاني: دليل الأسواق" : "Section 2: Market Directory"}</span>
             </div>
@@ -162,7 +162,7 @@ export function TradePage({ ar = true }: TradePageProps) {
 
         {/* Section 3: Global Product Demand */}
         <section id="product-demand" className="scroll-mt-32 space-y-6">
-          <div className="border-s-4 border-amber-500 ps-4">
+          <div className="interactive-card glass-box-interactive rounded-3xl p-6 sm:p-8 shadow-md backdrop-blur-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer">
             <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
               <span>{ar ? "القسم الثالث: محفظة السلع" : "Section 3: Product Portfolio"}</span>
@@ -182,7 +182,7 @@ export function TradePage({ ar = true }: TradePageProps) {
 
         {/* Section 4: Trade Intelligence & Documented Quantities */}
         <section id="trade-intelligence" className="scroll-mt-32 space-y-6">
-          <div className="border-s-4 border-brand-orange ps-4">
+          <div className="interactive-card glass-box-interactive rounded-3xl p-6 sm:p-8 shadow-md backdrop-blur-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer">
             <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
               <span>{ar ? "القسم الرابع: ذكاء السوق والكميات" : "Section 4: Market Intelligence"}</span>
@@ -202,7 +202,7 @@ export function TradePage({ ar = true }: TradePageProps) {
 
         {/* Section 5: Our International Business Network */}
         <section id="business-network" className="scroll-mt-32 space-y-6">
-          <div className="border-s-4 border-teal-500 ps-4">
+          <div className="interactive-card glass-box-interactive rounded-3xl p-6 sm:p-8 shadow-md backdrop-blur-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer">
             <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
               <span>{ar ? "القسم الخامس: شبكة الأعمال" : "Section 5: Business Network"}</span>
@@ -222,7 +222,7 @@ export function TradePage({ ar = true }: TradePageProps) {
 
         {/* Section 6: International Trade Opportunities */}
         <section id="trade-opportunities" className="scroll-mt-32 space-y-6">
-          <div className="border-s-4 border-emerald-500 ps-4">
+          <div className="interactive-card glass-box-interactive rounded-3xl p-6 sm:p-8 shadow-md backdrop-blur-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer">
             <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
               <span>{ar ? "القسم السادس: الفرص التجارية" : "Section 6: Trade Opportunities"}</span>
@@ -242,7 +242,7 @@ export function TradePage({ ar = true }: TradePageProps) {
 
         {/* Section 7: Downloadable Reports */}
         <section id="trade-reports" className="scroll-mt-32 space-y-6">
-          <div className="border-s-4 border-indigo-500 ps-4">
+          <div className="interactive-card glass-box-interactive rounded-3xl p-6 sm:p-8 shadow-md backdrop-blur-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer">
             <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
               <span>{ar ? "القسم السابع: التوثيق والتحميلات" : "Section 7: Reports & Documentation"}</span>
