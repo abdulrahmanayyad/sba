@@ -117,11 +117,6 @@ export function TradeIntelligenceDashboard({ ar = true }: TradeIntelligenceDashb
                 <h3 className="text-2xl font-black text-foreground mt-1">
                   {ar ? "متطلبات المشترين والكميات الموثقة رسميًا" : "Documented Buyer Requirements & Quantities"}
                 </h3>
-                <p className="text-xs text-muted-foreground mt-1 max-w-2xl">
-                  {ar
-                    ? "قائمة بالطلبات التي تضمنت تحديدًا كميًا دقيقًا في سجلات الاستفسارات لعام 2025، سواء كعقود توريد أسبوعية/شهرية دورية أو طلبيات فورية ضخمة."
-                    : "Explicit quantities documented in the 2025 international buyer inquiries dataset, covering recurring weekly/monthly supply contracts and large bulk shipments."}
-                </p>
               </div>
 
               <div className="flex items-center gap-2 rounded-2xl border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-amber-500 dark:text-amber-300">
