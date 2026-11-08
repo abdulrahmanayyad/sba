@@ -33,7 +33,7 @@ export function TradePage({ ar = true }: TradePageProps) {
         <div className="group-hero-overlay absolute inset-0 bg-black/65 backdrop-blur-[1px] pointer-events-none" />
 
         <div className="relative z-10 w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 flex-1 flex flex-col justify-between pt-20 sm:pt-28 pb-6 sm:pb-8">
-          <div className="my-auto space-y-6 text-start max-w-4xl">
+          <div className="my-auto space-y-6 text-start w-full">
             {/* Top Pill - at the start of the line matching homepage style */}
             <div className="flex justify-start">
               <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/50 px-4 py-1.5 text-xs font-bold tracking-wide text-white/95 backdrop-blur-md shadow-md">
@@ -44,14 +44,14 @@ export function TradePage({ ar = true }: TradePageProps) {
 
             {/* Main Headings */}
             <div className="space-y-3">
-              <h1 className="font-head text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight text-white leading-snug drop-shadow-md">
+              <h1 className="font-head text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight text-white leading-snug drop-shadow-md max-w-4xl">
                 {ar ? "نربط الأسواق العالمية، ونصنع الفرص التجارية الموثوقة" : "Connecting Global Markets, Delivering Real Trade Opportunities"}
               </h1>
 
-              <p className="max-w-4xl text-sm sm:text-base text-white/90 leading-relaxed drop-shadow-sm">
+              <p className="text-sm sm:text-base text-white/90 leading-relaxed drop-shadow-sm lg:whitespace-nowrap">
                 {ar
-                  ? "استعراض مهني موثق لشبكة الطلبات التجارية الدولية لعام 2025، وقاعدة متطلبات المشترين للتمور والسلع الزراعية والمحاصيل الاستراتيجية عبر 47 دولة حول العالم."
-                  : "A documented corporate showcase of our 2025 international commercial inquiry network, covering product demand for dates, agricultural commodities, and export crops across 47 countries."}
+                  ? "استعراض مهني موثق لشبكة الطلبات التجارية لعام 2025، وقاعدة متطلبات المشترين للتمور والسلع الغذائية عبر 47 دولة حول العالم."
+                  : "A documented corporate showcase of our 2025 commercial inquiry network, covering buyer demand for dates and food commodities across 47 countries."}
               </p>
             </div>
           </div>
