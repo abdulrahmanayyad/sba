@@ -148,21 +148,6 @@ export function TradePage({ ar = true }: TradePageProps) {
 
         {/* Section 7: Downloadable Reports */}
         <section id="trade-reports" className="scroll-mt-32 space-y-6">
-          <div className="interactive-card glass-box-interactive rounded-3xl p-6 sm:p-8 shadow-md backdrop-blur-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer">
-            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
-              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-              <span>{ar ? "القسم السابع: التوثيق والتحميلات" : "Section 7: Reports & Documentation"}</span>
-            </div>
-            <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5 leading-snug">
-              {ar ? "تقارير ودراسات التجارة الدولية الرسمية (PDF)" : "Official Trade Reports & PDFs"}
-            </h2>
-            <p className="text-xs sm:text-sm text-muted-foreground mt-2.5 sm:mt-3 leading-relaxed">
-              {ar
-                ? "مكتبة التقارير التنفيذية الخمسة الموثقة، مهيأة للتحميل والطباعة وفق الهوية البصرية للمجموعة."
-                : "Comprehensive library of five executive trade reports, ready for PDF export and high-resolution printing."}
-            </p>
-          </div>
-
           <TradeReportsDownloads ar={ar} />
         </section>
       </div>

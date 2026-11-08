@@ -95,26 +95,45 @@ export function TradeReportsDownloads({ ar = true }: TradeReportsDownloadsProps)
   };
 
   return (
-    <div className="w-full space-y-8">
-      {/* Header */}
-      <div className="glass-box-interactive interactive-card rounded-3xl p-6 sm:p-8 backdrop-blur-2xl cursor-pointer transition-all duration-300">
+    <div className="interactive-card glass-box-interactive w-full rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl backdrop-blur-2xl transition-all duration-300">
+      {/* Section 7 Title & Description */}
+      <div>
+        <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
+          <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+          <span>{ar ? "القسم السابع: التوثيق والتحميلات" : "Section 7: Reports & Documentation"}</span>
+        </div>
+        <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5 leading-snug">
+          {ar ? "تقارير ودراسات التجارة الدولية الرسمية (PDF)" : "Official Trade Reports & PDFs"}
+        </h2>
+        <p className="text-xs sm:text-sm text-muted-foreground mt-2.5 sm:mt-3 leading-relaxed max-w-4xl">
+          {ar
+            ? "مكتبة التقارير التنفيذية الخمسة الموثقة، مهيأة للتحميل والطباعة وفق الهوية البصرية للمجموعة."
+            : "Comprehensive library of five executive trade reports, ready for PDF export and high-resolution printing."}
+        </p>
+      </div>
+
+      {/* Divider */}
+      <div className="border-t border-border/40 dark:border-white/10" />
+
+      {/* Header Banner */}
+      <div className="rounded-2xl border border-white/15 bg-background/50 p-6 sm:p-8 backdrop-blur-xl shadow-inner transition-all duration-300">
         <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
           <div>
             <span className="text-xs font-bold uppercase tracking-wider text-emerald-500 dark:text-emerald-400 flex items-center gap-1.5">
               <FileCheck className="size-4" />
               {ar ? "مركز التقارير والتوثيق الرسمي" : "Official Documentation Center"}
             </span>
-            <h3 className="text-2xl font-black text-foreground mt-1">
+            <h3 className="text-xl sm:text-2xl font-black text-foreground mt-1">
               {ar ? "تقارير ودراسات التجارة الدولية والطلب العالمي (PDF)" : "International Trade Reports & Intelligence (PDF)"}
             </h3>
-            <p className="text-xs text-muted-foreground mt-1 max-w-2xl">
+            <p className="text-xs text-muted-foreground mt-1 max-w-2xl leading-relaxed">
               {ar
                 ? "تقارير مهنية موثقة تتضمن الجداول الإحصائية الكاملة، وقوائم الأسواق، ودراسات الطلب، مصممة وفق الهوية المؤسسية الرسمية لمجموعة سامي بن عياد."
                 : "Professional downloadable corporate reports featuring comprehensive statistics, market matrices, and demand audits."}
             </p>
           </div>
 
-          <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-2.5 text-xs text-muted-foreground">
+          <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-2.5 text-xs text-muted-foreground shrink-0">
             <span className="text-foreground font-bold">{ar ? "فترة البيانات: " : "Data Period: "}</span>
             <span className="font-mono text-brand-orange">2025 Comprehensive</span>
           </div>
