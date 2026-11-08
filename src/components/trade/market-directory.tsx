@@ -7,7 +7,6 @@ import {
   ChevronUp, 
   Calendar, 
   Package, 
-  TrendingUp, 
   FileText, 
   Sparkles,
   ExternalLink,
@@ -199,8 +198,7 @@ export function MarketDirectory({ ar = true, selectedCountryCode }: MarketDirect
                     </div>
                   </div>
 
-                  <span className="flex items-center gap-1 rounded-full bg-emerald-500/15 px-3 py-1 text-xs font-bold text-emerald-600 dark:text-emerald-400 border border-emerald-500/25">
-                    <TrendingUp className="size-3" />
+                  <span className="flex items-center rounded-full bg-emerald-500/15 px-3 py-1 text-xs font-bold text-emerald-600 dark:text-emerald-400 border border-emerald-500/25">
                     <span>{country.totalInquiries} {ar ? "طلب شراء" : "Inquiries"}</span>
                   </span>
                 </div>
