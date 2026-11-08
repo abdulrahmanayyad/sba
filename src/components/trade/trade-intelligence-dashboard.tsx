@@ -151,7 +151,7 @@ export function TradeIntelligenceDashboard({ ar = true }: TradeIntelligenceDashb
                   {ar ? "المسار الزمني الشهري لتدفق طلبات الشراء للمشترين (2025)" : "Monthly Purchase Requests Timeline (2025)"}
                 </h4>
               </div>
-              <span className="rounded-md bg-brand-green px-2.5 py-1 text-xs font-bold text-black border border-brand-green/30 shadow-xs">
+              <span className="inline-flex items-center gap-1.5 rounded-xl border border-brand-green !bg-brand-green !text-white px-3 py-1.5 text-xs font-bold shadow-sm transition-all duration-300 hover:!bg-brand-orange hover:!border-brand-orange hover:!text-white">
                 {ar ? "ذروة الطلبات: أبريل 2025" : "Peak Demand: April 2025"}
               </span>
             </div>
