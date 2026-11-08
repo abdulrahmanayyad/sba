@@ -216,7 +216,13 @@ export function TradeIntelligenceDashboard({ ar = true }: TradeIntelligenceDashb
                     <div key={c.code} className="space-y-1">
                       <div className="flex items-center justify-between text-xs font-semibold">
                         <span className="flex items-center gap-2 text-foreground">
-                          <span className="text-base">{c.flag}</span>
+                          <img
+                            src={`https://flagcdn.com/w40/${c.code.toLowerCase()}.png`}
+                            srcSet={`https://flagcdn.com/w80/${c.code.toLowerCase()}.png 2x`}
+                            alt={ar ? c.nameAr : c.nameEn}
+                            className="h-3.5 w-5 rounded-xs object-cover shadow-xs border border-white/20 shrink-0"
+                            loading="lazy"
+                          />
                           <span>{ar ? c.nameAr : c.nameEn}</span>
                         </span>
                         <span className="font-mono text-brand-orange">

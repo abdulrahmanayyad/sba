@@ -281,23 +281,32 @@ export function TradeWorldMap({ ar = true, onSelectCountry }: TradeWorldMapProps
                       </>
                     )}
 
-                    {/* Country National Flag */}
-                    <text
-                      x={x}
-                      y={y}
-                      textAnchor="middle"
-                      dominantBaseline="central"
-                      fontSize={isSelected ? "20" : "14"}
-                      className="select-none transition-transform hover:scale-135 drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]"
-                    >
-                      {c.flag}
-                    </text>
+                    {/* Country National Flag Image on Map */}
+                    <rect
+                      x={x - (isSelected ? 13 : 9)}
+                      y={y - (isSelected ? 9 : 6)}
+                      width={isSelected ? 26 : 18}
+                      height={isSelected ? 18 : 12}
+                      rx={2}
+                      fill="#1e293b"
+                      stroke={isSelected ? "var(--brand-green, #10b981)" : "rgba(255,255,255,0.7)"}
+                      strokeWidth={isSelected ? 1.5 : 0.8}
+                    />
+                    <image
+                      href={`https://flagcdn.com/w40/${c.code.toLowerCase()}.png`}
+                      x={x - (isSelected ? 13 : 9)}
+                      y={y - (isSelected ? 9 : 6)}
+                      width={isSelected ? 26 : 18}
+                      height={isSelected ? 18 : 12}
+                      preserveAspectRatio="none"
+                      className="pointer-events-none"
+                    />
 
                     {/* Label for selected or high-inquiry countries */}
                     {(isSelected || c.totalInquiries >= 5) && (
                       <text
                         x={x}
-                        y={y - (isSelected ? 16 : 12)}
+                        y={y - (isSelected ? 14 : 10)}
                         textAnchor="middle"
                         fill={isSelected ? "var(--brand-green, #22c55e)" : "#ffffff"}
                         fontSize={isSelected ? "11" : "9"}
@@ -356,15 +365,19 @@ export function TradeWorldMap({ ar = true, onSelectCountry }: TradeWorldMapProps
                     key={c.code}
                     type="button"
                     onClick={() => handleCountryClick(c)}
-                    className={`flex items-center gap-2 rounded-xl border px-3 py-2.5 text-xs font-bold transition-all text-start cursor-pointer ${
+                    className={`flex items-center gap-2.5 rounded-xl border px-3 py-2 text-xs font-bold transition-all text-start cursor-pointer ${
                       isSelected
                         ? "border-brand-green bg-brand-green/20 text-brand-green shadow-sm scale-[1.02]"
                         : "border-white/10 bg-white/5 text-foreground hover:border-brand-green/40 hover:bg-white/10"
                     }`}
                   >
-                    <span className="text-lg shrink-0" role="img" aria-label={c.nameEn}>
-                      {c.flag}
-                    </span>
+                    <img
+                      src={`https://flagcdn.com/w40/${c.code.toLowerCase()}.png`}
+                      srcSet={`https://flagcdn.com/w80/${c.code.toLowerCase()}.png 2x`}
+                      alt={ar ? c.nameAr : c.nameEn}
+                      className="h-4 w-6 rounded-[2px] object-cover shadow-xs border border-white/20 shrink-0"
+                      loading="lazy"
+                    />
                     <span className="truncate leading-normal">
                       {ar ? c.nameAr : c.nameEn}
                     </span>

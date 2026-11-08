@@ -303,7 +303,15 @@ export function TradeReportsDownloads({ ar = true }: TradeReportsDownloadsProps)
                       <tbody className="divide-y divide-white/10">
                         {COUNTRY_PROFILES.map((c) => (
                           <tr key={c.code} className="hover:bg-white/5">
-                            <td className="p-2.5 font-bold">{c.flag} {ar ? c.nameAr : c.nameEn}</td>
+                            <td className="p-2.5 font-bold flex items-center gap-2">
+                              <img
+                                src={`https://flagcdn.com/w40/${c.code.toLowerCase()}.png`}
+                                alt={ar ? c.nameAr : c.nameEn}
+                                className="h-3.5 w-5 rounded-xs object-cover shadow-xs border border-white/20 shrink-0 inline-block"
+                                loading="lazy"
+                              />
+                              <span>{ar ? c.nameAr : c.nameEn}</span>
+                            </td>
                             <td className="p-2.5 text-muted-foreground">{ar ? c.continentAr : c.continent}</td>
                             <td className="p-2.5 font-mono text-brand-orange font-bold">{c.totalInquiries}</td>
                             <td className="p-2.5 font-mono text-amber-400">{c.dateInquiriesCount}</td>
