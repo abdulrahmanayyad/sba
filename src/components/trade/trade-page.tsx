@@ -22,91 +22,96 @@ export function TradePage({ ar = true }: TradePageProps) {
 
   return (
     <div className="relative min-h-screen bg-background text-foreground pb-24">
-      {/* Background Ambience */}
-      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-20 start-1/2 -translate-x-1/2 size-[650px] rounded-full bg-emerald-600/10 blur-[130px]" />
-        <div className="absolute top-96 end-10 size-[450px] rounded-full bg-brand-orange/10 blur-[120px]" />
-      </div>
+      {/* 1. Hero Section (Full-width and Full-height Background like Home & News) */}
+      <section className="relative w-full min-h-[calc(100svh-76px)] overflow-hidden text-white flex flex-col justify-center mb-12">
+        {/* Full-width & Full-height background image & overlay */}
+        <img
+          src="/BG/Main Home Page.jpg"
+          alt={ar ? "التجارة والفرص الدولية - مجموعة سامي بن عياد" : "Global Trade & Opportunities - Sami Bin Ayyad Group"}
+          className="absolute inset-0 size-full object-cover object-center pointer-events-none select-none"
+          fetchPriority="high"
+        />
+        <div className="group-hero-overlay absolute inset-0 bg-black/65 backdrop-blur-[1px] pointer-events-none" />
 
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-16 px-4 sm:px-6 lg:px-8 w-full max-w-[1536px] mx-auto">
-        <div className="space-y-6 text-start">
-          {/* Top Pill - at the start of the line matching homepage style */}
-          <div className="flex justify-start">
-            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
-              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-              <span>{ar ? "مجموعة سامي بن عياد · انتشارنا التجاري العالمي" : "SAMI BIN AYYAD GROUP · Global Trade Footprint"}</span>
-            </div>
-          </div>
-
-          {/* Main Headings */}
-          <div className="space-y-3">
-            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black tracking-tight text-foreground text-black dark:text-white leading-tight">
-              {ar ? "نربط الأسواق العالمية، ونصنع الفرص التجارية الموثوقة" : "Connecting Global Markets, Delivering Real Trade Opportunities"}
-            </h1>
-
-            <p className="max-w-4xl text-sm sm:text-base text-muted-foreground leading-relaxed">
-              {ar
-                ? "استعراض مهني موثق لشبكة الطلبات التجارية الدولية لعام 2025، وقاعدة متطلبات المشترين للتمور والسلع الزراعية والمحاصيل الاستراتيجية عبر 47 دولة حول العالم."
-                : "A documented corporate showcase of our 2025 international commercial inquiry network, covering product demand for dates, agricultural commodities, and export crops across 47 countries."}
-            </p>
-          </div>
-
-          {/* Main Key Statistics Grid - Interactive Cards */}
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 w-full pt-2">
-            <div className="interactive-card glass-box-interactive group rounded-3xl border border-white/20 bg-background/70 p-5 shadow-md backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer">
-              <span className="font-head text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">47</span>
-              <p className="text-xs font-bold text-foreground mt-1">
-                {ar ? "دولة مسجلة في الطلبات" : "Documented Destination Markets"}
-              </p>
-              <span className="text-[11px] text-muted-foreground block mt-0.5">
-                {ar ? "عبر 5 قارات حول العالم" : "Across 5 Global Continents"}
-              </span>
+        <div className="relative z-10 w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
+          <div className="space-y-6 text-start">
+            {/* Top Pill - at the start of the line matching homepage style */}
+            <div className="flex justify-start">
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/50 px-4 py-1.5 text-xs font-bold tracking-wide text-white/95 backdrop-blur-md shadow-md">
+                <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+                <span>{ar ? "مجموعة سامي بن عياد · انتشارنا التجاري العالمي" : "SAMI BIN AYYAD GROUP · Global Trade Footprint"}</span>
+              </div>
             </div>
 
-            <div className="interactive-card glass-box-interactive group rounded-3xl border border-white/20 bg-background/70 p-5 shadow-md backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer">
-              <span className="font-head text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">179</span>
-              <p className="text-xs font-bold text-foreground mt-1">
-                {ar ? "سجل استفسار تجاري موثق" : "Recorded Commercial Inquiries"}
-              </p>
-              <span className="text-[11px] text-muted-foreground block mt-0.5">
-                {ar ? "سجلات أصلية لعام 2025" : "2025 Original Verified Records"}
-              </span>
-            </div>
+            {/* Main Headings */}
+            <div className="space-y-3">
+              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black tracking-tight text-white leading-tight drop-shadow-md">
+                {ar ? "نربط الأسواق العالمية، ونصنع الفرص التجارية الموثوقة" : "Connecting Global Markets, Delivering Real Trade Opportunities"}
+              </h1>
 
-            <div className="interactive-card glass-box-interactive group rounded-3xl border border-white/20 bg-background/70 p-5 shadow-md backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer">
-              <span className="font-head text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">66</span>
-              <p className="text-xs font-bold text-foreground mt-1">
-                {ar ? "استفسارات التمور ومنتجاتها" : "Date-Related Inquiry Records"}
-              </p>
-              <span className="text-[11px] text-muted-foreground block mt-0.5">
-                {ar ? "عجوة، مجدول، سكري، دبس" : "Ajwa, Medjool, Sukkari, Paste"}
-              </span>
-            </div>
-
-            <div className="interactive-card glass-box-interactive group rounded-3xl border border-white/20 bg-background/70 p-5 shadow-md backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer">
-              <span className="font-head text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">113</span>
-              <p className="text-xs font-bold text-foreground mt-1">
-                {ar ? "استفسارات السلع المتنوعة" : "Diversified Product Inquiries"}
-              </p>
-              <span className="text-[11px] text-muted-foreground block mt-0.5">
-                {ar ? "توابل، خضار، بذور، أعشاب" : "Spices, Produce, Seeds, Herbs"}
-              </span>
-            </div>
-          </div>
-
-          {/* Documentary Compliance Alert as Transparent Glass Interactive Card */}
-          <div className="interactive-card glass-box-interactive w-full rounded-2xl border border-white/20 bg-background/60 p-4 text-xs text-muted-foreground leading-relaxed text-start flex items-start gap-3 shadow-sm backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md cursor-pointer">
-            <AlertCircle className="size-4 shrink-0 text-brand-orange mt-0.5" />
-            <div>
-              <strong className="font-bold text-foreground">
-                {ar ? "إقرار الحوكمة والامتثال التوثيقي: " : "Documentary Compliance Statement: "}
-              </strong>
-              <span>
+              <p className="max-w-4xl text-sm sm:text-base text-white/90 leading-relaxed drop-shadow-sm">
                 {ar
-                  ? "تمثل هذه الأرقام طلبات شراء واردة ومسجلة ضمن متطلبات المشترين الدوليين، ولا تعني بالضرورة صدور أوامر شراء مؤكدة أو إبرام عقود تجارية أو إتمام عمليات توريد وشحن."
-                  : "These figures represent purchase requests received and recorded within international buyer requirements, and do not necessarily imply confirmed purchase orders, executed commercial contracts, or completed supply and shipping operations."}
-              </span>
+                  ? "استعراض مهني موثق لشبكة الطلبات التجارية الدولية لعام 2025، وقاعدة متطلبات المشترين للتمور والسلع الزراعية والمحاصيل الاستراتيجية عبر 47 دولة حول العالم."
+                  : "A documented corporate showcase of our 2025 international commercial inquiry network, covering product demand for dates, agricultural commodities, and export crops across 47 countries."}
+              </p>
+            </div>
+
+            {/* Main Key Statistics Grid - Interactive Glass Cards */}
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 w-full pt-2">
+              <div className="interactive-card glass-box-interactive group rounded-3xl border border-white/20 bg-black/40 p-5 shadow-md backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer">
+                <span className="font-head text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">47</span>
+                <p className="text-xs font-bold text-white mt-1">
+                  {ar ? "دولة مسجلة في الطلبات" : "Documented Destination Markets"}
+                </p>
+                <span className="text-[11px] text-white/70 block mt-0.5">
+                  {ar ? "عبر 5 قارات حول العالم" : "Across 5 Global Continents"}
+                </span>
+              </div>
+
+              <div className="interactive-card glass-box-interactive group rounded-3xl border border-white/20 bg-black/40 p-5 shadow-md backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer">
+                <span className="font-head text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">179</span>
+                <p className="text-xs font-bold text-white mt-1">
+                  {ar ? "سجل استفسار تجاري موثق" : "Recorded Commercial Inquiries"}
+                </p>
+                <span className="text-[11px] text-white/70 block mt-0.5">
+                  {ar ? "سجلات أصلية لعام 2025" : "2025 Original Verified Records"}
+                </span>
+              </div>
+
+              <div className="interactive-card glass-box-interactive group rounded-3xl border border-white/20 bg-black/40 p-5 shadow-md backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer">
+                <span className="font-head text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">66</span>
+                <p className="text-xs font-bold text-white mt-1">
+                  {ar ? "استفسارات التمور ومنتجاتها" : "Date-Related Inquiry Records"}
+                </p>
+                <span className="text-[11px] text-white/70 block mt-0.5">
+                  {ar ? "عجوة، مجدول، سكري، دبس" : "Ajwa, Medjool, Sukkari, Paste"}
+                </span>
+              </div>
+
+              <div className="interactive-card glass-box-interactive group rounded-3xl border border-white/20 bg-black/40 p-5 shadow-md backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer">
+                <span className="font-head text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">113</span>
+                <p className="text-xs font-bold text-white mt-1">
+                  {ar ? "استفسارات السلع المتنوعة" : "Diversified Product Inquiries"}
+                </p>
+                <span className="text-[11px] text-white/70 block mt-0.5">
+                  {ar ? "توابل، خضار، بذور، أعشاب" : "Spices, Produce, Seeds, Herbs"}
+                </span>
+              </div>
+            </div>
+
+            {/* Documentary Compliance Alert as Transparent Glass Interactive Card */}
+            <div className="interactive-card glass-box-interactive w-full rounded-2xl border border-white/20 bg-black/40 p-4 text-xs text-white/85 leading-relaxed text-start flex items-start gap-3 shadow-sm backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md cursor-pointer">
+              <AlertCircle className="size-4 shrink-0 text-brand-orange mt-0.5" />
+              <div>
+                <strong className="font-bold text-white">
+                  {ar ? "إقرار الحوكمة والامتثال التوثيقي: " : "Documentary Compliance Statement: "}
+                </strong>
+                <span>
+                  {ar
+                    ? "تمثل هذه الأرقام طلبات شراء واردة ومسجلة ضمن متطلبات المشترين الدوليين، ولا تعني بالضرورة صدور أوامر شراء مؤكدة أو إبرام عقود تجارية أو إتمام عمليات توريد وشحن."
+                    : "These figures represent purchase requests received and recorded within international buyer requirements, and do not necessarily imply confirmed purchase orders, executed commercial contracts, or completed supply and shipping operations."}
+                </span>
+              </div>
             </div>
           </div>
         </div>
