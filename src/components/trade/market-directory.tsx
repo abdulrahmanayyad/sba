@@ -114,7 +114,7 @@ export function MarketDirectory({ ar = true, selectedCountryCode }: MarketDirect
       {/* Directory Count Header */}
       <div className="flex items-center justify-between px-2 text-xs text-muted-foreground">
         <span>
-          {ar ? `عرض ${filteredCountries.length} من أصل 47 دولة مستوردة ومسجلة في قاعدة 2025` : `Showing ${filteredCountries.length} of 47 documented markets`}
+          {ar ? `عرض ${filteredCountries.length} من أصل 47 دولة مستوردة` : `Showing ${filteredCountries.length} of 47 documented markets`}
         </span>
         <span className="font-semibold text-brand-orange">
           {ar ? "بيانات موثقة من طلبات الشراء الرسمية" : "Verified from official inquiry records"}
