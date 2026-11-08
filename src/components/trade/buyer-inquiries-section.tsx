@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Users, Search, Filter } from "lucide-react";
+import { Users, Search, Filter, ChevronDown, ChevronUp } from "lucide-react";
 import { ALL_INQUIRIES } from "@/lib/trade-data";
 import { PRODUCT_EN_MAP } from "@/lib/trade-inquiry-translations";
 
@@ -10,6 +10,7 @@ interface BuyerInquiriesSectionProps {
 export function BuyerInquiriesSection({ ar = true }: BuyerInquiriesSectionProps) {
   const [inquirySearch, setInquirySearch] = useState("");
   const [statusFilter, setStatusFilter] = useState("all");
+  const [showAll, setShowAll] = useState(false);
 
   const filteredInquiries = ALL_INQUIRIES.filter((inq) => {
     const matchSearch =
@@ -26,6 +27,8 @@ export function BuyerInquiriesSection({ ar = true }: BuyerInquiriesSectionProps)
 
     return matchSearch && matchStatus;
   });
+
+  const visibleInquiries = showAll ? filteredInquiries : filteredInquiries.slice(0, 9);
 
   return (
     <div id="buyer-inquiries" className="interactive-card glass-box-interactive w-full rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl backdrop-blur-2xl transition-all duration-300">
@@ -53,7 +56,10 @@ export function BuyerInquiriesSection({ ar = true }: BuyerInquiriesSectionProps)
               <input
                 type="text"
                 value={inquirySearch}
-                onChange={(e) => setInquirySearch(e.target.value)}
+                onChange={(e) => {
+                  setInquirySearch(e.target.value);
+                  setShowAll(false);
+                }}
                 placeholder={ar ? "ابحث بدولة أو منتج..." : "Search country or product..."}
                 className="rounded-xl border border-foreground/25 bg-background/95 ps-8 pe-4 py-2 text-xs text-foreground placeholder:text-muted-foreground shadow-sm focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 transition-all w-52 sm:w-60"
               />
@@ -61,7 +67,10 @@ export function BuyerInquiriesSection({ ar = true }: BuyerInquiriesSectionProps)
 
             <select
               value={statusFilter}
-              onChange={(e) => setStatusFilter(e.target.value)}
+              onChange={(e) => {
+                setStatusFilter(e.target.value);
+                setShowAll(false);
+              }}
               className="appearance-none [appearance:none] [-webkit-appearance:none] [-moz-appearance:none] [&::-ms-expand]:hidden rounded-xl border border-foreground/25 bg-background/95 px-3 py-2 text-xs font-semibold text-foreground shadow-sm hover:border-brand-orange focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 cursor-pointer transition-all"
               style={{ WebkitAppearance: "none", MozAppearance: "none", appearance: "none", backgroundImage: "none" }}
             >
@@ -83,8 +92,8 @@ export function BuyerInquiriesSection({ ar = true }: BuyerInquiriesSectionProps)
       </div>
 
       {/* Inquiries Cards Grid */}
-      <div className="grid grid-cols-1 gap-3.5 md:grid-cols-2 lg:grid-cols-3 max-h-[640px] overflow-y-auto p-1">
-        {filteredInquiries.map((inq) => (
+      <div className="grid grid-cols-1 gap-3.5 md:grid-cols-2 lg:grid-cols-3 p-1">
+        {visibleInquiries.map((inq) => (
           <div
             key={inq.id}
             className="rounded-2xl border border-white/10 bg-background/60 p-4 text-xs backdrop-blur-md space-y-2.5 hover:border-brand-orange/40 transition-colors shadow-sm"
@@ -132,6 +141,32 @@ export function BuyerInquiriesSection({ ar = true }: BuyerInquiriesSectionProps)
           </div>
         ))}
       </div>
+
+      {/* View More Button */}
+      {filteredInquiries.length > 9 && (
+        <div className="flex justify-center pt-4">
+          <button
+            type="button"
+            onClick={() => setShowAll((prev) => !prev)}
+            className="group inline-flex items-center gap-2 rounded-xl border border-brand-green bg-brand-green px-8 py-3 text-sm font-bold text-white shadow-md transition-all duration-300 hover:bg-brand-orange hover:border-brand-orange hover:text-white hover:shadow-xl hover:-translate-y-0.5 active:scale-95 cursor-pointer"
+          >
+            <span>
+              {showAll
+                ? ar
+                  ? "عرض أقل"
+                  : "Show Less"
+                : ar
+                ? "رؤية المزيد"
+                : "View More"}
+            </span>
+            {showAll ? (
+              <ChevronUp className="size-4 transition-transform group-hover:-translate-y-0.5" />
+            ) : (
+              <ChevronDown className="size-4 transition-transform group-hover:translate-y-0.5" />
+            )}
+          </button>
+        </div>
+      )}
     </div>
   );
 }

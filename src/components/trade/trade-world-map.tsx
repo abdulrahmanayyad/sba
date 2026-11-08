@@ -102,7 +102,7 @@ export function TradeWorldMap({ ar = true, onSelectCountry }: TradeWorldMapProps
       {/* Filters Bar */}
       <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         {/* Continent Pills */}
-        <div className="flex flex-wrap items-center gap-1.5 p-1.5 rounded-2xl border border-border/80 bg-background/50 backdrop-blur-md shadow-xs">
+        <div className="flex flex-wrap items-center gap-2 no-scrollbar pb-1 md:pb-0">
           {continents.map((cont) => (
             <button
               key={cont.id}

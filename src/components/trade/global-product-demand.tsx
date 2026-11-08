@@ -7,6 +7,8 @@ import {
   FileCheck, 
   ShieldCheck,
   ChevronRight,
+  ChevronDown,
+  ChevronUp,
   TrendingUp,
   Search
 } from "lucide-react";
@@ -20,6 +22,7 @@ interface GlobalProductDemandProps {
 export function GlobalProductDemand({ ar = true, onInquireProduct }: GlobalProductDemandProps) {
   const [activeCategory, setActiveCategory] = useState<string>("dates");
   const [searchProduct, setSearchProduct] = useState<string>("");
+  const [showAll, setShowAll] = useState<boolean>(false);
 
   const currentCat = PRODUCT_DEMAND_PORTFOLIO.find((c) => c.categoryKey === activeCategory) || PRODUCT_DEMAND_PORTFOLIO[0];
 
@@ -34,6 +37,8 @@ export function GlobalProductDemand({ ar = true, onInquireProduct }: GlobalProdu
       p.markets.some((m) => m.includes(searchProduct))
     );
   });
+
+  const visibleProducts = showAll ? filteredProducts : filteredProducts.slice(0, 9);
 
   return (
     <div id="product-demand" className="interactive-card glass-box-interactive w-full rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl backdrop-blur-2xl transition-all duration-300">
@@ -67,6 +72,7 @@ export function GlobalProductDemand({ ar = true, onInquireProduct }: GlobalProdu
               onClick={() => {
                 setActiveCategory(cat.categoryKey);
                 setSearchProduct("");
+                setShowAll(false);
               }}
               className={`flex shrink-0 items-center gap-2 rounded-2xl px-5 py-3 text-xs font-bold transition-all duration-300 cursor-pointer ${
                 isActive
@@ -115,7 +121,7 @@ export function GlobalProductDemand({ ar = true, onInquireProduct }: GlobalProdu
 
       {/* Products Grid */}
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 pt-2">
-        {filteredProducts.map((prod, idx) => {
+        {visibleProducts.map((prod, idx) => {
           return (
             <div
               key={idx}
@@ -207,6 +213,32 @@ export function GlobalProductDemand({ ar = true, onInquireProduct }: GlobalProdu
           );
         })}
       </div>
+
+      {/* View More Button */}
+      {filteredProducts.length > 9 && (
+        <div className="flex justify-center pt-4">
+          <button
+            type="button"
+            onClick={() => setShowAll((prev) => !prev)}
+            className="group inline-flex items-center gap-2 rounded-xl border border-brand-green bg-brand-green px-8 py-3 text-sm font-bold text-white shadow-md transition-all duration-300 hover:bg-brand-orange hover:border-brand-orange hover:text-white hover:shadow-xl hover:-translate-y-0.5 active:scale-95 cursor-pointer"
+          >
+            <span>
+              {showAll
+                ? ar
+                  ? "عرض أقل"
+                  : "Show Less"
+                : ar
+                ? "رؤية المزيد"
+                : "View More"}
+            </span>
+            {showAll ? (
+              <ChevronUp className="size-4 transition-transform group-hover:-translate-y-0.5" />
+            ) : (
+              <ChevronDown className="size-4 transition-transform group-hover:translate-y-0.5" />
+            )}
+          </button>
+        </div>
+      )}
     </div>
   );
 }
