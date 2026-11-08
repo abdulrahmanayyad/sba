@@ -67,26 +67,45 @@ export function TradeOpportunitiesSection({ ar = true }: TradeOpportunitiesSecti
   };
 
   return (
-    <div id="trade-opportunities" className="w-full space-y-8">
-      {/* Section Header */}
-      <div className="glass-box-interactive interactive-card rounded-3xl p-6 sm:p-8 backdrop-blur-2xl cursor-pointer transition-all duration-300">
+    <div id="trade-opportunities" className="interactive-card glass-box-interactive w-full rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl backdrop-blur-2xl transition-all duration-300">
+      {/* Section 6 Title & Description Header */}
+      <div>
+        <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
+          <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+          <span>{ar ? "القسم السادس: الفرص التجارية" : "Section 6: Trade Opportunities"}</span>
+        </div>
+        <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5 leading-snug">
+          {ar ? "الفرص التجارية وعروض التوريد المفتوحة" : "International Trade Opportunities"}
+        </h2>
+        <p className="text-xs sm:text-sm text-muted-foreground mt-2.5 sm:mt-3 leading-relaxed max-w-4xl">
+          {ar
+            ? "بوابة تقديم العروض التنافسية أمام المنتجين والموردين المؤهلين للتعاقد على كميات التصدير المطلوبة."
+            : "Open bidding opportunities allowing qualified producers and suppliers to submit competitive supply quotes."}
+        </p>
+      </div>
+
+      {/* Divider */}
+      <div className="border-t border-border/40 dark:border-white/10" />
+
+      {/* Commercial Supply & Partnership Gate Banner */}
+      <div className="rounded-2xl border border-white/15 bg-background/50 p-6 sm:p-8 backdrop-blur-xl shadow-inner transition-all duration-300">
         <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
           <div>
             <span className="text-xs font-bold uppercase tracking-wider text-emerald-500 dark:text-emerald-400 flex items-center gap-1.5">
               <Briefcase className="size-4" />
               {ar ? "بوابة الشراكة والتوريد التجاري" : "Commercial Supply & Partnership Gate"}
             </span>
-            <h3 className="text-2xl font-black text-foreground mt-1">
+            <h3 className="text-xl sm:text-2xl font-black text-foreground mt-1">
               {ar ? "الفرص التجارية ومتطلبات الشراء الدولية المفتوحة للتوريد" : "International Trade Opportunities & Bidding"}
             </h3>
-            <p className="text-xs text-muted-foreground mt-1 max-w-2xl">
+            <p className="text-xs text-muted-foreground mt-1 max-w-2xl leading-relaxed">
               {ar
                 ? "فرص تجارية وطلبات شراء موثقة من مشترين ومستوردين دوليين، تتيح المجموعة للمنتجين والمزارعين والموردين المؤهلين تقديم عروض أسعارهم وتوفير الكميات المطلوبة وفق المواصفات الدولية."
                 : "Documented commercial buyer requirements. Qualified suppliers and producers can submit competitive supply proposals and capacity quotes."}
             </p>
           </div>
 
-          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shrink-0">
             <span className="size-1.5 rounded-full bg-brand-orange animate-pulse shrink-0" />
             <span>
               {ar ? "6 فرص تجارية كبرى متاحة للتعاقد" : "6 Major Trade Opportunities"}
@@ -96,7 +115,7 @@ export function TradeOpportunitiesSection({ ar = true }: TradeOpportunitiesSecti
       </div>
 
       {/* Opportunities Cards Grid */}
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 pt-2">
         {TRADE_OPPORTUNITIES.map((opp) => (
           <div
             key={opp.id}
