@@ -431,7 +431,7 @@ export function PartnersPage() {
 
       {/* 5. Discuss a Partnership CTA Box */}
       <section className="site-container py-12">
-        <div className="mx-auto max-w-5xl overflow-hidden rounded-3xl border border-white/20 bg-background/80 p-8 sm:p-12 shadow-[0_8px_40px_rgba(0,0,0,0.18)] backdrop-blur-2xl grid gap-8 lg:grid-cols-[1.3fr_1fr] items-center transition-all duration-500 hover:-translate-y-0.5 hover:border-white/80 hover:shadow-[0_20px_48px_-12px_rgba(0,0,0,0.1)]">
+        <div className="mx-auto w-full max-w-full overflow-hidden rounded-3xl border border-white/20 bg-background/80 p-8 sm:p-12 shadow-[0_8px_40px_rgba(0,0,0,0.18)] backdrop-blur-2xl grid gap-8 lg:grid-cols-[1.3fr_1fr] items-center transition-all duration-500 hover:-translate-y-0.5 hover:border-white/80 hover:shadow-[0_20px_48px_-12px_rgba(0,0,0,0.1)]">
           <div>
             <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />

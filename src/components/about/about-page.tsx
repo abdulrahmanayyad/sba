@@ -190,7 +190,7 @@ export function AboutPage() {
 
           {/* Interactive Corporate Structure Diagram */}
           <Reveal delay={0.15}>
-            <div className="mt-12 max-w-6xl mx-auto">
+            <div className="mt-12 w-full mx-auto">
               {/* Parent Holding Node — Integrated directly into the main container */}
               <div className="mx-auto max-w-3xl text-center">
                 <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-4 py-1.5 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
@@ -412,7 +412,7 @@ export function AboutPage() {
             </p>
           </Reveal>
 
-          <div className="mt-12 space-y-6 max-w-5xl mx-auto">
+          <div className="mt-12 space-y-6 w-full mx-auto">
             {founders.map((founder, index) => (
               <Reveal key={founder.role} delay={index * 0.08}>
                 <LeaderCard founder={founder} ar={ar} />

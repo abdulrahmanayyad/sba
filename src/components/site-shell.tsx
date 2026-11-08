@@ -404,10 +404,10 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
           language={<LanguageSwitcher language={language} onChange={selectLanguage} />}
         />
       ) : (
-        <header className="fixed inset-x-0 top-3 z-50 pointer-events-none px-4 flex justify-center transition-all duration-300">
+        <header className="fixed inset-x-0 top-3 z-50 pointer-events-none px-3 sm:px-6 flex justify-center transition-all duration-300">
           <div
             className={cn(
-              "pointer-events-auto mx-auto flex h-[62px] w-full max-w-[1380px] items-center justify-between gap-2 lg:gap-4 rounded-full px-4 sm:px-6 transition-all duration-300",
+              "pointer-events-auto mx-auto flex h-[62px] w-full max-w-full items-center justify-between gap-2 lg:gap-4 rounded-full px-4 sm:px-6 transition-all duration-300",
               scrolled
                 ? "border border-white/25 bg-background/85 shadow-[0_16px_40px_rgba(0,0,0,0.18)] backdrop-blur-2xl ring-1 ring-white/10"
                 : "border border-white/15 bg-background/70 shadow-[0_10px_30px_rgba(0,0,0,0.08)] backdrop-blur-xl"
@@ -498,8 +498,8 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
       <main id="top" className="flex min-h-[52vh] flex-1 pt-[76px]">{children}</main>
 
       {/* Glassmorphic Floating Island Footer */}
-      <footer className="relative px-4 pb-6 pt-4 text-footer-foreground">
-        <div className="mx-auto max-w-7xl overflow-hidden rounded-3xl border border-white/20 bg-background/70 shadow-[0_8px_40px_rgba(0,0,0,0.18)] backdrop-blur-2xl">
+      <footer className="relative px-3 sm:px-6 pb-6 pt-4 text-footer-foreground">
+        <div className="mx-auto w-full max-w-full overflow-hidden rounded-3xl border border-white/20 bg-background/70 shadow-[0_8px_40px_rgba(0,0,0,0.18)] backdrop-blur-2xl">
           {/* Subtle background image */}
           <img src={hero} alt="" aria-hidden="true" loading="lazy" className="pointer-events-none absolute inset-0 size-full scale-110 object-cover opacity-8 blur-2xl" />
           <div className="relative px-6 py-10 md:px-10 md:py-12">

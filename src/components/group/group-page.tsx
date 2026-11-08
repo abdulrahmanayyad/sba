@@ -55,7 +55,7 @@ export function GroupPage() {
       {/* Corporate introduction */}
       <section className="site-container section-band">
         <Reveal>
-          <div className="glass-box-interactive group mx-auto max-w-4xl rounded-3xl p-8 sm:p-12 text-center cursor-pointer">
+          <div className="glass-box-interactive group mx-auto w-full rounded-3xl p-8 sm:p-12 text-center cursor-pointer">
             <div className="relative z-10">
               <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
                 <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
@@ -445,7 +445,7 @@ export function GroupPage() {
 
       {/* Final CTA — Interactive Glassmorphic Island matching Footer */}
       <section id="contact" className="relative px-4 pb-10 pt-4 text-foreground scroll-mt-24">
-        <div className="glass-box-interactive mx-auto max-w-6xl rounded-3xl p-8 sm:p-12 cursor-pointer">
+        <div className="glass-box-interactive mx-auto w-full rounded-3xl p-8 sm:p-12 cursor-pointer">
           <div className="relative z-10 grid gap-8 lg:grid-cols-[1.2fr_1fr] items-center">
             <div>
               <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">

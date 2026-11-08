@@ -134,7 +134,7 @@ export function SectorsShowcase({ ar }: { ar: boolean }) {
       aria-label={ar ? "نظرة عامة على القطاعات" : "Sectors Overview"}
       className="relative px-4 py-12 text-foreground"
     >
-      <div className="glass-box-interactive mx-auto max-w-6xl rounded-3xl p-6 md:p-12">
+      <div className="glass-box-interactive mx-auto w-full rounded-3xl p-6 md:p-12">
         <div className="relative z-10 grid gap-10 lg:grid-cols-[minmax(280px,360px)_1fr] lg:gap-16">
 
           {/* ── LEFT: Tab Navigation + CTA ── */}

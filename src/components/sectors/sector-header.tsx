@@ -98,10 +98,10 @@ export function SectorHeader({
 
   return (
     <>
-      <header className="fixed inset-x-0 top-3 z-50 pointer-events-none flex justify-center px-4 transition-all duration-500">
+      <header className="fixed inset-x-0 top-3 z-50 pointer-events-none flex justify-center px-3 sm:px-6 transition-all duration-500">
         <div
           className={cn(
-            "pointer-events-auto mx-auto flex h-[62px] w-full max-w-6xl items-center justify-between gap-4 rounded-full px-5 transition-all duration-500",
+            "pointer-events-auto mx-auto flex h-[62px] w-full max-w-full items-center justify-between gap-4 rounded-full px-5 transition-all duration-500",
             scrolled
               ? "border border-white/25 bg-background/85 shadow-[0_16px_40px_rgba(0,0,0,0.18)] backdrop-blur-2xl ring-1 ring-white/10"
               : "border border-white/15 bg-background/70 shadow-[0_10px_30px_rgba(0,0,0,0.08)] backdrop-blur-xl"
