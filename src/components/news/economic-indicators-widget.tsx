@@ -44,9 +44,9 @@ export function EconomicIndicatorsWidget() {
               className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-border/80 bg-background/90 p-6 shadow-sm transition-all duration-300 hover:shadow-xl hover:bg-background"
             >
               <div>
-                {/* Header */}
-                <div className="flex items-center justify-end gap-3 mb-4">
-                  <span className="rounded-full bg-brand-orange/10 text-brand-orange border border-brand-orange/20 text-xs font-bold px-3 py-1">
+                {/* Header Badge (Centered & Green) */}
+                <div className="flex items-center justify-center mb-4 text-center">
+                  <span className="inline-flex items-center justify-center rounded-full bg-brand-green/15 text-brand-green border border-brand-green/35 text-xs font-bold px-3.5 py-1 text-center shadow-xs">
                     {ar ? ind.changeLabelAr : ind.changeLabelEn}
                   </span>
                 </div>
