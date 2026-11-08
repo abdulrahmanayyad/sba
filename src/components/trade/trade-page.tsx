@@ -126,13 +126,13 @@ export function TradePage({ ar = true }: TradePageProps) {
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
               <span>{ar ? "القسم الأول: الخريطة التفاعلية" : "Section 1: Interactive Map"}</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5">
+            <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5 leading-snug">
               {ar ? "خريطة الانتشار التجاري للأسواق الدولية" : "Global Trade Footprint Map"}
             </h2>
-            <p className="text-xs text-muted-foreground mt-1">
+            <p className="text-xs sm:text-sm text-muted-foreground mt-2.5 sm:mt-3 leading-relaxed">
               {ar
-                ? "تحديد بصري تفاعلي لـ 47 دولة تم تسجيل استفسارات تجارية منها خلال عام 2025 مصنفة حسب القارات ونوع السلعة."
-                : "Interactive visualization of 47 destination markets representing 2025 recorded commercial inquiries."}
+                ? "تحديد بصري تفاعلي لـ 47 دولة تم تسجيل طلبات شراء تجارية خلال عام 2025 مصنفة حسب القارات ونوع السلعة."
+                : "Interactive visualization of 47 destination markets representing 2025 recorded commercial purchase requests."}
             </p>
           </div>
 
@@ -146,10 +146,10 @@ export function TradePage({ ar = true }: TradePageProps) {
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
               <span>{ar ? "القسم الثاني: دليل الأسواق" : "Section 2: Market Directory"}</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5">
+            <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5 leading-snug">
               {ar ? "دليل الأسواق والطلب الدولي" : "Our Markets & International Demand"}
             </h2>
-            <p className="text-xs text-muted-foreground mt-1">
+            <p className="text-xs sm:text-sm text-muted-foreground mt-2.5 sm:mt-3 leading-relaxed">
               {ar
                 ? "بطاقات تفاعلية موسعة لكل دولة تتضمن قوائم السلع المطلوبة، المواصفات المسجلة، والكميات المحددة."
                 : "Dedicated expandable profiles for all 47 countries detailing products requested, quantities, and dates."}
@@ -166,10 +166,10 @@ export function TradePage({ ar = true }: TradePageProps) {
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
               <span>{ar ? "القسم الثالث: محفظة السلع" : "Section 3: Product Portfolio"}</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5">
+            <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5 leading-snug">
               {ar ? "المنتجات المطلوبة في الأسواق العالمية" : "Global Product Demand Portfolio"}
             </h2>
-            <p className="text-xs text-muted-foreground mt-1">
+            <p className="text-xs sm:text-sm text-muted-foreground mt-2.5 sm:mt-3 leading-relaxed">
               {ar
                 ? "استعراض تصنيفي متكامل لـ 7 فئات رئيسية تغطي التمور، التوابل، الخضروات، الفواكه، الحبوب، الأعشاب، والسلع الاستراتيجية."
                 : "Comprehensive product taxonomy covering seven core categories documented in international buyer inquiries."}
@@ -186,10 +186,10 @@ export function TradePage({ ar = true }: TradePageProps) {
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
               <span>{ar ? "القسم الرابع: ذكاء السوق والكميات" : "Section 4: Market Intelligence"}</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5">
+            <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5 leading-snug">
               {ar ? "ذكاء السوق ومتطلبات المشترين الموثقة" : "Market Demand & Trade Intelligence"}
             </h2>
-            <p className="text-xs text-muted-foreground mt-1">
+            <p className="text-xs sm:text-sm text-muted-foreground mt-2.5 sm:mt-3 leading-relaxed">
               {ar
                 ? "لوحة بيانات تحليلية للمسار الشهري، وحصر حصري للطلبات الـ 12 المحددة كميًا بدقة في سجلات عام 2025."
                 : "Analytics dashboard covering monthly trends and 12 explicitly quantified buyer requirement orders."}
@@ -206,10 +206,10 @@ export function TradePage({ ar = true }: TradePageProps) {
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
               <span>{ar ? "القسم الخامس: شبكة الأعمال" : "Section 5: Business Network"}</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5">
+            <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5 leading-snug">
               {ar ? "شبكتنا التجارية الدولية" : "Our International Business Network"}
             </h2>
-            <p className="text-xs text-muted-foreground mt-1">
+            <p className="text-xs sm:text-sm text-muted-foreground mt-2.5 sm:mt-3 leading-relaxed">
               {ar
                 ? "فصل كامل وصارم بين الشركاء والعملاء المتعاقد معهم فعليًا، وبين استفسارات المشترين قيد التفاوض والتدقيق."
                 : "Strict separation between verified contracted clients/partners and privacy-protected buyer inquiries."}
@@ -226,10 +226,10 @@ export function TradePage({ ar = true }: TradePageProps) {
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
               <span>{ar ? "القسم السادس: الفرص التجارية" : "Section 6: Trade Opportunities"}</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5">
+            <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5 leading-snug">
               {ar ? "الفرص التجارية وعروض التوريد المفتوحة" : "International Trade Opportunities"}
             </h2>
-            <p className="text-xs text-muted-foreground mt-1">
+            <p className="text-xs sm:text-sm text-muted-foreground mt-2.5 sm:mt-3 leading-relaxed">
               {ar
                 ? "بوابة تقديم العروض التنافسية أمام المنتجين والموردين المؤهلين للتعاقد على كميات التصدير المطلوبة."
                 : "Open bidding opportunities allowing qualified producers and suppliers to submit competitive supply quotes."}
@@ -246,10 +246,10 @@ export function TradePage({ ar = true }: TradePageProps) {
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
               <span>{ar ? "القسم السابع: التوثيق والتحميلات" : "Section 7: Reports & Documentation"}</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5">
+            <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5 leading-snug">
               {ar ? "تقارير ودراسات التجارة الدولية الرسمية (PDF)" : "Official Trade Reports & PDFs"}
             </h2>
-            <p className="text-xs text-muted-foreground mt-1">
+            <p className="text-xs sm:text-sm text-muted-foreground mt-2.5 sm:mt-3 leading-relaxed">
               {ar
                 ? "مكتبة التقارير التنفيذية الخمسة الموثقة، مهيأة للتحميل والطباعة وفق الهوية البصرية للمجموعة."
                 : "Comprehensive library of five executive trade reports, ready for PDF export and high-resolution printing."}
