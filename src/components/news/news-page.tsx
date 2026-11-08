@@ -230,21 +230,6 @@ export function NewsPage() {
               </p>
             </Reveal>
           </div>
-
-          {/* D. Archival Lineage Note — Positioned at the bottom of the hero image */}
-          <div className="mt-8 pt-4 w-full text-start">
-            <Reveal>
-              <h4 className="text-brand-orange font-bold text-xs sm:text-sm mb-1.5 text-start flex items-center gap-1.5">
-                <span className="size-1.5 rounded-full bg-brand-orange" />
-                <span>{ar ? "ملاحظة توثيقية للأرشيف:" : "Archival Lineage Note:"}</span>
-              </h4>
-              <p className="text-xs sm:text-[12.5px] text-white/90 text-start drop-shadow-sm lg:whitespace-nowrap leading-relaxed">
-                {ar
-                  ? "التقارير والمراجعات القطاعية المؤرخة قبل عام 2023 توثق أنشطة الكيانات المؤسسة ومشاريعها المتخصصة قبل توحيدها الشامل تحت مظلة مجموعة سامي بن عياد عام 2023 (امتدادًا للجذور المهنية القائمة منذ 1977)."
-                  : "Reports and sector reviews dated prior to 2023 document the operational milestones and market engagements of predecessor founding entities prior to their formal unification under Sami Bin Ayyad Group in 2023, building on foundational roots established since 1977."}
-              </p>
-            </Reveal>
-          </div>
         </div>
       </section>
 
