@@ -114,7 +114,7 @@ export function MarketDirectory({ ar = true, selectedCountryCode }: MarketDirect
           <select
             value={continentFilter}
             onChange={(e) => setContinentFilter(e.target.value)}
-            className="rounded-xl border border-foreground/25 bg-background/95 px-4 py-2 text-xs font-semibold text-foreground shadow-sm hover:border-brand-orange focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 cursor-pointer transition-all"
+            className="appearance-none rounded-xl border border-foreground/25 bg-background/95 px-4 py-2 text-xs font-semibold text-foreground shadow-sm hover:border-brand-orange focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 cursor-pointer transition-all"
           >
             {continents.map((cnt) => (
               <option key={cnt.id} value={cnt.id} className="bg-background text-foreground">
@@ -127,7 +127,7 @@ export function MarketDirectory({ ar = true, selectedCountryCode }: MarketDirect
           <select
             value={categoryFilter}
             onChange={(e) => setCategoryFilter(e.target.value)}
-            className="rounded-xl border border-foreground/25 bg-background/95 px-4 py-2 text-xs font-semibold text-foreground shadow-sm hover:border-brand-orange focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 cursor-pointer transition-all"
+            className="appearance-none rounded-xl border border-foreground/25 bg-background/95 px-4 py-2 text-xs font-semibold text-foreground shadow-sm hover:border-brand-orange focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 cursor-pointer transition-all"
           >
             <option value="all" className="bg-background text-foreground">
               {ar ? "كافة فئات طلبات الشراء" : "All Inquiry Types"}
