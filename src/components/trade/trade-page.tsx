@@ -128,21 +128,6 @@ export function TradePage({ ar = true }: TradePageProps) {
 
         {/* Section 3: Global Product Demand */}
         <section id="product-demand" className="scroll-mt-32 space-y-6">
-          <div className="interactive-card glass-box-interactive rounded-3xl p-6 sm:p-8 shadow-md backdrop-blur-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer">
-            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
-              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-              <span>{ar ? "القسم الثالث: محفظة السلع" : "Section 3: Product Portfolio"}</span>
-            </div>
-            <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5 leading-snug">
-              {ar ? "المنتجات المطلوبة في الأسواق العالمية" : "Global Product Demand Portfolio"}
-            </h2>
-            <p className="text-xs sm:text-sm text-muted-foreground mt-2.5 sm:mt-3 leading-relaxed">
-              {ar
-                ? "استعراض تصنيفي متكامل لـ 7 فئات رئيسية تغطي التمور، التوابل، الخضروات، الفواكه، الحبوب، الأعشاب، والسلع الاستراتيجية."
-                : "Comprehensive product taxonomy covering seven core categories documented in international buyer inquiries."}
-            </p>
-          </div>
-
           <GlobalProductDemand ar={ar} />
         </section>
 

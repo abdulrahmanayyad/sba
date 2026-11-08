@@ -34,69 +34,85 @@ export function GlobalProductDemand({ ar = true, onInquireProduct }: GlobalProdu
   });
 
   return (
-    <div className="w-full space-y-8">
-      {/* Unified Category Selection, Overview Banner & Search in a Single Glass Box */}
-      <div className="interactive-card glass-box-interactive rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl backdrop-blur-2xl transition-all duration-300">
-        {/* Category Tabs Header */}
-        <div className="flex flex-wrap items-center gap-2.5">
-          {PRODUCT_DEMAND_PORTFOLIO.map((cat) => {
-            const isActive = activeCategory === cat.categoryKey;
-            return (
-              <button
-                key={cat.categoryKey}
-                type="button"
-                onClick={() => {
-                  setActiveCategory(cat.categoryKey);
-                  setSearchProduct("");
-                }}
-                className={`flex shrink-0 items-center gap-2 rounded-2xl px-5 py-3 text-xs font-bold transition-all duration-300 cursor-pointer ${
-                  isActive
-                    ? "border-2 border-brand-green bg-brand-green text-white shadow-lg shadow-brand-green/20 scale-[1.03]"
-                    : "border border-border/60 bg-background/50 text-foreground/80 hover:border-brand-green/50 hover:bg-background/80 hover:text-foreground hover:-translate-y-0.5 shadow-sm"
-                }`}
-              >
-                <Package className="size-4 shrink-0" />
-                <span>{ar ? cat.categoryNameAr : cat.categoryNameEn}</span>
-              </button>
-            );
-          })}
+    <div id="product-demand" className="interactive-card glass-box-interactive w-full rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl backdrop-blur-2xl transition-all duration-300">
+      {/* Section 3 Title & Description Header */}
+      <div>
+        <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
+          <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+          <span>{ar ? "القسم الثالث: محفظة السلع" : "Section 3: Product Portfolio"}</span>
+        </div>
+        <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5 leading-snug">
+          {ar ? "المنتجات المطلوبة في الأسواق العالمية" : "Global Product Demand Portfolio"}
+        </h2>
+        <p className="text-xs sm:text-sm text-muted-foreground mt-2.5 sm:mt-3 leading-relaxed max-w-4xl">
+          {ar
+            ? "استعراض تصنيفي متكامل لـ 7 فئات رئيسية تغطي التمور، التوابل، الخضروات، الفواكه، الحبوب، الأعشاب، والسلع الاستراتيجية."
+            : "Comprehensive product taxonomy covering seven core categories documented in international buyer inquiries."}
+        </p>
+      </div>
+
+      {/* Divider */}
+      <div className="border-t border-border/40 dark:border-white/10" />
+
+      {/* Category Tabs Header */}
+      <div className="flex flex-wrap items-center gap-2.5">
+        {PRODUCT_DEMAND_PORTFOLIO.map((cat) => {
+          const isActive = activeCategory === cat.categoryKey;
+          return (
+            <button
+              key={cat.categoryKey}
+              type="button"
+              onClick={() => {
+                setActiveCategory(cat.categoryKey);
+                setSearchProduct("");
+              }}
+              className={`flex shrink-0 items-center gap-2 rounded-2xl px-5 py-3 text-xs font-bold transition-all duration-300 cursor-pointer ${
+                isActive
+                  ? "border-2 border-brand-green bg-brand-green text-white shadow-lg shadow-brand-green/20 scale-[1.03]"
+                  : "border border-border/60 bg-background/50 text-foreground/80 hover:border-brand-green/50 hover:bg-background/80 hover:text-foreground hover:-translate-y-0.5 shadow-sm"
+              }`}
+            >
+              <Package className="size-4 shrink-0" />
+              <span>{ar ? cat.categoryNameAr : cat.categoryNameEn}</span>
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Divider */}
+      <div className="border-t border-border/40 dark:border-white/10" />
+
+      {/* Active Category Overview & Search */}
+      <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+        <div>
+          <div className="text-brand-orange text-xs font-bold uppercase tracking-wider mb-1">
+            <span>{ar ? "فئة التصدير والطلب الدولي" : "Export & Global Demand Category"}</span>
+          </div>
+          <h3 className="text-xl sm:text-2xl font-black text-foreground">
+            {ar ? currentCat.categoryNameAr : currentCat.categoryNameEn}
+          </h3>
+          <p className="mt-1 text-xs sm:text-sm text-muted-foreground max-w-xl leading-relaxed">
+            {ar
+              ? `تم تسجيل وتوثيق طلب شراء لـ ${currentCat.subProducts.length} صنف أساسي ضمن هذه الفئة عبر أكثر من 20 دولة مستوردة خلال عام 2025`
+              : `Documented demand and purchase inquiries across ${currentCat.subProducts.length} core product lines from international buyers during 2025.`}
+          </p>
         </div>
 
-        {/* Divider */}
-        <div className="border-t border-border/40 dark:border-white/10" />
-
-        {/* Active Category Overview & Search */}
-        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-          <div>
-            <div className="text-brand-orange text-xs font-bold uppercase tracking-wider mb-1">
-              <span>{ar ? "فئة التصدير والطلب الدولي" : "Export & Global Demand Category"}</span>
-            </div>
-            <h3 className="text-xl sm:text-2xl font-black text-foreground">
-              {ar ? currentCat.categoryNameAr : currentCat.categoryNameEn}
-            </h3>
-            <p className="mt-1 text-xs sm:text-sm text-muted-foreground max-w-xl leading-relaxed">
-              {ar
-                ? `تم تسجيل وتوثيق طلب شراء لـ ${currentCat.subProducts.length} صنف أساسي ضمن هذه الفئة عبر أكثر من 20 دولة مستوردة خلال عام 2025`
-                : `Documented demand and purchase inquiries across ${currentCat.subProducts.length} core product lines from international buyers during 2025.`}
-            </p>
-          </div>
-
-          {/* Product Search Inside Category */}
-          <div className="relative min-w-[240px] sm:min-w-[280px]">
-            <Search className="absolute start-3.5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
-            <input
-              type="text"
-              value={searchProduct}
-              onChange={(e) => setSearchProduct(e.target.value)}
-              placeholder={ar ? "ابحث عن صنف أو مواصفة..." : "Search product or spec..."}
-              className="w-full rounded-xl border border-foreground/25 bg-background/95 py-2 pe-4 ps-10 text-xs text-foreground placeholder:text-muted-foreground shadow-sm focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 transition-all"
-            />
-          </div>
+        {/* Product Search Inside Category */}
+        <div className="relative min-w-[240px] sm:min-w-[280px]">
+          <Search className="absolute start-3.5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
+          <input
+            type="text"
+            value={searchProduct}
+            onChange={(e) => setSearchProduct(e.target.value)}
+            placeholder={ar ? "ابحث عن صنف أو مواصفة..." : "Search product or spec..."}
+            className="w-full rounded-xl border border-foreground/25 bg-background/95 py-2 pe-4 ps-10 text-xs text-foreground placeholder:text-muted-foreground shadow-sm focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 transition-all"
+          />
         </div>
       </div>
 
       {/* Products Grid */}
-      <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 pt-2">
         {filteredProducts.map((prod, idx) => {
           return (
             <div
