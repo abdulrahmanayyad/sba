@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Reveal } from "@/components/home/reveal";
 import { TradeWorldMap } from "./trade-world-map";
 import { MarketDirectory } from "./market-directory";
 import { GlobalProductDemand } from "./global-product-demand";
@@ -22,7 +23,7 @@ export function TradePage({ ar = true }: TradePageProps) {
   return (
     <div className="relative min-h-screen bg-background text-foreground pb-24">
       {/* 1. Hero Section (Full-width and Full-height Background like Home & News) */}
-      <section className="relative w-full min-h-[calc(100svh-76px)] overflow-hidden text-white flex flex-col justify-between">
+      <section className="relative w-full min-h-[calc(100svh-76px)] overflow-hidden text-white flex flex-col justify-center mb-12">
         {/* Full-width & Full-height background image & overlay */}
         <img
           src="/BG/Main Home Page.jpg"
@@ -32,34 +33,41 @@ export function TradePage({ ar = true }: TradePageProps) {
         />
         <div className="group-hero-overlay absolute inset-0 bg-black/65 backdrop-blur-[1px] pointer-events-none" />
 
-        <div className="relative z-10 w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 flex-1 flex flex-col justify-center pt-20 sm:pt-28 pb-10 sm:pb-12">
-          <div className="space-y-6 text-start w-full">
-            {/* Top Pill - at the start of the line matching homepage style */}
-            <div className="flex justify-start">
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/50 px-4 py-1.5 text-xs font-bold tracking-wide text-white/95 backdrop-blur-md shadow-md">
-                <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-                <span>{ar ? "مجموعة سامي بن عياد · انتشارنا التجاري العالمي" : "SAMI BIN AYYAD GROUP · Global Trade Footprint"}</span>
+        <div className="site-container relative z-10 flex min-h-[inherit] flex-col justify-between pt-16 sm:pt-24 pb-8 sm:pb-12">
+          <div className="my-auto">
+            <Reveal>
+              {/* A. Small Top Headline */}
+              <div className="flex items-center justify-start mb-6">
+                <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/50 px-4 py-1.5 text-xs font-bold tracking-wide text-white/95 backdrop-blur-md shadow-md">
+                  <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+                  <span>
+                    {ar
+                      ? "مجموعة سامي بن عياد · انتشارنا التجاري العالمي"
+                      : "SAMI BIN AYYAD GROUP · Global Trade Footprint"}
+                  </span>
+                </div>
               </div>
-            </div>
 
-            {/* Main Headings */}
-            <div className="space-y-3">
-              <h1 className="font-head text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight text-white leading-snug drop-shadow-md max-w-4xl">
-                {ar ? "نربط الأسواق العالمية، ونصنع الفرص التجارية الموثوقة" : "Connecting Global Markets, Delivering Real Trade Opportunities"}
+              {/* B. Main Headline */}
+              <h1 className="font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white leading-snug tracking-tight text-start drop-shadow-md max-w-4xl">
+                {ar
+                  ? "نربط الأسواق العالمية، ونصنع الفرص التجارية الموثوقة"
+                  : "Connecting Global Markets, Delivering Real Trade Opportunities"}
               </h1>
 
-              <p className="text-sm sm:text-base text-white/90 leading-relaxed drop-shadow-sm lg:whitespace-nowrap">
+              {/* C. Intro Paragraph */}
+              <p className="mt-3.5 max-w-4xl text-sm sm:text-base leading-relaxed text-white/90 text-start drop-shadow-sm">
                 {ar
                   ? "استعراض مهني موثق لشبكة الطلبات التجارية لعام 2025، وقاعدة متطلبات المشترين للتمور والسلع الغذائية عبر 47 دولة حول العالم."
                   : "A documented corporate showcase of our 2025 commercial inquiry network, covering buyer demand for dates and food commodities across 47 countries."}
               </p>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
 
       {/* Main Content Sections */}
-      <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 space-y-20 mt-8 sm:mt-12">
+      <div className="site-container space-y-20 mt-8 sm:mt-12">
         {/* Key Trade Statistics (Positioned Below Hero Background) */}
         <div className="grid grid-cols-2 gap-3.5 sm:grid-cols-4 w-full">
           <div className="interactive-card glass-box-interactive group rounded-3xl p-5 sm:p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer text-center flex flex-col items-center justify-center">
