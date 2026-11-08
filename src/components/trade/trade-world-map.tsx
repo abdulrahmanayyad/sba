@@ -1,16 +1,7 @@
 import React, { useState, useMemo } from "react";
 import { 
   Globe, 
-  MapPin, 
-  Filter, 
-  Sparkles, 
-  Info, 
-  ExternalLink, 
   Search, 
-  CheckCircle2, 
-  Layers,
-  ChevronRight,
-  TrendingUp,
   AlertCircle
 } from "lucide-react";
 import { 
@@ -154,10 +145,10 @@ export function TradeWorldMap({ ar = true, onSelectCountry }: TradeWorldMapProps
         </div>
       </div>
 
-      {/* Main Map Box & Country Drawer */}
+      {/* Main Map Box & Available Countries Panel */}
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 pt-2">
         {/* Map Canvas */}
-        <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-background/40 p-4 shadow-inner backdrop-blur-xl lg:col-span-8 transition-all duration-300">
+        <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-background/40 p-4 shadow-inner backdrop-blur-xl lg:col-span-7 transition-all duration-300">
           {/* Subtle Grid Lines Overlay */}
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(currentColor_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.04]" />
           
@@ -358,113 +349,48 @@ export function TradeWorldMap({ ar = true, onSelectCountry }: TradeWorldMapProps
           </div>
         </div>
 
-        {/* Selected Country Profile Drawer */}
-        <div className="lg:col-span-4 flex flex-col">
-          {activeCountry ? (
-            <div className="flex h-full flex-col justify-between rounded-2xl border border-white/15 bg-background/50 p-5 shadow-inner backdrop-blur-xl transition-all duration-300">
-              <div>
-                {/* Header */}
-                <div className="flex items-center justify-between border-b border-white/10 pb-4">
-                  <div className="flex items-center gap-3">
-                    <span className="text-3xl" role="img" aria-label={activeCountry.nameEn}>
-                      {activeCountry.flag}
-                    </span>
-                    <div>
-                      <h4 className="text-lg font-bold text-foreground">
-                        {ar ? activeCountry.nameAr : activeCountry.nameEn}
-                      </h4>
-                      <p className="text-xs text-muted-foreground">
-                        {ar ? activeCountry.continentAr : activeCountry.continent} • {activeCountry.flag}
-                      </p>
-                    </div>
-                  </div>
-
-                  <span className="rounded-full bg-brand-orange/20 px-3 py-1 text-xs font-bold text-brand-orange">
-                    {activeCountry.totalInquiries} {ar ? "طلب شراء" : "Purchase Requests"}
-                  </span>
-                </div>
-
-                {/* Inquiries Breakdown */}
-                <div className="grid grid-cols-2 gap-2 py-4">
-                  <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/10 p-3">
-                    <span className="text-[11px] font-bold text-emerald-600 dark:text-emerald-400">
-                      {ar ? "تمور ومنتجاتها" : "Dates & Products"}
-                    </span>
-                    <p className="mt-1 text-xl font-black text-foreground">
-                      {activeCountry.dateInquiriesCount} <span className="text-xs font-semibold text-muted-foreground">{ar ? "طلب شراء" : "requests"}</span>
-                    </p>
-                  </div>
-                  <div className="rounded-2xl border border-brand-orange/30 bg-brand-orange/10 p-3">
-                    <span className="text-[11px] font-bold text-brand-orange">
-                      {ar ? "سلع غذائية" : "Food Commodities"}
-                    </span>
-                    <p className="mt-1 text-xl font-black text-foreground">
-                      {activeCountry.diversifiedInquiriesCount} <span className="text-xs font-semibold text-muted-foreground">{ar ? "طلب شراء" : "requests"}</span>
-                    </p>
-                  </div>
-                </div>
-
-                {/* Requested Products */}
-                <div className="space-y-2">
-                  <h5 className="text-xs font-bold text-muted-foreground uppercase tracking-wider">
-                    {ar ? "أبرز المنتجات المطلوبة:" : "Requested Products:"}
-                  </h5>
-                  <div className="flex flex-wrap gap-1.5 max-h-36 overflow-y-auto p-1">
-                    {activeCountry.products.slice(0, 8).map((prod, idx) => (
-                      <span
-                        key={idx}
-                        className="rounded-lg border border-white/15 bg-white/10 px-2.5 py-1 text-xs font-medium text-foreground"
-                      >
-                        {prod}
-                      </span>
-                    ))}
-                    {activeCountry.products.length > 8 && (
-                      <span className="rounded-lg bg-white/5 px-2 py-1 text-[11px] text-muted-foreground">
-                        +{activeCountry.products.length - 8} {ar ? "منتجات أخرى" : "more"}
-                      </span>
-                    )}
-                  </div>
-                </div>
-
-                {/* Documented Quantities if any */}
-                {activeCountry.documentedQuantities.length > 0 && (
-                  <div className="mt-4 rounded-xl border border-white/10 bg-white/5 p-3">
-                    <h5 className="text-xs font-bold text-brand-orange mb-1 flex items-center gap-1.5">
-                      <TrendingUp className="size-3.5" />
-                      {ar ? "كميات مسجلة موثقة:" : "Documented Quantities:"}
-                    </h5>
-                    <ul className="space-y-1 text-xs text-foreground/90">
-                      {activeCountry.documentedQuantities.slice(0, 3).map((q, idx) => (
-                        <li key={idx} className="flex items-center gap-1.5">
-                          <span className="size-1 rounded-full bg-brand-orange" />
-                          <span>{q}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
+        {/* Available Countries Panel (Country Name + Flag Only) */}
+        <div className="lg:col-span-5 flex flex-col h-full">
+          <div className="flex h-full flex-col rounded-2xl border border-white/15 bg-background/50 p-4 sm:p-5 shadow-inner backdrop-blur-xl transition-all duration-300">
+            {/* Header */}
+            <div className="flex items-center justify-between border-b border-white/10 pb-3 mb-3">
+              <div className="flex items-center gap-2">
+                <Globe className="size-4 text-brand-orange" />
+                <h4 className="text-sm font-bold text-foreground">
+                  {ar ? "الدول المتاحة" : "Available Markets"}
+                </h4>
               </div>
+              <span className="rounded-full bg-white/10 px-2.5 py-0.5 text-xs font-bold text-foreground">
+                {filteredCountries.length} {ar ? "دولة" : "Countries"}
+              </span>
+            </div>
 
-              {/* Action Button */}
-              <div className="mt-6 pt-3 border-t border-border/40">
-                <a
-                  href="#market-directory"
-                  onClick={() => handleCountryClick(activeCountry)}
-                  className="flex w-full items-center justify-center gap-2 rounded-full bg-brand-green px-4 py-2.5 text-xs font-bold text-white shadow-md transition-all hover:bg-brand-orange hover:-translate-y-0.5 active:scale-95"
-                >
-                  <span>{ar ? "عرض الملف التجاري الكامل للدولة" : "View Full Country Profile"}</span>
-                  <ChevronRight className="size-4 rtl:rotate-180" />
-                </a>
-              </div>
+            {/* Countries List with Flag Only */}
+            <div className="grid grid-cols-2 gap-2 overflow-y-auto max-h-[480px] p-1 pe-1.5">
+              {filteredCountries.map((c) => {
+                const isSelected = activeCountry?.code === c.code;
+                return (
+                  <button
+                    key={c.code}
+                    type="button"
+                    onClick={() => handleCountryClick(c)}
+                    className={`flex items-center gap-2 rounded-xl border px-3 py-2.5 text-xs font-bold transition-all text-start cursor-pointer ${
+                      isSelected
+                        ? "border-brand-orange bg-brand-orange/20 text-brand-orange shadow-sm scale-[1.02]"
+                        : "border-white/10 bg-white/5 text-foreground hover:border-brand-orange/40 hover:bg-white/10"
+                    }`}
+                  >
+                    <span className="text-lg shrink-0" role="img" aria-label={c.nameEn}>
+                      {c.flag}
+                    </span>
+                    <span className="truncate leading-normal">
+                      {ar ? c.nameAr : c.nameEn}
+                    </span>
+                  </button>
+                );
+              })}
             </div>
-          ) : (
-            <div className="flex h-full min-h-[300px] flex-col items-center justify-center rounded-3xl border border-dashed border-white/20 p-6 text-center text-muted-foreground">
-              <Globe className="size-10 text-muted-foreground/50 mb-2" />
-              <p className="text-sm">
-                {ar ? "اختر أي دولة من الخريطة لمعاينة ملفها التجاري" : "Select a country from the map to view details"}
-              </p>
-            </div>
-          )}
+          </div>
         </div>
       </div>
     </div>
