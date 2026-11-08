@@ -73,7 +73,7 @@ export function MarketDirectory({ ar = true, selectedCountryCode }: MarketDirect
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder={ar ? "ابحث بالدولة أو كودها أو اسم منتج..." : "Search country or product..."}
-            className="w-full rounded-xl border border-border/80 bg-background/70 py-2 pe-4 ps-10 text-sm text-foreground placeholder:text-muted-foreground shadow-xs focus:border-brand-orange focus:outline-none focus:ring-1 focus:ring-brand-orange"
+            className="w-full rounded-xl border border-foreground/25 bg-background/95 py-2 pe-4 ps-10 text-sm text-foreground placeholder:text-muted-foreground shadow-sm focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 transition-all"
           />
         </div>
 
@@ -83,7 +83,7 @@ export function MarketDirectory({ ar = true, selectedCountryCode }: MarketDirect
           <select
             value={continentFilter}
             onChange={(e) => setContinentFilter(e.target.value)}
-            className="rounded-xl border border-border/90 bg-background/90 px-4 py-2 text-xs font-semibold text-foreground shadow-xs hover:border-brand-orange/60 focus:border-brand-orange focus:outline-none focus:ring-1 focus:ring-brand-orange cursor-pointer transition-colors"
+            className="rounded-xl border border-foreground/25 bg-background/95 px-4 py-2 text-xs font-semibold text-foreground shadow-sm hover:border-brand-orange focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 cursor-pointer transition-all"
           >
             {continents.map((cnt) => (
               <option key={cnt.id} value={cnt.id} className="bg-background text-foreground">
@@ -96,7 +96,7 @@ export function MarketDirectory({ ar = true, selectedCountryCode }: MarketDirect
           <select
             value={categoryFilter}
             onChange={(e) => setCategoryFilter(e.target.value)}
-            className="rounded-xl border border-border/90 bg-background/90 px-4 py-2 text-xs font-semibold text-foreground shadow-xs hover:border-brand-orange/60 focus:border-brand-orange focus:outline-none focus:ring-1 focus:ring-brand-orange cursor-pointer transition-colors"
+            className="rounded-xl border border-foreground/25 bg-background/95 px-4 py-2 text-xs font-semibold text-foreground shadow-sm hover:border-brand-orange focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 cursor-pointer transition-all"
           >
             <option value="all" className="bg-background text-foreground">
               {ar ? "كافة فئات طلبات الشراء" : "All Inquiry Types"}
