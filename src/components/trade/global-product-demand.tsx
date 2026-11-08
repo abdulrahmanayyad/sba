@@ -163,7 +163,7 @@ export function GlobalProductDemand({ ar = true, onInquireProduct }: GlobalProdu
                 <a
                   href="#trade-opportunities"
                   onClick={() => onInquireProduct?.(prod.nameAr)}
-                  className="flex w-full items-center justify-center gap-1.5 rounded-xl border border-white/10 bg-white/5 py-2 text-xs font-bold text-foreground/90 transition-all hover:bg-brand-orange hover:text-white hover:border-brand-orange"
+                  className="flex w-full items-center justify-center gap-1.5 rounded-xl border border-brand-green !bg-brand-green !text-white py-2 text-xs font-bold shadow-sm transition-all duration-300 hover:!bg-brand-orange hover:!border-brand-orange hover:!text-white hover:-translate-y-0.5 hover:shadow-md active:scale-95 cursor-pointer"
                 >
                   <span>{ar ? "استفسر عن توريد هذا الصنف" : "Inquire About This Product"}</span>
                   <ChevronRight className="size-3.5 rtl:rotate-180" />
