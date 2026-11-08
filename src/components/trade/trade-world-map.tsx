@@ -90,8 +90,8 @@ export function TradeWorldMap({ ar = true, onSelectCountry }: TradeWorldMapProps
         </h2>
         <p className="text-xs sm:text-sm text-muted-foreground mt-2.5 sm:mt-3 leading-relaxed max-w-4xl">
           {ar
-            ? "تحديد بصري تفاعلي لـ 47 دولة تم تسجيل طلبات شراء تجارية خلال عام 2025 مصنفة حسب القارات ونوع السلعة."
-            : "Interactive visualization of 47 destination markets representing 2025 recorded commercial purchase requests."}
+            ? "بيان للدول التي قامت بتسجيل طلبات شراء تجارية خلال عام 2025"
+            : "Overview of countries that recorded commercial purchase requests during 2025."}
         </p>
       </div>
 
