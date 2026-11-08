@@ -76,42 +76,42 @@ export function TradePage({ ar = true }: TradePageProps) {
       <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 space-y-20 mt-8 sm:mt-12">
         {/* Key Trade Statistics (Positioned Below Hero Background) */}
         <div className="grid grid-cols-2 gap-3.5 sm:grid-cols-4 w-full">
-          <div className="interactive-card glass-box-interactive group rounded-3xl p-5 sm:p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer">
+          <div className="interactive-card glass-box-interactive group rounded-3xl p-5 sm:p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer text-center flex flex-col items-center justify-center">
             <span className="font-head text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">47</span>
-            <p className="text-xs sm:text-sm font-bold text-foreground mt-1.5">
+            <p className="text-xs sm:text-sm font-bold text-foreground mt-1.5 text-center">
               {ar ? "دولة مسجلة في الطلبات" : "Documented Destination Markets"}
             </p>
-            <span className="text-[11px] text-muted-foreground block mt-0.5">
+            <span className="text-[11px] text-muted-foreground block mt-0.5 text-center">
               {ar ? "عبر 5 قارات حول العالم" : "Across 5 Global Continents"}
             </span>
           </div>
 
-          <div className="interactive-card glass-box-interactive group rounded-3xl p-5 sm:p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer">
+          <div className="interactive-card glass-box-interactive group rounded-3xl p-5 sm:p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer text-center flex flex-col items-center justify-center">
             <span className="font-head text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">179</span>
-            <p className="text-xs sm:text-sm font-bold text-foreground mt-1.5">
+            <p className="text-xs sm:text-sm font-bold text-foreground mt-1.5 text-center">
               {ar ? "سجل طلبات شرائية موثقة" : "Recorded Purchase Inquiries"}
             </p>
-            <span className="text-[11px] text-muted-foreground block mt-0.5">
+            <span className="text-[11px] text-muted-foreground block mt-0.5 text-center">
               {ar ? "سجلات أصلية لعام 2025" : "2025 Original Verified Records"}
             </span>
           </div>
 
-          <div className="interactive-card glass-box-interactive group rounded-3xl p-5 sm:p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer">
+          <div className="interactive-card glass-box-interactive group rounded-3xl p-5 sm:p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer text-center flex flex-col items-center justify-center">
             <span className="font-head text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">66</span>
-            <p className="text-xs sm:text-sm font-bold text-foreground mt-1.5">
+            <p className="text-xs sm:text-sm font-bold text-foreground mt-1.5 text-center">
               {ar ? "طلبات شراء التمور ومنتجاتها" : "Date Purchase Inquiries"}
             </p>
-            <span className="text-[11px] text-muted-foreground block mt-0.5">
+            <span className="text-[11px] text-muted-foreground block mt-0.5 text-center">
               {ar ? "عجوة، مجدول، سكري، دبس" : "Ajwa, Medjool, Sukkari, Paste"}
             </span>
           </div>
 
-          <div className="interactive-card glass-box-interactive group rounded-3xl p-5 sm:p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer">
+          <div className="interactive-card glass-box-interactive group rounded-3xl p-5 sm:p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer text-center flex flex-col items-center justify-center">
             <span className="font-head text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">113</span>
-            <p className="text-xs sm:text-sm font-bold text-foreground mt-1.5">
+            <p className="text-xs sm:text-sm font-bold text-foreground mt-1.5 text-center">
               {ar ? "طلبات شراء السلع المتنوعة" : "Diversified Purchase Inquiries"}
             </p>
-            <span className="text-[11px] text-muted-foreground block mt-0.5">
+            <span className="text-[11px] text-muted-foreground block mt-0.5 text-center">
               {ar ? "توابل، خضار، بذور، أعشاب" : "Spices, Produce, Seeds, Herbs"}
             </span>
           </div>
