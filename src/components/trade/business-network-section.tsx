@@ -224,7 +224,7 @@ export function BusinessNetworkSection({ ar = true }: BusinessNetworkSectionProp
 
           {/* Inquiries Table / Cards */}
           <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 max-h-[600px] overflow-y-auto p-1">
-            {filteredInquiries.slice(0, 48).map((inq) => (
+            {filteredInquiries.map((inq) => (
               <div
                 key={inq.id}
                 className="rounded-2xl border border-white/10 bg-background/60 p-4 text-xs backdrop-blur-md space-y-2 hover:border-brand-orange/40 transition-colors"
@@ -263,12 +263,6 @@ export function BusinessNetworkSection({ ar = true }: BusinessNetworkSectionProp
                 </div>
               </div>
             ))}
-          </div>
-
-          <div className="text-center text-xs text-muted-foreground">
-            {ar
-              ? `يتم عرض أول 48 استفسارًا من إجمالي ${filteredInquiries.length} استفسارًا مسجلًا في قاعدة البيانات لعام 2025.`
-              : `Showing first 48 records of ${filteredInquiries.length} documented inquiries in the 2025 database.`}
           </div>
         </div>
       )}
