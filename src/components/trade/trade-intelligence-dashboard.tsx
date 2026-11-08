@@ -150,7 +150,7 @@ export function TradeIntelligenceDashboard({ ar = true }: TradeIntelligenceDashb
                   {/* Quantity Highlight Box */}
                   <div className="mt-4 rounded-2xl border border-emerald-500/30 bg-emerald-500/10 p-3.5">
                     <span className="text-[11px] font-semibold text-emerald-400 block mb-0.5">
-                      {ar ? "الكمية المطلوبة الموثقة:" : "Documented Quantity:"}
+                      {ar ? "الكمية المطلوبة:" : "Required Quantity:"}
                     </span>
                     <p className="text-lg font-black text-emerald-300">
                       {ar ? req.quantity : req.quantityEn}

@@ -500,7 +500,7 @@ export function TradeCmsTab() {
 
               {selectedRecord.quantityRequested && (
                 <div className="rounded-xl border border-emerald-500/20 bg-emerald-500/10 p-3">
-                  <span className="text-emerald-400 font-bold block text-[11px]">الكمية المطلوبة الموثقة:</span>
+                  <span className="text-emerald-400 font-bold block text-[11px]">الكمية المطلوبة:</span>
                   <p className="text-sm font-black text-emerald-300 mt-0.5">
                     {selectedRecord.quantityRequested}
                   </p>

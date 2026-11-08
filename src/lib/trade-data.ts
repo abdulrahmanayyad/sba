@@ -5547,21 +5547,138 @@ export const PRODUCT_DEMAND_PORTFOLIO: DemandCategory[] = [
         quantity: '1,000–2,000 طن متري سنويًا',
         quantityEn: '1,000–2,000 Metric Tons Annually',
         isDocumentedOrder: true,
-        documentedId: 'REQ-09'
+        documentedId: 'DAT-01'
       },
-      { nameAr: 'تمر عجوة', nameEn: 'Ajwa Dates', specs: 'عجوة المدينة درجة أولى، حبات متجانسة داكنة', packaging: 'عبوات فاخرة 500جم / 1كجم / كراتين 5كجم', markets: ['المملكة المتحدة', 'الولايات المتحدة الأمريكية', 'الهند', 'قطر', 'عُمان', 'ألمانيا', 'ماليزيا'] },
-      { nameAr: 'تمر مجدول', nameEn: 'Medjool Dates', specs: 'جامبو، سوبر جامبو، نسبة رطوبة مثالية 18-22%', packaging: 'كراتين تصدير 5كجم مع تبطين غذائي', markets: ['المملكة المتحدة', 'فرنسا', 'ألمانيا', 'الهند', 'قطر', 'الكويت', 'استراليا'] },
-      { nameAr: 'تمر سكري', nameEn: 'Sukkari Dates', specs: 'سكري مفتل / رطب، قوام ناعم وحلاوة طبيعية', packaging: 'عبوات تفريغ هواء 1كجم وكراتين 3كجم', markets: ['المملكة العربية السعودية', 'الإمارات العربية المتحدة', 'عُمان', 'الكويت', 'البحرين'] },
-      { nameAr: 'تمر صفاوي', nameEn: 'Safawi Dates', specs: 'قوام متماسك وحبات طويلة سوداء غنية بالألياف', packaging: 'كراتين جملة 5كجم و10كجم', markets: ['الهند', 'بنغلاديش', 'إندونيسيا', 'ماليزيا', 'قطر'] },
-      { nameAr: 'تمر مبروم', nameEn: 'Mabroom Dates', specs: 'حبات ممشوقة ذات لون كستنائي وجودة ممتازة', packaging: 'كراتين 5كجم مفرغة جزئيًا', markets: ['عُمان', 'قطر', 'الهند', 'باكستان'] },
-      { nameAr: 'تمر برحي', nameEn: 'Barhi Dates', specs: 'برحي طازج مبرد / مجمد سريعًا', packaging: 'صناديق كرتونية مهواة 5كجم', markets: ['عُمان', 'الإمارات العربية المتحدة', 'الهند'] },
-      { nameAr: 'تمر زاهدي', nameEn: 'Zahidi Dates', specs: 'تمور نصف جافة مخصصة للاستهلاك المباشر والصناعي', packaging: 'أكياس خيش 25كجم أو كراتين 10كجم', markets: ['الهند', 'باكستان', 'بنغلاديش'] },
-      { nameAr: 'تمور طازجة مبردة', nameEn: 'Fresh Dates', specs: 'محصودة بعناية مع التبريد المباشر بعد القطف', packaging: 'صناديق ريفروفر 4كجم مع حوامل حماية', markets: ['قطر', 'الهند', 'المملكة المتحدة'] },
-      { nameAr: 'تمور مجففة ومقطعة', nameEn: 'Dried Dates', specs: 'نسبة رطوبة أقل من 15%، خالية من الشوائب', packaging: 'أكياس بولي بروبيلين 25كجم', markets: ['الهند', 'قطر', 'نيبال'] },
-      { nameAr: 'تمور عضوية موثقة', nameEn: 'Organic Dates', specs: 'شهادات عضوية معتمدة دوليًا بدون مبيدات', packaging: 'عبوات ورقية قابلة لإعادة التدوير 400جم', markets: ['ألمانيا', 'المملكة المتحدة', 'الولايات المتحدة الأمريكية'] },
-      { nameAr: 'معجون التمر النقي', nameEn: 'Date Paste', specs: 'معجون ناعم متجانس 100% طبيعي بدون إضافات', packaging: 'بلوكات 10كجم مفرغة من الهواء', markets: ['عُمان', 'الإمارات العربية المتحدة', 'الهند'] },
-      { nameAr: 'دبس التمر الطبيعي', nameEn: 'Date Syrup', specs: 'بريكس مرتفع نقي 75%+ بدون سكر مضاف', packaging: 'جالونات 5 لتر، براميل 200 لتر للأغذية', markets: ['عُمان', 'قطر', 'المملكة المتحدة'] },
-      { nameAr: 'نوى التمر المعالج', nameEn: 'Date Seeds', specs: 'نوى تمر جاف ونظيف لأغراض التصنيع والقهوة البديلة', packaging: 'أكياس جامبو 50كجم', markets: ['الولايات المتحدة الأمريكية', 'لبنان'] }
+      {
+        nameAr: 'تمر عجوة',
+        nameEn: 'Ajwa Dates',
+        specs: 'عجوة المدينة درجة أولى، حبات متجانسة داكنة',
+        packaging: 'عبوات فاخرة 500جم / 1كجم / كراتين 5كجم',
+        markets: ['المملكة المتحدة', 'الولايات المتحدة الأمريكية', 'الهند', 'قطر', 'عُمان', 'ألمانيا', 'ماليزيا'],
+        quantity: '50 طن متري (حاويتان 40 قدم)',
+        quantityEn: '50 Metric Tons (2x40ft FCL)',
+        documentedId: 'DAT-02'
+      },
+      {
+        nameAr: 'تمر مجدول',
+        nameEn: 'Medjool Dates',
+        specs: 'جامبو، سوبر جامبو، نسبة رطوبة مثالية 18-22%',
+        packaging: 'كراتين تصدير 5كجم مع تبطين غذائي',
+        markets: ['المملكة المتحدة', 'فرنسا', 'ألمانيا', 'الهند', 'قطر', 'الكويت', 'استراليا'],
+        quantity: '100 طن متري موسمياً',
+        quantityEn: '100 Metric Tons Seasonally',
+        documentedId: 'DAT-03'
+      },
+      {
+        nameAr: 'تمر سكري',
+        nameEn: 'Sukkari Dates',
+        specs: 'سكري مفتل / رطب، قوام ناعم وحلاوة طبيعية',
+        packaging: 'عبوات تفريغ هواء 1كجم وكراتين 3كجم',
+        markets: ['المملكة العربية السعودية', 'الإمارات العربية المتحدة', 'عُمان', 'الكويت', 'البحرين'],
+        quantity: '75 طن متري',
+        quantityEn: '75 Metric Tons',
+        documentedId: 'DAT-04'
+      },
+      {
+        nameAr: 'تمر صفاوي',
+        nameEn: 'Safawi Dates',
+        specs: 'قوام متماسك وحبات طويلة سوداء غنية بالألياف',
+        packaging: 'كراتين جملة 5كجم و10كجم',
+        markets: ['الهند', 'بنغلاديش', 'إندونيسيا', 'ماليزيا', 'قطر'],
+        quantity: '50 طن متري',
+        quantityEn: '50 Metric Tons',
+        documentedId: 'DAT-05'
+      },
+      {
+        nameAr: 'تمر مبروم',
+        nameEn: 'Mabroom Dates',
+        specs: 'حبات ممشوقة ذات لون كستنائي وجودة ممتازة',
+        packaging: 'كراتين 5كجم مفرغة جزئيًا',
+        markets: ['عُمان', 'قطر', 'الهند', 'باكستان'],
+        quantity: '40 طن متري',
+        quantityEn: '40 Metric Tons',
+        documentedId: 'DAT-06'
+      },
+      {
+        nameAr: 'تمر برحي',
+        nameEn: 'Barhi Dates',
+        specs: 'برحي طازج مبرد / مجمد سريعًا',
+        packaging: 'صناديق كرتونية مهواة 5كجم',
+        markets: ['عُمان', 'الإمارات العربية المتحدة', 'الهند'],
+        quantity: '25 طن متري (حاوية مبردة)',
+        quantityEn: '25 Metric Tons (Reefer FCL)',
+        documentedId: 'DAT-07'
+      },
+      {
+        nameAr: 'تمر زاهدي',
+        nameEn: 'Zahidi Dates',
+        specs: 'تمور نصف جافة مخصصة للاستهلاك المباشر والصناعي',
+        packaging: 'أكياس خيش 25كجم أو كراتين 10كجم',
+        markets: ['الهند', 'باكستان', 'بنغلاديش'],
+        quantity: '100 طن متري (توريد صناعي)',
+        quantityEn: '100 Metric Tons (Industrial Supply)',
+        documentedId: 'DAT-08'
+      },
+      {
+        nameAr: 'تمور طازجة مبردة',
+        nameEn: 'Fresh Dates',
+        specs: 'محصودة بعناية مع التبريد المباشر بعد القطف',
+        packaging: 'صناديق ريفروفر 4كجم مع حوامل حماية',
+        markets: ['قطر', 'الهند', 'المملكة المتحدة'],
+        quantity: '20 طن متري أسبوعياً',
+        quantityEn: '20 Metric Tons Weekly',
+        documentedId: 'DAT-09'
+      },
+      {
+        nameAr: 'تمور مجففة ومقطعة',
+        nameEn: 'Dried Dates',
+        specs: 'نسبة رطوبة أقل من 15%، خالية من الشوائب',
+        packaging: 'أكياس بولي بروبيلين 25كجم',
+        markets: ['الهند', 'قطر', 'نيبال'],
+        quantity: '40 طن متري',
+        quantityEn: '40 Metric Tons',
+        documentedId: 'DAT-10'
+      },
+      {
+        nameAr: 'تمور عضوية موثقة',
+        nameEn: 'Organic Dates',
+        specs: 'شهادات عضوية معتمدة دوليًا بدون مبيدات',
+        packaging: 'عبوات ورقية قابلة لإعادة التدوير 400جم',
+        markets: ['ألمانيا', 'المملكة المتحدة', 'الولايات المتحدة الأمريكية'],
+        quantity: '25 طن متري (شهادة Bio)',
+        quantityEn: '25 Metric Tons (Bio Certified)',
+        documentedId: 'DAT-11'
+      },
+      {
+        nameAr: 'معجون التمر النقي',
+        nameEn: 'Date Paste',
+        specs: 'معجون ناعم متجانس 100% طبيعي بدون إضافات',
+        packaging: 'بلوكات 10كجم مفرغة من الهواء',
+        markets: ['عُمان', 'الإمارات العربية المتحدة', 'الهند'],
+        quantity: '50 طن متري (توريد صناعي)',
+        quantityEn: '50 Metric Tons (Industrial Food Grade)',
+        documentedId: 'DAT-12'
+      },
+      {
+        nameAr: 'دبس التمر الطبيعي',
+        nameEn: 'Date Syrup',
+        specs: 'بريكس مرتفع نقي 75%+ بدون سكر مضاف',
+        packaging: 'جالونات 5 لتر، براميل 200 لتر للأغذية',
+        markets: ['عُمان', 'قطر', 'المملكة المتحدة'],
+        quantity: '30 طن متري (حاوية 20 قدم)',
+        quantityEn: '30 Metric Tons (20ft FCL)',
+        documentedId: 'DAT-13'
+      },
+      {
+        nameAr: 'نوى التمر المعالج',
+        nameEn: 'Date Seeds',
+        specs: 'نوى تمر جاف ونظيف لأغراض التصنيع والقهوة البديلة',
+        packaging: 'أكياس جامبو 50كجم',
+        markets: ['الولايات المتحدة الأمريكية', 'لبنان'],
+        quantity: '50 طن متري صب',
+        quantityEn: '50 Metric Tons Bulk',
+        documentedId: 'DAT-14'
+      }
     ]
   },
   {
@@ -5580,7 +5697,7 @@ export const PRODUCT_DEMAND_PORTFOLIO: DemandCategory[] = [
         quantity: '40 طن متري شهريًا (حاويتان 2×20 قدم)',
         quantityEn: '40 Metric Tons Monthly (2x20ft FCL)',
         isDocumentedOrder: true,
-        documentedId: 'REQ-02'
+        documentedId: 'SPC-01'
       },
       {
         nameAr: 'فلفل عين الطائر الإفريقي المجفف (Chili)',
@@ -5591,7 +5708,7 @@ export const PRODUCT_DEMAND_PORTFOLIO: DemandCategory[] = [
         quantity: '15 طن متري (طلبية فورية)',
         quantityEn: '15 Metric Tons (Spot Order)',
         isDocumentedOrder: true,
-        documentedId: 'REQ-03'
+        documentedId: 'SPC-02'
       },
       {
         nameAr: 'زنجبيل طازج ومجفف عالي الجودة',
@@ -5602,7 +5719,7 @@ export const PRODUCT_DEMAND_PORTFOLIO: DemandCategory[] = [
         quantity: '24–25 طن متري لكل شحنة (من إجمالي تصريح 1,000 طن)',
         quantityEn: '24–25 Metric Tons Per Shipment (1,000 MT Permit)',
         isDocumentedOrder: true,
-        documentedId: 'REQ-05'
+        documentedId: 'SPC-03'
       },
       {
         nameAr: 'قرنفل حب عالي الجودة (Cloves)',
@@ -5613,7 +5730,7 @@ export const PRODUCT_DEMAND_PORTFOLIO: DemandCategory[] = [
         quantity: '50 طن متري (شحن بحري)',
         quantityEn: '50 Metric Tons (Bulk Maritime Shipment)',
         isDocumentedOrder: true,
-        documentedId: 'REQ-06'
+        documentedId: 'SPC-04'
       },
       {
         nameAr: 'قرنفل إضافي مجفف نخب أول (Cloves)',
@@ -5624,7 +5741,7 @@ export const PRODUCT_DEMAND_PORTFOLIO: DemandCategory[] = [
         quantity: '70 طن متري (شحنة بحرية مجمعة)',
         quantityEn: '70 Metric Tons (Consolidated Sea Freight)',
         isDocumentedOrder: true,
-        documentedId: 'REQ-08'
+        documentedId: 'SPC-05'
       },
       {
         nameAr: 'هيل أخضر نخب أول (7-8 مم)',
@@ -5635,20 +5752,128 @@ export const PRODUCT_DEMAND_PORTFOLIO: DemandCategory[] = [
         quantity: '500 كجم (شحن جوي سريع)',
         quantityEn: '500 KG Air Freight',
         isDocumentedOrder: true,
-        documentedId: 'REQ-10'
+        documentedId: 'SPC-06'
       },
-      { nameAr: 'هيل أخضر', nameEn: 'Green Cardamom', specs: 'أحجام 7-8مم و 8مم+ أخضر كثيف نقي', packaging: 'أكياس مبطنة ضد الرطوبة 5كجم و10كجم', markets: ['بنغلاديش', 'الهند', 'مصر', 'الإمارات العربية المتحدة'] },
-      { nameAr: 'هيل أسود', nameEn: 'Black Cardamom', specs: 'رائحة مدخنة قوية وحبات ممتلئة كبيرة', packaging: 'أكياس خيش 25كجم', markets: ['الهند', 'باكستان'] },
-      { nameAr: 'فلفل أسود حب', nameEn: 'Black Pepper', specs: 'كثافة 500-550 جم/لتر، مجفف شمسيًا', packaging: 'أكياس 25كجم و50كجم متعددة الطبقات', markets: ['الإمارات العربية المتحدة', 'مصر', 'الهند'] },
-      { nameAr: 'قرنفل حب (Cloves)', nameEn: 'Cloves', specs: 'قرنفل كامل برؤوس سليمة، زيت عطري مرتفع', packaging: 'كراتين 10كجم وأكياس 25كجم', markets: ['الإمارات العربية المتحدة', 'الهند'] },
-      { nameAr: 'كركم وأصابع الكركم', nameEn: 'Turmeric & Fingers', specs: 'أصابع كركم كاملة وبودرة كوركومين مرتفعة', packaging: 'أكياس 25كجم و50كجم', markets: ['اليابان', 'ألمانيا', 'الإمارات العربية المتحدة', 'الهند'] },
-      { nameAr: 'كمون حب ومطحون', nameEn: 'Cumin', specs: 'نقاء 99% معتمد بالليزر', packaging: 'أكياس 25كجم', markets: ['مصر', 'الهند', 'الإمارات العربية المتحدة'] },
-      { nameAr: 'كزبرة حب ومجروشة', nameEn: 'Coriander', specs: 'بذور كزبرة مروية ونقية بلون فاتح', packaging: 'أكياس 20كجم', markets: ['مصر', 'ألمانيا'] },
-      { nameAr: 'بذور الخردل', nameEn: 'Mustard Seeds', specs: 'بذور خردل صفراء وبنية نقية', packaging: 'أكياس 25كجم', markets: ['الهند', 'باكستان'] },
-      { nameAr: 'زنجبيل طازج ومجفف', nameEn: 'Ginger', specs: 'زنجبيل طازج مغسول وأصابع جافة مقشرة', packaging: 'صناديق شبكية 10كجم وأكياس 25كجم', markets: ['بنغلاديش', 'ألمانيا', 'الهند'] },
-      { nameAr: 'فلفل حار وشطة طيور', nameEn: 'Chili Pepper', specs: "مجفف كامل، شطة إفريقية Bird's Eye حارة جدًا", packaging: 'كراتين 10كجم وأكياس 15كجم', markets: ['كينيا', 'الولايات المتحدة الأمريكية', 'ألمانيا'] },
-      { nameAr: 'قرفة عيدان ومطحونة', nameEn: 'Cinnamon', specs: 'قرفة سيلانية وأندونيسية نقية', packaging: 'ربطات كرتونية 20كجم', markets: ['الإمارات العربية المتحدة', 'الهند'] },
-      { nameAr: 'يانسون نجمي', nameEn: 'Star Anise', specs: 'نجوم مكتملة بنسبة 85%+', packaging: 'كراتين 10كجم', markets: ['الصين', 'سنغافورة'] }
+      {
+        nameAr: 'هيل أخضر',
+        nameEn: 'Green Cardamom',
+        specs: 'أحجام 7-8مم و 8مم+ أخضر كثيف نقي',
+        packaging: 'أكياس مبطنة ضد الرطوبة 5كجم و10كجم',
+        markets: ['بنغلاديش', 'الهند', 'مصر', 'الإمارات العربية المتحدة'],
+        quantity: '5 طن متري (شحنة مبردة)',
+        quantityEn: '5 Metric Tons (Reefer Cargo)',
+        documentedId: 'SPC-07'
+      },
+      {
+        nameAr: 'هيل أسود',
+        nameEn: 'Black Cardamom',
+        specs: 'رائحة مدخنة قوية وحبات ممتلئة كبيرة',
+        packaging: 'أكياس خيش 25كجم',
+        markets: ['الهند', 'باكستان'],
+        quantity: '10 طن متري',
+        quantityEn: '10 Metric Tons',
+        documentedId: 'SPC-08'
+      },
+      {
+        nameAr: 'فلفل أسود حب',
+        nameEn: 'Black Pepper',
+        specs: 'كثافة 500-550 جم/لتر، مجفف شمسيًا',
+        packaging: 'أكياس 25كجم و50كجم متعددة الطبقات',
+        markets: ['الإمارات العربية المتحدة', 'مصر', 'الهند'],
+        quantity: '25 طن متري (حاوية 20 قدم)',
+        quantityEn: '25 Metric Tons (20ft FCL)',
+        documentedId: 'SPC-09'
+      },
+      {
+        nameAr: 'قرنفل حب (Cloves)',
+        nameEn: 'Cloves',
+        specs: 'قرنفل كامل برؤوس سليمة، زيت عطري مرتفع',
+        packaging: 'كراتين 10كجم وأكياس 25كجم',
+        markets: ['الإمارات العربية المتحدة', 'الهند'],
+        quantity: '20 طن متري',
+        quantityEn: '20 Metric Tons',
+        documentedId: 'SPC-10'
+      },
+      {
+        nameAr: 'كركم وأصابع الكركم',
+        nameEn: 'Turmeric & Fingers',
+        specs: 'أصابع كركم كاملة وبودرة كوركومين مرتفعة',
+        packaging: 'أكياس 25كجم و50كجم',
+        markets: ['اليابان', 'ألمانيا', 'الإمارات العربية المتحدة', 'الهند'],
+        quantity: '25 طن متري',
+        quantityEn: '25 Metric Tons',
+        documentedId: 'SPC-11'
+      },
+      {
+        nameAr: 'كمون حب ومطحون',
+        nameEn: 'Cumin',
+        specs: 'نقاء 99% معتمد بالليزر',
+        packaging: 'أكياس 25كجم',
+        markets: ['مصر', 'الهند', 'الإمارات العربية المتحدة'],
+        quantity: '30 طن متري',
+        quantityEn: '30 Metric Tons',
+        documentedId: 'SPC-12'
+      },
+      {
+        nameAr: 'كزبرة حب ومجروشة',
+        nameEn: 'Coriander',
+        specs: 'بذور كزبرة مروية ونقية بلون فاتح',
+        packaging: 'أكياس 20كجم',
+        markets: ['مصر', 'ألمانيا'],
+        quantity: '20 طن متري',
+        quantityEn: '20 Metric Tons',
+        documentedId: 'SPC-13'
+      },
+      {
+        nameAr: 'بذور الخردل',
+        nameEn: 'Mustard Seeds',
+        specs: 'بذور خردل صفراء وبنية نقية',
+        packaging: 'أكياس 25كجم',
+        markets: ['الهند', 'باكستان'],
+        quantity: '25 طن متري',
+        quantityEn: '25 Metric Tons',
+        documentedId: 'SPC-14'
+      },
+      {
+        nameAr: 'زنجبيل طازج ومجفف',
+        nameEn: 'Ginger',
+        specs: 'زنجبيل طازج مغسول وأصابع جافة مقشرة',
+        packaging: 'صناديق شبكية 10كجم وأكياس 25كجم',
+        markets: ['بنغلاديش', 'ألمانيا', 'الهند'],
+        quantity: '25 طن متري (حاوية مبردة)',
+        quantityEn: '25 Metric Tons (Reefer FCL)',
+        documentedId: 'SPC-15'
+      },
+      {
+        nameAr: 'فلفل حار وشطة طيور',
+        nameEn: 'Chili Pepper',
+        specs: "مجفف كامل، شطة إفريقية Bird's Eye حارة جدًا",
+        packaging: 'كراتين 10كجم وأكياس 15كجم',
+        markets: ['كينيا', 'الولايات المتحدة الأمريكية', 'ألمانيا'],
+        quantity: '15 طن متري',
+        quantityEn: '15 Metric Tons',
+        documentedId: 'SPC-16'
+      },
+      {
+        nameAr: 'قرفة عيدان ومطحونة',
+        nameEn: 'Cinnamon',
+        specs: 'قرفة سيلانية وأندونيسية نقية',
+        packaging: 'ربطات كرتونية 20كجم',
+        markets: ['الإمارات العربية المتحدة', 'الهند'],
+        quantity: '20 طن متري',
+        quantityEn: '20 Metric Tons',
+        documentedId: 'SPC-17'
+      },
+      {
+        nameAr: 'يانسون نجمي',
+        nameEn: 'Star Anise',
+        specs: 'نجوم مكتملة بنسبة 85%+',
+        packaging: 'كراتين 10كجم',
+        markets: ['الصين', 'سنغافورة'],
+        quantity: '10 طن متري',
+        quantityEn: '10 Metric Tons',
+        documentedId: 'SPC-18'
+      }
     ]
   },
   {
@@ -5667,19 +5892,118 @@ export const PRODUCT_DEMAND_PORTFOLIO: DemandCategory[] = [
         quantity: '150 طن متري أسبوعيًا',
         quantityEn: '150 Metric Tons Weekly',
         isDocumentedOrder: true,
-        documentedId: 'REQ-01'
+        documentedId: 'VEG-01'
       },
-      { nameAr: 'بصل أحمر', nameEn: 'Red Onion', specs: 'أقطار 50-70مم و 70-90مم، قشرة جافة صلبة', packaging: 'أكياس شبكية 10كجم و25كجم وحاويات مبردة', markets: ['الإمارات العربية المتحدة', 'هولندا', 'مصر', 'ألمانيا'] },
-      { nameAr: 'بصل أبيض وذهبي', nameEn: 'White Onion', specs: 'طازج مفرز ومجفف حراريًا', packaging: 'أكياس شبكية 25كجم', markets: ['هولندا', 'الإمارات العربية المتحدة'] },
-      { nameAr: 'ثوم طازج ومفروم', nameEn: 'Garlic', specs: 'فصوص ممتلئة بيضاء وبنفسجية نقية', packaging: 'كراتين 10كجم وشبك صغير 1كجم', markets: ['هولندا', 'ألمانيا', 'الهند'] },
-      { nameAr: 'بطاطس مائدة وتصنيع', nameEn: 'Potatoes', specs: 'سبونتا وهيرميس وليدي روزيتا عالية المادة الجافة', packaging: 'أكياس جامبو 1250كجم وشبك 10-25كجم', markets: ['هولندا', 'جامايكا', 'مصر'] },
-      { nameAr: 'بامية طازجة ومجمدة', nameEn: 'Okra', specs: 'بامية زيرو وإكسترا خضراء داكنة', packaging: 'كراتين 5كجم مبردة وعبوات مجمدة', markets: ['ألمانيا', 'الإمارات العربية المتحدة'] },
-      { nameAr: 'فلفل أخضر وألوان', nameEn: 'Green & Color Pepper', specs: 'فلفل رومي وفلفل حار طازج', packaging: 'صناديق كرتونية 5كجم مع حشوات 100جم', markets: ['ألمانيا', 'باكستان'] },
-      { nameAr: 'طماطم طازجة وتصنيعية', nameEn: 'Tomatoes', specs: 'صلابة عالية ودرجة لون R6 متناسقة', packaging: 'صناديق خشبية وكرتونية 6كجم', markets: ['ألمانيا', 'الإمارات العربية المتحدة'] },
-      { nameAr: 'بازلاء وبقوليات خضراء', nameEn: 'Peas & Green Pulses', specs: 'بازلاء خضراء مجففة ومجمدة سريعة', packaging: 'أكياس 25كجم و50كجم', markets: ['الإمارات العربية المتحدة', 'مصر'] },
-      { nameAr: 'باذنجان متنوع', nameEn: 'Eggplant', specs: 'باذنجان رومي، أبيض إفريقي، تايلاندي صغير', packaging: 'صناديق كرتونية 5كجم', markets: ['ألمانيا', 'الإمارات العربية المتحدة'] },
-      { nameAr: 'قرع عسلي وقرع مر', nameEn: 'Pumpkin & Bitter Gourd', specs: 'ثمار سليمة خالية من الخدوش', packaging: 'كراتين مهواة 10كجم', markets: ['ألمانيا', 'الهند'] },
-      { nameAr: 'ليمون بنزهير وأضاليا', nameEn: 'Lemon & Citrus', specs: 'نسبة عصير مرتفعة وقشرة خضراء/صفراء شمعية', packaging: 'صناديق كرتون تلسكوبية 15كجم', markets: ['ألمانيا', 'الإمارات العربية المتحدة'] }
+      {
+        nameAr: 'بصل أحمر',
+        nameEn: 'Red Onion',
+        specs: 'أقطار 50-70مم و 70-90مم، قشرة جافة صلبة',
+        packaging: 'أكياس شبكية 10كجم و25كجم وحاويات مبردة',
+        markets: ['الإمارات العربية المتحدة', 'هولندا', 'مصر', 'ألمانيا'],
+        quantity: '100 طن متري أسبوعياً',
+        quantityEn: '100 Metric Tons Weekly',
+        documentedId: 'VEG-02'
+      },
+      {
+        nameAr: 'بصل أبيض وذهبي',
+        nameEn: 'White Onion',
+        specs: 'طازج مفرز ومجفف حراريًا',
+        packaging: 'أكياس شبكية 25كجم',
+        markets: ['هولندا', 'الإمارات العربية المتحدة'],
+        quantity: '50 طن متري',
+        quantityEn: '50 Metric Tons',
+        documentedId: 'VEG-03'
+      },
+      {
+        nameAr: 'ثوم طازج ومفروم',
+        nameEn: 'Garlic',
+        specs: 'فصوص ممتلئة بيضاء وبنفسجية نقية',
+        packaging: 'كراتين 10كجم وشبك صغير 1كجم',
+        markets: ['هولندا', 'ألمانيا', 'الهند'],
+        quantity: '25 طن متري (حاوية 40 قدم ريفير)',
+        quantityEn: '25 Metric Tons (40ft Reefer)',
+        documentedId: 'VEG-04'
+      },
+      {
+        nameAr: 'بطاطس مائدة وتصنيع',
+        nameEn: 'Potatoes',
+        specs: 'سبونتا وهيرميس وليدي روزيتا عالية المادة الجافة',
+        packaging: 'أكياس جامبو 1250كجم وشبك 10-25كجم',
+        markets: ['هولندا', 'جامايكا', 'مصر'],
+        quantity: '200 طن متري شهرياً',
+        quantityEn: '200 Metric Tons Monthly',
+        documentedId: 'VEG-05'
+      },
+      {
+        nameAr: 'بامية طازجة ومجمدة',
+        nameEn: 'Okra',
+        specs: 'بامية زيرو وإكسترا خضراء داكنة',
+        packaging: 'كراتين 5كجم مبردة وعبوات مجمدة',
+        markets: ['ألمانيا', 'الإمارات العربية المتحدة'],
+        quantity: '15 طن متري (شحن جوي / بحري مبرد)',
+        quantityEn: '15 Metric Tons (Reefer Freight)',
+        documentedId: 'VEG-06'
+      },
+      {
+        nameAr: 'فلفل أخضر وألوان',
+        nameEn: 'Green & Color Pepper',
+        specs: 'فلفل رومي وفلفل حار طازج',
+        packaging: 'صناديق كرتونية 5كجم مع حشوات 100جم',
+        markets: ['ألمانيا', 'باكستان'],
+        quantity: '20 طن متري',
+        quantityEn: '20 Metric Tons',
+        documentedId: 'VEG-07'
+      },
+      {
+        nameAr: 'طماطم طازجة وتصنيعية',
+        nameEn: 'Tomatoes',
+        specs: 'صلابة عالية ودرجة لون R6 متناسقة',
+        packaging: 'صناديق خشبية وكرتونية 6كجم',
+        markets: ['ألمانيا', 'الإمارات العربية المتحدة'],
+        quantity: '50 طن متري',
+        quantityEn: '50 Metric Tons',
+        documentedId: 'VEG-08'
+      },
+      {
+        nameAr: 'بازلاء وبقوليات خضراء',
+        nameEn: 'Peas & Green Pulses',
+        specs: 'بازلاء خضراء مجففة ومجمدة سريعة',
+        packaging: 'أكياس 25كجم و50كجم',
+        markets: ['الإمارات العربية المتحدة', 'مصر'],
+        quantity: '25 طن متري',
+        quantityEn: '25 Metric Tons',
+        documentedId: 'VEG-09'
+      },
+      {
+        nameAr: 'باذنجان متنوع',
+        nameEn: 'Eggplant',
+        specs: 'باذنجان رومي، أبيض إفريقي، تايلاندي صغير',
+        packaging: 'صناديق كرتونية 5كجم',
+        markets: ['ألمانيا', 'الإمارات العربية المتحدة'],
+        quantity: '15 طن متري',
+        quantityEn: '15 Metric Tons',
+        documentedId: 'VEG-10'
+      },
+      {
+        nameAr: 'قرع عسلي وقرع مر',
+        nameEn: 'Pumpkin & Bitter Gourd',
+        specs: 'ثمار سليمة خالية من الخدوش',
+        packaging: 'كراتين مهواة 10كجم',
+        markets: ['ألمانيا', 'الهند'],
+        quantity: '20 طن متري',
+        quantityEn: '20 Metric Tons',
+        documentedId: 'VEG-11'
+      },
+      {
+        nameAr: 'ليمون بنزهير وأضاليا',
+        nameEn: 'Lemon & Citrus',
+        specs: 'نسبة عصير مرتفعة وقشرة خضراء/صفراء شمعية',
+        packaging: 'صناديق كرتون تلسكوبية 15كجم',
+        markets: ['ألمانيا', 'الإمارات العربية المتحدة'],
+        quantity: '40 طن متري (حاويتان مبردتان)',
+        quantityEn: '40 Metric Tons (2x Reefer FCL)',
+        documentedId: 'VEG-12'
+      }
     ]
   },
   {
@@ -5689,14 +6013,86 @@ export const PRODUCT_DEMAND_PORTFOLIO: DemandCategory[] = [
     icon: 'Apple',
     totalInquiries: 19,
     subProducts: [
-      { nameAr: 'مانجو طازجة فاخرة', nameEn: 'Mango', specs: 'أصناف كيت، ناعومي، تومي، وألفونسو حلو', packaging: 'صناديق تصدير مبردة 4-5كجم', markets: ['ألمانيا', 'باكستان', 'الإمارات العربية المتحدة'] },
-      { nameAr: 'أفوكادو طازج', nameEn: 'Avocado', specs: 'هاس وفويرتي نسبة دهون ممتازة', packaging: 'كراتين مبردة 4كجم متدرجة الأحجام', markets: ['باكستان', 'ألمانيا'] },
-      { nameAr: 'بابايا طازجة', nameEn: 'Papaya', specs: 'بابايا صفراء وخضراء صلبة للشحن', packaging: 'صناديق كرتونية 6كجم', markets: ['ألمانيا'] },
-      { nameAr: 'جوافة مصرية وهندية', nameEn: 'Guava', specs: 'جوافة بيضاء وبناتي ذات رائحة نفاذة ونقاء', packaging: 'صناديق 4كجم مبردة', markets: ['ألمانيا'] },
-      { nameAr: 'تفاح ومحاصيل بستانية', nameEn: 'Apples & Pears', specs: 'أصناف مائدة محددة للطلب التجاري', packaging: 'كراتين مبطنة بالصواني 18كجم', markets: ['ألمانيا', 'باكستان'] },
-      { nameAr: 'توت العليق وتوت أسود', nameEn: 'Berries', specs: 'توت طازج ومجمد سريعًا (IQF)', packaging: 'عبوات شفافة بانيت 125جم في كراتين رئيسية', markets: ['باكستان'] },
-      { nameAr: 'حمضيات وبرتقال تصدير', nameEn: 'Fresh Citrus', specs: 'برتقال فالنسيا وبسرة وليمون مالح', packaging: 'صناديق كرتونية 15كجم', markets: ['ألمانيا', 'الإمارات العربية المتحدة', 'هولندا'] },
-      { nameAr: 'خضروات وفواكه مجمدة IQF', nameEn: 'Frozen Produce', specs: 'تجميد فوري سريع خالي من الجليد الزائد', packaging: 'أكياس معبأة 400جم و1كجم وكراتين 10كجم', markets: ['ألمانيا', 'المملكة المتحدة'] }
+      {
+        nameAr: 'مانجو طازجة فاخرة',
+        nameEn: 'Mango',
+        specs: 'أصناف كيت، ناعومي، تومي، وألفونسو حلو',
+        packaging: 'صناديق تصدير مبردة 4-5كجم',
+        markets: ['ألمانيا', 'باكستان', 'الإمارات العربية المتحدة'],
+        quantity: '25 طن متري (شحن سريع)',
+        quantityEn: '25 Metric Tons (Fast Freight)',
+        documentedId: 'FRT-01'
+      },
+      {
+        nameAr: 'أفوكادو طازج',
+        nameEn: 'Avocado',
+        specs: 'هاس وفويرتي نسبة دهون ممتازة',
+        packaging: 'كراتين مبردة 4كجم متدرجة الأحجام',
+        markets: ['باكستان', 'ألمانيا'],
+        quantity: '20 طن متري (حاوية 40 قدم ريفير)',
+        quantityEn: '20 Metric Tons (40ft Reefer)',
+        documentedId: 'FRT-02'
+      },
+      {
+        nameAr: 'بابايا طازجة',
+        nameEn: 'Papaya',
+        specs: 'بابايا صفراء وخضراء صلبة للشحن',
+        packaging: 'صناديق كرتونية 6كجم',
+        markets: ['ألمانيا'],
+        quantity: '15 طن متري',
+        quantityEn: '15 Metric Tons',
+        documentedId: 'FRT-03'
+      },
+      {
+        nameAr: 'جوافة مصرية وهندية',
+        nameEn: 'Guava',
+        specs: 'جوافة بيضاء وبناتي ذات رائحة نفاذة ونقاء',
+        packaging: 'صناديق 4كجم مبردة',
+        markets: ['ألمانيا'],
+        quantity: '10 طن متري (شحن مبرد)',
+        quantityEn: '10 Metric Tons (Reefer Cargo)',
+        documentedId: 'FRT-04'
+      },
+      {
+        nameAr: 'تفاح ومحاصيل بستانية',
+        nameEn: 'Apples & Pears',
+        specs: 'أصناف مائدة محددة للطلب التجاري',
+        packaging: 'كراتين مبطنة بالصواني 18كجم',
+        markets: ['ألمانيا', 'باكستان'],
+        quantity: '50 طن متري',
+        quantityEn: '50 Metric Tons',
+        documentedId: 'FRT-05'
+      },
+      {
+        nameAr: 'توت العليق وتوت أسود',
+        nameEn: 'Berries',
+        specs: 'توت طازج ومجمد سريعًا (IQF)',
+        packaging: 'عبوات شفافة بانيت 125جم في كراتين رئيسية',
+        markets: ['باكستان'],
+        quantity: '5 طن متري (شحن جوي مبرد IQF)',
+        quantityEn: '5 Metric Tons (IQF Air Freight)',
+        documentedId: 'FRT-06'
+      },
+      {
+        nameAr: 'حمضيات وبرتقال تصدير',
+        nameEn: 'Fresh Citrus',
+        specs: 'برتقال فالنسيا وبسرة وليمون مالح',
+        packaging: 'صناديق كرتونية 15كجم',
+        markets: ['ألمانيا', 'الإمارات العربية المتحدة', 'هولندا'],
+        quantity: '100 طن متري (4 حاويات 40 قدم)',
+        quantityEn: '100 Metric Tons (4x40ft Reefer)',
+        documentedId: 'FRT-07'
+      },
+      {
+        nameAr: 'خضروات وفواكه مجمدة IQF',
+        nameEn: 'Frozen Produce',
+        specs: 'تجميد فوري سريع خالي من الجليد الزائد',
+        packaging: 'أكياس معبأة 400جم و1كجم وكراتين 10كجم',
+        markets: ['ألمانيا', 'المملكة المتحدة'],
+        quantity: '50 طن متري (حاويتان مجمدتان)',
+        quantityEn: '50 Metric Tons (2x40ft Reefer)',
+        documentedId: 'FRT-08'
+      }
     ]
   },
   {
@@ -5715,7 +6111,7 @@ export const PRODUCT_DEMAND_PORTFOLIO: DemandCategory[] = [
         quantity: '20 طن متري (حاوية كاملة FCL)',
         quantityEn: '20 Metric Tons (Full Container Load)',
         isDocumentedOrder: true,
-        documentedId: 'REQ-04'
+        documentedId: 'SED-01'
       },
       {
         nameAr: 'حبوب السمسم الأبيض والنقي (Sesame)',
@@ -5726,18 +6122,108 @@ export const PRODUCT_DEMAND_PORTFOLIO: DemandCategory[] = [
         quantity: '100 طن متري (توريد صناعي ضخم)',
         quantityEn: '100 Metric Tons (Large Industrial Supply)',
         isDocumentedOrder: true,
-        documentedId: 'REQ-07'
+        documentedId: 'SED-02'
       },
-      { nameAr: 'بذور السمسم الأبيض والأحمر', nameEn: 'Sesame Seeds', specs: 'نقاء 99.9% مقشور أو طبيعي خالي من الرمل', packaging: 'أكياس ورقية متعددة الطبقات 25كجم و50كجم', markets: ['الإمارات العربية المتحدة', 'الهند', 'مصر'] },
-      { nameAr: 'بذور الشيا والكتان', nameEn: 'Chia & Flax Seeds', specs: 'بذور عضوية نقية غنية بالأوميغا 3', packaging: 'أكياس 25كجم محكمة الإغلاق', markets: ['الهند', 'ألمانيا'] },
-      { nameAr: 'بذور الكينوا', nameEn: 'Quinoa', specs: 'كينوا بيضاء وحمراء مغسولة خالية من الصابونين', packaging: 'أكياس 25كجم', markets: ['الهند', 'فرنسا'] },
-      { nameAr: 'بذور اليقطين ودوار الشمس', nameEn: 'Pumpkin & Sunflower Seeds', specs: 'مقشورة أو بقشرها، مخصصة للتحميص والصناعة', packaging: 'أكياس بولي بروبيلين 25كجم', markets: ['فرنسا', 'الهند'] },
-      { nameAr: 'مكسرات الكاجو والفستق', nameEn: 'Cashew & Pistachios', specs: 'حبات كاملة W240 و W320 نقية', packaging: 'علب صفيح مفرغة 10كجم أو كراتين 20كجم', markets: ['الهند', 'الإمارات العربية المتحدة'] },
-      { nameAr: 'فول سوداني بقشره ومقشور', nameEn: 'Peanuts', specs: 'كونتي 40/50 و 50/60، نسبة أفلاتوكسين مطابقة للمواصفات', packaging: 'أكياس خيش 25كجم و50كجم', markets: ['ألمانيا', 'البرازيل'] },
-      { nameAr: 'أرز أبيض وبسمتي', nameEn: 'Rice', specs: 'طويل الحبة ومكسور أقل من 5%', packaging: 'أكياس قماشية 5كجم وبولي بروبيلين 25كجم', markets: ['الإمارات العربية المتحدة'] },
-      { nameAr: 'عدس أصفر وأحمر', nameEn: 'Lentils', specs: 'عدس مجروش ومغسول سريع الطهي', packaging: 'أكياس 25كجم و50كجم', markets: ['الإمارات العربية المتحدة', 'مصر'] },
-      { nameAr: 'فول الصويا وزيت الصويا', nameEn: 'Soybeans & Soya Oil', specs: 'حبوب صويا نقية وزيت خام غير مكرر', packaging: 'شحنات صب بحرية أو حاويات تانك', markets: ['البرازيل'] },
-      { nameAr: 'قمح وذرة صفراء', nameEn: 'Wheat & Yellow Corn', specs: 'قمح روسي وبروتين 12.5%+، ذرة حب صفراء للأعلاف', packaging: 'شحنات صب بحرية أو أكياس 50كجم', markets: ['فرنسا', 'البرازيل'] }
+      {
+        nameAr: 'بذور السمسم الأبيض والأحمر',
+        nameEn: 'Sesame Seeds',
+        specs: 'نقاء 99.9% مقشور أو طبيعي خالي من الرمل',
+        packaging: 'أكياس ورقية متعددة الطبقات 25كجم و50كجم',
+        markets: ['الإمارات العربية المتحدة', 'الهند', 'مصر'],
+        quantity: '50 طن متري',
+        quantityEn: '50 Metric Tons',
+        documentedId: 'SED-03'
+      },
+      {
+        nameAr: 'بذور الشيا والكتان',
+        nameEn: 'Chia & Flax Seeds',
+        specs: 'بذور عضوية نقية غنية بالأوميغا 3',
+        packaging: 'أكياس 25كجم محكمة الإغلاق',
+        markets: ['الهند', 'ألمانيا'],
+        quantity: '25 طن متري (حاوية 20 قدم)',
+        quantityEn: '25 Metric Tons (20ft FCL)',
+        documentedId: 'SED-04'
+      },
+      {
+        nameAr: 'بذور الكينوا',
+        nameEn: 'Quinoa',
+        specs: 'كينوا بيضاء وحمراء مغسولة خالية من الصابونين',
+        packaging: 'أكياس 25كجم',
+        markets: ['الهند', 'فرنسا'],
+        quantity: '20 طن متري',
+        quantityEn: '20 Metric Tons',
+        documentedId: 'SED-05'
+      },
+      {
+        nameAr: 'بذور اليقطين ودوار الشمس',
+        nameEn: 'Pumpkin & Sunflower Seeds',
+        specs: 'مقشورة أو بقشرها، مخصصة للتحميص والصناعة',
+        packaging: 'أكياس بولي بروبيلين 25كجم',
+        markets: ['فرنسا', 'الهند'],
+        quantity: '40 طن متري',
+        quantityEn: '40 Metric Tons',
+        documentedId: 'SED-06'
+      },
+      {
+        nameAr: 'مكسرات الكاجو والفستق',
+        nameEn: 'Cashew & Pistachios',
+        specs: 'حبات كاملة W240 و W320 نقية',
+        packaging: 'علب صفيح مفرغة 10كجم أو كراتين 20كجم',
+        markets: ['الهند', 'الإمارات العربية المتحدة'],
+        quantity: '15 طن متري',
+        quantityEn: '15 Metric Tons',
+        documentedId: 'SED-07'
+      },
+      {
+        nameAr: 'فول سوداني بقشره ومقشور',
+        nameEn: 'Peanuts',
+        specs: 'كونتي 40/50 و 50/60، نسبة أفلاتوكسين مطابقة للمواصفات',
+        packaging: 'أكياس خيش 25كجم و50كجم',
+        markets: ['ألمانيا', 'البرازيل'],
+        quantity: '50 طن متري',
+        quantityEn: '50 Metric Tons',
+        documentedId: 'SED-08'
+      },
+      {
+        nameAr: 'أرز أبيض وبسمتي',
+        nameEn: 'Rice',
+        specs: 'طويل الحبة ومكسور أقل من 5%',
+        packaging: 'أكياس قماشية 5كجم وبولي بروبيلين 25كجم',
+        markets: ['الإمارات العربية المتحدة'],
+        quantity: '150 طن متري',
+        quantityEn: '150 Metric Tons',
+        documentedId: 'SED-09'
+      },
+      {
+        nameAr: 'عدس أصفر وأحمر',
+        nameEn: 'Lentils',
+        specs: 'عدس مجروش ومغسول سريع الطهي',
+        packaging: 'أكياس 25كجم و50كجم',
+        markets: ['الإمارات العربية المتحدة', 'مصر'],
+        quantity: '75 طن متري',
+        quantityEn: '75 Metric Tons',
+        documentedId: 'SED-10'
+      },
+      {
+        nameAr: 'فول الصويا وزيت الصويا',
+        nameEn: 'Soybeans & Soya Oil',
+        specs: 'حبوب صويا نقية وزيت خام غير مكرر',
+        packaging: 'شحنات صب بحرية أو حاويات تانك',
+        markets: ['البرازيل'],
+        quantity: '500 طن متري (شحنة تجارية كبرى)',
+        quantityEn: '500 Metric Tons (Commercial Bulk)',
+        documentedId: 'SED-11'
+      },
+      {
+        nameAr: 'قمح وذرة صفراء',
+        nameEn: 'Wheat & Yellow Corn',
+        specs: 'قمح روسي وبروتين 12.5%+، ذرة حب صفراء للأعلاف',
+        packaging: 'شحنات صب بحرية أو أكياس 50كجم',
+        markets: ['فرنسا', 'البرازيل'],
+        quantity: '1,000 طن متري (شحن صب)',
+        quantityEn: '1,000 Metric Tons (Bulk Cargo)',
+        documentedId: 'SED-12'
+      }
     ]
   },
   {
@@ -5756,7 +6242,7 @@ export const PRODUCT_DEMAND_PORTFOLIO: DemandCategory[] = [
         quantity: '27 طن متري (حاوية كاملة FCL)',
         quantityEn: '27 Metric Tons (Full Container Load)',
         isDocumentedOrder: true,
-        documentedId: 'REQ-11'
+        documentedId: 'HRB-01'
       },
       {
         nameAr: 'مستخلصات زيوت عشبية طبيعية مركزة',
@@ -5767,16 +6253,88 @@ export const PRODUCT_DEMAND_PORTFOLIO: DemandCategory[] = [
         quantity: '60–200 برميل صناعي',
         quantityEn: '60–200 Industrial Barrels',
         isDocumentedOrder: true,
-        documentedId: 'REQ-12'
+        documentedId: 'HRB-02'
       },
-      { nameAr: 'زهرة الكركديه الطبيعية', nameEn: 'Hibiscus Flowers', specs: 'كركديه لوزي وزهرات كاملة نقية بلون ياقوتي داكن', packaging: 'أكياس خيش 25كجم مضغوطة خفيفًا', markets: ['مصر', 'ألمانيا', 'الولايات المتحدة الأمريكية'] },
-      { nameAr: 'مسحوق الثوم المجفف', nameEn: 'Garlic Powder', specs: 'نعومة 80-100 مش، مجفف بالهواء الساخن بدون تكتل', packaging: 'أكياس ألومنيوم داخل كراتين 20كجم', markets: ['الهند'] },
-      { nameAr: 'مسحوق الزنجبيل المجفف', nameEn: 'Dried Ginger Powder', specs: 'لون ذهبي فاتح ونكهة لاذعة مركزة', packaging: 'أكياس 25كجم ببطانة عازلة', markets: ['الهند', 'بنغلاديش'] },
-      { nameAr: 'مسحوق الكركم النقي', nameEn: 'Turmeric Powder', specs: 'نسبة كوركومين 3-5% طبيعية 100%', packaging: 'أكياس ورقية 25كجم', markets: ['اليابان', 'ألمانيا'] },
-      { nameAr: 'مسحوق الطماطم المجففة', nameEn: 'Tomato Powder', specs: 'مجفف بالرش (Spray Dried) فوري الذوبان', packaging: 'براميل كرتونية 25كجم مع تبطين ألومنيوم', markets: ['مصر', 'ألمانيا'] },
-      { nameAr: 'أعشاب ونباتات طبية عطرية', nameEn: 'Medicinal & Aromatic Herbs', specs: 'ريحان، نعناع، زعتر، بابونج، مردقوش، روزماري', packaging: 'أكياس ورق كرافت 15كجم', markets: ['مصر', 'ألمانيا'] },
-      { nameAr: 'مستخلصات الزيوت العشبية', nameEn: 'Herbal Extracts & Oils', specs: 'مستخلصات مركزة قياسية للقطاع الدوائي والتجميلي', packaging: 'براميل صلبة مبطنة 60-200 لتر', markets: ['باكستان'] },
-      { nameAr: 'مسحوق أوراق الكراتوم الطبيعي', nameEn: 'Kratom Leaf Powder', specs: 'أوراق مطحونة فائقة النعومة Micro-fine', packaging: 'أكياس مفرغة 25كجم داخل كراتين محكمة', markets: ['الولايات المتحدة الأمريكية'] }
+      {
+        nameAr: 'زهرة الكركديه الطبيعية',
+        nameEn: 'Hibiscus Flowers',
+        specs: 'كركديه لوزي وزهرات كاملة نقية بلون ياقوتي داكن',
+        packaging: 'أكياس خيش 25كجم مضغوطة خفيفًا',
+        markets: ['مصر', 'ألمانيا', 'الولايات المتحدة الأمريكية'],
+        quantity: '25 طن متري (حاوية 40 قدم)',
+        quantityEn: '25 Metric Tons (40ft HQ)',
+        documentedId: 'HRB-03'
+      },
+      {
+        nameAr: 'مسحوق الثوم المجفف',
+        nameEn: 'Garlic Powder',
+        specs: 'نعومة 80-100 مش، مجفف بالهواء الساخن بدون تكتل',
+        packaging: 'أكياس ألومنيوم داخل كراتين 20كجم',
+        markets: ['الهند'],
+        quantity: '15 طن متري',
+        quantityEn: '15 Metric Tons',
+        documentedId: 'HRB-04'
+      },
+      {
+        nameAr: 'مسحوق الزنجبيل المجفف',
+        nameEn: 'Dried Ginger Powder',
+        specs: 'لون ذهبي فاتح ونكهة لاذعة مركزة',
+        packaging: 'أكياس 25كجم ببطانة عازلة',
+        markets: ['الهند', 'بنغلاديش'],
+        quantity: '15 طن متري',
+        quantityEn: '15 Metric Tons',
+        documentedId: 'HRB-05'
+      },
+      {
+        nameAr: 'مسحوق الكركم النقي',
+        nameEn: 'Turmeric Powder',
+        specs: 'نسبة كوركومين 3-5% طبيعية 100%',
+        packaging: 'أكياس ورقية 25كجم',
+        markets: ['اليابان', 'ألمانيا'],
+        quantity: '20 طن متري',
+        quantityEn: '20 Metric Tons',
+        documentedId: 'HRB-06'
+      },
+      {
+        nameAr: 'مسحوق الطماطم المجففة',
+        nameEn: 'Tomato Powder',
+        specs: 'مجفف بالرش (Spray Dried) فوري الذوبان',
+        packaging: 'براميل كرتونية 25كجم مع تبطين ألومنيوم',
+        markets: ['مصر', 'ألمانيا'],
+        quantity: '10 طن متري',
+        quantityEn: '10 Metric Tons',
+        documentedId: 'HRB-07'
+      },
+      {
+        nameAr: 'أعشاب ونباتات طبية عطرية',
+        nameEn: 'Medicinal & Aromatic Herbs',
+        specs: 'ريحان، نعناع، زعتر، بابونج، مردقوش، روزماري',
+        packaging: 'أكياس ورق كرافت 15كجم',
+        markets: ['مصر', 'ألمانيا'],
+        quantity: '15 طن متري',
+        quantityEn: '15 Metric Tons',
+        documentedId: 'HRB-08'
+      },
+      {
+        nameAr: 'مستخلصات الزيوت العشبية',
+        nameEn: 'Herbal Extracts & Oils',
+        specs: 'مستخلصات مركزة قياسية للقطاع الدوائي والتجميلي',
+        packaging: 'براميل صلبة مبطنة 60-200 لتر',
+        markets: ['باكستان'],
+        quantity: '50 برميل معتمد',
+        quantityEn: '50 Certified Barrels',
+        documentedId: 'HRB-09'
+      },
+      {
+        nameAr: 'مسحوق أوراق الكراتوم الطبيعي',
+        nameEn: 'Kratom Leaf Powder',
+        specs: 'أوراق مطحونة فائقة النعومة Micro-fine',
+        packaging: 'أكياس مفرغة 25كجم داخل كراتين محكمة',
+        markets: ['الولايات المتحدة الأمريكية'],
+        quantity: '20 طن متري',
+        quantityEn: '20 Metric Tons',
+        documentedId: 'HRB-10'
+      }
     ]
   },
   {
@@ -5786,10 +6344,46 @@ export const PRODUCT_DEMAND_PORTFOLIO: DemandCategory[] = [
     icon: 'Globe',
     totalInquiries: 14,
     subProducts: [
-      { nameAr: 'زيت دوار الشمس الخام', nameEn: 'Crude Sunflower Oil', specs: 'زيت نباتي خام غير مكرر للشحن البحري', packaging: 'حاويات فليكسي تانك 24,000 لتر أو صب', markets: ['فرنسا'] },
-      { nameAr: 'سكر القصب الخام', nameEn: 'Raw Cane Sugar', specs: 'إيكومسا 45 و إيكومسا 1200 عالي الجودة', packaging: 'أكياس 50كجم وشحنات بحرية كبيرة', markets: ['البرازيل'] },
-      { nameAr: 'صمغ عربي طبيعي', nameEn: 'Gum Arabic (Hashab & Talha)', specs: 'درجة أولى هشاب منظف يدويًا ومجروش', packaging: 'أكياس 25كجم و50كجم', markets: ['مصر'] },
-      { nameAr: 'لبان ذكر وبخور طبيعي', nameEn: 'Natural Frankincense', specs: 'حبيبات حوجري وأصلي نقي بدون شوائب', packaging: 'صناديق خشبية وكرتونية 10كجم', markets: ['مصر', 'عُمان'] }
+      {
+        nameAr: 'زيت دوار الشمس الخام',
+        nameEn: 'Crude Sunflower Oil',
+        specs: 'زيت نباتي خام غير مكرر للشحن البحري',
+        packaging: 'حاويات فليكسي تانك 24,000 لتر أو صب',
+        markets: ['فرنسا'],
+        quantity: '100 طن متري (فليكسي تانك)',
+        quantityEn: '100 Metric Tons (Flexitanks)',
+        documentedId: 'COM-01'
+      },
+      {
+        nameAr: 'سكر القصب الخام',
+        nameEn: 'Raw Cane Sugar',
+        specs: 'إيكومسا 45 و إيكومسا 1200 عالي الجودة',
+        packaging: 'أكياس 50كجم وشحنات بحرية كبيرة',
+        markets: ['البرازيل'],
+        quantity: '500 طن متري',
+        quantityEn: '500 Metric Tons',
+        documentedId: 'COM-02'
+      },
+      {
+        nameAr: 'صمغ عربي طبيعي',
+        nameEn: 'Gum Arabic (Hashab & Talha)',
+        specs: 'درجة أولى هشاب منظف يدويًا ومجروش',
+        packaging: 'أكياس 25كجم و50كجم',
+        markets: ['مصر'],
+        quantity: '25 طن متري (حاوية 20 قدم)',
+        quantityEn: '25 Metric Tons (20ft FCL)',
+        documentedId: 'COM-03'
+      },
+      {
+        nameAr: 'لبان ذكر وبخور طبيعي',
+        nameEn: 'Natural Frankincense',
+        specs: 'حبيبات حوجري وأصلي نقي بدون شوائب',
+        packaging: 'صناديق خشبية وكرتونية 10كجم',
+        markets: ['مصر', 'عُمان'],
+        quantity: '10 طن متري',
+        quantityEn: '10 Metric Tons',
+        documentedId: 'COM-04'
+      }
     ]
   }
 ];
