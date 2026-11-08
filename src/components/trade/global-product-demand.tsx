@@ -71,7 +71,7 @@ export function GlobalProductDemand({ ar = true, onInquireProduct }: GlobalProdu
           </h3>
           <p className="mt-1 text-xs text-muted-foreground max-w-xl">
             {ar
-              ? `تم تسجيل وتوثيق طلب شراء لـ ${currentCat.subProducts.length} صنفًا أساسيًا ضمن هذه الفئة عبر أكثر من 20 دولة مستوردة خلال عام 2025.`
+              ? `تم تسجيل وتوثيق طلب شراء لـ ${currentCat.subProducts.length} صنف أساسي ضمن هذه الفئة عبر أكثر من 20 دولة مستوردة خلال عام 2025`
               : `Documented demand and purchase inquiries across ${currentCat.subProducts.length} core product lines from international buyers during 2025.`}
           </p>
         </div>
