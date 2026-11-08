@@ -36,7 +36,7 @@ export function GlobalProductDemand({ ar = true, onInquireProduct }: GlobalProdu
   return (
     <div className="w-full space-y-8">
       {/* Category Tabs Header */}
-      <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
+      <div className="flex flex-wrap items-center gap-2.5 pb-2">
         {PRODUCT_DEMAND_PORTFOLIO.map((cat) => {
           const isActive = activeCategory === cat.categoryKey;
           return (
@@ -47,17 +47,14 @@ export function GlobalProductDemand({ ar = true, onInquireProduct }: GlobalProdu
                 setActiveCategory(cat.categoryKey);
                 setSearchProduct("");
               }}
-              className={`flex shrink-0 items-center gap-2 rounded-2xl px-5 py-3 text-xs font-bold transition-all duration-300 ${
+              className={`flex shrink-0 items-center gap-2 rounded-2xl px-5 py-3 text-xs font-bold transition-all duration-300 cursor-pointer ${
                 isActive
-                  ? "bg-gradient-to-r from-emerald-600 to-teal-700 text-white shadow-lg shadow-emerald-950/30 scale-105 border border-emerald-400/30"
-                  : "border border-white/10 bg-background/60 text-foreground/80 hover:bg-white/10 hover:text-foreground"
+                  ? "!bg-brand-green !text-white shadow-lg shadow-brand-green/25 scale-[1.02] border border-brand-green"
+                  : "glass-box-interactive border border-white/20 bg-background/60 text-foreground/85 hover:border-white/40 hover:bg-background/85 hover:text-foreground hover:-translate-y-0.5 shadow-sm"
               }`}
             >
-              <Package className="size-4" />
+              <Package className="size-4 shrink-0" />
               <span>{ar ? cat.categoryNameAr : cat.categoryNameEn}</span>
-              <span className={`rounded-full px-2 py-0.5 text-[10px] ${isActive ? "bg-white/20 text-white" : "bg-white/10 text-muted-foreground"}`}>
-                {cat.subProducts.length}
-              </span>
             </button>
           );
         })}
