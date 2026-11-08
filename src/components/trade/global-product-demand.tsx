@@ -87,7 +87,7 @@ export function GlobalProductDemand({ ar = true, onInquireProduct }: GlobalProdu
             value={searchProduct}
             onChange={(e) => setSearchProduct(e.target.value)}
             placeholder={ar ? "ابحث عن صنف أو مواصفة..." : "Search product or spec..."}
-            className="w-full rounded-full border border-white/20 bg-background/50 py-2 pe-4 ps-10 text-xs text-foreground placeholder:text-muted-foreground focus:border-brand-orange focus:outline-none focus:ring-1 focus:ring-brand-orange"
+            className="w-full rounded-xl border border-foreground/25 bg-background/95 py-2 pe-4 ps-10 text-xs text-foreground placeholder:text-muted-foreground shadow-sm focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 transition-all"
           />
         </div>
       </div>

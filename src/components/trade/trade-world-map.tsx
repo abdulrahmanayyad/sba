@@ -117,14 +117,14 @@ export function TradeWorldMap({ ar = true, onSelectCountry }: TradeWorldMapProps
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder={ar ? "ابحث بالدولة أو المنتج..." : "Search country or product..."}
-              className="w-full rounded-full border border-white/20 bg-background/50 py-1.5 pe-4 ps-9 text-xs text-foreground placeholder:text-muted-foreground focus:border-brand-orange focus:outline-none focus:ring-1 focus:ring-brand-orange"
+              className="w-full rounded-xl border border-foreground/25 bg-background/95 py-1.5 pe-4 ps-9 text-xs text-foreground placeholder:text-muted-foreground shadow-sm focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 transition-all"
             />
           </div>
 
           <select
             value={selectedCategory}
             onChange={(e) => setSelectedCategory(e.target.value)}
-            className="rounded-full border border-white/20 bg-background/70 px-3 py-1.5 text-xs font-medium text-foreground focus:border-brand-orange focus:outline-none"
+            className="rounded-xl border border-foreground/25 bg-background/95 px-3 py-1.5 text-xs font-medium text-foreground shadow-sm hover:border-brand-orange focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 cursor-pointer transition-all"
           >
             {categories.map((cat) => (
               <option key={cat.id} value={cat.id} className="bg-background text-foreground">

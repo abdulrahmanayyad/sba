@@ -178,13 +178,13 @@ export function BusinessNetworkSection({ ar = true }: BusinessNetworkSectionProp
                   value={inquirySearch}
                   onChange={(e) => setInquirySearch(e.target.value)}
                   placeholder={ar ? "ابحث بدولة أو منتج..." : "Search country or product..."}
-                  className="rounded-full border border-white/20 bg-background/50 px-4 py-1.5 text-xs text-foreground placeholder:text-muted-foreground focus:border-brand-orange focus:outline-none"
+                  className="rounded-xl border border-foreground/25 bg-background/95 px-4 py-1.5 text-xs text-foreground placeholder:text-muted-foreground shadow-sm focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 transition-all"
                 />
 
                 <select
                   value={statusFilter}
                   onChange={(e) => setStatusFilter(e.target.value)}
-                  className="rounded-full border border-white/20 bg-background/70 px-3 py-1.5 text-xs font-semibold text-foreground focus:border-brand-orange focus:outline-none"
+                  className="rounded-xl border border-foreground/25 bg-background/95 px-3 py-1.5 text-xs font-semibold text-foreground shadow-sm hover:border-brand-orange focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 cursor-pointer transition-all"
                 >
                   <option value="all" className="bg-background text-foreground">
                     {ar ? "كافة طلبات الشراء (179)" : "All Purchase Requests (179)"}
