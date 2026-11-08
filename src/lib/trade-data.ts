@@ -5565,7 +5565,7 @@ export const PRODUCT_DEMAND_PORTFOLIO: DemandCategory[] = [
         specs: 'جامبو، سوبر جامبو، نسبة رطوبة مثالية 18-22%',
         packaging: 'كراتين تصدير 5كجم مع تبطين غذائي',
         markets: ['المملكة المتحدة', 'فرنسا', 'ألمانيا', 'الهند', 'قطر', 'الكويت', 'استراليا'],
-        quantity: '100 طن متري موسمياً',
+        quantity: '100 طن متري موسمي',
         quantityEn: '100 Metric Tons Seasonally',
         documentedId: 'DAT-03'
       },
