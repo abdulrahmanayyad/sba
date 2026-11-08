@@ -44,11 +44,11 @@ export function TradeIntelligenceDashboard({ ar = true }: TradeIntelligenceDashb
 
   return (
     <div id="trade-intelligence" className="interactive-card glass-box-interactive w-full rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl backdrop-blur-2xl transition-all duration-300">
-      {/* Section 4 Title & Description Header */}
+      {/* Section 5 Title & Description Header */}
       <div>
         <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
           <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-          <span>{ar ? "القسم الرابع: اتجاه السوق التجاري" : "Section 4: Commercial Market Trends"}</span>
+          <span>{ar ? "القسم الخامس: اتجاه السوق التجاري" : "Section 5: Commercial Market Trends"}</span>
         </div>
         <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5 leading-snug">
           {ar ? "اتجاه الطلب التجاري" : "Commercial Demand Trends"}

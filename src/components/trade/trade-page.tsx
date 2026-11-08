@@ -125,19 +125,19 @@ export function TradePage({ ar = true }: TradePageProps) {
           <GlobalProductDemand ar={ar} />
         </section>
 
-        {/* Section 4: Trade Intelligence & Documented Quantities */}
+        {/* Section 4: International Trade Opportunities */}
+        <section id="trade-opportunities" className="scroll-mt-32 space-y-6">
+          <TradeOpportunitiesSection ar={ar} />
+        </section>
+
+        {/* Section 5: Trade Intelligence & Documented Quantities */}
         <section id="trade-intelligence" className="scroll-mt-32 space-y-6">
           <TradeIntelligenceDashboard ar={ar} />
         </section>
 
-        {/* Section 5: Our International Business Network */}
+        {/* Section 6: Our International Business Network */}
         <section id="business-network" className="scroll-mt-32 space-y-6">
           <BusinessNetworkSection ar={ar} />
-        </section>
-
-        {/* Section 6: International Trade Opportunities */}
-        <section id="trade-opportunities" className="scroll-mt-32 space-y-6">
-          <TradeOpportunitiesSection ar={ar} />
         </section>
 
         {/* Section 7: Downloadable Reports */}

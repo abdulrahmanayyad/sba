@@ -67,11 +67,11 @@ export function TradeOpportunitiesSection({ ar = true }: TradeOpportunitiesSecti
 
   return (
     <div id="trade-opportunities" className="interactive-card glass-box-interactive w-full rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl backdrop-blur-2xl transition-all duration-300">
-      {/* Section 6 Badge */}
+      {/* Section 4 Badge */}
       <div className="flex items-center justify-between">
         <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
           <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-          <span>{ar ? "القسم السادس: الفرص التجارية" : "Section 6: Trade Opportunities"}</span>
+          <span>{ar ? "القسم الرابع: الفرص التجارية" : "Section 4: Trade Opportunities"}</span>
         </div>
       </div>
 
