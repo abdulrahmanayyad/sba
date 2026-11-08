@@ -201,7 +201,7 @@ export function TradeIntelligenceDashboard({ ar = true }: TradeIntelligenceDashb
                 <div className="flex items-center gap-2">
                   <Globe className="size-5 text-brand-orange" />
                   <h4 className="text-base font-bold text-foreground">
-                    {ar ? "أكثر الأسواق طلبًا واستفسارًا (2025)" : "Top Markets by Inquiries (2025)"}
+                    {ar ? "أكثر الأسواق طلبًا (2025)" : "Top Markets by Demand (2025)"}
                   </h4>
                 </div>
                 <span className="text-xs text-muted-foreground">{ar ? "حسب عدد السجلات" : "By Record Count"}</span>
