@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { 
   Search, 
   Filter, 
@@ -25,6 +25,14 @@ export function MarketDirectory({ ar = true, selectedCountryCode }: MarketDirect
   const [continentFilter, setContinentFilter] = useState("all");
   const [categoryFilter, setCategoryFilter] = useState("all");
   const [expandedCountry, setExpandedCountry] = useState<string | null>(selectedCountryCode || null);
+  const [showAll, setShowAll] = useState(false);
+
+  useEffect(() => {
+    if (selectedCountryCode) {
+      setExpandedCountry(selectedCountryCode);
+      setShowAll(true);
+    }
+  }, [selectedCountryCode]);
 
   const continents = [
     { id: "all", nameAr: "كافة القارات", nameEn: "All Continents" },
@@ -60,6 +68,10 @@ export function MarketDirectory({ ar = true, selectedCountryCode }: MarketDirect
   const toggleExpand = (code: string) => {
     setExpandedCountry((prev) => (prev === code ? null : code));
   };
+
+  const visibleCountries = useMemo(() => {
+    return showAll ? filteredCountries : filteredCountries.slice(0, 9);
+  }, [showAll, filteredCountries]);
 
   return (
     <div id="market-directory" className="w-full space-y-6">
@@ -114,7 +126,9 @@ export function MarketDirectory({ ar = true, selectedCountryCode }: MarketDirect
       {/* Directory Count Header */}
       <div className="flex flex-wrap items-center justify-between gap-2 px-2 text-xs text-muted-foreground">
         <span>
-          {ar ? `عرض ${filteredCountries.length} من أصل 47 دولة مستوردة` : `Showing ${filteredCountries.length} of 47 documented markets`}
+          {ar
+            ? `عرض ${visibleCountries.length} من أصل ${filteredCountries.length} دولة مستوردة`
+            : `Showing ${visibleCountries.length} of ${filteredCountries.length} documented markets`}
         </span>
         <span className="inline-flex items-center justify-center rounded-xl border border-brand-green/40 bg-brand-green/15 px-3 py-1.5 font-bold text-brand-green shadow-xs">
           {ar ? "بيانات موثقة من طلبات الشراء الرسمية" : "Verified from official inquiry records"}
@@ -123,7 +137,7 @@ export function MarketDirectory({ ar = true, selectedCountryCode }: MarketDirect
 
       {/* Countries Cards Grid */}
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-        {filteredCountries.map((country) => {
+        {visibleCountries.map((country) => {
           const isExpanded = expandedCountry === country.code;
           const countryInquiries = ALL_INQUIRIES.filter((r) => r.countryAr === country.nameAr);
 
@@ -289,6 +303,32 @@ export function MarketDirectory({ ar = true, selectedCountryCode }: MarketDirect
           );
         })}
       </div>
+
+      {/* View More / رؤية المزيد Button */}
+      {filteredCountries.length > 9 && (
+        <div className="flex justify-center pt-2">
+          <button
+            type="button"
+            onClick={() => setShowAll((prev) => !prev)}
+            className="group inline-flex items-center gap-2 rounded-2xl border border-foreground/25 bg-background/95 px-8 py-3.5 text-sm font-bold text-foreground shadow-md backdrop-blur-xl transition-all duration-300 hover:border-brand-orange hover:text-brand-orange hover:shadow-xl cursor-pointer"
+          >
+            <span>
+              {showAll
+                ? ar
+                  ? "عرض أقل (أول 9 دول)"
+                  : "Show Less (First 9)"
+                : ar
+                ? `رؤية المزيد (${filteredCountries.length - 9} دولة إضافية)`
+                : `View More (${filteredCountries.length - 9} More Countries)`}
+            </span>
+            {showAll ? (
+              <ChevronUp className="size-4 transition-transform group-hover:-translate-y-0.5" />
+            ) : (
+              <ChevronDown className="size-4 transition-transform group-hover:translate-y-0.5" />
+            )}
+          </button>
+        </div>
+      )}
     </div>
   );
 }
