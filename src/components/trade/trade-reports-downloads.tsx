@@ -32,7 +32,7 @@ export function TradeReportsDownloads({ ar = true }: TradeReportsDownloadsProps)
       id: "footprint",
       titleAr: "تقرير الانتشار التجاري الدولي 2025",
       titleEn: "2025 Global Trade Footprint Report",
-      descAr: "تحليل شامل لـ 47 دولة مستوردة و179 استفساراً تجارياً مسجلاً عبر القارات الخمس، مع تصنيف مؤشرات الطلب.",
+      descAr: "تحليل شامل لـ 47 دولة مستوردة و179 استفسارًا تجاريًا مسجلًا عبر القارات الخمس، مع تصنيف مؤشرات الطلب.",
       descEn: "Comprehensive analysis of 47 destination markets and 179 recorded buyer inquiries across five continents.",
       pages: "12 صفحة موثقة",
       pagesEn: "12 Documented Pages",
@@ -68,7 +68,7 @@ export function TradeReportsDownloads({ ar = true }: TradeReportsDownloadsProps)
       id: "requirements",
       titleAr: "تقرير متطلبات المشترين والكميات الموثقة",
       titleEn: "Documented Buyer Requirements Report",
-      descAr: "حصر دقيق للطلبات الـ 12 المحددة كمياً بدقة (عقود التوريد الأسبوعية والشهرية والشحنات البحرية الكبرى).",
+      descAr: "حصر دقيق للطلبات الـ 12 المحددة كميًا بدقة (عقود التوريد الأسبوعية والشهرية والشحنات البحرية الكبرى).",
       descEn: "Exhaustive registry of the 12 explicitly quantified buyer inquiries, recurring weekly/monthly supply contracts.",
       pages: "8 صفحات تنفيذية",
       pagesEn: "8 Executive Pages",
@@ -254,7 +254,7 @@ export function TradeReportsDownloads({ ar = true }: TradeReportsDownloadsProps)
               {activeReportModal === "requirements" ? (
                 <div className="space-y-3">
                   <h4 className="font-bold text-sm text-foreground">
-                    {ar ? "جدول متطلبات المشترين والكميات المحددة صراحة (12 طلباً)" : "Explicitly Documented Buyer Requirements Table"}
+                    {ar ? "جدول متطلبات المشترين والكميات المحددة صراحة (12 طلبًا)" : "Explicitly Documented Buyer Requirements Table"}
                   </h4>
                   <div className="overflow-x-auto rounded-xl border border-white/10">
                     <table className="w-full text-start text-xs">

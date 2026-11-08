@@ -96,11 +96,11 @@ export function TradeIntelligenceDashboard({ ar = true }: TradeIntelligenceDashb
                   {ar ? "بيانات كميات رسمية مسجلة" : "Explicitly Documented Quantities"}
                 </span>
                 <h3 className="text-2xl font-black text-foreground mt-1">
-                  {ar ? "متطلبات المشترين والكميات الموثقة رسمياً" : "Documented Buyer Requirements & Quantities"}
+                  {ar ? "متطلبات المشترين والكميات الموثقة رسميًا" : "Documented Buyer Requirements & Quantities"}
                 </h3>
                 <p className="text-xs text-muted-foreground mt-1 max-w-2xl">
                   {ar
-                    ? "قائمة بالطلبات التي تضمنت تحديداً كمياً دقيقاً في سجلات الاستفسارات لعام 2025، سواء كعقود توريد أسبوعية/شهرية دورية أو طلبيات فورية ضخمة."
+                    ? "قائمة بالطلبات التي تضمنت تحديدًا كميًا دقيقًا في سجلات الاستفسارات لعام 2025، سواء كعقود توريد أسبوعية/شهرية دورية أو طلبيات فورية ضخمة."
                     : "Explicit quantities documented in the 2025 international buyer inquiries dataset, covering recurring weekly/monthly supply contracts and large bulk shipments."}
                 </p>
               </div>
@@ -108,7 +108,7 @@ export function TradeIntelligenceDashboard({ ar = true }: TradeIntelligenceDashb
               <div className="flex items-center gap-2 rounded-2xl border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-amber-300">
                 <TrendingUp className="size-5 shrink-0" />
                 <span className="text-xs font-bold">
-                  {ar ? "12 طلباً بـ كميات محددة صراحة" : "12 Explicitly Documented Orders"}
+                  {ar ? "12 طلبًا بـ كميات محددة صراحة" : "12 Explicitly Documented Orders"}
                 </span>
               </div>
             </div>
@@ -212,7 +212,7 @@ export function TradeIntelligenceDashboard({ ar = true }: TradeIntelligenceDashb
                 <div className="flex items-center gap-2">
                   <Globe className="size-5 text-brand-orange" />
                   <h4 className="text-base font-bold text-foreground">
-                    {ar ? "أكثر الأسواق طلباً واستفساراً (2025)" : "Top Markets by Inquiries (2025)"}
+                    {ar ? "أكثر الأسواق طلبًا واستفسارًا (2025)" : "Top Markets by Inquiries (2025)"}
                   </h4>
                 </div>
                 <span className="text-xs text-muted-foreground">{ar ? "حسب عدد السجلات" : "By Record Count"}</span>

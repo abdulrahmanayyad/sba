@@ -53,7 +53,7 @@ export function BusinessNetworkSection({ ar = true }: BusinessNetworkSectionProp
             }`}
           >
             <ShieldCheck className="size-4" />
-            <span>{ar ? "أولاً: العملاء والشركاء التجاريون المعتمدون" : "A. Verified Clients & Business Partners"}</span>
+            <span>{ar ? "أولًا: العملاء والشركاء التجاريون المعتمدون" : "A. Verified Clients & Business Partners"}</span>
           </button>
 
           <button
@@ -66,7 +66,7 @@ export function BusinessNetworkSection({ ar = true }: BusinessNetworkSectionProp
             }`}
           >
             <Users className="size-4" />
-            <span>{ar ? "ثانياً: سجل استفسارات المشترين الدوليين (2025)" : "B. International Buyer Inquiries (2025)"}</span>
+            <span>{ar ? "ثانيًا: سجل استفسارات المشترين الدوليين (2025)" : "B. International Buyer Inquiries (2025)"}</span>
           </button>
         </div>
       </div>
@@ -82,17 +82,17 @@ export function BusinessNetworkSection({ ar = true }: BusinessNetworkSectionProp
                   {ar ? "علاقات تعاقدية وتجارية موثقة ومستقلة" : "Independently Verified Commercial Contracts"}
                 </span>
                 <h3 className="text-xl font-black text-foreground mt-1">
-                  {ar ? "الشركاء والعملاء التجاريون المعتمدون رسمياً" : "Verified Clients & Contracted Business Partners"}
+                  {ar ? "الشركاء والعملاء التجاريون المعتمدون رسميًا" : "Verified Clients & Contracted Business Partners"}
                 </h3>
                 <p className="text-xs text-muted-foreground mt-1 max-w-2xl">
                   {ar
-                    ? "هذا القسم مخصص حصرياً للشركات والمؤسسات التي ترتبط مع المجموعة بعقود تجارية رسمية سارية، أو تعاملات تصنيع وتوريد منفذة وموثقة."
+                    ? "هذا القسم مخصص حصريًا للشركات والمؤسسات التي ترتبط مع المجموعة بعقود تجارية رسمية سارية، أو تعاملات تصنيع وتوريد منفذة وموثقة."
                     : "Strictly reserved for entities with verified ongoing commercial contracts, active supply agreements, or executed corporate partnerships."}
                 </p>
               </div>
 
               <span className="rounded-2xl border border-emerald-500/30 bg-emerald-500/10 px-4 py-2.5 text-xs font-bold text-emerald-300">
-                {ar ? "فئة معتمدة ومفصولة تماماً عن الاستفسارات" : "Verified Category / Isolated from Inquiries"}
+                {ar ? "فئة معتمدة ومفصولة تمامًا عن الاستفسارات" : "Verified Category / Isolated from Inquiries"}
               </span>
             </div>
           </div>
@@ -248,7 +248,7 @@ export function BusinessNetworkSection({ ar = true }: BusinessNetworkSectionProp
 
           <div className="text-center text-xs text-muted-foreground">
             {ar
-              ? `يتم عرض أول 48 استفساراً من إجمالي ${filteredInquiries.length} استفساراً مسجلاً في قاعدة البيانات لعام 2025.`
+              ? `يتم عرض أول 48 استفسارًا من إجمالي ${filteredInquiries.length} استفسارًا مسجلًا في قاعدة البيانات لعام 2025.`
               : `Showing first 48 records of ${filteredInquiries.length} documented inquiries in the 2025 database.`}
           </div>
         </div>

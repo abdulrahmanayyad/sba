@@ -205,7 +205,7 @@ export function TradeOpportunitiesSection({ ar = true }: TradeOpportunitiesSecti
                 </h4>
                 <p className="text-xs text-muted-foreground max-w-md mx-auto leading-relaxed">
                   {ar
-                    ? `شكراً لك. تم تسجيل عرضكم الخاص بالفرصة (${selectedOpp.id} - ${selectedOpp.productAr}) وسيتم مراجعته والتواصل معكم من قبل إدارة التجارة والتوريدات الدولية للمجموعة.`
+                    ? `شكرًا لك. تم تسجيل عرضكم الخاص بالفرصة (${selectedOpp.id} - ${selectedOpp.productAr}) وسيتم مراجعته والتواصل معكم من قبل إدارة التجارة والتوريدات الدولية للمجموعة.`
                     : `Your quote for opportunity (${selectedOpp.id}) has been registered and our trade procurement team will review and contact you shortly.`}
                 </p>
                 <button
@@ -300,7 +300,7 @@ export function TradeOpportunitiesSection({ ar = true }: TradeOpportunitiesSecti
                       required
                       value={supplierPriceQuote}
                       onChange={(e) => setSupplierPriceQuote(e.target.value)}
-                      placeholder={ar ? "مثال: 850 دولار للطن FOB الإسكندرية، طاقة توريد 100 طن شهرياً" : "e.g. $850/MT FOB Alexandria, capacity 100 MT/month"}
+                      placeholder={ar ? "مثال: 850 دولار للطن FOB الإسكندرية، طاقة توريد 100 طن شهريًا" : "e.g. $850/MT FOB Alexandria, capacity 100 MT/month"}
                       className="w-full rounded-xl border border-white/20 bg-background/50 px-3 py-2 text-foreground focus:border-brand-orange focus:outline-none"
                     />
                   </div>
@@ -323,7 +323,7 @@ export function TradeOpportunitiesSection({ ar = true }: TradeOpportunitiesSecti
                       type="submit"
                       className="w-full rounded-xl bg-gradient-to-r from-emerald-600 to-teal-700 py-3 text-xs font-bold text-white shadow-lg shadow-emerald-950/30 transition-all hover:from-emerald-500 hover:to-teal-600 active:scale-95"
                     >
-                      {ar ? "إرسال عرض التوريد رسمياً" : "Submit Supply Proposal"}
+                      {ar ? "إرسال عرض التوريد رسميًا" : "Submit Supply Proposal"}
                     </button>
                   </div>
                 </form>

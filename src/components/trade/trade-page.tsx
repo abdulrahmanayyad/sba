@@ -219,7 +219,7 @@ export function TradePage({ ar = true }: TradePageProps) {
             </h2>
             <p className="text-xs text-muted-foreground mt-1">
               {ar
-                ? "لوحة بيانات تحليلية للمسار الشهري، وحصر حصري للطلبات الـ 12 المحددة كمياً بدقة في سجلات عام 2025."
+                ? "لوحة بيانات تحليلية للمسار الشهري، وحصر حصري للطلبات الـ 12 المحددة كميًا بدقة في سجلات عام 2025."
                 : "Analytics dashboard covering monthly trends and 12 explicitly quantified buyer requirement orders."}
             </p>
           </div>
@@ -238,7 +238,7 @@ export function TradePage({ ar = true }: TradePageProps) {
             </h2>
             <p className="text-xs text-muted-foreground mt-1">
               {ar
-                ? "فصل كامل وصارم بين الشركاء والعملاء المتعاقد معهم فعلياً، وبين استفسارات المشترين قيد التفاوض والتدقيق."
+                ? "فصل كامل وصارم بين الشركاء والعملاء المتعاقد معهم فعليًا، وبين استفسارات المشترين قيد التفاوض والتدقيق."
                 : "Strict separation between verified contracted clients/partners and privacy-protected buyer inquiries."}
             </p>
           </div>
