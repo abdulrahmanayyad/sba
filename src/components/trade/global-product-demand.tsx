@@ -29,6 +29,8 @@ export function GlobalProductDemand({ ar = true, onInquireProduct }: GlobalProdu
       p.nameAr.includes(searchProduct) ||
       p.nameEn.toLowerCase().includes(searchProduct.toLowerCase()) ||
       p.specs.includes(searchProduct) ||
+      (p.documentedId && p.documentedId.toLowerCase().includes(searchProduct.toLowerCase())) ||
+      (p.quantity && p.quantity.includes(searchProduct)) ||
       p.markets.some((m) => m.includes(searchProduct))
     );
   });
@@ -123,21 +125,41 @@ export function GlobalProductDemand({ ar = true, onInquireProduct }: GlobalProdu
                 {/* Product Titles */}
                 <div className="flex items-start justify-between gap-3 border-b border-white/10 pb-3">
                   <div>
-                    <h4 className="text-base font-bold text-foreground group-hover:text-brand-green transition-colors">
-                      {prod.nameAr}
-                    </h4>
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <h4 className="text-base font-bold text-foreground group-hover:text-brand-green transition-colors">
+                        {prod.nameAr}
+                      </h4>
+                      {prod.documentedId && (
+                        <span className="font-mono text-[10px] font-bold text-brand-orange bg-brand-orange/15 border border-brand-orange/30 px-2 py-0.5 rounded-md">
+                          {prod.documentedId}
+                        </span>
+                      )}
+                    </div>
                     <p className="text-xs text-muted-foreground font-medium">
                       {prod.nameEn}
                     </p>
                   </div>
 
-                  <span className="inline-flex items-center justify-center rounded-xl border border-brand-green bg-brand-green px-2.5 py-1 text-[11px] font-bold text-white shadow-xs transition-colors duration-300 hover:bg-brand-orange hover:border-brand-orange">
-                    {ar ? "مطلوب دوليًا" : "In Demand"}
-                  </span>
+                  {prod.isDocumentedOrder ? (
+                    <span className="inline-flex shrink-0 items-center justify-center rounded-xl border border-amber-500/40 bg-amber-500/15 px-2.5 py-1 text-[11px] font-bold text-amber-400 shadow-xs">
+                      {ar ? "كمية موثقة رسميًا" : "Documented Volume"}
+                    </span>
+                  ) : (
+                    <span className="inline-flex shrink-0 items-center justify-center rounded-xl border border-brand-green bg-brand-green px-2.5 py-1 text-[11px] font-bold text-white shadow-xs transition-colors duration-300 hover:bg-brand-orange hover:border-brand-orange">
+                      {ar ? "مطلوب دوليًا" : "In Demand"}
+                    </span>
+                  )}
                 </div>
 
                 {/* Specifications & Packaging */}
                 <div className="mt-3.5 space-y-2.5 text-xs">
+                  {prod.quantity && (
+                    <div className="rounded-xl border border-amber-500/30 bg-amber-500/10 p-2.5 text-xs font-bold text-amber-500 dark:text-amber-300 flex items-center justify-between">
+                      <span className="text-[11px] text-muted-foreground">{ar ? "الكمية المطلوبة الموثقة:" : "Documented Quantity:"}</span>
+                      <span className="font-mono text-amber-400 font-extrabold">{ar ? prod.quantity : (prod.quantityEn || prod.quantity)}</span>
+                    </div>
+                  )}
+
                   <div>
                     <span className="font-semibold text-muted-foreground block text-[11px] mb-0.5">
                       {ar ? "المواصفات المطلوبة:" : "Requested Specifications:"}
