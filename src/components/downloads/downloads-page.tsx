@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { Download, ExternalLink, FileText, Filter, Globe2, Layers, Search, ShieldCheck } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { Reveal } from "@/components/home/reveal";
@@ -14,7 +14,11 @@ export function DownloadsPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedSector, setSelectedSector] = useState<string>("all");
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
-  const [selectedLang, setSelectedLang] = useState<string>("all");
+  const [selectedLang, setSelectedLang] = useState<string>(() => (ar ? "AR" : "EN"));
+
+  useEffect(() => {
+    setSelectedLang(ar ? "AR" : "EN");
+  }, [ar]);
 
   const filteredDownloads = useMemo(() => {
     return allCorporateDownloads.filter((doc) => {
@@ -40,20 +44,31 @@ export function DownloadsPage() {
 
   return (
     <div className="w-full">
-      {/* 1. Hero Section */}
-      <section className="relative w-full overflow-hidden text-footer-foreground min-h-[45vh] flex items-center bg-gradient-to-b from-brand-green-dark via-brand-green to-background">
-        <div className="site-container relative w-full py-16 sm:py-24 z-10">
+      {/* 1. Hero Section (Full-width and Full-height like Home Page) */}
+      <section className="relative w-full min-h-[calc(100svh-76px)] overflow-hidden text-white flex flex-col justify-center mb-12">
+        <img
+          src="/BG/Main Home Page.jpg"
+          alt={ar ? "مركز وثائق مجموعة سامي بن عياد" : "Sami Bin Ayyad Group Documentation Center"}
+          className="absolute inset-0 size-full object-cover object-center pointer-events-none select-none"
+          fetchPriority="high"
+        />
+        <div className="group-hero-overlay absolute inset-0 bg-black/60 backdrop-blur-[1px] pointer-events-none" />
+
+        <div className="site-container relative z-10 flex min-h-[inherit] flex-col justify-center py-16 sm:py-24">
           <Reveal>
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+            {/* A. Small Top Headline (Solid Black Box) */}
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/85 px-4 py-1.5 text-xs font-bold tracking-wide text-white backdrop-blur-md shadow-md">
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
               <span>{ar ? "مجموعة سامي بن عياد · مركز الوثائق المؤسسية" : "SAMI BIN AYYAD GROUP · Corporate Documentation Center"}</span>
             </div>
 
-            <h1 className="mt-2 max-w-4xl font-head text-[clamp(1.85rem,3.5vw,2.75rem)] font-extrabold leading-tight text-white drop-shadow-md">
+            {/* B. Main Headline (Smaller & Proportional) */}
+            <h1 className="mt-2 max-w-4xl font-head text-xl sm:text-2xl lg:text-3xl font-bold leading-snug tracking-tight text-white drop-shadow-md">
               {ar ? "مركز تحميل الوثائق والملفات التعريفية والكتالوجات المعتمدة" : "Corporate PDF Documentation & Catalogues Center"}
             </h1>
 
-            <p className="mt-4 max-w-3xl text-sm sm:text-base font-bold leading-relaxed text-white/90">
+            {/* C. Subtitle */}
+            <p className="mt-4 max-w-3xl text-sm sm:text-base font-medium leading-relaxed text-white/90 drop-shadow-sm">
               {ar
                 ? "مكتبة وثائق رسمية متكاملة تضم الملف التعريفي الشامل للمجموعة، أدلة القدرات التشغيلية للقطاعات، كتالوجات المنتجات، ونشرات البيانات الفنية (TDS) المعدة للشركاء والمستثمرين وإدارات المشتريات الدولية."
                 : "Official library of certified corporate documentation including the Complete Company Profile, sector capability dossiers, product catalogues, and technical data sheets (TDS) prepared for procurement teams, importers, and strategic partners."}
@@ -113,8 +128,8 @@ export function DownloadsPage() {
                 <div className="inline-flex rounded-full border border-border bg-secondary/80 p-1">
                   {[
                     { id: "all", label: ar ? "الكل" : "All" },
-                    { id: "EN", label: "EN" },
-                    { id: "AR", label: "AR" },
+                    { id: "AR", label: ar ? "العربية" : "Arabic" },
+                    { id: "EN", label: ar ? "الإنجليزية" : "English" },
                   ].map((l) => (
                     <button
                       key={l.id}
@@ -163,13 +178,8 @@ export function DownloadsPage() {
         <div className="flex items-center justify-between mb-6">
           <div>
             <h2 className="text-lg sm:text-xl font-bold font-head text-foreground">
-              {ar ? "الوثائق المتاحة للتحميل الفوري" : "Available Certified Documents"}
+              {ar ? "الوثائق المتاحة" : "Available Documents"}
             </h2>
-            <p className="text-xs text-muted-foreground mt-0.5">
-              {ar
-                ? `تم العثور على ${filteredDownloads.length} وثيقة مطابقة لمعايير البحث`
-                : `Showing ${filteredDownloads.length} verified documents matching your criteria`}
-            </p>
           </div>
         </div>
 
@@ -210,7 +220,7 @@ export function DownloadsPage() {
                       </span>
 
                       <span className="rounded-full border border-brand-orange/30 bg-brand-orange/10 px-2 py-0.5 text-[10px] font-bold text-brand-orange uppercase font-mono">
-                        {doc.language}
+                        {doc.language === "AR" ? (ar ? "عربي" : "AR") : doc.language === "EN" ? (ar ? "إنجليزي" : "EN") : (ar ? "ثنائي اللغة" : "Bilingual")}
                       </span>
                     </div>
 
@@ -270,18 +280,21 @@ export function DownloadsPage() {
         )}
       </section>
 
-      {/* 4. Custom Document Request Banner */}
+      {/* 4. Custom Document Request Banner (Interactive Glass Card) */}
       <section className="site-container pb-20">
         <Reveal>
-          <div className="rounded-3xl border border-brand-green/30 bg-gradient-to-r from-brand-green-dark to-brand-green p-8 sm:p-12 text-white shadow-2xl relative overflow-hidden">
-            <div className="relative z-10 max-w-2xl">
-              <span className="text-xs font-bold uppercase tracking-wider text-brand-orange block mb-2 font-mono">
-                {ar ? "استفسارات المستندات الخاصة والمناقصات" : "Custom Tender & Technical Submittals"}
-              </span>
-              <h2 className="font-head text-2xl sm:text-3xl font-extrabold text-white">
+          <div className="glass-box-interactive group rounded-3xl p-8 sm:p-12 relative overflow-hidden transition-all duration-300 text-start cursor-pointer">
+            <div className="relative z-10 max-w-2xl text-start">
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+                <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+                <span>
+                  {ar ? "استفسارات المستندات الخاصة والمناقصات" : "Custom Tender & Technical Submittals"}
+                </span>
+              </div>
+              <h2 className="font-head text-2xl sm:text-3xl font-extrabold text-foreground">
                 {ar ? "هل تحتاج إلى مستند مخصص لمشروع أو مناقصة معينة؟" : "Need a Tailored Specification Dossier for Your Tender?"}
               </h2>
-              <p className="mt-3 text-xs sm:text-sm leading-relaxed text-white/90">
+              <p className="mt-3 text-xs sm:text-sm leading-relaxed text-muted-foreground">
                 {ar
                   ? "يتولى مكتب الدعم الفني والتجاري للمجموعة إعداد المستندات الهندسية، وشهادات تحليل المختبرات (COA)، وجداول الكميات المخصصة لكبرى المشروعات والمناقصات الدولية."
                   : "Our technical and commercial engineering desk prepares bespoke project dossiers, laboratory analysis certificates (COA), and specialized technical submittals for major international tenders."}
@@ -290,17 +303,7 @@ export function DownloadsPage() {
                 <Button
                   asChild
                   size="lg"
-                  className="rounded-full !bg-brand-orange !text-white hover:!bg-brand-green px-6 py-2.5 text-xs sm:text-sm font-bold shadow-lg transition-all cursor-pointer"
-                >
-                  <Link to="/join">
-                    {ar ? "طلب ملف فني مخصص" : "Request Custom Dossier"}
-                  </Link>
-                </Button>
-                <Button
-                  asChild
-                  variant="outline"
-                  size="lg"
-                  className="rounded-full border-white/40 bg-black/30 text-white hover:bg-white/20 px-6 py-2.5 text-xs sm:text-sm font-bold cursor-pointer"
+                  className="rounded-full !bg-brand-green !text-white hover:!bg-brand-orange px-7 py-3 font-head text-xs sm:text-sm font-bold shadow-md transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer"
                 >
                   <Link to="/contact">
                     {ar ? "التواصل مع الإدارة التجارية" : "Contact Commercial Desk"}

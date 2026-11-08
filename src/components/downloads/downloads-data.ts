@@ -56,8 +56,8 @@ export const allCorporateDownloads: DownloadItem[] = [
   // 1. Corporate Profiles
   {
     id: "corp-profile-en",
-    titleEn: "Complete Corporate Company Profile (EN)",
-    titleAr: "الملف التعريفي الشامل للمجموعة (إنجليزي)",
+    titleEn: "Complete Corporate Company Profile",
+    titleAr: "الملف التعريفي الشامل للمجموعة",
     descriptionEn: "Comprehensive multidisciplinary corporate presentation covering all 4 strategic sectors, 45+ years heritage, governance, and operating scale.",
     descriptionAr: "العرض المؤسسي الشامل للقطاعات الأربعة وتاريخ المجموعة الممتد منذ 1977، ومنظومة الحوكمة، والقدرات التشغيلية والتصديرية.",
     sector: "corporate",
@@ -76,8 +76,8 @@ export const allCorporateDownloads: DownloadItem[] = [
   },
   {
     id: "corp-profile-ar",
-    titleEn: "Complete Corporate Company Profile (AR)",
-    titleAr: "الملف التعريفي الشامل للمجموعة (عربي)",
+    titleEn: "Complete Corporate Company Profile",
+    titleAr: "الملف التعريفي الشامل للمجموعة",
     descriptionEn: "Fully localized Arabic corporate presentation with verified business metrics, operational divisions, and leadership standards.",
     descriptionAr: "النسخة العربية المعتمدة للملف التعريفي الشامل للمجموعة؛ تغطي القطاعات الاستراتيجية، الأرقام التشغيلية، والشراكات المعتمدة.",
     sector: "corporate",
@@ -98,7 +98,7 @@ export const allCorporateDownloads: DownloadItem[] = [
   // 2. Corporate Capabilities
   {
     id: "corp-capabilities-en",
-    titleEn: "Corporate Capabilities Statement (EN)",
+    titleEn: "Corporate Capabilities Statement",
     titleAr: "بيان القدرات والجاهزية المؤسسية للمجموعة",
     descriptionEn: "Condensed briefing designed for international procurement desks, institutional tenders, and foreign business partners.",
     descriptionAr: "ملف موجز للجاهزية التشغيلية والقدرات التنفيذية مصمم خصيصًا لإدارات المشتريات الدولية والمستثمرين.",
@@ -119,8 +119,8 @@ export const allCorporateDownloads: DownloadItem[] = [
   // 3. Construction Documents
   {
     id: "const-capabilities-en",
-    titleEn: "Construction & Real Estate Capabilities Profile (EN)",
-    titleAr: "دليل قدرات قطاع المقاولات والتطوير العقاري (إنجليزي)",
+    titleEn: "Construction & Real Estate Capabilities Profile",
+    titleAr: "دليل قدرات قطاع المقاولات والتطوير العقاري",
     descriptionEn: "12 engineering disciplines, 6-stage execution framework, Egyptian Building Code compliance, and civil infrastructure delivery.",
     descriptionAr: "الدليل الهندسي الشامل لـ 12 تخصصًا إنشائيًا، ومنهجية التنفيذ السداسية، والأعمال المدنية والكهروميكانيكية MEP.",
     sector: "construction",
@@ -139,8 +139,8 @@ export const allCorporateDownloads: DownloadItem[] = [
   },
   {
     id: "const-capabilities-ar",
-    titleEn: "Construction & Real Estate Capabilities Profile (AR)",
-    titleAr: "دليل قدرات قطاع المقاولات والتطوير العقاري (عربي)",
+    titleEn: "Construction & Real Estate Capabilities Profile",
+    titleAr: "دليل قدرات قطاع المقاولات والتطوير العقاري",
     descriptionEn: "Arabic engineering guide covering general contracting, deep foundations, structural skeletons, and MEP works.",
     descriptionAr: "الدليل الهندسي العربي المتكامل للمقاولات العامة، الأساسات العميقة، الهياكل الخرسانية، وشبكات البنية التحتية.",
     sector: "construction",
@@ -160,8 +160,8 @@ export const allCorporateDownloads: DownloadItem[] = [
   // 4. Environmental Documents
   {
     id: "env-solutions-en",
-    titleEn: "Environmental Solutions & Sustainability Profile (EN)",
-    titleAr: "دليل الحلول البيئية المستدامة والطاقة المتجددة (إنجليزي)",
+    titleEn: "Environmental Solutions & Sustainability Profile",
+    titleAr: "دليل الحلول البيئية المستدامة والطاقة المتجددة",
     descriptionEn: "19 specialized services, RENERGON International AG alliance, RSD dry fermentation biogas, CBAM, and Scopes 1-3 carbon accounting.",
     descriptionAr: "منظومة 19 تخصصًا استشاريًا، الشراكة مع رينرجون السويسرية، تكنولوجيا تحويل المخلفات لطاقة RSD، وحساب البصمة الكربونية.",
     sector: "environmental",
@@ -180,8 +180,8 @@ export const allCorporateDownloads: DownloadItem[] = [
   },
   {
     id: "env-solutions-ar",
-    titleEn: "Environmental Solutions & Sustainability Profile (AR)",
-    titleAr: "دليل الحلول البيئية المستدامة والطاقة المتجددة (عربي)",
+    titleEn: "Environmental Solutions & Sustainability Profile",
+    titleAr: "دليل الحلول البيئية المستدامة والطاقة المتجددة",
     descriptionEn: "Arabic dossier for environmental impact assessments (EIA), waste-to-energy, circular economy, and biotechnology.",
     descriptionAr: "الدليل البيئي العربي الشامل لدراسات تقييم الأثر البيئي EIA، تحويل المخلفات لطاقة، والاقتصاد الدائري والتكنولوجيا الحيوية.",
     sector: "environmental",
@@ -201,8 +201,8 @@ export const allCorporateDownloads: DownloadItem[] = [
   // 5. Apparel Manufacturing
   {
     id: "apparel-profile-en",
-    titleEn: "Apparel Manufacturing & Fashion Profile (EN)",
-    titleAr: "دليل تصنيع وتصدير الملابس الجاهزة (إنجليزي)",
+    titleEn: "Apparel Manufacturing & Fashion Profile",
+    titleAr: "دليل تصنيع وتصدير الملابس الجاهزة",
     descriptionEn: "15+ lines, 250+ machines, dedicated classic shirt facility (45,000 shirts/mo), +2,700 designs, and 8-stage QC workflow.",
     descriptionAr: "الدليل الصناعي لتشغيل 15+ خط إنتاج، ومصنع القمصان الكلاسيكية (45,000 قميص/شهر)، ومكتبة تضم +2,700 موديل.",
     sector: "garment",
@@ -221,8 +221,8 @@ export const allCorporateDownloads: DownloadItem[] = [
   },
   {
     id: "apparel-profile-ar",
-    titleEn: "Apparel Manufacturing & Fashion Profile (AR)",
-    titleAr: "دليل تصنيع وتصدير الملابس الجاهزة (عربي)",
+    titleEn: "Apparel Manufacturing & Fashion Profile",
+    titleAr: "دليل تصنيع وتصدير الملابس الجاهزة",
     descriptionEn: "Arabic industrial manufacturing profile covering FOB programs, private label branding, and automated stitching.",
     descriptionAr: "الدليل الصناعي العربي لبرامج التصنيع التصديري FOB، وتصنيع العلامات الخاصة Private Label، ومراقبة الجودة AQL.",
     sector: "garment",
@@ -242,8 +242,8 @@ export const allCorporateDownloads: DownloadItem[] = [
   // 6. Product Catalogues
   {
     id: "apparel-catalogue-en",
-    titleEn: "Apparel Product Catalogue — 11 Collections (EN)",
-    titleAr: "كتالوج موديلات وتصاميم الملابس — 11 فئة (إنجليزي)",
+    titleEn: "Apparel Product Catalogue — 11 Collections",
+    titleAr: "كتالوج موديلات وتصاميم الملابس — 11 فئة",
     descriptionEn: "Specifications, fabric GSM ranges, size curves, and MOQ parameters for all 11 verified apparel product lines.",
     descriptionAr: "مواصفات الأقمشة، أوزان الـ GSM، جداول المقاسات، والحد الأدنى للطلب لكافة فئات الملابس الـ 11 المعتمدة.",
     sector: "garment",
@@ -261,8 +261,8 @@ export const allCorporateDownloads: DownloadItem[] = [
   },
   {
     id: "food-catalogue-en",
-    titleEn: "Natural Products & Agri-Food Export Catalogue (EN)",
-    titleAr: "كتالوج المنتجات الطبيعية والتصدير الزراعي (إنجليزي)",
+    titleEn: "Natural Products & Agri-Food Export Catalogue",
+    titleAr: "كتالوج المنتجات الطبيعية والتصدير الزراعي",
     descriptionEn: "Complete dossiers for 8 agricultural products: Sidr honey, EVOO, table olives, Medjool dates, herbs, and instant powders.",
     descriptionAr: "ملفات فنية متكاملة لـ 8 محاصيل ومنتجات: عسل السدر، زيت الزيتون البكر الممتاز، تمور المجدول، الأعشاب، والمشروبات المجففة.",
     sector: "food",
@@ -280,8 +280,8 @@ export const allCorporateDownloads: DownloadItem[] = [
   },
   {
     id: "all-products-portfolio-en",
-    titleEn: "Complete Products Portfolio (Apparel & Food) (EN)",
-    titleAr: "كتالوج المنتجات المجمع الشامل للمجموعة (إنجليزي)",
+    titleEn: "Complete Products Portfolio (Apparel & Food)",
+    titleAr: "كتالوج المنتجات المجمع الشامل للمجموعة",
     descriptionEn: "Consolidated commercial export catalogue spanning both physical product divisions with technical indices.",
     descriptionAr: "الكتالوج التجاري المجمع للمنتجات المادية لكافة قطاعات المجموعة (الملابس الجاهزة والمنتجات الطبيعية والغذائية).",
     sector: "corporate",
@@ -301,7 +301,7 @@ export const allCorporateDownloads: DownloadItem[] = [
   // 7. Technical Data Sheets (TDS)
   {
     id: "tds-et-pot-01",
-    titleEn: "Technical Data Sheet: ET-POT-01 Oil Terminator (EN)",
+    titleEn: "Technical Data Sheet: ET-POT-01 Oil Terminator",
     titleAr: "النشرة الفنية: مستحضر معالجة الزيوت الحيوية ET-POT-01",
     descriptionEn: "Detailed physical, chemical, and biological specifications for our concentrated microbial hydrocarbon bioremediation agent.",
     descriptionAr: "المواصفات الفيزيائية والكيميائية والبيولوجية لمستحضر المعالجة الحيوية للملوثات الزيتية والانسكابات النفطية.",
@@ -321,7 +321,7 @@ export const allCorporateDownloads: DownloadItem[] = [
   },
   {
     id: "tds-et-por-01",
-    titleEn: "Technical Data Sheet: ET-POR-01 Odor Neutralizer (EN)",
+    titleEn: "Technical Data Sheet: ET-POR-01 Odor Neutralizer",
     titleAr: "النشرة الفنية: مستحضر تحييد الروائح الصناعية ET-POR-01",
     descriptionEn: "Fast-acting biological formula eliminating hydrogen sulfide (H₂S), mercaptans, and ammonia at industrial emission sources.",
     descriptionAr: "النشرة الفنية لمركب التحييد الكيميائي الحيوي الفوري لغازات كبريتيد الهيدروجين والميركابتان بمحطات الصرف والمصانع.",
@@ -343,8 +343,8 @@ export const allCorporateDownloads: DownloadItem[] = [
   // 8. Project Portfolios
   {
     id: "const-portfolio-en",
-    titleEn: "Construction Project Portfolio (57 Projects) (EN)",
-    titleAr: "سجل المشروعات الإنشائية المعتمدة (57 مشروعًا) (إنجليزي)",
+    titleEn: "Construction Project Portfolio (57 Projects)",
+    titleAr: "سجل المشروعات الإنشائية المعتمدة (57 مشروعًا)",
     descriptionEn: "Complete verified index of 57 delivered contracting projects across commercial, medical, industrial, and infrastructure sectors.",
     descriptionAr: "السجل الموثق لـ 57 مشروعًا إنشائيًا تم تنفيذها عبر قطاعات المباني الإدارية، المستشفيات، المنشآت الصناعية، والبنية التحتية.",
     sector: "construction",
@@ -362,8 +362,8 @@ export const allCorporateDownloads: DownloadItem[] = [
   },
   {
     id: "case-studies-en",
-    titleEn: "Selected Multi-Sector Project Case Studies (EN)",
-    titleAr: "دراسات الحالة ونماذج المشروعات الناجحة للمجموعة (إنجليزي)",
+    titleEn: "Selected Multi-Sector Project Case Studies",
+    titleAr: "دراسات الحالة ونماذج المشروعات الناجحة للمجموعة",
     descriptionEn: "Technical challenges, engineered solutions, and verified outcomes across Construction, Waste-to-Energy, Apparel, and Food trade.",
     descriptionAr: "استعراض تحليلي للتحديات الهندسية والحلول المنفذة والنتائج المحققة في مشروعات المقاولات، البيوجاز، وتصدير الملابس والأغذية.",
     sector: "corporate",
@@ -383,8 +383,8 @@ export const allCorporateDownloads: DownloadItem[] = [
   // 9. Services & Solutions
   {
     id: "services-39-en",
-    titleEn: "Complete Services & Solutions Portfolio (39 Disciplines) (EN)",
-    titleAr: "دليل الخدمات والحلول المتكاملة (39 تخصصًا) (إنجليزي)",
+    titleEn: "Complete Services & Solutions Portfolio (39 Disciplines)",
+    titleAr: "دليل الخدمات والحلول المتكاملة (39 تخصصًا)",
     descriptionEn: "Comprehensive directory detailing all 39 corporate services across Construction (12), Environmental (19), and Apparel (8).",
     descriptionAr: "الدليل الشامل لكافة خدمات المجموعة الـ 39: 12 تخصص مقاولات، 19 خدمة بيئية وطاقة نظيفة، و8 حلول تصنيع ملابس.",
     sector: "corporate",
@@ -405,8 +405,8 @@ export const allCorporateDownloads: DownloadItem[] = [
   // 10. Business & Partnerships
   {
     id: "business-overview-en",
-    titleEn: "Corporate Business & Partnership Overview (EN)",
-    titleAr: "ملف الاستثمار والشراكات الاستراتيجية للمجموعة (إنجليزي)",
+    titleEn: "Corporate Business & Partnership Overview",
+    titleAr: "ملف الاستثمار والشراكات الاستراتيجية للمجموعة",
     descriptionEn: "Institutional briefing on co-investment opportunities, commercial joint ventures, and market expansion channels.",
     descriptionAr: "ملف تعريفي موجه للمستثمرين والشركاء التجاريين؛ يستعرض فرص التعاون، المشروعات المشتركة، والتوسع التصديري.",
     sector: "corporate",
@@ -424,8 +424,8 @@ export const allCorporateDownloads: DownloadItem[] = [
   },
   {
     id: "supplier-profile-en",
-    titleEn: "Supplier & Procurement Qualification Guide (EN)",
-    titleAr: "دليل تأهيل الموردين وسلاسل الإمداد للمجموعة (إنجليزي)",
+    titleEn: "Supplier & Procurement Qualification Guide",
+    titleAr: "دليل تأهيل الموردين وسلاسل الإمداد للمجموعة",
     descriptionEn: "Official onboarding documentation, quality standards, and purchasing categories for prospective vendors and raw material suppliers.",
     descriptionAr: "الدليل الرسمي لتأهيل واعتماد الموردين، اشتراطات الجودة، وفئات التوريد لمشروعات ومصانع المجموعة.",
     sector: "corporate",
@@ -445,8 +445,8 @@ export const allCorporateDownloads: DownloadItem[] = [
   // Food Sector Profiles
   {
     id: "food-profile-en",
-    titleEn: "Natural Products & Food Trading Profile (EN)",
-    titleAr: "دليل قطاع المنتجات الطبيعية والتوريد الغذائي (إنجليزي)",
+    titleEn: "Natural Products & Food Trading Profile",
+    titleAr: "دليل قطاع المنتجات الطبيعية والتوريد الغذائي",
     descriptionEn: "Sourcing capabilities, NFSA-licensed hubs, 6 export commodity categories, laboratory certificates, and global supply models.",
     descriptionAr: "القدرات التوريدية، محطات الفرز المعتمدة، 7 فئات تصديرية زراعية، وشهادات سلامة الغذاء الدولية.",
     sector: "food",
@@ -464,8 +464,8 @@ export const allCorporateDownloads: DownloadItem[] = [
   },
   {
     id: "food-profile-ar",
-    titleEn: "Natural Products & Food Trading Profile (AR)",
-    titleAr: "دليل قطاع المنتجات الطبيعية والتوريد الغذائي (عربي)",
+    titleEn: "Natural Products & Food Trading Profile",
+    titleAr: "دليل قطاع المنتجات الطبيعية والتوريد الغذائي",
     descriptionEn: "Arabic agricultural export profile covering Siwa reserves, extra virgin olive oil, Medjool dates, and bulk food supply.",
     descriptionAr: "الدليل الزراعي والتصديري العربي لمزارع سيوة، زيت الزيتون البكر الممتاز، تمور المجدول، والتوريد السائب.",
     sector: "food",
