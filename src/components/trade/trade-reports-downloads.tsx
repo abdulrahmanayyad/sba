@@ -173,7 +173,7 @@ export function TradeReportsDownloads({ ar = true }: TradeReportsDownloadsProps)
                   setActiveReportModal(rep.id);
                   setTimeout(() => window.print(), 300);
                 }}
-                className="flex items-center justify-center gap-1.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-700 py-2 text-xs font-bold text-white shadow-md hover:from-emerald-500 hover:to-teal-600"
+                className="flex items-center justify-center gap-1.5 rounded-xl bg-brand-green py-2 text-xs font-bold text-white shadow-md hover:bg-brand-orange transition-all duration-300 cursor-pointer"
               >
                 <Download className="size-3.5" />
                 <span>{ar ? "تحميل PDF" : "Download PDF"}</span>
@@ -200,7 +200,7 @@ export function TradeReportsDownloads({ ar = true }: TradeReportsDownloadsProps)
                 <button
                   type="button"
                   onClick={handlePrint}
-                  className="flex items-center gap-1.5 rounded-xl bg-emerald-600 px-4 py-1.5 text-xs font-bold text-white shadow hover:bg-emerald-500"
+                  className="flex items-center gap-1.5 rounded-xl bg-brand-green px-4 py-1.5 text-xs font-bold text-white shadow hover:bg-brand-orange transition-all duration-300 cursor-pointer"
                 >
                   <Printer className="size-3.5" />
                   <span>{ar ? "طباعة / تصدير PDF" : "Print / Export PDF"}</span>
