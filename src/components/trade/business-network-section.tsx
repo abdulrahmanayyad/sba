@@ -74,14 +74,14 @@ export function BusinessNetworkSection({ ar = true }: BusinessNetworkSectionProp
       {activeNetworkTab === "partners" ? (
         /* Category A: Verified Clients & Business Partners */
         <div className="space-y-6">
-          <div className="rounded-3xl border border-emerald-500/30 bg-gradient-to-r from-background/80 via-background/60 to-emerald-950/20 p-6 backdrop-blur-2xl">
+          <div className="glass-box-interactive interactive-card rounded-3xl p-6 sm:p-8 backdrop-blur-2xl cursor-pointer transition-all duration-300">
             <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
               <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-1.5">
+                <span className="text-xs font-bold uppercase tracking-wider text-emerald-500 dark:text-emerald-400 flex items-center gap-1.5">
                   <ShieldCheck className="size-4" />
                   {ar ? "علاقات تعاقدية وتجارية موثقة ومستقلة" : "Independently Verified Commercial Contracts"}
                 </span>
-                <h3 className="text-xl font-black text-foreground mt-1">
+                <h3 className="text-xl sm:text-2xl font-black text-foreground mt-1">
                   {ar ? "الشركاء والعملاء التجاريون المعتمدون رسميًا" : "Verified Clients & Contracted Business Partners"}
                 </h3>
                 <p className="text-xs text-muted-foreground mt-1 max-w-2xl">
@@ -91,7 +91,7 @@ export function BusinessNetworkSection({ ar = true }: BusinessNetworkSectionProp
                 </p>
               </div>
 
-              <span className="rounded-2xl border border-emerald-500/30 bg-emerald-500/10 px-4 py-2.5 text-xs font-bold text-emerald-300">
+              <span className="rounded-2xl border border-emerald-500/30 bg-emerald-500/10 px-4 py-2.5 text-xs font-bold text-emerald-600 dark:text-emerald-300">
                 {ar ? "فئة معتمدة ومفصولة تمامًا عن الاستفسارات" : "Verified Category / Isolated from Inquiries"}
               </span>
             </div>
@@ -154,7 +154,7 @@ export function BusinessNetworkSection({ ar = true }: BusinessNetworkSectionProp
       ) : (
         /* Category B: International Buyer Inquiries */
         <div className="space-y-6">
-          <div className="rounded-3xl border border-white/15 bg-gradient-to-r from-background/80 via-background/60 to-amber-950/20 p-6 backdrop-blur-2xl">
+          <div className="glass-box-interactive interactive-card rounded-3xl p-6 sm:p-8 backdrop-blur-2xl cursor-pointer transition-all duration-300">
             <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
               <div>
                 <span className="text-xs font-bold uppercase tracking-wider text-amber-400 flex items-center gap-1.5">

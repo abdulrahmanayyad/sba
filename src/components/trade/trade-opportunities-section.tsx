@@ -69,10 +69,10 @@ export function TradeOpportunitiesSection({ ar = true }: TradeOpportunitiesSecti
   return (
     <div id="trade-opportunities" className="w-full space-y-8">
       {/* Section Header */}
-      <div className="rounded-3xl border border-white/15 bg-gradient-to-r from-background/80 via-background/60 to-emerald-950/20 p-6 backdrop-blur-2xl">
+      <div className="glass-box-interactive interactive-card rounded-3xl p-6 sm:p-8 backdrop-blur-2xl cursor-pointer transition-all duration-300">
         <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
           <div>
-            <span className="text-xs font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-1.5">
+            <span className="text-xs font-bold uppercase tracking-wider text-emerald-500 dark:text-emerald-400 flex items-center gap-1.5">
               <Briefcase className="size-4" />
               {ar ? "بوابة الشراكة والتوريد التجاري" : "Commercial Supply & Partnership Gate"}
             </span>

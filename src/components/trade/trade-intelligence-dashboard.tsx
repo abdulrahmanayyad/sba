@@ -88,10 +88,10 @@ export function TradeIntelligenceDashboard({ ar = true }: TradeIntelligenceDashb
         /* Section 4 Part B: Documented Buyer Requirements */
         <div className="space-y-6">
           {/* Header Banner */}
-          <div className="rounded-3xl border border-white/15 bg-gradient-to-r from-background/80 via-background/60 to-amber-950/20 p-6 backdrop-blur-2xl">
+          <div className="glass-box-interactive interactive-card rounded-3xl p-6 sm:p-8 backdrop-blur-2xl cursor-pointer transition-all duration-300">
             <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
               <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-amber-400 flex items-center gap-1.5">
+                <span className="text-xs font-bold uppercase tracking-wider text-amber-500 dark:text-amber-400 flex items-center gap-1.5">
                   <ShieldAlert className="size-4" />
                   {ar ? "بيانات كميات رسمية مسجلة" : "Explicitly Documented Quantities"}
                 </span>
@@ -105,7 +105,7 @@ export function TradeIntelligenceDashboard({ ar = true }: TradeIntelligenceDashb
                 </p>
               </div>
 
-              <div className="flex items-center gap-2 rounded-2xl border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-amber-300">
+              <div className="flex items-center gap-2 rounded-2xl border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-amber-500 dark:text-amber-300">
                 <TrendingUp className="size-5 shrink-0" />
                 <span className="text-xs font-bold">
                   {ar ? "12 طلبًا بـ كميات محددة صراحة" : "12 Explicitly Documented Orders"}
@@ -188,14 +188,14 @@ export function TradeIntelligenceDashboard({ ar = true }: TradeIntelligenceDashb
           </div>
 
           {/* Legal Compliance Disclaimer Banner */}
-          <div className="rounded-2xl border border-amber-500/30 bg-amber-500/10 p-4 text-xs text-amber-200 leading-relaxed shadow-lg">
-            <div className="flex items-start gap-3">
-              <ShieldAlert className="size-5 shrink-0 text-amber-400 mt-0.5" />
+          <div className="glass-box-interactive interactive-card rounded-3xl p-6 text-xs leading-relaxed shadow-xl cursor-pointer transition-all duration-300 border-amber-500/30">
+            <div className="flex items-start gap-3.5">
+              <ShieldAlert className="size-5 shrink-0 text-amber-500 dark:text-amber-400 mt-0.5" />
               <div>
-                <strong className="font-bold text-amber-300 block mb-1">
+                <strong className="font-bold text-amber-600 dark:text-amber-300 block mb-1 text-sm">
                   {ar ? "إخلاء مسؤولية توثيقي وقانوني معتمد:" : "Mandatory Documentary Disclaimer:"}
                 </strong>
-                <p>
+                <p className="text-foreground/85 dark:text-amber-100/90 leading-relaxed text-xs">
                   {ar ? TRADE_STATS.legalDisclaimerAr : TRADE_STATS.legalDisclaimerEn}
                 </p>
               </div>
