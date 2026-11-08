@@ -35,7 +35,7 @@ export function TradeReportsDownloads({ ar = true }: TradeReportsDownloadsProps)
       descEn: "Comprehensive analysis of 47 destination markets and 179 recorded buyer inquiries across five continents.",
       pages: "12 صفحة موثقة",
       pagesEn: "12 Documented Pages",
-      size: "2.4 MB PDF",
+      size: "2.4 MB",
       date: "نوفمبر 2025",
       dateEn: "November 2025"
     },
@@ -47,7 +47,7 @@ export function TradeReportsDownloads({ ar = true }: TradeReportsDownloadsProps)
       descEn: "Detailed country-by-country profiles covering requested commodities, documented quantities, and terms.",
       pages: "18 صفحة مفصلة",
       pagesEn: "18 Detailed Pages",
-      size: "3.1 MB PDF",
+      size: "3.1 MB",
       date: "نوفمبر 2025",
       dateEn: "November 2025"
     },
@@ -59,7 +59,7 @@ export function TradeReportsDownloads({ ar = true }: TradeReportsDownloadsProps)
       descEn: "Specialized taxonomy and demand study across seven agricultural and food product categories.",
       pages: "14 صفحة متخصصة",
       pagesEn: "14 Analytical Pages",
-      size: "2.8 MB PDF",
+      size: "2.8 MB",
       date: "نوفمبر 2025",
       dateEn: "November 2025"
     },
@@ -71,7 +71,7 @@ export function TradeReportsDownloads({ ar = true }: TradeReportsDownloadsProps)
       descEn: "Exhaustive registry of the 12 explicitly quantified buyer inquiries, recurring weekly/monthly supply contracts.",
       pages: "8 صفحات تنفيذية",
       pagesEn: "8 Executive Pages",
-      size: "1.9 MB PDF",
+      size: "1.9 MB",
       date: "نوفمبر 2025",
       dateEn: "November 2025"
     },
@@ -83,7 +83,7 @@ export function TradeReportsDownloads({ ar = true }: TradeReportsDownloadsProps)
       descEn: "Technical specifications, packaging terms, and supply guidelines for open international trade opportunities.",
       pages: "10 صفحات تعاقدية",
       pagesEn: "10 Commercial Pages",
-      size: "2.2 MB PDF",
+      size: "2.2 MB",
       date: "نوفمبر 2025",
       dateEn: "November 2025"
     }
@@ -152,7 +152,7 @@ export function TradeReportsDownloads({ ar = true }: TradeReportsDownloadsProps)
 
               <div className="mt-4 flex items-center justify-between text-[11px] text-muted-foreground pt-3 border-t border-white/5">
                 <span>{ar ? rep.pages : rep.pagesEn}</span>
-                <span className="font-medium text-emerald-400">{ar ? rep.date : rep.dateEn}</span>
+                <span className="font-bold text-black dark:text-black bg-white/90 px-2 py-0.5 rounded-md shadow-xs">{ar ? rep.date : rep.dateEn}</span>
               </div>
             </div>
 

@@ -6391,7 +6391,7 @@ export const PRODUCT_DEMAND_PORTFOLIO: DemandCategory[] = [
 // Verified clients & partners category (Section 5 Part A)
 export const VERIFIED_TRADE_PARTNERS = [
   {
-    companyName: 'Haier Europe S.r.l.',
+    companyName: 'Haier Europe',
     countryAr: 'إيطاليا',
     countryEn: 'Italy',
     countryFlag: '🇮🇹',
@@ -6404,7 +6404,7 @@ export const VERIFIED_TRADE_PARTNERS = [
     establishedYear: 2024
   },
   {
-    companyName: 'Fontebasso Apparel & Textile',
+    companyName: 'Fontebasso Hospital Group',
     countryAr: 'إيطاليا',
     countryEn: 'Italy',
     countryFlag: '🇮🇹',
@@ -6415,32 +6415,6 @@ export const VERIFIED_TRADE_PARTNERS = [
     relationshipStatus: 'Active Commercial Contract',
     relationshipStatusAr: 'عقد تصنيع وتوريد سارٍ',
     establishedYear: 2025
-  },
-  {
-    companyName: 'Arabian Peninsula Trade & Contracting',
-    countryAr: 'المملكة العربية السعودية',
-    countryEn: 'Saudi Arabia',
-    countryFlag: '🇸🇦',
-    sectorAr: 'المقاولات والتوريدات والتطوير العقاري',
-    sectorEn: 'Contracting, Procurement & Real Estate',
-    productsSuppliedAr: 'خدمات التوريدات الإنشائية وإدارة مشاريع التشطيب',
-    productsSuppliedEn: 'Construction Procurement & Finishing Project Management',
-    relationshipStatus: 'Strategic Partner',
-    relationshipStatusAr: 'شريك استراتيجي للمجموعة',
-    establishedYear: 1992
-  },
-  {
-    companyName: 'Mediterranean Sustainable Solutions',
-    countryAr: 'مصر',
-    countryEn: 'Egypt',
-    countryFlag: '🇪🇬',
-    sectorAr: 'الحلول البيئية وإعادة التدوير واستدامة الموارد',
-    sectorEn: 'Environmental Solutions, Recycling & Resource Recovery',
-    productsSuppliedAr: 'إدارة المخلفات الصناعية والحلول البيئية المتكاملة',
-    productsSuppliedEn: 'Industrial Waste Management & Integrated ESG Solutions',
-    relationshipStatus: 'Corporate Subsidiary / Verified Affiliate',
-    relationshipStatusAr: 'شركة تابعة معتمدة للمجموعة',
-    establishedYear: 2018
   }
 ];
 

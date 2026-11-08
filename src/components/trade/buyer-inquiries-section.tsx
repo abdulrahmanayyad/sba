@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Lock, Users, Search, Filter } from "lucide-react";
+import { Users, Search, Filter } from "lucide-react";
 import { ALL_INQUIRIES } from "@/lib/trade-data";
 import { PRODUCT_EN_MAP } from "@/lib/trade-inquiry-translations";
 
@@ -31,24 +31,17 @@ export function BuyerInquiriesSection({ ar = true }: BuyerInquiriesSectionProps)
     <div id="buyer-inquiries" className="interactive-card glass-box-interactive w-full rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl backdrop-blur-2xl transition-all duration-300">
       {/* Section 7 Badge & Header */}
       <div>
-        <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
+        <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
           <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
           <span>{ar ? "القسم السابع: سجل استفسارات المشترين" : "Section 7: Buyer Inquiries Log"}</span>
         </div>
-        <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5 leading-snug">
-          {ar ? "سجل استفسارات المشترين الدوليين (2025)" : "International Buyer Inquiries Log (2025)"}
-        </h2>
       </div>
 
-      {/* Privacy and Search Filter Banner */}
+      {/* Search Filter Banner */}
       <div className="rounded-2xl border border-white/15 bg-background/50 p-6 sm:p-8 backdrop-blur-xl shadow-inner transition-all duration-300">
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
-            <span className="text-xs font-bold uppercase tracking-wider text-amber-500 dark:text-amber-400 flex items-center gap-1.5">
-              <Lock className="size-4" />
-              {ar ? "بيانات مفحوصة ومحمية الخصوصية" : "Privacy Protected Commercial Inquiries"}
-            </span>
-            <h3 className="text-xl font-black text-foreground mt-1">
+            <h3 className="text-xl font-black text-foreground">
               {ar ? "سجل استفسارات وطلبات المشترين الدوليين" : "Official Commercial Buyer Inquiries Registry"}
             </h3>
           </div>

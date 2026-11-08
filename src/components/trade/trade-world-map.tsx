@@ -18,6 +18,7 @@ interface TradeWorldMapProps {
 export function TradeWorldMap({ ar = true, onSelectCountry }: TradeWorldMapProps) {
   const [selectedContinent, setSelectedContinent] = useState<string>("all");
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
+  const [isCategoryOpen, setIsCategoryOpen] = useState<boolean>(false);
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [activeCountry, setActiveCountry] = useState<CountryTradeProfile | null>(
     () => COUNTRY_PROFILES.find((c) => c.code === "SAU") || COUNTRY_PROFILES[0] || null
@@ -101,7 +102,7 @@ export function TradeWorldMap({ ar = true, onSelectCountry }: TradeWorldMapProps
       {/* Filters Bar */}
       <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         {/* Continent Pills */}
-        <div className="flex flex-wrap items-center gap-1.5 overflow-x-auto pb-1 md:pb-0">
+        <div className="flex flex-wrap items-center gap-1.5 no-scrollbar pb-1 md:pb-0">
           {continents.map((cont) => (
             <button
               key={cont.id}
@@ -131,18 +132,43 @@ export function TradeWorldMap({ ar = true, onSelectCountry }: TradeWorldMapProps
             />
           </div>
 
-          <select
-            value={selectedCategory}
-            onChange={(e) => setSelectedCategory(e.target.value)}
-            className="appearance-none [appearance:none] [-webkit-appearance:none] [-moz-appearance:none] [&::-ms-expand]:hidden rounded-xl border border-foreground/25 bg-background/95 px-4 py-1.5 text-xs font-medium text-foreground shadow-sm hover:border-brand-orange focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 cursor-pointer transition-all text-center"
-            style={{ WebkitAppearance: "none", MozAppearance: "none", appearance: "none", backgroundImage: "none" }}
-          >
-            {categories.map((cat) => (
-              <option key={cat.id} value={cat.id} className="bg-background text-foreground">
-                {ar ? cat.labelAr : cat.labelEn}
-              </option>
-            ))}
-          </select>
+          <div className="relative">
+            <button
+              type="button"
+              onClick={() => setIsCategoryOpen(!isCategoryOpen)}
+              className="rounded-xl border border-foreground/25 bg-background/95 px-4 py-1.5 text-xs font-semibold text-foreground shadow-sm hover:border-brand-orange focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 cursor-pointer transition-all flex items-center justify-center min-w-[110px]"
+            >
+              <span>{ar ? (categories.find((c) => c.id === selectedCategory)?.labelAr || "كافة القطاعات") : (categories.find((c) => c.id === selectedCategory)?.labelEn || "All Inquiries")}</span>
+            </button>
+
+            {isCategoryOpen && (
+              <>
+                <div
+                  className="fixed inset-0 z-40"
+                  onClick={() => setIsCategoryOpen(false)}
+                />
+                <div className="absolute start-0 top-full mt-1.5 z-50 min-w-[170px] rounded-xl border border-border bg-background/95 p-1.5 shadow-xl backdrop-blur-xl animate-in fade-in zoom-in-95 duration-150">
+                  {categories.map((cat) => (
+                    <button
+                      key={cat.id}
+                      type="button"
+                      onClick={() => {
+                        setSelectedCategory(cat.id);
+                        setIsCategoryOpen(false);
+                      }}
+                      className={`flex w-full items-center px-3 py-2 text-xs font-medium rounded-lg transition-colors cursor-pointer text-start ${
+                        selectedCategory === cat.id
+                          ? "bg-brand-orange text-white font-bold"
+                          : "hover:bg-foreground/5 text-foreground"
+                      }`}
+                    >
+                      {ar ? cat.labelAr : cat.labelEn}
+                    </button>
+                  ))}
+                </div>
+              </>
+            )}
+          </div>
         </div>
       </div>
 

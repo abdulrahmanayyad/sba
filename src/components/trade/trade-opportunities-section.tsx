@@ -104,7 +104,7 @@ export function TradeOpportunitiesSection({ ar = true }: TradeOpportunitiesSecti
                 <span className="inline-flex items-center rounded-lg border border-brand-green bg-brand-green px-2.5 py-1 font-mono text-xs font-bold text-white shadow-xs">
                   {opp.id}
                 </span>
-                <span className="rounded-full bg-emerald-500/15 px-2.5 py-0.5 text-[11px] font-bold text-emerald-400 border border-emerald-500/20">
+                <span className="rounded-xl border border-brand-green bg-brand-green px-2.5 py-1 text-[11px] font-bold text-white shadow-xs">
                   {ar ? (opp.statusBadge === "Recurring Demand" ? "طلب سنوي متكرر" : "متطلب شراء نشط") : opp.statusBadge}
                 </span>
               </div>

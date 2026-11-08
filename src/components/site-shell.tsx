@@ -217,10 +217,18 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
     setMenuOpen(false);
   };
 
-  const navPill =
-    "group relative inline-flex items-center gap-1 rounded-full px-3 2xl:px-4 py-2 text-xs 2xl:text-sm font-bold tracking-tight xl:tracking-normal text-foreground transition-all duration-300 hover:bg-white/40 hover:text-brand-orange hover:shadow-sm hover:backdrop-blur-md hover:-translate-y-0.5 active:translate-y-0";
-  const navPillActive =
-    "group relative inline-flex items-center gap-1 rounded-full px-3 2xl:px-4 py-2 text-xs 2xl:text-sm font-bold tracking-tight xl:tracking-normal text-brand-orange bg-white/45 shadow-sm backdrop-blur-md -translate-y-0.5";
+  const navPill = cn(
+    "group relative inline-flex items-center rounded-full font-bold tracking-tight transition-all duration-300 hover:bg-white/40 hover:text-brand-orange hover:shadow-sm hover:backdrop-blur-md hover:-translate-y-0.5 active:translate-y-0 text-foreground",
+    isArabic
+      ? "gap-1 px-3 2xl:px-4 py-2 text-xs 2xl:text-sm xl:tracking-normal"
+      : "gap-0.5 px-2 2xl:px-2.5 py-1.5 text-[11px] 2xl:text-xs tracking-tight"
+  );
+  const navPillActive = cn(
+    "group relative inline-flex items-center rounded-full font-bold tracking-tight text-brand-orange bg-white/45 shadow-sm backdrop-blur-md -translate-y-0.5",
+    isArabic
+      ? "gap-1 px-3 2xl:px-4 py-2 text-xs 2xl:text-sm xl:tracking-normal"
+      : "gap-0.5 px-2 2xl:px-2.5 py-1.5 text-[11px] 2xl:text-xs tracking-tight"
+  );
   const dropdownLink =
     "block rounded-[16px] px-4 py-2.5 text-sm font-semibold text-foreground transition-all duration-200 hover:bg-brand-orange/15 hover:text-brand-orange hover:translate-x-1 rtl:hover:-translate-x-1";
 
