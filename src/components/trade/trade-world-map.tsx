@@ -102,16 +102,16 @@ export function TradeWorldMap({ ar = true, onSelectCountry }: TradeWorldMapProps
       {/* Filters Bar */}
       <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         {/* Continent Pills */}
-        <div className="flex flex-wrap items-center gap-1.5 no-scrollbar pb-1 md:pb-0">
+        <div className="flex flex-wrap items-center gap-1.5 p-1.5 rounded-2xl border border-border/80 bg-background/50 backdrop-blur-md shadow-xs">
           {continents.map((cont) => (
             <button
               key={cont.id}
               type="button"
               onClick={() => setSelectedContinent(cont.id)}
-              className={`rounded-full px-3.5 py-1.5 text-xs font-semibold transition-all cursor-pointer ${
+              className={`rounded-xl border px-3.5 py-1.5 text-xs font-bold transition-all cursor-pointer shadow-xs ${
                 selectedContinent === cont.id
-                  ? "bg-brand-orange text-white shadow-md shadow-brand-orange/20 scale-105"
-                  : "bg-white/10 text-foreground/80 hover:bg-white/20 hover:text-foreground"
+                  ? "border-brand-orange bg-brand-orange text-white shadow-md shadow-brand-orange/20 scale-105"
+                  : "border-border/80 dark:border-white/15 bg-background/80 text-foreground hover:border-brand-orange hover:text-brand-orange hover:bg-background"
               }`}
             >
               {ar ? cont.labelAr : cont.labelEn}
