@@ -172,8 +172,8 @@ export function TradePage({ ar = true }: TradePageProps) {
 
         {/* Section 2: International Market Directory */}
         <section id="market-directory" className="scroll-mt-32 space-y-6">
-          <div className="border-s-4 border-emerald-500 ps-4">
-            <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">
+          <div className="border-s-4 border-black dark:border-white ps-4">
+            <span className="text-xs font-bold uppercase tracking-wider text-black dark:text-white">
               {ar ? "القسم الثاني: دليل الأسواق" : "Section 2: Market Directory"}
             </span>
             <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5">
