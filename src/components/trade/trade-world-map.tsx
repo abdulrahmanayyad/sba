@@ -159,9 +159,6 @@ export function TradeWorldMap({ ar = true, onSelectCountry }: TradeWorldMapProps
               <h3 className="text-sm font-bold text-foreground">
                 {ar ? "خريطة انتشار طلبات التجارة الدولية 2025" : "Global Commercial Purchase Requests Map 2025"}
               </h3>
-              <span className="rounded-full bg-emerald-500/20 px-2 py-0.5 text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">
-                {filteredCountries.length} {ar ? "دولة نشطة" : "Active Markets"}
-              </span>
             </div>
           </div>
 
