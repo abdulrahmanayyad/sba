@@ -88,13 +88,6 @@ export function TradeOpportunitiesSection({ ar = true }: TradeOpportunitiesSecti
                 : "Documented commercial buyer requirements. Qualified suppliers and producers can submit competitive supply proposals and capacity quotes."}
             </p>
           </div>
-
-          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shrink-0">
-            <span className="size-1.5 rounded-full bg-brand-orange animate-pulse shrink-0" />
-            <span>
-              {ar ? "6 فرص تجارية كبرى متاحة للتعاقد" : "6 Major Trade Opportunities"}
-            </span>
-          </div>
         </div>
       </div>
 
