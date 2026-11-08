@@ -55,7 +55,26 @@ export function TradeIntelligenceDashboard({ ar = true }: TradeIntelligenceDashb
   const maxMonthly = Math.max(...monthlyTrends.map((m) => m.count));
 
   return (
-    <div className="w-full space-y-8">
+    <div id="trade-intelligence" className="interactive-card glass-box-interactive w-full rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl backdrop-blur-2xl transition-all duration-300">
+      {/* Section 4 Title & Description Header */}
+      <div>
+        <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
+          <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+          <span>{ar ? "القسم الرابع: ذكاء السوق والكميات" : "Section 4: Market Intelligence"}</span>
+        </div>
+        <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5 leading-snug">
+          {ar ? "ذكاء السوق ومتطلبات المشترين الموثقة" : "Market Demand & Trade Intelligence"}
+        </h2>
+        <p className="text-xs sm:text-sm text-muted-foreground mt-2.5 sm:mt-3 leading-relaxed max-w-4xl">
+          {ar
+            ? "لوحة بيانات تحليلية للمسار الشهري، وحصر حصري للطلبات الـ 12 المحددة كميًا بدقة في سجلات عام 2025."
+            : "Analytics dashboard covering monthly trends and 12 explicitly quantified buyer requirement orders."}
+        </p>
+      </div>
+
+      {/* Divider */}
+      <div className="border-t border-border/40 dark:border-white/10" />
+
       {/* Tab Switcher */}
       <div className="flex justify-center">
         <div className="inline-flex rounded-full border border-white/20 bg-background/70 p-1.5 backdrop-blur-xl shadow-lg">
@@ -86,9 +105,9 @@ export function TradeIntelligenceDashboard({ ar = true }: TradeIntelligenceDashb
 
       {activeTab === "requirements" ? (
         /* Section 4 Part B: Documented Buyer Requirements */
-        <div className="space-y-6">
+        <div className="space-y-6 pt-2">
           {/* Header Banner */}
-          <div className="glass-box-interactive interactive-card rounded-3xl p-6 sm:p-8 backdrop-blur-2xl cursor-pointer transition-all duration-300">
+          <div className="rounded-2xl border border-white/15 bg-background/50 p-6 sm:p-8 backdrop-blur-xl shadow-inner transition-all duration-300">
             <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
               <div>
                 <span className="text-xs font-bold uppercase tracking-wider text-amber-500 dark:text-amber-400 flex items-center gap-1.5">
