@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { 
-  Briefcase, 
   Send, 
   CheckCircle2, 
   Clock, 
@@ -80,11 +79,7 @@ export function TradeOpportunitiesSection({ ar = true }: TradeOpportunitiesSecti
       <div className="rounded-2xl border border-white/15 bg-background/50 p-6 sm:p-8 backdrop-blur-xl shadow-inner transition-all duration-300">
         <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
           <div>
-            <span className="text-xs font-bold uppercase tracking-wider text-emerald-500 dark:text-emerald-400 flex items-center gap-1.5">
-              <Briefcase className="size-4" />
-              {ar ? "بوابة الشراكة والتوريد التجاري" : "Commercial Supply & Partnership Gate"}
-            </span>
-            <h3 className="text-xl sm:text-2xl font-black text-foreground mt-1">
+            <h3 className="text-xl sm:text-2xl font-black text-foreground">
               {ar ? "الفرص التجارية ومتطلبات الشراء الدولية المفتوحة للتوريد" : "International Trade Opportunities & Bidding"}
             </h3>
             <p className="text-xs text-muted-foreground mt-1 max-w-2xl leading-relaxed">
