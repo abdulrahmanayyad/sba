@@ -163,13 +163,6 @@ export function TradeWorldMap({ ar = true, onSelectCountry }: TradeWorldMapProps
                 {filteredCountries.length} {ar ? "دولة نشطة" : "Active Markets"}
               </span>
             </div>
-
-            {/* Header Status & Indicator */}
-            <div className="flex items-center gap-2 text-[11px] text-foreground/80 font-medium">
-              <span className="flex items-center gap-1.5 rounded-full bg-brand-green/15 border border-brand-green/30 px-2.5 py-0.5 text-brand-green font-bold">
-                <span>{ar ? "أعلام الأسواق الدولية" : "International Market Flags"}</span>
-              </span>
-            </div>
           </div>
 
           {/* SVG Map Canvas */}
