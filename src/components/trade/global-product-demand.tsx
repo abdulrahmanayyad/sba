@@ -124,19 +124,21 @@ export function GlobalProductDemand({ ar = true, onInquireProduct }: GlobalProdu
               <div>
                 {/* Product Titles */}
                 <div className="border-b border-white/10 pb-3">
-                  <div className="flex items-center gap-2 flex-wrap">
-                    <h4 className="text-base font-bold text-foreground group-hover:text-brand-green transition-colors">
-                      {prod.nameAr}
-                    </h4>
+                  <div className="flex items-start justify-between gap-3">
+                    <div className="min-w-0 flex-1">
+                      <h4 className="text-base font-bold text-foreground group-hover:text-brand-green transition-colors">
+                        {ar ? prod.nameAr : prod.nameEn}
+                      </h4>
+                      <p className="text-xs text-muted-foreground font-medium mt-0.5">
+                        {ar ? prod.nameEn : prod.nameAr}
+                      </p>
+                    </div>
                     {prod.documentedId && (
-                      <span className="font-mono text-[10px] font-bold text-brand-orange bg-brand-orange/15 border border-brand-orange/30 px-2 py-0.5 rounded-md">
+                      <span className="shrink-0 font-mono text-[11px] font-bold text-brand-orange bg-brand-orange/15 border border-brand-orange/30 px-2.5 py-1 rounded-md shadow-xs self-start">
                         {prod.documentedId}
                       </span>
                     )}
                   </div>
-                  <p className="text-xs text-muted-foreground font-medium mt-0.5">
-                    {prod.nameEn}
-                  </p>
                 </div>
 
                 {/* Specifications & Packaging */}
