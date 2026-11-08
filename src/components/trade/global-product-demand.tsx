@@ -123,26 +123,20 @@ export function GlobalProductDemand({ ar = true, onInquireProduct }: GlobalProdu
             >
               <div>
                 {/* Product Titles */}
-                <div className="flex items-start justify-between gap-3 border-b border-white/10 pb-3">
-                  <div>
-                    <div className="flex items-center gap-2 flex-wrap">
-                      <h4 className="text-base font-bold text-foreground group-hover:text-brand-green transition-colors">
-                        {prod.nameAr}
-                      </h4>
-                      {prod.documentedId && (
-                        <span className="font-mono text-[10px] font-bold text-brand-orange bg-brand-orange/15 border border-brand-orange/30 px-2 py-0.5 rounded-md">
-                          {prod.documentedId}
-                        </span>
-                      )}
-                    </div>
-                    <p className="text-xs text-muted-foreground font-medium">
-                      {prod.nameEn}
-                    </p>
+                <div className="border-b border-white/10 pb-3">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <h4 className="text-base font-bold text-foreground group-hover:text-brand-green transition-colors">
+                      {prod.nameAr}
+                    </h4>
+                    {prod.documentedId && (
+                      <span className="font-mono text-[10px] font-bold text-brand-orange bg-brand-orange/15 border border-brand-orange/30 px-2 py-0.5 rounded-md">
+                        {prod.documentedId}
+                      </span>
+                    )}
                   </div>
-
-                  <span className="inline-flex shrink-0 items-center justify-center rounded-xl border border-brand-green bg-brand-green px-2.5 py-1 text-[11px] font-bold text-white shadow-xs transition-colors duration-300 hover:bg-brand-orange hover:border-brand-orange">
-                    {ar ? "مطلوب دوليًا" : "In Demand"}
-                  </span>
+                  <p className="text-xs text-muted-foreground font-medium mt-0.5">
+                    {prod.nameEn}
+                  </p>
                 </div>
 
                 {/* Specifications & Packaging */}
