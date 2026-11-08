@@ -245,7 +245,7 @@ export function BusinessNetworkSection({ ar = true }: BusinessNetworkSectionProp
                 </div>
 
                 {inq.quantityRequested && (
-                  <p className="text-emerald-400 font-semibold">
+                  <p className="text-brand-green font-semibold">
                     {ar ? "الكمية المطلوبة:" : "Qty:"} {inq.quantityRequested}
                   </p>
                 )}

@@ -142,9 +142,9 @@ export function GlobalProductDemand({ ar = true, onInquireProduct }: GlobalProdu
                 {/* Specifications & Packaging */}
                 <div className="mt-3.5 space-y-2.5 text-xs">
                   {prod.quantity && (
-                    <div className="rounded-xl border border-amber-500/30 bg-amber-500/10 p-2.5 text-xs font-bold text-amber-500 dark:text-amber-300 flex items-center justify-between">
+                    <div className="rounded-xl border border-brand-green/30 bg-brand-green/10 p-2.5 text-xs font-bold text-brand-green flex items-center justify-between">
                       <span className="text-[11px] text-muted-foreground">{ar ? "الكمية المطلوبة:" : "Required Quantity:"}</span>
-                      <span className="font-mono text-amber-400 font-extrabold">{ar ? prod.quantity : (prod.quantityEn || prod.quantity)}</span>
+                      <span className="font-mono text-brand-green font-extrabold">{ar ? prod.quantity : (prod.quantityEn || prod.quantity)}</span>
                     </div>
                   )}
 

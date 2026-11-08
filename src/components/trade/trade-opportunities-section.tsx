@@ -121,11 +121,11 @@ export function TradeOpportunitiesSection({ ar = true }: TradeOpportunitiesSecti
               </div>
 
               {/* Quantity Highlight Box */}
-              <div className="mt-4 rounded-2xl border border-white/10 bg-white/5 p-3.5">
-                <span className="text-[11px] font-semibold text-muted-foreground block mb-0.5">
+              <div className="mt-4 rounded-2xl border border-brand-green/30 bg-brand-green/10 p-3.5">
+                <span className="text-[11px] font-semibold text-brand-green block mb-0.5">
                   {ar ? "الكمية المطلوبة للتوريد:" : "Required Supply Quantity:"}
                 </span>
-                <p className="text-base font-black text-emerald-400">
+                <p className="text-base font-black text-brand-green">
                   {ar ? opp.quantityRequested : opp.quantityEn}
                 </p>
               </div>

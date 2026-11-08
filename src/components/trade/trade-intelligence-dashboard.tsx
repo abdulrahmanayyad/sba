@@ -148,14 +148,14 @@ export function TradeIntelligenceDashboard({ ar = true }: TradeIntelligenceDashb
                   </div>
 
                   {/* Quantity Highlight Box */}
-                  <div className="mt-4 rounded-2xl border border-emerald-500/30 bg-emerald-500/10 p-3.5">
-                    <span className="text-[11px] font-semibold text-emerald-400 block mb-0.5">
+                  <div className="mt-4 rounded-2xl border border-brand-green/30 bg-brand-green/10 p-3.5">
+                    <span className="text-[11px] font-semibold text-brand-green block mb-0.5">
                       {ar ? "الكمية المطلوبة:" : "Required Quantity:"}
                     </span>
-                    <p className="text-lg font-black text-emerald-300">
+                    <p className="text-lg font-black text-brand-green">
                       {ar ? req.quantity : req.quantityEn}
                     </p>
-                    <div className="mt-1 flex items-center gap-1 text-[11px] text-emerald-200/80">
+                    <div className="mt-1 flex items-center gap-1 text-[11px] text-brand-green/80">
                       <Clock className="size-3" />
                       <span>{ar ? req.frequencyAr : req.frequencyEn}</span>
                     </div>
