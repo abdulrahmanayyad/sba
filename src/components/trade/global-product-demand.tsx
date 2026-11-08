@@ -47,10 +47,10 @@ export function GlobalProductDemand({ ar = true, onInquireProduct }: GlobalProdu
                 setActiveCategory(cat.categoryKey);
                 setSearchProduct("");
               }}
-              className={`flex shrink-0 items-center gap-2 rounded-2xl px-5 py-3 text-xs font-bold transition-all duration-300 cursor-pointer ${
+              className={`interactive-card glass-box-interactive flex shrink-0 items-center gap-2 rounded-2xl px-5 py-3 text-xs font-bold transition-all duration-300 cursor-pointer ${
                 isActive
-                  ? "!bg-brand-green !text-white shadow-lg shadow-brand-green/25 scale-[1.02] border border-brand-green"
-                  : "glass-box-interactive border border-white/20 bg-background/60 text-foreground/85 hover:border-white/40 hover:bg-background/85 hover:text-foreground hover:-translate-y-0.5 shadow-sm"
+                  ? "border-2 border-brand-green bg-brand-green/20 text-brand-green shadow-lg shadow-brand-green/20 scale-[1.03] backdrop-blur-xl"
+                  : "border border-white/20 bg-background/60 text-foreground/85 hover:border-white/40 hover:bg-background/85 hover:text-foreground hover:-translate-y-0.5 shadow-sm backdrop-blur-xl"
               }`}
             >
               <Package className="size-4 shrink-0" />
@@ -61,7 +61,7 @@ export function GlobalProductDemand({ ar = true, onInquireProduct }: GlobalProdu
       </div>
 
       {/* Category Overview Banner & Search */}
-      <div className="flex flex-col gap-4 rounded-3xl border border-white/15 bg-gradient-to-r from-background/80 via-background/60 to-emerald-950/20 p-6 shadow-xl backdrop-blur-2xl md:flex-row md:items-center md:justify-between">
+      <div className="interactive-card glass-box-interactive flex flex-col gap-4 rounded-3xl border border-white/20 bg-background/60 p-6 shadow-xl backdrop-blur-2xl transition-all duration-300 hover:bg-background/80 hover:shadow-2xl md:flex-row md:items-center md:justify-between">
         <div>
           <div className="text-brand-orange text-xs font-bold uppercase tracking-wider mb-1">
             <span>{ar ? "فئة التصدير والطلب الدولي" : "Export & Global Demand Category"}</span>
