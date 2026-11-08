@@ -123,11 +123,14 @@ export function EconomicIndicatorsWidget() {
         </div>
 
         {/* Footnote on Data Responsibility */}
-        <div className="mt-6 p-3.5 rounded-xl bg-secondary/40 border border-border/60 text-xs text-muted-foreground leading-relaxed">
+        <div className="mt-6 p-4 rounded-2xl bg-brand-green/10 border border-brand-green/35 text-xs sm:text-sm text-foreground/90 leading-relaxed shadow-xs">
+          <span className="font-bold text-brand-green">
+            {ar ? "تنويه توثيقي: " : "Documentation Notice: "}
+          </span>
           <span>
             {ar
-              ? "تنويه توثيقي: هذه المؤشرات مأخوذة من مراجعات رسمية لمنظمة OECD والبنك الأهلي المصري ومركز المعلومات، ولا تمثل إحصاءات داخلية خاصة بمجموعة سامي بن عياد."
-              : "Documentation Notice: These indicators are cited from official OECD, NBE, and IDSC reports and do not constitute proprietary data of Sami Bin Ayyad Group."}
+              ? "هذه المؤشرات مأخوذة من مراجعات رسمية لمنظمة OECD والبنك الأهلي المصري ومركز المعلومات، ولا تمثل إحصاءات داخلية خاصة بمجموعة سامي بن عياد."
+              : "These indicators are cited from official OECD, NBE, and IDSC reports and do not constitute proprietary data of Sami Bin Ayyad Group."}
           </span>
         </div>
       </div>
