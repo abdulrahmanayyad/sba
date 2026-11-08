@@ -33,13 +33,13 @@ export function TradeWorldMap({ ar = true, onSelectCountry }: TradeWorldMapProps
   );
 
   const continents = useMemo(() => [
-    { id: "all", labelAr: "كافة القارات (47 دولة)", labelEn: "All Continents (47 Countries)" },
-    { id: "Middle East", labelAr: "الشرق الأوسط والخليج", labelEn: "Middle East & GCC" },
-    { id: "Asia", labelAr: "آسيا والمحيط الهادئ", labelEn: "Asia & Pacific" },
-    { id: "Europe", labelAr: "أوروبا", labelEn: "Europe" },
-    { id: "Africa", labelAr: "إفريقيا", labelEn: "Africa" },
-    { id: "Americas", labelAr: "الأمريكتان", labelEn: "Americas" },
-    { id: "Oceania", labelAr: "أوقيانوسيا", labelEn: "Oceania" },
+    { id: "all", labelAr: "كافة القارات", labelEn: "All Continents" },
+    { id: "Middle East", labelAr: "الشرق الأوسط", labelEn: "Middle East" },
+    { id: "Asia", labelAr: "قارة آسيا", labelEn: "Asia" },
+    { id: "Europe", labelAr: "قارة أوروبا", labelEn: "Europe" },
+    { id: "Africa", labelAr: "قارة إفريقيا", labelEn: "Africa" },
+    { id: "Americas", labelAr: "أمريكا", labelEn: "Americas" },
+    { id: "Oceania", labelAr: "أخرى", labelEn: "Other" },
   ], []);
 
   const categories = useMemo(() => [

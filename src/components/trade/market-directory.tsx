@@ -36,12 +36,12 @@ export function MarketDirectory({ ar = true, selectedCountryCode }: MarketDirect
 
   const continents = [
     { id: "all", nameAr: "كافة القارات", nameEn: "All Continents" },
-    { id: "Middle East", nameAr: "الشرق الأوسط والخليج", nameEn: "Middle East & GCC" },
-    { id: "Asia", nameAr: "آسيا والمحيط الهادئ", nameEn: "Asia & Pacific" },
-    { id: "Europe", nameAr: "أوروبا", nameEn: "Europe" },
-    { id: "Africa", nameAr: "إفريقيا", nameEn: "Africa" },
-    { id: "Americas", nameAr: "الأمريكتان", nameEn: "Americas" },
-    { id: "Oceania", nameAr: "أوقيانوسيا", nameEn: "Oceania" },
+    { id: "Middle East", nameAr: "الشرق الأوسط", nameEn: "Middle East" },
+    { id: "Asia", nameAr: "قارة آسيا", nameEn: "Asia" },
+    { id: "Europe", nameAr: "قارة أوروبا", nameEn: "Europe" },
+    { id: "Africa", nameAr: "قارة إفريقيا", nameEn: "Africa" },
+    { id: "Americas", nameAr: "أمريكا", nameEn: "Americas" },
+    { id: "Oceania", nameAr: "أخرى", nameEn: "Other" },
   ];
 
   const filteredCountries = useMemo(() => {
