@@ -101,17 +101,17 @@ export function TradeOpportunitiesSection({ ar = true }: TradeOpportunitiesSecti
             <div>
               {/* Top Meta */}
               <div className="flex items-center justify-between border-b border-white/10 pb-3">
-                <span className="font-mono text-xs font-bold text-brand-orange">
+                <span className="inline-flex items-center rounded-lg border border-brand-green bg-brand-green px-2.5 py-1 font-mono text-xs font-bold text-white shadow-xs">
                   {opp.id}
                 </span>
                 <span className="rounded-full bg-emerald-500/15 px-2.5 py-0.5 text-[11px] font-bold text-emerald-400 border border-emerald-500/20">
-                  {opp.statusBadge}
+                  {ar ? (opp.statusBadge === "Recurring Demand" ? "طلب سنوي متكرر" : "متطلب شراء نشط") : opp.statusBadge}
                 </span>
               </div>
 
               {/* Product & Destination */}
               <div className="mt-3.5 space-y-1">
-                <h4 className="text-lg font-bold text-foreground group-hover:text-brand-green transition-colors">
+                <h4 className="text-lg font-black text-foreground group-hover:text-brand-green transition-colors">
                   {ar ? opp.productAr : opp.productEn}
                 </h4>
                 <div className="flex items-center gap-1.5 text-xs text-muted-foreground font-medium">
@@ -121,11 +121,11 @@ export function TradeOpportunitiesSection({ ar = true }: TradeOpportunitiesSecti
               </div>
 
               {/* Quantity Highlight Box */}
-              <div className="mt-4 rounded-2xl border border-brand-green/30 bg-brand-green/10 p-3.5">
-                <span className="text-[11px] font-semibold text-brand-green block mb-0.5">
+              <div className="mt-4 rounded-2xl border border-brand-green bg-brand-green p-3.5 text-white shadow-sm">
+                <span className="text-[11px] font-bold text-white/90 block mb-0.5">
                   {ar ? "الكمية المطلوبة للتوريد:" : "Required Supply Quantity:"}
                 </span>
-                <p className="text-base font-black text-brand-green">
+                <p className="text-base font-black text-white">
                   {ar ? opp.quantityRequested : opp.quantityEn}
                 </p>
               </div>
@@ -165,14 +165,14 @@ export function TradeOpportunitiesSection({ ar = true }: TradeOpportunitiesSecti
 
             {/* CTA Button */}
             <div className="mt-6 pt-4 border-t border-border/40">
-              <Button
+              <button
                 type="button"
                 onClick={() => handleOpenProposal(opp)}
-                className="w-full rounded-full text-xs font-bold shadow-md cursor-pointer"
+                className="flex w-full items-center justify-center gap-2 rounded-xl border border-brand-green bg-brand-green py-2.5 text-xs font-bold text-white shadow-md transition-all duration-300 hover:bg-brand-orange hover:border-brand-orange active:scale-95 cursor-pointer"
               >
                 <Send className="size-3.5 me-2" />
                 <span>{ar ? "قدّم عرض توريد لهذه الفرصة" : "Submit Supply Proposal"}</span>
-              </Button>
+              </button>
             </div>
           </div>
         ))}
