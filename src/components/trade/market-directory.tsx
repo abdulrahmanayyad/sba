@@ -140,15 +140,19 @@ export function MarketDirectory({ ar = true, selectedCountryCode }: MarketDirect
               <div>
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex items-center gap-3">
-                    <span className="text-3xl drop-shadow-sm" role="img" aria-label={country.nameEn}>
-                      {country.flag}
-                    </span>
+                    <img
+                      src={`https://flagcdn.com/w40/${country.code.toLowerCase()}.png`}
+                      srcSet={`https://flagcdn.com/w80/${country.code.toLowerCase()}.png 2x`}
+                      alt={ar ? country.nameAr : country.nameEn}
+                      className="h-6 w-9 rounded-md object-cover shadow-sm border border-foreground/15 dark:border-white/20 shrink-0"
+                      loading="lazy"
+                    />
                     <div>
                       <h4 className="text-base font-bold text-foreground group-hover:text-brand-orange transition-colors">
                         {ar ? country.nameAr : country.nameEn}
                       </h4>
                       <p className="text-xs text-muted-foreground">
-                        {ar ? country.continentAr : country.continent} • {country.flag}
+                        {ar ? country.continentAr : country.continent}
                       </p>
                     </div>
                   </div>
