@@ -2,10 +2,13 @@ import { createFileRoute } from "@tanstack/react-router";
 import { TradePage } from "@/components/trade/trade-page";
 import { useLanguage } from "@/i18n/language-context";
 
+function TradeRouteComponent() {
+  const { language } = useLanguage();
+  const isArabic = language === "AR";
+  return <TradePage ar={isArabic} />;
+}
+
 export const Route = createFileRoute("/trade")({
-  validateSearch: (search: Record<string, unknown>): { sector?: string } => ({
-    sector: typeof search.sector === "string" ? search.sector : undefined,
-  }),
   head: () => ({
     meta: [
       { title: "Global Trade Footprint & Market Intelligence — Sami Bin Ayyad Group" },
@@ -21,10 +24,3 @@ export const Route = createFileRoute("/trade")({
   }),
   component: TradeRouteComponent,
 });
-
-function TradeRouteComponent() {
-  const { language } = useLanguage();
-  const isArabic = language === "AR";
-  const search = Route.useSearch();
-  return <TradePage ar={isArabic} searchSector={search?.sector} />;
-}

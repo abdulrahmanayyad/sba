@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "@tanstack/react-router";
 import { Reveal } from "@/components/home/reveal";
 import { Wheat, Shirt, Building2 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -17,23 +16,32 @@ import { TRADE_STATS, COUNTRY_PROFILES, CountryTradeProfile } from "@/lib/trade-
 
 interface TradePageProps {
   ar?: boolean;
-  searchSector?: string;
 }
 
-export function TradePage({ ar = true, searchSector }: TradePageProps) {
-  const navigate = useNavigate();
-  const [activeSector, setActiveSector] = useState<"food" | "apparel" | "real-estate">(() => {
-    if (searchSector === "apparel" || searchSector === "real-estate" || searchSector === "food") {
-      return searchSector;
-    }
-    return "food";
-  });
+export function TradePage({ ar = true }: TradePageProps) {
+  const [activeSector, setActiveSector] = useState<"food" | "apparel" | "real-estate">("food");
 
   useEffect(() => {
-    if (searchSector === "apparel" || searchSector === "real-estate" || searchSector === "food") {
-      setActiveSector(searchSector);
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const s = params.get("sector");
+      if (s === "apparel" || s === "real-estate" || s === "food") {
+        setActiveSector(s);
+      }
+
+      const onPopState = () => {
+        const p = new URLSearchParams(window.location.search);
+        const cur = p.get("sector");
+        if (cur === "apparel" || cur === "real-estate" || cur === "food") {
+          setActiveSector(cur);
+        } else {
+          setActiveSector("food");
+        }
+      };
+      window.addEventListener("popstate", onPopState);
+      return () => window.removeEventListener("popstate", onPopState);
     }
-  }, [searchSector]);
+  }, []);
 
   const [selectedCountryCode, setSelectedCountryCode] = useState<string | undefined>(undefined);
 
@@ -43,14 +51,14 @@ export function TradePage({ ar = true, searchSector }: TradePageProps) {
 
   const handleSectorChange = (sector: "food" | "apparel" | "real-estate") => {
     setActiveSector(sector);
-    try {
-      navigate({
-        to: "/trade",
-        search: { sector },
-        replace: true,
-      });
-    } catch {
-      // Fallback
+    if (typeof window !== "undefined") {
+      try {
+        const url = new URL(window.location.href);
+        url.searchParams.set("sector", sector);
+        window.history.pushState({}, "", url.toString());
+      } catch {
+        // Safe fallback
+      }
     }
   };
 
