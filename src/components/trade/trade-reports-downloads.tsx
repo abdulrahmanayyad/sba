@@ -184,21 +184,8 @@ export function TradeReportsDownloads({ ar = true }: TradeReportsDownloadsProps)
       {/* Special Tender & Custom Specifications Card */}
       <div className="mt-8 rounded-3xl border border-border/80 bg-background/80 p-6 sm:p-8 backdrop-blur-2xl shadow-xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-          <div className="lg:col-span-7 space-y-3">
-            <div className="inline-flex items-center gap-2 rounded-full border border-brand-orange/30 bg-brand-orange/10 px-3 py-1 text-xs font-bold text-brand-orange">
-              <span>{ar ? "عطاءات ومناقصات دولية" : "International Tenders"}</span>
-            </div>
-            <h3 className="text-xl sm:text-2xl font-black text-foreground">
-              {ar ? "استفسارات المستندات الخاصة والمناقصات" : "Custom Specifications & Tender Documentation Inquiries"}
-            </h3>
-            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              {ar
-                ? "للجهات والمؤسسات التي تتطلب كراسات شروط ومستندات فنية خاصة، أو شهادات فحص وتحليل مخبري معتمدة، أو عقود توريد سلعية كبرى ومناقصات رسمية، يرجى التواصل المباشر مع مكتب التجارة والتعاقدات الدولية بالمجموعة."
-                : "For institutional clients requiring specialized technical dossiers, accredited third-party laboratory certifications, or bulk commodity tenders, please contact our International Contracts Office directly."}
-            </p>
-          </div>
-
-          <div className="lg:col-span-5 rounded-2xl border border-border bg-card/90 p-5 shadow-md space-y-3.5">
+          {/* Official Contact Info Box (Placed on the right in Arabic / RTL) */}
+          <div className="lg:col-span-5 rounded-2xl border border-border bg-card/90 p-5 shadow-md space-y-3.5 order-1">
             <span className="text-xs font-bold text-foreground uppercase tracking-wider block border-b border-border/60 pb-2">
               {ar ? "قنوات الاتصال الرسمية المعتمدة:" : "Official Direct Channels:"}
             </span>
@@ -234,6 +221,21 @@ export function TradeReportsDownloads({ ar = true }: TradeReportsDownloadsProps)
                 </span>
               </div>
             </a>
+          </div>
+
+          {/* Main Info */}
+          <div className="lg:col-span-7 space-y-3 order-2">
+            <div className="inline-flex items-center gap-2 rounded-full border border-brand-orange/30 bg-brand-orange/10 px-3 py-1 text-xs font-bold text-brand-orange">
+              <span>{ar ? "عطاءات ومناقصات دولية" : "International Tenders"}</span>
+            </div>
+            <h3 className="text-xl sm:text-2xl font-black text-foreground">
+              {ar ? "استفسارات المستندات الخاصة والمناقصات" : "Custom Specifications & Tender Documentation Inquiries"}
+            </h3>
+            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+              {ar
+                ? "للجهات والمؤسسات التي تتطلب كراسات شروط ومستندات فنية خاصة، أو شهادات فحص وتحليل مخبري معتمدة، أو عقود توريد سلعية كبرى ومناقصات رسمية، يرجى التواصل المباشر مع مكتب التجارة والتعاقدات الدولية بالمجموعة."
+                : "For institutional clients requiring specialized technical dossiers, accredited third-party laboratory certifications, or bulk commodity tenders, please contact our International Contracts Office directly."}
+            </p>
           </div>
         </div>
       </div>

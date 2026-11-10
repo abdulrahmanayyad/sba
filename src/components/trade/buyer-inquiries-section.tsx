@@ -34,10 +34,6 @@ export function BuyerInquiriesSection({ ar = true }: BuyerInquiriesSectionProps)
     <div id="buyer-inquiries" className="interactive-card glass-box-interactive w-full rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl backdrop-blur-2xl transition-all duration-300">
       {/* Section 7 Title & Description Header */}
       <div>
-        <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
-          <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-          <span>{ar ? "القسم السابع: سجل استفسارات المشترين" : "Section 7: Buyer Inquiries Log"}</span>
-        </div>
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
             <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5 leading-snug">
