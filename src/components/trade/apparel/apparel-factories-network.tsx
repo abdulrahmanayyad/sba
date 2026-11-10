@@ -1,5 +1,5 @@
 import React from "react";
-import { Factory, ShieldCheck, CheckCircle2, MapPin } from "lucide-react";
+import { Factory, ShieldCheck, CheckCircle2 } from "lucide-react";
 import { APPAREL_EGYPTIAN_NETWORK } from "@/lib/apparel-trade-data";
 
 interface ApparelFactoriesNetworkProps {
@@ -18,10 +18,10 @@ export function ApparelFactoriesNetwork({ ar = true }: ApparelFactoriesNetworkPr
           <span>{ar ? "القسم التاسع: شبكة المصانع الشريكة" : "Section 9: Partner Manufacturing Network"}</span>
         </div>
         <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5 leading-snug">
-          {ar ? net.titleAr : net.titleEn}
+          {ar ? net.headlineAr : net.headlineEn}
         </h2>
-        <p className="text-xs sm:text-sm text-foreground/90 mt-3 leading-relaxed max-w-5xl font-medium bg-background/50 p-4 rounded-2xl border border-border/60">
-          {ar ? net.overviewAr : net.overviewEn}
+        <p className="text-xs sm:text-sm text-foreground/90 mt-3 leading-relaxed max-w-5xl font-medium bg-background/50 p-4 rounded-2xl border border-border/60 whitespace-pre-line">
+          {ar ? net.bodyAr : net.bodyEn}
         </p>
       </div>
 
@@ -60,7 +60,7 @@ export function ApparelFactoriesNetwork({ ar = true }: ApparelFactoriesNetworkPr
         </h3>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {net.specialties.map((spec) => (
+          {(net.subSpecialties || []).map((spec) => (
             <div
               key={spec.key}
               className="flex flex-col justify-between rounded-2xl border border-border/80 bg-background/60 p-4.5 backdrop-blur-md shadow-xs transition-all duration-300 hover:border-brand-orange/50 hover:shadow-md"
@@ -71,11 +71,11 @@ export function ApparelFactoriesNetwork({ ar = true }: ApparelFactoriesNetworkPr
                     <Factory className="size-3.5" />
                   </span>
                   <h4 className="font-bold text-xs sm:text-sm text-foreground">
-                    {ar ? spec.nameAr : spec.nameEn}
+                    {ar ? spec.labelAr : spec.labelEn}
                   </h4>
                 </div>
                 <p className="text-xs text-muted-foreground leading-relaxed">
-                  {ar ? spec.detailsAr : spec.detailsEn}
+                  {ar ? spec.descAr : spec.descEn}
                 </p>
               </div>
             </div>
@@ -85,4 +85,3 @@ export function ApparelFactoriesNetwork({ ar = true }: ApparelFactoriesNetworkPr
     </div>
   );
 }
-

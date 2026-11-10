@@ -91,11 +91,11 @@ export function ApparelBuyerInquiries({ ar = true }: ApparelBuyerInquiriesProps)
 
       {/* Inquiries Cards Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4.5">
-        {visibleInquiries.map((inq) => {
+        {visibleInquiries.map((inq, idx) => {
           const isExpanded = expandedCode === inq.inquiryCode;
           return (
             <div
-              key={inq.inquiryCode}
+              key={`${inq.inquiryCode}-${idx}`}
               className="flex flex-col justify-between rounded-2xl border border-border/80 bg-background/70 p-5 backdrop-blur-xl shadow-md transition-all duration-300 hover:border-brand-green/60 hover:shadow-lg hover:-translate-y-0.5"
             >
               <div className="space-y-3">

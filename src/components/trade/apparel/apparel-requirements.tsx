@@ -1,5 +1,5 @@
 import React from "react";
-import { CheckCircle2, Clock, ShieldCheck, Box, FileText, ArrowRight } from "lucide-react";
+import { CheckCircle2, ShieldCheck, Factory, Layers } from "lucide-react";
 import { APPAREL_REQUIREMENT_TRACKS } from "@/lib/apparel-trade-data";
 
 interface ApparelRequirementsProps {
@@ -20,8 +20,8 @@ export function ApparelRequirements({ ar = true }: ApparelRequirementsProps) {
         </h2>
         <p className="text-xs sm:text-sm text-muted-foreground mt-2 leading-relaxed max-w-4xl">
           {ar
-            ? "نحدد متطلبات واضحة لكل مسار إنتاجي، بما يشمل الحد الأدنى للطلب (MOQ)، والمدد الزمنية للعينات والإنتاج، والأقمشة المعتمدة، وشروط التصدير القياسية."
-            : "Clear parameters for every production pathway, outlining minimum order quantities (MOQ), lead times, certified fabric substrates, and international shipping terms."}
+            ? "نحدد متطلبات واضحة لكل مسار إنتاجي، بما يشمل نطاق العمل، الفئات المستهدفة، نماذج التشغيل المعتمدة، والمخرجات التنفيذية المسلمة للعميل."
+            : "Clear operational frameworks for every production track, outlining scope, target clients, operational models, and verified project deliverables."}
         </p>
       </div>
 
@@ -35,66 +35,54 @@ export function ApparelRequirements({ ar = true }: ApparelRequirementsProps) {
             <div>
               <div className="flex items-center justify-between border-b border-border/60 pb-3">
                 <span className="rounded-lg border border-brand-green/30 bg-brand-green/10 px-2.5 py-1 text-[11px] font-bold text-brand-green">
-                  {track.code}
+                  {track.id}
                 </span>
-                <span className="text-xs font-bold text-muted-foreground">
-                  {ar ? track.leadTimeAr : track.leadTimeEn}
-                </span>
+                <div className="flex flex-wrap gap-1">
+                  {(track.models || []).map((m, mIdx) => (
+                    <span key={mIdx} className="rounded-md bg-secondary/80 px-2 py-0.5 text-[10px] font-semibold text-foreground">
+                      {m}
+                    </span>
+                  ))}
+                </div>
               </div>
 
               <h3 className="font-head text-lg font-bold text-foreground mt-4">
                 {ar ? track.titleAr : track.titleEn}
               </h3>
               <p className="text-xs text-muted-foreground mt-2 leading-relaxed">
-                {ar ? track.descriptionAr : track.descriptionEn}
+                {ar ? track.scopeAr : track.scopeEn}
               </p>
 
               <div className="mt-5 space-y-3 border-t border-border/50 pt-4 text-xs">
                 <div>
                   <span className="font-bold text-foreground block text-[11px] uppercase tracking-wider mb-0.5">
-                    {ar ? "الحد الأدنى للكمية (MOQ):" : "Minimum Order Quantity (MOQ):"}
+                    {ar ? "الفئات المستهدفة:" : "Target Clients:"}
                   </span>
-                  <p className="text-brand-orange font-bold">
-                    {ar ? track.moqAr : track.moqEn}
+                  <p className="text-brand-orange font-bold text-xs">
+                    {ar ? track.targetClientsAr : track.targetClientsEn}
                   </p>
                 </div>
 
                 <div>
-                  <span className="font-bold text-foreground block text-[11px] uppercase tracking-wider mb-0.5">
-                    {ar ? "الأقمشة والخامات المعتمدة:" : "Approved Fabrics & Materials:"}
+                  <span className="font-bold text-foreground block text-[11px] uppercase tracking-wider mb-1.5">
+                    {ar ? "المخرجات والتسليمات التنفيذية:" : "Execution Deliverables:"}
                   </span>
-                  <ul className="space-y-1">
-                    {(ar ? track.materialsAr : track.materialsEn).map((mat, i) => (
-                      <li key={i} className="flex items-center gap-1.5 text-muted-foreground font-medium">
-                        <CheckCircle2 className="size-3 text-brand-green shrink-0" />
-                        <span>{mat}</span>
+                  <ul className="space-y-1.5">
+                    {(ar ? track.deliverablesAr || [] : track.deliverablesEn || []).map((del, i) => (
+                      <li key={i} className="flex items-start gap-1.5 text-muted-foreground font-medium text-xs">
+                        <CheckCircle2 className="size-3.5 text-brand-green shrink-0 mt-0.5" />
+                        <span>{del}</span>
                       </li>
                     ))}
                   </ul>
-                </div>
-
-                <div>
-                  <span className="font-bold text-foreground block text-[11px] uppercase tracking-wider mb-0.5">
-                    {ar ? "معايير الجودة والشهادات:" : "Quality Standards & Certifications:"}
-                  </span>
-                  <div className="flex flex-wrap gap-1.5 pt-1">
-                    {(ar ? track.qualityStandardsAr : track.qualityStandardsEn).map((cert, i) => (
-                      <span
-                        key={i}
-                        className="rounded-md border border-border/60 bg-muted/50 px-2 py-0.5 text-[10px] font-medium text-foreground"
-                      >
-                        {cert}
-                      </span>
-                    ))}
-                  </div>
                 </div>
               </div>
             </div>
 
             <div className="mt-5 pt-3 border-t border-border/50 flex items-center justify-between text-[11px]">
-              <span className="text-muted-foreground">{ar ? "شروط التسليم:" : "Incoterms:"}</span>
+              <span className="text-muted-foreground">{ar ? "نماذج التشغيل:" : "Models:"}</span>
               <span className="font-bold text-foreground">
-                {(ar ? track.exportTermsAr : track.exportTermsEn).join(" • ")}
+                {(track.models || []).join(" • ")}
               </span>
             </div>
           </div>
@@ -103,4 +91,3 @@ export function ApparelRequirements({ ar = true }: ApparelRequirementsProps) {
     </div>
   );
 }
-

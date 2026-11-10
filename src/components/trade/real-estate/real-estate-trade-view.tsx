@@ -46,14 +46,14 @@ export function RealEstateTradeView({ ar = true }: RealEstateTradeViewProps) {
 
   const coverageTabs = [
     { id: "all", labelAr: "كافة المناطق", labelEn: "All Regions" },
-    { id: "east_cairo", labelAr: "القاهرة الكبرى وشرق القاهرة", labelEn: "Greater Cairo & East" },
-    { id: "west_cairo", labelAr: "غرب القاهرة", labelEn: "West Cairo" },
-    { id: "coastal", labelAr: "المدن الساحلية والسياحية", labelEn: "Coastal & Tourism" },
-    { id: "international", labelAr: "الأسواق الدولية", labelEn: "International Markets" },
+    { id: "greater-cairo-east", labelAr: "القاهرة الكبرى وشرق القاهرة", labelEn: "Greater Cairo & East" },
+    { id: "west-cairo", labelAr: "غرب القاهرة", labelEn: "West Cairo" },
+    { id: "coastal-tourism", labelAr: "المدن الساحلية والسياحية", labelEn: "Coastal & Tourism" },
+    { id: "international-markets", labelAr: "الأسواق الدولية", labelEn: "International Markets" },
   ];
 
   const filteredCoverage = REAL_ESTATE_MARKET_COVERAGE.filter(
-    (c) => activeCoverageRegion === "all" || c.id === activeCoverageRegion
+    (c) => activeCoverageRegion === "all" || c.regionKey === activeCoverageRegion
   );
 
   return (
@@ -192,13 +192,13 @@ export function RealEstateTradeView({ ar = true }: RealEstateTradeViewProps) {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               {filteredCoverage.map((cov) => (
                 <div
-                  key={cov.id}
+                  key={cov.regionKey}
                   className="rounded-2xl border border-border/80 bg-background/70 p-5 backdrop-blur-xl shadow-xs transition-all duration-300 hover:border-brand-orange/50 hover:shadow-md"
                 >
                   <div className="flex items-center gap-2 mb-3 border-b border-border/50 pb-2.5">
                     <MapPin className="size-4 text-brand-orange shrink-0" />
                     <h3 className="font-bold text-sm text-foreground">
-                      {ar ? cov.regionAr : cov.regionEn}
+                      {ar ? cov.regionNameAr : cov.regionNameEn}
                     </h3>
                   </div>
 
@@ -238,12 +238,12 @@ export function RealEstateTradeView({ ar = true }: RealEstateTradeViewProps) {
             <div className="flex flex-wrap gap-2 border-b border-border/50 pb-3">
               {REAL_ESTATE_ASSETS_PORTFOLIO.map((cat) => (
                 <button
-                  key={cat.id}
+                  key={cat.categoryKey}
                   type="button"
-                  onClick={() => setActiveAssetTab(cat.id)}
+                  onClick={() => setActiveAssetTab(cat.categoryKey)}
                   className={cn(
                     "rounded-xl px-4 py-2 text-xs sm:text-sm font-bold transition-all duration-200 cursor-pointer border",
-                    activeAssetTab === cat.id
+                    activeAssetTab === cat.categoryKey
                       ? "bg-foreground text-background border-foreground shadow-sm"
                       : "bg-background/70 text-muted-foreground border-border hover:border-foreground/30 hover:text-foreground"
                   )}
@@ -254,27 +254,24 @@ export function RealEstateTradeView({ ar = true }: RealEstateTradeViewProps) {
             </div>
 
             {/* Active Asset Class View */}
-            {REAL_ESTATE_ASSETS_PORTFOLIO.filter((c) => c.id === activeAssetTab).map((cat) => (
-              <div key={cat.id} className="space-y-6 animate-in fade-in duration-300">
+            {REAL_ESTATE_ASSETS_PORTFOLIO.filter((c) => c.categoryKey === activeAssetTab).map((cat) => (
+              <div key={cat.categoryKey} className="space-y-6 animate-in fade-in duration-300">
                 <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                   {ar ? cat.descriptionAr : cat.descriptionEn}
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4.5">
-                  {cat.subTypes.map((item, idx) => (
+                  {(ar ? cat.itemsAr : cat.itemsEn).map((itemName, idx) => (
                     <div
                       key={idx}
                       className="rounded-2xl border border-border/80 bg-background/60 p-5 backdrop-blur-md shadow-xs transition-all duration-300 hover:border-brand-green/60 hover:shadow-md"
                     >
-                      <div className="flex items-center gap-2 mb-2">
+                      <div className="flex items-center gap-2">
                         <CheckCircle2 className="size-4 shrink-0 text-brand-green" />
                         <h4 className="font-bold text-sm text-foreground">
-                          {ar ? item.nameAr : item.nameEn}
+                          {itemName}
                         </h4>
                       </div>
-                      <p className="text-xs text-muted-foreground leading-relaxed">
-                        {ar ? item.descAr : item.descEn}
-                      </p>
                     </div>
                   ))}
                 </div>
@@ -302,14 +299,14 @@ export function RealEstateTradeView({ ar = true }: RealEstateTradeViewProps) {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
-              {REAL_ESTATE_TRANSACTION_MODELS.map((model) => (
+              {REAL_ESTATE_TRANSACTION_MODELS.map((model, idx) => (
                 <div
-                  key={model.id}
+                  key={idx}
                   className="flex flex-col justify-between rounded-2xl border border-border/80 bg-background/70 p-4.5 backdrop-blur-md shadow-xs transition-all duration-300 hover:border-brand-orange/50 hover:shadow-md"
                 >
                   <div>
                     <span className="rounded-lg border border-border bg-secondary/80 px-2 py-0.5 text-[10px] font-mono font-bold text-foreground">
-                      {model.code}
+                      {`0${idx + 1}`}
                     </span>
                     <h3 className="font-bold text-sm text-foreground mt-2.5">
                       {ar ? model.titleAr : model.titleEn}
@@ -318,6 +315,13 @@ export function RealEstateTradeView({ ar = true }: RealEstateTradeViewProps) {
                       {ar ? model.descAr : model.descEn}
                     </p>
                   </div>
+                  {model.tagEn && (
+                    <div className="pt-2 border-t border-border/40 mt-3">
+                      <span className="text-[10px] font-semibold text-brand-green block">
+                        {model.tagEn}
+                      </span>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -343,14 +347,14 @@ export function RealEstateTradeView({ ar = true }: RealEstateTradeViewProps) {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-              {REAL_ESTATE_ADVISORY_PILLARS.map((pillar) => (
+              {REAL_ESTATE_ADVISORY_PILLARS.map((pillar, idx) => (
                 <div
-                  key={pillar.id}
+                  key={idx}
                   className="rounded-2xl border border-border/80 bg-background/70 p-5 backdrop-blur-md shadow-sm space-y-3 transition-all duration-300 hover:border-brand-green/60 hover:shadow-lg"
                 >
                   <div className="flex items-center justify-between border-b border-border/50 pb-2.5">
                     <span className="rounded-lg border border-brand-green/30 bg-brand-green/10 px-2.5 py-0.5 text-[10px] font-bold text-brand-green">
-                      {pillar.id}
+                      {String(idx + 1).padStart(2, "0")}
                     </span>
                   </div>
                   <h3 className="font-bold text-base text-foreground">
@@ -359,19 +363,6 @@ export function RealEstateTradeView({ ar = true }: RealEstateTradeViewProps) {
                   <p className="text-xs text-muted-foreground leading-relaxed">
                     {ar ? pillar.descAr : pillar.descEn}
                   </p>
-                  <div className="border-t border-border/40 pt-2.5">
-                    <span className="text-[11px] font-bold text-foreground block mb-1">
-                      {ar ? "المخرجات والخدمات المشمولة:" : "Key Deliverables:"}
-                    </span>
-                    <ul className="space-y-1">
-                      {(ar ? pillar.deliverablesAr : pillar.deliverablesEn).map((del, dIdx) => (
-                        <li key={dIdx} className="flex items-center gap-1.5 text-xs text-muted-foreground">
-                          <CheckCircle2 className="size-3 text-brand-green shrink-0" />
-                          <span>{del}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
                 </div>
               ))}
             </div>
@@ -387,20 +378,22 @@ export function RealEstateTradeView({ ar = true }: RealEstateTradeViewProps) {
                 <span>{ar ? "القسم الخامس: استشارات متخصصة" : "Section 5: Healthcare Real Estate Advisory"}</span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5 leading-snug">
-                {ar ? PHARMACY_ADVISORY_SECTION.titleAr : PHARMACY_ADVISORY_SECTION.titleEn}
+                {ar ? PHARMACY_ADVISORY_SECTION.headlineAr : PHARMACY_ADVISORY_SECTION.headlineEn}
               </h2>
               <p className="text-xs sm:text-sm text-foreground/90 mt-2 leading-relaxed max-w-4xl font-medium">
-                {ar ? PHARMACY_ADVISORY_SECTION.overviewAr : PHARMACY_ADVISORY_SECTION.overviewEn}
+                {ar ? PHARMACY_ADVISORY_SECTION.introAr : PHARMACY_ADVISORY_SECTION.introEn}
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {PHARMACY_ADVISORY_SECTION.metrics.map((m, idx) => (
-                <div key={idx} className="rounded-2xl border border-border/80 bg-background/80 p-5 text-center shadow-xs">
-                  <span className="font-head text-3xl font-extrabold text-brand-green">{m.value}</span>
-                  <p className="text-xs font-bold text-foreground mt-1">{ar ? m.labelAr : m.labelEn}</p>
-                </div>
-              ))}
+            <div className="rounded-2xl border border-border/80 bg-background/80 p-5 shadow-xs">
+              <div className="flex items-center gap-2">
+                <span className="flex size-7 items-center justify-center rounded-lg bg-brand-green/20 text-brand-green">
+                  <Sparkles className="size-4" />
+                </span>
+                <span className="font-bold text-sm text-foreground">
+                  {ar ? PHARMACY_ADVISORY_SECTION.metricBadgeAr : PHARMACY_ADVISORY_SECTION.metricBadgeEn}
+                </span>
+              </div>
             </div>
 
             <div className="rounded-2xl border border-border/80 bg-background/60 p-5 space-y-3">
@@ -408,7 +401,7 @@ export function RealEstateTradeView({ ar = true }: RealEstateTradeViewProps) {
                 {ar ? "نطاق خدمات استشارات الصيدليات:" : "Scope of Pharmacy Real Estate Services:"}
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
-                {(ar ? PHARMACY_ADVISORY_SECTION.servicesAr : PHARMACY_ADVISORY_SECTION.servicesEn).map((srv, idx) => (
+                {(ar ? PHARMACY_ADVISORY_SECTION.servicesAr || [] : PHARMACY_ADVISORY_SECTION.servicesEn || []).map((srv, idx) => (
                   <div key={idx} className="flex items-center gap-2 text-foreground font-medium">
                     <CheckCircle2 className="size-4 text-brand-green shrink-0" />
                     <span>{srv}</span>
@@ -437,16 +430,16 @@ export function RealEstateTradeView({ ar = true }: RealEstateTradeViewProps) {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-              {REAL_ESTATE_MAJOR_MILESTONES.map((mile) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {REAL_ESTATE_MAJOR_MILESTONES.map((mile, idx) => (
                 <div
-                  key={mile.id}
+                  key={idx}
                   className="flex flex-col justify-between rounded-2xl border border-border/80 bg-background/70 p-6 backdrop-blur-md shadow-md transition-all duration-300 hover:border-brand-orange/60 hover:shadow-xl"
                 >
                   <div>
                     <div className="flex items-center justify-between border-b border-border/50 pb-3">
                       <span className="rounded-lg border border-brand-orange/30 bg-brand-orange/10 px-2.5 py-1 text-xs font-bold text-brand-orange">
-                        {ar ? mile.valueAr : mile.valueEn}
+                        {ar ? mile.valuationAr : mile.valuationEn}
                       </span>
                     </div>
 
@@ -456,20 +449,6 @@ export function RealEstateTradeView({ ar = true }: RealEstateTradeViewProps) {
                     <p className="text-xs text-muted-foreground mt-2 leading-relaxed">
                       {ar ? mile.descAr : mile.descEn}
                     </p>
-                  </div>
-
-                  <div className="mt-5 border-t border-border/40 pt-3">
-                    <span className="text-[11px] font-bold text-foreground block mb-1">
-                      {ar ? "أبرز مكونات المشروع:" : "Key Asset Highlights:"}
-                    </span>
-                    <ul className="space-y-1">
-                      {(ar ? mile.highlightsAr : mile.highlightsEn).map((h, i) => (
-                        <li key={i} className="flex items-center gap-1.5 text-xs text-muted-foreground font-medium">
-                          <span className="size-1 rounded-full bg-brand-orange" />
-                          <span>{h}</span>
-                        </li>
-                      ))}
-                    </ul>
                   </div>
                 </div>
               ))}
@@ -487,10 +466,10 @@ export function RealEstateTradeView({ ar = true }: RealEstateTradeViewProps) {
                   <span>{ar ? "القسم السابع: التشغيل التجاري" : "Section 7: Operations Ecosystem"}</span>
                 </div>
                 <h3 className="text-xl sm:text-2xl font-black text-foreground">
-                  {ar ? REAL_ESTATE_COMMERCIAL_OPERATIONS.titleAr : REAL_ESTATE_COMMERCIAL_OPERATIONS.titleEn}
+                  {ar ? REAL_ESTATE_COMMERCIAL_OPERATIONS.headlineAr : REAL_ESTATE_COMMERCIAL_OPERATIONS.headlineEn}
                 </h3>
                 <p className="text-xs sm:text-sm text-muted-foreground mt-2 leading-relaxed">
-                  {ar ? REAL_ESTATE_COMMERCIAL_OPERATIONS.overviewAr : REAL_ESTATE_COMMERCIAL_OPERATIONS.overviewEn}
+                  {ar ? REAL_ESTATE_COMMERCIAL_OPERATIONS.descAr : REAL_ESTATE_COMMERCIAL_OPERATIONS.descEn}
                 </p>
               </div>
 
@@ -498,11 +477,10 @@ export function RealEstateTradeView({ ar = true }: RealEstateTradeViewProps) {
                 <span className="text-xs font-bold text-foreground uppercase tracking-wider block">
                   {ar ? "أبرز شركات الإدارة والتشغيل المعتمدة:" : "Approved Commercial Operators:"}
                 </span>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                  {REAL_ESTATE_COMMERCIAL_OPERATIONS.partners.map((p, idx) => (
-                    <div key={idx} className="rounded-xl border border-border/70 bg-background/70 p-3 text-xs">
-                      <span className="font-bold text-foreground block">{p.name}</span>
-                      <span className="text-muted-foreground text-[11px]">{ar ? p.roleAr : p.roleEn}</span>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+                  {REAL_ESTATE_COMMERCIAL_OPERATIONS.reputablePartners?.map((partnerName, idx) => (
+                    <div key={idx} className="rounded-xl border border-border/70 bg-background/70 p-3 text-xs flex items-center justify-center text-center">
+                      <span className="font-bold text-foreground">{partnerName}</span>
                     </div>
                   ))}
                 </div>
@@ -647,13 +625,15 @@ export function RealEstateTradeView({ ar = true }: RealEstateTradeViewProps) {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-              {REAL_ESTATE_DIPLOMATIC_PARTNERSHIPS.map((dip) => (
+              {REAL_ESTATE_DIPLOMATIC_PARTNERSHIPS.map((dip, idx) => (
                 <div
-                  key={dip.id}
+                  key={idx}
                   className="rounded-2xl border border-border/80 bg-background/70 p-6 backdrop-blur-md shadow-md space-y-3"
                 >
                   <div className="flex items-center justify-between border-b border-border/50 pb-2.5">
-                    <span className="text-xs font-bold text-brand-orange">{ar ? dip.partnerAr : dip.partnerEn}</span>
+                    <span className="text-xs font-bold text-brand-orange">
+                      {ar ? `المحطة الدبلوماسية 0${idx + 1}` : `Diplomatic Milestone 0${idx + 1}`}
+                    </span>
                   </div>
                   <h3 className="font-bold text-base text-foreground">
                     {ar ? dip.titleAr : dip.titleEn}
@@ -733,7 +713,7 @@ export function RealEstateTradeView({ ar = true }: RealEstateTradeViewProps) {
                       key={idx}
                       className="rounded-lg border border-border/80 bg-secondary/80 px-3 py-1 text-xs font-semibold text-foreground"
                     >
-                      {ar ? field.titleAr : field.titleEn}
+                      {ar ? field.labelAr : field.labelEn}
                     </span>
                   ))}
                 </div>
