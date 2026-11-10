@@ -29,27 +29,27 @@ export function TradeReportsDownloads({ ar = true }: TradeReportsDownloadsProps)
   const reportsList = [
     {
       id: "footprint",
-      titleAr: "تقرير الانتشار التجاري الدولي 2025",
-      titleEn: "2025 Global Trade Footprint Report",
-      descAr: "تحليل شامل لـ 47 دولة مستوردة و179 استفسارًا تجاريًا مسجلًا عبر القارات الخمس، مع تصنيف مؤشرات الطلب.",
-      descEn: "Comprehensive analysis of 47 destination markets and 179 recorded buyer inquiries across five continents.",
+      titleAr: "تقرير الانتشار التجاري الدولي",
+      titleEn: "Global Trade Footprint Report",
+      descAr: `تحليل شامل لـ ${TRADE_STATS.totalCountries} دولة مستوردة و${TRADE_STATS.totalRecords} طلب شراء تجاري مسجل، مع تصنيف مؤشرات الطلب.`,
+      descEn: `Comprehensive analysis of ${TRADE_STATS.totalCountries} destination markets and ${TRADE_STATS.totalRecords} recorded buyer inquiries across global continents.`,
       pages: "12 صفحة موثقة",
       pagesEn: "12 Documented Pages",
       size: "2.4MB",
-      date: "نوفمبر 2025",
-      dateEn: "November 2025"
+      date: "2024–2026",
+      dateEn: "2024–2026"
     },
     {
       id: "directory",
       titleAr: "دليل الأسواق الدولية والطلب التجاري",
       titleEn: "International Market Directory Report",
-      descAr: "فهرس مفصل لكل دولة من الدول الـ 47 يتضمن قائمة السلع والكميات وتواريخ الاستفسارات وشروط الشحن.",
+      descAr: `فهرس مفصل لكل دولة من الدول الـ ${TRADE_STATS.totalCountries} يتضمن قائمة السلع والكميات وتواريخ طلبات الشراء وشروط الشحن.`,
       descEn: "Detailed country-by-country profiles covering requested commodities, documented quantities, and terms.",
       pages: "18 صفحة مفصلة",
       pagesEn: "18 Detailed Pages",
       size: "3.1MB",
-      date: "نوفمبر 2025",
-      dateEn: "November 2025"
+      date: "2024–2026",
+      dateEn: "2024–2026"
     },
     {
       id: "demand",
@@ -229,7 +229,7 @@ export function TradeReportsDownloads({ ar = true }: TradeReportsDownloadsProps)
               <span>{ar ? "عطاءات ومناقصات دولية" : "International Tenders"}</span>
             </div>
             <h3 className="text-xl sm:text-2xl font-black text-foreground">
-              {ar ? "استفسارات المستندات الخاصة والمناقصات" : "Custom Specifications & Tender Documentation Inquiries"}
+              {ar ? "طلبات المستندات الخاصة والمناقصات" : "Custom Specifications & Tender Documentation Inquiries"}
             </h3>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
               {ar
@@ -352,7 +352,7 @@ export function TradeReportsDownloads({ ar = true }: TradeReportsDownloadsProps)
                         <tr>
                           <th className="p-2.5">الدولة</th>
                           <th className="p-2.5">القارة</th>
-                          <th className="p-2.5">إجمالي الاستفسارات</th>
+                          <th className="p-2.5">إجمالي طلبات الشراء</th>
                           <th className="p-2.5">طلبات شراء التمور</th>
                           <th className="p-2.5">طلبات شراء السلع المتنوعة</th>
                         </tr>
@@ -386,26 +386,26 @@ export function TradeReportsDownloads({ ar = true }: TradeReportsDownloadsProps)
                   </h4>
                   <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
                     <div className="rounded-xl border border-white/10 bg-white/5 p-4 text-center">
-                      <span className="font-head text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">47</span>
+                      <span className="font-head text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">{TRADE_STATS.totalCountries}</span>
                       <p className="text-xs text-muted-foreground mt-1">{ar ? "دولة مسجلة" : "Documented Countries"}</p>
                     </div>
                     <div className="rounded-xl border border-white/10 bg-white/5 p-4 text-center">
-                      <span className="font-head text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">179</span>
-                      <p className="text-xs text-muted-foreground mt-1">{ar ? "استفسار تجاري موثق" : "Recorded Inquiries"}</p>
+                      <span className="font-head text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">{TRADE_STATS.totalRecords}</span>
+                      <p className="text-xs text-muted-foreground mt-1">{ar ? "طلب شراء موثق" : "Recorded Inquiries"}</p>
                     </div>
                     <div className="rounded-xl border border-white/10 bg-white/5 p-4 text-center">
-                      <span className="font-head text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">66</span>
-                      <p className="text-xs text-muted-foreground mt-1">{ar ? "استفسارات التمور" : "Dates Inquiries"}</p>
+                      <span className="font-head text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">{TRADE_STATS.dateRecordsCount}</span>
+                      <p className="text-xs text-muted-foreground mt-1">{ar ? "طلبات شراء التمور" : "Dates Inquiries"}</p>
                     </div>
                     <div className="rounded-xl border border-white/10 bg-white/5 p-4 text-center">
-                      <span className="font-head text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">113</span>
-                      <p className="text-xs text-muted-foreground mt-1">{ar ? "استفسارات سلع متنوعة" : "Diversified Inquiries"}</p>
+                      <span className="font-head text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">{TRADE_STATS.diversifiedRecordsCount}</span>
+                      <p className="text-xs text-muted-foreground mt-1">{ar ? "طلبات شراء سلع متنوعة" : "Diversified Inquiries"}</p>
                     </div>
                   </div>
 
                   <p className="text-xs text-muted-foreground leading-relaxed">
                     {ar
-                      ? "يتضمن التقرير الكامل كافة البيانات الموثقة المستخرجة من السجلات الرسمية للاستفسارات لعام 2025 مع تصنيف السلع وشروط الشحن وتفاصيل التعبئة والموانئ المستهدفة."
+                      ? "يتضمن التقرير الكامل كافة البيانات الموثقة المستخرجة من السجلات الرسمية لطلبات الشراء مع تصنيف السلع وشروط الشحن وتفاصيل التعبئة والموانئ المستهدفة."
                       : "The full report includes all documented inquiry data extracted from the 2025 records with product specifications, shipping terms, and destination ports."}
                   </p>
                 </div>

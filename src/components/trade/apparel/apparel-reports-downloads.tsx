@@ -150,7 +150,7 @@ export function ApparelReportsDownloads({ ar = true }: ApparelReportsDownloadsPr
               <span>{ar ? "عطاءات ومناقصات دولية" : "International Tenders"}</span>
             </div>
             <h3 className="text-xl sm:text-2xl font-black text-foreground">
-              {ar ? "استفسارات المستندات الخاصة والمناقصات" : "Custom Specifications & Tender Documentation Inquiries"}
+              {ar ? "طلبات المستندات الخاصة والمناقصات" : "Custom Specifications & Tender Documentation Inquiries"}
             </h3>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
               {ar

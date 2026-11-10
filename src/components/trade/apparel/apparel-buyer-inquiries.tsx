@@ -47,7 +47,7 @@ export function ApparelBuyerInquiries({ ar = true }: ApparelBuyerInquiriesProps)
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
             <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5 leading-snug">
-              {ar ? "سجل استفسارات وطلبات المشترين الدوليين للملابس والمنسوجات" : "Apparel & Textile International Buyer Inquiries Registry"}
+              {ar ? "سجل طلبات الشراء للمشترين الدوليين للملابس والمنسوجات" : "Apparel & Textile International Buyer Inquiries Registry"}
             </h2>
             <p className="text-xs sm:text-sm text-muted-foreground mt-1.5 leading-relaxed max-w-3xl">
               {ar

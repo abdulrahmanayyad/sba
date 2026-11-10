@@ -90,8 +90,10 @@ export function SectorHeader({
   const isFood = slug === "food";
   const activeTab = searchTab || "about";
 
-  const navPill =
-    "group relative inline-flex items-center gap-1 rounded-full px-4 py-2 text-sm font-bold tracking-wide text-foreground transition-all duration-300 hover:bg-white/40 hover:text-brand-orange hover:shadow-sm hover:backdrop-blur-md hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap";
+  const navPill = cn(
+    "group relative inline-flex items-center gap-1.5 rounded-full py-2 text-sm font-bold tracking-wide text-foreground transition-all duration-300 hover:bg-white/40 hover:text-brand-orange hover:shadow-sm hover:backdrop-blur-md hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap",
+    ar ? "px-4 2xl:px-5" : "px-3.5 2xl:px-4"
+  );
   const navLinkStyle = navPill;
   const mobileLinkStyle =
     "rounded-2xl px-3.5 py-2 font-head text-sm font-bold text-foreground transition-all duration-200 hover:bg-white/40 hover:text-brand-orange hover:translate-x-1 rtl:hover:-translate-x-1 block";
@@ -115,7 +117,13 @@ export function SectorHeader({
             {name}
           </p>
 
-          <nav aria-label={name} className="mx-auto hidden items-center justify-center gap-x-1 xl:flex">
+          <nav
+            aria-label={name}
+            className={cn(
+              "mx-auto hidden items-center justify-center xl:flex transition-all duration-300",
+              ar ? "gap-x-2.5 2xl:gap-x-4" : "gap-x-1 xl:gap-x-1.5"
+            )}
+          >
             {/* Home Link - Exact matching font and size */}
             <Link to="/" className={navPill}>
               {home}

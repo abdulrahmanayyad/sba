@@ -217,10 +217,14 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
     setMenuOpen(false);
   };
 
-  const navPill =
-    "group relative inline-flex items-center gap-1 rounded-full px-2.5 2xl:px-3 py-1.5 text-[13px] 2xl:text-sm font-bold tracking-tight xl:tracking-normal text-foreground transition-all duration-300 hover:bg-white/40 hover:text-brand-orange hover:shadow-sm hover:backdrop-blur-md hover:-translate-y-0.5 active:translate-y-0";
-  const navPillActive =
-    "group relative inline-flex items-center gap-1 rounded-full px-2.5 2xl:px-3 py-1.5 text-[13px] 2xl:text-sm font-bold tracking-tight xl:tracking-normal text-brand-orange bg-white/45 shadow-sm backdrop-blur-md -translate-y-0.5";
+  const navPill = cn(
+    "group relative inline-flex items-center gap-1.5 rounded-full py-1.5 text-[13px] 2xl:text-sm font-bold tracking-tight xl:tracking-normal text-foreground transition-all duration-300 hover:bg-white/40 hover:text-brand-orange hover:shadow-sm hover:backdrop-blur-md hover:-translate-y-0.5 active:translate-y-0",
+    isArabic ? "px-3 2xl:px-3.5" : "px-2.5 2xl:px-3"
+  );
+  const navPillActive = cn(
+    "group relative inline-flex items-center gap-1.5 rounded-full py-1.5 text-[13px] 2xl:text-sm font-bold tracking-tight xl:tracking-normal text-brand-orange bg-white/45 shadow-sm backdrop-blur-md -translate-y-0.5",
+    isArabic ? "px-3 2xl:px-3.5" : "px-2.5 2xl:px-3"
+  );
   const dropdownLink =
     "block rounded-[16px] px-4 py-2.5 text-sm font-semibold text-foreground transition-all duration-200 hover:bg-brand-orange/15 hover:text-brand-orange hover:translate-x-1 rtl:hover:-translate-x-1";
 
@@ -407,7 +411,8 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
         <header className="fixed inset-x-0 top-3 z-50 pointer-events-none px-4 sm:px-8 xl:px-12 flex justify-center transition-all duration-300">
           <div
             className={cn(
-              "pointer-events-auto mx-auto flex h-[62px] w-full max-w-[1260px] items-center justify-between gap-1.5 lg:gap-3 rounded-full px-4 sm:px-5 transition-all duration-300",
+              "pointer-events-auto mx-auto flex h-[62px] w-full items-center justify-between gap-1.5 lg:gap-3 rounded-full px-4 sm:px-6 transition-all duration-300",
+              isArabic ? "max-w-[1320px]" : "max-w-[1260px]",
               scrolled
                 ? "border border-white/25 bg-background/85 shadow-[0_16px_40px_rgba(0,0,0,0.18)] backdrop-blur-2xl ring-1 ring-white/10"
                 : "border border-white/15 bg-background/70 shadow-[0_10px_30px_rgba(0,0,0,0.08)] backdrop-blur-xl"
@@ -419,7 +424,13 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
             </Link>
 
             {/* Centered nav links */}
-            <nav aria-label={messages.accessibility.primaryNavigation} className="hidden items-center justify-center gap-x-0.5 2xl:gap-x-1 xl:flex">
+            <nav
+              aria-label={messages.accessibility.primaryNavigation}
+              className={cn(
+                "hidden items-center justify-center xl:flex transition-all duration-300",
+                isArabic ? "gap-x-2 2xl:gap-x-3.5" : "gap-x-0.5 2xl:gap-x-1"
+              )}
+            >
               {primaryLinks(navPill)}
             </nav>
 

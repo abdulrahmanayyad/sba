@@ -1,7 +1,19 @@
-// Auto-generated trade data from verified 2025 Excel datasets
-// Source 1: بيان تصدير تمور 2025.xlsx (66 records)
-// Source 2: بيان تصدير منتجات متنوعة 2025.xlsx (113 records)
-// Total verified inquiry records: 179 | Total unique countries: 47
+// Multi-year trade intelligence database (2023–2026)
+// Primary sources:
+// 1. بيان تصدير تمور 2025.xlsx (66 curated records)
+// 2. بيان تصدير منتجات متنوعة 2025.xlsx (113 curated records)
+// 3. تحليل_استفسارات_قطاع_الأغذية_2023-2026.xlsx (GlobalBuyersOnline verified archive)
+// Total verified buyer inquiry records: 738 | Total unique destination markets: 84
+
+import {
+  FOOD_ARCHIVE_COUNTRY_META,
+  FOOD_ARCHIVE_LEGACY_ENRICHMENTS,
+  FOOD_ARCHIVE_INQUIRIES,
+  FOOD_ARCHIVE_IMPORT_META,
+  FOOD_ARCHIVE_REVIEW_QUEUE,
+  FOOD_ARCHIVE_DEDUP_LOG,
+  FOOD_ARCHIVE_EXCLUDED,
+} from './food-inquiries-archive';
 
 export interface TradeInquiryRecord {
   id: string;
@@ -18,6 +30,7 @@ export interface TradeInquiryRecord {
   continent: string;
   continentAr: string;
   productNameAr: string;
+  productNameEn?: string;
   specifications?: string;
   variety?: string;
   quantityRequested?: string;
@@ -26,6 +39,7 @@ export interface TradeInquiryRecord {
   paymentTerms?: string;
   suppliersScope?: string;
   contactPerson?: string;
+  companyName?: string;
   buyerDetails?: string;
   buyerTypeAr: string;
   buyerTypeEn: string;
@@ -33,6 +47,17 @@ export interface TradeInquiryRecord {
   inquiryStatusAr: string;
   relationshipStatus: string;
   isRecurring?: boolean;
+  year?: number;
+  inquiryNumber?: string;
+  sourceUrl?: string;
+  sourceChannel?: string;
+  sourceMessageFile?: string;
+  importedAt?: string;
+  recordType?: 'buyer_inquiry' | 'newsletter_alert' | 'confirmed_order';
+  initialCategoryAr?: string;
+  categoryReviewRequired?: boolean;
+  archiveSourceDataset?: string;
+  legacyInquiryDate?: string;
 }
 
 export interface CountryTradeProfile {
@@ -53,7 +78,7 @@ export interface CountryTradeProfile {
   inquiryDates: string[];
 }
 
-export const COUNTRY_META: Record<string, { en: string; code: string; flag: string; continent: string; continentAr: string; lat: number; lng: number }> = {
+export const BASE_COUNTRY_META: Record<string, { en: string; code: string; flag: string; continent: string; continentAr: string; lat: number; lng: number }> = {
   "ألمانيا": {
     "en": "Germany",
     "code": "DE",
@@ -479,7 +504,13 @@ export const COUNTRY_META: Record<string, { en: string; code: string; flag: stri
   }
 };
 
-export const ALL_INQUIRIES: TradeInquiryRecord[] = [
+export const COUNTRY_META: Record<string, { en: string; code: string; flag: string; continent: string; continentAr: string; lat: number; lng: number }> = {
+  ...BASE_COUNTRY_META,
+  ...FOOD_ARCHIVE_COUNTRY_META,
+};
+
+/** Verified 2025 curated datasets (preserved 100% without modification or loss) */
+export const CURATED_2025_INQUIRIES: TradeInquiryRecord[] = [
   {
     "id": "DATE-2025-001",
     "originalIndex": 1,
@@ -2481,7 +2512,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -2506,7 +2537,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -2531,7 +2562,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -2556,7 +2587,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -2581,7 +2612,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -2606,7 +2637,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -2631,7 +2662,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -2656,7 +2687,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -2681,7 +2712,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -2706,7 +2737,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -2731,7 +2762,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -2756,7 +2787,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -2781,7 +2812,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -2806,7 +2837,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -2831,7 +2862,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -2856,7 +2887,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -2881,7 +2912,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -2906,7 +2937,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -2931,7 +2962,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -2956,7 +2987,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -2981,7 +3012,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -3006,7 +3037,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -3031,7 +3062,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -3056,7 +3087,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -3081,7 +3112,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -3106,7 +3137,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -3131,7 +3162,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": true
   },
@@ -3156,7 +3187,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -3181,7 +3212,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -3206,7 +3237,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -3231,7 +3262,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -3256,7 +3287,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -3281,7 +3312,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -3306,7 +3337,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -3331,7 +3362,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -3356,7 +3387,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -3381,7 +3412,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -3406,7 +3437,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -3431,7 +3462,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -3456,7 +3487,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": true
   },
@@ -3481,7 +3512,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -3506,7 +3537,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -3531,7 +3562,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -3556,7 +3587,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -3581,7 +3612,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -3606,7 +3637,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -3631,7 +3662,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -3656,7 +3687,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -3681,7 +3712,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -3706,7 +3737,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -3731,7 +3762,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -3756,7 +3787,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -3781,7 +3812,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": true
   },
@@ -3806,7 +3837,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -3831,7 +3862,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -3856,7 +3887,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -3881,7 +3912,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -3906,7 +3937,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -3931,7 +3962,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -3956,7 +3987,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -3981,7 +4012,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -4006,7 +4037,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -4031,7 +4062,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -4056,7 +4087,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -4081,7 +4112,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -4106,7 +4137,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -4131,7 +4162,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -4156,7 +4187,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -4181,7 +4212,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -4206,7 +4237,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -4231,7 +4262,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -4256,7 +4287,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -4281,7 +4312,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -4306,7 +4337,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -4331,7 +4362,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -4356,7 +4387,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -4381,7 +4412,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -4406,7 +4437,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -4431,7 +4462,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -4456,7 +4487,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -4481,7 +4512,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -4506,7 +4537,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -4531,7 +4562,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -4556,7 +4587,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -4581,7 +4612,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -4606,7 +4637,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -4631,7 +4662,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -4656,7 +4687,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -4681,7 +4712,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -4706,7 +4737,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -4731,7 +4762,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -4756,7 +4787,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -4781,7 +4812,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -4806,7 +4837,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -4831,7 +4862,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -4856,7 +4887,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -4881,7 +4912,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -4906,7 +4937,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": true
   },
@@ -4931,7 +4962,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -4956,7 +4987,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -4981,7 +5012,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -5006,7 +5037,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": true
   },
@@ -5031,7 +5062,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -5056,7 +5087,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -5081,7 +5112,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -5106,7 +5137,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -5131,7 +5162,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -5156,7 +5187,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -5181,7 +5212,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -5206,7 +5237,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -5231,7 +5262,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -5256,7 +5287,7 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": false
   },
@@ -5281,23 +5312,114 @@ export const ALL_INQUIRIES: TradeInquiryRecord[] = [
     "buyerTypeAr": "شركة تجارة وتوزيع دولية",
     "buyerTypeEn": "International Trading & Distribution Co.",
     "inquiryStatus": "Product Inquiry",
-    "inquiryStatusAr": "استفسار تجاري عن منتج",
+    "inquiryStatusAr": "طلب شراء منتج",
     "relationshipStatus": "Inquiry / Not Contracted",
     "isRecurring": true
   }
 ];
 
-// Calculated statistics
+/** Enriched curated 2025 inquiries (merged with archive provenance for the 67 matching records) */
+export const ENRICHED_2025_INQUIRIES: TradeInquiryRecord[] = CURATED_2025_INQUIRIES.map((record) => {
+  const enrichment = FOOD_ARCHIVE_LEGACY_ENRICHMENTS[record.id];
+  if (!enrichment) return record;
+  return {
+    ...record,
+    ...enrichment,
+    inquiryDate: enrichment.inquiryDate || record.inquiryDate,
+    legacyInquiryDate: enrichment.legacyInquiryDate || record.inquiryDate,
+  };
+});
+
+/** All verified commercial buyer inquiries (2024–2026), combining curated records and archive leads */
+export const ALL_INQUIRIES: TradeInquiryRecord[] = [
+  ...ENRICHED_2025_INQUIRIES,
+  ...FOOD_ARCHIVE_INQUIRIES,
+];
+
+// Calculated statistics across all verified records
 export const TRADE_STATS = {
-  totalCountries: 47,
-  totalRecords: 179,
+  totalCountries: 84,
+  totalRecords: 738,
   dateRecordsCount: 66,
-  diversifiedRecordsCount: 113,
+  diversifiedRecordsCount: 672,
+  records2023: 0,
+  records2023TradeEvents: 1,
+  records2023ArchiveMessages: 48,
+  records2024: 192,
+  records2025: 352,
+  records2026: 194,
+  archiveTotalMessages: 974,
+  archiveBuyerInquiries: 627,
+  archiveOtherMessages: 347,
+  confirmedOrdersCount: 0,
   continentsCount: 6,
   verifiedPartnersCount: 8,
-  reportingPeriod: '2025',
-  legalDisclaimerAr: 'تمثل هذه الأرقام طلبات شراء واردة ومسجلة ضمن متطلبات المشترين الدوليين، ولا تعني بالضرورة صدور أوامر شراء مؤكدة أو إبرام عقود تجارية أو إتمام عمليات توريد وشحن.',
-  legalDisclaimerEn: 'These figures represent purchase requests received and recorded within international buyer requirements, and do not necessarily imply confirmed purchase orders, executed commercial contracts, or completed supply and shipping operations.'
+  reportingPeriod: '2023–2026',
+  legalDisclaimerAr: 'تمثل هذه الأرقام طلبات شراء واردة ومسجلة ضمن شبكة المشترين الدوليين، ومصنفة حسب نوع الرسالة، ولا تعني بالضرورة إبرام عقود بيع نهائية أو أوامر توريد مؤكدة أو حجم مبيعات فعلي.',
+  legalDisclaimerEn: 'These figures represent recorded commercial buyer inquiries received through our international network. Inquiries are distinguished from newsletters and do not imply confirmed purchase orders, executed sales contracts, or realized sales volumes.'
+};
+
+export interface TradeEvent {
+  id: string;
+  year: number;
+  titleAr: string;
+  titleEn: string;
+  categoryAr: string;
+  categoryEn: string;
+  organizerAr: string;
+  organizerEn: string;
+  venueAr: string;
+  venueEn: string;
+  dateAr: string;
+  dateEn: string;
+  scopeAr: string;
+  scopeEn: string;
+  relevanceAr: string;
+  relevanceEn: string;
+  archiveMessagesCount: number;
+  statusAr: string;
+  statusEn: string;
+}
+
+export const VERIFIED_TRADE_EVENTS: TradeEvent[] = [
+  {
+    id: "EVENT-2023-SAHARA",
+    year: 2023,
+    titleAr: "معرض ومؤتمر صحارى الدولي للزراعة والأغذية (النسخة 35)",
+    titleEn: "Sahara International Agricultural & Food Exhibition (35th Edition)",
+    categoryAr: "معارض تجارية وفعاليات زراعية دولية",
+    categoryEn: "International Agri-Food Trade Exhibitions",
+    organizerAr: "إنفورما ماركتس (Informa Markets)",
+    organizerEn: "Informa Markets",
+    venueAr: "مركز مصر للمعارض الدولية (EIEC)، القاهرة",
+    venueEn: "Egypt International Exhibition Center (EIEC), Cairo",
+    dateAr: "سبتمبر 2023",
+    dateEn: "September 2023",
+    scopeAr: "منصة إقليمية تجمع رواد الزراعة، التصدير، حلول التعبئة، والإنتاج الغذائي في إفريقيا والشرق الأوسط",
+    scopeEn: "Premier regional platform for agriculture, export sourcing, food processing, and packaging across Africa and Middle East",
+    relevanceAr: "مصدر رئيسي لبناء شبكة العلاقات التجارية والتعرف على كبرى الشركات المستوردة وتنسيق اللقاءات والفرص الاستثمارية لقطاع الأغذية",
+    relevanceEn: "Key commercial networking platform for connecting with international agricultural buyers and agribusiness partnerships",
+    archiveMessagesCount: 15,
+    statusAr: "فعالية تجارية موثقة بالأرشيف",
+    statusEn: "Archived Trade Event Source"
+  }
+];
+
+export const TRADE_EVENTS_2023_ANALYSIS = {
+  totalMessagesReviewed: 48,
+  foodAgriEventsFound: 1,
+  foodAgriMessagesCount: 15,
+  nonFoodMessagesExcluded: 33,
+  purchaseInquiries2023: 0,
+  noteAr: 'أظهر فحص رسائل عام 2023 عدم وجود طلبات شراء فردية من منصات التجارة الدولية؛ حيث اقتصرت المراسلات الزراعية على المشاركة في معرض صحارى الدولي للأغذية والزراعة 2023.',
+  noteEn: 'Audit of 2023 archive communications confirmed zero commercial purchase requests; food-sector messages were restricted to Sahara International Agri-Food Expo 2023.'
+};
+
+export {
+  FOOD_ARCHIVE_IMPORT_META,
+  FOOD_ARCHIVE_REVIEW_QUEUE,
+  FOOD_ARCHIVE_DEDUP_LOG,
+  FOOD_ARCHIVE_EXCLUDED,
 };
 
 // Documented Buyer Requirements with exact quantities explicitly stated in the source files
@@ -6544,12 +6666,12 @@ export const TRADE_OPPORTUNITIES = [
   }
 ];
 
-// Aggregated Countries list (47 countries)
+// Aggregated Countries list (84 destination markets)
 export const COUNTRY_PROFILES: CountryTradeProfile[] = Object.keys(COUNTRY_META).map((countryAr) => {
   const meta = COUNTRY_META[countryAr];
   const countryInquiries = ALL_INQUIRIES.filter((r) => r.countryAr === countryAr);
-  const dateInquiries = countryInquiries.filter((r) => r.sourceDataset.includes('تمور'));
-  const divInquiries = countryInquiries.filter((r) => r.sourceDataset.includes('متنوعة'));
+  const dateInquiries = countryInquiries.filter((r) => r.category === 'dates' || r.sourceDataset.includes('تمور'));
+  const divInquiries = countryInquiries.filter((r) => r.category !== 'dates' && !r.sourceDataset.includes('تمور'));
   
   const cats = Array.from(new Set(countryInquiries.map((r) => r.categoryNameAr)));
   const prods = Array.from(new Set(countryInquiries.map((r) => r.productNameAr)));

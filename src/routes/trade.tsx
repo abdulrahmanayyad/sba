@@ -14,7 +14,7 @@ export const Route = createFileRoute("/trade")({
       { title: "Global Trade Footprint & Market Intelligence — Sami Bin Ayyad Group" },
       { 
         name: "description", 
-        content: "Documented 2025 international commercial reach, buyer inquiries for dates, agricultural commodities, and export crops across 47 destination markets." 
+        content: "Documented 2023–2026 international commercial reach, buyer inquiries for dates, agricultural commodities, and export crops across 84 destination markets." 
       },
       { property: "og:title", content: "Global Trade Footprint — Sami Bin Ayyad Group" },
       { property: "og:description", content: "Connecting global markets, delivering verified international commercial opportunities." },

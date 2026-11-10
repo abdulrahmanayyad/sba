@@ -110,9 +110,9 @@ export function TradeWorldMap({ ar = true, onSelectCountry }: TradeWorldMapProps
               key={cont.id}
               type="button"
               onClick={() => setSelectedContinent(cont.id)}
-              className={`rounded-xl border px-3.5 py-1.5 text-xs font-bold transition-all cursor-pointer shadow-xs ${
+              className={`rounded-full border px-3.5 py-1.5 text-xs font-bold transition-all duration-300 cursor-pointer shadow-xs ${
                 selectedContinent === cont.id
-                  ? "border-brand-orange bg-brand-orange text-white shadow-md shadow-brand-orange/20 scale-105"
+                  ? "!border-brand-green !bg-brand-green !text-white hover:!bg-brand-orange hover:!border-brand-orange shadow-md shadow-brand-green/20 hover:shadow-brand-orange/30 scale-105"
                   : "border-border/80 dark:border-white/15 bg-background/80 text-foreground hover:border-brand-orange hover:text-brand-orange hover:bg-background"
               }`}
             >

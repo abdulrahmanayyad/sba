@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Reveal } from "@/components/home/reveal";
-import { Wheat, Shirt, Building2 } from "lucide-react";
+import { Wheat, Shirt, Building2, Leaf } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { TradeWorldMap } from "./trade-world-map";
 import { MarketDirectory } from "./market-directory";
@@ -12,6 +12,7 @@ import { TradeOpportunitiesSection } from "./trade-opportunities-section";
 import { TradeReportsDownloads } from "./trade-reports-downloads";
 import { ApparelTradeView } from "./apparel/apparel-trade-view";
 import { RealEstateTradeView } from "./real-estate/real-estate-trade-view";
+import { SustainabilityTradeView } from "./sustainability/sustainability-trade-view";
 import { TRADE_STATS, COUNTRY_PROFILES, CountryTradeProfile } from "@/lib/trade-data";
 
 interface TradePageProps {
@@ -19,20 +20,20 @@ interface TradePageProps {
 }
 
 export function TradePage({ ar = true }: TradePageProps) {
-  const [activeSector, setActiveSector] = useState<"food" | "apparel" | "real-estate">("food");
+  const [activeSector, setActiveSector] = useState<"food" | "apparel" | "sustainability" | "real-estate">("food");
 
   useEffect(() => {
     if (typeof window !== "undefined") {
       const params = new URLSearchParams(window.location.search);
       const s = params.get("sector");
-      if (s === "apparel" || s === "real-estate" || s === "food") {
+      if (s === "apparel" || s === "sustainability" || s === "real-estate" || s === "food") {
         setActiveSector(s);
       }
 
       const onPopState = () => {
         const p = new URLSearchParams(window.location.search);
         const cur = p.get("sector");
-        if (cur === "apparel" || cur === "real-estate" || cur === "food") {
+        if (cur === "apparel" || cur === "sustainability" || cur === "real-estate" || cur === "food") {
           setActiveSector(cur);
         } else {
           setActiveSector("food");
@@ -49,7 +50,7 @@ export function TradePage({ ar = true }: TradePageProps) {
     setSelectedCountryCode(country.code);
   };
 
-  const handleSectorChange = (sector: "food" | "apparel" | "real-estate") => {
+  const handleSectorChange = (sector: "food" | "apparel" | "sustainability" | "real-estate") => {
     setActiveSector(sector);
     if (typeof window !== "undefined") {
       try {
@@ -67,8 +68,8 @@ export function TradePage({ ar = true }: TradePageProps) {
       id: "food" as const,
       titleAr: "قطاع الأغذية والسلع الزراعية",
       titleEn: "Food & Agri-Commodities",
-      badgeAr: "47 دولة • 179 طلبًا",
-      badgeEn: "47 Markets • 179 Inquiries",
+      badgeAr: `${TRADE_STATS.totalCountries} دولة • ${TRADE_STATS.totalRecords} طلبًا`,
+      badgeEn: `${TRADE_STATS.totalCountries} Markets • ${TRADE_STATS.totalRecords} Inquiries`,
       icon: Wheat,
     },
     {
@@ -80,6 +81,14 @@ export function TradePage({ ar = true }: TradePageProps) {
       icon: Shirt,
     },
     {
+      id: "sustainability" as const,
+      titleAr: "الفرص البيئية والاستدامة",
+      titleEn: "Sustainability & Environment",
+      badgeAr: "13 سوقًا • 28 فرصة ومبادرة",
+      badgeEn: "13 Markets • 28 Opportunities",
+      icon: Leaf,
+    },
+    {
       id: "real-estate" as const,
       titleAr: "الفرص العقارية والاستثمارية",
       titleEn: "Real Estate & Investments",
@@ -89,44 +98,160 @@ export function TradePage({ ar = true }: TradePageProps) {
     },
   ];
 
+  const heroContent = {
+    food: {
+      bg: "/BG/Main Home Page.jpg",
+      badgeAr: "مجموعة سامي بن عياد · انتشارنا التجاري العالمي",
+      badgeEn: "SAMI BIN AYYAD GROUP · Global Trade Footprint",
+      titleAr: "نربط الأسواق العالمية، ونصنع الفرص التجارية الموثوقة",
+      titleEn: "Connecting Global Markets, Delivering Real Trade Opportunities",
+      descAr: `استعراض مهني موثق لشبكة الطلبات التجارية للأعوام 2023–2026، وقاعدة متطلبات المشترين للتمور والسلع الغذائية عبر ${TRADE_STATS.totalCountries} دولة حول العالم.`,
+      descEn: `A documented corporate showcase of our 2023–2026 commercial inquiry network, covering buyer demand for dates and food commodities across ${TRADE_STATS.totalCountries} countries.`
+    },
+    apparel: {
+      bg: "/BG/Apparel & Fashion/Apparel & Fashion Home Page.jpg",
+      badgeAr: "مجموعة سامي بن عياد · الفرص العالمية | قطاع الملابس والمنسوجات",
+      badgeEn: "SAMI BIN AYYAD GROUP · Global Apparel & Textile Opportunities",
+      titleAr: "تصنيع تعاقدي، وتوريد مرن، وشراكات تصديرية موثوقة للأسواق العالمية",
+      titleEn: "Contract Manufacturing, Agile Sourcing & Trusted Global Export Partnerships",
+      descAr: "استعراض مهني موثق لشبكة التصنيع المصري، والفرص التصديرية، وسجل طلبات الشراء للملابس والمنسوجات عبر 20 سوقًا إقليميًا ودوليًا.",
+      descEn: "A documented corporate showcase of our Egyptian manufacturing network, export opportunities, and verified buyer inquiry registry across 20 regional and global markets."
+    },
+    sustainability: {
+      bg: "/BG/Environment & Sustainability/Sustainable Environmental Home Page.jpg",
+      badgeAr: "مجموعة سامي بن عياد · الفرص العالمية | قطاع البيئة المستدامة",
+      badgeEn: "SAMI BIN AYYAD GROUP · Global Sustainability Opportunities",
+      titleAr: "حلول بيئية متكاملة، واستشارات امتثال صناعي، وشراكات في الطاقة النظيفة والاقتصاد الدائري",
+      titleEn: "Integrated Environmental Solutions, Industrial Compliance & Clean Energy Alliances",
+      descAr: "بوابة استثمارية وشراكات تشغيلية تربط المبادرات الوطنية الكبرى والمصانع الإقليمية بأحدث التقنيات والحلول المستدامة، مع إفصاح كامل وموثق عن نطاق التنفيذ المباشر وعبر التحالفات الاستراتيجية المعتمدة.",
+      descEn: "A business gateway connecting national green mega-programs and industrial facilities with advanced sustainability solutions, featuring transparent disclosure of direct scope and certified consortium alliances."
+    },
+    "real-estate": {
+      bg: "/BG/Construction/Construction Home Page.jpg",
+      badgeAr: "مجموعة سامي بن عياد · الفرص العقارية والاستثمارية الدولية",
+      badgeEn: "SAMI BIN AYYAD GROUP · Global Real Estate & Investment Opportunities",
+      titleAr: "خبرات مهنية واستثمارية موثوقة في صناعة العقار وإدارة الأصول",
+      titleEn: "Trusted Real Estate Advisory, Asset Management & Institutional Alliances",
+      descAr: "مسيرة مهنية متواصلة منذ عام 2018 في السوق المصري والأسواق الإقليمية، تغطي أكثر من 400 مشروع عقاري، وشبكة علاقات مع 200 مطور، وإدارة محافظ بقيمة 5 مليارات جنيه.",
+      descEn: "A distinguished track record since 2018 across Egypt and international markets, spanning 400+ projects, 200+ developer partnerships, and 5 Billion EGP in asset portfolios."
+    }
+  };
+
   return (
     <div className="relative min-h-screen bg-background text-foreground pb-24">
-      {/* Sticky Global Sector Switcher Bar */}
-      <div className="sticky top-[68px] sm:top-[76px] z-40 w-full border-b border-border/80 bg-background/85 backdrop-blur-2xl py-3 px-4 shadow-sm transition-all duration-300">
-        <div className="site-container flex flex-wrap items-center justify-between gap-3">
-          <div className="flex items-center gap-2">
-            <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
-            <span className="text-xs font-bold text-foreground uppercase tracking-wider">
-              {ar ? "بوابة الفرص العالمية | اختر القطاع:" : "Global Opportunities | Select Sector:"}
-            </span>
+      {/* 1. Hero Section (خلفية صفحة الفرص العالمية) */}
+      <section className="relative w-full min-h-[calc(70svh-76px)] sm:min-h-[calc(75svh-76px)] overflow-hidden text-white flex flex-col justify-center mb-6 sm:mb-10">
+        {/* Full-width & Full-height background image & overlay */}
+        <img
+          src={heroContent[activeSector].bg}
+          alt={ar ? heroContent[activeSector].titleAr : heroContent[activeSector].titleEn}
+          className="absolute inset-0 size-full object-cover object-center pointer-events-none select-none transition-all duration-700"
+          fetchPriority="high"
+        />
+        <div className="group-hero-overlay absolute inset-0 bg-black/65 backdrop-blur-[1px] pointer-events-none" />
+
+        <div className="site-container relative z-10 flex min-h-[inherit] flex-col justify-center py-16 sm:py-20">
+          <Reveal>
+            {/* A. Small Top Headline */}
+            <div className="flex items-center justify-start mb-5">
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/50 px-4 py-1.5 text-xs font-bold tracking-wide text-white/95 backdrop-blur-md shadow-md">
+                <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+                <span>
+                  {ar ? heroContent[activeSector].badgeAr : heroContent[activeSector].badgeEn}
+                </span>
+              </div>
+            </div>
+
+            {/* B. Main Headline */}
+            <h1 className="font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white leading-snug tracking-tight text-start drop-shadow-md max-w-4xl">
+              {ar ? heroContent[activeSector].titleAr : heroContent[activeSector].titleEn}
+            </h1>
+
+            {/* C. Intro Paragraph */}
+            <p className="mt-3.5 max-w-4xl text-sm sm:text-base leading-relaxed text-white/90 text-start drop-shadow-sm">
+              {ar ? heroContent[activeSector].descAr : heroContent[activeSector].descEn}
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* 2. Global Opportunities Sector Selection Box (مربع عريض وكبير بعد الخلفية) */}
+      <div className="site-container mb-12 sm:mb-16">
+        <div className="rounded-3xl border border-white/20 bg-background/85 p-6 sm:p-8 shadow-2xl backdrop-blur-2xl">
+          {/* Box Header */}
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-b border-border/60 pb-5 mb-6">
+            <div className="inline-flex items-center gap-2 rounded-full border border-border/80 bg-secondary/85 px-4 py-2 text-xs sm:text-sm font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
+              <span className="size-2 rounded-full bg-brand-orange animate-pulse shrink-0" />
+              <span className="font-head">{ar ? "بوابة الفرص العالمية | اختر القطاع:" : "Global Opportunities | Select Sector:"}</span>
+            </div>
+            <p className="text-xs text-muted-foreground font-medium">
+              {ar ? "انقر على أي قطاع لعرض البيانات والمؤشرات المعتمدة أدناه" : "Click any sector to view verified indicators and database below"}
+            </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-2">
+          {/* The Sectors Side-by-Side in Responsive Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
             {sectorTabs.map((tab) => {
               const Icon = tab.icon;
               const isActive = activeSector === tab.id;
+
               return (
                 <button
                   key={tab.id}
                   type="button"
                   onClick={() => handleSectorChange(tab.id)}
                   className={cn(
-                    "flex items-center gap-2 rounded-2xl px-3.5 py-1.5 text-xs font-bold transition-all duration-300 cursor-pointer border",
+                    "group relative flex flex-col justify-between rounded-2xl sm:rounded-3xl p-5 sm:p-6 text-start transition-all duration-300 cursor-pointer border shadow-sm active:scale-98",
                     isActive
-                      ? "bg-foreground text-background border-foreground shadow-md scale-100"
-                      : "bg-background/80 text-muted-foreground border-border hover:border-foreground/30 hover:text-foreground hover:bg-muted/40"
+                      ? "!border-brand-green !bg-brand-green !text-white shadow-xl shadow-brand-green/25 hover:!bg-brand-orange hover:!border-brand-orange hover:!text-white hover:shadow-brand-orange/30 hover:-translate-y-1"
+                      : "border-border/80 bg-secondary/60 hover:bg-secondary/90 hover:border-brand-orange/50 hover:text-foreground hover:-translate-y-1 hover:shadow-md"
                   )}
                 >
-                  <Icon className={cn("size-3.5 shrink-0", isActive ? "text-brand-orange" : "text-muted-foreground")} />
-                  <span>{ar ? tab.titleAr : tab.titleEn}</span>
-                  <span
-                    className={cn(
-                      "hidden sm:inline-block rounded-md px-1.5 py-0.5 text-[10px] font-mono",
-                      isActive ? "bg-background/20 text-background" : "bg-muted text-muted-foreground"
+                  {/* Top row with icon & active status badge */}
+                  <div className="flex items-center justify-between w-full mb-3">
+                    <div
+                      className={cn(
+                        "p-3 rounded-2xl border transition-colors duration-300",
+                        isActive
+                          ? "bg-white/20 border-white/30 text-white"
+                          : "bg-background/80 border-border/60 text-brand-green group-hover:text-brand-orange group-hover:border-brand-orange/40"
+                      )}
+                    >
+                      <Icon className="size-6 shrink-0" />
+                    </div>
+
+                    {isActive ? (
+                      <span className="inline-flex items-center gap-1 rounded-full bg-white/20 px-3 py-1 text-[11px] font-bold text-white shadow-xs">
+                        <span className="size-1.5 rounded-full bg-white animate-pulse" />
+                        <span>{ar ? "القطاع المعروض حاليًا" : "Active Sector"}</span>
+                      </span>
+                    ) : (
+                      <span className="text-[11px] font-medium text-muted-foreground group-hover:text-brand-orange transition-colors">
+                        {ar ? "انقر للتبديل" : "Click to view"}
+                      </span>
                     )}
-                  >
-                    {ar ? tab.badgeAr : tab.badgeEn}
-                  </span>
+                  </div>
+
+                  {/* Title */}
+                  <div className="space-y-1.5 my-2">
+                    <h3 className={cn("text-base sm:text-lg font-black leading-snug transition-colors", isActive ? "text-white" : "text-foreground group-hover:text-brand-orange")}>
+                      {ar ? tab.titleAr : tab.titleEn}
+                    </h3>
+                  </div>
+
+                  {/* Statistic Badge */}
+                  <div className="pt-3 mt-2 border-t border-white/10 w-full">
+                    <span
+                      className={cn(
+                        "inline-block rounded-xl px-3 py-1.5 text-xs font-mono font-bold transition-colors",
+                        isActive
+                          ? "bg-white/20 text-white"
+                          : "bg-background/90 border border-border/60 text-muted-foreground group-hover:border-brand-orange/40 group-hover:text-brand-orange"
+                      )}
+                    >
+                      {ar ? tab.badgeAr : tab.badgeEn}
+                    </span>
+                  </div>
                 </button>
               );
             })}
@@ -134,97 +259,60 @@ export function TradePage({ ar = true }: TradePageProps) {
         </div>
       </div>
 
-      {/* RENDER ACTIVE SECTOR */}
-      {activeSector === "apparel" && <ApparelTradeView ar={ar} />}
-      {activeSector === "real-estate" && <RealEstateTradeView ar={ar} />}
+      {/* 3. RENDER DATA ACCORDING TO SELECTED SECTOR */}
+      {activeSector === "apparel" && <ApparelTradeView ar={ar} hideHero={true} />}
+      {activeSector === "sustainability" && <SustainabilityTradeView ar={ar} hideHero={true} />}
+      {activeSector === "real-estate" && <RealEstateTradeView ar={ar} hideHero={true} />}
 
       {activeSector === "food" && (
-        <>
-          {/* 1. Hero Section (Full-width and Full-height Background like Home & News) */}
-          <section className="relative w-full min-h-[calc(100svh-76px)] overflow-hidden text-white flex flex-col justify-center mb-12">
-            {/* Full-width & Full-height background image & overlay */}
-            <img
-              src="/BG/Main Home Page.jpg"
-              alt={ar ? "التجارة والفرص الدولية - مجموعة سامي بن عياد" : "Global Trade & Opportunities - Sami Bin Ayyad Group"}
-              className="absolute inset-0 size-full object-cover object-center pointer-events-none select-none"
-              fetchPriority="high"
-            />
-            <div className="group-hero-overlay absolute inset-0 bg-black/65 backdrop-blur-[1px] pointer-events-none" />
-
-            <div className="site-container relative z-10 flex min-h-[inherit] flex-col justify-between pt-16 sm:pt-24 pb-8 sm:pb-12">
-              <div className="my-auto">
-                <Reveal>
-                  {/* A. Small Top Headline */}
-                  <div className="flex items-center justify-start mb-6">
-                    <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/50 px-4 py-1.5 text-xs font-bold tracking-wide text-white/95 backdrop-blur-md shadow-md">
-                      <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-                      <span>
-                        {ar
-                          ? "مجموعة سامي بن عياد · انتشارنا التجاري العالمي"
-                          : "SAMI BIN AYYAD GROUP · Global Trade Footprint"}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* B. Main Headline */}
-                  <h1 className="font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white leading-snug tracking-tight text-start drop-shadow-md max-w-4xl">
-                    {ar
-                      ? "نربط الأسواق العالمية، ونصنع الفرص التجارية الموثوقة"
-                      : "Connecting Global Markets, Delivering Real Trade Opportunities"}
-                  </h1>
-
-                  {/* C. Intro Paragraph */}
-                  <p className="mt-3.5 max-w-4xl text-sm sm:text-base leading-relaxed text-white/90 text-start drop-shadow-sm">
-                    {ar
-                      ? "استعراض مهني موثق لشبكة الطلبات التجارية لعام 2025، وقاعدة متطلبات المشترين للتمور والسلع الغذائية عبر 47 دولة حول العالم."
-                      : "A documented corporate showcase of our 2025 commercial inquiry network, covering buyer demand for dates and food commodities across 47 countries."}
-                  </p>
-                </Reveal>
-              </div>
-            </div>
-          </section>
-
-          {/* Main Content Sections */}
-          <div className="site-container space-y-20 mt-8 sm:mt-12">
-            {/* Key Trade Statistics (Positioned Below Hero Background) */}
-            <div className="grid grid-cols-2 gap-3.5 sm:grid-cols-4 w-full">
+        <div className="site-container space-y-20">
+          {/* Key Trade Statistics */}
+          <div className="grid grid-cols-2 gap-3.5 sm:grid-cols-4 w-full">
               <div className="interactive-card glass-box-interactive group rounded-3xl p-5 sm:p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer text-center flex flex-col items-center justify-center">
-                <span className="font-head text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">47</span>
+                <span className="font-head text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">
+                  {TRADE_STATS.totalCountries}
+                </span>
                 <p className="text-xs sm:text-sm font-bold text-foreground mt-1.5 text-center">
-                  {ar ? "دولة مسجلة في الطلبات" : "Documented Destination Markets"}
+                  {ar ? "دولة مسجلة في شبكة الطلبات" : "Documented Destination Markets"}
                 </p>
                 <span className="text-[11px] text-muted-foreground block mt-0.5 text-center">
-                  {ar ? "عبر 5 قارات حول العالم" : "Across 5 Global Continents"}
+                  {ar ? "عبر 6 قارات حول العالم" : "Across 6 Global Continents"}
                 </span>
               </div>
 
               <div className="interactive-card glass-box-interactive group rounded-3xl p-5 sm:p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer text-center flex flex-col items-center justify-center">
-                <span className="font-head text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">179</span>
+                <span className="font-head text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">
+                  {TRADE_STATS.totalRecords}
+                </span>
                 <p className="text-xs sm:text-sm font-bold text-foreground mt-1.5 text-center">
-                  {ar ? "سجل طلبات شرائية موثقة" : "Recorded Purchase Inquiries"}
+                  {ar ? "طلب شراء تجاري معتمد" : "Recorded Purchase Inquiries"}
                 </p>
                 <span className="text-[11px] text-muted-foreground block mt-0.5 text-center">
-                  {ar ? "سجلات أصلية لعام 2025" : "2025 Original Verified Records"}
+                  {ar ? "أرشيف الطلبات للأعوام 2024–2026" : "2024–2026 Verified Records"}
                 </span>
               </div>
 
               <div className="interactive-card glass-box-interactive group rounded-3xl p-5 sm:p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer text-center flex flex-col items-center justify-center">
-                <span className="font-head text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">66</span>
+                <span className="font-head text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">
+                  {TRADE_STATS.records2025}
+                </span>
                 <p className="text-xs sm:text-sm font-bold text-foreground mt-1.5 text-center">
-                  {ar ? "طلبات شراء التمور ومنتجاتها" : "Date Purchase Inquiries"}
+                  {ar ? "طلبات شراء عام 2025 الموثقة" : "2025 Documented Inquiries"}
                 </p>
                 <span className="text-[11px] text-muted-foreground block mt-0.5 text-center">
-                  {ar ? "عجوة، مجدول، سكري، دبس" : "Ajwa, Medjool, Sukkari, Paste"}
+                  {ar ? "بيانات موثقة ومُثرية بالأصل" : "Curated & Enriched Records"}
                 </span>
               </div>
 
               <div className="interactive-card glass-box-interactive group rounded-3xl p-5 sm:p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer text-center flex flex-col items-center justify-center">
-                <span className="font-head text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">113</span>
+                <span className="font-head text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">
+                  {TRADE_STATS.archiveTotalMessages}
+                </span>
                 <p className="text-xs sm:text-sm font-bold text-foreground mt-1.5 text-center">
-                  {ar ? "طلبات شراء السلع المتنوعة" : "Diversified Purchase Inquiries"}
+                  {ar ? "إجمالي رسائل الأرشيف التجاري" : "Total Commercial Archive Logs"}
                 </p>
                 <span className="text-[11px] text-muted-foreground block mt-0.5 text-center">
-                  {ar ? "توابل، خضار، بذور، أعشاب" : "Spices, Produce, Seeds, Herbs"}
+                  {ar ? "627 طلب شراء • 347 تنبيه سوقي" : "627 Inquiries • 347 Market Alerts"}
                 </span>
               </div>
             </div>
@@ -269,7 +357,6 @@ export function TradePage({ ar = true }: TradePageProps) {
               <TradeReportsDownloads ar={ar} />
             </section>
           </div>
-        </>
       )}
     </div>
   );

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Reveal } from "@/components/home/reveal";
 import { AlertCircle, ShieldCheck } from "lucide-react";
+import { cn } from "@/lib/utils";
 import { ApparelWorldMap } from "./apparel-world-map";
 import { ApparelMarketDirectory } from "./apparel-market-directory";
 import { ApparelProductDemand } from "./apparel-product-demand";
@@ -14,9 +15,10 @@ import { APPAREL_TRADE_STATS, ApparelMarket } from "@/lib/apparel-trade-data";
 
 interface ApparelTradeViewProps {
   ar?: boolean;
+  hideHero?: boolean;
 }
 
-export function ApparelTradeView({ ar = true }: ApparelTradeViewProps) {
+export function ApparelTradeView({ ar = true, hideHero = false }: ApparelTradeViewProps) {
   const [selectedMarketCode, setSelectedMarketCode] = useState<string | undefined>(undefined);
 
   const handleMarketSelect = (market: ApparelMarket) => {
@@ -24,52 +26,54 @@ export function ApparelTradeView({ ar = true }: ApparelTradeViewProps) {
   };
 
   return (
-    <div className="relative min-h-screen bg-background text-foreground pb-24">
+    <div className={cn("relative min-h-screen bg-background text-foreground pb-24", hideHero && "min-h-0 pb-12")}>
       {/* 1. Hero Section (Section 1: Sector Intro & Hero) */}
-      <section className="relative w-full min-h-[calc(100svh-76px)] overflow-hidden text-white flex flex-col justify-center mb-12">
-        <img
-          src="/BG/Apparel & Fashion/Apparel & Fashion Home Page.jpg"
-          alt={ar ? "الفرص العالمية | قطاع الملابس والمنسوجات - مجموعة سامي بن عياد" : "Global Apparel & Textile Opportunities - Sami Bin Ayyad Group"}
-          className="absolute inset-0 size-full object-cover object-center pointer-events-none select-none"
-          fetchPriority="high"
-        />
-        <div className="group-hero-overlay absolute inset-0 bg-black/70 backdrop-blur-[1px] pointer-events-none" />
+      {!hideHero && (
+        <section className="relative w-full min-h-[calc(100svh-76px)] overflow-hidden text-white flex flex-col justify-center mb-12">
+          <img
+            src="/BG/Apparel & Fashion/Apparel & Fashion Home Page.jpg"
+            alt={ar ? "الفرص العالمية | قطاع الملابس والمنسوجات - مجموعة سامي بن عياد" : "Global Apparel & Textile Opportunities - Sami Bin Ayyad Group"}
+            className="absolute inset-0 size-full object-cover object-center pointer-events-none select-none"
+            fetchPriority="high"
+          />
+          <div className="group-hero-overlay absolute inset-0 bg-black/70 backdrop-blur-[1px] pointer-events-none" />
 
-        <div className="site-container relative z-10 flex min-h-[inherit] flex-col justify-between pt-16 sm:pt-24 pb-8 sm:pb-12">
-          <div className="my-auto">
-            <Reveal>
-              {/* Small Top Headline */}
-              <div className="flex items-center justify-start mb-6">
-                <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/50 px-4 py-1.5 text-xs font-bold tracking-wide text-white/95 backdrop-blur-md shadow-md">
-                  <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-                  <span>
-                    {ar
-                      ? "مجموعة سامي بن عياد · الفرص العالمية | قطاع الملابس والمنسوجات"
-                      : "SAMI BIN AYYAD GROUP · Global Apparel & Textile Opportunities"}
-                  </span>
+          <div className="site-container relative z-10 flex min-h-[inherit] flex-col justify-between pt-16 sm:pt-24 pb-8 sm:pb-12">
+            <div className="my-auto">
+              <Reveal>
+                {/* Small Top Headline */}
+                <div className="flex items-center justify-start mb-6">
+                  <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/50 px-4 py-1.5 text-xs font-bold tracking-wide text-white/95 backdrop-blur-md shadow-md">
+                    <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+                    <span>
+                      {ar
+                        ? "مجموعة سامي بن عياد · الفرص العالمية | قطاع الملابس والمنسوجات"
+                        : "SAMI BIN AYYAD GROUP · Global Apparel & Textile Opportunities"}
+                    </span>
+                  </div>
                 </div>
-              </div>
 
-              {/* Main Headline */}
-              <h1 className="font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white leading-snug tracking-tight text-start drop-shadow-md max-w-4xl">
-                {ar
-                  ? "تصنيع تعاقدي، وتوريد مرن، وشراكات تصديرية موثوقة للأسواق العالمية"
-                  : "Contract Manufacturing, Agile Sourcing & Trusted Global Export Partnerships"}
-              </h1>
+                {/* Main Headline */}
+                <h1 className="font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white leading-snug tracking-tight text-start drop-shadow-md max-w-4xl">
+                  {ar
+                    ? "تصنيع تعاقدي، وتوريد مرن، وشراكات تصديرية موثوقة للأسواق العالمية"
+                    : "Contract Manufacturing, Agile Sourcing & Trusted Global Export Partnerships"}
+                </h1>
 
-              {/* Intro Paragraph */}
-              <p className="mt-3.5 max-w-4xl text-sm sm:text-base leading-relaxed text-white/90 text-start drop-shadow-sm">
-                {ar
-                  ? "استعراض مهني موثق لشبكة التصنيع المصري، والفرص التصديرية، وسجل استفسارات المشترين للملابس والمنسوجات عبر 20 سوقًا إقليميًا ودوليًا."
-                  : "A documented corporate showcase of our Egyptian manufacturing network, export opportunities, and verified buyer inquiry registry across 20 regional and global markets."}
-              </p>
-            </Reveal>
+                {/* Intro Paragraph */}
+                <p className="mt-3.5 max-w-4xl text-sm sm:text-base leading-relaxed text-white/90 text-start drop-shadow-sm">
+                  {ar
+                    ? "استعراض مهني موثق لشبكة التصنيع المصري، والفرص التصديرية، وسجل طلبات الشراء للملابس والمنسوجات عبر 20 سوقًا إقليميًا ودوليًا."
+                    : "A documented corporate showcase of our Egyptian manufacturing network, export opportunities, and verified buyer inquiry registry across 20 regional and global markets."}
+                </p>
+              </Reveal>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Main Container */}
-      <div className="site-container space-y-20 mt-8 sm:mt-12">
+      <div className={cn("site-container space-y-20", !hideHero && "mt-8 sm:mt-12")}>
         {/* Section 2: Key Indicators (4 Neutral Glass Cards + Disclaimer) */}
         <div className="space-y-4">
           <div className="grid grid-cols-2 gap-3.5 sm:grid-cols-4 w-full">

@@ -38,9 +38,10 @@ import {
 
 interface RealEstateTradeViewProps {
   ar?: boolean;
+  hideHero?: boolean;
 }
 
-export function RealEstateTradeView({ ar = true }: RealEstateTradeViewProps) {
+export function RealEstateTradeView({ ar = true, hideHero = false }: RealEstateTradeViewProps) {
   const [activeAssetTab, setActiveAssetTab] = useState<string>("residential");
   const [activeCoverageRegion, setActiveCoverageRegion] = useState<string>("all");
 
@@ -57,49 +58,51 @@ export function RealEstateTradeView({ ar = true }: RealEstateTradeViewProps) {
   );
 
   return (
-    <div className="relative min-h-screen bg-background text-foreground pb-24">
+    <div className={cn("relative min-h-screen bg-background text-foreground pb-24", hideHero && "min-h-0 pb-12")}>
       {/* 1. Hero Section */}
-      <section className="relative w-full min-h-[calc(100svh-76px)] overflow-hidden text-white flex flex-col justify-center mb-12">
-        <img
-          src="/BG/Construction/Construction Home Page.jpg"
-          alt={ar ? "الفرص العقارية والاستثمارية الدولية - مجموعة سامي بن عياد" : "Global Real Estate & Investment Opportunities - Sami Bin Ayyad Group"}
-          className="absolute inset-0 size-full object-cover object-center pointer-events-none select-none"
-          fetchPriority="high"
-        />
-        <div className="group-hero-overlay absolute inset-0 bg-black/75 backdrop-blur-[1px] pointer-events-none" />
+      {!hideHero && (
+        <section className="relative w-full min-h-[calc(100svh-76px)] overflow-hidden text-white flex flex-col justify-center mb-12">
+          <img
+            src="/BG/Construction/Construction Home Page.jpg"
+            alt={ar ? "الفرص العقارية والاستثمارية الدولية - مجموعة سامي بن عياد" : "Global Real Estate & Investment Opportunities - Sami Bin Ayyad Group"}
+            className="absolute inset-0 size-full object-cover object-center pointer-events-none select-none"
+            fetchPriority="high"
+          />
+          <div className="group-hero-overlay absolute inset-0 bg-black/75 backdrop-blur-[1px] pointer-events-none" />
 
-        <div className="site-container relative z-10 flex min-h-[inherit] flex-col justify-between pt-16 sm:pt-24 pb-8 sm:pb-12">
-          <div className="my-auto">
-            <Reveal>
-              <div className="flex items-center justify-start mb-6">
-                <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/50 px-4 py-1.5 text-xs font-bold tracking-wide text-white/95 backdrop-blur-md shadow-md">
-                  <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-                  <span>
-                    {ar
-                      ? "مجموعة سامي بن عياد · الفرص العقارية والاستثمارية الدولية"
-                      : "SAMI BIN AYYAD GROUP · Global Real Estate & Investment Opportunities"}
-                  </span>
+          <div className="site-container relative z-10 flex min-h-[inherit] flex-col justify-between pt-16 sm:pt-24 pb-8 sm:pb-12">
+            <div className="my-auto">
+              <Reveal>
+                <div className="flex items-center justify-start mb-6">
+                  <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/50 px-4 py-1.5 text-xs font-bold tracking-wide text-white/95 backdrop-blur-md shadow-md">
+                    <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+                    <span>
+                      {ar
+                        ? "مجموعة سامي بن عياد · الفرص العقارية والاستثمارية الدولية"
+                        : "SAMI BIN AYYAD GROUP · Global Real Estate & Investment Opportunities"}
+                    </span>
+                  </div>
                 </div>
-              </div>
 
-              <h1 className="font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white leading-snug tracking-tight text-start drop-shadow-md max-w-4xl">
-                {ar
-                  ? "خبرات مهنية واستثمارية موثوقة في صناعة العقار وإدارة الأصول"
-                  : "Trusted Real Estate Advisory, Asset Management & Institutional Alliances"}
-              </h1>
+                <h1 className="font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white leading-snug tracking-tight text-start drop-shadow-md max-w-4xl">
+                  {ar
+                    ? "خبرات مهنية واستثمارية موثوقة في صناعة العقار وإدارة الأصول"
+                    : "Trusted Real Estate Advisory, Asset Management & Institutional Alliances"}
+                </h1>
 
-              <p className="mt-3.5 max-w-4xl text-sm sm:text-base leading-relaxed text-white/90 text-start drop-shadow-sm">
-                {ar
-                  ? "مسيرة مهنية متواصلة منذ عام 2018 في السوق المصري والأسواق الإقليمية، تغطي أكثر من 400 مشروع عقاري، وشبكة علاقات مع 200 مطور، وإدارة محافظ بقيمة 5 مليارات جنيه."
-                  : "A distinguished track record since 2018 across Egypt and international markets, spanning 400+ projects, 200+ developer partnerships, and 5 Billion EGP in asset portfolios."}
-              </p>
-            </Reveal>
+                <p className="mt-3.5 max-w-4xl text-sm sm:text-base leading-relaxed text-white/90 text-start drop-shadow-sm">
+                  {ar
+                    ? "مسيرة مهنية متواصلة منذ عام 2018 في السوق المصري والأسواق الإقليمية، تغطي أكثر من 400 مشروع عقاري، وشبكة علاقات مع 200 مطور، وإدارة محافظ بقيمة 5 مليارات جنيه."
+                    : "A distinguished track record since 2018 across Egypt and international markets, spanning 400+ projects, 200+ developer partnerships, and 5 Billion EGP in asset portfolios."}
+                </p>
+              </Reveal>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Main Container */}
-      <div className="site-container space-y-20 mt-8 sm:mt-12">
+      <div className={cn("site-container space-y-20", !hideHero && "mt-8 sm:mt-12")}>
         {/* Core Statistics Cards */}
         <div className="grid grid-cols-2 gap-3.5 sm:grid-cols-4 w-full">
           <div className="interactive-card glass-box-interactive group rounded-3xl p-5 sm:p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl text-center flex flex-col items-center justify-center">

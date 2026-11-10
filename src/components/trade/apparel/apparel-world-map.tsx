@@ -64,7 +64,7 @@ export function ApparelWorldMap({ ar = true, onSelectMarket }: ApparelWorldMapPr
         </h2>
         <p className="text-xs sm:text-sm text-muted-foreground mt-2 leading-relaxed max-w-4xl">
           {ar
-            ? "تغطية جغرافية موثقة عبر 20 دولة وسوقًا دوليًا لطلبات واستفسارات تصنيع وتوريد الملابس الجاهزة والمنسوجات المصرية."
+            ? "تغطية جغرافية موثقة عبر 20 دولة وسوقًا دوليًا لطلبات تصنيع وتوريد الملابس الجاهزة والمنسوجات المصرية."
             : "Documented global coverage across 20 international destination markets for Egyptian apparel, knitwear, and textile manufacturing inquiries."}
         </p>
       </div>
@@ -314,7 +314,7 @@ export function ApparelWorldMap({ ar = true, onSelectMarket }: ApparelWorldMapPr
 
             <div>
               <span className="font-bold text-muted-foreground block text-[11px] uppercase tracking-wider mb-1">
-                {ar ? "طبيعة الاستفسارات وملاحظات السوق:" : "Inquiry Nature & Market Notes:"}
+                {ar ? "طبيعة طلبات الشراء وملاحظات السوق:" : "Inquiry Nature & Market Notes:"}
               </span>
               <p className="text-foreground/90 font-medium leading-relaxed">
                 {ar ? activeMarket.marketNotesAr : activeMarket.marketNotesEn}

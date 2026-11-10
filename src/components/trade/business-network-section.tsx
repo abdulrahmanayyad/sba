@@ -1,5 +1,6 @@
 import React from "react";
-import { VERIFIED_TRADE_PARTNERS } from "@/lib/trade-data";
+import { Building2, Calendar, MapPin, Sparkles } from "lucide-react";
+import { VERIFIED_TRADE_PARTNERS, VERIFIED_TRADE_EVENTS } from "@/lib/trade-data";
 
 interface BusinessNetworkSectionProps {
   ar?: boolean;
@@ -74,6 +75,72 @@ export function BusinessNetworkSection({ ar = true }: BusinessNetworkSectionProp
           </div>
         ))}
       </div>
+
+      {/* Verified Trade Events & Opportunity Sources Subsection */}
+      {VERIFIED_TRADE_EVENTS && VERIFIED_TRADE_EVENTS.length > 0 && (
+        <div className="pt-4 border-t border-border/40 dark:border-white/10 space-y-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <Sparkles className="size-4 text-brand-orange" />
+              <h3 className="text-base sm:text-lg font-bold text-foreground">
+                {ar ? "الفعاليات والمعارض الدولية المعتمدة (مصادر الفرص التجارية)" : "Documented Trade Events & Business Opportunity Sources"}
+              </h3>
+            </div>
+            <span className="text-xs text-muted-foreground">
+              {ar ? "توثيق رسمي من أرشيف المراسلات" : "Documented Trade Platforms"}
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 gap-4">
+            {VERIFIED_TRADE_EVENTS.map((event) => (
+              <div
+                key={event.id}
+                className="rounded-3xl border border-brand-green/30 bg-background/60 p-5 sm:p-6 backdrop-blur-xl shadow-lg space-y-3"
+              >
+                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
+                  <div>
+                    <div className="inline-flex items-center gap-1.5 rounded-lg border border-brand-green/40 bg-brand-green/15 px-2.5 py-0.5 text-xs font-bold text-brand-green mb-1.5">
+                      <Building2 className="size-3.5" />
+                      <span>{ar ? event.categoryAr : event.categoryEn}</span>
+                    </div>
+                    <h4 className="text-base sm:text-lg font-bold text-foreground">
+                      {ar ? event.titleAr : event.titleEn}
+                    </h4>
+                    <div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground mt-1 font-medium">
+                      <span className="flex items-center gap-1">
+                        <MapPin className="size-3 text-brand-orange" />
+                        <span>{ar ? event.venueAr : event.venueEn}</span>
+                      </span>
+                      <span>•</span>
+                      <span className="flex items-center gap-1">
+                        <Calendar className="size-3 text-brand-green" />
+                        <span>{ar ? event.dateAr : event.dateEn}</span>
+                      </span>
+                      <span>•</span>
+                      <span>{ar ? event.organizerAr : event.organizerEn}</span>
+                    </div>
+                  </div>
+
+                  <span className="rounded-xl border border-brand-orange bg-brand-orange px-3 py-1 text-xs font-bold text-white shadow-xs shrink-0 self-start">
+                    {ar ? `${event.archiveMessagesCount} رسائل موثقة بالأرشيف` : `${event.archiveMessagesCount} Archive Notices`}
+                  </span>
+                </div>
+
+                <p className="text-xs sm:text-sm text-foreground/80 leading-relaxed pt-1">
+                  {ar ? event.scopeAr : event.scopeEn}
+                </p>
+
+                <div className="rounded-xl border border-white/5 bg-secondary/40 p-3 text-xs">
+                  <span className="font-bold text-foreground block mb-0.5">
+                    {ar ? "القيمة التجارية والاستثمارية:" : "Commercial Sourcing Relevance:"}
+                  </span>
+                  <span className="text-muted-foreground">{ar ? event.relevanceAr : event.relevanceEn}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
