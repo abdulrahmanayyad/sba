@@ -1149,6 +1149,39 @@ export const professionalServices: ProfessionalService[] = [
     "capabilitiesEn": ["OEKO-TEX Standard 100 chemical conformance", "Full in-house physical testing equipment (pull-test, wash crocking)", "Zero tolerance for safety and chemical non-compliance"],
     "capabilitiesAr": ["مطابقة للمواصفات البيئية لشهادة OEKO-TEX Standard 100", "أجهزة اختبارات ميكانيكية ومعملية (قوة شد الأزرار، ثبات الغسيل)", "صفر تسامح مع أي عيوب تؤثر على السلامة أو مظهر المنتج النهائي"],
     "image": "/BG/Apparel Manufacturing/Textile Mill & Internal Dyeing.jpg"
+  },
+  {
+    "id": "srv-app-brand-advisory",
+    "code": "SBA-SRV-APP09",
+    "sector": "apparel-services",
+    "categoryKey": "brand-advisory",
+    "categoryEn": "Fashion Brand Advisory",
+    "categoryAr": "استشارات تأسيس وتطوير العلامات التجارية",
+    "nameEn": "Fashion Brand Development & Manufacturing Advisory",
+    "nameAr": "استشارات تأسيس وتطوير العلامات التجارية للأزياء",
+    "descriptionEn": "Comprehensive strategic, design feasibility, and manufacturing execution advisory for emerging and established fashion brands, with over 400+ consultations delivered.",
+    "descriptionAr": "خدمات استشارية استراتيجية وتنفيذية متكاملة لرواد الأعمال ومؤسسي علامات الأزياء، مدعومة بسجل حافل تجاوز 400 استشارة ناجحة لتطوير المجموعات وربطها بالمصانع المناسبة.",
+    "scopeOfWorkEn": [
+      "Brand positioning & target market segment feasibility studies",
+      "Collection merchandising architecture (SKU planning, size runs, seasonal calendar)",
+      "Tech-pack readiness & bill-of-materials costing analysis",
+      "Strategic partner factory matching across 150+ verified manufacturers in Egypt",
+      "Pre-launch quality assurance & retail packaging standardization",
+      "Over 400+ advisory sessions delivered for fashion entrepreneurs and established brands"
+    ],
+    "scopeOfWorkAr": [
+      "دراسة تموضع العلامة التجارية والجدوى التسويقية لشريحة الجمهور المستهدف",
+      "هيكلة المجموعات الموسمية وتخطيط وحدات SKU وجداول المقاسات",
+      "تدقيق ملفات المواصفات الفنية (Tech Packs) وهندسة تكلفة القطعة",
+      "الربط بالمصانع المتخصصة الأنسب من شبكة تضم أكثر من 150 مصنعًا شريكًا في مصر",
+      "معايير ضبط الجودة والتعبئة والتغليف الاحترافي قبل الطرح بالأسواق",
+      "سجل استشاري حافل يضم تقديم أكثر من 400 استشارة لرواد أعمال ومؤسسي علامات الأزياء"
+    ],
+    "applicationsEn": ["Emerging Fashion Labels", "Established Retail Brands", "E-commerce Apparel Startups", "Designers Transitioning to Bulk Production"],
+    "applicationsAr": ["العلامات التجارية الناشئة للأزياء", "سلاسل ومتاجر التجزئة القائمة", "متاجر الأزياء الإلكترونية", "المصممون المستقلون الراغبون في التوسع الصناعي"],
+    "capabilitiesEn": ["400+ Consultations Delivered", "Direct access to 150+ partner factories", "End-to-end technical tech-pack auditing"],
+    "capabilitiesAr": ["تقديم أكثر من 400 استشارة متخصصة", "ربط مباشر بشبكة تضم أكثر من 150 مصنعًا شريكًا", "تدقيق فني شامل للعينات وملفات المواصفات"],
+    "image": "/BG/Apparel Manufacturing/Our Process.jpg"
   }
 ];
 
@@ -1268,7 +1301,8 @@ export const serviceDivisionsConfig = [
       { key: "cm-manufacturing", labelEn: "CM Manufacturing (Cut & Make)", labelAr: "التصنيع بنظام CM" },
       { key: "product-development", labelEn: "CAD Pattern Engineering", labelAr: "هندسة الباترون وتطوير المنتجات" },
       { key: "rapid-sampling", labelEn: "Rapid Sampling & Prototyping", labelAr: "صناعة العينات والنماذج الأولية" },
-      { key: "fabric-quality", labelEn: "Fabric Sourcing & AQL Quality", labelAr: "توريد الأقمشة وضمان الجودة AQL" }
+      { key: "fabric-quality", labelEn: "Fabric Sourcing & AQL Quality", labelAr: "توريد الأقمشة وضمان الجودة AQL" },
+      { key: "brand-advisory", labelEn: "Brand Development Advisory", labelAr: "استشارات تأسيس وتطوير العلامات" }
     ]
   }
 ];

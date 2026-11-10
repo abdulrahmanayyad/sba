@@ -1052,6 +1052,47 @@ export const garmentServicesExpanded: GarmentManufacturingService[] = [
     deliverablesEn: ["Approved Lab-Dip Color Swatches", "Fabric Technical Spec Sheet (Weight, Width, Shrinkage)", "Bulk Fabric Mill Roll Delivery"],
     deliverablesAr: ["عينات ألوان الصباغة المعتمدة (Lab Dips)", "بطاقة المواصفات الفنية للقماش (الوزن، العرض، نسبة الانكماش)", "توريد أثواب الأقمشة المعتمدة لصالة القص"],
     image: "/BG/Apparel Manufacturing/Textile Mill & Internal Dyeing.jpg"
+  },
+  {
+    id: "brand-advisory",
+    number: "09",
+    badgeEn: "Brand Strategy · 400+ Consultations Delivered",
+    badgeAr: "استراتيجية العلامات · أكثر من 400 استشارة معتمدة",
+    titleEn: "Fashion Brand Development & Manufacturing Advisory",
+    titleAr: "استشارات تأسيس وتطوير العلامات التجارية للأزياء",
+    leadEn: "Specialized strategic and operational roadmap transforming fashion concepts into market-ready commercial collections.",
+    leadAr: "خارطة طريق استراتيجية وتنفيذية شاملة لتحويل الأفكار وتصاميم الأزياء إلى علامات تجارية ناجحة قابلة للتصنيع والنمو.",
+    descEn: "With over 400+ consultations delivered for emerging and established fashion labels, our advisory arm guides founders through product-market fit, collection architecture, costing, fabric selection, prototype refinement, and partner factory allocation.",
+    descAr: "انطلاقًا من مسيرة مهنية قدمت فيها المجموعة أكثر من 400 استشارة للعلامات التجارية الناشئة والقائمة، نوفر الدعم المتكامل في بناء هوية المنتج، تسعير تكاليف الإنتاج، اختيار الخامات المناسبة، هندسة المجموعات الموسمية، وتخصيص خطوط التصنيع الأكثر كفاءة وجودة.",
+    capabilitiesEn: [
+      "Brand positioning & target market segment feasibility",
+      "Collection merchandising architecture (SKU planning, size runs)",
+      "Tech-pack readiness & bill-of-materials cost engineering",
+      "Strategic partner factory matching across 150+ verified manufacturers",
+      "Pre-launch quality assurance & packaging standardization",
+      "Over 400+ advisory sessions delivered for fashion entrepreneurs"
+    ],
+    capabilitiesAr: [
+      "دراسة تموضع العلامة التجارية والجدوى التسويقية لشريحة الجمهور المستهدف",
+      "هيكلة المجموعات الموسمية وتخطيط وحدات SKU وجداول المقاسات",
+      "تدقيق ملفات المواصفات الفنية (Tech Packs) وهندسة تكلفة القطعة",
+      "الربط بالمصانع المتخصصة الأنسب من شبكة تضم أكثر من 150 مصنعًا شريكًا",
+      "معايير ضبط الجودة والتعبئة والتغليف الاحترافي قبل الطرح بالأسواق",
+      "سجل استشاري حافل يضم تقديم أكثر من 400 استشارة لرواد أعمال ومؤسسي علامات الأزياء"
+    ],
+    deliverablesEn: [
+      "Comprehensive Brand Launch & Manufacturing Roadmap",
+      "Detailed Product Development Tech Pack Feasibility Report",
+      "Factory Matching & Production Cost Matrix",
+      "Free 30-Minute Initial Strategy Consultation"
+    ],
+    deliverablesAr: [
+      "خارطة طريق متكاملة لتأسيس وتصنيع العلامة التجارية",
+      "تقرير تدقيق الجاهزية الفنية وملفات المواصفات (Tech Packs)",
+      "جدول تسعير تكلفة الإنتاج وتوزيع المصانع الشريكة",
+      "جلسة استشارة أولية مجانية لبحث متطلبات المشروع"
+    ],
+    image: "/BG/Apparel Manufacturing/Our Process.jpg"
   }
 ];
 

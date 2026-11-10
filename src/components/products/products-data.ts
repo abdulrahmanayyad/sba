@@ -3,6 +3,8 @@
 // Strictly dedicated to tangible goods, equipment, and catalogues available for supply.
 // ============================================================================
 
+import { getCentralFoodPhysicalProducts } from "@/lib/central-food-products";
+
 export type ProductDivision = "apparel" | "food";
 
 export interface ProductSpec {
@@ -1243,7 +1245,9 @@ export const physicalProducts: PhysicalProduct[] = [
         "valueAr": "مالتوديكسترين غير معدل وراثيًا أو فاكهة مركزة نقية"
       }
     ]
-  }
+  },
+  // Expanded Food & Natural Products Portfolio (Single Central Source)
+  ...getCentralFoodPhysicalProducts()
 ];
 
 export const productCategoriesConfig = [
@@ -1264,10 +1268,17 @@ export const productCategoriesConfig = [
     division: "food" as const,
     labelEn: "Natural & Food Products",
     labelAr: "المنتجات الطبيعية والغذائية",
-    descEn: "Natural honey & derivatives, table olives, virgin olive oil, assorted dates, and natural herbs & spices.",
-    descAr: "عسل نحل طبيعي ومشتقاته، زيتون مائدة، زيت زيتون بكر، تمور بأنواعها، وأعشاب وتوابل طبيعية.",
+    descEn: "Natural honey & derivatives, table olives, virgin olive oil, assorted dates, culinary spices, soups, and traditional foods.",
+    descAr: "عسل نحل طبيعي ومشتقاته، زيتون مائدة، زيت زيتون بكر، تمور بأنواعها، شوربات، بهارات، وأكلات تراثية متخصصة.",
     categories: [
       { key: "all", labelEn: "All Products", labelAr: "كافة المنتجات" },
+      { key: "soups-stocks", labelEn: "Soups & Stocks", labelAr: "الشوربات والمرقات" },
+      { key: "traditional-foods", labelEn: "Traditional Food Products", labelAr: "الأكلات التراثية" },
+      { key: "rice-seasonings", labelEn: "Rice Seasoning Blends", labelAr: "خلطات الأرز" },
+      { key: "essential-spices", labelEn: "Essential Spices & Seasonings", labelAr: "التوابل الأساسية" },
+      { key: "asian-spices", labelEn: "Asian Spices & Blends", labelAr: "التوابل والخلطات الآسيوية" },
+      { key: "meat-poultry-seasonings", labelEn: "Meat & Poultry Seasonings", labelAr: "تتبيلات اللحوم والدجاج" },
+      { key: "specialty-blends", labelEn: "Specialty Blends & Other Products", labelAr: "المتفرقات والخلطات المتخصصة" },
       { key: "honey-bee", labelEn: "Honey & Derivatives", labelAr: "عسل النحل ومشتقاته" },
       { key: "olives-products", labelEn: "Egyptian Olives", labelAr: "الزيتون المصري" },
       { key: "olive-oil", labelEn: "Olive Oil", labelAr: "زيت الزيتون" },

@@ -1,3 +1,5 @@
+import { getCentralFoodSectorDetailedProducts } from "@/lib/central-food-products";
+
 export interface FoodHero {
   titleEn: string;
   titleAr: string;
@@ -1893,7 +1895,22 @@ export const detailedExportMarkets: MarketProfile[] = [
 // COMPREHENSIVE DETAILED PRODUCT CATALOG (12 REQUIRED FIELDS PER PRODUCT)
 export interface DetailedFoodProduct {
   id: string;
-  category: "honey" | "olives" | "olive-oil" | "dates" | "herbs" | "beverage-powders" | "spices" | "other-agri";
+  category:
+    | "honey"
+    | "olives"
+    | "olive-oil"
+    | "dates"
+    | "herbs"
+    | "beverage-powders"
+    | "spices"
+    | "other-agri"
+    | "soups-broths"
+    | "traditional-foods"
+    | "rice-blends"
+    | "essential-spices"
+    | "asian-spices"
+    | "meat-poultry-seasonings"
+    | "specialty-blends";
   nameEn: string;
   nameAr: string;
   productOverviewEn: string;
@@ -2330,4 +2347,5 @@ export const detailedFoodProductsCatalog: DetailedFoodProduct[] = [
     image: "/sami_trade_real_images/sami-trade-news-37-agricultural-commodities-trade.png",
     featured: false,
   },
+  ...getCentralFoodSectorDetailedProducts(),
 ];

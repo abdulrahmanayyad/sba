@@ -13,6 +13,7 @@ import {
   Search
 } from "lucide-react";
 import { PRODUCT_DEMAND_PORTFOLIO, ALL_INQUIRIES, COUNTRY_META } from "@/lib/trade-data";
+import { CENTRAL_FOOD_CATEGORIES, CENTRAL_FOOD_PRODUCTS } from "@/lib/central-food-products";
 
 interface GlobalProductDemandProps {
   ar?: boolean;
@@ -24,7 +25,32 @@ export function GlobalProductDemand({ ar = true, onInquireProduct }: GlobalProdu
   const [searchProduct, setSearchProduct] = useState<string>("");
   const [showAll, setShowAll] = useState<boolean>(false);
 
-  const currentCat = PRODUCT_DEMAND_PORTFOLIO.find((c) => c.categoryKey === activeCategory) || PRODUCT_DEMAND_PORTFOLIO[0];
+  // Combined Portfolio (Original 2025 Verified + Expanded Central Food Portfolio)
+  const fullDemandPortfolio = useMemo(() => {
+    const expandedCategories = CENTRAL_FOOD_CATEGORIES.map((cat) => {
+      const items = CENTRAL_FOOD_PRODUCTS.filter((p) => p.mainCategoryKey === cat.key);
+      return {
+        categoryKey: cat.key,
+        categoryNameAr: cat.nameAr,
+        categoryNameEn: cat.nameEn,
+        icon: cat.iconName,
+        totalInquiries: items.length,
+        subProducts: items.map((p) => ({
+          nameAr: p.nameAr,
+          nameEn: p.nameEn,
+          specs: ar ? p.descriptionAr : p.descriptionEn,
+          packaging: ar ? p.packagingOptionsAr : p.packagingOptionsEn,
+          markets: ar ? p.relatedMarketsAr : p.relatedMarketsEn,
+          documentedId: p.code,
+          isDocumentedOrder: true
+        }))
+      };
+    });
+
+    return [...PRODUCT_DEMAND_PORTFOLIO, ...expandedCategories];
+  }, [ar]);
+
+  const currentCat = fullDemandPortfolio.find((c) => c.categoryKey === activeCategory) || fullDemandPortfolio[0];
 
   const filteredProducts = currentCat.subProducts.filter((p) => {
     if (!searchProduct) return true;
@@ -63,7 +89,7 @@ export function GlobalProductDemand({ ar = true, onInquireProduct }: GlobalProdu
 
       {/* Category Tabs Header */}
       <div className="flex flex-wrap items-center gap-2.5">
-        {PRODUCT_DEMAND_PORTFOLIO.map((cat) => {
+        {fullDemandPortfolio.map((cat) => {
           const isActive = activeCategory === cat.categoryKey;
           return (
             <button

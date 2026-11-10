@@ -1141,6 +1141,13 @@ function FoodProductsTab({
     { id: "herbs", nameEn: "Aromatic Herbs", nameAr: "الأعشاب والنباتات الطبية" },
     { id: "beverage-powders", nameEn: "Powdered Juices & Ingredients", nameAr: "العصائر والمكونات المجففة" },
     { id: "spices", nameEn: "Single Spices & Blends", nameAr: "التوابل والبهارات" },
+    { id: "soups-broths", nameEn: "Soups & Stocks", nameAr: "الشوربات والمرقات" },
+    { id: "traditional-foods", nameEn: "Traditional Foods", nameAr: "الأكلات التراثية" },
+    { id: "rice-blends", nameEn: "Rice Seasoning Blends", nameAr: "خلطات الأرز" },
+    { id: "essential-spices", nameEn: "Essential Spices & Seasonings", nameAr: "التوابل الأساسية" },
+    { id: "asian-spices", nameEn: "Asian Spices & Blends", nameAr: "التوابل والخلطات الآسيوية" },
+    { id: "meat-poultry-seasonings", nameEn: "Meat & Poultry Seasonings", nameAr: "تتبيلات اللحوم والدجاج" },
+    { id: "specialty-blends", nameEn: "Specialty Blends & Other Products", nameAr: "المتفرقات والخلطات المتخصصة" },
     { id: "other-agri", nameEn: "Other Agricultural Crops", nameAr: "محاصيل وحاصلات زراعية أخرى" },
   ];
 
@@ -1684,6 +1691,13 @@ function FoodOrderProductTab({
                     <option value="herbs">{ar ? "الأعشاب والنباتات الطبية (Aromatic Herbs)" : "Aromatic Herbs & Botanicals"}</option>
                     <option value="beverage-powders">{ar ? "العصائر والمكونات المجففة (Beverage Powders)" : "Powdered Juices & Ingredients"}</option>
                     <option value="spices">{ar ? "التوابل والبهارات المفردة والخلطات (Spices)" : "Single Spices & Blends"}</option>
+                    <option value="soups-broths">{ar ? "الشوربات والمرقات (Soups & Stocks)" : "Soups & Stocks"}</option>
+                    <option value="traditional-foods">{ar ? "الأكلات التراثية (Traditional Food Products)" : "Traditional Food Products"}</option>
+                    <option value="rice-blends">{ar ? "خلطات الأرز (Rice Seasoning Blends)" : "Rice Seasoning Blends"}</option>
+                    <option value="essential-spices">{ar ? "التوابل الأساسية (Essential Spices & Seasonings)" : "Essential Spices & Seasonings"}</option>
+                    <option value="asian-spices">{ar ? "التوابل والخلطات الآسيوية (Asian Spices & Blends)" : "Asian Spices & Blends"}</option>
+                    <option value="meat-poultry-seasonings">{ar ? "تتبيلات اللحوم والدجاج (Meat & Poultry Seasonings)" : "Meat & Poultry Seasonings"}</option>
+                    <option value="specialty-blends">{ar ? "المتفرقات والخلطات المتخصصة (Specialty Blends)" : "Specialty Blends & Other Products"}</option>
                     <option value="other-agri">{ar ? "حاصلات زراعية أخرى (السمسم، البصل، الثوم)" : "Other Agricultural Commodities"}</option>
                   </select>
                 </div>

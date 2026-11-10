@@ -27,7 +27,7 @@ export function GarmentServicesTab() {
           <div className="max-w-3xl">
             <SectionBadge title={ar ? "خدمات التصنيع والتوريد B2B" : "Manufacturing Services"} />
             <h2 className="section-title mt-3">
-              {ar ? "9 برامج تصنيع وتوريد متكاملة تلبي احتياجات العلامات التجارية" : "9 Turnkey B2B Manufacturing & Sourcing Programs"}
+              {ar ? "خدمات وبرامج تصنيع واستشارات متكاملة تلبي احتياجات العلامات التجارية" : "Turnkey B2B Manufacturing, Sourcing & Advisory Programs"}
             </h2>
             <p className="section-intro mt-4">
               {ar
@@ -63,7 +63,17 @@ export function GarmentServicesTab() {
                     <h3 className="font-head text-xl sm:text-2xl font-bold text-foreground">
                       {ar ? service.titleAr : service.titleEn}
                     </h3>
-                    <p className="mt-1 text-xs sm:text-sm font-semibold text-brand-green-text">
+                    {service.id === "brand-advisory" && (
+                      <div className="mt-3 flex items-center gap-2 rounded-xl border border-brand-green/30 bg-brand-green/10 px-3.5 py-2 text-xs sm:text-sm font-bold text-brand-green">
+                        <Sparkles className="size-4 shrink-0 text-brand-orange" />
+                        <span>
+                          {ar
+                            ? "مؤشر رئيسي: تقديم أكثر من 400 استشارة للعلامات التجارية الناشئة والقائمة"
+                            : "Key Metric: Over 400+ Consultations Delivered for Emerging & Established Fashion Labels"}
+                        </span>
+                      </div>
+                    )}
+                    <p className="mt-2 text-xs sm:text-sm font-semibold text-brand-green-text">
                       {ar ? service.leadAr : service.leadEn}
                     </p>
 
@@ -100,12 +110,21 @@ export function GarmentServicesTab() {
                   </div>
 
                   <div className="mt-8 pt-4 border-t border-border/70 flex items-center justify-between">
-                    <Button asChild size="sm" className="rounded-full bg-brand-green text-white hover:bg-brand-orange transition-colors">
-                      <Link to="/sectors/$sector" params={{ sector: "garment" }} search={{ tab: "start-project", service: service.id }}>
-                        <span>{ar ? "اطلب عرض سعر لهذه الخدمة" : "Request Proposal for Service"}</span>
-                        <ArrowRight className="size-3.5 ms-2 rtl:rotate-180" />
-                      </Link>
-                    </Button>
+                    {service.id === "brand-advisory" ? (
+                      <Button asChild size="sm" className="rounded-full bg-brand-green text-white hover:bg-brand-orange transition-colors">
+                        <Link to="/contact">
+                          <span>{ar ? "طلب استشارة مجانية" : "Request a Free Consultation"}</span>
+                          <ArrowRight className="size-3.5 ms-2 rtl:rotate-180" />
+                        </Link>
+                      </Button>
+                    ) : (
+                      <Button asChild size="sm" className="rounded-full bg-brand-green text-white hover:bg-brand-orange transition-colors">
+                        <Link to="/sectors/$sector" params={{ sector: "garment" }} search={{ tab: "start-project", service: service.id }}>
+                          <span>{ar ? "اطلب عرض سعر لهذه الخدمة" : "Request Proposal for Service"}</span>
+                          <ArrowRight className="size-3.5 ms-2 rtl:rotate-180" />
+                        </Link>
+                      </Button>
+                    )}
                   </div>
                 </div>
               </div>

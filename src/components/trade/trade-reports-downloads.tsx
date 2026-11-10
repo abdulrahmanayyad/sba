@@ -181,6 +181,63 @@ export function TradeReportsDownloads({ ar = true }: TradeReportsDownloadsProps)
         ))}
       </div>
 
+      {/* Special Tender & Custom Specifications Card */}
+      <div className="mt-8 rounded-3xl border border-border/80 bg-background/80 p-6 sm:p-8 backdrop-blur-2xl shadow-xl">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+          <div className="lg:col-span-7 space-y-3">
+            <div className="inline-flex items-center gap-2 rounded-full border border-brand-orange/30 bg-brand-orange/10 px-3 py-1 text-xs font-bold text-brand-orange">
+              <span>{ar ? "عطاءات ومناقصات دولية" : "International Tenders"}</span>
+            </div>
+            <h3 className="text-xl sm:text-2xl font-black text-foreground">
+              {ar ? "استفسارات المستندات الخاصة والمناقصات" : "Custom Specifications & Tender Documentation Inquiries"}
+            </h3>
+            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+              {ar
+                ? "للجهات والمؤسسات التي تتطلب كراسات شروط ومستندات فنية خاصة، أو شهادات فحص وتحليل مخبري معتمدة، أو عقود توريد سلعية كبرى ومناقصات رسمية، يرجى التواصل المباشر مع مكتب التجارة والتعاقدات الدولية بالمجموعة."
+                : "For institutional clients requiring specialized technical dossiers, accredited third-party laboratory certifications, or bulk commodity tenders, please contact our International Contracts Office directly."}
+            </p>
+          </div>
+
+          <div className="lg:col-span-5 rounded-2xl border border-border bg-card/90 p-5 shadow-md space-y-3.5">
+            <span className="text-xs font-bold text-foreground uppercase tracking-wider block border-b border-border/60 pb-2">
+              {ar ? "قنوات الاتصال الرسمية المعتمدة:" : "Official Direct Channels:"}
+            </span>
+
+            <a
+              href="mailto:info@sami-trade.com"
+              className="flex items-center gap-3 p-2.5 rounded-xl border border-border/70 bg-background/80 hover:border-brand-orange hover:bg-background transition-all group"
+            >
+              <div className="flex size-9 items-center justify-center rounded-lg bg-brand-orange/15 text-brand-orange">
+                <FileText className="size-4" />
+              </div>
+              <div className="text-start">
+                <span className="text-[10px] text-muted-foreground block">{ar ? "البريد الرسمي المعتمد" : "Official Email"}</span>
+                <span className="text-xs font-bold text-foreground font-mono group-hover:text-brand-orange">
+                  info@sami-trade.com
+                </span>
+              </div>
+            </a>
+
+            <a
+              href="https://wa.me/201222238072"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-3 p-2.5 rounded-xl border border-brand-green/30 bg-brand-green/10 hover:border-brand-green hover:bg-brand-green/20 transition-all group"
+            >
+              <div className="flex size-9 items-center justify-center rounded-lg bg-brand-green text-white">
+                <Globe className="size-4" />
+              </div>
+              <div className="text-start">
+                <span className="text-[10px] text-brand-green block font-bold">{ar ? "واتساب التجاري المعتمد" : "Official WhatsApp"}</span>
+                <span dir="ltr" className="text-xs font-bold text-foreground font-mono group-hover:text-brand-green">
+                  +20 122 223 8072
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
       {/* Report Preview Modal */}
       {activeReportModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-in fade-in duration-200">
