@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "@tanstack/react-router";
 import { Reveal } from "@/components/home/reveal";
 import { Wheat, Shirt, Building2 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -16,17 +17,23 @@ import { TRADE_STATS, COUNTRY_PROFILES, CountryTradeProfile } from "@/lib/trade-
 
 interface TradePageProps {
   ar?: boolean;
+  searchSector?: string;
 }
 
-export function TradePage({ ar = true }: TradePageProps) {
+export function TradePage({ ar = true, searchSector }: TradePageProps) {
+  const navigate = useNavigate();
   const [activeSector, setActiveSector] = useState<"food" | "apparel" | "real-estate">(() => {
-    if (typeof window !== "undefined") {
-      const params = new URLSearchParams(window.location.search);
-      const s = params.get("sector");
-      if (s === "apparel" || s === "real-estate" || s === "food") return s;
+    if (searchSector === "apparel" || searchSector === "real-estate" || searchSector === "food") {
+      return searchSector;
     }
     return "food";
   });
+
+  useEffect(() => {
+    if (searchSector === "apparel" || searchSector === "real-estate" || searchSector === "food") {
+      setActiveSector(searchSector);
+    }
+  }, [searchSector]);
 
   const [selectedCountryCode, setSelectedCountryCode] = useState<string | undefined>(undefined);
 
@@ -36,10 +43,14 @@ export function TradePage({ ar = true }: TradePageProps) {
 
   const handleSectorChange = (sector: "food" | "apparel" | "real-estate") => {
     setActiveSector(sector);
-    if (typeof window !== "undefined") {
-      const url = new URL(window.location.href);
-      url.searchParams.set("sector", sector);
-      window.history.replaceState({}, "", url.toString());
+    try {
+      navigate({
+        to: "/trade",
+        search: { sector },
+        replace: true,
+      });
+    } catch {
+      // Fallback
     }
   };
 

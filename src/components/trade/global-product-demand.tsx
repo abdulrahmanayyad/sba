@@ -50,17 +50,17 @@ export function GlobalProductDemand({ ar = true, onInquireProduct }: GlobalProdu
     return [...PRODUCT_DEMAND_PORTFOLIO, ...expandedCategories];
   }, [ar]);
 
-  const currentCat = fullDemandPortfolio.find((c) => c.categoryKey === activeCategory) || fullDemandPortfolio[0];
+  const currentCat = fullDemandPortfolio.find((c) => c.categoryKey === activeCategory) || fullDemandPortfolio[0] || { subProducts: [] };
 
-  const filteredProducts = currentCat.subProducts.filter((p) => {
+  const filteredProducts = (currentCat?.subProducts || []).filter((p) => {
     if (!searchProduct) return true;
     return (
-      p.nameAr.includes(searchProduct) ||
-      p.nameEn.toLowerCase().includes(searchProduct.toLowerCase()) ||
-      p.specs.includes(searchProduct) ||
+      (p.nameAr || "").includes(searchProduct) ||
+      (p.nameEn || "").toLowerCase().includes(searchProduct.toLowerCase()) ||
+      (p.specs || "").includes(searchProduct) ||
       (p.documentedId && p.documentedId.toLowerCase().includes(searchProduct.toLowerCase())) ||
       (p.quantity && p.quantity.includes(searchProduct)) ||
-      p.markets.some((m) => m.includes(searchProduct))
+      (p.markets || []).some((m) => m && m.includes(searchProduct))
     );
   });
 

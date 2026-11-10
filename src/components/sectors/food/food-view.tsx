@@ -1157,8 +1157,8 @@ function FoodProductsTab({
       const matchCat = activeFilter === "all" || p.category === activeFilter;
       const matchQuery =
         !searchQuery.trim() ||
-        (ar ? p.nameAr : p.nameEn).toLowerCase().includes(searchQuery.toLowerCase()) ||
-        (ar ? p.productOverviewAr : p.productOverviewEn).toLowerCase().includes(searchQuery.toLowerCase());
+        (ar ? p.nameAr || "" : p.nameEn || "").toLowerCase().includes(searchQuery.toLowerCase()) ||
+        (ar ? p.productOverviewAr || "" : p.productOverviewEn || "").toLowerCase().includes(searchQuery.toLowerCase());
       return matchCat && matchQuery;
     });
   }, [activeFilter, searchQuery, ar]);
