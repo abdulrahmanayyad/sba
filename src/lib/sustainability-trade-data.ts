@@ -1432,11 +1432,12 @@ export const SUSTAINABILITY_DOCUMENTS = [
     id: "DOC-ENV-01",
     titleAr: "الملف التعريفي لقطاع الاستدامة والخدمات البيئية — مجموعة سامي بن عياد",
     titleEn: "Sustainability & Environmental Sector Corporate Profile — SBA Group",
-    fileSize: "4.8 MB",
+    fileSize: "7.8 MB",
     fileFormat: "PDF",
     categoryAr: "ملفات تعريفية مؤسسية",
     categoryEn: "Corporate Profiles",
-    downloadUrl: "/downloads/SBA_Complete_Corporate_Profile_AR.pdf",
+    downloadUrl: "/downloads/SBA_Environmental_Solutions_AR.pdf",
+    downloadUrlEn: "/downloads/SBA_Environmental_Solutions_EN.pdf",
     descriptionAr: "وثيقة مؤسسية معتمدة تستعرض رؤية المجموعة البيئية، محفظة الخدمات الاستشارية، ونماذج التحالفات الاستثمارية.",
     descriptionEn: "Official approved profile detailing our environmental vision, consulting portfolio, and investment partnership models."
   },
@@ -1444,25 +1445,27 @@ export const SUSTAINABILITY_DOCUMENTS = [
     id: "DOC-ENV-02",
     titleAr: "دليل الامتثال لقانون إدارة المخلفات رقم 202 لسنة 2020 للمنشآت الصناعية",
     titleEn: "Industrial Compliance Guidelines: National Waste Management Law No. 202",
-    fileSize: "2.6 MB",
+    fileSize: "7.8 MB",
     fileFormat: "PDF",
     categoryAr: "دراسات وأدلة تشريعية",
     categoryEn: "Legislative Guides",
-    downloadUrl: "/downloads/SBA_Complete_Corporate_Profile_AR.pdf",
+    downloadUrl: "/downloads/SBA_Environmental_Solutions_AR.pdf",
+    downloadUrlEn: "/downloads/SBA_Environmental_Solutions_EN.pdf",
     descriptionAr: "ملخص إرشادي لأصحاب المصانع حول اشتراطات تصنيف وتوثيق وسجلات المخلفات الصناعية وحوافز الاقتصاد الدائري.",
     descriptionEn: "Executive guide for plant managers on waste manifest protocols, classification standards, and circular economy incentives."
   },
   {
     id: "DOC-ENV-03",
-    titleAr: "ورقة عمل: حلول الطاقة الشمسية وترشيد المياه في الصناعات الغذائية والنسيجية",
-    titleEn: "Technical Brief: Solar PV & Water Recycling for Agri-Food & Textile Industries",
-    fileSize: "3.2 MB",
+    titleAr: "دليل التقنيات البيئية وخدمات البصمة الكربونية والطاقة النظيفة",
+    titleEn: "Technical Brief: Environmental Services, Clean Energy & Bio-Reagents",
+    fileSize: "3.1 MB",
     fileFormat: "PDF",
     categoryAr: "أوراق عمل ودراسات تقنية",
     categoryEn: "Technical Briefs",
-    downloadUrl: "/downloads/SBA_Complete_Corporate_Profile_EN.pdf",
-    descriptionAr: "دراسة تطبيقية تشرح عوائد الاستثمار ونماذج التوفير المالي لمحطات الطاقة الشمسية ومعالجة مياه الغسيل الصناعي.",
-    descriptionEn: "Applied technical brief detailing financial payback, water balance savings, and rooftop solar integration for manufacturing."
+    downloadUrl: "/downloads/SBA_Services_And_Solutions_Portfolio_AR.pdf",
+    downloadUrlEn: "/downloads/SBA_Services_And_Solutions_Portfolio_EN.pdf",
+    descriptionAr: "استعراض التخصصات الـ 19 لقطاع البيئة المستدامة بما فيها دراسات الطاقة الشمسية، محطات البيوجاز، وCBAM.",
+    descriptionEn: "Technical brief detailing our 19 environmental disciplines including solar PV studies, biogas, and CBAM compliance."
   }
 ];
 

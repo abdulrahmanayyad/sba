@@ -85,6 +85,7 @@
     "@types/react-dom": "^19.2.0",
     "@vitejs/plugin-react": "^5.2.0",
     "arabic-persian-reshaper": "^1.0.1",
+    "d3-geo": "^3.1.2",
     "drizzle-kit": "0.x",
     "drizzle-orm": "0.x",
     "eslint": "^9.32.0",
@@ -98,9 +99,11 @@
     "pdfkit": "^0.20.2",
     "postgres": "^3.4.9",
     "prettier": "^3.7.3",
+    "topojson-client": "^3.1.0",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.56.1",
     "vite": "8.1.5",
-    "vitest": "^4.1.10"
+    "vitest": "^4.1.10",
+    "world-atlas": "^2.0.2"
   }
 }

@@ -1066,8 +1066,8 @@ function EnvironmentalProductsView({ ar }: { ar: boolean }) {
 
   const handleDownloadDatasheet = (product: EnvironmentalProductItem) => {
     let pdfUrl = `/downloads/${product.code}_Technical_Data_Sheet.pdf`;
-    if (product.code === "ET-POT-01") pdfUrl = "/downloads/ET-POT-01_Technical_Data_Sheet.pdf";
-    else if (product.code === "ET-POR-01") pdfUrl = "/downloads/ET-POR-01_Technical_Data_Sheet.pdf";
+    if (product.code === "ET-POT-01") pdfUrl = ar ? "/downloads/ET-POT-01_Technical_Data_Sheet_AR.pdf" : "/downloads/ET-POT-01_Technical_Data_Sheet_EN.pdf";
+    else if (product.code === "ET-POR-01") pdfUrl = ar ? "/downloads/ET-POR-01_Technical_Data_Sheet_AR.pdf" : "/downloads/ET-POR-01_Technical_Data_Sheet_EN.pdf";
     else pdfUrl = ar ? "/downloads/SBA_Environmental_Solutions_AR.pdf" : "/downloads/SBA_Environmental_Solutions_EN.pdf";
 
     const link = document.createElement("a");

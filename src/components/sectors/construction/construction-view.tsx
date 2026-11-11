@@ -170,8 +170,8 @@ export function ConstructionSectorView({ tab = "about", token }: ConstructionVie
 
                 <Button asChild size="default" className="rounded-full bg-brand-green text-white hover:bg-brand-orange transition-all duration-300 shadow-md">
                   <a
-                    href="/downloads/SBA_Construction_Project_Portfolio_EN.pdf"
-                    download="SBA_Construction_Project_Portfolio_EN.pdf"
+                    href={ar ? "/downloads/SBA_Construction_Project_Portfolio_AR.pdf" : "/downloads/SBA_Construction_Project_Portfolio_EN.pdf"}
+                    download={ar ? "SBA_Construction_Project_Portfolio_AR.pdf" : "SBA_Construction_Project_Portfolio_EN.pdf"}
                     target="_blank"
                     rel="noopener noreferrer"
                   >

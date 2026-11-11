@@ -119,7 +119,12 @@ export function ServicesCataloguePage() {
               </h3>
               <div className="mt-2 flex items-center gap-2">
                 <Button asChild size="sm" className="rounded-full !bg-brand-green !text-white hover:!bg-brand-orange text-xs font-bold shadow-xs cursor-pointer">
-                  <a href="/downloads/SBA_Services_And_Solutions_Portfolio_EN.pdf" download="SBA_Services_And_Solutions_Portfolio_EN.pdf" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={ar ? "/downloads/SBA_Services_And_Solutions_Portfolio_AR.pdf" : "/downloads/SBA_Services_And_Solutions_Portfolio_EN.pdf"}
+                    download={ar ? "SBA_Services_And_Solutions_Portfolio_AR.pdf" : "SBA_Services_And_Solutions_Portfolio_EN.pdf"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Download className="size-3.5 me-1.5" />
                     <span>{ar ? "تحميل دليل الخدمات" : "Download Services Directory"}</span>
                   </a>

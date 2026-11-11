@@ -1,7 +1,6 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import {
-  Building2,
   Mail,
   Phone,
   Clock,
@@ -9,7 +8,6 @@ import {
   Globe,
   Share2,
   CheckCircle2,
-  AlertCircle,
   Upload,
   FileText,
   X,
@@ -34,9 +32,23 @@ import {
 import { submitCentralForm } from "@/lib/central-form-dispatch";
 import { WHATSAPP_URL } from "@/lib/process-steps";
 
+const DEPT_AR_MAP: Record<ContactInquiryType, string> = {
+  general_inquiry: "إدارة الاتصالات المؤسسية",
+  business_inquiry: "الإدارة التجارية وتطوير الأعمال",
+  international_trade: "قطاع التجارة الدولية والتصدير",
+  product_inquiry: "إدارة تطوير المنتجات والمبيعات",
+  construction_contracting: "إدارة الهندسة والأعمال المدنية والمقاولات",
+  environmental_services: "إدارة الاستشارات البيئية والاستدامة",
+  investment_inquiry: "إدارة علاقات المستثمرين والاستراتيجية",
+  partnership_proposal: "لجنة التحالفات والشراكات الاستراتيجية",
+  media_pr: "إدارة الإعلام والشؤون الخارجية",
+  other: "المكتب التنفيذي للمجموعة",
+};
+
 export function ContactPage() {
   const { language } = useLanguage();
   const ar = language === "AR";
+  const fullNameInputRef = useRef<HTMLInputElement>(null);
 
   // Form State
   const [inquiryType, setInquiryType] = useState<ContactInquiryType>("general_inquiry");
@@ -74,6 +86,27 @@ export function ContactPage() {
   const removeAttachment = (index: number) => {
     setAttachments((prev) => prev.filter((_, i) => i !== index));
   };
+
+  const clearError = (field: string) => {
+    if (errors[field]) {
+      setErrors((prev) => {
+        const next = { ...prev };
+        delete next[field];
+        return next;
+      });
+    }
+  };
+
+  const requiredChecks = [
+    fullName.trim().length > 0,
+    country.trim().length > 0,
+    email.trim().length > 0 && email.includes("@"),
+    phone.trim().length > 0,
+    subject.trim().length > 0,
+    message.trim().length > 0,
+  ];
+  const completedRequiredCount = requiredChecks.filter(Boolean).length;
+  const completionPercent = Math.round((completedRequiredCount / requiredChecks.length) * 100);
 
   const validate = () => {
     const errs: Record<string, string> = {};
@@ -166,18 +199,18 @@ export function ContactPage() {
   return (
     <div className="w-full pb-20">
       {/* Hero Header */}
-      <section className="relative overflow-hidden py-16 sm:py-20 bg-gradient-to-b from-secondary/40 via-background to-background">
-        <div className="site-container relative z-10 text-center max-w-4xl mx-auto">
+      <section className="site-container pt-10 pb-4">
+        <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/70 p-8 sm:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5 text-start">
           <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-4 shadow-sm">
             <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
             <span>{ar ? "مركز الاتصال المؤسسي" : "Corporate Contact Center"}</span>
           </div>
 
-          <h1 className="font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold text-foreground tracking-tight leading-tight">
+          <h1 className="font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold text-foreground tracking-tight leading-tight text-start">
             {ar ? "تواصل معنا" : "Contact Our Group"}
           </h1>
 
-          <div className="mt-6 space-y-4 text-base sm:text-lg leading-relaxed text-muted-foreground font-sans">
+          <div className="mt-6 space-y-4 text-base sm:text-lg leading-relaxed text-muted-foreground font-sans text-start">
             <p className="font-medium text-foreground">
               {ar
                 ? "نؤمن بأن التواصل الفعّال هو بداية كل علاقة ناجحة."
@@ -211,14 +244,6 @@ export function ContactPage() {
                 <h2 className="font-head text-xl sm:text-2xl font-bold text-foreground mt-1">
                   {ar ? "مجموعة سامي بن عياد" : "SAMI BIN AYYAD GROUP"}
                 </h2>
-                <div className="mt-2 flex flex-wrap gap-2 text-xs text-muted-foreground">
-                  <span className="bg-secondary/80 px-2.5 py-1 rounded-full border border-border">
-                    {ar ? "سجل تجاري: #209627" : "Company Reg: #209627"}
-                  </span>
-                  <span className="bg-secondary/80 px-2.5 py-1 rounded-full border border-border">
-                    {ar ? "بطاقة ضريبية: #753702878" : "Tax Reg: #753702878"}
-                  </span>
-                </div>
               </div>
 
               {/* Contact Channels */}
@@ -381,11 +406,8 @@ export function ContactPage() {
                   to="/request-consultation"
                   className="flex items-center justify-between p-3.5 rounded-2xl border border-brand-green/40 bg-brand-green/10 hover:bg-brand-green/20 hover:border-brand-green/60 transition-all text-xs font-bold shadow-xs"
                 >
-                  <span className="flex items-center gap-2 text-foreground">
-                    <Sparkles className="size-4 text-brand-green" />
-                    <span className="font-bold text-brand-green">
-                      {ar ? "طلب استشارة مجانية 100%" : "Request Free Consultation (100% Free)"}
-                    </span>
+                  <span className="font-bold text-brand-green">
+                    {ar ? "طلب استشارة مجانية" : "Request Free Consultation"}
                   </span>
                   <span className="text-brand-green font-bold">{ar ? "احجز الآن ←" : "Request Free →"}</span>
                 </Link>
@@ -393,8 +415,7 @@ export function ContactPage() {
                   to="/contact/complaints"
                   className="flex items-center justify-between p-3 rounded-2xl border border-border bg-secondary/40 hover:bg-brand-orange/10 hover:border-brand-orange/40 transition-all text-xs font-bold"
                 >
-                  <span className="flex items-center gap-2 text-foreground">
-                    <AlertCircle className="size-4 text-brand-orange" />
+                  <span className="text-foreground">
                     {ar ? "بوابة الشكاوى والمقترحات" : "Complaints & Suggestions Portal"}
                   </span>
                   <span className="text-brand-orange">{ar ? "فتح البوابة ←" : "Open →"}</span>
@@ -403,8 +424,7 @@ export function ContactPage() {
                   to="/contact/opportunities"
                   className="flex items-center justify-between p-3 rounded-2xl border border-border bg-secondary/40 hover:bg-secondary/70 transition-all text-xs font-bold"
                 >
-                  <span className="flex items-center gap-2 text-foreground">
-                    <Building2 className="size-4 text-brand-green" />
+                  <span className="text-foreground">
                     {ar ? "اعرض فرصتك الاستثمارية" : "Submit Your Opportunity"}
                   </span>
                   <span className="text-brand-green">{ar ? "تقديم الفرصة ←" : "Submit →"}</span>
@@ -415,12 +435,39 @@ export function ContactPage() {
 
           {/* Right Column: Full Inquiry Form (lg:col-span-7) */}
           <div className="lg:col-span-7">
-            <div className="rounded-3xl border border-white/25 bg-background/85 p-6 sm:p-10 backdrop-blur-2xl shadow-2xl">
-              <div className="border-b border-border/60 pb-5 mb-8">
-                <div className="inline-flex items-center gap-2 rounded-full border border-brand-orange/30 bg-brand-orange/10 px-3 py-1 text-xs font-bold text-brand-orange mb-2">
-                  <Send className="size-3" />
-                  <span>{ar ? "نموذج المراسلة المعتمد" : "Official Inquiry Form"}</span>
+            <div className="group/form rounded-3xl border border-white/30 bg-background/85 p-6 sm:p-10 backdrop-blur-2xl shadow-2xl transition-all duration-300 hover:border-brand-green/35 hover:shadow-[0_24px_60px_rgba(22,135,108,0.12)] focus-within:border-brand-green/50 focus-within:ring-2 focus-within:ring-brand-green/15">
+              <div className="border-b border-border/60 pb-5 mb-6">
+                <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
+                  <button
+                    type="button"
+                    onClick={() => fullNameInputRef.current?.focus()}
+                    className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-sm transition-all duration-200 hover:border-brand-orange/50 hover:bg-secondary cursor-pointer active:scale-95"
+                  >
+                    <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+                    <span>{ar ? "نموذج المراسلة المعتمد" : "Official Inquiry Form"}</span>
+                  </button>
+
+                  <span
+                    className={cn(
+                      "inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[11px] font-bold transition-all duration-300 border",
+                      completionPercent === 100
+                        ? "border-brand-green/40 bg-brand-green/15 text-brand-green"
+                        : "border-border bg-secondary/60 text-muted-foreground"
+                    )}
+                  >
+                    {completionPercent === 100 && <CheckCircle2 className="size-3.5" />}
+                    <span>
+                      {completionPercent === 100
+                        ? ar
+                          ? "جاهز للإرسال (100%)"
+                          : "Ready to Submit (100%)"
+                        : ar
+                        ? `الاكتمال: ${completedRequiredCount} / ${requiredChecks.length} (${completionPercent}%)`
+                        : `Completion: ${completedRequiredCount} / ${requiredChecks.length} (${completionPercent}%)`}
+                    </span>
+                  </span>
                 </div>
+
                 <h2 className="font-head text-2xl sm:text-3xl font-extrabold text-foreground">
                   {ar ? "أرسل استفسارك" : "Send Us an Inquiry"}
                 </h2>
@@ -429,44 +476,77 @@ export function ContactPage() {
                     ? "يرجى ملء البيانات بدقة لضمان تحويل رسالتك إلى الفريق المختص والرد خلال يوم عمل."
                     : "Please provide accurate information to route your request and ensure a response within one business day."}
                 </p>
+
+                {/* Live Completion Progress Bar */}
+                <div className="mt-4 h-1.5 w-full overflow-hidden rounded-full bg-secondary/80">
+                  <div
+                    className="h-full rounded-full bg-gradient-to-r from-brand-green to-brand-orange transition-all duration-500 ease-out"
+                    style={{ width: `${completionPercent}%` }}
+                  />
+                </div>
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-6">
-                {/* Field 1: Inquiry Type */}
-                <div>
-                  <label className="block text-xs sm:text-sm font-bold text-foreground mb-2">
+                {/* Field 1: Interactive Inquiry Type Pills + Live Routing */}
+                <div className="space-y-3">
+                  <label className="block text-xs sm:text-sm font-bold text-foreground">
                     {ar ? "نوع الاستفسار *" : "Inquiry Type *"}
                   </label>
-                  <select
-                    value={inquiryType}
-                    onChange={(e) => setInquiryType(e.target.value as ContactInquiryType)}
-                    className="w-full rounded-2xl border border-border bg-background px-4 py-3 text-xs sm:text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-brand-green"
-                  >
-                    {(Object.keys(INQUIRY_TYPES_MAP) as ContactInquiryType[]).map((type) => (
-                      <option key={type} value={type}>
-                        {ar ? INQUIRY_TYPES_MAP[type].ar : INQUIRY_TYPES_MAP[type].en}
-                      </option>
-                    ))}
-                  </select>
+                  <div className="flex flex-wrap gap-2">
+                    {(Object.keys(INQUIRY_TYPES_MAP) as ContactInquiryType[]).map((type) => {
+                      const active = inquiryType === type;
+                      return (
+                        <button
+                          key={type}
+                          type="button"
+                          onClick={() => setInquiryType(type)}
+                          aria-pressed={active}
+                          className={cn(
+                            "rounded-xl px-3 py-2 text-xs font-bold transition-all duration-200 border cursor-pointer active:scale-95",
+                            active
+                              ? "border-brand-green bg-brand-green text-white shadow-md shadow-brand-green/20"
+                              : "border-border bg-secondary/50 text-foreground/85 hover:border-brand-orange/40 hover:bg-brand-orange/10 hover:text-foreground"
+                          )}
+                        >
+                          {ar ? INQUIRY_TYPES_MAP[type].ar : INQUIRY_TYPES_MAP[type].en}
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  {/* Automatic Routing Preview */}
+                  <div className="flex items-center justify-between gap-3 rounded-2xl border border-brand-green/25 bg-brand-green/5 px-4 py-2.5 text-xs transition-all duration-300">
+                    <span className="text-muted-foreground font-medium">
+                      {ar ? "الإدارة المستلمة تلقائياً:" : "Auto-Routed Department:"}
+                    </span>
+                    <span className="font-bold text-brand-green">
+                      {ar ? DEPT_AR_MAP[inquiryType] : INQUIRY_TYPES_MAP[inquiryType].dept}
+                    </span>
+                  </div>
                 </div>
 
                 {/* Field 2: Personal Information */}
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div>
-                    <label className="block text-xs font-bold text-foreground mb-1.5">
-                      {ar ? "الاسم بالكامل *" : "Full Name *"}
+                    <label className="flex items-center justify-between text-xs font-bold text-foreground mb-1.5">
+                      <span>{ar ? "الاسم بالكامل *" : "Full Name *"}</span>
+                      {fullName.trim().length > 0 && <CheckCircle2 className="size-3.5 text-brand-green" />}
                     </label>
                     <input
+                      ref={fullNameInputRef}
                       type="text"
                       value={fullName}
-                      onChange={(e) => setFullName(e.target.value)}
+                      onChange={(e) => {
+                        setFullName(e.target.value);
+                        clearError("fullName");
+                      }}
                       placeholder={ar ? "الاسم ثلاثي أو رباعي" : "e.g. John Doe"}
                       className={cn(
-                        "w-full rounded-2xl border bg-background px-4 py-2.5 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-brand-green",
-                        errors.fullName ? "border-red-500" : "border-border"
+                        "w-full rounded-2xl border bg-background px-4 py-2.5 text-xs sm:text-sm font-medium transition-all focus:outline-none focus:ring-2 focus:ring-brand-green",
+                        errors['fullName'] ? "border-red-500" : "border-border hover:border-foreground/30"
                       )}
                     />
-                    {errors.fullName && <p className="text-[11px] text-red-500 mt-1">{errors.fullName}</p>}
+                    {errors['fullName'] && <p className="text-[11px] text-red-500 mt-1">{errors['fullName']}</p>}
                   </div>
 
                   <div>
@@ -478,7 +558,7 @@ export function ContactPage() {
                       value={company}
                       onChange={(e) => setCompany(e.target.value)}
                       placeholder={ar ? "اسم الشركة (إن وجد)" : "Company name"}
-                      className="w-full rounded-2xl border border-border bg-background px-4 py-2.5 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-brand-green"
+                      className="w-full rounded-2xl border border-border bg-background px-4 py-2.5 text-xs sm:text-sm font-medium transition-all hover:border-foreground/30 focus:outline-none focus:ring-2 focus:ring-brand-green"
                     />
                   </div>
 
@@ -491,25 +571,29 @@ export function ContactPage() {
                       value={jobTitle}
                       onChange={(e) => setJobTitle(e.target.value)}
                       placeholder={ar ? "مثال: مدير المشتريات" : "e.g. Procurement Lead"}
-                      className="w-full rounded-2xl border border-border bg-background px-4 py-2.5 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-brand-green"
+                      className="w-full rounded-2xl border border-border bg-background px-4 py-2.5 text-xs sm:text-sm font-medium transition-all hover:border-foreground/30 focus:outline-none focus:ring-2 focus:ring-brand-green"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-foreground mb-1.5">
-                      {ar ? "الدولة *" : "Country *"}
+                    <label className="flex items-center justify-between text-xs font-bold text-foreground mb-1.5">
+                      <span>{ar ? "الدولة *" : "Country *"}</span>
+                      {country.trim().length > 0 && <CheckCircle2 className="size-3.5 text-brand-green" />}
                     </label>
                     <input
                       type="text"
                       value={country}
-                      onChange={(e) => setCountry(e.target.value)}
+                      onChange={(e) => {
+                        setCountry(e.target.value);
+                        clearError("country");
+                      }}
                       placeholder={ar ? "مثال: مصر، السعودية، ألمانيا" : "e.g. Egypt, UAE, Germany"}
                       className={cn(
-                        "w-full rounded-2xl border bg-background px-4 py-2.5 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-brand-green",
-                        errors.country ? "border-red-500" : "border-border"
+                        "w-full rounded-2xl border bg-background px-4 py-2.5 text-xs sm:text-sm font-medium transition-all focus:outline-none focus:ring-2 focus:ring-brand-green",
+                        errors['country'] ? "border-red-500" : "border-border hover:border-foreground/30"
                       )}
                     />
-                    {errors.country && <p className="text-[11px] text-red-500 mt-1">{errors.country}</p>}
+                    {errors['country'] && <p className="text-[11px] text-red-500 mt-1">{errors['country']}</p>}
                   </div>
 
                   <div>
@@ -521,57 +605,82 @@ export function ContactPage() {
                       value={city}
                       onChange={(e) => setCity(e.target.value)}
                       placeholder={ar ? "المدينة" : "City name"}
-                      className="w-full rounded-2xl border border-border bg-background px-4 py-2.5 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-brand-green"
+                      className="w-full rounded-2xl border border-border bg-background px-4 py-2.5 text-xs sm:text-sm font-medium transition-all hover:border-foreground/30 focus:outline-none focus:ring-2 focus:ring-brand-green"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-foreground mb-1.5">
-                      {ar ? "البريد الإلكتروني *" : "Email Address *"}
+                    <label className="flex items-center justify-between text-xs font-bold text-foreground mb-1.5">
+                      <span>{ar ? "البريد الإلكتروني *" : "Email Address *"}</span>
+                      {email.trim().length > 0 && email.includes("@") && <CheckCircle2 className="size-3.5 text-brand-green" />}
                     </label>
                     <input
                       type="email"
                       value={email}
-                      onChange={(e) => setEmail(e.target.value)}
+                      onChange={(e) => {
+                        setEmail(e.target.value);
+                        clearError("email");
+                      }}
                       placeholder="name@domain.com"
                       className={cn(
-                        "w-full rounded-2xl border bg-background px-4 py-2.5 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-brand-green font-mono",
-                        errors.email ? "border-red-500" : "border-border"
+                        "w-full rounded-2xl border bg-background px-4 py-2.5 text-xs sm:text-sm font-medium transition-all focus:outline-none focus:ring-2 focus:ring-brand-green font-mono",
+                        errors['email'] ? "border-red-500" : "border-border hover:border-foreground/30"
                       )}
                     />
-                    {errors.email && <p className="text-[11px] text-red-500 mt-1">{errors.email}</p>}
+                    {errors['email'] && <p className="text-[11px] text-red-500 mt-1">{errors['email']}</p>}
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-foreground mb-1.5">
-                      {ar ? "رقم الهاتف *" : "Phone Number *"}
+                    <label className="flex items-center justify-between text-xs font-bold text-foreground mb-1.5">
+                      <span>{ar ? "رقم الهاتف *" : "Phone Number *"}</span>
+                      {phone.trim().length > 0 && <CheckCircle2 className="size-3.5 text-brand-green" />}
                     </label>
                     <input
                       type="tel"
                       value={phone}
-                      onChange={(e) => setPhone(e.target.value)}
+                      onChange={(e) => {
+                        setPhone(e.target.value);
+                        clearError("phone");
+                      }}
                       placeholder="+20 100 000 0000"
                       className={cn(
-                        "w-full rounded-2xl border bg-background px-4 py-2.5 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-brand-green font-mono",
-                        errors.phone ? "border-red-500" : "border-border"
+                        "w-full rounded-2xl border bg-background px-4 py-2.5 text-xs sm:text-sm font-medium transition-all focus:outline-none focus:ring-2 focus:ring-brand-green font-mono",
+                        errors['phone'] ? "border-red-500" : "border-border hover:border-foreground/30"
                       )}
                     />
-                    {errors.phone && <p className="text-[11px] text-red-500 mt-1">{errors.phone}</p>}
+                    {errors['phone'] && <p className="text-[11px] text-red-500 mt-1">{errors['phone']}</p>}
                   </div>
 
                   <div>
                     <label className="block text-xs font-bold text-foreground mb-1.5">
                       {ar ? "وسيلة التواصل المفضلة" : "Preferred Contact Method"}
                     </label>
-                    <select
-                      value={preferredContact}
-                      onChange={(e) => setPreferredContact(e.target.value as any)}
-                      className="w-full rounded-2xl border border-border bg-background px-4 py-2.5 text-xs sm:text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-brand-green"
-                    >
-                      <option value="email">{ar ? "البريد الإلكتروني" : "Email"}</option>
-                      <option value="phone">{ar ? "الاتصال الهاتفي" : "Phone Call"}</option>
-                      <option value="whatsapp">{ar ? "واتساب (WhatsApp)" : "WhatsApp"}</option>
-                    </select>
+                    <div className="grid grid-cols-3 gap-1.5">
+                      {([
+                        { id: "email", ar: "إيميل", en: "Email", Icon: Mail },
+                        { id: "phone", ar: "هاتف", en: "Phone", Icon: Phone },
+                        { id: "whatsapp", ar: "واتساب", en: "WhatsApp", Icon: MessageCircle },
+                      ] as const).map(({ id, ar: labelAr, en: labelEn, Icon }) => {
+                        const active = preferredContact === id;
+                        return (
+                          <button
+                            key={id}
+                            type="button"
+                            onClick={() => setPreferredContact(id)}
+                            aria-pressed={active}
+                            className={cn(
+                              "flex items-center justify-center gap-1.5 rounded-xl border px-2 py-2.5 text-xs font-bold transition-all duration-200 cursor-pointer active:scale-95",
+                              active
+                                ? "border-brand-green bg-brand-green text-white shadow-sm"
+                                : "border-border bg-background text-foreground/80 hover:border-brand-orange/40 hover:bg-brand-orange/5"
+                            )}
+                          >
+                            <Icon className="size-3.5 shrink-0" />
+                            <span>{ar ? labelAr : labelEn}</span>
+                          </button>
+                        );
+                      })}
+                    </div>
                   </div>
                 </div>
 
@@ -611,37 +720,48 @@ export function ContactPage() {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-foreground mb-1.5">
-                      {ar ? "موضوع الاستفسار *" : "Subject *"}
+                    <label className="flex items-center justify-between text-xs font-bold text-foreground mb-1.5">
+                      <span>{ar ? "موضوع الاستفسار *" : "Subject *"}</span>
+                      {subject.trim().length > 0 && <CheckCircle2 className="size-3.5 text-brand-green" />}
                     </label>
                     <input
                       type="text"
                       value={subject}
-                      onChange={(e) => setSubject(e.target.value)}
+                      onChange={(e) => {
+                        setSubject(e.target.value);
+                        clearError("subject");
+                      }}
                       placeholder={ar ? "عنوان موجز ومحدد للاستفسار" : "Brief specific summary of inquiry"}
                       className={cn(
-                        "w-full rounded-2xl border bg-background px-4 py-2.5 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-brand-green",
-                        errors.subject ? "border-red-500" : "border-border"
+                        "w-full rounded-2xl border bg-background px-4 py-2.5 text-xs sm:text-sm font-medium transition-all focus:outline-none focus:ring-2 focus:ring-brand-green",
+                        errors['subject'] ? "border-red-500" : "border-border hover:border-foreground/30"
                       )}
                     />
-                    {errors.subject && <p className="text-[11px] text-red-500 mt-1">{errors.subject}</p>}
+                    {errors['subject'] && <p className="text-[11px] text-red-500 mt-1">{errors['subject']}</p>}
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-foreground mb-1.5">
-                      {ar ? "تفاصيل الاستفسار *" : "Inquiry Details *"}
+                    <label className="flex items-center justify-between text-xs font-bold text-foreground mb-1.5">
+                      <span>{ar ? "تفاصيل الاستفسار *" : "Inquiry Details *"}</span>
+                      <span className="flex items-center gap-1.5 text-[11px] text-muted-foreground font-mono">
+                        <span>{ar ? `${message.length} حرف` : `${message.length} chars`}</span>
+                        {message.trim().length > 0 && <CheckCircle2 className="size-3.5 text-brand-green" />}
+                      </span>
                     </label>
                     <textarea
                       rows={4}
                       value={message}
-                      onChange={(e) => setMessage(e.target.value)}
+                      onChange={(e) => {
+                        setMessage(e.target.value);
+                        clearError("message");
+                      }}
                       placeholder={ar ? "اشرح استفسارك، الكميات المطلوبة، أو مجالات التعاون المقترحة..." : "Describe your inquiry, volumes, technical specifications or proposed collaboration..."}
                       className={cn(
-                        "w-full rounded-2xl border bg-background px-4 py-3 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-brand-green leading-relaxed",
-                        errors.message ? "border-red-500" : "border-border"
+                        "w-full rounded-2xl border bg-background px-4 py-3 text-xs sm:text-sm font-medium transition-all focus:outline-none focus:ring-2 focus:ring-brand-green leading-relaxed",
+                        errors['message'] ? "border-red-500" : "border-border hover:border-foreground/30"
                       )}
                     />
-                    {errors.message && <p className="text-[11px] text-red-500 mt-1">{errors.message}</p>}
+                    {errors['message'] && <p className="text-[11px] text-red-500 mt-1">{errors['message']}</p>}
                   </div>
 
                   <div>

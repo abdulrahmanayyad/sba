@@ -152,8 +152,8 @@ export function GarmentSectorView({ tab = "about" }: GarmentViewProps) {
 
                 <Button asChild size="default" className="rounded-full bg-brand-green text-white hover:bg-brand-orange transition-all duration-300 shadow-md">
                   <a
-                    href="/downloads/SBA_Apparel_Product_Catalogue_EN.pdf"
-                    download="SBA_Apparel_Product_Catalogue_EN.pdf"
+                    href={ar ? "/downloads/SBA_Apparel_Product_Catalogue_AR.pdf" : "/downloads/SBA_Apparel_Product_Catalogue_EN.pdf"}
+                    download={ar ? "SBA_Apparel_Product_Catalogue_AR.pdf" : "SBA_Apparel_Product_Catalogue_EN.pdf"}
                     target="_blank"
                     rel="noopener noreferrer"
                   >

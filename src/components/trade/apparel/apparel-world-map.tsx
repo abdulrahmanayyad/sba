@@ -2,6 +2,7 @@ import React, { useState, useMemo } from "react";
 import { Globe, Search, AlertCircle, MapPin, Building, ShieldCheck } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { APPAREL_MARKETS, ApparelMarket } from "@/lib/apparel-trade-data";
+import { GeographicMapMarker, GeographicWorldMap } from "../geographic-world-map";
 
 interface ApparelWorldMapProps {
   ar?: boolean;
@@ -44,11 +45,28 @@ export function ApparelWorldMap({ ar = true, onSelectMarket }: ApparelWorldMapPr
     if (onSelectMarket) onSelectMarket(market);
   };
 
-  // Convert lat/lng to approximate SVG coordinates (equirectangular projection: viewBox 0 0 1000 500)
-  const getCoordinates = (lat: number, lng: number) => {
-    const x = ((lng + 180) / 360) * 1000;
-    const y = ((90 - lat) / 180) * 500;
-    return { x: Math.max(10, Math.min(990, x)), y: Math.max(10, Math.min(490, y)) };
+  const mapMarkers = useMemo<GeographicMapMarker[]>(
+    () =>
+      filteredMarkets.map((m) => ({
+        code: m.code,
+        isoCode:
+          m.code === "IRQ-KRD"
+            ? undefined
+            : m.code === "ISR-TLV"
+              ? "ISR"
+              : m.code,
+        flagEmoji: m.flag,
+        nameAr: m.nameAr,
+        nameEn: m.nameEn,
+        lat: m.lat,
+        lng: m.lng,
+      })),
+    [filteredMarkets],
+  );
+
+  const handleMarkerSelect = (code: string) => {
+    const matched = filteredMarkets.find((m) => m.code === code) || APPAREL_MARKETS.find((m) => m.code === code);
+    if (matched) handleSelect(matched);
   };
 
   return (
@@ -125,110 +143,25 @@ export function ApparelWorldMap({ ar = true, onSelectMarket }: ApparelWorldMapPr
         </div>
       </div>
 
-      {/* SVG Interactive Map Container */}
-      <div className="relative w-full rounded-2xl border border-border/80 bg-gradient-to-b from-muted/20 to-muted/40 p-4 overflow-hidden">
-        <svg viewBox="0 0 1000 500" className="w-full h-auto max-h-[460px] drop-shadow-sm select-none">
-          <defs>
-            <radialGradient id="mapPinGlowApparel" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stopColor="#ff7a00" stopOpacity="0.8" />
-              <stop offset="100%" stopColor="#ff7a00" stopOpacity="0" />
-            </radialGradient>
-          </defs>
+      {/* Interactive Geographic Vector World Map */}
+      <div className="relative w-full rounded-2xl border border-border/80 bg-background/50 p-3 sm:p-4 overflow-hidden">
+        <GeographicWorldMap
+          markers={mapMarkers}
+          activeCode={activeMarket?.code ?? null}
+          onSelectMarker={handleMarkerSelect}
+          ar={ar}
+          maxHeightClass="max-h-[460px]"
+        />
 
-          {/* Stylized Minimal Continental Grid */}
-          <g opacity="0.15" stroke="currentColor" strokeWidth="0.5" strokeDasharray="3,3">
-            <line x1="0" y1="125" x2="1000" y2="125" />
-            <line x1="0" y1="250" x2="1000" y2="250" />
-            <line x1="0" y1="375" x2="1000" y2="375" />
-            <line x1="250" y1="0" x2="250" y2="500" />
-            <line x1="500" y1="0" x2="500" y2="500" />
-            <line x1="750" y1="0" x2="750" y2="500" />
-          </g>
-
-          {/* Stylized World Continents Background Path */}
-          <path
-            d="M150,120 Q180,80 280,100 Q320,130 260,200 Q200,240 160,200 Z 
-               M220,260 Q280,270 300,340 Q280,440 220,430 Q190,360 220,260 Z
-               M460,90 Q540,80 560,140 Q520,170 470,160 Q450,120 460,90 Z
-               M460,180 Q560,180 580,260 Q550,380 480,360 Q440,280 460,180 Z
-               M600,80 Q850,70 880,180 Q820,260 680,220 Q600,160 600,80 Z
-               M740,320 Q860,310 870,400 Q800,430 740,380 Z"
-            fill="currentColor"
-            opacity="0.06"
-          />
-
-          {/* Connection Lines from Egypt (approx x=587, y=194) to active markets */}
-          {filteredMarkets.map((m) => {
-            const coords = getCoordinates(m.lat, m.lng);
-            const isSelected = activeMarket?.code === m.code;
-            return (
-              <line
-                key={`line-${m.code}`}
-                x1={587}
-                y1={194}
-                x2={coords.x}
-                y2={coords.y}
-                stroke={isSelected ? "#ff7a00" : "currentColor"}
-                strokeWidth={isSelected ? "1.5" : "0.5"}
-                strokeDasharray={isSelected ? "none" : "2,3"}
-                opacity={isSelected ? 0.8 : 0.2}
-                className="transition-all duration-300"
-              />
-            );
-          })}
-
-          {/* Egypt Central Hub Marker */}
-          <g transform="translate(587, 194)">
-            <circle r="9" fill="#10b981" opacity="0.3" className="animate-ping" />
-            <circle r="5" fill="#10b981" stroke="#ffffff" strokeWidth="1.5" />
-          </g>
-
-          {/* Destination Markers */}
-          {filteredMarkets.map((m) => {
-            const { x, y } = getCoordinates(m.lat, m.lng);
-            const isSelected = activeMarket?.code === m.code;
-            return (
-              <g
-                key={`pin-${m.code}`}
-                transform={`translate(${x}, ${y})`}
-                onClick={() => handleSelect(m)}
-                className="cursor-pointer group"
-              >
-                {isSelected && (
-                  <circle r="16" fill="url(#mapPinGlowApparel)" className="animate-pulse" />
-                )}
-                <circle
-                  r={isSelected ? "7" : "4.5"}
-                  fill={isSelected ? "#ff7a00" : "#3b82f6"}
-                  stroke="#ffffff"
-                  strokeWidth={isSelected ? "2" : "1"}
-                  className="transition-all duration-300 group-hover:scale-125"
-                />
-                <text
-                  x="0"
-                  y="-10"
-                  textAnchor="middle"
-                  className={cn(
-                    "text-[9px] font-bold fill-foreground pointer-events-none transition-opacity",
-                    isSelected ? "opacity-100 font-extrabold" : "opacity-0 group-hover:opacity-100"
-                  )}
-                >
-                  {ar ? m.nameAr : m.nameEn}
-                </text>
-              </g>
-            );
-          })}
-        </svg>
-
-        {/* Legend */}
+        {/* Legend & Market Counter */}
         <div className="mt-3 flex flex-wrap items-center justify-between gap-3 text-[11px] text-muted-foreground border-t border-border/50 pt-3">
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center gap-4">
             <span className="flex items-center gap-1.5">
               <span className="size-2.5 rounded-full bg-emerald-500" />
               <span>{ar ? "مصر (مركز التصنيع والتصدير)" : "Egypt (Manufacturing & Export Hub)"}</span>
             </span>
             <span className="flex items-center gap-1.5">
-              <span className="size-2.5 rounded-full bg-blue-500" />
+              <span className="size-2.5 rounded-full bg-teal-700" />
               <span>{ar ? "أسواق الوجهة التصديرية (20 سوقًا)" : "Destination Markets (20 Markets)"}</span>
             </span>
             <span className="flex items-center gap-1.5">

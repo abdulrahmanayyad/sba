@@ -308,14 +308,26 @@ export function DownloadsPage() {
                   </div>
 
                   {isPublic ? (
-                    <a
-                      href={doc.downloadUrl || "/downloads/SBA_Complete_Corporate_Profile_AR.pdf"}
-                      download
-                      className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold !bg-brand-green !text-white hover:!bg-brand-orange hover:!text-white transition-all shadow-md"
-                    >
-                      <Download className="size-3.5" />
-                      <span>{ar ? "تحميل فوري" : "Download"}</span>
-                    </a>
+                    <div className="flex items-center gap-1.5">
+                      <a
+                        href={(ar ? doc.downloadUrlAr : doc.downloadUrlEn) || doc.downloadUrl || "/downloads/SBA_Complete_Corporate_Profile_AR.pdf"}
+                        download
+                        className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold !bg-brand-green !text-white hover:!bg-brand-orange hover:!text-white transition-all shadow-md"
+                      >
+                        <Download className="size-3.5" />
+                        <span>{ar ? "عربي (PDF)" : "English (PDF)"}</span>
+                      </a>
+                      {doc.downloadUrlAr && doc.downloadUrlEn && (
+                        <a
+                          href={ar ? doc.downloadUrlEn : doc.downloadUrlAr}
+                          download
+                          title={ar ? "تحميل النسخة الإنجليزية" : "Download Arabic Edition"}
+                          className="inline-flex items-center justify-center px-2.5 py-2 rounded-xl text-[11px] font-bold bg-secondary/90 hover:bg-brand-orange hover:text-white border border-border transition-all"
+                        >
+                          {ar ? "EN" : "AR"}
+                        </a>
+                      )}
+                    </div>
                   ) : (
                     <button
                       type="button"

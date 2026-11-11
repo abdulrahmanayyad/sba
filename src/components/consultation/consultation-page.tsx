@@ -275,25 +275,24 @@ export function ConsultationPage() {
   return (
     <div className="w-full pb-24">
       {/* 1. Header / Hero Section (Apple-inspired Glassmorphism) */}
-      <section className="relative overflow-hidden py-14 sm:py-20 bg-gradient-to-b from-secondary/40 via-background to-background">
-        <div className="site-container relative z-10 text-center max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 rounded-full border border-brand-green/30 bg-black/60 px-4 py-1.5 text-xs font-bold tracking-wide text-brand-green backdrop-blur-md shadow-md mb-4">
-            <Sparkles className="size-3.5 animate-pulse" />
+      <section className="site-container pt-10 pb-4">
+        <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/70 p-8 sm:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5 text-start">
+          <div className="inline-flex items-center rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-4 shadow-sm">
             <span>{ar ? "منظومة الاستشارات المجانية المعتمدة" : "Centralized Free Consultation System"}</span>
           </div>
 
-          <h1 className="font-head text-2xl sm:text-4xl lg:text-5xl font-extrabold text-foreground tracking-tight leading-tight">
+          <h1 className="font-head text-2xl sm:text-4xl lg:text-5xl font-extrabold text-foreground tracking-tight leading-tight text-start">
             {ar ? "طلب استشارة مجانية" : "Request a Free Consultation"}
           </h1>
 
-          <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground font-sans max-w-2xl mx-auto">
+          <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground font-sans text-start">
             {ar
               ? "شاركنا تفاصيل احتياجات أعمالك أو مشروعك أو فرصتك الاستثمارية، وسيقوم مستشار القطاع المعني بمراجعة طلبك والتواصل معك لمناقشة الخطوات القادمة."
               : "Tell us about your business needs, project, or opportunity. Our relevant sector specialist will review your inquiry and contact you to discuss the next steps."}
           </p>
 
           {/* Mandatory Business Policy Notice (Exact Corporate Copy) */}
-          <div className="mt-6 p-4 rounded-2xl bg-brand-green/10 border border-brand-green/25 backdrop-blur-md max-w-3xl mx-auto text-xs sm:text-sm text-foreground/90 leading-relaxed font-medium flex items-center gap-3">
+          <div className="mt-6 p-4 rounded-2xl bg-brand-green/10 border border-brand-green/25 backdrop-blur-md text-xs sm:text-sm text-foreground/90 leading-relaxed font-medium flex items-center gap-3 text-start">
             <CheckCircle2 className="size-5 text-brand-green shrink-0" />
             <p className="text-start">
               {ar
@@ -305,7 +304,7 @@ export function ConsultationPage() {
       </section>
 
       {/* 2. Multi-Step Form Container */}
-      <section className="site-container -mt-4">
+      <section className="site-container mt-6">
         <div className="max-w-4xl mx-auto rounded-3xl border border-white/20 bg-card/75 p-6 sm:p-10 lg:p-12 backdrop-blur-2xl shadow-2xl">
           {/* Submission Success Screen */}
           {submittedSubmission ? (

@@ -69,7 +69,7 @@ export const SustainabilityDocumentsContact: React.FC<SustainabilityDocumentsCon
               <div className="pt-4 border-t border-white/10 flex items-center justify-between">
                 <span className="text-[11px] text-slate-300 font-mono">{doc.id}</span>
                 <a
-                  href={doc.downloadUrl}
+                  href={ar ? doc.downloadUrl : (doc.downloadUrlEn || doc.downloadUrl)}
                   download
                   className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold !bg-brand-green !text-white hover:!bg-brand-orange hover:!text-white transition-all shadow-md"
                 >

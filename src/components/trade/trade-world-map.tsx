@@ -11,6 +11,7 @@ import {
   TRADE_STATS, 
   CountryTradeProfile 
 } from "@/lib/trade-data";
+import { GeographicMapMarker, GeographicWorldMap } from "./geographic-world-map";
 
 interface TradeWorldMapProps {
   ar?: boolean;
@@ -23,7 +24,7 @@ export function TradeWorldMap({ ar = true, onSelectCountry }: TradeWorldMapProps
   const [isCategoryOpen, setIsCategoryOpen] = useState<boolean>(false);
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [activeCountry, setActiveCountry] = useState<CountryTradeProfile | null>(
-    () => COUNTRY_PROFILES.find((c) => c.code === "SAU") || COUNTRY_PROFILES[0] || null
+    () => COUNTRY_PROFILES.find((c) => c.code === "SA" || c.code === "SAU") || COUNTRY_PROFILES[0] || null
   );
 
   const continents = useMemo(() => [
@@ -65,19 +66,29 @@ export function TradeWorldMap({ ar = true, onSelectCountry }: TradeWorldMapProps
     });
   }, [selectedContinent, selectedCategory, searchQuery]);
 
-  // Convert lat/lng to approximate SVG viewBox coordinates (equirectangular projection)
-  // viewBox: 0 0 1000 500
-  // x = ((lng + 180) / 360) * 1000
-  // y = ((90 - lat) / 180) * 500
-  const getMapCoordinates = (lat: number, lng: number) => {
-    const x = ((lng + 180) / 360) * 1000;
-    const y = ((90 - lat) / 180) * 500;
-    return { x: Math.max(20, Math.min(980, x)), y: Math.max(20, Math.min(480, y)) };
-  };
-
   const handleCountryClick = (country: CountryTradeProfile) => {
     setActiveCountry(country);
     if (onSelectCountry) onSelectCountry(country);
+  };
+
+  const mapMarkers = useMemo<GeographicMapMarker[]>(
+    () =>
+      filteredCountries.map((c) => ({
+        code: c.code,
+        isoCode: c.code,
+        flagIso2: c.code,
+        nameAr: c.nameAr,
+        nameEn: c.nameEn,
+        lat: c.lat,
+        lng: c.lng,
+        badgeCount: c.totalInquiries,
+      })),
+    [filteredCountries],
+  );
+
+  const handleMarkerSelect = (code: string) => {
+    const matched = filteredCountries.find((c) => c.code === code) || COUNTRY_PROFILES.find((c) => c.code === code);
+    if (matched) handleCountryClick(matched);
   };
 
   return (
@@ -192,155 +203,14 @@ export function TradeWorldMap({ ar = true, onSelectCountry }: TradeWorldMapProps
             </div>
           </div>
 
-          {/* SVG Map Canvas */}
-          <div className="relative aspect-[2/1] w-full min-h-[360px] overflow-hidden rounded-2xl bg-background/40 border border-white/15 backdrop-blur-md">
-            <svg
-              viewBox="0 0 1000 500"
-              className="h-full w-full select-none"
-              style={{ filter: "drop-shadow(0 2px 8px rgba(0,0,0,0.15))" }}
-            >
-              {/* Simplified world background continents silhouettes */}
-              <defs>
-                <radialGradient id="landGrad" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stopColor="currentColor" stopOpacity="0.14" />
-                  <stop offset="100%" stopColor="currentColor" stopOpacity="0.06" />
-                </radialGradient>
-                <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-                  <feGaussianBlur stdDeviation="3" result="blur" />
-                  <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                </filter>
-              </defs>
-
-              {/* Equator & Meridians Reference Grids */}
-              <line x1="0" y1="250" x2="1000" y2="250" stroke="currentColor" strokeOpacity="0.12" strokeDasharray="4 4" />
-              <line x1="500" y1="0" x2="500" y2="500" stroke="currentColor" strokeOpacity="0.12" strokeDasharray="4 4" />
-              <line x1="250" y1="0" x2="250" y2="500" stroke="currentColor" strokeOpacity="0.08" strokeDasharray="2 4" />
-              <line x1="750" y1="0" x2="750" y2="500" stroke="currentColor" strokeOpacity="0.08" strokeDasharray="2 4" />
-
-              {/* Approximate World Landmass Shapes for Context */}
-              {/* North America */}
-              <path
-                d="M120 70 Q 200 60, 280 80 T 320 180 Q 240 240, 180 200 Z"
-                fill="url(#landGrad)"
-                stroke="currentColor"
-                strokeOpacity="0.2"
-                strokeWidth="0.8"
-              />
-              {/* South America */}
-              <path
-                d="M240 240 Q 320 280, 290 400 T 220 440 Q 200 320, 240 240 Z"
-                fill="url(#landGrad)"
-                stroke="currentColor"
-                strokeOpacity="0.2"
-                strokeWidth="0.8"
-              />
-              {/* Europe */}
-              <path
-                d="M460 70 Q 560 60, 540 140 T 470 170 Q 440 120, 460 70 Z"
-                fill="url(#landGrad)"
-                stroke="currentColor"
-                strokeOpacity="0.2"
-                strokeWidth="0.8"
-              />
-              {/* Africa */}
-              <path
-                d="M470 180 Q 560 170, 570 280 T 520 400 Q 450 320, 470 180 Z"
-                fill="url(#landGrad)"
-                stroke="currentColor"
-                strokeOpacity="0.2"
-                strokeWidth="0.8"
-              />
-              {/* Asia */}
-              <path
-                d="M560 60 Q 820 60, 840 200 T 700 300 Q 580 240, 560 60 Z"
-                fill="url(#landGrad)"
-                stroke="currentColor"
-                strokeOpacity="0.2"
-                strokeWidth="0.8"
-              />
-              {/* Australia */}
-              <path
-                d="M780 340 Q 880 340, 870 420 T 770 410 Q 760 360, 780 340 Z"
-                fill="url(#landGrad)"
-                stroke="currentColor"
-                strokeOpacity="0.2"
-                strokeWidth="0.8"
-              />
-
-              {/* Country Interactive Flags on Map */}
-              {filteredCountries.map((c) => {
-                const { x, y } = getMapCoordinates(c.lat, c.lng);
-                const isSelected = activeCountry?.code === c.code;
-
-                return (
-                  <g
-                    key={c.code}
-                    className="cursor-pointer transition-all duration-300"
-                    onClick={() => handleCountryClick(c)}
-                  >
-                    {/* Pulsing aura on selected country */}
-                    {isSelected && (
-                      <>
-                        <circle
-                          cx={x}
-                          cy={y}
-                          r={18}
-                          fill="none"
-                          stroke="var(--brand-green, #10b981)"
-                          strokeWidth="2"
-                          strokeOpacity="0.8"
-                          className="animate-ping"
-                        />
-                        <circle
-                          cx={x}
-                          cy={y}
-                          r={15}
-                          fill="var(--brand-green, #10b981)"
-                          fillOpacity="0.25"
-                        />
-                      </>
-                    )}
-
-                    {/* Country National Flag Image on Map */}
-                    <rect
-                      x={x - (isSelected ? 13 : 9)}
-                      y={y - (isSelected ? 9 : 6)}
-                      width={isSelected ? 26 : 18}
-                      height={isSelected ? 18 : 12}
-                      rx={2}
-                      fill="#1e293b"
-                      stroke={isSelected ? "var(--brand-green, #10b981)" : "rgba(255,255,255,0.7)"}
-                      strokeWidth={isSelected ? 1.5 : 0.8}
-                    />
-                    <image
-                      href={`https://flagcdn.com/w40/${c.code.toLowerCase()}.png`}
-                      x={x - (isSelected ? 13 : 9)}
-                      y={y - (isSelected ? 9 : 6)}
-                      width={isSelected ? 26 : 18}
-                      height={isSelected ? 18 : 12}
-                      preserveAspectRatio="none"
-                      className="pointer-events-none"
-                    />
-
-                    {/* Label for selected or high-inquiry countries */}
-                    {(isSelected || c.totalInquiries >= 5) && (
-                      <text
-                        x={x}
-                        y={y - (isSelected ? 14 : 10)}
-                        textAnchor="middle"
-                        fill={isSelected ? "var(--brand-green, #22c55e)" : "#ffffff"}
-                        fontSize={isSelected ? "11" : "9"}
-                        fontWeight="bold"
-                        className="pointer-events-none drop-shadow-[0_1px_3px_rgba(0,0,0,0.95)]"
-                      >
-                        {ar ? c.nameAr : c.nameEn} ({c.totalInquiries})
-                      </text>
-                    )}
-                  </g>
-                );
-              })}
-            </svg>
-          </div>
+          {/* Geographic Vector World Map */}
+          <GeographicWorldMap
+            markers={mapMarkers}
+            activeCode={activeCountry?.code ?? null}
+            onSelectMarker={handleMarkerSelect}
+            ar={ar}
+            maxHeightClass="min-h-[360px]"
+          />
 
           {/* Compliance Disclaimer Notice as Glass Box */}
           <div className="mt-3 flex items-start gap-2 rounded-xl border border-white/20 bg-background/50 p-2.5 text-xs text-muted-foreground backdrop-blur-md">

@@ -71,11 +71,11 @@ export function InvestorRelationsPage() {
   const handleDownloadDoc = (doc: InvestorDocument) => {
     const docMap: Record<string, string> = {
       "doc-corporate-profile": ar ? "/downloads/SBA_Complete_Corporate_Profile_AR.pdf" : "/downloads/SBA_Complete_Corporate_Profile_EN.pdf",
-      "doc-investment-presentation": "/downloads/SBA_Business_And_Partnership_Overview_EN.pdf",
+      "doc-investment-presentation": ar ? "/downloads/SBA_Business_And_Partnership_Overview_AR.pdf" : "/downloads/SBA_Business_And_Partnership_Overview_EN.pdf",
       "doc-sector-dossier-environmental": ar ? "/downloads/SBA_Environmental_Solutions_AR.pdf" : "/downloads/SBA_Environmental_Solutions_EN.pdf",
       "doc-sector-dossier-apparel": ar ? "/downloads/SBA_Apparel_Manufacturing_Profile_AR.pdf" : "/downloads/SBA_Apparel_Manufacturing_Profile_EN.pdf",
     };
-    const targetUrl = docMap[doc.id] || "/downloads/SBA_Complete_Corporate_Profile_EN.pdf";
+    const targetUrl = docMap[doc.id] || (ar ? "/downloads/SBA_Complete_Corporate_Profile_AR.pdf" : "/downloads/SBA_Complete_Corporate_Profile_EN.pdf");
     const a = document.createElement("a");
     a.href = targetUrl;
     a.download = doc.fileName;
