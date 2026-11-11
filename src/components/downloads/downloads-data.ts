@@ -1,4 +1,22 @@
-export interface DownloadItem {
+// Investor & Corporate Data Room Registry
+// SAMI BIN AYYAD GROUP — Structured Corporate Documentation & Investor Repository
+
+export type DataRoomCategoryKey =
+  | "corporate_documents"
+  | "financial_information"
+  | "sector_capabilities"
+  | "project_portfolio"
+  | "certifications_compliance"
+  | "investment_opportunities"
+  | "technical_documents";
+
+export type DataRoomAccessLevel =
+  | "public"
+  | "registered_business"
+  | "nda_protected"
+  | "restricted_investor";
+
+export interface DataRoomDocument {
   id: string;
   titleEn: string;
   titleAr: string;
@@ -7,479 +25,494 @@ export interface DownloadItem {
   sector: "corporate" | "construction" | "environmental" | "garment" | "food";
   sectorEn: string;
   sectorAr: string;
-  category:
-    | "corporate-profiles"
-    | "corporate-capabilities"
-    | "construction-docs"
-    | "environmental-docs"
-    | "apparel-manufacturing"
-    | "product-catalogues"
-    | "technical-datasheets"
-    | "project-portfolios"
-    | "services-solutions"
-    | "business-partnership";
+  category: DataRoomCategoryKey;
   categoryEn: string;
   categoryAr: string;
+  accessLevel: DataRoomAccessLevel;
+  accessLevelEn: string;
+  accessLevelAr: string;
   language: "EN" | "AR" | "Bilingual";
-  format: "PDF (A4)";
+  format: string;
   fileSize: string;
   lastUpdated: string;
-  downloadUrl: string;
+  downloadUrl?: string;
   fileName: string;
   featured?: boolean;
 }
 
-export const downloadCategories = [
-  { id: "all", titleEn: "All Documents", titleAr: "كافة الوثائق والمستندات" },
-  { id: "corporate-profiles", titleEn: "Corporate Profiles", titleAr: "الملفات التعريفية للمجموعة" },
-  { id: "corporate-capabilities", titleEn: "Corporate Capabilities", titleAr: "بيانات القدرات المؤسسية" },
-  { id: "construction-docs", titleEn: "Construction Documents", titleAr: "وثائق قطاع المقاولات" },
-  { id: "environmental-docs", titleEn: "Environmental Documents", titleAr: "وثائق قطاع البيئة والاستدامة" },
-  { id: "apparel-manufacturing", titleEn: "Apparel Manufacturing", titleAr: "وثائق تصنيع الملابس" },
-  { id: "product-catalogues", titleEn: "Product Catalogues", titleAr: "كتالوجات المنتجات المعتمدة" },
-  { id: "technical-datasheets", titleEn: "Technical Data Sheets (TDS)", titleAr: "نشرات البيانات الفنية" },
-  { id: "project-portfolios", titleEn: "Project Portfolios", titleAr: "سجلات المشروعات المنجزة" },
-  { id: "services-solutions", titleEn: "Services & Solutions", titleAr: "دليل الخدمات والحلول المتكاملة" },
-  { id: "business-partnership", titleEn: "Business & Partnerships", titleAr: "وثائق الاستثمار والشراكات" },
-];
-
-export const downloadSectors = [
-  { id: "all", titleEn: "All Sectors", titleAr: "كافة القطاعات" },
-  { id: "corporate", titleEn: "Group Corporate", titleAr: "المجموعة المؤسسية" },
-  { id: "construction", titleEn: "Construction & Real Estate", titleAr: "المقاولات والتطوير العقاري" },
-  { id: "environmental", titleEn: "Environment & Sustainability", titleAr: "البيئة والاستدامة" },
-  { id: "garment", titleEn: "Apparel Manufacturing", titleAr: "تصنيع الملابس وتطوير الأزياء" },
-  { id: "food", titleEn: "Natural & Food Products", titleAr: "المنتجات الطبيعية والغذائية" },
-];
-
-export const allCorporateDownloads: DownloadItem[] = [
-  // 1. Corporate Profiles
+export const DATA_ROOM_CATEGORIES: {
+  id: DataRoomCategoryKey;
+  code: string;
+  titleEn: string;
+  titleAr: string;
+  descEn: string;
+  descAr: string;
+}[] = [
   {
-    id: "corp-profile-en",
-    titleEn: "Complete Corporate Company Profile",
-    titleAr: "الملف التعريفي الشامل للمجموعة",
-    descriptionEn: "Comprehensive multidisciplinary corporate presentation covering all 4 strategic sectors, 45+ years heritage, governance, and operating scale.",
-    descriptionAr: "العرض المؤسسي الشامل للقطاعات الأربعة وتاريخ المجموعة الممتد منذ 1977، ومنظومة الحوكمة، والقدرات التشغيلية والتصديرية.",
-    sector: "corporate",
-    sectorEn: "Group Corporate",
-    sectorAr: "المجموعة المؤسسية",
-    category: "corporate-profiles",
-    categoryEn: "Corporate Profiles",
-    categoryAr: "الملفات التعريفية للمجموعة",
-    language: "EN",
-    format: "PDF (A4)",
-    fileSize: "75.1 KB",
-    lastUpdated: "November 2026",
-    downloadUrl: "/downloads/SBA_Complete_Corporate_Profile_EN.pdf",
-    fileName: "SBA_Complete_Corporate_Profile_EN.pdf",
-    featured: true,
+    id: "corporate_documents",
+    code: "A",
+    titleEn: "Corporate Documents",
+    titleAr: "الوثائق المؤسسية والحوكمة",
+    descEn: "Company profile, corporate structure, registry references, and governance guidelines.",
+    descAr: "الملف التعريفي الشامل، الهيكل المؤسسي، السجلات القانونية المعتمدة، وأدلة الحوكمة."
   },
   {
-    id: "corp-profile-ar",
-    titleEn: "Complete Corporate Company Profile",
-    titleAr: "الملف التعريفي الشامل للمجموعة",
-    descriptionEn: "Fully localized Arabic corporate presentation with verified business metrics, operational divisions, and leadership standards.",
-    descriptionAr: "النسخة العربية المعتمدة للملف التعريفي الشامل للمجموعة؛ تغطي القطاعات الاستراتيجية، الأرقام التشغيلية، والشراكات المعتمدة.",
+    id: "financial_information",
+    code: "B",
+    titleEn: "Financial Information",
+    titleAr: "البيانات والمؤشرات المالية",
+    descEn: "Approved business performance reports, financial summaries, and institutional valuation metrics.",
+    descAr: "تقارير الأداء التجاري، ملخصات البيانات المالية، ومؤشرات الجدارة الائتمانية والاستثمارية."
+  },
+  {
+    id: "sector_capabilities",
+    code: "C",
+    titleEn: "Sector Capabilities",
+    titleAr: "قدرات القطاعات ومواصفات التشغيل",
+    descEn: "Operational capacities, delivery models, and technical infrastructure across our four sectors.",
+    descAr: "بيانات الطاقة التشغيلية، نماذج التعاقد، والبنية التحتية عبر قطاعاتنا الأربعة."
+  },
+  {
+    id: "project_portfolio",
+    code: "D",
+    titleEn: "Project Portfolio & Case Studies",
+    titleAr: "محفظة المشروعات الموثقة ودراسات الحالة",
+    descEn: "Verified execution profiles, completion milestones, and technical case studies.",
+    descAr: "سجلات المشروعات المنجزة والموثقة، مراحل التسليم، ودراسات الجدوى التطبيقية."
+  },
+  {
+    id: "certifications_compliance",
+    code: "E",
+    titleEn: "Certifications & Compliance",
+    titleAr: "شهادات الامتثال والجودة والبيئة",
+    descEn: "Quality compliance, environmental clearances, and official trade certifications.",
+    descAr: "شهادات الجودة الصناعية، تراخيص الامتثال البيئي، وشهادات النفاذ للأسواق الدولية."
+  },
+  {
+    id: "investment_opportunities",
+    code: "F",
+    titleEn: "Investment Opportunities",
+    titleAr: "فرص ومذكرات الاستثمار المشترك",
+    descEn: "Approved investment memorandums, PPP initiatives, and joint venture frameworks.",
+    descAr: "مذكرات الفرص الاستثمارية المعتمدة، مبادرات الشراكة مع القطاع الخاص، وتحالفات JV."
+  },
+  {
+    id: "technical_documents",
+    code: "G",
+    titleEn: "Technical Documents & Catalogues",
+    titleAr: "الوثائق الفنية والكتالوجات المعتمدة",
+    descEn: "Certified product catalogues, manufacturing specifications, and Technical Data Sheets (TDS).",
+    descAr: "كتالوجات المنتجات المعتمدة، أدلة المواصفات الفنية، ونشرات البيانات الصناعية TDS."
+  }
+];
+
+export const DATA_ROOM_ACCESS_LEVELS: {
+  id: DataRoomAccessLevel;
+  badgeEn: string;
+  badgeAr: string;
+  color: string;
+  descEn: string;
+  descAr: string;
+}[] = [
+  {
+    id: "public",
+    badgeEn: "Public Access",
+    badgeAr: "متاح للعموم",
+    color: "bg-emerald-500/15 text-emerald-400 border-emerald-500/30",
+    descEn: "Instantly downloadable for all prospective clients and partners.",
+    descAr: "تحميل فوري مباشر لجميع العملاء والشركاء."
+  },
+  {
+    id: "registered_business",
+    badgeEn: "Registered Business Access",
+    badgeAr: "للشركات المسجلة",
+    color: "bg-sky-500/15 text-sky-400 border-sky-500/30",
+    descEn: "Accessible upon corporate verification and commercial registration validation.",
+    descAr: "متاح للشركات بعد التحقق من البيانات المؤسسية والسجل التجاري."
+  },
+  {
+    id: "nda_protected",
+    badgeEn: "NDA-Protected",
+    badgeAr: "محمي باتفاقية سرية (NDA)",
+    color: "bg-amber-500/15 text-amber-400 border-amber-500/30",
+    descEn: "Requires formal Non-Disclosure Agreement (NDA) countersignature.",
+    descAr: "يتطلب توقيع اتفاقية الحفاظ على سرية المعلومات المؤسسية."
+  },
+  {
+    id: "restricted_investor",
+    badgeEn: "Restricted Investor Access",
+    badgeAr: "مخصص للمستثمرين المعتمدين",
+    color: "bg-purple-500/15 text-purple-400 border-purple-500/30",
+    descEn: "Exclusive to qualified institutional investors and vetted funds with clearance.",
+    descAr: "مخصص حصرياً للمؤسسات والصناديق الاستثمارية المؤهلة بعد موافقة مجلس الإدارة."
+  }
+];
+
+export const DATA_ROOM_DOCUMENTS: DataRoomDocument[] = [
+  // Category A: Corporate Documents
+  {
+    id: "DOC-CORP-01",
+    titleEn: "Complete Corporate Company Profile (2025–2026 Edition)",
+    titleAr: "الملف التعريفي الشامل للمجموعة (إصدار 2025–2026)",
+    descriptionEn: "Comprehensive overview of Sami Bin Ayyad Group, executive leadership, legal constitution, and cross-sector portfolio.",
+    descriptionAr: "وثيقة مؤسسية معتمدة تستعرض رؤية المجموعة، القيادة التنفيذية، التأسيس القانوني، ومحفظة العمليات عبر القطاعات.",
     sector: "corporate",
     sectorEn: "Group Corporate",
     sectorAr: "المجموعة المؤسسية",
-    category: "corporate-profiles",
-    categoryEn: "Corporate Profiles",
-    categoryAr: "الملفات التعريفية للمجموعة",
+    category: "corporate_documents",
+    categoryEn: "Corporate Documents",
+    categoryAr: "الوثائق المؤسسية والحوكمة",
+    accessLevel: "public",
+    accessLevelEn: "Public Access",
+    accessLevelAr: "متاح للعموم",
     language: "AR",
     format: "PDF (A4)",
-    fileSize: "84.9 KB",
-    lastUpdated: "November 2026",
+    fileSize: "4.8 MB",
+    lastUpdated: "2026-01-15",
     downloadUrl: "/downloads/SBA_Complete_Corporate_Profile_AR.pdf",
     fileName: "SBA_Complete_Corporate_Profile_AR.pdf",
-    featured: true,
+    featured: true
   },
-
-  // 2. Corporate Capabilities
   {
-    id: "corp-capabilities-en",
-    titleEn: "Corporate Capabilities Statement",
-    titleAr: "بيان القدرات والجاهزية المؤسسية للمجموعة",
-    descriptionEn: "Condensed briefing designed for international procurement desks, institutional tenders, and foreign business partners.",
-    descriptionAr: "ملف موجز للجاهزية التشغيلية والقدرات التنفيذية مصمم خصيصًا لإدارات المشتريات الدولية والمستثمرين.",
+    id: "DOC-CORP-02",
+    titleEn: "Corporate Company Profile (English International Edition)",
+    titleAr: "الملف التعريفي المؤسسي (النسخة الإنجليزية الدولية)",
+    descriptionEn: "Certified international edition detailing corporate structure, holding subsidiaries, and export infrastructure.",
+    descriptionAr: "النسخة الدولية المعتمدة باللغة الإنجليزية لتوضيح الهيكل المؤسسي وشبكة العمليات والتصدير الدولية.",
     sector: "corporate",
     sectorEn: "Group Corporate",
     sectorAr: "المجموعة المؤسسية",
-    category: "corporate-capabilities",
-    categoryEn: "Corporate Capabilities",
-    categoryAr: "بيانات القدرات المؤسسية",
+    category: "corporate_documents",
+    categoryEn: "Corporate Documents",
+    categoryAr: "الوثائق المؤسسية والحوكمة",
+    accessLevel: "public",
+    accessLevelEn: "Public Access",
+    accessLevelAr: "متاح للعموم",
     language: "EN",
     format: "PDF (A4)",
-    fileSize: "66.8 KB",
-    lastUpdated: "November 2026",
-    downloadUrl: "/downloads/SBA_Corporate_Capabilities_EN.pdf",
-    fileName: "SBA_Corporate_Capabilities_EN.pdf",
-  },
-
-  // 3. Construction Documents
-  {
-    id: "const-capabilities-en",
-    titleEn: "Construction & Real Estate Capabilities Profile",
-    titleAr: "دليل قدرات قطاع المقاولات والتطوير العقاري",
-    descriptionEn: "12 engineering disciplines, 6-stage execution framework, Egyptian Building Code compliance, and civil infrastructure delivery.",
-    descriptionAr: "الدليل الهندسي الشامل لـ 12 تخصصًا إنشائيًا، ومنهجية التنفيذ السداسية، والأعمال المدنية والكهروميكانيكية MEP.",
-    sector: "construction",
-    sectorEn: "Construction & Real Estate",
-    sectorAr: "المقاولات والتطوير العقاري",
-    category: "construction-docs",
-    categoryEn: "Construction Documents",
-    categoryAr: "وثائق قطاع المقاولات",
-    language: "EN",
-    format: "PDF (A4)",
-    fileSize: "68.4 KB",
-    lastUpdated: "November 2026",
-    downloadUrl: "/downloads/SBA_Construction_Capabilities_EN.pdf",
-    fileName: "SBA_Construction_Capabilities_EN.pdf",
-    featured: true,
+    fileSize: "4.6 MB",
+    lastUpdated: "2026-01-15",
+    downloadUrl: "/downloads/SBA_Complete_Corporate_Profile_EN.pdf",
+    fileName: "SBA_Complete_Corporate_Profile_EN.pdf",
+    featured: true
   },
   {
-    id: "const-capabilities-ar",
-    titleEn: "Construction & Real Estate Capabilities Profile",
-    titleAr: "دليل قدرات قطاع المقاولات والتطوير العقاري",
-    descriptionEn: "Arabic engineering guide covering general contracting, deep foundations, structural skeletons, and MEP works.",
-    descriptionAr: "الدليل الهندسي العربي المتكامل للمقاولات العامة، الأساسات العميقة، الهياكل الخرسانية، وشبكات البنية التحتية.",
-    sector: "construction",
-    sectorEn: "Construction & Real Estate",
-    sectorAr: "المقاولات والتطوير العقاري",
-    category: "construction-docs",
-    categoryEn: "Construction Documents",
-    categoryAr: "وثائق قطاع المقاولات",
-    language: "AR",
-    format: "PDF (A4)",
-    fileSize: "74.9 KB",
-    lastUpdated: "November 2026",
-    downloadUrl: "/downloads/SBA_Construction_Capabilities_AR.pdf",
-    fileName: "SBA_Construction_Capabilities_AR.pdf",
-  },
-
-  // 4. Environmental Documents
-  {
-    id: "env-solutions-en",
-    titleEn: "Environmental Solutions & Sustainability Profile",
-    titleAr: "دليل الحلول البيئية المستدامة والطاقة المتجددة",
-    descriptionEn: "19 specialized services, RENERGON International AG alliance, RSD dry fermentation biogas, CBAM, and Scopes 1-3 carbon accounting.",
-    descriptionAr: "منظومة 19 تخصصًا استشاريًا، الشراكة مع رينرجون السويسرية، تكنولوجيا تحويل المخلفات لطاقة RSD، وحساب البصمة الكربونية.",
-    sector: "environmental",
-    sectorEn: "Environment & Sustainability",
-    sectorAr: "البيئة والاستدامة",
-    category: "environmental-docs",
-    categoryEn: "Environmental Documents",
-    categoryAr: "وثائق قطاع البيئة والاستدامة",
-    language: "EN",
-    format: "PDF (A4)",
-    fileSize: "72.1 KB",
-    lastUpdated: "November 2026",
-    downloadUrl: "/downloads/SBA_Environmental_Solutions_EN.pdf",
-    fileName: "SBA_Environmental_Solutions_EN.pdf",
-    featured: true,
-  },
-  {
-    id: "env-solutions-ar",
-    titleEn: "Environmental Solutions & Sustainability Profile",
-    titleAr: "دليل الحلول البيئية المستدامة والطاقة المتجددة",
-    descriptionEn: "Arabic dossier for environmental impact assessments (EIA), waste-to-energy, circular economy, and biotechnology.",
-    descriptionAr: "الدليل البيئي العربي الشامل لدراسات تقييم الأثر البيئي EIA، تحويل المخلفات لطاقة، والاقتصاد الدائري والتكنولوجيا الحيوية.",
-    sector: "environmental",
-    sectorEn: "Environment & Sustainability",
-    sectorAr: "البيئة والاستدامة",
-    category: "environmental-docs",
-    categoryEn: "Environmental Documents",
-    categoryAr: "وثائق قطاع البيئة والاستدامة",
-    language: "AR",
-    format: "PDF (A4)",
-    fileSize: "77.4 KB",
-    lastUpdated: "November 2026",
-    downloadUrl: "/downloads/SBA_Environmental_Solutions_AR.pdf",
-    fileName: "SBA_Environmental_Solutions_AR.pdf",
-  },
-
-  // 5. Apparel Manufacturing
-  {
-    id: "apparel-profile-en",
-    titleEn: "Apparel Manufacturing & Fashion Profile",
-    titleAr: "دليل تصنيع وتصدير الملابس الجاهزة",
-    descriptionEn: "15+ lines, 250+ machines, dedicated classic shirt facility (45,000 shirts/mo), +2,700 designs, and 8-stage QC workflow.",
-    descriptionAr: "الدليل الصناعي لتشغيل 15+ خط إنتاج، ومصنع القمصان الكلاسيكية (45,000 قميص/شهر)، ومكتبة تضم +2,700 موديل.",
-    sector: "garment",
-    sectorEn: "Apparel Manufacturing",
-    sectorAr: "تصنيع الملابس وتطوير الأزياء",
-    category: "apparel-manufacturing",
-    categoryEn: "Apparel Manufacturing",
-    categoryAr: "وثائق تصنيع الملابس",
-    language: "EN",
-    format: "PDF (A4)",
-    fileSize: "73.5 KB",
-    lastUpdated: "November 2026",
-    downloadUrl: "/downloads/SBA_Apparel_Manufacturing_Profile_EN.pdf",
-    fileName: "SBA_Apparel_Manufacturing_Profile_EN.pdf",
-    featured: true,
-  },
-  {
-    id: "apparel-profile-ar",
-    titleEn: "Apparel Manufacturing & Fashion Profile",
-    titleAr: "دليل تصنيع وتصدير الملابس الجاهزة",
-    descriptionEn: "Arabic industrial manufacturing profile covering FOB programs, private label branding, and automated stitching.",
-    descriptionAr: "الدليل الصناعي العربي لبرامج التصنيع التصديري FOB، وتصنيع العلامات الخاصة Private Label، ومراقبة الجودة AQL.",
-    sector: "garment",
-    sectorEn: "Apparel Manufacturing",
-    sectorAr: "تصنيع الملابس وتطوير الأزياء",
-    category: "apparel-manufacturing",
-    categoryEn: "Apparel Manufacturing",
-    categoryAr: "وثائق تصنيع الملابس",
-    language: "AR",
-    format: "PDF (A4)",
-    fileSize: "75.7 KB",
-    lastUpdated: "November 2026",
-    downloadUrl: "/downloads/SBA_Apparel_Manufacturing_Profile_AR.pdf",
-    fileName: "SBA_Apparel_Manufacturing_Profile_AR.pdf",
-  },
-
-  // 6. Product Catalogues
-  {
-    id: "apparel-catalogue-en",
-    titleEn: "Apparel Product Catalogue — 11 Collections",
-    titleAr: "كتالوج موديلات وتصاميم الملابس — 11 فئة",
-    descriptionEn: "Specifications, fabric GSM ranges, size curves, and MOQ parameters for all 11 verified apparel product lines.",
-    descriptionAr: "مواصفات الأقمشة، أوزان الـ GSM، جداول المقاسات، والحد الأدنى للطلب لكافة فئات الملابس الـ 11 المعتمدة.",
-    sector: "garment",
-    sectorEn: "Apparel Manufacturing",
-    sectorAr: "تصنيع الملابس وتطوير الأزياء",
-    category: "product-catalogues",
-    categoryEn: "Product Catalogues",
-    categoryAr: "كتالوجات المنتجات المعتمدة",
-    language: "EN",
-    format: "PDF (A4)",
-    fileSize: "68.6 KB",
-    lastUpdated: "November 2026",
-    downloadUrl: "/downloads/SBA_Apparel_Product_Catalogue_EN.pdf",
-    fileName: "SBA_Apparel_Product_Catalogue_EN.pdf",
-  },
-  {
-    id: "food-catalogue-en",
-    titleEn: "Natural Products & Agri-Food Export Catalogue",
-    titleAr: "كتالوج المنتجات الطبيعية والتصدير الزراعي",
-    descriptionEn: "Complete dossiers for 8 agricultural products: Sidr honey, EVOO, table olives, Medjool dates, herbs, and instant powders.",
-    descriptionAr: "ملفات فنية متكاملة لـ 8 محاصيل ومنتجات: عسل السدر، زيت الزيتون البكر الممتاز، تمور المجدول، الأعشاب، والمشروبات المجففة.",
-    sector: "food",
-    sectorEn: "Natural & Food Products",
-    sectorAr: "المنتجات الطبيعية والغذائية",
-    category: "product-catalogues",
-    categoryEn: "Product Catalogues",
-    categoryAr: "كتالوجات المنتجات المعتمدة",
-    language: "EN",
-    format: "PDF (A4)",
-    fileSize: "67.8 KB",
-    lastUpdated: "November 2026",
-    downloadUrl: "/downloads/SBA_Natural_Products_Catalogue_EN.pdf",
-    fileName: "SBA_Natural_Products_Catalogue_EN.pdf",
-  },
-  {
-    id: "all-products-portfolio-en",
-    titleEn: "Complete Products Portfolio (Apparel & Food)",
-    titleAr: "كتالوج المنتجات المجمع الشامل للمجموعة",
-    descriptionEn: "Consolidated commercial export catalogue spanning both physical product divisions with technical indices.",
-    descriptionAr: "الكتالوج التجاري المجمع للمنتجات المادية لكافة قطاعات المجموعة (الملابس الجاهزة والمنتجات الطبيعية والغذائية).",
-    sector: "corporate",
-    sectorEn: "Group Products Division",
-    sectorAr: "قطاع المنتجات الموحد",
-    category: "product-catalogues",
-    categoryEn: "Product Catalogues",
-    categoryAr: "كتالوجات المنتجات المعتمدة",
-    language: "EN",
-    format: "PDF (A4)",
-    fileSize: "64.7 KB",
-    lastUpdated: "November 2026",
-    downloadUrl: "/downloads/SBA_Complete_Products_Portfolio_EN.pdf",
-    fileName: "SBA_Complete_Products_Portfolio_EN.pdf",
-  },
-
-  // 7. Technical Data Sheets (TDS)
-  {
-    id: "tds-et-pot-01",
-    titleEn: "Technical Data Sheet: ET-POT-01 Oil Terminator",
-    titleAr: "النشرة الفنية: مستحضر معالجة الزيوت الحيوية ET-POT-01",
-    descriptionEn: "Detailed physical, chemical, and biological specifications for our concentrated microbial hydrocarbon bioremediation agent.",
-    descriptionAr: "المواصفات الفيزيائية والكيميائية والبيولوجية لمستحضر المعالجة الحيوية للملوثات الزيتية والانسكابات النفطية.",
-    sector: "environmental",
-    sectorEn: "Environment & Sustainability",
-    sectorAr: "البيئة والاستدامة",
-    category: "technical-datasheets",
-    categoryEn: "Technical Data Sheets (TDS)",
-    categoryAr: "نشرات البيانات الفنية",
-    language: "EN",
-    format: "PDF (A4)",
-    fileSize: "67.4 KB",
-    lastUpdated: "November 2026",
-    downloadUrl: "/downloads/ET-POT-01_Technical_Data_Sheet.pdf",
-    fileName: "ET-POT-01_Technical_Data_Sheet.pdf",
-    featured: true,
-  },
-  {
-    id: "tds-et-por-01",
-    titleEn: "Technical Data Sheet: ET-POR-01 Odor Neutralizer",
-    titleAr: "النشرة الفنية: مستحضر تحييد الروائح الصناعية ET-POR-01",
-    descriptionEn: "Fast-acting biological formula eliminating hydrogen sulfide (H₂S), mercaptans, and ammonia at industrial emission sources.",
-    descriptionAr: "النشرة الفنية لمركب التحييد الكيميائي الحيوي الفوري لغازات كبريتيد الهيدروجين والميركابتان بمحطات الصرف والمصانع.",
-    sector: "environmental",
-    sectorEn: "Environment & Sustainability",
-    sectorAr: "البيئة والاستدامة",
-    category: "technical-datasheets",
-    categoryEn: "Technical Data Sheets (TDS)",
-    categoryAr: "نشرات البيانات الفنية",
-    language: "EN",
-    format: "PDF (A4)",
-    fileSize: "66.3 KB",
-    lastUpdated: "November 2026",
-    downloadUrl: "/downloads/ET-POR-01_Technical_Data_Sheet.pdf",
-    fileName: "ET-POR-01_Technical_Data_Sheet.pdf",
-    featured: true,
-  },
-
-  // 8. Project Portfolios
-  {
-    id: "const-portfolio-en",
-    titleEn: "Construction Project Portfolio (57 Projects)",
-    titleAr: "سجل المشروعات الإنشائية المعتمدة (57 مشروعًا)",
-    descriptionEn: "Complete verified index of 57 delivered contracting projects across commercial, medical, industrial, and infrastructure sectors.",
-    descriptionAr: "السجل الموثق لـ 57 مشروعًا إنشائيًا تم تنفيذها عبر قطاعات المباني الإدارية، المستشفيات، المنشآت الصناعية، والبنية التحتية.",
-    sector: "construction",
-    sectorEn: "Construction & Real Estate",
-    sectorAr: "المقاولات والتطوير العقاري",
-    category: "project-portfolios",
-    categoryEn: "Project Portfolios",
-    categoryAr: "سجلات المشروعات المنجزة",
-    language: "EN",
-    format: "PDF (A4)",
-    fileSize: "65.1 KB",
-    lastUpdated: "November 2026",
-    downloadUrl: "/downloads/SBA_Construction_Project_Portfolio_EN.pdf",
-    fileName: "SBA_Construction_Project_Portfolio_EN.pdf",
-  },
-  {
-    id: "case-studies-en",
-    titleEn: "Selected Multi-Sector Project Case Studies",
-    titleAr: "دراسات الحالة ونماذج المشروعات الناجحة للمجموعة",
-    descriptionEn: "Technical challenges, engineered solutions, and verified outcomes across Construction, Waste-to-Energy, Apparel, and Food trade.",
-    descriptionAr: "استعراض تحليلي للتحديات الهندسية والحلول المنفذة والنتائج المحققة في مشروعات المقاولات، البيوجاز، وتصدير الملابس والأغذية.",
+    id: "DOC-CORP-03",
+    titleEn: "Corporate Governance & Compliance Charter",
+    titleAr: "ميثاق الحوكمة المؤسسية والالتزام التنظيمي",
+    descriptionEn: "Framework governing board committees, executive audits, transparency policies, and code of conduct.",
+    descriptionAr: "الإطار المنظم للجان الحوكمة، التدقيق المؤسسي، سياسات الشفافية، وميثاق السلوك المهني.",
     sector: "corporate",
     sectorEn: "Group Corporate",
     sectorAr: "المجموعة المؤسسية",
-    category: "project-portfolios",
-    categoryEn: "Project Portfolios",
-    categoryAr: "سجلات المشروعات المنجزة",
-    language: "EN",
+    category: "corporate_documents",
+    categoryEn: "Corporate Documents",
+    categoryAr: "الوثائق المؤسسية والحوكمة",
+    accessLevel: "registered_business",
+    accessLevelEn: "Registered Business Access",
+    accessLevelAr: "للشركات المسجلة",
+    language: "Bilingual",
     format: "PDF (A4)",
-    fileSize: "65.6 KB",
-    lastUpdated: "November 2026",
-    downloadUrl: "/downloads/SBA_Selected_Project_Case_Studies_EN.pdf",
-    fileName: "SBA_Selected_Project_Case_Studies_EN.pdf",
+    fileSize: "2.1 MB",
+    lastUpdated: "2025-11-20",
+    downloadUrl: "/downloads/SBA_Complete_Corporate_Profile_AR.pdf",
+    fileName: "SBA_Governance_Charter.pdf"
   },
 
-  // 9. Services & Solutions
+  // Category B: Financial Information
   {
-    id: "services-39-en",
-    titleEn: "Complete Services & Solutions Portfolio (39 Disciplines)",
-    titleAr: "دليل الخدمات والحلول المتكاملة (39 تخصصًا)",
-    descriptionEn: "Comprehensive directory detailing all 39 corporate services across Construction (12), Environmental (19), and Apparel (8).",
-    descriptionAr: "الدليل الشامل لكافة خدمات المجموعة الـ 39: 12 تخصص مقاولات، 19 خدمة بيئية وطاقة نظيفة، و8 حلول تصنيع ملابس.",
+    id: "DOC-FIN-01",
+    titleEn: "Annual Business Performance & Trading Summary (FY 2024–2025)",
+    titleAr: "تقرير الأداء التجاري والمالي المعتمد (2024–2025)",
+    descriptionEn: "Consolidated operational turnover, sector contribution ratios, and audited commercial milestones.",
+    descriptionAr: "حجم الأعمال التشغيلي، مؤشرات مساهمة القطاعات في العوائد، ومعدلات النمو التجاري المعتمدة.",
     sector: "corporate",
-    sectorEn: "Corporate Services Division",
-    sectorAr: "قطاع الخدمات المتكاملة",
-    category: "services-solutions",
-    categoryEn: "Services & Solutions",
-    categoryAr: "دليل الخدمات والحلول المتكاملة",
+    sectorEn: "Group Corporate",
+    sectorAr: "المجموعة المؤسسية",
+    category: "financial_information",
+    categoryEn: "Financial Information",
+    categoryAr: "البيانات والمؤشرات المالية",
+    accessLevel: "restricted_investor",
+    accessLevelEn: "Restricted Investor Access",
+    accessLevelAr: "مخصص للمستثمرين المعتمدين",
+    language: "Bilingual",
+    format: "PDF / Financial Dossier",
+    fileSize: "3.5 MB",
+    lastUpdated: "2026-01-30",
+    fileName: "SBA_Financial_Performance_Summary.pdf"
+  },
+  {
+    id: "DOC-FIN-02",
+    titleEn: "Institutional Investor Presentation: Multi-Sector Growth 2026–2030",
+    titleAr: "العرض الاستثماري المؤسسي: استراتيجية النمو والتوسع 2026–2030",
+    descriptionEn: "Strategic investment thesis, expansion plans in regional manufacturing, industrial real estate, and clean energy.",
+    descriptionAr: "أطروحة الاستثمار المؤسسي، خطط التوسع في التصنيع الإقليمي، التطوير العقاري، ومحطات الطاقة النظيفة.",
+    sector: "corporate",
+    sectorEn: "Group Corporate",
+    sectorAr: "المجموعة المؤسسية",
+    category: "financial_information",
+    categoryEn: "Financial Information",
+    categoryAr: "البيانات والمؤشرات المالية",
+    accessLevel: "nda_protected",
+    accessLevelEn: "NDA-Protected",
+    accessLevelAr: "محمي باتفاقية سرية (NDA)",
     language: "EN",
-    format: "PDF (A4)",
-    fileSize: "74.2 KB",
-    lastUpdated: "November 2026",
-    downloadUrl: "/downloads/SBA_Services_And_Solutions_Portfolio_EN.pdf",
-    fileName: "SBA_Services_And_Solutions_Portfolio_EN.pdf",
-    featured: true,
+    format: "Presentation (PDF)",
+    fileSize: "7.2 MB",
+    lastUpdated: "2026-02-01",
+    fileName: "SBA_Investor_Presentation_2026.pdf",
+    featured: true
   },
 
-  // 10. Business & Partnerships
+  // Category C: Sector Capabilities
   {
-    id: "business-overview-en",
-    titleEn: "Corporate Business & Partnership Overview",
-    titleAr: "ملف الاستثمار والشراكات الاستراتيجية للمجموعة",
-    descriptionEn: "Institutional briefing on co-investment opportunities, commercial joint ventures, and market expansion channels.",
-    descriptionAr: "ملف تعريفي موجه للمستثمرين والشركاء التجاريين؛ يستعرض فرص التعاون، المشروعات المشتركة، والتوسع التصديري.",
-    sector: "corporate",
-    sectorEn: "Investor Relations & Partnerships",
-    sectorAr: "علاقات المستثمرين والشراكات",
-    category: "business-partnership",
-    categoryEn: "Business & Partnerships",
-    categoryAr: "وثائق الاستثمار والشراكات",
-    language: "EN",
+    id: "DOC-CAP-01",
+    titleEn: "Apparel & Textile Manufacturing Capabilities Dossier",
+    titleAr: "دليل القدرات التشغيلية لتصنيع الملابس والمنسوجات",
+    descriptionEn: "Complete production line specs, fabric sourcing networks, quality inspection stages, and CM/CMT/FOB models.",
+    descriptionAr: "المواصفات الفنية لخطوط الإنتاج، شبكة سلاسل إمداد الأقمشة، مراحل مراقبة الجودة، ونماذج التوريد التعاقدي.",
+    sector: "garment",
+    sectorEn: "Apparel Manufacturing",
+    sectorAr: "تصنيع الملابس وتطوير الأزياء",
+    category: "sector_capabilities",
+    categoryEn: "Sector Capabilities",
+    categoryAr: "قدرات القطاعات ومواصفات التشغيل",
+    accessLevel: "public",
+    accessLevelEn: "Public Access",
+    accessLevelAr: "متاح للعموم",
+    language: "Bilingual",
     format: "PDF (A4)",
-    fileSize: "64.9 KB",
-    lastUpdated: "November 2026",
-    downloadUrl: "/downloads/SBA_Business_And_Partnership_Overview_EN.pdf",
-    fileName: "SBA_Business_And_Partnership_Overview_EN.pdf",
+    fileSize: "3.8 MB",
+    lastUpdated: "2026-01-20",
+    downloadUrl: "/downloads/SBA_Apparel_Capabilities_EN.pdf",
+    fileName: "SBA_Apparel_Capabilities.pdf"
   },
   {
-    id: "supplier-profile-en",
-    titleEn: "Supplier & Procurement Qualification Guide",
-    titleAr: "دليل تأهيل الموردين وسلاسل الإمداد للمجموعة",
-    descriptionEn: "Official onboarding documentation, quality standards, and purchasing categories for prospective vendors and raw material suppliers.",
-    descriptionAr: "الدليل الرسمي لتأهيل واعتماد الموردين، اشتراطات الجودة، وفئات التوريد لمشروعات ومصانع المجموعة.",
-    sector: "corporate",
-    sectorEn: "Procurement & Supply Chain",
-    sectorAr: "المشتريات وسلاسل الإمداد",
-    category: "business-partnership",
-    categoryEn: "Business & Partnerships",
-    categoryAr: "وثائق الاستثمار والشراكات",
-    language: "EN",
-    format: "PDF (A4)",
-    fileSize: "65.1 KB",
-    lastUpdated: "November 2026",
-    downloadUrl: "/downloads/SBA_Supplier_And_Procurement_Profile_EN.pdf",
-    fileName: "SBA_Supplier_And_Procurement_Profile_EN.pdf",
-  },
-
-  // Food Sector Profiles
-  {
-    id: "food-profile-en",
-    titleEn: "Natural Products & Food Trading Profile",
-    titleAr: "دليل قطاع المنتجات الطبيعية والتوريد الغذائي",
-    descriptionEn: "Sourcing capabilities, NFSA-licensed hubs, 6 export commodity categories, laboratory certificates, and global supply models.",
-    descriptionAr: "القدرات التوريدية، محطات الفرز المعتمدة، 7 فئات تصديرية زراعية، وشهادات سلامة الغذاء الدولية.",
-    sector: "food",
-    sectorEn: "Natural & Food Products",
-    sectorAr: "المنتجات الطبيعية والغذائية",
-    category: "corporate-profiles",
-    categoryEn: "Corporate Profiles",
-    categoryAr: "الملفات التعريفية للمجموعة",
-    language: "EN",
-    format: "PDF (A4)",
-    fileSize: "67.8 KB",
-    lastUpdated: "November 2026",
-    downloadUrl: "/downloads/SBA_Natural_Products_Profile_EN.pdf",
-    fileName: "SBA_Natural_Products_Profile_EN.pdf",
-  },
-  {
-    id: "food-profile-ar",
-    titleEn: "Natural Products & Food Trading Profile",
-    titleAr: "دليل قطاع المنتجات الطبيعية والتوريد الغذائي",
-    descriptionEn: "Arabic agricultural export profile covering Siwa reserves, extra virgin olive oil, Medjool dates, and bulk food supply.",
-    descriptionAr: "الدليل الزراعي والتصديري العربي لمزارع سيوة، زيت الزيتون البكر الممتاز، تمور المجدول، والتوريد السائب.",
-    sector: "food",
-    sectorEn: "Natural & Food Products",
-    sectorAr: "المنتجات الطبيعية والغذائية",
-    category: "corporate-profiles",
-    categoryEn: "Corporate Profiles",
-    categoryAr: "الملفات التعريفية للمجموعة",
+    id: "DOC-CAP-02",
+    titleEn: "General Contracting & Infrastructure Technical Scope",
+    titleAr: "النطاق الفني لأعمال المقاولات المتكاملة والبنية التحتية",
+    descriptionEn: "Engineering workflows, civil contracting, electromechanical (MEP) execution, and project governance protocols.",
+    descriptionAr: "المنهجية الهندسية، المقاولات المدنية، الأعمال الكهروميكانيكية، وبروتوكولات إدارة المشروعات.",
+    sector: "construction",
+    sectorEn: "Construction & Real Estate",
+    sectorAr: "المقاولات والتطوير العقاري",
+    category: "sector_capabilities",
+    categoryEn: "Sector Capabilities",
+    categoryAr: "قدرات القطاعات ومواصفات التشغيل",
+    accessLevel: "registered_business",
+    accessLevelEn: "Registered Business Access",
+    accessLevelAr: "للشركات المسجلة",
     language: "AR",
     format: "PDF (A4)",
-    fileSize: "72.5 KB",
-    lastUpdated: "November 2026",
-    downloadUrl: "/downloads/SBA_Natural_Products_Profile_AR.pdf",
-    fileName: "SBA_Natural_Products_Profile_AR.pdf",
+    fileSize: "4.1 MB",
+    lastUpdated: "2025-12-10",
+    downloadUrl: "/downloads/SBA_Complete_Corporate_Profile_AR.pdf",
+    fileName: "SBA_Contracting_Technical_Scope.pdf"
   },
+  {
+    id: "DOC-CAP-03",
+    titleEn: "Sustainability Services & Environmental Compliance Scope",
+    titleAr: "محفظة الخدمات البيئية واستشارات الامتثال الصناعي",
+    descriptionEn: "Detailed delivery models (in-house vs international technical partner) for industrial effluent, C&I solar, and EPR.",
+    descriptionAr: "نماذج التنفيذ المباشر وعبر الشركاء الدوليين لمحطات معالجة الصرف الصناعي، الطاقة الشمسية، ومسؤولية المنتج.",
+    sector: "environmental",
+    sectorEn: "Environment & Sustainability",
+    sectorAr: "البيئة والاستدامة",
+    category: "sector_capabilities",
+    categoryEn: "Sector Capabilities",
+    categoryAr: "قدرات القطاعات ومواصفات التشغيل",
+    accessLevel: "public",
+    accessLevelEn: "Public Access",
+    accessLevelAr: "متاح للعموم",
+    language: "Bilingual",
+    format: "PDF (A4)",
+    fileSize: "3.2 MB",
+    lastUpdated: "2026-02-05",
+    downloadUrl: "/downloads/SBA_Complete_Corporate_Profile_AR.pdf",
+    fileName: "SBA_Environmental_Services_Scope.pdf"
+  },
+
+  // Category D: Project Portfolio & Case Studies
+  {
+    id: "DOC-PRJ-01",
+    titleEn: "Verified Construction & Infrastructure Projects Record",
+    titleAr: "سجل المشروعات الإنشائية وأعمال البنية التحتية المنجزة",
+    descriptionEn: "Documented project completions, institutional client rosters, handover certificates, and execution roles.",
+    descriptionAr: "قائمة المشروعات المسلمة، شهادات الإنجاز، بيانات جهات الإسناد، وتوضيح نطاق التنفيذ الدقيق.",
+    sector: "construction",
+    sectorEn: "Construction & Real Estate",
+    sectorAr: "المقاولات والتطوير العقاري",
+    category: "project_portfolio",
+    categoryEn: "Project Portfolio & Case Studies",
+    categoryAr: "محفظة المشروعات الموثقة ودراسات الحالة",
+    accessLevel: "registered_business",
+    accessLevelEn: "Registered Business Access",
+    accessLevelAr: "للشركات المسجلة",
+    language: "Bilingual",
+    format: "PDF (A4)",
+    fileSize: "5.4 MB",
+    lastUpdated: "2026-01-25",
+    downloadUrl: "/downloads/SBA_Complete_Corporate_Profile_AR.pdf",
+    fileName: "SBA_Verified_Projects_Record.pdf"
+  },
+  {
+    id: "DOC-PRJ-02",
+    titleEn: "Commercial Real Estate Advisory & Brokerage Portfolio (2018–2026)",
+    titleAr: "محفظة الاستشارات والتسويق العقاري المصري (2018–2026)",
+    descriptionEn: "Executive track record covering 400+ developments, developer agreements, and institutional marketing volume.",
+    descriptionAr: "المسيرة المهنية الموثقة لإدارة القطاع في تسويق أكثر من 400 مشروع لكبرى شركات التطوير في مصر.",
+    sector: "construction",
+    sectorEn: "Construction & Real Estate",
+    sectorAr: "المقاولات والتطوير العقاري",
+    category: "project_portfolio",
+    categoryEn: "Project Portfolio & Case Studies",
+    categoryAr: "محفظة المشروعات الموثقة ودراسات الحالة",
+    accessLevel: "registered_business",
+    accessLevelEn: "Registered Business Access",
+    accessLevelAr: "للشركات المسجلة",
+    language: "AR",
+    format: "PDF (A4)",
+    fileSize: "3.7 MB",
+    lastUpdated: "2026-02-01",
+    downloadUrl: "/downloads/SBA_Complete_Corporate_Profile_AR.pdf",
+    fileName: "SBA_RealEstate_Advisory_Portfolio.pdf"
+  },
+
+  // Category E: Certifications & Compliance
+  {
+    id: "DOC-CERT-01",
+    titleEn: "Apparel Quality & Environmental Compliance Portfolio",
+    titleAr: "ملف شهادات الجودة والامتثال البيئي لصناعة الملابس",
+    descriptionEn: "Audited lab test protocols, OEKO-TEX® & ISO compliance standards verified across our manufacturing network.",
+    descriptionAr: "بروتوكولات الفحص المخبري، معايير OEKO-TEX® وشهادات ISO المعتمدة عبر شبكة المصانع الشريكة.",
+    sector: "garment",
+    sectorEn: "Apparel Manufacturing",
+    sectorAr: "تصنيع الملابس وتطوير الأزياء",
+    category: "certifications_compliance",
+    categoryEn: "Certifications & Compliance",
+    categoryAr: "شهادات الامتثال والجودة والبيئة",
+    accessLevel: "registered_business",
+    accessLevelEn: "Registered Business Access",
+    accessLevelAr: "للشركات المسجلة",
+    language: "Bilingual",
+    format: "PDF Portfolio",
+    fileSize: "2.9 MB",
+    lastUpdated: "2026-01-10",
+    downloadUrl: "/downloads/SBA_Complete_Corporate_Profile_EN.pdf",
+    fileName: "SBA_Apparel_Certifications.pdf"
+  },
+  {
+    id: "DOC-CERT-02",
+    titleEn: "Food Export Safety & Phytosanitary Protocol Guidelines",
+    titleAr: "دليل الامتثال لسلامة الغذاء والاشتراطات الحجرية للتصدير",
+    descriptionEn: "Compliance dossier for Egyptian dates, olive oil, and herbs for European, Turkish, and GCC entry.",
+    descriptionAr: "ملف الاشتراطات الحجرية، شهادات سلامة الغذاء، والفحوص المخبرية لتصدير التمور والسلع الزراعية.",
+    sector: "food",
+    sectorEn: "Natural & Food Products",
+    sectorAr: "المنتجات الطبيعية والغذائية",
+    category: "certifications_compliance",
+    categoryEn: "Certifications & Compliance",
+    categoryAr: "شهادات الامتثال والجودة والبيئة",
+    accessLevel: "public",
+    accessLevelEn: "Public Access",
+    accessLevelAr: "متاح للعموم",
+    language: "Bilingual",
+    format: "PDF (A4)",
+    fileSize: "2.4 MB",
+    lastUpdated: "2026-01-18",
+    downloadUrl: "/downloads/SBA_Complete_Corporate_Profile_AR.pdf",
+    fileName: "SBA_Food_Safety_Protocols.pdf"
+  },
+
+  // Category F: Investment Opportunities
+  {
+    id: "DOC-INV-01",
+    titleEn: "Joint Venture Framework: Industrial Solar PV Rooftops (C&I)",
+    titleAr: "مذكرة شراكة استثمارية: محطات الطاقة الشمسية للمنشآت الصناعية",
+    descriptionEn: "Financial payback modeling, EPC partnership terms, and long-term PPA frameworks for manufacturing clusters.",
+    descriptionAr: "نموذج الجدوى المالية، شروط التحالف الفني، وعقود شراء الطاقة طويلة الأجل للمجمعات الصناعية.",
+    sector: "environmental",
+    sectorEn: "Environment & Sustainability",
+    sectorAr: "البيئة والاستدامة",
+    category: "investment_opportunities",
+    categoryEn: "Investment Opportunities",
+    categoryAr: "فرص ومذكرات الاستثمار المشترك",
+    accessLevel: "nda_protected",
+    accessLevelEn: "NDA-Protected",
+    accessLevelAr: "محمي باتفاقية سرية (NDA)",
+    language: "EN",
+    format: "Investment Memo (PDF)",
+    fileSize: "4.2 MB",
+    lastUpdated: "2026-02-05",
+    fileName: "SBA_Solar_Investment_Memo.pdf"
+  },
+  {
+    id: "DOC-INV-02",
+    titleEn: "Co-Development Opportunity: Agri-Waste Organic Fertilizer Complex",
+    titleAr: "فرصة استثمار مشترك: مجمع تدوير المخلفات الزراعية وإنتاج الأسمدة",
+    descriptionEn: "PPP project structure with WMRA Egypt, raw material off-take guarantees, and green finance incentives.",
+    descriptionAr: "هيكل مشروع الشراكة (PPP) في الدلتا، عقود التوريد المضمونة للمخلفات، وحوافز الاقتصاد الدائري.",
+    sector: "environmental",
+    sectorEn: "Environment & Sustainability",
+    sectorAr: "البيئة والاستدامة",
+    category: "investment_opportunities",
+    categoryEn: "Investment Opportunities",
+    categoryAr: "فرص ومذكرات الاستثمار المشترك",
+    accessLevel: "restricted_investor",
+    accessLevelEn: "Restricted Investor Access",
+    accessLevelAr: "مخصص للمستثمرين المعتمدين",
+    language: "Bilingual",
+    format: "Dossier (PDF)",
+    fileSize: "6.1 MB",
+    lastUpdated: "2026-02-10",
+    fileName: "SBA_AgriWaste_Fertilizer_PPP.pdf"
+  },
+
+  // Category G: Technical Documents
+  {
+    id: "DOC-TECH-01",
+    titleEn: "Official Export Catalogue: Egyptian Natural Dates & Agri-Commodities",
+    titleAr: "كتالوج التصدير الرسمي: التمور الطبيعية والسلع الزراعية المصرية",
+    descriptionEn: "Full product specs for Siwi, Medjool, olive oils, and herbs with moisture, sizing, and packing standards.",
+    descriptionAr: "المواصفات الكاملة للتمور السيوي، المجدول، زيت الزيتون، والأعشاب مع نسب الرطوبة وأوزان التعبئة.",
+    sector: "food",
+    sectorEn: "Natural & Food Products",
+    sectorAr: "المنتجات الطبيعية والغذائية",
+    category: "technical_documents",
+    categoryEn: "Technical Documents & Catalogues",
+    categoryAr: "الوثائق الفنية والكتالوجات المعتمدة",
+    accessLevel: "public",
+    accessLevelEn: "Public Access",
+    accessLevelAr: "متاح للعموم",
+    language: "Bilingual",
+    format: "PDF (A4)",
+    fileSize: "5.1 MB",
+    lastUpdated: "2026-01-22",
+    downloadUrl: "/downloads/SBA_Complete_Corporate_Profile_AR.pdf",
+    fileName: "SBA_Dates_Export_Catalogue.pdf",
+    featured: true
+  },
+  {
+    id: "DOC-TECH-02",
+    titleEn: "Apparel Export Lookbook & Sample Collections Dossier",
+    titleAr: "دليل الموديلات والكتالوج المعتمد للملابس الجاهزة",
+    descriptionEn: "Curated 150+ sample catalogue covering women's wear, children's wear, hoodies, and private label specifications.",
+    descriptionAr: "كتالوج يضم أكثر من 150 موديلاً تم تصنيعها، ومواصفات خامات القطن، ونماذج التسمية الخاصة (Private Label).",
+    sector: "garment",
+    sectorEn: "Apparel Manufacturing",
+    sectorAr: "تصنيع الملابس وتطوير الأزياء",
+    category: "technical_documents",
+    categoryEn: "Technical Documents & Catalogues",
+    categoryAr: "الوثائق الفنية والكتالوجات المعتمدة",
+    accessLevel: "public",
+    accessLevelEn: "Public Access",
+    accessLevelAr: "متاح للعموم",
+    language: "Bilingual",
+    format: "PDF (A4)",
+    fileSize: "6.8 MB",
+    lastUpdated: "2026-01-28",
+    downloadUrl: "/downloads/SBA_Complete_Corporate_Profile_EN.pdf",
+    fileName: "SBA_Apparel_Export_Lookbook.pdf",
+    featured: true
+  }
 ];
-

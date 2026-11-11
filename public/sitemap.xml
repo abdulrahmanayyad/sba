@@ -68,9 +68,35 @@
 
   <!-- Careers & Join Group -->
   <url>
-    <loc>https://sami-trade.com/join/group</loc>
+    <loc>https://www.sami-trade.com/join/group</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+
+  <!-- Global Opportunities & Trade -->
+  <url>
+    <loc>https://www.sami-trade.com/trade</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- Investor & Corporate Data Room -->
+  <url>
+    <loc>https://www.sami-trade.com/downloads</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.sami-trade.com/investor-relations</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Free Consultation System -->
+  <url>
+    <loc>https://www.sami-trade.com/request-consultation</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
   </url>
 </urlset>
 

@@ -27,6 +27,7 @@ import { VerifiedProjectsBanner } from "./verification/verified-projects-banner"
 import { ProjectVerificationModal } from "./verification/project-verification-modal";
 import { VerificationPortal } from "./verification/verification-portal";
 import { ProjectVerificationAdminDashboard } from "./verification/project-verification-admin-dashboard";
+import { SectorConsultationCta } from "@/components/site/sector-consultation-cta";
 
 export type ConstructionTab =
   | "about"
@@ -194,6 +195,13 @@ export function ConstructionSectorView({ tab = "about", token }: ConstructionVie
         {activeTab === "join" && <JoinPage trackId="construction" />}
         {activeTab === "verify-portal" && <VerificationPortal token={token || ""} />}
         {activeTab === "verification-admin" && <ProjectVerificationAdminDashboard />}
+
+        {/* Dedicated Sector Free Consultation CTA */}
+        {activeTab !== "start-project" && activeTab !== "join" && (
+          <div className="site-container">
+            <SectorConsultationCta sector="construction" ar={ar} />
+          </div>
+        )}
       </div>
     </div>
   );

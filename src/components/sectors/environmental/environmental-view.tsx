@@ -48,6 +48,7 @@ import { highlightBrand } from "@/components/site/brand-text";
 import { SectorContactSection } from "@/components/site/sector-contact-section";
 import { submitCentralForm } from "@/lib/central-form-dispatch";
 import { JoinPage } from "@/components/join/join-page";
+import { SectorConsultationCta } from "@/components/site/sector-consultation-cta";
 import {
   environmentalAboutData,
   environmentalHeroData,
@@ -138,6 +139,13 @@ export function EnvironmentalSectorView({ tab = "about" }: EnvironmentalViewProp
         {activeTab === "products" && <EnvironmentalProductsView ar={ar} />}
         {activeTab === "start-consultation" && <EnvironmentalStartConsultationView ar={ar} />}
         {activeTab === "join" && <JoinPage trackId="sustainability" />}
+
+        {/* Dedicated Sector Free Consultation CTA */}
+        {activeTab !== "start-consultation" && activeTab !== "join" && (
+          <div className="site-container">
+            <SectorConsultationCta sector="environmental" ar={ar} />
+          </div>
+        )}
       </div>
     </div>
   );

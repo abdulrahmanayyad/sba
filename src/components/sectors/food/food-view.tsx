@@ -45,6 +45,7 @@ import { SectorContactSection } from "@/components/site/sector-contact-section";
 import { AnimatedStatistic } from "@/components/site/animated-statistic";
 import { submitCentralForm } from "@/lib/central-form-dispatch";
 import { JoinPage } from "@/components/join/join-page";
+import { SectorConsultationCta } from "@/components/site/sector-consultation-cta";
 import {
   Dialog,
   DialogContent,
@@ -235,6 +236,13 @@ export function FoodSectorView({ tab = "about" }: FoodViewProps) {
       {activeTab === "join" && (
         <div className="pt-24 sm:pt-28">
           <JoinPage trackId="food" />
+        </div>
+      )}
+
+      {/* Dedicated Sector Free Consultation CTA */}
+      {activeTab !== "order-product" && activeTab !== "join" && (
+        <div className="site-container my-12">
+          <SectorConsultationCta sector="food" ar={ar} />
         </div>
       )}
 

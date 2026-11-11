@@ -4,6 +4,7 @@ import { crmSystem } from "./crm-system";
 import { WHATSAPP_URL } from "./process-steps";
 
 export type CentralFormType =
+  | "free_consultation"
   | "quote_request_model"
   | "general_contact"
   | "complaint"
@@ -17,13 +18,28 @@ export type CentralFormType =
   | "partnership_application"
   | "trade_supplier_bid";
 
+export type CentralSubmissionStatus =
+  | "new"
+  | "under_review"
+  | "info_required"
+  | "qualified"
+  | "not_qualified"
+  | "assigned"
+  | "contacted"
+  | "scheduled"
+  | "proposal_sent"
+  | "in_progress"
+  | "completed"
+  | "closed";
+
 export interface CentralFormSubmission {
   id: string;
   referenceCode: string;
   formType: CentralFormType;
   formTitleEn: string;
   formTitleAr: string;
-  sector: "garment" | "construction" | "environmental" | "food" | "investor" | "group";
+  sector: "garment" | "construction" | "environmental" | "food" | "investor" | "group" | "multi";
+  selectedSectors?: string[];
   createdAt: string;
   applicant: {
     fullName: string;
@@ -33,6 +49,8 @@ export interface CentralFormSubmission {
     country?: string;
     city?: string;
     jobTitle?: string;
+    website?: string;
+    linkedin?: string;
   };
   details: Record<string, any>;
   modelMeta?: {
@@ -44,7 +62,8 @@ export interface CentralFormSubmission {
     fabric?: string;
     moq?: string | number;
   };
-  status: "new" | "under_review" | "in_contact" | "closed";
+  status: CentralSubmissionStatus;
+  assignedSpecialist?: string;
   internalNotes?: string[];
 }
 
@@ -56,6 +75,7 @@ export function generateSubmissionReference(type: CentralFormType): string {
   const year = new Date().getFullYear();
   const rand = Math.floor(1000 + Math.random() * 9000);
   const prefixes: Record<CentralFormType, string> = {
+    free_consultation: "SBA-CNS",
     quote_request_model: "SBA-QTE",
     general_contact: "SBA-CNT",
     complaint: "SBA-CMP",
@@ -158,6 +178,40 @@ export function buildOwnerWhatsAppFollowupUrl(submission: CentralFormSubmission,
     ? `مرحبًا إدارة مجموعة سامي بن عياد، أود متابعة الطلب المقدم برقم مرجعي [${referenceCode}] بخصوص ${title}${modelInfo}.\nالاسم: ${applicant.fullName} - ${applicant.company || ""}`
     : `Hello SBA Management, following up on submission [${referenceCode}] regarding ${formTitleEn}${modelMeta ? ` (Model ${modelMeta.code})` : ""}.\nName: ${applicant.fullName} - ${applicant.company || ""}`;
   return `${WHATSAPP_URL}?text=${encodeURIComponent(text)}`;
+}
+
+export function buildApplicantConfirmationEmail(submission: CentralFormSubmission, ar = true): {
+  subject: string;
+  body: string;
+} {
+  const { referenceCode } = submission;
+  if (ar) {
+    return {
+      subject: `تأكيد استلام طلب الاستشارة المجانية — مجموعة سامي بن عياد [${referenceCode}]`,
+      body: `شكرًا لتواصلكم مع مجموعة سامي بن عياد.
+
+تم استلام طلب الاستشارة المجانية الخاص بكم بنجاح.
+
+سيقوم المختص في القطاع المعني بمراجعة استفساركم والتواصل معكم لمناقشة متطلباتكم والتنسيق للخطوات القادمة.
+
+الرقم المرجعي لطلبكم: ${referenceCode}
+
+نقدّر اهتمامكم وثقتكم بمجموعة سامي بن عياد.`
+    };
+  }
+
+  return {
+    subject: `Your Free Consultation Request – SAMI BIN AYYAD GROUP [${referenceCode}]`,
+    body: `Thank you for contacting SAMI BIN AYYAD GROUP.
+
+Your free consultation request has been successfully received.
+
+Our relevant sector specialist will review your inquiry and contact you to discuss your requirements.
+
+Your Inquiry Reference: ${referenceCode}
+
+We appreciate your interest in SAMI BIN AYYAD GROUP.`
+  };
 }
 
 /**

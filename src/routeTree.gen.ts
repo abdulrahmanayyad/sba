@@ -23,6 +23,7 @@ import { Route as ModelsRouteImport } from './routes/models'
 import { Route as NewsRouteImport } from './routes/news'
 import { Route as PartnersRouteImport } from './routes/partners'
 import { Route as ProductsRouteImport } from './routes/products'
+import { Route as RequestConsultationRouteImport } from './routes/request-consultation'
 import { Route as SectorsRouteImport } from './routes/sectors'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as SubmitOpportunityRouteImport } from './routes/submit-opportunity'
@@ -111,6 +112,11 @@ const PartnersRoute = PartnersRouteImport.update({
 const ProductsRoute = ProductsRouteImport.update({
   id: '/products',
   path: '/products',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RequestConsultationRoute = RequestConsultationRouteImport.update({
+  id: '/request-consultation',
+  path: '/request-consultation',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SectorsRoute = SectorsRouteImport.update({
@@ -224,6 +230,7 @@ export interface FileRoutesByFullPath {
   '/news': typeof NewsRouteWithChildren
   '/partners': typeof PartnersRoute
   '/products': typeof ProductsRoute
+  '/request-consultation': typeof RequestConsultationRoute
   '/sectors': typeof SectorsRouteWithChildren
   '/services': typeof ServicesRoute
   '/submit-opportunity': typeof SubmitOpportunityRoute
@@ -255,6 +262,7 @@ export interface FileRoutesByTo {
   '/investor-relations': typeof InvestorRelationsRoute
   '/partners': typeof PartnersRoute
   '/products': typeof ProductsRoute
+  '/request-consultation': typeof RequestConsultationRoute
   '/services': typeof ServicesRoute
   '/submit-opportunity': typeof SubmitOpportunityRoute
   '/trade': typeof TradeRoute
@@ -290,6 +298,7 @@ export interface FileRoutesById {
   '/news': typeof NewsRouteWithChildren
   '/partners': typeof PartnersRoute
   '/products': typeof ProductsRoute
+  '/request-consultation': typeof RequestConsultationRoute
   '/sectors': typeof SectorsRouteWithChildren
   '/services': typeof ServicesRoute
   '/submit-opportunity': typeof SubmitOpportunityRoute
@@ -327,6 +336,7 @@ export interface FileRouteTypes {
     | '/news'
     | '/partners'
     | '/products'
+    | '/request-consultation'
     | '/sectors'
     | '/services'
     | '/submit-opportunity'
@@ -358,6 +368,7 @@ export interface FileRouteTypes {
     | '/investor-relations'
     | '/partners'
     | '/products'
+    | '/request-consultation'
     | '/services'
     | '/submit-opportunity'
     | '/trade'
@@ -392,6 +403,7 @@ export interface FileRouteTypes {
     | '/news'
     | '/partners'
     | '/products'
+    | '/request-consultation'
     | '/sectors'
     | '/services'
     | '/submit-opportunity'
@@ -428,6 +440,7 @@ export interface RootRouteChildren {
   NewsRoute: typeof NewsRouteWithChildren
   PartnersRoute: typeof PartnersRoute
   ProductsRoute: typeof ProductsRoute
+  RequestConsultationRoute: typeof RequestConsultationRoute
   SectorsRoute: typeof SectorsRouteWithChildren
   ServicesRoute: typeof ServicesRoute
   SubmitOpportunityRoute: typeof SubmitOpportunityRoute
@@ -533,6 +546,13 @@ declare module '@tanstack/react-router' {
       path: '/products'
       fullPath: '/products'
       preLoaderRoute: typeof ProductsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/request-consultation': {
+      id: '/request-consultation'
+      path: '/request-consultation'
+      fullPath: '/request-consultation'
+      preLoaderRoute: typeof RequestConsultationRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sectors': {
@@ -757,6 +777,7 @@ const rootRouteChildren: RootRouteChildren = {
   NewsRoute: NewsRouteWithChildren,
   PartnersRoute: PartnersRoute,
   ProductsRoute: ProductsRoute,
+  RequestConsultationRoute: RequestConsultationRoute,
   SectorsRoute: SectorsRouteWithChildren,
   ServicesRoute: ServicesRoute,
   SubmitOpportunityRoute: SubmitOpportunityRoute,

@@ -30,6 +30,7 @@ import { GarmentPartnersTab } from "./tabs/garment-partners-tab";
 import { GarmentCapabilitiesTab } from "./tabs/garment-capabilities-tab";
 import { GarmentJoinTab } from "./tabs/garment-join-tab";
 import { JoinPage } from "@/components/join/join-page";
+import { SectorConsultationCta } from "@/components/site/sector-consultation-cta";
 
 export type GarmentTab = 
   | "about" 
@@ -178,6 +179,11 @@ export function GarmentSectorView({ tab = "about" }: GarmentViewProps) {
         {activeTab === "capabilities" && <GarmentCapabilitiesTab />}
         {activeTab === "join" && <JoinPage trackId="garment" />}
         {activeTab === "start-project" && <GarmentStartProjectView />}
+
+        {/* Dedicated Sector Free Consultation CTA */}
+        {activeTab !== "start-project" && activeTab !== "join" && (
+          <SectorConsultationCta sector="garment" ar={ar} />
+        )}
       </main>
     </div>
   );

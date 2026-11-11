@@ -50,8 +50,10 @@ export function CentralSubmissionsTab({ ar }: { ar: boolean }) {
     return () => window.removeEventListener("sba-submission-received", handleNew);
   }, []);
 
-  const FORM_TYPE_LABELS: Record<FormType, { en: string; ar: string; color: string }> = {
+  const FORM_TYPE_LABELS: Record<string, { en: string; ar: string; color: string }> = {
+    free_consultation: { en: "Free Consultation", ar: "طلب استشارة مجانية", color: "border-brand-green/40 bg-brand-green/15 text-brand-green font-bold" },
     rfq_model: { en: "Garment Model RFQ", ar: "طلب عرض سعر موديل", color: "border-purple-500/30 bg-purple-500/10 text-purple-600 dark:text-purple-400" },
+    quote_request_model: { en: "Garment Model RFQ", ar: "طلب عرض سعر موديل", color: "border-purple-500/30 bg-purple-500/10 text-purple-600 dark:text-purple-400" },
     general_contact: { en: "General Contact", ar: "استفسار تواصل عام", color: "border-blue-500/30 bg-blue-500/10 text-blue-600 dark:text-blue-400" },
     opportunity_proposal: { en: "Opportunity Proposal", ar: "مقترح فرصة استثمارية", color: "border-amber-500/30 bg-amber-500/10 text-amber-600 dark:text-amber-400" },
     investor_interest: { en: "Investor Dialogue", ar: "حوار استثماري مؤسسي", color: "border-brand-green/30 bg-brand-green/10 text-brand-green" },

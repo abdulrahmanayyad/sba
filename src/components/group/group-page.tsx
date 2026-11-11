@@ -16,6 +16,7 @@ import { SectorsShowcase } from "./sectors-showcase";
 import { JoinShowcase } from "./join-showcase";
 import { getLatestNewsArticles } from "@/components/news/news-data";
 import { HomeTradeSection } from "@/components/home/home-trade-section";
+import { HomeConsultationCta } from "@/components/home/home-consultation-cta";
 
 
 export function GroupPage() {
@@ -442,6 +443,9 @@ export function GroupPage() {
 
       {/* Join Us Pathways — 3 Concise Cards linking to dedicated pages */}
       <JoinShowcase />
+
+      {/* Central Free Consultation Section */}
+      <HomeConsultationCta ar={ar} />
 
       {/* Final CTA — Interactive Glassmorphic Island matching Footer */}
       <section id="contact" className="relative px-4 pb-10 pt-4 text-foreground scroll-mt-24">

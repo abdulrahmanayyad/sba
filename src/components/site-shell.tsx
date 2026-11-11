@@ -355,12 +355,31 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
         {(close) => (
           <div className="flex flex-col gap-1 p-1">
             <Link
+              to="/request-consultation"
+              className={cn(dropdownLink, "!bg-slate-900/40 border border-slate-700/50 hover:!bg-brand-green/20 hover:!border-brand-green/40")}
+              onClick={() => { close(); onNavigate?.(); }}
+            >
+              <div className="flex items-center gap-2.5">
+                <div className="size-7 rounded-lg bg-brand-green/20 text-brand-green flex items-center justify-center shrink-0">
+                  <Sparkles className="size-3.5" />
+                </div>
+                <div className="flex flex-col">
+                  <div className="flex items-center gap-1.5">
+                    <span className="font-bold text-brand-green">{isArabic ? "طلب استشارة مجانية" : "Request a Free Consultation"}</span>
+                    <span className="text-[9px] font-bold px-1.5 py-0.5 rounded bg-brand-green/20 text-brand-green">100% Free</span>
+                  </div>
+                  <span className="text-[11px] text-foreground/60">{isArabic ? "استشارة أعمال أولية لكافة القطاعات" : "Complimentary multi-sector guidance"}</span>
+                </div>
+              </div>
+            </Link>
+
+            <Link
               to="/contact"
               className={dropdownLink}
               onClick={() => { close(); onNavigate?.(); }}
             >
               <div className="flex flex-col">
-                <span className="font-bold">{isArabic ? "تواصل معنا" : "Contact Us"}</span>
+                <span className="font-bold">{isArabic ? "تواصل معنا" : "Contact Information"}</span>
                 <span className="text-[11px] text-foreground/60">{isArabic ? "الاستفسارات العامة وطلبات الأعمال" : "General inquiries & business requests"}</span>
               </div>
             </Link>
@@ -564,6 +583,10 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
                   <h2 className="font-head text-base sm:text-lg font-extrabold uppercase tracking-wider text-brand-orange">{messages.footer.contact}</h2>
                   <div className="grid gap-3 justify-items-start">
                     <Link to="/contact" className="text-sm font-semibold text-foreground/95 transition-colors hover:text-brand-orange leading-snug py-0.5">{isArabic ? "تواصل معنا" : "Contact Us"}</Link>
+                    <Link to="/request-consultation" className="text-sm font-bold text-brand-green hover:text-brand-orange transition-colors leading-snug py-0.5 inline-flex items-center gap-1.5">
+                      <span className="size-1.5 rounded-full bg-brand-green animate-pulse" />
+                      <span>{isArabic ? "طلب استشارة مجانية" : "Request a Free Consultation"}</span>
+                    </Link>
                     <Link to="/contact/complaints" className="text-sm font-semibold text-foreground/95 transition-colors hover:text-brand-orange leading-snug py-0.5">{isArabic ? "الشكاوى" : "Complaints"}</Link>
                     <Link to="/contact/opportunities" className="text-sm font-semibold text-foreground/95 transition-colors hover:text-brand-orange leading-snug py-0.5">{isArabic ? "اعرض فرصتك" : "Submit Your Opportunity"}</Link>
                     <div className="mt-1 pt-3 border-t border-border/40 grid gap-2.5 w-full justify-items-start">

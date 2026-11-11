@@ -102,21 +102,48 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: ReactNode }) {
-  const organizationSchema = {
+  const structuredData = {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "Sami Bin Ayyad Group",
-    alternateName: "مجموعة سامي بن عياد",
-    url: "https://sami-trade.com",
-    logo: "https://sami-trade.com/favicon.png",
-    description: "Multidisciplinary corporate group operating across Apparel Manufacturing, Contracting & Real Estate, Sustainable Environment, and Natural & Agri-Food Products.",
-    contactPoint: {
-      "@type": "ContactPoint",
-      telephone: "+201222238072",
-      contactType: "customer service",
-      email: "info@sami-trade.com",
-      availableLanguage: ["Arabic", "English"],
-    },
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.sami-trade.com/#organization",
+        name: "Sami Bin Ayyad Group",
+        alternateName: "مجموعة سامي بن عياد",
+        url: "https://www.sami-trade.com",
+        logo: {
+          "@type": "ImageObject",
+          url: "https://www.sami-trade.com/favicon.png",
+          caption: "Sami Bin Ayyad Group"
+        },
+        description: "Multidisciplinary corporate group operating across Apparel Manufacturing, Contracting & Real Estate, Sustainable Environment, and Natural & Agri-Food Products.",
+        foundingDate: "2023",
+        contactPoint: [
+          {
+            "@type": "ContactPoint",
+            telephone: "+201222238072",
+            contactType: "customer service",
+            email: "info@sami-trade.com",
+            availableLanguage: ["Arabic", "English"],
+          }
+        ],
+        sameAs: [
+          "https://www.facebook.com/samibinayyad",
+          "https://www.instagram.com/samibinayyad",
+          "https://www.linkedin.com/company/samibinayyad"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.sami-trade.com/#website",
+        url: "https://www.sami-trade.com",
+        name: "Sami Bin Ayyad Group",
+        publisher: {
+          "@id": "https://www.sami-trade.com/#organization"
+        },
+        inLanguage: ["ar", "en"]
+      }
+    ]
   };
 
   return (
@@ -125,7 +152,7 @@ function RootShell({ children }: { children: ReactNode }) {
         <HeadContent />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
       <body>

@@ -374,9 +374,21 @@ export function ContactPage() {
             {/* Quick Links to Other Contact Channels */}
             <div className="rounded-3xl border border-white/20 bg-background/60 p-6 backdrop-blur-xl shadow-md space-y-3">
               <h3 className="font-head text-sm font-bold text-foreground">
-                {ar ? "قنوات اتصال متخصصة أخرى:" : "Specialized Portals:"}
+                {ar ? "قنوات اتصال متخصصة ومجانية:" : "Specialized Portals & Consultations:"}
               </h3>
               <div className="grid gap-2">
+                <Link
+                  to="/request-consultation"
+                  className="flex items-center justify-between p-3.5 rounded-2xl border border-brand-green/40 bg-brand-green/10 hover:bg-brand-green/20 hover:border-brand-green/60 transition-all text-xs font-bold shadow-xs"
+                >
+                  <span className="flex items-center gap-2 text-foreground">
+                    <Sparkles className="size-4 text-brand-green" />
+                    <span className="font-bold text-brand-green">
+                      {ar ? "طلب استشارة مجانية 100%" : "Request Free Consultation (100% Free)"}
+                    </span>
+                  </span>
+                  <span className="text-brand-green font-bold">{ar ? "احجز الآن ←" : "Request Free →"}</span>
+                </Link>
                 <Link
                   to="/contact/complaints"
                   className="flex items-center justify-between p-3 rounded-2xl border border-border bg-secondary/40 hover:bg-brand-orange/10 hover:border-brand-orange/40 transition-all text-xs font-bold"
