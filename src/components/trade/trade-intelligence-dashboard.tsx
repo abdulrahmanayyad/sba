@@ -1,16 +1,5 @@
 import React, { useState, useMemo } from "react";
 import { 
-  Globe, 
-  Layers, 
-  Calendar,
-  CheckCircle2,
-  AlertCircle,
-  FileText,
-  Building2,
-  ShieldAlert,
-  Sparkles
-} from "lucide-react";
-import { 
   ALL_INQUIRIES,
   TRADE_STATS,
   VERIFIED_TRADE_EVENTS,
@@ -181,7 +170,6 @@ export function TradeIntelligenceDashboard({ ar = true }: TradeIntelligenceDashb
       {/* Methodological Transparency Strip */}
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-3 pt-2">
         <div className="rounded-2xl border border-brand-green/30 bg-brand-green/10 p-3.5 flex items-center gap-3">
-          <CheckCircle2 className="size-5 text-brand-green shrink-0" />
           <div className="text-xs">
             <span className="font-bold text-foreground block">
               {ar ? "طلبات شراء معتمدة:" : "Verified Buyer Inquiries:"} {activeInquiries.length}
@@ -193,7 +181,6 @@ export function TradeIntelligenceDashboard({ ar = true }: TradeIntelligenceDashb
         </div>
 
         <div className="rounded-2xl border border-border/60 bg-secondary/40 p-3.5 flex items-center gap-3">
-          <FileText className="size-5 text-muted-foreground shrink-0" />
           <div className="text-xs">
             <span className="font-bold text-foreground block">
               {ar ? "رسائل الأرشيف التسويقية:" : "Archive Newsletters/Alerts:"} 347
@@ -205,7 +192,6 @@ export function TradeIntelligenceDashboard({ ar = true }: TradeIntelligenceDashb
         </div>
 
         <div className="rounded-2xl border border-amber-500/30 bg-amber-500/10 p-3.5 flex items-center gap-3">
-          <AlertCircle className="size-5 text-amber-500 shrink-0" />
           <div className="text-xs">
             <span className="font-bold text-foreground block">
               {ar ? "الصفقات المنفذة:" : "Executed Deals / Contracts:"} {ar ? "عقود مستقلة" : "Independent"}
@@ -227,10 +213,7 @@ export function TradeIntelligenceDashboard({ ar = true }: TradeIntelligenceDashb
           <div className="space-y-6">
             <div className="rounded-3xl border border-brand-green/30 bg-background/80 p-6 sm:p-8 shadow-xl backdrop-blur-xl space-y-6">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-white/10 pb-5">
-                <div className="flex items-center gap-3">
-                  <div className="rounded-2xl bg-brand-green/15 p-3 text-brand-green border border-brand-green/30">
-                    <Sparkles className="size-6" />
-                  </div>
+                <div>
                   <div>
                     <div className="inline-flex items-center gap-2 rounded-full border border-brand-green/40 bg-brand-green/10 px-3 py-0.5 text-[11px] font-bold text-brand-green mb-1">
                       <span>{ar ? "توثيق رسمي موحد" : "Verified Trade Event"}</span>
@@ -310,8 +293,7 @@ export function TradeIntelligenceDashboard({ ar = true }: TradeIntelligenceDashb
                 >
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
                     <div>
-                      <div className="inline-flex items-center gap-1.5 rounded-lg border border-brand-green bg-brand-green/20 px-2.5 py-0.5 text-xs font-bold text-brand-green mb-2">
-                        <Building2 className="size-3.5" />
+                      <div className="inline-flex items-center rounded-lg border border-brand-green bg-brand-green/20 px-2.5 py-0.5 text-xs font-bold text-brand-green mb-2">
                         <span>{ar ? event.categoryAr : event.categoryEn}</span>
                       </div>
                       <h4 className="text-lg sm:text-xl font-bold text-foreground">
@@ -342,8 +324,7 @@ export function TradeIntelligenceDashboard({ ar = true }: TradeIntelligenceDashb
 
               {/* Exclusion Methodology Note */}
               <div className="rounded-2xl border border-border/70 bg-secondary/30 p-4 text-xs text-muted-foreground space-y-1.5">
-                <div className="flex items-center gap-2 font-bold text-foreground">
-                  <ShieldAlert className="size-4 text-brand-orange" />
+                <div className="font-bold text-foreground">
                   <span>{ar ? "منهجية الفرز والاستبعاد لرسائل عام 2023:" : "2023 Review & Filtering Methodology:"}</span>
                 </div>
                 <p className="leading-relaxed">
@@ -362,8 +343,7 @@ export function TradeIntelligenceDashboard({ ar = true }: TradeIntelligenceDashb
             {/* Top Countries by Inquiries */}
             <div className="rounded-3xl border border-white/15 bg-background/60 p-6 shadow-xl backdrop-blur-xl lg:col-span-6">
               <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-4">
-                <div className="flex items-center gap-2">
-                  <Globe className="size-5 text-brand-orange" />
+                <div>
                   <h4 className="text-base font-bold text-foreground">
                     {ar ? "أكثر الأسواق طلبًا" : "Top Markets by Demand"} {selectedYear !== "all" && `(${selectedYear})`}
                   </h4>
@@ -408,8 +388,7 @@ export function TradeIntelligenceDashboard({ ar = true }: TradeIntelligenceDashb
             {/* Category Breakdown */}
             <div className="rounded-3xl border border-white/15 bg-background/60 p-6 shadow-xl backdrop-blur-xl lg:col-span-6">
               <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-4">
-                <div className="flex items-center gap-2">
-                  <Layers className="size-5 text-brand-green" />
+                <div>
                   <h4 className="text-base font-bold text-foreground">
                     {ar ? "توزيع طلبات الشراء حسب فئات المنتجات" : "Purchase Requests by Product Category"}
                   </h4>
@@ -440,8 +419,7 @@ export function TradeIntelligenceDashboard({ ar = true }: TradeIntelligenceDashb
             {/* Timeline Bar Chart */}
             <div className="rounded-3xl border border-white/15 bg-background/60 p-6 shadow-xl backdrop-blur-xl lg:col-span-12">
               <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
-                <div className="flex items-center gap-2">
-                  <Calendar className="size-5 text-brand-orange" />
+                <div>
                   <h4 className="text-base font-bold text-foreground">
                     {timelineData.isYearly
                       ? ar
@@ -455,7 +433,7 @@ export function TradeIntelligenceDashboard({ ar = true }: TradeIntelligenceDashb
                 <span className="inline-flex items-center gap-1.5 rounded-xl border border-brand-green !bg-brand-green !text-white px-3 py-1.5 text-xs font-bold shadow-sm transition-all duration-300">
                   {timelineData.isYearly
                     ? ar
-                      ? "ذروة التوثيق: عام 2025 (352 سجلاً)"
+                      ? "ذروة التوثيق: عام 2025 (352 سجلًا)"
                       : "Peak Year: 2025 (352 Inquiries)"
                     : ar
                     ? `إجمالي طلبات الشراء لعام ${selectedYear}: ${activeInquiries.length}`

@@ -3,21 +3,6 @@
 
 import React, { useState } from "react";
 import { Reveal } from "@/components/home/reveal";
-import {
-  Leaf,
-  Globe2,
-  ShieldCheck,
-  TrendingUp,
-  FileCheck2,
-  ExternalLink,
-  Zap,
-  Recycle,
-  Droplets,
-  Building2,
-  Filter,
-  CheckCircle2,
-  ChevronDown
-} from "lucide-react";
 import { cn } from "@/lib/utils";
 import { SUSTAINABILITY_STATS } from "@/lib/sustainability-trade-data";
 
@@ -98,7 +83,7 @@ export function SustainabilityTradeView({ ar = true, hideHero = false }: Sustain
             <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-white/10">
               <div className="space-y-2">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-green/15 text-brand-green border border-brand-green/30 text-xs font-semibold">
-                  <Leaf className="w-3.5 h-3.5" />
+                  <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
                   <span>{ar ? "القسم 1: نظرة عامة على الفرص البيئية العالمية" : "Section 1: Global Sustainability Overview"}</span>
                 </div>
                 <h2 className="text-2xl md:text-3xl font-extrabold text-white tracking-tight">
@@ -119,7 +104,6 @@ export function SustainabilityTradeView({ ar = true, hideHero = false }: Sustain
                   href="#sustainability-forms"
                   className="px-4 py-2.5 rounded-xl text-xs font-bold !bg-brand-green !text-white hover:!bg-brand-orange hover:!text-white transition-all shadow-lg flex items-center gap-2"
                 >
-                  <ExternalLink className="w-4 h-4" />
                   <span>{ar ? "تقديم فرصة / استفسار" : "Submit Opportunity"}</span>
                 </a>
               </div>
@@ -168,8 +152,7 @@ export function SustainabilityTradeView({ ar = true, hideHero = false }: Sustain
 
         {/* Quick Anchor Navigation Links */}
         <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none text-xs">
-          <span className="text-slate-300 font-semibold shrink-0 flex items-center gap-1.5 ml-2">
-            <Filter className="w-3.5 h-3.5" />
+          <span className="text-slate-300 font-semibold shrink-0 ml-2">
             <span>{ar ? "الانتقال السريع:" : "Jump to:"}</span>
           </span>
           <a

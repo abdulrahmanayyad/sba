@@ -657,7 +657,7 @@ export function ModelsPage() {
                     <a
                       href={`${WHATSAPP_URL}&text=${encodeURIComponent(
                         ar
-                          ? `مرحباً، أود الاستفسار عن تصنيع الموديل رقم (${activeItem.code}) من كتالوج الملابس الجاهزة.`
+                          ? `مرحبًا، أود الاستفسار عن تصنيع الموديل رقم (${activeItem.code}) من كتالوج الملابس الجاهزة.`
                           : `Hello, I'd like to inquire about manufacturing model (${activeItem.code}) from the ready garments catalogue.`
                       )}`}
                       target="_blank"

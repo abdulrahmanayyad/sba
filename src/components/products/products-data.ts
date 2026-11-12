@@ -161,7 +161,7 @@ export const physicalProducts: PhysicalProduct[] = [
         labelEn: "Finishing & Comfort",
         labelAr: "التشطيب ومعايير الراحة",
         valueEn: "Tagless heat-transfer labels, gentle elastic bands, flatlock anti-chafing seams",
-        valueAr: "ملصقات رقبة مطبوعة حرارياً (Tagless)، أستك ناعم مبطن، وحياكة مسطحة مانعة للاحتكاك"
+        valueAr: "ملصقات رقبة مطبوعة حراريًا (Tagless)، أستك ناعم مبطن، وحياكة مسطحة مانعة للاحتكاك"
       },
       {
         labelEn: "Private Label",
@@ -293,7 +293,7 @@ export const physicalProducts: PhysicalProduct[] = [
         labelEn: "Private Label",
         labelAr: "التخصيص والعلامات الخاصة",
         valueEn: "Heat-sealed reflective logos, customized club crests, and branded zipper pulls",
-        valueAr: "شعارات عاكسة للضوء مدمجة حرارياً، شعارات أندية مخصصة، وسحابات تحمل علامة العميل"
+        valueAr: "شعارات عاكسة للضوء مدمجة حراريًا، شعارات أندية مخصصة، وسحابات تحمل علامة العميل"
       }
     ]
   },

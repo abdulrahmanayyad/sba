@@ -1,5 +1,4 @@
 import React from "react";
-import { Building2, Calendar, MapPin, Sparkles } from "lucide-react";
 import { VERIFIED_TRADE_PARTNERS, VERIFIED_TRADE_EVENTS } from "@/lib/trade-data";
 
 interface BusinessNetworkSectionProps {
@@ -80,8 +79,7 @@ export function BusinessNetworkSection({ ar = true }: BusinessNetworkSectionProp
       {VERIFIED_TRADE_EVENTS && VERIFIED_TRADE_EVENTS.length > 0 && (
         <div className="pt-4 border-t border-border/40 dark:border-white/10 space-y-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <Sparkles className="size-4 text-brand-orange" />
+            <div>
               <h3 className="text-base sm:text-lg font-bold text-foreground">
                 {ar ? "الفعاليات والمعارض الدولية المعتمدة (مصادر الفرص التجارية)" : "Documented Trade Events & Business Opportunity Sources"}
               </h3>
@@ -99,23 +97,16 @@ export function BusinessNetworkSection({ ar = true }: BusinessNetworkSectionProp
               >
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
                   <div>
-                    <div className="inline-flex items-center gap-1.5 rounded-lg border border-brand-green/40 bg-brand-green/15 px-2.5 py-0.5 text-xs font-bold text-brand-green mb-1.5">
-                      <Building2 className="size-3.5" />
+                    <div className="inline-flex items-center rounded-lg border border-brand-green/40 bg-brand-green/15 px-2.5 py-0.5 text-xs font-bold text-brand-green mb-1.5">
                       <span>{ar ? event.categoryAr : event.categoryEn}</span>
                     </div>
                     <h4 className="text-base sm:text-lg font-bold text-foreground">
                       {ar ? event.titleAr : event.titleEn}
                     </h4>
                     <div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground mt-1 font-medium">
-                      <span className="flex items-center gap-1">
-                        <MapPin className="size-3 text-brand-orange" />
-                        <span>{ar ? event.venueAr : event.venueEn}</span>
-                      </span>
+                      <span>{ar ? event.venueAr : event.venueEn}</span>
                       <span>•</span>
-                      <span className="flex items-center gap-1">
-                        <Calendar className="size-3 text-brand-green" />
-                        <span>{ar ? event.dateAr : event.dateEn}</span>
-                      </span>
+                      <span>{ar ? event.dateAr : event.dateEn}</span>
                       <span>•</span>
                       <span>{ar ? event.organizerAr : event.organizerEn}</span>
                     </div>

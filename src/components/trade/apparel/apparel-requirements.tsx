@@ -1,5 +1,4 @@
 import React from "react";
-import { CheckCircle2, ShieldCheck, Factory, Layers } from "lucide-react";
 import { APPAREL_REQUIREMENT_TRACKS } from "@/lib/apparel-trade-data";
 
 interface ApparelRequirementsProps {
@@ -69,8 +68,8 @@ export function ApparelRequirements({ ar = true }: ApparelRequirementsProps) {
                   </span>
                   <ul className="space-y-1.5">
                     {(ar ? track.deliverablesAr || [] : track.deliverablesEn || []).map((del, i) => (
-                      <li key={i} className="flex items-start gap-1.5 text-muted-foreground font-medium text-xs">
-                        <CheckCircle2 className="size-3.5 text-brand-green shrink-0 mt-0.5" />
+                      <li key={i} className="flex items-start gap-2 text-muted-foreground font-medium text-xs">
+                        <span className="size-1.5 rounded-full bg-brand-green shrink-0 mt-1.5" />
                         <span>{del}</span>
                       </li>
                     ))}

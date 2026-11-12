@@ -168,7 +168,7 @@ export function NewsCmsTab() {
           </h2>
           <p className="text-xs text-muted-foreground mt-0.5">
             {ar
-              ? `إجمالي المواد التوثيقية: ${articlesList.length} مادة (تشمل 11 تحليلاً تاريخياً 2010–2020 و39 تقريراً مؤسسياً).`
+              ? `إجمالي المواد التوثيقية: ${articlesList.length} مادة (تشمل 11 تحليلًا تاريخيًا 2010–2020 و39 تقريرًا مؤسسيًا).`
               : `Total Documented Entries: ${articlesList.length} records (including 11 historical reviews & 39 corporate news items).`}
           </p>
         </div>

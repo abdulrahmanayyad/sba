@@ -2,7 +2,6 @@
 // SAMI BIN AYYAD GROUP — Global Sustainability & Environmental Opportunities
 
 import React from "react";
-import { FileText, Download, ShieldCheck, Mail, Phone, MapPin, Clock, MessageSquare, ArrowUpRight } from "lucide-react";
 import { SUSTAINABILITY_DOCUMENTS } from "@/lib/sustainability-trade-data";
 
 interface SustainabilityDocumentsContactProps {
@@ -19,7 +18,7 @@ export const SustainabilityDocumentsContact: React.FC<SustainabilityDocumentsCon
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-4 border-b border-white/10">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-green/10 text-brand-green border border-brand-green/20 text-xs font-semibold mb-2">
-              <FileText className="w-3.5 h-3.5" />
+              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
               <span>{ar ? "القسم 15: مركز الوثائق والدراسات" : "Section 15: Documents & Research Center"}</span>
             </div>
             <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight">
@@ -31,8 +30,7 @@ export const SustainabilityDocumentsContact: React.FC<SustainabilityDocumentsCon
                 : "Approved corporate repository offering legal compliance guides, sector briefs, and technical feasibility papers for partners and investors."}
             </p>
           </div>
-          <div className="text-xs text-slate-300 flex items-center gap-2">
-            <ShieldCheck className="w-4 h-4 text-brand-green" />
+          <div className="text-xs text-slate-300">
             <span>{ar ? "وثائق رسمية محدثة 2025-2026" : "Official Documents Updated 2025-2026"}</span>
           </div>
         </div>
@@ -73,7 +71,6 @@ export const SustainabilityDocumentsContact: React.FC<SustainabilityDocumentsCon
                   download
                   className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold !bg-brand-green !text-white hover:!bg-brand-orange hover:!text-white transition-all shadow-md"
                 >
-                  <Download className="w-3.5 h-3.5" />
                   <span>{ar ? "تحميل الوثيقة" : "Download File"}</span>
                 </a>
               </div>
@@ -83,10 +80,7 @@ export const SustainabilityDocumentsContact: React.FC<SustainabilityDocumentsCon
 
         {/* Request Specialized Feasibility / Whitepaper Banner */}
         <div className="p-4 rounded-xl bg-white/[0.03] border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-300">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-brand-green/20 text-brand-green flex items-center justify-center shrink-0">
-              <FileText className="w-4 h-4" />
-            </div>
+          <div>
             <span>
               {ar
                 ? "هل تبحث عن دراسة جدوى قطاعية أو تقرير امتثال مخصص لمشروعك الصناعي؟ يمكنك طلب دراسة مخصصة عبر نموذج الاستفسارات."
@@ -109,7 +103,7 @@ export const SustainabilityDocumentsContact: React.FC<SustainabilityDocumentsCon
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-4 border-b border-white/10">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-green/10 text-brand-green border border-brand-green/20 text-xs font-semibold mb-2">
-              <Phone className="w-3.5 h-3.5" />
+              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
               <span>{ar ? "القسم 16: التواصل المباشر" : "Section 16: Direct Sector Contact"}</span>
             </div>
             <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight">
@@ -127,9 +121,6 @@ export const SustainabilityDocumentsContact: React.FC<SustainabilityDocumentsCon
           {/* Card 1: Official Corporate Emails */}
           <div className="p-6 rounded-2xl bg-white/[0.04] backdrop-blur-xl border border-white/10 flex flex-col justify-between space-y-4">
             <div className="space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-brand-green/15 text-brand-green flex items-center justify-center">
-                <Mail className="w-5 h-5" />
-              </div>
               <h3 className="text-base font-bold text-white">
                 {ar ? "البريد الإلكتروني المتخصص" : "Specialized Inboxes"}
               </h3>
@@ -158,9 +149,6 @@ export const SustainabilityDocumentsContact: React.FC<SustainabilityDocumentsCon
           {/* Card 2: Phone & Instant Coordination */}
           <div className="p-6 rounded-2xl bg-white/[0.04] backdrop-blur-xl border border-white/10 flex flex-col justify-between space-y-4">
             <div className="space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-brand-green/15 text-brand-green flex items-center justify-center">
-                <MessageSquare className="w-5 h-5" />
-              </div>
               <h3 className="text-base font-bold text-white">
                 {ar ? "الهاتف والمحادثة المباشرة" : "Phone & Instant Messaging"}
               </h3>
@@ -186,7 +174,6 @@ export const SustainabilityDocumentsContact: React.FC<SustainabilityDocumentsCon
                   className="text-brand-green hover:underline font-mono inline-flex items-center gap-1"
                 >
                   <span>Chat Direct</span>
-                  <ArrowUpRight className="w-3 h-3" />
                 </a>
               </div>
             </div>
@@ -195,9 +182,6 @@ export const SustainabilityDocumentsContact: React.FC<SustainabilityDocumentsCon
           {/* Card 3: Regional Hub & Working Hours */}
           <div className="p-6 rounded-2xl bg-white/[0.04] backdrop-blur-xl border border-white/10 flex flex-col justify-between space-y-4">
             <div className="space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-brand-green/15 text-brand-green flex items-center justify-center">
-                <MapPin className="w-5 h-5" />
-              </div>
               <h3 className="text-base font-bold text-white">
                 {ar ? "المقر وساعات العمل الرسمية" : "Regional Office & Hours"}
               </h3>
@@ -208,12 +192,10 @@ export const SustainabilityDocumentsContact: React.FC<SustainabilityDocumentsCon
               </p>
             </div>
             <div className="space-y-2 pt-2 border-t border-white/10 text-xs">
-              <div className="flex items-center gap-2 text-slate-300">
-                <Clock className="w-3.5 h-3.5 text-brand-green shrink-0" />
+              <div className="text-slate-300">
                 <span>{ar ? "الأحد – الخميس: 9:00 ص – 5:00 م" : "Sun – Thu: 9:00 AM – 5:00 PM (GMT+2)"}</span>
               </div>
-              <div className="flex items-center gap-2 text-slate-300">
-                <ShieldCheck className="w-3.5 h-3.5 text-brand-green shrink-0" />
+              <div className="text-slate-300">
                 <span>{ar ? "اتفاقيات سرية البيانات (NDA) متاحة قبل بدء التداول الفني" : "NDA execution available prior to deep technical sharing"}</span>
               </div>
             </div>

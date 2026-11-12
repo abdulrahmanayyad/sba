@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { FileText, Download, Eye, Mail, MessageSquare, Printer, CheckCircle2, ShieldAlert } from "lucide-react";
 import { APPAREL_DOWNLOADS } from "@/lib/apparel-trade-data";
 
 interface ApparelReportsDownloadsProps {
@@ -49,10 +48,7 @@ export function ApparelReportsDownloads({ ar = true }: ApparelReportsDownloadsPr
             className="group flex flex-col justify-between rounded-2xl border border-border/80 bg-background/60 p-6 backdrop-blur-xl transition-all duration-300 hover:border-brand-green/60 hover:bg-background/80 hover:shadow-lg hover:-translate-y-0.5"
           >
             <div>
-              <div className="flex items-center justify-between border-b border-border/60 pb-3">
-                <span className="flex size-10 items-center justify-center rounded-xl bg-brand-orange/15 text-brand-orange">
-                  <FileText className="size-5" />
-                </span>
+              <div className="flex items-center justify-end border-b border-border/60 pb-3">
                 <span dir="ltr" className="inline-flex items-center rounded-full bg-secondary px-2.5 py-0.5 text-[11px] font-mono font-medium text-foreground">
                   {rep.fileSize}
                 </span>
@@ -82,7 +78,6 @@ export function ApparelReportsDownloads({ ar = true }: ApparelReportsDownloadsPr
                 onClick={() => setActiveReportModal(rep.id)}
                 className="flex items-center justify-center gap-1.5 rounded-xl border border-border bg-secondary/50 py-2 text-xs font-semibold text-foreground hover:bg-secondary hover:text-brand-orange transition-colors cursor-pointer"
               >
-                <Eye className="size-3.5" />
                 <span>{ar ? "معاينة" : "Preview"}</span>
               </button>
 
@@ -94,7 +89,6 @@ export function ApparelReportsDownloads({ ar = true }: ApparelReportsDownloadsPr
                 }}
                 className="flex items-center justify-center gap-1.5 rounded-xl bg-brand-green py-2 text-xs font-bold text-white shadow-md hover:bg-brand-orange transition-all duration-300 cursor-pointer"
               >
-                <Download className="size-3.5" />
                 <span>{ar ? "تحميل PDF" : "Download PDF"}</span>
               </button>
             </div>
@@ -113,11 +107,8 @@ export function ApparelReportsDownloads({ ar = true }: ApparelReportsDownloadsPr
 
             <a
               href="mailto:info@sami-trade.com"
-              className="flex items-center gap-3 p-2.5 rounded-xl border border-border/70 bg-background/80 hover:border-brand-orange hover:bg-background transition-all group"
+              className="flex items-center justify-between p-3 rounded-xl border border-border/70 bg-background/80 hover:border-brand-orange hover:bg-background transition-all group"
             >
-              <div className="flex size-9 items-center justify-center rounded-lg bg-brand-orange/15 text-brand-orange">
-                <Mail className="size-4" />
-              </div>
               <div className="text-start">
                 <span className="text-[10px] text-muted-foreground block">{ar ? "البريد الرسمي المعتمد" : "Official Email"}</span>
                 <span className="text-xs font-bold text-foreground font-mono group-hover:text-brand-orange">
@@ -130,11 +121,8 @@ export function ApparelReportsDownloads({ ar = true }: ApparelReportsDownloadsPr
               href="https://wa.me/201222238072"
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-3 p-2.5 rounded-xl border border-brand-green/30 bg-brand-green/10 hover:border-brand-green hover:bg-brand-green/20 transition-all group"
+              className="flex items-center justify-between p-3 rounded-xl border border-brand-green/30 bg-brand-green/10 hover:border-brand-green hover:bg-brand-green/20 transition-all group"
             >
-              <div className="flex size-9 items-center justify-center rounded-lg bg-brand-green text-white">
-                <MessageSquare className="size-4" />
-              </div>
               <div className="text-start">
                 <span className="text-[10px] text-brand-green block font-bold">{ar ? "واتساب التجاري المعتمد" : "Official WhatsApp"}</span>
                 <span dir="ltr" className="text-xs font-bold text-foreground font-mono group-hover:text-brand-green">
@@ -166,8 +154,7 @@ export function ApparelReportsDownloads({ ar = true }: ApparelReportsDownloadsPr
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-in fade-in duration-200">
           <div className="relative w-full max-w-4xl rounded-3xl border border-white/20 bg-background/95 p-8 shadow-2xl backdrop-blur-2xl max-h-[90vh] overflow-y-auto">
             <div className="flex items-center justify-between border-b border-border/60 pb-4 mb-6">
-              <div className="flex items-center gap-2">
-                <FileText className="size-5 text-brand-orange" />
+              <div>
                 <span className="text-sm font-bold text-foreground">
                   {ar ? "معاينة الملف التوثيقي المعتمد" : "Official Dossier Preview"}
                 </span>
@@ -178,7 +165,6 @@ export function ApparelReportsDownloads({ ar = true }: ApparelReportsDownloadsPr
                   onClick={handlePrint}
                   className="rounded-xl border border-border bg-secondary/80 px-3 py-1.5 text-xs font-semibold text-foreground hover:bg-secondary cursor-pointer"
                 >
-                  <Printer className="size-3.5 inline me-1.5" />
                   <span>{ar ? "طباعة" : "Print"}</span>
                 </button>
                 <button

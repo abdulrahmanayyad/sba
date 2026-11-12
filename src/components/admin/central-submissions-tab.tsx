@@ -119,7 +119,7 @@ export function CentralSubmissionsTab({ ar }: { ar: boolean }) {
   };
 
   const clearAllLocal = () => {
-    if (window.confirm(ar ? "هل أنت متأكد من مسح كافة الطلبات المخزنة محلياً في هذا المتصفح؟" : "Are you sure you want to clear all locally cached submissions?")) {
+    if (window.confirm(ar ? "هل أنت متأكد من مسح كافة الطلبات المخزنة محليًا في هذا المتصفح؟" : "Are you sure you want to clear all locally cached submissions?")) {
       localStorage.removeItem("sba_central_submissions_v1");
       loadSubmissions();
     }

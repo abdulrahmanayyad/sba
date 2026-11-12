@@ -38,7 +38,7 @@ const SECTOR_CTA_CONFIG: Record<
       "Planning a construction project, exploring real estate opportunities, or seeking a reliable development partner? Discuss your requirements with our specialized team and explore the right solutions for your project.",
     buttonAr: "ناقش مشروعك – استشارة مجانية",
     buttonEn: "Discuss Your Project – Free Consultation",
-    secondaryAr: "من دراسة وتخطيط المشروعات حتى التنفيذ والتطوير المتكامل، لنستكشف الآفاق معاً.",
+    secondaryAr: "من دراسة وتخطيط المشروعات حتى التنفيذ والتطوير المتكامل، لنستكشف الآفاق معًا.",
     secondaryEn: "From project planning to execution and development, let’s explore the possibilities together.",
     badgeAr: "استشارات المقاولات والتطوير العقاري",
     badgeEn: "Contracting & Real Estate Advisory"
@@ -81,7 +81,7 @@ const SECTOR_CTA_CONFIG: Record<
       "Looking for reliable natural products, agricultural commodities, food sourcing, or international supply opportunities? Share your product specifications and market requirements with our team.",
     buttonAr: "ناقش متطلبات أعمالك الغذائية",
     buttonEn: "Discuss Your Food Business Needs",
-    secondaryAr: "سواء كنت مهتماً بالتوريد، الاستيراد، التصدير، التوزيع، أو الشراكات الاستراتيجية، فلنستكشف الفرصة معاً.",
+    secondaryAr: "سواء كنت مهتمًا بالتوريد، الاستيراد، التصدير، التوزيع، أو الشراكات الاستراتيجية، فلنستكشف الفرصة معًا.",
     secondaryEn: "Whether you’re interested in sourcing, importing, exporting, distribution, or strategic partnerships, let’s explore the opportunity together.",
     badgeAr: "استشارات التوريد والتصدير الغذائي",
     badgeEn: "Agri-Food & Supply Chain Advisory"
@@ -146,7 +146,7 @@ export const SectorConsultationCta: React.FC<SectorConsultationCtaProps> = ({ se
                 </Link>
               </Button>
               <span className="text-[11px] text-slate-400 text-center lg:text-end w-full sm:w-auto">
-                {ar ? "يتم توجيه الطلب فوراً إلى إدارة القطاع" : "Directly routed to the sector directorship"}
+                {ar ? "يتم توجيه الطلب فورًا إلى إدارة القطاع" : "Directly routed to the sector directorship"}
               </span>
             </div>
           </div>

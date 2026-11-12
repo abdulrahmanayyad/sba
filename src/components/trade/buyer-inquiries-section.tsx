@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Users, Search, Filter, ChevronDown, ChevronUp } from "lucide-react";
 import { ALL_INQUIRIES } from "@/lib/trade-data";
 import { PRODUCT_EN_MAP, VARIETY_EN_MAP, formatQuantity } from "@/lib/trade-inquiry-translations";
 
@@ -65,7 +64,7 @@ export function BuyerInquiriesSection({ ar = true }: BuyerInquiriesSectionProps)
                   setYearFilter(e.target.value);
                   setShowAll(false);
                 }}
-                className="appearance-none [appearance:none] [-webkit-appearance:none] [-moz-appearance:none] [&::-ms-expand]:hidden rounded-xl border border-foreground/25 bg-background/95 ps-3 pe-7 py-2 text-xs font-semibold text-foreground shadow-sm hover:border-brand-orange focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 cursor-pointer transition-all"
+                className="appearance-none [appearance:none] [-webkit-appearance:none] [-moz-appearance:none] [&::-ms-expand]:hidden rounded-xl border border-foreground/25 bg-background/95 px-3.5 py-2 text-xs font-semibold text-foreground shadow-sm hover:border-brand-orange focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 cursor-pointer transition-all"
                 style={{ WebkitAppearance: "none", MozAppearance: "none", appearance: "none", backgroundImage: "none" }}
               >
                 <option value="all" className="bg-background text-foreground">
@@ -84,11 +83,9 @@ export function BuyerInquiriesSection({ ar = true }: BuyerInquiriesSectionProps)
                   {ar ? "عام 2023 (0 طلبات - فعاليات ومعارض)" : "Year 2023 (0 Requests - Trade Events)"}
                 </option>
               </select>
-              <ChevronDown className="pointer-events-none absolute end-2 top-1/2 -translate-y-1/2 size-3 text-muted-foreground" />
             </div>
 
             <div className="relative">
-              <Search className="absolute start-3 top-1/2 -translate-y-1/2 size-3.5 text-muted-foreground" />
               <input
                 type="text"
                 value={inquirySearch}
@@ -97,7 +94,7 @@ export function BuyerInquiriesSection({ ar = true }: BuyerInquiriesSectionProps)
                   setShowAll(false);
                 }}
                 placeholder={ar ? "ابحث بدولة أو منتج أو رقم..." : "Search country, product, ID..."}
-                className="rounded-xl border border-foreground/25 bg-background/95 ps-8 pe-4 py-2 text-xs text-foreground placeholder:text-muted-foreground shadow-sm focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 transition-all w-48 sm:w-56"
+                className="rounded-xl border border-foreground/25 bg-background/95 px-4 py-2 text-xs text-foreground placeholder:text-muted-foreground shadow-sm focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 transition-all w-48 sm:w-56"
               />
             </div>
 
@@ -108,7 +105,7 @@ export function BuyerInquiriesSection({ ar = true }: BuyerInquiriesSectionProps)
                   setStatusFilter(e.target.value);
                   setShowAll(false);
                 }}
-                className="appearance-none [appearance:none] [-webkit-appearance:none] [-moz-appearance:none] [&::-ms-expand]:hidden rounded-xl border border-foreground/25 bg-background/95 ps-3.5 pe-8 py-2 text-xs font-semibold text-foreground shadow-sm hover:border-brand-orange focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 cursor-pointer transition-all"
+                className="appearance-none [appearance:none] [-webkit-appearance:none] [-moz-appearance:none] [&::-ms-expand]:hidden rounded-xl border border-foreground/25 bg-background/95 px-3.5 py-2 text-xs font-semibold text-foreground shadow-sm hover:border-brand-orange focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 cursor-pointer transition-all"
                 style={{ WebkitAppearance: "none", MozAppearance: "none", appearance: "none", backgroundImage: "none" }}
               >
                 <option value="all" className="bg-background text-foreground">
@@ -124,7 +121,6 @@ export function BuyerInquiriesSection({ ar = true }: BuyerInquiriesSectionProps)
                   {ar ? "طلبات السلع الغذائية" : "Food Commodities"}
                 </option>
               </select>
-              <ChevronDown className="pointer-events-none absolute end-2.5 top-1/2 -translate-y-1/2 size-3.5 text-muted-foreground" />
             </div>
           </div>
         </div>
@@ -249,11 +245,6 @@ export function BuyerInquiriesSection({ ar = true }: BuyerInquiriesSectionProps)
                 ? "رؤية المزيد"
                 : "View More"}
             </span>
-            {showAll ? (
-              <ChevronUp className="size-4 transition-transform group-hover:-translate-y-0.5" />
-            ) : (
-              <ChevronDown className="size-4 transition-transform group-hover:translate-y-0.5" />
-            )}
           </button>
         </div>
       )}

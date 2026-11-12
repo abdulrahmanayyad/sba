@@ -1,5 +1,4 @@
 import React from "react";
-import { Handshake, TrendingUp, AlertTriangle, ShieldCheck, Sparkles } from "lucide-react";
 import { 
   SUSTAINABILITY_STRATEGIC_ALLIANCES, 
   SUSTAINABILITY_MARKET_TRENDS 
@@ -36,9 +35,6 @@ export function SustainabilityAlliancesTrends({ ar = true }: SustainabilityAllia
               className="rounded-3xl border border-white/15 bg-background/70 p-5 sm:p-6 backdrop-blur-xl shadow-lg space-y-3.5 hover:border-brand-green/40 transition-all duration-300 flex flex-col justify-between"
             >
               <div className="space-y-2.5">
-                <div className="p-3 rounded-2xl bg-brand-green/10 border border-brand-green/30 text-brand-green w-fit">
-                  <Handshake className="size-5" />
-                </div>
                 <h3 className="text-base font-bold text-foreground">
                   {ar ? alliance.categoryAr : alliance.categoryEn}
                 </h3>
@@ -86,8 +82,7 @@ export function SustainabilityAlliancesTrends({ ar = true }: SustainabilityAllia
             >
               <div className="space-y-2">
                 <div className="flex items-center justify-between gap-2">
-                  <div className="flex items-center gap-2 text-brand-orange">
-                    <TrendingUp className="size-4" />
+                  <div className="text-brand-orange">
                     <span className="text-xs font-bold">{ar ? "محرك سوقي مؤثر" : "Key Market Driver"}</span>
                   </div>
                   <span className="rounded-full bg-amber-500/15 border border-amber-500/30 px-2.5 py-0.5 text-[10px] font-bold text-amber-600 dark:text-amber-400">

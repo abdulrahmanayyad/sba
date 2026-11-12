@@ -1,15 +1,5 @@
 import React, { useState } from "react";
 import { 
-  Send, 
-  CheckCircle2, 
-  MessageCircle, 
-  Building2, 
-  HelpCircle, 
-  UploadCloud, 
-  FileCheck2,
-  Sparkles
-} from "lucide-react";
-import { 
   submitCentralForm, 
   CentralFormSubmission, 
   generateSubmissionReference 
@@ -190,9 +180,6 @@ export function SustainabilityFormsSection({ ar = true }: SustainabilityFormsSec
         <div className="rounded-3xl border border-white/15 bg-background/70 p-6 sm:p-8 backdrop-blur-xl shadow-lg">
           {oppSubmittedRef ? (
             <div className="text-center py-8 space-y-4">
-              <div className="size-16 rounded-full bg-brand-green/20 text-brand-green border border-brand-green/30 flex items-center justify-center mx-auto">
-                <CheckCircle2 className="size-8" />
-              </div>
               <h3 className="text-xl font-black text-foreground">
                 {ar ? "تم استلام مقترح المشروع بنجاح!" : "Project Opportunity Submitted Successfully!"}
               </h3>
@@ -208,7 +195,6 @@ export function SustainabilityFormsSection({ ar = true }: SustainabilityFormsSec
                   rel="noopener noreferrer"
                   className="rounded-full bg-brand-green hover:bg-brand-orange text-white px-6 py-2.5 text-xs font-bold transition-all shadow-md inline-flex items-center gap-2"
                 >
-                  <MessageCircle className="size-4" />
                   <span>{ar ? "المتابعة عبر واتساب مباشرة" : "Follow up on WhatsApp"}</span>
                 </a>
                 <button
@@ -404,7 +390,6 @@ export function SustainabilityFormsSection({ ar = true }: SustainabilityFormsSec
                   disabled={oppSubmitting}
                   className="rounded-full bg-brand-green hover:bg-brand-orange text-white px-8 py-3 text-xs sm:text-sm font-bold transition-all shadow-md hover:shadow-xl hover:-translate-y-0.5 active:scale-95 cursor-pointer disabled:opacity-60 inline-flex items-center gap-2"
                 >
-                  <Send className="size-4" />
                   <span>{oppSubmitting ? (ar ? "جاري الإرسال والتسجيل..." : "Registering Submission...") : (ar ? "إرسال مقترح المشروع رسميًا" : "Submit Project Proposal Officially")}</span>
                 </button>
               </div>
@@ -418,9 +403,6 @@ export function SustainabilityFormsSection({ ar = true }: SustainabilityFormsSec
         <div className="rounded-3xl border border-white/15 bg-background/70 p-6 sm:p-8 backdrop-blur-xl shadow-lg">
           {reqSubmittedRef ? (
             <div className="text-center py-8 space-y-4">
-              <div className="size-16 rounded-full bg-brand-green/20 text-brand-green border border-brand-green/30 flex items-center justify-center mx-auto">
-                <CheckCircle2 className="size-8" />
-              </div>
               <h3 className="text-xl font-black text-foreground">
                 {ar ? "تم استلام طلب الخدمات بنجاح!" : "Solutions Request Submitted Successfully!"}
               </h3>
@@ -436,7 +418,6 @@ export function SustainabilityFormsSection({ ar = true }: SustainabilityFormsSec
                   rel="noopener noreferrer"
                   className="rounded-full bg-brand-green hover:bg-brand-orange text-white px-6 py-2.5 text-xs font-bold transition-all shadow-md inline-flex items-center gap-2"
                 >
-                  <MessageCircle className="size-4" />
                   <span>{ar ? "التواصل الفوري عبر واتساب" : "Direct WhatsApp Chat"}</span>
                 </a>
                 <button
@@ -571,7 +552,6 @@ export function SustainabilityFormsSection({ ar = true }: SustainabilityFormsSec
                   disabled={reqSubmitting}
                   className="rounded-full bg-brand-green hover:bg-brand-orange text-white px-8 py-3 text-xs sm:text-sm font-bold transition-all shadow-md hover:shadow-xl hover:-translate-y-0.5 active:scale-95 cursor-pointer disabled:opacity-60 inline-flex items-center gap-2"
                 >
-                  <Send className="size-4" />
                   <span>{reqSubmitting ? (ar ? "جاري الإرسال..." : "Sending...") : (ar ? "إرسال طلب الحلول البيئية" : "Submit Solutions Request")}</span>
                 </button>
               </div>

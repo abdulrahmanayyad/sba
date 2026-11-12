@@ -57,7 +57,7 @@ export const VERIFIED_PROJECT_DATABASE: VerifiedProjectRecord[] = [
     countryEn: "Egypt",
     cityAr: "كفر الشيخ",
     cityEn: "Kafr El-Sheikh",
-    descriptionAr: "برج طبي متكامل بارتفاع 11 طابقاً مجهز بأحدث معايير المنشآت الطبية وغرف العمليات الكبرى وشبكات الغازات.",
+    descriptionAr: "برج طبي متكامل بارتفاع 11 طابقًا مجهز بأحدث معايير المنشآت الطبية وغرف العمليات الكبرى وشبكات الغازات.",
     descriptionEn: "Turnkey 11-storey specialized healthcare tower featuring advanced operating theatres and medical gas networks.",
     scopeOfWorkAr: "المقاولات العامة، الأعمال الإنشائية الخرسانية، التشطيبات الفندقية الطبية، وشبكات الكهروميكانيك (MEP).",
     scopeOfWorkEn: "General contracting, reinforced concrete, specialized medical fit-out, and MEP networks.",
@@ -73,7 +73,7 @@ export const VERIFIED_PROJECT_DATABASE: VerifiedProjectRecord[] = [
     verificationStatus: "Verified & Approved",
     publicationApproval: true,
     technicalHighlightsAr: [
-      "مساحة بنائية 4,200 متر مربع موزعة على 11 طابقاً",
+      "مساحة بنائية 4,200 متر مربع موزعة على 11 طابقًا",
       "شبكات غازات طبية مركزية مطابقة للأكواد الدولية",
       "محطة طوارئ ومولدات احتياطية بقدرة 500 ك.ف.أ"
     ],
@@ -154,7 +154,7 @@ export const VERIFIED_PROJECT_DATABASE: VerifiedProjectRecord[] = [
     publicationApproval: true,
     technicalHighlightsAr: [
       "180,000 قطعة منجزة مطابقة لجدول التسليم الفصلي",
-      "معايير فحص الجودة بنسبة AQL 1.5 المعتمدة دولياً",
+      "معايير فحص الجودة بنسبة AQL 1.5 المعتمدة دوليًا",
       "تسمية خاصة (Private Label) وتغليف كامل بعلامة العميل"
     ],
     technicalHighlightsEn: [
@@ -219,7 +219,7 @@ export const VERIFIED_PROJECT_DATABASE: VerifiedProjectRecord[] = [
     countryEn: "Indonesia / UAE",
     cityAr: "جاكرتا / دبي",
     cityEn: "Jakarta / Dubai",
-    descriptionAr: "فرز وتعبئة وشحن 420 طناً من تمور واحة سيوة الطبيعية المفروزة آلياً والمعالجة حرارياً.",
+    descriptionAr: "فرز وتعبئة وشحن 420 طنًا من تمور واحة سيوة الطبيعية المفروزة آليًا والمعالجة حراريًا.",
     descriptionEn: "Grading, fumigation, packaging, and export of 420 Metric Tons of premium Egyptian Siwi dates.",
     scopeOfWorkAr: "الاستلام من المزارع، الفرز حسب درجات الجودة، الغسيل والتجفيف، التعبئة في كراتين 5 كجم و10 كجم، والفحص الحجري.",
     scopeOfWorkEn: "Farm procurement, mechanical grading, optical sorting, moisture standardization, bulk packing, and phytosanitary clearance.",
@@ -235,7 +235,7 @@ export const VERIFIED_PROJECT_DATABASE: VerifiedProjectRecord[] = [
     verificationStatus: "Verified & Approved",
     publicationApproval: true,
     technicalHighlightsAr: [
-      "420 طناً مترياً تم شحنها بحاويات مبردة 40 قدماً",
+      "420 طنًا متريًا تم شحنها بحاويات مبردة 40 قدمًا",
       "نسبة رطوبة مقاسة ومثبتة بين 18% و 20%",
       "خلو تام من المبيدات وشهادات فحص مخبري موثقة"
     ],

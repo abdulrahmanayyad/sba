@@ -33,6 +33,7 @@ import {
   OPPORTUNITY_STAGES_MAP,
 } from "@/lib/contact-portal-system";
 import { submitCentralForm } from "@/lib/central-form-dispatch";
+import { ContactDirectorySidebar } from "./contact-sidebar";
 
 export function SubmitOpportunityPage() {
   const { language } = useLanguage();
@@ -250,40 +251,45 @@ export function SubmitOpportunityPage() {
   return (
     <div className="w-full pb-20">
       {/* Hero Header */}
-      <section className="relative overflow-hidden py-16 sm:py-20 bg-gradient-to-b from-secondary/40 via-background to-background">
-        <div className="site-container relative z-10 text-center max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-4 shadow-sm">
-            <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-            <span>{ar ? "بوابة الاستثمار وتطوير الأعمال" : "Strategic Co-Development Portal"}</span>
-          </div>
+      <section className="site-container pt-10 pb-4">
+        <div className="interactive-card glass-box-interactive group overflow-hidden rounded-3xl border border-white/40 bg-background/70 p-8 sm:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5 text-start">
+          <div className="relative z-10">
+            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-4 shadow-sm transition-transform duration-300 group-hover:scale-[1.02]">
+              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+              <span>{ar ? "بوابة الاستثمار وتطوير الأعمال" : "Strategic Co-Development Portal"}</span>
+            </div>
 
-          <h1 className="font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold text-foreground tracking-tight leading-tight">
-            {ar ? "اعرض فرصتك" : "Submit Your Opportunity"}
-          </h1>
+            <h1 className="font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold text-foreground tracking-tight leading-tight text-start transition-colors duration-300 group-hover:text-brand-green-text">
+              {ar ? "اعرض فرصتك" : "Submit Your Opportunity"}
+            </h1>
 
-          <div className="mt-6 space-y-4 text-base sm:text-lg leading-relaxed text-muted-foreground font-sans">
-            <p className="font-medium text-foreground">
-              {ar
-                ? "نؤمن بأن الفرص الواعدة تبدأ بالتواصل، وأن الشراكات الناجحة تقوم على تكامل الخبرات والموارد والرؤى."
-                : "We believe that promising opportunities begin with meaningful connections and that successful partnerships are built on complementary expertise, resources, and strategic vision."}
-            </p>
-            <p>
-              {ar
-                ? "ومن خلال أنشطتنا المتنوعة في قطاعات الأعمال والاستثمار والتجارة والصناعة والمقاولات والخدمات البيئية، نرحب باستقبال الفرص والمبادرات والمشروعات المقترحة التي تتوافق مع توجهات المجموعة وإمكاناتها الاستراتيجية."
-                : "Across our diverse business activities, we welcome investment proposals, business opportunities, strategic partnerships, commercial initiatives, and promising projects that align with the Group’s interests and capabilities."}
-            </p>
-            <p className="text-sm sm:text-base text-brand-orange font-semibold">
-              {ar
-                ? "إذا كنت تمتلك فرصة استثمارية، أو مشروعاً واعداً، أو مقترح شراكة، أو فرصة تعاون تجاري، ندعوك إلى عرض فكرتك علينا لدراستها من قبل الإدارة المختصة."
-                : "Present your opportunity to our team for professional review and consideration."}
-            </p>
+            <div className="mt-6 space-y-4 text-base sm:text-lg leading-relaxed text-muted-foreground font-sans text-start">
+              <p className="font-medium text-foreground">
+                {ar
+                  ? "نؤمن بأن الفرص الواعدة تبدأ بالتواصل، وأن الشراكات الناجحة تقوم على تكامل الخبرات والموارد والرؤى."
+                  : "We believe that promising opportunities begin with meaningful connections and that successful partnerships are built on complementary expertise, resources, and strategic vision."}
+              </p>
+              <p>
+                {ar
+                  ? "ومن خلال أنشطتنا المتنوعة في قطاعات الأعمال والاستثمار والتجارة والصناعة والمقاولات والخدمات البيئية، نرحب باستقبال الفرص والمبادرات والمشروعات المقترحة التي تتوافق مع توجهات المجموعة وإمكاناتها الاستراتيجية."
+                  : "Across our diverse business activities, we welcome investment proposals, business opportunities, strategic partnerships, commercial initiatives, and promising projects that align with the Group’s interests and capabilities."}
+              </p>
+              <p className="text-sm sm:text-base text-brand-orange font-semibold">
+                {ar
+                  ? "إذا كنت تمتلك فرصة استثمارية، أو مشروعًا واعدًا، أو مقترح شراكة، أو فرصة تعاون تجاري، ندعوك إلى عرض فكرتك علينا لدراستها من قبل الإدارة المختصة."
+                  : "Present your opportunity to our team for professional review and consideration."}
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Stepped Form Card */}
-      <section className="site-container mt-4 max-w-4xl mx-auto">
-        <div className="rounded-3xl border border-white/25 bg-background/85 p-6 sm:p-10 backdrop-blur-2xl shadow-2xl">
+      {/* Main Grid: Official Contact Info + Stepped Form Card */}
+      <section className="site-container mt-6">
+        <div className="grid gap-10 lg:grid-cols-12 items-start">
+          <ContactDirectorySidebar ar={ar} />
+          <div className="lg:col-span-7">
+            <div className="rounded-3xl border border-white/25 bg-background/85 p-6 sm:p-10 backdrop-blur-2xl shadow-2xl">
           {/* Progress Indicator */}
           <div className="mb-8 border-b border-border/60 pb-6">
             <div className="flex items-center justify-between gap-2 overflow-x-auto pb-2 scrollbar-none">
@@ -525,7 +531,7 @@ export function SubmitOpportunityPage() {
                     rows={5}
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
-                    placeholder={ar ? "اكتب شرحًا متكاملاً للفرصة..." : "Describe the opportunity, key market drivers, and synergy..."}
+                    placeholder={ar ? "اكتب شرحًا متكاملًا للفرصة..." : "Describe the opportunity, key market drivers, and synergy..."}
                     className={cn("w-full rounded-2xl border bg-background px-4 py-3 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-brand-green leading-relaxed", stepErrors.description ? "border-red-500" : "border-border")}
                   />
                   {stepErrors.description && <p className="text-[11px] text-red-500 mt-1">{stepErrors.description}</p>}
@@ -781,7 +787,7 @@ export function SubmitOpportunityPage() {
                     />
                     <span className="text-xs sm:text-sm text-brand-orange leading-relaxed font-bold">
                       {ar
-                        ? "3. أدرك تماماً وأوافق على أن استلام هذا العرض أو تسجيله لا يشكل بأي حال من الأحوال قبولاً مبدئياً، أو موافقة استثمارية، أو اتفاق شراكة، أو أي التزام تعاقدي أو مالي من جانب مجموعة سامي بن عياد."
+                        ? "3. أدرك تمامًا وأوافق على أن استلام هذا العرض أو تسجيله لا يشكل بأي حال من الأحوال قبولًا مبدئيًا، أو موافقة استثمارية، أو اتفاق شراكة، أو أي التزام تعاقدي أو مالي من جانب مجموعة سامي بن عياد."
                         : "3. I understand that submitting an opportunity does not constitute acceptance, investment approval, partnership agreement, or any contractual commitment by the Group."}
                     </span>
                   </label>
@@ -843,6 +849,8 @@ export function SubmitOpportunityPage() {
               )}
             </div>
           </form>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -898,7 +906,7 @@ export function SubmitOpportunityPage() {
 
           <div className="p-3 rounded-2xl bg-secondary/50 border border-border text-[11px] text-muted-foreground leading-relaxed text-center font-sans">
             {ar
-              ? "نؤكد أن استلام العرض لا يمثل موافقة مبدئية أو التزاماً استثمارياً أو تعاقدياً من جانب المجموعة."
+              ? "نؤكد أن استلام العرض لا يمثل موافقة مبدئية أو التزامًا استثماريًا أو تعاقديًا من جانب المجموعة."
               : "Submission does not constitute investment approval, partnership acceptance, or any contractual commitment."}
           </div>
 

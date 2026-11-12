@@ -1,21 +1,5 @@
 import React, { useState, useMemo } from "react";
 import { 
-  Database, 
-  Search, 
-  Filter, 
-  ExternalLink, 
-  Building2, 
-  Calendar, 
-  Coins, 
-  FileCheck2, 
-  ShieldCheck, 
-  ChevronDown, 
-  ChevronUp,
-  Tag,
-  Clock,
-  Sparkles
-} from "lucide-react";
-import { 
   SUSTAINABILITY_OPPORTUNITY_RECORDS, 
   SustainabilityOpportunity,
   SustainabilitySubsectorKey,
@@ -98,7 +82,6 @@ export function SustainabilityOpportunityDatabase({ ar = true }: SustainabilityO
           </div>
 
           <span className="inline-flex items-center gap-1.5 rounded-2xl border border-brand-green/30 bg-brand-green/10 px-4 py-2 text-xs font-bold text-brand-green shrink-0 self-start">
-            <Database className="size-4" />
             <span>{ar ? `${filteredOpportunities.length} فرصة مطابقة` : `${filteredOpportunities.length} Filtered Records`}</span>
           </span>
         </div>
@@ -152,13 +135,12 @@ export function SustainabilityOpportunityDatabase({ ar = true }: SustainabilityO
 
         {/* Search Input */}
         <div className="relative flex-1 min-w-[220px]">
-          <Search className="absolute start-3 top-1/2 -translate-y-1/2 size-3.5 text-muted-foreground" />
           <input
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder={ar ? "ابحث باسم المشروع، الجهة، الكود أو الخدمات..." : "Search project, entity, code, or service..."}
-            className="w-full rounded-xl border border-foreground/25 bg-background/95 ps-8 pe-4 py-2 text-xs text-foreground placeholder:text-muted-foreground shadow-sm focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 transition-all"
+            className="w-full rounded-xl border border-foreground/25 bg-background/95 px-4 py-2 text-xs text-foreground placeholder:text-muted-foreground shadow-sm focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 transition-all"
           />
         </div>
       </div>
@@ -241,15 +223,13 @@ export function SustainabilityOpportunityDatabase({ ar = true }: SustainabilityO
 
                 {/* Key metadata strip */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs text-muted-foreground pt-1">
-                  <div className="flex items-center gap-1.5">
-                    <Tag className="size-3.5 text-brand-green shrink-0" />
-                    <span className="truncate">
+                  <div>
+                    <span className="truncate block">
                       <strong className="text-foreground font-semibold">{ar ? "الخدمات:" : "Services:"}</strong> {ar ? opp.requiredServicesAr : opp.requiredServicesEn}
                     </span>
                   </div>
 
-                  <div className="flex items-center gap-1.5">
-                    <Clock className="size-3.5 text-amber-500 shrink-0" />
+                  <div>
                     <span>
                       <strong className="text-foreground font-semibold">{ar ? "الموعد النهائي:" : "Deadline:"}</strong> {opp.submissionDeadline}
                     </span>
@@ -263,7 +243,6 @@ export function SustainabilityOpportunityDatabase({ ar = true }: SustainabilityO
                       className="inline-flex items-center gap-1 text-[11px] font-bold text-brand-orange hover:underline"
                     >
                       <span>{ar ? "رابط المصدر الرسمي" : "Official Source Link"}</span>
-                      <ExternalLink className="size-3" />
                     </a>
                   </div>
                 </div>
@@ -276,7 +255,6 @@ export function SustainabilityOpportunityDatabase({ ar = true }: SustainabilityO
                     className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-green hover:text-brand-orange transition-colors cursor-pointer"
                   >
                     <span>{isExpanded ? (ar ? "إخفاء التفاصيل والشروط" : "Hide Requirements") : (ar ? "عرض اشتراطات التأهيل والشراكة" : "View Qualification & Alliance Requirements")}</span>
-                    {isExpanded ? <ChevronUp className="size-3.5" /> : <ChevronDown className="size-3.5" />}
                   </button>
 
                   <span className="text-[10px] text-muted-foreground">

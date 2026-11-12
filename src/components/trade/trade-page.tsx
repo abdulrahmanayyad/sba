@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Reveal } from "@/components/home/reveal";
-import { Wheat, Shirt, Building2, Leaf } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { TradeWorldMap } from "./trade-world-map";
 import { MarketDirectory } from "./market-directory";
@@ -20,7 +19,7 @@ interface TradePageProps {
 }
 
 export function TradePage({ ar = true }: TradePageProps) {
-  const [activeSector, setActiveSector] = useState<"food" | "apparel" | "sustainability" | "real-estate">("food");
+  const [activeSector, setActiveSector] = useState<"food" | "apparel" | "sustainability" | "real-estate">("real-estate");
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -36,7 +35,7 @@ export function TradePage({ ar = true }: TradePageProps) {
         if (cur === "apparel" || cur === "sustainability" || cur === "real-estate" || cur === "food") {
           setActiveSector(cur);
         } else {
-          setActiveSector("food");
+          setActiveSector("real-estate");
         }
       };
       window.addEventListener("popstate", onPopState);
@@ -65,20 +64,11 @@ export function TradePage({ ar = true }: TradePageProps) {
 
   const sectorTabs = [
     {
-      id: "food" as const,
-      titleAr: "قطاع الأغذية والسلع الزراعية",
-      titleEn: "Food & Agri-Commodities",
-      badgeAr: `${TRADE_STATS.totalCountries} دولة • ${TRADE_STATS.totalRecords} طلبًا`,
-      badgeEn: `${TRADE_STATS.totalCountries} Markets • ${TRADE_STATS.totalRecords} Inquiries`,
-      icon: Wheat,
-    },
-    {
-      id: "apparel" as const,
-      titleAr: "قطاع الملابس والمنسوجات",
-      titleEn: "Apparel & Textiles",
-      badgeAr: "20 دولة • +150 مصنعًا",
-      badgeEn: "20 Markets • 150+ Factories",
-      icon: Shirt,
+      id: "real-estate" as const,
+      titleAr: "الفرص العقارية والاستثمارية",
+      titleEn: "Real Estate & Investments",
+      badgeAr: "+400 مشروع • 5 مليارات ج.م",
+      badgeEn: "400+ Projects • 5B EGP",
     },
     {
       id: "sustainability" as const,
@@ -86,15 +76,20 @@ export function TradePage({ ar = true }: TradePageProps) {
       titleEn: "Sustainability & Environment",
       badgeAr: "13 سوقًا • 28 فرصة ومبادرة",
       badgeEn: "13 Markets • 28 Opportunities",
-      icon: Leaf,
     },
     {
-      id: "real-estate" as const,
-      titleAr: "الفرص العقارية والاستثمارية",
-      titleEn: "Real Estate & Investments",
-      badgeAr: "+400 مشروع • 5 مليارات ج.م",
-      badgeEn: "400+ Projects • 5B EGP",
-      icon: Building2,
+      id: "apparel" as const,
+      titleAr: "قطاع الملابس والمنسوجات",
+      titleEn: "Apparel & Textiles",
+      badgeAr: "20 دولة • +150 مصنعًا",
+      badgeEn: "20 Markets • 150+ Factories",
+    },
+    {
+      id: "food" as const,
+      titleAr: "قطاع الأغذية والسلع الزراعية",
+      titleEn: "Food & Agri-Commodities",
+      badgeAr: `${TRADE_STATS.totalCountries} دولة • ${TRADE_STATS.totalRecords} طلبًا`,
+      badgeEn: `${TRADE_STATS.totalCountries} Markets • ${TRADE_STATS.totalRecords} Inquiries`,
     },
   ];
 
@@ -192,7 +187,6 @@ export function TradePage({ ar = true }: TradePageProps) {
           {/* The Sectors Side-by-Side in Responsive Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
             {sectorTabs.map((tab) => {
-              const Icon = tab.icon;
               const isActive = activeSector === tab.id;
 
               return (
@@ -207,19 +201,8 @@ export function TradePage({ ar = true }: TradePageProps) {
                       : "border-border/80 bg-secondary/60 hover:bg-secondary/90 hover:border-brand-orange/50 hover:text-foreground hover:-translate-y-1 hover:shadow-md"
                   )}
                 >
-                  {/* Top row with icon & active status badge */}
-                  <div className="flex items-center justify-between w-full mb-3">
-                    <div
-                      className={cn(
-                        "p-3 rounded-2xl border transition-colors duration-300",
-                        isActive
-                          ? "bg-white/20 border-white/30 text-white"
-                          : "bg-background/80 border-border/60 text-brand-green group-hover:text-brand-orange group-hover:border-brand-orange/40"
-                      )}
-                    >
-                      <Icon className="size-6 shrink-0" />
-                    </div>
-
+                  {/* Top row with active status badge */}
+                  <div className="flex items-center justify-end w-full mb-3">
                     {isActive ? (
                       <span className="inline-flex items-center gap-1 rounded-full bg-white/20 px-3 py-1 text-[11px] font-bold text-white shadow-xs">
                         <span className="size-1.5 rounded-full bg-white animate-pulse" />

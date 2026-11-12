@@ -333,7 +333,7 @@ export const APPAREL_MARKETS: ApparelMarket[] = [
     inquiryNatureEn: "Inquiries for high-density winter knitwear and outerwear",
     manufacturingModels: ["FOB", "Private Label"],
     supplyTerms: ["شحن جوي إلى أربيل", "شحن بري/بحري منسق"],
-    marketNotesAr: "اهتمام خاص بالملابس الشتوية والجاكيتات والسويت شيرت المبطن نظراً لطبيعة المناخ.",
+    marketNotesAr: "اهتمام خاص بالملابس الشتوية والجاكيتات والسويت شيرت المبطن نظرًا لطبيعة المناخ.",
     marketNotesEn: "Specific focus on heavyweight fleece, winter jackets, and lined hoodies due to local climate."
   },
 
@@ -484,7 +484,7 @@ export const APPAREL_MARKETS: ApparelMarket[] = [
     inquiryNatureEn: "Active, verified commercial supply and manufacturing contracts with stringent technical specs",
     manufacturingModels: ["Contract Manufacturing", "OEM", "FOB", "Private Label"],
     supplyTerms: ["FOB موانئ مصر", "شحن بحري إلى جنوى/ترييستي", "CIF موانئ إيطاليا"],
-    marketNotesAr: "علاقات تجارية مؤسسية موثقة ومعتمدة رسمياً لدى المجموعة منذ 2026.",
+    marketNotesAr: "علاقات تجارية مؤسسية موثقة ومعتمدة رسميًا لدى المجموعة منذ 2026.",
     marketNotesEn: "Documented institutional corporate partnerships officially verified since 2026."
   },
   {
@@ -541,7 +541,7 @@ export const APPAREL_CATEGORIES: ApparelProductCategory[] = [
     id: "womenswear",
     nameAr: "الملابس الحريمي",
     nameEn: "Women's Wear",
-    descriptionAr: "تصنيع متكامل للملابس الحريمي عبر شبكة تضم أكثر من 150 مصنعاً متخصصاً في مصر.",
+    descriptionAr: "تصنيع متكامل للملابس الحريمي عبر شبكة تضم أكثر من 150 مصنعًا متخصصًا في مصر.",
     descriptionEn: "Comprehensive women's apparel manufacturing coordinated across 150+ specialized partner factories in Egypt.",
     items: [
       { key: "casualwear", nameAr: "Casualwear (ملابس كاجوال يومية)", nameEn: "Casualwear", specsAr: "بلوزات، توبات، فساتين كاجوال، بناطيل وتنانير قطنية وخامات مخلوطة", specsEn: "Blouses, tops, casual dresses, trousers, and skirts in cotton and blends." },
@@ -987,7 +987,7 @@ export const APPAREL_BUYER_INQUIRIES: ApparelInquiryRecord[] = [
     quantityRequestedAr: "4,000 قطعة",
     quantityRequestedEn: "4,000 pieces",
     skuCount: "3 SKUs (S, M, L, XL, XXL)",
-    materialsAndColorsAr: "قطن/بوليستر فليس 80/20 معزول حرارياً، رمادي مبلور، أسود، وكحلي",
+    materialsAndColorsAr: "قطن/بوليستر فليس 80/20 معزول حراريًا، رمادي مبلور، أسود، وكحلي",
     materialsAndColorsEn: "80/20 Cotton-Poly thermal brushed fleece 320 GSM, Heather Grey, Black, Navy",
     manufacturingModel: "OEM",
     packagingTermsAr: "أكياس شفافة محكمة الإغلاق مع ملصق الحجم والباركود",

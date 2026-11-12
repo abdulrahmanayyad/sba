@@ -33,6 +33,7 @@ import {
   COMPLAINT_STATUSES_MAP,
 } from "@/lib/contact-portal-system";
 import { submitCentralForm } from "@/lib/central-form-dispatch";
+import { ContactDirectorySidebar } from "./contact-sidebar";
 
 export function ComplaintsPage() {
   const { language } = useLanguage();
@@ -199,62 +200,64 @@ export function ComplaintsPage() {
   return (
     <div className="w-full pb-20">
       {/* Hero Header */}
-      <section className="relative overflow-hidden py-16 sm:py-20 bg-gradient-to-b from-secondary/40 via-background to-background">
-        <div className="site-container relative z-10 text-center max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-4 shadow-sm">
-            <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-            <span>{ar ? "الجودة والامتثال المؤسسي" : "Governance & Quality Assurance"}</span>
-          </div>
+      <section className="site-container pt-10 pb-4">
+        <div className="interactive-card glass-box-interactive group overflow-hidden rounded-3xl border border-white/40 bg-background/70 p-8 sm:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5 text-start">
+          <div className="relative z-10">
+            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-4 shadow-sm transition-transform duration-300 group-hover:scale-[1.02]">
+              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+              <span>{ar ? "الجودة والامتثال المؤسسي" : "Governance & Quality Assurance"}</span>
+            </div>
 
-          <h1 className="font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold text-foreground tracking-tight leading-tight">
-            {ar ? "الشكاوى والمقترحات" : "Complaints & Suggestions"}
-          </h1>
+            <h1 className="font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold text-foreground tracking-tight leading-tight text-start transition-colors duration-300 group-hover:text-brand-green-text">
+              {ar ? "الشكاوى والمقترحات" : "Complaints & Suggestions"}
+            </h1>
 
-          <div className="mt-6 space-y-4 text-base sm:text-lg leading-relaxed text-muted-foreground font-sans">
-            <p className="font-medium text-foreground">
-              {ar
-                ? "تحرص مجموعة سامي بن عياد على تطبيق أعلى معايير الجودة والاحترافية في خدماتها وعلاقاتها التجارية."
-                : "At Sami Bin Ayyad Group, we are committed to maintaining high standards of quality, professionalism, and business integrity."}
-            </p>
-            <p>
-              {ar
-                ? "ونؤمن بأن ملاحظات عملائنا وشركائنا وموظفينا تمثل أحد أهم مصادر التطوير والتحسين المستمر."
-                : "We consider feedback, complaints, and suggestions essential to our continuous improvement."}
-            </p>
-            <p className="text-sm sm:text-base text-brand-orange font-semibold">
-              {ar
-                ? "لذلك خصصنا هذه الصفحة لاستقبال الشكاوى والملاحظات والمقترحات، والعمل على مراجعتها ومعالجتها من خلال آلية واضحة تضمن السرية والشفافية والاهتمام بكل طلب."
-                : "This channel provides a structured and confidential way to submit concerns, report issues, and share recommendations for review and appropriate action."}
-            </p>
-          </div>
+            <div className="mt-6 space-y-4 text-base sm:text-lg leading-relaxed text-muted-foreground font-sans text-start">
+              <p className="font-medium text-foreground">
+                {ar
+                  ? "تحرص مجموعة سامي بن عياد على تطبيق أعلى معايير الجودة والاحترافية في خدماتها وعلاقاتها التجارية."
+                  : "At Sami Bin Ayyad Group, we are committed to maintaining high standards of quality, professionalism, and business integrity."}
+              </p>
+              <p>
+                {ar
+                  ? "ونؤمن بأن ملاحظات عملائنا وشركائنا وموظفينا تمثل أحد أهم مصادر التطوير والتحسين المستمر."
+                  : "We consider feedback, complaints, and suggestions essential to our continuous improvement."}
+              </p>
+              <p className="text-sm sm:text-base text-brand-orange font-semibold">
+                {ar
+                  ? "لذلك خصصنا هذه الصفحة لاستقبال الشكاوى والملاحظات والمقترحات، والعمل على مراجعتها ومعالجتها من خلال آلية واضحة تضمن السرية والشفافية والاهتمام بكل طلب."
+                  : "This channel provides a structured and confidential way to submit concerns, report issues, and share recommendations for review and appropriate action."}
+              </p>
+            </div>
 
-          {/* Mode Switcher Pills: Submit vs Track */}
-          <div className="mt-8 flex justify-center">
-            <div className="inline-flex rounded-full border border-border bg-background/80 p-1.5 backdrop-blur-xl shadow-md">
-              <button
-                type="button"
-                onClick={() => setActiveTab("submit")}
-                className={cn(
-                  "rounded-full px-6 py-2.5 text-xs sm:text-sm font-head font-bold transition-all duration-300 cursor-pointer",
-                  activeTab === "submit"
-                    ? "bg-brand-green text-white shadow-md"
-                    : "text-muted-foreground hover:text-foreground"
-                )}
-              >
-                {ar ? "تقديم شكوى أو مقترح جديد" : "Submit Complaint / Suggestion"}
-              </button>
-              <button
-                type="button"
-                onClick={() => setActiveTab("track")}
-                className={cn(
-                  "rounded-full px-6 py-2.5 text-xs sm:text-sm font-head font-bold transition-all duration-300 cursor-pointer",
-                  activeTab === "track"
-                    ? "bg-brand-orange text-white shadow-md"
-                    : "text-muted-foreground hover:text-foreground"
-                )}
-              >
-                {ar ? "متابعة حالة شكوى سابقة" : "Track Existing Complaint"}
-              </button>
+            {/* Mode Switcher Pills: Submit vs Track */}
+            <div className="mt-8 flex justify-start">
+              <div className="inline-flex rounded-full border border-border bg-background/80 p-1.5 backdrop-blur-xl shadow-md">
+                <button
+                  type="button"
+                  onClick={() => setActiveTab("submit")}
+                  className={cn(
+                    "rounded-full px-6 py-2.5 text-xs sm:text-sm font-head font-bold transition-all duration-300 cursor-pointer",
+                    activeTab === "submit"
+                      ? "bg-brand-green text-white shadow-md"
+                      : "text-muted-foreground hover:text-foreground"
+                  )}
+                >
+                  {ar ? "تقديم شكوى أو مقترح جديد" : "Submit Complaint / Suggestion"}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setActiveTab("track")}
+                  className={cn(
+                    "rounded-full px-6 py-2.5 text-xs sm:text-sm font-head font-bold transition-all duration-300 cursor-pointer",
+                    activeTab === "track"
+                      ? "bg-brand-orange text-white shadow-md"
+                      : "text-muted-foreground hover:text-foreground"
+                  )}
+                >
+                  {ar ? "متابعة حالة شكوى سابقة" : "Track Existing Complaint"}
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -262,9 +265,12 @@ export function ComplaintsPage() {
 
       {/* Main Body */}
       <section className="site-container mt-6">
+        <div className="grid gap-10 lg:grid-cols-12 items-start">
+          <ContactDirectorySidebar ar={ar} />
+          <div className="lg:col-span-7">
         {activeTab === "track" ? (
           /* ── TRACKING INTERFACE ── */
-          <div className="max-w-3xl mx-auto space-y-8 animate-in fade-in duration-300">
+          <div className="space-y-8 animate-in fade-in duration-300">
             <div className="rounded-3xl border border-white/25 bg-background/85 p-6 sm:p-10 backdrop-blur-2xl shadow-xl">
               <div className="border-b border-border/60 pb-4 mb-6">
                 <span className="text-xs font-bold text-brand-orange uppercase block">
@@ -446,7 +452,7 @@ export function ComplaintsPage() {
           </div>
         ) : (
           /* ── SUBMISSION FORM ── */
-          <div className="max-w-4xl mx-auto">
+          <div>
             <div className="rounded-3xl border border-white/25 bg-background/85 p-6 sm:p-10 backdrop-blur-2xl shadow-2xl">
               <div className="border-b border-border/60 pb-5 mb-8">
                 <div className="inline-flex items-center gap-2 rounded-full border border-brand-green/30 bg-brand-green/10 px-3 py-1 text-xs font-bold text-brand-green mb-2">
@@ -468,7 +474,7 @@ export function ComplaintsPage() {
                 <div>
                   <h3 className="font-head text-sm sm:text-base font-bold text-brand-orange border-b border-border/40 pb-2 mb-4 flex items-center gap-2">
                     <User className="size-4" />
-                    <span>{ar ? "أولاً: بيانات مقدم الطلب" : "Section A: Complainant Information"}</span>
+                    <span>{ar ? "أولًا: بيانات مقدم الطلب" : "Section A: Complainant Information"}</span>
                   </h3>
 
                   <div className="grid gap-4 sm:grid-cols-2">
@@ -576,7 +582,7 @@ export function ComplaintsPage() {
                 <div>
                   <h3 className="font-head text-sm sm:text-base font-bold text-brand-orange border-b border-border/40 pb-2 mb-4 flex items-center gap-2">
                     <AlertTriangle className="size-4" />
-                    <span>{ar ? "ثانياً: تفاصيل وموضوع الشكوى أو المقترح" : "Section B: Complaint Information"}</span>
+                    <span>{ar ? "ثانيًا: تفاصيل وموضوع الشكوى أو المقترح" : "Section B: Complaint Information"}</span>
                   </h3>
 
                   <div className="space-y-4">
@@ -707,7 +713,7 @@ export function ComplaintsPage() {
                 <div>
                   <h3 className="font-head text-sm sm:text-base font-bold text-brand-orange border-b border-border/40 pb-2 mb-3 flex items-center gap-2">
                     <FileText className="size-4" />
-                    <span>{ar ? "ثالثاً: المستندات المؤيدة والمرفقات" : "Section C: Supporting Documentation"}</span>
+                    <span>{ar ? "ثالثًا: المستندات المؤيدة والمرفقات" : "Section C: Supporting Documentation"}</span>
                   </h3>
                   <p className="text-[11px] text-muted-foreground mb-3">
                     {ar
@@ -758,7 +764,7 @@ export function ComplaintsPage() {
                 <div>
                   <h3 className="font-head text-sm sm:text-base font-bold text-brand-orange border-b border-border/40 pb-2 mb-3 flex items-center gap-2">
                     <CheckCircle2 className="size-4" />
-                    <span>{ar ? "رابعاً: الإجراء أو الحل المأمول" : "Section D: Desired Resolution"}</span>
+                    <span>{ar ? "رابعًا: الإجراء أو الحل المأمول" : "Section D: Desired Resolution"}</span>
                   </h3>
                   <label className="block text-xs font-bold text-foreground mb-1.5">
                     {ar ? "ما الإجراء أو الحل الذي تتطلع إليه؟" : "What outcome or resolution are you seeking?"}
@@ -811,6 +817,8 @@ export function ComplaintsPage() {
             </div>
           </div>
         )}
+          </div>
+        </div>
       </section>
 
       {/* Success Dialog */}

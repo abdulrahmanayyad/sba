@@ -1,17 +1,4 @@
 import React, { useState, useMemo } from "react";
-import { 
-  Package, 
-  Globe, 
-  Layers, 
-  Tag, 
-  FileCheck, 
-  ShieldCheck,
-  ChevronRight,
-  ChevronDown,
-  ChevronUp,
-  TrendingUp,
-  Search
-} from "lucide-react";
 import { PRODUCT_DEMAND_PORTFOLIO, ALL_INQUIRIES, COUNTRY_META } from "@/lib/trade-data";
 import { CENTRAL_FOOD_CATEGORIES, CENTRAL_FOOD_PRODUCTS } from "@/lib/central-food-products";
 
@@ -106,7 +93,6 @@ export function GlobalProductDemand({ ar = true, onInquireProduct }: GlobalProdu
                   : "border border-border/60 bg-background/50 text-foreground/80 hover:border-brand-green/50 hover:bg-background/80 hover:text-foreground hover:-translate-y-0.5 shadow-sm"
               }`}
             >
-              <Package className="size-4 shrink-0" />
               <span>{ar ? cat.categoryNameAr : cat.categoryNameEn}</span>
             </button>
           );
@@ -134,13 +120,12 @@ export function GlobalProductDemand({ ar = true, onInquireProduct }: GlobalProdu
 
         {/* Product Search Inside Category */}
         <div className="relative min-w-[240px] sm:min-w-[280px]">
-          <Search className="absolute start-3.5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
           <input
             type="text"
             value={searchProduct}
             onChange={(e) => setSearchProduct(e.target.value)}
             placeholder={ar ? "ابحث عن صنف أو مواصفة..." : "Search product or spec..."}
-            className="w-full rounded-xl border border-foreground/25 bg-background/95 py-2 pe-4 ps-10 text-xs text-foreground placeholder:text-muted-foreground shadow-sm focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 transition-all"
+            className="w-full rounded-xl border border-foreground/25 bg-background/95 px-4 py-2 text-xs text-foreground placeholder:text-muted-foreground shadow-sm focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 transition-all"
           />
         </div>
       </div>
@@ -202,8 +187,7 @@ export function GlobalProductDemand({ ar = true, onInquireProduct }: GlobalProdu
 
                   {/* Destination Markets */}
                   <div className="pt-2">
-                    <span className="font-semibold text-brand-orange block text-[11px] mb-1.5 flex items-center gap-1">
-                      <Globe className="size-3" />
+                    <span className="font-semibold text-brand-orange block text-[11px] mb-1.5">
                       {ar ? "الأسواق المستوردة الموثقة:" : "Documented Import Markets:"}
                     </span>
                     <div className="flex flex-wrap gap-1">
@@ -214,7 +198,6 @@ export function GlobalProductDemand({ ar = true, onInquireProduct }: GlobalProdu
                             key={mIdx}
                             className="inline-flex items-center gap-1 rounded-lg border border-white/10 bg-white/5 px-2 py-0.5 text-[11px] text-foreground"
                           >
-                            <span>{meta?.flag || "🌐"}</span>
                             <span>{ar ? m : (meta?.en || m)}</span>
                           </span>
                         );
@@ -232,7 +215,6 @@ export function GlobalProductDemand({ ar = true, onInquireProduct }: GlobalProdu
                   className="flex w-full items-center justify-center gap-1.5 rounded-xl border border-brand-green !bg-brand-green !text-white py-2 text-xs font-bold shadow-sm transition-all duration-300 hover:!bg-brand-orange hover:!border-brand-orange hover:!text-white hover:-translate-y-0.5 hover:shadow-md active:scale-95 cursor-pointer"
                 >
                   <span>{ar ? "استفسر عن توريد هذا الصنف" : "Inquire About This Product"}</span>
-                  <ChevronRight className="size-3.5 rtl:rotate-180" />
                 </a>
               </div>
             </div>
@@ -257,11 +239,6 @@ export function GlobalProductDemand({ ar = true, onInquireProduct }: GlobalProdu
                 ? "رؤية المزيد"
                 : "View More"}
             </span>
-            {showAll ? (
-              <ChevronUp className="size-4 transition-transform group-hover:-translate-y-0.5" />
-            ) : (
-              <ChevronDown className="size-4 transition-transform group-hover:translate-y-0.5" />
-            )}
           </button>
         </div>
       )}

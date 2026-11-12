@@ -92,7 +92,6 @@ export function NewsPage() {
   const { language } = useLanguage();
   const ar = language === "AR";
 
-  const [periodTab, setPeriodTab] = useState<"all" | "historical" | "modern">("all");
   const [selectedSector, setSelectedSector] = useState<NewsSectorType>("all");
   const [selectedYear, setSelectedYear] = useState<"all" | number>("all");
   const [selectedContentType, setSelectedContentType] = useState<"all" | NewsContentType>("all");
@@ -135,10 +134,6 @@ export function NewsPage() {
     const list = newsArticles.filter((article) => {
       const artYear = article.historicalRefYear || article.year;
 
-      // Period Tab filter
-      if (periodTab === "historical" && (artYear < 2010 || artYear > 2020)) return false;
-      if (periodTab === "modern" && artYear < 2020) return false;
-
       // Sector filter
       if (selectedSector !== "all" && article.sector !== selectedSector) return false;
 
@@ -176,7 +171,7 @@ export function NewsPage() {
       }
       return yearB !== yearA ? yearB - yearA : timeB - timeA;
     });
-  }, [periodTab, selectedSector, selectedYear, selectedContentType, sortDirection, searchQuery, ar]);
+  }, [selectedSector, selectedYear, selectedContentType, sortDirection, searchQuery, ar]);
 
   // Featured Lead Article
   const featuredArticle = useMemo(() => {
@@ -326,56 +321,7 @@ export function NewsPage() {
       {/* 5. Archive Controls: Period Tabs, Sector Navigation, Year Timeline, Search & Sort */}
       <section className="site-container pb-8 scroll-mt-24" id="archive-controls">
         <div className="flex flex-col gap-6 rounded-3xl border border-white/20 bg-background/80 p-5 sm:p-7 shadow-lg backdrop-blur-xl">
-          {/* A. Period Filter Tabs (All vs Historical 2010-2020 vs Modern 2020-2026) */}
-          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 pb-4 border-b border-border/60">
-            <button
-              type="button"
-              onClick={() => {
-                setPeriodTab("all");
-                setSelectedYear("all");
-              }}
-              className={cn(
-                "rounded-full px-5 py-2 text-xs font-bold transition-all duration-300 cursor-pointer shadow-sm",
-                periodTab === "all"
-                  ? "!bg-brand-green !text-white hover:!bg-brand-orange shadow-md"
-                  : "border border-border/80 bg-secondary/80 text-foreground hover:!bg-brand-orange hover:!text-white"
-              )}
-            >
-              {ar ? "كافة الأرشيف والمحتوى" : "Complete Archive"}
-            </button>
-            <button
-              type="button"
-              onClick={() => {
-                setPeriodTab("historical");
-                setSelectedYear("all");
-              }}
-              className={cn(
-                "rounded-full px-5 py-2 text-xs font-bold transition-all cursor-pointer shadow-sm",
-                periodTab === "historical"
-                  ? "!bg-brand-orange !text-white shadow-md"
-                  : "border border-border/80 bg-secondary/80 text-foreground hover:bg-secondary"
-              )}
-            >
-              {ar ? "الأرشيف والتحليلات القطاعية (2010–2020)" : "Historical Sector Archive (2010–2020)"}
-            </button>
-            <button
-              type="button"
-              onClick={() => {
-                setPeriodTab("modern");
-                setSelectedYear("all");
-              }}
-              className={cn(
-                "rounded-full px-5 py-2 text-xs font-bold transition-all cursor-pointer shadow-sm",
-                periodTab === "modern"
-                  ? "!bg-brand-orange !text-white shadow-md"
-                  : "border border-border/80 bg-secondary/80 text-foreground hover:bg-secondary"
-              )}
-            >
-              {ar ? "أخبار وتقارير المجموعة (2020–2026)" : "Corporate News & Reports (2020–2026)"}
-            </button>
-          </div>
-
-          {/* B. Search Input (Positioned on Left in Arabic / RTL, Right in English / LTR) */}
+          {/* Search Input (Positioned on Left in Arabic / RTL, Right in English / LTR) */}
           <div className="flex justify-end w-full">
             <div className="relative w-full md:w-96">
               <Search className="absolute start-3.5 top-1/2 -translate-y-1/2 size-4 text-muted-foreground" />
@@ -402,10 +348,12 @@ export function NewsPage() {
             </div>
           </div>
 
-          {/* C. Sector Categories (Exact 8 Categories) */}
+          {/* C. Sector Categories */}
           <div>
             <div className="flex flex-wrap items-center gap-2">
-              {newsCategories.map((cat) => {
+              {newsCategories
+                .filter((cat) => cat.id !== "heritage" && cat.id !== "exhibitions" && cat.id !== "insights")
+                .map((cat) => {
                 const isActive = selectedSector === cat.id;
                 return (
                   <button
@@ -576,7 +524,6 @@ export function NewsPage() {
               variant="outline"
               size="sm"
               onClick={() => {
-                setPeriodTab("all");
                 setSelectedSector("all");
                 setSelectedYear("all");
                 setSelectedContentType("all");

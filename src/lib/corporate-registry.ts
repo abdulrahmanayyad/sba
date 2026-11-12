@@ -194,7 +194,7 @@ export const CORPORATE_REGISTRY: Record<string, CorporateIndicator> = {
     reportingPeriod: "Calendar Year 2025",
     calculationMethodologyAr: "حصر دقيق لكافة طلبات المشترين الواردة والمؤرخة في عام 2025.",
     calculationMethodologyEn: "Precise count of all documented buyer purchase inquiries dated in 2025.",
-    supportingEvidenceAr: "سجل رسائل وقاعدة بيانات 2025 المستخلصة والمعالجة برمجياً.",
+    supportingEvidenceAr: "سجل رسائل وقاعدة بيانات 2025 المستخلصة والمعالجة برمجيًا.",
     supportingEvidenceEn: "Audited 2025 commercial email ledger and purchase records.",
     lastVerificationDate: "2026-02-11",
     approvalStatus: "Approved",
@@ -236,7 +236,7 @@ export const CORPORATE_REGISTRY: Record<string, CorporateIndicator> = {
     lastVerificationDate: "2026-02-11",
     approvalStatus: "Approved",
     publicationPermission: true,
-    attributionNoteAr: "إفصاح شفاف كامل: تُنفذ المشروعات المباشرة استشارياً، والمشروعات الكبرى عبر التحالفات الدولية المعتمدة.",
+    attributionNoteAr: "إفصاح شفاف كامل: تُنفذ المشروعات المباشرة استشاريًا، والمشروعات الكبرى عبر التحالفات الدولية المعتمدة.",
     attributionNoteEn: "Transparent delivery model: consulting delivered in-house, EPC/mega-plants delivered via certified international consortia."
   },
 

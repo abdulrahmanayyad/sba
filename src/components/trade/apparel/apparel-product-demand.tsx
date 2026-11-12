@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { CheckCircle2, Sparkles, Layers, ArrowRight, ShieldCheck, Factory } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { APPAREL_CATEGORIES, ApparelProductCategory } from "@/lib/apparel-trade-data";
 
@@ -31,10 +30,7 @@ export function ApparelProductDemand({ ar = true }: ApparelProductDemandProps) {
       {/* Two Sourcing Pathways Banner */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="rounded-2xl border border-border/80 bg-background/80 p-5 backdrop-blur-md shadow-sm">
-          <div className="flex items-center gap-2.5 mb-2">
-            <span className="flex size-7 items-center justify-center rounded-lg bg-brand-green/20 text-brand-green">
-              <ShieldCheck className="size-4" />
-            </span>
+          <div className="mb-2">
             <h4 className="font-bold text-sm text-foreground">
               {ar ? "المسار الأول: التوريد والتصنيع الكامل (FOB / Turnkey Supply)" : "Track 1: Full Turnkey OEM & FOB Supply"}
             </h4>
@@ -47,10 +43,7 @@ export function ApparelProductDemand({ ar = true }: ApparelProductDemandProps) {
         </div>
 
         <div className="rounded-2xl border border-border/80 bg-background/80 p-5 backdrop-blur-md shadow-sm">
-          <div className="flex items-center gap-2.5 mb-2">
-            <span className="flex size-7 items-center justify-center rounded-lg bg-brand-orange/20 text-brand-orange">
-              <Factory className="size-4" />
-            </span>
+          <div className="mb-2">
             <h4 className="font-bold text-sm text-foreground">
               {ar ? "المسار الثاني: التصنيع التعاقدي وتشغيل الخطوط (CMT / Cut, Make, Trim)" : "Track 2: Contract Manufacturing & CMT Operations"}
             </h4>
@@ -95,8 +88,7 @@ export function ApparelProductDemand({ ar = true }: ApparelProductDemandProps) {
                 key={item.key}
                 className="rounded-2xl border border-border/80 bg-background/60 p-4.5 backdrop-blur-md shadow-xs transition-all duration-300 hover:border-brand-green/50 hover:shadow-md"
               >
-                <div className="flex items-center gap-2 mb-2">
-                  <CheckCircle2 className="size-4 shrink-0 text-brand-green" />
+                <div className="mb-2">
                   <h4 className="font-bold text-sm text-foreground">
                     {ar ? item.nameAr : item.nameEn}
                   </h4>

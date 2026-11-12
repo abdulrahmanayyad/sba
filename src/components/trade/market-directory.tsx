@@ -1,17 +1,4 @@
 import React, { useState, useMemo, useEffect } from "react";
-import { 
-  Search, 
-  Filter, 
-  Globe, 
-  ChevronDown, 
-  ChevronUp, 
-  Calendar, 
-  Package, 
-  FileText, 
-  Sparkles,
-  ExternalLink,
-  Tag
-} from "lucide-react";
 import { COUNTRY_PROFILES, ALL_INQUIRIES, CountryTradeProfile } from "@/lib/trade-data";
 import {
   isValidInfo,
@@ -109,13 +96,12 @@ export function MarketDirectory({ ar = true, selectedCountryCode }: MarketDirect
       <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         {/* Search */}
         <div className="relative flex-1 max-w-md">
-          <Search className="absolute start-3.5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
           <input
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder={ar ? "ابحث بالدولة أو كودها أو اسم منتج..." : "Search country or product..."}
-            className="w-full rounded-xl border border-foreground/25 bg-background/95 py-2 pe-4 ps-10 text-sm text-foreground placeholder:text-muted-foreground shadow-sm focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 transition-all"
+            className="w-full rounded-xl border border-foreground/25 bg-background/95 px-4 py-2 text-sm text-foreground placeholder:text-muted-foreground shadow-sm focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 transition-all"
           />
         </div>
 
@@ -126,7 +112,7 @@ export function MarketDirectory({ ar = true, selectedCountryCode }: MarketDirect
             <select
               value={continentFilter}
               onChange={(e) => setContinentFilter(e.target.value)}
-              className="appearance-none [appearance:none] [-webkit-appearance:none] [-moz-appearance:none] [&::-ms-expand]:hidden rounded-xl border border-foreground/25 bg-background/95 ps-4 pe-8 py-2 text-xs font-semibold text-foreground shadow-sm hover:border-brand-orange focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 cursor-pointer transition-all"
+              className="appearance-none [appearance:none] [-webkit-appearance:none] [-moz-appearance:none] [&::-ms-expand]:hidden rounded-xl border border-foreground/25 bg-background/95 px-4 py-2 text-xs font-semibold text-foreground shadow-sm hover:border-brand-orange focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 cursor-pointer transition-all"
               style={{ WebkitAppearance: "none", MozAppearance: "none", appearance: "none", backgroundImage: "none" }}
             >
               {continents.map((cnt) => (
@@ -135,7 +121,6 @@ export function MarketDirectory({ ar = true, selectedCountryCode }: MarketDirect
                 </option>
               ))}
             </select>
-            <ChevronDown className="pointer-events-none absolute end-2.5 top-1/2 -translate-y-1/2 size-3.5 text-muted-foreground" />
           </div>
 
           {/* Type */}
@@ -143,7 +128,7 @@ export function MarketDirectory({ ar = true, selectedCountryCode }: MarketDirect
             <select
               value={categoryFilter}
               onChange={(e) => setCategoryFilter(e.target.value)}
-              className="appearance-none [appearance:none] [-webkit-appearance:none] [-moz-appearance:none] [&::-ms-expand]:hidden rounded-xl border border-foreground/25 bg-background/95 ps-4 pe-8 py-2 text-xs font-semibold text-foreground shadow-sm hover:border-brand-orange focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 cursor-pointer transition-all"
+              className="appearance-none [appearance:none] [-webkit-appearance:none] [-moz-appearance:none] [&::-ms-expand]:hidden rounded-xl border border-foreground/25 bg-background/95 px-4 py-2 text-xs font-semibold text-foreground shadow-sm hover:border-brand-orange focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 cursor-pointer transition-all"
               style={{ WebkitAppearance: "none", MozAppearance: "none", appearance: "none", backgroundImage: "none" }}
             >
               <option value="all" className="bg-background text-foreground">
@@ -156,7 +141,6 @@ export function MarketDirectory({ ar = true, selectedCountryCode }: MarketDirect
                 {ar ? "طلبات السلع الغذائية فقط" : "Food Commodities Only"}
               </option>
             </select>
-            <ChevronDown className="pointer-events-none absolute end-2.5 top-1/2 -translate-y-1/2 size-3.5 text-muted-foreground" />
           </div>
         </div>
       </div>
@@ -279,8 +263,7 @@ export function MarketDirectory({ ar = true, selectedCountryCode }: MarketDirect
                               <span className="font-mono text-black font-extrabold bg-black/5 px-2 py-0.5 rounded border border-black/10">
                                 {inq.id}
                               </span>
-                              <span className="flex items-center gap-1.5 font-bold text-black">
-                                <Calendar className="size-3.5 text-black shrink-0" />
+                              <span className="font-bold text-black">
                                 {inq.inquiryDate}
                               </span>
                             </div>
@@ -295,8 +278,7 @@ export function MarketDirectory({ ar = true, selectedCountryCode }: MarketDirect
                             </div>
 
                             {qtyDisplay && (
-                              <div className="text-black font-bold flex items-center gap-1.5 text-xs">
-                                <Package className="size-3.5 text-black shrink-0" />
+                              <div className="text-black font-bold text-xs">
                                 <span>
                                   {ar ? "الكمية:" : "Quantity:"} {qtyDisplay}
                                 </span>
@@ -336,7 +318,7 @@ export function MarketDirectory({ ar = true, selectedCountryCode }: MarketDirect
                               )}
                               {portDisplay && (
                                 <span className="rounded-lg border border-black/15 bg-black/5 px-2.5 py-1 font-bold text-black">
-                                  📍 {portDisplay}
+                                  {portDisplay}
                                 </span>
                               )}
                               {buyerTypeDisplay && (
@@ -368,7 +350,6 @@ export function MarketDirectory({ ar = true, selectedCountryCode }: MarketDirect
                     ? `عرض كافة طلبات الشراء (${country.totalInquiries})`
                     : `View Full Purchase Requests (${country.totalInquiries})`}
                 </span>
-                {isExpanded ? <ChevronUp className="size-4" /> : <ChevronDown className="size-4" />}
               </button>
             </div>
           );
@@ -392,11 +373,6 @@ export function MarketDirectory({ ar = true, selectedCountryCode }: MarketDirect
                 ? "رؤية المزيد"
                 : "View More"}
             </span>
-            {showAll ? (
-              <ChevronUp className="size-4 transition-transform group-hover:-translate-y-0.5" />
-            ) : (
-              <ChevronDown className="size-4 transition-transform group-hover:translate-y-0.5" />
-            )}
           </button>
         </div>
       )}

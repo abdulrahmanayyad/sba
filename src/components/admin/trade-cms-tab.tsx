@@ -170,7 +170,7 @@ export function TradeCmsTab() {
 
         setInquiries((prev) => [...prev, ...newRecords]);
         setImportStatus(
-          `تم بنجاح استيراد ${newRecordsCount} سجلاً جديداً. (تم تجاهل ${duplicateCount} سجلاً مكرراً)`
+          `تم بنجاح استيراد ${newRecordsCount} سجلًا جديدًا. (تم تجاهل ${duplicateCount} سجلًا مكررًا)`
         );
       } catch (err: any) {
         setImportStatus(`خطأ في معالجة الملف: ${err.message}`);
@@ -253,7 +253,7 @@ export function TradeCmsTab() {
             قاعدة بيانات استفسارات المشترين والأسواق الدولية
           </h2>
           <p className="text-xs text-muted-foreground mt-1 max-w-2xl">
-            إدارة وتدقيق 179 سجلاً أصلياً من ملفي (بيان تصدير تمور 2025 & بيان تصدير منتجات متنوعة 2025)، مع إمكانية استيراد ملفات جديدة وتتبع دورة حياة الطلبات.
+            إدارة وتدقيق 179 سجلًا أصليًا من ملفي (بيان تصدير تمور 2025 & بيان تصدير منتجات متنوعة 2025)، مع إمكانية استيراد ملفات جديدة وتتبع دورة حياة الطلبات.
           </p>
         </div>
 
@@ -561,7 +561,7 @@ export function TradeCmsTab() {
                 تسجيل استفسار تجاري جديد
               </h3>
               <p className="text-xs text-muted-foreground">
-                إضافة استفسار جديد يدوياً إلى قاعدة بيانات التجارة الدولية 2025.
+                إضافة استفسار جديد يدويًا إلى قاعدة بيانات التجارة الدولية 2025.
               </p>
             </div>
 

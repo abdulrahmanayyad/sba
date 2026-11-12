@@ -60,6 +60,7 @@ import { NewsCmsTab } from "./news-cms-tab";
 import { TradeCmsTab } from "./trade-cms-tab";
 import { ContactPortalCmsTab } from "./contact-portal-cms-tab";
 import { CentralSubmissionsTab } from "./central-submissions-tab";
+import { GlobalMarketsCmsTab } from "./global-markets-cms-tab";
 
 export function CrmDashboard() {
   const { language } = useLanguage();
@@ -71,7 +72,7 @@ export function CrmDashboard() {
   const [pinError, setPinError] = useState(false);
 
   // Navigation View Tab
-  const [adminTab, setAdminTab] = useState<"central_inbox" | "contact_portal" | "inquiries" | "news" | "trade">("central_inbox");
+  const [adminTab, setAdminTab] = useState<"central_inbox" | "contact_portal" | "inquiries" | "news" | "trade" | "global_markets">("central_inbox");
 
   // Data & Filters
   const [inquiries, setInquiries] = useState<CrmInquiry[]>([]);
@@ -322,6 +323,18 @@ export function CrmDashboard() {
                   >
                     {ar ? "التجارة الدولية واستيراد Excel" : "Global Trade & Excel CMS"}
                   </button>
+                  <button
+                    type="button"
+                    onClick={() => setAdminTab("global_markets")}
+                    className={cn(
+                      "rounded-xl px-3.5 py-1 text-xs font-bold transition-all cursor-pointer",
+                      adminTab === "global_markets"
+                        ? "!bg-slate-900 !text-white shadow-sm"
+                        : "text-muted-foreground hover:text-foreground"
+                    )}
+                  >
+                    {ar ? "دراسات الأسواق العالمية" : "Global Markets Studies"}
+                  </button>
                 </div>
 
                 {adminTab === "inquiries" && (
@@ -355,6 +368,12 @@ export function CrmDashboard() {
             {adminTab === "trade" && (
               <div className="mt-8">
                 <TradeCmsTab />
+              </div>
+            )}
+
+            {adminTab === "global_markets" && (
+              <div className="mt-8">
+                <GlobalMarketsCmsTab ar={ar} />
               </div>
             )}
 

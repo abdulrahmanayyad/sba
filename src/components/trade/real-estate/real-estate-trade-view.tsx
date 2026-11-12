@@ -1,27 +1,5 @@
 import React, { useState } from "react";
 import { Reveal } from "@/components/home/reveal";
-import {
-  Building2,
-  MapPin,
-  ShieldCheck,
-  TrendingUp,
-  Layers,
-  Briefcase,
-  CheckCircle2,
-  Globe2,
-  FileCheck2,
-  Award,
-  Calendar,
-  Users2,
-  Landmark,
-  Store,
-  Factory,
-  Hotel,
-  ArrowRight,
-  Mail,
-  MessageSquare,
-  Sparkles,
-} from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
   REAL_ESTATE_STATS,
@@ -198,8 +176,7 @@ export function RealEstateTradeView({ ar = true, hideHero = false }: RealEstateT
                   key={cov.regionKey}
                   className="rounded-2xl border border-border/80 bg-background/70 p-5 backdrop-blur-xl shadow-xs transition-all duration-300 hover:border-brand-orange/50 hover:shadow-md"
                 >
-                  <div className="flex items-center gap-2 mb-3 border-b border-border/50 pb-2.5">
-                    <MapPin className="size-4 text-brand-orange shrink-0" />
+                  <div className="mb-3 border-b border-border/50 pb-2.5">
                     <h3 className="font-bold text-sm text-foreground">
                       {ar ? cov.regionNameAr : cov.regionNameEn}
                     </h3>
@@ -269,8 +246,7 @@ export function RealEstateTradeView({ ar = true, hideHero = false }: RealEstateT
                       key={idx}
                       className="rounded-2xl border border-border/80 bg-background/60 p-5 backdrop-blur-md shadow-xs transition-all duration-300 hover:border-brand-green/60 hover:shadow-md"
                     >
-                      <div className="flex items-center gap-2">
-                        <CheckCircle2 className="size-4 shrink-0 text-brand-green" />
+                      <div>
                         <h4 className="font-bold text-sm text-foreground">
                           {itemName}
                         </h4>
@@ -377,7 +353,7 @@ export function RealEstateTradeView({ ar = true, hideHero = false }: RealEstateT
           <div className="interactive-card glass-box-interactive w-full rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl backdrop-blur-2xl border-brand-green/30">
             <div>
               <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-brand-green/40 bg-brand-green/10 px-3.5 py-1 text-xs font-bold tracking-wide text-brand-green backdrop-blur-md shadow-xs">
-                <Sparkles className="size-3.5 text-brand-orange animate-pulse" />
+                <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
                 <span>{ar ? "القسم الخامس: استشارات متخصصة" : "Section 5: Healthcare Real Estate Advisory"}</span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5 leading-snug">
@@ -389,10 +365,7 @@ export function RealEstateTradeView({ ar = true, hideHero = false }: RealEstateT
             </div>
 
             <div className="rounded-2xl border border-border/80 bg-background/80 p-5 shadow-xs">
-              <div className="flex items-center gap-2">
-                <span className="flex size-7 items-center justify-center rounded-lg bg-brand-green/20 text-brand-green">
-                  <Sparkles className="size-4" />
-                </span>
+              <div>
                 <span className="font-bold text-sm text-foreground">
                   {ar ? PHARMACY_ADVISORY_SECTION.metricBadgeAr : PHARMACY_ADVISORY_SECTION.metricBadgeEn}
                 </span>
@@ -406,7 +379,7 @@ export function RealEstateTradeView({ ar = true, hideHero = false }: RealEstateT
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
                 {(ar ? PHARMACY_ADVISORY_SECTION.servicesAr || [] : PHARMACY_ADVISORY_SECTION.servicesEn || []).map((srv, idx) => (
                   <div key={idx} className="flex items-center gap-2 text-foreground font-medium">
-                    <CheckCircle2 className="size-4 text-brand-green shrink-0" />
+                    <span className="size-1.5 rounded-full bg-brand-green shrink-0" />
                     <span>{srv}</span>
                   </div>
                 ))}
@@ -730,11 +703,8 @@ export function RealEstateTradeView({ ar = true, hideHero = false }: RealEstateT
 
                 <a
                   href="mailto:info@sami-trade.com"
-                  className="flex items-center gap-3 p-3 rounded-xl border border-border/70 bg-background/80 hover:border-brand-orange hover:bg-background transition-all group"
+                  className="flex items-center justify-between p-3.5 rounded-xl border border-border/70 bg-background/80 hover:border-brand-orange hover:bg-background transition-all group"
                 >
-                  <div className="flex size-10 items-center justify-center rounded-lg bg-brand-orange/15 text-brand-orange">
-                    <Mail className="size-5" />
-                  </div>
                   <div className="text-start">
                     <span className="text-[11px] text-muted-foreground block">{ar ? "البريد المعتمد للاستشارات العقارية" : "Real Estate Advisory Email"}</span>
                     <span className="text-xs sm:text-sm font-bold text-foreground font-mono group-hover:text-brand-orange">
@@ -747,11 +717,8 @@ export function RealEstateTradeView({ ar = true, hideHero = false }: RealEstateT
                   href="https://wa.me/201222238072"
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center gap-3 p-3 rounded-xl border border-brand-green/30 bg-brand-green/10 hover:border-brand-green hover:bg-brand-green/20 transition-all group"
+                  className="flex items-center justify-between p-3.5 rounded-xl border border-brand-green/30 bg-brand-green/10 hover:border-brand-green hover:bg-brand-green/20 transition-all group"
                 >
-                  <div className="flex size-10 items-center justify-center rounded-lg bg-brand-green text-white">
-                    <MessageSquare className="size-5" />
-                  </div>
                   <div className="text-start">
                     <span className="text-[11px] text-brand-green block font-bold">{ar ? "واتساب المباشر للفرص العقارية" : "Direct WhatsApp Hotline"}</span>
                     <span dir="ltr" className="text-xs sm:text-sm font-bold text-foreground font-mono group-hover:text-brand-green">

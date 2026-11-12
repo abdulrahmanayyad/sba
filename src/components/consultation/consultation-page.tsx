@@ -37,6 +37,7 @@ import {
   BUSINESS_OWNER_EMAIL
 } from "@/lib/central-form-dispatch";
 import { CORPORATE_IDENTITY } from "@/lib/corporate-registry";
+import { ContactDirectorySidebar } from "@/components/contact/contact-sidebar";
 
 export type ConsultationSectorOption = "construction" | "garment" | "environmental" | "food";
 
@@ -276,36 +277,42 @@ export function ConsultationPage() {
     <div className="w-full pb-24">
       {/* 1. Header / Hero Section (Apple-inspired Glassmorphism) */}
       <section className="site-container pt-10 pb-4">
-        <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/70 p-8 sm:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5 text-start">
-          <div className="inline-flex items-center rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-4 shadow-sm">
-            <span>{ar ? "منظومة الاستشارات المجانية المعتمدة" : "Centralized Free Consultation System"}</span>
-          </div>
+        <div className="interactive-card glass-box-interactive group overflow-hidden rounded-3xl border border-white/40 bg-background/70 p-8 sm:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5 text-start">
+          <div className="relative z-10">
+            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-4 shadow-sm transition-transform duration-300 group-hover:scale-[1.02]">
+              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+              <span>{ar ? "منظومة الاستشارات المجانية المعتمدة" : "Centralized Free Consultation System"}</span>
+            </div>
 
-          <h1 className="font-head text-2xl sm:text-4xl lg:text-5xl font-extrabold text-foreground tracking-tight leading-tight text-start">
-            {ar ? "طلب استشارة مجانية" : "Request a Free Consultation"}
-          </h1>
+            <h1 className="font-head text-2xl sm:text-4xl lg:text-5xl font-extrabold text-foreground tracking-tight leading-tight text-start transition-colors duration-300 group-hover:text-brand-green-text">
+              {ar ? "طلب استشارة مجانية" : "Request a Free Consultation"}
+            </h1>
 
-          <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground font-sans text-start">
-            {ar
-              ? "شاركنا تفاصيل احتياجات أعمالك أو مشروعك أو فرصتك الاستثمارية، وسيقوم مستشار القطاع المعني بمراجعة طلبك والتواصل معك لمناقشة الخطوات القادمة."
-              : "Tell us about your business needs, project, or opportunity. Our relevant sector specialist will review your inquiry and contact you to discuss the next steps."}
-          </p>
-
-          {/* Mandatory Business Policy Notice (Exact Corporate Copy) */}
-          <div className="mt-6 p-4 rounded-2xl bg-brand-green/10 border border-brand-green/25 backdrop-blur-md text-xs sm:text-sm text-foreground/90 leading-relaxed font-medium flex items-center gap-3 text-start">
-            <CheckCircle2 className="size-5 text-brand-green shrink-0" />
-            <p className="text-start">
+            <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground font-sans text-start">
               {ar
-                ? CORPORATE_IDENTITY.freeConsultationPolicy.ar
-                : CORPORATE_IDENTITY.freeConsultationPolicy.en}
+                ? "شاركنا تفاصيل احتياجات أعمالك أو مشروعك أو فرصتك الاستثمارية، وسيقوم مستشار القطاع المعني بمراجعة طلبك والتواصل معك لمناقشة الخطوات القادمة."
+                : "Tell us about your business needs, project, or opportunity. Our relevant sector specialist will review your inquiry and contact you to discuss the next steps."}
             </p>
+
+            {/* Mandatory Business Policy Notice (Exact Corporate Copy) */}
+            <div className="mt-6 p-4 rounded-2xl bg-brand-green/10 border border-brand-green/25 backdrop-blur-md text-xs sm:text-sm text-foreground/90 leading-relaxed font-medium flex items-center gap-3 text-start transition-all duration-300 group-hover:bg-brand-green/15 group-hover:border-brand-green/35">
+              <CheckCircle2 className="size-5 text-brand-green shrink-0 transition-transform duration-300 group-hover:scale-110" />
+              <p className="text-start">
+                {ar
+                  ? CORPORATE_IDENTITY.freeConsultationPolicy.ar
+                  : CORPORATE_IDENTITY.freeConsultationPolicy.en}
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* 2. Multi-Step Form Container */}
+      {/* 2. Main Grid: Official Contact Info + Multi-Step Form */}
       <section className="site-container mt-6">
-        <div className="max-w-4xl mx-auto rounded-3xl border border-white/20 bg-card/75 p-6 sm:p-10 lg:p-12 backdrop-blur-2xl shadow-2xl">
+        <div className="grid gap-10 lg:grid-cols-12 items-start">
+          <ContactDirectorySidebar ar={ar} />
+          <div className="lg:col-span-7">
+            <div className="rounded-3xl border border-white/20 bg-card/75 p-6 sm:p-10 lg:p-12 backdrop-blur-2xl shadow-2xl">
           {/* Submission Success Screen */}
           {submittedSubmission ? (
             <div className="text-center py-8 space-y-6 animate-in fade-in zoom-in-95 duration-300">
@@ -1106,6 +1113,8 @@ export function ConsultationPage() {
               </div>
             </form>
           )}
+            </div>
+          </div>
         </div>
       </section>
     </div>

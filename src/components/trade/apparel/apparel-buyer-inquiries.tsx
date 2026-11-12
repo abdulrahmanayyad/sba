@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from "react";
-import { Search, ChevronDown, ChevronUp, Tag, ShieldCheck, Clock, Layers } from "lucide-react";
+import { ApparelFlag } from "./apparel-flag";
 import { APPAREL_BUYER_INQUIRIES, ApparelInquiryRecord } from "@/lib/apparel-trade-data";
 
 interface ApparelBuyerInquiriesProps {
@@ -51,7 +51,7 @@ export function ApparelBuyerInquiries({ ar = true }: ApparelBuyerInquiriesProps)
             </h2>
             <p className="text-xs sm:text-sm text-muted-foreground mt-1.5 leading-relaxed max-w-3xl">
               {ar
-                ? "سجل توثيقي يضم 18 حقلاً تفصيلياً لكل طلبية، مستندًا إلى سجلات ومحادثات تفاوضية رسمية مع المشترين الدوليين."
+                ? "سجل توثيقي يضم 18 حقلًا تفصيليًا لكل طلبية، مستندًا إلى سجلات ومحادثات تفاوضية رسمية مع المشترين الدوليين."
                 : "A documented registry detailing 18 verified parameters per order, derived from official buyer procurement dialogues."}
             </p>
           </div>
@@ -59,7 +59,6 @@ export function ApparelBuyerInquiries({ ar = true }: ApparelBuyerInquiriesProps)
           {/* Search and Filters */}
           <div className="flex flex-wrap items-center gap-2.5">
             <div className="relative">
-              <Search className="absolute start-3 top-1/2 -translate-y-1/2 size-3.5 text-muted-foreground" />
               <input
                 type="text"
                 value={searchQuery}
@@ -68,7 +67,7 @@ export function ApparelBuyerInquiries({ ar = true }: ApparelBuyerInquiriesProps)
                   setShowAll(false);
                 }}
                 placeholder={ar ? "ابحث بدولة، كود، خامة..." : "Search code, country, fabric..."}
-                className="rounded-xl border border-border bg-background/95 ps-8 pe-4 py-2 text-xs text-foreground placeholder:text-muted-foreground shadow-sm focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 transition-all w-52 sm:w-60"
+                className="rounded-xl border border-border bg-background/95 px-4 py-2 text-xs text-foreground placeholder:text-muted-foreground shadow-sm focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 transition-all w-52 sm:w-60"
               />
             </div>
 
@@ -102,7 +101,7 @@ export function ApparelBuyerInquiries({ ar = true }: ApparelBuyerInquiriesProps)
                 {/* Header: Code & Flag */}
                 <div className="flex items-center justify-between border-b border-border/50 pb-2.5">
                   <div className="flex items-center gap-2">
-                    <span className="text-xl select-none">{inq.countryFlag}</span>
+                    <ApparelFlag codeOrName={inq.countryEn} alt={ar ? inq.countryAr : inq.countryEn} className="h-4 w-6" />
                     <span className="text-xs font-bold text-foreground">
                       {ar ? inq.countryAr : inq.countryEn}
                     </span>
@@ -204,7 +203,6 @@ export function ApparelBuyerInquiries({ ar = true }: ApparelBuyerInquiriesProps)
                   className="text-[11px] font-bold text-foreground hover:text-brand-orange transition-colors cursor-pointer flex items-center gap-1"
                 >
                   <span>{isExpanded ? (ar ? "تفاصيل أقل" : "Less") : (ar ? "كافة الحقول (18)" : "18 Fields")}</span>
-                  {isExpanded ? <ChevronUp className="size-3" /> : <ChevronDown className="size-3" />}
                 </button>
               </div>
             </div>
@@ -229,11 +227,6 @@ export function ApparelBuyerInquiries({ ar = true }: ApparelBuyerInquiriesProps)
                 ? `عرض المزيد من الطلبات (${filteredInquiries.length})`
                 : `View More Inquiries (${filteredInquiries.length})`}
             </span>
-            {showAll ? (
-              <ChevronUp className="size-4 transition-transform group-hover:-translate-y-0.5" />
-            ) : (
-              <ChevronDown className="size-4 transition-transform group-hover:translate-y-0.5" />
-            )}
           </button>
         </div>
       )}

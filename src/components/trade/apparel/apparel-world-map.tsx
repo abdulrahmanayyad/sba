@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from "react";
-import { Globe, Search, AlertCircle, MapPin, Building, ShieldCheck } from "lucide-react";
+import { ApparelFlag, getApparelFlagIso2 } from "./apparel-flag";
 import { cn } from "@/lib/utils";
 import { APPAREL_MARKETS, ApparelMarket } from "@/lib/apparel-trade-data";
 import { GeographicMapMarker, GeographicWorldMap } from "../geographic-world-map";
@@ -55,7 +55,7 @@ export function ApparelWorldMap({ ar = true, onSelectMarket }: ApparelWorldMapPr
             : m.code === "ISR-TLV"
               ? "ISR"
               : m.code,
-        flagEmoji: m.flag,
+        flagIso2: getApparelFlagIso2(m.code),
         nameAr: m.nameAr,
         nameEn: m.nameEn,
         lat: m.lat,
@@ -89,8 +89,7 @@ export function ApparelWorldMap({ ar = true, onSelectMarket }: ApparelWorldMapPr
 
       {/* Disclaimers Box */}
       <div className="rounded-2xl border border-border/60 bg-muted/30 p-4 space-y-2 text-xs text-muted-foreground">
-        <div className="flex items-start gap-2">
-          <AlertCircle className="size-4 shrink-0 text-brand-orange mt-0.5" />
+        <div>
           <p>
             <strong className="text-foreground">{ar ? "تنويه توثيقي بشأن إقليم كردستان:" : "Documentation Note (Kurdistan Region):"}</strong>{" "}
             {ar
@@ -98,8 +97,7 @@ export function ApparelWorldMap({ ar = true, onSelectMarket }: ApparelWorldMapPr
               : "Iraqi Kurdistan is catalogued as an independent commercial interaction zone due to specific buyer procurement requirements and regional logistics protocols."}
           </p>
         </div>
-        <div className="flex items-start gap-2">
-          <AlertCircle className="size-4 shrink-0 text-brand-orange mt-0.5" />
+        <div>
           <p>
             <strong className="text-foreground">{ar ? "تنويه توثيقي بشأن مناطق 1948 / تل أبيب:" : "Documentation Note (1948 Areas / Tel Aviv):"}</strong>{" "}
             {ar
@@ -132,13 +130,12 @@ export function ApparelWorldMap({ ar = true, onSelectMarket }: ApparelWorldMapPr
 
         {/* Search */}
         <div className="relative w-full lg:w-64">
-          <Search className="absolute start-3 top-1/2 -translate-y-1/2 size-3.5 text-muted-foreground" />
           <input
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder={ar ? "ابحث بدولة أو منتج ملابس..." : "Search country or product..."}
-            className="w-full rounded-full border border-border bg-background/90 ps-9 pe-4 py-1.5 text-xs text-foreground placeholder:text-muted-foreground focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/20"
+            className="w-full rounded-full border border-border bg-background/90 px-4 py-1.5 text-xs text-foreground placeholder:text-muted-foreground focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/20"
           />
         </div>
       </div>
@@ -180,7 +177,11 @@ export function ApparelWorldMap({ ar = true, onSelectMarket }: ApparelWorldMapPr
         <div className="rounded-2xl border border-border bg-background/80 p-5 backdrop-blur-xl shadow-lg animate-in fade-in duration-300">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-border/60 pb-4">
             <div className="flex items-center gap-3">
-              <span className="text-3xl select-none">{activeMarket.flag}</span>
+              <ApparelFlag
+                codeOrName={activeMarket.code}
+                alt={ar ? activeMarket.nameAr : activeMarket.nameEn}
+                className="h-6 w-9"
+              />
               <div>
                 <h3 className="text-lg font-bold text-foreground">
                   {ar ? activeMarket.nameAr : activeMarket.nameEn}

@@ -442,7 +442,7 @@ export const SUSTAINABILITY_TARGET_MARKETS: SustainabilityMarket[] = [
     entryChannelsEn: ["NEMA Kenya", "KenInvest", "African Climate Finance Partnerships"],
     officialSource: "National Environment Management Authority (NEMA) / KenInvest",
     officialSourceUrl: "https://www.nema.go.ke",
-    summaryAr: "بوابة شرق إفريقيا للتمويل الأخضر، تشهد إقبالاً دوليًا واسعًا على استثمارات المياه والتدوير والطاقة الشمسية.",
+    summaryAr: "بوابة شرق إفريقيا للتمويل الأخضر، تشهد إقبالًا دوليًا واسعًا على استثمارات المياه والتدوير والطاقة الشمسية.",
     summaryEn: "East Africa green growth hub with major DFI funding for clean water, mini-grids, and circular plastics."
   },
   {
@@ -522,7 +522,7 @@ export const SUSTAINABILITY_TARGET_MARKETS: SustainabilityMarket[] = [
     entryChannelsEn: ["IPP Office (DMRE)", "InvestSA", "Certified Local B-BBEE Joint Ventures"],
     officialSource: "Department of Mineral Resources & Energy (DMRE) / JETP",
     officialSourceUrl: "https://www.energy.gov.za",
-    summaryAr: "أكبر سوق صناعي في إفريقيا يشهد تحولاً ضخمًا بمليارات الدولارات نحو الطاقة النظيفة ومعالجة المياه الصناعية.",
+    summaryAr: "أكبر سوق صناعي في إفريقيا يشهد تحولًا ضخمًا بمليارات الدولارات نحو الطاقة النظيفة ومعالجة المياه الصناعية.",
     summaryEn: "Africa's largest industrial market undergoing multi-billion-dollar green transition under JETP."
   },
   {

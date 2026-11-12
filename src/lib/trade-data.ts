@@ -6052,7 +6052,7 @@ export const PRODUCT_DEMAND_PORTFOLIO: DemandCategory[] = [
         specs: 'سبونتا وهيرميس وليدي روزيتا عالية المادة الجافة',
         packaging: 'أكياس جامبو 1250كجم وشبك 10-25كجم',
         markets: ['هولندا', 'جامايكا', 'مصر'],
-        quantity: '200 طن متري شهرياً',
+        quantity: '200 طن متري شهريًا',
         quantityEn: '200 Metric Tons Monthly',
         documentedId: 'VEG-05'
       },

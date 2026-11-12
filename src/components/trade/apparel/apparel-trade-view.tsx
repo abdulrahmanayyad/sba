@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Reveal } from "@/components/home/reveal";
-import { AlertCircle, ShieldCheck } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ApparelWorldMap } from "./apparel-world-map";
 import { ApparelMarketDirectory } from "./apparel-market-directory";
@@ -127,8 +126,7 @@ export function ApparelTradeView({ ar = true, hideHero = false }: ApparelTradeVi
           </div>
 
           {/* Audit Disclaimer Card */}
-          <div className="flex items-center gap-2.5 rounded-2xl border border-border/70 bg-background/60 p-4 text-xs text-muted-foreground backdrop-blur-md">
-            <ShieldCheck className="size-4 shrink-0 text-brand-green" />
+          <div className="rounded-2xl border border-border/70 bg-background/60 p-4 text-xs text-muted-foreground backdrop-blur-md">
             <p className="leading-relaxed">
               <strong className="text-foreground">{ar ? "إشعار التدقيق والسرية التجارية:" : "Commercial Verification Notice:"}</strong>{" "}
               {ar

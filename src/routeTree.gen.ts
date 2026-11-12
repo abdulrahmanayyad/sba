@@ -16,6 +16,7 @@ import { Route as BrandsRouteImport } from './routes/brands'
 import { Route as ComplaintsRouteImport } from './routes/complaints'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DownloadsRouteImport } from './routes/downloads'
+import { Route as GlobalMarketsRouteImport } from './routes/global-markets'
 import { Route as HowWeManufactureRouteImport } from './routes/how-we-manufacture'
 import { Route as InvestorRelationsRouteImport } from './routes/investor-relations'
 import { Route as JoinRouteImport } from './routes/join'
@@ -32,6 +33,10 @@ import { Route as AdminInquiriesRouteImport } from './routes/admin.inquiries'
 import { Route as ContactIndexRouteImport } from './routes/contact.index'
 import { Route as ContactComplaintsRouteImport } from './routes/contact.complaints'
 import { Route as ContactOpportunitiesRouteImport } from './routes/contact.opportunities'
+import { Route as GlobalMarketsIndexRouteImport } from './routes/global-markets.index'
+import { Route as GlobalMarketsSectorRouteImport } from './routes/global-markets.$sector'
+import { Route as GlobalMarketsCompareRouteImport } from './routes/global-markets.compare'
+import { Route as GlobalMarketsManageRouteImport } from './routes/global-markets.manage'
 import { Route as JoinIndexRouteImport } from './routes/join.index'
 import { Route as JoinConstructionRouteImport } from './routes/join.construction'
 import { Route as JoinGarmentRouteImport } from './routes/join.garment'
@@ -43,6 +48,8 @@ import { Route as NewsIndexRouteImport } from './routes/news.index'
 import { Route as NewsSlugRouteImport } from './routes/news.$slug'
 import { Route as SectorsIndexRouteImport } from './routes/sectors.index'
 import { Route as SectorsSectorRouteImport } from './routes/sectors.$sector'
+import { Route as GlobalMarketsSectorIndexRouteImport } from './routes/global-markets.$sector.index'
+import { Route as GlobalMarketsSectorSlugRouteImport } from './routes/global-markets.$sector.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -77,6 +84,11 @@ const ContactRoute = ContactRouteImport.update({
 const DownloadsRoute = DownloadsRouteImport.update({
   id: '/downloads',
   path: '/downloads',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GlobalMarketsRoute = GlobalMarketsRouteImport.update({
+  id: '/global-markets',
+  path: '/global-markets',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HowWeManufactureRoute = HowWeManufactureRouteImport.update({
@@ -159,6 +171,26 @@ const ContactOpportunitiesRoute = ContactOpportunitiesRouteImport.update({
   path: '/opportunities',
   getParentRoute: () => ContactRoute,
 } as any)
+const GlobalMarketsIndexRoute = GlobalMarketsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => GlobalMarketsRoute,
+} as any)
+const GlobalMarketsSectorRoute = GlobalMarketsSectorRouteImport.update({
+  id: '/$sector',
+  path: '/$sector',
+  getParentRoute: () => GlobalMarketsRoute,
+} as any)
+const GlobalMarketsCompareRoute = GlobalMarketsCompareRouteImport.update({
+  id: '/compare',
+  path: '/compare',
+  getParentRoute: () => GlobalMarketsRoute,
+} as any)
+const GlobalMarketsManageRoute = GlobalMarketsManageRouteImport.update({
+  id: '/manage',
+  path: '/manage',
+  getParentRoute: () => GlobalMarketsRoute,
+} as any)
 const JoinIndexRoute = JoinIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -214,6 +246,17 @@ const SectorsSectorRoute = SectorsSectorRouteImport.update({
   path: '/$sector',
   getParentRoute: () => SectorsRoute,
 } as any)
+const GlobalMarketsSectorIndexRoute =
+  GlobalMarketsSectorIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => GlobalMarketsSectorRoute,
+  } as any)
+const GlobalMarketsSectorSlugRoute = GlobalMarketsSectorSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => GlobalMarketsSectorRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -223,6 +266,7 @@ export interface FileRoutesByFullPath {
   '/complaints': typeof ComplaintsRoute
   '/contact': typeof ContactRouteWithChildren
   '/downloads': typeof DownloadsRoute
+  '/global-markets': typeof GlobalMarketsRouteWithChildren
   '/how-we-manufacture': typeof HowWeManufactureRoute
   '/investor-relations': typeof InvestorRelationsRoute
   '/join': typeof JoinRouteWithChildren
@@ -238,6 +282,9 @@ export interface FileRoutesByFullPath {
   '/admin/inquiries': typeof AdminInquiriesRoute
   '/contact/complaints': typeof ContactComplaintsRoute
   '/contact/opportunities': typeof ContactOpportunitiesRoute
+  '/global-markets/$sector': typeof GlobalMarketsSectorRouteWithChildren
+  '/global-markets/compare': typeof GlobalMarketsCompareRoute
+  '/global-markets/manage': typeof GlobalMarketsManageRoute
   '/join/construction': typeof JoinConstructionRoute
   '/join/garment': typeof JoinGarmentRoute
   '/join/group': typeof JoinGroupRoute
@@ -246,10 +293,13 @@ export interface FileRoutesByFullPath {
   '/news/$slug': typeof NewsSlugRoute
   '/sectors/$sector': typeof SectorsSectorRoute
   '/contact/': typeof ContactIndexRoute
+  '/global-markets/': typeof GlobalMarketsIndexRoute
   '/join/': typeof JoinIndexRoute
   '/models/': typeof ModelsIndexRoute
   '/news/': typeof NewsIndexRoute
   '/sectors/': typeof SectorsIndexRoute
+  '/global-markets/$sector/$slug': typeof GlobalMarketsSectorSlugRoute
+  '/global-markets/$sector/': typeof GlobalMarketsSectorIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -269,6 +319,8 @@ export interface FileRoutesByTo {
   '/admin/inquiries': typeof AdminInquiriesRoute
   '/contact/complaints': typeof ContactComplaintsRoute
   '/contact/opportunities': typeof ContactOpportunitiesRoute
+  '/global-markets/compare': typeof GlobalMarketsCompareRoute
+  '/global-markets/manage': typeof GlobalMarketsManageRoute
   '/join/construction': typeof JoinConstructionRoute
   '/join/garment': typeof JoinGarmentRoute
   '/join/group': typeof JoinGroupRoute
@@ -277,10 +329,13 @@ export interface FileRoutesByTo {
   '/news/$slug': typeof NewsSlugRoute
   '/sectors/$sector': typeof SectorsSectorRoute
   '/contact': typeof ContactIndexRoute
+  '/global-markets': typeof GlobalMarketsIndexRoute
   '/join': typeof JoinIndexRoute
   '/models': typeof ModelsIndexRoute
   '/news': typeof NewsIndexRoute
   '/sectors': typeof SectorsIndexRoute
+  '/global-markets/$sector/$slug': typeof GlobalMarketsSectorSlugRoute
+  '/global-markets/$sector': typeof GlobalMarketsSectorIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -291,6 +346,7 @@ export interface FileRoutesById {
   '/complaints': typeof ComplaintsRoute
   '/contact': typeof ContactRouteWithChildren
   '/downloads': typeof DownloadsRoute
+  '/global-markets': typeof GlobalMarketsRouteWithChildren
   '/how-we-manufacture': typeof HowWeManufactureRoute
   '/investor-relations': typeof InvestorRelationsRoute
   '/join': typeof JoinRouteWithChildren
@@ -306,6 +362,9 @@ export interface FileRoutesById {
   '/admin/inquiries': typeof AdminInquiriesRoute
   '/contact/complaints': typeof ContactComplaintsRoute
   '/contact/opportunities': typeof ContactOpportunitiesRoute
+  '/global-markets/$sector': typeof GlobalMarketsSectorRouteWithChildren
+  '/global-markets/compare': typeof GlobalMarketsCompareRoute
+  '/global-markets/manage': typeof GlobalMarketsManageRoute
   '/join/construction': typeof JoinConstructionRoute
   '/join/garment': typeof JoinGarmentRoute
   '/join/group': typeof JoinGroupRoute
@@ -314,10 +373,13 @@ export interface FileRoutesById {
   '/news/$slug': typeof NewsSlugRoute
   '/sectors/$sector': typeof SectorsSectorRoute
   '/contact/': typeof ContactIndexRoute
+  '/global-markets/': typeof GlobalMarketsIndexRoute
   '/join/': typeof JoinIndexRoute
   '/models/': typeof ModelsIndexRoute
   '/news/': typeof NewsIndexRoute
   '/sectors/': typeof SectorsIndexRoute
+  '/global-markets/$sector/$slug': typeof GlobalMarketsSectorSlugRoute
+  '/global-markets/$sector/': typeof GlobalMarketsSectorIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -329,6 +391,7 @@ export interface FileRouteTypes {
     | '/complaints'
     | '/contact'
     | '/downloads'
+    | '/global-markets'
     | '/how-we-manufacture'
     | '/investor-relations'
     | '/join'
@@ -344,6 +407,9 @@ export interface FileRouteTypes {
     | '/admin/inquiries'
     | '/contact/complaints'
     | '/contact/opportunities'
+    | '/global-markets/$sector'
+    | '/global-markets/compare'
+    | '/global-markets/manage'
     | '/join/construction'
     | '/join/garment'
     | '/join/group'
@@ -352,10 +418,13 @@ export interface FileRouteTypes {
     | '/news/$slug'
     | '/sectors/$sector'
     | '/contact/'
+    | '/global-markets/'
     | '/join/'
     | '/models/'
     | '/news/'
     | '/sectors/'
+    | '/global-markets/$sector/$slug'
+    | '/global-markets/$sector/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -375,6 +444,8 @@ export interface FileRouteTypes {
     | '/admin/inquiries'
     | '/contact/complaints'
     | '/contact/opportunities'
+    | '/global-markets/compare'
+    | '/global-markets/manage'
     | '/join/construction'
     | '/join/garment'
     | '/join/group'
@@ -383,10 +454,13 @@ export interface FileRouteTypes {
     | '/news/$slug'
     | '/sectors/$sector'
     | '/contact'
+    | '/global-markets'
     | '/join'
     | '/models'
     | '/news'
     | '/sectors'
+    | '/global-markets/$sector/$slug'
+    | '/global-markets/$sector'
   id:
     | '__root__'
     | '/'
@@ -396,6 +470,7 @@ export interface FileRouteTypes {
     | '/complaints'
     | '/contact'
     | '/downloads'
+    | '/global-markets'
     | '/how-we-manufacture'
     | '/investor-relations'
     | '/join'
@@ -411,6 +486,9 @@ export interface FileRouteTypes {
     | '/admin/inquiries'
     | '/contact/complaints'
     | '/contact/opportunities'
+    | '/global-markets/$sector'
+    | '/global-markets/compare'
+    | '/global-markets/manage'
     | '/join/construction'
     | '/join/garment'
     | '/join/group'
@@ -419,10 +497,13 @@ export interface FileRouteTypes {
     | '/news/$slug'
     | '/sectors/$sector'
     | '/contact/'
+    | '/global-markets/'
     | '/join/'
     | '/models/'
     | '/news/'
     | '/sectors/'
+    | '/global-markets/$sector/$slug'
+    | '/global-markets/$sector/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -433,6 +514,7 @@ export interface RootRouteChildren {
   ComplaintsRoute: typeof ComplaintsRoute
   ContactRoute: typeof ContactRouteWithChildren
   DownloadsRoute: typeof DownloadsRoute
+  GlobalMarketsRoute: typeof GlobalMarketsRouteWithChildren
   HowWeManufactureRoute: typeof HowWeManufactureRoute
   InvestorRelationsRoute: typeof InvestorRelationsRoute
   JoinRoute: typeof JoinRouteWithChildren
@@ -497,6 +579,13 @@ declare module '@tanstack/react-router' {
       path: '/downloads'
       fullPath: '/downloads'
       preLoaderRoute: typeof DownloadsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/global-markets': {
+      id: '/global-markets'
+      path: '/global-markets'
+      fullPath: '/global-markets'
+      preLoaderRoute: typeof GlobalMarketsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/how-we-manufacture': {
@@ -611,6 +700,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactOpportunitiesRouteImport
       parentRoute: typeof ContactRoute
     }
+    '/global-markets/': {
+      id: '/global-markets/'
+      path: '/'
+      fullPath: '/global-markets/'
+      preLoaderRoute: typeof GlobalMarketsIndexRouteImport
+      parentRoute: typeof GlobalMarketsRoute
+    }
+    '/global-markets/$sector': {
+      id: '/global-markets/$sector'
+      path: '/$sector'
+      fullPath: '/global-markets/$sector'
+      preLoaderRoute: typeof GlobalMarketsSectorRouteImport
+      parentRoute: typeof GlobalMarketsRoute
+    }
+    '/global-markets/compare': {
+      id: '/global-markets/compare'
+      path: '/compare'
+      fullPath: '/global-markets/compare'
+      preLoaderRoute: typeof GlobalMarketsCompareRouteImport
+      parentRoute: typeof GlobalMarketsRoute
+    }
+    '/global-markets/manage': {
+      id: '/global-markets/manage'
+      path: '/manage'
+      fullPath: '/global-markets/manage'
+      preLoaderRoute: typeof GlobalMarketsManageRouteImport
+      parentRoute: typeof GlobalMarketsRoute
+    }
     '/join/': {
       id: '/join/'
       path: '/'
@@ -688,6 +805,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SectorsSectorRouteImport
       parentRoute: typeof SectorsRoute
     }
+    '/global-markets/$sector/': {
+      id: '/global-markets/$sector/'
+      path: '/'
+      fullPath: '/global-markets/$sector/'
+      preLoaderRoute: typeof GlobalMarketsSectorIndexRouteImport
+      parentRoute: typeof GlobalMarketsSectorRoute
+    }
+    '/global-markets/$sector/$slug': {
+      id: '/global-markets/$sector/$slug'
+      path: '/$slug'
+      fullPath: '/global-markets/$sector/$slug'
+      preLoaderRoute: typeof GlobalMarketsSectorSlugRouteImport
+      parentRoute: typeof GlobalMarketsSectorRoute
+    }
   }
 }
 
@@ -705,6 +836,37 @@ const ContactRouteChildren: ContactRouteChildren = {
 
 const ContactRouteWithChildren =
   ContactRoute._addFileChildren(ContactRouteChildren)
+
+interface GlobalMarketsSectorRouteChildren {
+  GlobalMarketsSectorSlugRoute: typeof GlobalMarketsSectorSlugRoute
+  GlobalMarketsSectorIndexRoute: typeof GlobalMarketsSectorIndexRoute
+}
+
+const GlobalMarketsSectorRouteChildren: GlobalMarketsSectorRouteChildren = {
+  GlobalMarketsSectorSlugRoute: GlobalMarketsSectorSlugRoute,
+  GlobalMarketsSectorIndexRoute: GlobalMarketsSectorIndexRoute,
+}
+
+const GlobalMarketsSectorRouteWithChildren =
+  GlobalMarketsSectorRoute._addFileChildren(GlobalMarketsSectorRouteChildren)
+
+interface GlobalMarketsRouteChildren {
+  GlobalMarketsSectorRoute: typeof GlobalMarketsSectorRouteWithChildren
+  GlobalMarketsCompareRoute: typeof GlobalMarketsCompareRoute
+  GlobalMarketsManageRoute: typeof GlobalMarketsManageRoute
+  GlobalMarketsIndexRoute: typeof GlobalMarketsIndexRoute
+}
+
+const GlobalMarketsRouteChildren: GlobalMarketsRouteChildren = {
+  GlobalMarketsSectorRoute: GlobalMarketsSectorRouteWithChildren,
+  GlobalMarketsCompareRoute: GlobalMarketsCompareRoute,
+  GlobalMarketsManageRoute: GlobalMarketsManageRoute,
+  GlobalMarketsIndexRoute: GlobalMarketsIndexRoute,
+}
+
+const GlobalMarketsRouteWithChildren = GlobalMarketsRoute._addFileChildren(
+  GlobalMarketsRouteChildren,
+)
 
 interface JoinRouteChildren {
   JoinConstructionRoute: typeof JoinConstructionRoute
@@ -770,6 +932,7 @@ const rootRouteChildren: RootRouteChildren = {
   ComplaintsRoute: ComplaintsRoute,
   ContactRoute: ContactRouteWithChildren,
   DownloadsRoute: DownloadsRoute,
+  GlobalMarketsRoute: GlobalMarketsRouteWithChildren,
   HowWeManufactureRoute: HowWeManufactureRoute,
   InvestorRelationsRoute: InvestorRelationsRoute,
   JoinRoute: JoinRouteWithChildren,

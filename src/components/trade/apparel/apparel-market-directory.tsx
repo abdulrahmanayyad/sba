@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from "react";
-import { Search, ChevronDown, ChevronUp, Layers, MapPin, CheckCircle2 } from "lucide-react";
+import { ApparelFlag } from "./apparel-flag";
 import { cn } from "@/lib/utils";
 import { APPAREL_MARKETS, ApparelMarket } from "@/lib/apparel-trade-data";
 
@@ -61,7 +61,6 @@ export function ApparelMarketDirectory({ ar = true, selectedMarketCode }: Appare
 
           {/* Search Input */}
           <div className="relative w-full md:w-64">
-            <Search className="absolute start-3 top-1/2 -translate-y-1/2 size-3.5 text-muted-foreground" />
             <input
               type="text"
               value={searchQuery}
@@ -70,7 +69,7 @@ export function ApparelMarketDirectory({ ar = true, selectedMarketCode }: Appare
                 setShowAll(false);
               }}
               placeholder={ar ? "ابحث بدولة أو صنف..." : "Search country or item..."}
-              className="w-full rounded-xl border border-border bg-background/95 ps-8 pe-4 py-2 text-xs text-foreground placeholder:text-muted-foreground shadow-sm focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30"
+              className="w-full rounded-xl border border-border bg-background/95 px-4 py-2 text-xs text-foreground placeholder:text-muted-foreground shadow-sm focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30"
             />
           </div>
         </div>
@@ -111,7 +110,7 @@ export function ApparelMarketDirectory({ ar = true, selectedMarketCode }: Appare
             <div>
               <div className="flex items-start justify-between border-b border-border/60 pb-3">
                 <div className="flex items-center gap-2.5">
-                  <span className="text-2xl select-none">{market.flag}</span>
+                  <ApparelFlag codeOrName={market.code} alt={ar ? market.nameAr : market.nameEn} className="h-5 w-7" />
                   <div>
                     <h3 className="text-base font-bold text-foreground">
                       {ar ? market.nameAr : market.nameEn}
@@ -196,11 +195,6 @@ export function ApparelMarketDirectory({ ar = true, selectedMarketCode }: Appare
                 ? `عرض كافة الأسواق (${filteredMarkets.length})`
                 : `View All Markets (${filteredMarkets.length})`}
             </span>
-            {showAll ? (
-              <ChevronUp className="size-3.5 transition-transform group-hover:-translate-y-0.5" />
-            ) : (
-              <ChevronDown className="size-3.5 transition-transform group-hover:translate-y-0.5" />
-            )}
           </button>
         </div>
       )}

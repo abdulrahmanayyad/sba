@@ -1,15 +1,4 @@
 import React from "react";
-import { 
-  Sun, 
-  Recycle, 
-  Droplets, 
-  Factory, 
-  TrendingUp, 
-  CheckCircle2, 
-  Building2,
-  Cpu,
-  Layers
-} from "lucide-react";
 import { SUSTAINABILITY_STATS } from "@/lib/sustainability-trade-data";
 
 interface SustainabilitySubsectorsShowcaseProps {
@@ -25,9 +14,6 @@ export function SustainabilitySubsectorsShowcase({ ar = true }: SustainabilitySu
       titleEn: "Renewable Energy & Energy Efficiency",
       taglineAr: "محطات الطاقة الشمسية للقطاع التجاري والصناعي، أنظمة التخزين، وترشيد استهلاك الكهرباء",
       taglineEn: "Commercial & Industrial Solar PV, BESS storage, and industrial energy efficiency",
-      icon: Sun,
-      color: "text-amber-500",
-      accentBg: "bg-amber-500/10 border-amber-500/30",
       statCount: SUSTAINABILITY_STATS.renewableCount,
       statLabelAr: "فرص موثقة بالدراسة",
       statLabelEn: "Verified Opportunities",
@@ -51,9 +37,6 @@ export function SustainabilitySubsectorsShowcase({ ar = true }: SustainabilitySu
       titleEn: "Waste Management & Circular Economy",
       taglineAr: "إدارة المخلفات الصناعية والزراعية، استرداد المواد، وإنتاج بدائل الوقود والمخصبات",
       taglineEn: "Industrial & agri-waste management, materials recovery, and waste-to-resource valorization",
-      icon: Recycle,
-      color: "text-brand-green",
-      accentBg: "bg-brand-green/10 border-brand-green/30",
       statCount: SUSTAINABILITY_STATS.wasteCircularCount,
       statLabelAr: "فرص ومشاريع معلنة",
       statLabelEn: "Announced Opportunities",
@@ -77,9 +60,6 @@ export function SustainabilitySubsectorsShowcase({ ar = true }: SustainabilitySu
       titleEn: "Water & Resource Management",
       taglineAr: "معالجة مياه الصرف الصناعي، أنظمة الدوائر المغلقة، وترشيد الاستهلاك الزراعي",
       taglineEn: "Industrial effluent treatment, closed-loop water reuse, and precision irrigation",
-      icon: Droplets,
-      color: "text-sky-500",
-      accentBg: "bg-sky-500/10 border-sky-500/30",
       statCount: SUSTAINABILITY_STATS.waterResourcesCount,
       statLabelAr: "مشاريع بنية تحتية ومياه",
       statLabelEn: "Water Utility Programs",
@@ -103,9 +83,6 @@ export function SustainabilitySubsectorsShowcase({ ar = true }: SustainabilitySu
       titleEn: "Industrial, Commercial & Investment Opportunities",
       taglineAr: "برامج خفض الانبعاثات، الاستدامة للمصدرين، والتحالفات الاستثمارية المشتركة",
       taglineEn: "Supply chain decarbonization, EU CBAM compliance, and PPP co-investments",
-      icon: Factory,
-      color: "text-indigo-500",
-      accentBg: "bg-indigo-500/10 border-indigo-500/30",
       statCount: SUSTAINABILITY_STATS.partnershipsCount,
       statLabelAr: "تحالفات استثمارية مطروحة",
       statLabelEn: "Strategic Alliances",
@@ -145,8 +122,6 @@ export function SustainabilitySubsectorsShowcase({ ar = true }: SustainabilitySu
       {/* 4 Cards Grid */}
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         {subsectors.map((sec) => {
-          const Icon = sec.icon;
-
           return (
             <div
               key={sec.id}
@@ -154,10 +129,7 @@ export function SustainabilitySubsectorsShowcase({ ar = true }: SustainabilitySu
             >
               <div>
                 <div className="flex items-start justify-between gap-3 border-b border-white/10 pb-4">
-                  <div className="flex items-center gap-3">
-                    <div className={`p-3 rounded-2xl border ${sec.accentBg}`}>
-                      <Icon className={`size-6 ${sec.color}`} />
-                    </div>
+                  <div>
                     <div>
                       <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider block">
                         {sec.sectionNumber}
@@ -191,7 +163,7 @@ export function SustainabilitySubsectorsShowcase({ ar = true }: SustainabilitySu
                 <ul className="space-y-1.5 text-xs text-foreground/80">
                   {(ar ? sec.pointsAr : sec.pointsEn).map((pt, idx) => (
                     <li key={idx} className="flex items-start gap-2">
-                      <CheckCircle2 className="size-3.5 text-brand-green shrink-0 mt-0.5" />
+                      <span className="size-1.5 rounded-full bg-brand-green shrink-0 mt-1.5" />
                       <span className="leading-snug">{pt}</span>
                     </li>
                   ))}

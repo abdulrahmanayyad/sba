@@ -1,5 +1,4 @@
 import React, { useMemo, useRef, useState } from "react";
-import { Minus, Plus, RotateCcw } from "lucide-react";
 import {
   WORLD_COUNTRIES,
   WORLD_GRATICULE_PATH,
@@ -240,27 +239,27 @@ export function GeographicWorldMap({
           onClick={() => handleZoomStep(0.6)}
           disabled={clampedZoom >= 4}
           aria-label={ar ? "تكبير الخريطة" : "Zoom in"}
-          className="flex size-7 items-center justify-center rounded-lg text-slate-700 dark:text-slate-200 hover:bg-emerald-500/15 hover:text-emerald-700 disabled:opacity-35 transition-colors cursor-pointer"
+          className="flex size-7 items-center justify-center rounded-lg text-sm font-bold leading-none text-slate-700 dark:text-slate-200 hover:bg-emerald-500/15 hover:text-emerald-700 disabled:opacity-35 transition-colors cursor-pointer"
         >
-          <Plus className="size-3.5" />
+          +
         </button>
         <button
           type="button"
           onClick={() => handleZoomStep(-0.6)}
           disabled={clampedZoom <= 1}
           aria-label={ar ? "تصغير الخريطة" : "Zoom out"}
-          className="flex size-7 items-center justify-center rounded-lg text-slate-700 dark:text-slate-200 hover:bg-emerald-500/15 hover:text-emerald-700 disabled:opacity-35 transition-colors cursor-pointer"
+          className="flex size-7 items-center justify-center rounded-lg text-sm font-bold leading-none text-slate-700 dark:text-slate-200 hover:bg-emerald-500/15 hover:text-emerald-700 disabled:opacity-35 transition-colors cursor-pointer"
         >
-          <Minus className="size-3.5" />
+          −
         </button>
         {clampedZoom > 1 && (
           <button
             type="button"
             onClick={handleResetView}
             aria-label={ar ? "إعادة ضبط الخريطة" : "Reset map view"}
-            className="flex size-7 items-center justify-center rounded-lg text-slate-700 dark:text-slate-200 hover:bg-brand-orange/15 hover:text-brand-orange transition-colors cursor-pointer border-t border-slate-200/70 dark:border-white/10 pt-0.5"
+            className="flex size-7 items-center justify-center rounded-lg text-xs font-bold leading-none text-slate-700 dark:text-slate-200 hover:bg-brand-orange/15 hover:text-brand-orange transition-colors cursor-pointer border-t border-slate-200/70 dark:border-white/10 pt-0.5"
           >
-            <RotateCcw className="size-3.5" />
+            ↺
           </button>
         )}
       </div>

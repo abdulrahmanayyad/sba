@@ -1,4 +1,5 @@
 import React from "react";
+import { ApparelFlag } from "./apparel-flag";
 import { APPAREL_VERIFIED_PARTNERS } from "@/lib/apparel-trade-data";
 
 interface ApparelBusinessNetworkProps {
@@ -39,7 +40,7 @@ export function ApparelBusinessNetwork({ ar = true }: ApparelBusinessNetworkProp
                   {partner.companyName}
                 </h4>
                 <p className="text-xs text-muted-foreground flex items-center gap-1.5 mt-0.5">
-                  <span>{partner.countryFlag}</span>
+                  <ApparelFlag codeOrName={partner.countryEn} alt={ar ? partner.countryAr : partner.countryEn} className="h-3.5 w-5" />
                   <span>{ar ? partner.countryAr : partner.countryEn}</span>
                   <span>•</span>
                   <span>{ar ? partner.establishedTextAr : `Since ${partner.establishedYear}`}</span>

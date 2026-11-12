@@ -187,6 +187,8 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
         document.title = "خدماتنا — Sami Bin Ayyad";
       } else if (pathname === "/investor-relations") {
         document.title = "علاقات المستثمرين — Sami Bin Ayyad";
+      } else if (pathname.startsWith("/global-markets")) {
+        document.title = "الأسواق العالمية — Sami Bin Ayyad";
       } else if (pathname === "/trade") {
         document.title = "التجارة الدولية والأسواق العالمية — Sami Bin Ayyad";
       } else if (pathname === "/sectors") {
@@ -236,7 +238,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
   const isProductsActive = pathname === "/products" || pathname === "/models";
   const isServicesActive = pathname === "/services";
   const isNewsActive = pathname === "/news";
-  const isMoreActive = pathname === "/trade" || pathname === "/investor-relations" || pathname === "/downloads";
+  const isMoreActive = pathname.startsWith("/global-markets") || pathname === "/trade" || pathname === "/investor-relations" || pathname === "/downloads";
   const isContactActive = pathname.startsWith("/contact") || pathname === "/complaints" || pathname === "/submit-opportunity";
 
   const primaryLinks = (className: string, onNavigate?: () => void) => (
@@ -302,6 +304,17 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
       >
         {(close) => (
           <div className="flex flex-col gap-1 p-1">
+            <Link
+              to="/global-markets"
+              className={dropdownLink}
+              onClick={() => { close(); onNavigate?.(); }}
+            >
+              <div className="flex flex-col">
+                <span className="font-bold">{isArabic ? "الأسواق العالمية" : "Global Markets"}</span>
+                <span className="text-[11px] text-foreground/60">{isArabic ? "الدراسات السوقية وتحليلات القطاعات" : "Market research & strategic intelligence"}</span>
+              </div>
+            </Link>
+
             <Link
               to="/trade"
               className={dropdownLink}

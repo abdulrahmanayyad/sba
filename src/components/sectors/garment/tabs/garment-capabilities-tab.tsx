@@ -345,7 +345,7 @@ export function GarmentCapabilitiesTab() {
               {
                 term: "EUR-1 Movement Certificate",
                 badge: ar ? "شهادة تفضيلية" : "Trade Certificate",
-                descAr: "شهادة المنشأ التفضيلية EUR-1: وثيقة رسمية تمنح الصادرات المصرية إعفاءً جمركياً كاملاً (0% جمارك) عند دخول أسواق دول الاتحاد الأوروبي.",
+                descAr: "شهادة المنشأ التفضيلية EUR-1: وثيقة رسمية تمنح الصادرات المصرية إعفاءً جمركيًا كاملًا (0% جمارك) عند دخول أسواق دول الاتحاد الأوروبي.",
                 descEn: "Preferential origin certificate granting Egyptian garment exports 0% customs duty access across all European Union member states.",
               },
             ].map((item, idx) => (

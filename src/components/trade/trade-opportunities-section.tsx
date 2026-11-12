@@ -1,17 +1,4 @@
 import React, { useState } from "react";
-import { 
-  Send, 
-  CheckCircle2, 
-  Clock, 
-  Package, 
-  MapPin, 
-  CreditCard, 
-  Ship, 
-  Sparkles,
-  X,
-  FileCheck2,
-  Check
-} from "lucide-react";
 import { TRADE_OPPORTUNITIES } from "@/lib/trade-data";
 import { submitCentralForm } from "@/lib/central-form-dispatch";
 import { Button } from "@/components/ui/button";
@@ -109,8 +96,7 @@ export function TradeOpportunitiesSection({ ar = true }: TradeOpportunitiesSecti
                 <h4 className="text-lg font-black text-foreground group-hover:text-brand-green transition-colors">
                   {ar ? opp.productAr : opp.productEn}
                 </h4>
-                <div className="flex items-center gap-1.5 text-xs text-muted-foreground font-medium">
-                  <MapPin className="size-3.5 text-brand-orange shrink-0" />
+                <div className="text-xs text-muted-foreground font-medium">
                   <span>{ar ? opp.destinationMarketAr : opp.destinationMarketEn}</span>
                 </div>
               </div>
@@ -165,7 +151,6 @@ export function TradeOpportunitiesSection({ ar = true }: TradeOpportunitiesSecti
                 onClick={() => handleOpenProposal(opp)}
                 className="flex w-full items-center justify-center gap-2 rounded-xl border border-brand-green bg-brand-green py-2.5 text-xs font-bold text-white shadow-md transition-all duration-300 hover:bg-brand-orange hover:border-brand-orange active:scale-95 cursor-pointer"
               >
-                <Send className="size-3.5 me-2" />
                 <span>{ar ? "قدّم عرض توريد لهذه الفرصة" : "Submit Supply Proposal"}</span>
               </button>
             </div>
@@ -181,16 +166,14 @@ export function TradeOpportunitiesSection({ ar = true }: TradeOpportunitiesSecti
             <button
               type="button"
               onClick={() => setIsModalOpen(false)}
-              className="absolute end-4 top-4 rounded-full p-2 text-muted-foreground hover:bg-white/10 hover:text-foreground"
+              aria-label={ar ? "إغلاق" : "Close"}
+              className="absolute end-4 top-4 rounded-full px-2.5 py-1 text-sm font-bold text-muted-foreground hover:bg-white/10 hover:text-foreground cursor-pointer"
             >
-              <X className="size-5" />
+              ✕
             </button>
 
             {isSubmitted ? (
               <div className="py-8 text-center space-y-4">
-                <div className="mx-auto flex size-16 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
-                  <Check className="size-8" />
-                </div>
                 <h4 className="text-xl font-bold text-foreground">
                   {ar ? "تم استلام عرض التوريد بنجاح!" : "Supply Proposal Received!"}
                 </h4>

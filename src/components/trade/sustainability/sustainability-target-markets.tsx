@@ -1,5 +1,4 @@
 import React, { useState, useMemo } from "react";
-import { Globe2, Search, ExternalLink, ShieldCheck, MapPin, Layers } from "lucide-react";
 import { 
   SUSTAINABILITY_TARGET_MARKETS, 
   SustainabilityMarket,
@@ -52,7 +51,6 @@ export function SustainabilityTargetMarkets({ ar = true }: SustainabilityTargetM
           </div>
 
           <span className="inline-flex items-center gap-1.5 rounded-2xl border border-brand-green/30 bg-brand-green/10 px-4 py-2 text-xs font-bold text-brand-green shrink-0 self-start">
-            <Globe2 className="size-4" />
             <span>{ar ? `${SUSTAINABILITY_TARGET_MARKETS.length} سوقًا معتمدًا بالدراسة` : `${SUSTAINABILITY_TARGET_MARKETS.length} Verified Target Markets`}</span>
           </span>
         </div>
@@ -102,13 +100,12 @@ export function SustainabilityTargetMarkets({ ar = true }: SustainabilityTargetM
 
         {/* Search */}
         <div className="relative w-full sm:w-64">
-          <Search className="absolute start-3 top-1/2 -translate-y-1/2 size-3.5 text-muted-foreground" />
           <input
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder={ar ? "ابحث بدولة أو احتياج بيئي..." : "Search country or need..."}
-            className="w-full rounded-xl border border-foreground/25 bg-background/95 ps-8 pe-4 py-1.5 text-xs text-foreground placeholder:text-muted-foreground shadow-sm focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 transition-all"
+            className="w-full rounded-xl border border-foreground/25 bg-background/95 px-4 py-1.5 text-xs text-foreground placeholder:text-muted-foreground shadow-sm focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 transition-all"
           />
         </div>
       </div>
@@ -151,7 +148,6 @@ export function SustainabilityTargetMarkets({ ar = true }: SustainabilityTargetM
                   className="inline-flex items-center gap-1 rounded-xl border border-white/10 bg-secondary/60 px-2.5 py-1 text-[11px] font-semibold text-brand-orange hover:bg-brand-orange hover:text-white transition-all shadow-2xs shrink-0"
                 >
                   <span>{ar ? "المصدر الرسمي" : "Official Source"}</span>
-                  <ExternalLink className="size-3" />
                 </a>
               </div>
 
@@ -165,8 +161,7 @@ export function SustainabilityTargetMarkets({ ar = true }: SustainabilityTargetM
             <div className="space-y-3 pt-2">
               {/* Needs */}
               <div className="rounded-2xl border border-white/10 bg-secondary/40 p-3.5 space-y-1.5">
-                <span className="text-[11px] font-bold text-foreground flex items-center gap-1.5">
-                  <ShieldCheck className="size-3.5 text-brand-orange" />
+                <span className="text-[11px] font-bold text-foreground block">
                   <span>{ar ? "أهم الاحتياجات البيئية في السوق:" : "Core Environmental Demands:"}</span>
                 </span>
                 <ul className="text-xs text-muted-foreground space-y-1 ps-4 list-disc">
@@ -178,8 +173,7 @@ export function SustainabilityTargetMarkets({ ar = true }: SustainabilityTargetM
 
               {/* Suitable Solutions */}
               <div className="rounded-2xl border border-brand-green/20 bg-brand-green/5 p-3.5 space-y-1.5">
-                <span className="text-[11px] font-bold text-brand-green flex items-center gap-1.5">
-                  <Layers className="size-3.5 text-brand-green" />
+                <span className="text-[11px] font-bold text-brand-green block">
                   <span>{ar ? "الحلول والخدمات المناسبة المقترحة:" : "Suitable Solutions Portfolio:"}</span>
                 </span>
                 <div className="flex flex-wrap gap-1.5 pt-0.5">

@@ -146,7 +146,7 @@ export const DATA_ROOM_ACCESS_LEVELS: {
     badgeAr: "مخصص للمستثمرين المعتمدين",
     color: "bg-purple-500/15 text-purple-400 border-purple-500/30",
     descEn: "Exclusive to qualified institutional investors and vetted funds with clearance.",
-    descAr: "مخصص حصرياً للمؤسسات والصناديق الاستثمارية المؤهلة بعد موافقة مجلس الإدارة."
+    descAr: "مخصص حصريًا للمؤسسات والصناديق الاستثمارية المؤهلة بعد موافقة مجلس الإدارة."
   }
 ];
 

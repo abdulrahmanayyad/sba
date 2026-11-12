@@ -1,17 +1,5 @@
 import React, { useState } from "react";
 import { 
-  FileText, 
-  Download, 
-  Eye, 
-  Printer, 
-  ShieldAlert, 
-  CheckCircle2, 
-  Globe, 
-  Package, 
-  TrendingUp,
-  X
-} from "lucide-react";
-import { 
   TRADE_STATS, 
   DOCUMENTED_BUYER_REQUIREMENTS, 
   COUNTRY_PROFILES, 
@@ -130,10 +118,7 @@ export function TradeReportsDownloads({ ar = true }: TradeReportsDownloadsProps)
             className="interactive-card glass-box-interactive group flex flex-col justify-between rounded-3xl border border-white/15 bg-background/60 p-6 backdrop-blur-xl transition-all duration-300 hover:bg-background/80 hover:shadow-xl hover:-translate-y-1"
           >
             <div>
-              <div className="flex items-center justify-between border-b border-white/10 pb-3">
-                <span className="flex size-10 items-center justify-center rounded-2xl bg-brand-orange/15 text-brand-orange">
-                  <FileText className="size-5" />
-                </span>
+              <div className="flex items-center justify-end border-b border-white/10 pb-3">
                 <span dir="ltr" className="inline-flex items-center rounded-full bg-white/10 px-2.5 py-0.5 text-[11px] font-mono font-medium text-foreground">
                   {rep.size}
                 </span>
@@ -161,7 +146,6 @@ export function TradeReportsDownloads({ ar = true }: TradeReportsDownloadsProps)
                 onClick={() => setActiveReportModal(rep.id)}
                 className="flex items-center justify-center gap-1.5 rounded-xl border border-white/15 bg-white/5 py-2 text-xs font-semibold text-foreground hover:bg-white/10 hover:text-brand-orange"
               >
-                <Eye className="size-3.5" />
                 <span>{ar ? "معاينة" : "Preview"}</span>
               </button>
 
@@ -173,7 +157,6 @@ export function TradeReportsDownloads({ ar = true }: TradeReportsDownloadsProps)
                 }}
                 className="flex items-center justify-center gap-1.5 rounded-xl bg-brand-green py-2 text-xs font-bold text-white shadow-md hover:bg-brand-orange transition-all duration-300 cursor-pointer"
               >
-                <Download className="size-3.5" />
                 <span>{ar ? "تحميل PDF" : "Download PDF"}</span>
               </button>
             </div>
@@ -192,11 +175,8 @@ export function TradeReportsDownloads({ ar = true }: TradeReportsDownloadsProps)
 
             <a
               href="mailto:info@sami-trade.com"
-              className="flex items-center gap-3 p-2.5 rounded-xl border border-border/70 bg-background/80 hover:border-brand-orange hover:bg-background transition-all group"
+              className="flex items-center justify-between p-3 rounded-xl border border-border/70 bg-background/80 hover:border-brand-orange hover:bg-background transition-all group"
             >
-              <div className="flex size-9 items-center justify-center rounded-lg bg-brand-orange/15 text-brand-orange">
-                <FileText className="size-4" />
-              </div>
               <div className="text-start">
                 <span className="text-[10px] text-muted-foreground block">{ar ? "البريد الرسمي المعتمد" : "Official Email"}</span>
                 <span className="text-xs font-bold text-foreground font-mono group-hover:text-brand-orange">
@@ -209,11 +189,8 @@ export function TradeReportsDownloads({ ar = true }: TradeReportsDownloadsProps)
               href="https://wa.me/201222238072"
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-3 p-2.5 rounded-xl border border-brand-green/30 bg-brand-green/10 hover:border-brand-green hover:bg-brand-green/20 transition-all group"
+              className="flex items-center justify-between p-3 rounded-xl border border-brand-green/30 bg-brand-green/10 hover:border-brand-green hover:bg-brand-green/20 transition-all group"
             >
-              <div className="flex size-9 items-center justify-center rounded-lg bg-brand-green text-white">
-                <Globe className="size-4" />
-              </div>
               <div className="text-start">
                 <span className="text-[10px] text-brand-green block font-bold">{ar ? "واتساب التجاري المعتمد" : "Official WhatsApp"}</span>
                 <span dir="ltr" className="text-xs font-bold text-foreground font-mono group-hover:text-brand-green">
@@ -246,8 +223,7 @@ export function TradeReportsDownloads({ ar = true }: TradeReportsDownloadsProps)
           <div className="relative w-full max-w-4xl rounded-3xl border border-white/20 bg-background/95 p-8 shadow-2xl backdrop-blur-2xl max-h-[90vh] overflow-y-auto print:max-h-none print:m-0 print:p-4 print:border-none print:bg-white print:text-black">
             {/* Close & Print Buttons */}
             <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-6 print:hidden">
-              <div className="flex items-center gap-2">
-                <FileText className="size-5 text-brand-orange" />
+              <div>
                 <span className="text-sm font-bold text-foreground">
                   {ar ? "معاينة التقرير الرسمي المعتمد" : "Official Report Preview"}
                 </span>
@@ -259,15 +235,15 @@ export function TradeReportsDownloads({ ar = true }: TradeReportsDownloadsProps)
                   onClick={handlePrint}
                   className="flex items-center gap-1.5 rounded-xl bg-brand-green px-4 py-1.5 text-xs font-bold text-white shadow hover:bg-brand-orange transition-all duration-300 cursor-pointer"
                 >
-                  <Printer className="size-3.5" />
                   <span>{ar ? "طباعة / تصدير PDF" : "Print / Export PDF"}</span>
                 </button>
                 <button
                   type="button"
                   onClick={() => setActiveReportModal(null)}
-                  className="rounded-full p-2 text-muted-foreground hover:bg-white/10 hover:text-foreground"
+                  aria-label={ar ? "إغلاق" : "Close"}
+                  className="rounded-full px-2.5 py-1 text-sm font-bold text-muted-foreground hover:bg-white/10 hover:text-foreground cursor-pointer"
                 >
-                  <X className="size-5" />
+                  ✕
                 </button>
               </div>
             </div>

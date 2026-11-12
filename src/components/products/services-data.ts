@@ -1047,7 +1047,7 @@ export const professionalServices: ProfessionalService[] = [
       "العلامات التجارية وتجار الملابس",
       "شركات الاستيراد والتوزيع التي تمتلك الخامات ومستلزمات الإنتاج",
       "الشركات والمصممون الباحثون عن طاقة تصنيعية متخصصة لتنفيذ طلبياتهم",
-      "سلاسل التجزئة التي تدير توريد الأقمشة والإكسسوارات داخلياً"
+      "سلاسل التجزئة التي تدير توريد الأقمشة والإكسسوارات داخليًا"
     ],
     "capabilitiesEn": [
       "Pricing based on product type, style complexity, and volume, excluding fabric costs",

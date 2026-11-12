@@ -430,7 +430,7 @@ export const REAL_ESTATE_MAJOR_MILESTONES: RealEstateMajorMilestone[] = [
     titleEn: "Major Commercial Portfolio Sales & Marketing",
     valuationAr: "5 مليارات جنيه مصري",
     valuationEn: "5 Billion EGP Portfolio",
-    descAr: "المشاركة في تسويق وإدارة مبيعات محفظة عقارية استثمارية استثنائية شملت سبعة مراكز تجارية (Malls) وفندقًا سياحيًا متكاملاً.",
+    descAr: "المشاركة في تسويق وإدارة مبيعات محفظة عقارية استثمارية استثنائية شملت سبعة مراكز تجارية (Malls) وفندقًا سياحيًا متكاملًا.",
     descEn: "Participation in the strategic commercialization and sales management of an institutional portfolio encompassing seven retail malls and a full-service hotel."
   },
   {

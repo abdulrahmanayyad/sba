@@ -1,5 +1,4 @@
 import React from "react";
-import { TrendingUp, AlertCircle, BarChart3, PieChart, Users, ShoppingBag } from "lucide-react";
 
 interface ApparelIntelligenceProps {
   ar?: boolean;
@@ -45,8 +44,7 @@ export function ApparelIntelligence({ ar = true }: ApparelIntelligenceProps) {
       </div>
 
       {/* Analytics Disclaimer */}
-      <div className="flex items-start gap-2.5 rounded-2xl border border-border/60 bg-muted/30 p-4 text-xs text-muted-foreground">
-        <AlertCircle className="size-4 shrink-0 text-brand-orange mt-0.5" />
+      <div className="rounded-2xl border border-border/60 bg-muted/30 p-4 text-xs text-muted-foreground">
         <p>
           <strong className="text-foreground">{ar ? "تنويه تحليلي:" : "Analytical Note:"}</strong>{" "}
           {ar
@@ -59,8 +57,7 @@ export function ApparelIntelligence({ ar = true }: ApparelIntelligenceProps) {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
         {/* 1. Demand by Category */}
         <div className="rounded-2xl border border-border/80 bg-background/70 p-5 backdrop-blur-xl shadow-sm space-y-4">
-          <div className="flex items-center gap-2">
-            <ShoppingBag className="size-4 text-brand-orange" />
+          <div>
             <h3 className="font-bold text-sm text-foreground">
               {ar ? "توزيع الطلب حسب فئة المنتجات" : "Demand Breakdown by Category"}
             </h3>
@@ -83,8 +80,7 @@ export function ApparelIntelligence({ ar = true }: ApparelIntelligenceProps) {
 
         {/* 2. Client Segmentation */}
         <div className="rounded-2xl border border-border/80 bg-background/70 p-5 backdrop-blur-xl shadow-sm space-y-4">
-          <div className="flex items-center gap-2">
-            <Users className="size-4 text-brand-green" />
+          <div>
             <h3 className="font-bold text-sm text-foreground">
               {ar ? "تصنيف شرائح المشترين والمستوردين" : "Buyer Segmentation Breakdown"}
             </h3>
@@ -107,8 +103,7 @@ export function ApparelIntelligence({ ar = true }: ApparelIntelligenceProps) {
 
         {/* 3. Regional Distribution */}
         <div className="rounded-2xl border border-border/80 bg-background/70 p-5 backdrop-blur-xl shadow-sm space-y-4">
-          <div className="flex items-center gap-2">
-            <BarChart3 className="size-4 text-blue-500" />
+          <div>
             <h3 className="font-bold text-sm text-foreground">
               {ar ? "التوزيع الجغرافي للأسواق" : "Regional Geographical Share"}
             </h3>

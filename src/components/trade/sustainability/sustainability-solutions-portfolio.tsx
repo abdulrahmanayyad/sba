@@ -1,16 +1,5 @@
 import React, { useState } from "react";
 import { 
-  Sun, 
-  Recycle, 
-  Droplets, 
-  Factory, 
-  FileCheck2, 
-  Building2, 
-  ShieldAlert, 
-  Sparkles,
-  ArrowRight
-} from "lucide-react";
-import { 
   SUSTAINABILITY_SOLUTIONS_PORTFOLIO,
   SustainabilitySubsectorKey,
   DeliveryModel
@@ -23,15 +12,6 @@ interface SustainabilitySolutionsPortfolioProps {
 
 export function SustainabilitySolutionsPortfolio({ ar = true }: SustainabilitySolutionsPortfolioProps) {
   const [activeCategory, setActiveCategory] = useState<SustainabilitySubsectorKey>("renewable_energy");
-
-  const categoryIcons: Record<SustainabilitySubsectorKey, React.ComponentType<{ className?: string }>> = {
-    renewable_energy: Sun,
-    waste_circular: Recycle,
-    water_resources: Droplets,
-    industrial_sustainability: Factory,
-    environmental_consulting: FileCheck2,
-    project_development: Building2,
-  };
 
   const selectedPortfolio = SUSTAINABILITY_SOLUTIONS_PORTFOLIO.find(
     (c) => c.categoryKey === activeCategory
@@ -84,7 +64,6 @@ export function SustainabilitySolutionsPortfolio({ ar = true }: SustainabilitySo
           </div>
 
           <span className="inline-flex items-center gap-1.5 rounded-2xl border border-white/20 bg-secondary/70 px-4 py-2 text-xs font-bold text-foreground shrink-0 self-start">
-            <Sparkles className="size-4 text-brand-orange" />
             <span>{ar ? "شفافية تعاقدية معتمدة" : "Verified Delivery Integrity"}</span>
           </span>
         </div>
@@ -93,7 +72,6 @@ export function SustainabilitySolutionsPortfolio({ ar = true }: SustainabilitySo
       {/* Categories Tabs */}
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-6 border-y border-white/10 py-4">
         {SUSTAINABILITY_SOLUTIONS_PORTFOLIO.map((cat) => {
-          const Icon = categoryIcons[cat.categoryKey];
           const isActive = activeCategory === cat.categoryKey;
 
           return (
@@ -102,20 +80,12 @@ export function SustainabilitySolutionsPortfolio({ ar = true }: SustainabilitySo
               type="button"
               onClick={() => setActiveCategory(cat.categoryKey)}
               className={cn(
-                "group flex flex-col items-center gap-2 rounded-2xl p-3 text-center transition-all duration-300 cursor-pointer border shadow-xs",
+                "group flex flex-col items-center justify-center gap-2 rounded-2xl p-3.5 text-center transition-all duration-300 cursor-pointer border shadow-xs",
                 isActive
                   ? "!border-brand-green !bg-brand-green !text-white shadow-md shadow-brand-green/25 hover:!bg-brand-orange hover:!border-brand-orange hover:!text-white"
                   : "border-border/80 bg-secondary/70 text-foreground hover:border-brand-orange/50 hover:text-brand-orange hover:bg-secondary/90"
               )}
             >
-              <div
-                className={cn(
-                  "p-2 rounded-xl transition-colors",
-                  isActive ? "bg-white/20 text-white" : "bg-background/80 text-brand-green group-hover:text-brand-orange"
-                )}
-              >
-                <Icon className="size-5 shrink-0" />
-              </div>
               <span className="text-xs font-bold leading-tight">
                 {ar ? cat.categoryNameAr : cat.categoryNameEn}
               </span>
@@ -175,8 +145,7 @@ export function SustainabilitySolutionsPortfolio({ ar = true }: SustainabilitySo
         </div>
 
         {/* Integrity Disclosure Notice */}
-        <div className="rounded-2xl border border-border/70 bg-secondary/30 p-4 text-xs text-muted-foreground flex items-start gap-3">
-          <ShieldAlert className="size-5 text-brand-orange shrink-0 mt-0.5" />
+        <div className="rounded-2xl border border-border/70 bg-secondary/30 p-4 text-xs text-muted-foreground">
           <div className="space-y-1 leading-relaxed">
             <span className="font-bold text-foreground block">
               {ar ? "إقرار الشفافية ونطاق التنفيذ المعتمد:" : "Transparency & Delivery Scope Disclosure:"}

@@ -1,10 +1,4 @@
 import React, { useState, useMemo } from "react";
-import { 
-  Globe, 
-  Search, 
-  AlertCircle,
-  ChevronDown
-} from "lucide-react";
 import { cn } from "@/lib/utils";
 import { 
   COUNTRY_PROFILES, 
@@ -135,13 +129,12 @@ export function TradeWorldMap({ ar = true, onSelectCountry }: TradeWorldMapProps
         {/* Category & Search */}
         <div className="flex flex-wrap items-center gap-2">
           <div className="relative min-w-[200px]">
-            <Search className="absolute start-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder={ar ? "ابحث بالدولة أو المنتج..." : "Search country or product..."}
-              className="w-full rounded-xl border border-foreground/25 bg-background/95 py-1.5 pe-4 ps-9 text-xs text-foreground placeholder:text-muted-foreground shadow-sm focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 transition-all"
+              className="w-full rounded-xl border border-foreground/25 bg-background/95 px-4 py-1.5 text-xs text-foreground placeholder:text-muted-foreground shadow-sm focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 transition-all"
             />
           </div>
 
@@ -152,7 +145,6 @@ export function TradeWorldMap({ ar = true, onSelectCountry }: TradeWorldMapProps
               className="rounded-xl border border-foreground/25 bg-background/95 px-3.5 py-1.5 text-xs font-semibold text-foreground shadow-sm hover:border-brand-orange focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 cursor-pointer transition-all flex items-center justify-between gap-2 min-w-[125px]"
             >
               <span>{ar ? (categories.find((c) => c.id === selectedCategory)?.labelAr || "كافة القطاعات") : (categories.find((c) => c.id === selectedCategory)?.labelEn || "All Inquiries")}</span>
-              <ChevronDown className={cn("size-3.5 text-muted-foreground transition-transform duration-200", isCategoryOpen && "rotate-180 text-brand-orange")} />
             </button>
 
             {isCategoryOpen && (
@@ -213,8 +205,7 @@ export function TradeWorldMap({ ar = true, onSelectCountry }: TradeWorldMapProps
           />
 
           {/* Compliance Disclaimer Notice as Glass Box */}
-          <div className="mt-3 flex items-start gap-2 rounded-xl border border-white/20 bg-background/50 p-2.5 text-xs text-muted-foreground backdrop-blur-md">
-            <AlertCircle className="size-4 shrink-0 text-brand-orange mt-0.5" />
+          <div className="mt-3 rounded-xl border border-white/20 bg-background/50 p-2.5 text-xs text-muted-foreground backdrop-blur-md">
             <p className="leading-relaxed">
               <strong className="font-semibold text-foreground">
                 {ar ? "تنويه توثيقي رسمي: " : "Official Documentary Notice: "}
@@ -229,8 +220,7 @@ export function TradeWorldMap({ ar = true, onSelectCountry }: TradeWorldMapProps
           <div className="flex h-full flex-col rounded-2xl border border-white/15 bg-background/50 p-4 sm:p-5 shadow-inner backdrop-blur-xl transition-all duration-300">
             {/* Header */}
             <div className="flex items-center justify-between border-b border-white/10 pb-3 mb-3">
-              <div className="flex items-center gap-2">
-                <Globe className="size-4 text-brand-orange" />
+              <div>
                 <h4 className="text-sm font-bold text-foreground">
                   {ar ? "الدول المتاحة" : "Available Markets"}
                 </h4>

@@ -1,5 +1,4 @@
 import React from "react";
-import { Factory, ShieldCheck, CheckCircle2 } from "lucide-react";
 import { APPAREL_EGYPTIAN_NETWORK } from "@/lib/apparel-trade-data";
 
 interface ApparelFactoriesNetworkProps {
@@ -66,10 +65,7 @@ export function ApparelFactoriesNetwork({ ar = true }: ApparelFactoriesNetworkPr
               className="flex flex-col justify-between rounded-2xl border border-border/80 bg-background/60 p-4.5 backdrop-blur-md shadow-xs transition-all duration-300 hover:border-brand-orange/50 hover:shadow-md"
             >
               <div>
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="flex size-6 items-center justify-center rounded-lg bg-secondary text-brand-orange font-bold text-xs">
-                    <Factory className="size-3.5" />
-                  </span>
+                <div className="mb-2">
                   <h4 className="font-bold text-xs sm:text-sm text-foreground">
                     {ar ? spec.labelAr : spec.labelEn}
                   </h4>
