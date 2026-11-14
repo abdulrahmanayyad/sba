@@ -1,0 +1,2874 @@
+[
+  {
+    "base": "37_CD",
+    "xlsx": "37_CD_Environmental_Database.xlsx",
+    "docx": "37_CD_Environmental_Market_Study.docx",
+    "sheets": [
+      "Country Overview",
+      "Projects",
+      "Opportunities",
+      "Target Accounts",
+      "Regulatory",
+      "Risk Register",
+      "Sources"
+    ],
+    "sampleRows": [
+      [
+        "SBA Group – Environmental Market Database"
+      ],
+      [
+        "Country",
+        "جمهورية الكونغو الديمقراطية"
+      ],
+      [
+        "Country code",
+        "CD"
+      ],
+      [
+        "Sequence",
+        37
+      ],
+      [
+        "Priority sectors",
+        "التعدين، المياه، التلوث الصناعي"
+      ]
+    ]
+  },
+  {
+    "base": "38_CG",
+    "xlsx": "38_CG_Environmental_Database.xlsx",
+    "docx": "38_CG_Environmental_Market_Study.docx",
+    "sheets": [
+      "Country Overview",
+      "Projects",
+      "Opportunities",
+      "Target Accounts",
+      "Regulatory",
+      "Risk Register",
+      "Sources"
+    ],
+    "sampleRows": [
+      [
+        "SBA Group – Environmental Market Database"
+      ],
+      [
+        "Country",
+        "جمهورية الكونغو"
+      ],
+      [
+        "Country code",
+        "CG"
+      ],
+      [
+        "Sequence",
+        38
+      ],
+      [
+        "Priority sectors",
+        "النفط، الغاز، التلوث الهيدروكربوني"
+      ]
+    ]
+  },
+  {
+    "base": "39_DJ",
+    "xlsx": "39_DJ_Environmental_Database.xlsx",
+    "docx": "39_DJ_Environmental_Market_Study.docx",
+    "sheets": [
+      "Country Overview",
+      "Projects",
+      "Opportunities",
+      "Target Accounts",
+      "Regulatory",
+      "Risk Register",
+      "Sources"
+    ],
+    "sampleRows": [
+      [
+        "SBA Group – Environmental Market Database"
+      ],
+      [
+        "Country",
+        "جيبوتي"
+      ],
+      [
+        "Country code",
+        "DJ"
+      ],
+      [
+        "Sequence",
+        39
+      ],
+      [
+        "Priority sectors",
+        "الموانئ، التحلية، المخلفات"
+      ]
+    ]
+  },
+  {
+    "base": "40_GQ",
+    "xlsx": "40_GQ_Environmental_Database.xlsx",
+    "docx": "40_GQ_Environmental_Market_Study.docx",
+    "sheets": [
+      "Country Overview",
+      "Projects",
+      "Opportunities",
+      "Target Accounts",
+      "Regulatory",
+      "Risk Register",
+      "Sources"
+    ],
+    "sampleRows": [
+      [
+        "SBA Group – Environmental Market Database"
+      ],
+      [
+        "Country",
+        "غينيا الاستوائية"
+      ],
+      [
+        "Country code",
+        "GQ"
+      ],
+      [
+        "Sequence",
+        40
+      ],
+      [
+        "Priority sectors",
+        "النفط والغاز، تقييم الأثر البيئي"
+      ]
+    ]
+  },
+  {
+    "base": "41_ER",
+    "xlsx": "41_ER_Environmental_Database.xlsx",
+    "docx": "41_ER_Environmental_Market_Study.docx",
+    "sheets": [
+      "Country Overview",
+      "Projects",
+      "Opportunities",
+      "Target Accounts",
+      "Regulatory",
+      "Risk Register",
+      "Sources"
+    ],
+    "sampleRows": [
+      [
+        "SBA Group – Environmental Market Database"
+      ],
+      [
+        "Country",
+        "إريتريا"
+      ],
+      [
+        "Country code",
+        "ER"
+      ],
+      [
+        "Sequence",
+        41
+      ],
+      [
+        "Priority sectors",
+        "المياه، التعدين، الطاقة"
+      ]
+    ]
+  },
+  {
+    "base": "42_SZ",
+    "xlsx": "42_SZ_Environmental_Database.xlsx",
+    "docx": "42_SZ_Environmental_Market_Study.docx",
+    "sheets": [
+      "Country Overview",
+      "Projects",
+      "Opportunities",
+      "Target Accounts",
+      "Regulatory",
+      "Risk Register",
+      "Sources"
+    ],
+    "sampleRows": [
+      [
+        "SBA Group – Environmental Market Database"
+      ],
+      [
+        "Country",
+        "إسواتيني"
+      ],
+      [
+        "Country code",
+        "SZ"
+      ],
+      [
+        "Sequence",
+        42
+      ],
+      [
+        "Priority sectors",
+        "المخلفات الصناعية والزراعية"
+      ]
+    ]
+  },
+  {
+    "base": "43_GA",
+    "xlsx": "43_GA_Environmental_Database.xlsx",
+    "docx": "43_GA_Environmental_Market_Study.docx",
+    "sheets": [
+      "Country Overview",
+      "Projects",
+      "Opportunities",
+      "Target Accounts",
+      "Regulatory",
+      "Risk Register",
+      "Sources"
+    ],
+    "sampleRows": [
+      [
+        "SBA Group – Environmental Market Database"
+      ],
+      [
+        "Country",
+        "الغابون"
+      ],
+      [
+        "Country code",
+        "GA"
+      ],
+      [
+        "Sequence",
+        43
+      ],
+      [
+        "Priority sectors",
+        "النفط، التعدين، حماية الغابات"
+      ]
+    ]
+  },
+  {
+    "base": "44_GM",
+    "xlsx": "44_GM_Environmental_Database.xlsx",
+    "docx": "44_GM_Environmental_Market_Study.docx",
+    "sheets": [
+      "Country Overview",
+      "Projects",
+      "Opportunities",
+      "Target Accounts",
+      "Regulatory",
+      "Risk Register",
+      "Sources"
+    ],
+    "sampleRows": [
+      [
+        "SBA Group – Environmental Market Database"
+      ],
+      [
+        "Country",
+        "غامبيا"
+      ],
+      [
+        "Country code",
+        "GM"
+      ],
+      [
+        "Sequence",
+        44
+      ],
+      [
+        "Priority sectors",
+        "المخلفات، المياه، السياحة المستدامة"
+      ]
+    ]
+  },
+  {
+    "base": "45_GN",
+    "xlsx": "45_GN_Environmental_Database.xlsx",
+    "docx": "45_GN_Environmental_Market_Study.docx",
+    "sheets": [
+      "Country Overview",
+      "Projects",
+      "Opportunities",
+      "Target Accounts",
+      "Regulatory",
+      "Risk Register",
+      "Sources"
+    ],
+    "sampleRows": [
+      [
+        "SBA Group – Environmental Market Database"
+      ],
+      [
+        "Country",
+        "غينيا"
+      ],
+      [
+        "Country code",
+        "GN"
+      ],
+      [
+        "Sequence",
+        45
+      ],
+      [
+        "Priority sectors",
+        "التعدين، المياه، المخلفات"
+      ]
+    ]
+  },
+  {
+    "base": "46_GW",
+    "xlsx": "46_GW_Environmental_Database.xlsx",
+    "docx": "46_GW_Environmental_Market_Study.docx",
+    "sheets": [
+      "Country Overview",
+      "Projects",
+      "Opportunities",
+      "Target Accounts",
+      "Regulatory",
+      "Risk Register",
+      "Sources"
+    ],
+    "sampleRows": [
+      [
+        "SBA Group – Environmental Market Database"
+      ],
+      [
+        "Country",
+        "غينيا بيساو"
+      ],
+      [
+        "Country code",
+        "GW"
+      ],
+      [
+        "Sequence",
+        46
+      ],
+      [
+        "Priority sectors",
+        "المياه، الزراعة، المخلفات"
+      ]
+    ]
+  },
+  {
+    "base": "47_LS",
+    "xlsx": "47_LS_Environmental_Database.xlsx",
+    "docx": "47_LS_Environmental_Market_Study.docx",
+    "sheets": [
+      "Country Overview",
+      "Projects",
+      "Opportunities",
+      "Target Accounts",
+      "Regulatory",
+      "Risk Register",
+      "Sources"
+    ],
+    "sampleRows": [
+      [
+        "SBA Group – Environmental Market Database"
+      ],
+      [
+        "Country",
+        "ليسوتو"
+      ],
+      [
+        "Country code",
+        "LS"
+      ],
+      [
+        "Sequence",
+        47
+      ],
+      [
+        "Priority sectors",
+        "المياه، الطاقة، المخلفات"
+      ]
+    ]
+  },
+  {
+    "base": "48_LR",
+    "xlsx": "48_LR_Environmental_Database.xlsx",
+    "docx": "48_LR_Environmental_Market_Study.docx",
+    "sheets": [
+      "Country Overview",
+      "Projects",
+      "Opportunities",
+      "Target Accounts",
+      "Regulatory",
+      "Risk Register",
+      "Sources"
+    ],
+    "sampleRows": [
+      [
+        "SBA Group – Environmental Market Database"
+      ],
+      [
+        "Country",
+        "ليبيريا"
+      ],
+      [
+        "Country code",
+        "LR"
+      ],
+      [
+        "Sequence",
+        48
+      ],
+      [
+        "Priority sectors",
+        "التعدين، المياه، تقييم الأثر البيئي"
+      ]
+    ]
+  },
+  {
+    "base": "49_MG",
+    "xlsx": "49_MG_Environmental_Database.xlsx",
+    "docx": "49_MG_Environmental_Market_Study.docx",
+    "sheets": [
+      "Country Overview",
+      "Projects",
+      "Opportunities",
+      "Target Accounts",
+      "Regulatory",
+      "Risk Register",
+      "Sources"
+    ],
+    "sampleRows": [
+      [
+        "SBA Group – Environmental Market Database"
+      ],
+      [
+        "Country",
+        "مدغشقر"
+      ],
+      [
+        "Country code",
+        "MG"
+      ],
+      [
+        "Sequence",
+        49
+      ],
+      [
+        "Priority sectors",
+        "التعدين، المياه، التنوع الحيوي"
+      ]
+    ]
+  },
+  {
+    "base": "50_MW",
+    "xlsx": "50_MW_Environmental_Database.xlsx",
+    "docx": "50_MW_Environmental_Market_Study.docx",
+    "sheets": [
+      "Country Overview",
+      "Projects",
+      "Opportunities",
+      "Target Accounts",
+      "Regulatory",
+      "Risk Register",
+      "Sources"
+    ],
+    "sampleRows": [
+      [
+        "SBA Group – Environmental Market Database"
+      ],
+      [
+        "Country",
+        "ملاوي"
+      ],
+      [
+        "Country code",
+        "MW"
+      ],
+      [
+        "Sequence",
+        50
+      ],
+      [
+        "Priority sectors",
+        "البيوجاز، المخلفات الزراعية، المياه"
+      ]
+    ]
+  },
+  {
+    "base": "51_ML",
+    "xlsx": "51_ML_Environmental_Database.xlsx",
+    "docx": "51_ML_Environmental_Market_Study.docx",
+    "sheets": [
+      "Country Overview",
+      "Projects",
+      "Opportunities",
+      "Target Accounts",
+      "Regulatory",
+      "Risk Register",
+      "Sources"
+    ],
+    "sampleRows": [
+      [
+        "SBA Group – Environmental Market Database"
+      ],
+      [
+        "Country",
+        "مالي"
+      ],
+      [
+        "English name",
+        "Mali"
+      ],
+      [
+        "Country code",
+        "ML"
+      ],
+      [
+        "Sequence",
+        51
+      ]
+    ]
+  },
+  {
+    "base": "52_MU",
+    "xlsx": "52_MU_Environmental_Database.xlsx",
+    "docx": "52_MU_Environmental_Market_Study.docx",
+    "sheets": [
+      "Country Overview",
+      "Projects",
+      "Opportunities",
+      "Target Accounts",
+      "Regulatory",
+      "Risk Register",
+      "Sources"
+    ],
+    "sampleRows": [
+      [
+        "SBA Group – Environmental Market Database"
+      ],
+      [
+        "Country",
+        "موريشيوس"
+      ],
+      [
+        "English name",
+        "Mauritius"
+      ],
+      [
+        "Country code",
+        "MU"
+      ],
+      [
+        "Sequence",
+        52
+      ]
+    ]
+  },
+  {
+    "base": "53_NA",
+    "xlsx": "53_NA_Environmental_Database.xlsx",
+    "docx": "53_NA_Environmental_Market_Study.docx",
+    "sheets": [
+      "Country Overview",
+      "Projects",
+      "Opportunities",
+      "Target Accounts",
+      "Regulatory",
+      "Risk Register",
+      "Sources"
+    ],
+    "sampleRows": [
+      [
+        "SBA Group – Environmental Market Database"
+      ],
+      [
+        "Country",
+        "ناميبيا"
+      ],
+      [
+        "English name",
+        "Namibia"
+      ],
+      [
+        "Country code",
+        "NA"
+      ],
+      [
+        "Sequence",
+        53
+      ]
+    ]
+  },
+  {
+    "base": "54_NE",
+    "xlsx": "54_NE_Environmental_Database.xlsx",
+    "docx": "54_NE_Environmental_Market_Study.docx",
+    "sheets": [
+      "Country Overview",
+      "Projects",
+      "Opportunities",
+      "Target Accounts",
+      "Regulatory",
+      "Risk Register",
+      "Sources"
+    ],
+    "sampleRows": [
+      [
+        "SBA Group – Environmental Market Database"
+      ],
+      [
+        "Country",
+        "النيجر"
+      ],
+      [
+        "English name",
+        "Niger"
+      ],
+      [
+        "Country code",
+        "NE"
+      ],
+      [
+        "Sequence",
+        54
+      ]
+    ]
+  },
+  {
+    "base": "55_ST",
+    "xlsx": "55_ST_Environmental_Database.xlsx",
+    "docx": "55_ST_Environmental_Market_Study.docx",
+    "sheets": [
+      "Country Overview",
+      "Projects",
+      "Opportunities",
+      "Target Accounts",
+      "Regulatory",
+      "Risk Register",
+      "Sources"
+    ],
+    "sampleRows": [
+      [
+        "SBA Group – Environmental Market Database"
+      ],
+      [
+        "Country",
+        "ساو تومي وبرينسيب"
+      ],
+      [
+        "English name",
+        "São Tomé and Príncipe"
+      ],
+      [
+        "Country code",
+        "ST"
+      ],
+      [
+        "Sequence",
+        55
+      ]
+    ]
+  },
+  {
+    "base": "56_SC",
+    "xlsx": "56_SC_Environmental_Database.xlsx",
+    "docx": "56_SC_Environmental_Market_Study.docx",
+    "sheets": [
+      "Country Overview",
+      "Projects",
+      "Opportunities",
+      "Target Accounts",
+      "Regulatory",
+      "Risk Register",
+      "Sources"
+    ],
+    "sampleRows": [
+      [
+        "SBA Group – Environmental Market Database"
+      ],
+      [
+        "Country",
+        "سيشل"
+      ],
+      [
+        "English name",
+        "Seychelles"
+      ],
+      [
+        "Country code",
+        "SC"
+      ],
+      [
+        "Sequence",
+        56
+      ]
+    ]
+  },
+  {
+    "base": "57_SL",
+    "xlsx": "57_SL_Environmental_Database.xlsx",
+    "docx": "57_SL_Environmental_Market_Study.docx",
+    "sheets": [
+      "Country Overview",
+      "Projects",
+      "Opportunities",
+      "Target Accounts",
+      "Regulatory",
+      "Risk Register",
+      "Sources"
+    ],
+    "sampleRows": [
+      [
+        "SBA Group – Environmental Market Database"
+      ],
+      [
+        "Country",
+        "سيراليون"
+      ],
+      [
+        "English name",
+        "Sierra Leone"
+      ],
+      [
+        "Country code",
+        "SL"
+      ],
+      [
+        "Sequence",
+        57
+      ]
+    ]
+  },
+  {
+    "base": "58_SS",
+    "xlsx": "58_SS_Environmental_Database.xlsx",
+    "docx": "58_SS_Environmental_Market_Study.docx",
+    "sheets": [
+      "Country Overview",
+      "Projects",
+      "Opportunities",
+      "Target Accounts",
+      "Regulatory",
+      "Risk Register",
+      "Sources"
+    ],
+    "sampleRows": [
+      [
+        "SBA Group – Environmental Market Database"
+      ],
+      [
+        "Country",
+        "جنوب السودان"
+      ],
+      [
+        "English name",
+        "South Sudan"
+      ],
+      [
+        "Country code",
+        "SS"
+      ],
+      [
+        "Sequence",
+        58
+      ]
+    ]
+  },
+  {
+    "base": "59_TG",
+    "xlsx": "59_TG_Environmental_Database.xlsx",
+    "docx": "59_TG_Environmental_Market_Study.docx",
+    "sheets": [
+      "Country Overview",
+      "Projects",
+      "Opportunities",
+      "Target Accounts",
+      "Regulatory",
+      "Risk Register",
+      "Sources"
+    ],
+    "sampleRows": [
+      [
+        "SBA Group – Environmental Market Database"
+      ],
+      [
+        "Country",
+        "توغو"
+      ],
+      [
+        "English name",
+        "Togo"
+      ],
+      [
+        "Country code",
+        "TG"
+      ],
+      [
+        "Sequence",
+        59
+      ]
+    ]
+  },
+  {
+    "base": "60_ZW",
+    "xlsx": "60_ZW_Environmental_Database.xlsx",
+    "docx": "60_ZW_Environmental_Market_Study.docx",
+    "sheets": [
+      "Country Overview",
+      "Projects",
+      "Opportunities",
+      "Target Accounts",
+      "Regulatory",
+      "Risk Register",
+      "Sources"
+    ],
+    "sampleRows": [
+      [
+        "SBA Group – Environmental Market Database"
+      ],
+      [
+        "Country",
+        "زيمبابوي"
+      ],
+      [
+        "English name",
+        "Zimbabwe"
+      ],
+      [
+        "Country code",
+        "ZW"
+      ],
+      [
+        "Sequence",
+        60
+      ]
+    ]
+  },
+  {
+    "base": "61_SD",
+    "xlsx": "61_SD_Environmental_Database.xlsx",
+    "docx": "61_SD_Environmental_Market_Study.docx",
+    "sheets": [
+      "Country Overview",
+      "Projects",
+      "Opportunities",
+      "Target Accounts",
+      "Regulatory",
+      "Risk Register",
+      "Sources"
+    ],
+    "sampleRows": [
+      [
+        "SBA Group – Environmental Market Database"
+      ],
+      [
+        "Country",
+        "السودان"
+      ],
+      [
+        "English name",
+        "Sudan"
+      ],
+      [
+        "Country code",
+        "SD"
+      ],
+      [
+        "Sequence",
+        61
+      ]
+    ]
+  },
+  {
+    "base": "62_SO",
+    "xlsx": "62_SO_Environmental_Database.xlsx",
+    "docx": "62_SO_Environmental_Market_Study.docx",
+    "sheets": [
+      "Country Overview",
+      "Projects",
+      "Opportunities",
+      "Target Accounts",
+      "Regulatory",
+      "Risk Register",
+      "Sources"
+    ],
+    "sampleRows": [
+      [
+        "SBA Group – Environmental Market Database"
+      ],
+      [
+        "Country",
+        "الصومال"
+      ],
+      [
+        "English name",
+        "Somalia"
+      ],
+      [
+        "Country code",
+        "SO"
+      ],
+      [
+        "Sequence",
+        62
+      ]
+    ]
+  },
+  {
+    "base": "63_LB",
+    "xlsx": "63_LB_Environmental_Database.xlsx",
+    "docx": "63_LB_Environmental_Market_Study.docx",
+    "sheets": [
+      "Country Overview",
+      "Projects",
+      "Opportunities",
+      "Target Accounts",
+      "Regulatory",
+      "Risk Register",
+      "Sources"
+    ],
+    "sampleRows": [
+      [
+        "SBA Group – Environmental Market Database"
+      ],
+      [
+        "Country",
+        "لبنان"
+      ],
+      [
+        "English name",
+        "Lebanon"
+      ],
+      [
+        "Country code",
+        "LB"
+      ],
+      [
+        "Sequence",
+        63
+      ]
+    ]
+  },
+  {
+    "base": "64_PS",
+    "xlsx": "64_PS_Environmental_Database.xlsx",
+    "docx": "64_PS_Environmental_Market_Study.docx",
+    "sheets": [
+      "Country Overview",
+      "Projects",
+      "Opportunities",
+      "Target Accounts",
+      "Regulatory",
+      "Risk Register",
+      "Sources"
+    ],
+    "sampleRows": [
+      [
+        "SBA Group – Environmental Market Database"
+      ],
+      [
+        "Country",
+        "فلسطين"
+      ],
+      [
+        "English name",
+        "Palestine"
+      ],
+      [
+        "Country code",
+        "PS"
+      ],
+      [
+        "Sequence",
+        64
+      ]
+    ]
+  },
+  {
+    "base": "65_SY",
+    "xlsx": "65_SY_Environmental_Database.xlsx",
+    "docx": "65_SY_Environmental_Market_Study.docx",
+    "sheets": [
+      "Country Overview",
+      "Projects",
+      "Opportunities",
+      "Target Accounts",
+      "Regulatory",
+      "Risk Register",
+      "Sources"
+    ],
+    "sampleRows": [
+      [
+        "SBA Group – Environmental Market Database"
+      ],
+      [
+        "Country",
+        "سوريا"
+      ],
+      [
+        "English name",
+        "Syria"
+      ],
+      [
+        "Country code",
+        "SY"
+      ],
+      [
+        "Sequence",
+        65
+      ]
+    ]
+  },
+  {
+    "base": "66_YE",
+    "xlsx": "66_YE_Environmental_Database.xlsx",
+    "docx": "66_YE_Environmental_Market_Study.docx",
+    "sheets": [
+      "Country Overview",
+      "Projects",
+      "Opportunities",
+      "Target Accounts",
+      "Regulatory",
+      "Risk Register",
+      "Sources"
+    ],
+    "sampleRows": [
+      [
+        "SBA Group – Environmental Market Database"
+      ],
+      [
+        "Country",
+        "اليمن"
+      ],
+      [
+        "English name",
+        "Yemen"
+      ],
+      [
+        "Country code",
+        "YE"
+      ],
+      [
+        "Sequence",
+        66
+      ]
+    ]
+  },
+  {
+    "base": "SBA_Algeria",
+    "xlsx": "SBA_Algeria_Environmental_Opportunity_Database.xlsx",
+    "docx": "SBA_Algeria_Environmental_Market_Study_AR.docx",
+    "sheets": [
+      "ملخص تنفيذي",
+      "المشروعات والبرامج",
+      "المناقصات",
+      "التشريعات والتراخيص",
+      "العملاء والشركاء",
+      "خدمات SBA",
+      "خطة 180 يومًا",
+      "المصادر والمنهجية"
+    ],
+    "sampleRows": [
+      [
+        "المحور",
+        "المعلومة الأساسية",
+        "الفرصة",
+        "الأولوية"
+      ],
+      [
+        "المحروقات",
+        "طلب على معالجة التربة والمياه الملوثة والمخلفات النفطية",
+        "توصيف ورصد وتقييم مخاطر",
+        "عالية"
+      ],
+      [
+        "المخلفات",
+        "القانون 25-02 عدل 01-19",
+        "خطط إدارة وتدوير وتتبع",
+        "عالية"
+      ],
+      [
+        "المياه",
+        "محطة بن مهيدي 140 ألف م³/يوم",
+        "رصد مياه البحر والمنتج والرجيع الملحي",
+        "عالية"
+      ],
+      [
+        "EIA",
+        "المرسوم 26-156 بتاريخ 14 أبريل 2026",
+        "شراكة مع مكتب دراسات معتمد",
+        "عاجلة"
+      ]
+    ]
+  },
+  {
+    "base": "SBA_Angola",
+    "xlsx": "SBA_Angola_Environmental_Opportunity_Database.xlsx",
+    "docx": "SBA_Angola_Environmental_Market_Study_AR.docx",
+    "sheets": [
+      "فرص الخدمات",
+      "التنظيم والتأهيل",
+      "المشروعات والمناقصات",
+      "الحسابات المستهدفة",
+      "الشركاء والمنافسون",
+      "الفرص حسب المناطق",
+      "المصادر وخطة التنفيذ"
+    ],
+    "sampleRows": [
+      [
+        "الأولوية",
+        "الخدمة",
+        "الطلب/المشكلة",
+        "العملاء",
+        "نموذج الإيراد",
+        "متطلبات الدخول",
+        "التنفيذ من مصر"
+      ],
+      [
+        1,
+        "الرصد والقياسات",
+        "مراقبة الهواء والمياه والتربة والتصريف",
+        "الجهات المنظمة والمرافق والمناجم والنفط",
+        "حملة قياس + تقرير + متابعة",
+        "مختبر معتمد ومعايرة وسلسلة عينة",
+        "تحليل بيانات؛ الميدان محلي"
+      ],
+      [
+        2,
+        "EIA/ESIA/EMP",
+        "التراخيص والتوسعات والمشروعات",
+        "المطورون والمشغلون والمقاولون",
+        "دراسة/مخرجات أو دعم من الباطن",
+        "شريك محلي مسجل",
+        "جزئي؛ التوقيع محلي"
+      ],
+      [
+        3,
+        "إدارة المخلفات",
+        "توصيف وفرز ونقل ومعالجة",
+        "بلديات ومصانع ومشغلو مرافق",
+        "تدقيق ثم خطة ثم تشغيل",
+        "ترخيص حسب المخلف والنشاط",
+        "الدراسة والتصميم جزئيًا"
+      ],
+      [
+        4,
+        "المعالجة المتخصصة",
+        "تربة/مياه/حمأة/ملوثات نفطية",
+        "النفط والتعدين والصناعة",
+        "Pilot ثم سعر وحدة معالجة",
+        "SDS/TDS واختبار مستقل وتصريح",
+        "توريد وإشراف مع شريك"
+      ]
+    ]
+  },
+  {
+    "base": "SBA_Bahrain",
+    "xlsx": "SBA_Bahrain_Environmental_Opportunity_Database.xlsx",
+    "docx": "SBA_Bahrain_Environmental_Market_Study_AR.docx",
+    "sheets": [
+      "فرص الخدمات",
+      "التنظيم والتأهيل",
+      "المشروعات والمناقصات",
+      "الحسابات المستهدفة",
+      "الشركاء والمنافسون",
+      "الفرص حسب المناطق",
+      "المصادر وخطة التنفيذ"
+    ],
+    "sampleRows": [
+      [
+        "الأولوية",
+        "الخدمة",
+        "الطلب/المشكلة",
+        "العملاء",
+        "نموذج الإيراد",
+        "متطلبات الدخول",
+        "التنفيذ من مصر"
+      ],
+      [
+        1,
+        "الرصد والقياسات",
+        "مراقبة الهواء والمياه والتربة والتصريف",
+        "الجهات المنظمة والمرافق والمناجم والنفط",
+        "حملة قياس + تقرير + متابعة",
+        "مختبر معتمد ومعايرة وسلسلة عينة",
+        "تحليل بيانات؛ الميدان محلي"
+      ],
+      [
+        2,
+        "EIA/ESIA/EMP",
+        "التراخيص والتوسعات والمشروعات",
+        "المطورون والمشغلون والمقاولون",
+        "دراسة/مخرجات أو دعم من الباطن",
+        "شريك محلي مسجل",
+        "جزئي؛ التوقيع محلي"
+      ],
+      [
+        3,
+        "إدارة المخلفات",
+        "توصيف وفرز ونقل ومعالجة",
+        "بلديات ومصانع ومشغلو مرافق",
+        "تدقيق ثم خطة ثم تشغيل",
+        "ترخيص حسب المخلف والنشاط",
+        "الدراسة والتصميم جزئيًا"
+      ],
+      [
+        4,
+        "المعالجة المتخصصة",
+        "تربة/مياه/حمأة/ملوثات نفطية",
+        "النفط والتعدين والصناعة",
+        "Pilot ثم سعر وحدة معالجة",
+        "SDS/TDS واختبار مستقل وتصريح",
+        "توريد وإشراف مع شريك"
+      ]
+    ]
+  },
+  {
+    "base": "SBA_Benin",
+    "xlsx": "SBA_Benin_Environmental_Opportunity_Database.xlsx",
+    "docx": "SBA_Benin_Environmental_Market_Study_AR.docx",
+    "sheets": [
+      "فرص الخدمات",
+      "التنظيم والتأهيل",
+      "المشروعات والمناقصات",
+      "الحسابات المستهدفة",
+      "الشركاء والمنافسون",
+      "الفرص حسب المناطق",
+      "المصادر وخطة التنفيذ"
+    ],
+    "sampleRows": [
+      [
+        "الأولوية",
+        "الخدمة",
+        "الطلب/المشكلة",
+        "العملاء",
+        "نموذج الإيراد",
+        "متطلبات الدخول",
+        "التنفيذ من مصر"
+      ],
+      [
+        1,
+        "الرصد والقياسات",
+        "مراقبة الهواء والمياه والتربة والتصريف",
+        "الجهات المنظمة والمرافق والمناجم والنفط",
+        "حملة قياس + تقرير + متابعة",
+        "مختبر معتمد ومعايرة وسلسلة عينة",
+        "تحليل بيانات؛ الميدان محلي"
+      ],
+      [
+        2,
+        "EIA/ESIA/EMP",
+        "التراخيص والتوسعات والمشروعات",
+        "المطورون والمشغلون والمقاولون",
+        "دراسة/مخرجات أو دعم من الباطن",
+        "شريك محلي مسجل",
+        "جزئي؛ التوقيع محلي"
+      ],
+      [
+        3,
+        "إدارة المخلفات",
+        "توصيف وفرز ونقل ومعالجة",
+        "بلديات ومصانع ومشغلو مرافق",
+        "تدقيق ثم خطة ثم تشغيل",
+        "ترخيص حسب المخلف والنشاط",
+        "الدراسة والتصميم جزئيًا"
+      ],
+      [
+        4,
+        "المعالجة المتخصصة",
+        "تربة/مياه/حمأة/ملوثات نفطية",
+        "النفط والتعدين والصناعة",
+        "Pilot ثم سعر وحدة معالجة",
+        "SDS/TDS واختبار مستقل وتصريح",
+        "توريد وإشراف مع شريك"
+      ]
+    ]
+  },
+  {
+    "base": "SBA_Botswana",
+    "xlsx": "SBA_Botswana_Environmental_Opportunity_Database.xlsx",
+    "docx": "SBA_Botswana_Environmental_Market_Study_AR.docx",
+    "sheets": [
+      "فرص الخدمات",
+      "التنظيم والتأهيل",
+      "المشروعات والمناقصات",
+      "الحسابات المستهدفة",
+      "الشركاء والمنافسون",
+      "الفرص حسب المناطق",
+      "المصادر وخطة التنفيذ"
+    ],
+    "sampleRows": [
+      [
+        "الأولوية",
+        "الخدمة",
+        "الطلب/المشكلة",
+        "العملاء",
+        "نموذج الإيراد",
+        "متطلبات الدخول",
+        "التنفيذ من مصر"
+      ],
+      [
+        1,
+        "الرصد والقياسات",
+        "مراقبة الهواء والمياه والتربة والتصريف",
+        "الجهات المنظمة والمرافق والمناجم والنفط",
+        "حملة قياس + تقرير + متابعة",
+        "مختبر معتمد ومعايرة وسلسلة عينة",
+        "تحليل بيانات؛ الميدان محلي"
+      ],
+      [
+        2,
+        "EIA/ESIA/EMP",
+        "التراخيص والتوسعات والمشروعات",
+        "المطورون والمشغلون والمقاولون",
+        "دراسة/مخرجات أو دعم من الباطن",
+        "شريك محلي مسجل",
+        "جزئي؛ التوقيع محلي"
+      ],
+      [
+        3,
+        "إدارة المخلفات",
+        "توصيف وفرز ونقل ومعالجة",
+        "بلديات ومصانع ومشغلو مرافق",
+        "تدقيق ثم خطة ثم تشغيل",
+        "ترخيص حسب المخلف والنشاط",
+        "الدراسة والتصميم جزئيًا"
+      ],
+      [
+        4,
+        "المعالجة المتخصصة",
+        "تربة/مياه/حمأة/ملوثات نفطية",
+        "النفط والتعدين والصناعة",
+        "Pilot ثم سعر وحدة معالجة",
+        "SDS/TDS واختبار مستقل وتصريح",
+        "توريد وإشراف مع شريك"
+      ]
+    ]
+  },
+  {
+    "base": "SBA_Burkina_Faso",
+    "xlsx": "SBA_Burkina_Faso_Environmental_Opportunity_Database.xlsx",
+    "docx": "SBA_Burkina_Faso_Environmental_Market_Study_AR.docx",
+    "sheets": [
+      "فرص الخدمات",
+      "التنظيم والتأهيل",
+      "المشروعات والمناقصات",
+      "الحسابات المستهدفة",
+      "الشركاء والمنافسون",
+      "الفرص حسب المناطق",
+      "المصادر وخطة التنفيذ"
+    ],
+    "sampleRows": [
+      [
+        "الأولوية",
+        "الخدمة",
+        "الطلب/المشكلة",
+        "العملاء",
+        "نموذج الإيراد",
+        "متطلبات الدخول",
+        "التنفيذ من مصر"
+      ],
+      [
+        1,
+        "الرصد والقياسات",
+        "مراقبة الهواء والمياه والتربة والتصريف",
+        "الجهات المنظمة والمرافق والمناجم والنفط",
+        "حملة قياس + تقرير + متابعة",
+        "مختبر معتمد ومعايرة وسلسلة عينة",
+        "تحليل بيانات؛ الميدان محلي"
+      ],
+      [
+        2,
+        "EIA/ESIA/EMP",
+        "التراخيص والتوسعات والمشروعات",
+        "المطورون والمشغلون والمقاولون",
+        "دراسة/مخرجات أو دعم من الباطن",
+        "شريك محلي مسجل",
+        "جزئي؛ التوقيع محلي"
+      ],
+      [
+        3,
+        "إدارة المخلفات",
+        "توصيف وفرز ونقل ومعالجة",
+        "بلديات ومصانع ومشغلو مرافق",
+        "تدقيق ثم خطة ثم تشغيل",
+        "ترخيص حسب المخلف والنشاط",
+        "الدراسة والتصميم جزئيًا"
+      ],
+      [
+        4,
+        "المعالجة المتخصصة",
+        "تربة/مياه/حمأة/ملوثات نفطية",
+        "النفط والتعدين والصناعة",
+        "Pilot ثم سعر وحدة معالجة",
+        "SDS/TDS واختبار مستقل وتصريح",
+        "توريد وإشراف مع شريك"
+      ]
+    ]
+  },
+  {
+    "base": "SBA_Burundi",
+    "xlsx": "SBA_Burundi_Environmental_Opportunity_Database.xlsx",
+    "docx": "SBA_Burundi_Environmental_Market_Study_AR.docx",
+    "sheets": [
+      "فرص الخدمات",
+      "التنظيم والتأهيل",
+      "المشروعات والمناقصات",
+      "الحسابات المستهدفة",
+      "الشركاء والمنافسون",
+      "الفرص حسب المناطق",
+      "المصادر وخطة التنفيذ"
+    ],
+    "sampleRows": [
+      [
+        "الأولوية",
+        "الخدمة",
+        "الطلب/المشكلة",
+        "العملاء",
+        "نموذج الإيراد",
+        "متطلبات الدخول",
+        "التنفيذ من مصر"
+      ],
+      [
+        1,
+        "الرصد والقياسات",
+        "مراقبة الهواء والمياه والتربة والتصريف",
+        "الجهات المنظمة والمرافق والمناجم والنفط",
+        "حملة قياس + تقرير + متابعة",
+        "مختبر معتمد ومعايرة وسلسلة عينة",
+        "تحليل بيانات؛ الميدان محلي"
+      ],
+      [
+        2,
+        "EIA/ESIA/EMP",
+        "التراخيص والتوسعات والمشروعات",
+        "المطورون والمشغلون والمقاولون",
+        "دراسة/مخرجات أو دعم من الباطن",
+        "شريك محلي مسجل",
+        "جزئي؛ التوقيع محلي"
+      ],
+      [
+        3,
+        "إدارة المخلفات",
+        "توصيف وفرز ونقل ومعالجة",
+        "بلديات ومصانع ومشغلو مرافق",
+        "تدقيق ثم خطة ثم تشغيل",
+        "ترخيص حسب المخلف والنشاط",
+        "الدراسة والتصميم جزئيًا"
+      ],
+      [
+        4,
+        "المعالجة المتخصصة",
+        "تربة/مياه/حمأة/ملوثات نفطية",
+        "النفط والتعدين والصناعة",
+        "Pilot ثم سعر وحدة معالجة",
+        "SDS/TDS واختبار مستقل وتصريح",
+        "توريد وإشراف مع شريك"
+      ]
+    ]
+  },
+  {
+    "base": "SBA_Cabo_Verde",
+    "xlsx": "SBA_Cabo_Verde_Environmental_Opportunity_Database.xlsx",
+    "docx": "SBA_Cabo_Verde_Environmental_Market_Study_AR.docx",
+    "sheets": [
+      "فرص الخدمات",
+      "التنظيم والتأهيل",
+      "المشروعات والمناقصات",
+      "الحسابات المستهدفة",
+      "الشركاء والمنافسون",
+      "الفرص حسب المناطق",
+      "المصادر وخطة التنفيذ"
+    ],
+    "sampleRows": [
+      [
+        "الأولوية",
+        "الخدمة",
+        "الطلب/المشكلة",
+        "العملاء",
+        "نموذج الإيراد",
+        "متطلبات الدخول",
+        "التنفيذ من مصر"
+      ],
+      [
+        1,
+        "الرصد والقياسات",
+        "مراقبة الهواء والمياه والتربة والتصريف",
+        "الجهات المنظمة والمرافق والمناجم والنفط",
+        "حملة قياس + تقرير + متابعة",
+        "مختبر معتمد ومعايرة وسلسلة عينة",
+        "تحليل بيانات؛ الميدان محلي"
+      ],
+      [
+        2,
+        "EIA/ESIA/EMP",
+        "التراخيص والتوسعات والمشروعات",
+        "المطورون والمشغلون والمقاولون",
+        "دراسة/مخرجات أو دعم من الباطن",
+        "شريك محلي مسجل",
+        "جزئي؛ التوقيع محلي"
+      ],
+      [
+        3,
+        "إدارة المخلفات",
+        "توصيف وفرز ونقل ومعالجة",
+        "بلديات ومصانع ومشغلو مرافق",
+        "تدقيق ثم خطة ثم تشغيل",
+        "ترخيص حسب المخلف والنشاط",
+        "الدراسة والتصميم جزئيًا"
+      ],
+      [
+        4,
+        "المعالجة المتخصصة",
+        "تربة/مياه/حمأة/ملوثات نفطية",
+        "النفط والتعدين والصناعة",
+        "Pilot ثم سعر وحدة معالجة",
+        "SDS/TDS واختبار مستقل وتصريح",
+        "توريد وإشراف مع شريك"
+      ]
+    ]
+  },
+  {
+    "base": "SBA_Cameroon",
+    "xlsx": "SBA_Cameroon_Environmental_Opportunity_Database.xlsx",
+    "docx": "SBA_Cameroon_Environmental_Market_Study_AR.docx",
+    "sheets": [
+      "فرص الخدمات",
+      "التنظيم والتأهيل",
+      "المشروعات والمناقصات",
+      "الحسابات المستهدفة",
+      "الشركاء والمنافسون",
+      "الفرص حسب المناطق",
+      "المصادر وخطة التنفيذ"
+    ],
+    "sampleRows": [
+      [
+        "الأولوية",
+        "الخدمة",
+        "الطلب/المشكلة",
+        "العملاء",
+        "نموذج الإيراد",
+        "متطلبات الدخول",
+        "التنفيذ من مصر"
+      ],
+      [
+        1,
+        "الرصد والقياسات",
+        "مراقبة الهواء والمياه والتربة والتصريف",
+        "الجهات المنظمة والمرافق والمناجم والنفط",
+        "حملة قياس + تقرير + متابعة",
+        "مختبر معتمد ومعايرة وسلسلة عينة",
+        "تحليل بيانات؛ الميدان محلي"
+      ],
+      [
+        2,
+        "EIA/ESIA/EMP",
+        "التراخيص والتوسعات والمشروعات",
+        "المطورون والمشغلون والمقاولون",
+        "دراسة/مخرجات أو دعم من الباطن",
+        "شريك محلي مسجل",
+        "جزئي؛ التوقيع محلي"
+      ],
+      [
+        3,
+        "إدارة المخلفات",
+        "توصيف وفرز ونقل ومعالجة",
+        "بلديات ومصانع ومشغلو مرافق",
+        "تدقيق ثم خطة ثم تشغيل",
+        "ترخيص حسب المخلف والنشاط",
+        "الدراسة والتصميم جزئيًا"
+      ],
+      [
+        4,
+        "المعالجة المتخصصة",
+        "تربة/مياه/حمأة/ملوثات نفطية",
+        "النفط والتعدين والصناعة",
+        "Pilot ثم سعر وحدة معالجة",
+        "SDS/TDS واختبار مستقل وتصريح",
+        "توريد وإشراف مع شريك"
+      ]
+    ]
+  },
+  {
+    "base": "SBA_Central_African_Republic",
+    "xlsx": "SBA_Central_African_Republic_Environmental_Opportunity_Database.xlsx",
+    "docx": "SBA_Central_African_Republic_Environmental_Market_Study_AR.docx",
+    "sheets": [
+      "فرص الخدمات",
+      "التنظيم والتأهيل",
+      "المشروعات والمناقصات",
+      "الحسابات المستهدفة",
+      "الشركاء والمنافسون",
+      "الفرص حسب المناطق",
+      "المصادر وخطة التنفيذ"
+    ],
+    "sampleRows": [
+      [
+        "الأولوية",
+        "الخدمة",
+        "الطلب/المشكلة",
+        "العملاء",
+        "نموذج الإيراد",
+        "متطلبات الدخول",
+        "التنفيذ من مصر"
+      ],
+      [
+        1,
+        "الرصد والقياسات",
+        "مراقبة الهواء والمياه والتربة والتصريف",
+        "الجهات المنظمة والمرافق والمناجم والنفط",
+        "حملة قياس + تقرير + متابعة",
+        "مختبر معتمد ومعايرة وسلسلة عينة",
+        "تحليل بيانات؛ الميدان محلي"
+      ],
+      [
+        2,
+        "EIA/ESIA/EMP",
+        "التراخيص والتوسعات والمشروعات",
+        "المطورون والمشغلون والمقاولون",
+        "دراسة/مخرجات أو دعم من الباطن",
+        "شريك محلي مسجل",
+        "جزئي؛ التوقيع محلي"
+      ],
+      [
+        3,
+        "إدارة المخلفات",
+        "توصيف وفرز ونقل ومعالجة",
+        "بلديات ومصانع ومشغلو مرافق",
+        "تدقيق ثم خطة ثم تشغيل",
+        "ترخيص حسب المخلف والنشاط",
+        "الدراسة والتصميم جزئيًا"
+      ],
+      [
+        4,
+        "المعالجة المتخصصة",
+        "تربة/مياه/حمأة/ملوثات نفطية",
+        "النفط والتعدين والصناعة",
+        "Pilot ثم سعر وحدة معالجة",
+        "SDS/TDS واختبار مستقل وتصريح",
+        "توريد وإشراف مع شريك"
+      ]
+    ]
+  },
+  {
+    "base": "SBA_Chad",
+    "xlsx": "SBA_Chad_Environmental_Opportunity_Database.xlsx",
+    "docx": "SBA_Chad_Environmental_Market_Study_AR.docx",
+    "sheets": [
+      "فرص الخدمات",
+      "التنظيم والتأهيل",
+      "المشروعات والمناقصات",
+      "الحسابات المستهدفة",
+      "الشركاء والمنافسون",
+      "الفرص حسب المناطق",
+      "المصادر وخطة التنفيذ"
+    ],
+    "sampleRows": [
+      [
+        "الأولوية",
+        "الخدمة",
+        "الطلب/المشكلة",
+        "العملاء",
+        "نموذج الإيراد",
+        "متطلبات الدخول",
+        "التنفيذ من مصر"
+      ],
+      [
+        1,
+        "الرصد والقياسات",
+        "مراقبة الهواء والمياه والتربة والتصريف",
+        "الجهات المنظمة والمرافق والمناجم والنفط",
+        "حملة قياس + تقرير + متابعة",
+        "مختبر معتمد ومعايرة وسلسلة عينة",
+        "تحليل بيانات؛ الميدان محلي"
+      ],
+      [
+        2,
+        "EIA/ESIA/EMP",
+        "التراخيص والتوسعات والمشروعات",
+        "المطورون والمشغلون والمقاولون",
+        "دراسة/مخرجات أو دعم من الباطن",
+        "شريك محلي مسجل",
+        "جزئي؛ التوقيع محلي"
+      ],
+      [
+        3,
+        "إدارة المخلفات",
+        "توصيف وفرز ونقل ومعالجة",
+        "بلديات ومصانع ومشغلو مرافق",
+        "تدقيق ثم خطة ثم تشغيل",
+        "ترخيص حسب المخلف والنشاط",
+        "الدراسة والتصميم جزئيًا"
+      ],
+      [
+        4,
+        "المعالجة المتخصصة",
+        "تربة/مياه/حمأة/ملوثات نفطية",
+        "النفط والتعدين والصناعة",
+        "Pilot ثم سعر وحدة معالجة",
+        "SDS/TDS واختبار مستقل وتصريح",
+        "توريد وإشراف مع شريك"
+      ]
+    ]
+  },
+  {
+    "base": "SBA_Comoros",
+    "xlsx": "SBA_Comoros_Environmental_Opportunity_Database.xlsx",
+    "docx": "SBA_Comoros_Environmental_Market_Study_AR.docx",
+    "sheets": [
+      "فرص الخدمات",
+      "التنظيم والتأهيل",
+      "المشروعات والمناقصات",
+      "الحسابات المستهدفة",
+      "الشركاء والمنافسون",
+      "الفرص حسب المناطق",
+      "المصادر وخطة التنفيذ"
+    ],
+    "sampleRows": [
+      [
+        "الأولوية",
+        "الخدمة",
+        "الطلب/المشكلة",
+        "العملاء",
+        "نموذج الإيراد",
+        "متطلبات الدخول",
+        "التنفيذ من مصر"
+      ],
+      [
+        1,
+        "الرصد والقياسات",
+        "مراقبة الهواء والمياه والتربة والتصريف",
+        "الجهات المنظمة والمرافق والمناجم والنفط",
+        "حملة قياس + تقرير + متابعة",
+        "مختبر معتمد ومعايرة وسلسلة عينة",
+        "تحليل بيانات؛ الميدان محلي"
+      ],
+      [
+        2,
+        "EIA/ESIA/EMP",
+        "التراخيص والتوسعات والمشروعات",
+        "المطورون والمشغلون والمقاولون",
+        "دراسة/مخرجات أو دعم من الباطن",
+        "شريك محلي مسجل",
+        "جزئي؛ التوقيع محلي"
+      ],
+      [
+        3,
+        "إدارة المخلفات",
+        "توصيف وفرز ونقل ومعالجة",
+        "بلديات ومصانع ومشغلو مرافق",
+        "تدقيق ثم خطة ثم تشغيل",
+        "ترخيص حسب المخلف والنشاط",
+        "الدراسة والتصميم جزئيًا"
+      ],
+      [
+        4,
+        "المعالجة المتخصصة",
+        "تربة/مياه/حمأة/ملوثات نفطية",
+        "النفط والتعدين والصناعة",
+        "Pilot ثم سعر وحدة معالجة",
+        "SDS/TDS واختبار مستقل وتصريح",
+        "توريد وإشراف مع شريك"
+      ]
+    ]
+  },
+  {
+    "base": "SBA_Cote_dIvoire",
+    "xlsx": "SBA_Cote_dIvoire_Environmental_Opportunity_Database.xlsx",
+    "docx": "SBA_Cote_dIvoire_Environmental_Market_Study_AR.docx",
+    "sheets": [
+      "ملخص السوق",
+      "الفرص والمناقصات",
+      "الجهات والعملاء",
+      "الخدمات والمنتجات",
+      "التأهيل والامتثال",
+      "خطة 180 يوم",
+      "المصادر"
+    ],
+    "sampleRows": [
+      [],
+      [
+        "البند",
+        "التقييم",
+        "ملاحظات"
+      ],
+      [
+        "قرار الدخول",
+        "دخول مشروط",
+        "شريك محلي + مكتب EIES معتمد + مختبر"
+      ],
+      [
+        "الأولوية 1",
+        "المخلفات الزراعية والبيوجاز",
+        "كاكاو، كاجو، كسافا، نخيل زيتي، مطاط، قطن"
+      ],
+      [
+        "الأولوية 2",
+        "المياه والصرف",
+        "رصد وتحليل ومراقبة تنفيذ المشاريع"
+      ]
+    ]
+  },
+  {
+    "base": "SBA_Egypt",
+    "xlsx": "SBA_Egypt_Environmental_Opportunity_Database.xlsx",
+    "docx": "SBA_Egypt_Environmental_Market_Study_AR.docx",
+    "sheets": [
+      "ملخص تنفيذي",
+      "المشروعات والبرامج",
+      "المناقصات",
+      "التشريعات والتراخيص",
+      "العملاء والشركاء",
+      "خدمات SBA",
+      "خطة 180 يومًا",
+      "المصادر والمنهجية"
+    ],
+    "sampleRows": [
+      [
+        "المحور",
+        "النتيجة",
+        "الأثر على SBA",
+        "الأولوية"
+      ],
+      [
+        "إدارة المخلفات",
+        "منظومة WMRA للتراخيص إلكترونيًا",
+        "دخول عبر الدراسات والقياس أو شريك مرخص",
+        "عالية"
+      ],
+      [
+        "البيوجاز",
+        "1,932 وحدة؛ 2.1 مليون م³/سنة تقديريًا",
+        "تقييم الأداء والتوسع والرصد",
+        "عالية"
+      ],
+      [
+        "المياه والصرف",
+        "حياة كريمة ومشروعات PPP",
+        "EIA والرصد وجودة المياه والحمأة",
+        "عالية"
+      ],
+      [
+        "الصناعة",
+        "قانون 4/1994 وتعديلاته واللائحة 2024",
+        "تدقيق امتثال وقياسات وكفاءة موارد",
+        "عالية"
+      ]
+    ]
+  },
+  {
+    "base": "SBA_Ethiopia",
+    "xlsx": "SBA_Ethiopia_Environmental_Opportunity_Database.xlsx",
+    "docx": "SBA_Ethiopia_Environmental_Market_Study_AR.docx",
+    "sheets": [
+      "ملخص تنفيذي",
+      "المشروعات والبرامج",
+      "المناقصات",
+      "التشريعات والتراخيص",
+      "العملاء والشركاء",
+      "خدمات SBA",
+      "خطة 180 يومًا"
+    ],
+    "sampleRows": [
+      [
+        "المحور",
+        "النتيجة",
+        "فرصة SBA",
+        "الأولوية"
+      ],
+      [
+        "المخلفات الخطرة والإلكترونية",
+        "TotalEnergies REOI-441/26/GS/PUR حتى 27-11-2026",
+        "جمع ونقل وإتلاف/تدوير واختبارات effluent عبر شريك مرخص",
+        "عاجلة/عالية"
+      ],
+      [
+        "ESIA",
+        "إعلان 1371/2025 للتقييم البيئي والاجتماعي؛ إعلان 299/2002 و300/2002",
+        "دراسات أثر ورصد وخطط إدارة",
+        "عالية"
+      ],
+      [
+        "البيوجاز/PURE",
+        "SNV دعوة للتبريد والتجفيف والـ bio-slurry حتى 16-11-2026",
+        "تقييم تقنيات واستخدامات الطاقة والسماد الحيوي",
+        "عاجلة"
+      ],
+      [
+        "المياه والصرف",
+        "برنامج 75 مليون يورو اكتمل في 43 مدينة و8 أقاليم",
+        "تحاليل ورصد وتحسين أداء وإدارة حمأة",
+        "عالية"
+      ]
+    ]
+  },
+  {
+    "base": "SBA_Ghana",
+    "xlsx": "SBA_Ghana_Environmental_Opportunity_Database.xlsx",
+    "docx": "SBA_Ghana_Environmental_Market_Study_AR.docx",
+    "sheets": [
+      "ملخص السوق",
+      "الفرص والمشروعات",
+      "الجهات والعملاء",
+      "الخدمات والمنتجات",
+      "التأهيل والامتثال",
+      "خطة 180 يوم",
+      "المصادر"
+    ],
+    "sampleRows": [
+      [],
+      [
+        "البند",
+        "التقييم",
+        "ملاحظات"
+      ],
+      [
+        "قرار الدخول",
+        "دخول مشروط",
+        "شريك محلي + خدمات فنية ورصد وتقنية"
+      ],
+      [
+        "الأولوية 1",
+        "التعدين والاستصلاح",
+        "EIA، رصد، مياه، غبار، خطط استصلاح"
+      ],
+      [
+        "الأولوية 2",
+        "المخلفات والبيوجاز",
+        "توصيف مخلفات، رصد، تقييم، دعم المشغل المرخص"
+      ]
+    ]
+  },
+  {
+    "base": "SBA_Iraq",
+    "xlsx": "SBA_Iraq_Environmental_Opportunity_Database.xlsx",
+    "docx": "SBA_Iraq_Environmental_Market_Study_AR.docx",
+    "sheets": [
+      "ملخص السوق",
+      "الفرص والمناقصات",
+      "الجهات والعملاء",
+      "الخدمات والمنتجات",
+      "التأهيل والامتثال",
+      "خطة 180 يوم",
+      "المصادر"
+    ],
+    "sampleRows": [
+      [],
+      [
+        "البند",
+        "التقييم",
+        "ملاحظات"
+      ],
+      [
+        "قرار الدخول",
+        "دخول مشروط / أولوية مرتفعة",
+        "شريك عراقي ومقاولون محليون ومختبرات مؤهلة"
+      ],
+      [
+        "الأولوية 1",
+        "التلوث النفطي والتربة الملوثة",
+        "توصيف، عينات، معالجة، تحقق بعد المعالجة"
+      ],
+      [
+        "الأولوية 2",
+        "المياه والصرف",
+        "رصد نوعية المياه وتأهيل محطات وشبكات"
+      ]
+    ]
+  },
+  {
+    "base": "SBA_Jordan",
+    "xlsx": "SBA_Jordan_Environmental_Opportunity_Database.xlsx",
+    "docx": "SBA_Jordan_Environmental_Market_Study_AR.docx",
+    "sheets": [
+      "ملخص تنفيذي",
+      "المشروعات والبرامج",
+      "المناقصات",
+      "التشريعات والتراخيص",
+      "العملاء والشركاء",
+      "خدمات SBA",
+      "خطة 180 يومًا"
+    ],
+    "sampleRows": [
+      [
+        "المحور",
+        "النتيجة",
+        "فرصة SBA",
+        "الأولوية"
+      ],
+      [
+        "إعادة استخدام المياه",
+        "RFP_026 للمخطط الوطني؛ إغلاق 24-11-2026",
+        "استشارة تخطيط ومياه واقتصاد وإدارة بيئية",
+        "عاجلة"
+      ],
+      [
+        "الحمأة",
+        "Tender 72/2026 لإنشاء 5 عناقيد إقليمية؛ إغلاق 16-12-2026",
+        "تحالف مقاولات وخدمات EHS والرصد",
+        "عالية"
+      ],
+      [
+        "البيوجاز",
+        "عقد استشاري 3.3 مليون يورو وقع 23-09-2026 لمحطات جرش وكفرنجة",
+        "خدمات قياس غاز ورصد وتشغيل لاحق",
+        "عالية"
+      ],
+      [
+        "التحلل الحراري",
+        "Aqaba Water 20/T/2026 لوحدة Pyrolysis بشمال العقبة",
+        "توريد/تحالف تكنولوجي ومراقبة بيئية",
+        "متوسطة/عالية"
+      ]
+    ]
+  },
+  {
+    "base": "SBA_Kenya",
+    "xlsx": "SBA_Kenya_Environmental_Opportunity_Database.xlsx",
+    "docx": "SBA_Kenya_Environmental_Market_Study_AR.docx",
+    "sheets": [
+      "دليل الاستخدام",
+      "فرص SBA",
+      "القوانين والتراخيص",
+      "المشروعات",
+      "الجهات المستهدفة",
+      "الشركاء والمختبرات",
+      "المصادر",
+      "فجوات SBA"
+    ],
+    "sampleRows": [
+      [
+        "SAMI BIN AYYAD GROUP – كينيا | دراسة فرص البيئة والاستدامة – رقم 04"
+      ],
+      [
+        "تاريخ الإصدار",
+        "14 نوفمبر 2026"
+      ],
+      [
+        "النطاق",
+        "EIA، البيوجاز، المخلفات، المياه، الرصد البيئي."
+      ],
+      [
+        "تنبيه",
+        "الحسابات المستهدفة ليست عملاء حاليين. المشروع القائم ليس بالضرورة مناقصة مفتوحة."
+      ],
+      [
+        "التوصية",
+        "الدخول عبر شريك EIA مسجل لدى NEMA ومختبر معتمد لدى KENAS/KEBS، ثم Pilot."
+      ]
+    ]
+  },
+  {
+    "base": "SBA_Kuwait",
+    "xlsx": "SBA_Kuwait_Environmental_Opportunity_Database.xlsx",
+    "docx": "SBA_Kuwait_Environmental_Market_Study_AR.docx",
+    "sheets": [
+      "فرص الخدمات",
+      "التنظيم والتأهيل",
+      "المشروعات والمناقصات",
+      "الحسابات المستهدفة",
+      "الشركاء والمنافسون",
+      "الفرص حسب المناطق",
+      "المصادر وخطة التنفيذ"
+    ],
+    "sampleRows": [
+      [
+        "الأولوية",
+        "الخدمة",
+        "الطلب/المشكلة",
+        "العملاء",
+        "نموذج الإيراد",
+        "متطلبات الدخول",
+        "التنفيذ من مصر"
+      ],
+      [
+        1,
+        "الرصد والقياسات",
+        "مراقبة الهواء والمياه والتربة والتصريف",
+        "الجهات المنظمة والمرافق والمناجم والنفط",
+        "حملة قياس + تقرير + متابعة",
+        "مختبر معتمد ومعايرة وسلسلة عينة",
+        "تحليل بيانات؛ الميدان محلي"
+      ],
+      [
+        2,
+        "EIA/ESIA/EMP",
+        "التراخيص والتوسعات والمشروعات",
+        "المطورون والمشغلون والمقاولون",
+        "دراسة/مخرجات أو دعم من الباطن",
+        "شريك محلي مسجل",
+        "جزئي؛ التوقيع محلي"
+      ],
+      [
+        3,
+        "إدارة المخلفات",
+        "توصيف وفرز ونقل ومعالجة",
+        "بلديات ومصانع ومشغلو مرافق",
+        "تدقيق ثم خطة ثم تشغيل",
+        "ترخيص حسب المخلف والنشاط",
+        "الدراسة والتصميم جزئيًا"
+      ],
+      [
+        4,
+        "المعالجة المتخصصة",
+        "تربة/مياه/حمأة/ملوثات نفطية",
+        "النفط والتعدين والصناعة",
+        "Pilot ثم سعر وحدة معالجة",
+        "SDS/TDS واختبار مستقل وتصريح",
+        "توريد وإشراف مع شريك"
+      ]
+    ]
+  },
+  {
+    "base": "SBA_Libya",
+    "xlsx": "SBA_Libya_Environmental_Opportunity_Database.xlsx",
+    "docx": "SBA_Libya_Environmental_Market_Study_AR.docx",
+    "sheets": [
+      "فرص الخدمات",
+      "التنظيم والتأهيل",
+      "المشروعات والمناقصات",
+      "الحسابات المستهدفة",
+      "الشركاء والمنافسون",
+      "الفرص حسب المناطق",
+      "المصادر وخطة التنفيذ"
+    ],
+    "sampleRows": [
+      [
+        "الأولوية",
+        "الخدمة",
+        "الطلب/المشكلة",
+        "العملاء",
+        "نموذج الإيراد",
+        "متطلبات الدخول",
+        "التنفيذ من مصر"
+      ],
+      [
+        1,
+        "الرصد والقياسات",
+        "مراقبة الهواء والمياه والتربة والتصريف",
+        "الجهات المنظمة والمرافق والمناجم والنفط",
+        "حملة قياس + تقرير + متابعة",
+        "مختبر معتمد ومعايرة وسلسلة عينة",
+        "تحليل بيانات؛ الميدان محلي"
+      ],
+      [
+        2,
+        "EIA/ESIA/EMP",
+        "التراخيص والتوسعات والمشروعات",
+        "المطورون والمشغلون والمقاولون",
+        "دراسة/مخرجات أو دعم من الباطن",
+        "شريك محلي مسجل",
+        "جزئي؛ التوقيع محلي"
+      ],
+      [
+        3,
+        "إدارة المخلفات",
+        "توصيف وفرز ونقل ومعالجة",
+        "بلديات ومصانع ومشغلو مرافق",
+        "تدقيق ثم خطة ثم تشغيل",
+        "ترخيص حسب المخلف والنشاط",
+        "الدراسة والتصميم جزئيًا"
+      ],
+      [
+        4,
+        "المعالجة المتخصصة",
+        "تربة/مياه/حمأة/ملوثات نفطية",
+        "النفط والتعدين والصناعة",
+        "Pilot ثم سعر وحدة معالجة",
+        "SDS/TDS واختبار مستقل وتصريح",
+        "توريد وإشراف مع شريك"
+      ]
+    ]
+  },
+  {
+    "base": "SBA_Mauritania",
+    "xlsx": "SBA_Mauritania_Environmental_Opportunity_Database.xlsx",
+    "docx": "SBA_Mauritania_Environmental_Market_Study_AR.docx",
+    "sheets": [
+      "فرص الخدمات",
+      "التنظيم والتأهيل",
+      "المشروعات والمناقصات",
+      "الحسابات المستهدفة",
+      "الشركاء والمنافسون",
+      "الفرص حسب المناطق",
+      "المصادر وخطة التنفيذ"
+    ],
+    "sampleRows": [
+      [
+        "الأولوية",
+        "الخدمة",
+        "الطلب/المشكلة",
+        "العملاء",
+        "نموذج الإيراد",
+        "متطلبات الدخول",
+        "التنفيذ من مصر"
+      ],
+      [
+        1,
+        "الرصد والقياسات",
+        "مراقبة الهواء والمياه والتربة والتصريف",
+        "الجهات المنظمة والمرافق والمناجم والنفط",
+        "حملة قياس + تقرير + متابعة",
+        "مختبر معتمد ومعايرة وسلسلة عينة",
+        "تحليل بيانات؛ الميدان محلي"
+      ],
+      [
+        2,
+        "EIA/ESIA/EMP",
+        "التراخيص والتوسعات والمشروعات",
+        "المطورون والمشغلون والمقاولون",
+        "دراسة/مخرجات أو دعم من الباطن",
+        "شريك محلي مسجل",
+        "جزئي؛ التوقيع محلي"
+      ],
+      [
+        3,
+        "إدارة المخلفات",
+        "توصيف وفرز ونقل ومعالجة",
+        "بلديات ومصانع ومشغلو مرافق",
+        "تدقيق ثم خطة ثم تشغيل",
+        "ترخيص حسب المخلف والنشاط",
+        "الدراسة والتصميم جزئيًا"
+      ],
+      [
+        4,
+        "المعالجة المتخصصة",
+        "تربة/مياه/حمأة/ملوثات نفطية",
+        "النفط والتعدين والصناعة",
+        "Pilot ثم سعر وحدة معالجة",
+        "SDS/TDS واختبار مستقل وتصريح",
+        "توريد وإشراف مع شريك"
+      ]
+    ]
+  },
+  {
+    "base": "SBA_Morocco",
+    "xlsx": "SBA_Morocco_Environmental_Opportunity_Database.xlsx",
+    "docx": "SBA_Morocco_Environmental_Market_Study_AR.docx",
+    "sheets": [
+      "دليل الاستخدام",
+      "فرص الخدمات",
+      "التراخيص والقوانين",
+      "المشروعات",
+      "الحسابات المستهدفة",
+      "الشركاء والمختبرات",
+      "المصادر",
+      "فجوات SBA"
+    ],
+    "sampleRows": [
+      [
+        "SAMI BIN AYYAD GROUP – دراسة سوق البيئة والاستدامة | المغرب – الدراسة رقم 03"
+      ],
+      [
+        "تاريخ الإصدار",
+        "14 نوفمبر 2026"
+      ],
+      [
+        "الغرض",
+        "قاعدة الفرص والتراخيص والمشروعات والجهات والمصادر لدعم قرار دخول السوق."
+      ],
+      [
+        "تنبيه",
+        "إدراج جهة كحساب مستهدف لا يعني أنها عميل قائم. تسجيل المورد لا يعني التأهيل أو الترسية."
+      ],
+      [
+        "حالة المناقصة",
+        "يجب إعادة التحقق من البوابة والموعد والدفتر قبل أي تقديم؛ إشعار البوابة قد يغير الآجال."
+      ]
+    ]
+  },
+  {
+    "base": "SBA_Mozambique",
+    "xlsx": "SBA_Mozambique_Environmental_Opportunity_Database.xlsx",
+    "docx": "SBA_Mozambique_Environmental_Market_Study_AR.docx",
+    "sheets": [
+      "فرص الخدمات",
+      "التنظيم والتأهيل",
+      "المشروعات والمناقصات",
+      "الحسابات المستهدفة",
+      "الشركاء والمنافسون",
+      "الفرص حسب المناطق",
+      "المصادر وخطة التنفيذ"
+    ],
+    "sampleRows": [
+      [
+        "الأولوية",
+        "الخدمة",
+        "الطلب/المشكلة",
+        "العملاء",
+        "نموذج الإيراد",
+        "متطلبات الدخول",
+        "التنفيذ من مصر"
+      ],
+      [
+        1,
+        "الرصد والقياسات",
+        "مراقبة الهواء والمياه والتربة والتصريف",
+        "الجهات المنظمة والمرافق والمناجم والنفط",
+        "حملة قياس + تقرير + متابعة",
+        "مختبر معتمد ومعايرة وسلسلة عينة",
+        "تحليل بيانات؛ الميدان محلي"
+      ],
+      [
+        2,
+        "EIA/ESIA/EMP",
+        "التراخيص والتوسعات والمشروعات",
+        "المطورون والمشغلون والمقاولون",
+        "دراسة/مخرجات أو دعم من الباطن",
+        "شريك محلي مسجل",
+        "جزئي؛ التوقيع محلي"
+      ],
+      [
+        3,
+        "إدارة المخلفات",
+        "توصيف وفرز ونقل ومعالجة",
+        "بلديات ومصانع ومشغلو مرافق",
+        "تدقيق ثم خطة ثم تشغيل",
+        "ترخيص حسب المخلف والنشاط",
+        "الدراسة والتصميم جزئيًا"
+      ],
+      [
+        4,
+        "المعالجة المتخصصة",
+        "تربة/مياه/حمأة/ملوثات نفطية",
+        "النفط والتعدين والصناعة",
+        "Pilot ثم سعر وحدة معالجة",
+        "SDS/TDS واختبار مستقل وتصريح",
+        "توريد وإشراف مع شريك"
+      ]
+    ]
+  },
+  {
+    "base": "SBA_Nigeria",
+    "xlsx": "SBA_Nigeria_Environmental_Opportunity_Database.xlsx",
+    "docx": "SBA_Nigeria_Environmental_Market_Study_AR.docx",
+    "sheets": [
+      "دليل الاستخدام",
+      "فرص SBA",
+      "القوانين",
+      "المشروعات والفرص",
+      "الجهات المستهدفة",
+      "المختبرات والشركاء",
+      "المصادر",
+      "فجوات SBA"
+    ],
+    "sampleRows": [
+      [
+        "SAMI BIN AYYAD GROUP – نيجيريا | الدراسة رقم 05"
+      ],
+      [
+        "تاريخ الإصدار",
+        "14 نوفمبر 2026"
+      ],
+      [
+        "النطاق",
+        "النفط والغاز، المخلفات، المعالجة الحيوية، المياه."
+      ],
+      [
+        "تحذير تنظيمي",
+        "NUPRC يقيد/يمنع استخدام منتجات تحتوي على ميكروبات خارجية في remediation upstream؛ لا تعرض المنتجات قبل فحص التركيب والموافقة."
+      ],
+      [
+        "حالة المناقصات",
+        "إعلان HYPREP 2026 فرصة متابعة، لم يتم التحقق من أن التقديم ما زال مفتوحًا."
+      ]
+    ]
+  },
+  {
+    "base": "SBA_Oman",
+    "xlsx": "SBA_Oman_Environmental_Opportunity_Database.xlsx",
+    "docx": "SBA_Oman_Environmental_Market_Study_AR.docx",
+    "sheets": [
+      "ملخص السوق",
+      "الفرص والمناقصات",
+      "الجهات والعملاء",
+      "الخدمات والمنتجات",
+      "التأهيل والامتثال",
+      "خطة 180 يوم",
+      "المصادر"
+    ],
+    "sampleRows": [
+      [],
+      [
+        "البند",
+        "التقييم",
+        "ملاحظات"
+      ],
+      [
+        "قرار الدخول",
+        "دخول مشروط",
+        "شراكات محلية ومقاولون رئيسيون ونموذج أصول خفيف"
+      ],
+      [
+        "الأولوية 1",
+        "المخلفات الصناعية",
+        "إعادة التعبئة والنقل والتوثيق عبر جهات مرخصة"
+      ],
+      [
+        "الأولوية 2",
+        "المياه والصرف",
+        "القياسات والرصد حول المحطات والمياه المعالجة"
+      ]
+    ]
+  },
+  {
+    "base": "SBA_Qatar",
+    "xlsx": "SBA_Qatar_Environmental_Opportunity_Database.xlsx",
+    "docx": "SBA_Qatar_Environmental_Market_Study_AR.docx",
+    "sheets": [
+      "ملخص السوق",
+      "الفرص والعقود",
+      "الجهات والعملاء",
+      "الخدمات والمنتجات",
+      "التأهيل والامتثال",
+      "خطة 180 يوم",
+      "المصادر"
+    ],
+    "sampleRows": [
+      [
+        "البند",
+        "التقييم / المعلومة",
+        "ملاحظات"
+      ],
+      [
+        "قرار دخول السوق",
+        "دخول مشروط",
+        "الأفضل عبر شريك محلي ومقاولين رئيسيين"
+      ],
+      [
+        "الأولوية 1",
+        "الرصد والقياسات البيئية",
+        "هواء، انبعاثات، مياه، تربة، ضوضاء"
+      ],
+      [
+        "الأولوية 2",
+        "EIA / ESIA",
+        "عبر استشاري مؤهل/مسجل حسب متطلبات MECC"
+      ],
+      [
+        "الأولوية 3",
+        "ESG والكربون",
+        "إعداد الجرد ودعم التحقق؛ لا ادعاء اعتماد غير موجود"
+      ]
+    ]
+  },
+  {
+    "base": "SBA_Rwanda",
+    "xlsx": "SBA_Rwanda_Environmental_Opportunity_Database.xlsx",
+    "docx": "SBA_Rwanda_Environmental_Market_Study_AR.docx",
+    "sheets": [
+      "ملخص السوق",
+      "الفرص والمناقصات",
+      "المشروعات والبرامج",
+      "العملاء المستهدفون",
+      "التشريعات والتراخيص",
+      "خطة 180 يومًا",
+      "المصادر والمنهجية"
+    ],
+    "sampleRows": [
+      [
+        "المؤشر",
+        "البيان",
+        "ملاحظة"
+      ],
+      [
+        "تاريخ الرصد",
+        "14 نوفمبر 2026",
+        ""
+      ],
+      [
+        "أولوية 1",
+        "محطات الصرف والحمأة",
+        "Rwinkwavu وKigali ومراكز المدن"
+      ],
+      [
+        "أولوية 2",
+        "ESIA/ESMP والاستشارات البيئية",
+        "تحقق من الإعلان الأصلي"
+      ],
+      [
+        "أولوية 3",
+        "النفايات الصلبة والخطرة",
+        "ترخيص RURA حسب النشاط"
+      ]
+    ]
+  },
+  {
+    "base": "SBA_Saudi",
+    "xlsx": "SBA_Saudi_Environmental_Opportunity_Database.xlsx",
+    "docx": "SBA_Saudi_Environmental_Market_Study_AR.docx",
+    "sheets": [
+      "فرص الخدمات",
+      "التنظيم والتأهيل",
+      "المشروعات والمناقصات",
+      "الحسابات المستهدفة",
+      "شركاء ومنافسون",
+      "المصادر",
+      "الفرص حسب المناطق",
+      "مطابقة الخدمات",
+      "نماذج العقود والتسعير",
+      "ملف التأهيل المطلوب"
+    ],
+    "sampleRows": [
+      [
+        "الأولوية",
+        "الخدمة",
+        "الطلب/المشكلة",
+        "العملاء",
+        "نموذج الإيراد",
+        "متطلبات الدخول",
+        "التنفيذ من مصر"
+      ],
+      [
+        1,
+        "دعم EIA/ESIA وEMP",
+        "نمو التصاريح والامتثال",
+        "مكاتب NCEC، مطورون، مقاولون، مستشفيات ومصانع",
+        "دعم فني من الباطن",
+        "شريك مرخص وخبرات ومنهجية",
+        "جزئي؛ الاعتماد والتوقيع محليان"
+      ],
+      [
+        2,
+        "ESG وCarbon Footprint",
+        "إفصاح وخفض الانبعاثات",
+        "الصناعة والطاقة والتعدين والشركات المدرجة",
+        "مشروع ثم متابعة سنوية",
+        "منهجية موثقة ومراجعة حسب النطاق",
+        "مرتفع"
+      ],
+      [
+        3,
+        "IoT والرصد البيئي",
+        "رصد الهواء والغازات والضوضاء",
+        "المصانع والمناطق الصناعية والمرافق",
+        "توريد وتركيب واشتراك وصيانة",
+        "مطابقة NCEC ومعايرة واعتماد",
+        "توريد وبرمجيات من مصر؛ الميدان محلي"
+      ],
+      [
+        4,
+        "تدقيق وإدارة المخلفات",
+        "التزام MWAN وخفض التكاليف",
+        "مصانع ومستشفيات وبلديات",
+        "تدقيق وخطة تحسين ثم تشغيل عبر شريك",
+        "ترخيص MWAN للنشاط التشغيلي",
+        "الدراسة جزئيًا؛ التشغيل محلي"
+      ]
+    ]
+  },
+  {
+    "base": "SBA_Senegal",
+    "xlsx": "SBA_Senegal_Environmental_Opportunity_Database.xlsx",
+    "docx": "SBA_Senegal_Environmental_Market_Study_AR.docx",
+    "sheets": [
+      "ملخص تنفيذي",
+      "المشروعات والبرامج",
+      "المناقصات والفرص",
+      "التشريعات والتراخيص",
+      "العملاء والشركاء",
+      "خدمات SBA",
+      "خطة 180 يومًا"
+    ],
+    "sampleRows": [
+      [
+        "المحور",
+        "النتيجة الأساسية",
+        "فرصة SBA",
+        "الأولوية"
+      ],
+      [
+        "النفايات/PROMOGED",
+        "مشروع متكامل لإدارة النفايات وإعادة تأهيل Mbeubeuss ومرافق أخرى",
+        "دراسات ورصد وقياس وإدارة بيئية واجتماعية",
+        "عالية"
+      ],
+      [
+        "القانون",
+        "قانون البيئة 2023-15 والمرسوم 2025-227",
+        "EIES، تدقيق، خطط إدارة، دعم ترخيص",
+        "عالية"
+      ],
+      [
+        "البيوجاز",
+        "أكثر من 2,685 هاضمًا؛ 4.3 مليون م³ إنتاج معلن؛ هدف 52,676 حتى 2030",
+        "تقييم أداء، قياس الغاز، تصميم ودعم التشغيل",
+        "عالية"
+      ],
+      [
+        "المياه/ONAS",
+        "الصرف والمعالجة وتثمين الحمأة؛ لا توجد فرصة مفتوحة منشورة بالموقع وقت الرصد",
+        "تحاليل ورصد وإدارة حمأة ومتابعة المناقصات",
+        "متوسطة/عالية"
+      ]
+    ]
+  },
+  {
+    "base": "SBA_South_Africa",
+    "xlsx": "SBA_South_Africa_Environmental_Opportunity_Database.xlsx",
+    "docx": "SBA_South_Africa_Environmental_Market_Study_AR.docx",
+    "sheets": [
+      "دليل الاستخدام",
+      "فرص SBA",
+      "القوانين",
+      "المحاور والمشروعات",
+      "الحسابات المستهدفة",
+      "المختبرات والشركاء",
+      "المصادر",
+      "فجوات SBA"
+    ],
+    "sampleRows": [
+      [
+        "SAMI BIN AYYAD GROUP – جنوب أفريقيا | الدراسة رقم 06"
+      ],
+      [
+        "تاريخ الإصدار",
+        "14 نوفمبر 2026"
+      ],
+      [
+        "النطاق",
+        "التعدين، الصناعة، الكربون، المعالجة، القياسات."
+      ],
+      [
+        "التوصية",
+        "الدخول عبر شريك محلي ومختبر SANAS معتمد."
+      ],
+      [
+        "تنبيه",
+        "لم يتم إثبات مناقصة محددة مفتوحة بتاريخ الدراسة؛ المشروعات/الالتزامات ليست مناقصات تلقائيًا."
+      ]
+    ]
+  },
+  {
+    "base": "SBA_Tanzania",
+    "xlsx": "SBA_Tanzania_Environmental_Opportunity_Database.xlsx",
+    "docx": "SBA_Tanzania_Environmental_Market_Study_AR.docx",
+    "sheets": [
+      "ملخص تنفيذي",
+      "المشروعات والبرامج",
+      "المناقصات",
+      "التشريعات والتراخيص",
+      "العملاء والشركاء",
+      "خدمات SBA",
+      "خطة 180 يومًا"
+    ],
+    "sampleRows": [
+      [
+        "المحور",
+        "البيانات الرئيسية",
+        "فرصة SBA",
+        "الأولوية"
+      ],
+      [
+        "المياه والصرف",
+        "الصرف التقليدي 10.7% اتصال سكاني؛ امتثال مرافق 72.3%؛ NRW 33.4% إقليميًا و40% بدار السلام",
+        "رصد وتحاليل وتحسين محطات وكشف فاقد",
+        "عالية"
+      ],
+      [
+        "النفايات",
+        "قانون EMA يلزم السلطات المحلية بالفرز والتخطيط وإشراك القطاع الخاص",
+        "خطط إدارة وجمع وفرز وتدوير ورصد مصبات",
+        "عالية"
+      ],
+      [
+        "المخلفات الخطرة والإلكترونية",
+        "لوائح NEMC لعام 2021",
+        "تصنيف وتتبع وتدقيق وتخزين ومعالجة عبر مرخصين",
+        "عالية"
+      ],
+      [
+        "البيوجاز",
+        "فرص من الروث والمخلفات الزراعية والحمأة؛ لا مناقصة محددة مؤكدة",
+        "دراسة جدوى ورصد وتحسين تشغيل",
+        "متوسطة/عالية"
+      ]
+    ]
+  },
+  {
+    "base": "SBA_Tunisia",
+    "xlsx": "SBA_Tunisia_Environmental_Opportunity_Database.xlsx",
+    "docx": "SBA_Tunisia_Environmental_Market_Study_AR.docx",
+    "sheets": [
+      "ملخص تنفيذي",
+      "المشروعات والبرامج",
+      "المناقصات",
+      "التشريعات والتراخيص",
+      "العملاء والشركاء",
+      "خدمات SBA",
+      "خطة 180 يومًا"
+    ],
+    "sampleRows": [
+      [
+        "المحور",
+        "المعلومة",
+        "فرصة SBA",
+        "الأولوية"
+      ],
+      [
+        "النفايات",
+        "خطة 2026–2030 لوحدات معالجة وتثمين في 5 مناطق ومراكز خضراء وبيوجاز",
+        "دراسات جدوى، فرز، تسميد، ميثنة ورصد المصبات",
+        "عالية"
+      ],
+      [
+        "المياه والصرف",
+        "ONAS يدير بنية التطهير؛ طلبات CADRIN وتحسين المحطات",
+        "عينات وتحاليل وقياس تصريف وإعادة استخدام",
+        "عالية"
+      ],
+      [
+        "الرصد الصناعي",
+        "ANPE طرحت معدات مراقبة انبعاثات وتحليل مياه وتربة",
+        "توريد/تحالف أجهزة ومعايرة وإدارة بيانات",
+        "عاجلة"
+      ],
+      [
+        "EIE",
+        "مرسوم 2005-1991 يحدد أصناف دراسات الأثر وكراسات الشروط",
+        "دعم مكاتب الدراسات والرصد وخطط الإدارة",
+        "عالية"
+      ]
+    ]
+  },
+  {
+    "base": "SBA_UAE",
+    "xlsx": "SBA_UAE_Environmental_Opportunity_Database.xlsx",
+    "docx": "SBA_UAE_Environmental_Market_Study_AR.docx",
+    "sheets": [
+      "اقرأني - النسخة النهائية",
+      "فرص الخدمات",
+      "التراخيص",
+      "المشروعات",
+      "الحسابات المستهدفة",
+      "الشركاء",
+      "المصادر",
+      "UAE Regulatory Update",
+      "UAE Consultant Register",
+      "UAE Final Verification",
+      "UAE Procurement Routes",
+      "UAE Waste 2025",
+      "UAE Projects Nov 2026",
+      "UAE IoT RASID TDRA",
+      "UAE SBA Product Gaps"
+    ],
+    "sampleRows": [
+      [
+        "SAMI BIN AYYAD GROUP | دراسة سوق البيئة والاستدامة – الإمارات"
+      ],
+      [
+        "حالة الملف",
+        "النسخة النهائية لقاعدة الفرص المرافقة لدراسة السوق – جاهزة للرفع والاستخدام التجاري الأولي"
+      ],
+      [
+        "تاريخ الإقفال",
+        "14 نوفمبر 2026"
+      ],
+      [
+        "الغرض",
+        "قاعدة فرص وتراخيص ومشروعات وحسابات مستهدفة ومصادر رسمية داعمة لدراسة الإمارات."
+      ],
+      [
+        "مهم",
+        "التسجيل كمورد لا يساوي التأهيل الفني أو الترسية. إدراج جهة ضمن الحسابات المستهدفة لا يعني أنها عميل قائم."
+      ]
+    ]
+  },
+  {
+    "base": "SBA_Uganda",
+    "xlsx": "SBA_Uganda_Environmental_Opportunity_Database.xlsx",
+    "docx": "SBA_Uganda_Environmental_Market_Study_AR.docx",
+    "sheets": [
+      "فرص الخدمات",
+      "التنظيم والتأهيل",
+      "المشروعات والمناقصات",
+      "الحسابات المستهدفة",
+      "الشركاء والمنافسون",
+      "الفرص حسب المناطق",
+      "المصادر وخطة التنفيذ"
+    ],
+    "sampleRows": [
+      [
+        "الأولوية",
+        "الخدمة",
+        "الطلب/المشكلة",
+        "العملاء",
+        "نموذج الإيراد",
+        "متطلبات الدخول",
+        "التنفيذ من مصر"
+      ],
+      [
+        1,
+        "الرصد والقياسات",
+        "مراقبة الهواء والمياه والتربة والتصريف",
+        "الجهات المنظمة والمرافق والمناجم والنفط",
+        "حملة قياس + تقرير + متابعة",
+        "مختبر معتمد ومعايرة وسلسلة عينة",
+        "تحليل بيانات؛ الميدان محلي"
+      ],
+      [
+        2,
+        "EIA/ESIA/EMP",
+        "التراخيص والتوسعات والمشروعات",
+        "المطورون والمشغلون والمقاولون",
+        "دراسة/مخرجات أو دعم من الباطن",
+        "شريك محلي مسجل",
+        "جزئي؛ التوقيع محلي"
+      ],
+      [
+        3,
+        "إدارة المخلفات",
+        "توصيف وفرز ونقل ومعالجة",
+        "بلديات ومصانع ومشغلو مرافق",
+        "تدقيق ثم خطة ثم تشغيل",
+        "ترخيص حسب المخلف والنشاط",
+        "الدراسة والتصميم جزئيًا"
+      ],
+      [
+        4,
+        "المعالجة المتخصصة",
+        "تربة/مياه/حمأة/ملوثات نفطية",
+        "النفط والتعدين والصناعة",
+        "Pilot ثم سعر وحدة معالجة",
+        "SDS/TDS واختبار مستقل وتصريح",
+        "توريد وإشراف مع شريك"
+      ]
+    ]
+  },
+  {
+    "base": "SBA_Zambia",
+    "xlsx": "SBA_Zambia_Environmental_Opportunity_Database.xlsx",
+    "docx": "SBA_Zambia_Environmental_Market_Study_AR.docx",
+    "sheets": [
+      "ملخص السوق",
+      "الفرص والمناقصات",
+      "المشروعات والبرامج",
+      "العملاء المستهدفون",
+      "الإطار التنظيمي",
+      "خطة 180 يومًا",
+      "المصادر والمنهجية"
+    ],
+    "sampleRows": [
+      [
+        "المؤشر",
+        "البيان",
+        "ملاحظة"
+      ],
+      [
+        "تاريخ الرصد",
+        "14 نوفمبر 2026",
+        ""
+      ],
+      [
+        "الجهة التنظيمية",
+        "ZEMA",
+        "منظم البيئة المركزي"
+      ],
+      [
+        "الإطار الأحدث",
+        "SI No. 3 of 2026",
+        "لوائح EIA منشورة 9 يناير 2026"
+      ],
+      [
+        "أولوية 1",
+        "التعدين والمخلفات",
+        "Copperbelt وNorth-Western"
+      ]
+    ]
+  }
+]

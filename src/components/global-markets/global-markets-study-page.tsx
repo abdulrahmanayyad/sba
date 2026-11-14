@@ -10,6 +10,8 @@ import {
   Download,
   ExternalLink,
   FileCheck2,
+  FileSpreadsheet,
+  FileText,
   Globe,
   History,
   Lock,
@@ -164,25 +166,51 @@ export function GlobalMarketsStudyPage({
               </span>
             </div>
 
-            {downloadAllowed ? (
-              <button
-                type="button"
-                onClick={() => openApprovedStudyPdfReport(study, ar)}
-                className="inline-flex items-center gap-2 rounded-full bg-slate-900 dark:bg-white px-5 py-2.5 text-xs font-bold text-white dark:text-slate-900 hover:bg-brand-green dark:hover:bg-brand-green dark:hover:text-white transition-colors shadow-md cursor-pointer"
-              >
-                <Download className="size-4" />
-                <span>{ar ? "تنزيل الدراسة PDF المعتمدة" : "Download Approved PDF Study"}</span>
-              </button>
-            ) : (
-              <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 dark:border-white/15 bg-slate-100/90 dark:bg-white/5 px-4 py-2 text-xs font-semibold text-slate-500 dark:text-slate-400">
-                <Lock className="size-3.5" />
-                <span>
-                  {ar
-                    ? "تنزيل PDF متاح فقط للدراسات المكتملة والمعتمدة"
-                    : "PDF export enabled only after completion & approval"}
-                </span>
-              </div>
-            )}
+            <div className="flex flex-wrap items-center gap-2.5">
+              {study.downloadDocxUrl && (
+                <a
+                  href={study.downloadDocxUrl}
+                  download
+                  title={ar ? "تحميل دراسة السوق الأصلية بصيغة Word" : "Download Original Word Market Study"}
+                  className="inline-flex items-center gap-2 rounded-full border border-blue-500/40 bg-blue-500/10 px-4 py-2 text-xs font-bold text-blue-600 dark:text-blue-400 hover:bg-blue-600 hover:text-white transition-colors shadow-sm cursor-pointer"
+                >
+                  <FileText className="size-4" />
+                  <span>{ar ? "تحميل تقرير Word الأصلي" : "Download Word Study"}</span>
+                </a>
+              )}
+
+              {study.downloadXlsxUrl && (
+                <a
+                  href={study.downloadXlsxUrl}
+                  download
+                  title={ar ? "تحميل قاعدة البيانات الأصلية بصيغة Excel (7 أوراق عمل)" : "Download Original 7-Worksheet Excel Database"}
+                  className="inline-flex items-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-500/10 px-4 py-2 text-xs font-bold text-emerald-600 dark:text-emerald-400 hover:bg-emerald-600 hover:text-white transition-colors shadow-sm cursor-pointer"
+                >
+                  <FileSpreadsheet className="size-4" />
+                  <span>{ar ? "تحميل قاعدة بيانات Excel (7 أوراق)" : "Download Excel Database (7 Sheets)"}</span>
+                </a>
+              )}
+
+              {downloadAllowed ? (
+                <button
+                  type="button"
+                  onClick={() => openApprovedStudyPdfReport(study, ar)}
+                  className="inline-flex items-center gap-2 rounded-full bg-slate-900 dark:bg-white px-5 py-2.5 text-xs font-bold text-white dark:text-slate-900 hover:bg-brand-green dark:hover:bg-brand-green dark:hover:text-white transition-colors shadow-md cursor-pointer"
+                >
+                  <Download className="size-4" />
+                  <span>{ar ? "تنزيل الدراسة PDF المعتمدة" : "Download Approved PDF Study"}</span>
+                </button>
+              ) : (
+                <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 dark:border-white/15 bg-slate-100/90 dark:bg-white/5 px-4 py-2 text-xs font-semibold text-slate-500 dark:text-slate-400">
+                  <Lock className="size-3.5" />
+                  <span>
+                    {ar
+                      ? "تنزيل PDF متاح فقط للدراسات المكتملة والمعتمدة"
+                      : "PDF export enabled only after completion & approval"}
+                  </span>
+                </div>
+              )}
+            </div>
           </div>
 
           <div className="space-y-2">

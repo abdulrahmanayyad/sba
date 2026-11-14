@@ -6,6 +6,8 @@ import {
   Building2,
   ChevronRight,
   Download,
+  FileSpreadsheet,
+  FileText,
   FolderCog,
   Globe,
   Layers,
@@ -640,27 +642,53 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
                         {ar ? <ArrowLeft className="size-3.5" /> : <ArrowRight className="size-3.5" />}
                       </Link>
 
-                      {study.downloadDocxUrl || study.downloadZipUrl ? (
+                      {study.downloadDocxUrl && (
                         <a
-                          href={study.downloadDocxUrl || study.downloadZipUrl}
+                          href={study.downloadDocxUrl}
                           download
-                          title={ar ? "تحميل وثيقة الدراسة المعتمدة" : "Download Official Study Document"}
-                          className="inline-flex items-center justify-center gap-1.5 rounded-xl border border-brand-green/40 bg-brand-green/10 px-3 py-2 text-xs font-bold text-brand-green hover:bg-brand-green hover:text-white transition-colors cursor-pointer"
+                          title={ar ? "تحميل دراسة Word الأصلية" : "Download Official Word Report"}
+                          className="inline-flex items-center justify-center gap-1 rounded-xl border border-blue-500/40 bg-blue-500/10 px-2.5 py-2 text-xs font-bold text-blue-600 dark:text-blue-400 hover:bg-blue-600 hover:text-white transition-colors cursor-pointer"
                         >
-                          <Download className="size-3.5" />
-                          <span>{ar ? "تحميل الدراسة" : "Download"}</span>
+                          <FileText className="size-3.5" />
+                          <span>Word</span>
                         </a>
-                      ) : downloadAllowed ? (
-                        <button
-                          type="button"
-                          onClick={() => openApprovedStudyPdfReport(study, ar)}
-                          title={ar ? "تنزيل PDF معتمد" : "Download Approved PDF"}
-                          className="inline-flex items-center justify-center gap-1.5 rounded-xl border border-brand-green/40 bg-brand-green/10 px-3 py-2 text-xs font-bold text-brand-green hover:bg-brand-green hover:text-white transition-colors cursor-pointer"
+                      )}
+
+                      {study.downloadXlsxUrl && (
+                        <a
+                          href={study.downloadXlsxUrl}
+                          download
+                          title={ar ? "تحميل قاعدة بيانات Excel الأصلية" : "Download Official Excel Database"}
+                          className="inline-flex items-center justify-center gap-1 rounded-xl border border-emerald-500/40 bg-emerald-500/10 px-2.5 py-2 text-xs font-bold text-emerald-600 dark:text-emerald-400 hover:bg-emerald-600 hover:text-white transition-colors cursor-pointer"
                         >
-                          <Download className="size-3.5" />
-                          <span>{ar ? "تحميل PDF" : "Download PDF"}</span>
-                        </button>
-                      ) : null}
+                          <FileSpreadsheet className="size-3.5" />
+                          <span>Excel</span>
+                        </a>
+                      )}
+
+                      {!study.downloadDocxUrl && !study.downloadXlsxUrl && (study.downloadZipUrl || downloadAllowed) && (
+                        study.downloadZipUrl ? (
+                          <a
+                            href={study.downloadZipUrl}
+                            download
+                            title={ar ? "تحميل وثيقة الدراسة المعتمدة" : "Download Official Study Document"}
+                            className="inline-flex items-center justify-center gap-1.5 rounded-xl border border-brand-green/40 bg-brand-green/10 px-3 py-2 text-xs font-bold text-brand-green hover:bg-brand-green hover:text-white transition-colors cursor-pointer"
+                          >
+                            <Download className="size-3.5" />
+                            <span>{ar ? "تحميل الدراسة" : "Download"}</span>
+                          </a>
+                        ) : (
+                          <button
+                            type="button"
+                            onClick={() => openApprovedStudyPdfReport(study, ar)}
+                            title={ar ? "تنزيل PDF معتمد" : "Download Approved PDF"}
+                            className="inline-flex items-center justify-center gap-1.5 rounded-xl border border-brand-green/40 bg-brand-green/10 px-3 py-2 text-xs font-bold text-brand-green hover:bg-brand-green hover:text-white transition-colors cursor-pointer"
+                          >
+                            <Download className="size-3.5" />
+                            <span>{ar ? "تحميل PDF" : "Download PDF"}</span>
+                          </button>
+                        )
+                      )}
                     </div>
                   </div>
                 </div>

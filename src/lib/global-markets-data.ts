@@ -3,6 +3,7 @@ import sectorEnviroImg from "@/assets/sector-enviro.jpg";
 import sectorApparelImg from "@/assets/sector-apparel.jpg";
 import sectorFoodImg from "@/assets/sector-food.jpg";
 import { APPAREL_55_MASTER_STUDIES } from "./studies/apparel-master-studies";
+import { ENVIRONMENTAL_66_MASTER_STUDIES } from "./studies/environmental-master-studies";
 
 export type GlobalMarketSectorId =
   | "construction"
@@ -623,5 +624,6 @@ export const SECTOR_ALLOWED_REGIONS: Record<GlobalMarketSectorId, GeoRegionId[]>
  */
 export const PUBLISHED_GLOBAL_STUDIES: GlobalMarketStudy[] = [
   ...APPAREL_55_MASTER_STUDIES,
+  ...ENVIRONMENTAL_66_MASTER_STUDIES,
 ];
 
