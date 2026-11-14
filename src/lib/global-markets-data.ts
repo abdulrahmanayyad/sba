@@ -2,8 +2,7 @@ import sectorConstructionImg from "@/assets/sector-construction.jpg";
 import sectorEnviroImg from "@/assets/sector-enviro.jpg";
 import sectorApparelImg from "@/assets/sector-apparel.jpg";
 import sectorFoodImg from "@/assets/sector-food.jpg";
-import { STUDY_SAU_APPAREL_001 } from "./studies/sba-gm-app-sau-001";
-import { APPAREL_40_OTHER_COUNTRY_STUDIES } from "./studies/apparel-41-countries";
+import { APPAREL_55_MASTER_STUDIES } from "./studies/apparel-master-studies";
 
 export type GlobalMarketSectorId =
   | "construction"
@@ -182,9 +181,13 @@ export interface ArchivedStudyVersion {
 
 export type ApparelSubRegionId =
   | "gcc"
+  | "other_arab"
+  | "europe"
+  | "africa"
+  | "north_america"
+  | "south_central_america"
   | "levant"
   | "north_africa"
-  | "europe"
   | "americas"
   | "asia_pacific";
 
@@ -211,6 +214,16 @@ export interface GlobalMarketStudy {
   scope: "egypt_only" | "global";
   region: GeoRegionId;
   apparelSubRegion?: ApparelSubRegionId | undefined;
+  opportunityScore?: number | undefined;
+  opportunityTier?: string | undefined;
+  opportunityTierAr?: string | undefined;
+  regionalRank?: number | undefined;
+  totalInRegion?: number | undefined;
+  opportunityRationaleAr?: string | undefined;
+  opportunityRationaleEn?: string | undefined;
+  downloadDocxUrl?: string | undefined;
+  downloadXlsxUrl?: string | undefined;
+  downloadZipUrl?: string | undefined;
   priorityGrade?: PriorityGrade | undefined;
   marketRole?: MarketRoleCategory | undefined;
   dataBasis?: TradeDataBasis | undefined;
@@ -609,7 +622,6 @@ export const SECTOR_ALLOWED_REGIONS: Record<GlobalMarketSectorId, GeoRegionId[]>
  * NEVER add placeholder or fabricated statistics here.
  */
 export const PUBLISHED_GLOBAL_STUDIES: GlobalMarketStudy[] = [
-  STUDY_SAU_APPAREL_001,
-  ...APPAREL_40_OTHER_COUNTRY_STUDIES,
+  ...APPAREL_55_MASTER_STUDIES,
 ];
 

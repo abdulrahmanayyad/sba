@@ -1,0 +1,585 @@
+<USER_REQUEST>
+# CRITICAL: Replace, Rebuild, Categorize & Rank the Existing International Market Studies Collection
+
+## 1. المهمة الرئيسية
+
+أريد إجراء إعادة هيكلة وتنظيف شامل لقسم **International Market Studies – دراسات الأسواق الدولية** الموجود بالفعل على الموقع.
+
+هذه المهمة ليست مجرد تحديث للواجهة أو إضافة ملفات جديدة، بل هي عملية استبدال كاملة لمجموعة الدراسات الحالية، وإعادة تنظيمها وتصنيفها وترتيبها وفقًا لقوة الفرص التجارية والتصديرية.
+
+**القاعدة الأساسية غير القابلة للتفاوض:**
+
+الملفات الـ56 المرفقة في هذه المهمة هي المصدر الوحيد المعتمد لتحديد الدول التي يجب أن تظهر في قسم دراسات الأسواق الدولية.
+
+يُمنع الاحتفاظ بأي دراسة أخرى غير ممثلة ضمن هذه الملفات، حتى لو كانت موجودة سابقًا أو معتمدة أو منشورة على الموقع.
+
+---
+
+## 2. استخراج القائمة المرجعية للدول الـ56
+
+قبل تنفيذ أي تعديل:
+
+1. افحص جميع الملفات الـ56 المرفقة.
+2. استخرج الاسم الرسمي لكل دولة من محتوى الملفات، وليس من أسماء الملفات فقط.
+3. تحقق من عدم وجود ملفات مكررة أو اختلافات في كتابة أسماء الدول.
+4. أنشئ Master Reference List تضم الدول الـ56.
+5. حدد التصنيف الجغرافي الصحيح لكل دولة.
+6. استخدم هذه القائمة باعتبارها المرجع الوحيد لعملية الحذف والإضافة.
+
+### التوزيع النهائي الإلزامي
+
+| التصنيف | عدد الدراسات |
+|---|---:|
+| الدول العربية | 16 |
+| الدول الأوروبية | 15 |
+| الدول الأفريقية | 16 |
+| الدول الأمريكية | 9 |
+| **الإجمالي** | **56** |
+
+لا تعتبر المملكة العربية السعودية استثناءً تلقائيًا. يجب الاحتفاظ بها فقط إذا كانت ضمن الملفات الـ56 المرفقة.
+
+---
+
+## 3. إنشاء نظام تصنيف جغرافي احترافي للدول
+
+لا تعرض الدول الـ56 في قائمة واحدة.
+
+أعد تنظيمها داخل القسم باستخدام نظام تصنيف جغرافي واضح، مع تقسيم الدول العربية إلى مجموعات فرعية أكثر دقة.
+
+### أولًا: دول الخليج العربي
+GCC Countries
+
+تضم الدول الخليجية الموجودة بالفعل ضمن الملفات المرفقة فقط.
+
+### ثانيًا: الدول العربية الأخرى
+Other Arab Countries
+
+تضم الدول العربية غير الخليجية الموجودة ضمن الملفات.
+
+### ثالثًا: الدول الأوروبية
+European Markets
+
+تضم جميع الدول الأوروبية الموجودة ضمن الملفات.
+
+### رابعًا: الدول الأفريقية
+African Markets
+
+تضم جميع الدول الأفريقية الموجودة ضمن الملفات.
+
+### خامسًا: دول أمريكا الشمالية
+North American Markets
+
+تضم الدول التابعة لأمريكا الشمالية الموجودة ضمن الملفات.
+
+### سادسًا: دول أمريكا الجنوبية والوسطى
+South & Central American Markets
+
+تضم الدول التابعة لأمريكا الجنوبية والوسطى الموجودة ضمن الملفات.
+
+ملاحظة مهمة:
+- لا تنشئ دولًا أو تصنيفات تحتوي على دول غير موجودة في الملفات.
+- لا تفترض وجود دول معينة ضمن أي تصنيف قبل فحص الملفات.
+- يجب أن يظل مجموع جميع التصنيفات 56 دولة بالضبط.
+- إذا اقتضى التصنيف الجغرافي تقسيمًا إضافيًا، يمكن إضافته بشرط عدم تكرار أي دولة.
+
+---
+
+## 4. ترتيب الدول حسب قوة الفرص التجارية والتصديرية
+
+هذه نقطة أساسية في التحديث.
+
+لا أريد ترتيب الدول أبجديًا، بل أريد ترتيبًا استراتيجيًا يعكس أهمية كل سوق بالنسبة إلى أنشطة SAMI BIN AYYAD GROUP، خصوصًا:
+
+- Apparel & Garment Manufacturing.
+- Private Label Manufacturing.
+- OEM & FOB Production.
+- Textile & Fabric Supply.
+- Food Products & Agricultural Products.
+- Construction & Real Estate Development.
+- International Trade & Investment.
+
+### نظام ترتيب الفرص
+
+أنشئ نظام تقييم داخلي لكل دولة يعتمد على المؤشرات التالية:
+
+1. حجم الطلب على المنتجات والقطاعات التي تعمل بها المجموعة.
+2. حجم الواردات والاعتماد على الاستيراد.
+3. فرص التعاقد مع المصانع وموردي Private Label وFOB.
+4. القوة الشرائية وحجم السوق.
+5. سهولة دخول السوق والتصدير إليه.
+6. الاتفاقيات التجارية والجمركية مع مصر.
+7. المنافسة ومدى إمكانية تقديم ميزة سعرية وتنافسية.
+8. فرص الشراكات والاستثمار والتوسع طويل الأجل.
+
+### مؤشر قوة الفرصة التجارية
+
+أنشئ Opportunity Score من 100 درجة لكل دولة.
+
+يمكن استخدام الأوزان التالية:
+
+| المؤشر | الوزن |
+|---|---:|
+| حجم الطلب وإمكانيات السوق | 20% |
+| الواردات والاعتماد على الاستيراد | 15% |
+| فرص التصنيع والتعاقد FOB/OEM | 20% |
+| القوة الشرائية | 10% |
+| سهولة دخول السوق والتصدير | 10% |
+| الاتفاقيات التجارية مع مصر | 10% |
+| المنافسة والميزة التنافسية | 10% |
+| فرص الاستثمار والشراكات | 5% |
+| **الإجمالي** | **100%** |
+
+يجب أن يستند التقييم إلى معلومات واقعية ومصادر موثوقة، وليس إلى تقديرات عشوائية.
+
+### مستويات الفرص
+
+- Tier 1 – Very High Opportunity: الأسواق ذات الأولوية القصوى.
+- Tier 2 – High Opportunity: الأسواق ذات الفرص القوية.
+- Tier 3 – Moderate Opportunity: الأسواق الواعدة التي تحتاج إلى دراسة أو تطوير.
+- Tier 4 – Emerging Opportunity: الأسواق الناشئة والفرص طويلة الأجل.
+
+داخل كل تصنيف جغرافي، رتب الدول من الأعلى إلى الأقل في Opportunity Score.
+
+لا تحذف أي دولة بسبب انخفاض تقييمها؛ يجب الاحتفاظ بجميع الدول الـ56.
+
+---
+
+## 5. إعادة بناء واجهة قسم الدراسات
+
+احتفظ بالتصميم الحالي للموقع والهوية البصرية الموجودة.
+
+لا تنشئ قسمًا جديدًا، بل طور القسم الحالي مع الحفاظ على مكوناته الأساسية.
+
+### المطلوب في واجهة القسم:
+
+**A. Main Header**
+
+International Market Studies
+
+دراسات الأسواق الدولية
+
+وصف احترافي يوضح أن القسم يحتوي على دراسات موثقة للأسواق الدولية، تم إعدادها لدعم قرارات التوسع التجاري والتصدير والاستثمار.
+
+**B. Geographic Categories**
+
+أنشئ تصنيفات جغرافية واضحة وسهلة الاستخدام:
+
+- GCC Countries
+- Other Arab Countries
+- European Markets
+- African Markets
+- North American Markets
+- South & Central American Markets
+
+يجب أن يظهر عدد الدول داخل كل تصنيف.
+
+**C. Opportunity Ranking**
+
+اعرض ترتيب الفرص داخل كل تصنيف، مع إمكانية تمييز الأسواق ذات الأولوية القصوى.
+
+**D. Country Cards**
+
+احتفظ بأسلوب البطاقات الحالي، مع تطوير عرض بيانات كل دولة ليشمل:
+
+- اسم الدولة بالعربية والإنجليزية.
+- العلم الرسمي للدولة.
+- التصنيف الجغرافي.
+- Opportunity Score من 100.
+- مستوى الفرصة التجارية.
+- الترتيب داخل التصنيف الجغرافي.
+- زر View Full Study.
+- زر Download Study.
+
+يجب أن تكون روابط العرض والتحميل مرتبطة بالملفات الأصلية الكاملة، وليس بملخصات أو صفحات بديلة.
+
+**E. Filtering & Sorting**
+
+أضف أدوات تصفية عملية:
+
+- تصفية حسب المنطقة الجغرافية.
+- تصفية حسب مستوى الفرصة.
+- ترتيب حسب أعلى Opportunity Score.
+- ترتيب حسب اسم الدولة.
+- البحث عن دولة بالاسم العربي أو الإنجليزي.
+
+يجب أن تعمل جميع أدوات التصفية والترتيب فعليًا على بيانات الدراسات.
+
+---
+
+## 6. حذف الدراسات القديمة نهائيًا من الموقع
+
+هذه من أهم مراحل المهمة.
+
+لا تكتفِ بإخفاء الدراسات غير المرفقة من واجهة الموقع.
+
+قم بفحص جميع مصادر البيانات المرتبطة بقسم الدراسات، بما يشمل:
+
+- Database Records.
+- JSON Files.
+- JavaScript / TypeScript Data Arrays.
+- CMS Collections.
+- Static Data Sources.
+- API Endpoints.
+- Storage References.
+- Document URLs.
+- Download Links.
+- Country Slugs and Routes.
+- Search Indexes.
+- Cached Data.
+- Any Other Data Source Used by This Section.
+
+### آلية الحذف
+
+1. استخرج جميع الدراسات الموجودة حاليًا على الموقع.
+2. قارنها بالقائمة المرجعية للدول الـ56.
+3. حدد الدراسات التي يجب الاحتفاظ بها.
+4. حدد الدراسات التي يجب حذفها.
+5. احذف سجلات الدول غير المعتمدة من مصدر البيانات الفعلي.
+6. احذف روابط التحميل والعرض التابعة لها.
+7. احذف ملفات الدراسات المستبعدة من التخزين الخاص بالموقع إذا لم تكن مستخدمة في أي مكان آخر.
+8. احذف المسارات والروابط القديمة التي لم تعد مطلوبة.
+9. نظف أي بيانات تجريبية أو مؤقتة مرتبطة بالدراسات القديمة.
+
+### حماية الملفات المشتركة
+
+قبل حذف أي ملف أو أصل رقمي:
+
+- تحقق مما إذا كان مستخدمًا في صفحات أو قطاعات أخرى.
+- لا تحذف أي ملف مشترك.
+- لا تحذف صورًا أو خطوطًا أو مكونات تصميم أو بيانات تستخدمها صفحات أخرى.
+- احذف فقط الملفات المرتبطة بالدراسات المستبعدة والتي لا توجد لها استخدامات أخرى.
+
+لا تستخدم عمليات حذف شاملة أو أوامر تنظيف عامة قد تؤثر على بقية الموقع.
+
+---
+
+## 7. إضافة الدراسات الـ56 الأصلية
+
+بعد الانتهاء من التنظيف:
+
+أعد إدخال الدراسات المعتمدة اعتمادًا على الملفات الـ56 المرفقة.
+
+الشروط:
+
+1. استخدام الملفات الأصلية كاملة.
+2. عدم استبدال أي دراسة بملخص.
+3. عدم تعديل المحتوى البحثي للدراسات.
+4. عدم اختصار الملفات.
+5. الحفاظ على الجداول والبيانات والمراجع والصور الموجودة داخل الدراسات.
+6. الحفاظ على روابط العرض والتحميل.
+7. ربط كل ملف بالدولة الصحيحة.
+8. التأكد من ظهور النسختين العربية والإنجليزية في واجهة الموقع.
+9. التأكد من عدم إنشاء سجلات مكررة لنفس الدولة.
+
+---
+
+## 8. تنظيم البيانات وبنية النظام
+
+أنشئ بنية بيانات موحدة للدراسات، مع الاحتفاظ بتقنيات المشروع الحالية وعدم تغيير بنيته الأساسية دون ضرورة.
+
+يجب أن تتضمن بيانات كل دولة على الأقل:
+
+- Country ID.
+- Country Name Arabic.
+- Country Name English.
+- Country ISO Code.
+- Geographic Region.
+- Subregion.
+- Opportunity Score.
+- Opportunity Tier.
+- Regional Ranking.
+- Full Study File Reference.
+- Arabic Display Metadata.
+- English Display Metadata.
+- View URL.
+- Download URL.
+
+يجب أن يكون مصدر البيانات موحدًا بحيث تستمد منه جميع العناصر:
+
+- بطاقات الدول.
+- التصنيفات الجغرافية.
+- إحصائيات عدد الدراسات.
+- البحث والتصفية.
+- ترتيب الفرص.
+- روابط العرض والتحميل.
+
+لا تنشئ مصدر بيانات منفصلًا للواجهة وآخر للإحصائيات يؤدي إلى اختلاف الأرقام.
+
+---
+
+## 9. الحفاظ على الموقع الحالي
+
+ممنوع إجراء أي تعديلات خارج نطاق قسم دراسات الأسواق الدولية.
+
+التزم بالآتي:
+
+- الاحتفاظ بالتصميم الحالي للقسم وتطويره فقط.
+- عدم إنشاء قسم جديد.
+- عدم تغيير NAV BAR.
+- عدم تغيير ترتيب عناصر NAV BAR.
+- عدم تعديل الصفحة الرئيسية.
+- عدم تعديل القطاعات الأخرى.
+- عدم تعديل صفحات المشاريع أو المنتجات أو الخدمات.
+- عدم تعديل بيانات الشركة.
+- عدم تغيير نظام اللغتين العربية والإنجليزية.
+- عدم تغيير هوية SAMI BIN AYYAD GROUP.
+- عدم تغيير الروابط أو المكونات المشتركة إلا إذا كان ذلك ضروريًا ومضمونًا دون التأثير على أجزاء أخرى.
+
+---
+
+## 10. التحقق النهائي الإلزامي
+
+لا تعتبر المهمة مكتملة بمجرد ظهور الدول في الواجهة.
+
+نفذ اختبارًا شاملًا بعد انتهاء التحديث.
+
+### A. Database Verification
+
+- التأكد من وجود 56 سجل دراسة معتمدًا بالضبط في مصدر البيانات الفعلي للقسم.
+- التأكد من حذف جميع سجلات الدراسات غير المرفقة.
+- التأكد من عدم وجود سجلات مكررة.
+- التأكد من تطابق سجلات البيانات مع الملفات الـ56.
+
+### B. Geographic Verification
+
+- 16 دراسة عربية.
+- 15 دراسة أوروبية.
+- 16 دراسة أفريقية.
+- 9 دراسات أمريكية.
+- التأكد من صحة التصنيفات الفرعية.
+- التأكد من عدم وجود أي دولة خارج الملفات المرفقة.
+
+### C. File Verification
+
+- اختبار فتح جميع الدراسات الـ56.
+- اختبار تحميل جميع الملفات الـ56.
+- التأكد من أن كل رابط يفتح الدراسة الصحيحة.
+- التأكد من عدم وجود روابط مكسورة.
+- التأكد من عدم استبدال أي ملف أصلي بملخص.
+
+### D. UI Verification
+
+- اختبار جميع التصنيفات الجغرافية.
+- اختبار البحث بالعربية والإنجليزية.
+- اختبار التصفية حسب مستوى الفرصة.
+- اختبار ترتيب الدول حسب Opportunity Score.
+- التأكد من ظهور العدد الصحيح لكل تصنيف.
+- التأكد من عدم ظهور أي دراسة قديمة.
+
+### E. Regression Testing
+
+افحص الموقع بالكامل بعد التحديث للتأكد من:
+
+- عدم تأثر الصفحة الرئيسية.
+- عدم تأثر NAV BAR.
+- عدم تأثر القطاعات الأخرى.
+- عدم تعطل أي روابط مشتركة.
+- عدم حذف أي ملف مستخدم في مكان آخر.
+- استمرار عمل الموقع بالعربية والإنجليزية.
+
+---
+
+## 11. التقرير النهائي المطلوب
+
+بعد الانتهاء من التنفيذ والاختبار، قدم تقريرًا نهائيًا يتضمن:
+
+### 1. Before & After Statistics
+
+- عدد الدراسات قبل التحديث.
+- عدد الدراسات المحذوفة فعليًا.
+- عدد الدراسات المحتفظ بها.
+- عدد الدراسات المضافة أو المعاد ربطها.
+- إجمالي الدراسات النهائي.
+
+### 2. Approved Countries Master List
+
+اعرض أسماء الدول الـ56 كاملة، مع تصنيف كل دولة إلى:
+
+- الخليج العربي.
+- الدول العربية الأخرى.
+- أوروبا.
+- أفريقيا.
+- أمريكا الشمالية.
+- أمريكا الجنوبية والوسطى.
+
+### 3. Opportunity Ranking Report
+
+اعرض الدول مرتبة حسب قوة الفرص التجارية والتصديرية، مع:
+
+- Opportunity Score.
+- Opportunity Tier.
+- الترتيب الجغرافي.
+- سبب مختصر يوضح أولوية السوق.
+
+### 4. Deletion Report
+
+اعرض أسماء جميع الدراسات التي تم حذفها فعليًا من قاعدة البيانات ومصدر البيانات والتخزين، مع توضيح ما إذا كانت هناك ملفات مستبعدة تم الاحتفاظ بها لأنها مشتركة مع صفحات أخرى.
+
+### 5. Technical Verification
+
+وضح نتائج اختبارات:
+
+- Database.
+- File Links.
+- Downloads.
+- Geographic Categories.
+- Search & Filtering.
+- Arabic / English.
+- Regression Testing.
+
+---
+
+## 12. شروط اعتبار المهمة مكتملة
+
+لا تعلن اكتمال المهمة إلا بعد تحقق جميع الشروط التالية:
+
+1. وجود 56 دراسة فقط في قسم الدراسات.
+2. جميع الدراسات مرتبطة بالملفات الـ56 المرفقة.
+3. عدم وجود أي دراسة غير مرفقة.
+4. عدم وجود دراسات مكررة.
+5. تصنيف جميع الدول جغرافيًا بشكل صحيح.
+6. ترتيب الدول حسب قوة الفرص التجارية.
+7. عمل جميع روابط العرض والتحميل.
+8. تنظيف قاعدة البيانات ومصدر البيانات الفعلي.
+9. حذف الدراسات المستبعدة من التخزين الخاص بها إذا لم تكن مشتركة.
+10. عدم تأثر أي قسم آخر من الموقع.
+11. استمرار عمل اللغتين العربية والإنجليزية.
+
+**FINAL EXECUTION RULE:**
+
+نفذ المهمة على المشروع الحالي مباشرة، ولا تكتفِ باقتراح التعديلات أو إنشاء نموذج تجريبي أو واجهة شكلية.
+
+ابدأ بفحص الملفات الـ56 والمشروع الحالي، ثم أنشئ القائمة المرجعية، ثم نفذ المقارنة والحذف والإضافة والتصنيف والترتيب والاختبارات.
+
+لا تعتبر مجرد إخفاء العناصر أو تعديل عدد الدراسات الظاهر على الشاشة دليلًا على نجاح المهمة.
+
+المطلوب هو استبدال حقيقي ونظيف لمجموعة الدراسات الحالية، مع الحفاظ على بقية الموقع كما هي.
+
+إذا واجهت نقصًا في الملفات أو تعارضًا يمنع التحقق من دولة أو ملف، لا تخترع بيانات ولا تعلن اكتمال المهمة؛ وضح المشكلة بدقة قبل اعتماد النتيجة.@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Tunisia_Apparel_Study_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_Czechia_Apparel_Market_Study_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_Denmark_Apparel_Market_Study_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_France_Apparel_Market_Study_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_Germany_Apparel_Market_Study_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_Italy_Apparel_Market_Study_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_Netherlands_Apparel_Market_Study_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_Poland_Apparel_Market_Study_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_Spain_Apparel_Market_Study_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_UK_Apparel_Market_Study_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_Austria_Apparel_Market_Study_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_Belgium_Apparel_Market_Study_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_Canada_Apparel_Market_Study_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_Chile_Expanded_Complete_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_Colombia_Expanded_Complete_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_Costa_Rica_Expanded_Complete_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_Dominican_Republic_Expanded_Complete_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_Ecuador_Expanded_Complete_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_Greece_Apparel_Market_Study_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_Panama_Expanded_Complete_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_Peru_Expanded_Complete_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_Portugal_Apparel_Market_Study_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_Romania_Apparel_Market_Study_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_Sweden_Apparel_Market_Study_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_USA_Apparel_Market_Study_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_Mozambique_Apparel_Market_Study_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_Namibia_Apparel_Market_Study_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_Angola_Apparel_Market_Study_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_Cameroon_Apparel_Market_Study_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_Cote_dIvoire_Apparel_Market_Study_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_Ghana_Apparel_Market_Study_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_Kenya_Apparel_Market_Study_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_Mauritius_Apparel_Market_Study_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_Nigeria_Apparel_Market_Study_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_Rwanda_Apparel_Market_Study_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_Senegal_Apparel_Market_Study_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_South_Africa_Study.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_Tanzania_Apparel_Market_Study_Package_v2.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_Uganda_Apparel_Market_Study_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_Zambia_Apparel_Market_Study_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_Algeria_Apparel_Study_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_Egypt_Apparel_Market_Study_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_Iraq_Apparel_Study_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_Jordan_Apparel_Study_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_Kuwait_Apparel_Study_Package_v1.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_Lebanon_Apparel_Study_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_Morocco_Apparel_Study_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_Sudan_Apparel_Study_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_UAE_Apparel_Study_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_Bahrain_Apparel_Study_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_Libya_Apparel_Market_Study_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_Mauritania_Apparel_Study_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_Oman_Apparel_Study_Package.zip] @[c:\Users\20101\Downloads\Telegram Desktop\SBA_Qatar_Apparel_Study_Package.zip] @[c:\Users\20101\Downloads\sba-brand-compass\public\دراسات قطاع الملابس] 
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-11-14T16:25:37+02:00.
+
+The user's current state is as follows:
+Active Document: c:\Users\20101\Downloads\sba-brand-compass\src\components\trade\trade-intelligence-dashboard.tsx (LANGUAGE_UNSPECIFIED)
+Cursor is on line: 1
+Other open documents:
+- c:\Users\20101\Downloads\sba-brand-compass\src\components\sectors\garment\tabs\garment-capabilities-tab.tsx (LANGUAGE_UNSPECIFIED)
+- c:\Users\20101\Downloads\sba-brand-compass\src\components\news\corporate-timeline.tsx (LANGUAGE_UNSPECIFIED)
+- c:\Users\20101\Downloads\sba-brand-compass\src\components\site\section-badge.tsx (LANGUAGE_UNSPECIFIED)
+- c:\Users\20101\Downloads\sba-brand-compass\src\routes\global-markets.$sector.$slug.tsx (LANGUAGE_UNSPECIFIED)
+- c:\Users\20101\Downloads\sba-brand-compass\src\lib\studies\apparel-41-countries.ts (LANGUAGE_UNSPECIFIED)
+
+The user has mentioned some items in the form @[ITEM]. Here is extra information about the items that were mentioned by the user, in the order that they appear:
+
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Tunisia_Apparel_Study_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_Tunisia_Apparel_Study_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Czechia_Apparel_Market_Study_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_Czechia_Apparel_Market_Study_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Denmark_Apparel_Market_Study_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_Denmark_Apparel_Market_Study_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_France_Apparel_Market_Study_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_France_Apparel_Market_Study_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Germany_Apparel_Market_Study_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_Germany_Apparel_Market_Study_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Italy_Apparel_Market_Study_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_Italy_Apparel_Market_Study_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Netherlands_Apparel_Market_Study_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_Netherlands_Apparel_Market_Study_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Poland_Apparel_Market_Study_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_Poland_Apparel_Market_Study_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Spain_Apparel_Market_Study_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_Spain_Apparel_Market_Study_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_UK_Apparel_Market_Study_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_UK_Apparel_Market_Study_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Austria_Apparel_Market_Study_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_Austria_Apparel_Market_Study_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Belgium_Apparel_Market_Study_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_Belgium_Apparel_Market_Study_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Canada_Apparel_Market_Study_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_Canada_Apparel_Market_Study_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Chile_Expanded_Complete_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_Chile_Expanded_Complete_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Colombia_Expanded_Complete_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_Colombia_Expanded_Complete_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Costa_Rica_Expanded_Complete_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_Costa_Rica_Expanded_Complete_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Dominican_Republic_Expanded_Complete_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_Dominican_Republic_Expanded_Complete_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Ecuador_Expanded_Complete_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_Ecuador_Expanded_Complete_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Greece_Apparel_Market_Study_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_Greece_Apparel_Market_Study_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Panama_Expanded_Complete_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_Panama_Expanded_Complete_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Peru_Expanded_Complete_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_Peru_Expanded_Complete_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Portugal_Apparel_Market_Study_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_Portugal_Apparel_Market_Study_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Romania_Apparel_Market_Study_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_Romania_Apparel_Market_Study_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Sweden_Apparel_Market_Study_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_Sweden_Apparel_Market_Study_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_USA_Apparel_Market_Study_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_USA_Apparel_Market_Study_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Mozambique_Apparel_Market_Study_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_Mozambique_Apparel_Market_Study_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Namibia_Apparel_Market_Study_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_Namibia_Apparel_Market_Study_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Angola_Apparel_Market_Study_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_Angola_Apparel_Market_Study_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Cameroon_Apparel_Market_Study_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_Cameroon_Apparel_Market_Study_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Cote_dIvoire_Apparel_Market_Study_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_Cote_dIvoire_Apparel_Market_Study_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Ghana_Apparel_Market_Study_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_Ghana_Apparel_Market_Study_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Kenya_Apparel_Market_Study_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_Kenya_Apparel_Market_Study_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Mauritius_Apparel_Market_Study_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_Mauritius_Apparel_Market_Study_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Nigeria_Apparel_Market_Study_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_Nigeria_Apparel_Market_Study_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Rwanda_Apparel_Market_Study_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_Rwanda_Apparel_Market_Study_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Senegal_Apparel_Market_Study_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_Senegal_Apparel_Market_Study_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_South_Africa_Study.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_South_Africa_Study.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Tanzania_Apparel_Market_Study_Package_v2.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_Tanzania_Apparel_Market_Study_Package_v2.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Uganda_Apparel_Market_Study_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_Uganda_Apparel_Market_Study_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Zambia_Apparel_Market_Study_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_Zambia_Apparel_Market_Study_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Algeria_Apparel_Study_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_Algeria_Apparel_Study_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Egypt_Apparel_Market_Study_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_Egypt_Apparel_Market_Study_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Iraq_Apparel_Study_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_Iraq_Apparel_Study_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Jordan_Apparel_Study_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_Jordan_Apparel_Study_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Kuwait_Apparel_Study_Package_v1.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_Kuwait_Apparel_Study_Package_v1.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Lebanon_Apparel_Study_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_Lebanon_Apparel_Study_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Morocco_Apparel_Study_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_Morocco_Apparel_Study_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Sudan_Apparel_Study_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_Sudan_Apparel_Study_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_UAE_Apparel_Study_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_UAE_Apparel_Study_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Bahrain_Apparel_Study_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_Bahrain_Apparel_Study_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Libya_Apparel_Market_Study_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_Libya_Apparel_Market_Study_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Mauritania_Apparel_Study_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_Mauritania_Apparel_Study_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Oman_Apparel_Study_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_Oman_Apparel_Study_Package.zip
+@[c:\Users\20101\Downloads\Telegram Desktop\SBA_Qatar_Apparel_Study_Package.zip] is a [File]:
+c:\Users\20101\Downloads\Telegram Desktop\SBA_Qatar_Apparel_Study_Package.zip
+@[c:\Users\20101\Downloads\sba-brand-compass\public\دراسات قطاع الملابس] is a [Directory]:
+c:\Users\20101\Downloads\sba-brand-compass\public\دراسات قطاع الملابس
+</ADDITIONAL_METADATA>

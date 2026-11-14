@@ -25,7 +25,7 @@ import {
   APPAREL_EGYPT_RMG_CONTEXT,
   APPAREL_HS_PRODUCT_MAP,
   APPAREL_SUBREGIONS_META,
-} from "@/lib/studies/apparel-41-countries";
+} from "@/lib/studies/apparel-master-studies";
 import { MarketComparisonPanel } from "./market-comparison-panel";
 
 interface ApparelComparativePageProps {
@@ -169,13 +169,13 @@ export function ApparelComparativePage({
     ? "التقرير المقارن لأسواق دول مجلس التعاون الخليجي — قطاع الملابس والمنسوجات"
     : activeRegionMeta
     ? `المقارنة الإقليمية: ${activeRegionMeta.titleAr}`
-    : "لوحة المقارنة الشاملة للأسواق العالمية — قطاع الملابس والمنسوجات (41 دولة)";
+    : "لوحة المقارنة الشاملة للأسواق العالمية — قطاع الملابس والمنسوجات (الدراسات المعتمدة)";
 
   const pageTitleEn = isGccReport
     ? "GCC Comparative Report — Apparel & Textiles Market Intelligence"
     : activeRegionMeta
     ? `Regional Comparative Analysis: ${activeRegionMeta.titleEn}`
-    : "Global Apparel Markets Comparative Dashboard (41 Countries)";
+    : "Global Apparel Markets Comparative Dashboard (Verified Markets)";
 
   return (
     <div className="w-full pb-24">
@@ -204,7 +204,7 @@ export function ApparelComparativePage({
                 ? activeRegionMeta.titleAr
                 : activeRegionMeta.titleEn
               : ar
-              ? "المقارنة الشاملة (41 دولة)"
+              ? "المقارنة الشاملة للأسواق الدولية"
               : "Global Comparative Dashboard"}
           </span>
         </nav>
@@ -239,8 +239,8 @@ export function ApparelComparativePage({
             </h1>
             <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-4xl leading-relaxed">
               {ar
-                ? "مقارنة منضبطة منهجيًا للدول الـ41 حسب المناطق الجغرافية، ومستوى الأولوية، ودور السوق، وسنة البيانات، ونطاق القياس الجمركي، مع الفصل التام بين القيم الموثقة والحقول التي ما زالت قيد التحقق."
-                : "Methodologically disciplined comparison across all 41 markets by geographic region, priority rating, market role, latest reporting year, and measurement definition — explicitly separating verified HS61+HS62 figures from pending baselines."}
+                ? "مقارنة منضبطة منهجيًا للأسواق الدولية المعتمدة حسب المناطق الجغرافية، ومستوى الأولوية، ودور السوق، وسنة البيانات، ونطاق القياس الجمركي، مع الفصل التام بين القيم الموثقة والحقول التي ما زالت قيد التحقق."
+                : "Methodologically disciplined comparison across all verified international markets by geographic region, priority rating, market role, latest reporting year, and measurement definition — explicitly separating verified HS61+HS62 figures from pending baselines."}
             </p>
           </div>
 
@@ -582,7 +582,7 @@ export function ApparelComparativePage({
         </section>
       )}
 
-      {/* 5. Master 41-Country Matrix Table */}
+      {/* 5. Master International Markets Matrix Table */}
       <section className="site-container pb-8">
         <div className="rounded-3xl border border-slate-200/80 dark:border-white/15 bg-white/80 dark:bg-slate-900/70 p-6 sm:p-8 backdrop-blur-2xl shadow-lg space-y-5 text-start">
           <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200/70 dark:border-white/10 pb-3">

@@ -116,7 +116,7 @@ export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
                   to="/global-markets/compare"
                   className="inline-flex items-center gap-2 rounded-full bg-slate-900 dark:bg-white px-4 py-1.5 text-xs font-bold text-white dark:text-slate-900 hover:bg-brand-green dark:hover:bg-brand-green dark:hover:text-white transition-all shadow-xs"
                 >
-                  <span>{ar ? "لوحة مقارنة الملابس (41 دولة)" : "Apparel Compare Dashboard (41 Countries)"}</span>
+                  <span>{ar ? "لوحة مقارنة الأسواق الدولية" : "Apparel Compare Dashboard (Verified Markets)"}</span>
                 </Link>
                 <Link
                   to="/global-markets/manage"

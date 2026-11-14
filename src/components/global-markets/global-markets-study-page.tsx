@@ -31,7 +31,7 @@ import {
   useGlobalMarketsStudies,
 } from "@/lib/global-markets-store";
 import { ApparelScenarioCalculator } from "./apparel-scenario-calculator";
-import { APPAREL_SUBREGIONS_META } from "@/lib/studies/apparel-41-countries";
+import { APPAREL_SUBREGIONS_META } from "@/lib/studies/apparel-master-studies";
 import { StudyChartCard, StudyKpiGrid, StudyTableCard } from "./study-charts";
 
 interface GlobalMarketsStudyPageProps {
@@ -263,7 +263,7 @@ export function GlobalMarketsStudyPage({
                     params={{ sector: "garment", slug: "compare" }}
                     className="text-[11px] font-bold text-slate-800 dark:text-white hover:underline"
                   >
-                    {ar ? "لوحة المقارنة الشاملة (41 دولة)" : "Global 41-Country Dashboard"}
+                    {ar ? "لوحة المقارنة الشاملة للأسواق الدولية" : "Global Comparative Dashboard"}
                   </Link>
                 </div>
               </div>

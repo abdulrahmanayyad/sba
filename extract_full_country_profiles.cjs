@@ -1,0 +1,511 @@
+const fs = require('fs');
+const path = require('path');
+const XLSX = require('xlsx');
+
+const baseDir = 'c:\\Users\\20101\\Downloads\\sba-brand-compass\\extracted_studies';
+const folders = fs.readdirSync(baseDir);
+
+// Mapping folder to standard country metadata
+const FOLDER_MAP = {
+  "SBA_Algeria_Apparel_Study_Package": {
+    code: "DZ",
+    slug: "algeria-apparel-textiles",
+    nameAr: "الجزائر",
+    nameEn: "Algeria",
+    region: "arab_world",
+    subRegion: "other_arab",
+    reportCode: "SBA-GM-APP-DZA-001"
+  },
+  "SBA_Angola_Apparel_Market_Study_Package": {
+    code: "AO",
+    slug: "angola-apparel-textiles",
+    nameAr: "أنغولا",
+    nameEn: "Angola",
+    region: "africa",
+    subRegion: "africa",
+    reportCode: "SBA-GM-APP-AGO-001"
+  },
+  "SBA_Austria_Apparel_Market_Study_Package": {
+    code: "AT",
+    slug: "austria-apparel-textiles",
+    nameAr: "النمسا",
+    nameEn: "Austria",
+    region: "europe",
+    subRegion: "europe",
+    reportCode: "SBA-GM-APP-AUT-001"
+  },
+  "SBA_Bahrain_Apparel_Study_Package": {
+    code: "BH",
+    slug: "bahrain-apparel-textiles",
+    nameAr: "مملكة البحرين",
+    nameEn: "Kingdom of Bahrain",
+    region: "arab_world",
+    subRegion: "gcc",
+    reportCode: "SBA-GM-APP-BHR-001"
+  },
+  "SBA_Belgium_Apparel_Market_Study_Package": {
+    code: "BE",
+    slug: "belgium-apparel-textiles",
+    nameAr: "بلجيكا",
+    nameEn: "Belgium",
+    region: "europe",
+    subRegion: "europe",
+    reportCode: "SBA-GM-APP-BEL-001"
+  },
+  "SBA_Cameroon_Apparel_Market_Study_Package": {
+    code: "CM",
+    slug: "cameroon-apparel-textiles",
+    nameAr: "الكاميرون",
+    nameEn: "Cameroon",
+    region: "africa",
+    subRegion: "africa",
+    reportCode: "SBA-GM-APP-CMR-001"
+  },
+  "SBA_Canada_Apparel_Market_Study_Package": {
+    code: "CA",
+    slug: "canada-apparel-textiles",
+    nameAr: "كندا",
+    nameEn: "Canada",
+    region: "americas",
+    subRegion: "north_america",
+    reportCode: "SBA-GM-APP-CAN-001"
+  },
+  "SBA_Chile_Expanded_Complete_Package": {
+    code: "CL",
+    slug: "chile-apparel-textiles",
+    nameAr: "تشيلي",
+    nameEn: "Chile",
+    region: "americas",
+    subRegion: "south_central_america",
+    reportCode: "SBA-GM-APP-CHL-001"
+  },
+  "SBA_Colombia_Expanded_Complete_Package": {
+    code: "CO",
+    slug: "colombia-apparel-textiles",
+    nameAr: "كولومبيا",
+    nameEn: "Colombia",
+    region: "americas",
+    subRegion: "south_central_america",
+    reportCode: "SBA-GM-APP-COL-001"
+  },
+  "SBA_Costa_Rica_Expanded_Complete_Package": {
+    code: "CR",
+    slug: "costa-rica-apparel-textiles",
+    nameAr: "كوستاريكا",
+    nameEn: "Costa Rica",
+    region: "americas",
+    subRegion: "south_central_america",
+    reportCode: "SBA-GM-APP-CRI-001"
+  },
+  "SBA_Cote_dIvoire_Apparel_Market_Study_Package": {
+    code: "CI",
+    slug: "cote-divoire-apparel-textiles",
+    nameAr: "كوت ديفوار (ساحل العاج)",
+    nameEn: "Côte d'Ivoire",
+    region: "africa",
+    subRegion: "africa",
+    reportCode: "SBA-GM-APP-CIV-001"
+  },
+  "SBA_Czechia_Apparel_Market_Study_Package": {
+    code: "CZ",
+    slug: "czechia-apparel-textiles",
+    nameAr: "جمهورية التشيك",
+    nameEn: "Czech Republic (Czechia)",
+    region: "europe",
+    subRegion: "europe",
+    reportCode: "SBA-GM-APP-CZE-001"
+  },
+  "SBA_Denmark_Apparel_Market_Study_Package": {
+    code: "DK",
+    slug: "denmark-apparel-textiles",
+    nameAr: "الدنمارك",
+    nameEn: "Denmark",
+    region: "europe",
+    subRegion: "europe",
+    reportCode: "SBA-GM-APP-DNK-001"
+  },
+  "SBA_Dominican_Republic_Expanded_Complete_Package": {
+    code: "DO",
+    slug: "dominican-republic-apparel-textiles",
+    nameAr: "جمهورية الدومينيكان",
+    nameEn: "Dominican Republic",
+    region: "americas",
+    subRegion: "south_central_america",
+    reportCode: "SBA-GM-APP-DOM-001"
+  },
+  "SBA_Ecuador_Expanded_Complete_Package": {
+    code: "EC",
+    slug: "ecuador-apparel-textiles",
+    nameAr: "الإكوادور",
+    nameEn: "Ecuador",
+    region: "americas",
+    subRegion: "south_central_america",
+    reportCode: "SBA-GM-APP-ECU-001"
+  },
+  "SBA_Egypt_Apparel_Market_Study_Package": {
+    code: "EG",
+    slug: "egypt-apparel-textiles",
+    nameAr: "جمهورية مصر العربية",
+    nameEn: "Egypt",
+    region: "arab_world",
+    subRegion: "other_arab",
+    reportCode: "SBA-GM-APP-EGY-001"
+  },
+  "SBA_France_Apparel_Market_Study_Package": {
+    code: "FR",
+    slug: "france-apparel-textiles",
+    nameAr: "فرنسا",
+    nameEn: "France",
+    region: "europe",
+    subRegion: "europe",
+    reportCode: "SBA-GM-APP-FRA-001"
+  },
+  "SBA_Germany_Apparel_Market_Study_Package": {
+    code: "DE",
+    slug: "germany-apparel-textiles",
+    nameAr: "ألمانيا",
+    nameEn: "Germany",
+    region: "europe",
+    subRegion: "europe",
+    reportCode: "SBA-GM-APP-DEU-001"
+  },
+  "SBA_Ghana_Apparel_Market_Study_Package": {
+    code: "GH",
+    slug: "ghana-apparel-textiles",
+    nameAr: "غانا",
+    nameEn: "Ghana",
+    region: "africa",
+    subRegion: "africa",
+    reportCode: "SBA-GM-APP-GHA-001"
+  },
+  "SBA_Greece_Apparel_Market_Study_Package": {
+    code: "GR",
+    slug: "greece-apparel-textiles",
+    nameAr: "اليونان",
+    nameEn: "Greece",
+    region: "europe",
+    subRegion: "europe",
+    reportCode: "SBA-GM-APP-GRC-001"
+  },
+  "SBA_Iraq_Apparel_Study_Package": {
+    code: "IQ",
+    slug: "iraq-apparel-textiles",
+    nameAr: "جمهورية العراق",
+    nameEn: "Republic of Iraq",
+    region: "arab_world",
+    subRegion: "other_arab",
+    reportCode: "SBA-GM-APP-IRQ-001"
+  },
+  "SBA_Italy_Apparel_Market_Study_Package": {
+    code: "IT",
+    slug: "italy-apparel-textiles",
+    nameAr: "إيطاليا",
+    nameEn: "Italy",
+    region: "europe",
+    subRegion: "europe",
+    reportCode: "SBA-GM-APP-ITA-001"
+  },
+  "SBA_Jordan_Apparel_Study_Package": {
+    code: "JO",
+    slug: "jordan-apparel-textiles",
+    nameAr: "المملكة الأردنية الهاشمية",
+    nameEn: "Hashemite Kingdom of Jordan",
+    region: "arab_world",
+    subRegion: "other_arab",
+    reportCode: "SBA-GM-APP-JOR-001"
+  },
+  "SBA_Kenya_Apparel_Market_Study_Package": {
+    code: "KE",
+    slug: "kenya-apparel-textiles",
+    nameAr: "كينيا",
+    nameEn: "Kenya",
+    region: "africa",
+    subRegion: "africa",
+    reportCode: "SBA-GM-APP-KEN-001"
+  },
+  "SBA_Kuwait_Apparel_Study_Package_v1": {
+    code: "KW",
+    slug: "kuwait-apparel-textiles",
+    nameAr: "دولة الكويت",
+    nameEn: "State of Kuwait",
+    region: "arab_world",
+    subRegion: "gcc",
+    reportCode: "SBA-GM-APP-KWT-008"
+  },
+  "SBA_Lebanon_Apparel_Study_Package": {
+    code: "LB",
+    slug: "lebanon-apparel-textiles",
+    nameAr: "الجمهورية اللبنانية",
+    nameEn: "Lebanese Republic",
+    region: "arab_world",
+    subRegion: "other_arab",
+    reportCode: "SBA-GM-APP-LBN-001"
+  },
+  "SBA_Libya_Apparel_Market_Study_Package": {
+    code: "LY",
+    slug: "libya-apparel-textiles",
+    nameAr: "دولة ليبيا",
+    nameEn: "State of Libya",
+    region: "arab_world",
+    subRegion: "other_arab",
+    reportCode: "SBA-GM-APP-LBY-001"
+  },
+  "SBA_Mauritania_Apparel_Study_Package": {
+    code: "MR",
+    slug: "mauritania-apparel-textiles",
+    nameAr: "الجمهورية الإسلامية الموريتانية",
+    nameEn: "Islamic Republic of Mauritania",
+    region: "arab_world",
+    subRegion: "other_arab",
+    reportCode: "SBA-GM-APP-MRT-007"
+  },
+  "SBA_Mauritius_Apparel_Market_Study_Package": {
+    code: "MU",
+    slug: "mauritius-apparel-textiles",
+    nameAr: "موريشيوس",
+    nameEn: "Mauritius",
+    region: "africa",
+    subRegion: "africa",
+    reportCode: "SBA-GM-APP-MUS-001"
+  },
+  "SBA_Morocco_Apparel_Study_Package": {
+    code: "MA",
+    slug: "morocco-apparel-textiles",
+    nameAr: "المملكة المغربية",
+    nameEn: "Kingdom of Morocco",
+    region: "arab_world",
+    subRegion: "other_arab",
+    reportCode: "SBA-GM-APP-MAR-001"
+  },
+  "SBA_Mozambique_Apparel_Market_Study_Package": {
+    code: "MZ",
+    slug: "mozambique-apparel-textiles",
+    nameAr: "موزمبيق",
+    nameEn: "Mozambique",
+    region: "africa",
+    subRegion: "africa",
+    reportCode: "SBA-GM-APP-MOZ-001"
+  },
+  "SBA_Namibia_Apparel_Market_Study_Package": {
+    code: "NA",
+    slug: "namibia-apparel-textiles",
+    nameAr: "ناميبيا",
+    nameEn: "Namibia",
+    region: "africa",
+    subRegion: "africa",
+    reportCode: "SBA-GM-APP-NAM-001"
+  },
+  "SBA_Netherlands_Apparel_Market_Study_Package": {
+    code: "NL",
+    slug: "netherlands-apparel-textiles",
+    nameAr: "هولندا",
+    nameEn: "Netherlands",
+    region: "europe",
+    subRegion: "europe",
+    reportCode: "SBA-GM-APP-NLD-001"
+  },
+  "SBA_Nigeria_Apparel_Market_Study_Package": {
+    code: "NG",
+    slug: "nigeria-apparel-textiles",
+    nameAr: "جمهورية نيجيريا الاتحادية",
+    nameEn: "Federal Republic of Nigeria",
+    region: "africa",
+    subRegion: "africa",
+    reportCode: "SBA-GM-APP-NGA-001"
+  },
+  "SBA_Oman_Apparel_Study_Package": {
+    code: "OM",
+    slug: "oman-apparel-textiles",
+    nameAr: "سلطنة عُمان",
+    nameEn: "Sultanate of Oman",
+    region: "arab_world",
+    subRegion: "gcc",
+    reportCode: "SBA-GM-APP-OMN-001"
+  },
+  "SBA_Panama_Expanded_Complete_Package": {
+    code: "PA",
+    slug: "panama-apparel-textiles",
+    nameAr: "بنما",
+    nameEn: "Panama",
+    region: "americas",
+    subRegion: "south_central_america",
+    reportCode: "SBA-GM-APP-PAN-001"
+  },
+  "SBA_Peru_Expanded_Complete_Package": {
+    code: "PE",
+    slug: "peru-apparel-textiles",
+    nameAr: "بيرو",
+    nameEn: "Peru",
+    region: "americas",
+    subRegion: "south_central_america",
+    reportCode: "SBA-GM-APP-PER-001"
+  },
+  "SBA_Poland_Apparel_Market_Study_Package": {
+    code: "PL",
+    slug: "poland-apparel-textiles",
+    nameAr: "بولندا",
+    nameEn: "Poland",
+    region: "europe",
+    subRegion: "europe",
+    reportCode: "SBA-GM-APP-POL-001"
+  },
+  "SBA_Portugal_Apparel_Market_Study_Package": {
+    code: "PT",
+    slug: "portugal-apparel-textiles",
+    nameAr: "البرتغال",
+    nameEn: "Portugal",
+    region: "europe",
+    subRegion: "europe",
+    reportCode: "SBA-GM-APP-PRT-001"
+  },
+  "SBA_Qatar_Apparel_Study_Package": {
+    code: "QA",
+    slug: "qatar-apparel-textiles",
+    nameAr: "دولة قطر",
+    nameEn: "State of Qatar",
+    region: "arab_world",
+    subRegion: "gcc",
+    reportCode: "SBA-GM-APP-QAT-001"
+  },
+  "SBA_Romania_Apparel_Market_Study_Package": {
+    code: "RO",
+    slug: "romania-apparel-textiles",
+    nameAr: "رومانيا",
+    nameEn: "Romania",
+    region: "europe",
+    subRegion: "europe",
+    reportCode: "SBA-GM-APP-ROU-001"
+  },
+  "SBA_Rwanda_Apparel_Market_Study_Package": {
+    code: "RW",
+    slug: "rwanda-apparel-textiles",
+    nameAr: "رواندا",
+    nameEn: "Rwanda",
+    region: "africa",
+    subRegion: "africa",
+    reportCode: "SBA-GM-APP-RWA-001"
+  },
+  "SBA_Senegal_Apparel_Market_Study_Package": {
+    code: "SN",
+    slug: "senegal-apparel-textiles",
+    nameAr: "السنغال",
+    nameEn: "Senegal",
+    region: "africa",
+    subRegion: "africa",
+    reportCode: "SBA-GM-APP-SEN-001"
+  },
+  "SBA_South_Africa_Study": {
+    code: "ZA",
+    slug: "south-africa-apparel-textiles",
+    nameAr: "جمهورية جنوب أفريقيا",
+    nameEn: "Republic of South Africa",
+    region: "africa",
+    subRegion: "africa",
+    reportCode: "SBA-GM-APP-ZAF-001"
+  },
+  "SBA_Spain_Apparel_Market_Study_Package": {
+    code: "ES",
+    slug: "spain-apparel-textiles",
+    nameAr: "إسبانيا",
+    nameEn: "Spain",
+    region: "europe",
+    subRegion: "europe",
+    reportCode: "SBA-GM-APP-ESP-001"
+  },
+  "SBA_Sudan_Apparel_Study_Package": {
+    code: "SD",
+    slug: "sudan-apparel-textiles",
+    nameAr: "جمهورية السودان",
+    nameEn: "Republic of the Sudan",
+    region: "arab_world",
+    subRegion: "other_arab",
+    reportCode: "SBA-GM-APP-SDN-001"
+  },
+  "SBA_Sweden_Apparel_Market_Study_Package": {
+    code: "SE",
+    slug: "sweden-apparel-textiles",
+    nameAr: "السويد",
+    nameEn: "Sweden",
+    region: "europe",
+    subRegion: "europe",
+    reportCode: "SBA-GM-APP-SWE-001"
+  },
+  "SBA_Tanzania_Apparel_Market_Study_Package_v2": {
+    code: "TZ",
+    slug: "tanzania-apparel-textiles",
+    nameAr: "جمهورية تنزانيا المتحدة",
+    nameEn: "United Republic of Tanzania",
+    region: "africa",
+    subRegion: "africa",
+    reportCode: "SBA-GM-APP-TZA-001"
+  },
+  "SBA_Tunisia_Apparel_Study_Package": {
+    code: "TN",
+    slug: "tunisia-apparel-textiles",
+    nameAr: "الجمهورية التونسية",
+    nameEn: "Republic of Tunisia",
+    region: "arab_world",
+    subRegion: "other_arab",
+    reportCode: "SBA-GM-APP-TUN-001"
+  },
+  "SBA_UAE_Apparel_Study_Package": {
+    code: "AE",
+    slug: "united-arab-emirates-apparel-textiles",
+    nameAr: "دولة الإمارات العربية المتحدة",
+    nameEn: "United Arab Emirates",
+    region: "arab_world",
+    subRegion: "gcc",
+    reportCode: "SBA-GM-APP-UAE-001"
+  },
+  "SBA_Uganda_Apparel_Market_Study_Package": {
+    code: "UG",
+    slug: "uganda-apparel-textiles",
+    nameAr: "أوغندا",
+    nameEn: "Uganda",
+    region: "africa",
+    subRegion: "africa",
+    reportCode: "SBA-GM-APP-UGA-001"
+  },
+  "SBA_UK_Apparel_Market_Study_Package": {
+    code: "GB",
+    slug: "united-kingdom-apparel-textiles",
+    nameAr: "المملكة المتحدة",
+    nameEn: "United Kingdom",
+    region: "europe",
+    subRegion: "europe",
+    reportCode: "SBA-GM-APP-GBR-001"
+  },
+  "SBA_USA_Apparel_Market_Study_Package": {
+    code: "US",
+    slug: "united-states-apparel-textiles",
+    nameAr: "الولايات المتحدة الأمريكية",
+    nameEn: "United States of America",
+    region: "americas",
+    subRegion: "north_america",
+    reportCode: "SBA-GM-APP-USA-001"
+  },
+  "SBA_Zambia_Apparel_Market_Study_Package": {
+    code: "ZM",
+    slug: "zambia-apparel-textiles",
+    nameAr: "زامبيا",
+    nameEn: "Zambia",
+    region: "africa",
+    subRegion: "africa",
+    reportCode: "SBA-GM-APP-ZMB-001"
+  }
+};
+
+console.log('Total mapped folders:', Object.keys(FOLDER_MAP).length);
+
+// Also add Saudi Arabia from Prompt 8
+const SAUDI_ENTRY = {
+  code: "SA",
+  slug: "saudi-arabia-apparel-textiles",
+  nameAr: "المملكة العربية السعودية",
+  nameEn: "Kingdom of Saudi Arabia",
+  region: "arab_world",
+  subRegion: "gcc",
+  reportCode: "SBA-GM-APP-SAU-001"
+};
+
+fs.writeFileSync('c:\\Users\\20101\\Downloads\\sba-brand-compass\\folder_mapping.json', JSON.stringify(FOLDER_MAP, null, 2), 'utf8');

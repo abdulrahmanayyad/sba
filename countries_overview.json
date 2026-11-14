@@ -1,0 +1,1374 @@
+[
+  {
+    "index": 1,
+    "folder": "SBA_Algeria_Apparel_Study_Package",
+    "docx": "SBA_Algeria_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Algeria_Apparel_Trade_Buyers_Compliance.xlsx",
+    "sheetNames": [
+      "Market Summary",
+      "Egypt Export Product Mix",
+      "Buyer Accounts",
+      "Compliance",
+      "Scenarios",
+      "Sources"
+    ],
+    "firstSheetRowCount": 9,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "Apparel imports Algeria",
+    "year": 2024,
+    "sampleKeys": [
+      "Indicator",
+      "Year",
+      "Value",
+      "Unit",
+      "Definition / caveat",
+      "Source"
+    ]
+  },
+  {
+    "index": 2,
+    "folder": "SBA_Angola_Apparel_Market_Study_Package",
+    "docx": "SBA_Angola_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Angola_Trade_Buyers_Compliance.xlsx",
+    "sheetNames": [
+      "Executive Dashboard",
+      "HS6 Trade Data",
+      "Target Buyers & Brands",
+      "Tariff & Compliance",
+      "180-Day Entry Plan",
+      "Source Register"
+    ],
+    "firstSheetRowCount": 10,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "",
+    "year": "2024",
+    "sampleKeys": [
+      "__EMPTY",
+      "__EMPTY_1",
+      "__EMPTY_2",
+      "__EMPTY_3"
+    ]
+  },
+  {
+    "index": 3,
+    "folder": "SBA_Austria_Apparel_Market_Study_Package",
+    "docx": "SBA_Austria_Apparel_Market_Study_AR.docx",
+    "xlsx": "SBA_Austria_Apparel_Market_Data.xlsx",
+    "sheetNames": [
+      "Market Overview",
+      "HS6 Product Imports",
+      "Sector Opportunities",
+      "Used Clothing HS630900",
+      "Prospects",
+      "Compliance Checklist",
+      "Sources"
+    ],
+    "firstSheetRowCount": 11,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "",
+    "year": "2024",
+    "sampleKeys": [
+      "المؤشر",
+      "القيمة",
+      "الوحدة/الفترة",
+      "ملاحظة"
+    ]
+  },
+  {
+    "index": 4,
+    "folder": "SBA_Bahrain_Apparel_Study_Package",
+    "docx": "SBA_Bahrain_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Bahrain_Apparel_Trade_Buyers_Compliance.xlsx",
+    "sheetNames": [
+      "Bahrain Trade Baseline",
+      "Product HS6",
+      "Target Buyers",
+      "Compliance",
+      "Source Register"
+    ],
+    "firstSheetRowCount": 18,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "",
+    "year": 2024,
+    "sampleKeys": [
+      "Metric",
+      "Year",
+      "Value",
+      "Unit",
+      "Scope / note",
+      "Source"
+    ]
+  },
+  {
+    "index": 5,
+    "folder": "SBA_Belgium_Apparel_Market_Study_Package",
+    "docx": "SBA_Belgium_Apparel_Market_Study_AR.docx",
+    "xlsx": "SBA_Belgium_Apparel_Market_Data.xlsx",
+    "sheetNames": [
+      "Market Overview",
+      "HS6 Product Imports",
+      "Sector Opportunities",
+      "Used Clothing HS630900",
+      "Prospects",
+      "Compliance Checklist",
+      "Sources"
+    ],
+    "firstSheetRowCount": 12,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "",
+    "year": "2024",
+    "sampleKeys": [
+      "المؤشر",
+      "القيمة",
+      "الوحدة/الفترة",
+      "ملاحظة"
+    ]
+  },
+  {
+    "index": 6,
+    "folder": "SBA_Cameroon_Apparel_Market_Study_Package",
+    "docx": "SBA_Cameroon_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Cameroon_Trade_Buyers_Compliance.xlsx",
+    "sheetNames": [
+      "Executive Dashboard",
+      "Trade Data & HS",
+      "Buyer Leads",
+      "Tariff & Compliance",
+      "180-Day Entry Plan",
+      "Source Register"
+    ],
+    "firstSheetRowCount": 10,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "",
+    "year": "2024",
+    "sampleKeys": [
+      "__EMPTY",
+      "__EMPTY_1",
+      "__EMPTY_2",
+      "__EMPTY_3"
+    ]
+  },
+  {
+    "index": 7,
+    "folder": "SBA_Canada_Apparel_Market_Study_Package",
+    "docx": "SBA_Canada_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Canada_Apparel_Market_Data.xlsx",
+    "sheetNames": [
+      "ملخص السوق",
+      "HS610910 الموردون 2025",
+      "HS611020 الموردون",
+      "مصر HS610910",
+      "التعريفة GPT",
+      "المستوردون المحتملون",
+      "HS630900 مستعمل",
+      "الامتثال",
+      "المصادر"
+    ],
+    "firstSheetRowCount": 7,
+    "arabicName": "بنغلاديش",
+    "indicator": "",
+    "year": "2024",
+    "sampleKeys": [
+      "المؤشر",
+      "القيمة",
+      "الوحدة",
+      "السنة",
+      "ملاحظة"
+    ]
+  },
+  {
+    "index": 8,
+    "folder": "SBA_Chile_Expanded_Complete_Package",
+    "docx": "SBA_Chile_Apparel_Market_Study_AR_Expanded.docx",
+    "xlsx": "SBA_Chile_Trade_and_Entry_Data.xlsx",
+    "sheetNames": [
+      "Trade Overview",
+      "Compliance & Leads"
+    ],
+    "firstSheetRowCount": 14,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "HS61 imports 2023",
+    "year": "",
+    "sampleKeys": [
+      "Indicator",
+      "Value",
+      "Unit / Note"
+    ]
+  },
+  {
+    "index": 9,
+    "folder": "SBA_Colombia_Expanded_Complete_Package",
+    "docx": "SBA_Colombia_Apparel_Market_Study_AR_Expanded.docx",
+    "xlsx": "SBA_Colombia_Trade_and_Entry_Data.xlsx",
+    "sheetNames": [
+      "Trade Overview",
+      "Compliance & Leads"
+    ],
+    "firstSheetRowCount": 11,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "HS61 imports 2023",
+    "year": "",
+    "sampleKeys": [
+      "Indicator",
+      "Value",
+      "Unit / Note"
+    ]
+  },
+  {
+    "index": 10,
+    "folder": "SBA_Costa_Rica_Expanded_Complete_Package",
+    "docx": "SBA_Costa_Rica_Apparel_Market_Study_AR.docx",
+    "xlsx": "SBA_Costa_Rica_Trade_and_Entry_Data.xlsx",
+    "sheetNames": [
+      "Trade Overview",
+      "Action Checklist"
+    ],
+    "firstSheetRowCount": 9,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "HS61 imports 2023",
+    "year": "",
+    "sampleKeys": [
+      "Indicator",
+      "Value",
+      "Unit / Note"
+    ]
+  },
+  {
+    "index": 11,
+    "folder": "SBA_Cote_dIvoire_Apparel_Market_Study_Package",
+    "docx": "SBA_Cote_dIvoire_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Cote_dIvoire_Trade_Buyers_Compliance.xlsx",
+    "sheetNames": [
+      "Executive Dashboard",
+      "Trade Data & HS",
+      "Target Buyers & Channels",
+      "Tariff & Compliance",
+      "180-Day Entry Plan",
+      "Source Register"
+    ],
+    "firstSheetRowCount": 10,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "",
+    "year": "2024",
+    "sampleKeys": [
+      "__EMPTY",
+      "__EMPTY_1",
+      "__EMPTY_2",
+      "__EMPTY_3"
+    ]
+  },
+  {
+    "index": 12,
+    "folder": "SBA_Czechia_Apparel_Market_Study_Package",
+    "docx": "SBA_Czechia_Apparel_Market_Study_AR.docx",
+    "xlsx": "SBA_Czechia_Apparel_Market_Data.xlsx",
+    "sheetNames": [
+      "Market Overview",
+      "HS6 Product Imports",
+      "Sector Opportunities",
+      "Used Clothing HS630900",
+      "Prospects",
+      "Compliance Checklist",
+      "Sources"
+    ],
+    "firstSheetRowCount": 8,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "",
+    "year": "2024",
+    "sampleKeys": [
+      "المؤشر",
+      "القيمة",
+      "الوحدة/الفترة",
+      "ملاحظة"
+    ]
+  },
+  {
+    "index": 13,
+    "folder": "SBA_Denmark_Apparel_Market_Study_Package",
+    "docx": "SBA_Denmark_Apparel_Market_Study_AR.docx",
+    "xlsx": "SBA_Denmark_Apparel_Market_Data.xlsx",
+    "sheetNames": [
+      "Market Overview",
+      "Supplier Trends",
+      "HS6 Product Imports",
+      "Workwear",
+      "Used Clothing HS630900",
+      "Prospects",
+      "Compliance Checklist",
+      "Sources"
+    ],
+    "firstSheetRowCount": 11,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "",
+    "year": "2024",
+    "sampleKeys": [
+      "المؤشر",
+      "القيمة",
+      "الوحدة/الفترة",
+      "ملاحظة"
+    ]
+  },
+  {
+    "index": 14,
+    "folder": "SBA_Dominican_Republic_Expanded_Complete_Package",
+    "docx": "SBA_Dominican_Republic_Apparel_Market_Study_AR.docx",
+    "xlsx": "SBA_Dominican_Republic_Trade_and_Entry_Data.xlsx",
+    "sheetNames": [
+      "Trade Overview",
+      "Action Checklist"
+    ],
+    "firstSheetRowCount": 9,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "HS61 imports 2023",
+    "year": "",
+    "sampleKeys": [
+      "Indicator",
+      "Value",
+      "Unit / Note"
+    ]
+  },
+  {
+    "index": 15,
+    "folder": "SBA_Ecuador_Expanded_Complete_Package",
+    "docx": "SBA_Ecuador_Apparel_Market_Study_AR.docx",
+    "xlsx": "SBA_Ecuador_Trade_and_Entry_Data.xlsx",
+    "sheetNames": [
+      "Trade Overview",
+      "Action Checklist"
+    ],
+    "firstSheetRowCount": 9,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "HS61 imports 2023",
+    "year": "",
+    "sampleKeys": [
+      "Indicator",
+      "Value",
+      "Unit / Note"
+    ]
+  },
+  {
+    "index": 16,
+    "folder": "SBA_Egypt_Apparel_Market_Study_Package",
+    "docx": "SBA_Egypt_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Egypt_Apparel_Market_Data.xlsx",
+    "sheetNames": [
+      "Executive Dashboard",
+      "Exports & Trade",
+      "HS Product Strategy",
+      "Target Accounts",
+      "Competitive Landscape",
+      "Regulations & Origin",
+      "180-Day Action Plan",
+      "Source Register"
+    ],
+    "firstSheetRowCount": 10,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "Ready-made garments",
+    "year": "",
+    "sampleKeys": [
+      "SBA GROUP | EGYPT APPAREL MARKET",
+      "Value",
+      "Unit / Notes",
+      "Source"
+    ]
+  },
+  {
+    "index": 17,
+    "folder": "SBA_France_Apparel_Market_Study_Package",
+    "docx": "SBA_France_Apparel_Market_Study_AR.docx",
+    "xlsx": "SBA_France_Apparel_Market_Data.xlsx",
+    "sheetNames": [
+      "Market Snapshot",
+      "Supplier Shares",
+      "Target Leads",
+      "Compliance",
+      "Data Notes",
+      "Sources"
+    ],
+    "firstSheetRowCount": 13,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "",
+    "year": "2024",
+    "sampleKeys": [
+      "المؤشر",
+      "القيمة",
+      "السنة/النطاق",
+      "المصدر/الملاحظة"
+    ]
+  },
+  {
+    "index": 18,
+    "folder": "SBA_Germany_Apparel_Market_Study_Package",
+    "docx": "SBA_Germany_Apparel_Market_Study_AR.docx",
+    "xlsx": "SBA_Germany_Apparel_Market_Data.xlsx",
+    "sheetNames": [
+      "Market Snapshot",
+      "Supplier Shares",
+      "Target Leads",
+      "Compliance Checklist",
+      "HS Data Notes",
+      "Sources"
+    ],
+    "firstSheetRowCount": 9,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "",
+    "year": "2024",
+    "sampleKeys": [
+      "المؤشر",
+      "القيمة",
+      "السنة/النطاق",
+      "المصدر / الملاحظة"
+    ]
+  },
+  {
+    "index": 19,
+    "folder": "SBA_Ghana_Apparel_Market_Study_Package",
+    "docx": "SBA_Ghana_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Ghana_Trade_Buyers_Compliance.xlsx",
+    "sheetNames": [
+      "Executive Dashboard",
+      "HS6 Trade Data",
+      "Target Accounts",
+      "Competitive Landscape",
+      "Tariff & Compliance",
+      "180-Day Entry Plan",
+      "Source Register"
+    ],
+    "firstSheetRowCount": 9,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "",
+    "year": "2024",
+    "sampleKeys": [
+      "__EMPTY",
+      "__EMPTY_1",
+      "__EMPTY_2",
+      "__EMPTY_3"
+    ]
+  },
+  {
+    "index": 20,
+    "folder": "SBA_Greece_Apparel_Market_Study_Package",
+    "docx": "SBA_Greece_Apparel_Market_Study_AR.docx",
+    "xlsx": "SBA_Greece_Apparel_Market_Data.xlsx",
+    "sheetNames": [
+      "Market Overview",
+      "HS6 Product Imports",
+      "Workwear and Uniforms",
+      "Used Clothing HS630900",
+      "Prospects",
+      "Compliance Checklist",
+      "Sources"
+    ],
+    "firstSheetRowCount": 5,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "",
+    "year": "2024",
+    "sampleKeys": [
+      "المؤشر",
+      "القيمة",
+      "الوحدة/الفترة",
+      "ملاحظة"
+    ]
+  },
+  {
+    "index": 21,
+    "folder": "SBA_Iraq_Apparel_Study_Package",
+    "docx": "SBA_Iraq_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Iraq_Apparel_Trade_Buyers_Compliance.xlsx",
+    "sheetNames": [
+      "Iraq Trade Baseline",
+      "Product HS6",
+      "Target Buyers",
+      "Local Industry",
+      "Customs & Compliance",
+      "Source Register"
+    ],
+    "firstSheetRowCount": 15,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "",
+    "year": 2024,
+    "sampleKeys": [
+      "Metric",
+      "Year",
+      "Value",
+      "Unit",
+      "Scope / caveat",
+      "Source"
+    ]
+  },
+  {
+    "index": 22,
+    "folder": "SBA_Italy_Apparel_Market_Study_Package",
+    "docx": "SBA_Italy_Apparel_Market_Study_AR.docx",
+    "xlsx": "SBA_Italy_Apparel_Market_Data.xlsx",
+    "sheetNames": [
+      "Market Overview",
+      "Supplier Shares",
+      "Product Opportunities",
+      "Used Clothing HS630900",
+      "HS6 Example",
+      "Prospects",
+      "Compliance Checklist",
+      "Sources"
+    ],
+    "firstSheetRowCount": 11,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "",
+    "year": "2024",
+    "sampleKeys": [
+      "المؤشر",
+      "القيمة",
+      "الوحدة/الفترة",
+      "ملاحظة"
+    ]
+  },
+  {
+    "index": 23,
+    "folder": "SBA_Jordan_Apparel_Study_Package",
+    "docx": "SBA_Jordan_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Jordan_Apparel_Trade_Industry_Buyers.xlsx",
+    "sheetNames": [
+      "Jordan Trade Baseline",
+      "Product HS6",
+      "Target Buyers",
+      "Industry & US Access",
+      "Compliance",
+      "Source Register"
+    ],
+    "firstSheetRowCount": 20,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "",
+    "year": 2024,
+    "sampleKeys": [
+      "Metric",
+      "Year",
+      "Value",
+      "Unit",
+      "Scope / note",
+      "Source"
+    ]
+  },
+  {
+    "index": 24,
+    "folder": "SBA_Kenya_Apparel_Market_Study_Package",
+    "docx": "SBA_Kenya_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Kenya_Trade_Buyers_Compliance.xlsx",
+    "sheetNames": [
+      "Executive Dashboard",
+      "HS6 Trade Data",
+      "Target Accounts & EPZ",
+      "Competitive Landscape",
+      "Tariff & Compliance",
+      "180-Day Entry Plan",
+      "Source Register"
+    ],
+    "firstSheetRowCount": 10,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "",
+    "year": "2024",
+    "sampleKeys": [
+      "__EMPTY",
+      "__EMPTY_1",
+      "__EMPTY_2",
+      "__EMPTY_3"
+    ]
+  },
+  {
+    "index": 25,
+    "folder": "SBA_Kuwait_Apparel_Study_Package_v1",
+    "docx": "SBA_Kuwait_Apparel_Market_Study_v1.docx",
+    "xlsx": "SBA_Kuwait_Apparel_Trade_Buyers_Compliance_v1.xlsx",
+    "sheetNames": [
+      "Executive Summary",
+      "Trade Chapters",
+      "HS6 Product Data",
+      "Buyer Leads",
+      "Retail & Consumer",
+      "Tariff Compliance",
+      "Logistics",
+      "FOB Scenarios",
+      "Sources"
+    ],
+    "firstSheetRowCount": 19,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "Population 2025",
+    "year": 2023,
+    "sampleKeys": [
+      "SBA GROUP | KUWAIT APPAREL MARKET",
+      "Value",
+      "Notes"
+    ]
+  },
+  {
+    "index": 26,
+    "folder": "SBA_Lebanon_Apparel_Study_Package",
+    "docx": "SBA_Lebanon_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Lebanon_Apparel_Trade_Buyers_Compliance.xlsx",
+    "sheetNames": [
+      "Lebanon Trade Baseline",
+      "Product HS6",
+      "Target Buyers",
+      "Customs & Compliance",
+      "Source Register"
+    ],
+    "firstSheetRowCount": 20,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "",
+    "year": 2024,
+    "sampleKeys": [
+      "Metric",
+      "Year",
+      "Value",
+      "Unit",
+      "Scope / note",
+      "Source"
+    ]
+  },
+  {
+    "index": 27,
+    "folder": "SBA_Libya_Apparel_Market_Study_Package",
+    "docx": "SBA_Libya_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Libya_Apparel_Trade_Buyers_Compliance.xlsx",
+    "sheetNames": [
+      "Product Trade",
+      "Trends",
+      "Target Importers",
+      "Customs PTS Banking",
+      "SBA Product Fit",
+      "Source Register"
+    ],
+    "firstSheetRowCount": 10,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "",
+    "year": 2024,
+    "sampleKeys": [
+      "HS6",
+      "Product",
+      "Year",
+      "Libya imports USD m",
+      "Quantity",
+      "Unit",
+      "Egypt supply USD m",
+      "Egypt share",
+      "Competitor / source note"
+    ]
+  },
+  {
+    "index": 28,
+    "folder": "SBA_Mauritania_Apparel_Study_Package",
+    "docx": "SBA_Mauritania_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Mauritania_Apparel_Trade_Buyers_Compliance.xlsx",
+    "sheetNames": [
+      "Executive Summary",
+      "Trade Data",
+      "Buyer Prospects",
+      "Tariff Compliance",
+      "FOB Scenarios",
+      "Sources"
+    ],
+    "firstSheetRowCount": 15,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "",
+    "year": 2023,
+    "sampleKeys": [
+      "SBA GROUP | MAURITANIA APPAREL MARKET",
+      "Value",
+      "Notes"
+    ]
+  },
+  {
+    "index": 29,
+    "folder": "SBA_Mauritius_Apparel_Market_Study_Package",
+    "docx": "SBA_Mauritius_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Mauritius_Apparel_Market_Data.xlsx",
+    "sheetNames": [
+      "Trade Overview",
+      "HS61 Suppliers",
+      "HS62 Suppliers",
+      "Industry & Leads",
+      "HS Product Mapping",
+      "Trade Agreements",
+      "90 Day Plan"
+    ],
+    "firstSheetRowCount": 4,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "",
+    "year": "2023",
+    "sampleKeys": [
+      "المؤشر",
+      "السنة",
+      "القيمة USD",
+      "ملاحظة"
+    ]
+  },
+  {
+    "index": 30,
+    "folder": "SBA_Morocco_Apparel_Study_Package",
+    "docx": "SBA_Morocco_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Morocco_Apparel_Trade_Buyers_Industry.xlsx",
+    "sheetNames": [
+      "Morocco Trade Baseline",
+      "Egypt HS61 HS62 2025",
+      "Importers Buyers & Retail",
+      "Customs & Origin",
+      "Source Register"
+    ],
+    "firstSheetRowCount": 22,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "",
+    "year": 2023,
+    "sampleKeys": [
+      "Metric",
+      "Year",
+      "Value",
+      "Unit",
+      "Scope / note",
+      "Source"
+    ]
+  },
+  {
+    "index": 31,
+    "folder": "SBA_Mozambique_Apparel_Market_Study_Package",
+    "docx": "SBA_Mozambique_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Mozambique_Apparel_Market_Data.xlsx",
+    "sheetNames": [
+      "Trade Overview",
+      "HS61 Suppliers",
+      "HS62 Suppliers",
+      "Market Leads",
+      "HS Product Mapping",
+      "Import Compliance",
+      "90 Day Plan"
+    ],
+    "firstSheetRowCount": 7,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "",
+    "year": "2023",
+    "sampleKeys": [
+      "المؤشر",
+      "السنة",
+      "القيمة USD",
+      "الوصف/ملاحظة"
+    ]
+  },
+  {
+    "index": 32,
+    "folder": "SBA_Namibia_Apparel_Market_Study_Package",
+    "docx": "SBA_Namibia_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Namibia_Apparel_Market_Data.xlsx",
+    "sheetNames": [
+      "Trade Overview",
+      "HS61 Suppliers",
+      "HS62 Suppliers",
+      "Used Clothing Separate",
+      "Market Channels",
+      "HS Product Mapping",
+      "Tariff & Compliance",
+      "90 Day Plan"
+    ],
+    "firstSheetRowCount": 7,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "",
+    "year": "2023",
+    "sampleKeys": [
+      "المؤشر",
+      "السنة",
+      "القيمة USD",
+      "ملاحظة"
+    ]
+  },
+  {
+    "index": 33,
+    "folder": "SBA_Netherlands_Apparel_Market_Study_Package",
+    "docx": "SBA_Netherlands_Apparel_Market_Study_AR.docx",
+    "xlsx": "SBA_Netherlands_Apparel_Market_Data.xlsx",
+    "sheetNames": [
+      "Market Snapshot",
+      "Supplier Shares",
+      "Target Leads",
+      "Compliance",
+      "Data Notes",
+      "Sources"
+    ],
+    "firstSheetRowCount": 13,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "",
+    "year": "2024",
+    "sampleKeys": [
+      "المؤشر",
+      "القيمة",
+      "السنة/النطاق",
+      "المصدر/الملاحظة"
+    ]
+  },
+  {
+    "index": 34,
+    "folder": "SBA_Nigeria_Apparel_Market_Study_Package",
+    "docx": "SBA_Nigeria_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Nigeria_Trade_Buyers_Compliance.xlsx",
+    "sheetNames": [
+      "Executive Dashboard",
+      "HS6 Import Data",
+      "Egypt Export Signals",
+      "Target Accounts & Channels",
+      "Competitive Landscape",
+      "Tariff & Regulatory Checklist",
+      "180-Day Entry Plan",
+      "Source Register"
+    ],
+    "firstSheetRowCount": 9,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "",
+    "year": "2024",
+    "sampleKeys": [
+      "__EMPTY",
+      "__EMPTY_1",
+      "__EMPTY_2",
+      "__EMPTY_3"
+    ]
+  },
+  {
+    "index": 35,
+    "folder": "SBA_Oman_Apparel_Study_Package",
+    "docx": "SBA_Oman_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Oman_Apparel_Trade_Buyers_Compliance.xlsx",
+    "sheetNames": [
+      "Oman Trade Baseline",
+      "Product HS6",
+      "Target Buyers",
+      "Compliance",
+      "Source Register"
+    ],
+    "firstSheetRowCount": 19,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "",
+    "year": 2024,
+    "sampleKeys": [
+      "Metric",
+      "Year",
+      "Value",
+      "Unit",
+      "Scope / note",
+      "Source"
+    ]
+  },
+  {
+    "index": 36,
+    "folder": "SBA_Panama_Expanded_Complete_Package",
+    "docx": "SBA_Panama_Apparel_Market_Study_AR_Expanded.docx",
+    "xlsx": "SBA_Panama_Trade_and_Entry_Data.xlsx",
+    "sheetNames": [
+      "Trade Overview",
+      "Market Entry"
+    ],
+    "firstSheetRowCount": 8,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "HS61 imports 2023",
+    "year": "",
+    "sampleKeys": [
+      "Indicator",
+      "Value",
+      "Unit / Note"
+    ]
+  },
+  {
+    "index": 37,
+    "folder": "SBA_Peru_Expanded_Complete_Package",
+    "docx": "SBA_Peru_Apparel_Market_Study_AR_Expanded.docx",
+    "xlsx": "SBA_Peru_Trade_and_Buyer_Data.xlsx",
+    "sheetNames": [
+      "Trade Overview",
+      "Buyer Leads"
+    ],
+    "firstSheetRowCount": 10,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "HS61 imports 2023",
+    "year": "",
+    "sampleKeys": [
+      "Indicator",
+      "Value",
+      "Unit / Note"
+    ]
+  },
+  {
+    "index": 38,
+    "folder": "SBA_Poland_Apparel_Market_Study_Package",
+    "docx": "SBA_Poland_Apparel_Market_Study_AR.docx",
+    "xlsx": "SBA_Poland_Apparel_Market_Data.xlsx",
+    "sheetNames": [
+      "Market Overview",
+      "Sector Opportunities",
+      "Used Clothing HS630900",
+      "Prospects",
+      "Compliance Checklist",
+      "Sources"
+    ],
+    "firstSheetRowCount": 8,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "",
+    "year": "2024",
+    "sampleKeys": [
+      "المؤشر",
+      "القيمة",
+      "الوحدة/الفترة",
+      "ملاحظة"
+    ]
+  },
+  {
+    "index": 39,
+    "folder": "SBA_Portugal_Apparel_Market_Study_Package",
+    "docx": "SBA_Portugal_Apparel_Market_Study_AR.docx",
+    "xlsx": "SBA_Portugal_Apparel_Market_Data.xlsx",
+    "sheetNames": [
+      "Market Overview",
+      "HS6 Product Imports",
+      "Workwear",
+      "Industry and Manufacturing",
+      "Used Clothing HS630900",
+      "Prospects and Partners",
+      "Compliance Checklist",
+      "Sources"
+    ],
+    "firstSheetRowCount": 11,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "",
+    "year": "2024",
+    "sampleKeys": [
+      "المؤشر",
+      "القيمة",
+      "الوحدة/الفترة",
+      "ملاحظة"
+    ]
+  },
+  {
+    "index": 40,
+    "folder": "SBA_Qatar_Apparel_Study_Package",
+    "docx": "SBA_Qatar_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Qatar_Apparel_Trade_Buyers_Compliance.xlsx",
+    "sheetNames": [
+      "Qatar Trade Baseline",
+      "Product HS6",
+      "Target Buyers",
+      "Compliance",
+      "Source Register"
+    ],
+    "firstSheetRowCount": 14,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "",
+    "year": 2024,
+    "sampleKeys": [
+      "Metric",
+      "Year",
+      "Value",
+      "Unit",
+      "Scope / caveat",
+      "Source"
+    ]
+  },
+  {
+    "index": 41,
+    "folder": "SBA_Romania_Apparel_Market_Study_Package",
+    "docx": "SBA_Romania_Apparel_Market_Study_AR.docx",
+    "xlsx": "SBA_Romania_Apparel_Market_Data.xlsx",
+    "sheetNames": [
+      "Market Overview",
+      "HS6 Product Imports",
+      "Outerwear and Workwear",
+      "Used Clothing HS630900",
+      "Prospects",
+      "Compliance Checklist",
+      "Sources"
+    ],
+    "firstSheetRowCount": 7,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "",
+    "year": "2024",
+    "sampleKeys": [
+      "المؤشر",
+      "القيمة",
+      "الوحدة/الفترة",
+      "ملاحظة"
+    ]
+  },
+  {
+    "index": 42,
+    "folder": "SBA_Rwanda_Apparel_Market_Study_Package",
+    "docx": "SBA_Rwanda_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Rwanda_Apparel_Market_Data.xlsx",
+    "sheetNames": [
+      "Trade Overview",
+      "HS61 Suppliers",
+      "HS62 Suppliers",
+      "Industry & Leads",
+      "HS Product Mapping",
+      "Tariff & Compliance",
+      "90 Day Plan"
+    ],
+    "firstSheetRowCount": 6,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "",
+    "year": "2023",
+    "sampleKeys": [
+      "المؤشر",
+      "السنة",
+      "القيمة USD",
+      "ملاحظة"
+    ]
+  },
+  {
+    "index": 43,
+    "folder": "SBA_Senegal_Apparel_Market_Study_Package",
+    "docx": "SBA_Senegal_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Senegal_Trade_Buyers_Compliance.xlsx",
+    "sheetNames": [
+      "Executive Dashboard",
+      "HS6 Trade Data",
+      "Target Buyers & Channels",
+      "Tariff & Compliance",
+      "180-Day Entry Plan",
+      "Source Register"
+    ],
+    "firstSheetRowCount": 10,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "",
+    "year": "2024",
+    "sampleKeys": [
+      "__EMPTY",
+      "__EMPTY_1",
+      "__EMPTY_2",
+      "__EMPTY_3"
+    ]
+  },
+  {
+    "index": 44,
+    "folder": "SBA_South_Africa_Study",
+    "docx": "SBA_South_Africa_Apparel_Market_Study.docx",
+    "xlsx": "SBA_South_Africa_Trade_Buyers_Compliance.xlsx",
+    "sheetNames": [
+      "Executive Dashboard",
+      "HS6 Trade Data",
+      "Egypt Export Signals",
+      "Target Buyers",
+      "Competitors & Supply Origins",
+      "Tariff & Compliance",
+      "180-Day Market Entry",
+      "Source Register"
+    ],
+    "firstSheetRowCount": 12,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "",
+    "year": "2024",
+    "sampleKeys": [
+      "__EMPTY",
+      "__EMPTY_1",
+      "__EMPTY_2",
+      "__EMPTY_3"
+    ]
+  },
+  {
+    "index": 45,
+    "folder": "SBA_Spain_Apparel_Market_Study_Package",
+    "docx": "SBA_Spain_Apparel_Market_Study_AR.docx",
+    "xlsx": "SBA_Spain_Apparel_Market_Data.xlsx",
+    "sheetNames": [
+      "Market Snapshot",
+      "Supplier Shares",
+      "Target Leads",
+      "Compliance",
+      "Data Notes",
+      "Sources"
+    ],
+    "firstSheetRowCount": 11,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "",
+    "year": "2024",
+    "sampleKeys": [
+      "المؤشر",
+      "القيمة",
+      "السنة/النطاق",
+      "المصدر/الملاحظة"
+    ]
+  },
+  {
+    "index": 46,
+    "folder": "SBA_Sudan_Apparel_Study_Package",
+    "docx": "SBA_Sudan_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Sudan_Apparel_Trade_Buyers_Compliance.xlsx",
+    "sheetNames": [
+      "Trade Summary",
+      "HS4 Egypt Exports 2025",
+      "Buyer Leads",
+      "Compliance & Logistics",
+      "Scenarios",
+      "Sources & Definitions"
+    ],
+    "firstSheetRowCount": 9,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "Egypt exports to Sudan – HS61",
+    "year": 2025,
+    "sampleKeys": [
+      "Indicator",
+      "Year",
+      "Value USD",
+      "Basis / definition",
+      "Source / note"
+    ]
+  },
+  {
+    "index": 47,
+    "folder": "SBA_Sweden_Apparel_Market_Study_Package",
+    "docx": "SBA_Sweden_Apparel_Market_Study_AR.docx",
+    "xlsx": "SBA_Sweden_Apparel_Market_Data.xlsx",
+    "sheetNames": [
+      "Market Overview",
+      "Supplier Trends",
+      "HS6 Product Imports",
+      "Workwear",
+      "Used Clothing HS630900",
+      "Prospects",
+      "Compliance Checklist",
+      "Sources"
+    ],
+    "firstSheetRowCount": 9,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "",
+    "year": "2024",
+    "sampleKeys": [
+      "المؤشر",
+      "القيمة",
+      "الوحدة/الفترة",
+      "ملاحظة"
+    ]
+  },
+  {
+    "index": 48,
+    "folder": "SBA_Tanzania_Apparel_Market_Study_Package_v2",
+    "docx": "SBA_Tanzania_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Tanzania_Apparel_Market_Data.xlsx",
+    "sheetNames": [
+      "ملخص السوق",
+      "HS610910 الموردون 2025",
+      "HS610910 مقارنة 2024",
+      "HS611020 الموردون",
+      "HS630900 مستعمل",
+      "المنتجات والرموز",
+      "Prospects",
+      "التعريفة والامتثال",
+      "المصادر"
+    ],
+    "firstSheetRowCount": 10,
+    "arabicName": "الصين",
+    "indicator": "",
+    "year": "2024",
+    "sampleKeys": [
+      "المؤشر",
+      "القيمة",
+      "الوحدة",
+      "السنة",
+      "الملاحظة"
+    ]
+  },
+  {
+    "index": 49,
+    "folder": "SBA_Tunisia_Apparel_Study_Package",
+    "docx": "SBA_Tunisia_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Tunisia_Apparel_Trade_Buyers_Industry.xlsx",
+    "sheetNames": [
+      "Tunisia Trade Baseline",
+      "Egypt Product Trade",
+      "Buyers & Industrial Partners",
+      "Customs & Agreements",
+      "Source Register"
+    ],
+    "firstSheetRowCount": 15,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "",
+    "year": 2024,
+    "sampleKeys": [
+      "Metric",
+      "Year",
+      "Value",
+      "Unit",
+      "Scope / note",
+      "Source"
+    ]
+  },
+  {
+    "index": 50,
+    "folder": "SBA_UAE_Apparel_Study_Package",
+    "docx": "SBA_UAE_Apparel_Market_Study.docx",
+    "xlsx": "SBA_UAE_Apparel_Trade_and_Buyer_Data.xlsx",
+    "sheetNames": [
+      "Trade Baseline",
+      "Supplier Shares 2023",
+      "Product HS6",
+      "Target Accounts",
+      "Compliance",
+      "Sources"
+    ],
+    "firstSheetRowCount": 10,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "",
+    "year": 2023,
+    "sampleKeys": [
+      "Metric",
+      "Year",
+      "Value",
+      "Unit",
+      "Definition / Caveat",
+      "Source"
+    ]
+  },
+  {
+    "index": 51,
+    "folder": "SBA_Uganda_Apparel_Market_Study_Package",
+    "docx": "SBA_Uganda_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Uganda_Apparel_Market_Data.xlsx",
+    "sheetNames": [
+      "ملخص السوق",
+      "HS610910 الموردون",
+      "HS611020",
+      "HS630900 مستعمل",
+      "Prospects",
+      "الامتثال والتعريفة",
+      "المصادر"
+    ],
+    "firstSheetRowCount": 8,
+    "arabicName": "الصين",
+    "indicator": "",
+    "year": "2024",
+    "sampleKeys": [
+      "المؤشر",
+      "القيمة",
+      "الوحدة",
+      "السنة",
+      "ملاحظة"
+    ]
+  },
+  {
+    "index": 52,
+    "folder": "SBA_UK_Apparel_Market_Study_Package",
+    "docx": "SBA_UK_Apparel_Market_Study_AR.docx",
+    "xlsx": "SBA_UK_Apparel_Market_Data.xlsx",
+    "sheetNames": [
+      "Market Snapshot",
+      "Supplier Trends",
+      "Target Leads",
+      "UK Compliance",
+      "Data Notes",
+      "Sources"
+    ],
+    "firstSheetRowCount": 8,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "",
+    "year": "",
+    "sampleKeys": [
+      "المؤشر",
+      "القيمة",
+      "السنة/النطاق",
+      "المصدر/الملاحظة"
+    ]
+  },
+  {
+    "index": 53,
+    "folder": "SBA_USA_Apparel_Market_Study_Package",
+    "docx": "SBA_USA_Apparel_Market_Study.docx",
+    "xlsx": "SBA_USA_Apparel_Market_Data.xlsx",
+    "sheetNames": [
+      "ملخص السوق",
+      "HS610910 مصر",
+      "موردو HS61+62",
+      "HS630900 مستعمل",
+      "المنتجات والرموز",
+      "Prospects وقنوات",
+      "الامتثال",
+      "المصادر"
+    ],
+    "firstSheetRowCount": 9,
+    "arabicName": "فيتنام",
+    "indicator": "",
+    "year": "2025",
+    "sampleKeys": [
+      "المؤشر",
+      "القيمة",
+      "الوحدة/النطاق",
+      "السنة",
+      "ملاحظة"
+    ]
+  },
+  {
+    "index": 54,
+    "folder": "SBA_Zambia_Apparel_Market_Study_Package",
+    "docx": "SBA_Zambia_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Zambia_Apparel_Market_Data.xlsx",
+    "sheetNames": [
+      "Trade Overview",
+      "Suppliers HS61",
+      "Suppliers HS62",
+      "Business Leads",
+      "HS Product Mapping",
+      "Compliance & Actions"
+    ],
+    "firstSheetRowCount": 7,
+    "countryName": "",
+    "arabicName": "",
+    "indicator": "",
+    "year": "2023",
+    "sampleKeys": [
+      "المؤشر",
+      "السنة",
+      "القيمة USD",
+      "الوحدة/التعريف",
+      "المصدر/ملاحظة"
+    ]
+  }
+]

@@ -1,0 +1,434 @@
+{
+  "SBA_Algeria_Apparel_Study_Package": {
+    "docx": "SBA_Algeria_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Algeria_Apparel_Trade_Buyers_Compliance.xlsx",
+    "zipName": "SBA_Algeria_Apparel_Study_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_Algeria_Apparel_Market_Study.docx",
+    "xlsxUrl": "/studies/apparel/SBA_Algeria_Apparel_Trade_Buyers_Compliance.xlsx",
+    "zipUrl": "/studies/apparel/SBA_Algeria_Apparel_Study_Package.zip"
+  },
+  "SBA_Angola_Apparel_Market_Study_Package": {
+    "docx": "SBA_Angola_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Angola_Trade_Buyers_Compliance.xlsx",
+    "zipName": "SBA_Angola_Apparel_Market_Study_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_Angola_Apparel_Market_Study.docx",
+    "xlsxUrl": "/studies/apparel/SBA_Angola_Trade_Buyers_Compliance.xlsx",
+    "zipUrl": "/studies/apparel/SBA_Angola_Apparel_Market_Study_Package.zip"
+  },
+  "SBA_Austria_Apparel_Market_Study_Package": {
+    "docx": "SBA_Austria_Apparel_Market_Study_AR.docx",
+    "xlsx": "SBA_Austria_Apparel_Market_Data.xlsx",
+    "zipName": "SBA_Austria_Apparel_Market_Study_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_Austria_Apparel_Market_Study_AR.docx",
+    "xlsxUrl": "/studies/apparel/SBA_Austria_Apparel_Market_Data.xlsx",
+    "zipUrl": "/studies/apparel/SBA_Austria_Apparel_Market_Study_Package.zip"
+  },
+  "SBA_Bahrain_Apparel_Study_Package": {
+    "docx": "SBA_Bahrain_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Bahrain_Apparel_Trade_Buyers_Compliance.xlsx",
+    "zipName": "SBA_Bahrain_Apparel_Study_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_Bahrain_Apparel_Market_Study.docx",
+    "xlsxUrl": "/studies/apparel/SBA_Bahrain_Apparel_Trade_Buyers_Compliance.xlsx",
+    "zipUrl": "/studies/apparel/SBA_Bahrain_Apparel_Study_Package.zip"
+  },
+  "SBA_Belgium_Apparel_Market_Study_Package": {
+    "docx": "SBA_Belgium_Apparel_Market_Study_AR.docx",
+    "xlsx": "SBA_Belgium_Apparel_Market_Data.xlsx",
+    "zipName": "SBA_Belgium_Apparel_Market_Study_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_Belgium_Apparel_Market_Study_AR.docx",
+    "xlsxUrl": "/studies/apparel/SBA_Belgium_Apparel_Market_Data.xlsx",
+    "zipUrl": "/studies/apparel/SBA_Belgium_Apparel_Market_Study_Package.zip"
+  },
+  "SBA_Cameroon_Apparel_Market_Study_Package": {
+    "docx": "SBA_Cameroon_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Cameroon_Trade_Buyers_Compliance.xlsx",
+    "zipName": "SBA_Cameroon_Apparel_Market_Study_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_Cameroon_Apparel_Market_Study.docx",
+    "xlsxUrl": "/studies/apparel/SBA_Cameroon_Trade_Buyers_Compliance.xlsx",
+    "zipUrl": "/studies/apparel/SBA_Cameroon_Apparel_Market_Study_Package.zip"
+  },
+  "SBA_Canada_Apparel_Market_Study_Package": {
+    "docx": "SBA_Canada_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Canada_Apparel_Market_Data.xlsx",
+    "zipName": "SBA_Canada_Apparel_Market_Study_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_Canada_Apparel_Market_Study.docx",
+    "xlsxUrl": "/studies/apparel/SBA_Canada_Apparel_Market_Data.xlsx",
+    "zipUrl": "/studies/apparel/SBA_Canada_Apparel_Market_Study_Package.zip"
+  },
+  "SBA_Chile_Expanded_Complete_Package": {
+    "docx": "SBA_Chile_Apparel_Market_Study_AR_Expanded.docx",
+    "xlsx": "SBA_Chile_Trade_and_Entry_Data.xlsx",
+    "zipName": "SBA_Chile_Expanded_Complete_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_Chile_Apparel_Market_Study_AR_Expanded.docx",
+    "xlsxUrl": "/studies/apparel/SBA_Chile_Trade_and_Entry_Data.xlsx",
+    "zipUrl": "/studies/apparel/SBA_Chile_Expanded_Complete_Package.zip"
+  },
+  "SBA_Colombia_Expanded_Complete_Package": {
+    "docx": "SBA_Colombia_Apparel_Market_Study_AR_Expanded.docx",
+    "xlsx": "SBA_Colombia_Trade_and_Entry_Data.xlsx",
+    "zipName": "SBA_Colombia_Expanded_Complete_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_Colombia_Apparel_Market_Study_AR_Expanded.docx",
+    "xlsxUrl": "/studies/apparel/SBA_Colombia_Trade_and_Entry_Data.xlsx",
+    "zipUrl": "/studies/apparel/SBA_Colombia_Expanded_Complete_Package.zip"
+  },
+  "SBA_Costa_Rica_Expanded_Complete_Package": {
+    "docx": "SBA_Costa_Rica_Apparel_Market_Study_AR.docx",
+    "xlsx": "SBA_Costa_Rica_Trade_and_Entry_Data.xlsx",
+    "zipName": "SBA_Costa_Rica_Expanded_Complete_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_Costa_Rica_Apparel_Market_Study_AR.docx",
+    "xlsxUrl": "/studies/apparel/SBA_Costa_Rica_Trade_and_Entry_Data.xlsx",
+    "zipUrl": "/studies/apparel/SBA_Costa_Rica_Expanded_Complete_Package.zip"
+  },
+  "SBA_Cote_dIvoire_Apparel_Market_Study_Package": {
+    "docx": "SBA_Cote_dIvoire_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Cote_dIvoire_Trade_Buyers_Compliance.xlsx",
+    "zipName": "SBA_Cote_dIvoire_Apparel_Market_Study_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_Cote_dIvoire_Apparel_Market_Study.docx",
+    "xlsxUrl": "/studies/apparel/SBA_Cote_dIvoire_Trade_Buyers_Compliance.xlsx",
+    "zipUrl": "/studies/apparel/SBA_Cote_dIvoire_Apparel_Market_Study_Package.zip"
+  },
+  "SBA_Czechia_Apparel_Market_Study_Package": {
+    "docx": "SBA_Czechia_Apparel_Market_Study_AR.docx",
+    "xlsx": "SBA_Czechia_Apparel_Market_Data.xlsx",
+    "zipName": "SBA_Czechia_Apparel_Market_Study_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_Czechia_Apparel_Market_Study_AR.docx",
+    "xlsxUrl": "/studies/apparel/SBA_Czechia_Apparel_Market_Data.xlsx",
+    "zipUrl": "/studies/apparel/SBA_Czechia_Apparel_Market_Study_Package.zip"
+  },
+  "SBA_Denmark_Apparel_Market_Study_Package": {
+    "docx": "SBA_Denmark_Apparel_Market_Study_AR.docx",
+    "xlsx": "SBA_Denmark_Apparel_Market_Data.xlsx",
+    "zipName": "SBA_Denmark_Apparel_Market_Study_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_Denmark_Apparel_Market_Study_AR.docx",
+    "xlsxUrl": "/studies/apparel/SBA_Denmark_Apparel_Market_Data.xlsx",
+    "zipUrl": "/studies/apparel/SBA_Denmark_Apparel_Market_Study_Package.zip"
+  },
+  "SBA_Dominican_Republic_Expanded_Complete_Package": {
+    "docx": "SBA_Dominican_Republic_Apparel_Market_Study_AR.docx",
+    "xlsx": "SBA_Dominican_Republic_Trade_and_Entry_Data.xlsx",
+    "zipName": "SBA_Dominican_Republic_Expanded_Complete_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_Dominican_Republic_Apparel_Market_Study_AR.docx",
+    "xlsxUrl": "/studies/apparel/SBA_Dominican_Republic_Trade_and_Entry_Data.xlsx",
+    "zipUrl": "/studies/apparel/SBA_Dominican_Republic_Expanded_Complete_Package.zip"
+  },
+  "SBA_Ecuador_Expanded_Complete_Package": {
+    "docx": "SBA_Ecuador_Apparel_Market_Study_AR.docx",
+    "xlsx": "SBA_Ecuador_Trade_and_Entry_Data.xlsx",
+    "zipName": "SBA_Ecuador_Expanded_Complete_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_Ecuador_Apparel_Market_Study_AR.docx",
+    "xlsxUrl": "/studies/apparel/SBA_Ecuador_Trade_and_Entry_Data.xlsx",
+    "zipUrl": "/studies/apparel/SBA_Ecuador_Expanded_Complete_Package.zip"
+  },
+  "SBA_Egypt_Apparel_Market_Study_Package": {
+    "docx": "SBA_Egypt_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Egypt_Apparel_Market_Data.xlsx",
+    "zipName": "SBA_Egypt_Apparel_Market_Study_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_Egypt_Apparel_Market_Study.docx",
+    "xlsxUrl": "/studies/apparel/SBA_Egypt_Apparel_Market_Data.xlsx",
+    "zipUrl": "/studies/apparel/SBA_Egypt_Apparel_Market_Study_Package.zip"
+  },
+  "SBA_France_Apparel_Market_Study_Package": {
+    "docx": "SBA_France_Apparel_Market_Study_AR.docx",
+    "xlsx": "SBA_France_Apparel_Market_Data.xlsx",
+    "zipName": "SBA_France_Apparel_Market_Study_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_France_Apparel_Market_Study_AR.docx",
+    "xlsxUrl": "/studies/apparel/SBA_France_Apparel_Market_Data.xlsx",
+    "zipUrl": "/studies/apparel/SBA_France_Apparel_Market_Study_Package.zip"
+  },
+  "SBA_Germany_Apparel_Market_Study_Package": {
+    "docx": "SBA_Germany_Apparel_Market_Study_AR.docx",
+    "xlsx": "SBA_Germany_Apparel_Market_Data.xlsx",
+    "zipName": "SBA_Germany_Apparel_Market_Study_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_Germany_Apparel_Market_Study_AR.docx",
+    "xlsxUrl": "/studies/apparel/SBA_Germany_Apparel_Market_Data.xlsx",
+    "zipUrl": "/studies/apparel/SBA_Germany_Apparel_Market_Study_Package.zip"
+  },
+  "SBA_Ghana_Apparel_Market_Study_Package": {
+    "docx": "SBA_Ghana_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Ghana_Trade_Buyers_Compliance.xlsx",
+    "zipName": "SBA_Ghana_Apparel_Market_Study_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_Ghana_Apparel_Market_Study.docx",
+    "xlsxUrl": "/studies/apparel/SBA_Ghana_Trade_Buyers_Compliance.xlsx",
+    "zipUrl": "/studies/apparel/SBA_Ghana_Apparel_Market_Study_Package.zip"
+  },
+  "SBA_Greece_Apparel_Market_Study_Package": {
+    "docx": "SBA_Greece_Apparel_Market_Study_AR.docx",
+    "xlsx": "SBA_Greece_Apparel_Market_Data.xlsx",
+    "zipName": "SBA_Greece_Apparel_Market_Study_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_Greece_Apparel_Market_Study_AR.docx",
+    "xlsxUrl": "/studies/apparel/SBA_Greece_Apparel_Market_Data.xlsx",
+    "zipUrl": "/studies/apparel/SBA_Greece_Apparel_Market_Study_Package.zip"
+  },
+  "SBA_Iraq_Apparel_Study_Package": {
+    "docx": "SBA_Iraq_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Iraq_Apparel_Trade_Buyers_Compliance.xlsx",
+    "zipName": "SBA_Iraq_Apparel_Study_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_Iraq_Apparel_Market_Study.docx",
+    "xlsxUrl": "/studies/apparel/SBA_Iraq_Apparel_Trade_Buyers_Compliance.xlsx",
+    "zipUrl": "/studies/apparel/SBA_Iraq_Apparel_Study_Package.zip"
+  },
+  "SBA_Italy_Apparel_Market_Study_Package": {
+    "docx": "SBA_Italy_Apparel_Market_Study_AR.docx",
+    "xlsx": "SBA_Italy_Apparel_Market_Data.xlsx",
+    "zipName": "SBA_Italy_Apparel_Market_Study_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_Italy_Apparel_Market_Study_AR.docx",
+    "xlsxUrl": "/studies/apparel/SBA_Italy_Apparel_Market_Data.xlsx",
+    "zipUrl": "/studies/apparel/SBA_Italy_Apparel_Market_Study_Package.zip"
+  },
+  "SBA_Jordan_Apparel_Study_Package": {
+    "docx": "SBA_Jordan_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Jordan_Apparel_Trade_Industry_Buyers.xlsx",
+    "zipName": "SBA_Jordan_Apparel_Study_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_Jordan_Apparel_Market_Study.docx",
+    "xlsxUrl": "/studies/apparel/SBA_Jordan_Apparel_Trade_Industry_Buyers.xlsx",
+    "zipUrl": "/studies/apparel/SBA_Jordan_Apparel_Study_Package.zip"
+  },
+  "SBA_Kenya_Apparel_Market_Study_Package": {
+    "docx": "SBA_Kenya_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Kenya_Trade_Buyers_Compliance.xlsx",
+    "zipName": "SBA_Kenya_Apparel_Market_Study_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_Kenya_Apparel_Market_Study.docx",
+    "xlsxUrl": "/studies/apparel/SBA_Kenya_Trade_Buyers_Compliance.xlsx",
+    "zipUrl": "/studies/apparel/SBA_Kenya_Apparel_Market_Study_Package.zip"
+  },
+  "SBA_Kuwait_Apparel_Study_Package_v1": {
+    "docx": "SBA_Kuwait_Apparel_Market_Study_v1.docx",
+    "xlsx": "SBA_Kuwait_Apparel_Trade_Buyers_Compliance_v1.xlsx",
+    "zipName": "SBA_Kuwait_Apparel_Study_Package_v1.zip",
+    "docxUrl": "/studies/apparel/SBA_Kuwait_Apparel_Market_Study_v1.docx",
+    "xlsxUrl": "/studies/apparel/SBA_Kuwait_Apparel_Trade_Buyers_Compliance_v1.xlsx",
+    "zipUrl": "/studies/apparel/SBA_Kuwait_Apparel_Study_Package_v1.zip"
+  },
+  "SBA_Lebanon_Apparel_Study_Package": {
+    "docx": "SBA_Lebanon_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Lebanon_Apparel_Trade_Buyers_Compliance.xlsx",
+    "zipName": "SBA_Lebanon_Apparel_Study_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_Lebanon_Apparel_Market_Study.docx",
+    "xlsxUrl": "/studies/apparel/SBA_Lebanon_Apparel_Trade_Buyers_Compliance.xlsx",
+    "zipUrl": "/studies/apparel/SBA_Lebanon_Apparel_Study_Package.zip"
+  },
+  "SBA_Libya_Apparel_Market_Study_Package": {
+    "docx": "SBA_Libya_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Libya_Apparel_Trade_Buyers_Compliance.xlsx",
+    "zipName": "SBA_Libya_Apparel_Market_Study_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_Libya_Apparel_Market_Study.docx",
+    "xlsxUrl": "/studies/apparel/SBA_Libya_Apparel_Trade_Buyers_Compliance.xlsx",
+    "zipUrl": "/studies/apparel/SBA_Libya_Apparel_Market_Study_Package.zip"
+  },
+  "SBA_Mauritania_Apparel_Study_Package": {
+    "docx": "SBA_Mauritania_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Mauritania_Apparel_Trade_Buyers_Compliance.xlsx",
+    "zipName": "SBA_Mauritania_Apparel_Study_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_Mauritania_Apparel_Market_Study.docx",
+    "xlsxUrl": "/studies/apparel/SBA_Mauritania_Apparel_Trade_Buyers_Compliance.xlsx",
+    "zipUrl": "/studies/apparel/SBA_Mauritania_Apparel_Study_Package.zip"
+  },
+  "SBA_Mauritius_Apparel_Market_Study_Package": {
+    "docx": "SBA_Mauritius_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Mauritius_Apparel_Market_Data.xlsx",
+    "zipName": "SBA_Mauritius_Apparel_Market_Study_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_Mauritius_Apparel_Market_Study.docx",
+    "xlsxUrl": "/studies/apparel/SBA_Mauritius_Apparel_Market_Data.xlsx",
+    "zipUrl": "/studies/apparel/SBA_Mauritius_Apparel_Market_Study_Package.zip"
+  },
+  "SBA_Morocco_Apparel_Study_Package": {
+    "docx": "SBA_Morocco_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Morocco_Apparel_Trade_Buyers_Industry.xlsx",
+    "zipName": "SBA_Morocco_Apparel_Study_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_Morocco_Apparel_Market_Study.docx",
+    "xlsxUrl": "/studies/apparel/SBA_Morocco_Apparel_Trade_Buyers_Industry.xlsx",
+    "zipUrl": "/studies/apparel/SBA_Morocco_Apparel_Study_Package.zip"
+  },
+  "SBA_Mozambique_Apparel_Market_Study_Package": {
+    "docx": "SBA_Mozambique_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Mozambique_Apparel_Market_Data.xlsx",
+    "zipName": "SBA_Mozambique_Apparel_Market_Study_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_Mozambique_Apparel_Market_Study.docx",
+    "xlsxUrl": "/studies/apparel/SBA_Mozambique_Apparel_Market_Data.xlsx",
+    "zipUrl": "/studies/apparel/SBA_Mozambique_Apparel_Market_Study_Package.zip"
+  },
+  "SBA_Namibia_Apparel_Market_Study_Package": {
+    "docx": "SBA_Namibia_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Namibia_Apparel_Market_Data.xlsx",
+    "zipName": "SBA_Namibia_Apparel_Market_Study_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_Namibia_Apparel_Market_Study.docx",
+    "xlsxUrl": "/studies/apparel/SBA_Namibia_Apparel_Market_Data.xlsx",
+    "zipUrl": "/studies/apparel/SBA_Namibia_Apparel_Market_Study_Package.zip"
+  },
+  "SBA_Netherlands_Apparel_Market_Study_Package": {
+    "docx": "SBA_Netherlands_Apparel_Market_Study_AR.docx",
+    "xlsx": "SBA_Netherlands_Apparel_Market_Data.xlsx",
+    "zipName": "SBA_Netherlands_Apparel_Market_Study_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_Netherlands_Apparel_Market_Study_AR.docx",
+    "xlsxUrl": "/studies/apparel/SBA_Netherlands_Apparel_Market_Data.xlsx",
+    "zipUrl": "/studies/apparel/SBA_Netherlands_Apparel_Market_Study_Package.zip"
+  },
+  "SBA_Nigeria_Apparel_Market_Study_Package": {
+    "docx": "SBA_Nigeria_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Nigeria_Trade_Buyers_Compliance.xlsx",
+    "zipName": "SBA_Nigeria_Apparel_Market_Study_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_Nigeria_Apparel_Market_Study.docx",
+    "xlsxUrl": "/studies/apparel/SBA_Nigeria_Trade_Buyers_Compliance.xlsx",
+    "zipUrl": "/studies/apparel/SBA_Nigeria_Apparel_Market_Study_Package.zip"
+  },
+  "SBA_Oman_Apparel_Study_Package": {
+    "docx": "SBA_Oman_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Oman_Apparel_Trade_Buyers_Compliance.xlsx",
+    "zipName": "SBA_Oman_Apparel_Study_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_Oman_Apparel_Market_Study.docx",
+    "xlsxUrl": "/studies/apparel/SBA_Oman_Apparel_Trade_Buyers_Compliance.xlsx",
+    "zipUrl": "/studies/apparel/SBA_Oman_Apparel_Study_Package.zip"
+  },
+  "SBA_Panama_Expanded_Complete_Package": {
+    "docx": "SBA_Panama_Apparel_Market_Study_AR_Expanded.docx",
+    "xlsx": "SBA_Panama_Trade_and_Entry_Data.xlsx",
+    "zipName": "SBA_Panama_Expanded_Complete_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_Panama_Apparel_Market_Study_AR_Expanded.docx",
+    "xlsxUrl": "/studies/apparel/SBA_Panama_Trade_and_Entry_Data.xlsx",
+    "zipUrl": "/studies/apparel/SBA_Panama_Expanded_Complete_Package.zip"
+  },
+  "SBA_Peru_Expanded_Complete_Package": {
+    "docx": "SBA_Peru_Apparel_Market_Study_AR_Expanded.docx",
+    "xlsx": "SBA_Peru_Trade_and_Buyer_Data.xlsx",
+    "zipName": "SBA_Peru_Expanded_Complete_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_Peru_Apparel_Market_Study_AR_Expanded.docx",
+    "xlsxUrl": "/studies/apparel/SBA_Peru_Trade_and_Buyer_Data.xlsx",
+    "zipUrl": "/studies/apparel/SBA_Peru_Expanded_Complete_Package.zip"
+  },
+  "SBA_Poland_Apparel_Market_Study_Package": {
+    "docx": "SBA_Poland_Apparel_Market_Study_AR.docx",
+    "xlsx": "SBA_Poland_Apparel_Market_Data.xlsx",
+    "zipName": "SBA_Poland_Apparel_Market_Study_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_Poland_Apparel_Market_Study_AR.docx",
+    "xlsxUrl": "/studies/apparel/SBA_Poland_Apparel_Market_Data.xlsx",
+    "zipUrl": "/studies/apparel/SBA_Poland_Apparel_Market_Study_Package.zip"
+  },
+  "SBA_Portugal_Apparel_Market_Study_Package": {
+    "docx": "SBA_Portugal_Apparel_Market_Study_AR.docx",
+    "xlsx": "SBA_Portugal_Apparel_Market_Data.xlsx",
+    "zipName": "SBA_Portugal_Apparel_Market_Study_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_Portugal_Apparel_Market_Study_AR.docx",
+    "xlsxUrl": "/studies/apparel/SBA_Portugal_Apparel_Market_Data.xlsx",
+    "zipUrl": "/studies/apparel/SBA_Portugal_Apparel_Market_Study_Package.zip"
+  },
+  "SBA_Qatar_Apparel_Study_Package": {
+    "docx": "SBA_Qatar_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Qatar_Apparel_Trade_Buyers_Compliance.xlsx",
+    "zipName": "SBA_Qatar_Apparel_Study_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_Qatar_Apparel_Market_Study.docx",
+    "xlsxUrl": "/studies/apparel/SBA_Qatar_Apparel_Trade_Buyers_Compliance.xlsx",
+    "zipUrl": "/studies/apparel/SBA_Qatar_Apparel_Study_Package.zip"
+  },
+  "SBA_Romania_Apparel_Market_Study_Package": {
+    "docx": "SBA_Romania_Apparel_Market_Study_AR.docx",
+    "xlsx": "SBA_Romania_Apparel_Market_Data.xlsx",
+    "zipName": "SBA_Romania_Apparel_Market_Study_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_Romania_Apparel_Market_Study_AR.docx",
+    "xlsxUrl": "/studies/apparel/SBA_Romania_Apparel_Market_Data.xlsx",
+    "zipUrl": "/studies/apparel/SBA_Romania_Apparel_Market_Study_Package.zip"
+  },
+  "SBA_Rwanda_Apparel_Market_Study_Package": {
+    "docx": "SBA_Rwanda_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Rwanda_Apparel_Market_Data.xlsx",
+    "zipName": "SBA_Rwanda_Apparel_Market_Study_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_Rwanda_Apparel_Market_Study.docx",
+    "xlsxUrl": "/studies/apparel/SBA_Rwanda_Apparel_Market_Data.xlsx",
+    "zipUrl": "/studies/apparel/SBA_Rwanda_Apparel_Market_Study_Package.zip"
+  },
+  "SBA_Senegal_Apparel_Market_Study_Package": {
+    "docx": "SBA_Senegal_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Senegal_Trade_Buyers_Compliance.xlsx",
+    "zipName": "SBA_Senegal_Apparel_Market_Study_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_Senegal_Apparel_Market_Study.docx",
+    "xlsxUrl": "/studies/apparel/SBA_Senegal_Trade_Buyers_Compliance.xlsx",
+    "zipUrl": "/studies/apparel/SBA_Senegal_Apparel_Market_Study_Package.zip"
+  },
+  "SBA_South_Africa_Study": {
+    "docx": "SBA_South_Africa_Apparel_Market_Study.docx",
+    "xlsx": "SBA_South_Africa_Trade_Buyers_Compliance.xlsx",
+    "zipName": "SBA_South_Africa_Study.zip",
+    "docxUrl": "/studies/apparel/SBA_South_Africa_Apparel_Market_Study.docx",
+    "xlsxUrl": "/studies/apparel/SBA_South_Africa_Trade_Buyers_Compliance.xlsx",
+    "zipUrl": "/studies/apparel/SBA_South_Africa_Study.zip"
+  },
+  "SBA_Spain_Apparel_Market_Study_Package": {
+    "docx": "SBA_Spain_Apparel_Market_Study_AR.docx",
+    "xlsx": "SBA_Spain_Apparel_Market_Data.xlsx",
+    "zipName": "SBA_Spain_Apparel_Market_Study_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_Spain_Apparel_Market_Study_AR.docx",
+    "xlsxUrl": "/studies/apparel/SBA_Spain_Apparel_Market_Data.xlsx",
+    "zipUrl": "/studies/apparel/SBA_Spain_Apparel_Market_Study_Package.zip"
+  },
+  "SBA_Sudan_Apparel_Study_Package": {
+    "docx": "SBA_Sudan_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Sudan_Apparel_Trade_Buyers_Compliance.xlsx",
+    "zipName": "SBA_Sudan_Apparel_Study_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_Sudan_Apparel_Market_Study.docx",
+    "xlsxUrl": "/studies/apparel/SBA_Sudan_Apparel_Trade_Buyers_Compliance.xlsx",
+    "zipUrl": "/studies/apparel/SBA_Sudan_Apparel_Study_Package.zip"
+  },
+  "SBA_Sweden_Apparel_Market_Study_Package": {
+    "docx": "SBA_Sweden_Apparel_Market_Study_AR.docx",
+    "xlsx": "SBA_Sweden_Apparel_Market_Data.xlsx",
+    "zipName": "SBA_Sweden_Apparel_Market_Study_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_Sweden_Apparel_Market_Study_AR.docx",
+    "xlsxUrl": "/studies/apparel/SBA_Sweden_Apparel_Market_Data.xlsx",
+    "zipUrl": "/studies/apparel/SBA_Sweden_Apparel_Market_Study_Package.zip"
+  },
+  "SBA_Tanzania_Apparel_Market_Study_Package_v2": {
+    "docx": "SBA_Tanzania_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Tanzania_Apparel_Market_Data.xlsx",
+    "zipName": "SBA_Tanzania_Apparel_Market_Study_Package_v2.zip",
+    "docxUrl": "/studies/apparel/SBA_Tanzania_Apparel_Market_Study.docx",
+    "xlsxUrl": "/studies/apparel/SBA_Tanzania_Apparel_Market_Data.xlsx",
+    "zipUrl": "/studies/apparel/SBA_Tanzania_Apparel_Market_Study_Package_v2.zip"
+  },
+  "SBA_Tunisia_Apparel_Study_Package": {
+    "docx": "SBA_Tunisia_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Tunisia_Apparel_Trade_Buyers_Industry.xlsx",
+    "zipName": "SBA_Tunisia_Apparel_Study_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_Tunisia_Apparel_Market_Study.docx",
+    "xlsxUrl": "/studies/apparel/SBA_Tunisia_Apparel_Trade_Buyers_Industry.xlsx",
+    "zipUrl": "/studies/apparel/SBA_Tunisia_Apparel_Study_Package.zip"
+  },
+  "SBA_UAE_Apparel_Study_Package": {
+    "docx": "SBA_UAE_Apparel_Market_Study.docx",
+    "xlsx": "SBA_UAE_Apparel_Trade_and_Buyer_Data.xlsx",
+    "zipName": "SBA_UAE_Apparel_Study_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_UAE_Apparel_Market_Study.docx",
+    "xlsxUrl": "/studies/apparel/SBA_UAE_Apparel_Trade_and_Buyer_Data.xlsx",
+    "zipUrl": "/studies/apparel/SBA_UAE_Apparel_Study_Package.zip"
+  },
+  "SBA_Uganda_Apparel_Market_Study_Package": {
+    "docx": "SBA_Uganda_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Uganda_Apparel_Market_Data.xlsx",
+    "zipName": "SBA_Uganda_Apparel_Market_Study_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_Uganda_Apparel_Market_Study.docx",
+    "xlsxUrl": "/studies/apparel/SBA_Uganda_Apparel_Market_Data.xlsx",
+    "zipUrl": "/studies/apparel/SBA_Uganda_Apparel_Market_Study_Package.zip"
+  },
+  "SBA_UK_Apparel_Market_Study_Package": {
+    "docx": "SBA_UK_Apparel_Market_Study_AR.docx",
+    "xlsx": "SBA_UK_Apparel_Market_Data.xlsx",
+    "zipName": "SBA_UK_Apparel_Market_Study_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_UK_Apparel_Market_Study_AR.docx",
+    "xlsxUrl": "/studies/apparel/SBA_UK_Apparel_Market_Data.xlsx",
+    "zipUrl": "/studies/apparel/SBA_UK_Apparel_Market_Study_Package.zip"
+  },
+  "SBA_USA_Apparel_Market_Study_Package": {
+    "docx": "SBA_USA_Apparel_Market_Study.docx",
+    "xlsx": "SBA_USA_Apparel_Market_Data.xlsx",
+    "zipName": "SBA_USA_Apparel_Market_Study_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_USA_Apparel_Market_Study.docx",
+    "xlsxUrl": "/studies/apparel/SBA_USA_Apparel_Market_Data.xlsx",
+    "zipUrl": "/studies/apparel/SBA_USA_Apparel_Market_Study_Package.zip"
+  },
+  "SBA_Zambia_Apparel_Market_Study_Package": {
+    "docx": "SBA_Zambia_Apparel_Market_Study.docx",
+    "xlsx": "SBA_Zambia_Apparel_Market_Data.xlsx",
+    "zipName": "SBA_Zambia_Apparel_Market_Study_Package.zip",
+    "docxUrl": "/studies/apparel/SBA_Zambia_Apparel_Market_Study.docx",
+    "xlsxUrl": "/studies/apparel/SBA_Zambia_Apparel_Market_Data.xlsx",
+    "zipUrl": "/studies/apparel/SBA_Zambia_Apparel_Market_Study_Package.zip"
+  }
+}

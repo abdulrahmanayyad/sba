@@ -1,0 +1,1 @@
+SBA Colombia expanded market study package. Contains Arabic Word study, Excel trade/compliance workbook, and source/methodology notes. Confirm tariff, origin and HS10 classification before commercial shipment.

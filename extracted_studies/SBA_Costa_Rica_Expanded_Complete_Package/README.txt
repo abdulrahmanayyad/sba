@@ -1,0 +1,1 @@
+SBA كوستاريكا market study. Word report + Excel trade/action workbook. HS61/HS62 new apparel only. HS6309 is excluded. All buyer names are leads requiring validation; tariff requires national HS8/10 confirmation.

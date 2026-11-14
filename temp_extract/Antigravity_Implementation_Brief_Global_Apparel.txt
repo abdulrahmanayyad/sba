@@ -1,0 +1,117 @@
+SAMI BIN AYYAD GROUP — ANTIGRAVITY CONTENT IMPLEMENTATION BRIEF
+PROJECT: Global Markets — Apparel & Textiles (41 countries)
+INPUT FILES:
+1) SBA_Global_Apparel_41_Country_Market_Study.docx
+2) SBA_Global_Apparel_41_Country_Data_Matrix.xlsx
+
+OBJECTIVE
+Add the 41-country apparel and textiles market intelligence package to the EXISTING SAMI BIN AYYAD GROUP website. This is a content integration task, not a redesign.
+
+NON-NEGOTIABLE DESIGN / IMPLEMENTATION RULES
+- Preserve the existing website design system, navigation, typography, colors, animations, responsive behavior and Apple-inspired glassmorphism.
+- Do not rebuild the website, change existing URLs unnecessarily, remove existing pages, or overwrite other sectors.
+- Keep Arabic and English versions. Arabic is the default language; English is the parallel version.
+- Preserve the existing Saudi Arabia study page and its current URL if present. Compare it with the new Saudi profile and merge/update content without deleting useful existing verified material.
+- Do not publish a data point as official if the source file marks it as not verified, pending, indicative, estimated or requiring confirmation.
+- Do not convert import values into retail market size or demand. Do not convert kg into garment pieces.
+- Buyer names are potential target accounts, not confirmed customers or confirmed purchasing mandates. Display a clear note.
+- Every study page must show source name, data year, measurement scope and methodology note.
+- Do not invent company contact details, importer names, phone numbers, addresses, tariffs, certifications or market values.
+- All external references must open in a new tab and use the exact URLs in the source files where possible.
+
+NAVIGATION / INFORMATION ARCHITECTURE
+Global Markets
+  Apparel & Textiles
+    GCC Markets
+      Saudi Arabia
+      United Arab Emirates
+      Kuwait
+      Qatar
+      Bahrain
+      Oman
+      GCC Comparative Report
+    Levant Markets
+      Jordan
+      Iraq
+      Lebanon
+      Palestine
+      Syria
+    North Africa Markets
+      Libya
+      Tunisia
+      Algeria
+      Morocco
+      Mauritania
+      Sudan
+    Europe
+      Germany
+      France
+      Italy
+      Spain
+      United Kingdom
+      Netherlands
+      Belgium
+      Poland
+      Portugal
+      Türkiye
+    Americas
+      United States
+      Canada
+      Mexico
+      Brazil
+      Chile
+    Asia & Pacific
+      China
+      Japan
+      South Korea
+      India
+      Pakistan
+      Bangladesh
+      Vietnam
+      Indonesia
+      Australia
+    Global Comparative Dashboard
+
+PAGE TEMPLATE — EACH COUNTRY
+1. Country hero: country name, flag/icon, one-sentence market proposition, priority label.
+2. Executive Summary.
+3. Market Overview and Demand.
+4. Imports & Exports: HS61 and HS62; separate years and scopes; clearly label unavailable data.
+5. Product-Level Trade Intelligence: HS6/HS8 only where verified.
+6. Main Supplier Countries and Egypt’s Share: show only sourced figures; no invented shares.
+7. Product Opportunities relevant to SBA capabilities.
+8. Local Competition and Domestic Production.
+9. Potential Buyers & Retail Groups: mark as “Target Accounts — not confirmed customers”.
+10. Distribution and Go-to-Market Channels.
+11. Import Regulations, Tariffs, VAT, Labelling and Rules of Origin.
+12. Logistics and Route-to-Market.
+13. Commercial Models: CM, FOB, OEM, Private Label and own brand.
+14. Scenario Calculator: 10k / 25k / 50k / 100k units monthly. Mark prices as user-entered assumptions, not market facts.
+15. Risks and Entry Recommendations.
+16. Sources, data year and methodology.
+
+GLOBAL COMPARATIVE DASHBOARD
+- Compare markets only on like-for-like years and HS definitions.
+- Provide filters by region, priority, market role (consumer market / manufacturing competitor / sourcing hub / high-risk market).
+- Separate market size, customs imports, exports, retail sales and re-exports.
+- Include a visible “Data completeness” field.
+- Include the latest available reporting year per market without pretending all markets use the same year.
+- Do not rank markets using incomplete or non-comparable values.
+
+CONTENT STATUS
+- The Word report contains the country-level strategic dossiers and market entry analysis.
+- The Excel workbook contains the 41-country matrix, product HS map and source register.
+- Some countries have no verified country-level HS61+HS62 total in this package. Show “Data pending verification” in the UI and do not fabricate a figure.
+- The country-specific HS6/HS8 import-partner matrix and Egypt share should be populated only after an official UN Comtrade/WITS extraction has been completed and checked.
+
+QUALITY ASSURANCE BEFORE PUBLISHING
+- Confirm all 41 country pages are present exactly once.
+- Confirm Arabic/English language switch works on every page.
+- Confirm Saudi existing page is preserved and merged safely.
+- Check all links, page routes, cards, charts, mobile layouts and navigation.
+- Check that no source data is presented as a confirmed SBA customer/order.
+- Check that no unverified customs rate or tariff preference is displayed as final.
+- Return a concise implementation report listing page URLs created/updated, any missing content, any data still pending and any errors. Do not claim completion if a page or source is missing.
+
+IMPORTANT
+This content package does not authorize changes to Food, Construction or Environment sectors. Those sector studies will be prepared as separate content projects after the apparel global markets section is integrated.

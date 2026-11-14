@@ -1,0 +1,655 @@
+{
+  "codeToFolder": {
+    "DZ": "SBA_Algeria_Apparel_Study_Package",
+    "AO": "SBA_Angola_Apparel_Market_Study_Package",
+    "AT": "SBA_Austria_Apparel_Market_Study_Package",
+    "BH": "SBA_Bahrain_Apparel_Study_Package",
+    "BE": "SBA_Belgium_Apparel_Market_Study_Package",
+    "CM": "SBA_Cameroon_Apparel_Market_Study_Package",
+    "CA": "SBA_Canada_Apparel_Market_Study_Package",
+    "CL": "SBA_Chile_Expanded_Complete_Package",
+    "CO": "SBA_Colombia_Expanded_Complete_Package",
+    "CR": "SBA_Costa_Rica_Expanded_Complete_Package",
+    "CI": "SBA_Cote_dIvoire_Apparel_Market_Study_Package",
+    "CZ": "SBA_Czechia_Apparel_Market_Study_Package",
+    "DK": "SBA_Denmark_Apparel_Market_Study_Package",
+    "DO": "SBA_Dominican_Republic_Expanded_Complete_Package",
+    "EC": "SBA_Ecuador_Expanded_Complete_Package",
+    "EG": "SBA_Egypt_Apparel_Market_Study_Package",
+    "FR": "SBA_France_Apparel_Market_Study_Package",
+    "DE": "SBA_Germany_Apparel_Market_Study_Package",
+    "GH": "SBA_Ghana_Apparel_Market_Study_Package",
+    "GR": "SBA_Greece_Apparel_Market_Study_Package",
+    "IQ": "SBA_Iraq_Apparel_Study_Package",
+    "IT": "SBA_Italy_Apparel_Market_Study_Package",
+    "JO": "SBA_Jordan_Apparel_Study_Package",
+    "KE": "SBA_Kenya_Apparel_Market_Study_Package",
+    "KW": "SBA_Kuwait_Apparel_Study_Package_v1",
+    "LB": "SBA_Lebanon_Apparel_Study_Package",
+    "LY": "SBA_Libya_Apparel_Market_Study_Package",
+    "MR": "SBA_Mauritania_Apparel_Study_Package",
+    "MU": "SBA_Mauritius_Apparel_Market_Study_Package",
+    "MA": "SBA_Morocco_Apparel_Study_Package",
+    "MZ": "SBA_Mozambique_Apparel_Market_Study_Package",
+    "NA": "SBA_Namibia_Apparel_Market_Study_Package",
+    "NL": "SBA_Netherlands_Apparel_Market_Study_Package",
+    "NG": "SBA_Nigeria_Apparel_Market_Study_Package",
+    "OM": "SBA_Oman_Apparel_Study_Package",
+    "PA": "SBA_Panama_Expanded_Complete_Package",
+    "PE": "SBA_Peru_Expanded_Complete_Package",
+    "PL": "SBA_Poland_Apparel_Market_Study_Package",
+    "PT": "SBA_Portugal_Apparel_Market_Study_Package",
+    "QA": "SBA_Qatar_Apparel_Study_Package",
+    "RO": "SBA_Romania_Apparel_Market_Study_Package",
+    "RW": "SBA_Rwanda_Apparel_Market_Study_Package",
+    "SN": "SBA_Senegal_Apparel_Market_Study_Package",
+    "ZA": "SBA_South_Africa_Study",
+    "ES": "SBA_Spain_Apparel_Market_Study_Package",
+    "SD": "SBA_Sudan_Apparel_Study_Package",
+    "SE": "SBA_Sweden_Apparel_Market_Study_Package",
+    "TZ": "SBA_Tanzania_Apparel_Market_Study_Package_v2",
+    "TN": "SBA_Tunisia_Apparel_Study_Package",
+    "AE": "SBA_UAE_Apparel_Study_Package",
+    "UG": "SBA_Uganda_Apparel_Market_Study_Package",
+    "GB": "SBA_UK_Apparel_Market_Study_Package",
+    "US": "SBA_USA_Apparel_Market_Study_Package",
+    "ZM": "SBA_Zambia_Apparel_Market_Study_Package"
+  },
+  "COUNTRY_OFFICIAL_NAMES": {
+    "SA": {
+      "ar": "المملكة العربية السعودية",
+      "en": "Kingdom of Saudi Arabia",
+      "slug": "saudi-arabia-apparel-textiles"
+    },
+    "AE": {
+      "ar": "دولة الإمارات العربية المتحدة",
+      "en": "United Arab Emirates",
+      "slug": "united-arab-emirates-apparel-textiles"
+    },
+    "KW": {
+      "ar": "دولة الكويت",
+      "en": "State of Kuwait",
+      "slug": "kuwait-apparel-textiles"
+    },
+    "QA": {
+      "ar": "دولة قطر",
+      "en": "State of Qatar",
+      "slug": "qatar-apparel-textiles"
+    },
+    "OM": {
+      "ar": "سلطنة عُمان",
+      "en": "Sultanate of Oman",
+      "slug": "oman-apparel-textiles"
+    },
+    "BH": {
+      "ar": "مملكة البحرين",
+      "en": "Kingdom of Bahrain",
+      "slug": "bahrain-apparel-textiles"
+    },
+    "EG": {
+      "ar": "جمهورية مصر العربية",
+      "en": "Arab Republic of Egypt",
+      "slug": "egypt-apparel-textiles"
+    },
+    "LY": {
+      "ar": "دولة ليبيا",
+      "en": "State of Libya",
+      "slug": "libya-apparel-textiles"
+    },
+    "IQ": {
+      "ar": "جمهورية العراق",
+      "en": "Republic of Iraq",
+      "slug": "iraq-apparel-textiles"
+    },
+    "JO": {
+      "ar": "المملكة الأردنية الهاشمية",
+      "en": "Hashemite Kingdom of Jordan",
+      "slug": "jordan-apparel-textiles"
+    },
+    "MA": {
+      "ar": "المملكة المغربية",
+      "en": "Kingdom of Morocco",
+      "slug": "morocco-apparel-textiles"
+    },
+    "DZ": {
+      "ar": "الجمهورية الجزائرية الديمقراطية الشعبية",
+      "en": "People's Democratic Republic of Algeria",
+      "slug": "algeria-apparel-textiles"
+    },
+    "TN": {
+      "ar": "الجمهورية التونسية",
+      "en": "Republic of Tunisia",
+      "slug": "tunisia-apparel-textiles"
+    },
+    "LB": {
+      "ar": "الجمهورية اللبنانية",
+      "en": "Lebanese Republic",
+      "slug": "lebanon-apparel-textiles"
+    },
+    "SD": {
+      "ar": "جمهورية السودان",
+      "en": "Republic of the Sudan",
+      "slug": "sudan-apparel-textiles"
+    },
+    "MR": {
+      "ar": "الجمهورية الإسلامية الموريتانية",
+      "en": "Islamic Republic of Mauritania",
+      "slug": "mauritania-apparel-textiles"
+    },
+    "DE": {
+      "ar": "جمهورية ألمانيا الاتحادية",
+      "en": "Federal Republic of Germany",
+      "slug": "germany-apparel-textiles"
+    },
+    "GB": {
+      "ar": "المملكة المتحدة",
+      "en": "United Kingdom",
+      "slug": "united-kingdom-apparel-textiles"
+    },
+    "FR": {
+      "ar": "الجمهورية الفرنسية",
+      "en": "French Republic",
+      "slug": "france-apparel-textiles"
+    },
+    "ES": {
+      "ar": "مملكة إسبانيا",
+      "en": "Kingdom of Spain",
+      "slug": "spain-apparel-textiles"
+    },
+    "IT": {
+      "ar": "الجمهورية الإيطالية",
+      "en": "Italian Republic",
+      "slug": "italy-apparel-textiles"
+    },
+    "NL": {
+      "ar": "مملكة هولندا",
+      "en": "Kingdom of the Netherlands",
+      "slug": "netherlands-apparel-textiles"
+    },
+    "PL": {
+      "ar": "جمهورية بولندا",
+      "en": "Republic of Poland",
+      "slug": "poland-apparel-textiles"
+    },
+    "BE": {
+      "ar": "مملكة بلجيكا",
+      "en": "Kingdom of Belgium",
+      "slug": "belgium-apparel-textiles"
+    },
+    "SE": {
+      "ar": "مملكة السويد",
+      "en": "Kingdom of Sweden",
+      "slug": "sweden-apparel-textiles"
+    },
+    "AT": {
+      "ar": "جمهورية النمسا",
+      "en": "Republic of Austria",
+      "slug": "austria-apparel-textiles"
+    },
+    "DK": {
+      "ar": "مملكة الدنمارك",
+      "en": "Kingdom of Denmark",
+      "slug": "denmark-apparel-textiles"
+    },
+    "CZ": {
+      "ar": "جمهورية التشيك",
+      "en": "Czech Republic",
+      "slug": "czechia-apparel-textiles"
+    },
+    "PT": {
+      "ar": "الجمهورية البرتغالية",
+      "en": "Portuguese Republic",
+      "slug": "portugal-apparel-textiles"
+    },
+    "RO": {
+      "ar": "رومانيا",
+      "en": "Romania",
+      "slug": "romania-apparel-textiles"
+    },
+    "GR": {
+      "ar": "الجمهورية الهيلينية (اليونان)",
+      "en": "Hellenic Republic (Greece)",
+      "slug": "greece-apparel-textiles"
+    },
+    "US": {
+      "ar": "الولايات المتحدة الأمريكية",
+      "en": "United States of America",
+      "slug": "united-states-apparel-textiles"
+    },
+    "CA": {
+      "ar": "كندا",
+      "en": "Canada",
+      "slug": "canada-apparel-textiles"
+    },
+    "CL": {
+      "ar": "جمهورية تشيلي",
+      "en": "Republic of Chile",
+      "slug": "chile-apparel-textiles"
+    },
+    "PA": {
+      "ar": "جمهورية بنما",
+      "en": "Republic of Panama",
+      "slug": "panama-apparel-textiles"
+    },
+    "CO": {
+      "ar": "جمهورية كولومبيا",
+      "en": "Republic of Colombia",
+      "slug": "colombia-apparel-textiles"
+    },
+    "PE": {
+      "ar": "جمهورية بيرو",
+      "en": "Republic of Peru",
+      "slug": "peru-apparel-textiles"
+    },
+    "DO": {
+      "ar": "جمهورية الدومينيكان",
+      "en": "Dominican Republic",
+      "slug": "dominican-republic-apparel-textiles"
+    },
+    "CR": {
+      "ar": "جمهورية كوستاريكا",
+      "en": "Republic of Costa Rica",
+      "slug": "costa-rica-apparel-textiles"
+    },
+    "EC": {
+      "ar": "جمهورية الإكوادور",
+      "en": "Republic of Ecuador",
+      "slug": "ecuador-apparel-textiles"
+    },
+    "ZA": {
+      "ar": "جمهورية جنوب أفريقيا",
+      "en": "Republic of South Africa",
+      "slug": "south-africa-apparel-textiles"
+    },
+    "NG": {
+      "ar": "جمهورية نيجيريا الاتحادية",
+      "en": "Federal Republic of Nigeria",
+      "slug": "nigeria-apparel-textiles"
+    },
+    "KE": {
+      "ar": "جمهورية كينيا",
+      "en": "Republic of Kenya",
+      "slug": "kenya-apparel-textiles"
+    },
+    "GH": {
+      "ar": "جمهورية غانا",
+      "en": "Republic of Ghana",
+      "slug": "ghana-apparel-textiles"
+    },
+    "CI": {
+      "ar": "جمهورية كوت ديفوار (ساحل العاج)",
+      "en": "Republic of Côte d'Ivoire",
+      "slug": "cote-divoire-apparel-textiles"
+    },
+    "TZ": {
+      "ar": "جمهورية تنزانيا المتحدة",
+      "en": "United Republic of Tanzania",
+      "slug": "tanzania-apparel-textiles"
+    },
+    "AO": {
+      "ar": "جمهورية أنغولا",
+      "en": "Republic of Angola",
+      "slug": "angola-apparel-textiles"
+    },
+    "CM": {
+      "ar": "جمهورية الكاميرون",
+      "en": "Republic of Cameroon",
+      "slug": "cameroon-apparel-textiles"
+    },
+    "SN": {
+      "ar": "جمهورية السنغال",
+      "en": "Republic of Senegal",
+      "slug": "senegal-apparel-textiles"
+    },
+    "MU": {
+      "ar": "جمهورية موريشيوس",
+      "en": "Republic of Mauritius",
+      "slug": "mauritius-apparel-textiles"
+    },
+    "UG": {
+      "ar": "جمهورية أوغندا",
+      "en": "Republic of Uganda",
+      "slug": "uganda-apparel-textiles"
+    },
+    "ZM": {
+      "ar": "جمهورية زامبيا",
+      "en": "Republic of Zambia",
+      "slug": "zambia-apparel-textiles"
+    },
+    "NA": {
+      "ar": "جمهورية ناميبيا",
+      "en": "Republic of Namibia",
+      "slug": "namibia-apparel-textiles"
+    },
+    "RW": {
+      "ar": "جمهورية رواندا",
+      "en": "Republic of Rwanda",
+      "slug": "rwanda-apparel-textiles"
+    },
+    "MZ": {
+      "ar": "جمهورية موزمبيق",
+      "en": "Republic of Mozambique",
+      "slug": "mozambique-apparel-textiles"
+    }
+  },
+  "TARGET_BUYERS_MAP": {
+    "SA": {
+      "ar": "مجموعة سيومي ريتيل، فواز الحكير (سينومي)، الشايع، لاند مارك، كمال عثمان جمجوم (KOJ)",
+      "en": "Cenomi Retail, Landmark Group, M.H. Alshaya, Kamal Osman Jamjoom (KOJ)"
+    },
+    "AE": {
+      "ar": "مجموعة لاند مارك، أباريل جروب، الشايع، الطاير، أزاديا، ماجد الفطيم",
+      "en": "Landmark Group, Apparel Group, M.H. Alshaya, Al Tayer, Azadea, Majid Al Futtaim"
+    },
+    "KW": {
+      "ar": "مجموعة الشايع (Alshaya Group)، سلطان سنتر، أزاديا الكويت، سلاسل التجزئة المحلية",
+      "en": "M.H. Alshaya Group, The Sultan Center, Azadea Kuwait, local department stores"
+    },
+    "QA": {
+      "ar": "مجموعة الصالون الأزرق (Blue Salon)، أباريل جروب قطر، الميرة، لاند مارك قطر",
+      "en": "Blue Salon Group, Apparel Group Qatar, Al Meera, Landmark Qatar"
+    },
+    "OM": {
+      "ar": "سنتربوينت عُمان، كيمجي رامداس، مجموعة أباريل عُمان، لولو هايبر ماركت",
+      "en": "Centrepoint Oman, Khimji Ramdas, Apparel Group Oman, LuLu Hypermarket"
+    },
+    "BH": {
+      "ar": "الحواج (Al Hawaj)، لاند مارك البحرين، مجمع السيف، ريموت ريتيلرز",
+      "en": "Al Hawaj, Landmark Bahrain, Seef Mall Retailers, regional franchise groups"
+    },
+    "EG": {
+      "ar": "سلاسل التجزئة المحلية، شركات الملابس الجاهزة، مصانع القطاع الخاص (برامج التوريد المشترك)",
+      "en": "Local retail brands, export garment syndicates, private label partners"
+    },
+    "LY": {
+      "ar": "مستوردو طرابلس وبنغازي، شركة المدار للتجارة، تجار الجملة بسوق الرشيد وسوق الحوت",
+      "en": "Tripoli & Benghazi apparel importers, Al-Madar Trading, commercial wholesale syndicates"
+    },
+    "IQ": {
+      "ar": "مستوردو الشورجة ببغداد، كبرى شركات توزيع الملابس بأربيل والبصرة",
+      "en": "Shorja wholesale syndicates (Baghdad), Erbil & Basra commercial distributors"
+    },
+    "JO": {
+      "ar": "مجموعة السيف للأزياء، شركة حجازي وغوشة، محلات التجزئة بمول العبدلي وسيتي مول",
+      "en": "Al-Saif Fashion, local private label retail networks in Abdali Mall and City Mall"
+    },
+    "MA": {
+      "ar": "مجموعة مارجان (Marjane)، كارفور المغرب، كبرى شركات توزيع المنسوجات بالدار البيضاء",
+      "en": "Marjane Group, Label'Vie / Carrefour, Casablanca apparel wholesale syndicates"
+    },
+    "DZ": {
+      "ar": "مستوردو وتجار الجملة بحي بلكور وباب الزوار وبلوزداد، مستوردو الملابس الجاهزة بالجزائر العاصمة ووهران",
+      "en": "Bab Ezzouar & Belouizdad wholesale distributors, Algiers & Oran retail importers"
+    },
+    "TN": {
+      "ar": "مونوبري تونس (Monoprix)، المغازة العامة (Magasin Général)، مستوردو الأقمشة والملابس",
+      "en": "Monoprix Tunisia, Magasin Général, Tunis commercial textile distributors"
+    },
+    "LB": {
+      "ar": "مجموعة خوري هوم، شركات تجزئة فردان وأسواق بيروت، مستوردو الأزياء المستقلة",
+      "en": "Verdun & Beirut Souks fashion boutiques, independent apparel importers"
+    },
+    "SD": {
+      "ar": "شركة زيمو فاشن، الزهرة المتحدة، شركة أم جنين للتجارة، تجار جملة أم درمان وبورتسودان",
+      "en": "Zemo Fashion, Zahra United, Omgenean Trading, Omdurman & Port Sudan merchants"
+    },
+    "MR": {
+      "ar": "مستوردو نواكشوط بسوق العاصمة وسوق السبخة، كبرى مؤسسات الاستيراد العامة",
+      "en": "Nouakchott Central Market & Sebkha wholesale syndicates, general trading houses"
+    },
+    "DE": {
+      "ar": "أوتو جروب (Otto Group)، زالاندو (Zalando)، سي آند إيه (C&A)، كيك (KiK)، إرنستنغز فاميلي (Ernsting's family)",
+      "en": "Otto Group, Zalando, C&A, KiK Textilien, Ernsting's family"
+    },
+    "GB": {
+      "ar": "ماركس آند سبنسر (M&S)، نكست (Next)، أسوس (ASOS)، بريمارك (Primark)، ماتالان (Matalan)",
+      "en": "Marks & Spencer, Next plc, ASOS, Primark / ABF, Matalan"
+    },
+    "FR": {
+      "ar": "كيافي (Kiabi)، لا ردوت (La Redoute)، مجموعة بومانوير (Beaumanoir)، كارفور تيكستيل (Carrefour)",
+      "en": "Kiabi, La Redoute, Groupe Beaumanoir, Carrefour Textile, Monoprix"
+    },
+    "ES": {
+      "ar": "مجموعة إنديتكس (Inditex: Zara, Pull&Bear, Massimo Dutti)، مانجو (Mango)، تيندام (Tendam)",
+      "en": "Inditex Group (Zara, Pull&Bear), Mango (Punto Fa), Tendam Group"
+    },
+    "IT": {
+      "ar": "مجموعة أوفيشي (OVS Group)، بينيتون (Benetton)، كالتسيدونيا (Calzedonia)، ميروليو (Miroglio)",
+      "en": "OVS SpA, Benetton Group, Calzedonia, Miroglio Fashion"
+    },
+    "NL": {
+      "ar": "سي آند إيه أوروبا (C&A Europe HQ)، وي فاشن (WE Fashion)، إتش إي إم إيه (HEMA)",
+      "en": "C&A Europe (HQ), WE Fashion, HEMA, Scotch & Soda"
+    },
+    "PL": {
+      "ar": "مجموعة إل بي بي (LPP: Reserved, Cropp, House, Mohito, Sinsay)، سي سي سي (CCC)",
+      "en": "LPP SA (Reserved, Sinsay, Mohito, House), CCC Group"
+    },
+    "BE": {
+      "ar": "جي بي إكس تيكستيل (JBC)، كولرويت تيكستيل (Colruyt)، فيرست فاشن بلجيكا",
+      "en": "JBC NV, Colruyt Group, Cassis-Paprika, Zeb"
+    },
+    "SE": {
+      "ar": "إتش آند إم (H&M Group)، جينجر (Gina Tricot)، كابا إيه إل (KappAhl)، لندكس (Lindex)",
+      "en": "H&M Hennes & Mauritz, Gina Tricot, KappAhl, Lindex"
+    },
+    "AT": {
+      "ar": "كيك النمسا (KiK Austria)، إتش آند إم النمسا، كاستنر آند أولر (Kastner & Öhler)",
+      "en": "KiK Austria, Kastner & Öhler, Fussl Modestraße, Palmers Textil"
+    },
+    "DK": {
+      "ar": "مجموعة بست سيلر (Bestseller: Vero Moda, Jack & Jones, Name It)، آي سي جروب (IC Group)",
+      "en": "Bestseller A/S (Jack & Jones, Vero Moda), IC Group, DK Company"
+    },
+    "CZ": {
+      "ar": "إل بي بي التشيك، كيك براغ، متجر هافيلسكي، بيبكو التشيك (Pepco Czech)",
+      "en": "LPP Czech, KiK Textil, Pepco Czech Republic, Gate Clothing"
+    },
+    "PT": {
+      "ar": "مجموعة سوناي (Sonae: MO, Zippy)، كورتيفيل البرتغال، سالسا جينز (Salsa Jeans)",
+      "en": "Sonae Group (MO, Zippy), Tiffosi, Salsa Jeans (IVN)"
+    },
+    "RO": {
+      "ar": "بيبكو رومانيا (Pepco Romania)، إل بي بي بوخارست، لاكوشيتسا تيكستيل",
+      "en": "Pepco Romania, LPP Romania, Poema, TXM Romania"
+    },
+    "GR": {
+      "ar": "جمبو (Jumbo SA)، بي إس بي فاشن (BSB Fashion)، أتيكا ديبارتمنت ستورز (Attica)",
+      "en": "Jumbo SA, BSB Fashion, Attica Department Stores, Lynne"
+    },
+    "US": {
+      "ar": "تارجت (Target)، وول مارت (Walmart)، ذا جاب (The Gap Inc)، بي في إتش (PVH Corp: Tommy Hilfiger, Calvin Klein)، ليفي شتراوس (Levi's)",
+      "en": "Target, Walmart, Gap Inc, PVH Corp, Levi Strauss & Co, American Eagle"
+    },
+    "CA": {
+      "ar": "هدسون باي (Hudson's Bay)، ريتمانز (Reitmans)، لولوليمون (Lululemon)، مارك واير هاوس (Mark's)",
+      "en": "Hudson's Bay Company, Reitmans Canada, Mark's (Canadian Tire), Ardene"
+    },
+    "CL": {
+      "ar": "فالابيلا (Falabella)، سينكوسود (Cencosud / Paris)، ريبلي (Ripley)، لا بولار (La Polar)",
+      "en": "Falabella Retail, Cencosud (Paris), Ripley Corp, La Polar"
+    },
+    "PA": {
+      "ar": "مستوردو منطقة كولون الحرة (Colon Free Zone buyers)، موتي جروب (Motta Internacional)",
+      "en": "Colon Free Zone wholesale buyers, Motta Internacional, Felix B. Maduro"
+    },
+    "CO": {
+      "ar": "مجموعة إكسيتو (Grupo Éxito)، ستوديو إف (Studio F)، آرتورو كالي (Arturo Calle)، باتريمونيو",
+      "en": "Grupo Éxito, STF Group (Studio F), Arturo Calle, Koaj (Permoda)"
+    },
+    "PE": {
+      "ar": "ساجا فالابيلا بيرو (Saga Falabella)، ريبلي بيرو، أويشلي (Oechsle)، ريتيل بيرو",
+      "en": "Saga Falabella Peru, Ripley Peru, Oechsle (InRetail), Topitop"
+    },
+    "DO": {
+      "ar": "جروبو راموس (Grupo Ramos / La Sirena)، بلازا لاما (Plaza Lama)، سنترو كويستا ناسيونال (CCN)",
+      "en": "Grupo Ramos (La Sirena), Plaza Lama, Centro Cuesta Nacional (CCN)"
+    },
+    "CR": {
+      "ar": "سيميكا (Siman Costa Rica)، وول مارت أمريكا الوسطى، ياموني (Yamuni)",
+      "en": "Almacenes Siman, Walmart Central America, Yamuni, Tiendas Ekono"
+    },
+    "EC": {
+      "ar": "كوربوراسيون فافوريتا (Corporación Favorita / Megamaxi)، دي براتي (De Prati)",
+      "en": "Corporación Favorita (Megamaxi), Almacenes De Prati, Etafashion"
+    },
+    "ZA": {
+      "ar": "وول وورثس (Woolworths Holdings)، بيستروس (Pepkor: Pep, Ackermans)، ذا فوشيني جروب (The Foschini Group - TFG)، تروورثس (Truworths)، مستر برايس (Mr Price)",
+      "en": "Woolworths Holdings, Pepkor (Pep, Ackermans), The Foschini Group (TFG), Truworths, Mr Price Group"
+    },
+    "NG": {
+      "ar": "مستوردو سوق بالوجون وأيدوموتا بـ لاغوس، ريتيل لاند مارك نيجيريا، ديبريند أباريل",
+      "en": "Balogun & Idumota market wholesale syndicates (Lagos), Hubmart Stores, Ruff 'n' Tumble"
+    },
+    "KE": {
+      "ar": "ديفيا كينيا (Deacons East Africa)، ناكيمات تيكستيل، جافا فاشن، كينيا يونيفورمز",
+      "en": "Woolworths Kenya, Naivas Supermarkets, Chandarana, Uniform Distributors Nairobi"
+    },
+    "GH": {
+      "ar": "مستوردو سوق كانتامانتو بـ أكرا، ميلكوم جروب (Melcom Group)، بالاس هايبر ماركت",
+      "en": "Kantamanto Market wholesale syndicates, Melcom Group, Palace Mall"
+    },
+    "CI": {
+      "ar": "مجموعة سي دي سي آي (CDCI Abidjan)، بروكوما أبيدجان، أوركا ديكو تيكستيل",
+      "en": "CDCI (Compagnie de Distribution de Côte d'Ivoire), Prosuma Group, Orca Deco"
+    },
+    "TZ": {
+      "ar": "مستوردو سوق كاريوكو بـ دار السلام (Kariakoo Market)، مجموعة جي إس إم (GSM Group)",
+      "en": "Kariakoo Market wholesale syndicates (Dar es Salaam), GSM Group Tanzania"
+    },
+    "AO": {
+      "ar": "كانداندو أنغولا (Candando)، شبكة كيديسكونتو، مستوردو لواندا التجاريين",
+      "en": "Candando Hypermarkets, Kero Supermarkets, Luanda Commercial Importers"
+    },
+    "CM": {
+      "ar": "مستوردو سوق مارشي كونغ بب دوالا، سوتيكام (Soticam)، أدياليا الكاميرون (Adialea)",
+      "en": "Marché Congo wholesale syndicates (Douala), Sodicam SA, Adialea Cameroon"
+    },
+    "SN": {
+      "ar": "مستوردو سوق سانديغا بـ داكار (Marché Sandaga)، أوتشان السنغال (Auchan)، كارفور داكار",
+      "en": "Marché Sandaga wholesale syndicates (Dakar), Auchan Sénégal, Carrefour Market Dakar"
+    },
+    "MU": {
+      "ar": "مجموعة سي إل ريتيل (CIEL Textile)، أيرلاند بليث (IBL Group)، سوبر يو موريشيوس",
+      "en": "CIEL Textile retail divisions, IBL Group, Super U Mauritius, Courts Mammouth"
+    },
+    "UG": {
+      "ar": "مستوردو سوق كيكوبو بـ كمبالا (Kikuubo Wholesale)، كواليتي سوبر ماركت",
+      "en": "Kikuubo Wholesale Market (Kampala), Quality Supermarkets, Capital Shoppers"
+    },
+    "ZM": {
+      "ar": "مستوردو لوساكا، شوبرايت زامبيا تيكستيل (Shoprite)، بيك آند باي زامبيا",
+      "en": "Lusaka wholesale distributors, Shoprite Zambia apparel lines, Pick n Pay Zambia"
+    },
+    "NA": {
+      "ar": "مجموعة بي إتش إل ناميبيا، سلاسل وندوك التجارية، مستر برايس ناميبيا",
+      "en": "Pupkewitz Megabuild apparel divisions, Woermann Brock, Mr Price Namibia"
+    },
+    "RW": {
+      "ar": "مستوردو سوق نيابوجوجو بـ كيغالي (Nyabugogo Market)، سيمبا سوبر ماركت",
+      "en": "Nyabugogo Market wholesale importers (Kigali), Simba Supermarket, Sawa City"
+    },
+    "MZ": {
+      "ar": "مستوردو مابوتو (Maputo Importers)، شبكة بي إن بيه موزمبيق، في آي بي سبار",
+      "en": "Maputo wholesale trading houses, VIP Spar Mozambique, Premier Supermarkets"
+    }
+  },
+  "COUNTRY_PRODUCTS": {
+    "default": {
+      "ar": [
+        "تيشيرتات وبولو قطنية",
+        "ملابس أطفال ورضع",
+        "ملابس نوم ومنزلية",
+        "بناطيل وتريكو كاجوال",
+        "Private Label & FOB"
+      ],
+      "en": [
+        "Cotton T-shirts & Polos",
+        "Kidswear & Babywear",
+        "Homewear & Nightwear",
+        "Casual Knitwear",
+        "Private Label & FOB"
+      ]
+    },
+    "gulf": {
+      "ar": [
+        "ملابس نسائية كاجوال ومحتشمة",
+        "تيشيرتات وبولو قطنية فاخرة",
+        "ملابس نوم ومنزل قطن مصري",
+        "ملابس أطفال",
+        "Private Label"
+      ],
+      "en": [
+        "Modestwear & Casual Dresses",
+        "Premium Cotton Polos & Tees",
+        "Egyptian Cotton Homewear",
+        "Childrenswear",
+        "Private Label Programs"
+      ]
+    },
+    "europe": {
+      "ar": [
+        "تيشيرتات وبلوفرات قطن عضوي",
+        "ملابس رياضية وترفيهية أساسية",
+        "ملابس مهنية وزي عمل",
+        "ملابس نوم قطنية",
+        "برامج FOB سريعة"
+      ],
+      "en": [
+        "Organic Cotton Tees & Sweats",
+        "Athleisure & Basic Activewear",
+        "Workwear & Corporate Uniforms",
+        "Premium Cotton Sleepwear",
+        "Fast Nearshoring FOB"
+      ]
+    },
+    "north_america": {
+      "ar": [
+        "تيشيرتات قطنية 100% معفاة جمركيًا",
+        "سويتشيرت وبلوفرات فليس",
+        "ملابس داخلية ونوم",
+        "بناطيل جينز ودنيم وكاجوال",
+        "بروتوكول QIZ معفى"
+      ],
+      "en": [
+        "Duty-Free 100% Cotton T-shirts",
+        "Fleece Sweats & Hoodies",
+        "Underwear & Sleepwear",
+        "Denim & Twill Pants",
+        "Zero-Tariff QIZ Programs"
+      ]
+    },
+    "latam": {
+      "ar": [
+        "ملابس كاجوال خفيفة",
+        "تيشيرتات وبولو قطنية ومزيج",
+        "ملابس نوم وأطقم أطفال",
+        "ملابس رياضية يومية",
+        "Private Label"
+      ],
+      "en": [
+        "Lightweight Casualwear",
+        "Cotton & Poly-Blend Polos",
+        "Kidswear & Sleepwear Packs",
+        "Basic Daily Activewear",
+        "Private Label Sourcing"
+      ]
+    },
+    "africa": {
+      "ar": [
+        "ملابس قطنية أساسية خفيفة",
+        "ملابس مدرسية وزي موحد",
+        "تيشيرتات وشورتات كاجوال",
+        "ملابس أطفال اقتصادية",
+        "شحنات جملة سريعة"
+      ],
+      "en": [
+        "Lightweight Cotton Basics",
+        "Schoolwear & Institutional Uniforms",
+        "Casual Tees & Shorts",
+        "Value Childrenswear",
+        "Bulk Wholesale Replenishment"
+      ]
+    }
+  }
+}

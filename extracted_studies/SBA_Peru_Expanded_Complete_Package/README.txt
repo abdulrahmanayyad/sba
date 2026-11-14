@@ -1,0 +1,1 @@
+SBA Peru expanded market study package. Includes Arabic Word study and Excel trade/buyer workbook. HS6309 and HS392620 are separately identified and excluded from HS61+HS62 new-apparel market total. Importer leads based on customs declaration analytics and require validation.
