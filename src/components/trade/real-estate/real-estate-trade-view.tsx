@@ -26,7 +26,6 @@ import {
   REAL_ESTATE_ADVISORY_PILLARS,
   PHARMACY_ADVISORY_SECTION,
   REAL_ESTATE_MAJOR_MILESTONES,
-  REAL_ESTATE_DIPLOMATIC_PARTNERSHIPS,
   REAL_ESTATE_COLLABORATION_FIELDS,
 } from "@/lib/real-estate-trade-data";
 
@@ -470,54 +469,13 @@ export function RealEstateTradeView({ ar = true, hideHero = false }: RealEstateT
           </div>
         </section>
 
-        {/* Section 7: Diplomatic & High-Level Partnerships */}
-        <section id="re-diplomatic" className="scroll-mt-32 space-y-6">
-          <div className="interactive-card glass-box-interactive w-full rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl backdrop-blur-2xl border border-border/80 bg-background/85">
-            <div>
-              <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border/80 bg-secondary/85 px-4 py-1.5 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
-                <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-                <span>{ar ? "القسم السابع: شراكات دبلوماسية ووفود رسمية" : "Section 7: Diplomatic Partnerships"}</span>
-              </div>
-              <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-1 leading-snug">
-                {ar ? "شراكات دبلوماسية ومباحثات استثمارية رفيعة المستوى" : "Diplomatic Delegations & Strategic Alliances"}
-              </h2>
-              <p className="text-xs sm:text-sm text-muted-foreground mt-2 leading-relaxed max-w-4xl">
-                {ar
-                  ? "توثيق لمحطات ومباحثات رسمية جمعت قيادة المجموعة بسفراء ودبلوماسيين ومجموعات استثمارية دولية."
-                  : "Documented high-level engagements connecting Group leadership with ambassadors, diplomatic corps, and international sovereign investors."}
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-              {REAL_ESTATE_DIPLOMATIC_PARTNERSHIPS.map((dip, idx) => (
-                <div
-                  key={idx}
-                  className="group rounded-2xl border border-border/80 bg-background/80 p-6 backdrop-blur-md shadow-md space-y-3 transition-all duration-300 hover:-translate-y-1 hover:border-brand-orange/60 hover:shadow-xl"
-                >
-                  <div className="flex items-center justify-between border-b border-border/50 pb-2.5">
-                    <span className="rounded-full border border-brand-orange/30 bg-brand-orange/10 px-3 py-1 text-xs font-bold text-brand-orange">
-                      {ar ? `المحطة الدبلوماسية 0${idx + 1}` : `Diplomatic Milestone 0${idx + 1}`}
-                    </span>
-                  </div>
-                  <h3 className="font-bold text-base text-foreground group-hover:text-brand-orange transition-colors">
-                    {ar ? dip.titleAr : dip.titleEn}
-                  </h3>
-                  <p className="text-xs text-muted-foreground leading-relaxed">
-                    {ar ? dip.descAr : dip.descEn}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Section 8: Exhibitions & Industry Events */}
+        {/* Section 7: Exhibitions & Industry Events */}
         <section id="re-events" className="scroll-mt-32 space-y-6">
           <div className="interactive-card glass-box-interactive w-full rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl backdrop-blur-2xl border border-border/80 bg-background/85">
             <div>
               <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border/80 bg-secondary/85 px-4 py-1.5 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
                 <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-                <span>{ar ? "القسم الثامن: المعارض والمؤتمرات" : "Section 8: Industry Events & Exhibitions"}</span>
+                <span>{ar ? "القسم السابع: المعارض والمؤتمرات" : "Section 7: Industry Events & Exhibitions"}</span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-1 leading-snug">
                 {ar ? "المشاركة في كبرى المحافل والمعارض العقارية الدولية" : "International Real Estate Exhibitions & Summits"}
