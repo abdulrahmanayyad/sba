@@ -6,7 +6,6 @@ import {
   Building2,
   ChevronRight,
   Download,
-  FileSpreadsheet,
   FolderCog,
   Globe,
   Layers,
@@ -23,8 +22,6 @@ import { cn } from "@/lib/utils";
 import {
   GEO_REGIONS_ORDER,
   GLOBAL_MARKET_SECTORS,
-
-  STUDY_SECTION_BLUEPRINT,
   STUDY_STATUS_LABELS,
   type GlobalMarketSectorId,
   type GlobalMarketStudy,
@@ -759,62 +756,6 @@ export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
             );
           },
         )}
-      </section>
-
-      {/* 4. Institutional Architecture & 18-Axis Standard Blueprint */}
-      <section className="site-container pt-12">
-        <div className="rounded-3xl border border-slate-200/80 dark:border-white/15 bg-white/75 dark:bg-slate-900/60 p-6 sm:p-8 backdrop-blur-2xl shadow-md space-y-6">
-          <div className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-200/70 dark:border-white/10 pb-4">
-            <div className="flex items-center gap-3">
-              <div className="size-10 rounded-2xl bg-slate-900/5 dark:bg-white/10 text-slate-800 dark:text-slate-100 flex items-center justify-center shrink-0">
-                <Layers className="size-5" />
-              </div>
-              <div className="text-start">
-                <h2 className="font-head text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white">
-                  {ar ? "الهيكل المؤسسي الموحد للدراسات السوقية (18 محورًا)" : "Unified 18-Axis Market Study Framework"}
-                </h2>
-                <p className="text-xs text-slate-500 dark:text-slate-400">
-                  {ar
-                    ? "نظام مرن لاستقبال وعرض الدراسات المعتمدة، مع التخصيص حسب طبيعة كل قطاع ونوع السوق."
-                    : "Flexible, standardized presentation structure tailored to each sector and market scope."}
-                </p>
-              </div>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-2">
-              <Link
-                to="/trade"
-                className="inline-flex items-center gap-1.5 rounded-full bg-brand-green px-4 py-2 text-xs font-bold text-white hover:bg-brand-orange transition-all duration-300 shadow-xs cursor-pointer"
-              >
-                <FileSpreadsheet className="size-3.5" />
-                <span>{ar ? "الانتقال إلى الفرص العالمية" : "Open Global Opportunities"}</span>
-              </Link>
-              <Link
-                to="/global-markets/manage"
-                className="inline-flex items-center gap-1.5 rounded-full bg-brand-green px-4 py-2 text-xs font-bold text-white hover:bg-brand-orange transition-all duration-300 shadow-xs cursor-pointer"
-              >
-                <ShieldCheck className="size-3.5" />
-                <span>{ar ? "استيراد أو نشر دراسة معتمدة" : "Publish / Import Study"}</span>
-              </Link>
-            </div>
-          </div>
-
-          <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-            {STUDY_SECTION_BLUEPRINT.map((bp) => (
-              <div
-                key={bp.key}
-                className="flex items-center gap-2.5 rounded-xl border border-slate-200/70 dark:border-white/10 bg-slate-50/70 dark:bg-white/5 px-3.5 py-2.5 text-xs text-start"
-              >
-                <span className="flex size-6 shrink-0 items-center justify-center rounded-lg bg-brand-green text-[10px] font-extrabold text-white">
-                  {bp.order}
-                </span>
-                <span className="font-bold text-slate-800 dark:text-slate-200">
-                  {ar ? bp.titleAr : bp.titleEn}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
       </section>
     </div>
   );
