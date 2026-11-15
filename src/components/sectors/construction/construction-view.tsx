@@ -1138,7 +1138,7 @@ function ConstructionProjectsView({ ar }: { ar: boolean }) {
               </div>
 
               {/* Verified Project Institutional Section inside Modal */}
-              <div className="rounded-2xl border border-brand-green/30 bg-brand-green/5 p-4 sm:p-5 space-y-3">
+              <div className="rounded-2xl border border-white/40 bg-background/80 p-4 sm:p-5 space-y-3 backdrop-blur-md">
                 <div className="flex items-center gap-2 text-brand-green-text">
                   <ShieldCheck className="size-5 shrink-0" />
                   <h6 className="font-head text-sm font-bold">

@@ -19,16 +19,12 @@ interface VerifiedProjectsBannerProps {
 export function VerifiedProjectsBanner({ ar, onRequestOpen }: VerifiedProjectsBannerProps) {
   return (
     <Reveal>
-      <div className="group relative overflow-hidden rounded-3xl border border-white/40 bg-background/60 hover:bg-background/75 p-6 sm:p-8 md:p-10 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl mb-12 transition-all duration-300 interactive-card">
-        {/* Glow Effects */}
-        <div className="pointer-events-none absolute -end-24 -top-24 size-72 rounded-full bg-brand-green/10 blur-3xl transition-transform duration-500 group-hover:scale-110" />
-        <div className="pointer-events-none absolute -start-24 -bottom-24 size-72 rounded-full bg-brand-orange/10 blur-3xl transition-transform duration-500 group-hover:scale-110" />
-
+      <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 sm:p-8 md:p-10 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5 mb-12 transition-all duration-300">
         <div className="relative z-10 grid gap-8 lg:grid-cols-12 lg:items-center">
           {/* Main Info */}
           <div className="lg:col-span-8 space-y-4">
-            <div className="inline-flex items-center gap-2 rounded-full bg-brand-green/15 px-3.5 py-1 text-xs font-bold text-brand-green-text border border-brand-green/30">
-              <ShieldCheck className="size-4" />
+            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+              <ShieldCheck className="size-4 text-brand-green" />
               <span>{ar ? "المشروعات الموثقة" : "Verified Projects"}</span>
             </div>
 
@@ -46,15 +42,15 @@ export function VerifiedProjectsBanner({ ar, onRequestOpen }: VerifiedProjectsBa
 
             {/* Feature Badges */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
-              <div className="flex items-center gap-2 text-xs font-semibold text-foreground/90 bg-background/60 p-2.5 rounded-xl border border-border/60">
+              <div className="flex items-center gap-2 text-xs font-semibold text-foreground/90 bg-background/80 p-2.5 rounded-xl border border-white/40 shadow-xs backdrop-blur-sm">
                 <FileCheck className="size-4 text-brand-green shrink-0" />
                 <span>{ar ? "عقود ومحاضر استلام موثقة" : "Official Contracts & Handovers"}</span>
               </div>
-              <div className="flex items-center gap-2 text-xs font-semibold text-foreground/90 bg-background/60 p-2.5 rounded-xl border border-border/60">
+              <div className="flex items-center gap-2 text-xs font-semibold text-foreground/90 bg-background/80 p-2.5 rounded-xl border border-white/40 shadow-xs backdrop-blur-sm">
                 <Lock className="size-4 text-brand-orange shrink-0" />
                 <span>{ar ? "حماية البيانات وسرية التعاقد" : "Strict NDA & Data Redaction"}</span>
               </div>
-              <div className="flex items-center gap-2 text-xs font-semibold text-foreground/90 bg-background/60 p-2.5 rounded-xl border border-border/60">
+              <div className="flex items-center gap-2 text-xs font-semibold text-foreground/90 bg-background/80 p-2.5 rounded-xl border border-white/40 shadow-xs backdrop-blur-sm">
                 <Shield className="size-4 text-brand-green shrink-0" />
                 <span>{ar ? "مراجعة نظامية للهوية المهنية" : "Corporate Identity Vetting"}</span>
               </div>
