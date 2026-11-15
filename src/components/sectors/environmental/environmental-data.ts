@@ -3,8 +3,8 @@ const enviroImg = "/BG/Environment & Sustainability/Comprehensive Waste Manageme
 
 export const environmentalHeroData = {
   image: heroSustainable,
-  title: "Sustainable Environmental Services & Renewable Energy",
-  titleAr: "الخدمات البيئية المستدامة والطاقة المتجددة",
+  title: "Sustainable Environment & Renewable Energy",
+  titleAr: "البيئة المستدامة والطاقة المتجددة",
   subtitle: "Delivering advanced integrated technological, scientific research, and sustainable advisory solutions across Egypt, Africa, and the globe.",
   subtitleAr: "حلول بيئية واستشارية وتكنولوجية متقدمة مبنية على البحث والتطوير العلمي لخدمة المؤسسات في مصر وأفريقيا والعالم.",
   company: "SAMI BIN AYYAD · Environmental & Sustainability Solutions",
