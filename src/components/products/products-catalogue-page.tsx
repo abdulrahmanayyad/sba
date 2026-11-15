@@ -130,84 +130,102 @@ export function ProductsCataloguePage() {
 
   const totalProductsCount = physicalProducts.length;
 
-  const renderProductCard = (product: PhysicalProduct) => (
-    <div
-      key={product.id}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-white/20 bg-background/85 shadow-md backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)]"
-    >
-      <div>
-        {/* Product Image */}
-        <div className="relative aspect-[16/11] w-full overflow-hidden bg-secondary">
-          <img
-            src={product.image}
-            alt={ar ? product.nameAr : product.nameEn}
-            loading="lazy"
-            className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
-          />
-        </div>
+  const renderProductCard = (product: PhysicalProduct) => {
+    const isApparel = product.sector === "apparel";
 
-        {/* Content */}
-        <div className="p-6">
-          <h4 className="text-center font-head text-base sm:text-lg font-bold text-foreground group-hover:text-brand-green transition-colors leading-snug">
-            {ar ? product.nameAr : product.nameEn}
-          </h4>
+    return (
+      <div
+        key={product.id}
+        className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-white/20 bg-background/85 shadow-md backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)]"
+      >
+        <div>
+          {/* Product Image — only rendered for non-apparel products */}
+          {!isApparel && (
+            <div className="relative aspect-[16/11] w-full overflow-hidden bg-secondary">
+              <img
+                src={product.image}
+                alt={ar ? product.nameAr : product.nameEn}
+                loading="lazy"
+                className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
+          )}
 
-          <p className="mt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed line-clamp-2 text-center">
-            {ar ? product.taglineAr : product.taglineEn}
-          </p>
-
-          {/* Key Specifications Preview */}
-          <div className="mt-4 pt-3 border-t border-border/50 space-y-1.5">
-            {product.specifications.slice(0, 3).map((sp, sIdx) => (
-              <div key={sIdx} className="flex items-center justify-between text-[11px]">
-                <span className="text-muted-foreground font-medium shrink-0">
-                  {ar ? sp.labelAr : sp.labelEn}:
+          {/* Content */}
+          <div className="p-6">
+            {isApparel && (
+              <div className="flex items-center justify-between mb-3 pb-2 border-b border-border/40">
+                <span className="font-mono text-xs font-bold text-brand-orange bg-brand-orange/10 px-2.5 py-0.5 rounded-full">
+                  {product.code}
                 </span>
-                <span className="text-foreground font-semibold truncate max-w-[170px] text-end">
-                  {ar ? sp.valueAr : sp.valueEn}
+                <span className="text-xs text-muted-foreground flex items-center gap-1">
+                  <span>{product.originFlag}</span>
+                  <span>{ar ? product.originAr : product.originEn}</span>
                 </span>
               </div>
-            ))}
-          </div>
+            )}
 
-          {/* MOQ & Packaging */}
-          <div className="mt-3 rounded-xl bg-secondary/50 p-2.5 text-[11px] space-y-1">
-            <div className="flex items-center justify-between">
-              <span className="text-muted-foreground">{ar ? "الحد الأدنى للطلب:" : "MOQ:"}</span>
-              <span className="font-bold text-brand-orange">{ar ? product.moqAr : product.moqEn}</span>
+            <h4 className="text-center font-head text-base sm:text-lg font-bold text-foreground group-hover:text-brand-green transition-colors leading-snug">
+              {ar ? product.nameAr : product.nameEn}
+            </h4>
+
+            <p className="mt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed line-clamp-2 text-center">
+              {ar ? product.taglineAr : product.taglineEn}
+            </p>
+
+            {/* Key Specifications Preview */}
+            <div className="mt-4 pt-3 border-t border-border/50 space-y-1.5">
+              {product.specifications.slice(0, 3).map((sp, sIdx) => (
+                <div key={sIdx} className="flex items-center justify-between text-[11px]">
+                  <span className="text-muted-foreground font-medium shrink-0">
+                    {ar ? sp.labelAr : sp.labelEn}:
+                  </span>
+                  <span className="text-foreground font-semibold truncate max-w-[170px] text-end">
+                    {ar ? sp.valueAr : sp.valueEn}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            {/* MOQ & Packaging */}
+            <div className="mt-3 rounded-xl bg-secondary/50 p-2.5 text-[11px] space-y-1">
+              <div className="flex items-center justify-between">
+                <span className="text-muted-foreground">{ar ? "الحد الأدنى للطلب:" : "MOQ:"}</span>
+                <span className="font-bold text-brand-orange">{ar ? product.moqAr : product.moqEn}</span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Card Actions */}
-      <div className="p-6 pt-0 border-t border-border/40 mt-2 flex items-center gap-2">
-        <Button
-          type="button"
-          size="sm"
-          onClick={() => setActiveProductDetail(product)}
-          className="flex-1 rounded-full text-xs font-bold bg-brand-green text-white hover:bg-brand-orange transition-all duration-300 cursor-pointer"
-        >
-          <ZoomIn className="size-3.5 me-1.5" />
-          <span>{ar ? "استعراض المواصفات" : "View Product"}</span>
-        </Button>
+        {/* Card Actions */}
+        <div className="p-6 pt-0 border-t border-border/40 mt-2 flex items-center gap-2">
+          <Button
+            type="button"
+            size="sm"
+            onClick={() => setActiveProductDetail(product)}
+            className="flex-1 rounded-full text-xs font-bold bg-brand-green text-white hover:bg-brand-orange transition-all duration-300 cursor-pointer"
+          >
+            <ZoomIn className="size-3.5 me-1.5" />
+            <span>{ar ? "استعراض المواصفات" : "View Product"}</span>
+          </Button>
 
-        <Button
-          type="button"
-          size="sm"
-          onClick={() => {
-            setRfqTargetProduct(product);
-            setIsRfqSubmitted(false);
-            setGeneratedRfqCode(`RFQ-SBA-${Math.floor(1000 + Math.random() * 9000)}`);
-          }}
-          className="rounded-full bg-brand-green text-white hover:bg-brand-orange transition-all duration-300 text-xs font-bold px-3.5 cursor-pointer"
-        >
-          <Send className="size-3.5 me-1.5" />
-          <span>{ar ? "طلب عرض سعر" : "Quote"}</span>
-        </Button>
+          <Button
+            type="button"
+            size="sm"
+            onClick={() => {
+              setRfqTargetProduct(product);
+              setIsRfqSubmitted(false);
+              setGeneratedRfqCode(`RFQ-SBA-${Math.floor(1000 + Math.random() * 9000)}`);
+            }}
+            className="rounded-full bg-brand-green text-white hover:bg-brand-orange transition-all duration-300 text-xs font-bold px-3.5 cursor-pointer"
+          >
+            <Send className="size-3.5 me-1.5" />
+            <span>{ar ? "طلب عرض سعر" : "Quote"}</span>
+          </Button>
+        </div>
       </div>
-    </div>
-  );
+    );
+  };
 
   return (
     <div className="w-full">
@@ -468,13 +486,15 @@ export function ProductsCataloguePage() {
                 </DialogDescription>
               </DialogHeader>
 
-              <div className="mt-6 aspect-video w-full rounded-2xl overflow-hidden bg-secondary">
-                <img
-                  src={activeProductDetail.image}
-                  alt={ar ? activeProductDetail.nameAr : activeProductDetail.nameEn}
-                  className="size-full object-cover"
-                />
-              </div>
+              {activeProductDetail.sector !== "apparel" && (
+                <div className="mt-6 aspect-video w-full rounded-2xl overflow-hidden bg-secondary">
+                  <img
+                    src={activeProductDetail.image}
+                    alt={ar ? activeProductDetail.nameAr : activeProductDetail.nameEn}
+                    className="size-full object-cover"
+                  />
+                </div>
+              )}
 
               <div className="mt-6 space-y-4">
                 <div>
