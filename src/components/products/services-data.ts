@@ -923,7 +923,7 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["العلامات التجارية العالمية للأزياء", "سلاسل المتاجر الكبرى", "مشترو الزي الموحد وملابس العمل المؤسسية", "منصات تجارة الأزياء الإلكترونية"],
     "capabilitiesEn": ["Over 250 specialized industrial sewing machines", "Lean manufacturing line balancing", "AQL 1.5 inline and final inspection"],
     "capabilitiesAr": ["أكثر من 250 ماكينة خياطة صناعية متخصصة", "تطبيق مبادئ التصنيع الرشيق Lean Manufacturing لمرونة الخطوط", "مراقبة جودة صارمة بمقاييس AQL 1.5 الدولية"],
-    "image": "/BG/Apparel Manufacturing/Textile & Ready-Made Garments Sector.jpg"
+    "image": "/خدمات الملابس/collab-media-t26cTnB0V1k-unsplash.jpg"
   },
   {
     "id": "srv-app-odm",
@@ -952,7 +952,7 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["العلامات التجارية الصاعدة في الموضة", "سلاسل متاجر التجزئة الإقليمية", "المتاجر والبوتيكات الراقية", "ماركات الأزياء السريعة"],
     "capabilitiesEn": ["In-house fashion design team", "Proprietary library of over 2,700 commercial styles", "3D virtual fitting simulations"],
     "capabilitiesAr": ["فريق تصميم أزياء وباترون متخصص", "مكتبة موديلات تجارية تضم أكثر من 2,700 تصميم مجرب بالأسواق", "محاكاة ثلاثية الأبعاد لملاءمة القياسات 3D Virtual Fitting"],
-    "image": "/BG/Apparel Manufacturing/Product Development & Sampling.jpg"
+    "image": "/خدمات الملابس/shanjir-h-photo4life-au-hnYQUpNtBws-unsplash.jpg"
   },
   {
     "id": "srv-app-private-label",
@@ -981,7 +981,7 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["دور الأزياء الفاخرة", "العلامات الخاصة بسلاسل المتاجر الكبرى", "ماركات المشاهير والمؤثرين", "علامات الملابس الرياضية المتخصصة"],
     "capabilitiesEn": ["End-to-end branding packaging line", "Full IP and design protection", "Flexible multi-SKU minimum order quantities"],
     "capabilitiesAr": ["خطوط تعبئة وتغليف بهوية العلامة التجارية", "حماية كاملة للملكية الفكرية والتصميمات", "مرونة في الحد الأدنى للطلب وتعدد الموديلات"],
-    "image": "/BG/Apparel Manufacturing/Private Label & Contract Manufacturing.jpg"
+    "image": "/خدمات الملابس/winx-U6VKGLgsxz0-unsplash.jpg"
   },
   {
     "id": "srv-app-fob",
@@ -1010,7 +1010,7 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["بيوت الاستيراد الأوروبية", "مجموعات التجزئة في دول الخليج", "وكالات الشراء الدولية", "شركات التجارة العالمية"],
     "capabilitiesEn": ["FOB Alexandria / Port Said delivery", "Duty-free trade agreement utilization (EUR.1, Agadir, COMESA)", "Containerized freight logistics team"],
     "capabilitiesAr": ["تسليم FOB على موانئ الإسكندرية وبورسعيد ودمياط", "الاستفادة من الاتفاقيات الجمركية التفضيلية (EUR.1 وأغادير والكوميسا)", "فريق لوجستي متخصص في الشحن والتخليص الجمركي"],
-    "image": "/BG/Apparel Manufacturing/Integrated Manufacturing.jpg"
+    "image": "/خدمات الملابس/declan-sun-cQr2x2ALizA-unsplash.jpg"
   },
   {
     "id": "srv-app-cm",
@@ -1061,7 +1061,7 @@ export const professionalServices: ProfessionalService[] = [
       "خطوط فرد وقص آلية دقيقة تضمن أعلى كفاءة استغلال للأقمشة وتقليل الهادر",
       "رقابة جودة متعددة المراحل وفحص نهائي يضمن مطابقة تامة لمواصفات العميل"
     ],
-    "image": "/BG/Apparel Manufacturing/Integrated Manufacturing.jpg"
+    "image": "/خدمات الملابس/agto-nugroho-1mnXGDl3iRY-unsplash.jpg"
   },
   {
     "id": "srv-app-product-dev",
@@ -1090,7 +1090,7 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["ماركات الأزياء العالمية والمحلية", "مصممو الأزياء المستقلون", "مؤسسات توريد الزي الموحد", "مصانع الملابس الجاهزة"],
     "capabilitiesEn": ["Gerber AccuMark & Lectra CAD software platforms", "Automated digital pattern plotters", "Senior master patternmakers with 20+ years experience"],
     "capabilitiesAr": ["برمجيات Gerber AccuMark و Lectra العالمية", "طابعات بلوتر رقمية عريضة لرسم الباترونات الصناعية", "خبراء باترون أول بخبرة تفوق 20 عامًا في القصات العالمية"],
-    "image": "/BG/Apparel Manufacturing/Pattern Lab & Rapid Sampling.jpg"
+    "image": "/خدمات الملابس/adrien-olichon-1eQKDWNiIUs-unsplash.jpg"
   },
   {
     "id": "srv-app-sampling",
@@ -1119,7 +1119,7 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["مديرو المشتريات ومسؤولو الموضة", "فرق انتقاء المنتجات بسلاسل التجزئة", "الشركات الناشئة في مجال الأزياء", "مديرو التوريد للشركات"],
     "capabilitiesEn": ["Independent prototype workshop line", "Rapid turnarounds within 5-7 business days", "In-house trim and accessories library"],
     "capabilitiesAr": ["ورشة عينات مستقلة تمامًا عن خطوط الإنتاج الكمي", "سرعة تنفيذ وتسليم العينات خلال 5 إلى 7 أيام عمل", "مكتبة داخلية متكاملة للإكسسوارات والسحابات والخيوط"],
-    "image": "/BG/Apparel Manufacturing/Product Development & Sampling.jpg"
+    "image": "/خدمات الملابس/lidya-nada-grQh_x_vZKM-unsplash.jpg"
   },
   {
     "id": "srv-app-fabric-qc",
@@ -1148,7 +1148,7 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["سلاسل التجزئة العالمية للأزياء", "ماركات الملابس القطنية والتريكو الفاخرة", "بيوت التفتيش ومطابقة الجودة الدولية", "المشترون المؤسسيون للملابس الجاهزة"],
     "capabilitiesEn": ["OEKO-TEX Standard 100 chemical conformance", "Full in-house physical testing equipment (pull-test, wash crocking)", "Zero tolerance for safety and chemical non-compliance"],
     "capabilitiesAr": ["مطابقة للمواصفات البيئية لشهادة OEKO-TEX Standard 100", "أجهزة اختبارات ميكانيكية ومعملية (قوة شد الأزرار، ثبات الغسيل)", "صفر تسامح مع أي عيوب تؤثر على السلامة أو مظهر المنتج النهائي"],
-    "image": "/BG/Apparel Manufacturing/Textile Mill & Internal Dyeing.jpg"
+    "image": "/خدمات الملابس/th-o-ph-m-b5ivLh4eD0A-unsplash.jpg"
   },
   {
     "id": "srv-app-brand-advisory",
@@ -1181,7 +1181,7 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["العلامات التجارية الناشئة للأزياء", "سلاسل ومتاجر التجزئة القائمة", "متاجر الأزياء الإلكترونية", "المصممون المستقلون الراغبون في التوسع الصناعي"],
     "capabilitiesEn": ["400+ Consultations Delivered", "Direct access to 150+ partner factories", "End-to-end technical tech-pack auditing"],
     "capabilitiesAr": ["تقديم أكثر من 400 استشارة متخصصة", "ربط مباشر بشبكة تضم أكثر من 150 مصنعًا شريكًا", "تدقيق فني شامل للعينات وملفات المواصفات"],
-    "image": "/BG/Apparel Manufacturing/Our Process.jpg"
+    "image": "/خدمات الملابس/towel-studio-h7NX26Sh3uA-unsplash.jpg"
   }
 ];
 

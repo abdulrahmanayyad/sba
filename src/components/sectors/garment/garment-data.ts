@@ -832,7 +832,7 @@ export const garmentServicesExpanded: GarmentManufacturingService[] = [
     capabilitiesAr: ["مطابقة تامة لملف المواصفات الفنية", "مرونة في استيعاب أحجام الطلبيات", "مراجعات جودة في كل مرحلة إنتاج", "إمكانية التشغيل بخامات يوردها العميل"],
     deliverablesEn: ["Pre-production approval sample", "Bulk production conforming to AQL 2.5", "Inspection certificate"],
     deliverablesAr: ["عينة اعتماد ما قبل الإنتاج (PP Sample)", "إنتاج كمي مطابق لمعايير AQL 2.5", "شهادة الفحص ومطابقة الجودة"],
-    image: "/BG/Apparel Manufacturing/Ready-Made Garment Manufacturing.jpg"
+    image: "/خدمات الملابس/collab-media-t26cTnB0V1k-unsplash.jpg"
   },
   {
     id: "odm-development",
@@ -849,7 +849,7 @@ export const garmentServicesExpanded: GarmentManufacturingService[] = [
     capabilitiesAr: ["تصميمات متوافقة مع أحدث خطوط الموضة", "قصات مجربة ومثبتة في الأسواق", "تخصيص سريع للألوان والطباعات", "هندسة تكلفة تناسب السعر المستهدف"],
     deliverablesEn: ["Trend capsule collection proposals", "Fabric & color swatch cards", "Branded prototype approvals"],
     deliverablesAr: ["مقترحات كبسولات أزياء موسمية", "بطاقات خامات وعينات ألوان معتمدة", "عينات أولية معتمدة بهوية علامتك"],
-    image: "/BG/Apparel Manufacturing/Product Development & Sampling.jpg"
+    image: "/خدمات الملابس/shanjir-h-photo4life-au-hnYQUpNtBws-unsplash.jpg"
   },
   {
     id: "private-label",
@@ -866,7 +866,7 @@ export const garmentServicesExpanded: GarmentManufacturingService[] = [
     capabilitiesAr: ["توريد الليبل المنسوج والحراري المخصص", "دمج بطاقات الأسعار والباركود وRFID", "تغليف فردي جاهز للعرض بالمتاجر", "ملصقات وعلامات أمان مخصصة للعلامة"],
     deliverablesEn: ["Complete branded collection ready for retail shelves", "Barcode compliance report", "Master export cartons"],
     deliverablesAr: ["مجموعة ملابس متكاملة جاهزة للأرفف والمتاجر", "تقرير مطابقة الباركود وسلاسل التوريد", "كراتين تصدير مطبوعة بهوية البراند"],
-    image: "/BG/Apparel Manufacturing/Private Label Manufacturing.jpg"
+    image: "/خدمات الملابس/winx-U6VKGLgsxz0-unsplash.jpg"
   },
   {
     id: "fob-manufacturing",
@@ -883,7 +883,7 @@ export const garmentServicesExpanded: GarmentManufacturingService[] = [
     capabilitiesAr: ["تمويل وتوريد كافة الخامات ومستلزمات الإنتاج", "ضبط ومطابقة ألوان الصباغة معمليًا", "التخليص الجمركي وتجهيز مستندات الشحن والتصدير", "سعر تعاقدي ثابت ومحدد للقطعة دون تكاليف خفية"],
     deliverablesEn: ["Export-cleared container at shipping port", "Bill of Lading & Commercial Invoice", "Certificate of Origin & EUR-1 Form"],
     deliverablesAr: ["حاوية بضائع مخلصة جمركيًا بميناء التصدير", "بوليصة الشحن والفاتورة التجارية المعتمدة", "شهادة المنشأ المصرية ونموذج EUR-1 التصديري"],
-    image: "/BG/Apparel Manufacturing/FOB Manufacturing Programs.jpg"
+    image: "/خدمات الملابس/declan-sun-cQr2x2ALizA-unsplash.jpg"
   },
   {
     id: "cm-manufacturing",
@@ -920,7 +920,7 @@ export const garmentServicesExpanded: GarmentManufacturingService[] = [
       "تقرير مراجعة استهلاك الأقمشة ونسب كفاءة القص والهادر",
       "شهادة الفحص النهائي ومطابقة الجودة بمقاييس AQL المعتمدة"
     ],
-    image: "/BG/Apparel Manufacturing/Integrated Manufacturing.jpg"
+    image: "/خدمات الملابس/agto-nugroho-1mnXGDl3iRY-unsplash.jpg"
   },
   {
     id: "product-development",
@@ -937,7 +937,7 @@ export const garmentServicesExpanded: GarmentManufacturingService[] = [
     capabilitiesAr: ["إعداد ملفات المواصفات الفنية الكاملة (Tech Packs)", "حسابات استهلاك القماش الدقيقة لكل مقاس", "وضع قواعد تدريج المقاسات لمختلف الأسواق", "تحليل الجدوى التشغيلية وتكاليف الإنتاج الكمي"],
     deliverablesEn: ["Production-ready Tech Pack Dossier", "Graded digital pattern files (DXF/AAMA)", "Stitch and construction specifications sheet"],
     deliverablesAr: ["ملف Tech Pack فني متكامل جاهز للمصانع", "ملفات الباترون الرقمية المدرجة بجميع المقاسات", "جدول مواصفات الغرز وتقنيات الحياكة المعتمدة"],
-    image: "/BG/Apparel Manufacturing/Product Development & Sampling.jpg"
+    image: "/خدمات الملابس/adrien-olichon-1eQKDWNiIUs-unsplash.jpg"
   },
   {
     id: "sampling-prototyping",
@@ -954,7 +954,7 @@ export const garmentServicesExpanded: GarmentManufacturingService[] = [
     capabilitiesAr: ["إنهاء العينات الأولى خلال 5 إلى 7 أيام عمل", "تنفيذ مجموعات المقاسات الكاملة (Size Sets)", "عينات معارض المبيعات للعملاء والمشترين (SMS)", "تقارير تقييم القياسات وتعديلات الباترون الفورية"],
     deliverablesEn: ["Physical approved fit sample", "Sample measurement audit sheet", "Pre-production (PP) sign-off protocol"],
     deliverablesAr: ["عينة فيت معتمدة ومطابقة للمواصفات", "جدول فحص وتدقيق قياسات العينة الفعلي", "محضر اعتماد عينة ما قبل الإنتاج (PP Sign-Off)"],
-    image: "/BG/Apparel Manufacturing/Product Development & Sampling.jpg"
+    image: "/خدمات الملابس/lidya-nada-grQh_x_vZKM-unsplash.jpg"
   },
   {
     id: "bulk-production",
@@ -971,7 +971,7 @@ export const garmentServicesExpanded: GarmentManufacturingService[] = [
     capabilitiesAr: ["مرونة إنتاجية تبدأ من 1,000 وحتى أكثر من 100,000 قطعة", "توازن خطوط الإنتاج للقضاء على نقاط الاختناق", "متابعة رقمية لحظية لمعدلات الإنتاج اليومي", "تنظيم الإنتاج بحسب دفعات الصباغة والألوان (Lots)"],
     deliverablesEn: ["Complete inspected order ready on schedule", "Final AQL 2.5 quality inspection certificate", "Carton packing list and shipping manifest"],
     deliverablesAr: ["الطلبية الكاملة مفحوصة وجاهزة في الموعد المحدد", "شهادة الفحص النهائي للجودة بمعيار AQL 2.5", "كشف التعبئة التفصيلي (Packing List) وجدول الكراتين"],
-    image: "/BG/Apparel Manufacturing/Ready-Made Garment Manufacturing.jpg"
+    image: "/خدمات الملابس/collab-media-t26cTnB0V1k-unsplash.jpg"
   },
   {
     id: "fabric-development-sourcing",
@@ -988,7 +988,7 @@ export const garmentServicesExpanded: GarmentManufacturingService[] = [
     capabilitiesAr: ["غزل ونسيج أقمشة مخصصة (سنجل جيرسي، بيكيه، ريب، إنترلوك)", "مطابقة درجات ألوان بانتون عبر Lab Dips خلال 4 أيام عمل", "تشطيبات كيميائية ملمس الخوخ ومقاومة الوبرية ومقاومة البكتيريا", "فحوصات معملية لقوة الشد وثبات الألوان ضد الغسيل والاحتكاك"],
     deliverablesEn: ["Approved Lab-Dip Color Swatches", "Fabric Technical Spec Sheet (Weight, Width, Shrinkage)", "Bulk Fabric Mill Roll Delivery"],
     deliverablesAr: ["عينات ألوان الصباغة المعتمدة (Lab Dips)", "بطاقة المواصفات الفنية للقماش (الوزن، العرض، نسبة الانكماش)", "توريد أثواب الأقمشة المعتمدة لصالة القص"],
-    image: "/BG/Apparel Manufacturing/Textile Mill & Internal Dyeing.jpg"
+    image: "/خدمات الملابس/th-o-ph-m-b5ivLh4eD0A-unsplash.jpg"
   },
   {
     id: "brand-advisory",
@@ -1029,7 +1029,7 @@ export const garmentServicesExpanded: GarmentManufacturingService[] = [
       "جدول تسعير تكلفة الإنتاج وتوزيع المصانع الشريكة",
       "جلسة استشارة أولية مجانية لبحث متطلبات المشروع"
     ],
-    image: "/BG/Apparel Manufacturing/Our Process.jpg"
+    image: "/خدمات الملابس/towel-studio-h7NX26Sh3uA-unsplash.jpg"
   }
 ];
 
