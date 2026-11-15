@@ -215,7 +215,7 @@ export function ProductsCataloguePage() {
         key: "herbs",
         titleAr: "الأعشاب والنباتات الطبية",
         titleEn: "Herbs & Medicinal Botanicals",
-        subtitleAr: "أعشاب البابونج وورق اللوري والزعتر والملوخية المجففة طبيعيًا والمعقمة بالبخار للتصدير.",
+        subtitleAr: "أعشاب طبيعية ومعقمة",
         subtitleEn: "Dried chamomile flowers, bay leaves, wild thyme, and Egyptian export-grade molokhia.",
         badgeAr: "الأعشاب الطبية",
         badgeEn: "Medicinal Herbs",
