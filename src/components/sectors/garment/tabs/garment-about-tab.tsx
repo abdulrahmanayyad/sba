@@ -274,7 +274,7 @@ export function GarmentAboutTab() {
           <div className="text-center max-w-3xl mx-auto mb-10">
             <SectionBadge title={ar ? "التصنيفات والمنتجات" : "Product Categories"} />
             <h2 className="section-title mt-3 text-center mx-auto">
-              {ar ? "تنوع صناعي شامل عبر 11 فئة رئيسية للملابس" : "Comprehensive Apparel Product Categories"}
+              {ar ? "تنوع صناعي شامل" : "Comprehensive Apparel Diversity"}
             </h2>
             <p className="section-intro mt-3 text-center mx-auto">
               {ar ? "تخصص دقيق وقدرات إنتاجية لتلبية مختلف طلبات بيوت الأزياء وسلاسل التجزئة." : "Specialized production lines for diverse fashion genres from knit basics to tailored formalwear."}
@@ -304,7 +304,7 @@ export function GarmentAboutTab() {
           <div className="mt-8 text-center">
             <Button asChild size="default" className="rounded-full bg-brand-green text-white hover:bg-brand-orange shadow-md">
               <Link to="/models">
-                <span>{ar ? "استعراض كتالوج الموديلات (+2,700 موديل)" : "Browse Full Models Catalogue (+2,700 Styles)"}</span>
+                <span>{ar ? "استعراض كتالوج الموديلات" : "Browse Models Catalogue"}</span>
                 <ExternalLink className="size-4 ms-2" />
               </Link>
             </Button>
@@ -385,25 +385,25 @@ export function GarmentAboutTab() {
               <p className="section-intro mt-3 text-center mx-auto">{ar ? shirtFacility.subtitleAr : shirtFacility.subtitleEn}</p>
             </div>
 
-            <div className="rounded-2xl border border-brand-orange/30 bg-brand-orange/5 p-6 sm:p-8 mb-8">
-              <div className="flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-border/50 pb-4 mb-4">
+            <div className="rounded-3xl border border-border bg-secondary/30 p-6 sm:p-8 backdrop-blur-md shadow-sm transition hover:border-brand-green/60 mb-8">
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-border/50 pb-4 mb-6">
                 <div>
                   <h3 className="font-head text-lg font-bold text-foreground">
                     {ar ? "خط إنتاج القمصان الكلاسيكية المستقل" : "Dedicated Classic Shirt Line"}
                   </h3>
                   <p className="text-xs text-muted-foreground mt-0.5">{ar ? shirtFacility.noteAr : shirtFacility.noteEn}</p>
                 </div>
-                <div className="text-center sm:text-end shrink-0">
-                  <div className="font-head text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">{ar ? shirtFacility.monthlyCapacityAr : shirtFacility.monthlyCapacityEn}</div>
+                <div className="rounded-2xl border border-brand-green/40 bg-brand-green/10 px-4 py-2 text-center sm:text-end shrink-0">
+                  <div className="font-head text-xl sm:text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">{ar ? shirtFacility.monthlyCapacityAr : shirtFacility.monthlyCapacityEn}</div>
                   <div className="text-[11px] font-bold text-muted-foreground uppercase">{ar ? "طاقة الخط المعتمدة" : "Certified Line Capacity"}</div>
                 </div>
               </div>
 
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 {shirtFacility.specializedMachinery.map((mach, idx) => (
-                  <div key={idx} className="rounded-xl border border-border/60 bg-background/80 p-4">
+                  <div key={idx} className="rounded-2xl border border-border bg-secondary/40 p-4 backdrop-blur-md flex flex-col justify-between hover:border-brand-green transition-colors">
                     <span className="font-head text-xs font-bold text-foreground block">{ar ? mach.nameAr : mach.nameEn}</span>
-                    <p className="mt-1.5 text-xs text-muted-foreground leading-relaxed">{ar ? mach.descAr : mach.descEn}</p>
+                    <p className="mt-2 text-xs text-muted-foreground leading-relaxed">{ar ? mach.descAr : mach.descEn}</p>
                   </div>
                 ))}
               </div>

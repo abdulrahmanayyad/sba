@@ -177,7 +177,7 @@ export function GarmentCapabilitiesTab() {
             <SectionBadge title={ar ? "خط إنتاج القمصان الكلاسيكية" : "Dedicated Classic Shirt Line"} />
             <h2 className="section-title mt-3">{ar ? shirtFacility.headingAr : shirtFacility.headingEn}</h2>
             <p className="section-intro mt-3">{ar ? shirtFacility.subtitleAr : shirtFacility.subtitleEn}</p>
-            <div className="inline-block mt-5 rounded-2xl border border-brand-orange/40 bg-brand-orange/10 p-4 text-center">
+            <div className="inline-block mt-5 rounded-2xl border border-brand-green/40 bg-brand-green/10 p-4 text-center">
               <div className="font-head text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">{ar ? shirtFacility.monthlyCapacityAr : shirtFacility.monthlyCapacityEn}</div>
               <div className="text-xs font-bold text-muted-foreground uppercase mt-1">{ar ? "طاقة الخط المعتمدة شهريًا" : "Certified Monthly Capacity"}</div>
             </div>
@@ -191,7 +191,7 @@ export function GarmentCapabilitiesTab() {
             </h4>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {shirtFacility.specializedMachinery.map((mach, idx) => (
-                <div key={idx} className="rounded-2xl border border-border bg-card/60 p-4">
+                <div key={idx} className="rounded-2xl border border-border bg-secondary/30 p-4 backdrop-blur-md flex flex-col justify-between hover:border-brand-green transition-colors">
                   <span className="font-head text-xs font-bold text-foreground block">{ar ? mach.nameAr : mach.nameEn}</span>
                   <p className="mt-2 text-xs text-muted-foreground leading-relaxed">{ar ? mach.descAr : mach.descEn}</p>
                 </div>
