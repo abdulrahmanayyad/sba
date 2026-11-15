@@ -201,11 +201,10 @@ export function EnvironmentalMarketsTab({ ar }: EnvironmentalMarketsTabProps) {
     <div className="w-full space-y-12">
       {/* 1. Header & Intro */}
       <section className="site-container">
-        <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
-          <Reveal>
-            <div className="max-w-4xl mx-auto flex flex-col items-center justify-center text-center">
-              <SectionBadge title={ar ? "أسواقنا وتواجدنا الإقليمي والدولي" : "Our Regional & Global Markets"} />
-              <h1 className="mt-4 font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-foreground text-center w-full mx-auto">
+        <Reveal>
+          <div className="glass-box-interactive group mx-auto w-full rounded-3xl p-8 sm:p-12 text-center cursor-pointer">
+            <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center justify-center text-center">
+              <h1 className="font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-foreground text-center w-full mx-auto">
                 {ar ? "خريطة الأسواق والخدمات البيئية والاستشارية" : "Global Environmental Markets & Service Footprint"}
               </h1>
               <p className="mt-4 text-sm sm:text-base text-muted-foreground leading-relaxed text-center w-full max-w-3xl mx-auto">
@@ -216,7 +215,7 @@ export function EnvironmentalMarketsTab({ ar }: EnvironmentalMarketsTabProps) {
             </div>
 
             {/* Quick Metrics Bar */}
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 mt-10 pt-6 border-t border-border/50 max-w-5xl mx-auto justify-center">
+            <div className="relative z-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 mt-10 pt-6 border-t border-border/50 max-w-5xl mx-auto justify-center">
               <div className="rounded-2xl border border-border bg-secondary/30 p-5 sm:p-6 backdrop-blur-md flex flex-col items-center justify-center text-center transition-all hover:border-brand-green/40 hover:bg-secondary/40 shadow-xs">
                 <span className="text-[11px] sm:text-xs font-bold text-muted-foreground uppercase tracking-wider block text-center mx-auto">
                   {ar ? "إجمالي الدول والأسواق" : "Total Markets"}
@@ -265,8 +264,8 @@ export function EnvironmentalMarketsTab({ ar }: EnvironmentalMarketsTabProps) {
                 </p>
               </div>
             </div>
-          </Reveal>
-        </div>
+          </div>
+        </Reveal>
       </section>
 
       {/* 2. SPOTLIGHT: أبرز الأسواق التي تمثل سوقًا كبيرًا (Prominent High-Potential Markets) */}
