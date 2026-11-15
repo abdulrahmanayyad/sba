@@ -43,7 +43,7 @@ export const STUDY_TUN_APPAREL_001: GlobalMarketStudy = {
   "activityTypeEn": "Strategic Market Study & B2B Commercial Supply",
   "productTagsAr": ["تيشيرتات وبولو قطنية", "ملابس أطفال", "ملابس نوم وتريكو", "Private Label & FOB"],
   "productTagsEn": ["Cotton T-shirts & Polos", "Kidswear", "Homewear", "Private Label & FOB"],
-  "titleAr: "دراسة سوق الملابس الجاهزة والمنسوجات — الجمهورية التونسية",
+  "titleAr": "دراسة سوق الملابس الجاهزة والمنسوجات — الجمهورية التونسية",
   "titleEn": "Apparel & Textiles Market Intelligence Report — Republic of Tunisia",
   "subtitleAr": "تحليل شامل لفرص التوريد التجاري والتكامل الصناعي المتوسطي في قطاع الملابس والمنسوجات.",
   "subtitleEn": "Comprehensive analysis of commercial supply, Euro-Med nearshoring integration, and B2B apparel opportunities.",

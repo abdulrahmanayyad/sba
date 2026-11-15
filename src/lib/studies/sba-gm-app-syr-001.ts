@@ -44,7 +44,7 @@ export const STUDY_SYR_APPAREL_001: GlobalMarketStudy = {
   "productTagsEn": ["Cotton T-shirts & Polos", "Kidswear", "Homewear", "Private Label & FOB"],
   "titleAr": "دراسة سوق الملابس الجاهزة والمنسوجات — الجمهورية العربية السورية",
   "titleEn": "Apparel & Textiles Market Intelligence Report — Syrian Arab Republic",
-  "subtitleAr: "تحليل شامل لواردات الملابس والبيانات التناظرية وسلاسل الإمداد وضوابط الامتثال والتسوية المصرفية.",
+  "subtitleAr": "تحليل شامل لواردات الملابس والبيانات التناظرية وسلاسل الإمداد وضوابط الامتثال والتسوية المصرفية.",
   "subtitleEn": "Comprehensive analysis of apparel trade, mirror flows, supply corridors, compliance screening, and settlement channels.",
   "status": "completed",
   "approvalStatus": "approved",
