@@ -216,43 +216,51 @@ export function EnvironmentalMarketsTab({ ar }: EnvironmentalMarketsTabProps) {
             </div>
 
             {/* Quick Metrics Bar */}
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 mt-10 pt-6 border-t border-border/50">
-              <div className="rounded-2xl border border-border bg-secondary/30 p-4 backdrop-blur-md text-center">
-                <span className="text-[11px] font-bold text-muted-foreground uppercase tracking-wider block">
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 mt-10 pt-6 border-t border-border/50 max-w-5xl mx-auto justify-center">
+              <div className="rounded-2xl border border-border bg-secondary/30 p-5 sm:p-6 backdrop-blur-md flex flex-col items-center justify-center text-center transition-all hover:border-brand-green/40 hover:bg-secondary/40 shadow-xs">
+                <span className="text-[11px] sm:text-xs font-bold text-muted-foreground uppercase tracking-wider block text-center mx-auto">
                   {ar ? "إجمالي الدول والأسواق" : "Total Markets"}
                 </span>
-                <span className="font-head text-3xl font-extrabold text-foreground mt-1 block">66</span>
-                <p className="text-[11px] text-muted-foreground mt-0.5">
+                <span className="font-head text-3xl sm:text-4xl font-extrabold text-foreground mt-2 block text-center mx-auto">
+                  66
+                </span>
+                <p className="text-xs text-muted-foreground mt-1.5 text-center mx-auto leading-relaxed">
                   {ar ? "دول الخليج والعرب وإفريقيا" : "GCC, Arab & Global coverage"}
                 </p>
               </div>
 
-              <div className="rounded-2xl border border-border bg-secondary/30 p-4 backdrop-blur-md text-center">
-                <span className="text-[11px] font-bold text-muted-foreground uppercase tracking-wider block">
+              <div className="rounded-2xl border border-border bg-secondary/30 p-5 sm:p-6 backdrop-blur-md flex flex-col items-center justify-center text-center transition-all hover:border-brand-orange/40 hover:bg-secondary/40 shadow-xs">
+                <span className="text-[11px] sm:text-xs font-bold text-muted-foreground uppercase tracking-wider block text-center mx-auto">
                   {ar ? "أبرز الأسواق ذات الفرص الكبرى" : "Major Anchor Markets"}
                 </span>
-                <span className="font-head text-3xl font-extrabold text-brand-orange mt-1 block">10</span>
-                <p className="text-[11px] text-muted-foreground mt-0.5">
+                <span className="font-head text-3xl sm:text-4xl font-extrabold text-brand-orange mt-2 block text-center mx-auto">
+                  10
+                </span>
+                <p className="text-xs text-muted-foreground mt-1.5 text-center mx-auto leading-relaxed">
                   {ar ? "أسواق كبرى بإنفاق ومشاريع ضخمة" : "Mega capex & immediate entry"}
                 </p>
               </div>
 
-              <div className="rounded-2xl border border-border bg-secondary/30 p-4 backdrop-blur-md text-center">
-                <span className="text-[11px] font-bold text-muted-foreground uppercase tracking-wider block">
+              <div className="rounded-2xl border border-border bg-secondary/30 p-5 sm:p-6 backdrop-blur-md flex flex-col items-center justify-center text-center transition-all hover:border-brand-green/40 hover:bg-secondary/40 shadow-xs">
+                <span className="text-[11px] sm:text-xs font-bold text-muted-foreground uppercase tracking-wider block text-center mx-auto">
                   {ar ? "مجالات الأنشطة والاستشارات" : "Consultancy Disciplines"}
                 </span>
-                <span className="font-head text-3xl font-extrabold text-brand-green mt-1 block">19+</span>
-                <p className="text-[11px] text-muted-foreground mt-0.5">
+                <span className="font-head text-3xl sm:text-4xl font-extrabold text-brand-green mt-2 block text-center mx-auto">
+                  19+
+                </span>
+                <p className="text-xs text-muted-foreground mt-1.5 text-center mx-auto leading-relaxed">
                   {ar ? "تخصصات هندسية واستشارية متكاملة" : "Turnkey engineering solutions"}
                 </p>
               </div>
 
-              <div className="rounded-2xl border border-border bg-secondary/30 p-4 backdrop-blur-md text-center">
-                <span className="text-[11px] font-bold text-muted-foreground uppercase tracking-wider block">
+              <div className="rounded-2xl border border-border bg-secondary/30 p-5 sm:p-6 backdrop-blur-md flex flex-col items-center justify-center text-center transition-all hover:border-brand-green/40 hover:bg-secondary/40 shadow-xs">
+                <span className="text-[11px] sm:text-xs font-bold text-muted-foreground uppercase tracking-wider block text-center mx-auto">
                   {ar ? "نوعية الخدمات المقدمة" : "Services Spectrum"}
                 </span>
-                <span className="font-head text-3xl font-extrabold text-foreground mt-1 block">100%</span>
-                <p className="text-[11px] text-muted-foreground mt-0.5">
+                <span className="font-head text-3xl sm:text-4xl font-extrabold text-foreground mt-2 block text-center mx-auto">
+                  100%
+                </span>
+                <p className="text-xs text-muted-foreground mt-1.5 text-center mx-auto leading-relaxed">
                   {ar ? "EIA، غاز حيوي، مياه، وكربون" : "EIA, Biogas, Water & Carbon"}
                 </p>
               </div>
