@@ -188,7 +188,7 @@ export function NewsPage() {
       <section className="relative w-full min-h-[calc(100svh-76px)] overflow-hidden text-white flex flex-col justify-center mb-12">
         {/* Full-width & Full-height background image & overlay */}
         <img
-          src="/BG/Main Home Page.jpg"
+          src="/Background/Corporate Legacy, Historical Archive & Sector Insights.jpg"
           alt={ar ? "أرشيف مجموعة سامي بن عياد" : "Sami Bin Ayyad Group Archive"}
           className="absolute inset-0 size-full object-cover object-center pointer-events-none select-none"
           fetchPriority="high"

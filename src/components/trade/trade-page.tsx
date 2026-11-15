@@ -122,7 +122,7 @@ export function TradePage({ ar = true }: TradePageProps) {
       descEn: "A business gateway connecting national green mega-programs and industrial facilities with advanced sustainability solutions, featuring transparent disclosure of direct scope and certified consortium alliances."
     },
     "real-estate": {
-      bg: "/BG/Construction/Construction Home Page.jpg",
+      bg: "/Background/Trusted Real Estate Advisory, Asset Management & Institutional Alliances.jpg",
       badgeAr: "مجموعة سامي بن عياد · الفرص العقارية والاستثمارية الدولية",
       badgeEn: "SAMI BIN AYYAD GROUP · Global Real Estate & Investment Opportunities",
       titleAr: "خبرات مهنية واستثمارية موثوقة في صناعة العقار وإدارة الأصول",
