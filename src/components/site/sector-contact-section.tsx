@@ -1,4 +1,4 @@
-import { ArrowRight, Mail, MessageCircle, Phone } from "lucide-react";
+import { ArrowRight, Mail, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { WHATSAPP_URL } from "@/lib/process-steps";
 
@@ -67,23 +67,12 @@ export function SectorContactSection({ ar, sector }: SectorContactSectionProps) 
             </a>
           </Button>
 
-          <Button asChild variant="ghost" className="group relative h-auto w-full justify-start gap-3 sm:gap-4 overflow-hidden rounded-2xl border border-brand-orange/30 bg-brand-orange/5 p-4 sm:p-5 text-start whitespace-normal hover:border-brand-orange hover:bg-brand-orange/15 hover:shadow-lg backdrop-blur-md transition-all duration-300 active:scale-[0.98]">
-            <a href="tel:+201222238072">
-              <span className="flex size-10 sm:size-12 shrink-0 items-center justify-center rounded-full bg-brand-orange/15 text-brand-orange"><Phone aria-hidden="true" className="size-4 sm:size-5" /></span>
-              <span className="min-w-0 flex-1">
-                <span className="block font-head text-xs sm:text-sm font-bold text-foreground/80">{ar ? "الاتصال الهاتفي المباشر: " : "Direct Call: "}</span>
-                <span dir="ltr" className="mt-1 block font-head text-sm sm:text-base font-bold text-foreground">{ar ? "+20 01222238072 & +20 01222238073" : "+20 12 222 380 72 / 73"}</span>
-              </span>
-              <span className="shrink-0 text-brand-orange"><ArrowRight aria-hidden="true" className="size-4 sm:size-5 rtl:rotate-180" /></span>
-            </a>
-          </Button>
-
           <Button asChild variant="ghost" className="group relative h-auto w-full justify-start gap-3 sm:gap-4 overflow-hidden rounded-2xl border border-[#25D366]/30 bg-[#25D366]/5 p-4 sm:p-5 text-start whitespace-normal hover:border-[#25D366] hover:bg-[#25D366]/15 hover:shadow-lg backdrop-blur-md transition-all duration-300 active:scale-[0.98]">
-            <a href={WHATSAPP_URL} target="_blank" rel="noreferrer">
+            <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" aria-label="WhatsApp Direct: +20 01222238072">
               <span className="flex size-10 sm:size-12 shrink-0 items-center justify-center rounded-full bg-[#25D366]/15 text-[#25D366]"><MessageCircle aria-hidden="true" className="size-4 sm:size-5" /></span>
               <span className="min-w-0 flex-1">
                 <span className="block font-head text-xs sm:text-sm font-bold text-foreground/80">{ar ? "واتساب مباشر: " : "WhatsApp Direct: "}</span>
-                <span dir="ltr" className="mt-1 block font-head text-sm sm:text-base font-bold text-foreground">{ar ? "+20 01222238072" : "+20 12 222 380 72"}</span>
+                <span dir="ltr" className="mt-1 block font-head text-sm sm:text-base font-bold text-foreground">+20 01222238072</span>
               </span>
               <span className="shrink-0 text-[#25D366]"><ArrowRight aria-hidden="true" className="size-4 sm:size-5 rtl:rotate-180" /></span>
             </a>
