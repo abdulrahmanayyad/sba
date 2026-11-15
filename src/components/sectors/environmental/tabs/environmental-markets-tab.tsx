@@ -203,12 +203,12 @@ export function EnvironmentalMarketsTab({ ar }: EnvironmentalMarketsTabProps) {
       <section className="site-container">
         <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
           <Reveal>
-            <div className="max-w-4xl mx-auto text-center">
+            <div className="max-w-4xl mx-auto flex flex-col items-center justify-center text-center">
               <SectionBadge title={ar ? "أسواقنا وتواجدنا الإقليمي والدولي" : "Our Regional & Global Markets"} />
-              <h1 className="mt-4 font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-foreground">
+              <h1 className="mt-4 font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-foreground text-center w-full mx-auto">
                 {ar ? "خريطة الأسواق والخدمات البيئية والاستشارية" : "Global Environmental Markets & Service Footprint"}
               </h1>
-              <p className="mt-4 text-sm sm:text-base text-muted-foreground leading-relaxed">
+              <p className="mt-4 text-sm sm:text-base text-muted-foreground leading-relaxed text-center w-full max-w-3xl mx-auto">
                 {ar
                   ? "نطاق جغرافي ممتد يغطي 66 دولة وسوقًا إقليميًا ودوليًا؛ يوضح مجالات النشاطات والاستشارات البيئية المتخصصة ونوعية الخدمات الهندسية والتنفيذية المصممة لكل دولة، مع تسليط الضوء على أبرز الأسواق ذات الفرص البيئية الكبرى."
                   : "An extensive geographic footprint across 66 international markets. Highlighting specialized environmental consulting scopes, tailored engineering services per territory, and the most prominent high-potential green anchor markets."}
