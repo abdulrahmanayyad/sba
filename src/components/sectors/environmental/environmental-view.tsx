@@ -730,13 +730,13 @@ function EnvironmentalServicesView({ ar }: { ar: boolean }) {
       <section className="site-container">
         <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
           <Reveal>
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-              <div className="max-w-2xl">
+            <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+              <div className="flex-1 min-w-0">
                 <SectionBadge title={ar ? "خدماتنا وتخصصاتنا" : "Specialized Services"} />
-                <h2 className="section-title mt-3">
+                <h2 className="mt-3 font-head text-xl sm:text-2xl lg:text-[1.7rem] font-bold tracking-tight text-foreground md:whitespace-nowrap">
                   {ar ? "منظومة الخدمات البيئية والاستشارية والحلول التكنولوجية" : "Comprehensive Environmental & Engineering Services"}
                 </h2>
-                <p className="section-intro mt-3">
+                <p className="section-intro mt-2">
                   {ar
                     ? "التخصصات الهندسية والاستشارية المتكاملة"
                     : "Integrated Engineering & Consulting Disciplines"}
@@ -744,7 +744,7 @@ function EnvironmentalServicesView({ ar }: { ar: boolean }) {
               </div>
 
               {/* Search input */}
-              <div className="relative w-full md:w-72">
+              <div className="relative w-full lg:w-72 shrink-0">
                 <Search className="absolute start-3 top-1/2 -translate-y-1/2 size-4 text-muted-foreground" />
                 <input
                   type="text"
