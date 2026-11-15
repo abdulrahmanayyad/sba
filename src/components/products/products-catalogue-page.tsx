@@ -160,7 +160,7 @@ export function ProductsCataloguePage() {
         key: "olive-oil",
         titleAr: "زيت الزيتون البكر الممتاز",
         titleEn: "Virgin Olive Oil",
-        subtitleAr: "عصر ميكانيكي أول على البارد بنسبة حموضة أقل من 0.5% ومطابقة للمواصفات الدولية.",
+        subtitleAr: "عصر ميكانيكي أول على البارد",
         subtitleEn: "First cold-pressed extra virgin olive oil with acidity < 0.5% meeting IOC standards.",
         badgeAr: "زيت الزيتون",
         badgeEn: "Olive Oil",
