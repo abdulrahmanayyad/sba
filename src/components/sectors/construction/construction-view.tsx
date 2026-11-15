@@ -227,8 +227,8 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
               <span>{ar ? "نظرة عامة على القطاع" : "Sector Overview"}</span>
             </div>
-            <h2 className="section-title mt-2">{ar ? data.partnerTitleAr : data.partnerTitle}</h2>
-            <div className="section-intro mx-auto mt-6 leading-relaxed max-w-3xl space-y-4">
+            <h2 className="section-title mt-2 text-center mx-auto">{ar ? data.partnerTitleAr : data.partnerTitle}</h2>
+            <div className="section-intro mx-auto mt-6 leading-relaxed max-w-3xl space-y-4 text-center">
               {data.partnerContent.map((item, idx) => (
                 <p key={idx}>{highlightBrand(ar ? item.ar : item.en)}</p>
               ))}
@@ -288,8 +288,8 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-10">
             <SectionBadge title={ar ? "القدرات الفنية والتنفيذية" : "Technical Capabilities"} />
-            <h2 className="section-title mt-3">{ar ? capabilities.titleAr : capabilities.titleEn}</h2>
-            <p className="section-intro mt-3">{ar ? capabilities.subtitleAr : capabilities.subtitleEn}</p>
+            <h2 className="section-title mt-3 text-center mx-auto">{ar ? capabilities.titleAr : capabilities.titleEn}</h2>
+            <p className="section-intro mt-3 text-center mx-auto">{ar ? capabilities.subtitleAr : capabilities.subtitleEn}</p>
           </div>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -386,10 +386,10 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-10">
             <SectionBadge title={ar ? "القطاعات المخدومة" : "Industries We Serve"} />
-            <h2 className="section-title mt-3">
+            <h2 className="section-title mt-3 text-center mx-auto">
               {ar ? "ريادة تنفيذية موثقة عبر كبرى القطاعات" : "Proven Track Record Across Key Industries"}
             </h2>
-            <p className="section-intro mt-3">
+            <p className="section-intro mt-3 text-center mx-auto">
               {ar
                 ? "خبرات هندسية متخصصة تلبي أعلى متطلبات المستشفيات، منشآت الطاقة، المشروعات السكنية، والتجارية."
                 : "Engineering expertise tailored to demanding medical cleanrooms, oil & gas regulator stations, luxury compounds, and commercial centers."}
@@ -499,8 +499,8 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
           <Reveal>
             <div className="text-center max-w-3xl mx-auto mb-10">
               <SectionBadge title={ar ? "الجودة والسلامة والاعتمادات الرسمية" : "QHSE Standards & Official Accreditations"} />
-              <h2 className="section-title mt-3">{ar ? credentials.titleAr : credentials.titleEn}</h2>
-              <p className="section-intro mt-3">{ar ? credentials.subtitleAr : credentials.subtitleEn}</p>
+              <h2 className="section-title mt-3 text-center mx-auto">{ar ? credentials.titleAr : credentials.titleEn}</h2>
+              <p className="section-intro mt-3 text-center mx-auto">{ar ? credentials.subtitleAr : credentials.subtitleEn}</p>
             </div>
 
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -615,10 +615,10 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
                 <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
                 <span>{ar ? "ابدأ دراسة وتنفيذ مشروعك" : "Start Your Construction Project"}</span>
               </div>
-              <h2 className="text-2xl sm:text-4xl font-extrabold font-head text-foreground">
+              <h2 className="text-2xl sm:text-4xl font-extrabold font-head text-foreground text-center mx-auto">
                 {ar ? "جاهزون لمناقشة ودراسة مشروعك القادم" : "Ready to Execute Your Next Milestone Project"}
               </h2>
-              <p className="mt-3 text-xs sm:text-sm text-muted-foreground leading-relaxed">
+              <p className="mt-3 text-xs sm:text-sm text-muted-foreground leading-relaxed text-center mx-auto">
                 {ar
                   ? "قدم مواصفات مشروعك الآن عبر نموذج دراسة المشروعات متعدد الخطوات، وسيقوم فريق المكتب الفني بدراسة المقايسات والمخططات والتواصل معكم بعرض فني ومالي معتمد."
                   : "Submit your technical project brief through our multi-step proposal builder, and our senior engineering team will evaluate drawings and BOQs to provide a certified turnkey proposal."}
