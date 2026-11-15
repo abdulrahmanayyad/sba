@@ -289,9 +289,18 @@ export function EnvironmentalMarketsTab({ ar }: EnvironmentalMarketsTabProps) {
                   </p>
                 </div>
               </div>
-              <span className="rounded-full bg-brand-orange px-3.5 py-1 text-xs font-bold text-white shadow-xs self-start sm:self-center shrink-0">
-                {ar ? "أعلى 10 أسواق استراتيجية" : "Top 10 Strategic Anchors"}
-              </span>
+              <button
+                type="button"
+                onClick={() => {
+                  setSelectedRegion("top");
+                  const el = document.getElementById("country-directory");
+                  if (el) el.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="inline-flex items-center gap-2 rounded-full bg-brand-green hover:bg-brand-orange text-white px-4 py-1.5 text-xs font-bold shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer self-start sm:self-center shrink-0"
+              >
+                <span className="size-1.5 rounded-full bg-white animate-pulse" />
+                <span>{ar ? "أعلى 10 أسواق استراتيجية" : "Top 10 Strategic Anchors"}</span>
+              </button>
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
@@ -299,7 +308,7 @@ export function EnvironmentalMarketsTab({ ar }: EnvironmentalMarketsTabProps) {
                 <div
                   key={topCountry.id}
                   onClick={() => setActiveCountryModal(topCountry)}
-                  className="group relative cursor-pointer rounded-2xl border border-border/80 bg-background/90 p-4 transition-all duration-300 hover:-translate-y-1 hover:border-brand-orange hover:shadow-md flex flex-col justify-between"
+                  className="group relative cursor-pointer rounded-2xl border border-border/80 bg-background/90 p-4 transition-all duration-300 hover:-translate-y-1 hover:border-brand-green hover:shadow-md flex flex-col justify-between"
                 >
                   <div>
                     <div className="flex items-center justify-between gap-2 mb-2">
@@ -315,7 +324,7 @@ export function EnvironmentalMarketsTab({ ar }: EnvironmentalMarketsTabProps) {
                           {ar ? topCountry.nameAr : topCountry.nameEn}
                         </span>
                       </div>
-                      <span className="font-mono text-xs font-extrabold text-brand-orange">
+                      <span className="font-mono text-xs font-extrabold rounded-md bg-brand-green/10 text-brand-green group-hover:bg-brand-orange group-hover:text-white px-2 py-0.5 transition-all duration-200">
                         {topCountry.potentialScore}/100
                       </span>
                     </div>
@@ -325,7 +334,7 @@ export function EnvironmentalMarketsTab({ ar }: EnvironmentalMarketsTabProps) {
                     </p>
                   </div>
 
-                  <div className="mt-3 pt-2.5 border-t border-border/40 flex items-center justify-between text-[10px] font-bold text-brand-green">
+                  <div className="mt-3 pt-2.5 border-t border-border/40 flex items-center justify-between text-[10px] font-bold text-brand-green group-hover:text-brand-orange transition-colors">
                     <span>{ar ? topCountry.marketSizeLabelAr : topCountry.marketSizeLabelEn}</span>
                     <span className="text-muted-foreground group-hover:text-brand-orange transition-colors">←</span>
                   </div>
@@ -532,7 +541,7 @@ export function EnvironmentalMarketsTab({ ar }: EnvironmentalMarketsTabProps) {
       </section>
 
       {/* 4. COUNTRY DIRECTORY: دليل الدول ومجال النشاطات ونوع الخدمات المقدمة لكل دولة */}
-      <section className="site-container">
+      <section id="country-directory" className="site-container scroll-mt-24">
         <div className="rounded-3xl border border-white/40 bg-background/85 p-6 sm:p-8 shadow-sm backdrop-blur-xl">
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-6 border-b border-border/50">
             <div>
