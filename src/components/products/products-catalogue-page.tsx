@@ -128,6 +128,62 @@ export function ProductsCataloguePage() {
     ];
   }, [filteredProducts]);
 
+  // Food & Natural Products Sections (Strictly ordered broad families)
+  const foodSections = useMemo(() => {
+    return [
+      {
+        key: "honey-bee",
+        titleAr: "القسم الأول: عسل النحل الطبيعي ومشتقاته",
+        titleEn: "Section 1: Natural Honey & Bee Products",
+        subtitleAr: "تشكيلة من أجود أنواع العسل المصري النقي (عسل السدر، الموالح، حبة البركة، البرسيم، وزهور البراري)",
+        subtitleEn: "Premium pure Egyptian honey varieties (Sidr, Citrus, Black Seed, Clover, and Wildflower)",
+        badgeAr: "عسل النحل",
+        badgeEn: "Natural Honey",
+        products: filteredProducts.filter((p) => p.categoryKey === "honey-bee" || p.categoryKeys?.includes("honey-bee")),
+      },
+      {
+        key: "olives-oil",
+        titleAr: "القسم الثاني: الزيتون وزيت الزيتون",
+        titleEn: "Section 2: Olives & Olive Oil",
+        subtitleAr: "زيتون المائدة المخلل وزيت الزيتون البكر الممتاز والمعصور على البارد بأعلى معايير الجودة العالمية",
+        subtitleEn: "Egyptian table olives and cold-pressed extra virgin olive oil certified to international standards",
+        badgeAr: "الزيتون وزيت الزيتون",
+        badgeEn: "Olives & Olive Oil",
+        products: filteredProducts.filter((p) => p.categoryKey === "olives-oil" || p.categoryKeys?.includes("olives-oil") || p.categoryKey === "olives-products" || p.categoryKey === "olive-oil"),
+      },
+      {
+        key: "dates-palm",
+        titleAr: "القسم الثالث: التمور ومشتقاتها",
+        titleEn: "Section 3: Dates & Palm Products",
+        subtitleAr: "تمور الواحات ونخيل مصر الفاخرة (سيوي/صعيدي، مجدول، وعجينة ودبس التمر الطبيعي)",
+        subtitleEn: "Luxury Egyptian dates (Siwi, Medjool, Date Paste & Molasses) from Oasis & Toshka groves",
+        badgeAr: "التمور ومشتقاتها",
+        badgeEn: "Dates & Palm",
+        products: filteredProducts.filter((p) => p.categoryKey === "dates-palm" || p.categoryKeys?.includes("dates-palm")),
+      },
+      {
+        key: "spices-herbs",
+        titleAr: "القسم الرابع: التوابل والبهارات والأعشاب والخلطات",
+        titleEn: "Section 4: Herbs, Spices & Seasonings",
+        subtitleAr: "أعشاب ونباتات طبية مجففة، توابل عطرية كاملة ومطحونة، خلطات أرز وشوربات وتتبيلات تراثية متخصصة",
+        subtitleEn: "Aromatic herbs, culinary spices, traditional food mixes, rice seasonings, soups and marinades",
+        badgeAr: "التوابل والبهارات والأعشاب",
+        badgeEn: "Herbs & Spices",
+        products: filteredProducts.filter((p) => p.categoryKey === "spices-herbs" || p.categoryKeys?.includes("spices-herbs")),
+      },
+      {
+        key: "powdered-juices",
+        titleAr: "القسم الخامس: بودرة العصائر الطبيعية",
+        titleEn: "Section 5: Natural Juice Powders",
+        subtitleAr: "عصائر فواكه وحمضيات مجففة بالرذاذ سريعة الذوبان للصناعات الغذائية والمشروبات والمطابخ الفندقية",
+        subtitleEn: "Instant cold-soluble spray-dried fruit & citrus powders for beverages and food processing",
+        badgeAr: "بودرة العصائر",
+        badgeEn: "Juice Powders",
+        products: filteredProducts.filter((p) => p.categoryKey === "powdered-juices" || p.categoryKeys?.includes("powdered-juices")),
+      },
+    ].filter((sec) => sec.products.length > 0);
+  }, [filteredProducts]);
+
   const totalProductsCount = physicalProducts.length;
 
   const renderProductCard = (product: PhysicalProduct) => {
@@ -418,6 +474,35 @@ export function ProductsCataloguePage() {
         {selectedProductDivision === "apparel" && selectedProductCategory === "all" && !productSearchQuery.trim() ? (
           <div className="space-y-12">
             {apparelSections.map((sec, secIdx) => (
+              <div key={sec.key} className="space-y-6">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 rounded-2xl border border-white/20 bg-background/70 p-4 sm:p-5 backdrop-blur-xl shadow-xs">
+                  <div className="flex items-center gap-3">
+                    <span className="flex size-8 items-center justify-center rounded-xl bg-brand-green/10 text-brand-green border border-brand-green/25 font-bold text-xs shrink-0">
+                      {secIdx + 1}
+                    </span>
+                    <div>
+                      <h3 className="font-head text-base sm:text-lg md:text-xl font-bold text-foreground">
+                        {ar ? sec.titleAr : sec.titleEn}
+                      </h3>
+                      <p className="text-xs text-muted-foreground mt-0.5 leading-relaxed">
+                        {ar ? sec.subtitleAr : sec.subtitleEn}
+                      </p>
+                    </div>
+                  </div>
+                  <span className="inline-flex items-center self-start sm:self-auto rounded-xl bg-brand-green px-3.5 py-1.5 text-xs font-bold text-white shadow-xs shrink-0">
+                    {ar ? sec.badgeAr : sec.badgeEn}
+                  </span>
+                </div>
+
+                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                  {sec.products.map(renderProductCard)}
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : selectedProductDivision === "food" && selectedProductCategory === "all" && !productSearchQuery.trim() ? (
+          <div className="space-y-12">
+            {foodSections.map((sec, secIdx) => (
               <div key={sec.key} className="space-y-6">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 rounded-2xl border border-white/20 bg-background/70 p-4 sm:p-5 backdrop-blur-xl shadow-xs">
                   <div className="flex items-center gap-3">
