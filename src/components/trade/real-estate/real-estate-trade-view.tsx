@@ -469,48 +469,6 @@ export function RealEstateTradeView({ ar = true, hideHero = false }: RealEstateT
           </div>
         </section>
 
-        {/* Section 7: Exhibitions & Industry Events */}
-        <section id="re-events" className="scroll-mt-32 space-y-6">
-          <div className="interactive-card glass-box-interactive w-full rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl backdrop-blur-2xl border border-border/80 bg-background/85">
-            <div>
-              <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border/80 bg-secondary/85 px-4 py-1.5 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
-                <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-                <span>{ar ? "القسم السابع: المعارض والمؤتمرات" : "Section 7: Industry Events & Exhibitions"}</span>
-              </div>
-              <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-1 leading-snug">
-                {ar ? "المشاركة في كبرى المحافل والمعارض العقارية الدولية" : "International Real Estate Exhibitions & Summits"}
-              </h2>
-              <p className="text-xs sm:text-sm text-muted-foreground mt-2 leading-relaxed max-w-4xl">
-                {ar
-                  ? "حضور وتواجد نشط في أهم المعارض والمؤتمرات العقارية بمصر والمنطقة لمتابعة أحدث توجهات السوق والتحالفات."
-                  : "Active participation in leading real estate expos and investment summits across the MENA region."}
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              <div className="group rounded-2xl border border-border/80 bg-background/80 p-6 text-center shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-brand-orange/60 hover:shadow-lg">
-                <span className="font-bold text-base text-foreground group-hover:text-brand-orange transition-colors block">Cityscape Egypt</span>
-                <span className="rounded-full border border-brand-orange/30 bg-brand-orange/10 px-3 py-0.5 text-xs text-brand-orange font-bold inline-block mt-2">{ar ? "سيتي سكيب مصر" : "Annual Flagship"}</span>
-                <span className="text-[11px] text-muted-foreground block mt-1">{ar ? "القاهرة" : "Cairo"}</span>
-              </div>
-              <div className="group rounded-2xl border border-border/80 bg-background/80 p-6 text-center shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-brand-green/60 hover:shadow-lg">
-                <span className="font-bold text-base text-foreground group-hover:text-brand-green transition-colors block">The Real Gate</span>
-                <span className="rounded-full border border-brand-green/30 bg-brand-green/10 px-3 py-0.5 text-xs text-brand-green font-bold inline-block mt-2">{ar ? "ذا ريل جيت" : "Investment Expo"}</span>
-                <span className="text-[11px] text-muted-foreground block mt-1">{ar ? "مصر" : "Egypt"}</span>
-              </div>
-              <div className="group rounded-2xl border border-border/80 bg-background/80 p-6 text-center shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/60 hover:shadow-lg">
-                <span className="font-bold text-base text-foreground group-hover:text-blue-500 transition-colors block">IPS Dubai</span>
-                <span className="rounded-full border border-blue-500/30 bg-blue-500/10 px-3 py-0.5 text-xs text-blue-500 font-bold inline-block mt-2">{ar ? "معرض العقارات الدولي" : "International Property"}</span>
-                <span className="text-[11px] text-muted-foreground block mt-1">{ar ? "دبي" : "Dubai, UAE"}</span>
-              </div>
-              <div className="group rounded-2xl border border-border/80 bg-background/80 p-6 text-center shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-amber-500/60 hover:shadow-lg">
-                <span className="font-bold text-base text-foreground group-hover:text-amber-500 transition-colors block">Cityscape Global</span>
-                <span className="rounded-full border border-amber-500/30 bg-amber-500/10 px-3 py-0.5 text-xs text-amber-500 font-bold inline-block mt-2">{ar ? "سيتي سكيب العالمي" : "Global Summit"}</span>
-                <span className="text-[11px] text-muted-foreground block mt-1">{ar ? "الرياض" : "Riyadh, KSA"}</span>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* Section 12: Call to Collaborate & Direct Contact */}
         <section id="re-contact" className="scroll-mt-32 space-y-6">
