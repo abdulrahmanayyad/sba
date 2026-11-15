@@ -1,22 +1,21 @@
 @echo off
-setlocal
+setlocal EnableDelayedExpansion
 
 echo Staging all changes...
 git add -A
 
-set /p commitMsg="Enter commit message: "
-
-if "%commitMsg%"=="" (
-    echo No commit message entered. Aborting.
-    pause >nul
-    exit /b 1
-)
-
-git commit -m "%commitMsg%"
+git diff --cached --quiet
 if errorlevel 1 (
-    echo Commit failed or nothing to commit.
-    pause >nul
-    exit /b 1
+    set /p commitMsg="Enter commit message: "
+    if "!commitMsg!"=="" set commitMsg=Update
+    git commit -m "!commitMsg!"
+    if errorlevel 1 (
+        echo Commit failed.
+        pause >nul
+        exit /b 1
+    )
+) else (
+    echo Working tree clean or changes already committed.
 )
 
 echo Pushing to GitHub...
