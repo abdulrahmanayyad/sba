@@ -6,8 +6,6 @@ import {
   Building2,
   ChevronRight,
   Download,
-  FileSpreadsheet,
-  FileText,
   FolderCog,
   Globe,
   Layers,
@@ -642,30 +640,6 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
                         {ar ? <ArrowLeft className="size-3.5" /> : <ArrowRight className="size-3.5" />}
                       </Link>
 
-                      {study.downloadDocxUrl && (
-                        <a
-                          href={study.downloadDocxUrl}
-                          download
-                          title={ar ? "تحميل دراسة Word الأصلية" : "Download Official Word Report"}
-                          className="inline-flex items-center justify-center gap-1 rounded-xl border border-brand-green/30 bg-brand-green/10 px-2.5 py-2 text-xs font-bold text-brand-green hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-all duration-300 cursor-pointer"
-                        >
-                          <FileText className="size-3.5" />
-                          <span>Word</span>
-                        </a>
-                      )}
-
-                      {study.downloadXlsxUrl && (
-                        <a
-                          href={study.downloadXlsxUrl}
-                          download
-                          title={ar ? "تحميل قاعدة بيانات Excel الأصلية" : "Download Official Excel Database"}
-                          className="inline-flex items-center justify-center gap-1 rounded-xl border border-brand-green/30 bg-brand-green/10 px-2.5 py-2 text-xs font-bold text-brand-green hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-all duration-300 cursor-pointer"
-                        >
-                          <FileSpreadsheet className="size-3.5" />
-                          <span>Excel</span>
-                        </a>
-                      )}
-
                       {downloadAllowed && (
                         <button
                           type="button"
@@ -678,7 +652,7 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
                         </button>
                       )}
 
-                      {!study.downloadDocxUrl && !study.downloadXlsxUrl && study.downloadZipUrl && (
+                      {study.downloadZipUrl && (
                         <a
                           href={study.downloadZipUrl}
                           download
