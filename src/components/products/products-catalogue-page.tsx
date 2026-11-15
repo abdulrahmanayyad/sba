@@ -3,7 +3,9 @@ import { Link } from "@tanstack/react-router";
 import {
   ArrowRight,
   Check,
+  ChevronDown,
   Download,
+  Eye,
   Package,
   Search,
   Send,
@@ -40,6 +42,7 @@ export function ProductsCataloguePage() {
   const [productSearchQuery, setProductSearchQuery] = useState("");
   const [activeProductDetail, setActiveProductDetail] = useState<PhysicalProduct | null>(null);
   const [rfqTargetProduct, setRfqTargetProduct] = useState<PhysicalProduct | null>(null);
+  const [expandedFoodCategories, setExpandedFoodCategories] = useState<Record<string, boolean>>({});
 
   // RFQ Form State
   const [rfqForm, setRfqForm] = useState({
@@ -128,61 +131,153 @@ export function ProductsCataloguePage() {
     ];
   }, [filteredProducts]);
 
-  // Food & Natural Products Sections (Strictly ordered broad families)
-  const foodSections = useMemo(() => {
-    return [
+  // 9 Food Categories, each with ONE representative image & expandable varieties list
+  const foodCategories = useMemo(() => {
+    const all = [
       {
-        key: "honey-bee",
-        titleAr: "القسم الأول: عسل النحل الطبيعي ومشتقاته",
-        titleEn: "Section 1: Natural Honey & Bee Products",
-        subtitleAr: "تشكيلة من أجود أنواع العسل المصري النقي (عسل السدر، الموالح، حبة البركة، البرسيم، وزهور البراري)",
-        subtitleEn: "Premium pure Egyptian honey varieties (Sidr, Citrus, Black Seed, Clover, and Wildflower)",
+        key: "dates",
+        titleAr: "التمور ومشتقاتها",
+        titleEn: "Dates & Palm Products",
+        subtitleAr: "أجود تمور الواحات (سيوي/صعيدي)، المجدول الفاخر (جامبو)، وعجينة ودبس التمر الطبيعي 100%.",
+        subtitleEn: "Egyptian Oasis Siwi dates, luxury Medjool, and pure natural date paste & molasses.",
+        badgeAr: "التمور",
+        badgeEn: "Dates",
+        image: "/BG/Natural & Agri-Food Products/Dates & Palm Products.jpg",
+        products: physicalProducts.filter((p) => p.sector === "food" && (p.categoryKey === "dates" || p.categoryKeys?.includes("dates"))),
+      },
+      {
+        key: "honey",
+        titleAr: "عسل النحل الطبيعي ومشتقاته",
+        titleEn: "Natural Honey & Bee Products",
+        subtitleAr: "عسل نحل خام غير مبستر مفحوص معمليًا (سدر جبلي، موالح، حبة البركة، وبرسيم).",
+        subtitleEn: "Pure unpasteurized honey (Mountain Sidr, Citrus, Black Seed, Clover, Wildflower).",
         badgeAr: "عسل النحل",
-        badgeEn: "Natural Honey",
-        products: filteredProducts.filter((p) => p.categoryKey === "honey-bee" || p.categoryKeys?.includes("honey-bee")),
+        badgeEn: "Honey",
+        image: "/BG/Natural & Agri-Food Products/Natural Honey & Bee Products.jpg",
+        products: physicalProducts.filter((p) => p.sector === "food" && (p.categoryKey === "honey" || p.categoryKeys?.includes("honey"))),
       },
       {
-        key: "olives-oil",
-        titleAr: "القسم الثاني: الزيتون وزيت الزيتون",
-        titleEn: "Section 2: Olives & Olive Oil",
-        subtitleAr: "زيتون المائدة المخلل وزيت الزيتون البكر الممتاز والمعصور على البارد بأعلى معايير الجودة العالمية",
-        subtitleEn: "Egyptian table olives and cold-pressed extra virgin olive oil certified to international standards",
-        badgeAr: "الزيتون وزيت الزيتون",
-        badgeEn: "Olives & Olive Oil",
-        products: filteredProducts.filter((p) => p.categoryKey === "olives-oil" || p.categoryKeys?.includes("olives-oil") || p.categoryKey === "olives-products" || p.categoryKey === "olive-oil"),
+        key: "olive-oil",
+        titleAr: "زيت الزيتون البكر الممتاز",
+        titleEn: "Virgin Olive Oil",
+        subtitleAr: "عصر ميكانيكي أول على البارد بنسبة حموضة أقل من 0.5% ومطابقة للمواصفات الدولية.",
+        subtitleEn: "First cold-pressed extra virgin olive oil with acidity < 0.5% meeting IOC standards.",
+        badgeAr: "زيت الزيتون",
+        badgeEn: "Olive Oil",
+        image: "/BG/Natural & Agri-Food Products/Olive Oil Grades.jpg",
+        products: physicalProducts.filter((p) => p.sector === "food" && (p.categoryKey === "olive-oil" || p.categoryKeys?.includes("olive-oil"))),
       },
       {
-        key: "dates-palm",
-        titleAr: "القسم الثالث: التمور ومشتقاتها",
-        titleEn: "Section 3: Dates & Palm Products",
-        subtitleAr: "تمور الواحات ونخيل مصر الفاخرة (سيوي/صعيدي، مجدول، وعجينة ودبس التمر الطبيعي)",
-        subtitleEn: "Luxury Egyptian dates (Siwi, Medjool, Date Paste & Molasses) from Oasis & Toshka groves",
-        badgeAr: "التمور ومشتقاتها",
-        badgeEn: "Dates & Palm",
-        products: filteredProducts.filter((p) => p.categoryKey === "dates-palm" || p.categoryKeys?.includes("dates-palm")),
+        key: "olives",
+        titleAr: "زيتون المائدة المصري",
+        titleEn: "Egyptian Table Olives",
+        subtitleAr: "زيتون مائدة كامل ومخلي وشرائح ومحشو مخلل طبيعيًا في محلول ملحي متوازن (كلاماتا، منزانيللا، بيكوال).",
+        subtitleEn: "Natural brine cured table olives: Kalamata, Manzanilla, Picual in various cuts.",
+        badgeAr: "الزيتون",
+        badgeEn: "Olives",
+        image: "/BG/Natural & Agri-Food Products/Table Olives.jpg",
+        products: physicalProducts.filter((p) => p.sector === "food" && (p.categoryKey === "olives" || p.categoryKeys?.includes("olives"))),
       },
       {
-        key: "spices-herbs",
-        titleAr: "القسم الرابع: التوابل والبهارات والأعشاب والخلطات",
-        titleEn: "Section 4: Herbs, Spices & Seasonings",
-        subtitleAr: "أعشاب ونباتات طبية مجففة، توابل عطرية كاملة ومطحونة، خلطات أرز وشوربات وتتبيلات تراثية متخصصة",
-        subtitleEn: "Aromatic herbs, culinary spices, traditional food mixes, rice seasonings, soups and marinades",
-        badgeAr: "التوابل والبهارات والأعشاب",
-        badgeEn: "Herbs & Spices",
-        products: filteredProducts.filter((p) => p.categoryKey === "spices-herbs" || p.categoryKeys?.includes("spices-herbs")),
+        key: "spices",
+        titleAr: "البهارات والتوابل الزراعية والأساسية",
+        titleEn: "Essential Spices & Seasonings",
+        subtitleAr: "حبوب ومطحون التوابل الزراعية النقية غنية بالزيوت الطيارة ومفرزة آليًا بأعلى نقاء.",
+        subtitleEn: "Whole seeds and ground culinary spices with high volatile oils and optical sorting.",
+        badgeAr: "البهارات والتوابل",
+        badgeEn: "Spices",
+        image: "/BG/Natural & Agri-Food Products/Spices & Seasonings.jpg",
+        products: physicalProducts.filter((p) => p.sector === "food" && (p.categoryKey === "spices" || p.categoryKeys?.includes("spices"))),
       },
       {
-        key: "powdered-juices",
-        titleAr: "القسم الخامس: بودرة العصائر الطبيعية",
-        titleEn: "Section 5: Natural Juice Powders",
-        subtitleAr: "عصائر فواكه وحمضيات مجففة بالرذاذ سريعة الذوبان للصناعات الغذائية والمشروبات والمطابخ الفندقية",
-        subtitleEn: "Instant cold-soluble spray-dried fruit & citrus powders for beverages and food processing",
+        key: "blends",
+        titleAr: "الخلطات والتتبيلات والأكلات التراثية",
+        titleEn: "Culinary Blends & Seasonings",
+        subtitleAr: "تتبيلات الشواء والمشاوي، خلطات الأرز العالمية، والدقة والبصارة والفول والطحينة.",
+        subtitleEn: "Grill marinades, Kabsa & Biryani rice seasonings, and heritage Egyptian staples.",
+        badgeAr: "الخلطات والتتبيلات",
+        badgeEn: "Blends & Mixes",
+        image: "/BG/Natural & Agri-Food Products/Spices and Seasonings.jpg",
+        products: physicalProducts.filter((p) => p.sector === "food" && (p.categoryKey === "blends" || p.categoryKeys?.includes("blends"))),
+      },
+      {
+        key: "soups",
+        titleAr: "المرقة والشوربات الفورية",
+        titleEn: "Soups & Seasoning Broths",
+        subtitleAr: "شوربات كريمة الدجاج والمشروم والعدس، ومكعبات وبودرة مرقة الدجاج واللحم والخضار والجمبري.",
+        subtitleEn: "Instant gourmet cream soups and rich dehydrated bouillons for retail and food service.",
+        badgeAr: "المرقة والشوربات",
+        badgeEn: "Soups & Broths",
+        image: "/products/food/chicken-cream-soup.jpg",
+        products: physicalProducts.filter((p) => p.sector === "food" && (p.categoryKey === "soups" || p.categoryKeys?.includes("soups"))),
+      },
+      {
+        key: "herbs",
+        titleAr: "الأعشاب والنباتات الطبية والعطرية",
+        titleEn: "Herbs & Medicinal Botanicals",
+        subtitleAr: "أعشاب البابونج وورق اللوري والزعتر والملوخية المجففة طبيعيًا والمعقمة بالبخار للتصدير.",
+        subtitleEn: "Dried chamomile flowers, bay leaves, wild thyme, and Egyptian export-grade molokhia.",
+        badgeAr: "الأعشاب الطبية",
+        badgeEn: "Medicinal Herbs",
+        image: "/BG/Natural & Agri-Food Products/Aromatic Herbs & Natural Botanicals.jpg",
+        products: physicalProducts.filter((p) => p.sector === "food" && (p.categoryKey === "herbs" || p.categoryKeys?.includes("herbs"))),
+      },
+      {
+        key: "juices",
+        titleAr: "بودرة العصائر الطبيعية المركزة",
+        titleEn: "Natural Juice Powders",
+        subtitleAr: "عصائر حمضيات وفواكه طبيعية مجففة بالرذاذ سريعة الذوبان للصناعات الغذائية والمشروبات.",
+        subtitleEn: "Instant cold-soluble spray-dried fruit & citrus powders for beverages and processing.",
         badgeAr: "بودرة العصائر",
         badgeEn: "Juice Powders",
-        products: filteredProducts.filter((p) => p.categoryKey === "powdered-juices" || p.categoryKeys?.includes("powdered-juices")),
+        image: "/BG/Natural & Agri-Food Products/Natural Powdered Fruit & Vegetable Juices.jpg",
+        products: physicalProducts.filter((p) => p.sector === "food" && (p.categoryKey === "juices" || p.categoryKeys?.includes("juices"))),
       },
-    ].filter((sec) => sec.products.length > 0);
-  }, [filteredProducts]);
+    ];
+
+    if (selectedProductCategory !== "all") {
+      return all.filter((cat) => cat.key === selectedProductCategory);
+    }
+    return all;
+  }, [selectedProductCategory]);
+
+  const searchedFoodCategories = useMemo(() => {
+    if (!productSearchQuery.trim()) return foodCategories;
+    const q = productSearchQuery.toLowerCase().trim();
+
+    return foodCategories
+      .map((cat) => ({
+        ...cat,
+        products: cat.products.filter((p) => {
+          const inName = (p.nameAr + " " + p.nameEn).toLowerCase().includes(q);
+          const inCode = p.code.toLowerCase().includes(q);
+          const inDesc = (p.descriptionAr + " " + p.descriptionEn).toLowerCase().includes(q);
+          const inTag = (p.taglineAr + " " + p.taglineEn).toLowerCase().includes(q);
+          return inName || inCode || inDesc || inTag;
+        }),
+      }))
+      .filter((cat) => cat.products.length > 0);
+  }, [foodCategories, productSearchQuery]);
+
+  const toggleCategory = (key: string) => {
+    setExpandedFoodCategories((prev) => ({
+      ...prev,
+      [key]: prev[key] === undefined ? false : !prev[key],
+    }));
+  };
+
+  const isCategoryExpanded = (key: string) => {
+    if (productSearchQuery.trim() || selectedProductCategory !== "all") return true;
+    return expandedFoodCategories[key] ?? true;
+  };
+
+  const toggleAllFoodCategories = (expand: boolean) => {
+    const newState: Record<string, boolean> = {};
+    foodCategories.forEach((cat) => {
+      newState[cat.key] = expand;
+    });
+    setExpandedFoodCategories(newState);
+  };
 
   const totalProductsCount = physicalProducts.length;
 
@@ -462,87 +557,255 @@ export function ProductsCataloguePage() {
         )}
 
         {/* Products Grid Controls */}
-        <div className="mb-6 flex items-center justify-between">
+        <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <span className="text-xs font-body font-semibold text-muted-foreground">
-            {ar
-              ? `عرض ${filteredProducts.length} من أصل ${physicalProducts.filter((p) => p.sector === selectedProductDivision).length} منتج`
-              : `Showing ${filteredProducts.length} of ${physicalProducts.filter((p) => p.sector === selectedProductDivision).length} products`}
+            {selectedProductDivision === "food"
+              ? ar
+                ? `عرض ${searchedFoodCategories.reduce((acc, c) => acc + c.products.length, 0)} صنفًا موزعة عبر ${searchedFoodCategories.length} تصنيفات رئيسية`
+                : `Showing ${searchedFoodCategories.reduce((acc, c) => acc + c.products.length, 0)} varieties across ${searchedFoodCategories.length} categories`
+              : ar
+                ? `عرض ${filteredProducts.length} من أصل ${physicalProducts.filter((p) => p.sector === selectedProductDivision).length} منتج`
+                : `Showing ${filteredProducts.length} of ${physicalProducts.filter((p) => p.sector === selectedProductDivision).length} products`}
           </span>
+
+          {selectedProductDivision === "food" && searchedFoodCategories.length > 0 && (
+            <div className="flex items-center gap-2 self-start sm:self-auto">
+              <Button
+                size="sm"
+                variant="outline"
+                onClick={() => toggleAllFoodCategories(true)}
+                className="h-8 text-xs font-bold text-brand-green border-brand-green/30 hover:bg-brand-green/10 rounded-xl"
+              >
+                {ar ? "توسيع كافة القوائم" : "Expand All"}
+              </Button>
+              <Button
+                size="sm"
+                variant="outline"
+                onClick={() => toggleAllFoodCategories(false)}
+                className="h-8 text-xs font-bold text-muted-foreground border-border hover:bg-secondary rounded-xl"
+              >
+                {ar ? "طي كافة القوائم" : "Collapse All"}
+              </Button>
+            </div>
+          )}
         </div>
 
-        {/* Products Grid */}
-        {selectedProductDivision === "apparel" && selectedProductCategory === "all" && !productSearchQuery.trim() ? (
-          <div className="space-y-12">
-            {apparelSections.map((sec, secIdx) => (
-              <div key={sec.key} className="space-y-6">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 rounded-2xl border border-white/20 bg-background/70 p-4 sm:p-5 backdrop-blur-xl shadow-xs">
-                  <div className="flex items-center gap-3">
-                    <span className="flex size-8 items-center justify-center rounded-xl bg-brand-green/10 text-brand-green border border-brand-green/25 font-bold text-xs shrink-0">
-                      {secIdx + 1}
-                    </span>
-                    <div>
-                      <h3 className="font-head text-base sm:text-lg md:text-xl font-bold text-foreground">
-                        {ar ? sec.titleAr : sec.titleEn}
-                      </h3>
-                      <p className="text-xs text-muted-foreground mt-0.5 leading-relaxed">
-                        {ar ? sec.subtitleAr : sec.subtitleEn}
-                      </p>
+        {/* Content Section: Apparel vs Food */}
+        {selectedProductDivision === "apparel" ? (
+          selectedProductCategory === "all" && !productSearchQuery.trim() ? (
+            <div className="space-y-12">
+              {apparelSections.map((sec, secIdx) => (
+                <div key={sec.key} className="space-y-6">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 rounded-2xl border border-white/20 bg-background/70 p-4 sm:p-5 backdrop-blur-xl shadow-xs">
+                    <div className="flex items-center gap-3">
+                      <span className="flex size-8 items-center justify-center rounded-xl bg-brand-green/10 text-brand-green border border-brand-green/25 font-bold text-xs shrink-0">
+                        {secIdx + 1}
+                      </span>
+                      <div>
+                        <h3 className="font-head text-base sm:text-lg md:text-xl font-bold text-foreground">
+                          {ar ? sec.titleAr : sec.titleEn}
+                        </h3>
+                        <p className="text-xs text-muted-foreground mt-0.5 leading-relaxed">
+                          {ar ? sec.subtitleAr : sec.subtitleEn}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                  <span className="inline-flex items-center self-start sm:self-auto rounded-xl bg-brand-green px-3.5 py-1.5 text-xs font-bold text-white shadow-xs shrink-0">
-                    {ar ? sec.badgeAr : sec.badgeEn}
-                  </span>
-                </div>
-
-                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                  {sec.products.map(renderProductCard)}
-                </div>
-              </div>
-            ))}
-          </div>
-        ) : selectedProductDivision === "food" && selectedProductCategory === "all" && !productSearchQuery.trim() ? (
-          <div className="space-y-12">
-            {foodSections.map((sec, secIdx) => (
-              <div key={sec.key} className="space-y-6">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 rounded-2xl border border-white/20 bg-background/70 p-4 sm:p-5 backdrop-blur-xl shadow-xs">
-                  <div className="flex items-center gap-3">
-                    <span className="flex size-8 items-center justify-center rounded-xl bg-brand-green/10 text-brand-green border border-brand-green/25 font-bold text-xs shrink-0">
-                      {secIdx + 1}
+                    <span className="inline-flex items-center self-start sm:self-auto rounded-xl bg-brand-green px-3.5 py-1.5 text-xs font-bold text-white shadow-xs shrink-0">
+                      {ar ? sec.badgeAr : sec.badgeEn}
                     </span>
-                    <div>
-                      <h3 className="font-head text-base sm:text-lg md:text-xl font-bold text-foreground">
-                        {ar ? sec.titleAr : sec.titleEn}
-                      </h3>
-                      <p className="text-xs text-muted-foreground mt-0.5 leading-relaxed">
-                        {ar ? sec.subtitleAr : sec.subtitleEn}
-                      </p>
-                    </div>
                   </div>
-                  <span className="inline-flex items-center self-start sm:self-auto rounded-xl bg-brand-green px-3.5 py-1.5 text-xs font-bold text-white shadow-xs shrink-0">
-                    {ar ? sec.badgeAr : sec.badgeEn}
-                  </span>
-                </div>
 
-                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                  {sec.products.map(renderProductCard)}
+                  <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    {sec.products.map(renderProductCard)}
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        ) : filteredProducts.length > 0 ? (
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {filteredProducts.map(renderProductCard)}
-          </div>
+              ))}
+            </div>
+          ) : filteredProducts.length > 0 ? (
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {filteredProducts.map(renderProductCard)}
+            </div>
+          ) : (
+            <div className="py-20 text-center rounded-3xl border border-dashed border-border bg-secondary/30">
+              <Package className="mx-auto size-12 text-muted-foreground/50 mb-3" />
+              <h4 className="font-head text-base font-bold text-foreground">
+                {ar ? "لا توجد منتجات مطابقة للبحث" : "No products found"}
+              </h4>
+              <p className="text-xs text-muted-foreground mt-1">
+                {ar ? "جرّب تغيير كلمات البحث أو اختيار فئة أخرى." : "Try adjusting your search query or selecting another category."}
+              </p>
+            </div>
+          )
         ) : (
-          <div className="py-20 text-center rounded-3xl border border-dashed border-border bg-secondary/30">
-            <Package className="mx-auto size-12 text-muted-foreground/50 mb-3" />
-            <h4 className="font-head text-base font-bold text-foreground">
-              {ar ? "لا توجد منتجات مطابقة للبحث" : "No products found"}
-            </h4>
-            <p className="text-xs text-muted-foreground mt-1">
-              {ar ? "جرّب تغيير كلمات البحث أو اختيار فئة أخرى." : "Try adjusting your search query or selecting another category."}
-            </p>
-          </div>
+          /* Food Division: Render Category Cards with Dropdown Varieties List (NO individual images) */
+          searchedFoodCategories.length > 0 ? (
+            <div className="space-y-10">
+              {searchedFoodCategories.map((cat, catIdx) => {
+                const expanded = isCategoryExpanded(cat.key);
+                return (
+                  <div
+                    key={cat.key}
+                    id={`food-cat-${cat.key}`}
+                    className="overflow-hidden rounded-3xl border border-white/20 bg-background/85 shadow-md backdrop-blur-xl transition-all duration-300 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.18)]"
+                  >
+                    {/* Category Header with ONE Representative Image */}
+                    <div className="relative aspect-[16/7] sm:aspect-[21/8] w-full overflow-hidden bg-secondary">
+                      <img
+                        src={cat.image}
+                        alt={ar ? cat.titleAr : cat.titleEn}
+                        loading="lazy"
+                        className="size-full object-cover transition-transform duration-700 hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/15" />
+
+                      {/* Overlay Content */}
+                      <div className="absolute inset-x-0 bottom-0 p-5 sm:p-7 flex flex-col sm:flex-row sm:items-end justify-between gap-4 text-white">
+                        <div className="max-w-3xl">
+                          <div className="flex items-center gap-2 mb-2 flex-wrap">
+                            <span className="flex size-6 items-center justify-center rounded-full bg-brand-green text-white font-bold text-xs shrink-0">
+                              {catIdx + 1}
+                            </span>
+                            <span className="inline-flex items-center rounded-full bg-brand-green/90 px-3 py-0.5 text-xs font-bold text-white backdrop-blur-md shadow-xs">
+                              {ar ? cat.badgeAr : cat.badgeEn}
+                            </span>
+                            <span className="inline-flex items-center rounded-full bg-white/20 px-3 py-0.5 text-xs font-bold text-white backdrop-blur-md">
+                              {ar ? `${cat.products.length} أصناف متوفرة` : `${cat.products.length} Varieties`}
+                            </span>
+                          </div>
+
+                          <h3 className="font-head text-xl sm:text-2xl md:text-3xl font-black text-white drop-shadow-sm leading-tight">
+                            {ar ? cat.titleAr : cat.titleEn}
+                          </h3>
+
+                          <p className="mt-1.5 text-xs sm:text-sm text-white/85 leading-relaxed drop-shadow-xs line-clamp-2">
+                            {ar ? cat.subtitleAr : cat.subtitleEn}
+                          </p>
+                        </div>
+
+                        {/* Dropdown Toggle Button */}
+                        <Button
+                          onClick={() => toggleCategory(cat.key)}
+                          className={cn(
+                            "shrink-0 rounded-2xl px-5 py-2.5 font-head text-xs sm:text-sm font-bold shadow-md transition-all gap-2 self-start sm:self-auto",
+                            expanded
+                              ? "bg-white text-foreground hover:bg-white/90"
+                              : "bg-brand-orange text-white hover:bg-brand-orange/90"
+                          )}
+                        >
+                          <span>
+                            {expanded
+                              ? ar
+                                ? "إخفاء قائمة الأصناف"
+                                : "Collapse List"
+                              : ar
+                                ? `استعراض كافة الأصناف (${cat.products.length})`
+                                : `View Varieties (${cat.products.length})`}
+                          </span>
+                          <ChevronDown
+                            className={cn(
+                              "size-4 transition-transform duration-300",
+                              expanded && "rotate-180"
+                            )}
+                          />
+                        </Button>
+                      </div>
+                    </div>
+
+                    {/* Expandable Dropdown List of Varieties (WITHOUT IMAGES) */}
+                    {expanded && (
+                      <div className="p-5 sm:p-7 bg-background/50 border-t border-border/40 space-y-4">
+                        <div className="flex items-center justify-between border-b border-border/30 pb-3">
+                          <span className="text-xs font-bold text-foreground flex items-center gap-2">
+                            <span className="size-2 rounded-full bg-brand-green animate-pulse" />
+                            {ar
+                              ? `قائمة أصناف ${cat.titleAr} (${cat.products.length} صنفًا)`
+                              : `Available ${cat.titleEn} Varieties (${cat.products.length})`}
+                          </span>
+                          <span className="text-[11px] text-muted-foreground hidden sm:inline">
+                            {ar
+                              ? "اختر أي صنف لمشاهدة المواصفات والتحليل المعملي أو لطلب عرض سعر فوري"
+                              : "Click any item to view specifications or request quotation"}
+                          </span>
+                        </div>
+
+                        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                          {cat.products.map((item) => (
+                            <div
+                              key={item.id}
+                              className="group/item flex flex-col justify-between rounded-2xl border border-border/60 bg-card/70 p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-brand-green/40 hover:bg-card hover:shadow-md"
+                            >
+                              <div>
+                                <div className="flex items-center justify-between gap-2 mb-2">
+                                  <span className="font-mono text-[11px] font-bold text-brand-orange bg-brand-orange/10 px-2.5 py-0.5 rounded-full">
+                                    {item.code}
+                                  </span>
+                                  <span className="text-[11px] text-muted-foreground flex items-center gap-1">
+                                    <span>{item.originFlag}</span>
+                                    <span>{ar ? item.originAr : item.originEn}</span>
+                                  </span>
+                                </div>
+
+                                <h4 className="font-head text-sm sm:text-base font-bold text-foreground group-hover/item:text-brand-green transition-colors leading-snug">
+                                  {ar ? item.nameAr : item.nameEn}
+                                </h4>
+
+                                <p className="mt-1.5 text-xs text-muted-foreground leading-relaxed line-clamp-2">
+                                  {ar ? item.taglineAr : item.taglineEn}
+                                </p>
+
+                                {item.moqAr && (
+                                  <div className="mt-3 rounded-xl bg-secondary/50 px-2.5 py-1.5 text-[11px] flex items-center justify-between">
+                                    <span className="text-muted-foreground">{ar ? "الحد الأدنى:" : "MOQ:"}</span>
+                                    <span className="font-bold text-brand-orange truncate max-w-[170px] text-end">
+                                      {ar ? item.moqAr : item.moqEn}
+                                    </span>
+                                  </div>
+                                )}
+                              </div>
+
+                              <div className="mt-4 pt-3 border-t border-border/40 flex items-center gap-2">
+                                <Button
+                                  size="sm"
+                                  variant="outline"
+                                  onClick={() => setActiveProductDetail(item)}
+                                  className="h-8 flex-1 rounded-xl text-xs font-bold border-brand-green/30 text-brand-green hover:bg-brand-green hover:text-white transition-colors"
+                                >
+                                  <Eye className="size-3.5 me-1.5" />
+                                  {ar ? "المواصفات" : "Specs"}
+                                </Button>
+
+                                <Button
+                                  size="sm"
+                                  onClick={() => {
+                                    setRfqTargetProduct(item);
+                                    setIsRfqSubmitted(false);
+                                  }}
+                                  className="h-8 flex-1 rounded-xl text-xs font-bold bg-brand-orange text-white hover:bg-brand-orange/90 transition-colors"
+                                >
+                                  <Send className="size-3.5 me-1.5 rtl:rotate-180" />
+                                  {ar ? "طلب تسعير" : "RFQ"}
+                                </Button>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          ) : (
+            <div className="py-20 text-center rounded-3xl border border-dashed border-border bg-secondary/30">
+              <Package className="mx-auto size-12 text-muted-foreground/50 mb-3" />
+              <h4 className="font-head text-base font-bold text-foreground">
+                {ar ? "لا توجد منتجات مطابقة للبحث" : "No products found"}
+              </h4>
+              <p className="text-xs text-muted-foreground mt-1">
+                {ar ? "جرّب تغيير كلمات البحث أو اختيار فئة أخرى." : "Try adjusting your search query or selecting another category."}
+              </p>
+            </div>
+          )
         )}
       </section>
 

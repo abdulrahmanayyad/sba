@@ -1659,32 +1659,62 @@ export const CENTRAL_FOOD_PRODUCTS: CentralFoodProductItem[] = [
 
 // Helper to convert CentralFoodProductItem to PhysicalProduct schema used in /products
 export function getCentralFoodPhysicalProducts() {
-  return CENTRAL_FOOD_PRODUCTS.map((p) => ({
-    id: p.id,
-    code: p.code,
-    sector: "food" as const,
-    categoryKey: "spices-herbs",
-    categoryKeys: ["spices-herbs", p.mainCategoryKey],
-    categoryEn: "Herbs, Spices & Seasonings",
-    categoryAr: "التوابل والبهارات والأعشاب والخلطات",
-    mainDepartmentEn: "Herbs, Spices & Seasonings",
-    mainDepartmentAr: "التوابل والبهارات والأعشاب والخلطات",
-    nameEn: p.nameEn,
-    nameAr: p.nameAr,
-    taglineEn: p.subCategoryEn + " — " + p.packagingOptionsEn,
-    taglineAr: p.subCategoryAr + " — " + p.packagingOptionsAr,
-    descriptionEn: p.descriptionEn,
-    descriptionAr: p.descriptionAr,
-    image: p.image,
-    originEn: p.originEn,
-    originAr: p.originAr,
-    originFlag: p.originFlag,
-    moqEn: "Commercial Orders / Flexible MOQ",
-    moqAr: "طلبات تجارية / حد أدنى مرن",
-    packagingEn: p.packagingOptionsEn,
-    packagingAr: p.packagingOptionsAr,
-    specifications: p.specifications
-  }));
+  return CENTRAL_FOOD_PRODUCTS.map((p) => {
+    let catKey = "blends";
+    let catAr = "الخلطات والتتبيلات";
+    let catEn = "Culinary Blends & Seasonings";
+
+    if (p.mainCategoryKey === "soups-stocks") {
+      catKey = "soups";
+      catAr = "المرقة والشوربات";
+      catEn = "Soups & Broths";
+    } else if (p.mainCategoryKey === "essential-spices") {
+      if (p.id === "fp-spice-bay-leaves" || p.id === "fp-spice-thyme") {
+        catKey = "herbs";
+        catAr = "الأعشاب والنباتات الطبية";
+        catEn = "Herbs & Botanicals";
+      } else {
+        catKey = "spices";
+        catAr = "البهارات والتوابل";
+        catEn = "Essential Spices";
+      }
+    } else if (p.id === "fp-trad-molokhia-taaleya") {
+      catKey = "herbs";
+      catAr = "الأعشاب والنباتات الطبية";
+      catEn = "Herbs & Botanicals";
+    } else if (p.id === "fp-spec-dried-lumi") {
+      catKey = "spices";
+      catAr = "البهارات والتوابل";
+      catEn = "Essential Spices";
+    }
+
+    return {
+      id: p.id,
+      code: p.code,
+      sector: "food" as const,
+      categoryKey: catKey,
+      categoryKeys: [catKey, p.mainCategoryKey, "spices-herbs"],
+      categoryEn: catEn,
+      categoryAr: catAr,
+      mainDepartmentEn: catEn,
+      mainDepartmentAr: catAr,
+      nameEn: p.nameEn,
+      nameAr: p.nameAr,
+      taglineEn: p.subCategoryEn + " — " + p.packagingOptionsEn,
+      taglineAr: p.subCategoryAr + " — " + p.packagingOptionsAr,
+      descriptionEn: p.descriptionEn,
+      descriptionAr: p.descriptionAr,
+      image: p.image,
+      originEn: p.originEn,
+      originAr: p.originAr,
+      originFlag: p.originFlag,
+      moqEn: "Commercial Orders / Flexible MOQ",
+      moqAr: "طلبات تجارية / حد أدنى مرن",
+      packagingEn: p.packagingOptionsEn,
+      packagingAr: p.packagingOptionsAr,
+      specifications: p.specifications,
+    };
+  });
 }
 
 // Helper to convert CentralFoodProductItem to DetailedFoodProduct schema used in /sectors/food
