@@ -204,7 +204,7 @@ export function ProductsCataloguePage() {
         key: "soups",
         titleAr: "المرقة والشوربات",
         titleEn: "Soups & Seasoning Broths",
-        subtitleAr: "شوربات كريمة الدجاج والمشروم والعدس، ومكعبات وبودرة مرقة الدجاج واللحم والخضار والجمبري.",
+        subtitleAr: "شوربات كريمة الدجاج والمشروم ومرقة الدجاج واللحم",
         subtitleEn: "Instant gourmet cream soups and rich dehydrated bouillons for retail and food service.",
         badgeAr: "المرقة والشوربات",
         badgeEn: "Soups & Broths",
