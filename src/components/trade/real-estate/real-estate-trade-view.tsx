@@ -45,7 +45,6 @@ export function RealEstateTradeView({ ar = true, hideHero = false }: RealEstateT
     { id: "greater-cairo-east", labelAr: "القاهرة الكبرى وشرق القاهرة", labelEn: "Greater Cairo & East" },
     { id: "west-cairo", labelAr: "غرب القاهرة", labelEn: "West Cairo" },
     { id: "coastal-tourism", labelAr: "المدن الساحلية والسياحية", labelEn: "Coastal & Tourism" },
-    { id: "international-markets", labelAr: "الأسواق الدولية", labelEn: "International Markets" },
   ];
 
   const filteredCoverage = REAL_ESTATE_MARKET_COVERAGE.filter(
@@ -210,7 +209,7 @@ export function RealEstateTradeView({ ar = true, hideHero = false }: RealEstateT
             </div>
 
             {/* Coverage Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
               {filteredCoverage.map((cov) => (
                 <div
                   key={cov.regionKey}

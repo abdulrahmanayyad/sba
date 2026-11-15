@@ -123,23 +123,6 @@ export const REAL_ESTATE_MARKET_COVERAGE: RealEstateMarketCoverage[] = [
       "Marsa Matrouh",
       "New Damietta"
     ]
-  },
-  {
-    regionKey: "international-markets",
-    regionNameAr: "الأسواق الإقليمية والدولية",
-    regionNameEn: "Regional & International Markets",
-    citiesAr: [
-      "المملكة العربية السعودية (الرياض، جدة، الشرقية)",
-      "الإمارات العربية المتحدة (دبي، أبوظبي، الشارقة)",
-      "سلطنة عُمان (مسقط والمناطق الاقتصادية)",
-      "تركيا (إسطنبول والمدن الاستثمارية)"
-    ],
-    citiesEn: [
-      "Kingdom of Saudi Arabia (Riyadh, Jeddah, Eastern Province)",
-      "United Arab Emirates (Dubai, Abu Dhabi, Sharjah)",
-      "Sultanate of Oman (Muscat & Economic Zones)",
-      "Turkey (Istanbul & Investment Hubs)"
-    ]
   }
 ];
 
