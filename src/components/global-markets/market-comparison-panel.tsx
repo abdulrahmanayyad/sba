@@ -109,8 +109,8 @@ export function MarketComparisonPanel({
                   className={cn(
                     "inline-flex items-center gap-1.5 rounded-full border px-3.5 py-1.5 text-xs font-bold transition-all cursor-pointer",
                     active
-                      ? "border-slate-900 bg-slate-900 text-white dark:border-white dark:bg-white dark:text-slate-900 shadow-sm"
-                      : "border-slate-200 bg-white text-slate-700 hover:border-slate-400 dark:border-white/15 dark:bg-slate-800/60 dark:text-slate-200",
+                      ? "border-brand-green bg-brand-green text-white hover:bg-brand-orange shadow-sm"
+                      : "border-slate-200 bg-white text-slate-700 hover:bg-brand-orange hover:text-white hover:border-brand-orange dark:border-white/15 dark:bg-slate-800/60 dark:text-slate-200",
                   )}
                 >
                   {active && <Check className="size-3.5" />}

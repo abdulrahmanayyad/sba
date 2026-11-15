@@ -140,39 +140,31 @@ for (const k of sortedKeys) {
     sheetMap[sn] = rows.filter(r => r && r.length > 0);
   });
 
-  // Extract table datasets
+  // Extract table datasets strictly conforming to StudyTableDataset interface!
   const tables = [];
   wb.SheetNames.forEach((sn, sIdx) => {
     const rawRows = sheetMap[sn];
     if (rawRows.length > 1) {
       const headers = rawRows[0].map(h => String(h || '').trim());
-      const rows = rawRows.slice(1, 12).map(r => {
-        const rowObj = {};
-        headers.forEach((h, hIdx) => {
-          rowObj[`col_${hIdx}`] = String(r[hIdx] !== undefined ? r[hIdx] : '').trim();
-        });
-        return rowObj;
+      const dataRows = rawRows.slice(1, 12).map(r => {
+        return headers.map((_, hIdx) => String(r[hIdx] !== undefined ? r[hIdx] : '').trim());
       });
 
       tables.push({
         id: `tbl-${meta.iso.toLowerCase()}-${sIdx}`,
         titleAr: fixTanween(`جدول بيانات: ${sn}`),
         titleEn: `Data Table: ${sn}`,
-        descriptionAr: fixTanween(`سجل موثق مستخرج مباشرة من قاعدة بيانات قطاع البيئة الرسمية لدولة ${meta.ar}.`),
-        descriptionEn: `Official record extracted directly from the verified environmental database for ${meta.en}.`,
-        source: "SBA Environmental Intelligence Registry / 7-Worksheet Database (Nov 2026)",
-        columns: headers.map((h, hIdx) => ({
-          key: `col_${hIdx}`,
-          headerAr: fixTanween(h),
-          headerEn: h,
-          align: "right"
-        })),
-        rows
+        unit: fixTanween("سجل رصد بيئي موثق"),
+        source: fixTanween("قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP"),
+        referenceYear: "2026",
+        columnsAr: headers.map(fixTanween),
+        columnsEn: headers,
+        rows: dataRows.map(row => row.map(fixTanween))
       });
     }
   });
 
-  // Extract sources
+  // Extract sources strictly conforming to StudySourceRecord interface!
   const sources = [];
   const sourcesSheetName = wb.SheetNames.find(sn => sn.toLowerCase().includes('source') || sn.includes('المصادر'));
   if (sourcesSheetName && sheetMap[sourcesSheetName]) {
@@ -184,18 +176,13 @@ for (const k of sortedKeys) {
       if (title) {
         sources.push({
           id: `src-${meta.iso.toLowerCase()}-${sIdx}`,
-          titleAr: fixTanween(title),
-          titleEn: title,
-          authorityAr: fixTanween(desc || "سجل الرصد البيئي الموثق لـ SAMI BIN AYYAD GROUP"),
-          authorityEn: desc || "SAMI BIN AYYAD GROUP Environmental Verification Register",
-          classification: "official",
-          referenceYear: "2026",
-          publicationDate: "2026-11-14",
+          name: fixTanween(title),
           url: url.startsWith('http') ? url : undefined,
-          coverageScopeAr: fixTanween(`السياسات والتنظيمات والمشروعات البيئية في ${meta.ar}`),
-          coverageScopeEn: `Environmental policy, tenders & regulatory standards in ${meta.en}`,
-          notesAr: fixTanween("تمت المراجعة والتثبت ضمن الحزمة الشاملة الصادرة في 14 نوفمبر 2026."),
-          notesEn: "Verified and audited as part of the November 14, 2026 comprehensive dossier."
+          dataYear: "2026",
+          accessedAt: "2026-11-14",
+          classification: "official",
+          methodologyNoteAr: fixTanween(desc || `سجل الرصد البيئي الموثق لدولة ${meta.ar}`),
+          methodologyNoteEn: desc || `Verified environmental intelligence dossier for ${meta.en}`
         });
       }
     });
@@ -205,17 +192,13 @@ for (const k of sortedKeys) {
   if (sources.length === 0) {
     sources.push({
       id: `src-${meta.iso.toLowerCase()}-default`,
-      titleAr: fixTanween(`قاعدة بيانات الفرص البيئية الموثقة — ${meta.ar}`),
-      titleEn: `Verified Environmental Intelligence Dossier — ${meta.en}`,
-      authorityAr: fixTanween("وزارة البيئة والجهات التنظيمية الوطنية وبنوك التنمية الدولية"),
-      authorityEn: "National Environmental Ministry, Regulators & Multilateral Development Banks",
+      name: fixTanween(`قاعدة بيانات الفرص البيئية الموثقة — ${meta.ar}`),
+      url: "https://www.worldbank.org/en/topic/environment",
+      dataYear: "2026",
+      accessedAt: "2026-11-14",
       classification: "official",
-      referenceYear: "2026",
-      publicationDate: "2026-11-14",
-      coverageScopeAr: fixTanween(`التشريعات والمناقصات والتراخيص البيئية وفرص الاستثمار`),
-      coverageScopeEn: "Environmental regulations, tenders, permitting, and market entry",
-      notesAr: fixTanween("دراسة سوقية متخصصة ومحدثة بملف وورد وقاعدة بيانات إكسل بـ 7 أوراق عمل."),
-      notesEn: "Specialized study with dedicated Word report and 7-worksheet Excel database."
+      methodologyNoteAr: fixTanween("دراسة سوقية متخصصة ومحدثة بملف وورد وقاعدة بيانات إكسل بـ 7 أوراق عمل."),
+      methodologyNoteEn: "Specialized study with dedicated Word report and 7-worksheet Excel database."
     });
   }
 
@@ -426,12 +409,26 @@ for (const k of sortedKeys) {
     },
     groupOpportunities: [
       {
-        groupId: "sba-env-services",
-        groupTitleAr: fixTanween("حلول سامي بن عياد البيئية والاستدامة"),
-        groupTitleEn: "SBA Environmental & Sustainability Solutions",
-        relevanceScore: 95,
-        alignmentNoteAr: fixTanween(`توافق استراتيجي كامل مع خدمات المجموعة في الاستشارات البيئية وحلول معالجة المياه والمخلفات وتطبيقات الرصد الذكي داخل ${meta.ar}.`),
-        alignmentNoteEn: `Full strategic alignment with SBA environmental consultancy, remediation technologies, and IoT monitoring in ${meta.en}.`
+        id: `opp-env-${meta.iso.toLowerCase()}-01`,
+        capabilityAr: fixTanween("استشارات الأثر البيئي والامتثال والتراخيص (EIA / ESIA / EMP)"),
+        capabilityEn: "Environmental Impact Assessment, Permitting & Compliance (EIA / ESIA / EMP)",
+        descriptionAr: fixTanween(`توفير الكوادر الاستشارية والهندسية المتخصصة من مركز التميز في مصر لإعداد دراسات الأثر البيئي وتأهيل المنشآت الصناعية والمشاريع الكبرى داخل ${meta.ar}.`),
+        descriptionEn: `Deploying specialized advisory and environmental engineering teams to prepare ESIA studies and licensing packages for major industrial and development projects in ${meta.en}.`,
+        evidenceStatus: "confirmed",
+        evidenceReferenceAr: fixTanween(`قاعدة بيانات قطاع البيئة — المشروعات والفرص المعتمدة لدولة ${meta.ar}`),
+        evidenceReferenceEn: `SBA Environmental Opportunity Database for ${meta.en}`,
+        sectorPageUrl: "/sectors/environmental"
+      },
+      {
+        id: `opp-env-${meta.iso.toLowerCase()}-02`,
+        capabilityAr: fixTanween("حلول معالجة المياه والمخلفات وتطبيقات الرصد الذكي IoT"),
+        capabilityEn: "Water & Waste Remediation Technologies and IoT Environmental Telemetry",
+        descriptionAr: fixTanween(`توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.`),
+        descriptionEn: `Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.`,
+        evidenceStatus: "confirmed",
+        evidenceReferenceAr: fixTanween(`سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP`),
+        evidenceReferenceEn: "SBA Environmental Solutions & Technical Consortia Registry",
+        sectorPageUrl: "/sectors/environmental"
       }
     ]
   };

@@ -24,6 +24,8 @@ const COMPARATIVE_SLUG_MAP: Record<
   "region-gcc": { initialSubRegion: "gcc", titleAr: "مقارنة أسواق دول الخليج" },
   "region-levant": { initialSubRegion: "levant", titleAr: "مقارنة أسواق المشرق العربي" },
   "region-north-africa": { initialSubRegion: "north_africa", titleAr: "مقارنة أسواق شمال أفريقيا" },
+  "region-africa": { initialSubRegion: "africa", titleAr: "مقارنة الأسواق الأفريقية" },
+  "africa-comparative-report": { initialSubRegion: "africa", titleAr: "التقرير المقارن لأسواق إفريقيا" },
   "region-europe": { initialSubRegion: "europe", titleAr: "مقارنة الأسواق الأوروبية" },
   "region-americas": { initialSubRegion: "americas", titleAr: "مقارنة أسواق الأمريكتين" },
   "region-asia-pacific": { initialSubRegion: "asia_pacific", titleAr: "مقارنة أسواق آسيا وأستراليا" },

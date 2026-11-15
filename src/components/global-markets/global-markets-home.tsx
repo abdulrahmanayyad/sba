@@ -4,15 +4,20 @@ import {
   ArrowLeft,
   ArrowRight,
   Building2,
+  ChevronRight,
+  Download,
   FileSpreadsheet,
+  FileText,
   FolderCog,
   Globe,
   Layers,
   Leaf,
   MapPin,
+  Scale,
   Search,
   ShieldCheck,
   Shirt,
+  Sparkles,
   Wheat,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -22,12 +27,66 @@ import {
   STUDY_SECTION_BLUEPRINT,
   STUDY_STATUS_LABELS,
   type GlobalMarketSectorId,
+  type GlobalMarketStudy,
   type StudyStatus,
 } from "@/lib/global-markets-data";
-import { getSectorMetrics, useGlobalMarketsStudies } from "@/lib/global-markets-store";
+import {
+  getSectorMetrics,
+  isStudyDownloadAllowed,
+  openApprovedStudyPdfReport,
+  useGlobalMarketsStudies,
+} from "@/lib/global-markets-store";
 
 interface GlobalMarketsHomeProps {
   ar: boolean;
+}
+
+export type MarketRegionCategory = "all" | "gcc" | "arab" | "africa" | "europe" | "other";
+
+export interface RegionCategoryConfig {
+  id: MarketRegionCategory;
+  titleAr: string;
+  titleEn: string;
+}
+
+export const REGION_CATEGORIES: RegionCategoryConfig[] = [
+  { id: "all", titleAr: "كافة الدراسات", titleEn: "All Studies" },
+  { id: "gcc", titleAr: "دول الخليج", titleEn: "GCC Countries" },
+  { id: "arab", titleAr: "الدول العربية", titleEn: "Arab Countries" },
+  { id: "africa", titleAr: "الدول الأفريقية", titleEn: "African Countries" },
+  { id: "europe", titleAr: "الدول الأوروبية", titleEn: "European Countries" },
+];
+
+const GCC_COUNTRY_CODES = new Set(["SA", "AE", "KW", "QA", "OM", "BH", "KSA", "UAE", "KWT", "QAT", "OMN", "BHR"]);
+
+const ARAB_NON_GCC_CODES = new Set([
+  "EG", "JO", "LB", "SY", "TN", "SD", "LY", "IQ", "MA", "DZ", "MR", "YE", "PS", "SO", "DJ", "KM"
+]);
+
+const EUROPE_COUNTRY_CODES = new Set([
+  "DE", "GB", "UK", "FR", "ES", "IT", "NL", "PL", "BE", "SE", "AT", "DK", "CZ", "PT", "RO", "GR", "CH", "TR", "IE", "NO", "FI", "RU", "UA", "HU"
+]);
+
+export function getStudyRegionCategory(study: {
+  countryCode?: string;
+  apparelSubRegion?: string;
+  region?: string;
+}): "gcc" | "arab" | "africa" | "europe" | "other" {
+  const code = (study.countryCode || "").toUpperCase();
+  const sub = study.apparelSubRegion || "";
+  const reg = study.region || "";
+
+  if (sub === "gcc" || GCC_COUNTRY_CODES.has(code)) return "gcc";
+  if (
+    sub === "other_arab" ||
+    ARAB_NON_GCC_CODES.has(code) ||
+    (reg === "arab_world" && !GCC_COUNTRY_CODES.has(code))
+  ) {
+    return "arab";
+  }
+  if (sub === "europe" || reg === "europe" || EUROPE_COUNTRY_CODES.has(code)) return "europe";
+  if (sub === "africa" || reg === "africa") return "africa";
+  return "other";
 }
 
 function getSectorIcon(sectorId: GlobalMarketSectorId) {
@@ -46,97 +105,62 @@ function getSectorIcon(sectorId: GlobalMarketSectorId) {
 export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
   const { studies } = useGlobalMarketsStudies();
   const [searchQuery, setSearchQuery] = useState("");
-  const [sectorFilter, setSectorFilter] = useState<"all" | GlobalMarketSectorId>("all");
-  const [regionFilter, setRegionFilter] = useState<string>("all");
-  const [statusFilter, setStatusFilter] = useState<"all" | StudyStatus>("all");
-  const [yearFilter, setYearFilter] = useState<string>("all");
+  const [selectedSector, setSelectedSector] = useState<"all" | GlobalMarketSectorId>("all");
+  const [sectorCategoryFilters, setSectorCategoryFilters] = useState<Record<string, MarketRegionCategory>>({
+    garment: "all",
+    environmental: "all",
+    construction: "all",
+    food: "all",
+  });
 
   const activeStudies = useMemo(
     () => studies.filter((s) => s.status !== "archived"),
     [studies],
   );
 
-  const availableYears = useMemo(() => {
-    const yrs = new Set<string>();
-    activeStudies.forEach((s) => {
-      if (s.lastUpdated) yrs.add(s.lastUpdated.slice(0, 4));
-    });
-    return Array.from(yrs).sort().reverse();
-  }, [activeStudies]);
+  const setCategoryForSector = (sectorId: string, cat: MarketRegionCategory) => {
+    setSectorCategoryFilters((prev) => ({
+      ...prev,
+      [sectorId]: cat,
+    }));
+  };
 
-  const filteredStudies = useMemo(() => {
-    const q = searchQuery.trim().toLowerCase();
-    return activeStudies.filter((s) => {
-      if (sectorFilter !== "all" && s.sector !== sectorFilter) return false;
-      if (regionFilter !== "all" && s.region !== regionFilter) return false;
-      if (statusFilter !== "all" && s.status !== statusFilter) return false;
-      if (yearFilter !== "all" && !s.lastUpdated.startsWith(yearFilter)) return false;
-      if (q) {
-        const hay = [
-          s.titleAr,
-          s.titleEn,
-          s.countryNameAr,
-          s.countryNameEn,
-          s.subRegionOrProjectAr || "",
-          s.subRegionOrProjectEn || "",
-          s.activityTypeAr,
-          s.activityTypeEn,
-          ...s.productTagsAr,
-          ...s.productTagsEn,
-        ]
-          .join(" ")
-          .toLowerCase();
-        if (!hay.includes(q)) return false;
-      }
-      return true;
+  const handleResetFilters = () => {
+    setSearchQuery("");
+    setSelectedSector("all");
+    setSectorCategoryFilters({
+      garment: "all",
+      environmental: "all",
+      construction: "all",
+      food: "all",
     });
-  }, [activeStudies, sectorFilter, regionFilter, statusFilter, yearFilter, searchQuery]);
+  };
 
-  const hasActiveFilter =
-    Boolean(searchQuery.trim()) ||
-    sectorFilter !== "all" ||
-    regionFilter !== "all" ||
-    statusFilter !== "all" ||
-    yearFilter !== "all";
+  const hasActiveSearch = Boolean(searchQuery.trim());
 
   return (
     <div className="w-full pb-24">
       {/* 1. Institutional Hero Section */}
       <section className="site-container pt-10 pb-6">
-        <div className="interactive-card glass-box-interactive group overflow-hidden rounded-3xl border border-white/50 bg-white/75 dark:bg-slate-900/70 p-8 sm:p-12 shadow-[0_16px_50px_rgba(15,23,42,0.06)] backdrop-blur-2xl ring-1 ring-slate-900/5 text-start">
+        <div className="interactive-card glass-box-interactive group overflow-hidden rounded-3xl border border-white/50 bg-white/75 dark:bg-slate-900/70 p-8 sm:p-12 shadow-[0_16px_50px_rgba(15,23,42,0.06)] backdrop-blur-2xl ring-1 ring-slate-900/5 text-start space-y-7">
           <div className="relative z-10 space-y-5">
+            {/* Header Badge */}
             <div className="flex flex-wrap items-center justify-between gap-3">
-              <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 dark:border-white/15 bg-slate-100/90 dark:bg-white/10 px-3.5 py-1 text-xs font-bold tracking-wide text-slate-800 dark:text-slate-100 backdrop-blur-md shadow-xs">
-                <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-                <span>SAMI BIN AYYAD GROUP · {ar ? "مركز الأبحاث والدراسات السوقية" : "Market Research & Intelligence Hub"}</span>
-              </div>
-
-              <div className="flex flex-wrap items-center gap-2">
-                <Link
-                  to="/global-markets/compare"
-                  className="inline-flex items-center gap-2 rounded-full bg-slate-900 dark:bg-white px-4 py-1.5 text-xs font-bold text-white dark:text-slate-900 hover:bg-brand-green dark:hover:bg-brand-green dark:hover:text-white transition-all shadow-xs"
-                >
-                  <span>{ar ? "لوحة مقارنة الأسواق الدولية" : "Apparel Compare Dashboard (Verified Markets)"}</span>
-                </Link>
-                <Link
-                  to="/global-markets/manage"
-                  className="inline-flex items-center gap-2 rounded-full border border-slate-200 dark:border-white/15 bg-white/90 dark:bg-slate-800/80 px-4 py-1.5 text-xs font-bold text-slate-800 dark:text-slate-100 hover:border-slate-400 hover:bg-slate-100 transition-all shadow-xs"
-                >
-                  <FolderCog className="size-3.5 text-brand-green" />
-                  <span>{ar ? "إدارة الدراسات والتحديثات" : "Studies Registry & CMS"}</span>
-                </Link>
+              <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 dark:border-white/15 bg-slate-100/90 dark:bg-white/10 px-4 py-1.5 text-xs font-bold tracking-wide text-slate-800 dark:text-slate-100 backdrop-blur-md shadow-xs">
+                <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
+                <span>
+                  {ar
+                    ? "مجموعة سامي بن عياد · مركز الأبحاث والدراسات السوقية"
+                    : "SAMI BIN AYYAD GROUP · Market Research & Intelligence Center"}
+                </span>
               </div>
             </div>
 
+            {/* Title & Introductory Text */}
             <div className="space-y-3">
-              <div className="flex flex-wrap items-baseline gap-3">
-                <h1 className="font-head text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight text-start transition-colors duration-300 group-hover:text-brand-green-text">
-                  {ar ? "الأسواق العالمية" : "Global Markets"}
-                </h1>
-                <span className="text-sm sm:text-base font-bold text-slate-500 dark:text-slate-400">
-                  {ar ? "Global Markets" : "الأسواق العالمية"}
-                </span>
-              </div>
+              <h1 className="font-head text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight text-start transition-colors duration-300 group-hover:text-brand-green-text">
+                {ar ? "الأسواق العالمية" : "Global Markets"}
+              </h1>
 
               <p className="text-sm sm:text-base lg:text-lg leading-relaxed text-slate-600 dark:text-slate-300 max-w-4xl text-start">
                 {ar
@@ -145,9 +169,106 @@ export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
               </p>
             </div>
 
-            {/* Verified Readiness Summary Bar (No Fake Numbers) */}
+            {/* The Two Dedicated Action Boxes Under the Title */}
+            <div className="grid gap-5 sm:grid-cols-2 pt-2">
+              {/* Box 1: لوحة مقارنة الأسواق الدولية */}
+              <div className="interactive-card glass-box-interactive group/card flex flex-col justify-between overflow-hidden rounded-3xl border border-slate-200/80 dark:border-white/15 bg-white/85 dark:bg-slate-900/75 p-6 sm:p-7 shadow-lg backdrop-blur-2xl hover:border-brand-green/50 hover:-translate-y-1 transition-all">
+                <div className="space-y-4 text-start">
+                  <div className="flex items-center justify-between">
+                    <div className="size-12 rounded-2xl bg-brand-green/10 border border-brand-green/20 flex items-center justify-center text-brand-green group-hover/card:scale-105 transition-transform shadow-xs">
+                      <Scale className="size-6 text-brand-green" />
+                    </div>
+                    <span className="inline-flex items-center gap-1 rounded-full bg-brand-green/10 px-3 py-1 text-[11px] font-extrabold text-brand-green border border-brand-green/20">
+                      {ar ? "مقارنات تفاعلية معتمدة" : "Verified Benchmarks"}
+                    </span>
+                  </div>
+
+                  <div className="space-y-2">
+                    <h3 className="font-head text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white group-hover/card:text-brand-green-text transition-colors">
+                      {ar ? "لوحة مقارنة الأسواق الدولية" : "Global Markets Comparative Dashboard"}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                      {ar
+                        ? "مقارنة تفاعلية شاملة بين الأسواق والفرص الاستثمارية ومؤشرات الطلب والتجارة وسلاسل الإمداد عبر الرسوم البيانية والجداول التحليلية المعتمدة."
+                        : "Interactive comprehensive comparison across international markets, trade indicators, and investment opportunities through verified analytical tables."}
+                    </p>
+                  </div>
+
+                  <div className="flex flex-wrap gap-1.5 pt-1">
+                    <span className="rounded-lg border border-slate-200/70 dark:border-white/10 bg-slate-50 dark:bg-white/5 px-2.5 py-1 text-[11px] font-semibold text-slate-700 dark:text-slate-300">
+                      {ar ? "مقارنات إقليمية لدول الخليج" : "GCC Regional Comparisons"}
+                    </span>
+                    <span className="rounded-lg border border-slate-200/70 dark:border-white/10 bg-slate-50 dark:bg-white/5 px-2.5 py-1 text-[11px] font-semibold text-slate-700 dark:text-slate-300">
+                      {ar ? "مصفوفة تقييم الفرص" : "Opportunity Score Matrix"}
+                    </span>
+                    <span className="rounded-lg border border-slate-200/70 dark:border-white/10 bg-slate-50 dark:bg-white/5 px-2.5 py-1 text-[11px] font-semibold text-slate-700 dark:text-slate-300">
+                      {ar ? "بيانات التجارة الموثقة" : "Verified Trade Data"}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="pt-5 mt-4 border-t border-slate-200/70 dark:border-white/10">
+                  <Link
+                    to="/global-markets/compare"
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-brand-green px-5 py-3 text-xs sm:text-sm font-bold text-white hover:bg-brand-orange transition-all duration-300 shadow-sm cursor-pointer"
+                  >
+                    <span>{ar ? "فتح لوحة مقارنة الأسواق الدولية" : "Open Comparative Dashboard"}</span>
+                    {ar ? <ArrowLeft className="size-4" /> : <ArrowRight className="size-4" />}
+                  </Link>
+                </div>
+              </div>
+
+              {/* Box 2: إدارة الدراسات والتحديثات */}
+              <div className="interactive-card glass-box-interactive group/card flex flex-col justify-between overflow-hidden rounded-3xl border border-slate-200/80 dark:border-white/15 bg-white/85 dark:bg-slate-900/75 p-6 sm:p-7 shadow-lg backdrop-blur-2xl hover:border-brand-green/50 hover:-translate-y-1 transition-all">
+                <div className="space-y-4 text-start">
+                  <div className="flex items-center justify-between">
+                    <div className="size-12 rounded-2xl bg-brand-green/10 border border-brand-green/20 flex items-center justify-center text-brand-green group-hover/card:scale-105 transition-transform shadow-xs">
+                      <FolderCog className="size-6 text-brand-green" />
+                    </div>
+                    <span className="inline-flex items-center gap-1 rounded-full bg-brand-green/10 px-3 py-1 text-[11px] font-extrabold text-brand-green border border-brand-green/20">
+                      {ar ? "منظومة التحكم المركزي" : "Central CMS Hub"}
+                    </span>
+                  </div>
+
+                  <div className="space-y-2">
+                    <h3 className="font-head text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white group-hover/card:text-brand-green-text transition-colors">
+                      {ar ? "إدارة الدراسات والتحديثات" : "Studies Registry & CMS"}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                      {ar
+                        ? "لوحة التحكم لإدارة سجل الدراسات السوقية، ومتابعة تواريخ التحديث، والتحقق من المعايير، واستيراد أو نشر وتحديث بيانات القطاعات."
+                        : "Administrative dashboard to manage market studies registry, monitor update cycles, verify compliance, and import or publish sector intelligence."}
+                    </p>
+                  </div>
+
+                  <div className="flex flex-wrap gap-1.5 pt-1">
+                    <span className="rounded-lg border border-slate-200/70 dark:border-white/10 bg-slate-50 dark:bg-white/5 px-2.5 py-1 text-[11px] font-semibold text-slate-700 dark:text-slate-300">
+                      {ar ? "سجل دراسات الـ 66 دولة" : "66-Country Registry"}
+                    </span>
+                    <span className="rounded-lg border border-slate-200/70 dark:border-white/10 bg-slate-50 dark:bg-white/5 px-2.5 py-1 text-[11px] font-semibold text-slate-700 dark:text-slate-300">
+                      {ar ? "متابعة تواريخ التحديث" : "Update Tracking"}
+                    </span>
+                    <span className="rounded-lg border border-slate-200/70 dark:border-white/10 bg-slate-50 dark:bg-white/5 px-2.5 py-1 text-[11px] font-semibold text-slate-700 dark:text-slate-300">
+                      {ar ? "إدارة النشر والاستيراد" : "Publishing & Imports"}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="pt-5 mt-4 border-t border-slate-200/70 dark:border-white/10">
+                  <Link
+                    to="/global-markets/manage"
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-brand-green px-5 py-3 text-xs sm:text-sm font-bold text-white hover:bg-brand-orange transition-all duration-300 shadow-sm cursor-pointer"
+                  >
+                    <span>{ar ? "الدخول إلى إدارة الدراسات والتحديثات" : "Access Studies Registry & CMS"}</span>
+                    {ar ? <ArrowLeft className="size-4" /> : <ArrowRight className="size-4" />}
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Verified Readiness Summary Bar */}
             <div className="pt-4 border-t border-slate-200/70 dark:border-white/10 grid gap-3 sm:grid-cols-3 text-xs">
-              <div className="rounded-2xl border border-slate-200/70 dark:border-white/10 bg-slate-50/80 dark:bg-white/5 px-4 py-3">
+              <div className="rounded-2xl border border-slate-200/70 dark:border-white/10 bg-slate-50/80 dark:bg-white/5 px-4 py-3 text-start">
                 <span className="text-slate-500 dark:text-slate-400 block font-semibold">
                   {ar ? "القطاعات الاستراتيجية المعتمدة" : "Core Strategic Sectors"}
                 </span>
@@ -156,7 +277,7 @@ export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
                 </span>
               </div>
 
-              <div className="rounded-2xl border border-slate-200/70 dark:border-white/10 bg-slate-50/80 dark:bg-white/5 px-4 py-3">
+              <div className="rounded-2xl border border-slate-200/70 dark:border-white/10 bg-slate-50/80 dark:bg-white/5 px-4 py-3 text-start">
                 <span className="text-slate-500 dark:text-slate-400 block font-semibold">
                   {ar ? "الدراسات المنشورة فعليًا" : "Published Studies Count"}
                 </span>
@@ -171,7 +292,7 @@ export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
                 </span>
               </div>
 
-              <div className="rounded-2xl border border-slate-200/70 dark:border-white/10 bg-slate-50/80 dark:bg-white/5 px-4 py-3">
+              <div className="rounded-2xl border border-slate-200/70 dark:border-white/10 bg-slate-50/80 dark:bg-white/5 px-4 py-3 text-start">
                 <span className="text-slate-500 dark:text-slate-400 block font-semibold">
                   {ar ? "منهجية التوثيق" : "Verification Standard"}
                 </span>
@@ -184,32 +305,26 @@ export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
         </div>
       </section>
 
-      {/* 2. Global Search & Multi-Facet Filter Engine */}
+      {/* 2. Interactive Global Search Bar & Sector Quick Switcher */}
       <section className="site-container pb-6">
         <div className="rounded-3xl border border-slate-200/80 dark:border-white/15 bg-white/75 dark:bg-slate-900/60 p-5 sm:p-6 backdrop-blur-2xl shadow-md space-y-4">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <h2 className="font-head text-sm sm:text-base font-extrabold text-slate-900 dark:text-white">
-              {ar ? "محرك البحث والتصفية في الدراسات السوقية" : "Market Studies Search & Filter Engine"}
+              {ar ? "البحث والتصفية في دراسات الأسواق" : "Market Studies Search & Navigation"}
             </h2>
-            {hasActiveFilter && (
+            {(hasActiveSearch || selectedSector !== "all") && (
               <button
                 type="button"
-                onClick={() => {
-                  setSearchQuery("");
-                  setSectorFilter("all");
-                  setRegionFilter("all");
-                  setStatusFilter("all");
-                  setYearFilter("all");
-                }}
-                className="text-xs font-bold text-brand-orange hover:underline cursor-pointer"
+                onClick={handleResetFilters}
+                className="inline-flex items-center gap-1.5 rounded-full bg-brand-green px-3.5 py-1 text-xs font-bold text-white hover:bg-brand-orange transition-all duration-300 cursor-pointer shadow-xs"
               >
-                {ar ? "إعادة ضبط الفلاتر" : "Reset Filters"}
+                <span>{ar ? "إعادة ضبط البحث" : "Reset Filters"}</span>
               </button>
             )}
           </div>
 
-          <div className="grid gap-3 md:grid-cols-12">
-            <div className="relative md:col-span-4">
+          <div className="grid gap-3 md:grid-cols-12 items-center">
+            <div className="relative md:col-span-5">
               <Search className="absolute start-3.5 top-1/2 -translate-y-1/2 size-4 text-slate-400" />
               <input
                 type="text"
@@ -224,159 +339,138 @@ export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
               />
             </div>
 
-            <select
-              value={sectorFilter}
-              onChange={(e) => setSectorFilter(e.target.value as "all" | GlobalMarketSectorId)}
-              aria-label={ar ? "القطاع" : "Sector"}
-              className="md:col-span-2 rounded-2xl border border-slate-200 dark:border-white/15 bg-white dark:bg-slate-950/60 px-3 py-2.5 text-xs font-semibold text-slate-800 dark:text-slate-100 focus:outline-none"
-            >
-              <option value="all">{ar ? "كافة القطاعات" : "All Sectors"}</option>
-              {GLOBAL_MARKET_SECTORS.map((sec) => (
-                <option key={sec.id} value={sec.id}>
-                  {ar ? sec.nameAr : sec.nameEn}
-                </option>
-              ))}
-            </select>
-
-            <select
-              value={regionFilter}
-              onChange={(e) => setRegionFilter(e.target.value)}
-              aria-label={ar ? "المنطقة الجغرافية" : "Geographic Region"}
-              className="md:col-span-2 rounded-2xl border border-slate-200 dark:border-white/15 bg-white dark:bg-slate-950/60 px-3 py-2.5 text-xs font-semibold text-slate-800 dark:text-slate-100 focus:outline-none"
-            >
-              <option value="all">{ar ? "كافة المناطق" : "All Regions"}</option>
-              {GEO_REGIONS_ORDER.map((reg) => (
-                <option key={reg.id} value={reg.id}>
-                  {ar ? reg.ar : reg.en}
-                </option>
-              ))}
-            </select>
-
-            <select
-              value={statusFilter}
-              onChange={(e) => setStatusFilter(e.target.value as "all" | StudyStatus)}
-              aria-label={ar ? "حالة الدراسة" : "Study Status"}
-              className="md:col-span-2 rounded-2xl border border-slate-200 dark:border-white/15 bg-white dark:bg-slate-950/60 px-3 py-2.5 text-xs font-semibold text-slate-800 dark:text-slate-100 focus:outline-none"
-            >
-              <option value="all">{ar ? "كافة الحالات" : "All Statuses"}</option>
-              {(["in_research", "under_review", "completed", "needs_update"] as StudyStatus[]).map((st) => (
-                <option key={st} value={st}>
-                  {ar ? STUDY_STATUS_LABELS[st].ar : STUDY_STATUS_LABELS[st].en}
-                </option>
-              ))}
-            </select>
-
-            <select
-              value={yearFilter}
-              onChange={(e) => setYearFilter(e.target.value)}
-              aria-label={ar ? "سنة آخر تحديث" : "Last Updated Year"}
-              className="md:col-span-2 rounded-2xl border border-slate-200 dark:border-white/15 bg-white dark:bg-slate-950/60 px-3 py-2.5 text-xs font-semibold text-slate-800 dark:text-slate-100 focus:outline-none"
-            >
-              <option value="all">{ar ? "سنة التحديث (الكل)" : "Update Year (All)"}</option>
-              {availableYears.map((y) => (
-                <option key={y} value={y}>
-                  {y}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          {/* Search / Published Studies Results when active or available */}
-          {(hasActiveFilter || activeStudies.length > 0) && (
-            <div className="pt-3 border-t border-slate-200/70 dark:border-white/10">
-              {filteredStudies.length === 0 ? (
-                <p className="text-xs text-slate-500 dark:text-slate-400 py-2">
-                  {ar
-                    ? "لا توجد دراسات منشورة تطابق معايير البحث الحالية. سيتم إدراج الدراسات المعتمدة فور تسليمها ونشرها."
-                    : "No published studies match the selected criteria yet. Approved studies will appear here as soon as they are released."}
-                </p>
-              ) : (
-                <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                  {filteredStudies.map((study) => {
-                    const st = STUDY_STATUS_LABELS[study.status];
-                    return (
-                      <Link
-                        key={study.id}
-                        to="/global-markets/$sector/$slug"
-                        params={{ sector: study.sector, slug: study.slug }}
-                        className="rounded-2xl border border-slate-200/80 dark:border-white/15 bg-white/90 dark:bg-slate-950/50 p-4 hover:border-brand-green/50 hover:-translate-y-0.5 transition-all space-y-2"
-                      >
-                        <div className="flex items-center justify-between gap-2 text-[11px]">
-                          <span className="font-bold text-slate-700 dark:text-slate-300">
-                            {ar ? study.countryNameAr : study.countryNameEn}
-                          </span>
-                          <span className={cn("rounded-full border px-2 py-0.5 font-bold", st.badgeClass)}>
-                            {ar ? st.ar : st.en}
-                          </span>
-                        </div>
-                        <h3 className="font-head text-sm font-bold text-slate-900 dark:text-white line-clamp-2">
-                          {ar ? study.titleAr : study.titleEn}
-                        </h3>
-                        <p className="text-[11px] text-slate-500">
-                          {ar ? "آخر تحديث:" : "Updated:"} {study.lastUpdated}
-                        </p>
-                      </Link>
-                    );
-                  })}
-                </div>
-              )}
+            {/* Sector Quick Selector Pills */}
+            <div className="md:col-span-7 flex flex-wrap items-center gap-2">
+              <button
+                type="button"
+                onClick={() => setSelectedSector("all")}
+                className={cn(
+                  "rounded-full px-3.5 py-1.5 text-xs font-bold transition-all duration-300 cursor-pointer shadow-xs",
+                  selectedSector === "all"
+                    ? "bg-brand-green text-white hover:bg-brand-orange"
+                    : "border border-slate-200 dark:border-white/15 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-brand-orange hover:text-white hover:border-brand-orange",
+                )}
+              >
+                {ar ? "كافة القطاعات (4)" : "All Sectors (4)"}
+              </button>
+              {GLOBAL_MARKET_SECTORS.map((sec) => {
+                const count = activeStudies.filter((s) => s.sector === sec.id).length;
+                return (
+                  <button
+                    key={sec.id}
+                    type="button"
+                    onClick={() => setSelectedSector(sec.id)}
+                    className={cn(
+                      "rounded-full px-3.5 py-1.5 text-xs font-bold transition-all duration-300 cursor-pointer shadow-xs",
+                      selectedSector === sec.id
+                        ? "bg-brand-green text-white hover:bg-brand-orange"
+                        : "border border-slate-200 dark:border-white/15 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-brand-orange hover:text-white hover:border-brand-orange",
+                    )}
+                  >
+                    <span>{ar ? sec.nameAr : sec.nameEn}</span>
+                    <span className="ms-1.5 text-[10px] opacity-80">({count})</span>
+                  </button>
+                );
+              })}
             </div>
-          )}
+          </div>
         </div>
       </section>
 
-      {/* 3. Four Canonical Sector Cards (Strict Order: 1. Construction, 2. Environmental, 3. Garment, 4. Food) */}
-      <section className="site-container py-4">
-        <div className="mb-6 flex flex-wrap items-end justify-between gap-3">
-          <div>
-            <span className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-              {ar ? "القطاعات الأربعة المعتمدة" : "Four Strategic Sectors"}
-            </span>
-            <h2 className="font-head text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">
-              {ar ? "استكشف دراسات القطاعات والأسواق" : "Explore Sector & Market Studies"}
-            </h2>
-          </div>
-        </div>
-
-        <div className="grid gap-6 md:grid-cols-2">
-          {GLOBAL_MARKET_SECTORS.map((sector) => {
+      {/* 3. Sectors Container — Studies are Housed Inside Each Sector */}
+      <section className="site-container space-y-10">
+        {GLOBAL_MARKET_SECTORS.filter((sector) => selectedSector === "all" || sector.id === selectedSector).map(
+          (sector) => {
             const Icon = getSectorIcon(sector.id);
             const metrics = getSectorMetrics(sector.id, studies);
             const statusCfg = STUDY_STATUS_LABELS[metrics.status];
             const scopeBadge = ar ? sector.scopeLabelAr : sector.scopeLabelEn;
 
+            // Studies strictly belonging to this sector
+            const sectorStudies = activeStudies.filter((s) => s.sector === sector.id);
+
+            // Filter sector studies by search query if present
+            const q = searchQuery.trim().toLowerCase();
+            const searchedSectorStudies = sectorStudies.filter((s) => {
+              if (!q) return true;
+              const hay = [
+                s.titleAr,
+                s.titleEn,
+                s.countryNameAr,
+                s.countryNameEn,
+                s.subRegionOrProjectAr || "",
+                s.subRegionOrProjectEn || "",
+                s.activityTypeAr,
+                s.activityTypeEn,
+                ...s.productTagsAr,
+                ...s.productTagsEn,
+              ]
+                .join(" ")
+                .toLowerCase();
+              return hay.includes(q);
+            });
+
+            // Group studies by the 4 required regional classifications:
+            // 1. دول الخليج (GCC)
+            // 2. الدول العربية (Arab Countries)
+            // 3. الدول الأفريقية (African Countries)
+            // 4. الدول الأوروبية (European Countries)
+            // + دول أخرى (Other)
+            const gccStudies = searchedSectorStudies.filter((s) => getStudyRegionCategory(s) === "gcc");
+            const arabStudies = searchedSectorStudies.filter((s) => getStudyRegionCategory(s) === "arab");
+            const africaStudies = searchedSectorStudies.filter((s) => getStudyRegionCategory(s) === "africa");
+            const europeStudies = searchedSectorStudies.filter((s) => getStudyRegionCategory(s) === "europe");
+            const otherStudies = searchedSectorStudies.filter((s) => getStudyRegionCategory(s) === "other");
+
+            const currentCategory = sectorCategoryFilters[sector.id] || "all";
+
+            // Determine visible studies based on selected classification tab inside this sector
+            let displayStudies: GlobalMarketStudy[] = [];
+            if (currentCategory === "all") {
+              displayStudies = searchedSectorStudies;
+            } else if (currentCategory === "gcc") {
+              displayStudies = gccStudies;
+            } else if (currentCategory === "arab") {
+              displayStudies = arabStudies;
+            } else if (currentCategory === "africa") {
+              displayStudies = africaStudies;
+            } else if (currentCategory === "europe") {
+              displayStudies = europeStudies;
+            } else if (currentCategory === "other") {
+              displayStudies = otherStudies;
+            }
+
             return (
               <div
                 key={sector.id}
-                className="interactive-card glass-box-interactive group flex flex-col overflow-hidden rounded-3xl border border-slate-200/80 dark:border-white/15 bg-white/80 dark:bg-slate-900/70 shadow-lg backdrop-blur-2xl"
+                className="interactive-card glass-box-interactive group overflow-hidden rounded-3xl border border-slate-200/80 dark:border-white/15 bg-white/85 dark:bg-slate-900/75 shadow-xl backdrop-blur-2xl"
               >
-                {/* Expressive Sector Image */}
-                <div className="relative h-52 sm:h-56 w-full overflow-hidden bg-slate-100 dark:bg-slate-800">
+                {/* Sector Header Banner */}
+                <div className="relative h-60 sm:h-72 w-full overflow-hidden bg-slate-100 dark:bg-slate-800">
                   <img
                     src={sector.image}
                     alt={ar ? sector.nameAr : sector.nameEn}
                     loading="lazy"
                     className="size-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent" />
 
+                  {/* Top Badges */}
                   <div className="absolute top-4 start-4 flex flex-wrap items-center gap-2">
-                    <span className="inline-flex items-center gap-1.5 rounded-full bg-white/92 dark:bg-slate-900/90 px-3 py-1 text-[11px] font-extrabold text-slate-900 dark:text-white shadow-sm backdrop-blur-md">
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-white/95 dark:bg-slate-900/90 px-3.5 py-1 text-xs font-extrabold text-slate-900 dark:text-white shadow-sm backdrop-blur-md">
                       {sector.scope === "egypt_only" ? (
-                        <MapPin className="size-3 text-brand-orange" />
+                        <MapPin className="size-3.5 text-brand-orange" />
                       ) : (
-                        <Globe className="size-3 text-brand-green" />
+                        <Globe className="size-3.5 text-brand-green" />
                       )}
-                      <span>
-                        {ar ? `نطاق الدراسة: ${scopeBadge}` : `Scope: ${scopeBadge}`}
-                      </span>
+                      <span>{ar ? `نطاق الدراسة: ${scopeBadge}` : `Scope: ${scopeBadge}`}</span>
                     </span>
                   </div>
 
                   <div className="absolute top-4 end-4">
                     <span
                       className={cn(
-                        "inline-flex items-center rounded-full border px-3 py-1 text-[11px] font-bold backdrop-blur-md shadow-xs",
+                        "inline-flex items-center rounded-full border px-3.5 py-1 text-xs font-bold backdrop-blur-md shadow-xs",
                         statusCfg.badgeClass,
                       )}
                     >
@@ -384,54 +478,59 @@ export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
                     </span>
                   </div>
 
-                  <div className="absolute bottom-4 start-4 end-4 flex items-center gap-3 text-white">
-                    <div className="size-10 rounded-2xl bg-white/15 backdrop-blur-md border border-white/25 flex items-center justify-center shrink-0">
-                      <Icon className="size-5 text-white" />
+                  {/* Bottom Title Area */}
+                  <div className="absolute bottom-5 start-5 end-5 flex flex-wrap items-end justify-between gap-4 text-white">
+                    <div className="flex items-center gap-3.5 text-start">
+                      <div className="size-12 rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center shrink-0 shadow-sm">
+                        <Icon className="size-6 text-white" />
+                      </div>
+                      <div>
+                        <span className="text-xs font-semibold text-white/80 block">
+                          {ar ? `القطاع 0${sector.order} · ${sector.nameEn}` : `Sector 0${sector.order} · ${sector.nameAr}`}
+                        </span>
+                        <h2 className="font-head text-2xl sm:text-3xl font-extrabold !text-white leading-tight">
+                          {ar ? sector.nameAr : sector.nameEn}
+                        </h2>
+                      </div>
                     </div>
-                    <div className="text-start">
-                      <span className="text-[11px] font-semibold text-white/80 block">
-                        {ar ? `القطاع 0${sector.order} · ${sector.nameEn}` : `Sector 0${sector.order} · ${sector.nameAr}`}
-                      </span>
-                      <h3 className="font-head text-lg sm:text-xl font-extrabold !text-white leading-snug">
-                        {ar ? sector.nameAr : sector.nameEn}
-                      </h3>
-                    </div>
+
+                    <Link
+                      to="/global-markets/$sector"
+                      params={{ sector: sector.id }}
+                      className="inline-flex items-center gap-2 rounded-2xl bg-brand-green px-5 py-2.5 text-xs sm:text-sm font-bold text-white hover:bg-brand-orange transition-all duration-300 shadow-md cursor-pointer"
+                    >
+                      <span>{ar ? "استعراض صفحة القطاع" : "Sector Overview Page"}</span>
+                      {ar ? <ArrowLeft className="size-4" /> : <ArrowRight className="size-4" />}
+                    </Link>
                   </div>
                 </div>
 
-                {/* Card Body */}
-                <div className="flex flex-1 flex-col justify-between p-6 space-y-5 text-start">
-                  <div className="space-y-4">
-                    <p className="text-xs sm:text-sm leading-relaxed text-slate-600 dark:text-slate-300">
-                      {ar ? sector.shortDescAr : sector.shortDescEn}
-                    </p>
+                {/* Sector Overview & Metrics Bar */}
+                <div className="p-6 sm:p-8 space-y-6 text-start">
+                  <div className="grid gap-6 lg:grid-cols-12 lg:items-center">
+                    <div className="lg:col-span-8 space-y-3">
+                      <p className="text-xs sm:text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+                        {ar ? sector.shortDescAr : sector.shortDescEn}
+                      </p>
 
-                    {/* Core Coverage Topics Preview */}
-                    <div className="flex flex-wrap gap-1.5">
-                      {(ar ? sector.topicsAr : sector.topicsEn).slice(0, 6).map((topic, idx) => (
-                        <span
-                          key={idx}
-                          className="rounded-lg border border-slate-200/80 dark:border-white/10 bg-slate-50 dark:bg-white/5 px-2.5 py-1 text-[11px] font-semibold text-slate-700 dark:text-slate-300"
-                        >
-                          {topic}
-                        </span>
-                      ))}
-                      {sector.topicsAr.length > 6 && (
-                        <span className="rounded-lg bg-slate-100 dark:bg-white/10 px-2.5 py-1 text-[11px] font-bold text-slate-600 dark:text-slate-300">
-                          +{sector.topicsAr.length - 6} {ar ? "محاور أخرى" : "more topics"}
-                        </span>
-                      )}
+                      <div className="flex flex-wrap gap-1.5 pt-1">
+                        {(ar ? sector.topicsAr : sector.topicsEn).slice(0, 8).map((topic, idx) => (
+                          <span
+                            key={idx}
+                            className="rounded-lg border border-slate-200/80 dark:border-white/10 bg-slate-50 dark:bg-white/5 px-2.5 py-1 text-[11px] font-semibold text-slate-700 dark:text-slate-300"
+                          >
+                            {topic}
+                          </span>
+                        ))}
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Metadata & Action Row */}
-                  <div className="space-y-4 pt-4 border-t border-slate-200/70 dark:border-white/10">
-                    <div className="grid grid-cols-3 gap-2 text-[11px]">
-                      <div className="rounded-xl bg-slate-50/90 dark:bg-white/5 p-2.5 border border-slate-200/60 dark:border-white/10">
-                        <span className="text-slate-500 dark:text-slate-400 block">
+                    <div className="lg:col-span-4 grid grid-cols-3 gap-2 text-[11px]">
+                      <div className="rounded-2xl bg-slate-50/90 dark:bg-white/5 p-3 border border-slate-200/60 dark:border-white/10 text-center">
+                        <span className="text-slate-500 dark:text-slate-400 block text-[10px]">
                           {ar ? "الدراسات المنشورة" : "Published"}
                         </span>
-                        <span className="font-bold text-slate-900 dark:text-white mt-0.5 block">
+                        <span className="font-head text-base font-extrabold text-slate-900 dark:text-white mt-0.5 block">
                           {metrics.publishedCount > 0
                             ? metrics.publishedCount
                             : ar
@@ -440,54 +539,312 @@ export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
                         </span>
                       </div>
 
-                      <div className="rounded-xl bg-slate-50/90 dark:bg-white/5 p-2.5 border border-slate-200/60 dark:border-white/10">
-                        <span className="text-slate-500 dark:text-slate-400 block">
-                          {ar ? "حالة الدراسات" : "Status"}
+                      <div className="rounded-2xl bg-slate-50/90 dark:bg-white/5 p-3 border border-slate-200/60 dark:border-white/10 text-center">
+                        <span className="text-slate-500 dark:text-slate-400 block text-[10px]">
+                          {ar ? "حالة القطاع" : "Status"}
                         </span>
-                        <span className="font-bold text-slate-900 dark:text-white mt-0.5 block">
+                        <span className="font-bold text-slate-900 dark:text-white mt-1 block text-xs">
                           {ar ? statusCfg.ar : statusCfg.en}
                         </span>
                       </div>
 
-                      <div className="rounded-xl bg-slate-50/90 dark:bg-white/5 p-2.5 border border-slate-200/60 dark:border-white/10">
-                        <span className="text-slate-500 dark:text-slate-400 block">
-                          {ar ? "آخر تحديث" : "Last Updated"}
+                      <div className="rounded-2xl bg-slate-50/90 dark:bg-white/5 p-3 border border-slate-200/60 dark:border-white/10 text-center">
+                        <span className="text-slate-500 dark:text-slate-400 block text-[10px]">
+                          {ar ? "آخر تحديث" : "Updated"}
                         </span>
-                        <span className="font-bold text-slate-900 dark:text-white mt-0.5 block">
-                          {metrics.lastUpdatedYear ?? (ar ? "بانتظار النشر" : "Pending")}
+                        <span className="font-bold text-slate-900 dark:text-white mt-1 block text-xs">
+                          {metrics.lastUpdatedYear ?? (ar ? "قيد البحث" : "In Progress")}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Section Divider: Studies Inside this Sector */}
+                  <div className="pt-6 border-t border-slate-200/80 dark:border-white/10 space-y-4">
+                    <div className="flex flex-wrap items-center justify-between gap-3">
+                      <div className="flex items-center gap-2">
+                        <Layers className="size-4 text-brand-green" />
+                        <h3 className="font-head text-base sm:text-lg font-extrabold text-slate-900 dark:text-white">
+                          {ar
+                            ? `الدراسات السوقية الخاصة بقطاع ${sector.nameAr}`
+                            : `Market Studies for ${sector.nameEn}`}
+                        </h3>
+                        <span className="rounded-full bg-brand-green/10 text-brand-green px-2.5 py-0.5 text-xs font-extrabold">
+                          {searchedSectorStudies.length}
                         </span>
                       </div>
                     </div>
 
+                    {/* Regional Classification Tabs Inside the Sector:
+                        1. دول الخليج (GCC)
+                        2. الدول العربية (Arab Countries)
+                        3. الدول الأفريقية (African Countries)
+                        4. الدول الأوروبية (European Countries)
+                    */}
+                    <div className="flex flex-wrap items-center gap-2 pt-1">
+                      {/* All Studies Tab */}
+                      <button
+                        type="button"
+                        onClick={() => setCategoryForSector(sector.id, "all")}
+                        className={cn(
+                          "rounded-full px-3.5 py-1.5 text-xs font-bold transition-all duration-300 cursor-pointer shadow-xs",
+                          currentCategory === "all"
+                            ? "bg-brand-green text-white hover:bg-brand-orange"
+                            : "border border-slate-200 dark:border-white/15 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-brand-orange hover:text-white hover:border-brand-orange",
+                        )}
+                      >
+                        <span>{ar ? "كافة الدراسات" : "All Studies"}</span>
+                        <span className="ms-1.5 text-[10px] opacity-80">({searchedSectorStudies.length})</span>
+                      </button>
+
+                      {/* 1. دول الخليج (GCC) */}
+                      <button
+                        type="button"
+                        onClick={() => setCategoryForSector(sector.id, "gcc")}
+                        className={cn(
+                          "rounded-full px-3.5 py-1.5 text-xs font-bold transition-all duration-300 cursor-pointer shadow-xs",
+                          currentCategory === "gcc"
+                            ? "bg-brand-green text-white hover:bg-brand-orange"
+                            : "border border-slate-200 dark:border-white/15 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-brand-orange hover:text-white hover:border-brand-orange",
+                        )}
+                      >
+                        <span>{ar ? "دول الخليج" : "GCC Countries"}</span>
+                        <span className="ms-1.5 text-[10px] opacity-80">({gccStudies.length})</span>
+                      </button>
+
+                      {/* 2. الدول العربية (Arab Countries) */}
+                      <button
+                        type="button"
+                        onClick={() => setCategoryForSector(sector.id, "arab")}
+                        className={cn(
+                          "rounded-full px-3.5 py-1.5 text-xs font-bold transition-all duration-300 cursor-pointer shadow-xs",
+                          currentCategory === "arab"
+                            ? "bg-brand-green text-white hover:bg-brand-orange"
+                            : "border border-slate-200 dark:border-white/15 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-brand-orange hover:text-white hover:border-brand-orange",
+                        )}
+                      >
+                        <span>{ar ? "الدول العربية" : "Arab Countries"}</span>
+                        <span className="ms-1.5 text-[10px] opacity-80">({arabStudies.length})</span>
+                      </button>
+
+                      {/* 3. الدول الأفريقية (African Countries) */}
+                      <button
+                        type="button"
+                        onClick={() => setCategoryForSector(sector.id, "africa")}
+                        className={cn(
+                          "rounded-full px-3.5 py-1.5 text-xs font-bold transition-all duration-300 cursor-pointer shadow-xs",
+                          currentCategory === "africa"
+                            ? "bg-brand-green text-white hover:bg-brand-orange"
+                            : "border border-slate-200 dark:border-white/15 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-brand-orange hover:text-white hover:border-brand-orange",
+                        )}
+                      >
+                        <span>{ar ? "الدول الأفريقية" : "African Countries"}</span>
+                        <span className="ms-1.5 text-[10px] opacity-80">({africaStudies.length})</span>
+                      </button>
+
+                      {/* 4. الدول الأوروبية (European Countries) */}
+                      <button
+                        type="button"
+                        onClick={() => setCategoryForSector(sector.id, "europe")}
+                        className={cn(
+                          "rounded-full px-3.5 py-1.5 text-xs font-bold transition-all duration-300 cursor-pointer shadow-xs",
+                          currentCategory === "europe"
+                            ? "bg-brand-green text-white hover:bg-brand-orange"
+                            : "border border-slate-200 dark:border-white/15 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-brand-orange hover:text-white hover:border-brand-orange",
+                        )}
+                      >
+                        <span>{ar ? "الدول الأوروبية" : "European Countries"}</span>
+                        <span className="ms-1.5 text-[10px] opacity-80">({europeStudies.length})</span>
+                      </button>
+
+                      {/* Other Countries (if present, e.g. Americas) */}
+                      {otherStudies.length > 0 && (
+                        <button
+                          type="button"
+                          onClick={() => setCategoryForSector(sector.id, "other")}
+                          className={cn(
+                            "rounded-full px-3.5 py-1.5 text-xs font-bold transition-all duration-300 cursor-pointer shadow-xs",
+                            currentCategory === "other"
+                              ? "bg-brand-green text-white hover:bg-brand-orange"
+                              : "border border-slate-200 dark:border-white/15 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-brand-orange hover:text-white hover:border-brand-orange",
+                          )}
+                        >
+                          <span>{ar ? "دول أخرى" : "Other Markets"}</span>
+                          <span className="ms-1.5 text-[10px] opacity-80">({otherStudies.length})</span>
+                        </button>
+                      )}
+                    </div>
+
+                    {/* Studies Display Grid Inside This Sector */}
+                    <div className="pt-2">
+                      {displayStudies.length === 0 ? (
+                        <div className="rounded-2xl border border-dashed border-slate-300 dark:border-white/15 bg-slate-50/60 dark:bg-white/5 p-6 text-center space-y-2">
+                          <p className="text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-300">
+                            {hasActiveSearch
+                              ? ar
+                                ? "لا توجد دراسات في هذا التصنيف تطابق عبارة البحث الحالية."
+                                : "No studies in this classification match your search query."
+                              : ar
+                              ? "يتم حاليًا إعداد وتجهيز دراسات هذا التصنيف الإقليمي وفق المحاور الـ 18 المعتمدة."
+                              : "Studies in this regional classification are currently being prepared according to the 18-axis standard."}
+                          </p>
+                        </div>
+                      ) : (
+                        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                          {displayStudies.map((study) => {
+                            const st = STUDY_STATUS_LABELS[study.status];
+                            const downloadAllowed = isStudyDownloadAllowed(study);
+
+                            return (
+                              <div
+                                key={study.id}
+                                className="interactive-card glass-box-interactive flex flex-col justify-between rounded-2xl border border-slate-200/80 dark:border-white/15 bg-white/90 dark:bg-slate-950/60 p-4 sm:p-5 hover:border-brand-green/50 hover:-translate-y-1 transition-all space-y-3 text-start relative overflow-hidden shadow-sm"
+                              >
+                                <div className="space-y-2.5">
+                                  {/* Country Flag & Header */}
+                                  <div className="flex items-center justify-between gap-2">
+                                    <div className="flex items-center gap-2">
+                                      {study.countryCode && (
+                                        <img
+                                          src={`https://flagcdn.com/w40/${study.countryCode.toLowerCase()}.png`}
+                                          srcSet={`https://flagcdn.com/w80/${study.countryCode.toLowerCase()}.png 2x`}
+                                          alt={ar ? study.countryNameAr : study.countryNameEn}
+                                          className="h-3.5 w-5.5 rounded-[2px] object-cover border border-slate-300/60 dark:border-white/20 shrink-0 shadow-xs"
+                                          loading="lazy"
+                                        />
+                                      )}
+                                      <span className="font-head text-sm font-extrabold text-slate-900 dark:text-white">
+                                        {ar ? study.countryNameAr : study.countryNameEn}
+                                      </span>
+                                    </div>
+
+                                    {typeof study.opportunityScore === "number" ? (
+                                      <span
+                                        className={cn(
+                                          "rounded-full px-2 py-0.5 font-mono font-extrabold text-[10px] text-white shadow-xs",
+                                          study.opportunityScore >= 80
+                                            ? "bg-emerald-600"
+                                            : study.opportunityScore >= 65
+                                            ? "bg-blue-600"
+                                            : "bg-amber-600",
+                                        )}
+                                      >
+                                        {study.opportunityScore}/100
+                                      </span>
+                                    ) : (
+                                      <span className={cn("rounded-full border px-2 py-0.5 text-[10px] font-bold", st.badgeClass)}>
+                                        {ar ? st.ar : st.en}
+                                      </span>
+                                    )}
+                                  </div>
+
+                                  {/* Study Title & Subtitle */}
+                                  <h4 className="font-head text-xs sm:text-sm font-bold text-slate-900 dark:text-white line-clamp-2 leading-snug">
+                                    {ar ? study.titleAr : study.titleEn}
+                                  </h4>
+
+                                  {study.tradeIndicatorDisplay && (
+                                    <p className="text-[11px] font-bold text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
+                                      <span className="text-slate-500">{ar ? "المؤشر التجاري:" : "Trade Indicator:"}</span>
+                                      <span className="text-brand-green font-mono">{study.tradeIndicatorDisplay}</span>
+                                    </p>
+                                  )}
+
+                                  <p className="text-[11px] text-slate-500 dark:text-slate-400 line-clamp-2 leading-relaxed">
+                                    {ar ? study.subtitleAr : study.subtitleEn}
+                                  </p>
+                                </div>
+
+                                {/* Study Card Actions */}
+                                <div className="space-y-2 pt-3 border-t border-slate-200/70 dark:border-white/10">
+                                  <div className="flex flex-wrap items-center gap-1.5">
+                                    <Link
+                                      to="/global-markets/$sector/$slug"
+                                      params={{ sector: study.sector, slug: study.slug }}
+                                      className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-xl bg-brand-green px-3 py-2 text-xs font-bold text-white hover:bg-brand-orange transition-all duration-300 cursor-pointer shadow-xs"
+                                    >
+                                      <span>{ar ? "عرض الدراسة الكاملة" : "View Full Study"}</span>
+                                      {ar ? <ArrowLeft className="size-3.5" /> : <ArrowRight className="size-3.5" />}
+                                    </Link>
+
+                                    {study.downloadDocxUrl && (
+                                      <a
+                                        href={study.downloadDocxUrl}
+                                        download
+                                        title={ar ? "تحميل دراسة Word الأصلية" : "Download Official Word Report"}
+                                        className="inline-flex items-center justify-center gap-1 rounded-xl border border-brand-green/30 bg-brand-green/10 px-2 py-2 text-xs font-bold text-brand-green hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-all duration-300 cursor-pointer"
+                                      >
+                                        <FileText className="size-3.5" />
+                                        <span>Word</span>
+                                      </a>
+                                    )}
+
+                                    {study.downloadXlsxUrl && (
+                                      <a
+                                        href={study.downloadXlsxUrl}
+                                        download
+                                        title={ar ? "تحميل قاعدة بيانات Excel الأصلية" : "Download Official Excel Database"}
+                                        className="inline-flex items-center justify-center gap-1 rounded-xl border border-brand-green/30 bg-brand-green/10 px-2 py-2 text-xs font-bold text-brand-green hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-all duration-300 cursor-pointer"
+                                      >
+                                        <FileSpreadsheet className="size-3.5" />
+                                        <span>Excel</span>
+                                      </a>
+                                    )}
+
+                                    {downloadAllowed && (
+                                      <button
+                                        type="button"
+                                        onClick={() => openApprovedStudyPdfReport(study, ar)}
+                                        title={ar ? "تنزيل أو فتح تقرير PDF المعتمد" : "Open & Print Approved PDF Report"}
+                                        className="inline-flex items-center justify-center gap-1 rounded-xl border border-brand-green/30 bg-brand-green/10 px-2 py-2 text-xs font-bold text-brand-green hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-all duration-300 cursor-pointer"
+                                      >
+                                        <Download className="size-3.5" />
+                                        <span>PDF</span>
+                                      </button>
+                                    )}
+                                  </div>
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Sector Footer Link Button */}
+                  <div className="pt-4 border-t border-slate-200/70 dark:border-white/10 flex flex-wrap items-center justify-between gap-3">
+                    <p className="text-xs text-slate-500 dark:text-slate-400">
+                      {ar
+                        ? `يتضمن هذا القطاع تقارير مقارنة معتمدة ومؤشرات موثقة لـ ${sectorStudies.length} سوقًا استراتيجيًا.`
+                        : `This sector includes comparative benchmarks and verified indicators for ${sectorStudies.length} strategic markets.`}
+                    </p>
+
                     <Link
                       to="/global-markets/$sector"
                       params={{ sector: sector.id }}
-                      className="flex w-full items-center justify-between rounded-2xl bg-slate-900 dark:bg-white px-5 py-3 text-xs sm:text-sm font-bold text-white dark:text-slate-900 transition-all duration-200 hover:bg-brand-green dark:hover:bg-brand-green dark:hover:text-white shadow-sm"
+                      className="inline-flex items-center justify-center gap-2 rounded-2xl bg-brand-green px-5 py-2.5 text-xs sm:text-sm font-bold text-white hover:bg-brand-orange transition-all duration-300 shadow-sm cursor-pointer"
                     >
-                      <span>{ar ? "استعراض الدراسات" : "Explore Studies"}</span>
-                      {ar ? (
-                        <ArrowLeft className="size-4" />
-                      ) : (
-                        <ArrowRight className="size-4" />
-                      )}
+                      <span>{ar ? "استعراض كافة دراسات وتحليلات القطاع" : "Explore All Sector Studies & Analysis"}</span>
+                      {ar ? <ArrowLeft className="size-4" /> : <ArrowRight className="size-4" />}
                     </Link>
                   </div>
                 </div>
               </div>
             );
-          })}
-        </div>
+          },
+        )}
       </section>
 
       {/* 4. Institutional Architecture & 18-Axis Standard Blueprint */}
-      <section className="site-container pt-8">
+      <section className="site-container pt-12">
         <div className="rounded-3xl border border-slate-200/80 dark:border-white/15 bg-white/75 dark:bg-slate-900/60 p-6 sm:p-8 backdrop-blur-2xl shadow-md space-y-6">
           <div className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-200/70 dark:border-white/10 pb-4">
             <div className="flex items-center gap-3">
               <div className="size-10 rounded-2xl bg-slate-900/5 dark:bg-white/10 text-slate-800 dark:text-slate-100 flex items-center justify-center shrink-0">
                 <Layers className="size-5" />
               </div>
-              <div>
+              <div className="text-start">
                 <h2 className="font-head text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white">
                   {ar ? "الهيكل المؤسسي الموحد للدراسات السوقية (18 محورًا)" : "Unified 18-Axis Market Study Framework"}
                 </h2>
@@ -499,17 +856,17 @@ export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
               </div>
             </div>
 
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap items-center gap-2">
               <Link
                 to="/trade"
-                className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 dark:border-white/15 bg-slate-50 dark:bg-white/5 px-3.5 py-1.5 text-xs font-bold text-slate-800 dark:text-slate-100 hover:border-brand-green transition-colors"
+                className="inline-flex items-center gap-1.5 rounded-full bg-brand-green px-4 py-2 text-xs font-bold text-white hover:bg-brand-orange transition-all duration-300 shadow-xs cursor-pointer"
               >
-                <FileSpreadsheet className="size-3.5 text-brand-green" />
+                <FileSpreadsheet className="size-3.5" />
                 <span>{ar ? "الانتقال إلى الفرص العالمية" : "Open Global Opportunities"}</span>
               </Link>
               <Link
                 to="/global-markets/manage"
-                className="inline-flex items-center gap-1.5 rounded-full border border-brand-green/35 bg-brand-green/10 px-3.5 py-1.5 text-xs font-bold text-brand-green hover:bg-brand-green hover:text-white transition-colors"
+                className="inline-flex items-center gap-1.5 rounded-full bg-brand-green px-4 py-2 text-xs font-bold text-white hover:bg-brand-orange transition-all duration-300 shadow-xs cursor-pointer"
               >
                 <ShieldCheck className="size-3.5" />
                 <span>{ar ? "استيراد أو نشر دراسة معتمدة" : "Publish / Import Study"}</span>
@@ -521,9 +878,9 @@ export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
             {STUDY_SECTION_BLUEPRINT.map((bp) => (
               <div
                 key={bp.key}
-                className="flex items-center gap-2.5 rounded-xl border border-slate-200/70 dark:border-white/10 bg-slate-50/70 dark:bg-white/5 px-3.5 py-2.5 text-xs"
+                className="flex items-center gap-2.5 rounded-xl border border-slate-200/70 dark:border-white/10 bg-slate-50/70 dark:bg-white/5 px-3.5 py-2.5 text-xs text-start"
               >
-                <span className="flex size-6 shrink-0 items-center justify-center rounded-lg bg-slate-900 text-[10px] font-extrabold text-white dark:bg-white dark:text-slate-900">
+                <span className="flex size-6 shrink-0 items-center justify-center rounded-lg bg-brand-green text-[10px] font-extrabold text-white">
                   {bp.order}
                 </span>
                 <span className="font-bold text-slate-800 dark:text-slate-200">
@@ -537,4 +894,3 @@ export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
     </div>
   );
 }
-

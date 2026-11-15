@@ -100,7 +100,15 @@ export function ApparelComparativePage({
   const filteredStudies = useMemo(() => {
     const q = searchQuery.trim().toLowerCase();
     return garmentStudies.filter((s) => {
-      if (subRegionFilter !== "all" && s.apparelSubRegion !== subRegionFilter) return false;
+      if (subRegionFilter !== "all" && s.apparelSubRegion !== subRegionFilter) {
+        if (subRegionFilter === "levant" && (s.countryCode === "JO" || s.countryCode === "LB" || s.countryCode === "SY")) {
+          // match Levant countries under Levant regional view
+        } else if (subRegionFilter === "north_africa" && (s.countryCode === "EG" || s.countryCode === "LY" || s.countryCode === "TN" || s.countryCode === "DZ" || s.countryCode === "MA" || s.countryCode === "SD")) {
+          // match North Africa countries under North Africa regional view
+        } else {
+          return false;
+        }
+      }
       if (priorityFilter !== "all" && s.priorityGrade !== priorityFilter) return false;
       if (roleFilter !== "all" && s.marketRole !== roleFilter) return false;
       if (basisFilter !== "all" && s.dataBasis !== basisFilter) return false;
@@ -750,8 +758,8 @@ export function ApparelComparativePage({
               </strong>
               <span className="text-slate-600 dark:text-slate-300">
                 {ar
-                  ? "سوريا والسودان معلقان تمامًا لحين استيفاء التخليص القانوني والعقوبات والبنوك والشحن والأمن."
-                  : "Syria and Sudan remain strictly on hold pending legal, sanctions, banking, logistics, and security clearance."}
+                  ? "السودان معلق لحين استيفاء التخليص الأمني والمصرفي؛ وسوريا تخضع لضوابط الامتثال وقوائم الفحص المحددة بعد رفع العقوبات الشاملة."
+                  : "Sudan remains on hold pending security and banking clearance; Syria operates under targeted compliance screening following comprehensive sanctions relief."}
               </span>
             </div>
           </div>

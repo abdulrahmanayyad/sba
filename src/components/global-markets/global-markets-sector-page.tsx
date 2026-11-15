@@ -252,7 +252,7 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
                 </Link>
                 <Link
                   to="/global-markets/manage"
-                  className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-slate-900 dark:bg-white px-3.5 py-2 text-xs font-bold text-white dark:text-slate-900 hover:bg-brand-green dark:hover:bg-brand-green dark:hover:text-white transition-colors"
+                  className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-brand-green px-3.5 py-2 text-xs font-bold text-white hover:bg-brand-orange transition-all duration-300 shadow-xs cursor-pointer"
                 >
                   <FolderCog className="size-3.5" />
                   <span>{ar ? "إضافة دراسة" : "Add Study"}</span>
@@ -388,10 +388,10 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
                     type="button"
                     onClick={() => setSubRegionFilter("all")}
                     className={cn(
-                      "rounded-full border px-3 py-1 text-[11px] font-bold transition-colors cursor-pointer",
+                      "rounded-full border px-3 py-1 text-[11px] font-bold transition-all duration-300 cursor-pointer shadow-xs",
                       subRegionFilter === "all"
-                        ? "border-slate-900 bg-slate-900 text-white dark:border-white dark:bg-white dark:text-slate-900"
-                        : "border-slate-200 dark:border-white/15 bg-white dark:bg-white/5 text-slate-700 dark:text-slate-200 hover:border-brand-green",
+                        ? "border-brand-green bg-brand-green text-white hover:bg-brand-orange"
+                        : "border-slate-200 dark:border-white/15 bg-white dark:bg-white/5 text-slate-700 dark:text-slate-200 hover:bg-brand-orange hover:text-white hover:border-brand-orange",
                     )}
                   >
                     {ar ? `كافة الأقاليم (${sectorStudies.length})` : `All Regions (${sectorStudies.length})`}
@@ -404,10 +404,10 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
                         type="button"
                         onClick={() => setSubRegionFilter(reg.id)}
                         className={cn(
-                          "rounded-full border px-3 py-1 text-[11px] font-bold transition-colors cursor-pointer",
+                          "rounded-full border px-3 py-1 text-[11px] font-bold transition-all duration-300 cursor-pointer shadow-xs",
                           subRegionFilter === reg.id
-                            ? "border-brand-green bg-brand-green text-white"
-                            : "border-slate-200 dark:border-white/15 bg-white dark:bg-white/5 text-slate-700 dark:text-slate-200 hover:border-brand-green",
+                            ? "border-brand-green bg-brand-green text-white hover:bg-brand-orange"
+                            : "border-slate-200 dark:border-white/15 bg-white dark:bg-white/5 text-slate-700 dark:text-slate-200 hover:bg-brand-orange hover:text-white hover:border-brand-orange",
                         )}
                       >
                         {ar ? `${reg.titleAr} (${cnt})` : `${reg.titleEn} (${cnt})`}
@@ -436,7 +436,7 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
                 <Link
                   to="/global-markets/$sector/$slug"
                   params={{ sector: "garment", slug: "compare" }}
-                  className="inline-flex items-center gap-1.5 rounded-xl bg-slate-900 dark:bg-white px-4 py-2 text-xs font-extrabold text-white dark:text-slate-900 hover:bg-brand-green dark:hover:bg-brand-green dark:hover:text-white transition-colors shadow-xs"
+                  className="inline-flex items-center gap-1.5 rounded-xl bg-brand-green px-4 py-2 text-xs font-extrabold text-white hover:bg-brand-orange transition-all duration-300 shadow-xs cursor-pointer"
                 >
                   <Scale className="size-3.5" />
                   <span>{ar ? "لوحة المقارنة الشاملة للأسواق الدولية" : "Global Comparative Dashboard (Verified Markets)"}</span>
@@ -444,7 +444,7 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
                 <Link
                   to="/global-markets/$sector/$slug"
                   params={{ sector: "garment", slug: "gcc-comparative-report" }}
-                  className="inline-flex items-center gap-1.5 rounded-xl border border-brand-green/40 bg-brand-green/10 px-4 py-2 text-xs font-extrabold text-brand-green hover:bg-brand-green hover:text-white transition-colors"
+                  className="inline-flex items-center gap-1.5 rounded-xl bg-brand-green px-4 py-2 text-xs font-extrabold text-white hover:bg-brand-orange transition-all duration-300 shadow-xs cursor-pointer"
                 >
                   <span>{ar ? "التقرير المقارن لدول الخليج (GCC)" : "GCC Comparative Report"}</span>
                 </Link>
@@ -453,7 +453,7 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
                     key={reg.id}
                     to="/global-markets/$sector/$slug"
                     params={{ sector: "garment", slug: reg.comparativeSlug }}
-                    className="rounded-xl border border-slate-200 dark:border-white/15 bg-white/80 dark:bg-white/5 px-3 py-2 text-[11px] font-bold text-slate-700 dark:text-slate-200 hover:border-brand-green hover:text-brand-green transition-colors"
+                    className="rounded-xl border border-slate-200 dark:border-white/15 bg-white/80 dark:bg-white/5 px-3 py-2 text-[11px] font-bold text-slate-700 dark:text-slate-200 hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-all duration-300 cursor-pointer"
                   >
                     {ar ? `مقارنة ${reg.titleAr}` : `${reg.titleEn} Compare`}
                   </Link>
@@ -488,7 +488,7 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
 
               <Link
                 to="/global-markets/manage"
-                className="inline-flex items-center gap-2 rounded-full bg-slate-900 dark:bg-white px-5 py-2.5 text-xs font-bold text-white dark:text-slate-900 hover:bg-brand-green dark:hover:bg-brand-green dark:hover:text-white transition-colors"
+                className="inline-flex items-center gap-2 rounded-full bg-brand-green px-5 py-2.5 text-xs font-bold text-white hover:bg-brand-orange transition-all duration-300 shadow-xs cursor-pointer"
               >
                 <FolderCog className="size-4" />
                 <span>{ar ? "إضافة أو استيراد دراسة جديدة" : "Import or Add Study"}</span>
@@ -636,7 +636,7 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
                       <Link
                         to="/global-markets/$sector/$slug"
                         params={{ sector: study.sector, slug: study.slug }}
-                        className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-xl bg-slate-900 dark:bg-white px-3 py-2 text-xs font-bold text-white dark:text-slate-900 hover:bg-brand-green dark:hover:bg-brand-green dark:hover:text-white transition-colors"
+                        className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-xl bg-brand-green px-3 py-2 text-xs font-bold text-white hover:bg-brand-orange transition-all duration-300 shadow-xs cursor-pointer"
                       >
                         <span>{ar ? "عرض الدراسة الكاملة" : "View Full Study"}</span>
                         {ar ? <ArrowLeft className="size-3.5" /> : <ArrowRight className="size-3.5" />}
@@ -647,7 +647,7 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
                           href={study.downloadDocxUrl}
                           download
                           title={ar ? "تحميل دراسة Word الأصلية" : "Download Official Word Report"}
-                          className="inline-flex items-center justify-center gap-1 rounded-xl border border-blue-500/40 bg-blue-500/10 px-2.5 py-2 text-xs font-bold text-blue-600 dark:text-blue-400 hover:bg-blue-600 hover:text-white transition-colors cursor-pointer"
+                          className="inline-flex items-center justify-center gap-1 rounded-xl border border-brand-green/30 bg-brand-green/10 px-2.5 py-2 text-xs font-bold text-brand-green hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-all duration-300 cursor-pointer"
                         >
                           <FileText className="size-3.5" />
                           <span>Word</span>
@@ -659,35 +659,35 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
                           href={study.downloadXlsxUrl}
                           download
                           title={ar ? "تحميل قاعدة بيانات Excel الأصلية" : "Download Official Excel Database"}
-                          className="inline-flex items-center justify-center gap-1 rounded-xl border border-emerald-500/40 bg-emerald-500/10 px-2.5 py-2 text-xs font-bold text-emerald-600 dark:text-emerald-400 hover:bg-emerald-600 hover:text-white transition-colors cursor-pointer"
+                          className="inline-flex items-center justify-center gap-1 rounded-xl border border-brand-green/30 bg-brand-green/10 px-2.5 py-2 text-xs font-bold text-brand-green hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-all duration-300 cursor-pointer"
                         >
                           <FileSpreadsheet className="size-3.5" />
                           <span>Excel</span>
                         </a>
                       )}
 
-                      {!study.downloadDocxUrl && !study.downloadXlsxUrl && (study.downloadZipUrl || downloadAllowed) && (
-                        study.downloadZipUrl ? (
-                          <a
-                            href={study.downloadZipUrl}
-                            download
-                            title={ar ? "تحميل وثيقة الدراسة المعتمدة" : "Download Official Study Document"}
-                            className="inline-flex items-center justify-center gap-1.5 rounded-xl border border-brand-green/40 bg-brand-green/10 px-3 py-2 text-xs font-bold text-brand-green hover:bg-brand-green hover:text-white transition-colors cursor-pointer"
-                          >
-                            <Download className="size-3.5" />
-                            <span>{ar ? "تحميل الدراسة" : "Download"}</span>
-                          </a>
-                        ) : (
-                          <button
-                            type="button"
-                            onClick={() => openApprovedStudyPdfReport(study, ar)}
-                            title={ar ? "تنزيل PDF معتمد" : "Download Approved PDF"}
-                            className="inline-flex items-center justify-center gap-1.5 rounded-xl border border-brand-green/40 bg-brand-green/10 px-3 py-2 text-xs font-bold text-brand-green hover:bg-brand-green hover:text-white transition-colors cursor-pointer"
-                          >
-                            <Download className="size-3.5" />
-                            <span>{ar ? "تحميل PDF" : "Download PDF"}</span>
-                          </button>
-                        )
+                      {downloadAllowed && (
+                        <button
+                          type="button"
+                          onClick={() => openApprovedStudyPdfReport(study, ar)}
+                          title={ar ? "تنزيل أو فتح تقرير PDF المعتمد" : "Open & Print Approved PDF Report"}
+                          className="inline-flex items-center justify-center gap-1 rounded-xl border border-brand-green/30 bg-brand-green/10 px-2.5 py-2 text-xs font-bold text-brand-green hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-all duration-300 cursor-pointer"
+                        >
+                          <Download className="size-3.5" />
+                          <span>PDF</span>
+                        </button>
+                      )}
+
+                      {!study.downloadDocxUrl && !study.downloadXlsxUrl && study.downloadZipUrl && (
+                        <a
+                          href={study.downloadZipUrl}
+                          download
+                          title={ar ? "تحميل وثيقة الدراسة المعتمدة" : "Download Official Study Document"}
+                          className="inline-flex items-center justify-center gap-1.5 rounded-xl border border-brand-green/30 bg-brand-green/10 px-3 py-2 text-xs font-bold text-brand-green hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-all duration-300 cursor-pointer"
+                        >
+                          <Download className="size-3.5" />
+                          <span>{ar ? "تحميل الدراسة" : "Download"}</span>
+                        </a>
                       )}
                     </div>
                   </div>

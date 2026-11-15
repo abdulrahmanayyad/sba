@@ -230,15 +230,20 @@ export function getSectorMetrics(
 }
 
 export function isStudyDownloadAllowed(study: GlobalMarketStudy): boolean {
-  return study.status === "completed" && study.approvalStatus === "approved";
+  if (!study) return false;
+  if (study.status === "archived") return false;
+  return study.approvalStatus === "approved" || study.status === "completed" || Boolean(study.downloadDocxUrl || study.downloadXlsxUrl);
 }
 
-function escapeHtml(str: string): string {
+function escapeHtml(val: unknown): string {
+  if (val === undefined || val === null) return "";
+  const str = String(val);
   return str
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;");
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
 }
 
 /**
@@ -259,7 +264,8 @@ export function openApprovedStudyPdfReport(study: GlobalMarketStudy, ar: boolean
   const dir = ar ? "rtl" : "ltr";
   const logoSrc = ar ? "/brand/SBA%20logo%20AR.svg" : "/brand/SBA%20logo%20EN.svg";
 
-  const kpiHtml = study.kpis
+  const kpis = Array.isArray(study.kpis) ? study.kpis : [];
+  const kpiHtml = kpis
     .map(
       (k) => `
       <div style="border:1px solid #cbd5e1;border-radius:12px;padding:12px;background:#f8fafc;">
@@ -271,7 +277,7 @@ export function openApprovedStudyPdfReport(study: GlobalMarketStudy, ar: boolean
     .join("");
 
   const sectionsHtml = STUDY_SECTION_BLUEPRINT.map((bp) => {
-    const content = study.sections[bp.key];
+    const content = study.sections?.[bp.key];
     if (!content || content.applicable === false) return "";
     const summary = ar ? content.summaryAr : content.summaryEn;
     const bullets = (ar ? content.bulletsAr : content.bulletsEn) || [];
@@ -292,13 +298,33 @@ export function openApprovedStudyPdfReport(study: GlobalMarketStudy, ar: boolean
       </section>`;
   }).join("");
 
-  const tablesHtml = study.tables
+  const tables = Array.isArray(study.tables) ? study.tables : [];
+  const tablesHtml = tables
     .map((tbl) => {
-      const cols = ar ? tbl.columnsAr : tbl.columnsEn;
+      const tAny = tbl as any;
+      const rawCols = ar
+        ? (tbl.columnsAr || tAny.headersAr)
+        : (tbl.columnsEn || tAny.headersEn);
+      const cols = Array.isArray(rawCols)
+        ? rawCols
+        : tAny.columns?.map((c: any) => (ar ? c.headerAr : c.headerEn) || c) ||
+          tAny.headers?.map((c: any) => (ar ? c.headerAr : c.headerEn) || c) ||
+          [];
+      const rawRows = ar
+        ? (tAny.rowsAr || tbl.rows || tAny.dataAr || tAny.data)
+        : (tAny.rowsEn || tbl.rows || tAny.dataEn || tAny.data);
+      const rows = Array.isArray(rawRows) ? rawRows : [];
+
       return `
       <div style="margin:16px 0;page-break-inside:avoid;">
         <h3 style="font-size:13px;font-weight:800;color:#0f172a;margin-bottom:4px;">${escapeHtml(ar ? tbl.titleAr : tbl.titleEn)}</h3>
-        <div style="font-size:10px;color:#64748b;margin-bottom:6px;">${escapeHtml(ar ? "الوحدة:" : "Unit:")} ${escapeHtml(tbl.unit)} · ${escapeHtml(ar ? "المصدر:" : "Source:")} ${escapeHtml(tbl.source)} (${escapeHtml(tbl.referenceYear)})</div>
+        ${(tbl.unit || tbl.source || tbl.referenceYear) ? `
+          <div style="font-size:10px;color:#64748b;margin-bottom:6px;">
+            ${tbl.unit ? `${escapeHtml(ar ? "الوحدة:" : "Unit:")} ${escapeHtml(tbl.unit)} · ` : ""}
+            ${tbl.source ? `${escapeHtml(ar ? "المصدر:" : "Source:")} ${escapeHtml(tbl.source)}` : ""}
+            ${tbl.referenceYear ? ` (${escapeHtml(tbl.referenceYear)})` : ""}
+          </div>
+        ` : ""}
         <table style="width:100%;border-collapse:collapse;font-size:11.5px;">
           <thead>
             <tr style="background:#f1f5f9;">${cols
@@ -306,13 +332,17 @@ export function openApprovedStudyPdfReport(study: GlobalMarketStudy, ar: boolean
               .join("")}</tr>
           </thead>
           <tbody>
-            ${tbl.rows
-              .map(
-                (r) =>
-                  `<tr>${r
-                    .map((cell) => `<td style="border:1px solid #e2e8f0;padding:6px 8px;">${escapeHtml(cell)}</td>`)
-                    .join("")}</tr>`,
-              )
+            ${rows
+              .map((row) => {
+                const cells = Array.isArray(row)
+                  ? row
+                  : typeof row === "object" && row !== null
+                  ? Object.values(row)
+                  : [row];
+                return `<tr>${cells
+                  .map((cell) => `<td style="border:1px solid #e2e8f0;padding:6px 8px;">${escapeHtml(cell)}</td>`)
+                  .join("")}</tr>`;
+              })
               .join("")}
           </tbody>
         </table>
@@ -320,12 +350,15 @@ export function openApprovedStudyPdfReport(study: GlobalMarketStudy, ar: boolean
     })
     .join("");
 
-  const sourcesHtml = study.sources
+  const sources = Array.isArray(study.sources) ? study.sources : [];
+  const sourcesHtml = sources
     .map((src) => {
-      const cls = SOURCE_CLASSIFICATION_LABELS[src.classification];
+      const cls = src.classification ? SOURCE_CLASSIFICATION_LABELS[src.classification] : undefined;
+      const clsLabel = cls ? (ar ? cls.ar : cls.en) : (src.classification || "");
+      const srcName = src.name || (ar ? (src as any).titleAr : (src as any).titleEn) || (ar ? "مصدر معتمد" : "Verified Source");
       return `<li style="margin-bottom:6px;font-size:11.5px;color:#334155;">
-        <strong>${escapeHtml(src.name)}</strong> [${escapeHtml(ar ? cls.ar : cls.en)}] — ${escapeHtml(src.dataYear)}
-        ${src.url ? ` (${escapeHtml(src.url)})` : ""}
+        <strong>${escapeHtml(srcName)}</strong> ${clsLabel ? `[${escapeHtml(clsLabel)}]` : ""} ${src.dataYear ? `— ${escapeHtml(src.dataYear)}` : ""}
+        ${src.url ? ` (<a href="${escapeHtml(src.url)}" target="_blank" style="color:#0284c7;text-decoration:underline;">${escapeHtml(src.url)}</a>)` : ""}
       </li>`;
     })
     .join("");
@@ -369,15 +402,29 @@ export function openApprovedStudyPdfReport(study: GlobalMarketStudy, ar: boolean
         </section>`
       : ""
   }
-  <script>window.onload = () => { setTimeout(() => window.print(), 250); };</script>
+  <script>window.onload = () => { setTimeout(() => window.print(), 350); };</script>
 </body>
 </html>`;
 
-  const w = window.open("", "_blank", "noopener,noreferrer");
-  if (w) {
-    w.document.open();
-    w.document.write(html);
-    w.document.close();
+  try {
+    const blob = new Blob([html], { type: "text/html;charset=utf-8" });
+    const blobUrl = URL.createObjectURL(blob);
+    const printWin = window.open(blobUrl, "_blank");
+    if (!printWin) {
+      const a = document.createElement("a");
+      a.href = blobUrl;
+      a.target = "_blank";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+  } catch {
+    const w = window.open("", "_blank");
+    if (w) {
+      w.document.open();
+      w.document.write(html);
+      w.document.close();
+    }
   }
 }
 

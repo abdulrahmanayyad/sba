@@ -476,13 +476,15 @@ export function GlobalMarketsStudyPage({
                       {ar ? opp.evidenceReferenceAr : opp.evidenceReferenceEn}
                     </p>
                   )}
-                  <Link
-                    to={opp.sectorPageUrl}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-green hover:underline"
-                  >
-                    <span>{ar ? "استعراض قدرات القطاع" : "Inspect Sector Capabilities"}</span>
-                    {ar ? <ArrowLeft className="size-3.5" /> : <ArrowRight className="size-3.5" />}
-                  </Link>
+                  {(opp.sectorPageUrl || study.sector) && (
+                    <Link
+                      to={opp.sectorPageUrl || `/sectors/${study.sector}`}
+                      className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-green hover:underline"
+                    >
+                      <span>{ar ? "استعراض قدرات القطاع" : "Inspect Sector Capabilities"}</span>
+                      {ar ? <ArrowLeft className="size-3.5" /> : <ArrowRight className="size-3.5" />}
+                    </Link>
+                  )}
                 </div>
               ))}
             </div>

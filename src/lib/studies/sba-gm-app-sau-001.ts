@@ -64,6 +64,9 @@ export const STUDY_SAU_APPAREL_001: GlobalMarketStudy = {
   issueDate: "2026-11-12",
   lastUpdated: "2026-11-12",
   version: "1.0",
+  downloadDocxUrl: "/studies/apparel/SBA_Saudi_Arabia_Apparel_Market_Study.docx",
+  downloadXlsxUrl: "/studies/apparel/SBA_Saudi_Arabia_Apparel_Trade_Data.xlsx",
+  downloadZipUrl: "/studies/apparel/SBA_Saudi_Arabia_Apparel_Study_Package.zip",
 
   kpis: [
     {

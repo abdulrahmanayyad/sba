@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { BarChart3, Table2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type {
   StudyChartDataset,
+  StudyChartPoint,
   StudyKpiMetric,
   StudyTableDataset,
 } from "@/lib/global-markets-data";
@@ -44,9 +45,34 @@ export function StudyKpiGrid({ kpis, ar }: { kpis: StudyKpiMetric[]; ar: boolean
 
 export function StudyChartCard({ chart, ar }: { chart: StudyChartDataset; ar: boolean }) {
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
+
+  const cAny = chart as any;
+  const items: StudyChartPoint[] = useMemo(() => {
+    if (Array.isArray(chart.items) && chart.items.length > 0) {
+      return chart.items;
+    }
+    if (Array.isArray(cAny.categories) && Array.isArray(cAny.series) && cAny.series.length > 0) {
+      const primary = cAny.series[0];
+      const secondary = cAny.series[1];
+      return cAny.categories.map((cat: string, idx: number) => {
+        const val = primary?.data?.[idx];
+        const secVal = secondary?.data?.[idx];
+        return {
+          labelAr: cat,
+          labelEn: cat,
+          value: typeof val === "number" ? val : Number(val) || 0,
+          secondaryValue: typeof secVal === "number" ? secVal : undefined,
+        };
+      });
+    }
+    return [];
+  }, [chart, cAny.categories, cAny.series]);
+
+  if (items.length === 0) return null;
+
   const maxVal = Math.max(
     1,
-    ...chart.items.flatMap((it) => [it.value, it.secondaryValue ?? 0]),
+    ...items.flatMap((it) => [it.value, it.secondaryValue ?? 0]),
   );
 
   return (
@@ -84,7 +110,7 @@ export function StudyChartCard({ chart, ar }: { chart: StudyChartDataset; ar: bo
       )}
 
       <div className="space-y-3">
-        {chart.items.map((item, idx) => {
+        {items.map((item, idx) => {
           const pct = Math.max(2, Math.round((item.value / maxVal) * 100));
           const secPct =
             typeof item.secondaryValue === "number"
@@ -146,7 +172,21 @@ export function StudyChartCard({ chart, ar }: { chart: StudyChartDataset; ar: bo
 }
 
 export function StudyTableCard({ table, ar }: { table: StudyTableDataset; ar: boolean }) {
-  const columns = ar ? table.columnsAr : table.columnsEn;
+  const tAny = table as any;
+  const rawCols = ar
+    ? (table.columnsAr || tAny.headersAr)
+    : (table.columnsEn || tAny.headersEn);
+  const columns: string[] = Array.isArray(rawCols)
+    ? rawCols
+    : tAny.columns?.map((c: any) => (ar ? c.headerAr : c.headerEn) || c) ||
+      tAny.headers?.map((c: any) => (ar ? c.headerAr : c.headerEn) || c) ||
+      [];
+
+  const rawRows = ar
+    ? (tAny.rowsAr || table.rows || tAny.dataAr || tAny.data)
+    : (tAny.rowsEn || table.rows || tAny.dataEn || tAny.data);
+  const rows: any[] = Array.isArray(rawRows) ? rawRows : [];
+
   return (
     <div className="rounded-3xl border border-slate-200/80 dark:border-white/15 bg-white/75 dark:bg-slate-900/60 p-6 backdrop-blur-xl shadow-sm space-y-4">
       <div className="flex flex-wrap items-start justify-between gap-2 border-b border-slate-200/70 dark:border-white/10 pb-3">
@@ -158,14 +198,20 @@ export function StudyTableCard({ table, ar }: { table: StudyTableDataset; ar: bo
             <h3 className="font-head text-sm sm:text-base font-bold text-slate-900 dark:text-white">
               {ar ? table.titleAr : table.titleEn}
             </h3>
-            <p className="text-[11px] text-slate-500 dark:text-slate-400">
-              {ar ? "الوحدة:" : "Unit:"} {table.unit} · {ar ? "السنة:" : "Year:"} {table.referenceYear}
-            </p>
+            {(table.unit || table.referenceYear) && (
+              <p className="text-[11px] text-slate-500 dark:text-slate-400">
+                {table.unit ? `${ar ? "الوحدة:" : "Unit:"} ${table.unit}` : ""}
+                {table.unit && table.referenceYear ? " · " : ""}
+                {table.referenceYear ? `${ar ? "السنة:" : "Year:"} ${table.referenceYear}` : ""}
+              </p>
+            )}
           </div>
         </div>
-        <span className="rounded-full border border-slate-200 dark:border-white/15 bg-slate-100/80 dark:bg-white/5 px-2.5 py-0.5 text-[10px] font-semibold text-slate-600 dark:text-slate-300">
-          {table.source}
-        </span>
+        {table.source && (
+          <span className="rounded-full border border-slate-200 dark:border-white/15 bg-slate-100/80 dark:bg-white/5 px-2.5 py-0.5 text-[10px] font-semibold text-slate-600 dark:text-slate-300">
+            {table.source}
+          </span>
+        )}
       </div>
 
       <div className="overflow-x-auto rounded-2xl border border-slate-200/80 dark:border-white/10">
@@ -180,19 +226,27 @@ export function StudyTableCard({ table, ar }: { table: StudyTableDataset; ar: bo
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-200/70 dark:divide-white/10">
-            {table.rows.map((row, rIdx) => (
-              <tr key={rIdx} className="hover:bg-slate-50/90 dark:hover:bg-white/5 transition-colors">
-                {row.map((cell, cIdx) => (
-                  <td key={cIdx} className="px-4 py-2.5 text-slate-700 dark:text-slate-200">
-                    {cell}
-                  </td>
-                ))}
-              </tr>
-            ))}
+            {rows.map((row, rIdx) => {
+              const cells = Array.isArray(row)
+                ? row
+                : typeof row === "object" && row !== null
+                ? Object.values(row)
+                : [row];
+              return (
+                <tr key={rIdx} className="hover:bg-slate-50/90 dark:hover:bg-white/5 transition-colors">
+                  {cells.map((cell, cIdx) => (
+                    <td key={cIdx} className="px-4 py-2.5 text-slate-700 dark:text-slate-200">
+                      {String(cell ?? "")}
+                    </td>
+                  ))}
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>
     </div>
   );
 }
+
 
