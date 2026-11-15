@@ -1,16 +1,9 @@
-import { Building2, Leaf, Shirt, Wheat, CheckCircle2 } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 
 import { HomeReveal as Reveal } from "@/components/home/home-motion";
 import { AnimatedStatistic } from "@/components/site/animated-statistic";
 import { cn } from "@/lib/utils";
 import { activities, dashboardSectors, type SectorId } from "./dashboard-data";
-
-const icons: Record<SectorId, typeof Leaf> = {
-  construction: Building2,
-  environmental: Leaf,
-  garment: Shirt,
-  food: Wheat,
-};
 
 const aggregateStats = [
   {
@@ -28,14 +21,6 @@ const aggregateStats = [
     subEn: "Across general contracting, real estate development and environmental systems.",
     subAr: "في المقاولات العامة والتطوير العقاري والأنظمة البيئية.",
     sector: "construction" as SectorId,
-  },
-  {
-    value: "+2,700",
-    labelEn: "Apparel Styles & Garment Designs",
-    labelAr: "موديل وتصميم ملابس معتمد للإنتاج",
-    subEn: "Through specialized product development and ready-to-wear production lines.",
-    subAr: "عبر أنشطة تطوير المنتجات المتخصصة وخطوط تصنيع الملابس الجاهزة.",
-    sector: "garment" as SectorId,
   },
   {
     value: "4",
@@ -91,37 +76,34 @@ export function BusinessDashboard({ ar }: { ar: boolean }) {
               </div>
 
               {/* Aggregated Group Statistics Grid inside the same unified glass card */}
-              <div className="mt-8 pt-8 border-t border-border/50 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+              <div className="mt-8 pt-8 border-t border-border/50 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
                 {aggregateStats.map((stat, idx) => {
-                  const Icon = icons[stat.sector];
                   return (
                     <div
                       key={idx}
-                      className="group/stat relative rounded-2xl border border-white/50 bg-white/50 dark:bg-white/15 p-5 backdrop-blur-xl shadow-xs transition-all duration-300 hover:-translate-y-1 hover:bg-white/80 dark:hover:bg-white/25 hover:shadow-lg cursor-pointer flex flex-col justify-between"
+                      className="glass-box-interactive rounded-3xl p-6 cursor-pointer flex flex-col justify-between"
                     >
-                      <div>
-                        <div className="flex items-center justify-between mb-3">
-                          <span className="flex size-9 items-center justify-center rounded-xl bg-brand-green/10 text-brand-green-text transition-transform duration-300 group-hover/stat:scale-110">
-                            <Icon className="size-4.5" />
-                          </span>
-                          <span className="font-mono text-[11px] font-bold text-muted-foreground/70 border border-border/60 rounded-full px-2 py-0.5">
-                            0{idx + 1}
-                          </span>
+                      <div className="relative z-10 flex flex-col justify-between h-full">
+                        <div>
+                          <div className="flex items-center justify-between mb-4">
+                            <div
+                              className="font-head text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm flex items-center gap-1 text-start"
+                              dir={ar ? "rtl" : "ltr"}
+                            >
+                              <AnimatedStatistic value={stat.value} />
+                            </div>
+                            <span className="font-mono text-xs text-muted-foreground/70 border border-border/60 rounded-full px-2.5 py-0.5">
+                              0{idx + 1}
+                            </span>
+                          </div>
+                          <h3 className="text-start font-head text-sm sm:text-base font-bold text-foreground leading-snug">
+                            {ar ? stat.labelAr : stat.labelEn}
+                          </h3>
                         </div>
-                        {/* Milestones-style gradient and font size matching Our Journey */}
-                        <div
-                          className="font-head text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm flex items-center gap-1 text-start"
-                          dir={ar ? "rtl" : "ltr"}
-                        >
-                          <AnimatedStatistic value={stat.value} />
-                        </div>
-                        <h3 className="mt-2.5 text-xs sm:text-sm font-bold text-foreground">
-                          {ar ? stat.labelAr : stat.labelEn}
-                        </h3>
+                        <p className="mt-4 text-xs sm:text-sm leading-relaxed text-muted-foreground border-t border-border/40 pt-3 text-start">
+                          {ar ? stat.subAr : stat.subEn}
+                        </p>
                       </div>
-                      <p className="mt-3 text-[11px] leading-relaxed text-muted-foreground border-t border-border/40 pt-2.5">
-                        {ar ? stat.subAr : stat.subEn}
-                      </p>
                     </div>
                   );
                 })}

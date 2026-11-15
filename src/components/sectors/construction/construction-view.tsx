@@ -172,8 +172,8 @@ export function ConstructionSectorView({ tab = "about", token }: ConstructionVie
         {activeTab === "verify-portal" && <VerificationPortal token={token || ""} />}
         {activeTab === "verification-admin" && <ProjectVerificationAdminDashboard />}
 
-        {/* Dedicated Sector Free Consultation CTA */}
-        {activeTab !== "start-project" && activeTab !== "join" && (
+        {/* Dedicated Sector Free Consultation CTA — Rendered only on About and Projects tabs */}
+        {(activeTab === "about" || activeTab === "projects") && (
           <div className="site-container">
             <SectorConsultationCta sector="construction" ar={ar} />
           </div>
@@ -1142,7 +1142,7 @@ function ConstructionProjectsView({ ar }: { ar: boolean }) {
                 <div className="flex items-center gap-2 text-brand-green-text">
                   <ShieldCheck className="size-5 shrink-0" />
                   <h6 className="font-head text-sm font-bold">
-                    {ar ? "المشروعات الموثقة · Verified Projects" : "Verified Projects & Due Diligence"}
+                    {ar ? "المشروعات الموثقة" : "Verified Projects"}
                   </h6>
                 </div>
                 <p className="text-xs leading-relaxed text-muted-foreground">

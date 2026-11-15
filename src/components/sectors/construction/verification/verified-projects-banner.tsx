@@ -19,17 +19,17 @@ interface VerifiedProjectsBannerProps {
 export function VerifiedProjectsBanner({ ar, onRequestOpen }: VerifiedProjectsBannerProps) {
   return (
     <Reveal>
-      <div className="relative overflow-hidden rounded-3xl border border-brand-green/20 bg-gradient-to-br from-brand-green/10 via-background to-brand-orange/5 p-6 sm:p-8 md:p-10 shadow-lg backdrop-blur-xl mb-12">
+      <div className="group relative overflow-hidden rounded-3xl border border-white/40 bg-background/60 hover:bg-background/75 p-6 sm:p-8 md:p-10 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl mb-12 transition-all duration-300 interactive-card">
         {/* Glow Effects */}
-        <div className="pointer-events-none absolute -end-24 -top-24 size-72 rounded-full bg-brand-green/10 blur-3xl" />
-        <div className="pointer-events-none absolute -start-24 -bottom-24 size-72 rounded-full bg-brand-orange/10 blur-3xl" />
+        <div className="pointer-events-none absolute -end-24 -top-24 size-72 rounded-full bg-brand-green/10 blur-3xl transition-transform duration-500 group-hover:scale-110" />
+        <div className="pointer-events-none absolute -start-24 -bottom-24 size-72 rounded-full bg-brand-orange/10 blur-3xl transition-transform duration-500 group-hover:scale-110" />
 
         <div className="relative z-10 grid gap-8 lg:grid-cols-12 lg:items-center">
           {/* Main Info */}
           <div className="lg:col-span-8 space-y-4">
             <div className="inline-flex items-center gap-2 rounded-full bg-brand-green/15 px-3.5 py-1 text-xs font-bold text-brand-green-text border border-brand-green/30">
               <ShieldCheck className="size-4" />
-              <span>{ar ? "المشروعات الموثقة · Verified Projects" : "Verified Projects & Transparency"}</span>
+              <span>{ar ? "المشروعات الموثقة" : "Verified Projects"}</span>
             </div>
 
             <h3 className="font-head text-xl sm:text-2xl md:text-3xl font-bold text-foreground leading-snug">

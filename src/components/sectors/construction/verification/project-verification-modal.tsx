@@ -278,7 +278,7 @@ export function ProjectVerificationModal({
               <div className="flex items-center gap-2 mb-1.5">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-green/10 text-brand-green-text font-head text-xs font-bold border border-brand-green/20">
                   <ShieldCheck className="size-3.5" />
-                  {ar ? "المشروعات الموثقة · Verified Projects" : "Verified Projects"}
+                  {ar ? "المشروعات الموثقة" : "Verified Projects"}
                 </span>
                 <span className="font-sans text-xs font-bold text-muted-foreground">
                   Ref: SBA-PRJ-{project.year}-{project.id.toString().padStart(3, "0")}

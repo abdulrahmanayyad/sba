@@ -84,18 +84,25 @@ export function AboutPage() {
                 ))}
               </div>
 
-              <div className="mt-8 grid grid-cols-3 gap-4 border-t border-border pt-6">
-                {whoWeAreData.stats.map((stat) => (
-                  <div key={stat.value} className={ar ? "text-right" : "text-left"}>
-                    <p className={cn(
-                      "font-head text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm",
-                      ar ? "text-right" : "text-left"
-                    )}>
-                      <AnimatedStatistic value={stat.value} />
-                    </p>
-                    <p className="mt-1 text-xs font-semibold text-muted-foreground sm:text-sm">
-                      {ar ? stat.labelAr : stat.label}
-                    </p>
+              <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 border-t border-border/60 pt-6">
+                {whoWeAreData.stats.map((stat, idx) => (
+                  <div
+                    key={stat.value}
+                    className="glass-box-interactive rounded-3xl p-5 sm:p-6 flex flex-col justify-between cursor-pointer"
+                  >
+                    <div className="relative z-10 flex flex-col justify-between h-full">
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="font-head text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">
+                          <AnimatedStatistic value={stat.value} />
+                        </span>
+                        <span className="font-mono text-xs text-muted-foreground/70 border border-border/60 rounded-full px-2.5 py-0.5">
+                          0{idx + 1}
+                        </span>
+                      </div>
+                      <h3 className="text-start font-head text-sm sm:text-base font-bold text-foreground leading-snug">
+                        {ar ? stat.labelAr : stat.label}
+                      </h3>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -112,11 +119,6 @@ export function AboutPage() {
                     <Download className="size-4" />
                     <span>{ar ? "تحميل الملف التعريفي الشامل" : "Download Company Profile"}</span>
                   </a>
-                </Button>
-                <Button asChild size="default" className="rounded-full bg-brand-green text-white text-xs sm:text-sm font-bold shadow-md hover:bg-brand-orange transition-all duration-300 cursor-pointer">
-                  <Link to="/downloads">
-                    <span>{ar ? "مركز الوثائق والتحميلات" : "Downloads Center"}</span>
-                  </Link>
                 </Button>
               </div>
             </Reveal>

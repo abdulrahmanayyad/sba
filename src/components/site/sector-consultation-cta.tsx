@@ -3,7 +3,7 @@
 
 import React from "react";
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, CheckCircle2, MessageSquare, ShieldCheck, Sparkles } from "lucide-react";
+import { ArrowRight, CheckCircle2, MessageSquare, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/home/reveal";
 
@@ -102,7 +102,6 @@ export const SectorConsultationCta: React.FC<SectorConsultationCtaProps> = ({ se
             {/* Left Content */}
             <div className="lg:col-span-8 space-y-3.5">
               <div className="inline-flex items-center gap-2 rounded-full border border-brand-green/30 bg-black/40 px-3.5 py-1 text-xs font-bold tracking-wide text-brand-green backdrop-blur-md shadow-md">
-                <Sparkles className="size-3.5 animate-pulse" />
                 <span>{ar ? config.badgeAr : config.badgeEn}</span>
               </div>
 
