@@ -221,7 +221,7 @@ export function EnvironmentalMarketsTab({ ar }: EnvironmentalMarketsTabProps) {
                 <span className="text-[11px] sm:text-xs font-bold text-muted-foreground uppercase tracking-wider block text-center mx-auto">
                   {ar ? "إجمالي الدول والأسواق" : "Total Markets"}
                 </span>
-                <span className="font-head text-3xl sm:text-4xl font-extrabold text-foreground mt-2 block text-center mx-auto">
+                <span className="font-head text-3xl sm:text-4xl font-extrabold text-brand-green mt-2 block text-center mx-auto">
                   66
                 </span>
                 <p className="text-xs text-muted-foreground mt-1.5 text-center mx-auto leading-relaxed">
@@ -229,11 +229,11 @@ export function EnvironmentalMarketsTab({ ar }: EnvironmentalMarketsTabProps) {
                 </p>
               </div>
 
-              <div className="rounded-2xl border border-border bg-secondary/30 p-5 sm:p-6 backdrop-blur-md flex flex-col items-center justify-center text-center transition-all hover:border-brand-orange/40 hover:bg-secondary/40 shadow-xs">
+              <div className="rounded-2xl border border-border bg-secondary/30 p-5 sm:p-6 backdrop-blur-md flex flex-col items-center justify-center text-center transition-all hover:border-brand-green/40 hover:bg-secondary/40 shadow-xs">
                 <span className="text-[11px] sm:text-xs font-bold text-muted-foreground uppercase tracking-wider block text-center mx-auto">
                   {ar ? "أبرز الأسواق ذات الفرص الكبرى" : "Major Anchor Markets"}
                 </span>
-                <span className="font-head text-3xl sm:text-4xl font-extrabold text-brand-orange mt-2 block text-center mx-auto">
+                <span className="font-head text-3xl sm:text-4xl font-extrabold text-brand-green mt-2 block text-center mx-auto">
                   10
                 </span>
                 <p className="text-xs text-muted-foreground mt-1.5 text-center mx-auto leading-relaxed">
@@ -257,7 +257,7 @@ export function EnvironmentalMarketsTab({ ar }: EnvironmentalMarketsTabProps) {
                 <span className="text-[11px] sm:text-xs font-bold text-muted-foreground uppercase tracking-wider block text-center mx-auto">
                   {ar ? "نوعية الخدمات المقدمة" : "Services Spectrum"}
                 </span>
-                <span className="font-head text-3xl sm:text-4xl font-extrabold text-foreground mt-2 block text-center mx-auto">
+                <span className="font-head text-3xl sm:text-4xl font-extrabold text-brand-green mt-2 block text-center mx-auto">
                   100%
                 </span>
                 <p className="text-xs text-muted-foreground mt-1.5 text-center mx-auto leading-relaxed">
@@ -332,6 +332,14 @@ export function EnvironmentalMarketsTab({ ar }: EnvironmentalMarketsTabProps) {
                     <p className="text-[11px] text-muted-foreground line-clamp-2 leading-relaxed mt-2">
                       {ar ? topCountry.marketDriverAr : topCountry.marketDriverEn}
                     </p>
+
+                    {/* Visual indicator bar */}
+                    <div className="mt-2.5 w-full bg-secondary/80 h-1.5 rounded-full overflow-hidden">
+                      <div
+                        className="h-full rounded-full bg-brand-green transition-all duration-500"
+                        style={{ width: `${topCountry.potentialScore}%` }}
+                      />
+                    </div>
                   </div>
 
                   <div className="mt-3 pt-2.5 border-t border-border/40 flex items-center justify-between text-[10px] font-bold text-brand-green group-hover:text-brand-orange transition-colors">
@@ -426,7 +434,7 @@ export function EnvironmentalMarketsTab({ ar }: EnvironmentalMarketsTabProps) {
                         </div>
 
                         <div className="flex items-center gap-2 self-end sm:self-center">
-                          <span className="text-[11px] font-semibold text-brand-orange">
+                          <span className="text-[11px] font-semibold text-brand-green">
                             {ar ? item.marketSizeLabelAr : item.marketSizeLabelEn}
                           </span>
                           <span className="rounded-md bg-brand-green px-2 py-0.5 font-mono text-xs font-extrabold text-white">
@@ -438,7 +446,7 @@ export function EnvironmentalMarketsTab({ ar }: EnvironmentalMarketsTabProps) {
                       {/* Bar indicator */}
                       <div className="w-full bg-secondary/70 h-2.5 rounded-full overflow-hidden">
                         <div
-                          className="h-full rounded-full transition-all duration-700 bg-gradient-to-r from-brand-green via-brand-green to-brand-orange"
+                          className="h-full rounded-full transition-all duration-700 bg-brand-green"
                           style={{ width: `${widthPercent}%` }}
                         />
                       </div>
@@ -515,7 +523,7 @@ export function EnvironmentalMarketsTab({ ar }: EnvironmentalMarketsTabProps) {
                           <span className="flex size-9 items-center justify-center rounded-xl bg-brand-green/15 text-brand-green">
                             <SrvIcon className="size-4.5" />
                           </span>
-                          <span className="rounded-md bg-secondary px-2 py-0.5 text-[10px] font-bold text-brand-orange border border-border">
+                          <span className="rounded-md bg-brand-green/10 px-2 py-0.5 text-[10px] font-bold text-brand-green border border-brand-green/20">
                             {srv.badge}
                           </span>
                         </div>
@@ -527,9 +535,18 @@ export function EnvironmentalMarketsTab({ ar }: EnvironmentalMarketsTabProps) {
                         </p>
                       </div>
 
-                      <div className="mt-4 pt-3 border-t border-border/40 flex items-center justify-between text-xs">
-                        <span className="text-muted-foreground">{ar ? "نسبة التغطية الجغرافية:" : "Territory Coverage:"}</span>
-                        <span className="font-mono font-bold text-brand-green">{srv.share}</span>
+                      <div className="mt-4 pt-3 border-t border-border/40 space-y-2">
+                        <div className="flex items-center justify-between text-xs">
+                          <span className="text-muted-foreground">{ar ? "نسبة التغطية الجغرافية:" : "Territory Coverage:"}</span>
+                          <span className="font-mono font-bold text-brand-green">{srv.share}</span>
+                        </div>
+                        {/* Visual indicator bar */}
+                        <div className="w-full bg-secondary/80 h-1.5 rounded-full overflow-hidden">
+                          <div
+                            className="h-full rounded-full bg-brand-green transition-all duration-700"
+                            style={{ width: srv.share }}
+                          />
+                        </div>
                       </div>
                     </div>
                   );
@@ -727,16 +744,17 @@ export function EnvironmentalMarketsTab({ ar }: EnvironmentalMarketsTabProps) {
                       </div>
 
                       {/* Potential Score Badge */}
-                      <span
-                        className={cn(
-                          "rounded-full px-2.5 py-0.5 font-mono text-xs font-extrabold shadow-2xs shrink-0",
-                          country.isTopProminent
-                            ? "bg-brand-orange text-white"
-                            : "bg-brand-green/15 text-brand-green border border-brand-green/30"
-                        )}
-                      >
+                      <span className="rounded-full px-2.5 py-0.5 font-mono text-xs font-extrabold shadow-2xs shrink-0 bg-brand-green/15 text-brand-green border border-brand-green/30">
                         {country.potentialScore}/100
                       </span>
+                    </div>
+
+                    {/* Visual indicator bar */}
+                    <div className="w-full bg-secondary/80 h-1.5 rounded-full overflow-hidden mb-3.5">
+                      <div
+                        className="h-full rounded-full bg-brand-green transition-all duration-500"
+                        style={{ width: `${country.potentialScore}%` }}
+                      />
                     </div>
 
                     {/* مجال النشاطات والاستشارات لكل دولة (Scope of Activities & Consultations) */}
@@ -829,19 +847,28 @@ export function EnvironmentalMarketsTab({ ar }: EnvironmentalMarketsTabProps) {
               </DialogHeader>
 
               <div className="space-y-4 py-3 text-sm">
-                {/* Market Potential Tier */}
-                <div className="rounded-2xl border border-brand-green/30 bg-brand-green/10 p-3.5 flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <ShieldCheck className="size-4 text-brand-green" />
-                    <span className="font-head text-xs font-bold text-brand-green">
-                      {ar ? activeCountryModal.potentialTierAr : activeCountryModal.potentialTierEn}
-                    </span>
+                {/* Market Potential Tier & Indicator */}
+                <div className="rounded-2xl border border-brand-green/30 bg-brand-green/10 p-3.5 space-y-2">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <ShieldCheck className="size-4 text-brand-green" />
+                      <span className="font-head text-xs font-bold text-brand-green">
+                        {ar ? activeCountryModal.potentialTierAr : activeCountryModal.potentialTierEn}
+                      </span>
+                    </div>
+                    {activeCountryModal.isTopProminent && (
+                      <span className="rounded-full bg-brand-green px-2.5 py-0.5 text-[10px] font-bold text-white">
+                        {ar ? "أبرز سوق استراتيجي" : "Anchor Market"}
+                      </span>
+                    )}
                   </div>
-                  {activeCountryModal.isTopProminent && (
-                    <span className="rounded-full bg-brand-orange px-2.5 py-0.5 text-[10px] font-bold text-white">
-                      {ar ? "أبرز سوق استراتيجي" : "Anchor Market"}
-                    </span>
-                  )}
+                  {/* Visual indicator bar */}
+                  <div className="w-full bg-brand-green/20 h-1.5 rounded-full overflow-hidden">
+                    <div
+                      className="h-full rounded-full bg-brand-green"
+                      style={{ width: `${activeCountryModal.potentialScore}%` }}
+                    />
+                  </div>
                 </div>
 
                 {/* Scope of Activities & Consultations */}
