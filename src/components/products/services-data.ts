@@ -1127,9 +1127,9 @@ export const professionalServices: ProfessionalService[] = [
     "sector": "apparel-services",
     "categoryKey": "fabric-quality",
     "categoryEn": "Fabric Sourcing & AQL Quality",
-    "categoryAr": "توريد الأقمشة وضمان الجودة AQL",
+    "categoryAr": "توريد الخامات والأقمشة",
     "nameEn": "Fabric Sourcing & AQL Quality",
-    "nameAr": "توريد الأقمشة وضمان الجودة AQL",
+    "nameAr": "توريد الخامات والأقمشة",
     "descriptionEn": "Integrated textile fabric sourcing, laboratory spectrophotometer computerized dyeing, shrinkage control, and rigorous 4-point fabric and AQL 1.5 finished garment auditing.",
     "descriptionAr": "توريد وتطوير الأقمشة القطنية الفاخرة، الصباغة الآلية بأصباغ معتمدة من OEKO-TEX، ضبط الانكماش وثبات الألوان، وفحص الجودة بمقاييس AQL 1.5 الصارمة.",
     "scopeOfWorkEn": [
@@ -1301,7 +1301,7 @@ export const serviceDivisionsConfig = [
       { key: "cm-manufacturing", labelEn: "CM Manufacturing (Cut & Make)", labelAr: "التصنيع بنظام CM" },
       { key: "product-development", labelEn: "CAD Pattern Engineering", labelAr: "هندسة الباترون وتطوير المنتجات" },
       { key: "rapid-sampling", labelEn: "Rapid Sampling & Prototyping", labelAr: "صناعة العينات والنماذج الأولية" },
-      { key: "fabric-quality", labelEn: "Fabric Sourcing & AQL Quality", labelAr: "توريد الأقمشة وضمان الجودة AQL" },
+      { key: "fabric-quality", labelEn: "Fabric Sourcing & AQL Quality", labelAr: "توريد الخامات والأقمشة" },
       { key: "brand-advisory", labelEn: "Brand Development Advisory", labelAr: "استشارات تأسيس وتطوير العلامات" }
     ]
   }
