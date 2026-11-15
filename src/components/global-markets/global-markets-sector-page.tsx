@@ -644,8 +644,8 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
                         <button
                           type="button"
                           onClick={() => openApprovedStudyPdfReport(study, ar)}
-                          title={ar ? "تنزيل أو فتح تقرير PDF المعتمد" : "Open & Print Approved PDF Report"}
-                          className="inline-flex items-center justify-center gap-1 rounded-xl border border-brand-green/30 bg-brand-green/10 px-2.5 py-2 text-xs font-bold text-brand-green hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-all duration-300 cursor-pointer"
+                          title={ar ? "تحميل الدراسة المعتمدة PDF" : "Download Approved PDF Report"}
+                          className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-brand-green px-3 py-2 text-xs font-bold text-white hover:bg-brand-orange transition-all duration-300 cursor-pointer shadow-xs"
                         >
                           <Download className="size-3.5" />
                           <span>PDF</span>
