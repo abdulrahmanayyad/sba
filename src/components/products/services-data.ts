@@ -1131,7 +1131,7 @@ export const professionalServices: ProfessionalService[] = [
     "nameEn": "Fabric Sourcing & AQL Quality",
     "nameAr": "توريد الخامات والأقمشة",
     "descriptionEn": "Integrated textile fabric sourcing, laboratory spectrophotometer computerized dyeing, shrinkage control, and rigorous 4-point fabric and AQL 1.5 finished garment auditing.",
-    "descriptionAr": "توريد وتطوير الأقمشة القطنية الفاخرة، الصباغة الآلية بأصباغ معتمدة من OEKO-TEX، ضبط الانكماش وثبات الألوان، وفحص الجودة بمقاييس AQL 1.5 الصارمة.",
+    "descriptionAr": "توريد وتطوير الأقمشة القطنية الفاخرة، الصباغة الآلية بأصباغ معتمدة من OEKO-TEX، ضبط الانكماش وثبات الألوان.",
     "scopeOfWorkEn": [
       "Circular and flat knitting coordination for Single Jersey, Rib, Interlock, and French Terry",
       "Low-liquor computerized dyeing matching Pantone references with spectrophotometer verification",
