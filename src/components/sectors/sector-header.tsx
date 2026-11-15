@@ -204,15 +204,6 @@ export function SectorHeader({
                 <Link
                   to="/sectors/$sector"
                   params={{ sector: "garment" }}
-                  search={{ tab: "capabilities" }}
-                  className={cn(navPill, activeTab === "capabilities" && "!text-brand-orange bg-white/40 shadow-sm")}
-                >
-                  {ar ? "قدراتنا" : "Our Capabilities"}
-                </Link>
-
-                <Link
-                  to="/sectors/$sector"
-                  params={{ sector: "garment" }}
                   search={{ tab: "services" }}
                   className={cn(navPill, activeTab === "services" && "!text-brand-orange bg-white/40 shadow-sm")}
                 >
@@ -593,15 +584,6 @@ export function SectorHeader({
                       className={cn(mobileLinkStyle, (activeTab === "about" || !searchTab) && "!text-brand-orange bg-white/40")}
                     >
                       {ar ? "نظرة عامة" : "Overview"}
-                    </Link>
-                    <Link
-                      to="/sectors/$sector"
-                      params={{ sector: "garment" }}
-                      search={{ tab: "capabilities" }}
-                      onClick={() => setMenuOpen(false)}
-                      className={cn(mobileLinkStyle, activeTab === "capabilities" && "!text-brand-orange bg-white/40")}
-                    >
-                      {ar ? "قدراتنا" : "Our Capabilities"}
                     </Link>
                     <Link
                       to="/sectors/$sector"
