@@ -127,8 +127,8 @@ export function TradePage({ ar = true }: TradePageProps) {
       badgeEn: "SAMI BIN AYYAD GROUP · Global Real Estate & Investment Opportunities",
       titleAr: "خبرات مهنية واستثمارية موثوقة في صناعة العقار وإدارة الأصول",
       titleEn: "Trusted Real Estate Advisory, Asset Management & Institutional Alliances",
-      descAr: "مسيرة مهنية متواصلة منذ عام 2018 في السوق المصري والأسواق الإقليمية، تغطي أكثر من 400 مشروع عقاري، وشبكة علاقات مع 200 مطور، وإدارة محافظ بقيمة 5 مليارات جنيه.",
-      descEn: "A distinguished track record since 2018 across Egypt and international markets, spanning 400+ projects, 200+ developer partnerships, and 5 Billion EGP in asset portfolios."
+      descAr: "مسيرة متواصلة منذ عام 2018 في السوق المصري، تغطي أكثر من 400 مشروع عقاري، وشبكة علاقات مع 200 مطور عقاري",
+      descEn: "A continuous track record since 2018 in the Egyptian market, covering 400+ real estate projects, and a relationship network with 200 real estate developers."
     }
   };
 

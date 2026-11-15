@@ -83,8 +83,8 @@ export function RealEstateTradeView({ ar = true, hideHero = false }: RealEstateT
 
                 <p className="mt-3.5 max-w-4xl text-sm sm:text-base leading-relaxed text-white/90 text-start drop-shadow-sm">
                   {ar
-                    ? "مسيرة مهنية متواصلة منذ عام 2018 في السوق المصري والأسواق الإقليمية، تغطي أكثر من 400 مشروع عقاري، وشبكة علاقات مع 200 مطور، وإدارة محافظ بقيمة 5 مليارات جنيه."
-                    : "A distinguished track record since 2018 across Egypt and international markets, spanning 400+ projects, 200+ developer partnerships, and 5 Billion EGP in asset portfolios."}
+                    ? "مسيرة متواصلة منذ عام 2018 في السوق المصري، تغطي أكثر من 400 مشروع عقاري، وشبكة علاقات مع 200 مطور عقاري"
+                    : "A continuous track record since 2018 in the Egyptian market, covering 400+ real estate projects, and a relationship network with 200 real estate developers."}
                 </p>
 
                 <div className="mt-8 flex flex-wrap items-center gap-3">
