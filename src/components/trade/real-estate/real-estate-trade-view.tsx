@@ -576,75 +576,13 @@ export function RealEstateTradeView({ ar = true, hideHero = false }: RealEstateT
           </div>
         </section>
 
-        {/* Section 9: International Real Estate Expansion */}
-        <section id="re-international" className="scroll-mt-32 space-y-6">
-          <div className="interactive-card glass-box-interactive w-full rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl backdrop-blur-2xl border border-border/80 bg-background/85">
-            <div>
-              <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border/80 bg-secondary/85 px-4 py-1.5 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
-                <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-                <span>{ar ? "القسم التاسع: التوسع الدولي" : "Section 9: International Expansion"}</span>
-              </div>
-              <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-1 leading-snug">
-                {ar ? "الاستثمار العقاري الدولي والفرص العابرة للحدود" : "Cross-Border Real Estate & International Investments"}
-              </h2>
-              <p className="text-xs sm:text-sm text-muted-foreground mt-2 leading-relaxed max-w-4xl">
-                {ar
-                  ? "امتداد الخبرات والتعاملات الاستثمارية إلى أسواق المملكة العربية السعودية، والإمارات العربية المتحدة، وسلطنة عُمان، وتركيا."
-                  : "Active commercial intelligence, investor networks, and cross-border placement across Saudi Arabia, UAE, Oman, and Turkey."}
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              <div className="group rounded-2xl border border-border/80 bg-background/80 p-6 space-y-3 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-brand-orange/50 hover:shadow-md">
-                <div className="flex size-11 items-center justify-center rounded-2xl bg-secondary/80 border border-border/60 text-2xl shadow-xs group-hover:scale-105 transition-transform">🇸🇦</div>
-                <h4 className="font-bold text-sm text-foreground group-hover:text-brand-orange transition-colors">{ar ? "المملكة العربية السعودية" : "Saudi Arabia"}</h4>
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  {ar
-                    ? "الرياض وجدة والمنطقة الشرقية، مشاريع التطوير الكبرى ورؤية 2030 وفرص التحالفات المؤسسية."
-                    : "Riyadh, Jeddah & Eastern Province mega development initiatives aligned with Vision 2030."}
-                </p>
-              </div>
-
-              <div className="group rounded-2xl border border-border/80 bg-background/80 p-6 space-y-3 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-brand-green/50 hover:shadow-md">
-                <div className="flex size-11 items-center justify-center rounded-2xl bg-secondary/80 border border-border/60 text-2xl shadow-xs group-hover:scale-105 transition-transform">🇦🇪</div>
-                <h4 className="font-bold text-sm text-foreground group-hover:text-brand-green transition-colors">{ar ? "الإمارات العربية المتحدة" : "United Arab Emirates"}</h4>
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  {ar
-                    ? "دبي وأبوظبي، الأصول الفاخرة والعائد الاستثماري بالعملات الأجنبية والإقامة الذهبية."
-                    : "Dubai and Abu Dhabi prime assets, foreign currency yields, and Golden Visa investment placement."}
-                </p>
-              </div>
-
-              <div className="group rounded-2xl border border-border/80 bg-background/80 p-6 space-y-3 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-amber-500/50 hover:shadow-md">
-                <div className="flex size-11 items-center justify-center rounded-2xl bg-secondary/80 border border-border/60 text-2xl shadow-xs group-hover:scale-105 transition-transform">🇴🇲</div>
-                <h4 className="font-bold text-sm text-foreground group-hover:text-amber-500 transition-colors">{ar ? "سلطنة عُمان" : "Sultanate of Oman"}</h4>
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  {ar
-                    ? "مسقط والمجمعات السياحية المتكاملة، بيئة استثمارية مستقرة وفرص التطوير المشترك."
-                    : "Muscat integrated tourism complexes, stable business environment, and co-development opportunities."}
-                </p>
-              </div>
-
-              <div className="group rounded-2xl border border-border/80 bg-background/80 p-6 space-y-3 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-rose-500/50 hover:shadow-md">
-                <div className="flex size-11 items-center justify-center rounded-2xl bg-secondary/80 border border-border/60 text-2xl shadow-xs group-hover:scale-105 transition-transform">🇹🇷</div>
-                <h4 className="font-bold text-sm text-foreground group-hover:text-rose-500 transition-colors">{ar ? "تركيا" : "Turkey"}</h4>
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  {ar
-                    ? "إسطنبول والمدن الساحلية، الأصول السكنية والتجارية وفرص الاستثمار للمقيمين والدوليين."
-                    : "Istanbul and coastal cities residential and commercial assets with international investor pathways."}
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Section 10: Diplomatic & High-Level Partnerships */}
+        {/* Section 9: Diplomatic & High-Level Partnerships */}
         <section id="re-diplomatic" className="scroll-mt-32 space-y-6">
           <div className="interactive-card glass-box-interactive w-full rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl backdrop-blur-2xl border border-border/80 bg-background/85">
             <div>
               <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border/80 bg-secondary/85 px-4 py-1.5 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
                 <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-                <span>{ar ? "القسم العاشر: شراكات دبلوماسية ووفود رسمية" : "Section 10: Diplomatic Partnerships"}</span>
+                <span>{ar ? "القسم التاسع: شراكات دبلوماسية ووفود رسمية" : "Section 9: Diplomatic Partnerships"}</span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-1 leading-snug">
                 {ar ? "شراكات دبلوماسية ومباحثات استثمارية رفيعة المستوى" : "Diplomatic Delegations & Strategic Alliances"}
@@ -679,13 +617,13 @@ export function RealEstateTradeView({ ar = true, hideHero = false }: RealEstateT
           </div>
         </section>
 
-        {/* Section 11: Exhibitions & Industry Events */}
+        {/* Section 10: Exhibitions & Industry Events */}
         <section id="re-events" className="scroll-mt-32 space-y-6">
           <div className="interactive-card glass-box-interactive w-full rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl backdrop-blur-2xl border border-border/80 bg-background/85">
             <div>
               <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border/80 bg-secondary/85 px-4 py-1.5 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
                 <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-                <span>{ar ? "القسم الحادي عشر: المعارض والمؤتمرات" : "Section 11: Industry Events & Exhibitions"}</span>
+                <span>{ar ? "القسم العاشر: المعارض والمؤتمرات" : "Section 10: Industry Events & Exhibitions"}</span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-1 leading-snug">
                 {ar ? "المشاركة في كبرى المحافل والمعارض العقارية الدولية" : "International Real Estate Exhibitions & Summits"}
