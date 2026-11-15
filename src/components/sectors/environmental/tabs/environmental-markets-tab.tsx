@@ -357,20 +357,15 @@ export function EnvironmentalMarketsTab({ ar }: EnvironmentalMarketsTabProps) {
         <Reveal>
           <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/85 p-6 sm:p-10 shadow-lg backdrop-blur-2xl">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
-              <div className="flex items-center gap-3">
-                <span className="flex size-10 shrink-0 items-center justify-center rounded-2xl bg-brand-green/15 text-brand-green">
-                  <BarChart3 className="size-5" />
-                </span>
-                <div>
-                  <h2 className="font-head text-lg sm:text-2xl font-extrabold text-foreground">
-                    {ar ? "الرسم البياني التحليلي لجاذبية الأسواق والخدمات" : "Comparative Market Potential & Service Capacity"}
-                  </h2>
-                  <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">
-                    {ar
-                      ? "مقارنة بصرية بين الدول وفق مؤشر حجم الفرصة والإنفاق وتنوع الخدمات البيئية المطلوبة:"
-                      : "Visual comparison of key markets by potential opportunity score and environmental service complexity:"}
-                  </p>
-                </div>
+              <div>
+                <h2 className="font-head text-lg sm:text-2xl font-extrabold text-foreground">
+                  {ar ? "الرسم البياني التحليلي لجاذبية الأسواق والخدمات" : "Comparative Market Potential & Service Capacity"}
+                </h2>
+                <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">
+                  {ar
+                    ? "مقارنة بصرية بين الدول وفق مؤشر حجم الفرصة والإنفاق وتنوع الخدمات البيئية المطلوبة:"
+                    : "Visual comparison of key markets by potential opportunity score and environmental service complexity:"}
+                </p>
               </div>
 
               {/* Chart View Toggle */}
