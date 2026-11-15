@@ -94,19 +94,16 @@ export const SectorConsultationCta: React.FC<SectorConsultationCtaProps> = ({ se
   return (
     <div className="py-8 scroll-mt-24">
       <Reveal>
-        <div className="relative overflow-hidden rounded-3xl border border-white/20 bg-gradient-to-br from-slate-900/90 via-slate-900/80 to-slate-800/90 p-8 sm:p-12 text-white shadow-2xl backdrop-blur-2xl">
-          <div className="absolute top-0 right-0 size-80 rounded-full bg-brand-green/15 blur-3xl pointer-events-none" />
-          <div className="absolute bottom-0 left-0 size-72 rounded-full bg-brand-orange/10 blur-3xl pointer-events-none" />
+        <div className="group relative overflow-hidden rounded-3xl border border-white/25 bg-slate-900/40 hover:bg-slate-900/55 p-8 sm:p-12 text-white shadow-[0_16px_50px_rgba(0,0,0,0.25)] backdrop-blur-2xl transition-all duration-300 hover:border-brand-green/50 hover:shadow-brand-green/15 hover:-translate-y-0.5">
+          <div className="absolute top-0 right-0 size-80 rounded-full bg-brand-green/20 blur-3xl pointer-events-none transition-all duration-500 group-hover:scale-110" />
+          <div className="absolute bottom-0 left-0 size-72 rounded-full bg-brand-orange/15 blur-3xl pointer-events-none transition-all duration-500 group-hover:scale-110" />
 
           <div className="relative z-10 grid gap-8 lg:grid-cols-12 items-center">
             {/* Left Content */}
             <div className="lg:col-span-8 space-y-3.5">
-              <div className="inline-flex items-center gap-2 rounded-full border border-brand-green/30 bg-black/60 px-3.5 py-1 text-xs font-bold tracking-wide text-brand-green backdrop-blur-md shadow-md">
+              <div className="inline-flex items-center gap-2 rounded-full border border-brand-green/30 bg-black/40 px-3.5 py-1 text-xs font-bold tracking-wide text-brand-green backdrop-blur-md shadow-md">
                 <Sparkles className="size-3.5 animate-pulse" />
                 <span>{ar ? config.badgeAr : config.badgeEn}</span>
-                <span className="text-[10px] text-white/70 ms-1 bg-white/10 px-2 py-0.2 rounded-full">
-                  {ar ? "استشارة مجانية 100%" : "100% Free Consultation"}
-                </span>
               </div>
 
               <h3 className="font-head text-2xl sm:text-3xl font-extrabold leading-snug tracking-tight text-white drop-shadow-md">
@@ -134,7 +131,7 @@ export const SectorConsultationCta: React.FC<SectorConsultationCtaProps> = ({ se
             </div>
 
             {/* Right Action */}
-            <div className="lg:col-span-4 flex flex-col items-start lg:items-end justify-center gap-2.5">
+            <div className="lg:col-span-4 flex flex-col items-start lg:items-end justify-center">
               <Button
                 asChild
                 size="lg"
@@ -145,9 +142,6 @@ export const SectorConsultationCta: React.FC<SectorConsultationCtaProps> = ({ se
                   <ArrowRight className="size-4 rtl:rotate-180 ms-2" />
                 </Link>
               </Button>
-              <span className="text-[11px] text-slate-400 text-center lg:text-end w-full sm:w-auto">
-                {ar ? "يتم توجيه الطلب فورًا إلى إدارة القطاع" : "Directly routed to the sector directorship"}
-              </span>
             </div>
           </div>
         </div>

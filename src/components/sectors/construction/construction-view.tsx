@@ -1,5 +1,5 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { ArrowRight, Award, Briefcase, Building, Calendar, CheckCircle2, ChevronRight, Clock, Cpu, Download, FileCheck, FileText, HardHat, Layers, MapPin, MessageCircle, Phone, Search, ShieldAlert, ShieldCheck, Sparkles, Trophy, Truck, Users, Wrench, ZoomIn } from "lucide-react";
+import { ArrowRight, Award, Briefcase, Building, Calendar, CheckCircle2, ChevronRight, Clock, Cpu, FileCheck, FileText, HardHat, Layers, MapPin, MessageCircle, Phone, Search, ShieldAlert, ShieldCheck, Sparkles, Trophy, Truck, Users, Wrench, ZoomIn } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 
 import { Reveal } from "@/components/home/reveal";
@@ -149,35 +149,11 @@ export function ConstructionSectorView({ tab = "about", token }: ConstructionVie
               </p>
 
               <div className="mt-8 flex flex-wrap items-center gap-3">
-                <Button asChild size="default" className="rounded-full bg-brand-green text-white hover:bg-brand-orange transition-all duration-300 shadow-md">
-                  <Link to="/sectors/$sector" params={{ sector: "construction" }} search={{ tab: "start-project" }}>
-                    <span>{ar ? "ابدأ مشروعك" : "Start Your Project"}</span>
+                <Button asChild size="lg" className="rounded-full bg-brand-green text-white hover:bg-brand-orange transition-all duration-300 shadow-md font-bold px-8">
+                  <Link to="/sectors/$sector" params={{ sector: "construction" }} search={{ tab: "services" }}>
+                    <span>{ar ? "استكشف خدماتنا" : "Explore Our Services"}</span>
                     <ArrowRight className="size-4 ms-2 rtl:rotate-180" />
                   </Link>
-                </Button>
-
-                <Button asChild size="default" className="rounded-full bg-brand-green text-white hover:bg-brand-orange transition-all duration-300 shadow-md">
-                  <a
-                    href={ar ? "/downloads/SBA_Construction_Capabilities_AR.pdf" : "/downloads/SBA_Construction_Capabilities_EN.pdf"}
-                    download={ar ? "SBA_Construction_Capabilities_AR.pdf" : "SBA_Construction_Capabilities_EN.pdf"}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Download className="size-4 me-1.5" />
-                    <span>{ar ? "تحميل الدليل الهندسي (PDF)" : "Download Sector Profile (PDF)"}</span>
-                  </a>
-                </Button>
-
-                <Button asChild size="default" className="rounded-full bg-brand-green text-white hover:bg-brand-orange transition-all duration-300 shadow-md">
-                  <a
-                    href={ar ? "/downloads/SBA_Construction_Project_Portfolio_AR.pdf" : "/downloads/SBA_Construction_Project_Portfolio_EN.pdf"}
-                    download={ar ? "SBA_Construction_Project_Portfolio_AR.pdf" : "SBA_Construction_Project_Portfolio_EN.pdf"}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Download className="size-4 me-1.5" />
-                    <span>{ar ? "سجل المشروعات (57 مشروعًا)" : "Project Portfolio (PDF)"}</span>
-                  </a>
                 </Button>
               </div>
             </Reveal>
@@ -213,7 +189,15 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
   const capabilities = constructionCapabilitiesData;
   const credentials = constructionCredentialsData;
   const services = constructionServicesData.services;
-  const featuredProjects = contractingProjectsList.slice(0, 3);
+  const featuredProjects = useMemo(() => {
+    return [...contractingProjectsList]
+      .sort((a, b) => {
+        const valA = parseFloat((a.valueEn || "").replace(/[^0-9.]/g, "")) || 0;
+        const valB = parseFloat((b.valueEn || "").replace(/[^0-9.]/g, "")) || 0;
+        return valB - valA;
+      })
+      .slice(0, 3);
+  }, []);
 
   return (
     <div className="w-full space-y-16">
@@ -334,7 +318,7 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
             <div>
               <SectionBadge title={ar ? "خدماتنا المتخصصة" : "Engineering Services"} />
               <h2 className="section-title mt-3">
-                {ar ? "12 تخصصًا إنشائيًا وهندسيًا متكاملًا" : "12 Core Engineering & Construction Disciplines"}
+                {ar ? "التخصصات الإنشائية والهندسية" : "Engineering & Construction Disciplines"}
               </h2>
             </div>
             <Button asChild size="sm" className="rounded-full bg-brand-green text-white hover:bg-brand-orange transition-all duration-300">
@@ -401,8 +385,8 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
               <div className="mx-auto size-12 rounded-2xl bg-brand-green/10 flex items-center justify-center text-brand-green mb-3">
                 <Building className="size-6" />
               </div>
-              <h3 className="font-head text-base font-bold text-foreground">{ar ? "القطاع الطبي والرعاية الصحية" : "Healthcare & Medical Facilities"}</h3>
-              <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
+              <h3 className="font-head text-base font-bold text-foreground text-center mx-auto">{ar ? "القطاع الطبي والرعاية الصحية" : "Healthcare & Medical Facilities"}</h3>
+              <p className="mt-2 text-xs text-muted-foreground leading-relaxed text-center mx-auto">
                 {ar ? "غرف العمليات، الأشعة والتعقيم، شبكات الغازات الطبية، والمصاعد المتخصصة." : "Operating theatres, imaging rooms, medical gas networks, and bed elevators."}
               </p>
             </div>
@@ -411,8 +395,8 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
               <div className="mx-auto size-12 rounded-2xl bg-brand-orange/10 flex items-center justify-center text-brand-orange mb-3">
                 <HardHat className="size-6" />
               </div>
-              <h3 className="font-head text-base font-bold text-foreground">{ar ? "مشروعات البترول والغاز" : "Oil & Gas Infrastructure"}</h3>
-              <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
+              <h3 className="font-head text-base font-bold text-foreground text-center mx-auto">{ar ? "مشروعات البترول والغاز" : "Oil & Gas Infrastructure"}</h3>
+              <p className="mt-2 text-xs text-muted-foreground leading-relaxed text-center mx-auto">
                 {ar ? "حماية خطوط الغاز القومية، غرف محولات الضغط، ومحطات تموين الوقود." : "High-pressure gas pipeline protection, regulator rooms, and fuel stations."}
               </p>
             </div>
@@ -421,8 +405,8 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
               <div className="mx-auto size-12 rounded-2xl bg-brand-green/10 flex items-center justify-center text-brand-green mb-3">
                 <Layers className="size-6" />
               </div>
-              <h3 className="font-head text-base font-bold text-foreground">{ar ? "التطوير السكني والفلل الفاخرة" : "Residential & Luxury Estates"}</h3>
-              <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
+              <h3 className="font-head text-base font-bold text-foreground text-center mx-auto">{ar ? "التطوير السكني والفلل الفاخرة" : "Residential & Luxury Estates"}</h3>
+              <p className="mt-2 text-xs text-muted-foreground leading-relaxed text-center mx-auto">
                 {ar ? "منتجع فيدالا الجلالة، وفلل التجمع الخامس وماونتن فيو وقطامية ديونز." : "Vidala El-Galala resort blocks, Katameya Dunes, and Fifth Settlement villas."}
               </p>
             </div>
@@ -431,8 +415,8 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
               <div className="mx-auto size-12 rounded-2xl bg-brand-orange/10 flex items-center justify-center text-brand-orange mb-3">
                 <Trophy className="size-6" />
               </div>
-              <h3 className="font-head text-base font-bold text-foreground">{ar ? "المباني التجارية والإدارية" : "Commercial & Headquarters"}</h3>
-              <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
+              <h3 className="font-head text-base font-bold text-foreground text-center mx-auto">{ar ? "المباني التجارية والإدارية" : "Commercial & Headquarters"}</h3>
+              <p className="mt-2 text-xs text-muted-foreground leading-relaxed text-center mx-auto">
                 {ar ? "مجمعات التسوق، مقرات الشركات، والمشروعات التعليمية والمدارس الدولية." : "Corporate headquarters, retail shopping complexes, and international schools."}
               </p>
             </div>
@@ -545,7 +529,7 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
             </div>
             <Button asChild size="default" className="rounded-full bg-brand-green text-white hover:bg-brand-orange">
               <Link to="/sectors/$sector" params={{ sector: "construction" }} search={{ tab: "projects" }}>
-                <span>{ar ? "عرض كافة المشروعات (+57 مشروعًا)" : "View Full 57+ Portfolio"}</span>
+                <span>{ar ? "عرض كافة المشروعات" : "View Full Portfolio"}</span>
                 <ArrowRight className="size-4 ms-2 rtl:rotate-180" />
               </Link>
             </Button>
