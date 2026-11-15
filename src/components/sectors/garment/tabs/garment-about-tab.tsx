@@ -484,10 +484,8 @@ export function GarmentAboutTab() {
                   </h3>
                   <p className="text-xs text-muted-foreground mt-0.5">{ar ? shirtFacility.noteAr : shirtFacility.noteEn}</p>
                 </div>
-                <div className="rounded-2xl border border-brand-green/40 bg-brand-green/10 px-4 py-2.5 text-center sm:text-end shrink-0">
-                  <div className="font-head text-xl sm:text-2xl font-extrabold text-brand-green drop-shadow-sm">
-                    {ar ? shirtFacility.monthlyCapacityAr : shirtFacility.monthlyCapacityEn}
-                  </div>
+                <div className="inline-flex items-center justify-center rounded-full bg-brand-green px-4 py-2 font-head text-sm sm:text-base font-bold text-white shadow-sm transition hover:bg-brand-orange shrink-0">
+                  <span>{ar ? shirtFacility.monthlyCapacityAr : shirtFacility.monthlyCapacityEn}</span>
                 </div>
               </div>
 
