@@ -3,9 +3,9 @@ const apparelImg = "/BG/Apparel Manufacturing/Apparel Manufacturing Home Page.jp
 export const garmentHeroData = {
   image: apparelImg,
   company: "SAMI BIN AYYAD · Apparel Manufacturing",
-  companyAr: "مجموعة سامي بن عياد · تصنيع الملابس",
+  companyAr: "مجموعة سامي بن عياد · تصنيع الملابس الجاهزة",
   title: "Apparel Manufacturing",
-  titleAr: "تصنيع الملابس",
+  titleAr: "تصنيع الملابس الجاهزة",
   subtitle: "Integrated manufacturing solutions for fashion brands and global markets.",
   subtitleAr: "حلول تصنيع متكاملة للعلامات التجارية والأسواق العالمية.",
   intro: "SAMI BIN AYYAD GROUP delivers integrated apparel manufacturing solutions, combining product development, diverse production capabilities, manufacturing management, and quality control. With specialization in women's, children's, and men's apparel, we support fashion brands, importers, and international buyers through flexible manufacturing programs tailored to each project.",

@@ -68,7 +68,7 @@ export function GarmentAboutTab() {
           <div className="group relative mx-auto max-w-4xl overflow-hidden rounded-3xl border border-white/20 bg-background/75 p-8 sm:p-12 shadow-[0_12px_40px_rgba(0,0,0,0.08)] backdrop-blur-2xl transition-all duration-300 hover:scale-[1.01] hover:border-brand-green/40 text-center">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-              <span>{ar ? "عن قطاع تصنيع الملابس" : "About Garment Manufacturing"}</span>
+              <span>{ar ? "عن قطاع تصنيع الملابس الجاهزة" : "About Ready-Made Garments"}</span>
             </div>
             <h2 className="font-head text-xl sm:text-3xl font-extrabold text-foreground mt-2">
               {ar ? whoWeAre.headingAr : whoWeAre.heading}

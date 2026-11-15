@@ -45,7 +45,6 @@ export function GarmentCapabilitiesTab() {
   const capacity = garmentProductionCapacity;
   const capabilities = garmentIndustrialCapabilities;
   const shirtFacility = garmentClassicShirtFacility;
-  const gallery = garmentFactoryGallery;
 
   return (
     <div className="space-y-16 py-6">
