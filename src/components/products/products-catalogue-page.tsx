@@ -193,7 +193,7 @@ export function ProductsCataloguePage() {
         key: "blends",
         titleAr: "الخلطات والتتبيلات",
         titleEn: "Culinary Blends & Seasonings",
-        subtitleAr: "تتبيلات الشواء والمشاوي، خلطات الأرز العالمية، والدقة والبصارة والفول والطحينة.",
+        subtitleAr: "تتبيلات الشواء والمشاوي",
         subtitleEn: "Grill marinades, Kabsa & Biryani rice seasonings, and heritage Egyptian staples.",
         badgeAr: "الخلطات والتتبيلات",
         badgeEn: "Blends & Mixes",
