@@ -41,15 +41,6 @@ export function ApparelScenarioCalculator({
         </div>
       </div>
 
-      {/* Mandatory Assumption Warning */}
-      <div className="rounded-2xl border border-amber-500/40 bg-amber-500/10 p-3.5 text-xs text-amber-950 dark:text-amber-200 leading-relaxed">
-        <span>
-          {ar
-            ? "تنويه منهجي: الأسعار المُدخلة أدناه تمثل افتراضات تخطيطية يدخلها المستخدم فقط، وليست أسعارًا سوقية مؤكدة، ولا عروض أسعار معتمدة، ولا تمثل ربحًا صافيًا أو تأكيدًا لقدرة هذا السوق على استيعاب الكميات دون عقود فعلية. يجب نمذجة CM وFOB بشكل منفصل قبل أي التزام."
-            : "Disclaimer: Unit prices below are strictly user-entered planning assumptions — NOT validated market quotes, profit margins, purchase orders, or evidence of country absorption capacity. Always model CM and FOB costs separately prior to contracting."}
-        </span>
-      </div>
-
       {/* Controls */}
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <label className="block space-y-1.5 text-xs">

@@ -314,45 +314,10 @@ export function GlobalMarketsCmsTab({ ar = true }: GlobalMarketsCmsTabProps) {
               <h2 className="font-head text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white">
                 {ar ? "منظومة إدارة دراسات الأسواق العالمية" : "Global Markets Study Management System"}
               </h2>
-              <p className="text-xs text-slate-500 dark:text-slate-400">
-                {ar
-                  ? "استقبال ملفات الدراسات الجاهزة (JSON / PDF)، التعديل، الاعتماد، تحديث الحالة، وأرشفة الإصدارات."
-                  : "Ingest ready research files (JSON / PDF), edit bilingual sections, approve releases, and archive versions."}
-              </p>
             </div>
           </div>
 
           <div className="flex flex-wrap items-center gap-2">
-            <Button
-              type="button"
-              variant="outline"
-              onClick={copyChatGptTemplate}
-              className="rounded-full text-xs font-bold gap-1.5"
-            >
-              <Copy className="size-3.5" />
-              <span>{copiedSchema ? (ar ? "تم نسخ القالب" : "Template Copied") : (ar ? "نسخ قالب JSON" : "Copy JSON Schema")}</span>
-            </Button>
-
-            <Button
-              type="button"
-              variant="outline"
-              onClick={() => setImportOpen(true)}
-              className="rounded-full text-xs font-bold gap-1.5"
-            >
-              <FileJson className="size-3.5 text-brand-green" />
-              <span>{ar ? "استيراد JSON" : "Import JSON"}</span>
-            </Button>
-
-            <Button
-              type="button"
-              variant="outline"
-              onClick={exportRegistryJson}
-              className="rounded-full text-xs font-bold gap-1.5"
-            >
-              <Download className="size-3.5" />
-              <span>{ar ? "تصدير السجل" : "Export JSON"}</span>
-            </Button>
-
             <Button
               type="button"
               onClick={() => openEditor(createEmptyStudy())}
