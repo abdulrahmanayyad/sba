@@ -35,6 +35,7 @@ import {
   useGlobalMarketsStudies,
 } from "@/lib/global-markets-store";
 import { MarketComparisonPanel } from "./market-comparison-panel";
+import { getStudyRegionCategory } from "./global-markets-home";
 
 interface GlobalMarketsSectorPageProps {
   sectorId: GlobalMarketSectorId;
@@ -63,6 +64,7 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
 
   const [searchQuery, setSearchQuery] = useState("");
   const [regionFilter, setRegionFilter] = useState<string>("all");
+  const [regionCategory, setRegionCategory] = useState<string>("all");
   const [subRegionFilter, setSubRegionFilter] = useState<string>("all");
   const [priorityFilter, setPriorityFilter] = useState<string>("all");
   const [activityFilter, setActivityFilter] = useState<string>("all");
@@ -84,7 +86,12 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
 
   const metrics = useMemo(() => getSectorMetrics(sector.id, studies), [sector.id, studies]);
   const allowedRegionConfigs = useMemo(
-    () => GEO_REGIONS_ORDER.filter((r) => SECTOR_ALLOWED_REGIONS[sector.id].includes(r.id)),
+    () =>
+      GEO_REGIONS_ORDER.filter((r) => {
+        if (!SECTOR_ALLOWED_REGIONS[sector.id].includes(r.id)) return false;
+        if (sector.id === "environmental" && r.id === "europe") return false;
+        return true;
+      }),
     [sector.id],
   );
 
@@ -108,6 +115,7 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
   const filteredStudies = useMemo(() => {
     const q = searchQuery.trim().toLowerCase();
     const result = sectorStudies.filter((s) => {
+      if (regionCategory !== "all" && getStudyRegionCategory(s) !== regionCategory) return false;
       if (regionFilter !== "all" && s.region !== regionFilter) return false;
       if (subRegionFilter !== "all" && s.apparelSubRegion !== subRegionFilter) return false;
       if (priorityFilter !== "all" && s.priorityGrade !== priorityFilter) return false;
@@ -161,7 +169,7 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
       }
       return 0;
     });
-  }, [sectorStudies, regionFilter, subRegionFilter, priorityFilter, statusFilter, yearFilter, tierFilter, sortBy, activityFilter, searchQuery, ar]);
+  }, [sectorStudies, regionCategory, regionFilter, subRegionFilter, priorityFilter, statusFilter, yearFilter, tierFilter, sortBy, activityFilter, searchQuery, ar]);
 
   const Icon = getSectorIcon(sector.id);
   const statusCfg = STUDY_STATUS_LABELS[metrics.status];
@@ -443,6 +451,67 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
               </div>
             </div>
           )}
+
+          {sector.id === "environmental" && sectorStudies.length > 0 && (
+            <div className="pt-4 border-t border-slate-200/70 dark:border-white/10 space-y-3">
+              <div className="flex flex-wrap items-center gap-1.5">
+                <button
+                  type="button"
+                  onClick={() => setRegionCategory("all")}
+                  className={cn(
+                    "rounded-full border px-3 py-1 text-[11px] font-bold transition-all duration-300 cursor-pointer shadow-xs",
+                    regionCategory === "all"
+                      ? "border-brand-green bg-brand-green text-white hover:bg-brand-orange"
+                      : "border-slate-200 dark:border-white/15 bg-white dark:bg-white/5 text-slate-700 dark:text-slate-200 hover:bg-brand-orange hover:text-white hover:border-brand-orange",
+                  )}
+                >
+                  {ar ? `كافة الدراسات (${sectorStudies.length})` : `All Studies (${sectorStudies.length})`}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setRegionCategory("gcc")}
+                  className={cn(
+                    "rounded-full border px-3 py-1 text-[11px] font-bold transition-all duration-300 cursor-pointer shadow-xs",
+                    regionCategory === "gcc"
+                      ? "border-brand-green bg-brand-green text-white hover:bg-brand-orange"
+                      : "border-slate-200 dark:border-white/15 bg-white dark:bg-white/5 text-slate-700 dark:text-slate-200 hover:bg-brand-orange hover:text-white hover:border-brand-orange",
+                  )}
+                >
+                  {ar
+                    ? `دول الخليج (${sectorStudies.filter((s) => getStudyRegionCategory(s) === "gcc").length})`
+                    : `GCC Countries (${sectorStudies.filter((s) => getStudyRegionCategory(s) === "gcc").length})`}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setRegionCategory("arab")}
+                  className={cn(
+                    "rounded-full border px-3 py-1 text-[11px] font-bold transition-all duration-300 cursor-pointer shadow-xs",
+                    regionCategory === "arab"
+                      ? "border-brand-green bg-brand-green text-white hover:bg-brand-orange"
+                      : "border-slate-200 dark:border-white/15 bg-white dark:bg-white/5 text-slate-700 dark:text-slate-200 hover:bg-brand-orange hover:text-white hover:border-brand-orange",
+                  )}
+                >
+                  {ar
+                    ? `الدول العربية (${sectorStudies.filter((s) => getStudyRegionCategory(s) === "arab").length})`
+                    : `Arab Countries (${sectorStudies.filter((s) => getStudyRegionCategory(s) === "arab").length})`}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setRegionCategory("africa")}
+                  className={cn(
+                    "rounded-full border px-3 py-1 text-[11px] font-bold transition-all duration-300 cursor-pointer shadow-xs",
+                    regionCategory === "africa"
+                      ? "border-brand-green bg-brand-green text-white hover:bg-brand-orange"
+                      : "border-slate-200 dark:border-white/15 bg-white dark:bg-white/5 text-slate-700 dark:text-slate-200 hover:bg-brand-orange hover:text-white hover:border-brand-orange",
+                  )}
+                >
+                  {ar
+                    ? `الدول الأفريقية (${sectorStudies.filter((s) => getStudyRegionCategory(s) === "africa").length})`
+                    : `African Countries (${sectorStudies.filter((s) => getStudyRegionCategory(s) === "africa").length})`}
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
@@ -495,7 +564,20 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
             </div>
           </div>
         ) : (
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <div className="space-y-6">
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <div className="flex items-center gap-2">
+                <Layers className="size-4 text-brand-green" />
+                <h2 className="font-head text-base sm:text-lg font-extrabold text-slate-900 dark:text-white">
+                  {ar ? "الدراسات الشاملة" : "Comprehensive Studies"}
+                </h2>
+                <span className="rounded-full bg-brand-green/10 text-brand-green px-2.5 py-0.5 text-xs font-extrabold">
+                  {filteredStudies.length}
+                </span>
+              </div>
+            </div>
+
+            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {filteredStudies.map((study) => {
               const st = STUDY_STATUS_LABELS[study.status];
               const downloadAllowed = isStudyDownloadAllowed(study);
@@ -648,6 +730,7 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
                 </div>
               );
             })}
+            </div>
           </div>
         )}
       </section>

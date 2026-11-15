@@ -333,10 +333,10 @@ export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
               {GLOBAL_MARKET_SECTORS.map((sec) => {
                 const count = activeStudies.filter((s) => s.sector === sec.id).length;
                 return (
-                  <button
+                  <Link
                     key={sec.id}
-                    type="button"
-                    onClick={() => setSelectedSector(sec.id)}
+                    to="/global-markets/$sector"
+                    params={{ sector: sec.id }}
                     className={cn(
                       "rounded-full px-3.5 py-1.5 text-xs font-bold transition-all duration-300 cursor-pointer shadow-xs",
                       selectedSector === sec.id
@@ -346,7 +346,7 @@ export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
                   >
                     <span>{ar ? sec.nameAr : sec.nameEn}</span>
                     <span className="ms-1.5 text-[10px] opacity-80">({count})</span>
-                  </button>
+                  </Link>
                 );
               })}
             </div>
@@ -434,23 +434,27 @@ export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
 
                   {/* Bottom Title Area */}
                   <div className="absolute bottom-5 start-5 end-5 flex flex-wrap items-end justify-between gap-4 text-white">
-                    <div className="flex items-center gap-3.5 text-start">
-                      <div className="size-12 rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center shrink-0 shadow-sm">
+                    <Link
+                      to="/global-markets/$sector"
+                      params={{ sector: sector.id }}
+                      className="flex items-center gap-3.5 text-start group/title hover:opacity-95 transition-opacity"
+                    >
+                      <div className="size-12 rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center shrink-0 shadow-sm group-hover/title:bg-brand-green/40 transition-colors">
                         <Icon className="size-6 text-white" />
                       </div>
                       <div>
-                        <h2 className="font-head text-2xl sm:text-3xl font-extrabold !text-white leading-tight">
+                        <h2 className="font-head text-2xl sm:text-3xl font-extrabold !text-white leading-tight group-hover/title:text-brand-orange transition-colors">
                           {ar ? sector.nameAr : sector.nameEn}
                         </h2>
                       </div>
-                    </div>
+                    </Link>
 
                     <Link
                       to="/global-markets/$sector"
                       params={{ sector: sector.id }}
                       className="inline-flex items-center gap-2 rounded-2xl bg-brand-green px-5 py-2.5 text-xs sm:text-sm font-bold text-white hover:bg-brand-orange transition-all duration-300 shadow-md cursor-pointer"
                     >
-                      <span>{ar ? "استعراض صفحة القطاع" : "Sector Overview Page"}</span>
+                      <span>{ar ? "الدخول إلى صفحة دراسات القطاع" : "Access Sector Studies Page"}</span>
                       {ar ? <ArrowLeft className="size-4" /> : <ArrowRight className="size-4" />}
                     </Link>
                   </div>
@@ -516,9 +520,7 @@ export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
                       <div className="flex items-center gap-2">
                         <Layers className="size-4 text-brand-green" />
                         <h3 className="font-head text-base sm:text-lg font-extrabold text-slate-900 dark:text-white">
-                          {ar
-                            ? `الدراسات السوقية الخاصة بقطاع ${sector.nameAr}`
-                            : `Market Studies for ${sector.nameEn}`}
+                          {ar ? "الدراسات الشاملة" : "Comprehensive Studies"}
                         </h3>
                         <span className="rounded-full bg-brand-green/10 text-brand-green px-2.5 py-0.5 text-xs font-extrabold">
                           {searchedSectorStudies.length}
@@ -594,19 +596,21 @@ export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
                       </button>
 
                       {/* 4. الدول الأوروبية (European Countries) */}
-                      <button
-                        type="button"
-                        onClick={() => setCategoryForSector(sector.id, "europe")}
-                        className={cn(
-                          "rounded-full px-3.5 py-1.5 text-xs font-bold transition-all duration-300 cursor-pointer shadow-xs",
-                          currentCategory === "europe"
-                            ? "bg-brand-green text-white hover:bg-brand-orange"
-                            : "border border-slate-200 dark:border-white/15 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-brand-orange hover:text-white hover:border-brand-orange",
-                        )}
-                      >
-                        <span>{ar ? "الدول الأوروبية" : "European Countries"}</span>
-                        <span className="ms-1.5 text-[10px] opacity-80">({europeStudies.length})</span>
-                      </button>
+                      {europeStudies.length > 0 && sector.id !== "environmental" && (
+                        <button
+                          type="button"
+                          onClick={() => setCategoryForSector(sector.id, "europe")}
+                          className={cn(
+                            "rounded-full px-3.5 py-1.5 text-xs font-bold transition-all duration-300 cursor-pointer shadow-xs",
+                            currentCategory === "europe"
+                              ? "bg-brand-green text-white hover:bg-brand-orange"
+                              : "border border-slate-200 dark:border-white/15 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-brand-orange hover:text-white hover:border-brand-orange",
+                          )}
+                        >
+                          <span>{ar ? "الدول الأوروبية" : "European Countries"}</span>
+                          <span className="ms-1.5 text-[10px] opacity-80">({europeStudies.length})</span>
+                        </button>
+                      )}
 
                       {/* Other Countries (if present, e.g. Americas) */}
                       {otherStudies.length > 0 && (
