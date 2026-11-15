@@ -307,7 +307,7 @@ export function RealEstateTradeView({ ar = true, hideHero = false }: RealEstateT
                 <span>{ar ? "القسم الثالث: نماذج وآليات التعامل" : "Section 3: Transaction & Deal Models"}</span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-1 leading-snug">
-                {ar ? "10 نماذج تعاقدية واستثمارية مرنة" : "10 Agile Transaction & Investment Frameworks"}
+                {ar ? "النماذج التعاقدية والاستثمارية" : "Transaction & Investment Frameworks"}
               </h2>
               <p className="text-xs sm:text-sm text-muted-foreground mt-2 leading-relaxed max-w-4xl">
                 {ar
