@@ -513,7 +513,7 @@ export const garmentIndustrialCapabilities: IndustrialCapabilityItem[] = [
     titleEn: "CAD / CAM Pattern Making & Grading",
     titleAr: "هندسة الباترون وتدريج المقاسات بالكمبيوتر",
     leadEn: "State-of-the-art Gerber & Lectra digital pattern systems executing exact fit grading from XS to 5XL.",
-    leadAr: "أنظمة باترونات رقمية متطورة (Gerber وLectra) لتدريج المقاسات بدقة متناهية من XS إلى 5XL.",
+    leadAr: "أنظمة باترونات متطورة لتدريج المقاسات بدقة متناهية",
     specsEn: [
       "Digital marker optimization yielding maximum fabric utilization (>88%)",
       "Precision size grading for European, American, and Gulf body proportions",

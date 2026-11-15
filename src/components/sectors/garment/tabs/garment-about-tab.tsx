@@ -134,7 +134,7 @@ export function GarmentAboutTab() {
             <div className="text-center max-w-3xl mx-auto mb-10">
               <SectionBadge title={ar ? "دليل المصطلحات الفنية والتجارية" : "B2B Technical Glossary"} />
               <h2 className="section-title mt-3 text-center mx-auto">
-                {ar ? "دليل مصطلحات تصنيع وتصدير الملابس B2B" : "Garment Manufacturing & Trade Terminology"}
+                {ar ? "دليل المصطلحات الفنية" : "Technical Glossary"}
               </h2>
               <p className="section-intro mt-3 text-center mx-auto">
                 {ar
@@ -484,9 +484,10 @@ export function GarmentAboutTab() {
                   </h3>
                   <p className="text-xs text-muted-foreground mt-0.5">{ar ? shirtFacility.noteAr : shirtFacility.noteEn}</p>
                 </div>
-                <div className="rounded-2xl border border-brand-green/40 bg-brand-green/10 px-4 py-2 text-center sm:text-end shrink-0">
-                  <div className="font-head text-xl sm:text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">{ar ? shirtFacility.monthlyCapacityAr : shirtFacility.monthlyCapacityEn}</div>
-                  <div className="text-[11px] font-bold text-muted-foreground uppercase">{ar ? "طاقة الخط المعتمدة" : "Certified Line Capacity"}</div>
+                <div className="rounded-2xl border border-brand-green/40 bg-brand-green/10 px-4 py-2.5 text-center sm:text-end shrink-0">
+                  <div className="font-head text-xl sm:text-2xl font-extrabold text-brand-green drop-shadow-sm">
+                    {ar ? shirtFacility.monthlyCapacityAr : shirtFacility.monthlyCapacityEn}
+                  </div>
                 </div>
               </div>
 
