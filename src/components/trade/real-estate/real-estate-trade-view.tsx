@@ -26,7 +26,6 @@ import {
   REAL_ESTATE_ADVISORY_PILLARS,
   PHARMACY_ADVISORY_SECTION,
   REAL_ESTATE_MAJOR_MILESTONES,
-  REAL_ESTATE_COLLABORATION_FIELDS,
 } from "@/lib/real-estate-trade-data";
 
 interface RealEstateTradeViewProps {
@@ -487,16 +486,6 @@ export function RealEstateTradeView({ ar = true, hideHero = false }: RealEstateT
                     : "We welcome dialogue and strategic partnerships with institutional investors, property developers, and corporate asset holders to evaluate high-yield opportunities and co-develop transformative projects."}
                 </p>
 
-                <div className="flex flex-wrap gap-2 pt-1">
-                  {REAL_ESTATE_COLLABORATION_FIELDS.map((field, idx) => (
-                    <span
-                      key={idx}
-                      className="rounded-full border border-border/80 bg-secondary/80 px-3.5 py-1 text-xs font-bold text-foreground transition-all hover:border-brand-orange/40 hover:text-brand-orange"
-                    >
-                      {ar ? field.labelAr : field.labelEn}
-                    </span>
-                  ))}
-                </div>
 
                 <div className="pt-3">
                   <Button
