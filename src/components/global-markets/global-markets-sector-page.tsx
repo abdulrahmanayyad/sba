@@ -649,32 +649,63 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
                         )
                       )}
 
-                      {/* Opportunity Tier Badge */}
-                      {study.opportunityTierAr && (
-                        <div className="mt-1.5 flex items-center gap-1.5 text-[11px] font-extrabold">
-                          <span className={cn(
-                            "rounded-lg px-2 py-0.5",
-                            (study.opportunityScore ?? 0) >= 80
-                              ? "bg-brand-green/10 text-brand-green border border-brand-green/30"
-                              : (study.opportunityScore ?? 0) >= 65
-                                ? "bg-brand-orange/10 text-brand-orange border border-brand-orange/30"
-                                : "bg-red-500/10 text-red-600 dark:text-red-400 border border-red-500/30"
-                          )}>
-                            {ar ? study.opportunityTierAr : study.opportunityTier}
-                          </span>
-                        </div>
+                      {/* Garment Specific: Trade Indicator Box & Integrated Strategic Analysis Box */}
+                      {study.sector === "garment" ? (
+                        <>
+                          <div className="mt-2 flex flex-wrap items-center gap-2">
+                            {/* خانة المؤشر التجاري */}
+                            <div className="inline-flex items-center gap-1.5 rounded-lg border border-brand-green/30 bg-brand-green/10 px-2.5 py-1 text-xs font-bold text-brand-green shadow-xs">
+                              <span className="text-slate-600 dark:text-slate-300 font-semibold">{ar ? "المؤشر التجاري:" : "Trade Indicator:"}</span>
+                              <span className="font-mono font-extrabold">{study.tradeIndicatorDisplay || "—"}</span>
+                              {study.tradeIndicatorYear && (
+                                <span className="text-[10px] text-slate-500 font-normal">({study.tradeIndicatorYear})</span>
+                              )}
+                            </div>
+
+                            {/* خانة تحليل استراتيجي متكامل */}
+                            <div className="inline-flex items-center gap-1.5 rounded-lg border border-brand-orange/30 bg-brand-orange/10 px-2.5 py-1 text-xs font-bold text-brand-orange shadow-xs">
+                              <span>{ar ? "تحليل استراتيجي متكامل" : "Integrated Strategic Analysis"}</span>
+                            </div>
+                          </div>
+
+                          <p className="text-xs text-slate-600 dark:text-slate-300 mt-2 line-clamp-2 leading-relaxed">
+                            {ar
+                              ? study.subtitleAr.replace(/^تحليل استراتيجي متكامل:\s*/, "")
+                              : study.subtitleEn.replace(/^Integrated Strategic Analysis:\s*/, "")}
+                          </p>
+                        </>
+                      ) : (
+                        <>
+                          {/* Opportunity Tier Badge */}
+                          {study.opportunityTierAr && (
+                            <div className="mt-1.5 flex items-center gap-1.5 text-[11px] font-extrabold">
+                              <span className={cn(
+                                "rounded-lg px-2 py-0.5",
+                                (study.opportunityScore ?? 0) >= 80
+                                  ? "bg-brand-green/10 text-brand-green border border-brand-green/30"
+                                  : (study.opportunityScore ?? 0) >= 65
+                                    ? "bg-brand-orange/10 text-brand-orange border border-brand-orange/30"
+                                    : "bg-red-500/10 text-red-600 dark:text-red-400 border border-red-500/30"
+                              )}>
+                                {ar ? study.opportunityTierAr : study.opportunityTier}
+                              </span>
+                            </div>
+                          )}
+
+                          {/* Trade Indicator */}
+                          {study.tradeIndicatorDisplay && (
+                            <p className="text-xs font-bold text-slate-700 dark:text-slate-200 mt-2 flex items-center gap-1.5">
+                              <span className="text-slate-500 dark:text-slate-400">{ar ? "المؤشر التجاري:" : "Trade Indicator:"}</span>
+                              <span className="text-brand-green font-mono font-extrabold">{study.tradeIndicatorDisplay}</span>
+                              <span className="text-[10px] text-slate-500">({study.tradeIndicatorYear})</span>
+                            </p>
+                          )}
+
+                          <p className="text-xs text-slate-600 dark:text-slate-300 mt-2 line-clamp-2 leading-relaxed">
+                            {ar ? study.subtitleAr : study.subtitleEn}
+                          </p>
+                        </>
                       )}
-
-                      {/* Trade Indicator */}
-                      <p className="text-xs font-bold text-slate-700 dark:text-slate-200 mt-2 flex items-center gap-1.5">
-                        <span className="text-slate-500 dark:text-slate-400">{ar ? "واردات الملابس:" : "Apparel Imports:"}</span>
-                        <span className="text-brand-green font-mono font-extrabold">{study.tradeIndicatorDisplay}</span>
-                        <span className="text-[10px] text-slate-500">({study.tradeIndicatorYear})</span>
-                      </p>
-
-                      <p className="text-xs text-slate-600 dark:text-slate-300 mt-2 line-clamp-2 leading-relaxed">
-                        {ar ? study.subtitleAr : study.subtitleEn}
-                      </p>
                     </div>
 
                     {/* Prospective Target Accounts Note */}

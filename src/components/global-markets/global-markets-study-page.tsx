@@ -159,9 +159,30 @@ export function GlobalMarketsStudyPage({
                 ? (ar ? "دراسة شاملة للسوق" : "Comprehensive Market Study")
                 : (ar ? study.titleAr : study.titleEn)}
             </h1>
+
+            {study.sector === "garment" && (
+              <div className="flex flex-wrap items-center gap-2 pt-1 pb-1">
+                {/* خانة المؤشر التجاري */}
+                <div className="inline-flex items-center gap-1.5 rounded-lg border border-brand-green/30 bg-brand-green/10 px-3 py-1 text-xs font-bold text-brand-green shadow-xs">
+                  <span className="text-slate-600 dark:text-slate-300 font-semibold">{ar ? "المؤشر التجاري:" : "Trade Indicator:"}</span>
+                  <span className="font-mono font-extrabold">{study.tradeIndicatorDisplay || "—"}</span>
+                  {study.tradeIndicatorYear && (
+                    <span className="text-[10px] text-slate-500 font-normal">({study.tradeIndicatorYear})</span>
+                  )}
+                </div>
+
+                {/* خانة تحليل استراتيجي متكامل */}
+                <div className="inline-flex items-center gap-1.5 rounded-lg border border-brand-orange/30 bg-brand-orange/10 px-3 py-1 text-xs font-bold text-brand-orange shadow-xs">
+                  <span>{ar ? "تحليل استراتيجي متكامل" : "Integrated Strategic Analysis"}</span>
+                </div>
+              </div>
+            )}
+
             {(ar ? study.subtitleAr : study.subtitleEn) && (
               <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed max-w-4xl">
-                {ar ? study.subtitleAr : study.subtitleEn}
+                {ar
+                  ? study.subtitleAr.replace(/^تحليل استراتيجي متكامل:\s*/, "")
+                  : study.subtitleEn.replace(/^Integrated Strategic Analysis:\s*/, "")}
               </p>
             )}
           </div>

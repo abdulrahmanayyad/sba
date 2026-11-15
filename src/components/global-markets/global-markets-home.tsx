@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import { Link } from "@tanstack/react-router";
 import {
   ArrowLeft,
@@ -9,7 +9,6 @@ import {
   Layers,
   Leaf,
   Scale,
-  Search,
   ShieldCheck,
   Shirt,
   Wheat,
@@ -95,20 +94,11 @@ function getSectorIcon(sectorId: GlobalMarketSectorId) {
 
 export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
   const { studies } = useGlobalMarketsStudies();
-  const [searchQuery, setSearchQuery] = useState("");
-  const [selectedSector, setSelectedSector] = useState<"all" | GlobalMarketSectorId>("all");
 
   const activeStudies = useMemo(
     () => studies.filter((s) => s.status !== "archived"),
     [studies],
   );
-
-  const handleResetFilters = () => {
-    setSearchQuery("");
-    setSelectedSector("all");
-  };
-
-  const hasActiveSearch = Boolean(searchQuery.trim());
 
   return (
     <div className="w-full pb-24">
@@ -254,241 +244,124 @@ export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
         </div>
       </section>
 
-      {/* 2. Interactive Global Search Bar & Sector Quick Switcher */}
-      <section className="site-container pb-6">
-        <div className="rounded-3xl border border-slate-200/80 dark:border-white/15 bg-white/75 dark:bg-slate-900/60 p-5 sm:p-6 backdrop-blur-2xl shadow-md space-y-4">
-          <div className="flex flex-wrap items-center justify-between gap-2">
-            <h2 className="font-head text-sm sm:text-base font-extrabold text-slate-900 dark:text-white">
-              {ar ? "البحث والتصفية في دراسات الأسواق" : "Market Studies Search & Navigation"}
-            </h2>
-            {(hasActiveSearch || selectedSector !== "all") && (
-              <button
-                type="button"
-                onClick={handleResetFilters}
-                className="inline-flex items-center gap-1.5 rounded-full bg-brand-green px-3.5 py-1 text-xs font-bold text-white hover:bg-brand-orange transition-all duration-300 cursor-pointer shadow-xs"
-              >
-                <span>{ar ? "إعادة ضبط البحث" : "Reset Filters"}</span>
-              </button>
-            )}
-          </div>
-
-          <div className="grid gap-3 md:grid-cols-12 items-center">
-            <div className="relative md:col-span-5">
-              <Search className="absolute start-3.5 top-1/2 -translate-y-1/2 size-4 text-slate-400" />
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder={
-                  ar
-                    ? "ابحث باسم الدولة، النشاط، المنتج، أو عنوان الدراسة..."
-                    : "Search by country, product, activity, or study title..."
-                }
-                className="w-full rounded-2xl border border-slate-200 dark:border-white/15 bg-white dark:bg-slate-950/60 ps-10 pe-4 py-2.5 text-xs font-medium text-slate-900 dark:text-white focus:border-slate-500 focus:outline-none"
-              />
-            </div>
-
-            {/* Sector Quick Selector Pills */}
-            <div className="md:col-span-7 flex flex-wrap items-center gap-2">
-              <button
-                type="button"
-                onClick={() => setSelectedSector("all")}
-                className={cn(
-                  "rounded-full px-3.5 py-1.5 text-xs font-bold transition-all duration-300 cursor-pointer shadow-xs",
-                  selectedSector === "all"
-                    ? "bg-brand-green text-white hover:bg-brand-orange"
-                    : "border border-slate-200 dark:border-white/15 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-brand-orange hover:text-white hover:border-brand-orange",
-                )}
-              >
-                {ar ? "كافة القطاعات (4)" : "All Sectors (4)"}
-              </button>
-              {GLOBAL_MARKET_SECTORS.map((sec) => {
-                const count = activeStudies.filter((s) => s.sector === sec.id).length;
-                return (
-                  <Link
-                    key={sec.id}
-                    to="/global-markets/$sector"
-                    params={{ sector: sec.id }}
-                    className={cn(
-                      "rounded-full px-3.5 py-1.5 text-xs font-bold transition-all duration-300 cursor-pointer shadow-xs",
-                      selectedSector === sec.id
-                        ? "bg-brand-green text-white hover:bg-brand-orange"
-                        : "border border-slate-200 dark:border-white/15 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-brand-orange hover:text-white hover:border-brand-orange",
-                    )}
-                  >
-                    <span>{ar ? sec.nameAr : sec.nameEn}</span>
-                    <span className="ms-1.5 text-[10px] opacity-80">({count})</span>
-                  </Link>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 3. Sectors Container — 4 Core Strategic Sectors */}
+      {/* 2. Sectors Container — 4 Core Strategic Sectors */}
       <section className="site-container space-y-8">
-        {GLOBAL_MARKET_SECTORS.filter((sector) => selectedSector === "all" || sector.id === selectedSector).map(
-          (sector) => {
-            const Icon = getSectorIcon(sector.id);
-            const metrics = getSectorMetrics(sector.id, studies);
-            const statusCfg = STUDY_STATUS_LABELS[metrics.status];
+        {GLOBAL_MARKET_SECTORS.map((sector) => {
+          const Icon = getSectorIcon(sector.id);
+          const metrics = getSectorMetrics(sector.id, studies);
+          const statusCfg = STUDY_STATUS_LABELS[metrics.status];
+          const sectorStudies = activeStudies.filter((s) => s.sector === sector.id);
 
-            // Studies strictly belonging to this sector
-            const sectorStudies = activeStudies.filter((s) => s.sector === sector.id);
+          return (
+            <div
+              key={sector.id}
+              className="interactive-card glass-box-interactive group overflow-hidden rounded-3xl border border-slate-200/80 dark:border-white/15 bg-white/85 dark:bg-slate-900/75 shadow-xl backdrop-blur-2xl transition-all duration-300 hover:border-brand-green/50 hover:shadow-2xl"
+            >
+              {/* Sector Header Banner */}
+              <div className="relative h-60 sm:h-72 w-full overflow-hidden bg-slate-100 dark:bg-slate-800">
+                <img
+                  src={sector.image}
+                  alt={ar ? sector.nameAr : sector.nameEn}
+                  loading="lazy"
+                  className="size-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent" />
 
-            // Filter sector by search query if present
-            const q = searchQuery.trim().toLowerCase();
-            if (q) {
-              const matchesName =
-                sector.nameAr.toLowerCase().includes(q) ||
-                sector.nameEn.toLowerCase().includes(q) ||
-                (sector.shortDescAr && sector.shortDescAr.toLowerCase().includes(q)) ||
-                (sector.shortDescEn && sector.shortDescEn.toLowerCase().includes(q)) ||
-                sector.topicsAr.some((t) => t.toLowerCase().includes(q)) ||
-                sector.topicsEn.some((t) => t.toLowerCase().includes(q));
-
-              const matchesAnyStudy = sectorStudies.some((s) => {
-                const hay = [
-                  s.titleAr,
-                  s.titleEn,
-                  s.countryNameAr,
-                  s.countryNameEn,
-                  s.subRegionOrProjectAr || "",
-                  s.subRegionOrProjectEn || "",
-                  s.activityTypeAr,
-                  s.activityTypeEn,
-                  ...s.productTagsAr,
-                  ...s.productTagsEn,
-                ]
-                  .join(" ")
-                  .toLowerCase();
-                return hay.includes(q);
-              });
-
-              if (!matchesName && !matchesAnyStudy) return null;
-            }
-
-            return (
-              <div
-                key={sector.id}
-                className="interactive-card glass-box-interactive group overflow-hidden rounded-3xl border border-slate-200/80 dark:border-white/15 bg-white/85 dark:bg-slate-900/75 shadow-xl backdrop-blur-2xl transition-all duration-300 hover:border-brand-green/50 hover:shadow-2xl"
-              >
-                {/* Sector Header Banner */}
-                <div className="relative h-60 sm:h-72 w-full overflow-hidden bg-slate-100 dark:bg-slate-800">
-                  <img
-                    src={sector.image}
-                    alt={ar ? sector.nameAr : sector.nameEn}
-                    loading="lazy"
-                    className="size-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent" />
-
-                  {/* Bottom Title Area */}
-                  <div className="absolute bottom-5 start-5 end-5 flex flex-wrap items-end justify-between gap-4 text-white">
-                    <Link
-                      to="/global-markets/$sector"
-                      params={{ sector: sector.id }}
-                      className="flex items-center gap-3.5 text-start group/title hover:opacity-95 transition-opacity"
-                    >
-                      <div className="size-12 rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center shrink-0 shadow-sm group-hover/title:bg-brand-green/40 transition-colors">
-                        <Icon className="size-6 text-white" />
-                      </div>
-                      <div>
-                        <h2 className="font-head text-2xl sm:text-3xl font-extrabold !text-white leading-tight group-hover/title:text-brand-orange transition-colors">
-                          {ar ? sector.nameAr : sector.nameEn}
-                        </h2>
-                      </div>
-                    </Link>
-
-                    <Link
-                      to="/global-markets/$sector"
-                      params={{ sector: sector.id }}
-                      className="inline-flex items-center gap-2 rounded-2xl bg-brand-green px-6 py-3 text-xs sm:text-sm font-bold text-white hover:bg-brand-orange transition-all duration-300 shadow-md cursor-pointer"
-                    >
-                      <span>{ar ? "الدخول إلى دراسات القطاع" : "Access Sector Studies Page"}</span>
-                      {ar ? <ArrowLeft className="size-4" /> : <ArrowRight className="size-4" />}
-                    </Link>
-                  </div>
-                </div>
-
-                {/* Sector Overview & Metrics Bar */}
-                <div className="p-6 sm:p-8 space-y-6 text-start">
-                  <div className="grid gap-6 lg:grid-cols-12 lg:items-center">
-                    <div className="lg:col-span-8 space-y-3">
-                      {(ar ? sector.shortDescAr : sector.shortDescEn) && (
-                        <p className="text-xs sm:text-sm leading-relaxed text-slate-600 dark:text-slate-300">
-                          {ar ? sector.shortDescAr : sector.shortDescEn}
-                        </p>
-                      )}
-
-                      <div className="flex flex-wrap gap-1.5 pt-1">
-                        {(ar ? sector.topicsAr : sector.topicsEn).slice(0, 8).map((topic, idx) => (
-                          <span
-                            key={idx}
-                            className="rounded-lg border border-slate-200/80 dark:border-white/10 bg-slate-50 dark:bg-white/5 px-2.5 py-1 text-[11px] font-semibold text-slate-700 dark:text-slate-300"
-                          >
-                            {topic}
-                          </span>
-                        ))}
-                      </div>
+                {/* Bottom Title Area */}
+                <div className="absolute bottom-5 start-5 end-5 flex items-center justify-between text-white">
+                  <Link
+                    to="/global-markets/$sector"
+                    params={{ sector: sector.id }}
+                    className="flex items-center gap-3.5 text-start group/title hover:opacity-95 transition-opacity"
+                  >
+                    <div className="size-12 rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center shrink-0 shadow-sm group-hover/title:bg-brand-green/40 transition-colors">
+                      <Icon className="size-6 text-white" />
                     </div>
-
-                    <div className="lg:col-span-4 grid grid-cols-3 gap-2 text-[11px]">
-                      <div className="rounded-2xl bg-slate-50/90 dark:bg-white/5 p-3 border border-slate-200/60 dark:border-white/10 text-center">
-                        <span className="text-slate-500 dark:text-slate-400 block text-[10px]">
-                          {ar ? "الدراسات المنشورة" : "Published"}
-                        </span>
-                        <span className="font-head text-base font-extrabold text-slate-900 dark:text-white mt-0.5 block">
-                          {metrics.publishedCount > 0
-                            ? metrics.publishedCount
-                            : ar
-                              ? "لم يُنشر بعد"
-                              : "None yet"}
-                        </span>
-                      </div>
-
-                      <div className="rounded-2xl bg-slate-50/90 dark:bg-white/5 p-3 border border-slate-200/60 dark:border-white/10 text-center">
-                        <span className="text-slate-500 dark:text-slate-400 block text-[10px]">
-                          {ar ? "حالة القطاع" : "Status"}
-                        </span>
-                        <span className="font-bold text-slate-900 dark:text-white mt-1 block text-xs">
-                          {ar ? statusCfg.ar : statusCfg.en}
-                        </span>
-                      </div>
-
-                      <div className="rounded-2xl bg-slate-50/90 dark:bg-white/5 p-3 border border-slate-200/60 dark:border-white/10 text-center">
-                        <span className="text-slate-500 dark:text-slate-400 block text-[10px]">
-                          {ar ? "آخر تحديث" : "Updated"}
-                        </span>
-                        <span className="font-bold text-slate-900 dark:text-white mt-1 block text-xs">
-                          {metrics.lastUpdatedYear ?? (ar ? "قيد البحث" : "In Progress")}
-                        </span>
-                      </div>
+                    <div>
+                      <h2 className="font-head text-2xl sm:text-3xl font-extrabold !text-white leading-tight group-hover/title:text-brand-orange transition-colors">
+                        {ar ? sector.nameAr : sector.nameEn}
+                      </h2>
                     </div>
-                  </div>
-
-                  {/* Sector Footer Action */}
-                  <div className="pt-4 border-t border-slate-200/70 dark:border-white/10 flex flex-wrap items-center justify-between gap-3">
-                    <span className="text-xs text-slate-500 dark:text-slate-400">
-                      {ar
-                        ? `يتضمن هذا القطاع ${sectorStudies.length} دراسة سوقية متخصصة ومقارنات دولية موثقة.`
-                        : `This sector includes ${sectorStudies.length} specialized market studies and verified international intelligence.`}
-                    </span>
-                    <Link
-                      to="/global-markets/$sector"
-                      params={{ sector: sector.id }}
-                      className="inline-flex items-center justify-center gap-2 rounded-2xl bg-brand-green px-5 py-2.5 text-xs sm:text-sm font-bold text-white hover:bg-brand-orange transition-all duration-300 shadow-sm cursor-pointer"
-                    >
-                      <span>{ar ? "استعراض كافة دراسات وتحليلات القطاع" : "Explore All Sector Studies & Analysis"}</span>
-                      {ar ? <ArrowLeft className="size-4" /> : <ArrowRight className="size-4" />}
-                    </Link>
-                  </div>
+                  </Link>
                 </div>
               </div>
-            );
-          },
-        )}
+
+              {/* Sector Overview & Metrics Bar */}
+              <div className="p-6 sm:p-8 space-y-6 text-start">
+                <div className="grid gap-6 lg:grid-cols-12 lg:items-center">
+                  <div className="lg:col-span-8 space-y-3">
+                    {(ar ? sector.shortDescAr : sector.shortDescEn) && (
+                      <p className="text-xs sm:text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+                        {ar ? sector.shortDescAr : sector.shortDescEn}
+                      </p>
+                    )}
+
+                    <div className="flex flex-wrap gap-1.5 pt-1">
+                      {(ar ? sector.topicsAr : sector.topicsEn).slice(0, 8).map((topic, idx) => (
+                        <span
+                          key={idx}
+                          className="rounded-lg border border-slate-200/80 dark:border-white/10 bg-slate-50 dark:bg-white/5 px-2.5 py-1 text-[11px] font-semibold text-slate-700 dark:text-slate-300"
+                        >
+                          {topic}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="lg:col-span-4 grid grid-cols-3 gap-2 text-[11px]">
+                    <div className="rounded-2xl bg-slate-50/90 dark:bg-white/5 p-3 border border-slate-200/60 dark:border-white/10 flex flex-col items-center justify-center text-center">
+                      <span className="text-slate-500 dark:text-slate-400 block text-[10px] text-center w-full">
+                        {ar ? "الدراسات المنشورة" : "Published"}
+                      </span>
+                      <span className="font-head text-base font-extrabold text-slate-900 dark:text-white mt-1 block text-center w-full">
+                        {metrics.publishedCount > 0
+                          ? metrics.publishedCount
+                          : ar
+                            ? "لم يُنشر بعد"
+                            : "None yet"}
+                      </span>
+                    </div>
+
+                    <div className="rounded-2xl bg-slate-50/90 dark:bg-white/5 p-3 border border-slate-200/60 dark:border-white/10 flex flex-col items-center justify-center text-center">
+                      <span className="text-slate-500 dark:text-slate-400 block text-[10px] text-center w-full">
+                        {ar ? "حالة القطاع" : "Status"}
+                      </span>
+                      <span className="font-bold text-slate-900 dark:text-white mt-1 block text-xs text-center w-full">
+                        {ar ? statusCfg.ar : statusCfg.en}
+                      </span>
+                    </div>
+
+                    <div className="rounded-2xl bg-slate-50/90 dark:bg-white/5 p-3 border border-slate-200/60 dark:border-white/10 flex flex-col items-center justify-center text-center">
+                      <span className="text-slate-500 dark:text-slate-400 block text-[10px] text-center w-full">
+                        {ar ? "آخر تحديث" : "Updated"}
+                      </span>
+                      <span className="font-bold text-slate-900 dark:text-white mt-1 block text-xs text-center w-full">
+                        {metrics.lastUpdatedYear ?? (ar ? "قيد البحث" : "In Progress")}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Sector Footer Action */}
+                <div className="pt-4 border-t border-slate-200/70 dark:border-white/10 flex flex-wrap items-center justify-between gap-3">
+                  <span className="text-xs text-slate-500 dark:text-slate-400">
+                    {ar
+                      ? `يتضمن هذا القطاع ${sectorStudies.length} دراسة سوقية متخصصة ومقارنات دولية موثقة.`
+                      : `This sector includes ${sectorStudies.length} specialized market studies and verified international intelligence.`}
+                  </span>
+                  <Link
+                    to="/global-markets/$sector"
+                    params={{ sector: sector.id }}
+                    className="inline-flex items-center justify-center gap-2 rounded-2xl bg-brand-green px-5 py-2.5 text-xs sm:text-sm font-bold text-white hover:bg-brand-orange transition-all duration-300 shadow-sm cursor-pointer"
+                  >
+                    <span>{ar ? "استعراض كافة دراسات وتحليلات القطاع" : "Explore All Sector Studies & Analysis"}</span>
+                    {ar ? <ArrowLeft className="size-4" /> : <ArrowRight className="size-4" />}
+                  </Link>
+                </div>
+              </div>
+            </div>
+          );
+        })}
       </section>
     </div>
   );
