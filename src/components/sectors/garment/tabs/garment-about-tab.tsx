@@ -70,7 +70,7 @@ export function GarmentAboutTab() {
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
               <span>{ar ? "عن قطاع تصنيع الملابس الجاهزة" : "About Ready-Made Garments"}</span>
             </div>
-            <h2 className="font-head text-xl sm:text-3xl font-extrabold text-foreground mt-2">
+            <h2 className="font-head text-xl sm:text-3xl font-extrabold text-foreground mt-2 text-center mx-auto w-full">
               {ar ? whoWeAre.headingAr : whoWeAre.heading}
             </h2>
             <div className="section-intro mx-auto mt-6 leading-relaxed max-w-3xl space-y-4 text-start">
