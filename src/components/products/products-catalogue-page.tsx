@@ -226,7 +226,7 @@ export function ProductsCataloguePage() {
         key: "juices",
         titleAr: "بودرة العصائر الطبيعية",
         titleEn: "Natural Juice Powders",
-        subtitleAr: "عصائر حمضيات وفواكه طبيعية مجففة بالرذاذ سريعة الذوبان للصناعات الغذائية والمشروبات.",
+        subtitleAr: "عصائر حمضيات وفواكه طبيعية مجففة سريعة الذوبان",
         subtitleEn: "Instant cold-soluble spray-dried fruit & citrus powders for beverages and processing.",
         badgeAr: "بودرة العصائر",
         badgeEn: "Juice Powders",
