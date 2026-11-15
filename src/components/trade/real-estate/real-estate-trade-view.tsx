@@ -470,83 +470,13 @@ export function RealEstateTradeView({ ar = true, hideHero = false }: RealEstateT
           </div>
         </section>
 
-        {/* Section 7: Strategic Alliances with Global Developers */}
-        <section id="re-alliances" className="scroll-mt-32 space-y-6">
-          <div className="interactive-card glass-box-interactive w-full rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl backdrop-blur-2xl border border-border/80 bg-background/85">
-            <div>
-              <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border/80 bg-secondary/85 px-4 py-1.5 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
-                <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-                <span>{ar ? "القسم السابع: كبار المطورين والتحالفات" : "Section 7: Premier Developers & Alliances"}</span>
-              </div>
-              <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-1 leading-snug">
-                {ar ? "التحالفات مع كبرى شركات التطوير العالمية" : "Strategic Alliances with Global Developers"}
-              </h2>
-              <p className="text-xs sm:text-sm text-muted-foreground mt-2 leading-relaxed max-w-4xl">
-                {ar
-                  ? "علاقات عمل وثيقة وشراكات تسويق وتوجيه استثماري مع كبرى المجموعات العقارية الرائدة إقليميًا وعالميًا."
-                  : "Strategic collaborative advisory, marketing alliances, and investor placement with premier master developers."}
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 pt-2">
-              <div className="group rounded-2xl border border-border/80 bg-background/80 p-6 space-y-3 shadow-xs transition-all duration-300 hover:border-brand-green/60 hover:shadow-md hover:-translate-y-0.5">
-                <div className="flex items-center justify-between">
-                  <h4 className="font-bold text-sm text-foreground group-hover:text-brand-green transition-colors">
-                    Emaar Properties (إعمار العقارية)
-                  </h4>
-                  <span className="rounded-full border border-brand-green/30 bg-brand-green/10 px-3 py-0.5 text-xs font-bold text-brand-green">
-                    Global Flagship
-                  </span>
-                </div>
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  {ar
-                    ? "تسويق استثماري وتوجيه المشترين الدوليين للمشروعات الفاخرة والمجتمعات المتكاملة في مصر ودبي."
-                    : "Investor positioning across luxury integrated master communities in Egypt and the UAE."}
-                </p>
-              </div>
-
-              <div className="group rounded-2xl border border-border/80 bg-background/80 p-6 space-y-3 shadow-xs transition-all duration-300 hover:border-brand-orange/60 hover:shadow-md hover:-translate-y-0.5">
-                <div className="flex items-center justify-between">
-                  <h4 className="font-bold text-sm text-foreground group-hover:text-brand-orange transition-colors">
-                    Azizi Developments (عزيزي للتطوير)
-                  </h4>
-                  <span className="rounded-full border border-brand-orange/30 bg-brand-orange/10 px-3 py-0.5 text-xs font-bold text-brand-orange">
-                    Regional Leader
-                  </span>
-                </div>
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  {ar
-                    ? "شراكة تسويقية للمشروعات السكنية والاستثمارية عالية العائد للمستثمرين الباحثين عن دخل دولي منتظم."
-                    : "High-yield residential and commercial investment opportunities for overseas income portfolios."}
-                </p>
-              </div>
-
-              <div className="group rounded-2xl border border-border/80 bg-background/80 p-6 space-y-3 shadow-xs transition-all duration-300 hover:border-blue-500/60 hover:shadow-md hover:-translate-y-0.5">
-                <div className="flex items-center justify-between">
-                  <h4 className="font-bold text-sm text-foreground group-hover:text-blue-500 transition-colors">
-                    Binghatti Developers (بن غاطي)
-                  </h4>
-                  <span className="rounded-full border border-blue-500/30 bg-blue-500/10 px-3 py-0.5 text-xs font-bold text-blue-500">
-                    Architectural Icons
-                  </span>
-                </div>
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  {ar
-                    ? "عرض الأبراج الأيقونية والشراكات الفاخرة في دبي للمستثمرين الاستراتيجيين وكبار العملاء."
-                    : "Architectural branded residences and luxury skyscrapers in Dubai for strategic high-net-worth investors."}
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Section 8: Diplomatic & High-Level Partnerships */}
+        {/* Section 7: Diplomatic & High-Level Partnerships */}
         <section id="re-diplomatic" className="scroll-mt-32 space-y-6">
           <div className="interactive-card glass-box-interactive w-full rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl backdrop-blur-2xl border border-border/80 bg-background/85">
             <div>
               <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border/80 bg-secondary/85 px-4 py-1.5 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
                 <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-                <span>{ar ? "القسم الثامن: شراكات دبلوماسية ووفود رسمية" : "Section 8: Diplomatic Partnerships"}</span>
+                <span>{ar ? "القسم السابع: شراكات دبلوماسية ووفود رسمية" : "Section 7: Diplomatic Partnerships"}</span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-1 leading-snug">
                 {ar ? "شراكات دبلوماسية ومباحثات استثمارية رفيعة المستوى" : "Diplomatic Delegations & Strategic Alliances"}
@@ -581,13 +511,13 @@ export function RealEstateTradeView({ ar = true, hideHero = false }: RealEstateT
           </div>
         </section>
 
-        {/* Section 9: Exhibitions & Industry Events */}
+        {/* Section 8: Exhibitions & Industry Events */}
         <section id="re-events" className="scroll-mt-32 space-y-6">
           <div className="interactive-card glass-box-interactive w-full rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl backdrop-blur-2xl border border-border/80 bg-background/85">
             <div>
               <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border/80 bg-secondary/85 px-4 py-1.5 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
                 <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-                <span>{ar ? "القسم التاسع: المعارض والمؤتمرات" : "Section 9: Industry Events & Exhibitions"}</span>
+                <span>{ar ? "القسم الثامن: المعارض والمؤتمرات" : "Section 8: Industry Events & Exhibitions"}</span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-1 leading-snug">
                 {ar ? "المشاركة في كبرى المحافل والمعارض العقارية الدولية" : "International Real Estate Exhibitions & Summits"}
