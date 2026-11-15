@@ -177,7 +177,7 @@ export function TradePage({ ar = true }: TradePageProps) {
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-b border-border/60 pb-5 mb-6">
             <div className="inline-flex items-center gap-2 rounded-full border border-border/80 bg-secondary/85 px-4 py-2 text-xs sm:text-sm font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
               <span className="size-2 rounded-full bg-brand-orange animate-pulse shrink-0" />
-              <span className="font-head">{ar ? "بوابة الفرص العالمية | اختر القطاع:" : "Global Opportunities | Select Sector:"}</span>
+              <span className="font-head">{ar ? "بوابة الفرص العالمية" : "Global Opportunities"}</span>
             </div>
             <p className="text-xs text-muted-foreground font-medium">
               {ar ? "انقر على أي قطاع لعرض البيانات والمؤشرات المعتمدة أدناه" : "Click any sector to view verified indicators and database below"}
