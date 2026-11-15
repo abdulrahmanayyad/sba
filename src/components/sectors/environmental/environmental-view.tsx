@@ -613,7 +613,7 @@ function EnvironmentalAboutView({ ar }: { ar: boolean }) {
 
                 <Button asChild size="lg" className="rounded-full bg-brand-green text-white hover:bg-brand-orange shadow-md transition-all duration-300">
                   <Link to="/sectors/$sector" params={{ sector: "environmental" }} search={{ tab: "services" }}>
-                    <span>{ar ? "استعراض كافة الخدمات (19 خدمة)" : "Browse All 19 Services"}</span>
+                    <span>{ar ? "استعراض كافة الخدمات" : "Browse All Services"}</span>
                   </Link>
                 </Button>
               </div>
