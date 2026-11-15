@@ -21,11 +21,30 @@ const COMPARATIVE_SLUG_MAP: Record<
     isGccReport: true,
     titleAr: "التقرير المقارن لأسواق دول مجلس التعاون الخليجي",
   },
+  "other-arab-comparative-report": {
+    initialSubRegion: "other_arab",
+    titleAr: "التقرير المقارن لأسواق الدول العربية الأخرى",
+  },
+  "europe-comparative-report": {
+    initialSubRegion: "europe",
+    titleAr: "التقرير المقارن للأسواق الأوروبية",
+  },
+  "africa-comparative-report": {
+    initialSubRegion: "africa",
+    titleAr: "التقرير المقارن لأسواق إفريقيا",
+  },
+  "north-america-comparative-report": {
+    initialSubRegion: "north_america",
+    titleAr: "التقرير المقارن لأسواق أمريكا الشمالية",
+  },
+  "south-central-america-comparative-report": {
+    initialSubRegion: "south_central_america",
+    titleAr: "التقرير المقارن لأسواق أمريكا الجنوبية والوسطى",
+  },
   "region-gcc": { initialSubRegion: "gcc", titleAr: "مقارنة أسواق دول الخليج" },
   "region-levant": { initialSubRegion: "levant", titleAr: "مقارنة أسواق المشرق العربي" },
   "region-north-africa": { initialSubRegion: "north_africa", titleAr: "مقارنة أسواق شمال أفريقيا" },
   "region-africa": { initialSubRegion: "africa", titleAr: "مقارنة الأسواق الأفريقية" },
-  "africa-comparative-report": { initialSubRegion: "africa", titleAr: "التقرير المقارن لأسواق إفريقيا" },
   "region-europe": { initialSubRegion: "europe", titleAr: "مقارنة الأسواق الأوروبية" },
   "region-americas": { initialSubRegion: "americas", titleAr: "مقارنة أسواق الأمريكتين" },
   "region-asia-pacific": { initialSubRegion: "asia_pacific", titleAr: "مقارنة أسواق آسيا وأستراليا" },

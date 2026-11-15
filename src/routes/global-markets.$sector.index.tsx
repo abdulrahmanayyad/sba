@@ -1,4 +1,4 @@
-import { createFileRoute, notFound } from "@tanstack/react-router";
+import { createFileRoute, notFound, redirect } from "@tanstack/react-router";
 import { GlobalMarketsSectorPage } from "@/components/global-markets/global-markets-sector-page";
 import { useLanguage } from "@/i18n/language-context";
 import {
@@ -8,6 +8,17 @@ import {
 
 export const Route = createFileRoute("/global-markets/$sector/")({
   loader: ({ params }) => {
+    if (params.sector === "compare") {
+      throw redirect({
+        to: "/global-markets/$sector/$slug",
+        params: { sector: "garment", slug: "compare" },
+      });
+    }
+    if (params.sector === "manage") {
+      throw redirect({
+        to: "/global-markets/manage",
+      });
+    }
     const sector = GLOBAL_MARKET_SECTORS.find((s) => s.id === params.sector);
     if (!sector) {
       throw notFound();

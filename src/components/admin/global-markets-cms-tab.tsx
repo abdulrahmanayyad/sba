@@ -108,8 +108,8 @@ export function GlobalMarketsCmsTab({ ar = true }: GlobalMarketsCmsTabProps) {
 
   const openEditor = (study: GlobalMarketStudy) => {
     setEditingStudy(JSON.parse(JSON.stringify(study)));
-    setProductTagsArText(study.productTagsAr.join(", "));
-    setProductTagsEnText(study.productTagsEn.join(", "));
+    setProductTagsArText((study.productTagsAr || []).join(", "));
+    setProductTagsEnText((study.productTagsEn || []).join(", "));
     setActiveSectionKey("executiveSummary");
   };
 
@@ -356,7 +356,7 @@ export function GlobalMarketsCmsTab({ ar = true }: GlobalMarketsCmsTabProps) {
             <Button
               type="button"
               onClick={() => openEditor(createEmptyStudy())}
-              className="rounded-full !bg-slate-900 !text-white hover:!bg-brand-green text-xs font-bold gap-1.5"
+              className="rounded-full !bg-brand-green hover:!bg-brand-orange !text-white text-xs font-bold gap-1.5 transition-colors cursor-pointer shadow-sm"
             >
               <Plus className="size-3.5" />
               <span>{ar ? "إضافة دراسة جديدة" : "New Study"}</span>
@@ -439,19 +439,26 @@ export function GlobalMarketsCmsTab({ ar = true }: GlobalMarketsCmsTabProps) {
               </thead>
               <tbody className="divide-y divide-slate-200/70 dark:divide-white/10">
                 {filteredStudies.map((study) => {
-                  const st = STUDY_STATUS_LABELS[study.status];
-                  const appSt = APPROVAL_STATUS_LABELS[study.approvalStatus];
+                  const st = (study.status && STUDY_STATUS_LABELS[study.status]) || STUDY_STATUS_LABELS.completed;
+                  const appSt = (study.approvalStatus && APPROVAL_STATUS_LABELS[study.approvalStatus]) || APPROVAL_STATUS_LABELS.approved;
                   const sec = GLOBAL_MARKET_SECTORS.find((s) => s.id === study.sector);
+                  const titleAr = study.titleAr || study.countryNameAr || "دراسة سوقية";
+                  const titleEn = study.titleEn || study.countryNameEn || "Market Study";
+                  const countryAr = study.countryNameAr || "—";
+                  const countryEn = study.countryNameEn || "—";
+                  const version = study.version || "1.0";
+                  const updated = study.lastUpdated || study.issueDate || "2026";
+                  const sectorId = study.sector || "garment";
                   return (
                     <tr key={study.id} className="hover:bg-slate-50/80 dark:hover:bg-white/5">
                       <td className="py-3 px-3">
-                        <div className="font-bold text-slate-900 dark:text-white">{ar ? study.titleAr : study.titleEn}</div>
+                        <div className="font-bold text-slate-900 dark:text-white">{ar ? titleAr : titleEn}</div>
                         <div className="text-[11px] text-slate-500">
-                          {ar ? study.countryNameAr : study.countryNameEn} · v{study.version}
+                          {ar ? countryAr : countryEn} · v{version}
                         </div>
                       </td>
                       <td className="py-3 px-3 font-semibold text-slate-700 dark:text-slate-200">
-                        {sec ? (ar ? sec.nameAr : sec.nameEn) : study.sector}
+                        {sec ? (ar ? sec.nameAr : sec.nameEn) : sectorId}
                       </td>
                       <td className="py-3 px-3">
                         <span className={cn("rounded-full border px-2.5 py-0.5 text-[10px] font-bold", st.badgeClass)}>
@@ -464,13 +471,13 @@ export function GlobalMarketsCmsTab({ ar = true }: GlobalMarketsCmsTabProps) {
                         </span>
                       </td>
                       <td className="py-3 px-3 font-mono text-slate-600 dark:text-slate-300">
-                        {study.lastUpdated}
+                        {updated}
                       </td>
                       <td className="py-3 px-3">
                         <div className="flex items-center justify-end gap-1.5">
                           <Link
                             to="/global-markets/$sector/$slug"
-                            params={{ sector: study.sector, slug: study.slug }}
+                            params={{ sector: sectorId, slug: study.slug }}
                             className="rounded-lg border border-slate-200 p-1.5 text-slate-700 hover:bg-slate-100"
                             title={ar ? "معاينة" : "Preview"}
                           >

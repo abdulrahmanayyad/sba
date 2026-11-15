@@ -209,7 +209,8 @@ export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
 
                 <div className="pt-5 mt-4 border-t border-slate-200/70 dark:border-white/10">
                   <Link
-                    to="/global-markets/compare"
+                    to="/global-markets/$sector/$slug"
+                    params={{ sector: "garment", slug: "compare" }}
                     className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-brand-green px-5 py-3 text-xs sm:text-sm font-bold text-white hover:bg-brand-orange transition-all duration-300 shadow-sm cursor-pointer"
                   >
                     <span>{ar ? "فتح لوحة مقارنة الأسواق الدولية" : "Open Comparative Dashboard"}</span>

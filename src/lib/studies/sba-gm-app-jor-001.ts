@@ -82,7 +82,7 @@ export const STUDY_JOR_APPAREL_001: GlobalMarketStudy = {
   titleEn: "Jordan Apparel & Textiles Market Intelligence Report — Hashemite Kingdom of Jordan",
   subtitleAr: "تحليل شامل لواردات الملابس (474.9M$)، سلاسل التوريد، الصناعة التصديرية (2.4B$)، وفرص التوريد B2B لمجموعة سامي بن عياد",
   subtitleEn: "Comprehensive Analysis of Apparel Imports ($474.9M), Sourcing Ecosystem, Export Industry ($2.4B), and B2B Sourcing Opportunities for Sami Bin Ayyad Group",
-  status: "published",
+  status: "completed",
   approvalStatus: "approved",
   issueDate: "2026-11-15",
   lastUpdated: "2026-11-15",

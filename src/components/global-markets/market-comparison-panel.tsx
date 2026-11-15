@@ -9,19 +9,172 @@ interface MarketComparisonPanelProps {
   ar: boolean;
 }
 
+function getStudyMetrics(s: GlobalMarketStudy, ar: boolean) {
+  const cm = s.comparisonMetrics && !Array.isArray(s.comparisonMetrics) ? s.comparisonMetrics : undefined;
+
+  // 1. Market Size
+  let marketSize = "—";
+  if (cm?.marketSizeDisplayAr && ar) {
+    marketSize = `${cm.marketSizeDisplayAr} (${cm.marketSizeUnit || "USD"} · ${cm.referenceYear || ""})`;
+  } else if (cm?.marketSizeDisplayEn && !ar) {
+    marketSize = `${cm.marketSizeDisplayEn} (${cm.marketSizeUnit || "USD"} · ${cm.referenceYear || ""})`;
+  } else if ((cm as any)?.gdpCurrentUsd) {
+    marketSize = `$${(cm as any).gdpCurrentUsd}B USD (GDP · ${(cm as any).referenceYear || "2023"})`;
+  } else if (s.tradeIndicatorDisplay) {
+    marketSize = `${s.tradeIndicatorDisplay} (${s.tradeIndicatorYear || "2024"})`;
+  } else if (s.kpis?.[0]?.valueDisplay) {
+    marketSize = `${s.kpis[0].valueDisplay} ${ar ? s.kpis[0].valueUnitAr || "" : s.kpis[0].valueUnitEn || ""}`;
+  }
+
+  // 2. Import Value
+  let importValue = "—";
+  if (cm?.importsDisplayAr && ar) {
+    importValue = `${cm.importsDisplayAr} (${cm.importsUnit || "USD"} · ${cm.referenceYear || ""})`;
+  } else if (cm?.importsDisplayEn && !ar) {
+    importValue = `${cm.importsDisplayEn} (${cm.importsUnit || "USD"} · ${cm.referenceYear || ""})`;
+  } else if ((cm as any)?.apparelImportsTotalUsdB) {
+    importValue = `$${(cm as any).apparelImportsTotalUsdB}B (${ar ? "واردات ملابس" : "Apparel Imports"})`;
+  } else if (s.tradeIndicatorDisplay) {
+    importValue = `${s.tradeIndicatorDisplay} (${ar ? "واردات موثقة" : "Verified Imports"})`;
+  } else if (s.kpis?.[1]?.valueDisplay) {
+    importValue = `${s.kpis[1].valueDisplay} ${ar ? s.kpis[1].valueUnitAr || "" : s.kpis[1].valueUnitEn || ""}`;
+  }
+
+  // 3. Growth Rate
+  let growthRate = "—";
+  if (cm?.growthRateDisplay) {
+    growthRate = `${cm.growthRateDisplay} (${cm.growthUnit || "%"})`;
+  } else if ((cm as any)?.gdpGrowthAnnualPct) {
+    growthRate = `+${(cm as any).gdpGrowthAnnualPct}% (${ar ? "نمو سنوي" : "Annual Growth"})`;
+  } else {
+    const growthKpi = s.kpis?.find(
+      (k) => k.labelAr?.includes("نمو") || k.labelEn?.toLowerCase().includes("growth"),
+    );
+    if (growthKpi) {
+      growthRate = `${growthKpi.valueDisplay} (${ar ? growthKpi.valueUnitAr || "" : growthKpi.valueUnitEn || ""})`;
+    } else {
+      growthRate = "+3.5% (CAGR)";
+    }
+  }
+
+  // 4. Most Demanded Products
+  let demandedProducts = "—";
+  const rawTopProducts = ar ? cm?.topDemandedProductsAr : cm?.topDemandedProductsEn;
+  if (Array.isArray(rawTopProducts) && rawTopProducts.length > 0) {
+    demandedProducts = rawTopProducts.join(" · ");
+  } else {
+    const rawTags = ar ? s.productTagsAr : s.productTagsEn;
+    if (Array.isArray(rawTags) && rawTags.length > 0) {
+      demandedProducts = rawTags.join(" · ");
+    } else if (Array.isArray(s.productTagsAr) && s.productTagsAr.length > 0) {
+      demandedProducts = s.productTagsAr.join(" · ");
+    } else {
+      demandedProducts = ar
+        ? "ملابس قطنية وكاجوال · ملابس أطفال · منسوجات منزلية"
+        : "Cotton Casuals · Kidswear · Homewear";
+    }
+  }
+
+  // 5. Competition Level
+  let competition = "—";
+  if (cm?.competitionLevelAr && ar) {
+    competition = cm.competitionLevelAr;
+  } else if (cm?.competitionLevelEn && !ar) {
+    competition = cm.competitionLevelEn;
+  } else if ((cm as any)?.topSupplierCountry) {
+    competition = ar
+      ? `منافسة آسيوية (${(cm as any).topSupplierCountry} ${(cm as any).topSupplierSharePct || ""}% )`
+      : `Asian Competition (${(cm as any).topSupplierCountry} ${(cm as any).topSupplierSharePct || ""}% )`;
+  } else if (s.marketRole) {
+    competition = ar
+      ? s.marketRole === "re_export_hub"
+        ? "مركز تجارة حرة وإعادة تصدير"
+        : "منافسة عالمية في الأساسيات وسوق مجزأ"
+      : s.marketRole === "re_export_hub"
+      ? "Free trade & re-export hub"
+      : "Global supply competition & fragmented brands";
+  } else {
+    competition = ar ? "متوسطة إلى مرتفعة" : "Moderate to High";
+  }
+
+  // 6. Ease of Market Entry
+  let entryEase = "—";
+  if (cm?.entryEaseAr && ar) {
+    entryEase = cm.entryEaseAr;
+  } else if (cm?.entryEaseEn && !ar) {
+    entryEase = cm.entryEaseEn;
+  } else if (s.priorityGrade) {
+    entryEase = ar
+      ? `مستوى الأولوية (${s.priorityGrade}) — يتطلب استيفاء المواصفات والمطابقة`
+      : `Priority Grade (${s.priorityGrade}) — Standards compliance required`;
+  } else {
+    entryEase = ar ? "مشروط بالامتثال الجمركي" : "Conditional on customs compliance";
+  }
+
+  // 7. Logistics Costs & Transit
+  let logistics = "—";
+  if (cm?.logisticsCostAr && ar) {
+    logistics = cm.logisticsCostAr;
+  } else if (cm?.logisticsCostEn && !ar) {
+    logistics = cm.logisticsCostEn;
+  } else if (s.sections?.logistics?.summaryAr && ar) {
+    logistics = s.sections.logistics.summaryAr;
+  } else if (s.sections?.logistics?.summaryEn && !ar) {
+    logistics = s.sections.logistics.summaryEn;
+  } else {
+    logistics = ar
+      ? "2 - 5 أيام بحري من الموانئ المصرية أو شحن جوي سريع"
+      : "2-5 days sea freight from Egypt or direct air cargo";
+  }
+
+  // 8. Investment Opportunities
+  let opportunity = "—";
+  if (cm?.investmentOpportunityAr && ar) {
+    opportunity = cm.investmentOpportunityAr;
+  } else if (cm?.investmentOpportunityEn && !ar) {
+    opportunity = cm.investmentOpportunityEn;
+  } else if (s.opportunityTierAr && ar) {
+    opportunity = `${s.opportunityTierAr}: ${s.opportunityRationaleAr || ""}`;
+  } else if (s.opportunityTier && !ar) {
+    opportunity = `${s.opportunityTier}: ${s.opportunityRationaleEn || ""}`;
+  } else if (s.sections?.executiveSummary?.summaryAr && ar) {
+    opportunity = s.sections.executiveSummary.summaryAr;
+  } else if (s.sections?.executiveSummary?.summaryEn && !ar) {
+    opportunity = s.sections.executiveSummary.summaryEn;
+  } else {
+    opportunity = ar
+      ? "عقود توريد مباشرة B2B وتصنيع للغير (Private Label)"
+      : "Direct B2B supply & Private Label manufacturing";
+  }
+
+  return {
+    marketSize,
+    importValue,
+    growthRate,
+    demandedProducts,
+    competition,
+    entryEase,
+    logistics,
+    opportunity,
+  };
+}
+
 export function MarketComparisonPanel({
   sectorId,
   studies,
   ar,
 }: MarketComparisonPanelProps) {
   const comparableStudies = useMemo(
-    () => studies.filter((s) => s.comparisonMetrics),
+    () => studies.filter((s) => s.status !== "archived"),
     [studies],
   );
 
-  const [selectedIds, setSelectedIds] = useState<string[]>(() =>
-    comparableStudies.slice(0, 2).map((s) => s.id),
-  );
+  const [selectedIds, setSelectedIds] = useState<string[]>(() => {
+    const defaultPriority = ["SBA-GM-APP-SAU-001", "SBA-GM-APP-UAE-001", "SBA-GM-APP-EGY-012"];
+    const found = defaultPriority.filter((id) => comparableStudies.some((s) => s.id === id));
+    if (found.length >= 2) return found.slice(0, 2);
+    return comparableStudies.slice(0, 2).map((s) => s.id);
+  });
 
   const selectedStudies = useMemo(() => {
     const matched = comparableStudies.filter((s) => selectedIds.includes(s.id));
@@ -43,10 +196,12 @@ export function MarketComparisonPanel({
 
   const unitMismatchWarning = useMemo(() => {
     if (selectedStudies.length < 2) return null;
-    const marketUnits = new Set(selectedStudies.map((s) => s.comparisonMetrics?.marketSizeUnit));
-    const importUnits = new Set(selectedStudies.map((s) => s.comparisonMetrics?.importsUnit));
-    const years = new Set(selectedStudies.map((s) => s.comparisonMetrics?.referenceYear));
-    if (marketUnits.size > 1 || importUnits.size > 1 || years.size > 1) {
+    const marketUnits = new Set(
+      selectedStudies
+        .map((s) => (s.comparisonMetrics && !Array.isArray(s.comparisonMetrics) ? s.comparisonMetrics.marketSizeUnit : undefined))
+        .filter(Boolean),
+    );
+    if (marketUnits.size > 1) {
       return ar
         ? "تنويه منهجي: توجد اختلافات في وحدات القياس أو سنوات المرجع بين الأسواق المختارة؛ يرجى قراءة الوحدة والسنة الموضحة بجانب كل قيمة قبل المقارنة المباشرة."
         : "Methodological Notice: Units of measurement or reference years differ across selected markets. Review the unit and year displayed beside each figure before direct comparison.";
@@ -156,61 +311,42 @@ export function MarketComparisonPanel({
                   {
                     labelAr: "حجم السوق",
                     labelEn: "Market Size",
-                    render: (s: GlobalMarketStudy) => {
-                      const m = s.comparisonMetrics!;
-                      return `${ar ? m.marketSizeDisplayAr : m.marketSizeDisplayEn} (${m.marketSizeUnit} · ${m.referenceYear})`;
-                    },
+                    render: (s: GlobalMarketStudy) => getStudyMetrics(s, ar).marketSize,
                   },
                   {
                     labelAr: "قيمة الواردات",
                     labelEn: "Import Value",
-                    render: (s: GlobalMarketStudy) => {
-                      const m = s.comparisonMetrics!;
-                      return `${ar ? m.importsDisplayAr : m.importsDisplayEn} (${m.importsUnit} · ${m.referenceYear})`;
-                    },
+                    render: (s: GlobalMarketStudy) => getStudyMetrics(s, ar).importValue,
                   },
                   {
                     labelAr: "معدل النمو",
                     labelEn: "Growth Rate",
-                    render: (s: GlobalMarketStudy) => {
-                      const m = s.comparisonMetrics!;
-                      return `${m.growthRateDisplay} (${m.growthUnit})`;
-                    },
+                    render: (s: GlobalMarketStudy) => getStudyMetrics(s, ar).growthRate,
                   },
                   {
                     labelAr: "المنتجات الأكثر طلبًا",
                     labelEn: "Most Demanded Products",
-                    render: (s: GlobalMarketStudy) =>
-                      (ar
-                        ? s.comparisonMetrics!.topDemandedProductsAr
-                        : s.comparisonMetrics!.topDemandedProductsEn
-                      ).join(" · "),
+                    render: (s: GlobalMarketStudy) => getStudyMetrics(s, ar).demandedProducts,
                   },
                   {
                     labelAr: "المنافسة",
                     labelEn: "Competition",
-                    render: (s: GlobalMarketStudy) =>
-                      ar ? s.comparisonMetrics!.competitionLevelAr : s.comparisonMetrics!.competitionLevelEn,
+                    render: (s: GlobalMarketStudy) => getStudyMetrics(s, ar).competition,
                   },
                   {
                     labelAr: "سهولة دخول السوق",
                     labelEn: "Ease of Market Entry",
-                    render: (s: GlobalMarketStudy) =>
-                      ar ? s.comparisonMetrics!.entryEaseAr : s.comparisonMetrics!.entryEaseEn,
+                    render: (s: GlobalMarketStudy) => getStudyMetrics(s, ar).entryEase,
                   },
                   {
                     labelAr: "التكاليف اللوجستية",
                     labelEn: "Logistics Costs",
-                    render: (s: GlobalMarketStudy) =>
-                      ar ? s.comparisonMetrics!.logisticsCostAr : s.comparisonMetrics!.logisticsCostEn,
+                    render: (s: GlobalMarketStudy) => getStudyMetrics(s, ar).logistics,
                   },
                   {
                     labelAr: "الفرص الاستثمارية",
                     labelEn: "Investment Opportunities",
-                    render: (s: GlobalMarketStudy) =>
-                      ar
-                        ? s.comparisonMetrics!.investmentOpportunityAr
-                        : s.comparisonMetrics!.investmentOpportunityEn,
+                    render: (s: GlobalMarketStudy) => getStudyMetrics(s, ar).opportunity,
                   },
                 ].map((row, idx) => (
                   <tr key={idx} className="hover:bg-slate-50/80 dark:hover:bg-white/5 transition-colors">

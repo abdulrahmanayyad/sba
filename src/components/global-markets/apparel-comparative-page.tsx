@@ -114,11 +114,12 @@ export function ApparelComparativePage({
       if (basisFilter !== "all" && s.dataBasis !== basisFilter) return false;
       if (q) {
         const hay = [
-          s.countryNameAr,
-          s.countryNameEn,
-          ...s.productTagsAr,
-          ...s.productTagsEn,
-          s.sections.potentialBuyers?.summaryEn || "",
+          s.countryNameAr || "",
+          s.countryNameEn || "",
+          ...(s.productTagsAr || []),
+          ...(s.productTagsEn || []),
+          s.sections?.potentialBuyers?.summaryEn || "",
+          s.sections?.potentialBuyers?.summaryAr || "",
         ]
           .join(" ")
           .toLowerCase();
@@ -569,14 +570,14 @@ export function ApparelComparativePage({
               <div className="rounded-2xl border border-slate-200/80 dark:border-white/10 bg-slate-50/80 dark:bg-white/5 p-4 space-y-1.5 text-xs">
                 <div className="font-extrabold text-slate-900 dark:text-white">
                   {ar
-                    ? `السياق المصري العام (2024): $${APPAREL_EGYPT_RMG_CONTEXT.exports2024UsdB} مليار (+${APPAREL_EGYPT_RMG_CONTEXT.growthPct}%)`
-                    : `Egypt Sector Exports Context (2024): $${APPAREL_EGYPT_RMG_CONTEXT.exports2024UsdB}B (+${APPAREL_EGYPT_RMG_CONTEXT.growthPct}%)`}
+                    ? `السياق المصري العام (2024): $${APPAREL_EGYPT_RMG_CONTEXT.totalExports2024UsdB} مليار (+${APPAREL_EGYPT_RMG_CONTEXT.growthVs2023Pct}%)`
+                    : `Egypt Sector Exports Context (2024): $${APPAREL_EGYPT_RMG_CONTEXT.totalExports2024UsdB}B (+${APPAREL_EGYPT_RMG_CONTEXT.growthVs2023Pct}%)`}
                 </div>
                 <p className="text-[11px] text-slate-600 dark:text-slate-300 leading-relaxed">
                   {ar ? APPAREL_EGYPT_RMG_CONTEXT.noteAr : APPAREL_EGYPT_RMG_CONTEXT.noteEn}
                 </p>
                 <a
-                  href={APPAREL_EGYPT_RMG_CONTEXT.sourceUrl}
+                  href={(APPAREL_EGYPT_RMG_CONTEXT as any).sourceUrl || "https://www.sis.gov.eg"}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 text-[11px] font-bold text-brand-green hover:underline"
@@ -675,9 +676,9 @@ export function ApparelComparativePage({
                         {ar ? s.dataCompletenessAr : s.dataCompletenessEn}
                       </td>
                       <td className="px-3.5 py-3 text-[11px] text-slate-600 dark:text-slate-300 min-w-[220px]">
-                        {ar
-                          ? s.sections.potentialBuyers?.bulletsAr?.slice(0, 3).map((b) => b.replace(/ \(جهة مستهدفة محتملة\)$/, "")).join(" · ")
-                          : s.sections.potentialBuyers?.bulletsEn?.slice(0, 3).map((b) => b.replace(/ \(Prospective Target Account\)$/, "")).join(" · ")}
+                        {(ar
+                          ? s.sections?.potentialBuyers?.bulletsAr?.slice(0, 3).map((b) => b.replace(/ \(جهة مستهدفة محتملة\)$/, "")).join(" · ")
+                          : s.sections?.potentialBuyers?.bulletsEn?.slice(0, 3).map((b) => b.replace(/ \(Prospective Target Account\)$/, "")).join(" · ")) || "—"}
                       </td>
                     </tr>
                   );
