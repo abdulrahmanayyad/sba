@@ -27,7 +27,6 @@ import { GarmentServicesTab } from "./tabs/garment-services-tab";
 import { GarmentClientsTab } from "./tabs/garment-clients-tab";
 import { GarmentProjectsTab } from "./tabs/garment-projects-tab";
 import { GarmentPartnersTab } from "./tabs/garment-partners-tab";
-import { GarmentCapabilitiesTab } from "./tabs/garment-capabilities-tab";
 import { GarmentJoinTab } from "./tabs/garment-join-tab";
 import { JoinPage } from "@/components/join/join-page";
 import { SectorConsultationCta } from "@/components/site/sector-consultation-cta";
@@ -38,7 +37,6 @@ export type GarmentTab =
   | "clients" 
   | "projects" 
   | "partners" 
-  | "capabilities" 
   | "join"
   | "start-project";
 
@@ -50,7 +48,7 @@ export function GarmentSectorView({ tab = "about" }: GarmentViewProps) {
   const { language } = useLanguage();
   const ar = language === "AR";
 
-  const validTabs: GarmentTab[] = ["about", "services", "clients", "projects", "partners", "capabilities", "join", "start-project"];
+  const validTabs: GarmentTab[] = ["about", "services", "clients", "projects", "partners", "join", "start-project"];
   const activeTab: GarmentTab = validTabs.includes(tab) ? tab : "about";
 
   const tabLabels: Record<GarmentTab, { en: string; ar: string; descEn: string; descAr: string }> = {
@@ -83,12 +81,6 @@ export function GarmentSectorView({ tab = "about" }: GarmentViewProps) {
       ar: "شركاؤنا",
       descEn: "139 brand partners across casual, classic, kids, loungewear & soirée",
       descAr: "139 شريكًا تجاريًا عبر الكاجوال والكلاسيك والأطفال والسواريه",
-    },
-    capabilities: {
-      en: "Our Capabilities",
-      ar: "قدراتنا",
-      descEn: "15+ lines, 250+ machines, dedicated classic shirt facility & QC",
-      descAr: "15+ خط إنتاج، 250+ ماكينة، مصنع القمصان المتخصص ومراقبة الجودة",
     },
     join: {
       en: "Join Us",
@@ -152,7 +144,6 @@ export function GarmentSectorView({ tab = "about" }: GarmentViewProps) {
         {activeTab === "partners" && <GarmentPartnersTab />}
         {activeTab === "services" && <GarmentServicesTab />}
         {activeTab === "projects" && <GarmentProjectsTab />}
-        {activeTab === "capabilities" && <GarmentCapabilitiesTab />}
         {activeTab === "join" && <JoinPage trackId="garment" />}
         {activeTab === "start-project" && <GarmentStartProjectView />}
 

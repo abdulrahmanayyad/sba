@@ -24,7 +24,6 @@ export function getSectorNavigation(slug: SectorSlug, ar: boolean) {
     garment: { about: standardAbout, links: [
       { label: copy.services, title: "Our Services" },
       { label: copy.products, title: "Our Products" },
-      { label: copy.capabilities, title: "Manufacturing Capabilities" },
     ] },
     food: { about: [
       { label: copy.highlights, title: "Division Highlights" },

@@ -8,7 +8,7 @@ import { EnvironmentalSectorView, type EnvironmentalTab } from "@/components/sec
 import { FoodSectorView, type FoodTab } from "@/components/sectors/food/food-view";
 
 const validConstructionTabs: ConstructionTab[] = ["about", "sectors", "services", "projects", "join", "start-project", "verify-portal", "verification-admin"];
-const validGarmentTabs: GarmentTab[] = ["about", "services", "clients", "projects", "partners", "capabilities", "join", "start-project"];
+const validGarmentTabs: GarmentTab[] = ["about", "services", "clients", "projects", "partners", "join", "start-project"];
 const validEnvironmentalTabs: EnvironmentalTab[] = ["about", "sectors", "services", "products", "join", "start-consultation"];
 const validFoodTabs: FoodTab[] = ["about", "sectors", "products", "markets", "order-product", "join"];
 
@@ -54,7 +54,6 @@ export const Route = createFileRoute("/sectors/$sector")({
         clients: "Our Clients — Global & Regional Fashion Brands",
         projects: "Our Projects — Garment Portfolio",
         partners: "Our Partners — Brand Partners Across Categories",
-        capabilities: "Our Capabilities — Advanced Garment Infrastructure",
         join: "Join Us & Request Quotation",
       };
       if (garmentTabTitles[tab]) {

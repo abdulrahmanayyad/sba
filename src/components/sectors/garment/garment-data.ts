@@ -470,8 +470,8 @@ export const garmentIndustrialCapabilities: IndustrialCapabilityItem[] = [
     number: "01",
     titleEn: "Production Lines",
     titleAr: "خطوط الإنتاج الصناعية",
-    leadEn: "15 modular assembly lines configured for flexible switching between knitwear and woven garments.",
-    leadAr: "15 خط إنتاج نمطي مرن مصمم للتحويل السريع بين الملابس القطنية (Knit) والمنسوجة (Woven).",
+    leadEn: "Modular assembly lines configured for flexible switching between knitwear and woven garments.",
+    leadAr: "خطوط إنتاج مرنة مصممة للتحويل السريع بين الملابس القطنية والمنسوجة.",
     specsEn: [
       "Modular lean manufacturing layout minimizing handling time",
       "Dedicated lines for structured garments and soft knits",
@@ -489,10 +489,10 @@ export const garmentIndustrialCapabilities: IndustrialCapabilityItem[] = [
   {
     id: "sewing-machinery",
     number: "02",
-    titleEn: "Sewing Machinery Fleet",
-    titleAr: "أسطول ماكينات الخياطة المتطورة",
-    leadEn: "Over 250 heavy-duty computerized machines from industry leaders Juki, Brother, and Pegasus.",
-    leadAr: "أكثر من 250 ماكينة خياطة إلكترونية متقدمة من كبرى العلامات اليابانية مثل Juki وBrother وPegasus.",
+    titleEn: "Advanced Sewing Machinery",
+    titleAr: "ماكينات الخياطة المتطورة",
+    leadEn: "Modern advanced electronic sewing machinery delivering highest efficiency and craftsmanship.",
+    leadAr: "ماكينات خياطة إلكترونية حديثة متقدمة لتقديم أعلى معدل كفاءة وإتقان",
     specsEn: [
       "Computerized direct-drive lockstitch sewing machines",
       "4-thread and 5-thread high-speed differential overlock units",
@@ -508,29 +508,8 @@ export const garmentIndustrialCapabilities: IndustrialCapabilityItem[] = [
     image: "/BG/Apparel Manufacturing/Apparel Manufacturing Home Page.jpg"
   },
   {
-    id: "cutting-facilities",
-    number: "03",
-    titleEn: "Precision Cutting Facilities",
-    titleAr: "غرف ومرافق القص الآلي",
-    leadEn: "Long-bed spreading tables and computerized cutting capabilities ensuring millimeter-accurate fabric plies.",
-    leadAr: "طاولات فرد أوتوماتيكية وقص فائق الدقة يضمن تطابق طبقات القماش بنسبة 100% وخفض الهدر.",
-    specsEn: [
-      "18-meter precision spreading tables with vacuum tension control",
-      "High-ply reciprocating vertical knife cutting machines",
-      "End-of-ply automatic fabric edge aligners",
-      "Laser-guided notch and drill marking for pocket placements"
-    ],
-    specsAr: [
-      "طاولات فرد أقمشة بطول 18 مترًا مزودة بنظام شفط وتثبيت هوائي",
-      "ماكينات قص رأسي للطبقات الكثيفة تضمن استقامة الحواف",
-      "حساسات محاذاة آلية لحواف الأقمشة لتقليل نسبة الهدر في القماش",
-      "تحديد مواضع الجيوب والأزرار بالعلامات الضوئية الدقيقة"
-    ],
-    image: "/BG/Apparel Manufacturing/Ready-Made Garment Manufacturing.jpg"
-  },
-  {
     id: "pattern-making",
-    number: "04",
+    number: "03",
     titleEn: "CAD / CAM Pattern Making & Grading",
     titleAr: "هندسة الباترون وتدريج المقاسات بالكمبيوتر",
     leadEn: "State-of-the-art Gerber & Lectra digital pattern systems executing exact fit grading from XS to 5XL.",
@@ -551,11 +530,11 @@ export const garmentIndustrialCapabilities: IndustrialCapabilityItem[] = [
   },
   {
     id: "sample-development",
-    number: "05",
+    number: "04",
     titleEn: "Sample Development & Rapid Prototyping",
     titleAr: "تطوير العينات والنماذج الأولية السريعة",
-    leadEn: "Dedicated master sampling room turning sketches and mood boards into approved fit samples within 5–7 days.",
-    leadAr: "غرفة عينات تخصصية تضم أمهر الفنيين لتحويل الاسكتشات والمراجع إلى عينات قياس معتمدة خلال 5-7 أيام.",
+    leadEn: "Specialized sampling department transforming patterns and references into approved samples.",
+    leadAr: "غرفة عينات تخصصية لتحويل الباترونات والمراجع إلى عينات معتمدة",
     specsEn: [
       "Proto-sample, fit-sample, and pre-production (PP) sample development",
       "On-site master tailor and pattern engineer collaboration",
@@ -572,11 +551,11 @@ export const garmentIndustrialCapabilities: IndustrialCapabilityItem[] = [
   },
   {
     id: "fabric-sourcing",
-    number: "06",
-    titleEn: "Fabric Sourcing & Development",
+    number: "05",
+    titleEn: "Fabric Sourcing & Raw Materials Supply",
     titleAr: "توريد وتطوير الأقمشة والغزول",
-    leadEn: "Vertical integration with SBA textile mills and premier Egyptian long-staple cotton spinners.",
-    leadAr: "ارتباط صناعي مباشر بمصانع أقمشة المجموعة وموردي القطن المصري طويل التيلة المعتمد.",
+    leadEn: "Direct integration with major fabric mills providing all fabric types and raw materials.",
+    leadAr: "ارتباط مباشر مع كبرى مصانع الأقمشة بأنواعها وتوفير جميع أنواع الخامات",
     specsEn: [
       "100% Giza combed Egyptian cotton (Single jersey, Pique, Interlock, Rib)",
       "Cotton-Lycra, French Terry, CVC, and poly-cotton performance blends",
@@ -593,11 +572,11 @@ export const garmentIndustrialCapabilities: IndustrialCapabilityItem[] = [
   },
   {
     id: "printing-embroidery",
-    number: "07",
-    titleEn: "Printing & Embroidery Techniques",
+    number: "06",
+    titleEn: "Garment Printing & Embroidery",
     titleAr: "تقنيات الطباعة والتطريز الصناعي",
-    leadEn: "Multi-head Tajima embroidery machines and automated screen printing lines delivering durable brand detailing.",
-    leadAr: "ماكينات تطريز تاجيما متعددة الرؤوس وخطوط طباعة شاشة آلية تضمن ثبات ألوان ومظهر فخم.",
+    leadEn: "All apparel printing types with embroidery services via specialized factories and trusted partners.",
+    leadAr: "جميع أنواع الطباعة على الملابس، مع خدمات التطريز عبر مصانع متخصصة وشركاء موثوقين.",
     specsEn: [
       "Multi-head computerized embroidery (up to 12 colors per design)",
       "High-density (3D puff), sequin, chenille, and appliqué embroidery",
@@ -613,50 +592,8 @@ export const garmentIndustrialCapabilities: IndustrialCapabilityItem[] = [
     image: "/BG/Apparel Manufacturing/Ready-Made Garment Manufacturing.jpg"
   },
   {
-    id: "washing-finishing",
-    number: "08",
-    titleEn: "Washing & Industrial Finishing",
-    titleAr: "الغسيل الصناعي والتشطيب النهائي",
-    leadEn: "Industrial garment wash, enzyme softening, and steam tunnel finishing ensuring zero shrinkage and luxurious hand-feel.",
-    leadAr: "غسيل إنزيمي صناعي وتنعيم وتجفيف وتشطيب بنفق البخار لضمان ثبات المقاس وملمس فاخر.",
-    specsEn: [
-      "Garment enzyme, silicone, and bio-wash treatment barrels",
-      "Steam tunnel form finishers and vacuum pressing boards",
-      "Anti-pilling, antimicrobial, and moisture-wicking chemical finishes",
-      "Strict shrinkage stability testing (less than 3% residual tolerance)"
-    ],
-    specsAr: [
-      "براميل معالجة بالغسيل الإنزيمي والسيليكوني لملمس ناعم يدوم طويلًا",
-      "أنفاق بخار وطاولات كي وشفط أوتوماتيكية لإظهار رونق الملابس",
-      "معالجات كيميائية مقاومة للوبرية ومضادة للبكتيريا وسريعة الجفاف",
-      "اختبارات ثبات انكماش صارمة تضمن عدم تغير المقاس بعد الغسيل المنزلي"
-    ],
-    image: "/BG/Apparel Manufacturing/Apparel Manufacturing Home Page.jpg"
-  },
-  {
-    id: "quality-inspection",
-    number: "09",
-    titleEn: "Quality Inspection & Testing Protocols",
-    titleAr: "الفحص ومراقبة الجودة الصارمة",
-    leadEn: "Multi-gate quality control following international AQL 2.5 / 4.0 standards with metal/needle detection.",
-    leadAr: "منظومة فحص متعددة البوابات تطبق معايير AQL 2.5/4.0 العالمية مع أجهزة كشف الإبر والمعادن.",
-    specsEn: [
-      "4-point fabric inspection upon raw roll arrival",
-      "100% in-line sewing inspection during critical production stages",
-      "Automated metal detector scanning ensuring infant and child safety",
-      "Comprehensive lab tests: Colorfastness, seam slippage, and tensile pull"
-    ],
-    specsAr: [
-      "فحص أثواب الأقمشة بنظام النقاط الأربعة قبل السماح بدخولها للقص",
-      "فحص مرحلي 100% على خطوط الخياطة لضمان مطابقة عينة الاعتماد",
-      "تمرير كافة القطع على أجهزة الكشف عن الإبر والمعادن لسلامة المستهلك",
-      "اختبارات معملية لثبات الصباغة وقوة الشد ومقاومة التمزق"
-    ],
-    image: "/BG/Apparel Manufacturing/Rigorous Quality Assurance.jpg"
-  },
-  {
     id: "packaging-export",
-    number: "10",
+    number: "07",
     titleEn: "Packaging & Export Logistics Preparation",
     titleAr: "التعبئة والتغليف وتجهيز الشحن للتصدير",
     leadEn: "Custom retail-ready packaging, barcode tagging, moisture-barrier polybagging, and export container stuffing.",
