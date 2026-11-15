@@ -3,7 +3,7 @@
 
 import React from "react";
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, CheckCircle2, MessageSquare, ShieldCheck } from "lucide-react";
+import { ArrowRight, CheckCircle2, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/home/reveal";
 
@@ -94,53 +94,52 @@ export const SectorConsultationCta: React.FC<SectorConsultationCtaProps> = ({ se
   return (
     <div className="py-8 scroll-mt-24">
       <Reveal>
-        <div className="group relative overflow-hidden rounded-3xl border border-white/25 bg-slate-900/40 hover:bg-slate-900/55 p-8 sm:p-12 text-white shadow-[0_16px_50px_rgba(0,0,0,0.25)] backdrop-blur-2xl transition-all duration-300 hover:border-brand-green/50 hover:shadow-brand-green/15 hover:-translate-y-0.5">
-          <div className="absolute top-0 right-0 size-80 rounded-full bg-brand-green/20 blur-3xl pointer-events-none transition-all duration-500 group-hover:scale-110" />
-          <div className="absolute bottom-0 left-0 size-72 rounded-full bg-brand-orange/15 blur-3xl pointer-events-none transition-all duration-500 group-hover:scale-110" />
-
-          <div className="relative z-10 grid gap-8 lg:grid-cols-12 items-center">
-            {/* Left Content */}
-            <div className="lg:col-span-8 space-y-3.5">
-              <div className="inline-flex items-center gap-2 rounded-full border border-brand-green/30 bg-black/40 px-3.5 py-1 text-xs font-bold tracking-wide text-brand-green backdrop-blur-md shadow-md">
+        <div className="glass-box-interactive rounded-3xl p-8 sm:p-12 cursor-pointer">
+          <div className="relative z-10">
+            {/* Header portion */}
+            <div className="max-w-3xl text-start">
+              <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+                <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
                 <span>{ar ? config.badgeAr : config.badgeEn}</span>
               </div>
-
-              <h3 className="font-head text-2xl sm:text-3xl font-extrabold leading-snug tracking-tight text-white drop-shadow-md">
+              <h2 className="font-head text-xl sm:text-2xl lg:text-3xl font-extrabold text-foreground leading-snug">
                 {ar ? config.headingAr : config.headingEn}
-              </h3>
-
-              <p className="text-sm sm:text-base leading-relaxed text-slate-200 max-w-2xl">
+              </h2>
+              <p className="mt-3 text-sm sm:text-base leading-relaxed text-muted-foreground">
                 {ar ? config.supportingAr : config.supportingEn}
               </p>
-
-              <p className="text-xs text-brand-orange font-medium leading-relaxed max-w-2xl">
-                {ar ? config.secondaryAr : config.secondaryEn}
-              </p>
-
-              <div className="pt-2 flex flex-wrap items-center gap-4 text-xs text-slate-300">
-                <div className="flex items-center gap-1.5">
-                  <CheckCircle2 className="size-4 text-brand-green shrink-0" />
-                  <span className="font-semibold">{ar ? "مجانية بالكامل – دون أي رسوم" : "100% Free – No Fees"}</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <ShieldCheck className="size-4 text-sky-400 shrink-0" />
-                  <span>{ar ? "رد وتنسيق مباشر من المتخصصين" : "Direct Specialist Follow-up"}</span>
-                </div>
-              </div>
             </div>
 
-            {/* Right Action */}
-            <div className="lg:col-span-4 flex flex-col items-start lg:items-end justify-center">
-              <Button
-                asChild
-                size="lg"
-                className="w-full sm:w-auto rounded-full !bg-brand-green !text-white px-8 py-4 font-head text-sm font-bold shadow-xl shadow-brand-green/20 transition-all duration-300 hover:!bg-brand-orange hover:shadow-brand-orange/30 hover:scale-105 active:scale-95 cursor-pointer"
-              >
-                <Link to="/request-consultation" search={{ sector }}>
-                  <span>{ar ? config.buttonAr : config.buttonEn}</span>
-                  <ArrowRight className="size-4 rtl:rotate-180 ms-2" />
-                </Link>
-              </Button>
+            {/* Bottom track details and CTA portion */}
+            <div className="mt-8 pt-8 border-t border-border/50 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+              <div className="max-w-2xl space-y-3 text-start">
+                <p className="text-xs sm:text-sm text-brand-orange font-medium leading-relaxed">
+                  {ar ? config.secondaryAr : config.secondaryEn}
+                </p>
+                <div className="flex flex-wrap items-center gap-4 text-xs text-muted-foreground">
+                  <div className="flex items-center gap-1.5">
+                    <CheckCircle2 className="size-4 text-brand-green shrink-0" />
+                    <span className="font-semibold text-foreground/90">{ar ? "مجانية بالكامل – دون أي رسوم" : "100% Free – No Fees"}</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <ShieldCheck className="size-4 text-sky-500 shrink-0" />
+                    <span>{ar ? "رد وتنسيق مباشر من المتخصصين" : "Direct Specialist Follow-up"}</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="shrink-0 w-full md:w-auto">
+                <Button
+                  asChild
+                  size="lg"
+                  className="w-full md:w-auto rounded-full bg-brand-green hover:bg-brand-orange text-white font-head font-bold shadow-md transition-all px-8 py-3.5 hover:scale-105 active:scale-95 cursor-pointer"
+                >
+                  <Link to="/request-consultation" search={{ sector }}>
+                    <span>{ar ? config.buttonAr : config.buttonEn}</span>
+                    <ArrowRight className="size-4 ms-2 rtl:rotate-180" />
+                  </Link>
+                </Button>
+              </div>
             </div>
           </div>
         </div>
@@ -148,4 +147,3 @@ export const SectorConsultationCta: React.FC<SectorConsultationCtaProps> = ({ se
     </div>
   );
 };
-

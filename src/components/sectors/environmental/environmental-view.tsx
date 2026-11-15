@@ -115,14 +115,8 @@ export function EnvironmentalSectorView({ tab = "about" }: EnvironmentalViewProp
               <div className="mt-8 flex flex-wrap items-center gap-3">
                 <Button asChild size="default" className="rounded-full bg-brand-green text-white hover:bg-brand-orange transition-all duration-300 shadow-md">
                   <Link to="/sectors/$sector" params={{ sector: "environmental" }} search={{ tab: "services" }}>
-                    <span>{ar ? "استكشف خدماتنا البيئية (19 تخصصًا)" : "Explore Our 19 Services"}</span>
+                    <span>{ar ? "استكشف خدماتنا البيئية" : "Explore Our Environmental Services"}</span>
                     <ArrowRight className="size-4 ms-2 rtl:rotate-180" />
-                  </Link>
-                </Button>
-
-                <Button asChild size="default" className="rounded-full bg-brand-green text-white hover:bg-brand-orange transition-all duration-300 shadow-md">
-                  <Link to="/sectors/$sector" params={{ sector: "environmental" }} search={{ tab: "start-consultation" }}>
-                    <span>{ar ? "طلب استشارة بيئية" : "Request Consultation"}</span>
                   </Link>
                 </Button>
               </div>
@@ -166,37 +160,6 @@ function EnvironmentalAboutView({ ar }: { ar: boolean }) {
       {/* 1. SECTOR OVERVIEW & VERIFIED PERFORMANCE STATS */}
       <section className="site-container">
         <Reveal>
-          {/* Key Metrics Dashboard */}
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:gap-4 mb-8">
-            <div className="rounded-2xl border border-white/20 bg-background/80 p-5 shadow-sm backdrop-blur-md text-center">
-              <div className="font-head text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">19</div>
-              <div className="mt-1 text-xs font-bold text-muted-foreground uppercase tracking-wider">
-                {ar ? "تخصصًا وخدمة بيئية متكاملة" : "Core Disciplines"}
-              </div>
-            </div>
-
-            <div className="rounded-2xl border border-white/20 bg-background/80 p-5 shadow-sm backdrop-blur-md text-center">
-              <div className="font-head text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">RENERGON</div>
-              <div className="mt-1 text-xs font-bold text-muted-foreground uppercase tracking-wider">
-                {ar ? "تحالف سويسري حصري للبيوجاز" : "Swiss Strategic Alliance"}
-              </div>
-            </div>
-
-            <div className="rounded-2xl border border-white/20 bg-background/80 p-5 shadow-sm backdrop-blur-md text-center">
-              <div className="font-head text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">185K+</div>
-              <div className="mt-1 text-xs font-bold text-muted-foreground uppercase tracking-wider">
-                {ar ? "طن مكافئ كربون تم تجنبه" : "Tons CO₂e Mitigated"}
-              </div>
-            </div>
-
-            <div className="rounded-2xl border border-white/20 bg-background/80 p-5 shadow-sm backdrop-blur-md text-center">
-              <div className="font-head text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">100%</div>
-              <div className="mt-1 text-xs font-bold text-muted-foreground uppercase tracking-wider">
-                {ar ? "اعتماد دراسات EIA (40+ مشروع)" : "EIA Approval (40+ Projects)"}
-              </div>
-            </div>
-          </div>
-
           {/* Executive Corporate Intro Box */}
           <div className="group relative mx-auto max-w-4xl overflow-hidden rounded-3xl border border-white/20 bg-background/75 p-8 sm:p-12 shadow-[0_12px_40px_rgba(0,0,0,0.08)] backdrop-blur-2xl transition-all duration-500 hover:-translate-y-0.5 hover:shadow-2xl text-center">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
@@ -264,7 +227,7 @@ function EnvironmentalAboutView({ ar }: { ar: boolean }) {
             <div>
               <SectionBadge title={ar ? "الخدمات والاستشارات" : "Environmental Services"} />
               <h2 className="section-title mt-3">
-                {ar ? "منظومة الخدمات البيئية والاستشارية (19 تخصصًا)" : "19 Specialized Environmental Disciplines"}
+                {ar ? "منظومة الخدمات البيئية والاستشارية" : "Specialized Environmental Disciplines"}
               </h2>
             </div>
             <Button asChild size="default" className="rounded-full bg-brand-green text-white hover:bg-brand-orange">
@@ -320,10 +283,10 @@ function EnvironmentalAboutView({ ar }: { ar: boolean }) {
           <Reveal>
             <div className="text-center max-w-3xl mx-auto mb-10">
               <SectionBadge title={ar ? "الحلول التكنولوجية المتقدمة" : "Advanced Technical Solutions"} />
-              <h2 className="section-title mt-3">
+              <h2 className="section-title mt-3 text-center mx-auto">
                 {ar ? "توطين التكنولوجيا الأوروبية والحلول البيئية الذكية" : "Engineering & Green Technology Systems"}
               </h2>
-              <p className="section-intro mt-3">
+              <p className="section-intro mt-3 text-center mx-auto">
                 {ar
                   ? "نجمع بين الابتكارات الحيوية المعملية والتكنولوجيات السويسرية الحاصلة على براءات اختراع لتقديم حلول مستدامة وعالية المردود."
                   : "Bridging patented European dry-digestion systems with applied microbiology and IoT telemetry."}
@@ -446,8 +409,8 @@ function EnvironmentalAboutView({ ar }: { ar: boolean }) {
           <Reveal>
             <div className="text-center max-w-3xl mx-auto mb-10">
               <SectionBadge title={ar ? "القطاعات والصناعات" : "Industries We Serve"} />
-              <h2 className="section-title mt-3">{ar ? "دعم بيئي متخصص عبر كافة القطاعات الحيوية" : "Cross-Industry Environmental Expertise"}</h2>
-              <p className="section-intro mt-3">
+              <h2 className="section-title mt-3 text-center mx-auto">{ar ? "دعم بيئي متخصص عبر كافة القطاعات الحيوية" : "Cross-Industry Environmental Expertise"}</h2>
+              <p className="section-intro mt-3 text-center mx-auto">
                 {ar ? "استشارات وحلول مدركة للمتطلبات التشغيلية والتجارية لكل صناعة." : "Commercial and technical advisory tailored to specific industrial workflows."}
               </p>
             </div>
@@ -590,16 +553,16 @@ function EnvironmentalAboutView({ ar }: { ar: boolean }) {
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-10">
             <SectionBadge title={ar ? "مؤشرات الاستدامة والأثر" : "Sustainability & Impact"} />
-            <h2 className="section-title mt-3">{ar ? impact.titleAr : impact.titleEn}</h2>
-            <p className="section-intro mt-3">{ar ? impact.subtitleAr : impact.subtitleEn}</p>
+            <h2 className="section-title mt-3 text-center mx-auto">{ar ? impact.titleAr : impact.titleEn}</h2>
+            <p className="section-intro mt-3 text-center mx-auto">{ar ? impact.subtitleAr : impact.subtitleEn}</p>
           </div>
 
           <div className="grid grid-cols-2 gap-4 lg:grid-cols-4 mb-10">
             {impact.kpis.map((kpi, idx) => (
-              <div key={idx} className="rounded-2xl border border-white/20 bg-background/80 p-5 shadow-sm backdrop-blur-md text-center">
-                <div className="font-head text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">{kpi.metric}</div>
-                <div className="text-xs font-bold text-brand-orange mt-0.5">{ar ? kpi.unitAr : kpi.unitEn}</div>
-                <div className="mt-2 text-xs text-muted-foreground leading-snug">{ar ? kpi.labelAr : kpi.labelEn}</div>
+              <div key={idx} className="rounded-2xl border border-white/20 bg-background/80 p-5 shadow-sm backdrop-blur-md text-center flex flex-col items-center justify-center">
+                <div className="font-head text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm text-center w-full">{kpi.metric}</div>
+                <div className="text-xs font-bold text-brand-orange mt-0.5 text-center w-full">{ar ? kpi.unitAr : kpi.unitEn}</div>
+                <div className="mt-2 text-xs text-muted-foreground leading-snug text-center w-full">{ar ? kpi.labelAr : kpi.labelEn}</div>
               </div>
             ))}
           </div>
@@ -624,15 +587,15 @@ function EnvironmentalAboutView({ ar }: { ar: boolean }) {
       <section className="site-container">
         <div className="overflow-hidden rounded-3xl border border-border/80 bg-background/80 p-8 sm:p-14 text-center shadow-xl backdrop-blur-2xl transition-all duration-500 hover:-translate-y-0.5 hover:shadow-2xl">
           <Reveal>
-            <div className="max-w-3xl mx-auto">
+            <div className="max-w-3xl mx-auto text-center">
               <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-3">
                 <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
                 <span>{ar ? "استشارات بيئية موثوقة" : "Certified Environmental Consultation"}</span>
               </div>
-              <h2 className="text-2xl sm:text-4xl font-extrabold font-head text-foreground">
+              <h2 className="text-2xl sm:text-4xl font-extrabold font-head text-foreground text-center mx-auto">
                 {ar ? "جاهزون لتقييم وتطوير المتطلبات البيئية لمنشأتك" : "Ready to Engineer Your Sustainable Future"}
               </h2>
-              <p className="mt-3 text-xs sm:text-sm text-muted-foreground leading-relaxed">
+              <p className="mt-3 text-xs sm:text-sm text-muted-foreground leading-relaxed text-center mx-auto">
                 {ar
                   ? "قدم طلب استشارتك عبر نموذج الاستشارات البيئية متعدد المراحل، وسيتواصل معك خبراؤنا الاستشاريون بعرض فني ودراسة متكاملة تلبي الاشتراطات القانونية وأهدافك الاستثمارية."
                   : "Submit your technical consultation brief through our structured proposal builder and our accredited environmental engineers will evaluate regulatory requirements and deliver tailored solutions."}
@@ -739,13 +702,13 @@ function EnvironmentalServicesView({ ar }: { ar: boolean }) {
   }, [requestedServiceId, activeService]);
 
   const categories = [
-    { id: "all", titleEn: "All Services (19)", titleAr: "كافة الخدمات (19)" },
-    { id: "consultancy-compliance", titleEn: "1. Consultancy & Compliance", titleAr: "١. الاستشارات والتوافق البيئي" },
-    { id: "waste-circular", titleEn: "2. Waste & Circular Economy", titleAr: "٢. إدارة المخلفات والاقتصاد الدائري" },
-    { id: "renewable-wte", titleEn: "3. Renewable Energy & WtE", titleAr: "٣. الطاقة المتجددة وتحويل المخلفات" },
-    { id: "water-wastewater", titleEn: "4. Water & Wastewater", titleAr: "٤. معالجة المياه والصرف والبيولوجيا" },
-    { id: "carbon-sustainability", titleEn: "5. Carbon & Sustainability", titleAr: "٥. الكربون والاستدامة وCBAM" },
-    { id: "tech-digital", titleEn: "6. Technology & Digital Solutions", titleAr: "٦. الحلول التكنولوجية والبرمجيات" },
+    { id: "all", titleEn: "All Services", titleAr: "كافة الخدمات" },
+    { id: "consultancy-compliance", titleEn: "Consultancy & Compliance", titleAr: "الاستشارات والتوافق البيئي" },
+    { id: "waste-circular", titleEn: "Waste & Circular Economy", titleAr: "إدارة المخلفات والاقتصاد الدائري" },
+    { id: "renewable-wte", titleEn: "Renewable Energy & WtE", titleAr: "الطاقة المتجددة وتحويل المخلفات" },
+    { id: "water-wastewater", titleEn: "Water & Wastewater", titleAr: "معالجة المياه والصرف والبيولوجيا" },
+    { id: "carbon-sustainability", titleEn: "Carbon & Sustainability", titleAr: "الكربون والاستدامة وCBAM" },
+    { id: "tech-digital", titleEn: "Technology & Digital Solutions", titleAr: "الحلول التكنولوجية والبرمجيات" },
   ];
 
   const filteredServices = useMemo(() => {
@@ -775,8 +738,8 @@ function EnvironmentalServicesView({ ar }: { ar: boolean }) {
                 </h2>
                 <p className="section-intro mt-3">
                   {ar
-                    ? "19 تخصصًا استشاريًا وهندسيًا متكاملًا يغطي تقييم الأثر البيئي، وإدارة المخلفات، والبصمة الكربونية، وتأهيل الأيزو والبرمجيات."
-                    : "19 specialized disciplines covering environmental impact, waste-to-energy, carbon footprint, ISO qualification, and digital solutions."}
+                    ? "التخصصات الهندسية والاستشارية المتكاملة"
+                    : "Integrated Engineering & Consulting Disciplines"}
                 </p>
               </div>
 

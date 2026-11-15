@@ -64,10 +64,10 @@ export function ContactDirectorySidebar({ ar }: ContactDirectorySidebarProps) {
               </h3>
               <div className="mt-1 flex flex-col gap-1 text-sm font-bold font-mono">
                 <a href="tel:+201222238072" className="hover:text-brand-orange transition-colors" dir="ltr">
-                  +20 12 222 380 72
+                  {ar ? "+20 01222238072" : "+20 12 222 380 72"}
                 </a>
                 <a href="tel:+201222238073" className="hover:text-brand-orange transition-colors" dir="ltr">
-                  +20 12 222 380 73
+                  {ar ? "+20 01222238073" : "+20 12 222 380 73"}
                 </a>
               </div>
             </div>

@@ -273,13 +273,6 @@ export function SectorHeader({
                 </Link>
 
                 <Link
-                  to="/products"
-                  className={cn(navPill, "hover:!text-brand-green")}
-                >
-                  {ar ? "منتجاتنا" : "Our Products"}
-                </Link>
-
-                <Link
                   to="/join/group"
                   className={cn(navPill, "hover:!text-brand-orange")}
                 >
@@ -671,13 +664,6 @@ export function SectorHeader({
                       className={cn(mobileLinkStyle, activeTab === "services" && "!text-brand-green bg-white/40")}
                     >
                       {ar ? "خدماتنا" : "Our Services"}
-                    </Link>
-                    <Link
-                      to="/products"
-                      onClick={() => setMenuOpen(false)}
-                      className={mobileLinkStyle}
-                    >
-                      {ar ? "منتجاتنا" : "Our Products"}
                     </Link>
                     <Link
                       to="/join/group"

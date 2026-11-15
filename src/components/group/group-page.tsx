@@ -496,7 +496,7 @@ export function GroupPage() {
                   <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#25D366]/15 text-[#25D366]"><MessageCircle aria-hidden="true" className="size-5" /></span>
                   <span className="min-w-0 flex-1">
                     <span className="block font-head text-sm font-bold text-foreground/80">WhatsApp Direct: </span>
-                    <span dir="ltr" className="mt-1 block font-head text-base font-bold text-foreground sm:text-lg">+20 12 222 380 72</span>
+                    <span dir="ltr" className="mt-1 block font-head text-base font-bold text-foreground sm:text-lg">{ar ? "+20 01222238072" : "+20 12 222 380 72"}</span>
                   </span>
                   <span className="shrink-0 text-[#25D366]"><ArrowRight aria-hidden="true" className="size-5 rtl:rotate-180" /></span>
                 </a>

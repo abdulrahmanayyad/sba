@@ -72,7 +72,7 @@ export function SectorContactSection({ ar, sector }: SectorContactSectionProps) 
               <span className="flex size-10 sm:size-12 shrink-0 items-center justify-center rounded-full bg-[#25D366]/15 text-[#25D366]"><MessageCircle aria-hidden="true" className="size-4 sm:size-5" /></span>
               <span className="min-w-0 flex-1">
                 <span className="block font-head text-xs sm:text-sm font-bold text-foreground/80">WhatsApp Direct: </span>
-                <span dir="ltr" className="mt-1 block font-head text-sm sm:text-base font-bold text-foreground">+20 12 222 380 72</span>
+                <span dir="ltr" className="mt-1 block font-head text-sm sm:text-base font-bold text-foreground">{ar ? "+20 01222238072" : "+20 12 222 380 72"}</span>
               </span>
               <span className="shrink-0 text-[#25D366]"><ArrowRight aria-hidden="true" className="size-4 sm:size-5 rtl:rotate-180" /></span>
             </a>
