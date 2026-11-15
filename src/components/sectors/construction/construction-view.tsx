@@ -220,36 +220,6 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
       {/* 1. SECTOR OVERVIEW & VERIFIED PERFORMANCE STATS */}
       <section className="site-container">
         <Reveal>
-          {/* Key Metrics Dashboard */}
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:gap-4 mb-8">
-            <div className="rounded-2xl border border-white/20 bg-background/80 p-5 shadow-sm backdrop-blur-md text-center">
-              <div className="font-head text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">+45 {ar ? "عامًا" : "Years"}</div>
-              <div className="mt-1 text-xs font-bold text-muted-foreground uppercase tracking-wider">
-                {ar ? "خبرة ممتدة منذ 1977" : "Heritage Since 1977"}
-              </div>
-            </div>
-
-            <div className="rounded-2xl border border-white/20 bg-background/80 p-5 shadow-sm backdrop-blur-md text-center">
-              <div className="font-head text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">+57</div>
-              <div className="mt-1 text-xs font-bold text-muted-foreground uppercase tracking-wider">
-                {ar ? "مشروعًا موثقًا بسجل الأعمال" : "Documented Projects"}
-              </div>
-            </div>
-
-            <div className="rounded-2xl border border-white/20 bg-background/80 p-5 shadow-sm backdrop-blur-md text-center">
-              <div className="font-head text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">+540M {ar ? "ج.م" : "EGP"}</div>
-              <div className="mt-1 text-xs font-bold text-muted-foreground uppercase tracking-wider">
-                {ar ? "حجم أعمال تعاقدية منجز" : "Turnover Volume Delivered"}
-              </div>
-            </div>
-
-            <div className="rounded-2xl border border-white/20 bg-background/80 p-5 shadow-sm backdrop-blur-md text-center">
-              <div className="font-head text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">12</div>
-              <div className="mt-1 text-xs font-bold text-muted-foreground uppercase tracking-wider">
-                {ar ? "تخصصًا إنشائيًا وهندسيًا" : "Integrated Disciplines"}
-              </div>
-            </div>
-          </div>
 
           {/* Executive Corporate Intro Box */}
           <div className="group relative mx-auto max-w-4xl overflow-hidden rounded-3xl border border-white/20 bg-background/75 p-8 sm:p-12 shadow-[0_12px_40px_rgba(0,0,0,0.08)] backdrop-blur-2xl transition-all duration-500 hover:-translate-y-0.5 hover:border-white/80 hover:shadow-[0_20px_48px_-12px_rgba(0,0,0,0.1)] text-center">
