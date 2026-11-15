@@ -197,9 +197,11 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
                 {ar ? sector.nameAr : sector.nameEn}
               </h1>
 
-              <p className="text-sm sm:text-base leading-relaxed text-slate-600 dark:text-slate-300">
-                {ar ? sector.shortDescAr : sector.shortDescEn}
-              </p>
+              {(ar ? sector.shortDescAr : sector.shortDescEn) && (
+                <p className="text-sm sm:text-base leading-relaxed text-slate-600 dark:text-slate-300">
+                  {ar ? sector.shortDescAr : sector.shortDescEn}
+                </p>
+              )}
 
               {(ar ? sector.regionNoteAr : sector.regionNoteEn) && (
                 <div className="rounded-2xl border border-slate-200/80 dark:border-white/15 bg-slate-50/80 dark:bg-white/5 px-4 py-3 text-xs font-semibold text-slate-700 dark:text-slate-200">
@@ -634,6 +636,18 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
                           {ar ? study.countryNameAr : study.countryNameEn}
                         </h3>
                       </div>
+
+                      {(study.sector === "garment" || study.sector === "environmental") ? (
+                        <h4 className="font-head text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200 mt-1">
+                          {ar ? "دراسة شاملة للسوق" : "Comprehensive Market Study"}
+                        </h4>
+                      ) : (
+                        study.titleAr && (
+                          <h4 className="font-head text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200 mt-1">
+                            {ar ? study.titleAr : study.titleEn}
+                          </h4>
+                        )
+                      )}
 
                       {/* Opportunity Tier Badge */}
                       {study.opportunityTierAr && (

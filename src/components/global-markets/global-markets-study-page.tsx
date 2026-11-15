@@ -155,7 +155,9 @@ export function GlobalMarketsStudyPage({
 
           <div className="space-y-2">
             <h1 className="font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white leading-tight text-start">
-              {ar ? study.titleAr : study.titleEn}
+              {(study.sector === "garment" || study.sector === "environmental")
+                ? (ar ? "دراسة شاملة للسوق" : "Comprehensive Market Study")
+                : (ar ? study.titleAr : study.titleEn)}
             </h1>
             {(ar ? study.subtitleAr : study.subtitleEn) && (
               <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed max-w-4xl">

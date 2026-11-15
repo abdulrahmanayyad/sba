@@ -446,8 +446,7 @@ export const GLOBAL_MARKET_SECTORS: GlobalMarketSectorConfig[] = [
     order: 4,
     nameAr: "قطاع الأغذية والمنتجات الطبيعية",
     nameEn: "Food & Natural Products",
-    shortDescAr:
-      "دراسات الطلب والاستيراد والأسعار والاشتراطات الصحية وقنوات التوزيع العالمية للعسل وزيت الزيتون والتمور والأعشاب والمنتجات الزراعية.",
+    shortDescAr: "",
     shortDescEn:
       "Global food trade intelligence analyzing import demand, pricing, food safety regulations, and distribution for honey, olive oil, dates, and herbs.",
     scope: "global",

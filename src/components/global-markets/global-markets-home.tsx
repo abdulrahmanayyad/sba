@@ -464,9 +464,11 @@ export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
                 <div className="p-6 sm:p-8 space-y-6 text-start">
                   <div className="grid gap-6 lg:grid-cols-12 lg:items-center">
                     <div className="lg:col-span-8 space-y-3">
-                      <p className="text-xs sm:text-sm leading-relaxed text-slate-600 dark:text-slate-300">
-                        {ar ? sector.shortDescAr : sector.shortDescEn}
-                      </p>
+                      {(ar ? sector.shortDescAr : sector.shortDescEn) && (
+                        <p className="text-xs sm:text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+                          {ar ? sector.shortDescAr : sector.shortDescEn}
+                        </p>
+                      )}
 
                       <div className="flex flex-wrap gap-1.5 pt-1">
                         {(ar ? sector.topicsAr : sector.topicsEn).slice(0, 8).map((topic, idx) => (
@@ -691,7 +693,9 @@ export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
 
                                   {/* Study Title & Subtitle */}
                                   <h4 className="font-head text-xs sm:text-sm font-bold text-slate-900 dark:text-white line-clamp-2 leading-snug">
-                                    {ar ? study.titleAr : study.titleEn}
+                                    {(study.sector === "garment" || study.sector === "environmental")
+                                      ? (ar ? "دراسة شاملة للسوق" : "Comprehensive Market Study")
+                                      : (ar ? study.titleAr : study.titleEn)}
                                   </h4>
 
                                   {study.tradeIndicatorDisplay && (
