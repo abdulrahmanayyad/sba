@@ -60,14 +60,11 @@ export function ContactDirectorySidebar({ ar }: ContactDirectorySidebarProps) {
             </div>
             <div>
               <h3 className="font-head text-xs font-bold uppercase text-brand-orange">
-                {ar ? "أرقام الهاتف المباشرة" : "Telephone Lines"}
+                {ar ? "رقم الهاتف المباشر" : "Telephone Line"}
               </h3>
               <div className="mt-1 flex flex-col gap-1 text-sm font-bold font-mono">
                 <a href="tel:+201222238072" className="hover:text-brand-orange transition-colors" dir="ltr">
-                  {ar ? "+20 01222238072" : "+20 12 222 380 72"}
-                </a>
-                <a href="tel:+201222238073" className="hover:text-brand-orange transition-colors" dir="ltr">
-                  {ar ? "+20 01222238073" : "+20 12 222 380 73"}
+                  +20 01222238072
                 </a>
               </div>
             </div>
@@ -88,7 +85,7 @@ export function ContactDirectorySidebar({ ar }: ContactDirectorySidebarProps) {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 mt-1 text-xs sm:text-sm font-bold text-emerald-600 hover:text-emerald-700"
               >
-                <span dir="ltr">+20 12 222 380 72</span>
+                <span dir="ltr">+20 01222238072</span>
                 <ExternalLink className="size-3.5" />
               </a>
             </div>

@@ -275,7 +275,7 @@ export const CORPORATE_IDENTITY = {
   officialWebsite: "https://www.sami-trade.com",
   officialEmail: "info@sami-trade.com",
   backupEmail: "ayyad.investments@gmail.com",
-  officialPhone: "+20 12 222 380 72",
+  officialPhone: "+20 01222238072",
   centralRegistrationYear: 2023,
   foundationalContractingHeritage: 1977,
   realEstateAdvisoryStart: 2018,

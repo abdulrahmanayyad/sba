@@ -592,8 +592,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
                     <Link to="/contact/complaints" className="text-sm font-semibold text-foreground/95 transition-colors hover:text-brand-orange leading-snug py-0.5">{isArabic ? "الشكاوى" : "Complaints"}</Link>
                     <Link to="/contact/opportunities" className="text-sm font-semibold text-foreground/95 transition-colors hover:text-brand-orange leading-snug py-0.5">{isArabic ? "اعرض فرصتك" : "Submit Your Opportunity"}</Link>
                     <div className="mt-1 pt-3 border-t border-border/40 grid gap-2.5 w-full justify-items-start">
-                      <a className="text-sm font-bold text-foreground/95 transition-colors hover:text-brand-orange" href="tel:+201222238072" dir="ltr">{isArabic ? "+20 01222238072" : "+20 12 222 380 72"}</a>
-                      <a className="text-sm font-bold text-foreground/95 transition-colors hover:text-brand-orange" href="tel:+201222238073" dir="ltr">{isArabic ? "+20 01222238073" : "+20 12 222 380 73"}</a>
+                      <a className="text-sm font-bold text-foreground/95 transition-colors hover:text-brand-orange" href="tel:+201222238072" dir="ltr">+20 01222238072</a>
                       <a className="break-all text-sm font-semibold text-foreground/95 transition-colors hover:text-brand-orange" href="mailto:info@sami-trade.com">info@sami-trade.com</a>
                     </div>
                     {/* Social icons below email */}

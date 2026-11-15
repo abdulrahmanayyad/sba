@@ -161,14 +161,14 @@ export const SustainabilityDocumentsContact: React.FC<SustainabilityDocumentsCon
             <div className="space-y-2 pt-2 border-t border-white/10 text-xs">
               <div className="flex items-center justify-between">
                 <span className="text-slate-300">{ar ? "الهاتف المؤسسي الموحد:" : "Central Phone:"}</span>
-                <a href="tel:+201017042079" className="text-white hover:text-brand-green font-mono">
-                  +20 101 704 2079
+                <a href="tel:+201222238072" className="text-white hover:text-brand-green font-mono">
+                  +20 01222238072
                 </a>
               </div>
               <div className="flex items-center justify-between">
                 <span className="text-slate-300">{ar ? "واتساب قطاع الاستدامة:" : "Sustainability WhatsApp:"}</span>
                 <a
-                  href="https://wa.me/201017042079?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B5%D9%84%20%D9%85%D8%B9%20%D9%82%D8%B7%D8%A7%D8%B9%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D8%AF%D8%A7%D9%85%D8%A9%20%D9%88%D8%A7%D9%84%D8%A8%D9%8A%D8%A6%D8%A9"
+                  href="https://wa.me/201222238072?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B5%D9%84%20%D9%85%D8%B9%20%D9%82%D8%B7%D8%A7%D8%B9%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D8%AF%D8%A7%D9%85%D8%A9%20%D9%88%D8%A7%D9%84%D8%A8%D9%8A%D8%A6%D8%A9"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-brand-green hover:underline font-mono inline-flex items-center gap-1"

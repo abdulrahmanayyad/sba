@@ -486,7 +486,7 @@ export function PartnersPage() {
                 </span>
                 <span className="min-w-0 flex-1">
                   <span className="block font-head text-xs font-bold text-foreground/80">WhatsApp Direct</span>
-                  <span dir="ltr" className="mt-0.5 block font-head text-sm sm:text-base font-bold text-foreground">{ar ? "+20 01222238072" : "+20 12 222 380 72"}</span>
+                  <span dir="ltr" className="mt-0.5 block font-head text-sm sm:text-base font-bold text-foreground">+20 01222238072</span>
                 </span>
                 <span className="shrink-0 text-[#25D366]"><ArrowRight aria-hidden="true" className="size-4 rtl:rotate-180" /></span>
               </a>
