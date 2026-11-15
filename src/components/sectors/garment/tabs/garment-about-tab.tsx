@@ -176,19 +176,11 @@ export function GarmentAboutTab() {
             {capacity.capacities.map((cap) => (
               <div
                 key={cap.type}
-                className={cn(
-                  "rounded-3xl border p-8 shadow-sm backdrop-blur-xl flex flex-col justify-between transition hover:-translate-y-1 hover:shadow-xl",
-                  cap.type === "available"
-                    ? "border-brand-green/80 bg-brand-green/10 ring-2 ring-brand-green/30"
-                    : "border-white/50 bg-white/95 text-foreground shadow-sm dark:bg-card/90"
-                )}
+                className="rounded-3xl border border-white/50 bg-white/95 text-foreground shadow-sm dark:bg-card/90 p-8 backdrop-blur-xl flex flex-col justify-between transition hover:-translate-y-1 hover:shadow-xl"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <span className={cn(
-                      "text-xs font-bold px-3 py-1 rounded-full",
-                      cap.type === "available" ? "bg-brand-green text-white" : "bg-secondary text-foreground"
-                    )}>
+                    <span className="text-xs font-bold px-3 py-1 rounded-full bg-secondary text-foreground">
                       {ar ? cap.labelAr : cap.labelEn}
                     </span>
                   </div>
