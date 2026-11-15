@@ -44,17 +44,16 @@ const SECTOR_CTA_CONFIG: Record<
     badgeEn: "Contracting & Real Estate Advisory"
   },
   garment: {
-    headingAr: "لنحوّل مجموعتك القادمة إلى واقع تصنيعي.",
-    headingEn: "Let’s Bring Your Next Collection to Life.",
+    headingAr: "ناقشنا باستشارة مجانية",
+    headingEn: "Discuss with Us via Free Consultation",
     supportingAr:
-      "تبحث عن شريك تصنيع موثوق، أو إنتاج بعلامتك الخاصة (Private Label)، أو حل متكامل لتطوير الأزياء؟ شاركنا مواصفات مجموعتك مع خبرائنا واحصل على توجيه مهني مخصص لعلامتك التجارية.",
+      "تبحث عن شريك تصنيع موثوق، أو إنتاج بعلامتك الخاصة، أو حل متكامل لتطوير الأزياء. شاركنا مع خبرائنا واحصل على توجيه مهني مخصص",
     supportingEn:
-      "Looking for a reliable manufacturing partner, private-label production, or a complete apparel development solution? Share your collection requirements with our specialists and receive professional guidance tailored to your brand.",
+      "Looking for a reliable manufacturing partner, private-label production, or complete apparel development? Connect with our specialists for tailored guidance.",
     buttonAr: "ناقش متطلبات التصنيع الخاصة بك",
     buttonEn: "Discuss Your Manufacturing Needs",
-    secondaryAr: "من تطوير العينات الفنية حتى نماذج CM و CMT و FOB و OEM و ODM والتصنيع الخاص، نحن جاهزون لمناقشة فرصتك الإنتاجية القادمة.",
-    secondaryEn:
-      "From product development and sampling to CM, CMT, FOB, OEM, ODM, and private-label manufacturing, we’re ready to discuss your next production opportunity.",
+    secondaryAr: "",
+    secondaryEn: "",
     badgeAr: "استشارات تصنيع وتطوير الملابس",
     badgeEn: "Apparel & Manufacturing Advisory"
   },
@@ -113,9 +112,11 @@ export const SectorConsultationCta: React.FC<SectorConsultationCtaProps> = ({ se
             {/* Bottom track details and CTA portion */}
             <div className="mt-8 pt-8 border-t border-border/50 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
               <div className="max-w-2xl space-y-3 text-start">
-                <p className="text-xs sm:text-sm text-brand-orange font-medium leading-relaxed">
-                  {ar ? config.secondaryAr : config.secondaryEn}
-                </p>
+                {Boolean((ar ? config.secondaryAr : config.secondaryEn)?.trim()) && (
+                  <p className="text-xs sm:text-sm text-brand-orange font-medium leading-relaxed">
+                    {ar ? config.secondaryAr : config.secondaryEn}
+                  </p>
+                )}
                 <div className="flex flex-wrap items-center gap-4 text-xs text-muted-foreground">
                   <div className="flex items-center gap-1.5">
                     <CheckCircle2 className="size-4 text-brand-green shrink-0" />

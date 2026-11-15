@@ -38,7 +38,6 @@ import { cn } from "@/lib/utils";
 import { SectorContactSection } from "@/components/site/sector-contact-section";
 import { highlightBrand } from "@/components/site/brand-text";
 import { AnimatedStatistic } from "@/components/site/animated-statistic";
-import { FactorySlider } from "@/components/group/factory-slider";
 
 function SectionBadge({ title }: { title: string }) {
   return (
@@ -65,37 +64,6 @@ export function GarmentAboutTab() {
       {/* 1. ABOUT GARMENT MANUFACTURING & EXECUTIVE OVERVIEW */}
       <section id="about-overview" className="scroll-mt-36">
         <Reveal>
-          {/* Key Metrics Dashboard */}
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:gap-4 mb-8">
-            <div className="rounded-2xl border border-white/20 bg-background/80 p-5 shadow-sm backdrop-blur-md text-center">
-              <div className="font-head text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">+40 {ar ? "عامًا" : "Years"}</div>
-              <div className="mt-1 text-xs font-bold text-muted-foreground uppercase tracking-wider">
-                {ar ? "خبرة تصنيعية ممتدة" : "Industrial Heritage"}
-              </div>
-            </div>
-
-            <div className="rounded-2xl border border-white/20 bg-background/80 p-5 shadow-sm backdrop-blur-md text-center">
-              <div className="font-head text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">15</div>
-              <div className="mt-1 text-xs font-bold text-muted-foreground uppercase tracking-wider">
-                {ar ? "خط إنتاج تخصصي" : "Active Production Lines"}
-              </div>
-            </div>
-
-            <div className="rounded-2xl border border-white/20 bg-background/80 p-5 shadow-sm backdrop-blur-md text-center">
-              <div className="font-head text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">100K+</div>
-              <div className="mt-1 text-xs font-bold text-muted-foreground uppercase tracking-wider">
-                {ar ? "قطعة شهريًا طاقة فعلية" : "Actual Monthly Output"}
-              </div>
-            </div>
-
-            <div className="rounded-2xl border border-white/20 bg-background/80 p-5 shadow-sm backdrop-blur-md text-center">
-              <div className="font-head text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">250+</div>
-              <div className="mt-1 text-xs font-bold text-muted-foreground uppercase tracking-wider">
-                {ar ? "ماكينة إلكترونية متقدمة" : "Advanced Machines"}
-              </div>
-            </div>
-          </div>
-
           {/* Centered Executive Intro Box */}
           <div className="group relative mx-auto max-w-4xl overflow-hidden rounded-3xl border border-white/20 bg-background/75 p-8 sm:p-12 shadow-[0_12px_40px_rgba(0,0,0,0.08)] backdrop-blur-2xl transition-all duration-300 hover:scale-[1.01] hover:border-brand-green/40 text-center">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
@@ -200,8 +168,8 @@ export function GarmentAboutTab() {
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-10">
             <SectionBadge title={ar ? "الطاقة والقدرة الإنتاجية" : "Production Capacity"} />
-            <h2 className="section-title mt-3">{ar ? capacity.headingAr : capacity.headingEn}</h2>
-            <p className="section-intro mt-3">{ar ? capacity.subtitleAr : capacity.subtitleEn}</p>
+            <h2 className="section-title mt-3 text-center mx-auto">{ar ? capacity.headingAr : capacity.headingEn}</h2>
+            <p className="section-intro mt-3 text-center mx-auto">{ar ? capacity.subtitleAr : capacity.subtitleEn}</p>
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
@@ -211,8 +179,8 @@ export function GarmentAboutTab() {
                 className={cn(
                   "rounded-3xl border p-8 shadow-sm backdrop-blur-xl flex flex-col justify-between transition hover:-translate-y-1 hover:shadow-xl",
                   cap.type === "available"
-                    ? "border-brand-green bg-brand-green/5 ring-2 ring-brand-green/20"
-                    : "border-white/30 bg-background/80"
+                    ? "border-brand-green/80 bg-brand-green/10 ring-2 ring-brand-green/30"
+                    : "border-white/50 bg-white/95 text-foreground shadow-sm dark:bg-card/90"
                 )}
               >
                 <div>
@@ -223,7 +191,6 @@ export function GarmentAboutTab() {
                     )}>
                       {ar ? cap.labelAr : cap.labelEn}
                     </span>
-                    {cap.type === "available" && <Sparkles className="size-4 text-brand-orange" />}
                   </div>
 
                   <div className="font-head text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">
@@ -306,10 +273,10 @@ export function GarmentAboutTab() {
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-10">
             <SectionBadge title={ar ? "التصنيفات والمنتجات" : "Product Categories"} />
-            <h2 className="section-title mt-3">
+            <h2 className="section-title mt-3 text-center mx-auto">
               {ar ? "تنوع صناعي شامل عبر 11 فئة رئيسية للملابس" : "Comprehensive Apparel Product Categories"}
             </h2>
-            <p className="section-intro mt-3">
+            <p className="section-intro mt-3 text-center mx-auto">
               {ar ? "تخصص دقيق وقدرات إنتاجية لتلبية مختلف طلبات بيوت الأزياء وسلاسل التجزئة." : "Specialized production lines for diverse fashion genres from knit basics to tailored formalwear."}
             </p>
           </div>
@@ -414,8 +381,8 @@ export function GarmentAboutTab() {
           <Reveal>
             <div className="text-center max-w-3xl mx-auto mb-10">
               <SectionBadge title={ar ? "مصانعنا ومرافقنا" : "Our Factory & Dedicated Lines"} />
-              <h2 className="section-title mt-3">{ar ? shirtFacility.headingAr : shirtFacility.headingEn}</h2>
-              <p className="section-intro mt-3">{ar ? shirtFacility.subtitleAr : shirtFacility.subtitleEn}</p>
+              <h2 className="section-title mt-3 text-center mx-auto">{ar ? shirtFacility.headingAr : shirtFacility.headingEn}</h2>
+              <p className="section-intro mt-3 text-center mx-auto">{ar ? shirtFacility.subtitleAr : shirtFacility.subtitleEn}</p>
             </div>
 
             <div className="rounded-2xl border border-brand-orange/30 bg-brand-orange/5 p-6 sm:p-8 mb-8">
@@ -440,14 +407,6 @@ export function GarmentAboutTab() {
                   </div>
                 ))}
               </div>
-            </div>
-
-            {/* Factory Gallery Carousel */}
-            <div className="mt-8">
-              <h4 className="font-head text-xs font-bold uppercase tracking-wider text-muted-foreground mb-4 text-center">
-                {ar ? "جولة مصورة داخل صالات الإنتاج والماكينات" : "Factory Production Floor Showcase"}
-              </h4>
-              <FactorySlider />
             </div>
           </Reveal>
         </div>
@@ -495,14 +454,13 @@ export function GarmentAboutTab() {
         <div className="overflow-hidden rounded-3xl border border-brand-green/30 bg-gradient-to-br from-brand-green/10 via-background to-brand-orange/5 p-8 sm:p-14 text-center shadow-xl backdrop-blur-2xl">
           <Reveal>
             <div className="max-w-3xl mx-auto">
-              <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-3">
-                <Sparkles className="size-3.5 text-brand-orange" />
-                <span>{ar ? "تصنيع تعاقدي وتصدير دولي" : "Contract Manufacturing & Export Orders"}</span>
+              <div className="mb-3">
+                <SectionBadge title={ar ? "تصنيع تعاقدي وتصدير دولي" : "Contract Manufacturing & Export Orders"} />
               </div>
-              <h2 className="text-2xl sm:text-4xl font-extrabold font-head text-foreground">
-                {ar ? "جاهزون لبدء إنتاج مجموعتك القادمة وفق أعلى معايير الجودة" : "Ready to Manufacture Your Next Apparel Collection"}
+              <h2 className="text-2xl sm:text-4xl font-extrabold font-head text-foreground text-center mx-auto">
+                {ar ? "جاهزون للبدء بأعلى معايير الجودة" : "Ready to Manufacture with the Highest Quality Standards"}
               </h2>
-              <p className="mt-3 text-xs sm:text-sm text-muted-foreground leading-relaxed">
+              <p className="mt-3 text-xs sm:text-sm text-muted-foreground leading-relaxed text-center mx-auto">
                 {ar
                   ? "قدّم مواصفات طلبية التصنيع عبر النموذج متعدد المراحل، وسيقوم فريق المكتب الفني بدراسة متطلبات الأقمشة والكميات وتقديم عرض سعر تفصيلي خلال 48 ساعة عمل."
                   : "Submit your manufacturing brief through our multi-stage B2B proposal builder and our engineering team will provide a comprehensive costing within 48 business hours."}
@@ -518,7 +476,7 @@ export function GarmentAboutTab() {
 
                 <Button asChild size="lg" className="rounded-full bg-brand-green text-white hover:bg-brand-orange shadow-md transition-all duration-300">
                   <Link to="/models">
-                    <span>{ar ? "تصفح كتالوج الموديلات (+2,700)" : "Browse Model Catalogue"}</span>
+                    <span>{ar ? "تصفح كتالوج الموديلات" : "Browse Model Catalogue"}</span>
                   </Link>
                 </Button>
               </div>

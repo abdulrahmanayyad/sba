@@ -133,33 +133,9 @@ export function GarmentSectorView({ tab = "about" }: GarmentViewProps) {
 
               <div className="mt-8 flex flex-wrap items-center gap-3">
                 <Button asChild size="default" className="rounded-full bg-brand-green text-white hover:bg-brand-orange transition-all duration-300 shadow-md">
-                  <Link to="/sectors/$sector" params={{ sector: "garment" }} search={{ tab: "start-project" }}>
-                    <span>{ar ? "ابدأ طلب تصنيع" : "Start Manufacturing Inquiry"}</span>
+                  <Link to="/sectors/$sector" params={{ sector: "garment" }} search={{ tab: "projects" }}>
+                    <span>{ar ? "استكشف مشاريعنا" : "Explore Our Projects"}</span>
                   </Link>
-                </Button>
-
-                <Button asChild size="default" className="rounded-full bg-brand-green text-white hover:bg-brand-orange transition-all duration-300 shadow-md">
-                  <a
-                    href={ar ? "/downloads/SBA_Apparel_Manufacturing_Profile_AR.pdf" : "/downloads/SBA_Apparel_Manufacturing_Profile_EN.pdf"}
-                    download={ar ? "SBA_Apparel_Manufacturing_Profile_AR.pdf" : "SBA_Apparel_Manufacturing_Profile_EN.pdf"}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Download className="size-4 me-1.5" />
-                    <span>{ar ? "تحميل الدليل الصناعي (PDF)" : "Download Manufacturing Profile (PDF)"}</span>
-                  </a>
-                </Button>
-
-                <Button asChild size="default" className="rounded-full bg-brand-green text-white hover:bg-brand-orange transition-all duration-300 shadow-md">
-                  <a
-                    href={ar ? "/downloads/SBA_Apparel_Product_Catalogue_AR.pdf" : "/downloads/SBA_Apparel_Product_Catalogue_EN.pdf"}
-                    download={ar ? "SBA_Apparel_Product_Catalogue_AR.pdf" : "SBA_Apparel_Product_Catalogue_EN.pdf"}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Download className="size-4 me-1.5" />
-                    <span>{ar ? "كتالوج الموديلات (11 فئة)" : "Download Apparel Catalogue"}</span>
-                  </a>
                 </Button>
               </div>
             </Reveal>

@@ -26,12 +26,9 @@ import {
   garmentAboutData,
   garmentProductionCapacity,
   garmentIndustrialCapabilities,
-  garmentClassicShirtFacility,
-  garmentFactoryGallery
+  garmentClassicShirtFacility
 } from "../garment-data";
 import { cn } from "@/lib/utils";
-import { AnimatedStatistic } from "@/components/site/animated-statistic";
-import { FactorySlider } from "@/components/group/factory-slider";
 
 function SectionBadge({ title }: { title: string }) {
   return (
@@ -55,7 +52,7 @@ export function GarmentCapabilitiesTab() {
       {/* 1. Production Capacity Breakdown (Design vs Actual vs Available) */}
       <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
         <Reveal>
-          <div className="max-w-3xl">
+          <div className="text-center max-w-3xl mx-auto">
             <SectionBadge title={ar ? "الطاقة والقدرة الصناعية المعتمدة" : "Certified Production Capacity"} />
             <h2 className="section-title mt-3">
               {ar ? capacity.headingAr : capacity.headingEn}
@@ -73,8 +70,8 @@ export function GarmentCapabilitiesTab() {
                 className={cn(
                   "rounded-3xl border p-8 shadow-sm backdrop-blur-xl flex flex-col justify-between transition hover:-translate-y-1 hover:shadow-xl",
                   cap.type === "available"
-                    ? "border-brand-green bg-brand-green/10 ring-2 ring-brand-green/30"
-                    : "border-border bg-card/60"
+                    ? "border-brand-green/80 bg-brand-green/10 ring-2 ring-brand-green/30"
+                    : "border-white/50 bg-white/95 text-foreground shadow-sm dark:bg-card/90"
                 )}
               >
                 <div>
@@ -85,7 +82,6 @@ export function GarmentCapabilitiesTab() {
                     )}>
                       {ar ? cap.labelAr : cap.labelEn}
                     </span>
-                    {cap.type === "available" && <Sparkles className="size-4 text-brand-orange" />}
                   </div>
 
                   <div className="font-head text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">
@@ -105,16 +101,6 @@ export function GarmentCapabilitiesTab() {
                     {cap.type === "available" ? (ar ? "جاهزة للتعاقد الفوري للعلامات التجارية" : "Ready for Allocation") : (ar ? "طاقة تشغيلية مستقرة" : "Sustained Operation")}
                   </span>
                 </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Key Metrics Banner */}
-          <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4 rounded-2xl border border-border/60 bg-secondary/30 p-4 text-center">
-            {capacity.keyMetrics.map((km, idx) => (
-              <div key={idx} className="p-2">
-                <span className="font-head text-lg sm:text-xl font-bold text-foreground block">{km.value}</span>
-                <span className="text-xs text-muted-foreground">{ar ? km.labelAr : km.labelEn}</span>
               </div>
             ))}
           </div>
@@ -187,13 +173,11 @@ export function GarmentCapabilitiesTab() {
       {/* 3. Dedicated Classic Shirt Line */}
       <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
         <Reveal>
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-border pb-6 mb-8">
-            <div className="max-w-2xl">
-              <SectionBadge title={ar ? "خط إنتاج القمصان الكلاسيكية" : "Dedicated Classic Shirt Line"} />
-              <h2 className="section-title mt-3">{ar ? shirtFacility.headingAr : shirtFacility.headingEn}</h2>
-              <p className="section-intro mt-3">{ar ? shirtFacility.subtitleAr : shirtFacility.subtitleEn}</p>
-            </div>
-            <div className="rounded-2xl border border-brand-orange/40 bg-brand-orange/10 p-5 text-center shrink-0">
+          <div className="text-center max-w-3xl mx-auto border-b border-border pb-6 mb-8">
+            <SectionBadge title={ar ? "خط إنتاج القمصان الكلاسيكية" : "Dedicated Classic Shirt Line"} />
+            <h2 className="section-title mt-3">{ar ? shirtFacility.headingAr : shirtFacility.headingEn}</h2>
+            <p className="section-intro mt-3">{ar ? shirtFacility.subtitleAr : shirtFacility.subtitleEn}</p>
+            <div className="inline-block mt-5 rounded-2xl border border-brand-orange/40 bg-brand-orange/10 p-4 text-center">
               <div className="font-head text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">{ar ? shirtFacility.monthlyCapacityAr : shirtFacility.monthlyCapacityEn}</div>
               <div className="text-xs font-bold text-muted-foreground uppercase mt-1">{ar ? "طاقة الخط المعتمدة شهريًا" : "Certified Monthly Capacity"}</div>
             </div>
@@ -228,42 +212,7 @@ export function GarmentCapabilitiesTab() {
         </Reveal>
       </div>
 
-      {/* 4. Factory Gallery Showcase */}
-      <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
-        <Reveal>
-          <div className="text-center max-w-3xl mx-auto mb-10">
-            <SectionBadge title={ar ? "معرض المصنع وصالات الإنتاج" : "Factory Gallery"} />
-            <h2 className="section-title mt-3">
-              {ar ? "جولة مصورة داخل مرافق التصنيع والماكينات" : "Inside Our Factory & Assembly Lines"}
-            </h2>
-            <p className="section-intro mt-3">
-              {ar ? "صور حقيقية ومحدثة من صالات القص، وخطوط الخياطة، ومعامل الجودة، والتعبئة." : "Real photographs of our cutting hall, sewing floors, QC stations, and export packing."}
-            </p>
-          </div>
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {gallery.map((item) => (
-              <div key={item.id} className="group overflow-hidden rounded-2xl border border-border bg-card/60 backdrop-blur-md shadow-sm">
-                <div className="relative aspect-[16/10] overflow-hidden bg-muted">
-                  <img
-                    src={item.image}
-                    alt={ar ? item.titleAr : item.titleEn}
-                    className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    loading="lazy"
-                  />
-                  <span className="absolute bottom-2.5 start-2.5 bg-black/70 text-white text-[11px] font-bold px-2.5 py-0.5 rounded-md backdrop-blur-sm">
-                    {ar ? item.categoryAr : item.categoryEn}
-                  </span>
-                </div>
-                <div className="p-4 space-y-1.5">
-                  <h4 className="font-head text-sm font-bold text-foreground">{ar ? item.titleAr : item.titleEn}</h4>
-                  <p className="text-xs text-muted-foreground leading-relaxed line-clamp-2">{ar ? item.descAr : item.descEn}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </Reveal>
-      </div>
 
       {/* 5. Garment B2B Technical Terms Glossary */}
       <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">

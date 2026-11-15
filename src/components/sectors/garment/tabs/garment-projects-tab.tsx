@@ -135,7 +135,7 @@ export function GarmentProjectsTab() {
         </div>
         <Button asChild variant="outline" size="sm" className="rounded-full text-xs font-bold shrink-0">
           <Link to="/models">
-            <span>{ar ? "تصفح كتالوج الموديلات (+2,700)" : "Explore Full Catalogue (+2,700)"}</span>
+            <span>{ar ? "تصفح كتالوج الموديلات" : "Explore Full Catalogue"}</span>
             <ExternalLink className="size-3.5 ms-1.5" />
           </Link>
         </Button>

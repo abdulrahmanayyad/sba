@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 
 import { Reveal } from "@/components/home/reveal";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/i18n/language-context";
 import { cn } from "@/lib/utils";
 
 // All 58 factory images in sequential order
@@ -11,7 +12,9 @@ const factoryImages = Array.from({ length: 58 }, (_, i) => {
   return `/factory/slide-${num}.jpg`;
 });
 
-export function FactorySlider({ ar }: { ar: boolean }) {
+export function FactorySlider({ ar: arProp }: { ar?: boolean }) {
+  const { language } = useLanguage();
+  const ar = arProp ?? (language === "AR");
   const [current, setCurrent] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
   const thumbnailScrollRef = useRef<HTMLDivElement>(null);
@@ -52,9 +55,9 @@ export function FactorySlider({ ar }: { ar: boolean }) {
       <Reveal className="mx-auto max-w-3xl text-center">
         <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
           <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-          <span>{ar ? "جولة تصويرية متكاملة" : "Visual Factory Tour"}</span>
+          <span>{ar ? "جولة مرئية في المصنع" : "Visual Factory Tour"}</span>
         </div>
-        <h2 className="section-title mt-1">{ar ? "نظرة عامة على المصنع" : "Factory Overview"}</h2>
+        <h2 className="section-title mt-1 text-center mx-auto">{ar ? "نظرة عامة على المصنع" : "Factory Overview"}</h2>
       </Reveal>
 
       {/* Main Full Photo Slider Container — Focused purely on images */}

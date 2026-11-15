@@ -812,8 +812,8 @@ export const garmentClassicShirtFacility = {
   headingAr: "خط إنتاج وتصنيع القمصان الكلاسيكية المتخصص",
   subtitleEn: "A dedicated manufacturing ecosystem engineered strictly for high-end formal, business, and luxury shirts.",
   subtitleAr: "خط إنتاج مستقل مجهز بماكينات يابانية متخصصة لتصنيع القمصان الرسمية وبدل العمل وفق أرقى معايير الخياطة العالمية.",
-  monthlyCapacityEn: "45,000 Certified Shirts / Month",
-  monthlyCapacityAr: "45,000 قميص كلاسيكي معتمد شهريًا",
+  monthlyCapacityEn: "30,000 Shirts / Month",
+  monthlyCapacityAr: "30,000 قميص شهري",
   noteEn: "This capacity is measured and dedicated exclusively to the Classic Shirt Line, separate from general knitwear throughput.",
   noteAr: "هذه الطاقة الإنتاجية مخصصة ومقاسة حصريًا لخط تصنيع القمصان، ومنفصلة تمامًا عن طاقة مصانع الملابس القطنية الأخرى.",
   specializedMachinery: [

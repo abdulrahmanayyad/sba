@@ -25,9 +25,9 @@ export function GarmentServicesTab() {
       <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
         <Reveal>
           <div className="max-w-3xl">
-            <SectionBadge title={ar ? "خدمات التصنيع والتوريد B2B" : "Manufacturing Services"} />
+            <SectionBadge title={ar ? "خدمات التصنيع والتوريد" : "Manufacturing Services"} />
             <h2 className="section-title mt-3">
-              {ar ? "خدمات وبرامج تصنيع واستشارات متكاملة تلبي احتياجات العلامات التجارية" : "Turnkey B2B Manufacturing, Sourcing & Advisory Programs"}
+              {ar ? "خدمات واستشارات تلبي احتياجات العلامات التجارية" : "Services & Advisory Meeting Brand Needs"}
             </h2>
             <p className="section-intro mt-4">
               {ar
@@ -65,7 +65,6 @@ export function GarmentServicesTab() {
                     </h3>
                     {service.id === "brand-advisory" && (
                       <div className="mt-3 flex items-center gap-2 rounded-xl border border-brand-green/30 bg-brand-green/10 px-3.5 py-2 text-xs sm:text-sm font-bold text-brand-green">
-                        <Sparkles className="size-4 shrink-0 text-brand-orange" />
                         <span>
                           {ar
                             ? "مؤشر رئيسي: تقديم أكثر من 400 استشارة للعلامات التجارية الناشئة والقائمة"
