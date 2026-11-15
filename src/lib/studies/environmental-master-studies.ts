@@ -50,7 +50,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — المملكة العربية السعودية",
+    "titleAr": "دراسة سوق المملكة العربية السعودية",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Saudi Arabia",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -1175,7 +1175,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — دولة الإمارات العربية المتحدة",
+    "titleAr": "دراسة سوق دولة الإمارات العربية المتحدة",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — United Arab Emirates",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -2787,7 +2787,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — المملكة المغربية",
+    "titleAr": "دراسة سوق المملكة المغربية",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Morocco",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -3636,7 +3636,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — جمهورية كينيا",
+    "titleAr": "دراسة سوق جمهورية كينيا",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Kenya",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -4416,7 +4416,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — جمهورية نيجيريا الاتحادية",
+    "titleAr": "دراسة سوق جمهورية نيجيريا الاتحادية",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Nigeria",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -5165,7 +5165,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — جمهورية جنوب أفريقيا",
+    "titleAr": "دراسة سوق جمهورية جنوب أفريقيا",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — South Africa",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -5879,7 +5879,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — دولة قطر",
+    "titleAr": "دراسة سوق دولة قطر",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Qatar",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -6631,7 +6631,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — سلطنة عمان",
+    "titleAr": "دراسة سوق سلطنة عمان",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Oman",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -7440,7 +7440,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — جمهورية مصر العربية",
+    "titleAr": "دراسة سوق جمهورية مصر العربية",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Egypt",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -8175,7 +8175,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — الجمهورية الجزائرية الديمقراطية الشعبية",
+    "titleAr": "دراسة سوق الجمهورية الجزائرية الديمقراطية الشعبية",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Algeria",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -8908,7 +8908,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — جمهورية العراق",
+    "titleAr": "دراسة سوق جمهورية العراق",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Iraq",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -9748,7 +9748,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — جمهورية غانا",
+    "titleAr": "دراسة سوق جمهورية غانا",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Ghana",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -10617,7 +10617,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — جمهورية كوت ديفوار (ساحل العاج)",
+    "titleAr": "دراسة سوق جمهورية كوت ديفوار (ساحل العاج)",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Cote d'Ivoire",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -11553,7 +11553,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — الجمهورية التونسية",
+    "titleAr": "دراسة سوق الجمهورية التونسية",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Tunisia",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -12262,7 +12262,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — جمهورية السنغال",
+    "titleAr": "دراسة سوق جمهورية السنغال",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Senegal",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -12975,7 +12975,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — جمهورية تنزانيا الاتحادية",
+    "titleAr": "دراسة سوق جمهورية تنزانيا الاتحادية",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Tanzania",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -13704,7 +13704,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — جمهورية إثيوبيا الفيدرالية الديمقراطية",
+    "titleAr": "دراسة سوق جمهورية إثيوبيا الفيدرالية الديمقراطية",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Ethiopia",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -14400,7 +14400,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — المملكة الأردنية الهاشمية",
+    "titleAr": "دراسة سوق المملكة الأردنية الهاشمية",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Jordan",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -15093,7 +15093,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — جمهورية رواندا",
+    "titleAr": "دراسة سوق جمهورية رواندا",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Rwanda",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -15738,7 +15738,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — جمهورية زامبيا",
+    "titleAr": "دراسة سوق جمهورية زامبيا",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Zambia",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -16440,7 +16440,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — جمهورية أوغندا",
+    "titleAr": "دراسة سوق جمهورية أوغندا",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Uganda",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -17172,7 +17172,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — دولة ليبيا",
+    "titleAr": "دراسة سوق دولة ليبيا",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Libya",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -17889,7 +17889,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — الجمهورية الإسلامية الموريتانية",
+    "titleAr": "دراسة سوق الجمهورية الإسلامية الموريتانية",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Mauritania",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -18606,7 +18606,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — جمهورية موزمبيق",
+    "titleAr": "دراسة سوق جمهورية موزمبيق",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Mozambique",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -19329,7 +19329,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — دولة الكويت",
+    "titleAr": "دراسة سوق دولة الكويت",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Kuwait",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -20087,7 +20087,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — مملكة البحرين",
+    "titleAr": "دراسة سوق مملكة البحرين",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Bahrain",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -20753,7 +20753,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — جمهورية الكاميرون",
+    "titleAr": "دراسة سوق جمهورية الكاميرون",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Cameroon",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -21419,7 +21419,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — جمهورية أنغولا",
+    "titleAr": "دراسة سوق جمهورية أنغولا",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Angola",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -22085,7 +22085,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — جمهورية بنين",
+    "titleAr": "دراسة سوق جمهورية بنين",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Benin",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -22736,7 +22736,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — جمهورية بوتسوانا",
+    "titleAr": "دراسة سوق جمهورية بوتسوانا",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Botswana",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -23387,7 +23387,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — بوركينا فاسو",
+    "titleAr": "دراسة سوق بوركينا فاسو",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Burkina Faso",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -24053,7 +24053,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — جمهورية بوروندي",
+    "titleAr": "دراسة سوق جمهورية بوروندي",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Burundi",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -24725,7 +24725,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — جمهورية كاب فيردي (الرأس الأخضر)",
+    "titleAr": "دراسة سوق جمهورية كاب فيردي (الرأس الأخضر)",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Cabo Verde",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -25382,7 +25382,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — جمهورية أفريقيا الوسطى",
+    "titleAr": "دراسة سوق جمهورية أفريقيا الوسطى",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Central African Republic",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -26027,7 +26027,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — جمهورية تشاد",
+    "titleAr": "دراسة سوق جمهورية تشاد",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Chad",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -26684,7 +26684,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — اتحاد جزر القمر",
+    "titleAr": "دراسة سوق اتحاد جزر القمر",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Comoros",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -27335,7 +27335,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — جمهورية الكونغو الديمقراطية",
+    "titleAr": "دراسة سوق جمهورية الكونغو الديمقراطية",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Democratic Republic of the Congo",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -27923,7 +27923,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — جمهورية الكونغو",
+    "titleAr": "دراسة سوق جمهورية الكونغو",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Republic of the Congo",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -28503,7 +28503,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — جمهورية جيبوتي",
+    "titleAr": "دراسة سوق جمهورية جيبوتي",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Djibouti",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -29068,7 +29068,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — جمهورية غينيا الاستوائية",
+    "titleAr": "دراسة سوق جمهورية غينيا الاستوائية",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Equatorial Guinea",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -29633,7 +29633,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — دولة إريتريا",
+    "titleAr": "دراسة سوق دولة إريتريا",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Eritrea",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -30183,7 +30183,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — مملكة إيسواتيني",
+    "titleAr": "دراسة سوق مملكة إيسواتيني",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Eswatini",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -30733,7 +30733,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — الجمهورية الغابونية",
+    "titleAr": "دراسة سوق الجمهورية الغابونية",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Gabon",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -31313,7 +31313,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — جمهورية غامبيا",
+    "titleAr": "دراسة سوق جمهورية غامبيا",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — The Gambia",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -31863,7 +31863,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — جمهورية غينيا",
+    "titleAr": "دراسة سوق جمهورية غينيا",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Guinea",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -32451,7 +32451,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — جمهورية غينيا بيساو",
+    "titleAr": "دراسة سوق جمهورية غينيا بيساو",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Guinea-Bissau",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -33001,7 +33001,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — مملكة ليسوتو",
+    "titleAr": "دراسة سوق مملكة ليسوتو",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Lesotho",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -33581,7 +33581,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — جمهورية ليبيريا",
+    "titleAr": "دراسة سوق جمهورية ليبيريا",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Liberia",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -34131,7 +34131,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — جمهورية مدغشقر",
+    "titleAr": "دراسة سوق جمهورية مدغشقر",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Madagascar",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -34719,7 +34719,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — جمهورية ملاوي",
+    "titleAr": "دراسة سوق جمهورية ملاوي",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Malawi",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -35277,7 +35277,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — جمهورية مالي",
+    "titleAr": "دراسة سوق جمهورية مالي",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Mali",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -35870,7 +35870,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — جمهورية موريشيوس",
+    "titleAr": "دراسة سوق جمهورية موريشيوس",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Mauritius",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -36463,7 +36463,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — جمهورية ناميبيا",
+    "titleAr": "دراسة سوق جمهورية ناميبيا",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Namibia",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -37041,7 +37041,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — جمهورية النيجر",
+    "titleAr": "دراسة سوق جمهورية النيجر",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Niger",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -37596,7 +37596,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — جمهورية ساو تومي وبرينسيبي",
+    "titleAr": "دراسة سوق جمهورية ساو تومي وبرينسيبي",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Sao Tome and Principe",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -38151,7 +38151,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — جمهورية سيشل",
+    "titleAr": "دراسة سوق جمهورية سيشل",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Seychelles",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -38691,7 +38691,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — جمهورية سيراليون",
+    "titleAr": "دراسة سوق جمهورية سيراليون",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Sierra Leone",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -39269,7 +39269,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — جمهورية جنوب السودان",
+    "titleAr": "دراسة سوق جمهورية جنوب السودان",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — South Sudan",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -39824,7 +39824,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — الجمهورية التوغولية",
+    "titleAr": "دراسة سوق الجمهورية التوغولية",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Togo",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -40387,7 +40387,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — جمهورية زيمبابوي",
+    "titleAr": "دراسة سوق جمهورية زيمبابوي",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Zimbabwe",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -40942,7 +40942,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — جمهورية السودان",
+    "titleAr": "دراسة سوق جمهورية السودان",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Sudan",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -41520,7 +41520,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — جمهورية الصومال الفيدرالية",
+    "titleAr": "دراسة سوق جمهورية الصومال الفيدرالية",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Somalia",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -42083,7 +42083,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — الجمهورية اللبنانية",
+    "titleAr": "دراسة سوق الجمهورية اللبنانية",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Lebanon",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -42661,7 +42661,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — دولة فلسطين",
+    "titleAr": "دراسة سوق دولة فلسطين",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Palestine",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -43231,7 +43231,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — الجمهورية العربية السورية",
+    "titleAr": "دراسة سوق الجمهورية العربية السورية",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Syria",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
@@ -43809,7 +43809,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       "EIA / ESIA & Environmental Compliance",
       "Circular Economy Solutions"
     ],
-    "titleAr": "دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — الجمهورية اليمنية",
+    "titleAr": "دراسة سوق الجمهورية اليمنية",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Yemen",
     "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",

@@ -185,22 +185,6 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
         <div className="interactive-card glass-box-interactive group overflow-hidden rounded-3xl border border-white/50 bg-white/75 dark:bg-slate-900/70 p-6 sm:p-10 shadow-lg backdrop-blur-2xl text-start">
           <div className="relative z-10 grid gap-8 lg:grid-cols-12 lg:items-center">
             <div className="lg:col-span-8 space-y-4">
-              <div className="flex flex-wrap items-center gap-2">
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 dark:border-white/15 bg-slate-100/90 dark:bg-white/10 px-3.5 py-1 text-xs font-bold text-slate-800 dark:text-slate-100">
-                  <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-                  <span>{ar ? `القطاع 0${sector.order} · ${sector.nameEn}` : `Sector 0${sector.order} · ${sector.nameAr}`}</span>
-                </span>
-
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 dark:border-white/15 bg-white/90 dark:bg-slate-800 px-3.5 py-1 text-xs font-bold text-slate-900 dark:text-white">
-                  {isEgyptOnly ? <MapPin className="size-3.5 text-brand-orange" /> : <Globe className="size-3.5 text-brand-green" />}
-                  <span>{ar ? `نطاق الدراسة: ${sector.scopeLabelAr}` : `Scope: ${sector.scopeLabelEn}`}</span>
-                </span>
-
-                <span className={cn("inline-flex items-center rounded-full border px-3 py-1 text-xs font-bold", statusCfg.badgeClass)}>
-                  {ar ? statusCfg.ar : statusCfg.en}
-                </span>
-              </div>
-
               <h1 className="font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight transition-colors duration-300 group-hover:text-brand-green-text">
                 {ar ? sector.nameAr : sector.nameEn}
               </h1>
@@ -271,8 +255,8 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
                   ? "البحث والتصفية حسب المنطقة والنشاط ونوع المشروع داخل مصر"
                   : "البحث والتصفية حسب الدولة والمنطقة الجغرافية والمنتج"
                 : isEgyptOnly
-                ? "Filter by Region, Activity & Project Type inside Egypt"
-                : "Filter by Country, Geographic Region, Product & Status"}
+                  ? "Filter by Region, Activity & Project Type inside Egypt"
+                  : "Filter by Country, Geographic Region, Product & Status"}
             </h2>
             <span className="text-xs font-bold text-slate-500">
               {ar ? `${filteredStudies.length} دراسة` : `${filteredStudies.length} Studies`}
@@ -292,8 +276,8 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
                       ? "ابحث بالمنطقة، المحافظة، نوع المشروع أو النشاط..."
                       : "ابحث باسم الدولة، المنتج، أو النشاط..."
                     : isEgyptOnly
-                    ? "Search city, project type, or activity in Egypt..."
-                    : "Search country, product, or activity..."
+                      ? "Search city, project type, or activity in Egypt..."
+                      : "Search country, product, or activity..."
                 }
                 className="w-full rounded-2xl border border-slate-200 dark:border-white/15 bg-white dark:bg-slate-950/60 ps-10 pe-4 py-2.5 text-xs font-medium focus:border-slate-500 focus:outline-none"
               />
@@ -541,19 +525,15 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
                           <span className={cn(
                             "rounded-full px-2.5 py-0.5 font-mono font-extrabold text-xs shadow-xs",
                             study.opportunityScore >= 80
-                              ? "bg-emerald-500 text-white"
+                              ? "bg-brand-green text-white"
                               : study.opportunityScore >= 65
-                              ? "bg-blue-600 text-white"
-                              : "bg-amber-600 text-white"
+                                ? "bg-brand-orange text-white"
+                                : "bg-red-500 text-white"
                           )}>
                             {study.opportunityScore}/100
                           </span>
                         </div>
-                      ) : (
-                        <span className={cn("rounded-full border px-2.5 py-0.5 font-bold", st.badgeClass)}>
-                          {ar ? st.ar : st.en}
-                        </span>
-                      )}
+                      ) : null}
                     </div>
 
                     {/* Country Header */}
@@ -579,10 +559,10 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
                           <span className={cn(
                             "rounded-lg px-2 py-0.5",
                             (study.opportunityScore ?? 0) >= 80
-                              ? "bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30"
+                              ? "bg-brand-green/10 text-brand-green border border-brand-green/30"
                               : (study.opportunityScore ?? 0) >= 65
-                              ? "bg-blue-500/10 text-blue-700 dark:text-blue-300 border border-blue-500/30"
-                              : "bg-amber-500/10 text-amber-700 dark:text-amber-300 border border-amber-500/30"
+                                ? "bg-brand-orange/10 text-brand-orange border border-brand-orange/30"
+                                : "bg-red-500/10 text-red-600 dark:text-red-400 border border-red-500/30"
                           )}>
                             {ar ? study.opportunityTierAr : study.opportunityTier}
                           </span>

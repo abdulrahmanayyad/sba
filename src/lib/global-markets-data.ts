@@ -302,7 +302,7 @@ export const GLOBAL_MARKET_SECTORS: GlobalMarketSectorConfig[] = [
   {
     id: "construction",
     order: 1,
-    nameAr: "المقاولات والتطوير العقاري",
+    nameAr: "قطاع المقاولات والتطوير العقاري",
     nameEn: "Construction & Real Estate Development",
     shortDescAr:
       "دراسات تحليلية متخصصة لسوق التشييد والبناء والتطوير العقاري والمشروعات القومية والخاصة داخل جمهورية مصر العربية فقط.",
@@ -354,7 +354,7 @@ export const GLOBAL_MARKET_SECTORS: GlobalMarketSectorConfig[] = [
   {
     id: "environmental",
     order: 2,
-    nameAr: "البيئة والاستدامة",
+    nameAr: "قطاع البيئة المستدامة",
     nameEn: "Sustainability & Environment",
     shortDescAr:
       "دراسات الأسواق العالمية الأكثر طلبًا في الطاقة المتجددة وإدارة المخلفات ومعالجة المياه والاقتصاد الدائري والتكنولوجيا البيئية.",
@@ -398,7 +398,7 @@ export const GLOBAL_MARKET_SECTORS: GlobalMarketSectorConfig[] = [
   {
     id: "garment",
     order: 3,
-    nameAr: "الملابس والمنسوجات",
+    nameAr: "قطاع الملابس والمنسوجات",
     nameEn: "Apparel & Textiles",
     shortDescAr:
       "تحليل أسواق التصدير والتصنيع التعاقدي للملابس والمنسوجات والأقمشة وبرامج FOB وCM وOEM وPrivate Label عالميًا.",
@@ -446,7 +446,7 @@ export const GLOBAL_MARKET_SECTORS: GlobalMarketSectorConfig[] = [
   {
     id: "food",
     order: 4,
-    nameAr: "الأغذية والمنتجات الطبيعية",
+    nameAr: "قطاع الأغذية والمنتجات الطبيعية",
     nameEn: "Food & Natural Products",
     shortDescAr:
       "دراسات الطلب والاستيراد والأسعار والاشتراطات الصحية وقنوات التوزيع العالمية للعسل وزيت الزيتون والتمور والأعشاب والمنتجات الزراعية.",

@@ -23,6 +23,7 @@ import { cn } from "@/lib/utils";
 import {
   GEO_REGIONS_ORDER,
   GLOBAL_MARKET_SECTORS,
+
   STUDY_SECTION_BLUEPRINT,
   STUDY_STATUS_LABELS,
   type GlobalMarketSectorId,
@@ -287,8 +288,8 @@ export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
                       ? `${activeStudies.length} دراسة موثقة`
                       : `${activeStudies.length} Verified Studies`
                     : ar
-                    ? "0 (جاهز لاستقبال الدراسات المعتمدة)"
-                    : "0 (Ready to Receive Approved Studies)"}
+                      ? "0 (جاهز لاستقبال الدراسات المعتمدة)"
+                      : "0 (Ready to Receive Approved Studies)"}
                 </span>
               </div>
 
@@ -455,29 +456,6 @@ export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent" />
 
-                  {/* Top Badges */}
-                  <div className="absolute top-4 start-4 flex flex-wrap items-center gap-2">
-                    <span className="inline-flex items-center gap-1.5 rounded-full bg-white/95 dark:bg-slate-900/90 px-3.5 py-1 text-xs font-extrabold text-slate-900 dark:text-white shadow-sm backdrop-blur-md">
-                      {sector.scope === "egypt_only" ? (
-                        <MapPin className="size-3.5 text-brand-orange" />
-                      ) : (
-                        <Globe className="size-3.5 text-brand-green" />
-                      )}
-                      <span>{ar ? `نطاق الدراسة: ${scopeBadge}` : `Scope: ${scopeBadge}`}</span>
-                    </span>
-                  </div>
-
-                  <div className="absolute top-4 end-4">
-                    <span
-                      className={cn(
-                        "inline-flex items-center rounded-full border px-3.5 py-1 text-xs font-bold backdrop-blur-md shadow-xs",
-                        statusCfg.badgeClass,
-                      )}
-                    >
-                      {ar ? statusCfg.ar : statusCfg.en}
-                    </span>
-                  </div>
-
                   {/* Bottom Title Area */}
                   <div className="absolute bottom-5 start-5 end-5 flex flex-wrap items-end justify-between gap-4 text-white">
                     <div className="flex items-center gap-3.5 text-start">
@@ -485,9 +463,6 @@ export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
                         <Icon className="size-6 text-white" />
                       </div>
                       <div>
-                        <span className="text-xs font-semibold text-white/80 block">
-                          {ar ? `القطاع 0${sector.order} · ${sector.nameEn}` : `Sector 0${sector.order} · ${sector.nameAr}`}
-                        </span>
                         <h2 className="font-head text-2xl sm:text-3xl font-extrabold !text-white leading-tight">
                           {ar ? sector.nameAr : sector.nameEn}
                         </h2>
@@ -534,8 +509,8 @@ export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
                           {metrics.publishedCount > 0
                             ? metrics.publishedCount
                             : ar
-                            ? "لم يُنشر بعد"
-                            : "None yet"}
+                              ? "لم يُنشر بعد"
+                              : "None yet"}
                         </span>
                       </div>
 
@@ -685,8 +660,8 @@ export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
                                 ? "لا توجد دراسات في هذا التصنيف تطابق عبارة البحث الحالية."
                                 : "No studies in this classification match your search query."
                               : ar
-                              ? "يتم حاليًا إعداد وتجهيز دراسات هذا التصنيف الإقليمي وفق المحاور الـ 18 المعتمدة."
-                              : "Studies in this regional classification are currently being prepared according to the 18-axis standard."}
+                                ? "يتم حاليًا إعداد وتجهيز دراسات هذا التصنيف الإقليمي وفق المحاور الـ 18 المعتمدة."
+                                : "Studies in this regional classification are currently being prepared according to the 18-axis standard."}
                           </p>
                         </div>
                       ) : (
@@ -718,22 +693,18 @@ export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
                                       </span>
                                     </div>
 
-                                    {typeof study.opportunityScore === "number" ? (
+                                    {typeof study.opportunityScore === "number" && (
                                       <span
                                         className={cn(
                                           "rounded-full px-2 py-0.5 font-mono font-extrabold text-[10px] text-white shadow-xs",
                                           study.opportunityScore >= 80
-                                            ? "bg-emerald-600"
+                                            ? "bg-brand-green"
                                             : study.opportunityScore >= 65
-                                            ? "bg-blue-600"
-                                            : "bg-amber-600",
+                                              ? "bg-brand-orange"
+                                              : "bg-red-500",
                                         )}
                                       >
                                         {study.opportunityScore}/100
-                                      </span>
-                                    ) : (
-                                      <span className={cn("rounded-full border px-2 py-0.5 text-[10px] font-bold", st.badgeClass)}>
-                                        {ar ? st.ar : st.en}
                                       </span>
                                     )}
                                   </div>

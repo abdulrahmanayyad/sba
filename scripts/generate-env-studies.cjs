@@ -251,7 +251,7 @@ for (const k of sortedKeys) {
     activityTypeEn: "Environmental Consultancy, Water & Waste Remediation, IoT Monitoring & Sustainable Tech",
     productTagsAr: defaultTagsAr.map(fixTanween),
     productTagsEn: defaultTagsEn,
-    titleAr: fixTanween(`دراسة سوق قطاع البيئة والاستدامة والفرص الاستثمارية — ${meta.ar}`),
+    titleAr: fixTanween(`دراسة سوق ${meta.ar}`),
     titleEn: `Environmental & Sustainability Market Intelligence Report — ${meta.en}`,
     subtitleAr: fixTanween(`رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.`),
     subtitleEn: `Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.`,
