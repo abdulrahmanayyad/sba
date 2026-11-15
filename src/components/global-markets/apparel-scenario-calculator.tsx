@@ -67,10 +67,10 @@ export function ApparelScenarioCalculator({
             <button
               type="button"
               onClick={() => setModelType("FOB")}
-              className={`rounded-xl border px-3 py-2 text-xs font-bold transition-colors cursor-pointer ${
+              className={`rounded-xl border px-3 py-2 text-xs font-bold transition-all duration-300 cursor-pointer ${
                 modelType === "FOB"
-                  ? "border-slate-900 bg-slate-900 text-white dark:border-white dark:bg-white dark:text-slate-900"
-                  : "border-slate-200 dark:border-white/15 bg-white dark:bg-slate-800/60 text-slate-700 dark:text-slate-200"
+                  ? "border-brand-green bg-brand-green text-white shadow-sm"
+                  : "border-slate-200 dark:border-white/15 bg-white dark:bg-slate-800/60 text-slate-700 dark:text-slate-200 hover:border-brand-green hover:text-brand-green"
               }`}
             >
               FOB ({ar ? "توريد كامل" : "Full-Package"})
@@ -78,10 +78,10 @@ export function ApparelScenarioCalculator({
             <button
               type="button"
               onClick={() => setModelType("CM")}
-              className={`rounded-xl border px-3 py-2 text-xs font-bold transition-colors cursor-pointer ${
+              className={`rounded-xl border px-3 py-2 text-xs font-bold transition-all duration-300 cursor-pointer ${
                 modelType === "CM"
-                  ? "border-slate-900 bg-slate-900 text-white dark:border-white dark:bg-white dark:text-slate-900"
-                  : "border-slate-200 dark:border-white/15 bg-white dark:bg-slate-800/60 text-slate-700 dark:text-slate-200"
+                  ? "border-brand-orange bg-brand-orange text-white shadow-sm"
+                  : "border-slate-200 dark:border-white/15 bg-white dark:bg-slate-800/60 text-slate-700 dark:text-slate-200 hover:border-brand-orange hover:text-brand-orange"
               }`}
             >
               CM ({ar ? "تشغيل مصنعية" : "Cut & Make"})
@@ -92,20 +92,36 @@ export function ApparelScenarioCalculator({
 
       {/* Scenarios Cards */}
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-        {VOLUME_SCENARIOS.map((sc) => {
+        {VOLUME_SCENARIOS.map((sc, idx) => {
           const monthlyVal = sc.monthly * unitPrice;
           const annualUnits = sc.monthly * 12;
           const annualVal = monthlyVal * 12;
+          const isGreen = idx % 2 === 0;
+
           return (
             <div
               key={sc.key}
-              className="rounded-2xl border border-slate-200/80 dark:border-white/15 bg-slate-50/80 dark:bg-white/5 p-4 space-y-2"
+              className={`group rounded-2xl border p-4 space-y-2 transition-all duration-300 cursor-pointer shadow-xs ${
+                isGreen
+                  ? "border-slate-200/80 dark:border-white/15 bg-slate-50/80 dark:bg-white/5 hover:border-brand-green hover:bg-brand-green/10 hover:shadow-md dark:hover:bg-brand-green/15"
+                  : "border-slate-200/80 dark:border-white/15 bg-slate-50/80 dark:bg-white/5 hover:border-brand-orange hover:bg-brand-orange/10 hover:shadow-md dark:hover:bg-brand-orange/15"
+              }`}
             >
               <div className="flex items-center justify-between text-[11px]">
-                <span className="font-bold text-slate-500">
+                <span
+                  className={`font-bold transition-colors ${
+                    isGreen ? "group-hover:text-brand-green" : "group-hover:text-brand-orange"
+                  } text-slate-500`}
+                >
                   {ar ? sc.labelAr : sc.labelEn}
                 </span>
-                <span className="rounded bg-slate-200/70 dark:bg-white/10 px-1.5 py-0.5 font-mono text-[10px] font-bold text-slate-800 dark:text-slate-100">
+                <span
+                  className={`rounded px-1.5 py-0.5 font-mono text-[10px] font-bold transition-colors ${
+                    isGreen
+                      ? "bg-slate-200/70 text-slate-800 dark:bg-white/10 dark:text-slate-100 group-hover:bg-brand-green group-hover:text-white"
+                      : "bg-slate-200/70 text-slate-800 dark:bg-white/10 dark:text-slate-100 group-hover:bg-brand-orange group-hover:text-white"
+                  }`}
+                >
                   {modelType}
                 </span>
               </div>
@@ -118,7 +134,11 @@ export function ApparelScenarioCalculator({
               <div className="pt-2 border-t border-slate-200/70 dark:border-white/10 space-y-1 text-xs">
                 <div className="flex justify-between">
                   <span className="text-slate-500">{ar ? "قيمة شهرية (افتراضية):" : "Monthly Gross:"}</span>
-                  <span className="font-mono font-bold text-brand-green">
+                  <span
+                    className={`font-mono font-bold transition-colors ${
+                      isGreen ? "text-brand-green" : "text-brand-orange"
+                    }`}
+                  >
                     ${monthlyVal.toLocaleString("en-US", { maximumFractionDigits: 0 })}
                   </span>
                 </div>

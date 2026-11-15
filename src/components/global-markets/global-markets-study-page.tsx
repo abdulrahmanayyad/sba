@@ -77,7 +77,7 @@ export function GlobalMarketsStudyPage({
   }
 
   const regionLabel = GEO_REGIONS_ORDER.find((r) => r.id === study.region);
-  const downloadAllowed = isStudyDownloadAllowed(study);
+  const downloadAllowed = study.sector !== "garment" && isStudyDownloadAllowed(study);
 
   const visibleSections = STUDY_SECTION_BLUEPRINT.filter((bp) => {
     if (bp.key === "recommendationsActionPlan") {
@@ -293,27 +293,10 @@ export function GlobalMarketsStudyPage({
         </section>
       )}
 
-      {/* 4. Quick Section Index */}
-      {visibleSections.length > 0 && (
-        <section className="site-container pb-6">
-          <div className="flex flex-wrap gap-2">
-            {visibleSections.map((bp) => (
-              <a
-                key={bp.key}
-                href={`#section-${bp.key}`}
-                className="rounded-full border border-slate-200/80 dark:border-white/15 bg-white/80 dark:bg-slate-900/60 px-3 py-1.5 text-[11px] font-bold text-slate-700 dark:text-slate-200 hover:border-brand-green hover:text-brand-green transition-colors"
-              >
-                {bp.order}. {ar ? bp.titleAr : bp.titleEn}
-              </a>
-            ))}
-          </div>
-        </section>
-      )}
-
-      {/* 5. Analytical Study Sections (Populated Axes Only) */}
+      {/* 4. Analytical Study Sections (Populated Axes Only) */}
       {visibleSections.length > 0 && (
         <section className="site-container pb-8 space-y-4">
-          {visibleSections.map((bp) => {
+          {visibleSections.map((bp, idx) => {
             const content = study.sections[bp.key]!;
             const summary = ar ? content.summaryAr : content.summaryEn;
             const bullets = (ar ? content.bulletsAr : content.bulletsEn) || [];
@@ -325,8 +308,8 @@ export function GlobalMarketsStudyPage({
                 className="scroll-mt-24 rounded-3xl border border-slate-200/80 dark:border-white/15 bg-white/80 dark:bg-slate-900/65 p-6 sm:p-8 backdrop-blur-xl shadow-sm space-y-4 text-start"
               >
                 <div className="flex items-center gap-3 border-b border-slate-200/70 dark:border-white/10 pb-3">
-                  <span className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-slate-900 text-xs font-extrabold text-white dark:bg-white dark:text-slate-900">
-                    {bp.order}
+                  <span className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-brand-green text-xs font-extrabold text-white shadow-xs">
+                    {idx + 1}
                   </span>
                   <h2 className="font-head text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white">
                     {ar ? bp.titleAr : bp.titleEn}

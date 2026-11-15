@@ -399,7 +399,7 @@ export const GLOBAL_MARKET_SECTORS: GlobalMarketSectorConfig[] = [
     nameAr: "قطاع الملابس والمنسوجات",
     nameEn: "Apparel & Textiles",
     shortDescAr:
-      "تحليل أسواق التصدير والتصنيع التعاقدي للملابس والمنسوجات والأقمشة وبرامج FOB وCM وOEM وPrivate Label عالميًا.",
+      "تحليل أسواق التصدير والتصنيع التعاقدي للملابس والمنسوجات والأقمشة",
     shortDescEn:
       "Global apparel market research across womenswear, menswear, kidswear, sportswear, abayas, fabrics, and FOB/CM/OEM/Private Label supply.",
     scope: "global",

@@ -270,9 +270,11 @@ export function MarketComparisonPanel({
                 >
                   {active && <Check className="size-3.5" />}
                   <span>
-                    {ar
-                      ? s.subRegionOrProjectAr || s.countryNameAr
-                      : s.subRegionOrProjectEn || s.countryNameEn}
+                    {isConstruction
+                      ? (ar
+                          ? s.subRegionOrProjectAr || s.countryNameAr
+                          : s.subRegionOrProjectEn || s.countryNameEn)
+                      : (ar ? s.countryNameAr : s.countryNameEn)}
                   </span>
                 </button>
               );
@@ -297,7 +299,7 @@ export function MarketComparisonPanel({
                   {selectedStudies.map((s) => (
                     <th key={s.id} className="px-4 py-3 font-extrabold text-start min-w-[180px]">
                       <div>{ar ? s.countryNameAr : s.countryNameEn}</div>
-                      {(ar ? s.subRegionOrProjectAr : s.subRegionOrProjectEn) && (
+                      {isConstruction && (ar ? s.subRegionOrProjectAr : s.subRegionOrProjectEn) && (
                         <div className="text-[10px] font-semibold text-slate-500">
                           {ar ? s.subRegionOrProjectAr : s.subRegionOrProjectEn}
                         </div>

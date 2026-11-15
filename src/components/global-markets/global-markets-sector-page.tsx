@@ -42,6 +42,39 @@ interface GlobalMarketsSectorPageProps {
   ar: boolean;
 }
 
+const CLASSIFICATION_TABS = [
+  { id: "all", labelAr: "كافة الدراسات", labelEn: "All Studies" },
+  { id: "gcc", labelAr: "الدول الخليجية", labelEn: "GCC Countries" },
+  { id: "arab", labelAr: "الدول العربية", labelEn: "Arab Countries" },
+  { id: "europe", labelAr: "الدول الأوروبية", labelEn: "European Countries" },
+  { id: "americas", labelAr: "الدول الأمريكية", labelEn: "American Countries" },
+  { id: "other", labelAr: "بقية الدول", labelEn: "Rest of Countries" },
+] as const;
+
+function getStudyOrderNumber(study: GlobalMarketStudy): number {
+  if (typeof study.regionalRank === "number" && study.regionalRank > 0) {
+    return study.regionalRank;
+  }
+  const arMatch = study.subRegionOrProjectAr?.match(/الدراسة رقم\s*(\d+)/);
+  if (arMatch) return parseInt(arMatch[1], 10);
+  const enMatch = study.subRegionOrProjectEn?.match(/Study #(\d+)/i);
+  if (enMatch) return parseInt(enMatch[1], 10);
+  const codeMatch = study.slug?.match(/-(\d+)$/) || study.id?.match(/-(\d+)$/);
+  if (codeMatch) return parseInt(codeMatch[1], 10);
+  return 999;
+}
+
+function getCategoryPriority(cat: string): number {
+  switch (cat) {
+    case "gcc": return 1;
+    case "arab": return 2;
+    case "europe": return 3;
+    case "americas": return 4;
+    case "other": return 5;
+    default: return 99;
+  }
+}
+
 function getSectorIcon(sectorId: GlobalMarketSectorId) {
   switch (sectorId) {
     case "construction":
@@ -71,16 +104,17 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
   const [statusFilter, setStatusFilter] = useState<"all" | StudyStatus>("all");
   const [yearFilter, setYearFilter] = useState<string>("all");
   const [tierFilter, setTierFilter] = useState<string>("all");
-  const [sortBy, setSortBy] = useState<"score" | "name" | "imports">("score");
+  const [sortBy, setSortBy] = useState<"order" | "score" | "name" | "imports">("order");
 
   const sectorStudies = useMemo(() => {
     const list = studies.filter((s) => s.sector === sector.id && s.status !== "archived");
     return [...list].sort((a, b) => {
-      // Default sort by Opportunity Score descending
-      const sa = a.opportunityScore ?? 0;
-      const sb = b.opportunityScore ?? 0;
-      if (sb !== sa) return sb - sa;
-      return (a.countryNameEn || "").localeCompare(b.countryNameEn || "");
+      const catA = getStudyRegionCategory(a);
+      const catB = getStudyRegionCategory(b);
+      const prioA = getCategoryPriority(catA);
+      const prioB = getCategoryPriority(catB);
+      if (prioA !== prioB) return prioA - prioB;
+      return getStudyOrderNumber(a) - getStudyOrderNumber(b);
     });
   }, [studies, sector.id]);
 
@@ -110,6 +144,22 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
       if (s.lastUpdated) set.add(s.lastUpdated.slice(0, 4));
     });
     return Array.from(set).sort().reverse();
+  }, [sectorStudies]);
+
+  const categoryCounts = useMemo(() => {
+    const counts: Record<string, number> = {
+      all: sectorStudies.length,
+      gcc: 0,
+      arab: 0,
+      europe: 0,
+      americas: 0,
+      other: 0,
+    };
+    sectorStudies.forEach((s) => {
+      const cat = getStudyRegionCategory(s);
+      counts[cat] = (counts[cat] || 0) + 1;
+    });
+    return counts;
   }, [sectorStudies]);
 
   const filteredStudies = useMemo(() => {
@@ -166,6 +216,13 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
         const na = ar ? a.countryNameAr : a.countryNameEn;
         const nb = ar ? b.countryNameAr : b.countryNameEn;
         return na.localeCompare(nb);
+      } else {
+        const catA = getStudyRegionCategory(a);
+        const catB = getStudyRegionCategory(b);
+        const prioA = getCategoryPriority(catA);
+        const prioB = getCategoryPriority(catB);
+        if (prioA !== prioB) return prioA - prioB;
+        return getStudyOrderNumber(a) - getStudyOrderNumber(b);
       }
       return 0;
     });
@@ -347,10 +404,11 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
 
             <select
               value={sortBy}
-              onChange={(e) => setSortBy(e.target.value as "score" | "name" | "imports")}
+              onChange={(e) => setSortBy(e.target.value as "order" | "score" | "name" | "imports")}
               aria-label={ar ? "الترتيب" : "Sort By"}
               className="md:col-span-2 rounded-2xl border border-slate-200 dark:border-white/15 bg-white dark:bg-slate-950/60 px-3 py-2.5 text-xs font-semibold focus:outline-none"
             >
+              <option value="order">{ar ? "ترتيب: التسلسل المعتمد للدراسات" : "Sort: Official Study Sequence"}</option>
               <option value="score">{ar ? "ترتيب: أعلى تقييم فرصة" : "Sort: Opportunity Score"}</option>
               <option value="imports">{ar ? "ترتيب: حجم الواردات" : "Sort: Total Imports"}</option>
               <option value="name">{ar ? "ترتيب: اسم الدولة" : "Sort: Country Name"}</option>
@@ -371,147 +429,82 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
             </select>
           </div>
 
-          {sector.id === "garment" && sectorStudies.length > 0 && (
+          {sectorStudies.length > 0 && !isEgyptOnly && (
             <div className="pt-4 border-t border-slate-200/70 dark:border-white/10 space-y-3">
-              {/* Sub-region Quick Filter & Comparative Pages Navigation */}
               <div className="flex flex-wrap items-center justify-between gap-2">
                 <div className="flex flex-wrap items-center gap-1.5">
-                  <button
-                    type="button"
-                    onClick={() => setSubRegionFilter("all")}
-                    className={cn(
-                      "rounded-full border px-3 py-1 text-[11px] font-bold transition-all duration-300 cursor-pointer shadow-xs",
-                      subRegionFilter === "all"
-                        ? "border-brand-green bg-brand-green text-white hover:bg-brand-orange"
-                        : "border-slate-200 dark:border-white/15 bg-white dark:bg-white/5 text-slate-700 dark:text-slate-200 hover:bg-brand-orange hover:text-white hover:border-brand-orange",
-                    )}
-                  >
-                    {ar ? `كافة الأقاليم (${sectorStudies.length})` : `All Regions (${sectorStudies.length})`}
-                  </button>
-                  {APPAREL_6_SUBREGIONS_META.map((reg) => {
-                    const cnt = sectorStudies.filter((s) => s.apparelSubRegion === reg.id).length;
+                  {CLASSIFICATION_TABS.filter(
+                    (tab) => tab.id === "all" || (categoryCounts[tab.id] ?? 0) > 0,
+                  ).map((tab) => {
+                    const count = categoryCounts[tab.id] ?? 0;
+                    const active = regionCategory === tab.id;
                     return (
                       <button
-                        key={reg.id}
+                        key={tab.id}
                         type="button"
-                        onClick={() => setSubRegionFilter(reg.id)}
+                        onClick={() => {
+                          setRegionCategory(tab.id);
+                          setSubRegionFilter("all");
+                        }}
                         className={cn(
                           "rounded-full border px-3 py-1 text-[11px] font-bold transition-all duration-300 cursor-pointer shadow-xs",
-                          subRegionFilter === reg.id
+                          active
                             ? "border-brand-green bg-brand-green text-white hover:bg-brand-orange"
                             : "border-slate-200 dark:border-white/15 bg-white dark:bg-white/5 text-slate-700 dark:text-slate-200 hover:bg-brand-orange hover:text-white hover:border-brand-orange",
                         )}
                       >
-                        {ar ? `${reg.titleAr} (${cnt})` : `${reg.titleEn} (${cnt})`}
+                        {ar ? `${tab.labelAr} (${count})` : `${tab.labelEn} (${count})`}
                       </button>
                     );
                   })}
                 </div>
 
-                <select
-                  value={priorityFilter}
-                  onChange={(e) => setPriorityFilter(e.target.value)}
-                  aria-label={ar ? "الأولوية" : "Priority"}
-                  className="rounded-xl border border-slate-200 dark:border-white/15 bg-white dark:bg-slate-950/60 px-3 py-1 text-[11px] font-bold focus:outline-none"
-                >
-                  <option value="all">{ar ? "كافة الأولويات (A–D)" : "All Priorities (A–D)"}</option>
-                  {["A", "A-", "B+", "B", "B-", "C", "D"].map((p) => (
-                    <option key={p} value={p}>
-                      {ar ? `الأولوية ${p}` : `Priority ${p}`}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              {/* Comparative Dashboards Quick Access Bar */}
-              <div className="flex flex-wrap items-center gap-2 pt-1">
-                <Link
-                  to="/global-markets/$sector/$slug"
-                  params={{ sector: "garment", slug: "compare" }}
-                  className="inline-flex items-center gap-1.5 rounded-xl bg-brand-green px-4 py-2 text-xs font-extrabold text-white hover:bg-brand-orange transition-all duration-300 shadow-xs cursor-pointer"
-                >
-                  <Scale className="size-3.5" />
-                  <span>{ar ? "لوحة المقارنة الشاملة للأسواق الدولية" : "Global Comparative Dashboard (Verified Markets)"}</span>
-                </Link>
-                <Link
-                  to="/global-markets/$sector/$slug"
-                  params={{ sector: "garment", slug: "gcc-comparative-report" }}
-                  className="inline-flex items-center gap-1.5 rounded-xl bg-brand-green px-4 py-2 text-xs font-extrabold text-white hover:bg-brand-orange transition-all duration-300 shadow-xs cursor-pointer"
-                >
-                  <span>{ar ? "التقرير المقارن لدول الخليج (GCC)" : "GCC Comparative Report"}</span>
-                </Link>
-                {APPAREL_6_SUBREGIONS_META.filter((r) => r.id !== "gcc").map((reg) => (
-                  <Link
-                    key={reg.id}
-                    to="/global-markets/$sector/$slug"
-                    params={{ sector: "garment", slug: reg.comparativeSlug }}
-                    className="rounded-xl border border-slate-200 dark:border-white/15 bg-white/80 dark:bg-white/5 px-3 py-2 text-[11px] font-bold text-slate-700 dark:text-slate-200 hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-all duration-300 cursor-pointer"
+                {sector.id === "garment" && (
+                  <select
+                    value={priorityFilter}
+                    onChange={(e) => setPriorityFilter(e.target.value)}
+                    aria-label={ar ? "الأولوية" : "Priority"}
+                    className="rounded-xl border border-slate-200 dark:border-white/15 bg-white dark:bg-slate-950/60 px-3 py-1 text-[11px] font-bold focus:outline-none"
                   >
-                    {ar ? `مقارنة ${reg.titleAr}` : `${reg.titleEn} Compare`}
-                  </Link>
-                ))}
+                    <option value="all">{ar ? "كافة الأولويات (A–D)" : "All Priorities (A–D)"}</option>
+                    {["A", "A-", "B+", "B", "B-", "C", "D"].map((p) => (
+                      <option key={p} value={p}>
+                        {ar ? `الأولوية ${p}` : `Priority ${p}`}
+                      </option>
+                    ))}
+                  </select>
+                )}
               </div>
-            </div>
-          )}
 
-          {sector.id === "environmental" && sectorStudies.length > 0 && (
-            <div className="pt-4 border-t border-slate-200/70 dark:border-white/10 space-y-3">
-              <div className="flex flex-wrap items-center gap-1.5">
-                <button
-                  type="button"
-                  onClick={() => setRegionCategory("all")}
-                  className={cn(
-                    "rounded-full border px-3 py-1 text-[11px] font-bold transition-all duration-300 cursor-pointer shadow-xs",
-                    regionCategory === "all"
-                      ? "border-brand-green bg-brand-green text-white hover:bg-brand-orange"
-                      : "border-slate-200 dark:border-white/15 bg-white dark:bg-white/5 text-slate-700 dark:text-slate-200 hover:bg-brand-orange hover:text-white hover:border-brand-orange",
-                  )}
-                >
-                  {ar ? `كافة الدراسات (${sectorStudies.length})` : `All Studies (${sectorStudies.length})`}
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setRegionCategory("gcc")}
-                  className={cn(
-                    "rounded-full border px-3 py-1 text-[11px] font-bold transition-all duration-300 cursor-pointer shadow-xs",
-                    regionCategory === "gcc"
-                      ? "border-brand-green bg-brand-green text-white hover:bg-brand-orange"
-                      : "border-slate-200 dark:border-white/15 bg-white dark:bg-white/5 text-slate-700 dark:text-slate-200 hover:bg-brand-orange hover:text-white hover:border-brand-orange",
-                  )}
-                >
-                  {ar
-                    ? `دول الخليج (${sectorStudies.filter((s) => getStudyRegionCategory(s) === "gcc").length})`
-                    : `GCC Countries (${sectorStudies.filter((s) => getStudyRegionCategory(s) === "gcc").length})`}
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setRegionCategory("arab")}
-                  className={cn(
-                    "rounded-full border px-3 py-1 text-[11px] font-bold transition-all duration-300 cursor-pointer shadow-xs",
-                    regionCategory === "arab"
-                      ? "border-brand-green bg-brand-green text-white hover:bg-brand-orange"
-                      : "border-slate-200 dark:border-white/15 bg-white dark:bg-white/5 text-slate-700 dark:text-slate-200 hover:bg-brand-orange hover:text-white hover:border-brand-orange",
-                  )}
-                >
-                  {ar
-                    ? `الدول العربية (${sectorStudies.filter((s) => getStudyRegionCategory(s) === "arab").length})`
-                    : `Arab Countries (${sectorStudies.filter((s) => getStudyRegionCategory(s) === "arab").length})`}
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setRegionCategory("africa")}
-                  className={cn(
-                    "rounded-full border px-3 py-1 text-[11px] font-bold transition-all duration-300 cursor-pointer shadow-xs",
-                    regionCategory === "africa"
-                      ? "border-brand-green bg-brand-green text-white hover:bg-brand-orange"
-                      : "border-slate-200 dark:border-white/15 bg-white dark:bg-white/5 text-slate-700 dark:text-slate-200 hover:bg-brand-orange hover:text-white hover:border-brand-orange",
-                  )}
-                >
-                  {ar
-                    ? `الدول الأفريقية (${sectorStudies.filter((s) => getStudyRegionCategory(s) === "africa").length})`
-                    : `African Countries (${sectorStudies.filter((s) => getStudyRegionCategory(s) === "africa").length})`}
-                </button>
-              </div>
+              {sector.id === "garment" && (
+                <div className="flex flex-wrap items-center gap-2 pt-1">
+                  <Link
+                    to="/global-markets/$sector/$slug"
+                    params={{ sector: "garment", slug: "compare" }}
+                    className="inline-flex items-center gap-1.5 rounded-xl bg-brand-green px-4 py-2 text-xs font-extrabold text-white hover:bg-brand-orange transition-all duration-300 shadow-xs cursor-pointer"
+                  >
+                    <Scale className="size-3.5" />
+                    <span>{ar ? "لوحة المقارنة الشاملة للأسواق الدولية" : "Global Comparative Dashboard (Verified Markets)"}</span>
+                  </Link>
+                  <Link
+                    to="/global-markets/$sector/$slug"
+                    params={{ sector: "garment", slug: "gcc-comparative-report" }}
+                    className="inline-flex items-center gap-1.5 rounded-xl bg-brand-green px-4 py-2 text-xs font-extrabold text-white hover:bg-brand-orange transition-all duration-300 shadow-xs cursor-pointer"
+                  >
+                    <span>{ar ? "التقرير المقارن لدول الخليج (GCC)" : "GCC Comparative Report"}</span>
+                  </Link>
+                  {APPAREL_6_SUBREGIONS_META.filter((r) => r.id !== "gcc").map((reg) => (
+                    <Link
+                      key={reg.id}
+                      to="/global-markets/$sector/$slug"
+                      params={{ sector: "garment", slug: reg.comparativeSlug }}
+                      className="rounded-xl border border-slate-200 dark:border-white/15 bg-white/80 dark:bg-white/5 px-3 py-2 text-[11px] font-bold text-slate-700 dark:text-slate-200 hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-all duration-300 cursor-pointer"
+                    >
+                      {ar ? `مقارنة ${reg.titleAr}` : `${reg.titleEn} Compare`}
+                    </Link>
+                  ))}
+                </div>
+              )}
             </div>
           )}
         </div>
@@ -712,7 +705,7 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
                     {study.sections.potentialBuyers?.summaryAr && (
                       <div className="rounded-xl border border-slate-200/80 dark:border-white/10 bg-slate-50/70 dark:bg-white/5 p-2.5 text-[11px] text-slate-600 dark:text-slate-300 space-y-1">
                         <div className="font-extrabold text-slate-700 dark:text-slate-200 flex items-center justify-between">
-                          <span>{ar ? "حسابات مستهدفة محتملة (غير مؤكدة):" : "Target Accounts (Prospective / Unconfirmed):"}</span>
+                          <span>{ar ? "حسابات مستهدفة" : "Target Accounts"}</span>
                         </div>
                         <p className="line-clamp-2 text-slate-600 dark:text-slate-400">
                           {ar
@@ -747,7 +740,7 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
                         {ar ? <ArrowLeft className="size-3.5" /> : <ArrowRight className="size-3.5" />}
                       </Link>
 
-                      {downloadAllowed && (
+                      {study.sector !== "garment" && downloadAllowed && (
                         <button
                           type="button"
                           onClick={() => openApprovedStudyPdfReport(study, ar)}
@@ -759,7 +752,7 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
                         </button>
                       )}
 
-                      {study.downloadZipUrl && (
+                      {study.sector !== "garment" && study.downloadZipUrl && (
                         <a
                           href={study.downloadZipUrl}
                           download

@@ -57,11 +57,17 @@ const EUROPE_COUNTRY_CODES = new Set([
   "DE", "GB", "UK", "FR", "ES", "IT", "NL", "PL", "BE", "SE", "AT", "DK", "CZ", "PT", "RO", "GR", "CH", "TR", "IE", "NO", "FI", "RU", "UA", "HU"
 ]);
 
+const AMERICAS_COUNTRY_CODES = new Set([
+  "US", "USA", "CA", "CAN", "MX", "MEX", "CL", "CHL", "CO", "COL", "PE", "PER", "PA", "PAN", "CR", "CRI", "DO", "DOM", "EC", "ECU", "BR", "BRA", "AR", "ARG"
+]);
+
+export type StudyRegionCategory = "gcc" | "arab" | "europe" | "americas" | "other";
+
 export function getStudyRegionCategory(study: {
   countryCode?: string;
   apparelSubRegion?: string;
   region?: string;
-}): "gcc" | "arab" | "africa" | "europe" | "other" {
+}): StudyRegionCategory {
   const code = (study.countryCode || "").toUpperCase();
   const sub = study.apparelSubRegion || "";
   const reg = study.region || "";
@@ -75,7 +81,14 @@ export function getStudyRegionCategory(study: {
     return "arab";
   }
   if (sub === "europe" || reg === "europe" || EUROPE_COUNTRY_CODES.has(code)) return "europe";
-  if (sub === "africa" || reg === "africa") return "africa";
+  if (
+    sub === "north_america" ||
+    sub === "south_central_america" ||
+    reg === "americas" ||
+    AMERICAS_COUNTRY_CODES.has(code)
+  ) {
+    return "americas";
+  }
   return "other";
 }
 
@@ -343,12 +356,7 @@ export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
                 </div>
 
                 {/* Sector Footer Action */}
-                <div className="pt-4 border-t border-slate-200/70 dark:border-white/10 flex flex-wrap items-center justify-between gap-3">
-                  <span className="text-xs text-slate-500 dark:text-slate-400">
-                    {ar
-                      ? `يتضمن هذا القطاع ${sectorStudies.length} دراسة سوقية متخصصة ومقارنات دولية موثقة.`
-                      : `This sector includes ${sectorStudies.length} specialized market studies and verified international intelligence.`}
-                  </span>
+                <div className="pt-4 border-t border-slate-200/70 dark:border-white/10 flex flex-wrap items-center justify-end gap-3">
                   <Link
                     to="/global-markets/$sector"
                     params={{ sector: sector.id }}
