@@ -138,7 +138,7 @@ export function ProductsCataloguePage() {
         key: "dates",
         titleAr: "التمور ومشتقاتها",
         titleEn: "Dates & Palm Products",
-        subtitleAr: "أجود تمور الواحات (سيوي/صعيدي)، المجدول الفاخر (جامبو)، وعجينة ودبس التمر الطبيعي 100%.",
+        subtitleAr: "أجود أنواع التمور",
         subtitleEn: "Egyptian Oasis Siwi dates, luxury Medjool, and pure natural date paste & molasses.",
         badgeAr: "التمور",
         badgeEn: "Dates",
@@ -149,7 +149,7 @@ export function ProductsCataloguePage() {
         key: "honey",
         titleAr: "عسل النحل الطبيعي ومشتقاته",
         titleEn: "Natural Honey & Bee Products",
-        subtitleAr: "عسل نحل خام غير مبستر مفحوص معمليًا (سدر جبلي، موالح، حبة البركة، وبرسيم).",
+        subtitleAr: "عسل نحل خام طبيعي",
         subtitleEn: "Pure unpasteurized honey (Mountain Sidr, Citrus, Black Seed, Clover, Wildflower).",
         badgeAr: "عسل النحل",
         badgeEn: "Honey",
@@ -169,9 +169,9 @@ export function ProductsCataloguePage() {
       },
       {
         key: "olives",
-        titleAr: "زيتون المائدة المصري",
+        titleAr: "الزيتون المصري",
         titleEn: "Egyptian Table Olives",
-        subtitleAr: "زيتون مائدة كامل ومخلي وشرائح ومحشو مخلل طبيعيًا في محلول ملحي متوازن (كلاماتا، منزانيللا، بيكوال).",
+        subtitleAr: "زيتون مائدة كامل ومخلي وشرائح ومحشو مخلل",
         subtitleEn: "Natural brine cured table olives: Kalamata, Manzanilla, Picual in various cuts.",
         badgeAr: "الزيتون",
         badgeEn: "Olives",
@@ -180,9 +180,9 @@ export function ProductsCataloguePage() {
       },
       {
         key: "spices",
-        titleAr: "البهارات والتوابل الزراعية والأساسية",
+        titleAr: "البهارات والتوابل",
         titleEn: "Essential Spices & Seasonings",
-        subtitleAr: "حبوب ومطحون التوابل الزراعية النقية غنية بالزيوت الطيارة ومفرزة آليًا بأعلى نقاء.",
+        subtitleAr: "حبوب ومطحون التوابل المميزة",
         subtitleEn: "Whole seeds and ground culinary spices with high volatile oils and optical sorting.",
         badgeAr: "البهارات والتوابل",
         badgeEn: "Spices",
@@ -191,7 +191,7 @@ export function ProductsCataloguePage() {
       },
       {
         key: "blends",
-        titleAr: "الخلطات والتتبيلات والأكلات التراثية",
+        titleAr: "الخلطات والتتبيلات",
         titleEn: "Culinary Blends & Seasonings",
         subtitleAr: "تتبيلات الشواء والمشاوي، خلطات الأرز العالمية، والدقة والبصارة والفول والطحينة.",
         subtitleEn: "Grill marinades, Kabsa & Biryani rice seasonings, and heritage Egyptian staples.",
@@ -202,7 +202,7 @@ export function ProductsCataloguePage() {
       },
       {
         key: "soups",
-        titleAr: "المرقة والشوربات الفورية",
+        titleAr: "المرقة والشوربات",
         titleEn: "Soups & Seasoning Broths",
         subtitleAr: "شوربات كريمة الدجاج والمشروم والعدس، ومكعبات وبودرة مرقة الدجاج واللحم والخضار والجمبري.",
         subtitleEn: "Instant gourmet cream soups and rich dehydrated bouillons for retail and food service.",
@@ -213,7 +213,7 @@ export function ProductsCataloguePage() {
       },
       {
         key: "herbs",
-        titleAr: "الأعشاب والنباتات الطبية والعطرية",
+        titleAr: "الأعشاب والنباتات الطبية",
         titleEn: "Herbs & Medicinal Botanicals",
         subtitleAr: "أعشاب البابونج وورق اللوري والزعتر والملوخية المجففة طبيعيًا والمعقمة بالبخار للتصدير.",
         subtitleEn: "Dried chamomile flowers, bay leaves, wild thyme, and Egyptian export-grade molokhia.",
@@ -224,7 +224,7 @@ export function ProductsCataloguePage() {
       },
       {
         key: "juices",
-        titleAr: "بودرة العصائر الطبيعية المركزة",
+        titleAr: "بودرة العصائر الطبيعية",
         titleEn: "Natural Juice Powders",
         subtitleAr: "عصائر حمضيات وفواكه طبيعية مجففة بالرذاذ سريعة الذوبان للصناعات الغذائية والمشروبات.",
         subtitleEn: "Instant cold-soluble spray-dried fruit & citrus powders for beverages and processing.",
@@ -262,14 +262,19 @@ export function ProductsCataloguePage() {
   const toggleCategory = (key: string) => {
     setExpandedFoodCategories((prev) => ({
       ...prev,
-      [key]: prev[key] === undefined ? false : !prev[key],
+      [key]: !prev[key],
     }));
   };
 
   const isCategoryExpanded = (key: string) => {
     if (productSearchQuery.trim() || selectedProductCategory !== "all") return true;
-    return expandedFoodCategories[key] ?? true;
+    return !!expandedFoodCategories[key];
   };
+
+  const areAllFoodExpanded = useMemo(() => {
+    if (searchedFoodCategories.length === 0) return false;
+    return searchedFoodCategories.every((cat) => isCategoryExpanded(cat.key));
+  }, [searchedFoodCategories, expandedFoodCategories, productSearchQuery, selectedProductCategory]);
 
   const toggleAllFoodCategories = (expand: boolean) => {
     const newState: Record<string, boolean> = {};
@@ -561,8 +566,8 @@ export function ProductsCataloguePage() {
           <span className="text-xs font-body font-semibold text-muted-foreground">
             {selectedProductDivision === "food"
               ? ar
-                ? `عرض ${searchedFoodCategories.reduce((acc, c) => acc + c.products.length, 0)} صنفًا موزعة عبر ${searchedFoodCategories.length} تصنيفات رئيسية`
-                : `Showing ${searchedFoodCategories.reduce((acc, c) => acc + c.products.length, 0)} varieties across ${searchedFoodCategories.length} categories`
+                ? `عرض ${searchedFoodCategories.reduce((acc, c) => acc + c.products.length, 0)} صنف`
+                : `Showing ${searchedFoodCategories.reduce((acc, c) => acc + c.products.length, 0)} products`
               : ar
                 ? `عرض ${filteredProducts.length} من أصل ${physicalProducts.filter((p) => p.sector === selectedProductDivision).length} منتج`
                 : `Showing ${filteredProducts.length} of ${physicalProducts.filter((p) => p.sector === selectedProductDivision).length} products`}
@@ -573,18 +578,16 @@ export function ProductsCataloguePage() {
               <Button
                 size="sm"
                 variant="outline"
-                onClick={() => toggleAllFoodCategories(true)}
+                onClick={() => toggleAllFoodCategories(!areAllFoodExpanded)}
                 className="h-8 text-xs font-bold text-brand-green border-brand-green/30 hover:bg-brand-green/10 rounded-xl"
               >
-                {ar ? "توسيع كافة القوائم" : "Expand All"}
-              </Button>
-              <Button
-                size="sm"
-                variant="outline"
-                onClick={() => toggleAllFoodCategories(false)}
-                className="h-8 text-xs font-bold text-muted-foreground border-border hover:bg-secondary rounded-xl"
-              >
-                {ar ? "طي كافة القوائم" : "Collapse All"}
+                {areAllFoodExpanded
+                  ? ar
+                    ? "إخفاء كافة المنتجات"
+                    : "Hide All Products"
+                  : ar
+                    ? "إظهار كافة المنتجات"
+                    : "Show All Products"}
               </Button>
             </div>
           )}
@@ -668,9 +671,6 @@ export function ProductsCataloguePage() {
                             <span className="inline-flex items-center rounded-full bg-brand-green/90 px-3 py-0.5 text-xs font-bold text-white backdrop-blur-md shadow-xs">
                               {ar ? cat.badgeAr : cat.badgeEn}
                             </span>
-                            <span className="inline-flex items-center rounded-full bg-white/20 px-3 py-0.5 text-xs font-bold text-white backdrop-blur-md">
-                              {ar ? `${cat.products.length} أصناف متوفرة` : `${cat.products.length} Varieties`}
-                            </span>
                           </div>
 
                           <h3 className="font-head text-xl sm:text-2xl md:text-3xl font-black text-white drop-shadow-sm leading-tight">
@@ -695,11 +695,11 @@ export function ProductsCataloguePage() {
                           <span>
                             {expanded
                               ? ar
-                                ? "إخفاء قائمة الأصناف"
-                                : "Collapse List"
+                                ? "إخفاء كافة الأصناف"
+                                : "Hide Varieties"
                               : ar
-                                ? `استعراض كافة الأصناف (${cat.products.length})`
-                                : `View Varieties (${cat.products.length})`}
+                                ? "استعراض كافة الأصناف"
+                                : "View All Varieties"}
                           </span>
                           <ChevronDown
                             className={cn(
@@ -718,13 +718,8 @@ export function ProductsCataloguePage() {
                           <span className="text-xs font-bold text-foreground flex items-center gap-2">
                             <span className="size-2 rounded-full bg-brand-green animate-pulse" />
                             {ar
-                              ? `قائمة أصناف ${cat.titleAr} (${cat.products.length} صنفًا)`
-                              : `Available ${cat.titleEn} Varieties (${cat.products.length})`}
-                          </span>
-                          <span className="text-[11px] text-muted-foreground hidden sm:inline">
-                            {ar
-                              ? "اختر أي صنف لمشاهدة المواصفات والتحليل المعملي أو لطلب عرض سعر فوري"
-                              : "Click any item to view specifications or request quotation"}
+                              ? `قائمة أصناف ${cat.titleAr}`
+                              : `Available ${cat.titleEn} Varieties`}
                           </span>
                         </div>
 
