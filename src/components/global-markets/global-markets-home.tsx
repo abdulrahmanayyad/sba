@@ -193,18 +193,6 @@ export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
                         : "Interactive comprehensive comparison across international markets, trade indicators, and investment opportunities through verified analytical tables."}
                     </p>
                   </div>
-
-                  <div className="flex flex-wrap gap-1.5 pt-1">
-                    <span className="rounded-lg border border-slate-200/70 dark:border-white/10 bg-slate-50 dark:bg-white/5 px-2.5 py-1 text-[11px] font-semibold text-slate-700 dark:text-slate-300">
-                      {ar ? "مقارنات إقليمية لدول الخليج" : "GCC Regional Comparisons"}
-                    </span>
-                    <span className="rounded-lg border border-slate-200/70 dark:border-white/10 bg-slate-50 dark:bg-white/5 px-2.5 py-1 text-[11px] font-semibold text-slate-700 dark:text-slate-300">
-                      {ar ? "مصفوفة تقييم الفرص" : "Opportunity Score Matrix"}
-                    </span>
-                    <span className="rounded-lg border border-slate-200/70 dark:border-white/10 bg-slate-50 dark:bg-white/5 px-2.5 py-1 text-[11px] font-semibold text-slate-700 dark:text-slate-300">
-                      {ar ? "بيانات التجارة الموثقة" : "Verified Trade Data"}
-                    </span>
-                  </div>
                 </div>
 
                 <div className="pt-5 mt-4 border-t border-slate-200/70 dark:border-white/10">
@@ -241,18 +229,6 @@ export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
                         : "Administrative dashboard to manage market studies registry, monitor update cycles, verify compliance, and import or publish sector intelligence."}
                     </p>
                   </div>
-
-                  <div className="flex flex-wrap gap-1.5 pt-1">
-                    <span className="rounded-lg border border-slate-200/70 dark:border-white/10 bg-slate-50 dark:bg-white/5 px-2.5 py-1 text-[11px] font-semibold text-slate-700 dark:text-slate-300">
-                      {ar ? "سجل دراسات الـ 66 دولة" : "66-Country Registry"}
-                    </span>
-                    <span className="rounded-lg border border-slate-200/70 dark:border-white/10 bg-slate-50 dark:bg-white/5 px-2.5 py-1 text-[11px] font-semibold text-slate-700 dark:text-slate-300">
-                      {ar ? "متابعة تواريخ التحديث" : "Update Tracking"}
-                    </span>
-                    <span className="rounded-lg border border-slate-200/70 dark:border-white/10 bg-slate-50 dark:bg-white/5 px-2.5 py-1 text-[11px] font-semibold text-slate-700 dark:text-slate-300">
-                      {ar ? "إدارة النشر والاستيراد" : "Publishing & Imports"}
-                    </span>
-                  </div>
                 </div>
 
                 <div className="pt-5 mt-4 border-t border-slate-200/70 dark:border-white/10">
@@ -271,16 +247,16 @@ export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
             <div className="pt-4 border-t border-slate-200/70 dark:border-white/10 grid gap-3 sm:grid-cols-3 text-xs">
               <div className="rounded-2xl border border-slate-200/70 dark:border-white/10 bg-slate-50/80 dark:bg-white/5 px-4 py-3 text-start">
                 <span className="text-slate-500 dark:text-slate-400 block font-semibold">
-                  {ar ? "القطاعات الاستراتيجية المعتمدة" : "Core Strategic Sectors"}
+                  {ar ? "القطاعات الاستراتيجية" : "Core Strategic Sectors"}
                 </span>
                 <span className="font-head text-base font-extrabold text-slate-900 dark:text-white mt-0.5 block">
-                  {ar ? "4 قطاعات رئيسية" : "4 Canonical Sectors"}
+                  {ar ? "4 قطاعات" : "4 Sectors"}
                 </span>
               </div>
 
               <div className="rounded-2xl border border-slate-200/70 dark:border-white/10 bg-slate-50/80 dark:bg-white/5 px-4 py-3 text-start">
                 <span className="text-slate-500 dark:text-slate-400 block font-semibold">
-                  {ar ? "الدراسات المنشورة فعليًا" : "Published Studies Count"}
+                  {ar ? "الدراسات المنشورة" : "Published Studies Count"}
                 </span>
                 <span className="font-head text-base font-extrabold text-slate-900 dark:text-white mt-0.5 block">
                   {activeStudies.length > 0
@@ -298,7 +274,7 @@ export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
                   {ar ? "منهجية التوثيق" : "Verification Standard"}
                 </span>
                 <span className="font-head text-base font-extrabold text-brand-green mt-0.5 block">
-                  {ar ? "18 محورًا تحليليًا · مصادر موثقة" : "18 Analytical Axes · Cited Sources"}
+                  {ar ? "18 محور تحليلي · مصادر موثقة" : "18 Analytical Axes · Cited Sources"}
                 </span>
               </div>
             </div>
@@ -660,8 +636,8 @@ export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
                                 ? "لا توجد دراسات في هذا التصنيف تطابق عبارة البحث الحالية."
                                 : "No studies in this classification match your search query."
                               : ar
-                                ? "يتم حاليًا إعداد وتجهيز دراسات هذا التصنيف الإقليمي وفق المحاور الـ 18 المعتمدة."
-                                : "Studies in this regional classification are currently being prepared according to the 18-axis standard."}
+                                ? "يتم حاليًا إعداد وتجهيز دراسات هذا التصنيف الإقليمي."
+                                : "Studies in this regional classification are currently being prepared."}
                           </p>
                         </div>
                       ) : (
@@ -760,13 +736,7 @@ export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
                   </div>
 
                   {/* Sector Footer Link Button */}
-                  <div className="pt-4 border-t border-slate-200/70 dark:border-white/10 flex flex-wrap items-center justify-between gap-3">
-                    <p className="text-xs text-slate-500 dark:text-slate-400">
-                      {ar
-                        ? `يتضمن هذا القطاع تقارير مقارنة معتمدة ومؤشرات موثقة لـ ${sectorStudies.length} سوقًا استراتيجيًا.`
-                        : `This sector includes comparative benchmarks and verified indicators for ${sectorStudies.length} strategic markets.`}
-                    </p>
-
+                  <div className="pt-4 border-t border-slate-200/70 dark:border-white/10 flex justify-end">
                     <Link
                       to="/global-markets/$sector"
                       params={{ sector: sector.id }}

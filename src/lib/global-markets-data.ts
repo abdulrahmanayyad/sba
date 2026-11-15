@@ -304,10 +304,8 @@ export const GLOBAL_MARKET_SECTORS: GlobalMarketSectorConfig[] = [
     order: 1,
     nameAr: "قطاع المقاولات والتطوير العقاري",
     nameEn: "Construction & Real Estate Development",
-    shortDescAr:
-      "دراسات تحليلية متخصصة لسوق التشييد والبناء والتطوير العقاري والمشروعات القومية والخاصة داخل جمهورية مصر العربية فقط.",
-    shortDescEn:
-      "Specialized market studies covering construction spending, real estate development, infrastructure, and contracting opportunities inside Egypt only.",
+    shortDescAr: "",
+    shortDescEn: "",
     scope: "egypt_only",
     scopeLabelAr: "جمهورية مصر العربية فقط",
     scopeLabelEn: "Egypt Only",

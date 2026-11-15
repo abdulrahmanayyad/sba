@@ -1,7 +1,6 @@
 import { useMemo, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import {
-  AlertTriangle,
   ArrowLeft,
   ArrowRight,
   ChevronRight,
@@ -162,29 +161,17 @@ export function ApparelComparativePage({
     ...comparable2024HsStudies.map((s) => s.tradeIndicatorNumericUsdB ?? 0),
   );
 
-  const countsByStatus = useMemo(() => {
-    const hsConfirmed = garmentStudies.filter((s) => s.dataBasis === "hs61_hs62_customs").length;
-    const altBasis = garmentStudies.filter(
-      (s) =>
-        s.dataBasis === "eurostat_sitc84" ||
-        s.dataBasis === "tradegov_estimate" ||
-        s.dataBasis === "secondary_aggregate",
-    ).length;
-    const pending = garmentStudies.filter((s) => s.dataBasis === "pending_verification").length;
-    return { total: garmentStudies.length, hsConfirmed, altBasis, pending };
-  }, [garmentStudies]);
-
   const pageTitleAr = isGccReport
     ? "التقرير المقارن لأسواق دول مجلس التعاون الخليجي — قطاع الملابس والمنسوجات"
     : activeRegionMeta
     ? `المقارنة الإقليمية: ${activeRegionMeta.titleAr}`
-    : "لوحة المقارنة الشاملة للأسواق العالمية — قطاع الملابس والمنسوجات (الدراسات المعتمدة)";
+    : "لوحة المقارنة الشاملة للأسواق العالمية — قطاع الملابس والمنسوجات";
 
   const pageTitleEn = isGccReport
     ? "GCC Comparative Report — Apparel & Textiles Market Intelligence"
     : activeRegionMeta
     ? `Regional Comparative Analysis: ${activeRegionMeta.titleEn}`
-    : "Global Apparel Markets Comparative Dashboard (Verified Markets)";
+    : "Global Apparel Markets Comparative Dashboard";
 
   return (
     <div className="w-full pb-24">
@@ -289,69 +276,6 @@ export function ApparelComparativePage({
                 </Link>
               );
             })}
-          </div>
-
-          {/* Data Completeness Summary Cards */}
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4 pt-2">
-            <div className="rounded-2xl border border-slate-200/80 dark:border-white/15 bg-slate-50/80 dark:bg-white/5 p-4">
-              <div className="text-[11px] font-bold text-slate-500">
-                {ar ? "إجمالي الدول المشمولة" : "Total Covered Markets"}
-              </div>
-              <div className="font-head text-2xl font-extrabold text-slate-900 dark:text-white mt-1">
-                {countsByStatus.total}
-              </div>
-              <div className="text-[11px] text-slate-600 dark:text-slate-400">
-                {ar ? "6 أقاليم جغرافية حول العالم" : "Across 6 global regions"}
-              </div>
-            </div>
-            <div className="rounded-2xl border border-brand-green/30 bg-brand-green/5 p-4">
-              <div className="text-[11px] font-bold text-brand-green">
-                {ar ? "خط أساس HS61+HS62 موثق" : "HS61+HS62 Trade Baseline"}
-              </div>
-              <div className="font-head text-2xl font-extrabold text-slate-900 dark:text-white mt-1">
-                {countsByStatus.hsConfirmed}
-              </div>
-              <div className="text-[11px] text-slate-600 dark:text-slate-400">
-                {ar ? "دولتان بسنة 2025 و19 دولة بسنة 2024" : "2 markets in 2025 · 19 in 2024"}
-              </div>
-            </div>
-            <div className="rounded-2xl border border-sky-500/30 bg-sky-500/5 p-4">
-              <div className="text-[11px] font-bold text-sky-700 dark:text-sky-300">
-                {ar ? "نطاقات قياس بديلة منفصلة" : "Alternative Scope Baselines"}
-              </div>
-              <div className="font-head text-2xl font-extrabold text-slate-900 dark:text-white mt-1">
-                {countsByStatus.altBasis}
-              </div>
-              <div className="text-[11px] text-slate-600 dark:text-slate-400">
-                {ar ? "بلجيكا (SITC 84) · لبنان (Trade.gov) · تركيا" : "Belgium SITC 84 · Lebanon Est. · Türkiye"}
-              </div>
-            </div>
-            <div className="rounded-2xl border border-amber-500/30 bg-amber-500/5 p-4">
-              <div className="text-[11px] font-bold text-amber-700 dark:text-amber-300">
-                {ar ? "إجمالي الدولة قيد التحقق" : "Country Baseline Pending"}
-              </div>
-              <div className="font-head text-2xl font-extrabold text-slate-900 dark:text-white mt-1">
-                {countsByStatus.pending}
-              </div>
-              <div className="text-[11px] text-slate-600 dark:text-slate-400">
-                {ar ? "بانتظار استخراج UN Comtrade الرسمي" : "Awaiting formal UN Comtrade extraction"}
-              </div>
-            </div>
-          </div>
-
-          {/* Non-Negotiable Methodological Discipline Notice */}
-          <div className="rounded-2xl border border-amber-500/40 bg-amber-500/10 p-4 flex items-start gap-3 text-xs text-amber-950 dark:text-amber-200 leading-relaxed">
-            <AlertTriangle className="size-4 shrink-0 mt-0.5 text-amber-600 dark:text-amber-400" />
-            <div className="space-y-1">
-              <p className="font-bold">
-                {ar ? "ضوابط المقارنة المنهجية الصارمة:" : "Strict Methodological Comparison Discipline:"}
-              </p>
-              <p>
-                {ar
-                  ? "لا تمثل قيم الواردات الجمركية (HS61+HS62) حجم مبيعات التجزئة أو الطلب المضمون للمصنع. لا يجوز جمع أو ترتيب الدول ذات السنوات المختلفة (2024 مقابل 2025) أو التصنيفات المختلفة (Eurostat SITC 84 في بلجيكا أو تقديرات Trade.gov في لبنان)، وتظهر الدول التي لم يوثق إجمالي وارداتها كـ (قيد التحقق) دون اصطناع أرقام. كما أن جميع المجموعات والشركات المذكورة هي حسابات مستهدفة وليست عملاء متعاقدين."
-                  : "Customs import values (HS61+HS62) are NOT retail sales or guaranteed factory demand. Markets with differing years (2024 vs 2025) or non-identical definitions (Belgium SITC 84, Lebanon Trade.gov estimate, Türkiye secondary aggregate) must not be combined or ranked together. Unverified totals remain marked as pending. All named buyers are prospect accounts, not contracted buyers."}
-              </p>
-            </div>
           </div>
         </div>
       </section>
