@@ -19,6 +19,7 @@ export function getSectorNavigation(slug: SectorSlug, ar: boolean) {
     ] },
     environmental: { about: standardAbout, links: [
       { label: copy.services, title: "Our Services" },
+      { label: copy.markets, title: "Our Markets" },
       { label: copy.sectors, title: "Sectors We Serve" },
     ] },
     garment: { about: standardAbout, links: [

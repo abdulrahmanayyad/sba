@@ -49,6 +49,7 @@ import { SectorContactSection } from "@/components/site/sector-contact-section";
 import { submitCentralForm } from "@/lib/central-form-dispatch";
 import { JoinPage } from "@/components/join/join-page";
 import { SectorConsultationCta } from "@/components/site/sector-consultation-cta";
+import { EnvironmentalMarketsTab } from "./tabs/environmental-markets-tab";
 import {
   environmentalAboutData,
   environmentalHeroData,
@@ -64,7 +65,7 @@ import {
   type EnvironmentalProjectCaseStudy
 } from "./environmental-data";
 
-export type EnvironmentalTab = "about" | "sectors" | "services" | "products" | "start-consultation" | "join";
+export type EnvironmentalTab = "about" | "sectors" | "services" | "markets" | "products" | "start-consultation" | "join";
 
 interface EnvironmentalViewProps {
   tab?: EnvironmentalTab;
@@ -82,7 +83,7 @@ function SectionBadge({ title }: { title: string }) {
 export function EnvironmentalSectorView({ tab = "about" }: EnvironmentalViewProps) {
   const { language } = useLanguage();
   const ar = language === "AR";
-  const validTabs: EnvironmentalTab[] = ["about", "sectors", "services", "products", "start-consultation", "join"];
+  const validTabs: EnvironmentalTab[] = ["about", "sectors", "services", "markets", "products", "start-consultation", "join"];
   const activeTab: EnvironmentalTab = validTabs.includes(tab) ? tab : "about";
 
   return (
@@ -130,6 +131,7 @@ export function EnvironmentalSectorView({ tab = "about" }: EnvironmentalViewProp
         {activeTab === "about" && <EnvironmentalAboutView ar={ar} />}
         {activeTab === "sectors" && <EnvironmentalSectorsView ar={ar} />}
         {activeTab === "services" && <EnvironmentalServicesView ar={ar} />}
+        {activeTab === "markets" && <EnvironmentalMarketsTab ar={ar} />}
         {activeTab === "products" && <EnvironmentalProductsView ar={ar} />}
         {activeTab === "start-consultation" && <EnvironmentalStartConsultationView ar={ar} />}
         {activeTab === "join" && <JoinPage trackId="sustainability" />}
