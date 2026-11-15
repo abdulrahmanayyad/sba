@@ -1,5 +1,4 @@
 import { useState, useMemo } from "react";
-import { BarChart3, Table2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type {
   StudyChartDataset,
@@ -9,10 +8,30 @@ import type {
 } from "@/lib/global-markets-data";
 
 export function StudyKpiGrid({ kpis, ar }: { kpis: StudyKpiMetric[]; ar: boolean }) {
-  if (kpis.length === 0) return null;
+  const visibleKpis = useMemo(() => {
+    return kpis.filter((kpi) => {
+      const labelAr = kpi.labelAr || "";
+      const labelEn = kpi.labelEn || "";
+      if (labelAr.includes("الترتيب ضمن محفظة") || labelEn.includes("Portfolio Sequence")) return false;
+      if (labelAr.includes("أوراق عمل") || labelEn.includes("Worksheets Count")) return false;
+      return true;
+    });
+  }, [kpis]);
+
+  if (visibleKpis.length === 0) return null;
+
+  const getKpiScoreColor = (val: string) => {
+    const m = val.match(/^(\d+)\/100$/);
+    if (!m) return "text-slate-900 dark:text-white";
+    const num = parseInt(m[1], 10);
+    if (num >= 80) return "text-brand-green";
+    if (num >= 65) return "text-brand-orange";
+    return "text-red-500";
+  };
+
   return (
     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-      {kpis.map((kpi) => (
+      {visibleKpis.map((kpi) => (
         <div
           key={kpi.id}
           className="rounded-2xl border border-slate-200/80 dark:border-white/15 bg-white/75 dark:bg-slate-900/60 p-5 backdrop-blur-xl shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
@@ -21,7 +40,7 @@ export function StudyKpiGrid({ kpis, ar }: { kpis: StudyKpiMetric[]; ar: boolean
             {ar ? kpi.labelAr : kpi.labelEn}
           </p>
           <div className="mt-2 flex items-baseline gap-1.5">
-            <span className="font-head text-2xl font-extrabold text-slate-900 dark:text-white">
+            <span className={cn("font-head text-2xl font-extrabold", getKpiScoreColor(kpi.value))}>
               {kpi.value}
             </span>
             <span className="text-xs font-semibold text-slate-500 dark:text-slate-400">
@@ -78,22 +97,19 @@ export function StudyChartCard({ chart, ar }: { chart: StudyChartDataset; ar: bo
   return (
     <div className="rounded-3xl border border-slate-200/80 dark:border-white/15 bg-white/75 dark:bg-slate-900/60 p-6 backdrop-blur-xl shadow-sm space-y-4">
       <div className="flex flex-wrap items-start justify-between gap-2 border-b border-slate-200/70 dark:border-white/10 pb-3">
-        <div className="flex items-center gap-2">
-          <div className="size-8 rounded-xl bg-slate-900/5 dark:bg-white/10 text-slate-800 dark:text-slate-100 flex items-center justify-center shrink-0">
-            <BarChart3 className="size-4" />
-          </div>
-          <div>
-            <h3 className="font-head text-sm sm:text-base font-bold text-slate-900 dark:text-white">
-              {ar ? chart.titleAr : chart.titleEn}
-            </h3>
-            <p className="text-[11px] text-slate-500 dark:text-slate-400">
-              {ar ? "الوحدة:" : "Unit:"} {chart.unit} · {ar ? "السنة:" : "Year:"} {chart.referenceYear}
-            </p>
-          </div>
+        <div>
+          <h3 className="font-head text-sm sm:text-base font-bold text-slate-900 dark:text-white">
+            {ar ? chart.titleAr : chart.titleEn}
+          </h3>
+          <p className="text-[11px] text-slate-500 dark:text-slate-400">
+            {ar ? "الوحدة:" : "Unit:"} {chart.unit} · {ar ? "السنة:" : "Year:"} {chart.referenceYear}
+          </p>
         </div>
-        <span className="rounded-full border border-slate-200 dark:border-white/15 bg-slate-100/80 dark:bg-white/5 px-2.5 py-0.5 text-[10px] font-semibold text-slate-600 dark:text-slate-300">
-          {chart.source}
-        </span>
+        {chart.source && !chart.source.includes("قاعدة بيانات قطاع البيئة") && (
+          <span className="rounded-full border border-slate-200 dark:border-white/15 bg-slate-100/80 dark:bg-white/5 px-2.5 py-0.5 text-[10px] font-semibold text-slate-600 dark:text-slate-300">
+            {chart.source}
+          </span>
+        )}
       </div>
 
       {chart.type === "comparison" && chart.secondarySeriesLabelAr && (
@@ -190,24 +206,19 @@ export function StudyTableCard({ table, ar }: { table: StudyTableDataset; ar: bo
   return (
     <div className="rounded-3xl border border-slate-200/80 dark:border-white/15 bg-white/75 dark:bg-slate-900/60 p-6 backdrop-blur-xl shadow-sm space-y-4">
       <div className="flex flex-wrap items-start justify-between gap-2 border-b border-slate-200/70 dark:border-white/10 pb-3">
-        <div className="flex items-center gap-2">
-          <div className="size-8 rounded-xl bg-slate-900/5 dark:bg-white/10 text-slate-800 dark:text-slate-100 flex items-center justify-center shrink-0">
-            <Table2 className="size-4" />
-          </div>
-          <div>
-            <h3 className="font-head text-sm sm:text-base font-bold text-slate-900 dark:text-white">
-              {ar ? table.titleAr : table.titleEn}
-            </h3>
-            {(table.unit || table.referenceYear) && (
-              <p className="text-[11px] text-slate-500 dark:text-slate-400">
-                {table.unit ? `${ar ? "الوحدة:" : "Unit:"} ${table.unit}` : ""}
-                {table.unit && table.referenceYear ? " · " : ""}
-                {table.referenceYear ? `${ar ? "السنة:" : "Year:"} ${table.referenceYear}` : ""}
-              </p>
-            )}
-          </div>
+        <div>
+          <h3 className="font-head text-sm sm:text-base font-bold text-slate-900 dark:text-white">
+            {ar ? table.titleAr : table.titleEn}
+          </h3>
+          {(table.unit || table.referenceYear) && (
+            <p className="text-[11px] text-slate-500 dark:text-slate-400">
+              {table.unit ? `${ar ? "الوحدة:" : "Unit:"} ${table.unit}` : ""}
+              {table.unit && table.referenceYear ? " · " : ""}
+              {table.referenceYear ? `${ar ? "السنة:" : "Year:"} ${table.referenceYear}` : ""}
+            </p>
+          )}
         </div>
-        {table.source && (
+        {table.source && !table.source.includes("قاعدة بيانات قطاع البيئة") && (
           <span className="rounded-full border border-slate-200 dark:border-white/15 bg-slate-100/80 dark:bg-white/5 px-2.5 py-0.5 text-[10px] font-semibold text-slate-600 dark:text-slate-300">
             {table.source}
           </span>

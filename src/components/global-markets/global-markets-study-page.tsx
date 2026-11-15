@@ -1,28 +1,10 @@
 import { useMemo } from "react";
 import { Link } from "@tanstack/react-router";
-import {
-  ArrowLeft,
-  ArrowRight,
-  BookOpen,
-  Briefcase,
-  CheckCircle2,
-  ChevronRight,
-  Download,
-  ExternalLink,
-  FileCheck2,
-  Globe,
-  History,
-  Lock,
-  MapPin,
-} from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
-  APPROVAL_STATUS_LABELS,
   GEO_REGIONS_ORDER,
   GLOBAL_MARKET_SECTORS,
-  SOURCE_CLASSIFICATION_LABELS,
   STUDY_SECTION_BLUEPRINT,
-  STUDY_STATUS_LABELS,
   type GlobalMarketSectorId,
 } from "@/lib/global-markets-data";
 import {
@@ -94,12 +76,18 @@ export function GlobalMarketsStudyPage({
     );
   }
 
-  const st = STUDY_STATUS_LABELS[study.status];
-  const appSt = APPROVAL_STATUS_LABELS[study.approvalStatus];
   const regionLabel = GEO_REGIONS_ORDER.find((r) => r.id === study.region);
   const downloadAllowed = isStudyDownloadAllowed(study);
 
   const visibleSections = STUDY_SECTION_BLUEPRINT.filter((bp) => {
+    if (bp.key === "recommendationsActionPlan") {
+      const sec = study.sections.recommendationsActionPlan;
+      if (!sec || sec.applicable === false) return false;
+      const sAr = sec.summaryAr || "";
+      if (sAr.includes("Word") || sAr.includes("Excel") || sAr.includes("الحزمة الأصلية")) {
+        return false;
+      }
+    }
     const content = study.sections[bp.key];
     if (!content || content.applicable === false) return false;
     const hasSummary = Boolean((ar ? content.summaryAr : content.summaryEn)?.trim());
@@ -115,7 +103,7 @@ export function GlobalMarketsStudyPage({
           <Link to="/global-markets" className="hover:text-slate-900 dark:hover:text-white">
             {ar ? "الأسواق العالمية" : "Global Markets"}
           </Link>
-          <ChevronRight className="size-3.5 rtl:rotate-180" />
+          <span className="text-slate-400">/</span>
           <Link
             to="/global-markets/$sector"
             params={{ sector: sector.id }}
@@ -123,7 +111,7 @@ export function GlobalMarketsStudyPage({
           >
             {ar ? sector.nameAr : sector.nameEn}
           </Link>
-          <ChevronRight className="size-3.5 rtl:rotate-180" />
+          <span className="text-slate-400">/</span>
           <span className="text-slate-900 dark:text-white">
             {ar ? study.countryNameAr : study.countryNameEn}
           </span>
@@ -136,7 +124,7 @@ export function GlobalMarketsStudyPage({
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="flex flex-wrap items-center gap-2">
               <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 dark:border-white/15 bg-slate-100 dark:bg-white/10 px-3 py-1 text-xs font-bold text-slate-800 dark:text-slate-100">
-                {study.countryCode ? (
+                {study.countryCode && (
                   <img
                     src={`https://flagcdn.com/w40/${study.countryCode.toLowerCase()}.png`}
                     srcSet={`https://flagcdn.com/w80/${study.countryCode.toLowerCase()}.png 2x`}
@@ -144,45 +132,23 @@ export function GlobalMarketsStudyPage({
                     className="h-3.5 w-5 rounded-[2px] object-cover border border-slate-300/60 dark:border-white/20 shrink-0"
                     loading="lazy"
                   />
-                ) : study.scope === "egypt_only" ? (
-                  <MapPin className="size-3.5 text-brand-orange" />
-                ) : (
-                  <Globe className="size-3.5 text-brand-green" />
                 )}
                 <span>
                   {ar ? study.countryNameAr : study.countryNameEn}
                   {regionLabel ? ` · ${ar ? regionLabel.ar : regionLabel.en}` : ""}
                 </span>
               </span>
-
-              <span className={cn("rounded-full border px-3 py-1 text-xs font-bold", st.badgeClass)}>
-                {ar ? st.ar : st.en}
-              </span>
-
-              <span className={cn("rounded-full border px-3 py-1 text-xs font-bold", appSt.badgeClass)}>
-                {ar ? appSt.ar : appSt.en}
-              </span>
             </div>
 
             <div className="flex flex-wrap items-center gap-2.5">
-              {downloadAllowed ? (
+              {downloadAllowed && (
                 <button
                   type="button"
                   onClick={() => openApprovedStudyPdfReport(study, ar)}
-                  className="inline-flex items-center gap-2 rounded-full bg-brand-green px-5 py-2.5 text-xs font-bold text-white hover:bg-brand-orange transition-all duration-300 shadow-md cursor-pointer"
+                  className="inline-flex items-center justify-center rounded-full bg-brand-green px-5 py-2.5 text-xs font-bold text-white hover:bg-brand-orange transition-all duration-300 shadow-md cursor-pointer"
                 >
-                  <Download className="size-4" />
                   <span>{ar ? "تحميل الدراسة" : "Download Study"}</span>
                 </button>
-              ) : (
-                <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 dark:border-white/15 bg-slate-100/90 dark:bg-white/5 px-4 py-2 text-xs font-semibold text-slate-500 dark:text-slate-400">
-                  <Lock className="size-3.5" />
-                  <span>
-                    {ar
-                      ? "تنزيل PDF متاح فقط للدراسات المكتملة والمعتمدة"
-                      : "PDF export enabled only after completion & approval"}
-                  </span>
-                </div>
               )}
             </div>
           </div>
@@ -217,24 +183,14 @@ export function GlobalMarketsStudyPage({
             </span>
           </div>
 
-          {(study.tradeIndicatorScopeAr || study.dataCompletenessAr) && (
+          {study.tradeIndicatorScopeAr && (
             <div className="rounded-2xl border border-slate-200/80 dark:border-white/10 bg-slate-50/80 dark:bg-white/5 p-3.5 text-xs text-slate-600 dark:text-slate-300 space-y-1">
-              {study.tradeIndicatorScopeAr && (
-                <div>
-                  <strong className="text-slate-800 dark:text-white">
-                    {ar ? "نطاق القياس:" : "Measurement Scope:"}
-                  </strong>{" "}
-                  <span>{ar ? study.tradeIndicatorScopeAr : study.tradeIndicatorScopeEn}</span>
-                </div>
-              )}
-              {study.dataCompletenessAr && (
-                <div>
-                  <strong className="text-slate-800 dark:text-white">
-                    {ar ? "اكتمال البيانات:" : "Data Completeness:"}
-                  </strong>{" "}
-                  <span>{ar ? study.dataCompletenessAr : study.dataCompletenessEn}</span>
-                </div>
-              )}
+              <div>
+                <strong className="text-slate-800 dark:text-white">
+                  {ar ? "نطاق القياس:" : "Measurement Scope:"}
+                </strong>{" "}
+                <span>{ar ? study.tradeIndicatorScopeAr : study.tradeIndicatorScopeEn}</span>
+              </div>
             </div>
           )}
 
@@ -367,7 +323,7 @@ export function GlobalMarketsStudyPage({
                         key={idx}
                         className="flex items-start gap-2 rounded-xl border border-slate-200/60 dark:border-white/10 bg-slate-50/70 dark:bg-white/5 px-3.5 py-2.5 text-xs sm:text-sm text-slate-700 dark:text-slate-200"
                       >
-                        <CheckCircle2 className="size-4 shrink-0 text-brand-green mt-0.5" />
+                        <span className="size-1.5 rounded-full bg-brand-green mt-1.5 shrink-0" />
                         <span>{b}</span>
                       </li>
                     ))}
@@ -400,18 +356,15 @@ export function GlobalMarketsStudyPage({
       {study.groupOpportunities.length > 0 && (
         <section className="site-container pb-8">
           <div className="rounded-3xl border border-brand-green/25 bg-white/80 dark:bg-slate-900/70 p-6 sm:p-8 backdrop-blur-2xl shadow-md space-y-5 text-start">
-            <div className="flex items-center gap-2.5 border-b border-slate-200/70 dark:border-white/10 pb-3">
-              <Briefcase className="size-5 text-brand-green" />
-              <div>
-                <h2 className="font-head text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white">
-                  {ar ? "فرص المجموعة | Group Opportunities" : "Group Opportunities | فرص المجموعة"}
-                </h2>
-                <p className="text-xs text-slate-500 dark:text-slate-400">
-                  {ar
-                    ? "ربط مخرجات الدراسة بالقدرات والأنشطة الفعلية داخل مجموعة سامي بن عياد."
-                    : "Mapping verified study insights directly to SAMI BIN AYYAD GROUP capabilities."}
-                </p>
-              </div>
+            <div className="border-b border-slate-200/70 dark:border-white/10 pb-3">
+              <h2 className="font-head text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white">
+                {ar ? "فرص المجموعة | Group Opportunities" : "Group Opportunities | فرص المجموعة"}
+              </h2>
+              <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                {ar
+                  ? "ربط مخرجات الدراسة بالقدرات والأنشطة الفعلية داخل مجموعة سامي بن عياد."
+                  : "Mapping verified study insights directly to SAMI BIN AYYAD GROUP capabilities."}
+              </p>
             </div>
 
             <div className="grid gap-4 md:grid-cols-2">
@@ -424,22 +377,6 @@ export function GlobalMarketsStudyPage({
                     <h3 className="font-head text-sm sm:text-base font-extrabold text-slate-900 dark:text-white">
                       {ar ? opp.capabilityAr : opp.capabilityEn}
                     </h3>
-                    <span
-                      className={cn(
-                        "rounded-full border px-2.5 py-0.5 text-[10px] font-bold",
-                        opp.evidenceStatus === "confirmed"
-                          ? "border-brand-green/40 bg-brand-green/10 text-brand-green"
-                          : "border-slate-300 bg-white text-slate-600 dark:border-white/15 dark:bg-slate-800 dark:text-slate-300",
-                      )}
-                    >
-                      {opp.evidenceStatus === "confirmed"
-                        ? ar
-                          ? "فرصة موثقة بدليل"
-                          : "Confirmed with Evidence"
-                        : ar
-                        ? "فرصة استكشافية"
-                        : "Exploratory Assessment"}
-                    </span>
                   </div>
                   <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                     {ar ? opp.descriptionAr : opp.descriptionEn}
@@ -456,7 +393,6 @@ export function GlobalMarketsStudyPage({
                       className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-green hover:underline"
                     >
                       <span>{ar ? "استعراض قدرات القطاع" : "Inspect Sector Capabilities"}</span>
-                      {ar ? <ArrowLeft className="size-3.5" /> : <ArrowRight className="size-3.5" />}
                     </Link>
                   )}
                 </div>
@@ -472,7 +408,6 @@ export function GlobalMarketsStudyPage({
           <div className="rounded-3xl border border-slate-300/80 dark:border-white/20 bg-slate-900 text-white p-6 sm:p-8 shadow-xl flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-start">
             <div className="space-y-1.5">
               <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1 text-[11px] font-bold text-emerald-300">
-                <FileCheck2 className="size-3.5" />
                 <span>{ar ? "ربط معتمد بقسم الفرص العالمية" : "Approved Global Opportunities Link"}</span>
               </span>
               <h2 className="font-head text-lg sm:text-xl font-extrabold text-white">
@@ -490,7 +425,6 @@ export function GlobalMarketsStudyPage({
               className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-xs font-extrabold text-slate-900 hover:bg-brand-green hover:text-white transition-colors shrink-0"
             >
               <span>{ar ? "فتح الفرصة في الفرص العالمية" : "View in Global Opportunities"}</span>
-              {ar ? <ArrowLeft className="size-4" /> : <ArrowRight className="size-4" />}
             </Link>
           </div>
         </section>
@@ -510,18 +444,10 @@ export function GlobalMarketsStudyPage({
       {/* 9. Sources & Data (المصادر والبيانات) */}
       <section className="site-container pb-8">
         <div className="rounded-3xl border border-slate-200/80 dark:border-white/15 bg-white/80 dark:bg-slate-900/65 p-6 sm:p-8 backdrop-blur-xl shadow-sm space-y-5 text-start">
-          <div className="flex items-center gap-2.5 border-b border-slate-200/70 dark:border-white/10 pb-3">
-            <BookOpen className="size-5 text-slate-800 dark:text-white" />
-            <div>
-              <h2 className="font-head text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white">
-                {ar ? "المصادر والبيانات | Sources & Data" : "Sources & Data | المصادر والبيانات"}
-              </h2>
-              <p className="text-xs text-slate-500 dark:text-slate-400">
-                {ar
-                  ? "تصنيف منهجي يميز بين البيانات الرسمية، وتقديرات المؤسسات البحثية، والبيانات التجارية، والتحليلات، والافتراضات المالية."
-                  : "Methodological classification distinguishing official data, research estimates, trade records, analysis, and financial assumptions."}
-              </p>
-            </div>
+          <div className="border-b border-slate-200/70 dark:border-white/10 pb-3">
+            <h2 className="font-head text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white">
+              {ar ? "المصادر والبيانات | Sources & Data" : "Sources & Data | المصادر والبيانات"}
+            </h2>
           </div>
 
           {study.sources.length === 0 ? (
@@ -531,7 +457,6 @@ export function GlobalMarketsStudyPage({
           ) : (
             <div className="grid gap-3">
               {study.sources.map((src) => {
-                const cls = SOURCE_CLASSIFICATION_LABELS[src.classification];
                 return (
                   <div
                     key={src.id}
@@ -540,9 +465,6 @@ export function GlobalMarketsStudyPage({
                     <div className="flex flex-wrap items-center justify-between gap-2">
                       <span className="font-head text-sm font-bold text-slate-900 dark:text-white">
                         {src.name}
-                      </span>
-                      <span className={cn("rounded-full border px-2.5 py-0.5 text-[10px] font-bold", cls.badgeClass)}>
-                        {ar ? cls.ar : cls.en}
                       </span>
                     </div>
                     <div className="flex flex-wrap items-center gap-4 text-[11px] text-slate-500">
@@ -556,7 +478,6 @@ export function GlobalMarketsStudyPage({
                           className="inline-flex items-center gap-1 font-bold text-brand-green hover:underline"
                         >
                           <span>{ar ? "رابط المصدر" : "Source URL"}</span>
-                          <ExternalLink className="size-3" />
                         </a>
                       )}
                     </div>
@@ -577,8 +498,7 @@ export function GlobalMarketsStudyPage({
       {study.archivedVersions && study.archivedVersions.length > 0 && (
         <section className="site-container">
           <div className="rounded-3xl border border-slate-200/80 dark:border-white/15 bg-white/70 dark:bg-slate-900/50 p-6 space-y-3 text-start">
-            <div className="flex items-center gap-2 text-sm font-extrabold text-slate-800 dark:text-white">
-              <History className="size-4 text-slate-500" />
+            <div className="text-sm font-extrabold text-slate-800 dark:text-white">
               <span>{ar ? "الإصدارات السابقة المؤرشفة" : "Archived Previous Versions"}</span>
             </div>
             <div className="space-y-2">

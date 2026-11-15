@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { AlertCircle, Calculator } from "lucide-react";
 
 interface ApparelScenarioCalculatorProps {
   countryNameAr: string;
@@ -28,28 +27,22 @@ export function ApparelScenarioCalculator({
   return (
     <div className="rounded-3xl border border-slate-200/80 dark:border-white/15 bg-white/80 dark:bg-slate-900/70 p-6 sm:p-8 backdrop-blur-2xl shadow-md space-y-5 text-start">
       <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200/70 dark:border-white/10 pb-4">
-        <div className="flex items-center gap-2.5">
-          <div className="size-9 rounded-2xl bg-slate-900/5 dark:bg-white/10 text-slate-800 dark:text-slate-100 flex items-center justify-center shrink-0">
-            <Calculator className="size-4.5" />
-          </div>
-          <div>
-            <h2 className="font-head text-base sm:text-lg font-extrabold text-slate-900 dark:text-white">
-              {ar
-                ? `حاسبة السيناريوهات التخطيطية للطاقة الإنتاجية — ${countryNameAr}`
-                : `Production Volume & Pricing Scenario Calculator — ${countryNameEn}`}
-            </h2>
-            <p className="text-xs text-slate-500 dark:text-slate-400">
-              {ar
-                ? "اختبار حسابي لأثر سعر الوحدة الافتراضي (مدخل بواسطة المستخدم) عبر 10k / 25k / 50k / 100k قطعة شهريًا."
-                : "Arithmetic illustration of monthly & annualized gross turnover using user-entered unit price assumptions across 10k / 25k / 50k / 100k monthly pieces."}
-            </p>
-          </div>
+        <div>
+          <h2 className="font-head text-base sm:text-lg font-extrabold text-slate-900 dark:text-white">
+            {ar
+              ? `حاسبة السيناريوهات التخطيطية للطاقة الإنتاجية — ${countryNameAr}`
+              : `Production Volume & Pricing Scenario Calculator — ${countryNameEn}`}
+          </h2>
+          <p className="text-xs text-slate-500 dark:text-slate-400">
+            {ar
+              ? "اختبار حسابي لأثر سعر الوحدة الافتراضي (مدخل بواسطة المستخدم) عبر 10k / 25k / 50k / 100k قطعة شهريًا."
+              : "Arithmetic illustration of monthly & annualized gross turnover using user-entered unit price assumptions across 10k / 25k / 50k / 100k monthly pieces."}
+          </p>
         </div>
       </div>
 
       {/* Mandatory Assumption Warning */}
-      <div className="rounded-2xl border border-amber-500/40 bg-amber-500/10 p-3.5 flex items-start gap-2.5 text-xs text-amber-950 dark:text-amber-200 leading-relaxed">
-        <AlertCircle className="size-4 shrink-0 mt-0.5 text-amber-600 dark:text-amber-400" />
+      <div className="rounded-2xl border border-amber-500/40 bg-amber-500/10 p-3.5 text-xs text-amber-950 dark:text-amber-200 leading-relaxed">
         <span>
           {ar
             ? "تنويه منهجي: الأسعار المُدخلة أدناه تمثل افتراضات تخطيطية يدخلها المستخدم فقط، وليست أسعارًا سوقية مؤكدة، ولا عروض أسعار معتمدة، ولا تمثل ربحًا صافيًا أو تأكيدًا لقدرة هذا السوق على استيعاب الكميات دون عقود فعلية. يجب نمذجة CM وFOB بشكل منفصل قبل أي التزام."

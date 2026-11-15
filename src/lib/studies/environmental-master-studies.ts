@@ -1,4 +1,4 @@
-// SAMI BIN AYYAD GROUP — INTERNATIONAL ENVIRONMENTAL MARKET STUDIES (66 COUNTRIES)
+// مجموعة سامي بن عياد — INTERNATIONAL ENVIRONMENTAL MARKET STUDIES (66 COUNTRIES)
 // Generated automatically from verified institutional packages, official Word reports, and 7-worksheet Excel databases.
 // Every country contains an independent, comprehensive study record with verified download links.
 // Tanween strictly placed before Alef (ـًا / \u064B\u0627) across all Arabic strings.
@@ -22,7 +22,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/SBA_Saudi_Environmental_Market_Study_AR.docx",
     "downloadXlsxUrl": "/studies/environmental/SBA_Saudi_Environmental_Opportunity_Database.xlsx",
     "priorityGrade": "A",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Flagship (Priority 1)",
     "countryCode": "SA",
@@ -52,7 +52,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق المملكة العربية السعودية",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Saudi Arabia",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -112,7 +112,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: فرص الخدمات",
         "titleEn": "Data Table: فرص الخدمات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الأولوية",
@@ -203,7 +203,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: التنظيم والتأهيل",
         "titleEn": "Data Table: التنظيم والتأهيل",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة",
@@ -283,7 +283,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المشروعات والمناقصات",
         "titleEn": "Data Table: المشروعات والمناقصات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المشروع",
@@ -365,7 +365,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الحسابات المستهدفة",
         "titleEn": "Data Table: الحسابات المستهدفة",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة",
@@ -455,7 +455,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: شركاء ومنافسون",
         "titleEn": "Data Table: شركاء ومنافسون",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة",
@@ -513,7 +513,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المصادر",
         "titleEn": "Data Table: المصادر",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المصدر",
@@ -588,7 +588,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الفرص حسب المناطق",
         "titleEn": "Data Table: الفرص حسب المناطق",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المنطقة",
@@ -658,7 +658,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: مطابقة الخدمات",
         "titleEn": "Data Table: مطابقة الخدمات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الخدمة/المنتج",
@@ -746,7 +746,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: نماذج العقود والتسعير",
         "titleEn": "Data Table: نماذج العقود والتسعير",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "النموذج",
@@ -810,7 +810,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: ملف التأهيل المطلوب",
         "titleEn": "Data Table: ملف التأهيل المطلوب",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المستند",
@@ -1011,8 +1011,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل المملكة العربية السعودية. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق المملكة العربية السعودية بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Saudi Arabia. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل المملكة العربية السعودية. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق المملكة العربية السعودية بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Saudi Arabia. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -1062,8 +1062,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل المملكة العربية السعودية لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Saudi Arabia for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل المملكة العربية السعودية لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Saudi Arabia for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -1092,17 +1092,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -1125,7 +1123,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -1147,7 +1145,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/SBA_UAE_Environmental_Market_Study_AR.docx",
     "downloadXlsxUrl": "/studies/environmental/SBA_UAE_Environmental_Opportunity_Database.xlsx",
     "priorityGrade": "A",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Flagship (Priority 1)",
     "countryCode": "AE",
@@ -1177,7 +1175,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق دولة الإمارات العربية المتحدة",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — United Arab Emirates",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -1237,13 +1235,13 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: اقرأني - النسخة النهائية",
         "titleEn": "Data Table: اقرأني - النسخة النهائية",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
-          "SAMI BIN AYYAD GROUP | دراسة سوق البيئة والاستدامة – الإمارات"
+          "مجموعة سامي بن عياد | دراسة سوق البيئة والاستدامة – الإمارات"
         ],
         "columnsEn": [
-          "SAMI BIN AYYAD GROUP | دراسة سوق البيئة والاستدامة – الإمارات"
+          "مجموعة سامي بن عياد | دراسة سوق البيئة والاستدامة – الإمارات"
         ],
         "rows": [
           [
@@ -1280,7 +1278,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: فرص الخدمات",
         "titleEn": "Data Table: فرص الخدمات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الأولوية",
@@ -1370,7 +1368,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: التراخيص",
         "titleEn": "Data Table: التراخيص",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الإمارة/الجهة",
@@ -1446,7 +1444,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المشروعات",
         "titleEn": "Data Table: المشروعات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المشروع",
@@ -1512,7 +1510,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الحسابات المستهدفة",
         "titleEn": "Data Table: الحسابات المستهدفة",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة",
@@ -1613,7 +1611,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الشركاء",
         "titleEn": "Data Table: الشركاء",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الفئة",
@@ -1663,7 +1661,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المصادر",
         "titleEn": "Data Table: المصادر",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المصدر",
@@ -1725,7 +1723,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: UAE Regulatory Update",
         "titleEn": "Data Table: UAE Regulatory Update",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الإمارة/الجهة",
@@ -1845,7 +1843,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: UAE Consultant Register",
         "titleEn": "Data Table: UAE Consultant Register",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الإمارة",
@@ -1963,7 +1961,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: UAE Final Verification",
         "titleEn": "Data Table: UAE Final Verification",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الإمارة",
@@ -2021,7 +2019,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: UAE Procurement Routes",
         "titleEn": "Data Table: UAE Procurement Routes",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة/المنصة",
@@ -2111,7 +2109,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: UAE Waste 2025",
         "titleEn": "Data Table: UAE Waste 2025",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "مؤشر بلدية دبي 2025",
@@ -2212,7 +2210,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: UAE Projects Nov 2026",
         "titleEn": "Data Table: UAE Projects Nov 2026",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المشروع",
@@ -2276,7 +2274,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: UAE IoT RASID TDRA",
         "titleEn": "Data Table: UAE IoT RASID TDRA",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الموضوع",
@@ -2334,7 +2332,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: UAE SBA Product Gaps",
         "titleEn": "Data Table: UAE SBA Product Gaps",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "منتج SBA",
@@ -2623,8 +2621,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل دولة الإمارات العربية المتحدة. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق دولة الإمارات العربية المتحدة بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in United Arab Emirates. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل دولة الإمارات العربية المتحدة. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق دولة الإمارات العربية المتحدة بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in United Arab Emirates. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -2674,8 +2672,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل دولة الإمارات العربية المتحدة لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in United Arab Emirates for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل دولة الإمارات العربية المتحدة لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in United Arab Emirates for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -2704,17 +2702,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -2737,7 +2733,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -2759,7 +2755,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/SBA_Morocco_Environmental_Market_Study_AR.docx",
     "downloadXlsxUrl": "/studies/environmental/SBA_Morocco_Environmental_Opportunity_Database.xlsx",
     "priorityGrade": "A",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Flagship (Priority 1)",
     "countryCode": "MA",
@@ -2789,7 +2785,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق المملكة المغربية",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Morocco",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -2849,13 +2845,13 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: دليل الاستخدام",
         "titleEn": "Data Table: دليل الاستخدام",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
-          "SAMI BIN AYYAD GROUP – دراسة سوق البيئة والاستدامة | المغرب – الدراسة رقم 03"
+          "مجموعة سامي بن عياد – دراسة سوق البيئة والاستدامة | المغرب – الدراسة رقم 03"
         ],
         "columnsEn": [
-          "SAMI BIN AYYAD GROUP – دراسة سوق البيئة والاستدامة | المغرب – الدراسة رقم 03"
+          "مجموعة سامي بن عياد – دراسة سوق البيئة والاستدامة | المغرب – الدراسة رقم 03"
         ],
         "rows": [
           [
@@ -2883,7 +2879,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: فرص الخدمات",
         "titleEn": "Data Table: فرص الخدمات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الخدمة/المنتج",
@@ -2965,7 +2961,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: التراخيص والقوانين",
         "titleEn": "Data Table: التراخيص والقوانين",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "النص/الجهة",
@@ -3038,7 +3034,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المشروعات",
         "titleEn": "Data Table: المشروعات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المشروع",
@@ -3096,7 +3092,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الحسابات المستهدفة",
         "titleEn": "Data Table: الحسابات المستهدفة",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة",
@@ -3169,7 +3165,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الشركاء والمختبرات",
         "titleEn": "Data Table: الشركاء والمختبرات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة/النوع",
@@ -3215,7 +3211,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المصادر",
         "titleEn": "Data Table: المصادر",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المصدر",
@@ -3290,7 +3286,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: فجوات SBA",
         "titleEn": "Data Table: فجوات SBA",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الموضوع",
@@ -3472,8 +3468,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل المملكة المغربية. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق المملكة المغربية بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Morocco. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل المملكة المغربية. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق المملكة المغربية بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Morocco. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -3523,8 +3519,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل المملكة المغربية لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Morocco for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل المملكة المغربية لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Morocco for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -3553,17 +3549,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -3586,7 +3580,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -3608,7 +3602,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/SBA_Kenya_Environmental_Market_Study_AR.docx",
     "downloadXlsxUrl": "/studies/environmental/SBA_Kenya_Environmental_Opportunity_Database.xlsx",
     "priorityGrade": "A",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Flagship (Priority 1)",
     "countryCode": "KE",
@@ -3638,7 +3632,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق جمهورية كينيا",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Kenya",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -3698,13 +3692,13 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: دليل الاستخدام",
         "titleEn": "Data Table: دليل الاستخدام",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
-          "SAMI BIN AYYAD GROUP – كينيا | دراسة فرص البيئة والاستدامة – رقم 04"
+          "مجموعة سامي بن عياد – كينيا | دراسة فرص البيئة والاستدامة – رقم 04"
         ],
         "columnsEn": [
-          "SAMI BIN AYYAD GROUP – كينيا | دراسة فرص البيئة والاستدامة – رقم 04"
+          "مجموعة سامي بن عياد – كينيا | دراسة فرص البيئة والاستدامة – رقم 04"
         ],
         "rows": [
           [
@@ -3729,7 +3723,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: فرص SBA",
         "titleEn": "Data Table: فرص SBA",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الخدمة",
@@ -3795,7 +3789,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: القوانين والتراخيص",
         "titleEn": "Data Table: القوانين والتراخيص",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "النص",
@@ -3875,7 +3869,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المشروعات",
         "titleEn": "Data Table: المشروعات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المشروع",
@@ -3927,7 +3921,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الجهات المستهدفة",
         "titleEn": "Data Table: الجهات المستهدفة",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة",
@@ -3991,7 +3985,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الشركاء والمختبرات",
         "titleEn": "Data Table: الشركاء والمختبرات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة/الفئة",
@@ -4036,7 +4030,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المصادر",
         "titleEn": "Data Table: المصادر",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المصدر",
@@ -4106,7 +4100,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: فجوات SBA",
         "titleEn": "Data Table: فجوات SBA",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الملف",
@@ -4252,8 +4246,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل جمهورية كينيا. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية كينيا بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Kenya. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل جمهورية كينيا. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية كينيا بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Kenya. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -4303,8 +4297,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية كينيا لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Kenya for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية كينيا لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Kenya for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -4333,17 +4327,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -4366,7 +4358,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -4388,7 +4380,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/SBA_Nigeria_Environmental_Market_Study_AR.docx",
     "downloadXlsxUrl": "/studies/environmental/SBA_Nigeria_Environmental_Opportunity_Database.xlsx",
     "priorityGrade": "A",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Flagship (Priority 1)",
     "countryCode": "NG",
@@ -4418,7 +4410,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق جمهورية نيجيريا الاتحادية",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Nigeria",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -4478,13 +4470,13 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: دليل الاستخدام",
         "titleEn": "Data Table: دليل الاستخدام",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
-          "SAMI BIN AYYAD GROUP – نيجيريا | الدراسة رقم 05"
+          "مجموعة سامي بن عياد – نيجيريا | الدراسة رقم 05"
         ],
         "columnsEn": [
-          "SAMI BIN AYYAD GROUP – نيجيريا | الدراسة رقم 05"
+          "مجموعة سامي بن عياد – نيجيريا | الدراسة رقم 05"
         ],
         "rows": [
           [
@@ -4509,7 +4501,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: فرص SBA",
         "titleEn": "Data Table: فرص SBA",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الخدمة",
@@ -4567,7 +4559,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: القوانين",
         "titleEn": "Data Table: القوانين",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "النص",
@@ -4643,7 +4635,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المشروعات والفرص",
         "titleEn": "Data Table: المشروعات والفرص",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الفرصة",
@@ -4695,7 +4687,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الجهات المستهدفة",
         "titleEn": "Data Table: الجهات المستهدفة",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة",
@@ -4759,7 +4751,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المختبرات والشركاء",
         "titleEn": "Data Table: المختبرات والشركاء",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الفئة",
@@ -4804,7 +4796,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المصادر",
         "titleEn": "Data Table: المصادر",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المصدر",
@@ -4869,7 +4861,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: فجوات SBA",
         "titleEn": "Data Table: فجوات SBA",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الملف",
@@ -5001,8 +4993,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل جمهورية نيجيريا الاتحادية. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية نيجيريا الاتحادية بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Nigeria. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل جمهورية نيجيريا الاتحادية. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية نيجيريا الاتحادية بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Nigeria. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -5052,8 +5044,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية نيجيريا الاتحادية لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Nigeria for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية نيجيريا الاتحادية لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Nigeria for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -5082,17 +5074,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -5115,7 +5105,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -5137,7 +5127,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/SBA_South_Africa_Environmental_Market_Study_AR.docx",
     "downloadXlsxUrl": "/studies/environmental/SBA_South_Africa_Environmental_Opportunity_Database.xlsx",
     "priorityGrade": "A",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Flagship (Priority 1)",
     "countryCode": "ZA",
@@ -5167,7 +5157,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق جمهورية جنوب أفريقيا",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — South Africa",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -5227,13 +5217,13 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: دليل الاستخدام",
         "titleEn": "Data Table: دليل الاستخدام",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
-          "SAMI BIN AYYAD GROUP – جنوب أفريقيا | الدراسة رقم 06"
+          "مجموعة سامي بن عياد – جنوب أفريقيا | الدراسة رقم 06"
         ],
         "columnsEn": [
-          "SAMI BIN AYYAD GROUP – جنوب أفريقيا | الدراسة رقم 06"
+          "مجموعة سامي بن عياد – جنوب أفريقيا | الدراسة رقم 06"
         ],
         "rows": [
           [
@@ -5255,7 +5245,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: فرص SBA",
         "titleEn": "Data Table: فرص SBA",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الخدمة",
@@ -5321,7 +5311,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: القوانين",
         "titleEn": "Data Table: القوانين",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "النص",
@@ -5385,7 +5375,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المحاور والمشروعات",
         "titleEn": "Data Table: المحاور والمشروعات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المحور",
@@ -5437,7 +5427,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الحسابات المستهدفة",
         "titleEn": "Data Table: الحسابات المستهدفة",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة/الحساب",
@@ -5501,7 +5491,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المختبرات والشركاء",
         "titleEn": "Data Table: المختبرات والشركاء",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الفئة",
@@ -5546,7 +5536,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المصادر",
         "titleEn": "Data Table: المصادر",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المصدر",
@@ -5601,7 +5591,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: فجوات SBA",
         "titleEn": "Data Table: فجوات SBA",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الملف",
@@ -5715,8 +5705,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل جمهورية جنوب أفريقيا. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية جنوب أفريقيا بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in South Africa. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل جمهورية جنوب أفريقيا. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية جنوب أفريقيا بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in South Africa. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -5766,8 +5756,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية جنوب أفريقيا لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in South Africa for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية جنوب أفريقيا لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in South Africa for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -5796,17 +5786,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -5829,7 +5817,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -5851,7 +5839,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/SBA_Qatar_Environmental_Market_Study_AR.docx",
     "downloadXlsxUrl": "/studies/environmental/SBA_Qatar_Environmental_Opportunity_Database.xlsx",
     "priorityGrade": "B",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Flagship (Priority 1)",
     "countryCode": "QA",
@@ -5881,7 +5869,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق دولة قطر",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Qatar",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -5941,7 +5929,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: ملخص السوق",
         "titleEn": "Data Table: ملخص السوق",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "البند",
@@ -6001,7 +5989,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الفرص والعقود",
         "titleEn": "Data Table: الفرص والعقود",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "ID",
@@ -6083,7 +6071,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الجهات والعملاء",
         "titleEn": "Data Table: الجهات والعملاء",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة",
@@ -6147,7 +6135,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الخدمات والمنتجات",
         "titleEn": "Data Table: الخدمات والمنتجات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "خدمة/منتج SBA",
@@ -6202,7 +6190,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: التأهيل والامتثال",
         "titleEn": "Data Table: التأهيل والامتثال",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المتطلب",
@@ -6266,7 +6254,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: خطة 180 يوم",
         "titleEn": "Data Table: خطة 180 يوم",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الفترة",
@@ -6311,7 +6299,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المصادر",
         "titleEn": "Data Table: المصادر",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المصدر",
@@ -6467,8 +6455,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل دولة قطر. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق دولة قطر بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Qatar. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل دولة قطر. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق دولة قطر بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Qatar. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -6518,8 +6506,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل دولة قطر لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Qatar for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل دولة قطر لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Qatar for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -6548,17 +6536,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -6581,7 +6567,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -6603,7 +6589,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/SBA_Oman_Environmental_Market_Study_AR.docx",
     "downloadXlsxUrl": "/studies/environmental/SBA_Oman_Environmental_Opportunity_Database.xlsx",
     "priorityGrade": "B",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Flagship (Priority 1)",
     "countryCode": "OM",
@@ -6633,7 +6619,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق سلطنة عمان",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Oman",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -6693,7 +6679,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: ملخص السوق",
         "titleEn": "Data Table: ملخص السوق",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "البند",
@@ -6753,7 +6739,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الفرص والمناقصات",
         "titleEn": "Data Table: الفرص والمناقصات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "ID",
@@ -6873,7 +6859,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الجهات والعملاء",
         "titleEn": "Data Table: الجهات والعملاء",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة",
@@ -6943,7 +6929,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الخدمات والمنتجات",
         "titleEn": "Data Table: الخدمات والمنتجات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "خدمة/منتج SBA",
@@ -7008,7 +6994,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: التأهيل والامتثال",
         "titleEn": "Data Table: التأهيل والامتثال",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المتطلب",
@@ -7090,7 +7076,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: خطة 180 يوم",
         "titleEn": "Data Table: خطة 180 يوم",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الفترة",
@@ -7135,7 +7121,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المصادر",
         "titleEn": "Data Table: المصادر",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المصدر",
@@ -7276,8 +7262,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل سلطنة عمان. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق سلطنة عمان بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Oman. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل سلطنة عمان. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق سلطنة عمان بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Oman. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -7327,8 +7313,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل سلطنة عمان لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Oman for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل سلطنة عمان لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Oman for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -7357,17 +7343,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -7390,7 +7374,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -7412,7 +7396,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/SBA_Egypt_Environmental_Market_Study_AR.docx",
     "downloadXlsxUrl": "/studies/environmental/SBA_Egypt_Environmental_Opportunity_Database.xlsx",
     "priorityGrade": "A",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Flagship (Priority 1)",
     "countryCode": "EG",
@@ -7442,7 +7426,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق جمهورية مصر العربية",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Egypt",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -7502,7 +7486,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: ملخص تنفيذي",
         "titleEn": "Data Table: ملخص تنفيذي",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المحور",
@@ -7560,7 +7544,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المشروعات والبرامج",
         "titleEn": "Data Table: المشروعات والبرامج",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المشروع",
@@ -7618,7 +7602,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المناقصات",
         "titleEn": "Data Table: المناقصات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الفرصة",
@@ -7698,7 +7682,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: التشريعات والتراخيص",
         "titleEn": "Data Table: التشريعات والتراخيص",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "التشريع/الجهة",
@@ -7750,7 +7734,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: العملاء والشركاء",
         "titleEn": "Data Table: العملاء والشركاء",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الشريحة",
@@ -7809,7 +7793,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: خدمات SBA",
         "titleEn": "Data Table: خدمات SBA",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الخدمة",
@@ -7868,7 +7852,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: خطة 180 يومًا",
         "titleEn": "Data Table: خطة 180 يومًا",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الفترة",
@@ -7920,7 +7904,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المصادر والمنهجية",
         "titleEn": "Data Table: المصادر والمنهجية",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المصدر",
@@ -8011,8 +7995,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل جمهورية مصر العربية. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية مصر العربية بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Egypt. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل جمهورية مصر العربية. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية مصر العربية بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Egypt. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -8062,8 +8046,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية مصر العربية لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Egypt for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية مصر العربية لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Egypt for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -8092,17 +8076,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -8125,7 +8107,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -8147,7 +8129,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/SBA_Algeria_Environmental_Market_Study_AR.docx",
     "downloadXlsxUrl": "/studies/environmental/SBA_Algeria_Environmental_Opportunity_Database.xlsx",
     "priorityGrade": "B",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Flagship (Priority 1)",
     "countryCode": "DZ",
@@ -8177,7 +8159,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق الجمهورية الجزائرية الديمقراطية الشعبية",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Algeria",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -8237,7 +8219,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: ملخص تنفيذي",
         "titleEn": "Data Table: ملخص تنفيذي",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المحور",
@@ -8289,7 +8271,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المشروعات والبرامج",
         "titleEn": "Data Table: المشروعات والبرامج",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المشروع",
@@ -8355,7 +8337,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المناقصات",
         "titleEn": "Data Table: المناقصات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "رقم/عنوان",
@@ -8419,7 +8401,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: التشريعات والتراخيص",
         "titleEn": "Data Table: التشريعات والتراخيص",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "التشريع",
@@ -8477,7 +8459,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: العملاء والشركاء",
         "titleEn": "Data Table: العملاء والشركاء",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الشريحة",
@@ -8536,7 +8518,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: خدمات SBA",
         "titleEn": "Data Table: خدمات SBA",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الخدمة",
@@ -8594,7 +8576,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: خطة 180 يومًا",
         "titleEn": "Data Table: خطة 180 يومًا",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الفترة",
@@ -8646,7 +8628,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المصادر والمنهجية",
         "titleEn": "Data Table: المصادر والمنهجية",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المصدر",
@@ -8744,8 +8726,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل الجمهورية الجزائرية الديمقراطية الشعبية. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق الجمهورية الجزائرية الديمقراطية الشعبية بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Algeria. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل الجمهورية الجزائرية الديمقراطية الشعبية. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق الجمهورية الجزائرية الديمقراطية الشعبية بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Algeria. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -8795,8 +8777,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل الجمهورية الجزائرية الديمقراطية الشعبية لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Algeria for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل الجمهورية الجزائرية الديمقراطية الشعبية لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Algeria for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -8825,17 +8807,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -8858,7 +8838,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -8880,7 +8860,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/SBA_Iraq_Environmental_Market_Study_AR.docx",
     "downloadXlsxUrl": "/studies/environmental/SBA_Iraq_Environmental_Opportunity_Database.xlsx",
     "priorityGrade": "B",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Strategic (Priority 2)",
     "countryCode": "IQ",
@@ -8910,7 +8890,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق جمهورية العراق",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Iraq",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -8970,7 +8950,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: ملخص السوق",
         "titleEn": "Data Table: ملخص السوق",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "البند",
@@ -9030,7 +9010,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الفرص والمناقصات",
         "titleEn": "Data Table: الفرص والمناقصات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "ID",
@@ -9136,7 +9116,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الجهات والعملاء",
         "titleEn": "Data Table: الجهات والعملاء",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة",
@@ -9206,7 +9186,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الخدمات والمنتجات",
         "titleEn": "Data Table: الخدمات والمنتجات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "خدمة/منتج SBA",
@@ -9271,7 +9251,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: التأهيل والامتثال",
         "titleEn": "Data Table: التأهيل والامتثال",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المتطلب",
@@ -9353,7 +9333,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: خطة 180 يوم",
         "titleEn": "Data Table: خطة 180 يوم",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الفترة",
@@ -9398,7 +9378,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المصادر",
         "titleEn": "Data Table: المصادر",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المصدر",
@@ -9584,8 +9564,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل جمهورية العراق. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية العراق بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Iraq. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل جمهورية العراق. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية العراق بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Iraq. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -9635,8 +9615,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية العراق لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Iraq for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية العراق لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Iraq for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -9665,17 +9645,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -9698,7 +9676,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -9720,7 +9698,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/SBA_Ghana_Environmental_Market_Study_AR.docx",
     "downloadXlsxUrl": "/studies/environmental/SBA_Ghana_Environmental_Opportunity_Database.xlsx",
     "priorityGrade": "B",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Strategic (Priority 2)",
     "countryCode": "GH",
@@ -9750,7 +9728,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق جمهورية غانا",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Ghana",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -9810,7 +9788,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: ملخص السوق",
         "titleEn": "Data Table: ملخص السوق",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "البند",
@@ -9870,7 +9848,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الفرص والمشروعات",
         "titleEn": "Data Table: الفرص والمشروعات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "ID",
@@ -9979,7 +9957,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الجهات والعملاء",
         "titleEn": "Data Table: الجهات والعملاء",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة",
@@ -10055,7 +10033,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الخدمات والمنتجات",
         "titleEn": "Data Table: الخدمات والمنتجات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "خدمة/منتج SBA",
@@ -10120,7 +10098,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: التأهيل والامتثال",
         "titleEn": "Data Table: التأهيل والامتثال",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المتطلب",
@@ -10202,7 +10180,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: خطة 180 يوم",
         "titleEn": "Data Table: خطة 180 يوم",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الفترة",
@@ -10247,7 +10225,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المصادر",
         "titleEn": "Data Table: المصادر",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المصدر",
@@ -10453,8 +10431,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل جمهورية غانا. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية غانا بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Ghana. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل جمهورية غانا. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية غانا بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Ghana. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -10504,8 +10482,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية غانا لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Ghana for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية غانا لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Ghana for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -10534,17 +10512,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -10567,7 +10543,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -10589,7 +10565,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/SBA_Cote_dIvoire_Environmental_Market_Study_AR.docx",
     "downloadXlsxUrl": "/studies/environmental/SBA_Cote_dIvoire_Environmental_Opportunity_Database.xlsx",
     "priorityGrade": "B",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Strategic (Priority 2)",
     "countryCode": "CI",
@@ -10619,7 +10595,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق جمهورية كوت ديفوار (ساحل العاج)",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Cote d'Ivoire",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -10679,7 +10655,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: ملخص السوق",
         "titleEn": "Data Table: ملخص السوق",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "البند",
@@ -10739,7 +10715,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الفرص والمناقصات",
         "titleEn": "Data Table: الفرص والمناقصات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "ID",
@@ -10869,7 +10845,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الجهات والعملاء",
         "titleEn": "Data Table: الجهات والعملاء",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة",
@@ -10951,7 +10927,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الخدمات والمنتجات",
         "titleEn": "Data Table: الخدمات والمنتجات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "خدمة/منتج SBA",
@@ -11016,7 +10992,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: التأهيل والامتثال",
         "titleEn": "Data Table: التأهيل والامتثال",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المتطلب",
@@ -11098,7 +11074,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: خطة 180 يوم",
         "titleEn": "Data Table: خطة 180 يوم",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الفترة",
@@ -11143,7 +11119,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المصادر",
         "titleEn": "Data Table: المصادر",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المصدر",
@@ -11389,8 +11365,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل جمهورية كوت ديفوار (ساحل العاج). يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية كوت ديفوار (ساحل العاج) بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Cote d'Ivoire. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل جمهورية كوت ديفوار (ساحل العاج). يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية كوت ديفوار (ساحل العاج) بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Cote d'Ivoire. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -11440,8 +11416,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية كوت ديفوار (ساحل العاج) لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Cote d'Ivoire for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية كوت ديفوار (ساحل العاج) لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Cote d'Ivoire for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -11470,17 +11446,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -11503,7 +11477,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -11525,7 +11499,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/SBA_Tunisia_Environmental_Market_Study_AR.docx",
     "downloadXlsxUrl": "/studies/environmental/SBA_Tunisia_Environmental_Opportunity_Database.xlsx",
     "priorityGrade": "B",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Strategic (Priority 2)",
     "countryCode": "TN",
@@ -11555,7 +11529,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق الجمهورية التونسية",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Tunisia",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -11615,7 +11589,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: ملخص تنفيذي",
         "titleEn": "Data Table: ملخص تنفيذي",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المحور",
@@ -11673,7 +11647,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المشروعات والبرامج",
         "titleEn": "Data Table: المشروعات والبرامج",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المشروع/البرنامج",
@@ -11737,7 +11711,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المناقصات",
         "titleEn": "Data Table: المناقصات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الفرصة",
@@ -11817,7 +11791,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: التشريعات والتراخيص",
         "titleEn": "Data Table: التشريعات والتراخيص",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "التشريع/الجهة",
@@ -11890,7 +11864,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: العملاء والشركاء",
         "titleEn": "Data Table: العملاء والشركاء",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الشريحة/الجهة",
@@ -11956,7 +11930,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: خدمات SBA",
         "titleEn": "Data Table: خدمات SBA",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الخدمة",
@@ -12029,7 +12003,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: خطة 180 يومًا",
         "titleEn": "Data Table: خطة 180 يومًا",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الفترة",
@@ -12098,8 +12072,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل الجمهورية التونسية. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق الجمهورية التونسية بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Tunisia. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل الجمهورية التونسية. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق الجمهورية التونسية بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Tunisia. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -12149,8 +12123,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل الجمهورية التونسية لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Tunisia for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل الجمهورية التونسية لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Tunisia for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -12179,17 +12153,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -12212,7 +12184,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -12234,7 +12206,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/SBA_Senegal_Environmental_Market_Study_AR.docx",
     "downloadXlsxUrl": "/studies/environmental/SBA_Senegal_Environmental_Opportunity_Database.xlsx",
     "priorityGrade": "B",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Strategic (Priority 2)",
     "countryCode": "SN",
@@ -12264,7 +12236,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق جمهورية السنغال",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Senegal",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -12324,7 +12296,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: ملخص تنفيذي",
         "titleEn": "Data Table: ملخص تنفيذي",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المحور",
@@ -12376,7 +12348,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المشروعات والبرامج",
         "titleEn": "Data Table: المشروعات والبرامج",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المشروع/البرنامج",
@@ -12440,7 +12412,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المناقصات والفرص",
         "titleEn": "Data Table: المناقصات والفرص",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المرجع/الإعلان",
@@ -12530,7 +12502,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: التشريعات والتراخيص",
         "titleEn": "Data Table: التشريعات والتراخيص",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "النص/الجهة",
@@ -12603,7 +12575,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: العملاء والشركاء",
         "titleEn": "Data Table: العملاء والشركاء",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة/الشريحة",
@@ -12669,7 +12641,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: خدمات SBA",
         "titleEn": "Data Table: خدمات SBA",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الخدمة",
@@ -12742,7 +12714,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: خطة 180 يومًا",
         "titleEn": "Data Table: خطة 180 يومًا",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الفترة",
@@ -12811,8 +12783,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل جمهورية السنغال. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية السنغال بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Senegal. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل جمهورية السنغال. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية السنغال بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Senegal. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -12862,8 +12834,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية السنغال لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Senegal for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية السنغال لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Senegal for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -12892,17 +12864,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -12925,7 +12895,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -12947,7 +12917,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/SBA_Tanzania_Environmental_Market_Study_AR.docx",
     "downloadXlsxUrl": "/studies/environmental/SBA_Tanzania_Environmental_Opportunity_Database.xlsx",
     "priorityGrade": "B",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Strategic (Priority 2)",
     "countryCode": "TZ",
@@ -12977,7 +12947,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق جمهورية تنزانيا الاتحادية",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Tanzania",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -13037,7 +13007,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: ملخص تنفيذي",
         "titleEn": "Data Table: ملخص تنفيذي",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المحور",
@@ -13089,7 +13059,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المشروعات والبرامج",
         "titleEn": "Data Table: المشروعات والبرامج",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المشروع/المؤشر",
@@ -13162,7 +13132,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المناقصات",
         "titleEn": "Data Table: المناقصات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الإعلان",
@@ -13252,7 +13222,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: التشريعات والتراخيص",
         "titleEn": "Data Table: التشريعات والتراخيص",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "التشريع/الجهة",
@@ -13332,7 +13302,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: العملاء والشركاء",
         "titleEn": "Data Table: العملاء والشركاء",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة/الشريحة",
@@ -13398,7 +13368,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: خدمات SBA",
         "titleEn": "Data Table: خدمات SBA",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الخدمة",
@@ -13471,7 +13441,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: خطة 180 يومًا",
         "titleEn": "Data Table: خطة 180 يومًا",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الفترة",
@@ -13540,8 +13510,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل جمهورية تنزانيا الاتحادية. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية تنزانيا الاتحادية بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Tanzania. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل جمهورية تنزانيا الاتحادية. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية تنزانيا الاتحادية بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Tanzania. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -13591,8 +13561,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية تنزانيا الاتحادية لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Tanzania for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية تنزانيا الاتحادية لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Tanzania for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -13621,17 +13591,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -13654,7 +13622,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -13676,7 +13644,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/SBA_Ethiopia_Environmental_Market_Study_AR.docx",
     "downloadXlsxUrl": "/studies/environmental/SBA_Ethiopia_Environmental_Opportunity_Database.xlsx",
     "priorityGrade": "B",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Strategic (Priority 2)",
     "countryCode": "ET",
@@ -13706,7 +13674,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق جمهورية إثيوبيا الفيدرالية الديمقراطية",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Ethiopia",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -13766,7 +13734,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: ملخص تنفيذي",
         "titleEn": "Data Table: ملخص تنفيذي",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المحور",
@@ -13818,7 +13786,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المشروعات والبرامج",
         "titleEn": "Data Table: المشروعات والبرامج",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المشروع/البرنامج",
@@ -13882,7 +13850,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المناقصات",
         "titleEn": "Data Table: المناقصات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الفرصة",
@@ -13962,7 +13930,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: التشريعات والتراخيص",
         "titleEn": "Data Table: التشريعات والتراخيص",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "التشريع",
@@ -14028,7 +13996,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: العملاء والشركاء",
         "titleEn": "Data Table: العملاء والشركاء",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة/الشريحة",
@@ -14094,7 +14062,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: خدمات SBA",
         "titleEn": "Data Table: خدمات SBA",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الخدمة",
@@ -14167,7 +14135,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: خطة 180 يومًا",
         "titleEn": "Data Table: خطة 180 يومًا",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الفترة",
@@ -14236,8 +14204,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل جمهورية إثيوبيا الفيدرالية الديمقراطية. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية إثيوبيا الفيدرالية الديمقراطية بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Ethiopia. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل جمهورية إثيوبيا الفيدرالية الديمقراطية. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية إثيوبيا الفيدرالية الديمقراطية بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Ethiopia. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -14287,8 +14255,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية إثيوبيا الفيدرالية الديمقراطية لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Ethiopia for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية إثيوبيا الفيدرالية الديمقراطية لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Ethiopia for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -14317,17 +14285,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -14350,7 +14316,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -14372,7 +14338,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/SBA_Jordan_Environmental_Market_Study_AR.docx",
     "downloadXlsxUrl": "/studies/environmental/SBA_Jordan_Environmental_Opportunity_Database.xlsx",
     "priorityGrade": "B",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Strategic (Priority 2)",
     "countryCode": "JO",
@@ -14402,7 +14368,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق المملكة الأردنية الهاشمية",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Jordan",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -14462,7 +14428,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: ملخص تنفيذي",
         "titleEn": "Data Table: ملخص تنفيذي",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المحور",
@@ -14514,7 +14480,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المشروعات والبرامج",
         "titleEn": "Data Table: المشروعات والبرامج",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المشروع",
@@ -14587,7 +14553,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المناقصات",
         "titleEn": "Data Table: المناقصات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الفرصة",
@@ -14669,7 +14635,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: التشريعات والتراخيص",
         "titleEn": "Data Table: التشريعات والتراخيص",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "التشريع/الجهة",
@@ -14728,7 +14694,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: العملاء والشركاء",
         "titleEn": "Data Table: العملاء والشركاء",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة/الشريحة",
@@ -14787,7 +14753,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: خدمات SBA",
         "titleEn": "Data Table: خدمات SBA",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الخدمة",
@@ -14860,7 +14826,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: خطة 180 يومًا",
         "titleEn": "Data Table: خطة 180 يومًا",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الفترة",
@@ -14929,8 +14895,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل المملكة الأردنية الهاشمية. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق المملكة الأردنية الهاشمية بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Jordan. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل المملكة الأردنية الهاشمية. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق المملكة الأردنية الهاشمية بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Jordan. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -14980,8 +14946,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل المملكة الأردنية الهاشمية لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Jordan for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل المملكة الأردنية الهاشمية لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Jordan for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -15010,17 +14976,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -15043,7 +15007,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -15065,7 +15029,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/SBA_Rwanda_Environmental_Market_Study_AR.docx",
     "downloadXlsxUrl": "/studies/environmental/SBA_Rwanda_Environmental_Opportunity_Database.xlsx",
     "priorityGrade": "B",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Strategic (Priority 2)",
     "countryCode": "RW",
@@ -15095,7 +15059,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق جمهورية رواندا",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Rwanda",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -15155,7 +15119,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: ملخص السوق",
         "titleEn": "Data Table: ملخص السوق",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المؤشر",
@@ -15210,7 +15174,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الفرص والمناقصات",
         "titleEn": "Data Table: الفرص والمناقصات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "ID",
@@ -15290,7 +15254,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المشروعات والبرامج",
         "titleEn": "Data Table: المشروعات والبرامج",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المشروع",
@@ -15348,7 +15312,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: العملاء المستهدفون",
         "titleEn": "Data Table: العملاء المستهدفون",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الفئة",
@@ -15400,7 +15364,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: التشريعات والتراخيص",
         "titleEn": "Data Table: التشريعات والتراخيص",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة/التشريع",
@@ -15446,7 +15410,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: خطة 180 يومًا",
         "titleEn": "Data Table: خطة 180 يومًا",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الفترة",
@@ -15491,7 +15455,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المصادر والمنهجية",
         "titleEn": "Data Table: المصادر والمنهجية",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المصدر",
@@ -15574,8 +15538,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل جمهورية رواندا. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية رواندا بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Rwanda. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل جمهورية رواندا. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية رواندا بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Rwanda. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -15625,8 +15589,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية رواندا لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Rwanda for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية رواندا لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Rwanda for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -15655,17 +15619,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -15688,7 +15650,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -15710,7 +15672,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/SBA_Zambia_Environmental_Market_Study_AR.docx",
     "downloadXlsxUrl": "/studies/environmental/SBA_Zambia_Environmental_Opportunity_Database.xlsx",
     "priorityGrade": "B",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Strategic (Priority 2)",
     "countryCode": "ZM",
@@ -15740,7 +15702,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق جمهورية زامبيا",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Zambia",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -15800,7 +15762,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: ملخص السوق",
         "titleEn": "Data Table: ملخص السوق",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المؤشر",
@@ -15855,7 +15817,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الفرص والمناقصات",
         "titleEn": "Data Table: الفرص والمناقصات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "ID",
@@ -15942,7 +15904,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المشروعات والبرامج",
         "titleEn": "Data Table: المشروعات والبرامج",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "ID",
@@ -16022,7 +15984,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: العملاء المستهدفون",
         "titleEn": "Data Table: العملاء المستهدفون",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الفئة",
@@ -16081,7 +16043,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الإطار التنظيمي",
         "titleEn": "Data Table: الإطار التنظيمي",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "التشريع/الجهة",
@@ -16133,7 +16095,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: خطة 180 يومًا",
         "titleEn": "Data Table: خطة 180 يومًا",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الفترة",
@@ -16178,7 +16140,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المصادر والمنهجية",
         "titleEn": "Data Table: المصادر والمنهجية",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المصدر",
@@ -16276,8 +16238,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل جمهورية زامبيا. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية زامبيا بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Zambia. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل جمهورية زامبيا. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية زامبيا بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Zambia. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -16327,8 +16289,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية زامبيا لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Zambia for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية زامبيا لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Zambia for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -16357,17 +16319,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -16390,7 +16350,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -16412,7 +16372,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/SBA_Uganda_Environmental_Market_Study_AR.docx",
     "downloadXlsxUrl": "/studies/environmental/SBA_Uganda_Environmental_Opportunity_Database.xlsx",
     "priorityGrade": "B",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Strategic (Priority 2)",
     "countryCode": "UG",
@@ -16442,7 +16402,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق جمهورية أوغندا",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Uganda",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -16502,7 +16462,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: فرص الخدمات",
         "titleEn": "Data Table: فرص الخدمات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الأولوية",
@@ -16584,7 +16544,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: التنظيم والتأهيل",
         "titleEn": "Data Table: التنظيم والتأهيل",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة",
@@ -16630,7 +16590,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المشروعات والمناقصات",
         "titleEn": "Data Table: المشروعات والمناقصات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المشروع/المرجع",
@@ -16668,7 +16628,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الحسابات المستهدفة",
         "titleEn": "Data Table: الحسابات المستهدفة",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة",
@@ -16727,7 +16687,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الشركاء والمنافسون",
         "titleEn": "Data Table: الشركاء والمنافسون",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "نوع الشريك",
@@ -16779,7 +16739,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الفرص حسب المناطق",
         "titleEn": "Data Table: الفرص حسب المناطق",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المنطقة/النطاق",
@@ -16825,7 +16785,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المصادر وخطة التنفيذ",
         "titleEn": "Data Table: المصادر وخطة التنفيذ",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المصدر",
@@ -17008,8 +16968,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل جمهورية أوغندا. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية أوغندا بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Uganda. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل جمهورية أوغندا. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية أوغندا بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Uganda. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -17059,8 +17019,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية أوغندا لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Uganda for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية أوغندا لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Uganda for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -17089,17 +17049,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -17122,7 +17080,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -17144,7 +17102,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/SBA_Libya_Environmental_Market_Study_AR.docx",
     "downloadXlsxUrl": "/studies/environmental/SBA_Libya_Environmental_Opportunity_Database.xlsx",
     "priorityGrade": "B",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Strategic (Priority 2)",
     "countryCode": "LY",
@@ -17174,7 +17132,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق دولة ليبيا",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Libya",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -17234,7 +17192,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: فرص الخدمات",
         "titleEn": "Data Table: فرص الخدمات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الأولوية",
@@ -17316,7 +17274,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: التنظيم والتأهيل",
         "titleEn": "Data Table: التنظيم والتأهيل",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة",
@@ -17362,7 +17320,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المشروعات والمناقصات",
         "titleEn": "Data Table: المشروعات والمناقصات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المشروع/المرجع",
@@ -17400,7 +17358,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الحسابات المستهدفة",
         "titleEn": "Data Table: الحسابات المستهدفة",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة",
@@ -17459,7 +17417,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الشركاء والمنافسون",
         "titleEn": "Data Table: الشركاء والمنافسون",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "نوع الشريك",
@@ -17511,7 +17469,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الفرص حسب المناطق",
         "titleEn": "Data Table: الفرص حسب المناطق",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المنطقة/النطاق",
@@ -17557,7 +17515,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المصادر وخطة التنفيذ",
         "titleEn": "Data Table: المصادر وخطة التنفيذ",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المصدر",
@@ -17725,8 +17683,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل دولة ليبيا. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق دولة ليبيا بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Libya. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل دولة ليبيا. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق دولة ليبيا بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Libya. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -17776,8 +17734,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل دولة ليبيا لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Libya for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل دولة ليبيا لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Libya for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -17806,17 +17764,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -17839,7 +17795,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -17861,7 +17817,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/SBA_Mauritania_Environmental_Market_Study_AR.docx",
     "downloadXlsxUrl": "/studies/environmental/SBA_Mauritania_Environmental_Opportunity_Database.xlsx",
     "priorityGrade": "B",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Strategic (Priority 2)",
     "countryCode": "MR",
@@ -17891,7 +17847,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق الجمهورية الإسلامية الموريتانية",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Mauritania",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -17951,7 +17907,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: فرص الخدمات",
         "titleEn": "Data Table: فرص الخدمات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الأولوية",
@@ -18033,7 +17989,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: التنظيم والتأهيل",
         "titleEn": "Data Table: التنظيم والتأهيل",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة",
@@ -18079,7 +18035,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المشروعات والمناقصات",
         "titleEn": "Data Table: المشروعات والمناقصات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المشروع/المرجع",
@@ -18117,7 +18073,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الحسابات المستهدفة",
         "titleEn": "Data Table: الحسابات المستهدفة",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة",
@@ -18176,7 +18132,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الشركاء والمنافسون",
         "titleEn": "Data Table: الشركاء والمنافسون",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "نوع الشريك",
@@ -18228,7 +18184,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الفرص حسب المناطق",
         "titleEn": "Data Table: الفرص حسب المناطق",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المنطقة/النطاق",
@@ -18274,7 +18230,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المصادر وخطة التنفيذ",
         "titleEn": "Data Table: المصادر وخطة التنفيذ",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المصدر",
@@ -18442,8 +18398,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل الجمهورية الإسلامية الموريتانية. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق الجمهورية الإسلامية الموريتانية بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Mauritania. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل الجمهورية الإسلامية الموريتانية. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق الجمهورية الإسلامية الموريتانية بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Mauritania. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -18493,8 +18449,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل الجمهورية الإسلامية الموريتانية لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Mauritania for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل الجمهورية الإسلامية الموريتانية لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Mauritania for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -18523,17 +18479,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -18556,7 +18510,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -18578,7 +18532,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/SBA_Mozambique_Environmental_Market_Study_AR.docx",
     "downloadXlsxUrl": "/studies/environmental/SBA_Mozambique_Environmental_Opportunity_Database.xlsx",
     "priorityGrade": "C",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Strategic (Priority 2)",
     "countryCode": "MZ",
@@ -18608,7 +18562,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق جمهورية موزمبيق",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Mozambique",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -18668,7 +18622,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: فرص الخدمات",
         "titleEn": "Data Table: فرص الخدمات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الأولوية",
@@ -18750,7 +18704,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: التنظيم والتأهيل",
         "titleEn": "Data Table: التنظيم والتأهيل",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة",
@@ -18796,7 +18750,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المشروعات والمناقصات",
         "titleEn": "Data Table: المشروعات والمناقصات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المشروع/المرجع",
@@ -18834,7 +18788,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الحسابات المستهدفة",
         "titleEn": "Data Table: الحسابات المستهدفة",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة",
@@ -18893,7 +18847,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الشركاء والمنافسون",
         "titleEn": "Data Table: الشركاء والمنافسون",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "نوع الشريك",
@@ -18945,7 +18899,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الفرص حسب المناطق",
         "titleEn": "Data Table: الفرص حسب المناطق",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المنطقة/النطاق",
@@ -18997,7 +18951,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المصادر وخطة التنفيذ",
         "titleEn": "Data Table: المصادر وخطة التنفيذ",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المصدر",
@@ -19165,8 +19119,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل جمهورية موزمبيق. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية موزمبيق بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Mozambique. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل جمهورية موزمبيق. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية موزمبيق بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Mozambique. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -19216,8 +19170,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية موزمبيق لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Mozambique for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية موزمبيق لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Mozambique for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -19246,17 +19200,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -19279,7 +19231,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -19301,7 +19253,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/SBA_Kuwait_Environmental_Market_Study_AR.docx",
     "downloadXlsxUrl": "/studies/environmental/SBA_Kuwait_Environmental_Opportunity_Database.xlsx",
     "priorityGrade": "B",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Strategic (Priority 2)",
     "countryCode": "KW",
@@ -19331,7 +19283,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق دولة الكويت",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Kuwait",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -19391,7 +19343,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: فرص الخدمات",
         "titleEn": "Data Table: فرص الخدمات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الأولوية",
@@ -19473,7 +19425,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: التنظيم والتأهيل",
         "titleEn": "Data Table: التنظيم والتأهيل",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة",
@@ -19519,7 +19471,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المشروعات والمناقصات",
         "titleEn": "Data Table: المشروعات والمناقصات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المشروع/المرجع",
@@ -19557,7 +19509,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الحسابات المستهدفة",
         "titleEn": "Data Table: الحسابات المستهدفة",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة",
@@ -19616,7 +19568,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الشركاء والمنافسون",
         "titleEn": "Data Table: الشركاء والمنافسون",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "نوع الشريك",
@@ -19668,7 +19620,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الفرص حسب المناطق",
         "titleEn": "Data Table: الفرص حسب المناطق",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المنطقة/النطاق",
@@ -19720,7 +19672,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المصادر وخطة التنفيذ",
         "titleEn": "Data Table: المصادر وخطة التنفيذ",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المصدر",
@@ -19923,8 +19875,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل دولة الكويت. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق دولة الكويت بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Kuwait. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل دولة الكويت. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق دولة الكويت بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Kuwait. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -19974,8 +19926,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل دولة الكويت لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Kuwait for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل دولة الكويت لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Kuwait for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -20004,17 +19956,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -20037,7 +19987,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -20059,7 +20009,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/SBA_Bahrain_Environmental_Market_Study_AR.docx",
     "downloadXlsxUrl": "/studies/environmental/SBA_Bahrain_Environmental_Opportunity_Database.xlsx",
     "priorityGrade": "B",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Comprehensive Coverage",
     "countryCode": "BH",
@@ -20089,7 +20039,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق مملكة البحرين",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Bahrain",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -20149,7 +20099,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: فرص الخدمات",
         "titleEn": "Data Table: فرص الخدمات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الأولوية",
@@ -20231,7 +20181,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: التنظيم والتأهيل",
         "titleEn": "Data Table: التنظيم والتأهيل",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة",
@@ -20277,7 +20227,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المشروعات والمناقصات",
         "titleEn": "Data Table: المشروعات والمناقصات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المشروع/المرجع",
@@ -20315,7 +20265,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الحسابات المستهدفة",
         "titleEn": "Data Table: الحسابات المستهدفة",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة",
@@ -20374,7 +20324,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الشركاء والمنافسون",
         "titleEn": "Data Table: الشركاء والمنافسون",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "نوع الشريك",
@@ -20426,7 +20376,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الفرص حسب المناطق",
         "titleEn": "Data Table: الفرص حسب المناطق",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المنطقة/النطاق",
@@ -20466,7 +20416,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المصادر وخطة التنفيذ",
         "titleEn": "Data Table: المصادر وخطة التنفيذ",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المصدر",
@@ -20589,8 +20539,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل مملكة البحرين. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق مملكة البحرين بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Bahrain. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل مملكة البحرين. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق مملكة البحرين بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Bahrain. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -20640,8 +20590,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل مملكة البحرين لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Bahrain for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل مملكة البحرين لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Bahrain for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -20670,17 +20620,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -20703,7 +20651,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -20725,7 +20673,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/SBA_Cameroon_Environmental_Market_Study_AR.docx",
     "downloadXlsxUrl": "/studies/environmental/SBA_Cameroon_Environmental_Opportunity_Database.xlsx",
     "priorityGrade": "C",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Comprehensive Coverage",
     "countryCode": "CM",
@@ -20755,7 +20703,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق جمهورية الكاميرون",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Cameroon",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -20815,7 +20763,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: فرص الخدمات",
         "titleEn": "Data Table: فرص الخدمات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الأولوية",
@@ -20897,7 +20845,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: التنظيم والتأهيل",
         "titleEn": "Data Table: التنظيم والتأهيل",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة",
@@ -20943,7 +20891,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المشروعات والمناقصات",
         "titleEn": "Data Table: المشروعات والمناقصات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المشروع/المرجع",
@@ -20981,7 +20929,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الحسابات المستهدفة",
         "titleEn": "Data Table: الحسابات المستهدفة",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة",
@@ -21040,7 +20988,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الشركاء والمنافسون",
         "titleEn": "Data Table: الشركاء والمنافسون",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "نوع الشريك",
@@ -21092,7 +21040,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الفرص حسب المناطق",
         "titleEn": "Data Table: الفرص حسب المناطق",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المنطقة/النطاق",
@@ -21132,7 +21080,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المصادر وخطة التنفيذ",
         "titleEn": "Data Table: المصادر وخطة التنفيذ",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المصدر",
@@ -21255,8 +21203,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل جمهورية الكاميرون. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية الكاميرون بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Cameroon. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل جمهورية الكاميرون. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية الكاميرون بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Cameroon. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -21306,8 +21254,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية الكاميرون لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Cameroon for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية الكاميرون لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Cameroon for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -21336,17 +21284,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -21369,7 +21315,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -21391,7 +21337,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/SBA_Angola_Environmental_Market_Study_AR.docx",
     "downloadXlsxUrl": "/studies/environmental/SBA_Angola_Environmental_Opportunity_Database.xlsx",
     "priorityGrade": "B",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Comprehensive Coverage",
     "countryCode": "AO",
@@ -21421,7 +21367,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق جمهورية أنغولا",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Angola",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -21481,7 +21427,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: فرص الخدمات",
         "titleEn": "Data Table: فرص الخدمات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الأولوية",
@@ -21563,7 +21509,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: التنظيم والتأهيل",
         "titleEn": "Data Table: التنظيم والتأهيل",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة",
@@ -21609,7 +21555,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المشروعات والمناقصات",
         "titleEn": "Data Table: المشروعات والمناقصات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المشروع/المرجع",
@@ -21647,7 +21593,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الحسابات المستهدفة",
         "titleEn": "Data Table: الحسابات المستهدفة",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة",
@@ -21706,7 +21652,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الشركاء والمنافسون",
         "titleEn": "Data Table: الشركاء والمنافسون",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "نوع الشريك",
@@ -21758,7 +21704,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الفرص حسب المناطق",
         "titleEn": "Data Table: الفرص حسب المناطق",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المنطقة/النطاق",
@@ -21798,7 +21744,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المصادر وخطة التنفيذ",
         "titleEn": "Data Table: المصادر وخطة التنفيذ",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المصدر",
@@ -21921,8 +21867,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل جمهورية أنغولا. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية أنغولا بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Angola. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل جمهورية أنغولا. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية أنغولا بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Angola. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -21972,8 +21918,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية أنغولا لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Angola for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية أنغولا لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Angola for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -22002,17 +21948,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -22035,7 +21979,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -22057,7 +22001,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/SBA_Benin_Environmental_Market_Study_AR.docx",
     "downloadXlsxUrl": "/studies/environmental/SBA_Benin_Environmental_Opportunity_Database.xlsx",
     "priorityGrade": "C",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Comprehensive Coverage",
     "countryCode": "BJ",
@@ -22087,7 +22031,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق جمهورية بنين",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Benin",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -22147,7 +22091,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: فرص الخدمات",
         "titleEn": "Data Table: فرص الخدمات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الأولوية",
@@ -22229,7 +22173,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: التنظيم والتأهيل",
         "titleEn": "Data Table: التنظيم والتأهيل",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة",
@@ -22275,7 +22219,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المشروعات والمناقصات",
         "titleEn": "Data Table: المشروعات والمناقصات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المشروع/المرجع",
@@ -22313,7 +22257,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الحسابات المستهدفة",
         "titleEn": "Data Table: الحسابات المستهدفة",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة",
@@ -22372,7 +22316,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الشركاء والمنافسون",
         "titleEn": "Data Table: الشركاء والمنافسون",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "نوع الشريك",
@@ -22424,7 +22368,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الفرص حسب المناطق",
         "titleEn": "Data Table: الفرص حسب المناطق",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المنطقة/النطاق",
@@ -22464,7 +22408,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المصادر وخطة التنفيذ",
         "titleEn": "Data Table: المصادر وخطة التنفيذ",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المصدر",
@@ -22572,8 +22516,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل جمهورية بنين. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية بنين بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Benin. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل جمهورية بنين. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية بنين بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Benin. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -22623,8 +22567,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية بنين لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Benin for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية بنين لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Benin for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -22653,17 +22597,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -22686,7 +22628,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -22708,7 +22650,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/SBA_Botswana_Environmental_Market_Study_AR.docx",
     "downloadXlsxUrl": "/studies/environmental/SBA_Botswana_Environmental_Opportunity_Database.xlsx",
     "priorityGrade": "B",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Comprehensive Coverage",
     "countryCode": "BW",
@@ -22738,7 +22680,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق جمهورية بوتسوانا",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Botswana",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -22798,7 +22740,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: فرص الخدمات",
         "titleEn": "Data Table: فرص الخدمات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الأولوية",
@@ -22880,7 +22822,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: التنظيم والتأهيل",
         "titleEn": "Data Table: التنظيم والتأهيل",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة",
@@ -22926,7 +22868,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المشروعات والمناقصات",
         "titleEn": "Data Table: المشروعات والمناقصات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المشروع/المرجع",
@@ -22964,7 +22906,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الحسابات المستهدفة",
         "titleEn": "Data Table: الحسابات المستهدفة",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة",
@@ -23023,7 +22965,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الشركاء والمنافسون",
         "titleEn": "Data Table: الشركاء والمنافسون",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "نوع الشريك",
@@ -23075,7 +23017,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الفرص حسب المناطق",
         "titleEn": "Data Table: الفرص حسب المناطق",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المنطقة/النطاق",
@@ -23115,7 +23057,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المصادر وخطة التنفيذ",
         "titleEn": "Data Table: المصادر وخطة التنفيذ",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المصدر",
@@ -23223,8 +23165,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل جمهورية بوتسوانا. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية بوتسوانا بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Botswana. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل جمهورية بوتسوانا. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية بوتسوانا بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Botswana. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -23274,8 +23216,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية بوتسوانا لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Botswana for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية بوتسوانا لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Botswana for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -23304,17 +23246,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -23337,7 +23277,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -23359,7 +23299,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/SBA_Burkina_Faso_Environmental_Market_Study_AR.docx",
     "downloadXlsxUrl": "/studies/environmental/SBA_Burkina_Faso_Environmental_Opportunity_Database.xlsx",
     "priorityGrade": "C",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Comprehensive Coverage",
     "countryCode": "BF",
@@ -23389,7 +23329,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق بوركينا فاسو",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Burkina Faso",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -23449,7 +23389,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: فرص الخدمات",
         "titleEn": "Data Table: فرص الخدمات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الأولوية",
@@ -23531,7 +23471,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: التنظيم والتأهيل",
         "titleEn": "Data Table: التنظيم والتأهيل",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة",
@@ -23577,7 +23517,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المشروعات والمناقصات",
         "titleEn": "Data Table: المشروعات والمناقصات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المشروع/المرجع",
@@ -23615,7 +23555,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الحسابات المستهدفة",
         "titleEn": "Data Table: الحسابات المستهدفة",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة",
@@ -23674,7 +23614,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الشركاء والمنافسون",
         "titleEn": "Data Table: الشركاء والمنافسون",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "نوع الشريك",
@@ -23726,7 +23666,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الفرص حسب المناطق",
         "titleEn": "Data Table: الفرص حسب المناطق",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المنطقة/النطاق",
@@ -23766,7 +23706,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المصادر وخطة التنفيذ",
         "titleEn": "Data Table: المصادر وخطة التنفيذ",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المصدر",
@@ -23889,8 +23829,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل بوركينا فاسو. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق بوركينا فاسو بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Burkina Faso. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل بوركينا فاسو. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق بوركينا فاسو بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Burkina Faso. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -23940,8 +23880,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل بوركينا فاسو لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Burkina Faso for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل بوركينا فاسو لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Burkina Faso for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -23970,17 +23910,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -24003,7 +23941,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -24025,7 +23963,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/SBA_Burundi_Environmental_Market_Study_AR.docx",
     "downloadXlsxUrl": "/studies/environmental/SBA_Burundi_Environmental_Opportunity_Database.xlsx",
     "priorityGrade": "C",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Comprehensive Coverage",
     "countryCode": "BI",
@@ -24055,7 +23993,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق جمهورية بوروندي",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Burundi",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -24115,7 +24053,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: فرص الخدمات",
         "titleEn": "Data Table: فرص الخدمات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الأولوية",
@@ -24197,7 +24135,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: التنظيم والتأهيل",
         "titleEn": "Data Table: التنظيم والتأهيل",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة",
@@ -24243,7 +24181,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المشروعات والمناقصات",
         "titleEn": "Data Table: المشروعات والمناقصات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المشروع/المرجع",
@@ -24281,7 +24219,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الحسابات المستهدفة",
         "titleEn": "Data Table: الحسابات المستهدفة",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة",
@@ -24340,7 +24278,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الشركاء والمنافسون",
         "titleEn": "Data Table: الشركاء والمنافسون",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "نوع الشريك",
@@ -24392,7 +24330,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الفرص حسب المناطق",
         "titleEn": "Data Table: الفرص حسب المناطق",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المنطقة/النطاق",
@@ -24438,7 +24376,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المصادر وخطة التنفيذ",
         "titleEn": "Data Table: المصادر وخطة التنفيذ",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المصدر",
@@ -24561,8 +24499,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل جمهورية بوروندي. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية بوروندي بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Burundi. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل جمهورية بوروندي. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية بوروندي بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Burundi. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -24612,8 +24550,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية بوروندي لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Burundi for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية بوروندي لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Burundi for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -24642,17 +24580,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -24675,7 +24611,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -24697,7 +24633,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/SBA_Cabo_Verde_Environmental_Market_Study_AR.docx",
     "downloadXlsxUrl": "/studies/environmental/SBA_Cabo_Verde_Environmental_Opportunity_Database.xlsx",
     "priorityGrade": "C",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Comprehensive Coverage",
     "countryCode": "CV",
@@ -24727,7 +24663,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق جمهورية كاب فيردي (الرأس الأخضر)",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Cabo Verde",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -24787,7 +24723,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: فرص الخدمات",
         "titleEn": "Data Table: فرص الخدمات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الأولوية",
@@ -24869,7 +24805,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: التنظيم والتأهيل",
         "titleEn": "Data Table: التنظيم والتأهيل",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة",
@@ -24915,7 +24851,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المشروعات والمناقصات",
         "titleEn": "Data Table: المشروعات والمناقصات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المشروع/المرجع",
@@ -24953,7 +24889,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الحسابات المستهدفة",
         "titleEn": "Data Table: الحسابات المستهدفة",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة",
@@ -25012,7 +24948,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الشركاء والمنافسون",
         "titleEn": "Data Table: الشركاء والمنافسون",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "نوع الشريك",
@@ -25064,7 +25000,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الفرص حسب المناطق",
         "titleEn": "Data Table: الفرص حسب المناطق",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المنطقة/النطاق",
@@ -25110,7 +25046,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المصادر وخطة التنفيذ",
         "titleEn": "Data Table: المصادر وخطة التنفيذ",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المصدر",
@@ -25218,8 +25154,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل جمهورية كاب فيردي (الرأس الأخضر). يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية كاب فيردي (الرأس الأخضر) بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Cabo Verde. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل جمهورية كاب فيردي (الرأس الأخضر). يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية كاب فيردي (الرأس الأخضر) بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Cabo Verde. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -25269,8 +25205,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية كاب فيردي (الرأس الأخضر) لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Cabo Verde for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية كاب فيردي (الرأس الأخضر) لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Cabo Verde for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -25299,17 +25235,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -25332,7 +25266,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -25354,7 +25288,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/SBA_Central_African_Republic_Environmental_Market_Study_AR.docx",
     "downloadXlsxUrl": "/studies/environmental/SBA_Central_African_Republic_Environmental_Opportunity_Database.xlsx",
     "priorityGrade": "C",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Comprehensive Coverage",
     "countryCode": "CF",
@@ -25384,7 +25318,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق جمهورية أفريقيا الوسطى",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Central African Republic",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -25444,7 +25378,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: فرص الخدمات",
         "titleEn": "Data Table: فرص الخدمات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الأولوية",
@@ -25526,7 +25460,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: التنظيم والتأهيل",
         "titleEn": "Data Table: التنظيم والتأهيل",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة",
@@ -25572,7 +25506,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المشروعات والمناقصات",
         "titleEn": "Data Table: المشروعات والمناقصات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المشروع/المرجع",
@@ -25610,7 +25544,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الحسابات المستهدفة",
         "titleEn": "Data Table: الحسابات المستهدفة",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة",
@@ -25669,7 +25603,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الشركاء والمنافسون",
         "titleEn": "Data Table: الشركاء والمنافسون",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "نوع الشريك",
@@ -25721,7 +25655,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الفرص حسب المناطق",
         "titleEn": "Data Table: الفرص حسب المناطق",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المنطقة/النطاق",
@@ -25755,7 +25689,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المصادر وخطة التنفيذ",
         "titleEn": "Data Table: المصادر وخطة التنفيذ",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المصدر",
@@ -25863,8 +25797,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل جمهورية أفريقيا الوسطى. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية أفريقيا الوسطى بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Central African Republic. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل جمهورية أفريقيا الوسطى. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية أفريقيا الوسطى بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Central African Republic. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -25914,8 +25848,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية أفريقيا الوسطى لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Central African Republic for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية أفريقيا الوسطى لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Central African Republic for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -25944,17 +25878,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -25977,7 +25909,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -25999,7 +25931,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/SBA_Chad_Environmental_Market_Study_AR.docx",
     "downloadXlsxUrl": "/studies/environmental/SBA_Chad_Environmental_Opportunity_Database.xlsx",
     "priorityGrade": "C",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Comprehensive Coverage",
     "countryCode": "TD",
@@ -26029,7 +25961,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق جمهورية تشاد",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Chad",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -26089,7 +26021,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: فرص الخدمات",
         "titleEn": "Data Table: فرص الخدمات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الأولوية",
@@ -26171,7 +26103,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: التنظيم والتأهيل",
         "titleEn": "Data Table: التنظيم والتأهيل",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة",
@@ -26217,7 +26149,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المشروعات والمناقصات",
         "titleEn": "Data Table: المشروعات والمناقصات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المشروع/المرجع",
@@ -26255,7 +26187,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الحسابات المستهدفة",
         "titleEn": "Data Table: الحسابات المستهدفة",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة",
@@ -26314,7 +26246,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الشركاء والمنافسون",
         "titleEn": "Data Table: الشركاء والمنافسون",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "نوع الشريك",
@@ -26366,7 +26298,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الفرص حسب المناطق",
         "titleEn": "Data Table: الفرص حسب المناطق",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المنطقة/النطاق",
@@ -26412,7 +26344,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المصادر وخطة التنفيذ",
         "titleEn": "Data Table: المصادر وخطة التنفيذ",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المصدر",
@@ -26520,8 +26452,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل جمهورية تشاد. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية تشاد بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Chad. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل جمهورية تشاد. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية تشاد بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Chad. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -26571,8 +26503,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية تشاد لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Chad for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية تشاد لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Chad for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -26601,17 +26533,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -26634,7 +26564,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -26656,7 +26586,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/SBA_Comoros_Environmental_Market_Study_AR.docx",
     "downloadXlsxUrl": "/studies/environmental/SBA_Comoros_Environmental_Opportunity_Database.xlsx",
     "priorityGrade": "C",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Comprehensive Coverage",
     "countryCode": "KM",
@@ -26686,7 +26616,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق اتحاد جزر القمر",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Comoros",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -26746,7 +26676,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: فرص الخدمات",
         "titleEn": "Data Table: فرص الخدمات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الأولوية",
@@ -26828,7 +26758,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: التنظيم والتأهيل",
         "titleEn": "Data Table: التنظيم والتأهيل",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة",
@@ -26874,7 +26804,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المشروعات والمناقصات",
         "titleEn": "Data Table: المشروعات والمناقصات",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المشروع/المرجع",
@@ -26912,7 +26842,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الحسابات المستهدفة",
         "titleEn": "Data Table: الحسابات المستهدفة",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "الجهة",
@@ -26971,7 +26901,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الشركاء والمنافسون",
         "titleEn": "Data Table: الشركاء والمنافسون",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "نوع الشريك",
@@ -27023,7 +26953,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: الفرص حسب المناطق",
         "titleEn": "Data Table: الفرص حسب المناطق",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المنطقة/النطاق",
@@ -27063,7 +26993,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: المصادر وخطة التنفيذ",
         "titleEn": "Data Table: المصادر وخطة التنفيذ",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "المصدر",
@@ -27171,8 +27101,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل اتحاد جزر القمر. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق اتحاد جزر القمر بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Comoros. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل اتحاد جزر القمر. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق اتحاد جزر القمر بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Comoros. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -27222,8 +27152,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل اتحاد جزر القمر لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Comoros for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل اتحاد جزر القمر لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Comoros for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -27252,17 +27182,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -27285,7 +27213,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -27307,7 +27235,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/37_CD_Environmental_Market_Study.docx",
     "downloadXlsxUrl": "/studies/environmental/37_CD_Environmental_Database.xlsx",
     "priorityGrade": "B",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Comprehensive Coverage",
     "countryCode": "CD",
@@ -27337,7 +27265,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق جمهورية الكونغو الديمقراطية",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Democratic Republic of the Congo",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -27397,7 +27325,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Country Overview",
         "titleEn": "Data Table: Country Overview",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "SBA Group – Environmental Market Database"
@@ -27446,7 +27374,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Projects",
         "titleEn": "Data Table: Projects",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Project / signal",
@@ -27480,7 +27408,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Opportunities",
         "titleEn": "Data Table: Opportunities",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Opportunity",
@@ -27570,7 +27498,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Target Accounts",
         "titleEn": "Data Table: Target Accounts",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Target account category",
@@ -27598,7 +27526,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Regulatory",
         "titleEn": "Data Table: Regulatory",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Regulatory workstream",
@@ -27638,7 +27566,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Risk Register",
         "titleEn": "Data Table: Risk Register",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Risk",
@@ -27678,7 +27606,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Sources",
         "titleEn": "Data Table: Sources",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Source",
@@ -27759,8 +27687,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل جمهورية الكونغو الديمقراطية. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية الكونغو الديمقراطية بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Democratic Republic of the Congo. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل جمهورية الكونغو الديمقراطية. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية الكونغو الديمقراطية بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Democratic Republic of the Congo. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -27810,8 +27738,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية الكونغو الديمقراطية لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Democratic Republic of the Congo for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية الكونغو الديمقراطية لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Democratic Republic of the Congo for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -27840,17 +27768,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -27873,7 +27799,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -27895,7 +27821,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/38_CG_Environmental_Market_Study.docx",
     "downloadXlsxUrl": "/studies/environmental/38_CG_Environmental_Database.xlsx",
     "priorityGrade": "C",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Comprehensive Coverage",
     "countryCode": "CG",
@@ -27925,7 +27851,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق جمهورية الكونغو",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Republic of the Congo",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -27985,7 +27911,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Country Overview",
         "titleEn": "Data Table: Country Overview",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "SBA Group – Environmental Market Database"
@@ -28034,7 +27960,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Projects",
         "titleEn": "Data Table: Projects",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Project / signal",
@@ -28068,7 +27994,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Opportunities",
         "titleEn": "Data Table: Opportunities",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Opportunity",
@@ -28150,7 +28076,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Target Accounts",
         "titleEn": "Data Table: Target Accounts",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Target account category",
@@ -28178,7 +28104,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Regulatory",
         "titleEn": "Data Table: Regulatory",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Regulatory workstream",
@@ -28218,7 +28144,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Risk Register",
         "titleEn": "Data Table: Risk Register",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Risk",
@@ -28258,7 +28184,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Sources",
         "titleEn": "Data Table: Sources",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Source",
@@ -28339,8 +28265,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل جمهورية الكونغو. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية الكونغو بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Republic of the Congo. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل جمهورية الكونغو. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية الكونغو بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Republic of the Congo. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -28390,8 +28316,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية الكونغو لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Republic of the Congo for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية الكونغو لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Republic of the Congo for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -28420,17 +28346,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -28453,7 +28377,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -28475,7 +28399,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/39_DJ_Environmental_Market_Study.docx",
     "downloadXlsxUrl": "/studies/environmental/39_DJ_Environmental_Database.xlsx",
     "priorityGrade": "B",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Comprehensive Coverage",
     "countryCode": "DJ",
@@ -28505,7 +28429,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق جمهورية جيبوتي",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Djibouti",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -28565,7 +28489,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Country Overview",
         "titleEn": "Data Table: Country Overview",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "SBA Group – Environmental Market Database"
@@ -28614,7 +28538,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Projects",
         "titleEn": "Data Table: Projects",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Project / signal",
@@ -28648,7 +28572,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Opportunities",
         "titleEn": "Data Table: Opportunities",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Opportunity",
@@ -28730,7 +28654,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Target Accounts",
         "titleEn": "Data Table: Target Accounts",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Target account category",
@@ -28758,7 +28682,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Regulatory",
         "titleEn": "Data Table: Regulatory",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Regulatory workstream",
@@ -28798,7 +28722,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Risk Register",
         "titleEn": "Data Table: Risk Register",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Risk",
@@ -28838,7 +28762,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Sources",
         "titleEn": "Data Table: Sources",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Source",
@@ -28904,8 +28828,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل جمهورية جيبوتي. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية جيبوتي بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Djibouti. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل جمهورية جيبوتي. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية جيبوتي بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Djibouti. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -28955,8 +28879,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية جيبوتي لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Djibouti for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية جيبوتي لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Djibouti for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -28985,17 +28909,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -29018,7 +28940,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -29040,7 +28962,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/40_GQ_Environmental_Market_Study.docx",
     "downloadXlsxUrl": "/studies/environmental/40_GQ_Environmental_Database.xlsx",
     "priorityGrade": "C",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Comprehensive Coverage",
     "countryCode": "GQ",
@@ -29070,7 +28992,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق جمهورية غينيا الاستوائية",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Equatorial Guinea",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -29130,7 +29052,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Country Overview",
         "titleEn": "Data Table: Country Overview",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "SBA Group – Environmental Market Database"
@@ -29179,7 +29101,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Projects",
         "titleEn": "Data Table: Projects",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Project / signal",
@@ -29213,7 +29135,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Opportunities",
         "titleEn": "Data Table: Opportunities",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Opportunity",
@@ -29295,7 +29217,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Target Accounts",
         "titleEn": "Data Table: Target Accounts",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Target account category",
@@ -29323,7 +29245,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Regulatory",
         "titleEn": "Data Table: Regulatory",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Regulatory workstream",
@@ -29363,7 +29285,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Risk Register",
         "titleEn": "Data Table: Risk Register",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Risk",
@@ -29403,7 +29325,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Sources",
         "titleEn": "Data Table: Sources",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Source",
@@ -29469,8 +29391,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل جمهورية غينيا الاستوائية. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية غينيا الاستوائية بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Equatorial Guinea. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل جمهورية غينيا الاستوائية. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية غينيا الاستوائية بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Equatorial Guinea. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -29520,8 +29442,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية غينيا الاستوائية لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Equatorial Guinea for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية غينيا الاستوائية لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Equatorial Guinea for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -29550,17 +29472,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -29583,7 +29503,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -29605,7 +29525,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/41_ER_Environmental_Market_Study.docx",
     "downloadXlsxUrl": "/studies/environmental/41_ER_Environmental_Database.xlsx",
     "priorityGrade": "C",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Comprehensive Coverage",
     "countryCode": "ER",
@@ -29635,7 +29555,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق دولة إريتريا",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Eritrea",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -29695,7 +29615,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Country Overview",
         "titleEn": "Data Table: Country Overview",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "SBA Group – Environmental Market Database"
@@ -29744,7 +29664,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Projects",
         "titleEn": "Data Table: Projects",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Project / signal",
@@ -29778,7 +29698,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Opportunities",
         "titleEn": "Data Table: Opportunities",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Opportunity",
@@ -29860,7 +29780,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Target Accounts",
         "titleEn": "Data Table: Target Accounts",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Target account category",
@@ -29888,7 +29808,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Regulatory",
         "titleEn": "Data Table: Regulatory",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Regulatory workstream",
@@ -29928,7 +29848,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Risk Register",
         "titleEn": "Data Table: Risk Register",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Risk",
@@ -29968,7 +29888,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Sources",
         "titleEn": "Data Table: Sources",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Source",
@@ -30019,8 +29939,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل دولة إريتريا. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق دولة إريتريا بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Eritrea. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل دولة إريتريا. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق دولة إريتريا بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Eritrea. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -30070,8 +29990,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل دولة إريتريا لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Eritrea for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل دولة إريتريا لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Eritrea for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -30100,17 +30020,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -30133,7 +30051,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -30155,7 +30073,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/42_SZ_Environmental_Market_Study.docx",
     "downloadXlsxUrl": "/studies/environmental/42_SZ_Environmental_Database.xlsx",
     "priorityGrade": "C",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Comprehensive Coverage",
     "countryCode": "SZ",
@@ -30185,7 +30103,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق مملكة إيسواتيني",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Eswatini",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -30245,7 +30163,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Country Overview",
         "titleEn": "Data Table: Country Overview",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "SBA Group – Environmental Market Database"
@@ -30294,7 +30212,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Projects",
         "titleEn": "Data Table: Projects",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Project / signal",
@@ -30328,7 +30246,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Opportunities",
         "titleEn": "Data Table: Opportunities",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Opportunity",
@@ -30410,7 +30328,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Target Accounts",
         "titleEn": "Data Table: Target Accounts",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Target account category",
@@ -30438,7 +30356,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Regulatory",
         "titleEn": "Data Table: Regulatory",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Regulatory workstream",
@@ -30478,7 +30396,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Risk Register",
         "titleEn": "Data Table: Risk Register",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Risk",
@@ -30518,7 +30436,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Sources",
         "titleEn": "Data Table: Sources",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Source",
@@ -30569,8 +30487,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل مملكة إيسواتيني. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق مملكة إيسواتيني بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Eswatini. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل مملكة إيسواتيني. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق مملكة إيسواتيني بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Eswatini. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -30620,8 +30538,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل مملكة إيسواتيني لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Eswatini for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل مملكة إيسواتيني لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Eswatini for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -30650,17 +30568,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -30683,7 +30599,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -30705,7 +30621,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/43_GA_Environmental_Market_Study.docx",
     "downloadXlsxUrl": "/studies/environmental/43_GA_Environmental_Database.xlsx",
     "priorityGrade": "B",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Comprehensive Coverage",
     "countryCode": "GA",
@@ -30735,7 +30651,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق الجمهورية الغابونية",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Gabon",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -30795,7 +30711,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Country Overview",
         "titleEn": "Data Table: Country Overview",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "SBA Group – Environmental Market Database"
@@ -30844,7 +30760,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Projects",
         "titleEn": "Data Table: Projects",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Project / signal",
@@ -30878,7 +30794,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Opportunities",
         "titleEn": "Data Table: Opportunities",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Opportunity",
@@ -30960,7 +30876,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Target Accounts",
         "titleEn": "Data Table: Target Accounts",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Target account category",
@@ -30988,7 +30904,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Regulatory",
         "titleEn": "Data Table: Regulatory",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Regulatory workstream",
@@ -31028,7 +30944,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Risk Register",
         "titleEn": "Data Table: Risk Register",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Risk",
@@ -31068,7 +30984,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Sources",
         "titleEn": "Data Table: Sources",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Source",
@@ -31149,8 +31065,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل الجمهورية الغابونية. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق الجمهورية الغابونية بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Gabon. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل الجمهورية الغابونية. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق الجمهورية الغابونية بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Gabon. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -31200,8 +31116,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل الجمهورية الغابونية لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Gabon for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل الجمهورية الغابونية لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Gabon for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -31230,17 +31146,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -31263,7 +31177,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -31285,7 +31199,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/44_GM_Environmental_Market_Study.docx",
     "downloadXlsxUrl": "/studies/environmental/44_GM_Environmental_Database.xlsx",
     "priorityGrade": "C",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Comprehensive Coverage",
     "countryCode": "GM",
@@ -31315,7 +31229,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق جمهورية غامبيا",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — The Gambia",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -31375,7 +31289,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Country Overview",
         "titleEn": "Data Table: Country Overview",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "SBA Group – Environmental Market Database"
@@ -31424,7 +31338,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Projects",
         "titleEn": "Data Table: Projects",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Project / signal",
@@ -31458,7 +31372,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Opportunities",
         "titleEn": "Data Table: Opportunities",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Opportunity",
@@ -31540,7 +31454,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Target Accounts",
         "titleEn": "Data Table: Target Accounts",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Target account category",
@@ -31568,7 +31482,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Regulatory",
         "titleEn": "Data Table: Regulatory",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Regulatory workstream",
@@ -31608,7 +31522,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Risk Register",
         "titleEn": "Data Table: Risk Register",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Risk",
@@ -31648,7 +31562,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Sources",
         "titleEn": "Data Table: Sources",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Source",
@@ -31699,8 +31613,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل جمهورية غامبيا. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية غامبيا بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in The Gambia. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل جمهورية غامبيا. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية غامبيا بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in The Gambia. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -31750,8 +31664,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية غامبيا لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in The Gambia for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية غامبيا لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in The Gambia for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -31780,17 +31694,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -31813,7 +31725,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -31835,7 +31747,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/45_GN_Environmental_Market_Study.docx",
     "downloadXlsxUrl": "/studies/environmental/45_GN_Environmental_Database.xlsx",
     "priorityGrade": "C",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Comprehensive Coverage",
     "countryCode": "GN",
@@ -31865,7 +31777,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق جمهورية غينيا",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Guinea",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -31925,7 +31837,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Country Overview",
         "titleEn": "Data Table: Country Overview",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "SBA Group – Environmental Market Database"
@@ -31974,7 +31886,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Projects",
         "titleEn": "Data Table: Projects",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Project / signal",
@@ -32008,7 +31920,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Opportunities",
         "titleEn": "Data Table: Opportunities",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Opportunity",
@@ -32098,7 +32010,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Target Accounts",
         "titleEn": "Data Table: Target Accounts",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Target account category",
@@ -32126,7 +32038,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Regulatory",
         "titleEn": "Data Table: Regulatory",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Regulatory workstream",
@@ -32166,7 +32078,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Risk Register",
         "titleEn": "Data Table: Risk Register",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Risk",
@@ -32206,7 +32118,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Sources",
         "titleEn": "Data Table: Sources",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Source",
@@ -32287,8 +32199,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل جمهورية غينيا. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية غينيا بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Guinea. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل جمهورية غينيا. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية غينيا بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Guinea. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -32338,8 +32250,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية غينيا لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Guinea for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية غينيا لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Guinea for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -32368,17 +32280,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -32401,7 +32311,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -32423,7 +32333,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/46_GW_Environmental_Market_Study.docx",
     "downloadXlsxUrl": "/studies/environmental/46_GW_Environmental_Database.xlsx",
     "priorityGrade": "C",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Comprehensive Coverage",
     "countryCode": "GW",
@@ -32453,7 +32363,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق جمهورية غينيا بيساو",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Guinea-Bissau",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -32513,7 +32423,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Country Overview",
         "titleEn": "Data Table: Country Overview",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "SBA Group – Environmental Market Database"
@@ -32562,7 +32472,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Projects",
         "titleEn": "Data Table: Projects",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Project / signal",
@@ -32596,7 +32506,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Opportunities",
         "titleEn": "Data Table: Opportunities",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Opportunity",
@@ -32678,7 +32588,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Target Accounts",
         "titleEn": "Data Table: Target Accounts",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Target account category",
@@ -32706,7 +32616,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Regulatory",
         "titleEn": "Data Table: Regulatory",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Regulatory workstream",
@@ -32746,7 +32656,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Risk Register",
         "titleEn": "Data Table: Risk Register",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Risk",
@@ -32786,7 +32696,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Sources",
         "titleEn": "Data Table: Sources",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Source",
@@ -32837,8 +32747,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل جمهورية غينيا بيساو. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية غينيا بيساو بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Guinea-Bissau. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل جمهورية غينيا بيساو. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية غينيا بيساو بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Guinea-Bissau. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -32888,8 +32798,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية غينيا بيساو لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Guinea-Bissau for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية غينيا بيساو لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Guinea-Bissau for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -32918,17 +32828,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -32951,7 +32859,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -32973,7 +32881,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/47_LS_Environmental_Market_Study.docx",
     "downloadXlsxUrl": "/studies/environmental/47_LS_Environmental_Database.xlsx",
     "priorityGrade": "C",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Comprehensive Coverage",
     "countryCode": "LS",
@@ -33003,7 +32911,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق مملكة ليسوتو",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Lesotho",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -33063,7 +32971,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Country Overview",
         "titleEn": "Data Table: Country Overview",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "SBA Group – Environmental Market Database"
@@ -33112,7 +33020,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Projects",
         "titleEn": "Data Table: Projects",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Project / signal",
@@ -33146,7 +33054,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Opportunities",
         "titleEn": "Data Table: Opportunities",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Opportunity",
@@ -33228,7 +33136,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Target Accounts",
         "titleEn": "Data Table: Target Accounts",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Target account category",
@@ -33256,7 +33164,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Regulatory",
         "titleEn": "Data Table: Regulatory",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Regulatory workstream",
@@ -33296,7 +33204,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Risk Register",
         "titleEn": "Data Table: Risk Register",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Risk",
@@ -33336,7 +33244,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Sources",
         "titleEn": "Data Table: Sources",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Source",
@@ -33417,8 +33325,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل مملكة ليسوتو. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق مملكة ليسوتو بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Lesotho. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل مملكة ليسوتو. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق مملكة ليسوتو بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Lesotho. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -33468,8 +33376,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل مملكة ليسوتو لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Lesotho for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل مملكة ليسوتو لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Lesotho for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -33498,17 +33406,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -33531,7 +33437,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -33553,7 +33459,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/48_LR_Environmental_Market_Study.docx",
     "downloadXlsxUrl": "/studies/environmental/48_LR_Environmental_Database.xlsx",
     "priorityGrade": "C",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Comprehensive Coverage",
     "countryCode": "LR",
@@ -33583,7 +33489,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق جمهورية ليبيريا",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Liberia",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -33643,7 +33549,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Country Overview",
         "titleEn": "Data Table: Country Overview",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "SBA Group – Environmental Market Database"
@@ -33692,7 +33598,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Projects",
         "titleEn": "Data Table: Projects",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Project / signal",
@@ -33726,7 +33632,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Opportunities",
         "titleEn": "Data Table: Opportunities",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Opportunity",
@@ -33808,7 +33714,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Target Accounts",
         "titleEn": "Data Table: Target Accounts",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Target account category",
@@ -33836,7 +33742,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Regulatory",
         "titleEn": "Data Table: Regulatory",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Regulatory workstream",
@@ -33876,7 +33782,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Risk Register",
         "titleEn": "Data Table: Risk Register",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Risk",
@@ -33916,7 +33822,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Sources",
         "titleEn": "Data Table: Sources",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Source",
@@ -33967,8 +33873,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل جمهورية ليبيريا. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية ليبيريا بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Liberia. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل جمهورية ليبيريا. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية ليبيريا بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Liberia. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -34018,8 +33924,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية ليبيريا لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Liberia for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية ليبيريا لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Liberia for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -34048,17 +33954,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -34081,7 +33985,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -34103,7 +34007,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/49_MG_Environmental_Market_Study.docx",
     "downloadXlsxUrl": "/studies/environmental/49_MG_Environmental_Database.xlsx",
     "priorityGrade": "C",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Comprehensive Coverage",
     "countryCode": "MG",
@@ -34133,7 +34037,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق جمهورية مدغشقر",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Madagascar",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -34193,7 +34097,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Country Overview",
         "titleEn": "Data Table: Country Overview",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "SBA Group – Environmental Market Database"
@@ -34242,7 +34146,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Projects",
         "titleEn": "Data Table: Projects",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Project / signal",
@@ -34276,7 +34180,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Opportunities",
         "titleEn": "Data Table: Opportunities",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Opportunity",
@@ -34366,7 +34270,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Target Accounts",
         "titleEn": "Data Table: Target Accounts",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Target account category",
@@ -34394,7 +34298,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Regulatory",
         "titleEn": "Data Table: Regulatory",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Regulatory workstream",
@@ -34434,7 +34338,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Risk Register",
         "titleEn": "Data Table: Risk Register",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Risk",
@@ -34474,7 +34378,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Sources",
         "titleEn": "Data Table: Sources",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Source",
@@ -34555,8 +34459,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل جمهورية مدغشقر. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية مدغشقر بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Madagascar. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل جمهورية مدغشقر. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية مدغشقر بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Madagascar. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -34606,8 +34510,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية مدغشقر لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Madagascar for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية مدغشقر لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Madagascar for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -34636,17 +34540,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -34669,7 +34571,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -34691,7 +34593,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/50_MW_Environmental_Market_Study.docx",
     "downloadXlsxUrl": "/studies/environmental/50_MW_Environmental_Database.xlsx",
     "priorityGrade": "C",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Comprehensive Coverage",
     "countryCode": "MW",
@@ -34721,7 +34623,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق جمهورية ملاوي",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Malawi",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -34781,7 +34683,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Country Overview",
         "titleEn": "Data Table: Country Overview",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "SBA Group – Environmental Market Database"
@@ -34830,7 +34732,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Projects",
         "titleEn": "Data Table: Projects",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Project / signal",
@@ -34864,7 +34766,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Opportunities",
         "titleEn": "Data Table: Opportunities",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Opportunity",
@@ -34954,7 +34856,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Target Accounts",
         "titleEn": "Data Table: Target Accounts",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Target account category",
@@ -34982,7 +34884,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Regulatory",
         "titleEn": "Data Table: Regulatory",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Regulatory workstream",
@@ -35022,7 +34924,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Risk Register",
         "titleEn": "Data Table: Risk Register",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Risk",
@@ -35062,7 +34964,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Sources",
         "titleEn": "Data Table: Sources",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Source",
@@ -35113,8 +35015,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل جمهورية ملاوي. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية ملاوي بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Malawi. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل جمهورية ملاوي. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية ملاوي بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Malawi. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -35164,8 +35066,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية ملاوي لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Malawi for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية ملاوي لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Malawi for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -35194,17 +35096,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -35227,7 +35127,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -35249,7 +35149,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/51_ML_Environmental_Market_Study.docx",
     "downloadXlsxUrl": "/studies/environmental/51_ML_Environmental_Database.xlsx",
     "priorityGrade": "C",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Comprehensive Coverage",
     "countryCode": "ML",
@@ -35279,7 +35179,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق جمهورية مالي",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Mali",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -35339,7 +35239,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Country Overview",
         "titleEn": "Data Table: Country Overview",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "SBA Group – Environmental Market Database"
@@ -35388,7 +35288,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Projects",
         "titleEn": "Data Table: Projects",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Project / signal",
@@ -35422,7 +35322,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Opportunities",
         "titleEn": "Data Table: Opportunities",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Opportunity",
@@ -35512,7 +35412,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Target Accounts",
         "titleEn": "Data Table: Target Accounts",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Target account",
@@ -35540,7 +35440,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Regulatory",
         "titleEn": "Data Table: Regulatory",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Workstream",
@@ -35585,7 +35485,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Risk Register",
         "titleEn": "Data Table: Risk Register",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Risk",
@@ -35625,7 +35525,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Sources",
         "titleEn": "Data Table: Sources",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Source",
@@ -35706,8 +35606,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل جمهورية مالي. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية مالي بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Mali. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل جمهورية مالي. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية مالي بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Mali. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -35757,8 +35657,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية مالي لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Mali for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية مالي لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Mali for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -35787,17 +35687,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -35820,7 +35718,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -35842,7 +35740,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/52_MU_Environmental_Market_Study.docx",
     "downloadXlsxUrl": "/studies/environmental/52_MU_Environmental_Database.xlsx",
     "priorityGrade": "B",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Comprehensive Coverage",
     "countryCode": "MU",
@@ -35872,7 +35770,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق جمهورية موريشيوس",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Mauritius",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -35932,7 +35830,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Country Overview",
         "titleEn": "Data Table: Country Overview",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "SBA Group – Environmental Market Database"
@@ -35981,7 +35879,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Projects",
         "titleEn": "Data Table: Projects",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Project / signal",
@@ -36015,7 +35913,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Opportunities",
         "titleEn": "Data Table: Opportunities",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Opportunity",
@@ -36105,7 +36003,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Target Accounts",
         "titleEn": "Data Table: Target Accounts",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Target account",
@@ -36133,7 +36031,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Regulatory",
         "titleEn": "Data Table: Regulatory",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Workstream",
@@ -36178,7 +36076,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Risk Register",
         "titleEn": "Data Table: Risk Register",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Risk",
@@ -36218,7 +36116,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Sources",
         "titleEn": "Data Table: Sources",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Source",
@@ -36299,8 +36197,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل جمهورية موريشيوس. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية موريشيوس بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Mauritius. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل جمهورية موريشيوس. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية موريشيوس بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Mauritius. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -36350,8 +36248,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية موريشيوس لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Mauritius for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية موريشيوس لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Mauritius for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -36380,17 +36278,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -36413,7 +36309,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -36435,7 +36331,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/53_NA_Environmental_Market_Study.docx",
     "downloadXlsxUrl": "/studies/environmental/53_NA_Environmental_Database.xlsx",
     "priorityGrade": "B",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Comprehensive Coverage",
     "countryCode": "NA",
@@ -36465,7 +36361,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق جمهورية ناميبيا",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Namibia",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -36525,7 +36421,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Country Overview",
         "titleEn": "Data Table: Country Overview",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "SBA Group – Environmental Market Database"
@@ -36574,7 +36470,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Projects",
         "titleEn": "Data Table: Projects",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Project / signal",
@@ -36608,7 +36504,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Opportunities",
         "titleEn": "Data Table: Opportunities",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Opportunity",
@@ -36698,7 +36594,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Target Accounts",
         "titleEn": "Data Table: Target Accounts",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Target account",
@@ -36726,7 +36622,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Regulatory",
         "titleEn": "Data Table: Regulatory",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Workstream",
@@ -36771,7 +36667,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Risk Register",
         "titleEn": "Data Table: Risk Register",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Risk",
@@ -36811,7 +36707,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Sources",
         "titleEn": "Data Table: Sources",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Source",
@@ -36877,8 +36773,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل جمهورية ناميبيا. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية ناميبيا بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Namibia. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل جمهورية ناميبيا. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية ناميبيا بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Namibia. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -36928,8 +36824,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية ناميبيا لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Namibia for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية ناميبيا لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Namibia for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -36958,17 +36854,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -36991,7 +36885,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -37013,7 +36907,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/54_NE_Environmental_Market_Study.docx",
     "downloadXlsxUrl": "/studies/environmental/54_NE_Environmental_Database.xlsx",
     "priorityGrade": "C",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Comprehensive Coverage",
     "countryCode": "NE",
@@ -37043,7 +36937,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق جمهورية النيجر",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Niger",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -37103,7 +36997,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Country Overview",
         "titleEn": "Data Table: Country Overview",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "SBA Group – Environmental Market Database"
@@ -37152,7 +37046,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Projects",
         "titleEn": "Data Table: Projects",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Project / signal",
@@ -37186,7 +37080,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Opportunities",
         "titleEn": "Data Table: Opportunities",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Opportunity",
@@ -37268,7 +37162,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Target Accounts",
         "titleEn": "Data Table: Target Accounts",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Target account",
@@ -37296,7 +37190,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Regulatory",
         "titleEn": "Data Table: Regulatory",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Workstream",
@@ -37341,7 +37235,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Risk Register",
         "titleEn": "Data Table: Risk Register",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Risk",
@@ -37381,7 +37275,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Sources",
         "titleEn": "Data Table: Sources",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Source",
@@ -37432,8 +37326,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل جمهورية النيجر. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية النيجر بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Niger. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل جمهورية النيجر. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية النيجر بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Niger. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -37483,8 +37377,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية النيجر لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Niger for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية النيجر لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Niger for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -37513,17 +37407,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -37546,7 +37438,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -37568,7 +37460,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/55_ST_Environmental_Market_Study.docx",
     "downloadXlsxUrl": "/studies/environmental/55_ST_Environmental_Database.xlsx",
     "priorityGrade": "C",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Comprehensive Coverage",
     "countryCode": "ST",
@@ -37598,7 +37490,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق جمهورية ساو تومي وبرينسيبي",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Sao Tome and Principe",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -37658,7 +37550,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Country Overview",
         "titleEn": "Data Table: Country Overview",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "SBA Group – Environmental Market Database"
@@ -37707,7 +37599,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Projects",
         "titleEn": "Data Table: Projects",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Project / signal",
@@ -37741,7 +37633,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Opportunities",
         "titleEn": "Data Table: Opportunities",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Opportunity",
@@ -37823,7 +37715,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Target Accounts",
         "titleEn": "Data Table: Target Accounts",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Target account",
@@ -37851,7 +37743,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Regulatory",
         "titleEn": "Data Table: Regulatory",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Workstream",
@@ -37896,7 +37788,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Risk Register",
         "titleEn": "Data Table: Risk Register",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Risk",
@@ -37936,7 +37828,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Sources",
         "titleEn": "Data Table: Sources",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Source",
@@ -37987,8 +37879,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل جمهورية ساو تومي وبرينسيبي. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية ساو تومي وبرينسيبي بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Sao Tome and Principe. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل جمهورية ساو تومي وبرينسيبي. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية ساو تومي وبرينسيبي بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Sao Tome and Principe. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -38038,8 +37930,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية ساو تومي وبرينسيبي لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Sao Tome and Principe for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية ساو تومي وبرينسيبي لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Sao Tome and Principe for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -38068,17 +37960,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -38101,7 +37991,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -38123,7 +38013,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/56_SC_Environmental_Market_Study.docx",
     "downloadXlsxUrl": "/studies/environmental/56_SC_Environmental_Database.xlsx",
     "priorityGrade": "B",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Comprehensive Coverage",
     "countryCode": "SC",
@@ -38153,7 +38043,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق جمهورية سيشل",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Seychelles",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -38213,7 +38103,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Country Overview",
         "titleEn": "Data Table: Country Overview",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "SBA Group – Environmental Market Database"
@@ -38262,7 +38152,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Projects",
         "titleEn": "Data Table: Projects",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Project / signal",
@@ -38296,7 +38186,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Opportunities",
         "titleEn": "Data Table: Opportunities",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Opportunity",
@@ -38378,7 +38268,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Target Accounts",
         "titleEn": "Data Table: Target Accounts",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Target account",
@@ -38406,7 +38296,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Regulatory",
         "titleEn": "Data Table: Regulatory",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Workstream",
@@ -38451,7 +38341,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Risk Register",
         "titleEn": "Data Table: Risk Register",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Risk",
@@ -38491,7 +38381,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Sources",
         "titleEn": "Data Table: Sources",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Source",
@@ -38527,8 +38417,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل جمهورية سيشل. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية سيشل بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Seychelles. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل جمهورية سيشل. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية سيشل بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Seychelles. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -38578,8 +38468,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية سيشل لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Seychelles for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية سيشل لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Seychelles for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -38608,17 +38498,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -38641,7 +38529,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -38663,7 +38551,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/57_SL_Environmental_Market_Study.docx",
     "downloadXlsxUrl": "/studies/environmental/57_SL_Environmental_Database.xlsx",
     "priorityGrade": "C",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Comprehensive Coverage",
     "countryCode": "SL",
@@ -38693,7 +38581,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق جمهورية سيراليون",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Sierra Leone",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -38753,7 +38641,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Country Overview",
         "titleEn": "Data Table: Country Overview",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "SBA Group – Environmental Market Database"
@@ -38802,7 +38690,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Projects",
         "titleEn": "Data Table: Projects",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Project / signal",
@@ -38836,7 +38724,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Opportunities",
         "titleEn": "Data Table: Opportunities",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Opportunity",
@@ -38926,7 +38814,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Target Accounts",
         "titleEn": "Data Table: Target Accounts",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Target account",
@@ -38954,7 +38842,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Regulatory",
         "titleEn": "Data Table: Regulatory",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Workstream",
@@ -38999,7 +38887,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Risk Register",
         "titleEn": "Data Table: Risk Register",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Risk",
@@ -39039,7 +38927,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Sources",
         "titleEn": "Data Table: Sources",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Source",
@@ -39105,8 +38993,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل جمهورية سيراليون. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية سيراليون بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Sierra Leone. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل جمهورية سيراليون. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية سيراليون بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Sierra Leone. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -39156,8 +39044,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية سيراليون لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Sierra Leone for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية سيراليون لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Sierra Leone for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -39186,17 +39074,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -39219,7 +39105,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -39241,7 +39127,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/58_SS_Environmental_Market_Study.docx",
     "downloadXlsxUrl": "/studies/environmental/58_SS_Environmental_Database.xlsx",
     "priorityGrade": "C",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Comprehensive Coverage",
     "countryCode": "SS",
@@ -39271,7 +39157,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق جمهورية جنوب السودان",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — South Sudan",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -39331,7 +39217,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Country Overview",
         "titleEn": "Data Table: Country Overview",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "SBA Group – Environmental Market Database"
@@ -39380,7 +39266,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Projects",
         "titleEn": "Data Table: Projects",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Project / signal",
@@ -39414,7 +39300,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Opportunities",
         "titleEn": "Data Table: Opportunities",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Opportunity",
@@ -39496,7 +39382,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Target Accounts",
         "titleEn": "Data Table: Target Accounts",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Target account",
@@ -39524,7 +39410,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Regulatory",
         "titleEn": "Data Table: Regulatory",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Workstream",
@@ -39569,7 +39455,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Risk Register",
         "titleEn": "Data Table: Risk Register",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Risk",
@@ -39609,7 +39495,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Sources",
         "titleEn": "Data Table: Sources",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Source",
@@ -39660,8 +39546,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل جمهورية جنوب السودان. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية جنوب السودان بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in South Sudan. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل جمهورية جنوب السودان. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية جنوب السودان بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in South Sudan. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -39711,8 +39597,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية جنوب السودان لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in South Sudan for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية جنوب السودان لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in South Sudan for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -39741,17 +39627,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -39774,7 +39658,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -39796,7 +39680,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/59_TG_Environmental_Market_Study.docx",
     "downloadXlsxUrl": "/studies/environmental/59_TG_Environmental_Database.xlsx",
     "priorityGrade": "C",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Comprehensive Coverage",
     "countryCode": "TG",
@@ -39826,7 +39710,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق الجمهورية التوغولية",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Togo",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -39886,7 +39770,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Country Overview",
         "titleEn": "Data Table: Country Overview",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "SBA Group – Environmental Market Database"
@@ -39935,7 +39819,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Projects",
         "titleEn": "Data Table: Projects",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Project / signal",
@@ -39969,7 +39853,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Opportunities",
         "titleEn": "Data Table: Opportunities",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Opportunity",
@@ -40059,7 +39943,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Target Accounts",
         "titleEn": "Data Table: Target Accounts",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Target account",
@@ -40087,7 +39971,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Regulatory",
         "titleEn": "Data Table: Regulatory",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Workstream",
@@ -40132,7 +40016,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Risk Register",
         "titleEn": "Data Table: Risk Register",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Risk",
@@ -40172,7 +40056,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Sources",
         "titleEn": "Data Table: Sources",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Source",
@@ -40223,8 +40107,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل الجمهورية التوغولية. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق الجمهورية التوغولية بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Togo. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل الجمهورية التوغولية. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق الجمهورية التوغولية بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Togo. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -40274,8 +40158,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل الجمهورية التوغولية لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Togo for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل الجمهورية التوغولية لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Togo for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -40304,17 +40188,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -40337,7 +40219,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -40359,7 +40241,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/60_ZW_Environmental_Market_Study.docx",
     "downloadXlsxUrl": "/studies/environmental/60_ZW_Environmental_Database.xlsx",
     "priorityGrade": "C",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Comprehensive Coverage",
     "countryCode": "ZW",
@@ -40389,7 +40271,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق جمهورية زيمبابوي",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Zimbabwe",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -40449,7 +40331,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Country Overview",
         "titleEn": "Data Table: Country Overview",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "SBA Group – Environmental Market Database"
@@ -40498,7 +40380,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Projects",
         "titleEn": "Data Table: Projects",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Project / signal",
@@ -40532,7 +40414,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Opportunities",
         "titleEn": "Data Table: Opportunities",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Opportunity",
@@ -40614,7 +40496,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Target Accounts",
         "titleEn": "Data Table: Target Accounts",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Target account",
@@ -40642,7 +40524,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Regulatory",
         "titleEn": "Data Table: Regulatory",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Workstream",
@@ -40687,7 +40569,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Risk Register",
         "titleEn": "Data Table: Risk Register",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Risk",
@@ -40727,7 +40609,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Sources",
         "titleEn": "Data Table: Sources",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Source",
@@ -40778,8 +40660,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل جمهورية زيمبابوي. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية زيمبابوي بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Zimbabwe. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل جمهورية زيمبابوي. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية زيمبابوي بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Zimbabwe. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -40829,8 +40711,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية زيمبابوي لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Zimbabwe for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية زيمبابوي لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Zimbabwe for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -40859,17 +40741,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -40892,7 +40772,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -40914,7 +40794,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/61_SD_Environmental_Market_Study.docx",
     "downloadXlsxUrl": "/studies/environmental/61_SD_Environmental_Database.xlsx",
     "priorityGrade": "C",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Comprehensive Coverage",
     "countryCode": "SD",
@@ -40944,7 +40824,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق جمهورية السودان",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Sudan",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -41004,7 +40884,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Country Overview",
         "titleEn": "Data Table: Country Overview",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "SBA Group – Environmental Market Database"
@@ -41053,7 +40933,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Projects",
         "titleEn": "Data Table: Projects",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Project / signal",
@@ -41087,7 +40967,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Opportunities",
         "titleEn": "Data Table: Opportunities",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Opportunity",
@@ -41177,7 +41057,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Target Accounts",
         "titleEn": "Data Table: Target Accounts",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Target account",
@@ -41205,7 +41085,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Regulatory",
         "titleEn": "Data Table: Regulatory",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Workstream",
@@ -41250,7 +41130,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Risk Register",
         "titleEn": "Data Table: Risk Register",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Risk",
@@ -41290,7 +41170,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Sources",
         "titleEn": "Data Table: Sources",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Source",
@@ -41356,8 +41236,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل جمهورية السودان. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية السودان بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Sudan. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل جمهورية السودان. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية السودان بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Sudan. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -41407,8 +41287,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية السودان لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Sudan for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية السودان لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Sudan for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -41437,17 +41317,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -41470,7 +41348,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -41492,7 +41370,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/62_SO_Environmental_Market_Study.docx",
     "downloadXlsxUrl": "/studies/environmental/62_SO_Environmental_Database.xlsx",
     "priorityGrade": "C",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Comprehensive Coverage",
     "countryCode": "SO",
@@ -41522,7 +41400,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق جمهورية الصومال الفيدرالية",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Somalia",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -41582,7 +41460,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Country Overview",
         "titleEn": "Data Table: Country Overview",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "SBA Group – Environmental Market Database"
@@ -41631,7 +41509,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Projects",
         "titleEn": "Data Table: Projects",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Project / signal",
@@ -41665,7 +41543,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Opportunities",
         "titleEn": "Data Table: Opportunities",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Opportunity",
@@ -41755,7 +41633,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Target Accounts",
         "titleEn": "Data Table: Target Accounts",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Target account",
@@ -41783,7 +41661,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Regulatory",
         "titleEn": "Data Table: Regulatory",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Workstream",
@@ -41828,7 +41706,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Risk Register",
         "titleEn": "Data Table: Risk Register",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Risk",
@@ -41868,7 +41746,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Sources",
         "titleEn": "Data Table: Sources",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Source",
@@ -41919,8 +41797,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل جمهورية الصومال الفيدرالية. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية الصومال الفيدرالية بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Somalia. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل جمهورية الصومال الفيدرالية. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق جمهورية الصومال الفيدرالية بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Somalia. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -41970,8 +41848,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية الصومال الفيدرالية لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Somalia for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل جمهورية الصومال الفيدرالية لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Somalia for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -42000,17 +41878,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -42033,7 +41909,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -42055,7 +41931,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/63_LB_Environmental_Market_Study.docx",
     "downloadXlsxUrl": "/studies/environmental/63_LB_Environmental_Database.xlsx",
     "priorityGrade": "B",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Comprehensive Coverage",
     "countryCode": "LB",
@@ -42085,7 +41961,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق الجمهورية اللبنانية",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Lebanon",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -42145,7 +42021,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Country Overview",
         "titleEn": "Data Table: Country Overview",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "SBA Group – Environmental Market Database"
@@ -42194,7 +42070,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Projects",
         "titleEn": "Data Table: Projects",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Project / signal",
@@ -42228,7 +42104,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Opportunities",
         "titleEn": "Data Table: Opportunities",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Opportunity",
@@ -42318,7 +42194,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Target Accounts",
         "titleEn": "Data Table: Target Accounts",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Target account",
@@ -42346,7 +42222,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Regulatory",
         "titleEn": "Data Table: Regulatory",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Workstream",
@@ -42391,7 +42267,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Risk Register",
         "titleEn": "Data Table: Risk Register",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Risk",
@@ -42431,7 +42307,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Sources",
         "titleEn": "Data Table: Sources",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Source",
@@ -42497,8 +42373,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل الجمهورية اللبنانية. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق الجمهورية اللبنانية بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Lebanon. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل الجمهورية اللبنانية. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق الجمهورية اللبنانية بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Lebanon. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -42548,8 +42424,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل الجمهورية اللبنانية لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Lebanon for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل الجمهورية اللبنانية لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Lebanon for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -42578,17 +42454,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -42611,7 +42485,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -42633,7 +42507,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/64_PS_Environmental_Market_Study.docx",
     "downloadXlsxUrl": "/studies/environmental/64_PS_Environmental_Database.xlsx",
     "priorityGrade": "B",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Comprehensive Coverage",
     "countryCode": "PS",
@@ -42663,7 +42537,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق دولة فلسطين",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Palestine",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -42723,7 +42597,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Country Overview",
         "titleEn": "Data Table: Country Overview",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "SBA Group – Environmental Market Database"
@@ -42772,7 +42646,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Projects",
         "titleEn": "Data Table: Projects",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Project / signal",
@@ -42806,7 +42680,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Opportunities",
         "titleEn": "Data Table: Opportunities",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Opportunity",
@@ -42888,7 +42762,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Target Accounts",
         "titleEn": "Data Table: Target Accounts",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Target account",
@@ -42916,7 +42790,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Regulatory",
         "titleEn": "Data Table: Regulatory",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Workstream",
@@ -42961,7 +42835,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Risk Register",
         "titleEn": "Data Table: Risk Register",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Risk",
@@ -43001,7 +42875,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Sources",
         "titleEn": "Data Table: Sources",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Source",
@@ -43067,8 +42941,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل دولة فلسطين. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق دولة فلسطين بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Palestine. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل دولة فلسطين. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق دولة فلسطين بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Palestine. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -43118,8 +42992,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل دولة فلسطين لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Palestine for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل دولة فلسطين لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Palestine for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -43148,17 +43022,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -43181,7 +43053,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -43203,7 +43075,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/65_SY_Environmental_Market_Study.docx",
     "downloadXlsxUrl": "/studies/environmental/65_SY_Environmental_Database.xlsx",
     "priorityGrade": "C",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Comprehensive Coverage",
     "countryCode": "SY",
@@ -43233,7 +43105,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق الجمهورية العربية السورية",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Syria",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -43293,7 +43165,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Country Overview",
         "titleEn": "Data Table: Country Overview",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "SBA Group – Environmental Market Database"
@@ -43342,7 +43214,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Projects",
         "titleEn": "Data Table: Projects",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Project / signal",
@@ -43376,7 +43248,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Opportunities",
         "titleEn": "Data Table: Opportunities",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Opportunity",
@@ -43466,7 +43338,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Target Accounts",
         "titleEn": "Data Table: Target Accounts",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Target account",
@@ -43494,7 +43366,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Regulatory",
         "titleEn": "Data Table: Regulatory",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Workstream",
@@ -43539,7 +43411,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Risk Register",
         "titleEn": "Data Table: Risk Register",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Risk",
@@ -43579,7 +43451,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Sources",
         "titleEn": "Data Table: Sources",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Source",
@@ -43645,8 +43517,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل الجمهورية العربية السورية. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق الجمهورية العربية السورية بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Syria. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل الجمهورية العربية السورية. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق الجمهورية العربية السورية بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Syria. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -43696,8 +43568,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل الجمهورية العربية السورية لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Syria for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل الجمهورية العربية السورية لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Syria for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -43726,17 +43598,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -43759,7 +43629,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
@@ -43781,7 +43651,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "downloadDocxUrl": "/studies/environmental/66_YE_Environmental_Market_Study.docx",
     "downloadXlsxUrl": "/studies/environmental/66_YE_Environmental_Database.xlsx",
     "priorityGrade": "C",
-    "dataCompletenessAr": "مكتملة دراسيًا بملف تقرير Word وقاعدة بيانات Excel تفصيلية معتمدة",
+    "dataCompletenessAr": "",
     "dataCompletenessEn": "Study complete with dedicated Word report and verified 7-worksheet Excel database",
     "waveBadge": "Comprehensive Coverage",
     "countryCode": "YE",
@@ -43811,7 +43681,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     ],
     "titleAr": "دراسة سوق الجمهورية اليمنية",
     "titleEn": "Environmental & Sustainability Market Intelligence Report — Yemen",
-    "subtitleAr": "رصد شامل للمشروعات والمناقصات، متطلبات التأهيل والترخيص، الحسابات المستهدفة، واستراتيجية دخول السوق لـ SAMI BIN AYYAD GROUP.",
+    "subtitleAr": "",
     "subtitleEn": "Comprehensive coverage of tenders, licensing frameworks, target accounts, and market entry pathways for SAMI BIN AYYAD GROUP.",
     "status": "completed",
     "approvalStatus": "approved",
@@ -43871,7 +43741,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Country Overview",
         "titleEn": "Data Table: Country Overview",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "SBA Group – Environmental Market Database"
@@ -43920,7 +43790,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Projects",
         "titleEn": "Data Table: Projects",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Project / signal",
@@ -43954,7 +43824,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Opportunities",
         "titleEn": "Data Table: Opportunities",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Opportunity",
@@ -44044,7 +43914,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Target Accounts",
         "titleEn": "Data Table: Target Accounts",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Target account",
@@ -44072,7 +43942,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Regulatory",
         "titleEn": "Data Table: Regulatory",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Workstream",
@@ -44117,7 +43987,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Risk Register",
         "titleEn": "Data Table: Risk Register",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Risk",
@@ -44157,7 +44027,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "titleAr": "جدول بيانات: Sources",
         "titleEn": "Data Table: Sources",
         "unit": "سجل رصد بيئي موثق",
-        "source": "قاعدة بيانات قطاع البيئة — SAMI BIN AYYAD GROUP",
+        "source": "",
         "referenceYear": "2026",
         "columnsAr": [
           "Source",
@@ -44238,8 +44108,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
     "sections": {
       "executiveSummary": {
         "applicable": true,
-        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لـ SAMI BIN AYYAD GROUP في قطاع البيئة والاستدامة داخل الجمهورية اليمنية. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق الجمهورية اليمنية بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
-        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for SAMI BIN AYYAD GROUP within the environmental and sustainability sector in Yemen. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
+        "summaryAr": "تستعرض هذه الدراسة المتخصصة الفرص الاستثمارية والتجارية الواعدة لمجموعة سامي بن عياد في قطاع البيئة والاستدامة داخل الجمهورية اليمنية. يستند التقرير إلى مسح ميداني وبيانات موثقة من الهيئات والوزارات المعنية والمؤسسات الدولية (مثل البنك الدولي وبنك التنمية الأفريقي ومؤسسات التمويل متعددة الأطراف). يتميز سوق الجمهورية اليمنية بطلب متنامٍ على حلول معالجة المياه العادمة، وإدارة المخلفات الصلبة والخطرة، والتحول نحو الطاقة المتجددة، ومراقبة الانبعاثات والرصد البيئي المعتمد على تقنيات إنترنت الأشياء (IoT)، وخدمات تقييم الأثر البيئي والاجتماعي (ESIA).",
+        "summaryEn": "This specialized report presents the strategic investment and commercial opportunities for مجموعة سامي بن عياد within the environmental and sustainability sector in Yemen. Grounded in verified institutional datasets from national ministries, regulatory authorities, and multilateral lenders (e.g., World Bank, African Development Bank), the study highlights growing demand for wastewater treatment, solid and industrial waste recycling, renewable integration, IoT-based environmental monitoring, and ESIA consulting.",
         "bulletsAr": [
           "تحديد الأولويات البيئية الوطنية ومطابقتها مع قدرات محفظة خدمات SBA",
           "حصر المشروعات والمناقصات الممولة والمعلنة مع روابط التتبع المباشرة",
@@ -44289,8 +44159,8 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "marketEntryStrategy": {
         "applicable": true,
-        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لـ SAMI BIN AYYAD GROUP على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل الجمهورية اليمنية لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
-        "summaryEn": "The proposed entry model for SAMI BIN AYYAD GROUP adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Yemen for field execution and statutory sign-offs.",
+        "summaryAr": "تعتمد استراتيجية الدخول المقترحة لمجموعة سامي بن عياد على نهج مرحلي منخفض المخاطر والتكاليف الرأسمالية: البدء بتقديم الدعم الفني والاستشاري والبرمجي من المقر الرئيسي في مصر (مركز التميز)، بالتوازي مع التحالف مع مكاتب محلية معتمدة داخل الجمهورية اليمنية لتولي الأعمال الميدانية والحصول على التوقيعات والاعتمادات السيادية.",
+        "summaryEn": "The proposed entry model for مجموعة سامي بن عياد adopts a disciplined, asset-light, stage-gate architecture: delivering core engineering, telemetry, and analytical design from Egypt's Center of Excellence, while pairing with accredited local operators in Yemen for field execution and statutory sign-offs.",
         "bulletsAr": [
           "المرحلة الأولى (1-60 يومًا): فحص الشركاء المحليين والتسجيل في بوابات المشتريات",
           "المرحلة الثانية (61-120 يومًا): التقديم المشترك على حزم المناقصات والاستشارات المستهدفة",
@@ -44319,17 +44189,15 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
       },
       "recommendationsActionPlan": {
         "applicable": true,
-        "summaryAr": "توصي الدراسة بتنزيل الحزمة الأصلية الكاملة (دراسة Word المرفقة وقاعدة بيانات Excel المكونة من 7 أوراق عمل)، ومراجعة قائمة الحسابات والمناقصات فورًا للبدء في تشكيل تحالفات المناقصات ومخاطبة الشركاء المستهدفين.",
+        "summaryAr": "",
         "summaryEn": "The study recommends downloading the complete original dossier (Word report and 7-worksheet Excel database) and immediately initiating partner outreach and vendor qualification steps.",
         "bulletsAr": [
-          "تحميل دراسة السوق الأصلية بصيغة Word عبر الرابط المباشر",
-          "تحميل قاعدة بيانات الفرص والتراخيص بصيغة Excel (7 أوراق عمل)",
-          "التواصل مع فريق تطوير الأعمال الدولي في SAMI BIN AYYAD GROUP لتفعيل خطة الدخول"
+          "التواصل مع فريق تطوير الأعمال الدولي في مجموعة سامي بن عياد لتفعيل خطة الدخول"
         ],
         "bulletsEn": [
           "Download official Word research study via direct download link",
           "Download 7-worksheet Excel opportunity and regulatory database",
-          "Liaise with SAMI BIN AYYAD GROUP international expansion desk for execution"
+          "Liaise with مجموعة سامي بن عياد international expansion desk for execution"
         ]
       }
     },
@@ -44352,7 +44220,7 @@ export const ENVIRONMENTAL_66_MASTER_STUDIES: GlobalMarketStudy[] = [
         "descriptionAr": "توريد وتشغيل محطات معالجة الصرف الصحي والصناعي المدمجة، ونظم رصد الانبعاثات وجودة الهواء اللحظية بالتعاون مع الشركاء المحليين المؤهلين.",
         "descriptionEn": "Supplying and operating modular water/effluent treatment packages and real-time IoT air and emissions monitoring systems alongside accredited local partners.",
         "evidenceStatus": "confirmed",
-        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — SAMI BIN AYYAD GROUP",
+        "evidenceReferenceAr": "سجل حلول المعالجة والتحالفات الفنية — مجموعة سامي بن عياد",
         "evidenceReferenceEn": "SBA Environmental Solutions & Technical Consortia Registry",
         "sectorPageUrl": "/sectors/environmental"
       }
