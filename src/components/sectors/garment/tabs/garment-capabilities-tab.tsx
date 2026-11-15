@@ -25,7 +25,6 @@ import {
   garmentProcessSteps, 
   garmentAboutData,
   garmentProductionCapacity,
-  garmentIndustrialCapabilities,
   garmentClassicShirtFacility
 } from "../garment-data";
 import { cn } from "@/lib/utils";
@@ -43,7 +42,6 @@ export function GarmentCapabilitiesTab() {
   const { language } = useLanguage();
   const ar = language === "AR";
   const capacity = garmentProductionCapacity;
-  const capabilities = garmentIndustrialCapabilities;
   const shirtFacility = garmentClassicShirtFacility;
 
   return (
@@ -98,70 +96,7 @@ export function GarmentCapabilitiesTab() {
         </Reveal>
       </div>
 
-      {/* 2. 10 Core Industrial Capabilities */}
-      <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
-        <Reveal>
-          <div className="max-w-3xl mb-10">
-            <SectionBadge title={ar ? "القدرات الصناعية المتكاملة" : "10 Industrial Capabilities"} />
-            <h2 className="section-title mt-3">
-              {ar ? "منظومة تصنيع متطورة من الخيط وحتى التعبئة للتصدير" : "End-to-End Industrial Capabilities"}
-            </h2>
-            <p className="section-intro mt-4">
-              {ar
-                ? "تغطي منشآتنا الصناعية كافة مفاصل دورة التصنيع بماكينات أوتوماتيكية متطورة لضمان الدقة والسرعة والجودة."
-                : "Comprehensive industrial infrastructure covering pattern making, automated cutting, high-speed sewing, and export packing."}
-            </p>
-          </div>
-
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
-            {capabilities.map((cap) => (
-              <div
-                key={cap.id}
-                className="group overflow-hidden rounded-3xl border border-border bg-card/60 backdrop-blur-md shadow-sm transition hover:border-brand-green/60 hover:shadow-lg flex flex-col justify-between"
-              >
-                <div>
-                  <div className="relative aspect-[16/9] overflow-hidden bg-muted">
-                    <img
-                      src={cap.image}
-                      alt={ar ? cap.titleAr : cap.titleEn}
-                      className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      loading="lazy"
-                    />
-                    <span className="absolute top-3 start-3 bg-black/70 text-white font-mono text-xs font-bold px-2.5 py-1 rounded-lg backdrop-blur-md">
-                      {cap.number}
-                    </span>
-                  </div>
-
-                  <div className="p-6 space-y-3">
-                    <h3 className="font-head text-lg sm:text-xl font-bold text-foreground group-hover:text-brand-green transition-colors">
-                      {ar ? cap.titleAr : cap.titleEn}
-                    </h3>
-                    <p className="text-xs sm:text-sm text-brand-orange-text font-medium">
-                      {ar ? cap.leadAr : cap.leadEn}
-                    </p>
-
-                    <div className="pt-3 border-t border-border/50">
-                      <span className="text-xs font-bold uppercase tracking-wider text-foreground block mb-2">
-                        {ar ? "المواصفات والقدرات الفنية:" : "Technical Specifications & Scopes:"}
-                      </span>
-                      <ul className="space-y-1.5">
-                        {(ar ? cap.specsAr : cap.specsEn).map((sp, idx) => (
-                          <li key={idx} className="flex items-start gap-2 text-xs text-muted-foreground">
-                            <CheckCircle2 className="size-3.5 text-brand-green shrink-0 mt-0.5" />
-                            <span>{sp}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </Reveal>
-      </div>
-
-      {/* 3. Dedicated Classic Shirt Line */}
+      {/* 2. Dedicated Classic Shirt Line */}
       <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
         <Reveal>
           <div className="text-center max-w-3xl mx-auto border-b border-border pb-6 mb-8">

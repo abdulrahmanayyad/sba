@@ -129,41 +129,7 @@ export function GarmentAboutTab() {
         </div>
       </section>
 
-      {/* 2. INDUSTRIAL CAPABILITIES HIGHLIGHTS */}
-      <section id="industrial-capabilities" className="scroll-mt-36">
-        <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
-          <Reveal>
-            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
-              <div>
-                <SectionBadge title={ar ? "القدرات الصناعية المتكاملة" : "Industrial Capabilities"} />
-                <h2 className="section-title mt-3">
-                  {ar ? "بنية تحتية متطورة تغطي كافة مراحل دورة الإنتاج" : "Complete Manufacturing Ecosystem Across 10 Disciplines"}
-                </h2>
-              </div>
-              <Button asChild size="default" className="rounded-full bg-brand-green text-white hover:bg-brand-orange shrink-0">
-                <Link to="/sectors/$sector" params={{ sector: "garment" }} search={{ tab: "capabilities" }}>
-                  <span>{ar ? "عرض القدرات بالتفصيل" : "View Full Capabilities"}</span>
-                  <ArrowRight className="size-4 ms-2 rtl:rotate-180" />
-                </Link>
-              </Button>
-            </div>
-
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-              {capabilities.slice(0, 5).map((cap) => (
-                <div key={cap.id} className="rounded-2xl border border-border bg-secondary/30 p-4 backdrop-blur-md flex flex-col justify-between hover:border-brand-green transition-colors">
-                  <div>
-                    <span className="font-mono text-xs font-bold text-brand-orange-text block mb-2 text-center">{cap.number}</span>
-                    <h4 className="text-center font-head text-sm font-bold text-foreground">{ar ? cap.titleAr : cap.titleEn}</h4>
-                    <p className="mt-2 text-xs text-muted-foreground leading-relaxed line-clamp-3">{ar ? cap.leadAr : cap.leadEn}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* 3. PRODUCTION CAPACITY (DESIGN VS ACTUAL VS AVAILABLE) */}
+      {/* 2. PRODUCTION CAPACITY (DESIGN VS ACTUAL VS AVAILABLE) */}
       <section id="production-capacity" className="scroll-mt-36">
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-10">
@@ -206,6 +172,71 @@ export function GarmentAboutTab() {
             ))}
           </div>
         </Reveal>
+      </section>
+
+      {/* 3. FULL INTEGRATED INDUSTRIAL CAPABILITIES (10 DISCIPLINES) */}
+      <section id="industrial-capabilities" className="scroll-mt-36">
+        <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
+          <Reveal>
+            <div className="max-w-3xl mb-10">
+              <SectionBadge title={ar ? "القدرات الصناعية المتكاملة" : "10 Industrial Capabilities"} />
+              <h2 className="section-title mt-3">
+                {ar ? "منظومة تصنيع متطورة من الخيط وحتى التعبئة للتصدير" : "End-to-End Industrial Capabilities"}
+              </h2>
+              <p className="section-intro mt-4">
+                {ar
+                  ? "تغطي منشآتنا الصناعية كافة مفاصل دورة التصنيع بماكينات أوتوماتيكية متطورة لضمان الدقة والسرعة والجودة."
+                  : "Comprehensive industrial infrastructure covering pattern making, automated cutting, high-speed sewing, and export packing."}
+              </p>
+            </div>
+
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
+              {capabilities.map((cap) => (
+                <div
+                  key={cap.id}
+                  className="group overflow-hidden rounded-3xl border border-border bg-card/60 backdrop-blur-md shadow-sm transition hover:border-brand-green/60 hover:shadow-lg flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="relative aspect-[16/9] overflow-hidden bg-muted">
+                      <img
+                        src={cap.image}
+                        alt={ar ? cap.titleAr : cap.titleEn}
+                        className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                      <span className="absolute top-3 start-3 bg-black/70 text-white font-mono text-xs font-bold px-2.5 py-1 rounded-lg backdrop-blur-md">
+                        {cap.number}
+                      </span>
+                    </div>
+
+                    <div className="p-6 space-y-3">
+                      <h3 className="font-head text-lg sm:text-xl font-bold text-foreground group-hover:text-brand-green transition-colors">
+                        {ar ? cap.titleAr : cap.titleEn}
+                      </h3>
+                      <p className="text-xs sm:text-sm text-brand-orange-text font-medium">
+                        {ar ? cap.leadAr : cap.leadEn}
+                      </p>
+
+                      <div className="pt-3 border-t border-border/50">
+                        <span className="text-xs font-bold uppercase tracking-wider text-foreground block mb-2">
+                          {ar ? "المواصفات والقدرات الفنية:" : "Technical Specifications & Scopes:"}
+                        </span>
+                        <ul className="space-y-1.5">
+                          {(ar ? cap.specsAr : cap.specsEn).map((sp, idx) => (
+                            <li key={idx} className="flex items-start gap-2 text-xs text-muted-foreground">
+                              <CheckCircle2 className="size-3.5 text-brand-green shrink-0 mt-0.5" />
+                              <span>{sp}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        </div>
       </section>
 
       {/* 4. MANUFACTURING SERVICES (8 B2B SERVICES) */}
