@@ -62,8 +62,8 @@ export function ApparelTradeView({ ar = true, hideHero = false }: ApparelTradeVi
                 {/* Intro Paragraph */}
                 <p className="mt-3.5 max-w-4xl text-sm sm:text-base leading-relaxed text-white/90 text-start drop-shadow-sm">
                   {ar
-                    ? "استعراض مهني موثق لشبكة التصنيع المصري، والفرص التصديرية، وسجل طلبات الشراء للملابس والمنسوجات عبر 20 سوقًا إقليميًا ودوليًا."
-                    : "A documented corporate showcase of our Egyptian manufacturing network, export opportunities, and verified buyer inquiry registry across 20 regional and global markets."}
+                    ? "استعراض مهني موثق لشبكة التصنيع المصري، والفرص التصديرية، وسجل طلبات الشراء للملابس والمنسوجات"
+                    : "A documented corporate showcase of our Egyptian manufacturing network, export opportunities, and verified buyer inquiry registry for apparel and textiles."}
                 </p>
               </Reveal>
             </div>

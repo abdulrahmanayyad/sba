@@ -101,8 +101,8 @@ export function TradePage({ ar = true }: TradePageProps) {
       badgeEn: "SAMI BIN AYYAD GROUP · Global Opportunities",
       titleAr: "تصنيع تعاقدي وتوريد مرن وشراكات موثوقة",
       titleEn: "Contract Manufacturing, Agile Sourcing & Trusted Partnerships",
-      descAr: "استعراض مهني موثق لشبكة التصنيع المصري، والفرص التصديرية، وسجل طلبات الشراء للملابس والمنسوجات عبر 20 سوقًا إقليميًا ودوليًا.",
-      descEn: "A documented corporate showcase of our Egyptian manufacturing network, export opportunities, and verified buyer inquiry registry across 20 regional and global markets."
+      descAr: "استعراض مهني موثق لشبكة التصنيع المصري، والفرص التصديرية، وسجل طلبات الشراء للملابس والمنسوجات",
+      descEn: "A documented corporate showcase of our Egyptian manufacturing network, export opportunities, and verified buyer inquiry registry for apparel and textiles."
     },
     sustainability: {
       bg: "/BG/Environment & Sustainability/Sustainable Environmental Home Page.jpg",
