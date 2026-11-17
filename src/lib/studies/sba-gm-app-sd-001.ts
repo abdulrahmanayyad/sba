@@ -26,7 +26,7 @@ export const STUDY_SD_APPAREL_001: GlobalMarketStudy = {
   "marketRole": "consumer_market",
   "dataBasis": "hs61_hs62_customs",
   "tradeIndicatorNumericUsdB": 0.0722,
-  "tradeIndicatorDisplay": "72.2M USD (CBOS) / 50.1M USD (Egypt Mirror)",
+  "tradeIndicatorDisplay": "72.2M USD",
   "tradeIndicatorYear": "2024/2025",
   "tradeIndicatorScopeAr": "مؤشر واردات الملابس الجاهزة لبنك السودان المركزي (72.2M$ لعام 2025) وصادرات مصر الموثقة WITS (50.05M$ لعام 2024)",
   "tradeIndicatorScopeEn": "Central Bank of Sudan Garments Import Indicator ($72.2M in 2025) & Verified Egypt Mirror Exports ($50.05M in 2024)",

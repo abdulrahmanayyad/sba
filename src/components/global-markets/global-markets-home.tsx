@@ -5,10 +5,8 @@ import {
   ArrowRight,
   Building2,
   ChevronRight,
-  FolderCog,
   Layers,
   Leaf,
-  Scale,
   ShieldCheck,
   Shirt,
   Wheat,
@@ -151,9 +149,6 @@ export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
               <div className="interactive-card glass-box-interactive group/card flex flex-col justify-between overflow-hidden rounded-3xl border border-slate-200/80 dark:border-white/15 bg-white/85 dark:bg-slate-900/75 p-6 sm:p-7 shadow-lg backdrop-blur-2xl hover:border-brand-green/50 hover:-translate-y-1 transition-all">
                 <div className="space-y-4 text-start">
                   <div className="flex items-center justify-between">
-                    <div className="size-12 rounded-2xl bg-brand-green/10 border border-brand-green/20 flex items-center justify-center text-brand-green group-hover/card:scale-105 transition-transform shadow-xs">
-                      <Scale className="size-6 text-brand-green" />
-                    </div>
                     <span className="inline-flex items-center gap-1 rounded-full bg-brand-green/10 px-3 py-1 text-[11px] font-extrabold text-brand-green border border-brand-green/20">
                       {ar ? "مقارنات تفاعلية معتمدة" : "Verified Benchmarks"}
                     </span>
@@ -178,7 +173,6 @@ export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
                     className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-brand-green px-5 py-3 text-xs sm:text-sm font-bold text-white hover:bg-brand-orange transition-all duration-300 shadow-sm cursor-pointer"
                   >
                     <span>{ar ? "فتح لوحة مقارنة الأسواق الدولية" : "Open Comparative Dashboard"}</span>
-                    {ar ? <ArrowLeft className="size-4" /> : <ArrowRight className="size-4" />}
                   </Link>
                 </div>
               </div>
@@ -187,9 +181,6 @@ export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
               <div className="interactive-card glass-box-interactive group/card flex flex-col justify-between overflow-hidden rounded-3xl border border-slate-200/80 dark:border-white/15 bg-white/85 dark:bg-slate-900/75 p-6 sm:p-7 shadow-lg backdrop-blur-2xl hover:border-brand-green/50 hover:-translate-y-1 transition-all">
                 <div className="space-y-4 text-start">
                   <div className="flex items-center justify-between">
-                    <div className="size-12 rounded-2xl bg-brand-green/10 border border-brand-green/20 flex items-center justify-center text-brand-green group-hover/card:scale-105 transition-transform shadow-xs">
-                      <FolderCog className="size-6 text-brand-green" />
-                    </div>
                     <span className="inline-flex items-center gap-1 rounded-full bg-brand-green/10 px-3 py-1 text-[11px] font-extrabold text-brand-green border border-brand-green/20">
                       {ar ? "منظومة التحكم المركزي" : "Central CMS Hub"}
                     </span>
@@ -213,7 +204,6 @@ export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
                     className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-brand-green px-5 py-3 text-xs sm:text-sm font-bold text-white hover:bg-brand-orange transition-all duration-300 shadow-sm cursor-pointer"
                   >
                     <span>{ar ? "الدخول إلى إدارة الدراسات والتحديثات" : "Access Studies Registry & CMS"}</span>
-                    {ar ? <ArrowLeft className="size-4" /> : <ArrowRight className="size-4" />}
                   </Link>
                 </div>
               </div>

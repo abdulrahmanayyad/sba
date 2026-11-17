@@ -309,7 +309,7 @@ export function GlobalMarketsCmsTab({ ar = true }: GlobalMarketsCmsTabProps) {
       <table className="w-full text-xs">
         <thead className="border-b border-slate-200 dark:border-white/10 text-slate-500">
           <tr>
-            <th className="py-3 px-3 text-center">{ar ? "العنوان والسوق" : "Title & Market"}</th>
+            <th className="py-3 px-3 text-start">{ar ? "العنوان والسوق" : "Title & Market"}</th>
             <th className="py-3 px-3 text-center">{ar ? "القطاع" : "Sector"}</th>
             <th className="py-3 px-3 text-center">{ar ? "الحالة" : "Status"}</th>
             <th className="py-3 px-3 text-center">{ar ? "التوثيق" : "Documentation"}</th>
@@ -334,7 +334,7 @@ export function GlobalMarketsCmsTab({ ar = true }: GlobalMarketsCmsTabProps) {
             const sectorId = study.sector || "garment";
             return (
               <tr key={study.id} className="hover:bg-slate-50/80 dark:hover:bg-white/5">
-                <td className="py-3 px-3 text-center">
+                <td className="py-3 px-3 text-start">
                   <div className="font-bold text-slate-900 dark:text-white">{ar ? titleAr : titleEn}</div>
                   <div className="text-[11px] text-slate-500">
                     {ar ? countryAr : countryEn} · v{version}

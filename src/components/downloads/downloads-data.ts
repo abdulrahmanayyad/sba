@@ -155,7 +155,7 @@ export const DATA_ROOM_DOCUMENTS: DataRoomDocument[] = [
   {
     id: "DOC-CORP-01",
     titleEn: "Complete Corporate Company Profile (2026 Bilingual Editions)",
-    titleAr: "الملف التعريفي الشامل للمجموعة (النسختان العربية والإنجليزية 2026)",
+    titleAr: "الملف التعريفي الشامل",
     descriptionEn: "Comprehensive overview of Sami Bin Ayyad Group, executive leadership, legal constitution, and cross-sector portfolio.",
     descriptionAr: "وثيقة مؤسسية معتمدة تستعرض رؤية المجموعة، القيادة التنفيذية، التأسيس القانوني، ومحفظة العمليات عبر القطاعات الأربعة.",
     sector: "corporate",
@@ -180,7 +180,7 @@ export const DATA_ROOM_DOCUMENTS: DataRoomDocument[] = [
   {
     id: "DOC-CORP-02",
     titleEn: "Corporate Capabilities Statement (AR & EN)",
-    titleAr: "بيان القدرات المؤسسية والتشغيلية الشامل (عربي وإنجليزي)",
+    titleAr: "بيان القدرات المؤسسية والتشغيلية الشامل",
     descriptionEn: "Procurement briefing detailing verified engineering assets, capacities, compliance & onboarding workflows.",
     descriptionAr: "ملف تأهيل ومشتريات معتمد لاستعراض الطاقات الإنتاجية، البنية الهندسية، ونماذج التعاقد لجهات الإسناد.",
     sector: "corporate",
@@ -205,7 +205,7 @@ export const DATA_ROOM_DOCUMENTS: DataRoomDocument[] = [
   {
     id: "DOC-CORP-03",
     titleEn: "Complete Services & Solutions Portfolio — 39 Disciplines",
-    titleAr: "دليل الخدمات والحلول المتكاملة الشامل (39 خدمة معتمدة)",
+    titleAr: "دليل الخدمات والحلول المتكاملة الشامل",
     descriptionEn: "Consolidated directory spanning 12 Construction, 19 Environmental, and 8 Apparel manufacturing disciplines.",
     descriptionAr: "الدليل الموحد لمنظومة تضم 39 خدمة تخصصية في المقاولات الهندسية، الحلول البيئية، وتصنيع الملابس.",
     sector: "corporate",
@@ -303,7 +303,7 @@ export const DATA_ROOM_DOCUMENTS: DataRoomDocument[] = [
   {
     id: "DOC-CAP-01",
     titleEn: "Apparel Manufacturing & Fashion Development Profile",
-    titleAr: "دليل قطاع تصنيع الملابس وتطوير الأزياء",
+    titleAr: "دليل قطاع تصنيع الملابس الجاهزة",
     descriptionEn: "15+ production lines, dedicated 45,000 shirts/mo facility, OEM/ODM/FOB models & 8-stage AQL inspection.",
     descriptionAr: "التصنيع التعاقدي، مصنع القمصان الكلاسيكية (45 ألف قميص/شهر)، العلامات الخاصة وبرامج التصدير FOB.",
     sector: "garment",
@@ -351,7 +351,7 @@ export const DATA_ROOM_DOCUMENTS: DataRoomDocument[] = [
   {
     id: "DOC-CAP-03",
     titleEn: "Environmental Solutions & Sustainability Profile (ENVIROTAQA)",
-    titleAr: "دليل قطاع البيئة المستدامة والطاقة المتجددة (إنفيروتاقة)",
+    titleAr: "دليل قطاع البيئة المستدامة",
     descriptionEn: "19 environmental services, RENERGON Swiss RSD biogas alliance, EU CBAM readiness & 13 regional markets.",
     descriptionAr: "الاستشارات البيئية EIA/ESIA، تحويل المخلفات لطاقة، البصمة الكربونية وجاهزية CBAM والفرص الإقليمية.",
     sector: "environmental",
@@ -375,7 +375,7 @@ export const DATA_ROOM_DOCUMENTS: DataRoomDocument[] = [
   {
     id: "DOC-CAP-04",
     titleEn: "Natural Products & Food Trading Profile",
-    titleAr: "دليل قطاع المنتجات الطبيعية والتوريد الغذائي",
+    titleAr: "دليل قطاع المنتجات الطبيعية والغذائية",
     descriptionEn: "NFSA cold logistics hubs, 7 agricultural export categories & 738 verified inquiries across 84 buyer markets.",
     descriptionAr: "مصادر زراعية مصرية أصيلة، محطات فرز وتبريد NFSA، وشبكة طلبات موثقة في 84 دولة حول العالم.",
     sector: "food",
@@ -401,7 +401,7 @@ export const DATA_ROOM_DOCUMENTS: DataRoomDocument[] = [
   {
     id: "DOC-PRJ-01",
     titleEn: "Construction & Contracting Project Portfolio (57+ Projects)",
-    titleAr: "محفظة مشروعات قطاع المقاولات والإنشاءات الموثقة (+57 مشروعًا)",
+    titleAr: "محفظة مشروعات قطاع المقاولات",
     descriptionEn: "Structured execution ledger covering Patio Town, Obour Villas, GASTEC, GASCO 100km pipeline & healthcare works.",
     descriptionAr: "السجل الموثق لمشروعات البنية التحتية، البترول والغاز، الرعاية الصحية والمجمعات السكنية والتجارية.",
     sector: "construction",
@@ -543,7 +543,7 @@ export const DATA_ROOM_DOCUMENTS: DataRoomDocument[] = [
   {
     id: "DOC-TECH-01",
     titleEn: "Natural Products & Agri-Food Export Catalogue",
-    titleAr: "كتالوج التصدير الرسمي: التمور الطبيعية والسلع الزراعية المصرية",
+    titleAr: "كتالوج المنتجات الطبيعية والغذائية",
     descriptionEn: "Full product specs for Siwi, Medjool, olive oils, honey, herbs, and powders with moisture & packing standards.",
     descriptionAr: "المواصفات الكاملة للتمور السيوي، المجدول، زيت الزيتون، العسل والأعشاب مع نسب الرطوبة وأوزان التعبئة.",
     sector: "food",
@@ -568,7 +568,7 @@ export const DATA_ROOM_DOCUMENTS: DataRoomDocument[] = [
   {
     id: "DOC-TECH-02",
     titleEn: "Apparel Product Catalogue — 11 Verified Collections",
-    titleAr: "كتالوج منتجات ومواصفات تصنيع الملابس (11 فئة معتمدة)",
+    titleAr: "كتالوج منتجات الملابس الجاهزة",
     descriptionEn: "Fabric compositions, GSM ranges, international size curves & standard MOQs across 11 apparel lines.",
     descriptionAr: "دليل المواصفات الفنية للأقمشة، الأوزان (GSM)، جداول المقاسات الدولية، والحد الأدنى للكميات (MOQ).",
     sector: "garment",
@@ -590,31 +590,7 @@ export const DATA_ROOM_DOCUMENTS: DataRoomDocument[] = [
     fileName: "SBA_Apparel_Product_Catalogue",
     featured: true
   },
-  {
-    id: "DOC-TECH-03",
-    titleEn: "Complete Products Portfolio (Consolidated Apparel & Food)",
-    titleAr: "كتالوج المنتجات المجمع (الملابس والأغذية الطبيعية)",
-    descriptionEn: "Consolidated B2B commercial export catalogue uniting both industrial garment and agri-food product portfolios.",
-    descriptionAr: "الدليل التجاري التصديري الموحد لمجموعات تصنيع الملابس الجاهزة والمنتجات الزراعية والغذائية الطبيعية.",
-    sector: "corporate",
-    sectorEn: "Group Corporate",
-    sectorAr: "المجموعة المؤسسية",
-    category: "technical_documents",
-    categoryEn: "Technical Documents & Catalogues",
-    categoryAr: "الوثائق الفنية والكتالوجات المعتمدة",
-    accessLevel: "public",
-    accessLevelEn: "Public Access",
-    accessLevelAr: "متاح للعموم",
-    language: "Bilingual",
-    format: "PDF (A4)",
-    fileSize: "3.4 MB",
-    lastUpdated: "2026-02-11",
-    downloadUrl: "/downloads/SBA_Complete_Products_Portfolio_AR.pdf",
-    downloadUrlAr: "/downloads/SBA_Complete_Products_Portfolio_AR.pdf",
-    downloadUrlEn: "/downloads/SBA_Complete_Products_Portfolio_EN.pdf",
-    fileName: "SBA_Complete_Products_Portfolio"
-  },
-  {
+    {
     id: "DOC-TECH-04",
     titleEn: "Technical Data Sheet: ET-POT-01 Oil Terminator",
     titleAr: "النشرة الفنية المعتمدة: ET-POT-01 قاهر الزيوت البترولية",

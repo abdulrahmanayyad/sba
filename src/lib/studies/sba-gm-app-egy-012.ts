@@ -58,7 +58,7 @@ export const STUDY_EGY_APPAREL_012: GlobalMarketStudy = {
   marketRole: "production_hub",
   dataBasis: "hs61_hs62_customs",
   tradeIndicatorNumericUsdB: 3.39,
-  tradeIndicatorDisplay: "3.39B USD (Exports) / 292M USD (Imports)",
+  tradeIndicatorDisplay: "3.39B USD",
   tradeIndicatorYear: "2025",
   tradeIndicatorScopeAr: "صادرات الملابس الجاهزة 2025 (3.394 مليار دولار) / واردات الملابس الجمركية HS61+HS62 لعام 2023 (292.1 مليون دولار)",
   tradeIndicatorScopeEn: "2025 RMG Exports ($3.394B GOEIC) / 2023 Customs Imports HS61+HS62 ($292.1M WITS)",

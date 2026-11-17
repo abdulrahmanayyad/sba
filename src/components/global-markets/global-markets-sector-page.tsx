@@ -537,11 +537,6 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
                     ? "لم تُنشر دراسات سوقية لهذا القطاع حتى الآن"
                     : "No Market Studies Published in This Sector Yet"}
                 </h2>
-                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 max-w-3xl leading-relaxed">
-                  {ar
-                    ? "تم تجهيز البنية الكاملة لعرض دراسات هذا القطاع وفق المحاور الـ 18 المعتمدة، بما يشمل المؤشرات الموثقة والمصادر وجداول المقارنة والتنزيل بصيغة PDF فور اعتماد الدراسات وتسليمها."
-                    : "The full 18-axis study presentation architecture, cited KPIs, comparison matrix, and approved PDF export pipeline are ready to receive finalized studies once delivered."}
-                </p>
               </div>
 
               <Link

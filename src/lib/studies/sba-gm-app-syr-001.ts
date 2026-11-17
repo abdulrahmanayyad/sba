@@ -25,7 +25,7 @@ export const STUDY_SYR_APPAREL_001: GlobalMarketStudy = {
   "marketRole": "reconstruction_market",
   "dataBasis": "partner_mirror_data",
   "tradeIndicatorNumericUsdB": 0.0123,
-  "tradeIndicatorDisplay": "12.3M USD (Mirror)",
+  "tradeIndicatorDisplay": "12.3M USD",
   "tradeIndicatorYear": "2023/2024",
   "tradeIndicatorScopeAr": "صادرات الدول الشريكة المبلغ عنها إلى سوريا (Mirror Trade Data) لعدم اكتمال بيانات الواردات السورية الرسمية",
   "tradeIndicatorScopeEn": "Partner exporter-reported mirror data due to missing complete Syrian importer-reported series",

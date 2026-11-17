@@ -177,7 +177,7 @@ export function ApparelComparativePage({
     ? `المقارنة الإقليمية: ${activeRegionMeta.titleAr}`
     : currentSectorObj
     ? currentSectorObj.nameAr
-    : "لوحة المقارنة الشاملة للأسواق العالمية لكافة القطاعات";
+    : "المقارنة الشاملة لكافة القطاعات";
 
   const pageTitleEn = isGccReport
     ? "GCC Comparative Report — Strategic Market Intelligence"
@@ -185,7 +185,7 @@ export function ApparelComparativePage({
     ? `Regional Comparative Analysis: ${activeRegionMeta.titleEn}`
     : currentSectorObj
     ? currentSectorObj.nameEn
-    : "Comprehensive Global Markets Comparison Dashboard";
+    : "Comprehensive Comparison Across All Sectors";
 
   return (
     <div className="w-full pb-24">
@@ -229,7 +229,7 @@ export function ApparelComparativePage({
         <div className="rounded-3xl border border-white/50 bg-white/80 dark:bg-slate-900/75 p-6 sm:p-10 shadow-xl backdrop-blur-2xl space-y-6 text-start">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 dark:border-white/15 bg-slate-100 dark:bg-white/10 px-3.5 py-1 text-xs font-bold text-slate-800 dark:text-slate-100 shadow-xs">
-              <Scale className="size-3.5 text-brand-green" />
+              <span className="size-2 rounded-full bg-brand-orange shrink-0" />
               <span>
                 {ar
                   ? "مجموعة سامي بن عياد · منظومة المقارنة الإقليمية والعالمية"
@@ -261,11 +261,6 @@ export function ApparelComparativePage({
             <h1 className="font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white leading-tight">
               {ar ? pageTitleAr : pageTitleEn}
             </h1>
-            <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-4xl leading-relaxed">
-              {ar
-                ? "مقارنة منضبطة منهجيًا للأسواق الدولية المعتمدة حسب القطاعات والمناطق الجغرافية، ومستوى الأولوية، ودور السوق، وسنة البيانات، مع الفصل التام بين القيم الموثقة والحقول التي ما زالت قيد التحقق."
-                : "Methodologically disciplined comparison across all verified international markets by sector, geographic region, priority rating, market role, and reporting year."}
-            </p>
           </div>
 
           {/* Sector Selector Tabs (جميع القطاعات الاستراتيجية) */}
@@ -547,7 +542,7 @@ export function ApparelComparativePage({
                           <span className="font-mono text-slate-900 dark:text-white">{s.tradeIndicatorDisplay}</span>
                         </div>
                         <div className="h-2.5 w-full overflow-hidden rounded-full bg-slate-200/80 dark:bg-slate-800">
-                          <div className="h-full rounded-full bg-slate-900 dark:bg-white" style={{ width: `${pct}%` }} />
+                          <div className="h-full rounded-full bg-brand-green" style={{ width: `${pct}%` }} />
                         </div>
                       </div>
                     );
@@ -584,8 +579,7 @@ export function ApparelComparativePage({
       <section className="site-container pb-8">
         <div className="rounded-3xl border border-slate-200/80 dark:border-white/15 bg-white/80 dark:bg-slate-900/70 p-6 sm:p-8 backdrop-blur-2xl shadow-lg space-y-5 text-start">
           <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200/70 dark:border-white/10 pb-3">
-            <div className="flex items-center gap-2">
-              <Layers className="size-5 text-brand-green" />
+            <div>
               <h2 className="font-head text-base sm:text-lg font-extrabold text-slate-900 dark:text-white">
                 {ar ? "مصفوفة المقارنة التفصيلية ونطاق البيانات" : "Detailed Country Matrix & Data Completeness"}
               </h2>

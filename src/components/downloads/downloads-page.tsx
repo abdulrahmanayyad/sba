@@ -10,11 +10,9 @@ import {
   Globe2,
   Layers,
   Search,
-  ShieldCheck,
   Mail,
   Lock,
   Building2,
-  FileCheck2,
   CheckCircle2,
   X,
   AlertCircle,
@@ -143,56 +141,41 @@ export function DownloadsPage() {
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-brand-green/30 bg-black/60 px-4 py-1.5 text-xs font-bold tracking-wide text-white backdrop-blur-md shadow-lg">
               <span className="size-2 rounded-full bg-brand-green animate-pulse" />
               <span>
-                {ar ? "مجموعة سامي بن عياد · غرفة البيانات المؤسسية والاستثمارية" : "SAMI BIN AYYAD GROUP · Investor & Corporate Data Room"}
+                {ar ? "مجموعة سامي بن عياد · مركز الوثائق" : "SAMI BIN AYYAD GROUP · Documentation Center"}
               </span>
             </div>
 
-            <h1 className="mt-2 max-w-4xl font-head text-2xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-white drop-shadow-md">
+            <h1 className="mt-2 max-w-4xl font-head text-xl sm:text-2xl lg:text-3xl font-extrabold leading-tight tracking-tight text-white drop-shadow-md">
               {ar
                 ? "غرفة البيانات المؤسسية والاستثمارية المعتمدة"
                 : "Investor & Corporate Data Room"}
             </h1>
 
-            <p className="mt-4 max-w-3xl text-sm sm:text-base font-normal leading-relaxed text-slate-200 drop-shadow-sm">
+            <p className="mt-3 max-w-3xl text-xs sm:text-sm font-normal leading-relaxed text-slate-200 drop-shadow-sm">
               {ar
                 ? "منظومة موثقة لإتاحة الوثائق المؤسسية، التقارير المالية، مواصفات القدرات التشغيلية للقطاعات، شهادات الامتثال، ومذكرات الاستثمار المشترك للمستثمرين والشركاء الدوليين وفق مستويات تصريح محكمة."
                 : "A certified governance repository providing corporate documents, financial indicators, sector capabilities, compliance records, and joint venture proposals under four secure, role-based access levels."}
             </p>
-
-            <div className="mt-8 flex flex-wrap items-center gap-4 text-xs font-mono">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white/10 border border-white/15 backdrop-blur-md">
-                <ShieldCheck className="size-4 text-brand-green" />
-                <span>{ar ? "7 فئات وثائق معتمدة" : "7 Certified Categories"}</span>
-              </div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white/10 border border-white/15 backdrop-blur-md">
-                <Lock className="size-4 text-amber-400" />
-                <span>{ar ? "4 مستويات حماية وتصريح" : "4 Tier Access Control"}</span>
-              </div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white/10 border border-white/15 backdrop-blur-md">
-                <FileCheck2 className="size-4 text-sky-400" />
-                <span>{ar ? "بيانات موثقة دون ادعاءات غير مدعومة" : "Strict Verification Protocol"}</span>
-              </div>
-            </div>
           </Reveal>
         </div>
       </section>
 
       {/* 2. Main Content & Data Room Experience */}
       <div className="site-container space-y-12">
-        {/* Categories Grid (A to G) */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-3">
+        {/* Categories Grid (4 boxes on top, 4 boxes on bottom) */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
           <button
             type="button"
             onClick={() => setSelectedCategory("all")}
             className={cn(
-              "p-3.5 rounded-2xl border text-start transition-all duration-300 cursor-pointer flex flex-col justify-between",
+              "p-4 sm:p-5 rounded-2xl border text-center transition-all duration-300 cursor-pointer flex flex-col items-center justify-center min-h-[95px] shadow-xs",
               selectedCategory === "all"
                 ? "!border-brand-green !bg-brand-green !text-white shadow-lg shadow-brand-green/20"
-                : "border-white/10 bg-white/[0.03] text-foreground hover:bg-white/[0.08]"
+                : "border-slate-200/80 dark:border-white/10 bg-white/70 dark:bg-white/[0.03] text-foreground hover:bg-slate-100/80 dark:hover:bg-white/[0.08]"
             )}
           >
-            <div className="text-[10px] font-mono opacity-80 uppercase">{ar ? "كافة الفئات" : "ALL"}</div>
-            <div className="text-xs font-bold mt-2 leading-snug">{ar ? "جميع الوثائق" : "All Documents"}</div>
+            <div className="text-xs sm:text-sm font-extrabold font-head leading-snug">{ar ? "كافة الفئات" : "All Categories"}</div>
+            <div className="text-[11px] sm:text-xs font-medium opacity-85 mt-1">{ar ? "جميع الوثائق" : "All Documents"}</div>
           </button>
 
           {DATA_ROOM_CATEGORIES.map((cat) => (
@@ -201,14 +184,14 @@ export function DownloadsPage() {
               type="button"
               onClick={() => setSelectedCategory(cat.id)}
               className={cn(
-                "p-3.5 rounded-2xl border text-start transition-all duration-300 cursor-pointer flex flex-col justify-between",
+                "p-4 sm:p-5 rounded-2xl border text-center transition-all duration-300 cursor-pointer flex flex-col items-center justify-center min-h-[95px] shadow-xs",
                 selectedCategory === cat.id
                   ? "!border-brand-green !bg-brand-green !text-white shadow-lg shadow-brand-green/20"
-                  : "border-white/10 bg-white/[0.03] text-foreground hover:bg-white/[0.08]"
+                  : "border-slate-200/80 dark:border-white/10 bg-white/70 dark:bg-white/[0.03] text-foreground hover:bg-slate-100/80 dark:hover:bg-white/[0.08]"
               )}
             >
-              <div className="text-[10px] font-mono opacity-80">Cat. {cat.code}</div>
-              <div className="text-xs font-bold mt-2 leading-snug">{ar ? cat.titleAr : cat.titleEn}</div>
+              <div className="text-xs sm:text-sm font-extrabold font-mono leading-snug">Cat. {cat.code}</div>
+              <div className="text-[11px] sm:text-xs font-medium opacity-85 mt-1 line-clamp-2">{ar ? cat.titleAr : cat.titleEn}</div>
             </button>
           ))}
         </div>
@@ -237,10 +220,10 @@ export function DownloadsPage() {
               type="button"
               onClick={() => setSelectedAccessLevel("all")}
               className={cn(
-                "px-3 py-1.5 rounded-xl text-xs font-semibold transition-all",
+                "px-3 py-1.5 rounded-xl text-xs font-semibold transition-all border",
                 selectedAccessLevel === "all"
-                  ? "bg-foreground text-background"
-                  : "bg-background/80 text-muted-foreground hover:text-foreground border border-border"
+                  ? "!bg-brand-green !text-white !border-brand-green font-bold shadow-xs"
+                  : "bg-background/80 text-muted-foreground hover:text-foreground border-border"
               )}
             >
               {ar ? "الكل" : "All"}
@@ -253,7 +236,7 @@ export function DownloadsPage() {
                 className={cn(
                   "px-3 py-1.5 rounded-xl text-xs font-semibold transition-all border",
                   selectedAccessLevel === lvl.id
-                    ? "!bg-brand-green !text-white !border-brand-green"
+                    ? "!bg-brand-green !text-white !border-brand-green font-bold shadow-xs"
                     : "bg-background/80 text-muted-foreground hover:text-foreground border-border"
                 )}
               >
@@ -308,23 +291,24 @@ export function DownloadsPage() {
                   </div>
 
                   {isPublic ? (
-                    <div className="flex items-center gap-1.5">
+                    <div className="flex flex-wrap items-center gap-2">
                       <a
-                        href={(ar ? doc.downloadUrlAr : doc.downloadUrlEn) || doc.downloadUrl || "/downloads/SBA_Complete_Corporate_Profile_AR.pdf"}
+                        href={doc.downloadUrlAr || doc.downloadUrl || "/downloads/SBA_Complete_Corporate_Profile_AR.pdf"}
                         download
-                        className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold !bg-brand-green !text-white hover:!bg-brand-orange hover:!text-white transition-all shadow-md"
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold !bg-brand-green !text-white hover:!bg-brand-orange hover:!text-white transition-all shadow-md cursor-pointer"
                       >
                         <Download className="size-3.5" />
-                        <span>{ar ? "عربي (PDF)" : "English (PDF)"}</span>
+                        <span>{ar ? "عربي (PDF)" : "Arabic (PDF)"}</span>
                       </a>
-                      {doc.downloadUrlAr && doc.downloadUrlEn && (
+                      {doc.downloadUrlEn && (
                         <a
-                          href={ar ? doc.downloadUrlEn : doc.downloadUrlAr}
+                          href={doc.downloadUrlEn}
                           download
-                          title={ar ? "تحميل النسخة الإنجليزية" : "Download Arabic Edition"}
-                          className="inline-flex items-center justify-center px-2.5 py-2 rounded-xl text-[11px] font-bold bg-secondary/90 hover:bg-brand-orange hover:text-white border border-border transition-all"
+                          title={ar ? "تحميل النسخة الإنجليزية" : "Download English Edition"}
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold !bg-brand-green !text-white hover:!bg-brand-orange hover:!text-white transition-all shadow-md cursor-pointer"
                         >
-                          {ar ? "EN" : "AR"}
+                          <Download className="size-3.5" />
+                          <span>{ar ? "إنجليزي (PDF)" : "English (PDF)"}</span>
                         </a>
                       )}
                     </div>
