@@ -134,7 +134,7 @@ export function SustainabilityFormsSection({ ar = true }: SustainabilityFormsSec
       <div>
         <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
           <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-          <span>{ar ? "القسم 13 و 14: طلبات التعاون وبوابة تقديم المشاريع" : "Sections 13 & 14: Inquiries & Project Submission Portals"}</span>
+          <span>{ar ? "طلبات التعاون وبوابة تقديم المشاريع" : "Inquiries & Project Submission Portals"}</span>
         </div>
         <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5 leading-snug">
           {ar ? "بوابة تقديم المشاريع وطلبات الحلول البيئية" : "Environmental Project Submission & Solutions Request"}

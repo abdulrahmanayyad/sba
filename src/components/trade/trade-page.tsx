@@ -67,8 +67,8 @@ export function TradePage({ ar = true }: TradePageProps) {
       id: "real-estate" as const,
       titleAr: "الفرص العقارية والاستثمارية",
       titleEn: "Real Estate & Investments",
-      badgeAr: "+400 مشروع • 5 مليارات ج.م",
-      badgeEn: "400+ Projects • 5B EGP",
+      badgeAr: "أصول وفرص استثمارية",
+      badgeEn: "Assets & Investment Opportunities",
     },
     {
       id: "sustainability" as const,

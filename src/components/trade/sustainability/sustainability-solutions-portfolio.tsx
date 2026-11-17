@@ -49,7 +49,7 @@ export function SustainabilitySolutionsPortfolio({ ar = true }: SustainabilitySo
       <div>
         <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
           <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-          <span>{ar ? "القسم الرابع: محفظة الخدمات والحلول البيئية" : "Section 4: Environmental Services & Solutions Portfolio"}</span>
+          <span>{ar ? "محفظة الخدمات والحلول البيئية" : "Environmental Services & Solutions Portfolio"}</span>
         </div>
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div>
@@ -62,10 +62,6 @@ export function SustainabilitySolutionsPortfolio({ ar = true }: SustainabilitySo
                 : "Structured overview of 6 core environmental categories, transparently differentiating in-house capabilities, technical consortium deliveries, and co-development opportunities."}
             </p>
           </div>
-
-          <span className="inline-flex items-center gap-1.5 rounded-2xl border border-white/20 bg-secondary/70 px-4 py-2 text-xs font-bold text-foreground shrink-0 self-start">
-            <span>{ar ? "شفافية تعاقدية معتمدة" : "Verified Delivery Integrity"}</span>
-          </span>
         </div>
       </div>
 

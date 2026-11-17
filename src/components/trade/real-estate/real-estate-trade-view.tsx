@@ -3,7 +3,6 @@ import { Link } from "@tanstack/react-router";
 import {
   ArrowRight,
   Building2,
-  MapPin,
   TrendingUp,
   Globe2,
   ShieldCheck,
@@ -19,8 +18,6 @@ import { Reveal } from "@/components/home/reveal";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import {
-  REAL_ESTATE_STATS,
-  REAL_ESTATE_MARKET_COVERAGE,
   REAL_ESTATE_ASSETS_PORTFOLIO,
   REAL_ESTATE_TRANSACTION_MODELS,
   REAL_ESTATE_ADVISORY_PILLARS,
@@ -35,18 +32,6 @@ interface RealEstateTradeViewProps {
 
 export function RealEstateTradeView({ ar = true, hideHero = false }: RealEstateTradeViewProps) {
   const [activeAssetTab, setActiveAssetTab] = useState<string>("residential");
-  const [activeCoverageRegion, setActiveCoverageRegion] = useState<string>("all");
-
-  const coverageTabs = [
-    { id: "all", labelAr: "كافة المناطق", labelEn: "All Regions" },
-    { id: "greater-cairo-east", labelAr: "القاهرة الكبرى وشرق القاهرة", labelEn: "Greater Cairo & East" },
-    { id: "west-cairo", labelAr: "غرب القاهرة", labelEn: "West Cairo" },
-    { id: "coastal-tourism", labelAr: "المدن الساحلية والسياحية", labelEn: "Coastal & Tourism" },
-  ];
-
-  const filteredCoverage = REAL_ESTATE_MARKET_COVERAGE.filter(
-    (c) => activeCoverageRegion === "all" || c.regionKey === activeCoverageRegion
-  );
 
   return (
     <div className={cn("relative min-h-screen bg-background text-foreground pb-24", hideHero && "min-h-0 pb-12")}>
@@ -117,129 +102,13 @@ export function RealEstateTradeView({ ar = true, hideHero = false }: RealEstateT
 
       {/* Main Container */}
       <div className={cn("site-container space-y-16 sm:space-y-20", !hideHero && "mt-8 sm:mt-12")}>
-        {/* Core Statistics Cards */}
-        <div className="grid grid-cols-2 gap-3.5 sm:grid-cols-4 w-full">
-          <div className="interactive-card glass-box-interactive group rounded-3xl p-5 sm:p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-brand-orange/60 border border-border/80 bg-background/85 backdrop-blur-xl text-center flex flex-col items-center justify-center">
-            <span className="font-head text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">
-              +{REAL_ESTATE_STATS.projectsHandled}
-            </span>
-            <p className="text-xs sm:text-sm font-bold text-foreground mt-1.5 text-center">
-              {ar ? "مشروع عقاري تم التعامل معه" : "Real Estate Projects Handled"}
-            </p>
-            <span className="text-[11px] text-muted-foreground block mt-0.5 text-center">
-              {ar ? "سكني، تجاري، سياحي، صناعي" : "Residential, Commercial & Mixed-Use"}
-            </span>
-          </div>
-
-          <div className="interactive-card glass-box-interactive group rounded-3xl p-5 sm:p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-brand-orange/60 border border-border/80 bg-background/85 backdrop-blur-xl text-center flex flex-col items-center justify-center">
-            <span className="font-head text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">
-              +{REAL_ESTATE_STATS.developersNetwork}
-            </span>
-            <p className="text-xs sm:text-sm font-bold text-foreground mt-1.5 text-center">
-              {ar ? "شركة ومطور عقاري شريك" : "Partner Developers Network"}
-            </p>
-            <span className="text-[11px] text-muted-foreground block mt-0.5 text-center">
-              {ar ? "في مصر والمنطقة الإقليمية" : "In Egypt & Regional Markets"}
-            </span>
-          </div>
-
-          <div className="interactive-card glass-box-interactive group rounded-3xl p-5 sm:p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-brand-orange/60 border border-border/80 bg-background/85 backdrop-blur-xl text-center flex flex-col items-center justify-center">
-            <span className="font-head text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">
-              5 {ar ? "مليارات" : "Billion"}
-            </span>
-            <p className="text-xs sm:text-sm font-bold text-foreground mt-1.5 text-center">
-              {ar ? "جنيه إجمالي محافظ مسوقة ومقيمة" : "EGP Total Marketed & Valued"}
-            </p>
-            <span className="text-[11px] text-muted-foreground block mt-0.5 text-center">
-              {ar ? "7 مولات وفندق ومجمعات استثمارية" : "7 Malls, Hotel & Mega Complexes"}
-            </span>
-          </div>
-
-          <div className="interactive-card glass-box-interactive group rounded-3xl p-5 sm:p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-brand-orange/60 border border-border/80 bg-background/85 backdrop-blur-xl text-center flex flex-col items-center justify-center">
-            <span className="font-head text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">
-              +{REAL_ESTATE_STATS.pharmacistsAdvised}
-            </span>
-            <p className="text-xs sm:text-sm font-bold text-foreground mt-1.5 text-center">
-              {ar ? "صيدلي ومستثمر طبي تمت خدمتهم" : "Pharmacists & Healthcare Clients"}
-            </p>
-            <span className="text-[11px] text-muted-foreground block mt-0.5 text-center">
-              {ar ? "في انتقاء المواقع وترخيص الفروع" : "Prime Pharmacy Locations & Licensing"}
-            </span>
-          </div>
-        </div>
-
-        {/* Section 1: Real Estate Market Coverage */}
-        <section id="re-coverage" className="scroll-mt-32 space-y-6">
-          <div className="interactive-card glass-box-interactive w-full rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl backdrop-blur-2xl border border-border/80 bg-background/85">
-            <div>
-              <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border/80 bg-secondary/85 px-4 py-1.5 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
-                <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-                <span>{ar ? "القسم الأول: خريطة الانتشار العقاري" : "Section 1: Market Coverage"}</span>
-              </div>
-              <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-1 leading-snug">
-                {ar ? "خريطة الانتشار الجغرافي والمدن المشمولة" : "Geographical Footprint & Urban Markets"}
-              </h2>
-              <p className="text-xs sm:text-sm text-muted-foreground mt-2 leading-relaxed max-w-4xl">
-                {ar
-                  ? "تغطية ميدانية وتحليلية واسعة تشمل أهم محاور التنمية العمرانية في القاهرة الكبرى والمدن الجديدة والمناطق الساحلية والأسواق الدولية."
-                  : "Extensive market coverage across high-growth urban growth corridors, new master developments, coastal hubs, and regional capitals."}
-              </p>
-            </div>
-
-            {/* Region Filter Buttons */}
-            <div className="flex flex-wrap gap-2 border-b border-border/50 pb-4">
-              {coverageTabs.map((tab) => (
-                <button
-                  key={tab.id}
-                  type="button"
-                  onClick={() => setActiveCoverageRegion(tab.id)}
-                  className={cn(
-                    "rounded-full px-4 py-2 text-xs font-bold transition-all duration-200 cursor-pointer shadow-sm border",
-                    activeCoverageRegion === tab.id
-                      ? "!bg-brand-green !text-white !border-brand-green shadow-md shadow-brand-green/20"
-                      : "border-border/80 bg-background/90 text-foreground hover:border-brand-orange/50 hover:bg-secondary/80 hover:text-brand-orange"
-                  )}
-                >
-                  {ar ? tab.labelAr : tab.labelEn}
-                </button>
-              ))}
-            </div>
-
-            {/* Coverage Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-              {filteredCoverage.map((cov) => (
-                <div
-                  key={cov.regionKey}
-                  className="group rounded-2xl border border-border/80 bg-background/80 p-5 backdrop-blur-xl shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-brand-green/60 hover:shadow-md"
-                >
-                  <div className="mb-3 border-b border-border/50 pb-2.5 flex items-center justify-between">
-                    <h3 className="font-bold text-sm text-foreground group-hover:text-brand-green transition-colors flex items-center gap-2">
-                      <MapPin className="size-3.5 text-brand-orange shrink-0" />
-                      <span>{ar ? cov.regionNameAr : cov.regionNameEn}</span>
-                    </h3>
-                  </div>
-
-                  <ul className="space-y-2">
-                    {(ar ? cov.citiesAr : cov.citiesEn).map((city, idx) => (
-                      <li key={idx} className="flex items-center gap-2 text-xs text-foreground/90 font-medium">
-                        <span className="size-1.5 rounded-full bg-brand-green shrink-0" />
-                        <span>{city}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Section 2: Directory of Real Estate Opportunities */}
+        {/* Section: Directory of Real Estate Opportunities */}
         <section id="re-portfolio" className="scroll-mt-32 space-y-6">
           <div className="interactive-card glass-box-interactive w-full rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl backdrop-blur-2xl border border-border/80 bg-background/85">
             <div>
               <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border/80 bg-secondary/85 px-4 py-1.5 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
                 <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-                <span>{ar ? "القسم الثاني: دليل الفرص والأصول العقارية" : "Section 2: Asset Classes Directory"}</span>
+                <span>{ar ? "دليل الفرص والأصول العقارية" : "Asset Classes Directory"}</span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-1 leading-snug">
                 {ar ? "دليل الأصول والمنتجات العقارية والاستثمارية" : "Asset Classes & Real Estate Products Portfolio"}
@@ -301,7 +170,7 @@ export function RealEstateTradeView({ ar = true, hideHero = false }: RealEstateT
             <div>
               <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border/80 bg-secondary/85 px-4 py-1.5 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
                 <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-                <span>{ar ? "القسم الثالث: نماذج وآليات التعامل" : "Section 3: Transaction & Deal Models"}</span>
+                <span>{ar ? "نماذج وآليات التعامل" : "Transaction & Deal Models"}</span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-1 leading-snug">
                 {ar ? "النماذج التعاقدية والاستثمارية" : "Transaction & Investment Frameworks"}
@@ -349,7 +218,7 @@ export function RealEstateTradeView({ ar = true, hideHero = false }: RealEstateT
             <div>
               <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border/80 bg-secondary/85 px-4 py-1.5 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
                 <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-                <span>{ar ? "القسم الرابع: الاستشارات العقارية" : "Section 4: Strategic Advisory Pillars"}</span>
+                <span>{ar ? "الاستشارات العقارية" : "Strategic Advisory Pillars"}</span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-1 leading-snug">
                 {ar ? "خدمات الاستشارات العقارية ودراسات الجدوى" : "Strategic Real Estate Advisory & Feasibility Pillars"}
@@ -390,7 +259,7 @@ export function RealEstateTradeView({ ar = true, hideHero = false }: RealEstateT
             <div>
               <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-brand-green/40 bg-brand-green/15 px-4 py-1.5 text-xs font-bold tracking-wide text-brand-green backdrop-blur-md shadow-xs">
                 <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-                <span>{ar ? "القسم الخامس: استشارات متخصصة" : "Section 5: Healthcare Real Estate Advisory"}</span>
+                <span>{ar ? "استشارات متخصصة" : "Healthcare Real Estate Advisory"}</span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-1 leading-snug">
                 {ar ? PHARMACY_ADVISORY_SECTION.headlineAr : PHARMACY_ADVISORY_SECTION.headlineEn}
@@ -430,7 +299,7 @@ export function RealEstateTradeView({ ar = true, hideHero = false }: RealEstateT
             <div>
               <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border/80 bg-secondary/85 px-4 py-1.5 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
                 <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-                <span>{ar ? "القسم السادس: المشروعات الكبرى والمحافظ المدارة" : "Section 6: Major Assets & Valuations"}</span>
+                <span>{ar ? "المشروعات الكبرى والمحافظ المدارة" : "Major Assets & Valuations"}</span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-1 leading-snug">
                 {ar ? "سجل المشروعات الاستثمارية الكبرى والتقييمات" : "Major Institutional Asset Portfolios & Valuations"}

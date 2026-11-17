@@ -75,23 +75,21 @@ export function SustainabilityTradeView({ ar = true, hideHero = false }: Sustain
       {/* SECTION 1: GLOBAL ENVIRONMENTAL OVERVIEW & INDICATORS STRIP */}
       {/* ======================================================== */}
       <section id="sustainability-overview" className="site-container relative z-10 mb-12">
-        {/* If hideHero is true, show section title and intro card */}
-        {hideHero && (
-          <div className="mb-8 p-6 md:p-8 rounded-3xl bg-gradient-to-br from-slate-900/90 via-slate-900/80 to-slate-800/90 border border-white/10 backdrop-blur-xl shadow-2xl relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-96 h-96 bg-brand-green/10 rounded-full blur-3xl pointer-events-none" />
-            
-            <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-white/10">
-              <div className="space-y-2">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-green/15 text-brand-green border border-brand-green/30 text-xs font-semibold">
-                  <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-                  <span>{ar ? "القسم 1: نظرة عامة على الفرص البيئية العالمية" : "Section 1: Global Sustainability Overview"}</span>
-                </div>
-                <h2 className="text-2xl md:text-3xl font-extrabold text-white tracking-tight">
+        <div className="interactive-card glass-box-interactive w-full rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl backdrop-blur-2xl transition-all duration-300">
+          <div>
+            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
+              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+              <span>{ar ? "نظرة عامة على الفرص البيئية العالمية" : "Global Sustainability Overview"}</span>
+            </div>
+
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div>
+                <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5 leading-snug">
                   {ar
                     ? "قطاع البيئة المستدامة — الشراكات والمشروعات الاستراتيجية"
                     : "Sustainability Sector — Strategic Opportunities & Alliances"}
                 </h2>
-                <p className="text-slate-300 text-sm max-w-3xl leading-relaxed">
+                <p className="text-xs sm:text-sm text-muted-foreground mt-2 leading-relaxed max-w-4xl">
                   {ar
                     ? "نطاق عمل متكامل يغطي استشارات الامتثال البيئي، محطات الطاقة المتجددة الصناعية، إعادة تدوير المخلفات، وإدارة الموارد المائية في مصر، المملكة العربية السعودية، ودول الخليج وأفريقيا، وفق أعلى معايير الشفافية ونماذج التحالفات الدولية."
                     : "Comprehensive operational scope covering industrial environmental compliance, C&I solar PV, circular waste recovery, and water recycling across Egypt, KSA, GCC, and Africa."}
@@ -102,101 +100,52 @@ export function SustainabilityTradeView({ ar = true, hideHero = false }: Sustain
               <div className="shrink-0 flex items-center gap-3">
                 <a
                   href="#sustainability-forms"
-                  className="px-4 py-2.5 rounded-xl text-xs font-bold !bg-brand-green !text-white hover:!bg-brand-orange hover:!text-white transition-all shadow-lg flex items-center gap-2"
+                  className="px-4 py-2.5 rounded-xl text-xs font-bold !bg-brand-green !text-white hover:!bg-brand-orange hover:!text-white transition-all shadow-lg flex items-center gap-2 cursor-pointer"
                 >
                   <span>{ar ? "تقديم فرصة / استفسار" : "Submit Opportunity"}</span>
                 </a>
               </div>
             </div>
+          </div>
 
-            {/* Quick Indicators Grid */}
-            <div className="relative z-10 pt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-              <div className="p-3.5 rounded-xl bg-white/[0.04] border border-white/10">
-                <div className="text-xs text-slate-300 mb-1">{ar ? "الأسواق المستهدفة" : "Target Markets"}</div>
-                <div className="text-2xl font-black text-white">{SUSTAINABILITY_STATS.totalMarkets}</div>
-                <div className="text-[10px] text-brand-green mt-0.5">{ar ? "5 أولوية أولى + 8 ثانية" : "5 Tier 1 + 8 Tier 2"}</div>
-              </div>
+          {/* Quick Indicators Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3.5 pt-2">
+            <div className="p-3.5 rounded-2xl bg-secondary/40 border border-border/80">
+              <div className="text-xs text-muted-foreground mb-1">{ar ? "الأسواق المستهدفة" : "Target Markets"}</div>
+              <div className="text-2xl font-black text-foreground">{SUSTAINABILITY_STATS.totalMarkets}</div>
+              <div className="text-[10px] text-brand-green font-semibold mt-0.5">{ar ? "5 أولوية أولى + 8 ثانية" : "5 Tier 1 + 8 Tier 2"}</div>
+            </div>
 
-              <div className="p-3.5 rounded-xl bg-white/[0.04] border border-white/10">
-                <div className="text-xs text-slate-300 mb-1">{ar ? "محفظة الخدمات" : "Services Portfolio"}</div>
-                <div className="text-2xl font-black text-white">{SUSTAINABILITY_STATS.totalServicesCount}</div>
-                <div className="text-[10px] text-brand-green mt-0.5">{ar ? "عبر 6 فئات رئيسية" : "Across 6 Categories"}</div>
-              </div>
+            <div className="p-3.5 rounded-2xl bg-secondary/40 border border-border/80">
+              <div className="text-xs text-muted-foreground mb-1">{ar ? "محفظة الخدمات" : "Services Portfolio"}</div>
+              <div className="text-2xl font-black text-foreground">{SUSTAINABILITY_STATS.totalServicesCount}</div>
+              <div className="text-[10px] text-brand-green font-semibold mt-0.5">{ar ? "عبر 6 فئات رئيسية" : "Across 6 Categories"}</div>
+            </div>
 
-              <div className="p-3.5 rounded-xl bg-white/[0.04] border border-white/10">
-                <div className="text-xs text-slate-300 mb-1">{ar ? "المشروعات والفرص" : "Active Projects"}</div>
-                <div className="text-2xl font-black text-white">{SUSTAINABILITY_STATS.totalOpportunities}</div>
-                <div className="text-[10px] text-brand-green mt-0.5">{ar ? "فرص موثقة ومطروحة" : "Documented Opportunities"}</div>
-              </div>
+            <div className="p-3.5 rounded-2xl bg-secondary/40 border border-border/80">
+              <div className="text-xs text-muted-foreground mb-1">{ar ? "المشروعات والفرص" : "Active Projects"}</div>
+              <div className="text-2xl font-black text-foreground">{SUSTAINABILITY_STATS.totalOpportunities}</div>
+              <div className="text-[10px] text-brand-green font-semibold mt-0.5">{ar ? "فرص موثقة ومطروحة" : "Documented Opportunities"}</div>
+            </div>
 
-              <div className="p-3.5 rounded-xl bg-white/[0.04] border border-white/10">
-                <div className="text-xs text-slate-300 mb-1">{ar ? "المناقصات المطروحة" : "Active Tenders"}</div>
-                <div className="text-2xl font-black text-white">{SUSTAINABILITY_STATS.tendersCount}</div>
-                <div className="text-[10px] text-amber-400 mt-0.5">{ar ? "برامج وطنية ومناقصات" : "Government Mega-Programs"}</div>
-              </div>
+            <div className="p-3.5 rounded-2xl bg-secondary/40 border border-border/80">
+              <div className="text-xs text-muted-foreground mb-1">{ar ? "المناقصات المطروحة" : "Active Tenders"}</div>
+              <div className="text-2xl font-black text-foreground">{SUSTAINABILITY_STATS.tendersCount}</div>
+              <div className="text-[10px] text-amber-500 font-semibold mt-0.5">{ar ? "برامج وطنية ومناقصات" : "Government Mega-Programs"}</div>
+            </div>
 
-              <div className="p-3.5 rounded-xl bg-white/[0.04] border border-white/10">
-                <div className="text-xs text-slate-300 mb-1">{ar ? "التحالفات الدولية" : "Strategic Consortia"}</div>
-                <div className="text-2xl font-black text-white">3</div>
-                <div className="text-[10px] text-sky-400 mt-0.5">{ar ? "EPC، تقنية، وتمويل" : "EPC, Tech, Green Finance"}</div>
-              </div>
+            <div className="p-3.5 rounded-2xl bg-secondary/40 border border-border/80">
+              <div className="text-xs text-muted-foreground mb-1">{ar ? "التحالفات الدولية" : "Strategic Consortia"}</div>
+              <div className="text-2xl font-black text-foreground">3</div>
+              <div className="text-[10px] text-sky-500 font-semibold mt-0.5">{ar ? "EPC، تقنية، وتمويل" : "EPC, Tech, Green Finance"}</div>
+            </div>
 
-              <div className="p-3.5 rounded-xl bg-white/[0.04] border border-white/10">
-                <div className="text-xs text-slate-300 mb-1">{ar ? "نموذج الشفافية" : "Delivery Model"}</div>
-                <div className="text-2xl font-black text-white">100%</div>
-                <div className="text-[10px] text-brand-green mt-0.5">{ar ? "إفصاح كامل عن النطاق" : "Disclosed Execution"}</div>
-              </div>
+            <div className="p-3.5 rounded-2xl bg-secondary/40 border border-border/80">
+              <div className="text-xs text-muted-foreground mb-1">{ar ? "نموذج الشفافية" : "Delivery Model"}</div>
+              <div className="text-2xl font-black text-foreground">100%</div>
+              <div className="text-[10px] text-brand-green font-semibold mt-0.5">{ar ? "إفصاح كامل عن النطاق" : "Disclosed Execution"}</div>
             </div>
           </div>
-        )}
-
-        {/* Quick Anchor Navigation Links */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none text-xs">
-          <span className="text-slate-300 font-semibold shrink-0 ml-2">
-            <span>{ar ? "الانتقال السريع:" : "Jump to:"}</span>
-          </span>
-          <a
-            href="#sustainability-target-markets"
-            className="shrink-0 px-3 py-1.5 rounded-lg bg-white/[0.05] hover:bg-white/[0.1] text-slate-300 hover:text-white border border-white/10 transition-colors"
-          >
-            {ar ? "الأسواق المستهدفة (2-3)" : "Target Markets (2-3)"}
-          </a>
-          <a
-            href="#sustainability-solutions"
-            className="shrink-0 px-3 py-1.5 rounded-lg bg-white/[0.05] hover:bg-white/[0.1] text-slate-300 hover:text-white border border-white/10 transition-colors"
-          >
-            {ar ? "محفظة الخدمات (4)" : "Solutions Portfolio (4)"}
-          </a>
-          <a
-            href="#sustainability-subsectors"
-            className="shrink-0 px-3 py-1.5 rounded-lg bg-white/[0.05] hover:bg-white/[0.1] text-slate-300 hover:text-white border border-white/10 transition-colors"
-          >
-            {ar ? "القطاعات الفرعية (5-9)" : "Subsectors (5-9)"}
-          </a>
-          <a
-            href="#sustainability-opportunities"
-            className="shrink-0 px-3 py-1.5 rounded-lg bg-white/[0.05] hover:bg-white/[0.1] text-slate-300 hover:text-white border border-white/10 transition-colors"
-          >
-            {ar ? "بنك الفرص والمناقصات (10)" : "Opportunities & Tenders (10)"}
-          </a>
-          <a
-            href="#sustainability-alliances-trends"
-            className="shrink-0 px-3 py-1.5 rounded-lg bg-white/[0.05] hover:bg-white/[0.1] text-slate-300 hover:text-white border border-white/10 transition-colors"
-          >
-            {ar ? "التحالفات والاتجاهات (11-12)" : "Consortia & Trends (11-12)"}
-          </a>
-          <a
-            href="#sustainability-forms"
-            className="shrink-0 px-3 py-1.5 rounded-lg bg-white/[0.05] hover:bg-white/[0.1] text-slate-300 hover:text-white border border-white/10 transition-colors"
-          >
-            {ar ? "نماذج التقديم والطلب (13-14)" : "Submission Forms (13-14)"}
-          </a>
-          <a
-            href="#sustainability-documents"
-            className="shrink-0 px-3 py-1.5 rounded-lg bg-white/[0.05] hover:bg-white/[0.1] text-slate-300 hover:text-white border border-white/10 transition-colors"
-          >
-            {ar ? "الوثائق والتواصل (15-16)" : "Docs & Contact (15-16)"}
-          </a>
         </div>
       </section>
 

@@ -107,7 +107,7 @@ export function SustainabilitySubsectorsShowcase({ ar = true }: SustainabilitySu
       <div>
         <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
           <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-          <span>{ar ? "الأقسام 5–9: الفرص القطاعية المتخصصة والاستثمار" : "Sections 5–9: Subsectors & Investment Opportunities"}</span>
+          <span>{ar ? "الفرص القطاعية المتخصصة والاستثمار" : "Subsectors & Investment Opportunities"}</span>
         </div>
         <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5 leading-snug">
           {ar ? "الفرص القطاعية المتخصصة ومجالات الاستثمار البيئي" : "Specialized Subsectors & Green Investment Fields"}
@@ -128,26 +128,10 @@ export function SustainabilitySubsectorsShowcase({ ar = true }: SustainabilitySu
               className="rounded-3xl border border-white/15 bg-background/70 p-6 backdrop-blur-xl shadow-lg space-y-4 hover:border-brand-green/40 transition-all duration-300 flex flex-col justify-between"
             >
               <div>
-                <div className="flex items-start justify-between gap-3 border-b border-white/10 pb-4">
-                  <div>
-                    <div>
-                      <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider block">
-                        {sec.sectionNumber}
-                      </span>
-                      <h3 className="text-base sm:text-lg font-bold text-foreground leading-snug">
-                        {ar ? sec.titleAr : sec.titleEn}
-                      </h3>
-                    </div>
-                  </div>
-
-                  <div className="text-end shrink-0">
-                    <span className="font-mono text-xl font-black text-foreground block">
-                      {sec.statCount}
-                    </span>
-                    <span className="text-[10px] text-muted-foreground block">
-                      {ar ? sec.statLabelAr : sec.statLabelEn}
-                    </span>
-                  </div>
+                <div className="border-b border-white/10 pb-4">
+                  <h3 className="text-base sm:text-lg font-bold text-foreground leading-snug">
+                    {ar ? sec.titleAr : sec.titleEn}
+                  </h3>
                 </div>
 
                 <p className="text-xs text-muted-foreground leading-relaxed pt-3">

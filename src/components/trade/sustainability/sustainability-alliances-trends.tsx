@@ -16,7 +16,7 @@ export function SustainabilityAlliancesTrends({ ar = true }: SustainabilityAllia
         <div>
           <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
             <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-            <span>{ar ? "القسم الحادي عشر: الشراكات والتحالفات الاستراتيجية" : "Section 11: Strategic Partnerships & Alliances"}</span>
+            <span>{ar ? "الشراكات والتحالفات الاستراتيجية" : "Strategic Partnerships & Alliances"}</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5 leading-snug">
             {ar ? "نماذج التحالفات الاستراتيجية والشراكات التقنية" : "Strategic Alliances & Technical Consortium Frameworks"}
@@ -62,7 +62,7 @@ export function SustainabilityAlliancesTrends({ ar = true }: SustainabilityAllia
         <div>
           <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
             <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-            <span>{ar ? "القسم الثاني عشر: اتجاهات السوق والتحولات البيئية" : "Section 12: Market Trends & Environmental Transition"}</span>
+            <span>{ar ? "اتجاهات السوق والتحولات البيئية" : "Market Trends & Environmental Transition"}</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5 leading-snug">
             {ar ? "اتجاهات السوق الإقليمية ومتطلبات التحول الأخضر" : "Market Trends & Industrial Environmental Transition"}

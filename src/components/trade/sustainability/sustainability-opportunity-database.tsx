@@ -67,7 +67,7 @@ export function SustainabilityOpportunityDatabase({ ar = true }: SustainabilityO
       <div>
         <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
           <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-          <span>{ar ? "القسم العاشر: المناقصات والمشاريع المطروحة وقاعدة الفرص" : "Section 10: Active Tenders, Projects & Opportunities Registry"}</span>
+          <span>{ar ? "المناقصات والمشاريع المطروحة وقاعدة الفرص" : "Active Tenders, Projects & Opportunities Registry"}</span>
         </div>
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div>
@@ -80,10 +80,6 @@ export function SustainabilityOpportunityDatabase({ ar = true }: SustainabilityO
                 : "Structured database of documented environmental projects and tenders across MENA, featuring controlled stage tracking, contracting models, and verified sources."}
             </p>
           </div>
-
-          <span className="inline-flex items-center gap-1.5 rounded-2xl border border-brand-green/30 bg-brand-green/10 px-4 py-2 text-xs font-bold text-brand-green shrink-0 self-start">
-            <span>{ar ? `${filteredOpportunities.length} فرصة مطابقة` : `${filteredOpportunities.length} Filtered Records`}</span>
-          </span>
         </div>
       </div>
 
@@ -196,7 +192,7 @@ export function SustainabilityOpportunityDatabase({ ar = true }: SustainabilityO
                     </p>
                   </div>
 
-                  {/* Stage & Value Column */}
+                  {/* Stage Column */}
                   <div className="flex flex-wrap sm:flex-col items-end gap-2 shrink-0">
                     <span className={cn(
                       "rounded-full px-3 py-1 text-[11px] font-bold border shadow-2xs",
@@ -204,15 +200,6 @@ export function SustainabilityOpportunityDatabase({ ar = true }: SustainabilityO
                     )}>
                       {ar ? opp.projectStageAr : opp.projectStage}
                     </span>
-
-                    <div className="text-end">
-                      <span className="text-[10px] text-muted-foreground block">
-                        {ar ? "القيمة الاستثمارية / النموذج:" : "Investment Value / Model:"}
-                      </span>
-                      <span className="font-mono text-xs font-bold text-foreground">
-                        {opp.investmentValue} {opp.currency} ({opp.contractingModel})
-                      </span>
-                    </div>
                   </div>
                 </div>
 

@@ -36,7 +36,7 @@ export function SustainabilityTargetMarkets({ ar = true }: SustainabilityTargetM
       <div>
         <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
           <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-          <span>{ar ? "القسم الثاني والثالث: الأسواق المستهدفة والاحتياجات البيئية" : "Sections 2 & 3: Target Markets & Required Solutions"}</span>
+          <span>{ar ? "الأسواق المستهدفة والاحتياجات البيئية" : "Target Markets & Required Solutions"}</span>
         </div>
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div>
@@ -49,10 +49,6 @@ export function SustainabilityTargetMarkets({ ar = true }: SustainabilityTargetM
                 : "Systematic classification of priority MENA and African markets (Tier 1 & Tier 2), highlighting environmental needs, tailored solutions, entry channels, and official references."}
             </p>
           </div>
-
-          <span className="inline-flex items-center gap-1.5 rounded-2xl border border-brand-green/30 bg-brand-green/10 px-4 py-2 text-xs font-bold text-brand-green shrink-0 self-start">
-            <span>{ar ? `${SUSTAINABILITY_TARGET_MARKETS.length} سوقًا معتمدًا بالدراسة` : `${SUSTAINABILITY_TARGET_MARKETS.length} Verified Target Markets`}</span>
-          </span>
         </div>
       </div>
 
@@ -82,7 +78,7 @@ export function SustainabilityTargetMarkets({ ar = true }: SustainabilityTargetM
                 : "border-border/80 bg-secondary/80 text-foreground hover:border-brand-orange/50 hover:text-brand-orange"
             )}
           >
-            {ar ? "الأسواق ذات الأولوية القصوى (Tier 1 - 5 دول)" : "Priority Tier 1 (5 Markets)"}
+            {ar ? "الأسواق ذات الأولوية القصوى (Tier 1)" : "Priority Tier 1"}
           </button>
           <button
             type="button"
@@ -94,7 +90,7 @@ export function SustainabilityTargetMarkets({ ar = true }: SustainabilityTargetM
                 : "border-border/80 bg-secondary/80 text-foreground hover:border-brand-orange/50 hover:text-brand-orange"
             )}
           >
-            {ar ? "الأسواق الواعدة والمستهدفة (Tier 2 - 8 دول)" : "Priority Tier 2 (8 Markets)"}
+            {ar ? "الأسواق الواعدة والمستهدفة (Tier 2)" : "Priority Tier 2"}
           </button>
         </div>
 
