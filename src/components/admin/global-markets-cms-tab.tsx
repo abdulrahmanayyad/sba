@@ -497,11 +497,13 @@ export function GlobalMarketsCmsTab({ ar = true }: GlobalMarketsCmsTabProps) {
             <p className="font-head text-base font-bold text-slate-800 dark:text-white">
               {ar ? "لا توجد دراسات مسجلة بعد" : "No Studies Registered Yet"}
             </p>
-            <p className="text-xs text-slate-500 max-w-md mx-auto">
-              {ar
-                ? "استخدم زر \"استيراد JSON\" لإدراج ملف دراسة معد مسبقًا أو \"إضافة دراسة جديدة\" لإنشاء سجل دراسة يدويًا."
-                : "Use \"Import JSON\" to ingest a prepared study payload or \"New Study\" to register one directly."}
-            </p>
+            {sectorFilter !== "construction" && sectorFilter !== "food" && (
+              <p className="text-xs text-slate-500 max-w-md mx-auto">
+                {ar
+                  ? "استخدم زر \"استيراد JSON\" لإدراج ملف دراسة معد مسبقًا أو \"إضافة دراسة جديدة\" لإنشاء سجل دراسة يدويًا."
+                  : "Use \"Import JSON\" to ingest a prepared study payload or \"New Study\" to register one directly."}
+              </p>
+            )}
           </div>
         ) : sectorFilter === "all" ? (
           <div className="space-y-8">

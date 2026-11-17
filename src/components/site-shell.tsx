@@ -1,4 +1,4 @@
-import { ArrowUpRight, ChevronDown, Facebook, FileText, Globe, Handshake, Instagram, Linkedin, Mail, Menu, MessageSquare, Phone, ShieldAlert, TrendingUp, X } from "lucide-react";
+import { ArrowUpRight, Check, ChevronDown, Facebook, FileText, Globe, Handshake, Instagram, Linkedin, Mail, Menu, MessageSquare, Phone, ShieldAlert, TrendingUp, X } from "lucide-react";
 import { Link, useRouterState } from "@tanstack/react-router";
 
 import { SectorHeader } from "@/components/sectors/sector-header";
@@ -29,11 +29,13 @@ const aboutKeys = ["whoWeAre", "whatWeDo", "ourApproach", "ourValues", "whySba",
 
 function NavDropdown({
   label,
+  to,
   children,
   className,
   onNavigate,
 }: {
   label: React.ReactNode;
+  to?: string;
   children: (close: () => void) => React.ReactNode;
   className?: string;
   onNavigate?: () => void;
@@ -48,22 +50,51 @@ function NavDropdown({
       onKeyDown={(event) => { if (event.key === "Escape") close(); }}
       onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) close(); }}
     >
-      <button
-        type="button"
-        aria-expanded={open}
-        className={cn(
-          className,
-          "flex items-center gap-1 cursor-pointer transition-all duration-300",
-          open && "bg-white/40 text-brand-orange shadow-sm backdrop-blur-md"
-        )}
-        onClick={(event) => {
-          if (event.detail > 0 && window.matchMedia("(hover: hover)").matches) setOpen(true);
-          else setOpen((value) => !value);
-        }}
-      >
-        <span>{label}</span>
-        <ChevronDown aria-hidden="true" className={cn("size-3 transition-transform duration-200", open && "rotate-180")} />
-      </button>
+      {to ? (
+        <Link
+          to={to}
+          aria-expanded={open}
+          className={cn(
+            className,
+            "flex items-center gap-1 cursor-pointer transition-all duration-300",
+            open && "bg-white/40 text-brand-orange shadow-sm backdrop-blur-md"
+          )}
+          onClick={() => {
+            close();
+            onNavigate?.();
+          }}
+        >
+          <span>{label}</span>
+          <ChevronDown
+            aria-hidden="true"
+            className={cn("size-3 transition-transform duration-200", open && "rotate-180")}
+            onClick={(e) => {
+              if (typeof window !== "undefined" && window.matchMedia("(hover: none)").matches) {
+                e.preventDefault();
+                e.stopPropagation();
+                setOpen((prev) => !prev);
+              }
+            }}
+          />
+        </Link>
+      ) : (
+        <button
+          type="button"
+          aria-expanded={open}
+          className={cn(
+            className,
+            "flex items-center gap-1 cursor-pointer transition-all duration-300",
+            open && "bg-white/40 text-brand-orange shadow-sm backdrop-blur-md"
+          )}
+          onClick={(event) => {
+            if (event.detail > 0 && window.matchMedia("(hover: hover)").matches) setOpen(true);
+            else setOpen((value) => !value);
+          }}
+        >
+          <span>{label}</span>
+          <ChevronDown aria-hidden="true" className={cn("size-3 transition-transform duration-200", open && "rotate-180")} />
+        </button>
+      )}
       {open && (
         <div className="absolute top-full z-50 min-w-64 pt-2.5 start-0">
           <div
@@ -252,6 +283,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
       </Link>
       <NavDropdown
         label={messages.nav.about}
+        to="/about"
         className={cn(className, "whitespace-nowrap", isAboutActive && navPillActive)}
       >
         {(close) => aboutKeys.map((key) => (
@@ -302,53 +334,69 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
         label={isArabic ? "المزيد" : "More"}
         className={cn(className, "whitespace-nowrap", isMoreActive && navPillActive)}
       >
-        {(close) => (
-          <div className="flex flex-col gap-1 p-1">
-            <Link
-              to="/global-markets"
-              className={dropdownLink}
-              onClick={() => { close(); onNavigate?.(); }}
-            >
-              <div className="flex flex-col">
-                <span className="font-bold">{isArabic ? "الأسواق العالمية" : "Global Markets"}</span>
-                <span className="text-[11px] text-foreground/60">{isArabic ? "الدراسات السوقية وتحليلات القطاعات" : "Market research & strategic intelligence"}</span>
-              </div>
-            </Link>
+        {(close) => {
+          const moreItems = [
+            {
+              to: "/global-markets",
+              title: isArabic ? "الأسواق العالمية" : "Global Markets",
+              subtitle: isArabic ? "الدراسات السوقية وتحليلات القطاعات" : "Market research & strategic intelligence",
+              isActive: pathname.startsWith("/global-markets"),
+            },
+            {
+              to: "/trade",
+              title: isArabic ? "الفرص العالمية" : "Global Opportunities",
+              subtitle: isArabic ? "شبكة التجارة والأسواق الدولية" : "International trade & export network",
+              isActive: pathname === "/trade" || pathname.startsWith("/trade"),
+            },
+            {
+              to: "/investor-relations",
+              title: isArabic ? "الشراكات والاستثمار" : "Investment & Partnerships",
+              subtitle: isArabic ? "علاقات المستثمرين والتحالفات الكبرى" : "Investor relations & alliances",
+              isActive: pathname === "/investor-relations",
+            },
+            {
+              to: "/downloads",
+              title: isArabic ? "مركز الوثائق" : "Document Center",
+              subtitle: isArabic ? "الملفات المؤسسية والكتالوجات المعتمدة" : "Corporate profiles & catalogues",
+              isActive: pathname === "/downloads",
+            },
+          ];
 
-            <Link
-              to="/trade"
-              className={dropdownLink}
-              onClick={() => { close(); onNavigate?.(); }}
-            >
-              <div className="flex flex-col">
-                <span className="font-bold">{isArabic ? "الفرص العالمية" : "Global Opportunities"}</span>
-                <span className="text-[11px] text-foreground/60">{isArabic ? "شبكة التجارة والأسواق الدولية" : "International trade & export network"}</span>
-              </div>
-            </Link>
-
-            <Link
-              to="/investor-relations"
-              className={dropdownLink}
-              onClick={() => { close(); onNavigate?.(); }}
-            >
-              <div className="flex flex-col">
-                <span className="font-bold">{isArabic ? "الشراكات والاستثمار" : "Investment & Partnerships"}</span>
-                <span className="text-[11px] text-foreground/60">{isArabic ? "علاقات المستثمرين والتحالفات الكبرى" : "Investor relations & alliances"}</span>
-              </div>
-            </Link>
-
-            <Link
-              to="/downloads"
-              className={dropdownLink}
-              onClick={() => { close(); onNavigate?.(); }}
-            >
-              <div className="flex flex-col">
-                <span className="font-bold">{isArabic ? "مركز الوثائق" : "Document Center"}</span>
-                <span className="text-[11px] text-foreground/60">{isArabic ? "الملفات المؤسسية والكتالوجات المعتمدة" : "Corporate profiles & catalogues"}</span>
-              </div>
-            </Link>
-          </div>
-        )}
+          return (
+            <div className="flex flex-col gap-1 p-1">
+              {moreItems.map((item) => (
+                <Link
+                  key={item.to}
+                  to={item.to}
+                  className={cn(
+                    dropdownLink,
+                    item.isActive && "bg-brand-orange/15 border border-brand-orange/40 text-brand-orange font-bold shadow-xs"
+                  )}
+                  onClick={() => { close(); onNavigate?.(); }}
+                >
+                  <div className="flex items-center justify-between gap-2.5">
+                    <div className="flex items-center gap-2 min-w-0">
+                      {item.isActive && (
+                        <Check className="size-4 text-brand-orange shrink-0 stroke-[2.5]" />
+                      )}
+                      <div className="flex flex-col">
+                        <span className={cn("font-bold", item.isActive ? "text-brand-orange" : "text-foreground")}>
+                          {item.title}
+                        </span>
+                        <span className="text-[11px] text-foreground/60">{item.subtitle}</span>
+                      </div>
+                    </div>
+                    {item.isActive && (
+                      <span className="shrink-0 rounded-full bg-brand-orange text-white px-2 py-0.5 text-[10px] font-black">
+                        {isArabic ? "الصفحة الحالية" : "Current"}
+                      </span>
+                    )}
+                  </div>
+                </Link>
+              ))}
+            </div>
+          );
+        }}
       </NavDropdown>
       <Link
         to="/join/group"
@@ -365,53 +413,69 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
           isContactActive && "!bg-brand-orange !text-white shadow-md"
         )}
       >
-        {(close) => (
-          <div className="flex flex-col gap-1 p-1">
-            <Link
-              to="/request-consultation"
-              className={dropdownLink}
-              onClick={() => { close(); onNavigate?.(); }}
-            >
-              <div className="flex flex-col">
-                <span className="font-bold">{isArabic ? "طلب استشارة مجانية" : "Request a Free Consultation"}</span>
-                <span className="text-[11px] text-foreground/60">{isArabic ? "استشارة أعمال أولية لكافة القطاعات" : "Complimentary multi-sector guidance"}</span>
-              </div>
-            </Link>
+        {(close) => {
+          const contactItems = [
+            {
+              to: "/request-consultation",
+              title: isArabic ? "طلب استشارة مجانية" : "Request a Free Consultation",
+              subtitle: isArabic ? "استشارة أعمال أولية لكافة القطاعات" : "Complimentary multi-sector guidance",
+              isActive: pathname === "/request-consultation",
+            },
+            {
+              to: "/contact",
+              title: isArabic ? "تواصل معنا" : "Contact Information",
+              subtitle: isArabic ? "الاستفسارات العامة وطلبات الأعمال" : "General inquiries & business requests",
+              isActive: pathname === "/contact",
+            },
+            {
+              to: "/contact/complaints",
+              title: isArabic ? "الشكاوى والمقترحات" : "Complaints & Suggestions",
+              subtitle: isArabic ? "تقديم ومتابعة الشكاوى برقم مرجعي" : "Submit & track complaints with ref code",
+              isActive: pathname === "/contact/complaints" || pathname === "/complaints",
+            },
+            {
+              to: "/contact/opportunities",
+              title: isArabic ? "اعرض فرصتك" : "Submit Your Opportunity",
+              subtitle: isArabic ? "بوابة الشراكات والصفقات الاستثمارية" : "Partnership & investment portal",
+              isActive: pathname === "/contact/opportunities" || pathname === "/submit-opportunity",
+            },
+          ];
 
-            <Link
-              to="/contact"
-              className={dropdownLink}
-              onClick={() => { close(); onNavigate?.(); }}
-            >
-              <div className="flex flex-col">
-                <span className="font-bold">{isArabic ? "تواصل معنا" : "Contact Information"}</span>
-                <span className="text-[11px] text-foreground/60">{isArabic ? "الاستفسارات العامة وطلبات الأعمال" : "General inquiries & business requests"}</span>
-              </div>
-            </Link>
-
-            <Link
-              to="/contact/complaints"
-              className={dropdownLink}
-              onClick={() => { close(); onNavigate?.(); }}
-            >
-              <div className="flex flex-col">
-                <span className="font-bold">{isArabic ? "الشكاوى والمقترحات" : "Complaints & Suggestions"}</span>
-                <span className="text-[11px] text-foreground/60">{isArabic ? "تقديم ومتابعة الشكاوى برقم مرجعي" : "Submit & track complaints with ref code"}</span>
-              </div>
-            </Link>
-
-            <Link
-              to="/contact/opportunities"
-              className={dropdownLink}
-              onClick={() => { close(); onNavigate?.(); }}
-            >
-              <div className="flex flex-col">
-                <span className="font-bold">{isArabic ? "اعرض فرصتك" : "Submit Your Opportunity"}</span>
-                <span className="text-[11px] text-foreground/60">{isArabic ? "بوابة الشراكات والصفقات الاستثمارية" : "Partnership & investment portal"}</span>
-              </div>
-            </Link>
-          </div>
-        )}
+          return (
+            <div className="flex flex-col gap-1 p-1">
+              {contactItems.map((item) => (
+                <Link
+                  key={item.to}
+                  to={item.to}
+                  className={cn(
+                    dropdownLink,
+                    item.isActive && "bg-brand-orange/15 border border-brand-orange/40 text-brand-orange font-bold shadow-xs"
+                  )}
+                  onClick={() => { close(); onNavigate?.(); }}
+                >
+                  <div className="flex items-center justify-between gap-2.5">
+                    <div className="flex items-center gap-2 min-w-0">
+                      {item.isActive && (
+                        <Check className="size-4 text-brand-orange shrink-0 stroke-[2.5]" />
+                      )}
+                      <div className="flex flex-col">
+                        <span className={cn("font-bold", item.isActive ? "text-brand-orange" : "text-foreground")}>
+                          {item.title}
+                        </span>
+                        <span className="text-[11px] text-foreground/60">{item.subtitle}</span>
+                      </div>
+                    </div>
+                    {item.isActive && (
+                      <span className="shrink-0 rounded-full bg-brand-orange text-white px-2 py-0.5 text-[10px] font-black">
+                        {isArabic ? "الصفحة الحالية" : "Current"}
+                      </span>
+                    )}
+                  </div>
+                </Link>
+              ))}
+            </div>
+          );
+        }}
       </NavDropdown>
     </>
   );

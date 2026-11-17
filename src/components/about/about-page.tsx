@@ -95,9 +95,6 @@ export function AboutPage() {
                         <span className="font-head text-3xl sm:text-4xl font-black font-extrabold text-brand-orange drop-shadow-sm tracking-tight">
                           <AnimatedStatistic value={stat.value} />
                         </span>
-                        <span className="font-mono text-xs font-black font-extrabold text-foreground border border-border/80 bg-secondary/80 rounded-full px-2.5 py-0.5 shadow-xs">
-                          0{idx + 1}
-                        </span>
                       </div>
                       <h3 className="text-start font-head text-sm sm:text-base font-black font-extrabold text-foreground leading-snug">
                         {ar ? stat.labelAr : stat.label}

@@ -937,7 +937,7 @@ function ConstructionProjectsView({ ar }: { ar: boolean }) {
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {displayedProjects.map((proj, pIdx) => (
               <Reveal key={proj.id} delay={Math.min(pIdx * 0.03, 0.3)}>
-                <div 
+                <div
                   onClick={() => setActiveProject(proj)}
                   className="group flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-white/30 bg-background/70 shadow-sm backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-brand-orange/50 hover:shadow-xl cursor-pointer"
                 >
@@ -951,7 +951,7 @@ function ConstructionProjectsView({ ar }: { ar: boolean }) {
                         className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
-                      
+
                       {/* Top Badges */}
                       <div className="absolute top-3 end-3 flex items-center">
                         <span className="font-sans text-xs font-bold px-2.5 py-0.5 rounded-full bg-brand-orange text-white shadow-sm">
