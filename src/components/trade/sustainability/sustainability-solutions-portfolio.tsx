@@ -58,8 +58,8 @@ export function SustainabilitySolutionsPortfolio({ ar = true }: SustainabilitySo
             </h2>
             <p className="text-xs sm:text-sm text-muted-foreground mt-2 leading-relaxed max-w-4xl">
               {ar
-                ? "استعراض منظم لـ 6 فئات رئيسية للخدمات البيئية، مع التمييز الواضح والشفاف بين القدرات الذاتية، والخدمات المنفذة عبر تحالفات تقنية، والفرص الاستثمارية قيد التطوير المشترك."
-                : "Structured overview of 6 core environmental categories, transparently differentiating in-house capabilities, technical consortium deliveries, and co-development opportunities."}
+                ? "استعراض منظم للفئات الرئيسية للخدمات البيئية، مع التمييز الواضح بين القدرات الذاتية، والخدمات المنفذة عبر تحالفات تقنية، والفرص الاستثمارية قيد التطوير المشترك."
+                : "Structured overview of core environmental categories, differentiating in-house capabilities, technical consortium deliveries, and co-development opportunities."}
             </p>
           </div>
         </div>
