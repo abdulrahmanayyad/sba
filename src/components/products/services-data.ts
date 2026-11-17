@@ -1194,7 +1194,7 @@ export const executedConstructionProjects: ExecutedProject[] = [
     "locationAr": "العاصمة الإدارية الجديدة، مصر",
     "scopeEn": "Full turnkey civil, structural, facade glazing, and MEP engineering across 45,000 m² built-up area.",
     "scopeAr": "تنفيذ متكامل للأعمال المدنية والخرسانية والواجهات الزجاجية وشبكات الكهروميكانيك بمسطح 45,000 م².",
-    "image": "/BG/Contracting & Real Estate Development/Administrative Buildings & Commercial Centers.jpg",
+    "image": "/BG/Contracting & Real Estate Development/Commercial & Administrative Development.jpg",
     "statusEn": "Completed & Handed Over",
     "statusAr": "تم التسليم"
   },
@@ -1206,7 +1206,7 @@ export const executedConstructionProjects: ExecutedProject[] = [
     "locationAr": "القاهرة الكبرى، مصر",
     "scopeEn": "Specialized hospital civil construction, hermetic operating theaters, and medical gas pipeline networks.",
     "scopeAr": "أعمال إنشائية تخصصية، تجهيز غرف العمليات المعقمة الكبسولية وتمديد شبكات الغازات الطبية المركزية.",
-    "image": "/BG/Contracting & Real Estate Development/Hospital & Health Center Construction.jpg",
+    "image": "/BG/Contracting & Real Estate Development/Healthcare Facilities & Medical Fit-Out.jpg",
     "statusEn": "Operational",
     "statusAr": "قيد التشغيل"
   },
@@ -1218,7 +1218,7 @@ export const executedConstructionProjects: ExecutedProject[] = [
     "locationAr": "المنطقة الصناعية بالسويس، مصر",
     "scopeEn": "Reinforced deep pile foundations, pre-engineered steel frames (36m clear span), and laser-leveled industrial floors.",
     "scopeAr": "أساسات خوازيق عميقة، جمالونات فولاذية ببحور مفتوحة 36 مترًا، وأرضيات صناعية عالية التحمل ومسواة بالليزر.",
-    "image": "/BG/Contracting & Real Estate Development/Industrial Construction & Pre-Engineered Buildings.jpg",
+    "image": "/BG/Contracting & Real Estate Development/Oil & Gas Industrial Civil Infrastructure.jpg",
     "statusEn": "Completed",
     "statusAr": "تم الإنجاز"
   },
@@ -1230,7 +1230,7 @@ export const executedConstructionProjects: ExecutedProject[] = [
     "locationAr": "القاهرة الجديدة، مصر",
     "scopeEn": "Civil skeleton, architectural finishing, road paving, utility infrastructure, and integrated community landscape.",
     "scopeAr": "الهياكل الخرسانية، التشطيبات المعمارية الفاخرة، رصف الطرق وشبكات المرافق المتكاملة واللاندسكيب.",
-    "image": "/BG/Contracting & Real Estate Development/Residential Units & Housing Projects.jpg",
+    "image": "/BG/Contracting & Real Estate Development/Residential Development & Luxury Villas.jpg",
     "statusEn": "Delivered",
     "statusAr": "تم التسليم"
   }

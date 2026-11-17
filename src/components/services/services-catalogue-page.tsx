@@ -236,9 +236,21 @@ export function ServicesCataloguePage() {
                     {/* Service Image Banner */}
                     <div className="relative aspect-[16/10] w-full overflow-hidden bg-secondary">
                       <img
-                        src={service.image}
+                        src={encodeURI(service.image)}
                         alt={ar ? service.nameAr : service.nameEn}
                         loading="lazy"
+                        onError={(e) => {
+                          const target = e.currentTarget as HTMLImageElement;
+                          if (!target.dataset.retried) {
+                            target.dataset.retried = "1";
+                            const filename = service.image.split("/").pop();
+                            if (filename) {
+                              target.src = encodeURI(`/services/environmental/${filename}`);
+                              return;
+                            }
+                          }
+                          target.src = "/placeholder.svg";
+                        }}
                         className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                     </div>
@@ -346,6 +358,27 @@ export function ServicesCataloguePage() {
                   {ar ? activeServiceDetail.descriptionAr : activeServiceDetail.descriptionEn}
                 </DialogDescription>
               </DialogHeader>
+
+              {/* Service Hero Image */}
+              {activeServiceDetail.image && (
+                <div className="relative aspect-video w-full overflow-hidden rounded-2xl bg-secondary my-4">
+                  <img
+                    src={encodeURI(activeServiceDetail.image)}
+                    alt={ar ? activeServiceDetail.nameAr : activeServiceDetail.nameEn}
+                    className="size-full object-cover"
+                    onError={(e) => {
+                      const target = e.currentTarget as HTMLImageElement;
+                      const filename = activeServiceDetail.image.split("/").pop();
+                      if (filename && !target.dataset.retried) {
+                        target.dataset.retried = "1";
+                        target.src = encodeURI(`/services/environmental/${filename}`);
+                        return;
+                      }
+                      target.src = "/placeholder.svg";
+                    }}
+                  />
+                </div>
+              )}
 
               {/* Scope of Work */}
               <div className="mt-6">
