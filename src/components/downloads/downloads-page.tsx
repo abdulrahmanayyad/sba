@@ -190,7 +190,7 @@ export function DownloadsPage() {
                   : "border-slate-200/80 dark:border-white/10 bg-white/70 dark:bg-white/[0.03] text-foreground hover:bg-slate-100/80 dark:hover:bg-white/[0.08]"
               )}
             >
-              <div className="text-xs sm:text-sm font-extrabold font-mono leading-snug">Cat. {cat.code}</div>
+              <div className="text-xs sm:text-sm font-extrabold font-mono leading-snug">CAT. {cat.code}</div>
               <div className="text-[11px] sm:text-xs font-medium opacity-85 mt-1 line-clamp-2">{ar ? cat.titleAr : cat.titleEn}</div>
             </button>
           ))}
