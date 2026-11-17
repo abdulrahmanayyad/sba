@@ -16,9 +16,9 @@ const VOLUME_SCENARIOS = [
 export function ApparelScenarioCalculator({
   ar,
 }: ApparelScenarioCalculatorProps) {
-  const [unitPriceInput, setUnitPriceInput] = useState<string>("6");
   const [modelType, setModelType] = useState<"FOB" | "CM">("FOB");
   const [customQtyInput, setCustomQtyInput] = useState<string>("25000");
+  const [unitPriceInput, setUnitPriceInput] = useState<string>("6");
 
   const parsedPrice = Number(unitPriceInput);
   const unitPrice = Number.isFinite(parsedPrice) && parsedPrice >= 0 ? parsedPrice : 0;
@@ -46,29 +46,12 @@ export function ApparelScenarioCalculator({
         </div>
       </div>
 
-      {/* Controls */}
+      {/* Controls: Reordered as requested: نموذج التصنيع - كمية الإنتاج (قطعة/شهر) - سعر القطعة (دولار) */}
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {/* 1. Unit Price Input */}
-        <label className="block space-y-1.5 text-xs">
-          <span className="font-bold text-slate-700 dark:text-slate-200 block">
-            {ar
-              ? `سعر القطعة الافتراضي (${modelType} — دولار أمريكي):`
-              : `Assumed ${modelType} Unit Price (USD):`}
-          </span>
-          <input
-            type="number"
-            min="0"
-            step="0.25"
-            value={unitPriceInput}
-            onChange={(e) => setUnitPriceInput(e.target.value)}
-            className="w-full rounded-xl border border-slate-300 dark:border-white/20 bg-white dark:bg-slate-950/60 px-3.5 py-2 text-sm font-mono font-bold text-slate-900 dark:text-white focus:border-brand-green focus:outline-none"
-          />
-        </label>
-
-        {/* 2. Manufacturing Model FOB / CM */}
+        {/* 1. نموذج التصنيع */}
         <div className="space-y-1.5 text-xs">
           <span className="font-bold text-slate-700 dark:text-slate-200 block">
-            {ar ? "نموذج التصنيع للاختبار:" : "Commercial Scope Assumption:"}
+            {ar ? "نموذج التصنيع" : "Manufacturing Model"}
           </span>
           <div className="grid grid-cols-2 gap-2">
             <button
@@ -80,7 +63,7 @@ export function ApparelScenarioCalculator({
                   : "border-slate-200 dark:border-white/15 bg-white dark:bg-slate-800/60 text-slate-700 dark:text-slate-200 hover:border-brand-green hover:text-brand-green"
               }`}
             >
-              FOB ({ar ? "توريد كامل" : "Full-Package"})
+              {ar ? "نموذج FOB" : "FOB Model"}
             </button>
             <button
               type="button"
@@ -91,41 +74,44 @@ export function ApparelScenarioCalculator({
                   : "border-slate-200 dark:border-white/15 bg-white dark:bg-slate-800/60 text-slate-700 dark:text-slate-200 hover:border-brand-orange hover:text-brand-orange"
               }`}
             >
-              CM ({ar ? "تشغيل مصنعية" : "Cut & Make"})
+              {ar ? "نموذج CM" : "CM Model"}
             </button>
           </div>
         </div>
 
-        {/* 3. Custom Quantity Input */}
+        {/* 2. كمية الإنتاج (قطعة/شهر) - Without X button */}
         <label className="block space-y-1.5 text-xs">
           <span className="font-bold text-slate-700 dark:text-slate-200 block">
-            {ar ? "كمية الإنتاج المطلوبة (قطعة / شهرياً):" : "Custom Production Volume (pcs / mo):"}
+            {ar ? "كمية الإنتاج (قطعة/شهر)" : "Production Volume (pcs/month)"}
           </span>
-          <div className="relative">
-            <input
-              type="number"
-              min="1"
-              step="500"
-              placeholder={ar ? "أدخل أي كمية مخصصة" : "Enter any custom qty"}
-              value={customQtyInput}
-              onChange={(e) => setCustomQtyInput(e.target.value)}
-              className="w-full rounded-xl border border-slate-300 dark:border-white/20 bg-white dark:bg-slate-950/60 px-3.5 py-2 text-sm font-mono font-bold text-slate-900 dark:text-white focus:border-brand-green focus:outline-none"
-            />
-            {customQtyInput && (
-              <button
-                type="button"
-                onClick={() => setCustomQtyInput("")}
-                className="absolute end-2.5 top-1/2 -translate-y-1/2 text-xs text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 font-bold px-1 cursor-pointer"
-                title={ar ? "إعادة تعيين" : "Reset"}
-              >
-                ✕
-              </button>
-            )}
-          </div>
+          <input
+            type="number"
+            min="1"
+            step="500"
+            placeholder={ar ? "أدخل الكمية" : "Enter quantity"}
+            value={customQtyInput}
+            onChange={(e) => setCustomQtyInput(e.target.value)}
+            className="w-full rounded-xl border border-slate-300 dark:border-white/20 bg-white dark:bg-slate-950/60 px-3.5 py-2 text-sm font-mono font-bold text-slate-900 dark:text-white focus:border-brand-green focus:outline-none"
+          />
+        </label>
+
+        {/* 3. سعر القطعة (دولار) */}
+        <label className="block space-y-1.5 text-xs">
+          <span className="font-bold text-slate-700 dark:text-slate-200 block">
+            {ar ? "سعر القطعة (دولار)" : "Unit Price (USD)"}
+          </span>
+          <input
+            type="number"
+            min="0"
+            step="0.25"
+            value={unitPriceInput}
+            onChange={(e) => setUnitPriceInput(e.target.value)}
+            className="w-full rounded-xl border border-slate-300 dark:border-white/20 bg-white dark:bg-slate-950/60 px-3.5 py-2 text-sm font-mono font-bold text-slate-900 dark:text-white focus:border-brand-green focus:outline-none"
+          />
         </label>
       </div>
 
-      {/* Live Custom Calculation Box */}
+      {/* Live Custom Calculation Box (المربع اللي تحتهم مباشرة) */}
       {customQty > 0 && (
         <div className="rounded-2xl border-2 border-brand-green/30 bg-gradient-to-r from-brand-green/10 via-brand-green/5 to-transparent dark:from-brand-green/15 dark:via-brand-green/10 p-4 sm:p-5 transition-all duration-300 shadow-xs">
           <div className="flex flex-wrap items-center justify-between gap-3 mb-3 pb-3 border-b border-brand-green/20">
@@ -142,7 +128,7 @@ export function ApparelScenarioCalculator({
             </div>
             <div className="flex items-center gap-2">
               <span className="rounded-lg bg-brand-green px-2.5 py-1 text-xs font-bold text-white shadow-xs">
-                {modelType} — {modelType === "FOB" ? (ar ? "توريد كامل" : "Full-Package") : (ar ? "تشغيل مصنعية" : "Cut & Make")}
+                {ar ? (modelType === "FOB" ? "نموذج FOB" : "نموذج CM") : `${modelType} Model`}
               </span>
               <span className="font-mono text-xs font-bold text-slate-600 dark:text-slate-300">
                 @ ${unitPrice.toFixed(2)}
@@ -229,7 +215,7 @@ export function ApparelScenarioCalculator({
                           : "bg-slate-200/70 text-slate-800 dark:bg-white/10 dark:text-slate-100 group-hover:bg-brand-orange group-hover:text-white"
                     }`}
                   >
-                    {modelType}
+                    {ar ? (modelType === "FOB" ? "نموذج FOB" : "نموذج CM") : modelType}
                   </span>
                 </div>
                 <div className="font-head text-lg font-extrabold text-slate-900 dark:text-white">
