@@ -199,9 +199,9 @@ export function buildApparelAndFoodDocs() {
         ${glassTable(
           ['Division', 'Included Product Lines', 'Fabric Capabilities', 'Target MOQs'],
           [
-            ['Section 1: Kids & Newborn', 'Casual, Underwear, Homewear, Sportswear & Newborn', '100% Organic Combed Cotton, Interlock, Fleece', '400–1,000 pcs'],
-            ['Section 2: Women’s Wear', 'Underwear, Homewear & Pyjamas, Luxury Lingerie', 'Rayon, Linen, Viscose, Modal, Silk Satin', '400–800 pcs'],
-            ['Section 3: Men’s Wear', 'Casual, Classic, Formal Shirts, Homewear, Sportswear', 'High-Thread Poplin, Dobby, Pique, French Terry', '300–500 pcs']
+            ['Section 1: Kids & Newborn', 'Casual & Outdoor Wear, Underwear, Homewear, Sportswear & Newborn Wear', '100% Organic Combed Cotton, Interlock, Fleece', '400–1,000 pcs'],
+            ['Section 2: Women’s Wear', 'Underwear, Homewear, Nightwear', 'Rayon, Linen, Viscose, Modal, Silk Satin', '400–800 pcs'],
+            ['Section 3: Men’s Wear', 'Casual & Outdoor Wear, Classic Wear, Homewear, Sportswear', 'High-Thread Poplin, Dobby, Pique, French Terry', '300–500 pcs']
           ],
           ['25%', '35%', '25%', '15%']
         )}
@@ -217,7 +217,7 @@ export function buildApparelAndFoodDocs() {
           ${modelCardHtml({
             code: 'SBA-PRD-KID-CAS01',
             badge: "Kids' Wear",
-            title: 'Kids Casual Wear',
+            title: 'Kids Casual & Outdoor Wear',
             tagline: 'Tees, denim & twill pants, shorts, button-down shirts, coordinated 2/3-piece sets, jackets, and fleece hoodies.',
             image: '/Summer/Casual/2-5/Summer - Casual - (2-5) (1).jpg',
             fabrics: '100% Cotton, Combed Cotton, Denim, French Terry',
@@ -241,7 +241,7 @@ export function buildApparelAndFoodDocs() {
           ${modelCardHtml({
             code: 'SBA-PRD-KID-HOM01',
             badge: "Kids' Wear",
-            title: 'Kids Homewear & Pyjamas',
+            title: 'Kids Homewear',
             tagline: 'Two-piece sleepwear sets, cotton pyjamas, loungewear robes, nightgowns, and cozy winter fleece sleepwear.',
             image: '/Categories/Kids/1247 - 1248.jpg',
             fabrics: 'Single Jersey, Cotton/Spandex, Fleece',
@@ -262,7 +262,7 @@ export function buildApparelAndFoodDocs() {
           ${modelCardHtml({
             code: 'SBA-PRD-KID-SPO01',
             badge: "Kids' Wear",
-            title: 'Kids Sportswear & Gym Sets',
+            title: 'Kids Sportswear',
             tagline: 'Training tracksuits, PE uniform sets, athletic shorts, breathable Dry-Fit gym tees, and compression leggings.',
             image: '/Winter/Casual/Boys/3-6/Winter - Casual - (3-6) (1).jpg',
             fabrics: 'Moisture-Wicking Poly, Cotton Lycra',
@@ -275,7 +275,7 @@ export function buildApparelAndFoodDocs() {
             code: 'SBA-PRD-KID-NEW01',
             badge: 'Newborn Line',
             badgeColor: 'orange',
-            title: 'Newborn & Infant Essentials',
+            title: 'Newborn Wear',
             tagline: 'Bodysuits, footed rompers/sleepsuits, kimono baby grows, bibs, swaddle wraps, and hospital welcome sets.',
             image: '/Summer/Casual/2-5/Summer - Casual - (2-5) (2).jpg',
             fabrics: '100% Organic Cotton, Nickel-Free Snaps',
@@ -287,7 +287,7 @@ export function buildApparelAndFoodDocs() {
           ${modelCardHtml({
             code: 'SBA-PRD-WOM-UND01',
             badge: "Women's Wear",
-            title: 'Women’s Underwear & Intimates',
+            title: 'Women’s Underwear',
             tagline: 'Cotton camisoles, briefs, seamless boyshorts, bralettes, shaping basics, and multi-pack sets with laser-cut edges.',
             image: '/Categories/Lingerie/1001.jpeg',
             fabrics: 'Egyptian Cotton, Modal, Soft Lace, Elastane',
@@ -301,14 +301,14 @@ export function buildApparelAndFoodDocs() {
       `
         ${sectionHeader(
           'Section 2 (Cont.) & Section 3: Men’s Wear',
-          'Women’s Loungewear & Lingerie + Men’s Casual & Classic Lines',
+          'Women’s Homewear & Nightwear + Men’s Casual & Classic Lines',
           'Precision fit, trend-conscious designs, and verified private label execution.'
         )}
         <div style="display:flex; flex-direction:column; gap:8px;">
           ${modelCardHtml({
             code: 'SBA-PRD-WOM-HOM01',
             badge: "Women's Wear",
-            title: 'Women’s Homewear & Pyjamas',
+            title: 'Women’s Homewear',
             tagline: 'Buttoned pyjama sets, nightgowns, loungewear robes, oversized lounge tees, and cozy modal sweat sets.',
             image: '/Categories/Home Wear/2003 (1).jpg',
             fabrics: 'Viscose, Modal, Cotton Lycra, Satin',
@@ -320,7 +320,7 @@ export function buildApparelAndFoodDocs() {
           ${modelCardHtml({
             code: 'SBA-PRD-WOM-LNG01',
             badge: "Women's Wear",
-            title: 'Women’s Luxury Lingerie',
+            title: 'Women’s Nightwear',
             tagline: 'Babydolls, silk satin slips, lace nighties, chemises, kimono robes, and luxury bridal honeymoon collections.',
             image: '/Categories/Lingerie/1005.jpeg',
             fabrics: 'Silk Satin, Fine Chiffon, Lined French Lace',
@@ -333,7 +333,7 @@ export function buildApparelAndFoodDocs() {
             code: 'SBA-PRD-MEN-CAS01',
             badge: "Men's Wear",
             badgeColor: 'orange',
-            title: 'Men’s Casual Wear',
+            title: 'Men’s Casual & Outdoor Wear',
             tagline: 'Polo shirts (pique), basic & graphic tees, denim jeans, chino trousers, shorts, zip hoodies, and sweatshirts.',
             image: '/BG/Apparel Manufacturing/Specialized Production Lines.jpg',
             fabrics: '100% Combed Cotton, Pique, French Terry',
@@ -347,7 +347,7 @@ export function buildApparelAndFoodDocs() {
       `
         ${sectionHeader(
           'Section 3 (Cont.): Men’s Formal & Sportswear + Coordination',
-          'Men’s Classic Suits, Formal Poplin Shirts, and Active Sportswear',
+          'Men’s Classic Wear and Active Sportswear',
           'Single unified contract for full-package FOB export delivery at shipping ports.'
         )}
         <div style="display:flex; flex-direction:column; gap:8px;">
@@ -355,7 +355,7 @@ export function buildApparelAndFoodDocs() {
             code: 'SBA-PRD-MEN-FSH01',
             badge: "Men's Wear",
             badgeColor: 'orange',
-            title: 'Men’s Formal & Dress Shirts',
+            title: 'Men’s Classic Wear',
             tagline: 'Dedicated 100-machine facility producing 45,000 monthly dress shirts: Italian spread, button-down, and tuxedo collars.',
             image: '/BG/Apparel Manufacturing/Product Development & Sampling.jpg',
             fabrics: 'High-Thread Egyptian Cotton Poplin & Dobby',
@@ -368,7 +368,7 @@ export function buildApparelAndFoodDocs() {
             code: 'SBA-PRD-MEN-SPO01',
             badge: "Men's Wear",
             badgeColor: 'orange',
-            title: 'Men’s Sportswear & Training Gear',
+            title: 'Men’s Sportswear',
             tagline: 'Gym tanks, moisture-wicking tees, athletic training shorts, running joggers, and zip-up track jackets.',
             image: '/BG/Apparel Manufacturing/Production Volume & Scale.jpg',
             fabrics: 'Dry-Fit Polyester, Spandex, Elastane',
