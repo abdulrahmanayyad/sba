@@ -604,13 +604,12 @@ export function ApparelComparativePage({
             <table className="w-full text-xs text-start">
               <thead className="bg-slate-100/90 dark:bg-slate-800/80 text-slate-800 dark:text-slate-100">
                 <tr>
-                  <th className="px-3.5 py-3 font-extrabold">{ar ? "الدولة" : "Country"}</th>
-                  <th className="px-3.5 py-3 font-extrabold">{ar ? "الإقليم" : "Region"}</th>
-                  <th className="px-3.5 py-3 font-extrabold">{ar ? "الأولوية" : "Priority"}</th>
-                  <th className="px-3.5 py-3 font-extrabold">{ar ? "الدور السوقي" : "Market Role"}</th>
-                  <th className="px-3.5 py-3 font-extrabold">{ar ? "المؤشر / السنة" : "Indicator / Year"}</th>
-                  <th className="px-3.5 py-3 font-extrabold">{ar ? "حالة واكتمال البيانات" : "Data Completeness & Scope"}</th>
-                  <th className="px-3.5 py-3 font-extrabold">{ar ? "الجهات المستهدفة (غير مؤكدة)" : "Target Accounts (Unconfirmed)"}</th>
+                  <th className="px-2.5 py-3 font-extrabold whitespace-nowrap w-[14%]">{ar ? "الدولة" : "Country"}</th>
+                  <th className="px-2 py-3 font-extrabold whitespace-nowrap w-[11%]">{ar ? "الإقليم" : "Region"}</th>
+                  <th className="px-1.5 py-3 font-extrabold text-center whitespace-nowrap w-[6%]">{ar ? "الأولوية" : "Priority"}</th>
+                  <th className="px-2 py-3 font-extrabold text-center whitespace-nowrap w-[12%]">{ar ? "الدور السوقي" : "Market Role"}</th>
+                  <th className="px-2.5 py-3 font-extrabold whitespace-nowrap w-[13%]">{ar ? "المؤشر / السنة" : "Indicator / Year"}</th>
+                  <th className="px-4 py-3 font-extrabold w-[44%] min-w-[320px]">{ar ? "الجهات المستهدفة" : "Target Accounts"}</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-200/70 dark:divide-white/10">
@@ -618,13 +617,22 @@ export function ApparelComparativePage({
                   const regionMeta = APPAREL_SUBREGIONS_META.find((r) => r.id === s.apparelSubRegion);
                   const roleCfg = s.marketRole ? ROLE_LABELS[s.marketRole] : null;
                   const prioCls = s.priorityGrade ? PRIORITY_BADGE_MAP[s.priorityGrade] : "";
+                  const buyers = (ar ? s.sections?.potentialBuyers?.bulletsAr : s.sections?.potentialBuyers?.bulletsEn) || [];
+                  const cleanBuyers = buyers
+                    .slice(0, 3)
+                    .map((b) =>
+                      ar
+                        ? b.replace(/ \(جهة مستهدفة محتملة\)$/, "").trim()
+                        : b.replace(/ \(Prospective Target Account\)$/, "").trim()
+                    );
+
                   return (
                     <tr key={s.id} className="hover:bg-slate-50/80 dark:hover:bg-white/5 align-top">
-                      <td className="px-3.5 py-3 font-bold whitespace-nowrap">
+                      <td className="px-2.5 py-3 font-bold whitespace-nowrap">
                         <Link
                           to="/global-markets/$sector/$slug"
                           params={{ sector: s.sector || "garment", slug: s.slug }}
-                          className="inline-flex items-center gap-2 text-slate-900 dark:text-white hover:text-brand-green"
+                          className="inline-flex items-center gap-1.5 text-slate-900 dark:text-white hover:text-brand-green"
                         >
                           {s.countryCode && (
                             <img
@@ -634,45 +642,51 @@ export function ApparelComparativePage({
                               loading="lazy"
                             />
                           )}
-                          <span>{ar ? s.countryNameAr : s.countryNameEn}</span>
+                          <span className="text-xs">{ar ? s.countryNameAr : s.countryNameEn}</span>
                         </Link>
                       </td>
-                      <td className="px-3.5 py-3 text-slate-600 dark:text-slate-300 whitespace-nowrap">
+                      <td className="px-2 py-3 text-slate-600 dark:text-slate-300 whitespace-nowrap text-[11px]">
                         {regionMeta ? (ar ? regionMeta.titleAr : regionMeta.titleEn) : "—"}
                       </td>
-                      <td className="px-3.5 py-3 whitespace-nowrap">
+                      <td className="px-1.5 py-3 text-center whitespace-nowrap">
                         {s.priorityGrade && (
                           <span className={cn("inline-flex rounded-full border px-2 py-0.5 text-[10px] font-extrabold", prioCls)}>
                             {s.priorityGrade}
                           </span>
                         )}
                       </td>
-                      <td className="px-3.5 py-3 whitespace-nowrap">
+                      <td className="px-2 py-3 text-center whitespace-nowrap">
                         {roleCfg && (
                           <span className={cn("inline-flex rounded-full border px-2 py-0.5 text-[10px] font-bold", roleCfg.badgeClass)}>
                             {ar ? roleCfg.ar : roleCfg.en}
                           </span>
                         )}
                       </td>
-                      <td className="px-3.5 py-3 font-mono whitespace-nowrap">
+                      <td className="px-2.5 py-3 font-mono whitespace-nowrap text-xs">
                         {s.dataBasis === "pending_verification" ? (
-                          <span className="text-amber-700 dark:text-amber-300 font-semibold font-sans">
+                          <span className="text-amber-700 dark:text-amber-300 font-semibold font-sans text-[11px]">
                             {ar ? "قيد التحقق" : "Pending Verification"}
                           </span>
                         ) : (
                           <div>
                             <span className="font-bold text-slate-900 dark:text-white">{s.tradeIndicatorDisplay}</span>
-                            <span className="text-slate-500 ms-1.5">({s.tradeIndicatorYear})</span>
+                            <span className="text-slate-500 ms-1 text-[11px]">({s.tradeIndicatorYear})</span>
                           </div>
                         )}
                       </td>
-                      <td className="px-3.5 py-3 text-[11px] text-slate-600 dark:text-slate-300 min-w-[220px]">
-                        {ar ? s.dataCompletenessAr : s.dataCompletenessEn}
-                      </td>
-                      <td className="px-3.5 py-3 text-[11px] text-slate-600 dark:text-slate-300 min-w-[220px]">
-                        {(ar
-                          ? s.sections?.potentialBuyers?.bulletsAr?.slice(0, 3).map((b) => b.replace(/ \(جهة مستهدفة محتملة\)$/, "")).join(" · ")
-                          : s.sections?.potentialBuyers?.bulletsEn?.slice(0, 3).map((b) => b.replace(/ \(Prospective Target Account\)$/, "")).join(" · ")) || "—"}
+                      <td className="px-4 py-3 text-xs text-slate-700 dark:text-slate-200 leading-relaxed">
+                        {cleanBuyers.length > 0 ? (
+                          <div className="space-y-1.5">
+                            {cleanBuyers.map((buyer, bIdx) => (
+                              <div key={bIdx} className="flex items-start gap-1.5">
+                                <span className="size-1 rounded-full bg-brand-green mt-1.5 shrink-0" />
+                                <span className="leading-relaxed">{buyer}</span>
+                              </div>
+                            ))}
+                          </div>
+                        ) : (
+                          "—"
+                        )}
                       </td>
                     </tr>
                   );
