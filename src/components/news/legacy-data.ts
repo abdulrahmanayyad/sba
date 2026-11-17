@@ -271,7 +271,7 @@ export const HISTORICAL_ARTICLES_2010_2020: HistoricalArticle[] = [
 Throughout 2010, alternative procurement and funding models gained traction across Egyptian planning circles, particularly Public-Private Partnerships (PPPs), recognized as an instrumental mechanism to attract institutional capital into large-scale civic utilities.
 
 This transformative era reinforced the decisive role of rigorous engineering oversight, value engineering, precision cost management, and multidisciplinary contracting standards in creating scalable, long-term civil infrastructure.`,
-    image: "/historical/sba-historical-01-infrastructure-investment.jpg",
+    image: "/News Background/News (40).jpg",
     imageAltAr: "تطوير البنية التحتية ومشروعات التشييد في مصر عام 2010",
     imageAltEn: "Civil infrastructure and contracting investments in Egypt 2010",
     readingTimeAr: "3 دقائق للقراءة",
@@ -308,7 +308,7 @@ This transformative era reinforced the decisive role of rigorous engineering ove
 Effective environmental stewardship requires migrating beyond reactive remediation toward closed-loop systems encompassing waste minimization at source, automated sorting, materials valorization, and specialized treatment protocols.
 
 Embedding structured environmental impact parameters into industrial plants and urban centers emerged as an essential step toward balancing economic productivity with long-term ecological resilience.`,
-    image: "/historical/sba-historical-02-environmental-waste-management.jpg",
+    image: "/News Background/News (41).jpg",
     imageAltAr: "إدارة المخلفات والحلول البيئية المستدامة 2011",
     imageAltEn: "Municipal waste recycling and environmental management 2011",
     readingTimeAr: "3 دقائق للقراءة",
@@ -344,7 +344,7 @@ Embedding structured environmental impact parameters into industrial plants and 
 Commercial continuity across bullion and retail markets hinges upon verifiable provenance, certified hallmarks, real-time market hedging, stringent inventory security, and unwavering adherence to regulatory oversight.
 
 Cultivating enduring client trust and professional relationship management forms the essential foundation for institutional endurance and commercial repute across generational market cycles.`,
-    image: "/historical/sba-historical-03-gold-jewelry-supply-chain.jpg",
+    image: "/News Background/News (42).jpg",
     imageAltAr: "تجارة الذهب والمجوهرات وإدارة سلاسل التوريد 2012",
     imageAltEn: "Gold jewelry craftsmanship and commercial supply chain 2012",
     readingTimeAr: "3 دقائق للقراءة",
@@ -380,7 +380,7 @@ Cultivating enduring client trust and professional relationship management forms
 Civil infrastructure encompasses interwoven disciplines—transportation corridors, power generation, water distribution, and sewage networks—each forming a direct prerequisite for subsequent real estate master developments.
 
 Executing major civil undertakings mandates meticulous synthesis between structural engineering, capital expenditure planning, and rigorous quality assurance, underscoring the necessity for multidisciplinary contracting capabilities.`,
-    image: "/historical/sba-historical-04-construction-infrastructure-impact.jpg",
+    image: "/News Background/News (43).jpg",
     imageAltAr: "مشروعات البنية التحتية وأثرها على قطاع المقاولات 2013",
     imageAltEn: "Major civil infrastructure and contracting engineering 2013",
     readingTimeAr: "3 دقائق للقراءة",
@@ -417,7 +417,7 @@ Executing major civil undertakings mandates meticulous synthesis between structu
 Creating viable new communities extends well beyond building construction; it demands coherent civil planning uniting road grids, utility conduits, power stations, public amenities, and landscaped buffer zones.
 
 Synergy between real estate investment, general contracting execution, and prime architectural finishing proves vital in delivering long-term functional value and structural longevity.`,
-    image: "/historical/sba-historical-05-urban-development-communities.jpg",
+    image: "/News Background/News (44).jpg",
     imageAltAr: "التطوير العمراني والمجتمعات الجديدة في مصر 2014",
     imageAltEn: "Urban master planning and contemporary community development 2014",
     readingTimeAr: "3 دقائق للقراءة",
@@ -453,7 +453,7 @@ Synergy between real estate investment, general contracting execution, and prime
 Operational success across the food sector depends heavily upon resilient supply chains, stringent food safety standards (HACCP/ISO), humidity-controlled cold storage, and sanitary bulk transit.
 
 Commercial scaling necessitates robust distribution networks, durable producer-exporter alliances, and continuous alignment with evolving consumer preferences in Arab and African markets.`,
-    image: "/historical/sba-historical-06-food-processing-manufacturing.jpg",
+    image: "/News Background/News (45).jpg",
     imageAltAr: "الصناعات الغذائية والتعبئة والتوزيع والتجارة 2015",
     imageAltEn: "Agro-food processing, packaging, and commercial trade 2015",
     readingTimeAr: "3 دقائق للقراءة",
@@ -490,7 +490,7 @@ Commercial scaling necessitates robust distribution networks, durable producer-e
 Modern supply chain governance encompasses automated material requirements planning, vendor qualification, batch traceability, lean inventory controls, and reliable freight dispatch.
 
 Synergistic integration between primary manufacturing operations and commercial distribution fosters heightened responsiveness to demand fluctuations, curtails idle inventory carrying costs, and optimizes shop-floor utilization.`,
-    image: "/historical/sba-historical-07-industrial-development-supply-chains.jpg",
+    image: "/News Background/News (46).jpg",
     imageAltAr: "تطور الصناعة وسلاسل الإمداد والتخزين والتوزيع 2016",
     imageAltEn: "Industrial supply chain logistics and automated factory warehousing 2016",
     readingTimeAr: "3 دقائق للقراءة",
@@ -526,7 +526,7 @@ Synergistic integration between primary manufacturing operations and commercial 
 Global industrial parity requires systematic capital investments in automated tooling, lean labor productivity, precision quality assurance, and modern technical product packaging.
 
 Securing sustainable footholds in international procurement networks necessitates absolute compliance with global technical specifications, production throughput reliability, and strict adherence to delivery timetables.`,
-    image: "/historical/sba-historical-08-local-manufacturing-competitiveness.jpg",
+    image: "/News Background/News (47).jpg",
     imageAltAr: "التصنيع المحلي والقدرة التنافسية وتطوير المنتجات المصرية 2017",
     imageAltEn: "Local manufacturing and competitive industrial production 2017",
     readingTimeAr: "3 دقائق للقراءة",
@@ -563,7 +563,7 @@ Securing sustainable footholds in international procurement networks necessitate
 Core sustainable operating practices encompass water recirculation, energy-efficient thermal systems, segregated hazardous waste handling, and specialized engineering protocols curbing carbon footprints.
 
 Within this expanding industrial discipline, the year 2018 witnessed the founding of the Sustainable Environment company as part of the historical business evolution that subsequently consolidated under the unified corporate umbrella of Sami Bin Ayyad Group.`,
-    image: "/historical/sba-historical-09-environmental-sustainability-resources.jpg",
+    image: "/News Background/News (48).jpg",
     imageAltAr: "الاستدامة البيئية وإدارة الموارد الطبيعية 2018",
     imageAltEn: "Environmental sustainability and natural resource engineering 2018",
     readingTimeAr: "3 دقائق للقراءة",
@@ -599,7 +599,7 @@ Within this expanding industrial discipline, the year 2018 witnessed the foundin
 Sustained international expansion depends upon cohesive variables: supply chain stability, zero-defect batch compliance, competitive cost modeling, scalable volume fulfillment, and institutional commercial relationships.
 
 Linking primary domestic production with structured foreign export channels creates fertile ground for regional competitiveness across Arab, European, and African trade corridors.`,
-    image: "/historical/sba-historical-10-manufacturing-international-trade.jpg",
+    image: "/News Background/News (49).jpg",
     imageAltAr: "التصنيع والتجارة الخارجية والصادرات المصرية 2019",
     imageAltEn: "Maritime container shipping and manufactured goods export trade 2019",
     readingTimeAr: "3 دقائق للقراءة",
@@ -636,7 +636,7 @@ Linking primary domestic production with structured foreign export channels crea
 This pivotal phase underscored the existential importance of supplier multi-sourcing, dynamic inventory buffers, accelerated digital workflows, and battle-tested business continuity planning.
 
 Navigating the crisis reinforced the priority of forward risk mitigation, demonstrating that organizational adaptability and operational agility are indispensable prerequisites for sustained commercial resilience.`,
-    image: "/historical/sba-historical-11-supply-chain-resilience-continuity.jpg",
+    image: "/News Background/News (50).jpg",
     imageAltAr: "إعادة تشكيل سلاسل الإمداد ومرونة الأعمال في عام 2020",
     imageAltEn: "Supply chain resilience and global business continuity 2020",
     readingTimeAr: "3 دقائق للقراءة",
