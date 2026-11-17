@@ -22,7 +22,6 @@ import {
   GEO_REGIONS_ORDER,
   GLOBAL_MARKET_SECTORS,
   SECTOR_ALLOWED_REGIONS,
-  STUDY_SECTION_BLUEPRINT,
   STUDY_STATUS_LABELS,
   type GlobalMarketSectorId,
   type StudyStatus,
@@ -553,23 +552,6 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
                 <span>{ar ? "إضافة أو استيراد دراسة جديدة" : "Import or Add Study"}</span>
               </Link>
             </div>
-
-            <div className="pt-4 border-t border-slate-200/70 dark:border-white/10">
-              <p className="text-xs font-bold text-slate-700 dark:text-slate-200 mb-3">
-                {ar ? "المحاور المدعومة عند نشر كل دراسة:" : "Supported Analytical Structure Per Study:"}
-              </p>
-              <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-                {STUDY_SECTION_BLUEPRINT.map((bp) => (
-                  <div
-                    key={bp.key}
-                    className="flex items-center gap-2 rounded-xl border border-slate-200/70 dark:border-white/10 bg-white/80 dark:bg-white/5 px-3 py-2 text-xs text-slate-700 dark:text-slate-300"
-                  >
-                    <span className="font-mono text-[10px] font-extrabold text-slate-500">{String(bp.order).padStart(2, "0")}</span>
-                    <span className="font-semibold">{ar ? bp.titleAr : bp.titleEn}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
         ) : (
           <div className="space-y-6">
@@ -577,11 +559,8 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
               <div className="flex items-center gap-2">
                 <Layers className="size-4 text-brand-green" />
                 <h2 className="font-head text-base sm:text-lg font-extrabold text-slate-900 dark:text-white">
-                  {ar ? "الدراسات الشاملة" : "Comprehensive Studies"}
+                  {ar ? "جميع الدراسات" : "All Studies"}
                 </h2>
-                <span className="rounded-full bg-brand-green/10 text-brand-green px-2.5 py-0.5 text-xs font-extrabold">
-                  {filteredStudies.length}
-                </span>
               </div>
             </div>
 
