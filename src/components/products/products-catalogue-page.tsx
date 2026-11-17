@@ -102,8 +102,8 @@ export function ProductsCataloguePage() {
         key: "kids",
         titleAr: "القسم الأول: ملابس الأطفال وحديثي الولادة",
         titleEn: "Section 1: Kids & Newborn Wear",
-        subtitleAr: "5 تصنيفات معتمدة للتصنيع والتوريد (كاجوال، أندر وير، هوم وير، رياضي وأطقم تمارين، حديثي الولادة)",
-        subtitleEn: "5 certified manufacturing lines (Casual, Underwear, Homewear, Sportswear, Newborn)",
+        subtitleAr: "5 تصنيفات معتمدة للتصنيع والتوريد (ملابس الخروج، الملابس الداخلية، الملابس المنزلية، الملابس الرياضية، ملابس حديثي الولادة)",
+        subtitleEn: "5 certified manufacturing lines (Casual Wear, Underwear, Homewear, Sportswear, Newborn Wear)",
         badgeAr: "أزياء أطفالي",
         badgeEn: "Kids' Wear",
         products: filteredProducts.filter((p) => p.mainDepartmentEn === "Kids & Baby Wear"),
@@ -112,8 +112,8 @@ export function ProductsCataloguePage() {
         key: "women",
         titleAr: "القسم الثاني: الملابس النسائية",
         titleEn: "Section 2: Women’s Wear",
-        subtitleAr: "3 تصنيفات معتمدة ومخصصة (الأندر وير، الهوم وير والبيجامات، واللانجري)",
-        subtitleEn: "3 certified lines (Underwear, Homewear & Pyjamas, Lingerie)",
+        subtitleAr: "3 تصنيفات معتمدة ومخصصة (الملابس الداخلية، الملابس المنزلية، ملابس النوم)",
+        subtitleEn: "3 certified lines (Underwear, Homewear, Nightwear)",
         badgeAr: "أزياء نسائية",
         badgeEn: "Women's Wear",
         products: filteredProducts.filter((p) => p.mainDepartmentEn === "Women's Wear"),
@@ -122,8 +122,8 @@ export function ProductsCataloguePage() {
         key: "men",
         titleAr: "القسم الثالث: الملابس الرجالية",
         titleEn: "Section 3: Men’s Wear",
-        subtitleAr: "5 تصنيفات متكاملة (الكاجوال، الكلاسيك، القمصان الرسمي، الهوم وير، الرياضي وأطقم التمرين)",
-        subtitleEn: "5 comprehensive categories (Casual, Classic, Formal Shirts, Homewear, Sportswear & Gym)",
+        subtitleAr: "4 تصنيفات متكاملة (ملابس الخروج، الملابس الكلاسيك، الملابس المنزلية، الملابس الرياضية)",
+        subtitleEn: "4 comprehensive categories (Casual Wear, Classic Wear, Homewear, Sportswear)",
         badgeAr: "أزياء رجالية",
         badgeEn: "Men's Wear",
         products: filteredProducts.filter((p) => p.mainDepartmentEn === "Men's Wear"),
@@ -295,28 +295,26 @@ export function ProductsCataloguePage() {
         className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-white/20 bg-background/85 shadow-md backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.22)]"
       >
         <div>
-          {/* Product Image — only rendered for non-apparel products */}
-          {!isApparel && (
-            <div className="relative aspect-[16/11] w-full overflow-hidden bg-secondary">
-              <img
-                src={product.image}
-                alt={ar ? product.nameAr : product.nameEn}
-                loading="lazy"
-                className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-            </div>
-          )}
+          {/* Product Image — rendered across all categories */}
+          <div className="relative aspect-[16/11] w-full overflow-hidden bg-secondary">
+            <img
+              src={product.image}
+              alt={ar ? product.nameAr : product.nameEn}
+              loading="lazy"
+              onError={(e) => {
+                // Graceful fallback if image file is not yet added
+                (e.currentTarget as HTMLImageElement).src = "/placeholder.svg";
+              }}
+              className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+          </div>
 
           {/* Content */}
           <div className="p-6">
             {isApparel && (
-              <div className="flex items-center justify-between mb-3 pb-2 border-b border-border/40">
+              <div className="flex items-center justify-center mb-3 pb-2 border-b border-border/40">
                 <span className="font-mono text-xs font-bold text-brand-orange bg-brand-orange/10 px-2.5 py-0.5 rounded-full">
                   {product.code}
-                </span>
-                <span className="text-xs text-muted-foreground flex items-center gap-1">
-                  <span>{product.originFlag}</span>
-                  <span>{ar ? product.originAr : product.originEn}</span>
                 </span>
               </div>
             )}
@@ -862,10 +860,12 @@ export function ProductsCataloguePage() {
                   <span className="rounded-full bg-brand-orange px-3 py-0.5 text-xs font-bold text-white font-mono">
                     {activeProductDetail.code}
                   </span>
-                  <span className="text-xs text-muted-foreground flex items-center gap-1">
-                    <span>{activeProductDetail.originFlag}</span>
-                    <span>{ar ? activeProductDetail.originAr : activeProductDetail.originEn}</span>
-                  </span>
+                  {activeProductDetail.sector !== "apparel" && (
+                    <span className="text-xs text-muted-foreground flex items-center gap-1">
+                      <span>{activeProductDetail.originFlag}</span>
+                      <span>{ar ? activeProductDetail.originAr : activeProductDetail.originEn}</span>
+                    </span>
+                  )}
                 </div>
                 <DialogTitle className="font-head text-xl sm:text-2xl font-black text-foreground">
                   {ar ? activeProductDetail.nameAr : activeProductDetail.nameEn}
@@ -875,15 +875,16 @@ export function ProductsCataloguePage() {
                 </DialogDescription>
               </DialogHeader>
 
-              {activeProductDetail.sector !== "apparel" && (
-                <div className="mt-6 aspect-video w-full rounded-2xl overflow-hidden bg-secondary">
-                  <img
-                    src={activeProductDetail.image}
-                    alt={ar ? activeProductDetail.nameAr : activeProductDetail.nameEn}
-                    className="size-full object-cover"
-                  />
-                </div>
-              )}
+              <div className="mt-6 aspect-video w-full rounded-2xl overflow-hidden bg-secondary">
+                <img
+                  src={activeProductDetail.image}
+                  alt={ar ? activeProductDetail.nameAr : activeProductDetail.nameEn}
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = "/placeholder.svg";
+                  }}
+                  className="size-full object-cover"
+                />
+              </div>
 
               <div className="mt-6 space-y-4">
                 <div>

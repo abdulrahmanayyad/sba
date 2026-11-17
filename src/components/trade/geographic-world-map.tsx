@@ -56,6 +56,7 @@ export function GeographicWorldMap({
   const [isDragging, setIsDragging] = useState(false);
   const isScrollingRef = useRef(false);
   const scrollTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const hoverFrameRef = useRef<number | null>(null);
 
   useEffect(() => {
     const onScroll = () => {
@@ -69,8 +70,29 @@ export function GeographicWorldMap({
     return () => {
       window.removeEventListener("scroll", onScroll);
       if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
+      if (hoverFrameRef.current) cancelAnimationFrame(hoverFrameRef.current);
     };
   }, []);
+
+  const handleMarkerEnter = (code: string) => {
+    if (isScrollingRef.current) return;
+    if (hoverFrameRef.current) {
+      cancelAnimationFrame(hoverFrameRef.current);
+      hoverFrameRef.current = null;
+    }
+    setHoveredCode((prev) => (prev === code ? prev : code));
+  };
+
+  const handleMarkerLeave = (code: string) => {
+    if (isScrollingRef.current) return;
+    if (hoverFrameRef.current) {
+      cancelAnimationFrame(hoverFrameRef.current);
+    }
+    hoverFrameRef.current = requestAnimationFrame(() => {
+      setHoveredCode((prev) => (prev === code ? null : prev));
+      hoverFrameRef.current = null;
+    });
+  };
   const dragStartRef = useRef<{
     clientX: number;
     clientY: number;
@@ -201,14 +223,14 @@ export function GeographicWorldMap({
   // Inverse scale keeps pins sharp without bloating when zooming in
   const pinScale = 1 / Math.pow(clampedZoom, 0.7);
 
-  // Sort markers so non-selected render first and active/hovered render on top
+  // Stable marker list sorted so active marker renders on top without DOM thrashing on hover
   const orderedMarkers = useMemo(() => {
     return [...projectedMarkers].sort((a, b) => {
-      const scoreA = a.code === activeCode ? 2 : a.code === hoveredCode ? 1 : 0;
-      const scoreB = b.code === activeCode ? 2 : b.code === hoveredCode ? 1 : 0;
-      return scoreA - scoreB;
+      const isActA = a.code === activeCode ? 1 : 0;
+      const isActB = b.code === activeCode ? 1 : 0;
+      return isActA - isActB;
     });
-  }, [projectedMarkers, activeCode, hoveredCode]);
+  }, [projectedMarkers, activeCode]);
 
   const findCountryMarker = (iso2: string, iso3: string) => {
     return (
@@ -306,18 +328,6 @@ export function GeographicWorldMap({
             <stop offset="55%" stopColor="#0ea5e9" />
             <stop offset="100%" stopColor="#ff7a00" />
           </linearGradient>
-
-          <filter id="sbaArcGlow" x="-30%" y="-30%" width="160%" height="160%">
-            <feGaussianBlur stdDeviation="2.5" result="blur" />
-            <feMerge>
-              <feMergeNode in="blur" />
-              <feMergeNode in="SourceGraphic" />
-            </feMerge>
-          </filter>
-
-          <filter id="sbaPinShadow" x="-50%" y="-50%" width="200%" height="200%">
-            <feDropShadow dx="0" dy="1.5" stdDeviation="1.2" floodColor="#0f172a" floodOpacity="0.28" />
-          </filter>
         </defs>
 
         {/* Subtle Geographic Graticule (Lat/Lng Curves) */}
@@ -378,12 +388,10 @@ export function GeographicWorldMap({
                   if (matchedMarker) onSelectMarker(matchedMarker.code);
                 }}
                 onMouseEnter={() => {
-                  if (isScrollingRef.current) return;
-                  if (matchedMarker) setHoveredCode(matchedMarker.code);
+                  if (matchedMarker) handleMarkerEnter(matchedMarker.code);
                 }}
                 onMouseLeave={() => {
-                  if (isScrollingRef.current) return;
-                  if (matchedMarker) setHoveredCode((prev) => (prev === matchedMarker.code ? null : prev));
+                  if (matchedMarker) handleMarkerLeave(matchedMarker.code);
                 }}
               />
             );
@@ -397,27 +405,18 @@ export function GeographicWorldMap({
               d={activeArcPath}
               fill="none"
               stroke="url(#sbaRouteArcGrad)"
-              strokeWidth={4 / clampedZoom}
-              strokeOpacity="0.28"
+              strokeWidth={3.5 / clampedZoom}
+              strokeOpacity="0.3"
               strokeLinecap="round"
-              filter="url(#sbaArcGlow)"
             />
             <path
               d={activeArcPath}
               fill="none"
-              stroke="url(#sbaRouteArcGrad)"
-              strokeWidth={2 / clampedZoom}
+              stroke="#ff7a00"
+              strokeWidth={1.8 / clampedZoom}
               strokeLinecap="round"
-              strokeDasharray={`${5 / clampedZoom} ${3 / clampedZoom}`}
-            >
-              <animate
-                attributeName="stroke-dashoffset"
-                from={`${16 / clampedZoom}`}
-                to="0"
-                dur="1.4s"
-                repeatCount="indefinite"
-              />
-            </path>
+              strokeDasharray={`${6 / clampedZoom} ${4 / clampedZoom}`}
+            />
           </g>
         )}
 
@@ -426,16 +425,15 @@ export function GeographicWorldMap({
           transform={`translate(${originPoint.x.toFixed(1)}, ${originPoint.y.toFixed(1)}) scale(${pinScale.toFixed(3)})`}
           className="pointer-events-none"
         >
-          <circle r="22" fill="url(#sbaOriginRadarGrad)" />
+          <circle r="20" fill="url(#sbaOriginRadarGrad)" />
           <circle
-            r="11"
+            r="10"
             fill="none"
             stroke="#10b981"
             strokeWidth="1.2"
             strokeOpacity="0.5"
-            className="animate-ping"
           />
-          <circle r="5.2" fill="#10b981" stroke="#ffffff" strokeWidth="2" filter="url(#sbaPinShadow)" />
+          <circle r="4.8" fill="#10b981" stroke="#ffffff" strokeWidth="1.8" />
           <circle r="1.8" fill="#ffffff" />
         </g>
 
@@ -444,7 +442,8 @@ export function GeographicWorldMap({
           const isSelected = m.code === activeCode;
           const isHovered = m.code === hoveredCode;
           const isProminent = isSelected || isHovered;
-          const localScale = pinScale * (isSelected ? 1.28 : isHovered ? 1.15 : 0.9);
+          // Scale remains constant on hover to guarantee stable hit targets without cursor jitter
+          const localScale = pinScale * (isSelected ? 1.25 : 1.0);
           const pinFill = isSelected ? "#ff7a00" : isHovered ? "#10b981" : "#0f766e";
 
           return (
@@ -456,14 +455,8 @@ export function GeographicWorldMap({
                 if (dragStartRef.current?.moved) return;
                 onSelectMarker(m.code);
               }}
-              onMouseEnter={() => {
-                if (isScrollingRef.current) return;
-                setHoveredCode(m.code);
-              }}
-              onMouseLeave={() => {
-                if (isScrollingRef.current) return;
-                setHoveredCode((prev) => (prev === m.code ? null : prev));
-              }}
+              onMouseEnter={() => handleMarkerEnter(m.code)}
+              onMouseLeave={() => handleMarkerLeave(m.code)}
               className="cursor-pointer"
             >
               {/* Invisible generous hit target so small nearby pins are easy to click */}
@@ -472,16 +465,15 @@ export function GeographicWorldMap({
               {/* Selected Country Concentric Halo */}
               {isSelected && (
                 <>
-                  <circle cx="0" cy="0" r="18" fill="url(#sbaTargetGlowGrad)" />
+                  <circle cx="0" cy="0" r="16" fill="url(#sbaTargetGlowGrad)" />
                   <circle
                     cx="0"
                     cy="0"
-                    r="11"
+                    r="9.5"
                     fill="none"
                     stroke="#ff7a00"
-                    strokeWidth="1.4"
-                    strokeOpacity="0.7"
-                    className="animate-ping"
+                    strokeWidth="1.2"
+                    strokeOpacity="0.65"
                   />
                 </>
               )}
@@ -495,8 +487,7 @@ export function GeographicWorldMap({
                 fill={pinFill}
                 stroke="#ffffff"
                 strokeWidth={isProminent ? "1.6" : "1.2"}
-                filter="url(#sbaPinShadow)"
-                className="transition-colors duration-200"
+                className="transition-colors duration-150"
               />
 
               {/* Crisp Inner Pin Dot */}
@@ -514,7 +505,7 @@ export function GeographicWorldMap({
             top: `${tooltipPos.topPct}%`,
           }}
           className={cn(
-            "pointer-events-none absolute z-20 -translate-x-1/2 transition-all duration-150",
+            "pointer-events-none absolute z-20 -translate-x-1/2 will-change-transform",
             tooltipPos.placeBelow ? "translate-y-3" : "-translate-y-[calc(100%+18px)]",
           )}
         >

@@ -56,7 +56,7 @@ export const physicalProducts: PhysicalProduct[] = [
     mainDepartmentEn: "Kids & Baby Wear",
     mainDepartmentAr: "ملابس الأطفال وحديثي الولادة",
     nameEn: "Casual Wear",
-    nameAr: "الكاجوال",
+    nameAr: "ملابس الخروج",
     taglineEn: "Kids t-shirts, denim & cotton pants, shorts, casual shirts, 2/3-piece sets, jackets, and fleece hoodies.",
     taglineAr: "تيشيرتات، بناطيل جينز وقطنية، شورتات، قمصان كاجوال، أطقم يومية قطعتين وثلاث قطع، سترات وهوديز.",
     descriptionEn: "A comprehensive casual apparel manufacturing line for children: graphic & basic tees, comfort-stretch denim and twill trousers, shorts, button-down casual shirts, coordinated 2-piece and 3-piece daily sets, light jackets, and French terry/fleece hoodies designed for maximum durability and active play.",
@@ -119,7 +119,7 @@ export const physicalProducts: PhysicalProduct[] = [
     mainDepartmentEn: "Kids & Baby Wear",
     mainDepartmentAr: "ملابس الأطفال وحديثي الولادة",
     nameEn: "Underwear",
-    nameAr: "الأندر وير",
+    nameAr: "الملابس الداخلية",
     taglineEn: "Combed cotton undershirts, boys boxers, girls panties, daily cotton sets, and infant base layers.",
     taglineAr: "فانلات داخلية، بوكسرات أولاد، ملابس داخلية بنات، أطقم داخلية قطنية، وملابس داخلية للرضع.",
     descriptionEn: "Precision manufacturing of children's intimates: pure combed cotton undershirts, comfortable boys' boxer briefs, girls' briefs and camisoles, matching sets, and gentle infant undergarments produced with skin-friendly flatlock seams and non-irritating waistbands.",
@@ -182,7 +182,7 @@ export const physicalProducts: PhysicalProduct[] = [
     mainDepartmentEn: "Kids & Baby Wear",
     mainDepartmentAr: "ملابس الأطفال وحديثي الولادة",
     nameEn: "Homewear",
-    nameAr: "الهوم وير",
+    nameAr: "الملابس المنزلية",
     taglineEn: "Kids pyjamas, summer sleep sets, warm winter nightwear, cotton loungewear, and relaxation sets.",
     taglineAr: "بيجامات أطفال، أطقم نوم صيفية، أطقم نوم شتوية دافئة، أطقم منزلية قطنية، وملابس استرخاء.",
     descriptionEn: "Comprehensive kids loungewear line: lightweight summer short pyjamas, cozy long winter sleepwear, cotton lounge sets, and relaxation wear made of pure cotton, modal, soft jersey, interlock, and warm fleece for deep rest.",
@@ -245,7 +245,7 @@ export const physicalProducts: PhysicalProduct[] = [
     mainDepartmentEn: "Kids & Baby Wear",
     mainDepartmentAr: "ملابس الأطفال وحديثي الولادة",
     nameEn: "Sportswear & Activewear",
-    nameAr: "الرياضي وأطقم التمارين",
+    nameAr: "الملابس الرياضية",
     taglineEn: "Children's tracksuits, athletic tees, training bottoms, sports shorts, jackets, and activewear.",
     taglineAr: "أطقم رياضية، تيشيرتات رياضية، بناطيل رياضية، شورتات، جاكيتات رياضية، وملابس تدريب وحركة.",
     descriptionEn: "Engineered activewear collection for boys and girls: 2-piece tracksuits, quick-dry training t-shirts, flexible sweatpants, athletic shorts, and zip jackets tailored from breathable Polyester/Spandex blends that allow full freedom of movement.",
@@ -308,7 +308,7 @@ export const physicalProducts: PhysicalProduct[] = [
     mainDepartmentEn: "Kids & Baby Wear",
     mainDepartmentAr: "ملابس الأطفال وحديثي الولادة",
     nameEn: "Newborn & Baby Wear",
-    nameAr: "حديثي الولادة",
+    nameAr: "ملابس حديثي الولادة",
     taglineEn: "Baby rompers, bodysuits, newborn starter sets, infant pyjamas, daily cottons, and outdoor sets.",
     taglineAr: "سالوبيتات، بودي سوت، أطقم حديثي الولادة، بيجامات الرضع، ملابس قطنية يومية، وأطقم خروج.",
     descriptionEn: "Gentle, certified infant apparel collection for babies aged 0 to 24 months: full-length snap rompers, expandable lap-neck bodysuits, hospital-take-home starter sets, baby pyjamas, soft daily cottons, and cute outdoor sets crafted from 100% hypoallergenic and organic combed cotton.",
@@ -376,7 +376,7 @@ export const physicalProducts: PhysicalProduct[] = [
     mainDepartmentEn: "Women's Wear",
     mainDepartmentAr: "الملابس النسائية",
     nameEn: "Underwear",
-    nameAr: "أندر وير",
+    nameAr: "الملابس الداخلية",
     taglineEn: "Women's basic underwear sets, bras, panties, shorts, undershirts, cotton intimates, and seamless sets.",
     taglineAr: "أطقم داخلية نسائية، حمالات صدر، سراويل داخلية، شورتات، فانلات نسائية، وأطقم سيمليس بدون درزات.",
     descriptionEn: "A dedicated manufacturing line for everyday women's underwear: combed cotton multi-pack panties (bikini, hipster, brief), wireless and comfort everyday bras, inner shorts, cotton undershirts, and seamless circular-knitted basic sets providing irritation-free comfort and supreme breathability.",
@@ -439,7 +439,7 @@ export const physicalProducts: PhysicalProduct[] = [
     mainDepartmentEn: "Women's Wear",
     mainDepartmentAr: "الملابس النسائية",
     nameEn: "Homewear & Pyjamas",
-    nameAr: "هوم وير وبيجامات",
+    nameAr: "الملابس المنزلية",
     taglineEn: "Women's pyjamas, 2-piece and 3-piece home sets, loungewear, summer light sets, winter sets, and robes.",
     taglineAr: "بيجامات نسائية، أطقم منزلية قطعتين وثلاث قطع، ملابس استرخاء، أطقم صيفية خفيفة وشتوية، وروب منزلي.",
     descriptionEn: "Refined women's homewear and loungewear collection: stylish 2-piece and 3-piece indoor sets, lightweight summer pyjamas, warm fleece and interlock winter sets, relaxed loungewear, and comfortable wrap robes crafted from premium modal, combed cotton, and viscose.",
@@ -502,7 +502,7 @@ export const physicalProducts: PhysicalProduct[] = [
     mainDepartmentEn: "Women's Wear",
     mainDepartmentAr: "الملابس النسائية",
     nameEn: "Lingerie & Nightwear",
-    nameAr: "اللانجيري وأطقم النوم",
+    nameAr: "ملابس النوم",
     taglineEn: "Luxury lingerie sets, nightwear chemises, bridal robes, bodysuits, satin sets, lace sets, and separates.",
     taglineAr: "أطقم لانجري فاخرة، قمصان نوم، روب لانجري، بودي سوت، أطقم ساتان ودانتيل، وقطع لانجري منفصلة.",
     descriptionEn: "Specialized luxury lingerie manufacturing division: satin bridal and nightwear sets, French lace chemises, sheer bodysuits, delicate wrap robes, satin coordinates, fine mesh designs, and luxury separates produced under strict quality standards for premium retail brands.",
@@ -557,7 +557,7 @@ export const physicalProducts: PhysicalProduct[] = [
 
   // ==========================================================================
   // SECTION 3: الملابس الرجالية (MEN'S WEAR)
-  // (5 categories: Casual, Classic, Shirts, Homewear, Sportswear)
+  // (4 categories: Casual, Classic, Homewear, Sportswear)
   // ==========================================================================
   {
     id: "prod-gar-men-casual",
@@ -570,7 +570,7 @@ export const physicalProducts: PhysicalProduct[] = [
     mainDepartmentEn: "Men's Wear",
     mainDepartmentAr: "الملابس الرجالية",
     nameEn: "Casual Wear",
-    nameAr: "الكاجوال",
+    nameAr: "ملابس الخروج",
     taglineEn: "Men's t-shirts, polo shirts, chino pants, casual trousers, shorts, hoodies, sweatshirts, and casual jackets.",
     taglineAr: "تيشيرتات رجالية، بولو، بناطيل تشينو، بناطيل كاجوال، شورتات، هوديز، سويت شيرت، وجاكيتات كاجوال.",
     descriptionEn: "Full-scale casual apparel production for men: heavy combed cotton t-shirts, double-pique polo shirts, stretch cotton chino trousers, casual shorts, heavyweight French terry hoodies, crewneck sweatshirts, and casual utility jackets crafted for all-day comfort and long-lasting shape retention.",
@@ -623,7 +623,7 @@ export const physicalProducts: PhysicalProduct[] = [
     ]
   },
   {
-    id: "prod-gar-men-classic",
+    id: "prod-gar-men-shirts",
     code: "SBA-PRD-MEN-CLS01",
     sector: "apparel",
     categoryKey: "mens-wear",
@@ -633,70 +633,7 @@ export const physicalProducts: PhysicalProduct[] = [
     mainDepartmentEn: "Men's Wear",
     mainDepartmentAr: "الملابس الرجالية",
     nameEn: "Classic Wear",
-    nameAr: "الكلاسيك",
-    taglineEn: "Classic trousers, tailored suits, formal blazers, waistcoats, formal sets, and executive business attire.",
-    taglineAr: "بناطيل كلاسيكية، بدلات رجالية، سترات رسمية (Blazers)، صديري رجالي، وأطقم رجال الأعمال.",
-    descriptionEn: "Precision tailored classic menswear: structured 2-piece and 3-piece business suits, refined executive blazers, crease-resistant tailored trousers, formal waistcoats, and corporate uniform lines engineered with premium wool blends, polyester-viscose, and stretch suiting textiles.",
-    descriptionAr: "وحدة حياكة وتفصيل الأزياء الكلاسيكية والرسمية للرجال: تشمل بدلات رجالية كاملة قطعتين وثلاث قطع، سترات رسمية (Blazers) أنيقة، بناطيل كلاسيكية مقواة ومقاومة للتجعد، صديري رجالي (Waistcoats)، وأطقم رجال الأعمال المصنعة من خامات الصوف والمخاليط الفاخرة لمظهر رسمي متميز.",
-    image: "/BG/Apparel Manufacturing/Private Label Manufacturing.jpg",
-    originEn: "Egypt",
-    originAr: "جمهورية مصر العربية",
-    originFlag: "🇪🇬",
-    moqEn: "300 pcs / style",
-    moqAr: "300 قطعة / تصميم",
-    packagingEn: "Garment suit cover with heavy hanger in protective export wardrobe carton.",
-    packagingAr: "كفر بدلة واقٍ بسحاب مع شماعة متينة داخل كرتونة شحن وحفظ الملابس الرسمية.",
-    specifications: [
-      {
-        labelEn: "Included Products",
-        labelAr: "المنتجات المشمولة",
-        valueEn: "Classic trousers, Men's suits (2 & 3 piece), Blazers, Waistcoats, Formal executive business sets",
-        valueAr: "بناطيل كلاسيكية، بدلات رجالية، سترات رسمية (Blazers)، صديري رجالي (Waistcoats)، أطقم رسمية، ملابس رجال الأعمال"
-      },
-      {
-        labelEn: "Fabric Composition",
-        labelAr: "الخامات وتركيب الأقمشة",
-        valueEn: "Wool Blends, Polyester / Viscose, Cotton Twill, Stretch Suiting Fabrics",
-        valueAr: "Wool Blends، Polyester / Viscose، Cotton Twill، Stretch Suiting Fabrics"
-      },
-      {
-        labelEn: "Fabric Weights (GSM)",
-        labelAr: "أوزان الأقمشة",
-        valueEn: "240 to 340 GSM suiting fabrics",
-        valueAr: "من 240 إلى 340 جم/م² أقمشة بدل رسمية فاخرة"
-      },
-      {
-        labelEn: "Available Sizes",
-        labelAr: "المقاسات المتاحة",
-        valueEn: "EU 46 to 60 (Regular Fit, Slim Fit, Tailored Fit)",
-        valueAr: "من 46 إلى 60 أوروبي (Regular Fit, Slim Fit, Tailored Fit)"
-      },
-      {
-        labelEn: "Tailoring Details",
-        labelAr: "تفاصيل الخياطة والتشطيب",
-        valueEn: "Fused collar & lapel interfacing, interior satin lining, functional horn/resin buttons",
-        valueAr: "تقوية الياقات والصدر بكنافاس متين، بطانة داخلية ساتان، وأزرار قرنية وراتنجية أنيقة"
-      },
-      {
-        labelEn: "Private Label",
-        labelAr: "التخصيص والعلامات الخاصة",
-        valueEn: "Corporate uniform branding, custom sleeve labels, branded suit covers",
-        valueAr: "برامج الزي الموحد للشركات، بطاقات أكمام مخصصة، وأغلفة بدل بشعار العميل"
-      }
-    ]
-  },
-  {
-    id: "prod-gar-men-shirts",
-    code: "SBA-PRD-MEN-SHT01",
-    sector: "apparel",
-    categoryKey: "mens-wear",
-    categoryKeys: ["mens-wear", "mens-shirts"],
-    categoryEn: "Men's Wear",
-    categoryAr: "ملابس رجالية",
-    mainDepartmentEn: "Men's Wear",
-    mainDepartmentAr: "الملابس الرجالية",
-    nameEn: "Formal Shirts",
-    nameAr: "القمصان الرسمي",
+    nameAr: "الملابس الكلاسيك",
     taglineEn: "Formal dress shirts, Oxford shirts, casual button-downs, long & short sleeves, solids, stripes & custom designs.",
     taglineAr: "قمصان رسمية، قمصان أكسفورد، قمصان كاجوال، أكمام طويلة وقصيرة، سادة ومخططة وتصميمات مخصصة.",
     descriptionEn: "Dedicated shirt manufacturing department: crisp executive dress shirts with fusible collars, washed casual Oxford shirts, linen summer shirts, long and short-sleeve options in solid colors, stripes, and checks, crafted from world-renowned Egyptian cotton and fine poplin.",
@@ -759,7 +696,7 @@ export const physicalProducts: PhysicalProduct[] = [
     mainDepartmentEn: "Men's Wear",
     mainDepartmentAr: "الملابس الرجالية",
     nameEn: "Homewear & Pyjamas",
-    nameAr: "الهوم وير والبيجامات",
+    nameAr: "الملابس المنزلية",
     taglineEn: "Men's pyjamas, indoor sets, lounge pants, home t-shirts, lounge shorts, summer and winter sleepwear.",
     taglineAr: "بيجامات رجالية، أطقم منزلية، بناطيل منزلية، تيشيرتات منزلية، شورتات، وملابس نوم صيفية وشتوية.",
     descriptionEn: "Comfort-engineered men's loungewear and pyjama collection: coordinated 2-piece sleep sets, lightweight summer shorts and tees, warm winter interlock pants, relaxed fit home t-shirts, and lounge trousers made of soft combed cotton, modal, and breathable jersey.",
@@ -822,7 +759,7 @@ export const physicalProducts: PhysicalProduct[] = [
     mainDepartmentEn: "Men's Wear",
     mainDepartmentAr: "الملابس الرجالية",
     nameEn: "Sportswear & Gym Wear",
-    nameAr: "الرياضي وأطقم الجيم",
+    nameAr: "الملابس الرياضية",
     taglineEn: "Full tracksuits, athletic tees, workout pants, training shorts, athletic jackets, gym and running wear.",
     taglineAr: "أطقم رياضية، تيشيرتات رياضية، بناطيل تدريب، شورتات رياضية، جاكيتات رياضية، ملابس جيم وجري.",
     descriptionEn: "High-performance men's athletic activewear: full coordinated tracksuits, moisture-wicking gym t-shirts, flexible workout joggers, running shorts with inner compression, training zip-ups, and athletic jackets engineered with 4-way stretch and rapid moisture management.",
