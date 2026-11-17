@@ -91,8 +91,8 @@ export function SectorHeader({
   const activeTab = searchTab || "about";
 
   const navPill = cn(
-    "group relative inline-flex items-center gap-1.5 rounded-full py-2 text-sm font-bold tracking-wide text-foreground transition-all duration-300 hover:bg-white/40 hover:text-brand-orange hover:shadow-sm hover:backdrop-blur-md hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap",
-    ar ? "px-4 2xl:px-5" : "px-3.5 2xl:px-4"
+    "group relative inline-flex items-center gap-1.5 rounded-full py-1.5 text-[13px] 2xl:text-sm font-bold tracking-tight xl:tracking-normal text-foreground transition-all duration-300 hover:bg-white/40 hover:text-brand-orange hover:shadow-sm hover:backdrop-blur-md hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap",
+    ar ? "px-3 2xl:px-3.5" : "px-2.5 2xl:px-3"
   );
   const navLinkStyle = navPill;
   const mobileLinkStyle =
@@ -100,10 +100,11 @@ export function SectorHeader({
 
   return (
     <>
-      <header className="fixed inset-x-0 top-3 z-50 pointer-events-none flex justify-center px-3 sm:px-6 transition-all duration-500">
+      <header className="fixed inset-x-0 top-3 z-50 pointer-events-none px-4 sm:px-8 xl:px-12 flex justify-center transition-all duration-300">
         <div
           className={cn(
-            "pointer-events-auto mx-auto flex h-[62px] w-full max-w-full items-center justify-between gap-4 rounded-full px-5 transition-all duration-500",
+            "pointer-events-auto mx-auto flex h-[62px] w-full items-center justify-between gap-1.5 lg:gap-3 rounded-full px-4 sm:px-6 transition-all duration-300",
+            ar ? "max-w-[1320px]" : "max-w-[1260px]",
             scrolled
               ? "border border-white/25 bg-background/85 shadow-[0_16px_40px_rgba(0,0,0,0.18)] backdrop-blur-2xl ring-1 ring-white/10"
               : "border border-white/15 bg-background/70 shadow-[0_10px_30px_rgba(0,0,0,0.08)] backdrop-blur-xl"
@@ -121,7 +122,7 @@ export function SectorHeader({
             aria-label={name}
             className={cn(
               "mx-auto hidden items-center justify-center xl:flex transition-all duration-300",
-              ar ? "gap-x-2.5 2xl:gap-x-4" : "gap-x-1 xl:gap-x-1.5"
+              ar ? "gap-x-2 2xl:gap-x-3.5" : "gap-x-0.5 2xl:gap-x-1"
             )}
           >
             {/* Home Link - Exact matching font and size */}
@@ -481,7 +482,7 @@ export function SectorHeader({
                   el.scrollIntoView({ behavior: "smooth" });
                 }
               }}
-              className="group/cta inline-flex items-center gap-2 rounded-full bg-brand-green px-5 py-2.5 text-xs font-bold text-white transition-all duration-300 hover:bg-brand-orange hover:shadow-lg hover:shadow-brand-orange/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/50 active:scale-95 cursor-pointer"
+              className="group/cta inline-flex items-center gap-2 rounded-full bg-brand-green px-4 py-2 text-xs font-bold text-white transition-all duration-300 hover:bg-brand-orange hover:shadow-lg hover:shadow-brand-orange/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/50 active:scale-95 cursor-pointer"
             >
               <span>{ar ? "تواصل معنا" : "Contact Us"}</span>
               <ArrowUpRight className="size-3.5 transition-transform duration-300 group-hover/cta:translate-x-1 group-hover/cta:-translate-y-1 rtl:rotate-90 rtl:group-hover/cta:-translate-x-1 rtl:group-hover/cta:-translate-y-1" />
