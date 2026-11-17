@@ -171,7 +171,7 @@ export function ApparelScenarioCalculator({
       {/* Scenarios Cards */}
       <div className="space-y-2.5">
         <p className="text-xs font-bold text-slate-600 dark:text-slate-300">
-          {ar ? "السيناريوهات التخطيطية القياسية (انقر على أي مرحلة للتطبيق المباشر):" : "Standard Planning Benchmarks (Click any scale to apply):"}
+          {ar ? "السيناريوهات التخطيطية القياسية" : "Standard Planning Scenarios"}
         </p>
 
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
