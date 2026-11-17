@@ -52,7 +52,7 @@ export const garmentAboutData = {
       {
         id: "development",
         title: "Product Development & Sampling",
-        titleAr: "تطوير المنتجات والعينات",
+        titleAr: "تصميم وتطوير الموديلات",
         desc: "Transforming design sketches, mood boards, and references into commercial prototypes, fit samples, and production-ready tech packs.",
         descAr: "تحويل التصميمات والأفكار والمراجع إلى نماذج أولية (Prototypes) وعينات قياس واعتماد جاهزة للإنتاج الكمي.",
       },
@@ -66,7 +66,7 @@ export const garmentAboutData = {
       {
         id: "fob",
         title: "FOB Manufacturing Programs",
-        titleAr: "برامج FOB للتصنيع المتكامل",
+        titleAr: "التصنيع بنظام FOB",
         desc: "Turnkey coordination from raw fabric sourcing and accessories through cutting, sewing, quality inspection, packaging, and export preparation.",
         descAr: "إدارة متكاملة تشمل توفير الخامات والأقمشة، التصنيع، مراقبة الجودة، التعبئة، والتجهيز للشحن والتصدير الدولي تحت مظلة واحدة.",
       },
@@ -329,7 +329,7 @@ export const garmentServicesDetailed = [
   {
     id: "product-development",
     titleEn: "Product Development & Sampling",
-    titleAr: "تطوير المنتجات والعينات",
+    titleAr: "تصميم وتطوير الموديلات",
     taglineEn: "From mood boards and sketches to production-ready golden samples.",
     taglineAr: "من الفكرة والتصميم المرجعي إلى العينة الذهبية الجاهزة للإنتاج.",
     descriptionEn: "Our development studio translates creative sketches, reference garments, or digital packs into precise CAD patterns, fit iterations, and sample prototypes ready for your commercial sign-off.",
@@ -351,7 +351,7 @@ export const garmentServicesDetailed = [
   {
     id: "fob-programs",
     titleEn: "FOB Manufacturing Programs",
-    titleAr: "برامج FOB للتصنيع المتكامل",
+    titleAr: "التصنيع بنظام FOB",
     taglineEn: "Turnkey manufacturing from fiber procurement to port delivery.",
     taglineAr: "حل تصنيعي شامل من توفير الخامات وحتى تسليم الشحنة في الميناء.",
     descriptionEn: "Under our FOB (Free On Board) contracts, we manage the entire manufacturing supply chain: sourcing certified yarns and fabrics, coordinating trims, executing production, overseeing multi-point QC, and managing export documentation.",
@@ -840,7 +840,7 @@ export const garmentServicesExpanded: GarmentManufacturingService[] = [
     badgeEn: "Concept to Production · In-House Library",
     badgeAr: "من الفكرة للإنتاج · كتالوج الموديلات",
     titleEn: "ODM Development",
-    titleAr: "التصميم والتصنيع المشترك (ODM)",
+    titleAr: "تصميم وتطوير الموديلات",
     leadEn: "Complete concept creation where brands select and customize designs from our 2,700+ style library for private branding.",
     leadAr: "خدمة تطوير وتصميم متكاملة تتيح للعلامات التجارية اختيار وتخصيص موديلات من محفظتنا التي تضم أكثر من 2,700 تصميم.",
     descEn: "We provide comprehensive fashion development for brands needing fresh seasonal collections without maintaining internal design teams. Choose from our proven silhouette library, customize colors and trims, and launch under your own brand.",
@@ -874,7 +874,7 @@ export const garmentServicesExpanded: GarmentManufacturingService[] = [
     badgeEn: "Full Package · Raw Material to Export Port",
     badgeAr: "تصنيع شامل FOB · من الغزل حتى الميناء",
     titleEn: "FOB Manufacturing Programs",
-    titleAr: "برامج التصنيع الشامل (FOB)",
+    titleAr: "التصنيع بنظام FOB",
     leadEn: "Turnkey coordination from raw fabric yarn and trims to finished packed garments delivered directly to the export shipping port.",
     leadAr: "إدارة صناعية شاملة تتولى توفير الأقمشة والإكسسوارات والتصنيع والتعبئة والشحن حتى ميناء التصدير (FOB).",
     descEn: "Our FOB (Free on Board) programs give international buyers full cost transparency and risk mitigation. We handle yarn spinning, knitting, dyeing, cutting, sewing, finishing, quality auditing, and export customs clearance under a single unified contract.",

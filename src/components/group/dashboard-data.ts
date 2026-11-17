@@ -76,7 +76,7 @@ export const activities: Record<SectorId, { items: T[]; note?: T }> = {
     { en: "OEM Partner Manufacturing", ar: "التصنيع كشريك للمعدات الأصلية (OEM)" },
     { en: "ODM Design & Co-Development", ar: "التصميم والتصنيع المشترك (ODM)" },
     { en: "Private Label Turnkey Programs", ar: "التصنيع للعلامات التجارية الخاصة" },
-    { en: "Full FOB Integrated Manufacturing", ar: "برامج التصنيع الشامل والتصدير (FOB)" },
+    { en: "Full FOB Integrated Manufacturing", ar: "التصنيع بنظام FOB" },
     { en: "CAD Pattern Engineering & Grading", ar: "هندسة الباترون وتطوير المنتجات" },
     { en: "Rapid Prototyping & Sampling", ar: "صناعة العينات والنماذج الأولية السريعة" },
     { en: "Commercial Bulk Production", ar: "الإنتاج الصناعي الكمي المتوسع" },

@@ -426,7 +426,7 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["المناطق والمجمعات الصناعية", "الموانئ والتطوير الساحلي", "مشروعات الطاقة المتجددة الكبرى", "المشروعات السياحية والعمرانية"],
     "capabilitiesEn": ["Certified environmental consulting house accreditation", "AERMOD / CALPUFF certified air dispersion modelers", "Bankable environmental reports approved by global DFIs"],
     "capabilitiesAr": ["بيت خبرة واستشارات بيئية معتمد رسميًا", "خبراء نمذجة انتشار الملوثات ببرامج AERMOD و CALPUFF", "تقارير معتمدة لدى بنوك ومؤسسات التمويل الدولية"],
-    "image": "/BG/Environment & Sustainability/Environmental Impact Assessment (EIA).jpg"
+    "image": "/BG/Environment & Sustainability/Environmental Assessment.jpg"
   },
   {
     "id": "srv-env-carbon",
@@ -542,7 +542,7 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["مجمعات البتروكيماويات", "مصانع الأدوية والكيماويات", "مصانع تجميع السيارات والدهانات", "ورش ومصانع الجلفنة والطلاء الكهربائي"],
     "capabilitiesEn": ["Licensed hazardous waste transport fleet", "Coded HazMat safety engineers", "Certified hazardous landfill chain of custody"],
     "capabilitiesAr": ["أسطول سيارات مجهز ومرخص رسميًا لنقل المخلفات الخطرة", "مهندسو سلامة كيميائية معتمدون", "سلسلة حيازة موثقة حتى التسليم للمدافن الخطرة المعتمدة"],
-    "image": "/BG/Environment & Sustainability/Hazardous & Solid Waste Management & Recycling.jpg"
+    "image": "/BG/Environment & Sustainability/Hazardous Waste Management.jpg"
   },
   {
     "id": "srv-env-solid-recycling",
@@ -571,7 +571,7 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["مصانع التعبئة والتغليف", "شركات الأغذية والمشروبات", "المؤسسات الزراعية الكبرى", "المجمعات الصناعية لتدوير المخلفات"],
     "capabilitiesEn": ["Circular economy engineering advisory", "High-throughput shredding and pelletizing engineering", "Closed-loop supply chain integration"],
     "capabilitiesAr": ["استشارات متقدمة في الاقتصاد الدائري وإعادة التدوير", "هندسة خطوط الجرش والتحبيب عالية الإنتاجية", "تكامل سلاسل الإمداد المغلقة لتقليل الفاقد"],
-    "image": "/BG/Environment & Sustainability/Hazardous & Solid Waste Management & Recycling.jpg"
+    "image": "/BG/Environment & Sustainability/Solid Waste Recycling.jpg"
   },
   {
     "id": "srv-env-waste-to-energy",
@@ -629,7 +629,7 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["مزارع الإنتاج الحيواني والدواجن الكبرى", "مصانع الأغذية والحلويات والسكر", "محطات معالجة الصرف الصحي (حمأة)", "المجمعات الزراعية الصناعية"],
     "capabilitiesEn": ["Patented biological desulfurization formulations", "High-efficiency anaerobic mixing systems", "Organic bio-fertilizer separation and packaging skids"],
     "capabilitiesAr": ["مركبات بيولوجية متطورة لإزالة كبريتيد الهيدروجين بكفاءة تفوق 99%", "أنظمة تقليب وخلط لاهوائية موفرة للطاقة", "وحدات فصل وتجفيف السماد العضوي السائل والصلب عالي الجودة"],
-    "image": "/BG/Environment & Sustainability/Waste to Energy & Biogas Plants.jpg"
+    "image": "/BG/Environment & Sustainability/Biogas Project Development.jpg"
   },
   {
     "id": "srv-env-renewable-energy",
@@ -931,9 +931,9 @@ export const professionalServices: ProfessionalService[] = [
     "sector": "apparel-services",
     "categoryKey": "odm-development",
     "categoryEn": "ODM Design & Co-Development",
-    "categoryAr": "التصميم والتصنيع المشترك ODM",
+    "categoryAr": "تصميم وتطوير الموديلات",
     "nameEn": "ODM Design & Co-Development",
-    "nameAr": "التصميم والتصنيع المشترك ODM",
+    "nameAr": "تصميم وتطوير الموديلات",
     "descriptionEn": "End-to-end design development allowing fashion labels to select and customize garments from our verified 2,700+ design library without internal design overhead.",
     "descriptionAr": "خدمة تطوير وتصميم متكاملة تتيح للماركات التجارية اختيار وتخصيص موديلات من محفظتنا المعتمدة التي تضم أكثر من 2,700 تصميم جاهز للإنتاج الفوري.",
     "scopeOfWorkEn": [
@@ -989,9 +989,9 @@ export const professionalServices: ProfessionalService[] = [
     "sector": "apparel-services",
     "categoryKey": "fob-manufacturing",
     "categoryEn": "FOB Full Package Programs",
-    "categoryAr": "برامج التصنيع الشامل والتصدير FOB",
+    "categoryAr": "التصنيع بنظام FOB",
     "nameEn": "FOB Full Package Programs",
-    "nameAr": "برامج التصنيع الشامل والتصدير FOB",
+    "nameAr": "التصنيع بنظام FOB",
     "descriptionEn": "All-inclusive manufacturing coordinating raw cotton fiber, knitting, piece dyeing, bulk production, and port customs export clearance under standard international Incoterms.",
     "descriptionAr": "برامج تصنيع شاملة تتولى شراء الأقمشة والغزول، الصباغة، التصنيع الكامل، الفحص المخبري، وإنهاء الإجراءات الجمركية وشحن الحاويات بموانئ الإسكندرية ودمياط.",
     "scopeOfWorkEn": [
@@ -1295,9 +1295,9 @@ export const serviceDivisionsConfig = [
     categories: [
       { key: "all", labelEn: "All Services", labelAr: "كافة الخدمات" },
       { key: "oem-manufacturing", labelEn: "OEM Contract Manufacturing", labelAr: "التصنيع الأصلي OEM" },
-      { key: "odm-development", labelEn: "ODM Design & Co-Development", labelAr: "التصميم والتصنيع المشترك ODM" },
+      { key: "odm-development", labelEn: "ODM Design & Co-Development", labelAr: "تصميم وتطوير الموديلات" },
       { key: "private-label", labelEn: "Private Label Manufacturing", labelAr: "التصنيع للعلامات التجارية الخاصة" },
-      { key: "fob-manufacturing", labelEn: "FOB Full Package Programs", labelAr: "برامج التصنيع الشامل والتصدير FOB" },
+      { key: "fob-manufacturing", labelEn: "FOB Full Package Programs", labelAr: "التصنيع بنظام FOB" },
       { key: "cm-manufacturing", labelEn: "CM Manufacturing (Cut & Make)", labelAr: "التصنيع بنظام CM" },
       { key: "product-development", labelEn: "CAD Pattern Engineering", labelAr: "هندسة الباترون وتطوير المنتجات" },
       { key: "rapid-sampling", labelEn: "Rapid Sampling & Prototyping", labelAr: "صناعة العينات والنماذج الأولية" },
