@@ -137,7 +137,7 @@ export function TradePage({ ar = true }: TradePageProps) {
           className="absolute inset-0 size-full object-cover object-center pointer-events-none select-none transition-all duration-700"
           fetchPriority="high"
         />
-        <div className="group-hero-overlay absolute inset-0 bg-black/65 backdrop-blur-[1px] pointer-events-none" />
+        <div className="group-hero-overlay absolute inset-0 bg-slate-950/45 backdrop-blur-[0.5px] pointer-events-none" />
 
         <div className="site-container relative z-10 flex min-h-[inherit] flex-col justify-center py-16 sm:py-20">
           <Reveal>
