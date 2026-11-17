@@ -176,7 +176,7 @@ export function ApparelComparativePage({
     : activeRegionMeta
     ? `المقارنة الإقليمية: ${activeRegionMeta.titleAr}`
     : currentSectorObj
-    ? `لوحة المقارنة الشاملة للأسواق العالمية — ${currentSectorObj.nameAr}`
+    ? currentSectorObj.nameAr
     : "لوحة المقارنة الشاملة للأسواق العالمية لكافة القطاعات";
 
   const pageTitleEn = isGccReport
@@ -184,7 +184,7 @@ export function ApparelComparativePage({
     : activeRegionMeta
     ? `Regional Comparative Analysis: ${activeRegionMeta.titleEn}`
     : currentSectorObj
-    ? `Global Market Comparison Dashboard — ${currentSectorObj.nameEn}`
+    ? currentSectorObj.nameEn
     : "Comprehensive Global Markets Comparison Dashboard";
 
   return (
