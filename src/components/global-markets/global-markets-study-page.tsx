@@ -8,8 +8,6 @@ import {
   type GlobalMarketSectorId,
 } from "@/lib/global-markets-data";
 import {
-  isStudyDownloadAllowed,
-  openApprovedStudyPdfReport,
   useGlobalMarketsStudies,
 } from "@/lib/global-markets-store";
 import { ApparelScenarioCalculator } from "./apparel-scenario-calculator";
@@ -77,7 +75,6 @@ export function GlobalMarketsStudyPage({
   }
 
   const regionLabel = GEO_REGIONS_ORDER.find((r) => r.id === study.region);
-  const downloadAllowed = study.sector !== "garment" && isStudyDownloadAllowed(study);
 
   const visibleSections = STUDY_SECTION_BLUEPRINT.filter((bp) => {
     if (bp.key === "recommendationsActionPlan") {
@@ -138,18 +135,6 @@ export function GlobalMarketsStudyPage({
                   {regionLabel ? ` · ${ar ? regionLabel.ar : regionLabel.en}` : ""}
                 </span>
               </span>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-2.5">
-              {downloadAllowed && (
-                <button
-                  type="button"
-                  onClick={() => openApprovedStudyPdfReport(study, ar)}
-                  className="inline-flex items-center justify-center rounded-full bg-brand-green px-5 py-2.5 text-xs font-bold text-white hover:bg-brand-orange transition-all duration-300 shadow-md cursor-pointer"
-                >
-                  <span>{ar ? "تحميل الدراسة" : "Download Study"}</span>
-                </button>
-              )}
             </div>
           </div>
 

@@ -5,7 +5,6 @@ import {
   ArrowRight,
   Building2,
   ChevronRight,
-  Download,
   FolderCog,
   Globe,
   Layers,
@@ -30,8 +29,6 @@ import {
 } from "@/lib/global-markets-data";
 import {
   getSectorMetrics,
-  isStudyDownloadAllowed,
-  openApprovedStudyPdfReport,
   useGlobalMarketsStudies,
 } from "@/lib/global-markets-store";
 import { MarketComparisonPanel } from "./market-comparison-panel";
@@ -104,11 +101,18 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
   const [statusFilter, setStatusFilter] = useState<"all" | StudyStatus>("all");
   const [yearFilter, setYearFilter] = useState<string>("all");
   const [tierFilter, setTierFilter] = useState<string>("all");
-  const [sortBy, setSortBy] = useState<"order" | "score" | "name" | "imports">("order");
+  const [sortBy, setSortBy] = useState<"order" | "score" | "name" | "imports">(() =>
+    sector.id === "garment" || sector.id === "environmental" ? "score" : "order"
+  );
 
   const sectorStudies = useMemo(() => {
     const list = studies.filter((s) => s.sector === sector.id && s.status !== "archived");
     return [...list].sort((a, b) => {
+      if (sector.id === "garment" || sector.id === "environmental") {
+        const sa = a.opportunityScore ?? 0;
+        const sb = b.opportunityScore ?? 0;
+        if (sb !== sa) return sb - sa;
+      }
       const catA = getStudyRegionCategory(a);
       const catB = getStudyRegionCategory(b);
       const prioA = getCategoryPriority(catA);
@@ -217,6 +221,11 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
         const nb = ar ? b.countryNameAr : b.countryNameEn;
         return na.localeCompare(nb);
       } else {
+        if (sector.id === "garment" || sector.id === "environmental") {
+          const sa = a.opportunityScore ?? 0;
+          const sb = b.opportunityScore ?? 0;
+          if (sb !== sa) return sb - sa;
+        }
         const catA = getStudyRegionCategory(a);
         const catB = getStudyRegionCategory(b);
         const prioA = getCategoryPriority(catA);
@@ -266,16 +275,18 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
                 </div>
               )}
 
-              <div className="flex flex-wrap gap-1.5 pt-1">
-                {(ar ? sector.topicsAr : sector.topicsEn).map((t, i) => (
-                  <span
-                    key={i}
-                    className="rounded-lg border border-slate-200/80 dark:border-white/10 bg-white/80 dark:bg-white/5 px-2.5 py-1 text-[11px] font-semibold text-slate-700 dark:text-slate-300"
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
+              {(ar ? sector.topicsAr : sector.topicsEn).length > 0 && (
+                <div className="flex flex-wrap gap-1.5 pt-1">
+                  {(ar ? sector.topicsAr : sector.topicsEn).map((t, i) => (
+                    <span
+                      key={i}
+                      className="rounded-lg border border-slate-200/80 dark:border-white/10 bg-white/80 dark:bg-white/5 px-2.5 py-1 text-[11px] font-semibold text-slate-700 dark:text-slate-300"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              )}
             </div>
 
             <div className="lg:col-span-4 space-y-3">
@@ -286,10 +297,12 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
                   className="size-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
-                <div className="absolute bottom-3 start-3 flex items-center gap-2 text-white text-xs font-bold">
-                  <Icon className="size-4" />
-                  <span>{ar ? sector.classificationHintAr : sector.classificationHintEn}</span>
-                </div>
+                {(ar ? sector.classificationHintAr : sector.classificationHintEn) ? (
+                  <div className="absolute bottom-3 start-3 flex items-center gap-2 text-white text-xs font-bold">
+                    <Icon className="size-4" />
+                    <span>{ar ? sector.classificationHintAr : sector.classificationHintEn}</span>
+                  </div>
+                ) : null}
               </div>
 
               <div className="flex flex-wrap gap-2">
@@ -575,7 +588,6 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
             <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {filteredStudies.map((study) => {
               const st = STUDY_STATUS_LABELS[study.status];
-              const downloadAllowed = isStudyDownloadAllowed(study);
               const regionLabel = GEO_REGIONS_ORDER.find((r) => r.id === study.region);
 
               return (
@@ -728,7 +740,7 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
                     </div>
                   </div>
 
-                  {/* Actions: View Study & Download Study */}
+                  {/* Actions: View Study */}
                   <div className="space-y-2 pt-3 border-t border-slate-200/70 dark:border-white/10">
                     <div className="flex flex-wrap items-center gap-2">
                       <Link
@@ -739,30 +751,6 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
                         <span>{ar ? "عرض الدراسة الكاملة" : "View Full Study"}</span>
                         {ar ? <ArrowLeft className="size-3.5" /> : <ArrowRight className="size-3.5" />}
                       </Link>
-
-                      {study.sector !== "garment" && downloadAllowed && (
-                        <button
-                          type="button"
-                          onClick={() => openApprovedStudyPdfReport(study, ar)}
-                          title={ar ? "تحميل الدراسة المعتمدة PDF" : "Download Approved PDF Report"}
-                          className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-brand-green px-3 py-2 text-xs font-bold text-white hover:bg-brand-orange transition-all duration-300 cursor-pointer shadow-xs"
-                        >
-                          <Download className="size-3.5" />
-                          <span>PDF</span>
-                        </button>
-                      )}
-
-                      {study.sector !== "garment" && study.downloadZipUrl && (
-                        <a
-                          href={study.downloadZipUrl}
-                          download
-                          title={ar ? "تحميل وثيقة الدراسة المعتمدة" : "Download Official Study Document"}
-                          className="inline-flex items-center justify-center gap-1.5 rounded-xl border border-brand-green/30 bg-brand-green/10 px-3 py-2 text-xs font-bold text-brand-green hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-all duration-300 cursor-pointer"
-                        >
-                          <Download className="size-3.5" />
-                          <span>{ar ? "تحميل الدراسة" : "Download"}</span>
-                        </a>
-                      )}
                     </div>
                   </div>
                 </div>

@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { Link } from "@tanstack/react-router";
+import { Link, useNavigate } from "@tanstack/react-router";
 import {
   ArrowLeft,
   ArrowRight,
@@ -106,6 +106,7 @@ function getSectorIcon(sectorId: GlobalMarketSectorId) {
 }
 
 export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
+  const navigate = useNavigate();
   const { studies } = useGlobalMarketsStudies();
 
   const activeStudies = useMemo(
@@ -268,7 +269,16 @@ export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
           return (
             <div
               key={sector.id}
-              className="interactive-card glass-box-interactive group overflow-hidden rounded-3xl border border-slate-200/80 dark:border-white/15 bg-white/85 dark:bg-slate-900/75 shadow-xl backdrop-blur-2xl transition-all duration-300 hover:border-brand-green/50 hover:shadow-2xl"
+              role="button"
+              tabIndex={0}
+              onClick={() => navigate({ to: "/global-markets/$sector", params: { sector: sector.id } })}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  navigate({ to: "/global-markets/$sector", params: { sector: sector.id } });
+                }
+              }}
+              className="interactive-card glass-box-interactive group overflow-hidden rounded-3xl border border-slate-200/80 dark:border-white/15 bg-white/85 dark:bg-slate-900/75 shadow-xl backdrop-blur-2xl transition-all duration-300 hover:border-brand-green/50 hover:shadow-2xl cursor-pointer"
             >
               {/* Sector Header Banner */}
               <div className="relative h-60 sm:h-72 w-full overflow-hidden bg-slate-100 dark:bg-slate-800">
@@ -309,16 +319,18 @@ export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
                       </p>
                     )}
 
-                    <div className="flex flex-wrap gap-1.5 pt-1">
-                      {(ar ? sector.topicsAr : sector.topicsEn).slice(0, 8).map((topic, idx) => (
-                        <span
-                          key={idx}
-                          className="rounded-lg border border-slate-200/80 dark:border-white/10 bg-slate-50 dark:bg-white/5 px-2.5 py-1 text-[11px] font-semibold text-slate-700 dark:text-slate-300"
-                        >
-                          {topic}
-                        </span>
-                      ))}
-                    </div>
+                    {(ar ? sector.topicsAr : sector.topicsEn).length > 0 && (
+                      <div className="flex flex-wrap gap-1.5 pt-1">
+                        {(ar ? sector.topicsAr : sector.topicsEn).slice(0, 8).map((topic, idx) => (
+                          <span
+                            key={idx}
+                            className="rounded-lg border border-slate-200/80 dark:border-white/10 bg-slate-50 dark:bg-white/5 px-2.5 py-1 text-[11px] font-semibold text-slate-700 dark:text-slate-300"
+                          >
+                            {topic}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                   </div>
 
                   <div className="lg:col-span-4 grid grid-cols-3 gap-2 text-[11px]">
