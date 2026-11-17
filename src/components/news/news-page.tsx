@@ -498,10 +498,6 @@ export function NewsPage() {
                         </span>
                         <ArrowRight className="size-3 rtl:rotate-180" />
                       </Link>
-
-                      <span className="text-[10px] font-bold text-muted-foreground/70">
-                        #{article.id.replace("sba-news-", "NEWS ").replace("sba-hist-", "HIST ")}
-                      </span>
                     </div>
                   </article>
                 </Reveal>
