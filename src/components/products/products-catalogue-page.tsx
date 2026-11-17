@@ -298,12 +298,21 @@ export function ProductsCataloguePage() {
           {/* Product Image — rendered across all categories */}
           <div className="relative aspect-[16/11] w-full overflow-hidden bg-secondary">
             <img
-              src={product.image}
+              src={encodeURI(product.image)}
               alt={ar ? product.nameAr : product.nameEn}
               loading="lazy"
               onError={(e) => {
-                // Graceful fallback if image file is not yet added
-                (e.currentTarget as HTMLImageElement).src = "/placeholder.svg";
+                const img = e.currentTarget as HTMLImageElement;
+                if (!img.dataset.retried) {
+                  img.dataset.retried = "1";
+                  const filename = product.image.split("/").pop();
+                  if (filename) {
+                    const cleanName = filename.toLowerCase().replace(/\s+-\s+/g, "-").replace(/\s+/g, "-");
+                    img.src = `/products/apparel/${cleanName}`;
+                    return;
+                  }
+                }
+                img.src = "/placeholder.svg";
               }}
               className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
@@ -877,10 +886,20 @@ export function ProductsCataloguePage() {
 
               <div className="mt-6 aspect-video w-full rounded-2xl overflow-hidden bg-secondary">
                 <img
-                  src={activeProductDetail.image}
+                  src={encodeURI(activeProductDetail.image)}
                   alt={ar ? activeProductDetail.nameAr : activeProductDetail.nameEn}
                   onError={(e) => {
-                    (e.currentTarget as HTMLImageElement).src = "/placeholder.svg";
+                    const img = e.currentTarget as HTMLImageElement;
+                    if (!img.dataset.retried) {
+                      img.dataset.retried = "1";
+                      const filename = activeProductDetail.image.split("/").pop();
+                      if (filename) {
+                        const cleanName = filename.toLowerCase().replace(/\s+-\s+/g, "-").replace(/\s+/g, "-");
+                        img.src = `/products/apparel/${cleanName}`;
+                        return;
+                      }
+                    }
+                    img.src = "/placeholder.svg";
                   }}
                   className="size-full object-cover"
                 />

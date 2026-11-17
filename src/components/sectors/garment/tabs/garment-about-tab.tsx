@@ -413,19 +413,36 @@ export function GarmentAboutTab() {
 
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {categories.map((cat) => (
-              <div key={cat.id} className="group rounded-2xl border border-white/20 bg-background/70 p-5 backdrop-blur-xl shadow-sm transition hover:border-brand-orange hover:shadow-lg">
-                <h4 className="text-center font-head text-sm font-bold text-foreground group-hover:text-brand-orange transition-colors">
-                  {ar ? cat.nameAr : cat.nameEn}
-                </h4>
-                <p className="mt-1.5 text-xs text-muted-foreground leading-relaxed line-clamp-2">
-                  {ar ? cat.descriptionAr : cat.descriptionEn}
-                </p>
-                <div className="mt-3 pt-2.5 border-t border-border/40 flex flex-wrap gap-1">
-                  {(ar ? cat.itemsAr : cat.itemsEn).slice(0, 2).map((item, idx) => (
-                    <span key={idx} className="bg-secondary/60 text-[10px] font-medium px-2 py-0.5 rounded-md text-foreground">
-                      {item}
-                    </span>
-                  ))}
+              <div key={cat.id} className="group rounded-2xl border border-white/20 bg-background/80 overflow-hidden shadow-sm backdrop-blur-xl transition hover:border-brand-orange hover:shadow-lg flex flex-col justify-between">
+                <div>
+                  {cat.image && (
+                    <div className="relative aspect-[16/10] w-full overflow-hidden bg-secondary">
+                      <img
+                        src={encodeURI(cat.image)}
+                        alt={ar ? cat.nameAr : cat.nameEn}
+                        loading="lazy"
+                        onError={(e) => {
+                          (e.currentTarget as HTMLImageElement).src = "/placeholder.svg";
+                        }}
+                        className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                  )}
+                  <div className="p-5">
+                    <h4 className="text-center font-head text-sm font-bold text-foreground group-hover:text-brand-orange transition-colors">
+                      {ar ? cat.nameAr : cat.nameEn}
+                    </h4>
+                    <p className="mt-1.5 text-xs text-muted-foreground leading-relaxed line-clamp-2">
+                      {ar ? cat.descriptionAr : cat.descriptionEn}
+                    </p>
+                    <div className="mt-3 pt-2.5 border-t border-border/40 flex flex-wrap gap-1">
+                      {(ar ? cat.itemsAr : cat.itemsEn).slice(0, 2).map((item, idx) => (
+                        <span key={idx} className="bg-secondary/60 text-[10px] font-medium px-2 py-0.5 rounded-md text-foreground">
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}

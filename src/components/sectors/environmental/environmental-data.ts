@@ -247,6 +247,7 @@ export const environmentalSectorsData = {
     },
     {
       id: "renewable-energy",
+    image: "/BG/Environment & Sustainability/Renewable Energy Sector.jpg",
       number: "04",
       nameEn: "Renewable Energy Sector",
       nameAr: "قطاع الطاقة المتجددة",
@@ -354,6 +355,7 @@ export const environmentalServicesData = {
   services: [
     {
       id: "waste-to-energy",
+    image: "/BG/Environment & Sustainability/Waste to Energy Services & Biogas Plants.jpg",
       number: "01",
       badgeEn: "Strategic Alliance · RENERGON International AG",
       badgeAr: "شراكة استراتيجية · رينرجون الدولية (RENERGON) السويسرية",
@@ -444,6 +446,7 @@ export const environmentalServicesData = {
     },
     {
       id: "measurements-monitoring",
+    image: "/BG/Environment & Sustainability/Environmental Measurements & Continuous Monitoring.jpg",
       number: "06",
       badgeEn: "Lab Testing & Field Inspection",
       badgeAr: "الفحص الميداني والتحاليل المعملية المعتمدة",
@@ -464,6 +467,7 @@ export const environmentalServicesData = {
     },
     {
       id: "waste-management",
+    image: "/BG/Environment & Sustainability/Comprehensive Waste Management Services.jpg",
       number: "07",
       badgeEn: "Circular Economy & Hierarchy",
       badgeAr: "الاقتصاد الدائري والتسلسل الهرمي للمخلفات",
@@ -590,6 +594,7 @@ export const environmentalServicesData = {
     },
     {
       id: "renewable-energy",
+    image: "/BG/Environment & Sustainability/Renewable Energy Sector.jpg",
       number: "14",
       badgeEn: "Solar · Wind · Micro-Hydro · Biomass",
       badgeAr: "طاقة شمسية · رياح · هيدرو · كتلة حيوية",
@@ -631,6 +636,7 @@ export const environmentalServicesData = {
 // 19 DETAILED ENVIRONMENTAL SERVICES (EXPANDED)
 // ==========================================
 export interface EnvironmentalServiceDetailed {
+  image: string;
   id: string;
   number: string;
   badgeEn: string;
@@ -663,6 +669,7 @@ export interface EnvironmentalServiceDetailed {
 export const detailedEnvironmentalServices: EnvironmentalServiceDetailed[] = [
   {
     id: "eia",
+    image: "/BG/Environment & Sustainability/Environmental Assessment.jpg",
     number: "01",
     badgeEn: "EIA · Regulatory Permitting",
     badgeAr: "تقييم الأثر البيئي · التراخيص الرسمية",
@@ -692,6 +699,7 @@ export const detailedEnvironmentalServices: EnvironmentalServiceDetailed[] = [
   },
   {
     id: "esia",
+    image: "/BG/Environment & Sustainability/Environmental & Social Impact Assessments (ESIA).jpg",
     number: "02",
     badgeEn: "ESIA · International Due Diligence",
     badgeAr: "التقييم البيئي والمجتمعي · التمويل الدولي",
@@ -721,6 +729,7 @@ export const detailedEnvironmentalServices: EnvironmentalServiceDetailed[] = [
   },
   {
     id: "carbon-footprint-assessment",
+    image: "/BG/Environment & Sustainability/Carbon Footprint & Greenhouse Gas Services.jpg",
     number: "03",
     badgeEn: "GHG Accounting · Scope 1, 2 & 3",
     badgeAr: "حساب الكربون · النطاق 1 و2 و3",
@@ -750,6 +759,7 @@ export const detailedEnvironmentalServices: EnvironmentalServiceDetailed[] = [
   },
   {
     id: "carbon-emissions-reporting",
+    image: "/BG/Environment & Sustainability/Carbon Footprint & Greenhouse Gas Services.jpg",
     number: "04",
     badgeEn: "Disclosure · ESG & CBAM Compliance",
     badgeAr: "الإفصاح المناخي · تقارير CBAM وESG",
@@ -779,6 +789,7 @@ export const detailedEnvironmentalServices: EnvironmentalServiceDetailed[] = [
   },
   {
     id: "measurements-monitoring",
+    image: "/BG/Environment & Sustainability/Environmental Measurements & Continuous Monitoring.jpg",
     number: "05",
     badgeEn: "Field Measurements · Calibrated Devices",
     badgeAr: "القياسات البيئية · أجهزة معايرة معتمدة",
@@ -808,6 +819,7 @@ export const detailedEnvironmentalServices: EnvironmentalServiceDetailed[] = [
   },
   {
     id: "waste-management",
+    image: "/BG/Environment & Sustainability/Comprehensive Waste Management Services.jpg",
     number: "06",
     badgeEn: "Circular Economy · Waste Hierarchy",
     badgeAr: "إدارة المخلفات · التسلسل الهرمي الدولي",
@@ -837,6 +849,7 @@ export const detailedEnvironmentalServices: EnvironmentalServiceDetailed[] = [
   },
   {
     id: "hazardous-waste-management",
+    image: "/BG/Environment & Sustainability/Hazardous Waste Management.jpg",
     number: "07",
     badgeEn: "Hazardous Materials · Controlled Disposal",
     badgeAr: "المخلفات الخطرة · تصاريح وتخلص آمن",
@@ -866,6 +879,7 @@ export const detailedEnvironmentalServices: EnvironmentalServiceDetailed[] = [
   },
   {
     id: "solid-waste-recycling",
+    image: "/BG/Environment & Sustainability/Solid Waste Recycling.jpg",
     number: "08",
     badgeEn: "Resource Recovery · Upcycling Plants",
     badgeAr: "تدوير المخلفات الصلبة · استرداد الموارد",
@@ -895,6 +909,7 @@ export const detailedEnvironmentalServices: EnvironmentalServiceDetailed[] = [
   },
   {
     id: "waste-to-energy",
+    image: "/BG/Environment & Sustainability/Waste to Energy Services & Biogas Plants.jpg",
     number: "09",
     badgeEn: "Strategic Alliance · RENERGON International AG",
     badgeAr: "شراكة دولية · رينرجون السويسرية (RENERGON)",
@@ -924,6 +939,7 @@ export const detailedEnvironmentalServices: EnvironmentalServiceDetailed[] = [
   },
   {
     id: "biogas-plants",
+    image: "/BG/Environment & Sustainability/Biogas Project Development.jpg",
     number: "10",
     badgeEn: "Patented RSD Technology · Dry Fermentation",
     badgeAr: "تكنولوجيا RSD الحاصلة على براءة اختراع · تخمير جاف",
@@ -953,6 +969,7 @@ export const detailedEnvironmentalServices: EnvironmentalServiceDetailed[] = [
   },
   {
     id: "renewable-energy",
+    image: "/BG/Environment & Sustainability/Renewable Energy Sector.jpg",
     number: "11",
     badgeEn: "Solar · Micro-Wind · Micro-Hydro",
     badgeAr: "طاقة شمسية · رياح مصغرة · هيدرو",
@@ -982,6 +999,7 @@ export const detailedEnvironmentalServices: EnvironmentalServiceDetailed[] = [
   },
   {
     id: "environmental-economic-studies",
+    image: "/BG/Environment & Sustainability/Environmental Economic Studies & Policy Advisory.jpg",
     number: "12",
     badgeEn: "Macro & Micro Economics · Policy Modeling",
     badgeAr: "الاقتصاد البيئي · الجدوى وسياسات التسعير",
@@ -1011,6 +1029,7 @@ export const detailedEnvironmentalServices: EnvironmentalServiceDetailed[] = [
   },
   {
     id: "sustainability-consulting",
+    image: "/BG/Environment & Sustainability/Sustainable Development Advisory & UN Global Goals.jpg",
     number: "13",
     badgeEn: "Corporate Strategy · ESG Frameworks",
     badgeAr: "استراتيجيات الاستدامة · معايير ESG",
@@ -1040,6 +1059,7 @@ export const detailedEnvironmentalServices: EnvironmentalServiceDetailed[] = [
   },
   {
     id: "sdgs-consulting",
+    image: "/BG/Environment & Sustainability/Sustainable Development Advisory & UN Global Goals.jpg",
     number: "14",
     badgeEn: "UN 2030 Agenda · Global Goals",
     badgeAr: "أجندة الأمم المتحدة 2030 · الأهداف العالمية",
@@ -1069,6 +1089,7 @@ export const detailedEnvironmentalServices: EnvironmentalServiceDetailed[] = [
   },
   {
     id: "iso-environmental-management",
+    image: "/BG/Environment & Sustainability/Management Consultations & ISO Qualification Projects.jpg",
     number: "15",
     badgeEn: "ISO 14001:2015 · ISO 50001:2018",
     badgeAr: "أيزو 14001:2015 · أيزو 50001:2018",
@@ -1098,6 +1119,7 @@ export const detailedEnvironmentalServices: EnvironmentalServiceDetailed[] = [
   },
   {
     id: "qhse-solutions",
+    image: "/BG/Environment & Sustainability/Intelligent QHSE Application & Software Solutions.jpg",
     number: "16",
     badgeEn: "Quality, Health, Safety & Environment · Integration",
     badgeAr: "الجودة والسلامة والصحة والبيئة · أنظمة متكاملة",
@@ -1127,6 +1149,7 @@ export const detailedEnvironmentalServices: EnvironmentalServiceDetailed[] = [
   },
   {
     id: "ehs-digital-solutions",
+    image: "/BG/Environment & Sustainability/IoT Environmental Monitoring System.jpg",
     number: "17",
     badgeEn: "Cloud Platform · Mobile Application",
     badgeAr: "منظومة سحابية · تطبيقات ذكية للهواتف",
@@ -1156,6 +1179,7 @@ export const detailedEnvironmentalServices: EnvironmentalServiceDetailed[] = [
   },
   {
     id: "environmental-biotechnology",
+    image: "/BG/Environment & Sustainability/Environmental Biotechnology Services.jpg",
     number: "18",
     badgeEn: "Microbial Bioremediation · Eco-Friendly",
     badgeAr: "المعالجة البيولوجية الميكروبية · حلول حيوية",
@@ -1185,6 +1209,7 @@ export const detailedEnvironmentalServices: EnvironmentalServiceDetailed[] = [
   },
   {
     id: "research-development",
+    image: "/BG/Environment & Sustainability/Research & Development & Environmental Software Solutions.jpg",
     number: "19",
     badgeEn: "Academic Partnerships · Applied Science",
     badgeAr: "شراكات أكاديمية · أبحاث تطبيقية",

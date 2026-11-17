@@ -244,25 +244,40 @@ function EnvironmentalAboutView({ ar }: { ar: boolean }) {
             {services.slice(0, 6).map((srv) => (
               <div
                 key={srv.id}
-                className="group rounded-2xl border border-white/20 bg-background/70 p-6 backdrop-blur-xl shadow-sm transition hover:border-brand-green hover:shadow-lg flex flex-col justify-between"
+                className="group rounded-2xl border border-white/20 bg-background/80 overflow-hidden shadow-sm backdrop-blur-xl transition hover:border-brand-green hover:shadow-lg flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="font-mono text-xs font-bold text-brand-green-text bg-brand-green/10 px-2.5 py-0.5 rounded-full">
-                      {srv.number}
-                    </span>
-                    <span className="text-[11px] font-semibold text-muted-foreground">
-                      {ar ? srv.categoryAr : srv.categoryEn}
-                    </span>
+                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-secondary">
+                    <img
+                      src={encodeURI(srv.image)}
+                      alt={ar ? srv.titleAr : srv.titleEn}
+                      loading="lazy"
+                      onError={(e) => {
+                        (e.currentTarget as HTMLImageElement).src = "/placeholder.svg";
+                      }}
+                      className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute top-2.5 start-2.5">
+                      <span className="font-mono text-xs font-bold text-white bg-black/60 px-2 py-0.5 rounded-full backdrop-blur-md">
+                        {srv.number}
+                      </span>
+                    </div>
                   </div>
-                  <h4 className="text-center font-head text-base font-bold text-foreground group-hover:text-brand-green transition-colors">
-                    {ar ? srv.titleAr : srv.titleEn}
-                  </h4>
-                  <p className="mt-2 text-xs text-muted-foreground leading-relaxed line-clamp-3">
-                    {ar ? srv.leadAr : srv.leadEn}
-                  </p>
+                  <div className="p-5">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-[11px] font-semibold text-brand-orange">
+                        {ar ? srv.categoryAr : srv.categoryEn}
+                      </span>
+                    </div>
+                    <h4 className="font-head text-base font-bold text-foreground group-hover:text-brand-green transition-colors">
+                      {ar ? srv.titleAr : srv.titleEn}
+                    </h4>
+                    <p className="mt-2 text-xs text-muted-foreground leading-relaxed line-clamp-3">
+                      {ar ? srv.leadAr : srv.leadEn}
+                    </p>
+                  </div>
                 </div>
-                <div className="mt-4 pt-3 border-t border-border/40">
+                <div className="px-5 pb-5 pt-3 border-t border-border/40">
                   <Link
                     to="/sectors/$sector"
                     params={{ sector: "environmental" }}
@@ -791,44 +806,59 @@ function EnvironmentalServicesView({ ar }: { ar: boolean }) {
                 <div
                   id={`service-${service.id}`}
                   onClick={() => setActiveService(service)}
-                  className="group flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-white/20 bg-background/70 p-6 backdrop-blur-xl shadow-sm transition hover:-translate-y-1 hover:border-brand-green/60 hover:shadow-xl cursor-pointer"
+                  className="group flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-white/20 bg-background/80 shadow-sm backdrop-blur-xl transition hover:-translate-y-1 hover:border-brand-green/60 hover:shadow-xl cursor-pointer"
                 >
                   <div>
-                    <div className="flex items-center justify-between mb-3">
-                      <span className="font-mono text-xs font-bold text-brand-green-text bg-brand-green/10 px-2.5 py-0.5 rounded-full">
-                        {service.number}
-                      </span>
-                      <span className="text-[11px] font-semibold text-muted-foreground line-clamp-1 max-w-[180px]">
-                        {ar ? service.badgeAr : service.badgeEn}
-                      </span>
+                    {/* Service Image Banner */}
+                    <div className="relative aspect-[16/10] w-full overflow-hidden bg-secondary">
+                      <img
+                        src={encodeURI(service.image)}
+                        alt={ar ? service.titleAr : service.titleEn}
+                        loading="lazy"
+                        onError={(e) => {
+                          (e.currentTarget as HTMLImageElement).src = "/placeholder.svg";
+                        }}
+                        className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity" />
+                      <div className="absolute top-3 start-3 end-3 flex items-center justify-between">
+                        <span className="font-mono text-xs font-bold text-white bg-black/60 px-2.5 py-0.5 rounded-full backdrop-blur-md">
+                          {service.number}
+                        </span>
+                        <span className="text-[11px] font-semibold text-white bg-black/60 px-2.5 py-0.5 rounded-full backdrop-blur-md line-clamp-1 max-w-[180px]">
+                          {ar ? service.badgeAr : service.badgeEn}
+                        </span>
+                      </div>
                     </div>
 
-                    <h3 className="font-head text-base sm:text-lg font-bold text-foreground group-hover:text-brand-green transition-colors">
-                      {ar ? service.titleAr : service.titleEn}
-                    </h3>
-                    <p className="mt-1 text-xs font-medium text-brand-orange-text">
-                      {ar ? service.categoryAr : service.categoryEn}
-                    </p>
-                    <p className="mt-3 text-xs leading-relaxed text-muted-foreground line-clamp-3">
-                      {ar ? service.leadAr : service.leadEn}
-                    </p>
+                    <div className="p-6">
+                      <h3 className="font-head text-base sm:text-lg font-bold text-foreground group-hover:text-brand-green transition-colors">
+                        {ar ? service.titleAr : service.titleEn}
+                      </h3>
+                      <p className="mt-1 text-xs font-medium text-brand-orange-text">
+                        {ar ? service.categoryAr : service.categoryEn}
+                      </p>
+                      <p className="mt-3 text-xs leading-relaxed text-muted-foreground line-clamp-3">
+                        {ar ? service.leadAr : service.leadEn}
+                      </p>
 
-                    <div className="mt-4 pt-3 border-t border-border/40">
-                      <span className="text-[11px] font-bold text-foreground block mb-1.5">
-                        {ar ? "أبرز مجالات ونطاق العمل:" : "Core Scope Highlights:"}
-                      </span>
-                      <ul className="space-y-1">
-                        {(ar ? service.scopeAr : service.scopeEn).slice(0, 2).map((sc, sIdx) => (
-                          <li key={sIdx} className="flex items-start gap-1.5 text-xs text-muted-foreground">
-                            <CheckCircle2 className="size-3 text-brand-green shrink-0 mt-0.5" />
-                            <span className="line-clamp-1">{sc}</span>
-                          </li>
-                        ))}
-                      </ul>
+                      <div className="mt-4 pt-3 border-t border-border/40">
+                        <span className="text-[11px] font-bold text-foreground block mb-1.5">
+                          {ar ? "أبرز مجالات ونطاق العمل:" : "Core Scope Highlights:"}
+                        </span>
+                        <ul className="space-y-1">
+                          {(ar ? service.scopeAr : service.scopeEn).slice(0, 2).map((sc, sIdx) => (
+                            <li key={sIdx} className="flex items-start gap-1.5 text-xs text-muted-foreground">
+                              <CheckCircle2 className="size-3 text-brand-green shrink-0 mt-0.5" />
+                              <span className="line-clamp-1">{sc}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
                   </div>
 
-                  <div className="mt-6 pt-4 border-t border-border/50 flex items-center justify-between">
+                  <div className="px-6 pb-6 pt-4 border-t border-border/50 flex items-center justify-between">
                     <span className="text-xs font-bold text-brand-green group-hover:text-brand-orange transition-colors flex items-center gap-1">
                       <span>{ar ? "عرض الملف الفني الشامل" : "View Technical Dossier"}</span>
                       <ChevronRight className="size-3.5 rtl:rotate-180" />
@@ -872,6 +902,18 @@ function EnvironmentalServicesView({ ar }: { ar: boolean }) {
                 {ar ? activeService.leadAr : activeService.leadEn}
               </DialogDescription>
             </DialogHeader>
+
+            {/* Service Hero Image Banner */}
+            <div className="relative aspect-video w-full rounded-2xl overflow-hidden bg-secondary mt-4">
+              <img
+                src={encodeURI(activeService.image)}
+                alt={ar ? activeService.titleAr : activeService.titleEn}
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).src = "/placeholder.svg";
+                }}
+                className="size-full object-cover"
+              />
+            </div>
 
             <div className="mt-6 space-y-6 text-xs sm:text-sm">
               {/* 1. Service Overview */}
