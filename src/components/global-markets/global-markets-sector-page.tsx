@@ -602,7 +602,7 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
                         <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 dark:bg-white/10 px-2.5 py-0.5 font-bold text-slate-700 dark:text-slate-200">
                           {regionLabel ? (ar ? regionLabel.ar : regionLabel.en) : study.region}
                         </span>
-                        {typeof study.regionalRank === "number" && (
+                        {study.sector !== "garment" && study.sector !== "environmental" && typeof study.regionalRank === "number" && (
                           <span className="rounded-full bg-brand-green/15 text-brand-green px-2 py-0.5 font-extrabold text-[10px]">
                             {ar ? `الترتيب #${study.regionalRank}` : `Rank #${study.regionalRank}`}
                           </span>
