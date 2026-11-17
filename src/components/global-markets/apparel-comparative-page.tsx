@@ -604,12 +604,12 @@ export function ApparelComparativePage({
             <table className="w-full text-xs text-start">
               <thead className="bg-slate-100/90 dark:bg-slate-800/80 text-slate-800 dark:text-slate-100">
                 <tr>
-                  <th className="px-2.5 py-3 font-extrabold whitespace-nowrap w-[14%]">{ar ? "الدولة" : "Country"}</th>
-                  <th className="px-2 py-3 font-extrabold whitespace-nowrap w-[11%]">{ar ? "الإقليم" : "Region"}</th>
+                  <th className="px-2.5 py-3 font-extrabold text-center whitespace-nowrap w-[13%]">{ar ? "الدولة" : "Country"}</th>
+                  <th className="px-2 py-3 font-extrabold text-center whitespace-nowrap w-[10%]">{ar ? "الإقليم" : "Region"}</th>
                   <th className="px-1.5 py-3 font-extrabold text-center whitespace-nowrap w-[6%]">{ar ? "الأولوية" : "Priority"}</th>
-                  <th className="px-2 py-3 font-extrabold text-center whitespace-nowrap w-[12%]">{ar ? "الدور السوقي" : "Market Role"}</th>
-                  <th className="px-2.5 py-3 font-extrabold whitespace-nowrap w-[13%]">{ar ? "المؤشر / السنة" : "Indicator / Year"}</th>
-                  <th className="px-4 py-3 font-extrabold w-[44%] min-w-[320px]">{ar ? "الجهات المستهدفة" : "Target Accounts"}</th>
+                  <th className="px-2 py-3 font-extrabold text-center whitespace-nowrap w-[10%]">{ar ? "الدور السوقي" : "Market Role"}</th>
+                  <th className="px-2 py-3 font-extrabold text-center whitespace-nowrap w-[9%]">{ar ? "المؤشر / السنة" : "Indicator / Year"}</th>
+                  <th className="px-4 py-3 font-extrabold text-center w-[52%] min-w-[350px]">{ar ? "الجهات المستهدفة" : "Target Accounts"}</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-200/70 dark:divide-white/10">
@@ -627,12 +627,12 @@ export function ApparelComparativePage({
                     );
 
                   return (
-                    <tr key={s.id} className="hover:bg-slate-50/80 dark:hover:bg-white/5 align-top">
-                      <td className="px-2.5 py-3 font-bold whitespace-nowrap">
+                    <tr key={s.id} className="hover:bg-slate-50/80 dark:hover:bg-white/5 align-middle">
+                      <td className="px-2.5 py-3 font-bold whitespace-nowrap text-center">
                         <Link
                           to="/global-markets/$sector/$slug"
                           params={{ sector: s.sector || "garment", slug: s.slug }}
-                          className="inline-flex items-center gap-1.5 text-slate-900 dark:text-white hover:text-brand-green"
+                          className="inline-flex items-center justify-center gap-1.5 text-slate-900 dark:text-white hover:text-brand-green"
                         >
                           {s.countryCode && (
                             <img
@@ -645,7 +645,7 @@ export function ApparelComparativePage({
                           <span className="text-xs">{ar ? s.countryNameAr : s.countryNameEn}</span>
                         </Link>
                       </td>
-                      <td className="px-2 py-3 text-slate-600 dark:text-slate-300 whitespace-nowrap text-[11px]">
+                      <td className="px-2 py-3 text-slate-600 dark:text-slate-300 whitespace-nowrap text-[11px] text-center">
                         {regionMeta ? (ar ? regionMeta.titleAr : regionMeta.titleEn) : "—"}
                       </td>
                       <td className="px-1.5 py-3 text-center whitespace-nowrap">
@@ -662,21 +662,21 @@ export function ApparelComparativePage({
                           </span>
                         )}
                       </td>
-                      <td className="px-2.5 py-3 font-mono whitespace-nowrap text-xs">
+                      <td className="px-2 py-3 font-mono whitespace-nowrap text-center">
                         {s.dataBasis === "pending_verification" ? (
-                          <span className="text-amber-700 dark:text-amber-300 font-semibold font-sans text-[11px]">
+                          <span className="text-amber-700 dark:text-amber-300 font-semibold font-sans text-[11px] block text-center">
                             {ar ? "قيد التحقق" : "Pending Verification"}
                           </span>
                         ) : (
-                          <div>
-                            <span className="font-bold text-slate-900 dark:text-white">{s.tradeIndicatorDisplay}</span>
-                            <span className="text-slate-500 ms-1 text-[11px]">({s.tradeIndicatorYear})</span>
+                          <div className="flex flex-col items-center justify-center text-center">
+                            <span className="font-bold text-slate-900 dark:text-white leading-tight text-xs">{s.tradeIndicatorDisplay}</span>
+                            <span className="text-slate-500 text-[10px] font-sans mt-0.5">({s.tradeIndicatorYear})</span>
                           </div>
                         )}
                       </td>
-                      <td className="px-4 py-3 text-xs text-slate-700 dark:text-slate-200 leading-relaxed">
+                      <td className="px-4 py-3 text-xs text-slate-700 dark:text-slate-200 leading-relaxed text-center">
                         {cleanBuyers.length > 0 ? (
-                          <div className="space-y-1.5">
+                          <div className="space-y-1.5 inline-block text-start w-full">
                             {cleanBuyers.map((buyer, bIdx) => (
                               <div key={bIdx} className="flex items-start gap-1.5">
                                 <span className="size-1 rounded-full bg-brand-green mt-1.5 shrink-0" />
