@@ -237,22 +237,24 @@ export function ApparelComparativePage({
               </span>
             </span>
 
-            <Link
-              to={selectedSector === "all" ? "/global-markets" : "/global-markets/$sector"}
-              params={selectedSector === "all" ? undefined : { sector: selectedSector }}
-              className="inline-flex items-center gap-1.5 rounded-full border border-brand-green/30 bg-brand-green/10 px-4 py-1.5 text-xs font-bold text-brand-green hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-all duration-300 shadow-xs cursor-pointer"
-            >
-              {ar ? <ArrowRight className="size-3.5" /> : <ArrowLeft className="size-3.5" />}
-              <span>
-                {selectedSector === "all"
-                  ? ar
-                    ? "العودة للأسواق العالمية"
-                    : "Back to Global Markets"
-                  : ar
-                  ? "العودة لدليل دول القطاع"
-                  : "Back to Sector Directory"}
-              </span>
-            </Link>
+            {selectedSector === "all" ? (
+              <Link
+                to="/global-markets"
+                className="inline-flex items-center gap-1.5 rounded-full border border-brand-green/30 bg-brand-green/10 px-4 py-1.5 text-xs font-bold text-brand-green hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-all duration-300 shadow-xs cursor-pointer"
+              >
+                {ar ? <ArrowRight className="size-3.5" /> : <ArrowLeft className="size-3.5" />}
+                <span>{ar ? "العودة للأسواق العالمية" : "Back to Global Markets"}</span>
+              </Link>
+            ) : (
+              <Link
+                to="/global-markets/$sector"
+                params={{ sector: selectedSector }}
+                className="inline-flex items-center gap-1.5 rounded-full border border-brand-green/30 bg-brand-green/10 px-4 py-1.5 text-xs font-bold text-brand-green hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-all duration-300 shadow-xs cursor-pointer"
+              >
+                {ar ? <ArrowRight className="size-3.5" /> : <ArrowLeft className="size-3.5" />}
+                <span>{ar ? "العودة لدليل دول القطاع" : "Back to Sector Directory"}</span>
+              </Link>
+            )}
           </div>
 
           <div className="space-y-2">
@@ -468,7 +470,7 @@ export function ApparelComparativePage({
                       <div className="flex items-center justify-between gap-2 text-xs">
                         <Link
                           to="/global-markets/$sector/$slug"
-                          params={{ sector: "garment", slug: s.slug }}
+                          params={{ sector: s.sector || "garment", slug: s.slug }}
                           className="font-bold text-slate-800 dark:text-slate-100 hover:text-brand-green flex items-center gap-2"
                         >
                           {s.countryCode && (
@@ -534,7 +536,7 @@ export function ApparelComparativePage({
                         <div className="flex items-center justify-between text-xs font-bold">
                           <Link
                             to="/global-markets/$sector/$slug"
-                            params={{ sector: "garment", slug: s.slug }}
+                            params={{ sector: s.sector || "garment", slug: s.slug }}
                             className="flex items-center gap-2 text-slate-800 dark:text-slate-100 hover:text-brand-green"
                           >
                             {s.countryCode && (
@@ -621,7 +623,7 @@ export function ApparelComparativePage({
                       <td className="px-3.5 py-3 font-bold whitespace-nowrap">
                         <Link
                           to="/global-markets/$sector/$slug"
-                          params={{ sector: "garment", slug: s.slug }}
+                          params={{ sector: s.sector || "garment", slug: s.slug }}
                           className="inline-flex items-center gap-2 text-slate-900 dark:text-white hover:text-brand-green"
                         >
                           {s.countryCode && (
@@ -683,7 +685,7 @@ export function ApparelComparativePage({
 
       {/* 6. Interactive Side-by-Side Comparison Matrix */}
       <section className="site-container pb-8">
-        <MarketComparisonPanel sectorId="garment" studies={filteredStudies} ar={ar} />
+        <MarketComparisonPanel sectorId={selectedSector === "all" ? "garment" : selectedSector} studies={filteredStudies} ar={ar} />
       </section>
 
       {/* 7. HS Product Map & Launch Waves Context */}

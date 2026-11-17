@@ -53,7 +53,7 @@ export const STUDY_SAU_APPAREL_001: GlobalMarketStudy = {
     "Private Label",
     "FOB / OEM",
   ],
-  titleAr: "دراسة السوق السعودي لقطاع الملابس والمنسوجات والفرص التجارية والاستثمارية",
+  titleAr: "دراسة سوق المملكة العربية السعودية",
   titleEn: "Saudi Arabia – Apparel & Textiles Market Intelligence Report",
   subtitleAr:
     "المرجع الموثق SBA-GM-APP-SAU-001 (الإصدار 1.0) — مكتملة بحثيًا: تحليل حجم السوق، الواردات (HS 61/62)، المنافسة، الاشتراطات التنظيمية (SASO / SABER / GAFTA)، والمشترين المحتملين واستراتيجية الدخول التعاقدي.",

@@ -73,7 +73,7 @@ export const STUDY_UAE_APPAREL_001: GlobalMarketStudy = {
     "Tracksuits & Activewear (HS 6112)",
     "Private Label & OEM Programs",
   ],
-  titleAr: "دراسة السوق الإماراتي لقطاع الملابس والمنسوجات والفرص التجارية والاستثمارية",
+  titleAr: "دراسة سوق دولة الإمارات العربية المتحدة",
   titleEn: "United Arab Emirates Apparel & Textiles Market Intelligence Report — Trade & Investment Opportunities",
   subtitleAr: "تحليل استراتيجي متكامل: مركز إعادة التصدير الإقليمي الأول، مؤشرات الواردات الجمركية ($6.61B)، وحلول التوريد والتصنيع للمجموعات الكبرى",
   subtitleEn: "Strategic Market Intelligence: Premier Regional Re-Export Hub, $6.61B Customs Baseline, and Private Label Manufacturing Solutions",

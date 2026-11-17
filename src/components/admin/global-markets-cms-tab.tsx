@@ -106,8 +106,25 @@ export function GlobalMarketsCmsTab({ ar = true }: GlobalMarketsCmsTabProps) {
     return studies.filter((s) => s.sector === sectorFilter);
   }, [studies, sectorFilter]);
 
+  const garmentStudies = useMemo(
+    () => filteredStudies.filter((s) => s.sector === "garment"),
+    [filteredStudies],
+  );
+  const environmentalStudies = useMemo(
+    () => filteredStudies.filter((s) => s.sector === "environmental"),
+    [filteredStudies],
+  );
+  const otherStudies = useMemo(
+    () => filteredStudies.filter((s) => s.sector !== "garment" && s.sector !== "environmental"),
+    [filteredStudies],
+  );
+
   const openEditor = (study: GlobalMarketStudy) => {
-    setEditingStudy(JSON.parse(JSON.stringify(study)));
+    const cloned = JSON.parse(JSON.stringify(study));
+    if (cloned.sector === "garment" && cloned.countryNameAr) {
+      cloned.titleAr = `دراسة سوق ${cloned.countryNameAr}`;
+    }
+    setEditingStudy(cloned);
     setProductTagsArText((study.productTagsAr || []).join(", "));
     setProductTagsEnText((study.productTagsEn || []).join(", "));
     setActiveSectionKey("executiveSummary");
@@ -301,6 +318,104 @@ export function GlobalMarketsCmsTab({ ar = true }: GlobalMarketsCmsTabProps) {
     setTimeout(() => setCopiedSchema(false), 2000);
   };
 
+  const renderStudiesTable = (list: GlobalMarketStudy[]) => (
+    <div className="overflow-x-auto">
+      <table className="w-full text-xs">
+        <thead className="border-b border-slate-200 dark:border-white/10 text-slate-500">
+          <tr>
+            <th className="py-3 px-3 text-start">{ar ? "العنوان والسوق" : "Title & Market"}</th>
+            <th className="py-3 px-3 text-start">{ar ? "القطاع" : "Sector"}</th>
+            <th className="py-3 px-3 text-start">{ar ? "الحالة" : "Status"}</th>
+            <th className="py-3 px-3 text-start">{ar ? "الاعتماد" : "Approval"}</th>
+            <th className="py-3 px-3 text-start">{ar ? "التحديث" : "Updated"}</th>
+            <th className="py-3 px-3 text-end">{ar ? "إجراءات" : "Actions"}</th>
+          </tr>
+        </thead>
+        <tbody className="divide-y divide-slate-200/70 dark:divide-white/10">
+          {list.map((study) => {
+            const st = (study.status && STUDY_STATUS_LABELS[study.status]) || STUDY_STATUS_LABELS.completed;
+            const appSt = (study.approvalStatus && APPROVAL_STATUS_LABELS[study.approvalStatus]) || APPROVAL_STATUS_LABELS.approved;
+            const sec = GLOBAL_MARKET_SECTORS.find((s) => s.id === study.sector);
+            const titleAr =
+              study.sector === "garment" && study.countryNameAr
+                ? `دراسة سوق ${study.countryNameAr}`
+                : study.titleAr || study.countryNameAr || "دراسة سوقية";
+            const titleEn = study.titleEn || study.countryNameEn || "Market Study";
+            const countryAr = study.countryNameAr || "—";
+            const countryEn = study.countryNameEn || "—";
+            const version = study.version || "1.0";
+            const updated = study.lastUpdated || study.issueDate || "2026";
+            const sectorId = study.sector || "garment";
+            return (
+              <tr key={study.id} className="hover:bg-slate-50/80 dark:hover:bg-white/5">
+                <td className="py-3 px-3">
+                  <div className="font-bold text-slate-900 dark:text-white">{ar ? titleAr : titleEn}</div>
+                  <div className="text-[11px] text-slate-500">
+                    {ar ? countryAr : countryEn} · v{version}
+                  </div>
+                </td>
+                <td className="py-3 px-3 font-semibold text-slate-700 dark:text-slate-200">
+                  {sec ? (ar ? sec.nameAr : sec.nameEn) : sectorId}
+                </td>
+                <td className="py-3 px-3">
+                  <span className={cn("rounded-full border px-2.5 py-0.5 text-[10px] font-bold", st.badgeClass)}>
+                    {ar ? st.ar : st.en}
+                  </span>
+                </td>
+                <td className="py-3 px-3">
+                  <span className={cn("rounded-full border px-2.5 py-0.5 text-[10px] font-bold", appSt.badgeClass)}>
+                    {ar ? appSt.ar : appSt.en}
+                  </span>
+                </td>
+                <td className="py-3 px-3 font-mono text-slate-600 dark:text-slate-300">
+                  {updated}
+                </td>
+                <td className="py-3 px-3">
+                  <div className="flex items-center justify-end gap-1.5">
+                    <Link
+                      to="/global-markets/$sector/$slug"
+                      params={{ sector: sectorId, slug: study.slug }}
+                      className="rounded-lg border border-slate-200 dark:border-white/10 p-1.5 text-slate-700 dark:text-slate-300 hover:border-brand-green hover:text-brand-green hover:bg-brand-green/10 transition-colors"
+                      title={ar ? "معاينة" : "Preview"}
+                    >
+                      <Eye className="size-3.5" />
+                    </Link>
+                    <button
+                      type="button"
+                      onClick={() => openEditor(study)}
+                      className="rounded-lg border border-slate-200 dark:border-white/10 p-1.5 text-slate-700 dark:text-slate-300 hover:border-brand-orange hover:text-brand-orange hover:bg-brand-orange/10 transition-colors cursor-pointer"
+                      title={ar ? "تعديل" : "Edit"}
+                    >
+                      <Edit3 className="size-3.5" />
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => handleArchiveStudy(study)}
+                      className="rounded-lg border border-slate-200 p-1.5 text-amber-600 hover:bg-amber-50 cursor-pointer"
+                      title={ar ? "أرشفة" : "Archive"}
+                    >
+                      <Archive className="size-3.5" />
+                    </button>
+                    {study.isCustomStored && (
+                      <button
+                        type="button"
+                        onClick={() => handleDeleteStudy(study.id)}
+                        className="rounded-lg border border-slate-200 p-1.5 text-red-600 hover:bg-red-50 cursor-pointer"
+                        title={ar ? "حذف" : "Delete"}
+                      >
+                        <Trash2 className="size-3.5" />
+                      </button>
+                    )}
+                  </div>
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+  );
+
   return (
     <div className="space-y-6 text-start">
       {/* Header Toolbar */}
@@ -375,8 +490,8 @@ export function GlobalMarketsCmsTab({ ar = true }: GlobalMarketsCmsTabProps) {
         </div>
       </div>
 
-      {/* Studies Table */}
-      <div className="rounded-3xl border border-slate-200/80 dark:border-white/15 bg-white/80 dark:bg-slate-900/70 p-6 backdrop-blur-2xl shadow-md">
+      {/* Studies Table & Sector Sections */}
+      <div className="rounded-3xl border border-slate-200/80 dark:border-white/15 bg-white/80 dark:bg-slate-900/70 p-6 backdrop-blur-2xl shadow-md space-y-6">
         {filteredStudies.length === 0 ? (
           <div className="py-10 text-center space-y-2">
             <p className="font-head text-base font-bold text-slate-800 dark:text-white">
@@ -388,99 +503,82 @@ export function GlobalMarketsCmsTab({ ar = true }: GlobalMarketsCmsTabProps) {
                 : "Use \"Import JSON\" to ingest a prepared study payload or \"New Study\" to register one directly."}
             </p>
           </div>
-        ) : (
-          <div className="overflow-x-auto">
-            <table className="w-full text-xs">
-              <thead className="border-b border-slate-200 dark:border-white/10 text-slate-500">
-                <tr>
-                  <th className="py-3 px-3 text-start">{ar ? "العنوان والسوق" : "Title & Market"}</th>
-                  <th className="py-3 px-3 text-start">{ar ? "القطاع" : "Sector"}</th>
-                  <th className="py-3 px-3 text-start">{ar ? "الحالة" : "Status"}</th>
-                  <th className="py-3 px-3 text-start">{ar ? "الاعتماد" : "Approval"}</th>
-                  <th className="py-3 px-3 text-start">{ar ? "التحديث" : "Updated"}</th>
-                  <th className="py-3 px-3 text-end">{ar ? "إجراءات" : "Actions"}</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-200/70 dark:divide-white/10">
-                {filteredStudies.map((study) => {
-                  const st = (study.status && STUDY_STATUS_LABELS[study.status]) || STUDY_STATUS_LABELS.completed;
-                  const appSt = (study.approvalStatus && APPROVAL_STATUS_LABELS[study.approvalStatus]) || APPROVAL_STATUS_LABELS.approved;
-                  const sec = GLOBAL_MARKET_SECTORS.find((s) => s.id === study.sector);
-                  const titleAr = study.titleAr || study.countryNameAr || "دراسة سوقية";
-                  const titleEn = study.titleEn || study.countryNameEn || "Market Study";
-                  const countryAr = study.countryNameAr || "—";
-                  const countryEn = study.countryNameEn || "—";
-                  const version = study.version || "1.0";
-                  const updated = study.lastUpdated || study.issueDate || "2026";
-                  const sectorId = study.sector || "garment";
-                  return (
-                    <tr key={study.id} className="hover:bg-slate-50/80 dark:hover:bg-white/5">
-                      <td className="py-3 px-3">
-                        <div className="font-bold text-slate-900 dark:text-white">{ar ? titleAr : titleEn}</div>
-                        <div className="text-[11px] text-slate-500">
-                          {ar ? countryAr : countryEn} · v{version}
-                        </div>
-                      </td>
-                      <td className="py-3 px-3 font-semibold text-slate-700 dark:text-slate-200">
-                        {sec ? (ar ? sec.nameAr : sec.nameEn) : sectorId}
-                      </td>
-                      <td className="py-3 px-3">
-                        <span className={cn("rounded-full border px-2.5 py-0.5 text-[10px] font-bold", st.badgeClass)}>
-                          {ar ? st.ar : st.en}
-                        </span>
-                      </td>
-                      <td className="py-3 px-3">
-                        <span className={cn("rounded-full border px-2.5 py-0.5 text-[10px] font-bold", appSt.badgeClass)}>
-                          {ar ? appSt.ar : appSt.en}
-                        </span>
-                      </td>
-                      <td className="py-3 px-3 font-mono text-slate-600 dark:text-slate-300">
-                        {updated}
-                      </td>
-                      <td className="py-3 px-3">
-                        <div className="flex items-center justify-end gap-1.5">
-                          <Link
-                            to="/global-markets/$sector/$slug"
-                            params={{ sector: sectorId, slug: study.slug }}
-                            className="rounded-lg border border-slate-200 dark:border-white/10 p-1.5 text-slate-700 dark:text-slate-300 hover:border-brand-green hover:text-brand-green hover:bg-brand-green/10 transition-colors"
-                            title={ar ? "معاينة" : "Preview"}
-                          >
-                            <Eye className="size-3.5" />
-                          </Link>
-                          <button
-                            type="button"
-                            onClick={() => openEditor(study)}
-                            className="rounded-lg border border-slate-200 dark:border-white/10 p-1.5 text-slate-700 dark:text-slate-300 hover:border-brand-orange hover:text-brand-orange hover:bg-brand-orange/10 transition-colors cursor-pointer"
-                            title={ar ? "تعديل" : "Edit"}
-                          >
-                            <Edit3 className="size-3.5" />
-                          </button>
-                          <button
-                            type="button"
-                            onClick={() => handleArchiveStudy(study)}
-                            className="rounded-lg border border-slate-200 p-1.5 text-amber-600 hover:bg-amber-50 cursor-pointer"
-                            title={ar ? "أرشفة" : "Archive"}
-                          >
-                            <Archive className="size-3.5" />
-                          </button>
-                          {study.isCustomStored && (
-                            <button
-                              type="button"
-                              onClick={() => handleDeleteStudy(study.id)}
-                              className="rounded-lg border border-slate-200 p-1.5 text-red-600 hover:bg-red-50 cursor-pointer"
-                              title={ar ? "حذف" : "Delete"}
-                            >
-                              <Trash2 className="size-3.5" />
-                            </button>
-                          )}
-                        </div>
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
+        ) : sectorFilter === "all" ? (
+          <div className="space-y-8">
+            {/* 1. Garment Sector Section */}
+            {garmentStudies.length > 0 && (
+              <div className="space-y-4">
+                <div className="flex flex-wrap items-center justify-between gap-3 border-b-2 border-brand-green/30 pb-3">
+                  <div className="flex items-center gap-2.5">
+                    <div className="size-9 rounded-2xl bg-brand-green/15 text-brand-green border border-brand-green/30 flex items-center justify-center font-bold text-base shadow-xs">
+                      👕
+                    </div>
+                    <div>
+                      <h3 className="font-head text-base font-extrabold text-slate-900 dark:text-white">
+                        {ar ? "دراسات قطاع الملابس والمنسوجات" : "Apparel & Textiles Sector Studies"}
+                      </h3>
+                      <p className="text-[11px] text-slate-500">
+                        {ar ? `${garmentStudies.length} دراسة سوقية معتمدة دولياً` : `${garmentStudies.length} verified studies`}
+                      </p>
+                    </div>
+                  </div>
+                  <span className="rounded-full bg-brand-green/10 border border-brand-green/30 px-3.5 py-1 text-xs font-bold text-brand-green">
+                    {ar ? "قطاع الملابس والمنسوجات" : "Garment Sector"}
+                  </span>
+                </div>
+                {renderStudiesTable(garmentStudies)}
+              </div>
+            )}
+
+            {/* 2. Visual Separator Between Sectors */}
+            {garmentStudies.length > 0 && environmentalStudies.length > 0 && (
+              <div className="relative my-8 py-3">
+                <div className="absolute inset-0 flex items-center" aria-hidden="true">
+                  <div className="w-full border-t-2 border-dashed border-brand-green/30 dark:border-brand-green/20" />
+                </div>
+                <div className="relative flex justify-center">
+                  <span className="inline-flex items-center gap-2 rounded-full border-2 border-brand-green bg-white dark:bg-slate-900 px-6 py-2 text-xs font-black text-brand-green shadow-md">
+                    <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
+                    <span>{ar ? "فاصل منظم بين القطاعات المعتمدة" : "Standardized Divider Between Sectors"}</span>
+                  </span>
+                </div>
+              </div>
+            )}
+
+            {/* 3. Environmental Sector Section */}
+            {environmentalStudies.length > 0 && (
+              <div className="space-y-4">
+                <div className="flex flex-wrap items-center justify-between gap-3 border-b-2 border-emerald-500/30 pb-3">
+                  <div className="flex items-center gap-2.5">
+                    <div className="size-9 rounded-2xl bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30 flex items-center justify-center font-bold text-base shadow-xs">
+                      🌱
+                    </div>
+                    <div>
+                      <h3 className="font-head text-base font-extrabold text-slate-900 dark:text-white">
+                        {ar ? "دراسات قطاع البيئة المستدامة" : "Sustainable Environment Sector Studies"}
+                      </h3>
+                      <p className="text-[11px] text-slate-500">
+                        {ar ? `${environmentalStudies.length} دراسة سوقية معتمدة دولياً` : `${environmentalStudies.length} verified studies`}
+                      </p>
+                    </div>
+                  </div>
+                  <span className="rounded-full bg-emerald-500/10 border border-emerald-500/30 px-3.5 py-1 text-xs font-bold text-emerald-700 dark:text-emerald-300">
+                    {ar ? "قطاع البيئة المستدامة" : "Environmental Sector"}
+                  </span>
+                </div>
+                {renderStudiesTable(environmentalStudies)}
+              </div>
+            )}
+
+            {/* 4. Other Sectors if present */}
+            {otherStudies.length > 0 && (
+              <div className="space-y-4 pt-6 border-t border-slate-200 dark:border-white/10">
+                {renderStudiesTable(otherStudies)}
+              </div>
+            )}
           </div>
+        ) : (
+          renderStudiesTable(filteredStudies)
         )}
       </div>
 

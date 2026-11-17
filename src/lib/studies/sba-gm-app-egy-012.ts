@@ -97,7 +97,7 @@ export const STUDY_EGY_APPAREL_012: GlobalMarketStudy = {
     "Private Label & OEM Contract Manufacturing",
     "Qualifying Industrial Zones (QIZ) Sourcing"
   ],
-  titleAr: "دراسة السوق المصري لقطاع الملابس والمنسوجات — الاستهلاك المحلي وقاعدة التصنيع والتصدير الدولي",
+  titleAr: "دراسة سوق جمهورية مصر العربية",
   titleEn: "Egypt Apparel & Textiles Market Intelligence Report — Domestic Market, Manufacturing Hub & Export Platform",
   subtitleAr: "تحليل استراتيجي موثق (SBA-GM-APP-EGY-012 | الإصدار 2.0): خط الأساس الجمركي لواردات HS 61/62 (292.1 مليون دولار)، سلاسل التجارة الخارجية عبر GOEIC (صادرات 3.39 مليار دولار في 2025)، خريطة الـ 14,339 شركة والـ 8 تجمعات صناعية، شبكات التجزئة والمشترين المستهدفين، وقواعد الدخول التجاري لمجموعة سامي بن عياد",
   subtitleEn: "Verified Strategic Intelligence (SBA-GM-APP-EGY-012 | Edition 2.0): HS 61/62 Customs Imports Baseline ($292.1M WITS), GOEIC Trade Series ($3.394B Exports in 2025), Map of 14,339 Textile/RMG Companies & 8 Industrial Clusters, Retail Buyers Directory, and SBA Commercial Models",

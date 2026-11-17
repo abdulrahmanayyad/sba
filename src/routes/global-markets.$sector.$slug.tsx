@@ -59,7 +59,7 @@ export const Route = createFileRoute("/global-markets/$sector/$slug")({
     return { sectorId: sector.id, slug: params.slug };
   },
   head: ({ params }) => {
-    const cmp = params.sector === "garment" ? COMPARATIVE_SLUG_MAP[params.slug] : undefined;
+    const cmp = COMPARATIVE_SLUG_MAP[params.slug];
     return {
       meta: [
         {
