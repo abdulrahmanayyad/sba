@@ -32,8 +32,8 @@ export function AnimatedStatistic({ value }: { value: string }) {
     return () => mm.revert();
   }, [value]);
   return (
-    <span aria-label={value} dir="ltr" className="inline-block" style={{ direction: "ltr", unicodeBidi: "isolate" }}>
-      <span ref={ref} aria-hidden="true" className="tabular-nums" dir="ltr">
+    <span aria-label={value} dir="ltr" className="inline-block font-inherit font-extrabold" style={{ direction: "ltr", unicodeBidi: "isolate" }}>
+      <span ref={ref} aria-hidden="true" className="tabular-nums font-inherit font-extrabold" dir="ltr">
         {value}
       </span>
     </span>

@@ -92,14 +92,14 @@ export function AboutPage() {
                   >
                     <div className="relative z-10 flex flex-col justify-between h-full">
                       <div className="flex items-center justify-between mb-3">
-                        <span className="font-head text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">
+                        <span className="font-head text-3xl sm:text-4xl font-black font-extrabold text-brand-orange drop-shadow-sm tracking-tight">
                           <AnimatedStatistic value={stat.value} />
                         </span>
-                        <span className="font-mono text-xs text-muted-foreground/70 border border-border/60 rounded-full px-2.5 py-0.5">
+                        <span className="font-mono text-xs font-black font-extrabold text-foreground border border-border/80 bg-secondary/80 rounded-full px-2.5 py-0.5 shadow-xs">
                           0{idx + 1}
                         </span>
                       </div>
-                      <h3 className="text-start font-head text-sm sm:text-base font-bold text-foreground leading-snug">
+                      <h3 className="text-start font-head text-sm sm:text-base font-black font-extrabold text-foreground leading-snug">
                         {ar ? stat.labelAr : stat.label}
                       </h3>
                     </div>
