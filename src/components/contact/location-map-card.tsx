@@ -14,7 +14,7 @@ export function LocationMapCard({ ar = true, className = "" }: LocationMapCardPr
 
   return (
     <div
-      className={`relative aspect-[16/10] w-full rounded-2xl overflow-hidden border border-slate-200/90 dark:border-white/15 bg-slate-100 dark:bg-slate-900/80 shadow-md transition-all duration-300 hover:shadow-lg ${className}`}
+      className={`relative aspect-[3/2] w-full rounded-2xl overflow-hidden border border-slate-200/90 dark:border-white/15 bg-slate-100 dark:bg-slate-900/80 shadow-md transition-all duration-300 hover:shadow-lg ${className}`}
       dir="ltr"
     >
       {/* 1. Top-Left: "Open in Maps" Floating Button */}
@@ -38,8 +38,8 @@ export function LocationMapCard({ ar = true, className = "" }: LocationMapCardPr
         referrerPolicy="no-referrer-when-downgrade"
       />
 
-      {/* 3. Bottom-Right: Floating BUE Science & Innovation Park Pill Badge */}
-      <div className="absolute bottom-6 right-3 z-10 inline-flex items-center gap-1.5 rounded-full border border-slate-200/90 bg-white/95 px-3.5 py-1 text-xs font-bold text-slate-800 shadow-md backdrop-blur-md select-none">
+      {/* 3. Bottom-Left: Floating BUE Science & Innovation Park Pill Badge */}
+      <div className="absolute bottom-6 left-3 z-10 inline-flex items-center gap-1.5 rounded-full border border-slate-200/90 bg-white/95 px-3.5 py-1 text-xs font-bold text-slate-800 shadow-md backdrop-blur-md select-none">
         <span className="font-semibold tracking-tight text-[11px] sm:text-xs">BUE Science & Innovation Park</span>
         <MapPin className="size-3.5 text-brand-orange shrink-0 fill-brand-orange/20" />
       </div>
