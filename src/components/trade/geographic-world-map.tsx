@@ -1,4 +1,4 @@
-import React, { useMemo, useRef, useState } from "react";
+import React, { useMemo, useRef, useState, useEffect } from "react";
 import {
   WORLD_COUNTRIES,
   WORLD_GRATICULE_PATH,
@@ -54,6 +54,23 @@ export function GeographicWorldMap({
   const [zoom, setZoom] = useState<number>(1);
   const [pan, setPan] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
+  const isScrollingRef = useRef(false);
+  const scrollTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    const onScroll = () => {
+      isScrollingRef.current = true;
+      if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
+      scrollTimeoutRef.current = setTimeout(() => {
+        isScrollingRef.current = false;
+      }, 120);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
+    };
+  }, []);
   const dragStartRef = useRef<{
     clientX: number;
     clientY: number;
@@ -361,9 +378,11 @@ export function GeographicWorldMap({
                   if (matchedMarker) onSelectMarker(matchedMarker.code);
                 }}
                 onMouseEnter={() => {
+                  if (isScrollingRef.current) return;
                   if (matchedMarker) setHoveredCode(matchedMarker.code);
                 }}
                 onMouseLeave={() => {
+                  if (isScrollingRef.current) return;
                   if (matchedMarker) setHoveredCode((prev) => (prev === matchedMarker.code ? null : prev));
                 }}
               />
@@ -437,8 +456,14 @@ export function GeographicWorldMap({
                 if (dragStartRef.current?.moved) return;
                 onSelectMarker(m.code);
               }}
-              onMouseEnter={() => setHoveredCode(m.code)}
-              onMouseLeave={() => setHoveredCode((prev) => (prev === m.code ? null : prev))}
+              onMouseEnter={() => {
+                if (isScrollingRef.current) return;
+                setHoveredCode(m.code);
+              }}
+              onMouseLeave={() => {
+                if (isScrollingRef.current) return;
+                setHoveredCode((prev) => (prev === m.code ? null : prev));
+              }}
               className="cursor-pointer"
             >
               {/* Invisible generous hit target so small nearby pins are easy to click */}

@@ -190,7 +190,7 @@ export function TradeWorldMap({ ar = true, onSelectCountry }: TradeWorldMapProps
             <div className="flex items-center gap-2">
               <span className="flex size-2.5 rounded-full bg-emerald-500 animate-pulse" />
               <h3 className="text-sm font-bold text-foreground">
-                {ar ? "خريطة انتشار طلبات التجارة الدولية 2025" : "Global Commercial Purchase Requests Map 2025"}
+                {ar ? "خريطة انتشار طلبات التجارة الدولية" : "Global Commercial Purchase Requests Map"}
               </h3>
             </div>
           </div>

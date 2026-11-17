@@ -48,7 +48,19 @@ export function MotionEnhancer({ rtl }: { rtl: boolean }) {
         };
         // Async catalogue results, filters and tab changes receive the same effects.
         scan();
-        const observer = new MutationObserver(() => {
+        const observer = new MutationObserver((mutations) => {
+          const hasRelevantChange = mutations.some(m =>
+            Array.from(m.addedNodes).some(node =>
+              node instanceof HTMLElement && (
+                node.hasAttribute("data-site-reveal") ||
+                node.hasAttribute("data-motion-reveal") ||
+                node.hasAttribute("data-clip-reveal") ||
+                node.classList.contains("section-heading") ||
+                node.classList.contains("glass-card")
+              )
+            )
+          );
+          if (!hasRelevantChange) return;
           cancelAnimationFrame(frame);
           frame = requestAnimationFrame(scan);
         });

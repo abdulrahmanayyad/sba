@@ -221,37 +221,37 @@ export function TradePage({ ar = true }: TradePageProps) {
             </section>
 
             {/* Section 2: International Market Directory */}
-            <section id="market-directory" className="scroll-mt-32 space-y-6">
+            <section id="market-directory" className="scroll-mt-32 space-y-6 [content-visibility:auto] [contain-intrinsic-size:auto_750px]">
               <MarketDirectory ar={ar} selectedCountryCode={selectedCountryCode} />
             </section>
 
             {/* Section 3: Global Product Demand */}
-            <section id="product-demand" className="scroll-mt-32 space-y-6">
+            <section id="product-demand" className="scroll-mt-32 space-y-6 [content-visibility:auto] [contain-intrinsic-size:auto_750px]">
               <GlobalProductDemand ar={ar} />
             </section>
 
             {/* Section 4: International Trade Opportunities */}
-            <section id="trade-opportunities" className="scroll-mt-32 space-y-6">
+            <section id="trade-opportunities" className="scroll-mt-32 space-y-6 [content-visibility:auto] [contain-intrinsic-size:auto_750px]">
               <TradeOpportunitiesSection ar={ar} />
             </section>
 
             {/* Section 5: Trade Intelligence & Documented Quantities */}
-            <section id="trade-intelligence" className="scroll-mt-32 space-y-6">
+            <section id="trade-intelligence" className="scroll-mt-32 space-y-6 [content-visibility:auto] [contain-intrinsic-size:auto_750px]">
               <TradeIntelligenceDashboard ar={ar} />
             </section>
 
             {/* Section 6: Our International Business Network */}
-            <section id="business-network" className="scroll-mt-32 space-y-6">
+            <section id="business-network" className="scroll-mt-32 space-y-6 [content-visibility:auto] [contain-intrinsic-size:auto_750px]">
               <BusinessNetworkSection ar={ar} />
             </section>
 
             {/* Section 7: International Buyer Inquiries Log */}
-            <section id="buyer-inquiries" className="scroll-mt-32 space-y-6">
+            <section id="buyer-inquiries" className="scroll-mt-32 space-y-6 [content-visibility:auto] [contain-intrinsic-size:auto_750px]">
               <BuyerInquiriesSection ar={ar} />
             </section>
 
             {/* Section 8: Downloadable Reports */}
-            <section id="trade-reports" className="scroll-mt-32 space-y-6">
+            <section id="trade-reports" className="scroll-mt-32 space-y-6 [content-visibility:auto] [contain-intrinsic-size:auto_750px]">
               <TradeReportsDownloads ar={ar} />
             </section>
           </div>
