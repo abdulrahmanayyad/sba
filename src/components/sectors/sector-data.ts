@@ -337,7 +337,7 @@ export const sectors: Record<SectorSlug, SectorPageData> = {
     company: "SAMI BIN AYYAD GROUP · Natural Products Division",
     companyAr: "مجموعة سامي بن عياد · قطاع المنتجات الطبيعية",
     name: "Natural Products",
-    nameAr: "المنتجات الطبيعية",
+    nameAr: "قطاع المنتجات الطبيعية والغذائية",
     tagline: "From Nature’s Finest to Global Markets",
     taglineAr: "من خيرات الطبيعة إلى الأسواق العالمية",
     intro: "The Food & Natural Products Division is a business unit of SAMI BIN AYYAD GROUP, specializing in the sourcing and marketing of a diverse range of natural food products, including honey, olives and olive oil, dates and date-based products, herbs, spices, and natural powdered juice products. The division aims to build a flexible commercial network connecting product sources with target markets.",

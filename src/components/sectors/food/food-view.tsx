@@ -162,13 +162,9 @@ export function FoodSectorView({ tab = "about" }: FoodViewProps) {
                   <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
                   <span>
                     {ar
-                      ? "مجموعة سامي بن عياد · قطاع الأغذية والمنتجات الطبيعية"
+                      ? "مجموعة سامي بن عياد · قطاع المنتجات الطبيعية والأغذية"
                       : "SAMI BIN AYYAD · Natural & Agri-Food Products"}
                   </span>
-                </span>
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-400/30 bg-emerald-950/60 px-3 py-1 text-xs font-medium text-emerald-300 backdrop-blur-md">
-                  <ShieldCheck className="size-3.5 text-emerald-400" />
-                  <span>{ar ? "توريد تجاري وتصدير دولي معتمد" : "Certified B2B International Export"}</span>
                 </span>
               </div>
             </Reveal>
@@ -190,31 +186,12 @@ export function FoodSectorView({ tab = "about" }: FoodViewProps) {
                 <Link
                   to="/sectors/$sector"
                   params={{ sector: "food" }}
-                  search={{ tab: "request-supply" }}
+                  search={{ tab: "markets" }}
                   className="inline-flex items-center gap-2 rounded-full bg-brand-orange px-8 py-3.5 text-sm font-bold text-white shadow-xl shadow-brand-orange/30 transition-all hover:bg-brand-green hover:scale-105 active:scale-95"
                 >
-                  <Send className="size-4 rtl:rotate-180" />
-                  <span>{ar ? "طلب توريد" : "Request Supply"}</span>
+                  <Globe className="size-4" />
+                  <span>{ar ? "استكشاف أسواقنا" : "Explore Our Markets"}</span>
                 </Link>
-                <Link
-                  to="/sectors/$sector"
-                  params={{ sector: "food" }}
-                  search={{ tab: "products" }}
-                  className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-7 py-3.5 text-sm font-bold text-white backdrop-blur-md transition-all hover:bg-white/20 hover:scale-105"
-                >
-                  <Package className="size-4" />
-                  <span>{ar ? "كتالوج المنتجات والمواصفات" : "View Export Catalog"}</span>
-                </Link>
-                <a
-                  href={ar ? "/downloads/SBA_Natural_Products_Profile_AR.pdf" : "/downloads/SBA_Natural_Products_Profile_EN.pdf"}
-                  download={ar ? "SBA_Natural_Products_Profile_AR.pdf" : "SBA_Natural_Products_Profile_EN.pdf"}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-7 py-3.5 text-sm font-bold text-white backdrop-blur-md transition-all hover:bg-white/20 hover:scale-105"
-                >
-                  <Download className="size-4" />
-                  <span>{ar ? "تحميل الدليل التصديري (PDF)" : "Download Export Dossier (PDF)"}</span>
-                </a>
               </div>
             </Reveal>
           </div>
@@ -285,8 +262,8 @@ function FoodAboutTab({
       <section className="site-container py-12 sm:py-20 lg:py-24">
         <Reveal>
           <div className="mx-auto max-w-4xl rounded-3xl border border-white/20 bg-background/80 p-6 sm:p-10 shadow-xl backdrop-blur-2xl mb-12 text-center transition-all duration-300 hover:scale-[1.01] hover:shadow-2xl hover:border-brand-green/40">
-            <SectionBadge title={ar ? "1. نظرة عامة على القطاع" : "1. Sector Overview"} />
-            <h2 className="font-head text-2xl sm:text-4xl font-bold tracking-tight text-foreground mt-4 mb-6">
+            <SectionBadge title={ar ? "نظرة عامة على القطاع" : "Sector Overview"} />
+            <h2 className="font-head text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-foreground mt-4 mb-6 text-center">
               {ar ? "أصالة المصادر وجودة التصدير الدولي" : "Authentic Origins & Global Supply Excellence"}
             </h2>
 
@@ -386,8 +363,8 @@ function FoodAboutTab({
         <div className="site-container">
           <Reveal>
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <SectionBadge title={ar ? "2. تصنيف المنتجات" : "2. Product Categories"} />
-              <h2 className="font-head text-2xl sm:text-4xl font-bold tracking-tight text-foreground mt-3 mb-4">
+              <SectionBadge title={ar ? "تصنيف المنتجات" : "Product Categories"} />
+              <h2 className="font-head text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-foreground mt-3 mb-4 text-center">
                 {ar ? "محفظة المنتجات الطبيعية والغذائية للتصدير" : "Agri-Food Portfolio for Global Markets"}
               </h2>
               <p className="text-sm sm:text-base text-muted-foreground">
@@ -461,8 +438,8 @@ function FoodAboutTab({
       <section className="site-container py-16 sm:py-24">
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <SectionBadge title={ar ? "3. قدراتنا التوريدية" : "3. Our Supply Capabilities"} />
-            <h2 className="font-head text-2xl sm:text-4xl font-bold tracking-tight text-foreground mt-3 mb-4">
+            <SectionBadge title={ar ? "قدراتنا التوريدية" : "Our Supply Capabilities"} />
+            <h2 className="font-head text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-foreground mt-3 mb-4 text-center">
               {ar ? "بنية لوجستية وضمانات توريد صناعية" : "Industrial Logistics & Sourcing Infrastructure"}
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground">
@@ -539,8 +516,8 @@ function FoodAboutTab({
         <div className="site-container">
           <Reveal>
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <SectionBadge title={ar ? "4. التوريد والمصادر الزراعية" : "4. Sourcing & Procurement"} />
-              <h2 className="font-head text-2xl sm:text-4xl font-bold tracking-tight text-foreground mt-3 mb-4">
+              <SectionBadge title={ar ? "التوريد والمصادر الزراعية" : "Sourcing & Procurement"} />
+              <h2 className="font-head text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-foreground mt-3 mb-4 text-center">
                 {ar ? "منظومة اختيار المصادر والزراعة التعاقدية" : "Contract Farming & Origin Selection"}
               </h2>
               <p className="text-sm sm:text-base text-muted-foreground">
@@ -578,8 +555,8 @@ function FoodAboutTab({
       <section className="site-container py-16 sm:py-24">
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <SectionBadge title={ar ? "5. التجهيز والتعبئة" : "5. Processing & Packaging"} />
-            <h2 className="font-head text-2xl sm:text-4xl font-bold tracking-tight text-foreground mt-3 mb-4">
+            <SectionBadge title={ar ? "التجهيز والتعبئة" : "Processing & Packaging"} />
+            <h2 className="font-head text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-foreground mt-3 mb-4 text-center">
               {ar ? "تكنولوجيا الفرز الآلي والتعبئة المعقمة" : "Automated Sorting & Sterile Packaging"}
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground">
@@ -614,8 +591,8 @@ function FoodAboutTab({
         <div className="site-container">
           <Reveal>
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <SectionBadge title={ar ? "6. ضمان الجودة والشهادات" : "6. Quality Assurance & Compliance"} />
-              <h2 className="font-head text-2xl sm:text-4xl font-bold tracking-tight text-foreground mt-3 mb-4">
+              <SectionBadge title={ar ? "ضمان الجودة والشهادات" : "Quality Assurance & Compliance"} />
+              <h2 className="font-head text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-foreground mt-3 mb-4 text-center">
                 {ar ? "مستندات وشهادات تصدير رسمية معتمدة" : "Official Export Documentation & Certified Standards"}
               </h2>
               <p className="text-sm sm:text-base text-muted-foreground">
@@ -668,8 +645,8 @@ function FoodAboutTab({
       <section className="site-container py-16 sm:py-24">
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <SectionBadge title={ar ? "7. الأسواق والتصدير" : "7. Export Markets"} />
-            <h2 className="font-head text-2xl sm:text-4xl font-bold tracking-tight text-foreground mt-3 mb-4">
+            <SectionBadge title={ar ? "الأسواق والتصدير" : "Export Markets"} />
+            <h2 className="font-head text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-foreground mt-3 mb-4 text-center">
               {ar ? "حضور ممتد في الأسواق العربية والأوروبية" : "Expanding Presence Across Arab & European Destinations"}
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground">
@@ -766,9 +743,9 @@ function FoodAboutTab({
         <div className="site-container">
           <Reveal>
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <SectionBadge title={ar ? "8. نماذج التوريد والتعاقد" : "8. Supply Models"} />
-              <h2 className="font-head text-2xl sm:text-4xl font-bold tracking-tight text-foreground mt-3 mb-4">
-                {ar ? "6 نماذج توريد مرنة تناسب كافة أحجام الأعمال" : "6 Versatile B2B Commercial Supply Models"}
+              <SectionBadge title={ar ? "نماذج التوريد والتعاقد" : "Supply Models"} />
+              <h2 className="font-head text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-foreground mt-3 mb-4 text-center">
+                {ar ? "نماذج توريد مرنة تناسب كافة أحجام الأعمال" : "Versatile B2B Commercial Supply Models"}
               </h2>
               <p className="text-sm sm:text-base text-muted-foreground">
                 {ar
@@ -826,7 +803,7 @@ function FoodAboutTab({
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-12">
             <SectionBadge title={ar ? "شبكة المزارع والموردين" : "Supplier & Farm Network"} />
-            <h2 className="font-head text-2xl sm:text-4xl font-bold tracking-tight text-foreground mt-3 mb-4">
+            <h2 className="font-head text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-foreground mt-3 mb-4 text-center">
               {ar ? "المزارع التعاقدية ومحطات الفرز والتجهيز المرخصة" : "Contracted Farms & Licensed Packing Hubs"}
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground">
@@ -897,7 +874,7 @@ function FoodAboutTab({
           <Reveal>
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
               <div>
-                <SectionBadge title={ar ? "9. منتجاتنا والمواصفات الفنية" : "9. Our Products & Technical Dossiers"} />
+                <SectionBadge title={ar ? "منتجاتنا والمواصفات الفنية" : "Our Products & Technical Dossiers"} />
                 <h2 className="font-head text-2xl sm:text-4xl font-bold tracking-tight text-foreground mt-3">
                   {ar ? "ملفات المواصفات الفنية المعتمدة للمنتجات" : "Certified Product Technical Dossiers"}
                 </h2>
@@ -974,46 +951,6 @@ function FoodAboutTab({
             ))}
           </div>
         </div>
-      </section>
-
-      {/* SECTION 10: Request a Supply Quotation Hero CTA */}
-      <section className="site-container py-16 sm:py-24">
-        <Reveal>
-          <div className="rounded-3xl border border-border/80 bg-background/80 p-8 sm:p-14 shadow-xl backdrop-blur-2xl text-center relative overflow-hidden transition-all duration-500 hover:-translate-y-0.5 hover:shadow-2xl">
-            <div className="relative z-10 max-w-3xl mx-auto">
-              <SectionBadge title={ar ? "10. اطلب عرض توريد" : "10. Start Your Supply Order"} />
-              <h2 className="font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold text-foreground mt-4 mb-4 tracking-tight">
-                {ar ? "هل تبحث عن شريك توريد غذائي معتمد دوليًا؟" : "Looking for an Accredited International Food Supply Partner?"}
-              </h2>
-              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-8 max-w-2xl mx-auto">
-                {ar
-                  ? "سواء كنت بحاجة إلى حاويات خامات صناعية (Bulk)، أو تصنيع وتعبئة بعلامتك الخاصة (Private Label)، أو توريد فنادق ومطاعم؛ فريقنا التجاري جاهز لتقديم عرض فني وسعري متكامل خلال 24 ساعة."
-                  : "Whether you require full container bulk raw materials, private label co-packing, or food service supply; our commercial export desk delivers comprehensive proposals within 24 hours."}
-              </p>
-
-              <div className="flex flex-wrap items-center justify-center gap-4">
-                <Link
-                  to="/sectors/$sector"
-                  params={{ sector: "food" }}
-                  search={{ tab: "order-product" }}
-                  className="inline-flex items-center gap-2 rounded-full bg-brand-orange px-8 py-4 text-sm font-bold text-white shadow-xl shadow-brand-orange/30 transition-all hover:bg-brand-green hover:scale-105 active:scale-95"
-                >
-                  <Send className="size-4 rtl:rotate-180" />
-                  <span>{ar ? "فتح نموذج طلب عرض التوريد (RFQ)" : "Open Sourcing & RFQ Proposal Form"}</span>
-                </Link>
-                <a
-                  href={WHATSAPP_URL}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-7 py-4 text-sm font-bold text-foreground hover:bg-emerald-600 hover:text-white transition-all shadow-md"
-                >
-                  <MessageCircle className="size-4" />
-                  <span>{ar ? "تواصل فوري عبر واتساب" : "Instant WhatsApp Desk"}</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </Reveal>
       </section>
 
       {/* Sector Contact Section */}
@@ -1340,7 +1277,7 @@ function FoodMarketsTab({ ar }: { ar: boolean }) {
       <Reveal>
         <div className="mx-auto max-w-3xl rounded-3xl border border-white/20 bg-background/80 p-8 sm:p-10 shadow-xl backdrop-blur-2xl mb-12 text-center">
           <SectionBadge title={ar ? "أسواقنا والتصدير الدولي" : "Our Global Export Markets"} />
-          <h2 className="font-head text-2xl sm:text-4xl font-bold tracking-tight text-foreground mt-3 mb-4 text-center">
+          <h2 className="font-head text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-foreground mt-3 mb-4 text-center">
             {ar ? "حضور ممتد وتوسع مدروس في الأسواق العربية والدولية" : "Expanding Presence Across Arab & European Gateways"}
           </h2>
           <p className="text-muted-foreground text-sm sm:text-base leading-relaxed text-center">
@@ -1910,9 +1847,9 @@ export function FoodSupplyRequestTab({
       <section className="site-container pt-28 sm:pt-36 pb-12">
         <Reveal>
           <div className="max-w-4xl mx-auto text-center">
-            <SectionBadge title={ar ? "قطاع الأغذية والمنتجات الطبيعية · طلب توريد معتمد" : "Food & Natural Products · Certified Supply Request"} />
-            <h1 className="font-head text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight">
-              {ar ? "طلب توريد المنتجات الغذائية والطبيعية" : "Food & Natural Products Supply Request"}
+            <SectionBadge title={ar ? "قطاع المنتجات الطبيعية والغذائية · طلب توريد معتمد" : "Food & Natural Products · Certified Supply Request"} />
+            <h1 className="font-head text-xl sm:text-2xl lg:text-3xl font-bold text-foreground mt-4 mb-4 tracking-tight leading-tight text-center">
+              {ar ? "طلب توريد المنتجات الطبيعية والغذائية" : "Food & Natural Products Supply Request"}
             </h1>
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-3xl mx-auto whitespace-pre-line">
               {ar
@@ -1933,7 +1870,7 @@ export function FoodSupplyRequestTab({
                 className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-6 py-3 text-sm font-bold text-foreground hover:bg-secondary transition-all"
               >
                 <ClipboardCheck className="size-4 text-brand-orange" />
-                <span>{ar ? "آلية دراسة الطلبات (5 خطوات)" : "Supply Assessment Process"}</span>
+                <span>{ar ? "آلية دراسة طلب التوريد" : "Supply Assessment Process"}</span>
               </a>
             </div>
           </div>
@@ -2069,7 +2006,7 @@ export function FoodSupplyRequestTab({
               <span className="text-xs font-bold uppercase tracking-wider text-brand-orange block mb-1">
                 {ar ? "أطر الشراكة التجارية" : "Partnership Frameworks"}
               </span>
-              <h2 className="font-head text-2xl sm:text-3xl font-bold text-foreground">
+              <h2 className="font-head text-xl sm:text-2xl lg:text-3xl font-bold text-foreground text-center">
                 {ar ? "نماذج التعاون التجاري المحتملة" : "Commercial Cooperation Models"}
               </h2>
               <p className="text-xs sm:text-sm text-muted-foreground mt-2 leading-relaxed">
@@ -2120,8 +2057,8 @@ export function FoodSupplyRequestTab({
               <span className="text-xs font-bold uppercase tracking-wider text-brand-orange block mb-1">
                 {ar ? "منظومة الانضباط التجاري" : "Structured Protocol"}
               </span>
-              <h2 className="font-head text-2xl sm:text-3xl font-bold text-foreground">
-                {ar ? "آلية دراسة طلب التوريد (5 خطوات)" : "Supply Request Assessment Process"}
+              <h2 className="font-head text-xl sm:text-2xl lg:text-3xl font-bold text-foreground text-center">
+                {ar ? "آلية دراسة طلب التوريد" : "Supply Request Assessment Process"}
               </h2>
               <p className="text-xs sm:text-sm text-muted-foreground mt-2 leading-relaxed">
                 {ar
@@ -2165,11 +2102,11 @@ export function FoodSupplyRequestTab({
       {/* 6. Section 5: The Supply Request Form | نموذج طلب التوريد */}
       <section id="supply-form" className="site-container py-12 pb-24">
         <Reveal>
-          <div className="max-w-4xl mx-auto rounded-3xl border border-white/20 bg-background/90 p-8 sm:p-12 shadow-2xl backdrop-blur-2xl">
+          <div className="w-full max-w-6xl mx-auto rounded-3xl border border-white/20 bg-background/90 p-6 sm:p-10 lg:p-12 shadow-2xl backdrop-blur-2xl">
             <div className="text-center mb-10">
               <SectionBadge title={ar ? "النموذج الرسمي المعتمد" : "Official B2B Inquiry Form"} />
-              <h2 className="font-head text-2xl sm:text-4xl font-bold text-foreground mt-3 mb-2">
-                {ar ? "نموذج طلب توريد المنتجات الغذائية والطبيعية" : "Food & Natural Products Supply Request Form"}
+              <h2 className="font-head text-xl sm:text-2xl lg:text-3xl font-bold text-foreground mt-3 mb-2 text-center">
+                {ar ? "نموذج طلب توريد المنتجات الطبيعية والغذائية" : "Natural & Food Products Supply Request Form"}
               </h2>
               <p className="text-xs sm:text-sm text-muted-foreground max-w-2xl mx-auto">
                 {ar

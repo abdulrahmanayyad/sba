@@ -626,80 +626,60 @@ export function FoodQualityTab({ ar }: FoodQualityTabProps) {
       {/* =========================================================================
           SECTION 01 — QUALITY PHILOSOPHY (فلسفة الجودة)
       ========================================================================= */}
-      <section className="relative w-full overflow-hidden text-footer-foreground min-h-[85vh] flex items-center pt-28 sm:pt-36 pb-20">
-        <img
-          src="/BG/Natural & Agri-Food Products/Natural & Agri-Food Products Home Page.jpg"
-          alt={ar ? "جودة المنتجات الطبيعية والغذائية" : "Natural Products Quality Management"}
-          className="absolute inset-0 size-full object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-footer via-footer/90 to-footer/70 backdrop-blur-[2px]" />
+      <section className="site-container pt-28 sm:pt-36 pb-16">
+        <Reveal>
+          <div className="text-center mb-4">
+            <SectionBadge title={ar ? "الجودة" : "Quality"} />
+          </div>
+        </Reveal>
 
-        <div className="site-container relative w-full z-10">
-          <Reveal>
-            <div className="flex flex-wrap items-center gap-2 text-xs font-medium mb-4">
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/85 px-4 py-1.5 text-xs font-bold tracking-wide text-white backdrop-blur-md shadow-md">
-                <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-                <span>
-                  {ar
-                    ? "منظومة الجودة والامتثال · قطاع الأغذية والمنتجات الطبيعية"
-                    : "Quality & Regulatory Compliance · Natural & Agri-Food Division"}
+        <Reveal delay={0.1}>
+          <h1 className="font-head text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-foreground mb-6 max-w-4xl mx-auto text-center leading-tight">
+            {ar ? "الجودة تبدأ من المصدر" : "Quality Begins at the Source"}
+          </h1>
+        </Reveal>
+
+        <Reveal delay={0.15}>
+          <div className="rounded-3xl border border-border/80 bg-background/85 p-6 sm:p-10 shadow-xl backdrop-blur-2xl max-w-4xl mx-auto text-foreground">
+            <p className="text-base sm:text-lg leading-relaxed mb-4 text-foreground/95 font-medium">
+              {ar
+                ? "في SAMI BIN AYYAD GROUP نؤمن بأن جودة المنتجات الطبيعية والغذائية لا تقتصر على المنتج النهائي، بل تبدأ من اختيار مصادر التوريد المناسبة، وتمر بمراحل الفحص والتداول والتخزين والتعبئة، وصولًا إلى تقديم منتجات تلبي متطلبات الأسواق والعملاء."
+                : "At SAMI BIN AYYAD GROUP, we believe that the quality of natural and agri-food products is not merely defined by the final packaged good; it originates at the selection of verified supply sources and progresses through rigorous inspection, safe handling, controlled storage, and protective packaging, culminating in offerings that satisfy international market standards and client demands."}
+            </p>
+            <p className="text-sm sm:text-base leading-relaxed text-muted-foreground border-t border-border/50 pt-4">
+              {ar
+                ? "نعتمد منهجية قائمة على الاهتمام بالمواصفات، ووضوح المعلومات، والتحقق من متطلبات كل سوق، والعمل مع الموردين والشركاء وفق معايير الجودة والسلامة المناسبة لطبيعة المنتجات."
+                : "We deploy a structured methodology anchored in stringent adherence to specifications, data transparency, verified destination compliance, and close collaboration with vetted suppliers and commercial partners aligned with recognized quality and food safety standards."}
+            </p>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-6 mt-6 border-t border-border/40 text-center">
+              <div className="p-3 rounded-2xl bg-secondary/50 border border-border/40">
+                <span className="block font-head text-xl sm:text-2xl font-bold text-brand-orange">
+                  100%
                 </span>
-              </span>
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-400/30 bg-emerald-950/70 px-3 py-1 text-xs font-medium text-emerald-300 backdrop-blur-md">
-                <ShieldCheck className="size-3.5 text-emerald-400" />
-                <span>{ar ? "معايير التجارة والتوريد الدولي" : "International Trade & Quality Standards"}</span>
-              </span>
-            </div>
-          </Reveal>
-
-          <Reveal delay={0.1}>
-            <h1 className="font-head text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6 max-w-4xl leading-tight">
-              {ar ? "الجودة تبدأ من المصدر" : "Quality Begins at the Source"}
-            </h1>
-          </Reveal>
-
-          <Reveal delay={0.15}>
-            <div className="rounded-3xl border border-white/25 bg-background/85 p-6 sm:p-10 shadow-2xl backdrop-blur-2xl max-w-4xl text-foreground">
-              <p className="text-base sm:text-lg leading-relaxed mb-4 text-foreground/95 font-medium">
-                {ar
-                  ? "في SAMI BIN AYYAD GROUP نؤمن بأن جودة المنتجات الطبيعية والغذائية لا تقتصر على المنتج النهائي، بل تبدأ من اختيار مصادر التوريد المناسبة، وتمر بمراحل الفحص والتداول والتخزين والتعبئة، وصولًا إلى تقديم منتجات تلبي متطلبات الأسواق والعملاء."
-                  : "At SAMI BIN AYYAD GROUP, we believe that the quality of natural and agri-food products is not merely defined by the final packaged good; it originates at the selection of verified supply sources and progresses through rigorous inspection, safe handling, controlled storage, and protective packaging, culminating in offerings that satisfy international market standards and client demands."}
-              </p>
-              <p className="text-sm sm:text-base leading-relaxed text-muted-foreground border-t border-border/50 pt-4">
-                {ar
-                  ? "نعتمد منهجية قائمة على الاهتمام بالمواصفات، ووضوح المعلومات، والتحقق من متطلبات كل سوق، والعمل مع الموردين والشركاء وفق معايير الجودة والسلامة المناسبة لطبيعة المنتجات."
-                  : "We deploy a structured methodology anchored in stringent adherence to specifications, data transparency, verified destination compliance, and close collaboration with vetted suppliers and commercial partners aligned with recognized quality and food safety standards."}
-              </p>
-
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-6 mt-6 border-t border-border/40 text-center">
-                <div className="p-3 rounded-2xl bg-secondary/50 border border-border/40">
-                  <span className="block font-head text-xl sm:text-2xl font-bold text-brand-orange">
-                    100%
-                  </span>
-                  <span className="text-xs text-muted-foreground font-medium">
-                    {ar ? "تدقيق مصادر المنشأ" : "Origin Verification"}
-                  </span>
-                </div>
-                <div className="p-3 rounded-2xl bg-secondary/50 border border-border/40">
-                  <span className="block font-head text-xl sm:text-2xl font-bold text-brand-green-text">
-                    6 {ar ? "مراحل" : "Stages"}
-                  </span>
-                  <span className="text-xs text-muted-foreground font-medium">
-                    {ar ? "منظومة الضبط والتحقق" : "Quality Control Protocol"}
-                  </span>
-                </div>
-                <div className="col-span-2 sm:col-span-1 p-3 rounded-2xl bg-secondary/50 border border-border/40">
-                  <span className="block font-head text-xl sm:text-2xl font-bold text-foreground">
-                    B2B
-                  </span>
-                  <span className="text-xs text-muted-foreground font-medium">
-                    {ar ? "مطابقة اشتراطات التصدير" : "Export Specification Focus"}
-                  </span>
-                </div>
+                <span className="text-xs text-muted-foreground font-medium">
+                  {ar ? "تدقيق مصادر المنشأ" : "Origin Verification"}
+                </span>
+              </div>
+              <div className="p-3 rounded-2xl bg-secondary/50 border border-border/40">
+                <span className="block font-head text-xl sm:text-2xl font-bold text-brand-green-text">
+                  6 {ar ? "مراحل" : "Stages"}
+                </span>
+                <span className="text-xs text-muted-foreground font-medium">
+                  {ar ? "منظومة الضبط والتحقق" : "Quality Control Protocol"}
+                </span>
+              </div>
+              <div className="col-span-2 sm:col-span-1 p-3 rounded-2xl bg-secondary/50 border border-border/40">
+                <span className="block font-head text-xl sm:text-2xl font-bold text-foreground">
+                  B2B
+                </span>
+                <span className="text-xs text-muted-foreground font-medium">
+                  {ar ? "مطابقة اشتراطات التصدير" : "Export Specification Focus"}
+                </span>
               </div>
             </div>
-          </Reveal>
-        </div>
+          </div>
+        </Reveal>
       </section>
 
       {/* =========================================================================
@@ -709,7 +689,7 @@ export function FoodQualityTab({ ar }: FoodQualityTabProps) {
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-16">
             <SectionBadge title={ar ? "ركائز الجودة" : "Quality Pillars"} />
-            <h2 className="font-head text-3xl sm:text-5xl font-bold tracking-tight text-foreground mt-3 mb-4">
+            <h2 className="font-head text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-foreground mt-3 mb-4 text-center">
               {ar ? "ركائز منظومة الجودة الست" : "The Six Pillars of Our Quality Framework"}
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground">
@@ -755,8 +735,8 @@ export function FoodQualityTab({ ar }: FoodQualityTabProps) {
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-16">
             <SectionBadge title={ar ? "مراحل ضبط الجودة" : "Quality Control Process"} />
-            <h2 className="font-head text-3xl sm:text-5xl font-bold tracking-tight text-foreground mt-3 mb-4">
-              {ar ? "رحلة التحقق والرقابة عبر 6 مراحل متتابعة" : "The 6-Stage Quality Assurance Journey"}
+            <h2 className="font-head text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-foreground mt-3 mb-4 text-center">
+              {ar ? "رحلة التحقق والرقابة" : "Verification & Quality Control Journey"}
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground">
               {ar
@@ -801,21 +781,6 @@ export function FoodQualityTab({ ar }: FoodQualityTabProps) {
             );
           })}
         </div>
-
-        {/* Operational Notice Box */}
-        <Reveal delay={0.2}>
-          <div className="mt-10 rounded-2xl border border-amber-500/20 bg-amber-500/10 p-5 backdrop-blur-md flex items-start gap-3.5 text-xs sm:text-sm text-foreground/90">
-            <Info className="size-5 text-amber-500 shrink-0 mt-0.5" />
-            <p className="leading-relaxed">
-              <strong className="font-bold text-amber-600 dark:text-amber-400">
-                {ar ? "ملاحظة تشغيلية وتوضيحية: " : "Operational Scope Notice: "}
-              </strong>
-              {ar
-                ? "تُعرض هذه المراحل باعتبارها منهجية العمل المستهدفة وإجراءات التحقق المعتمدة بحسب التطبيق الفعلي وطبيعة كل صفقة وشحنة، وفقاً للاتفاقيات المبرمة مع الموردين والعملاء، وليست ادعاءً بتطبيق كافة المراحل المخبرية المتقدمة ذاتياً على جميع المنتجات."
-                : "These stages represent our target operational methodology and verified verification protocols applied based on actual commercial deployment and specific contractual scopes, rather than claiming in-house execution of all technical assays across all products."}
-            </p>
-          </div>
-        </Reveal>
       </section>
 
       {/* =========================================================================
@@ -825,7 +790,7 @@ export function FoodQualityTab({ ar }: FoodQualityTabProps) {
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-16">
             <SectionBadge title={ar ? "سلامة الغذاء" : "Food Safety"} />
-            <h2 className="font-head text-3xl sm:text-5xl font-bold tracking-tight text-foreground mt-3 mb-4">
+            <h2 className="font-head text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-foreground mt-3 mb-4 text-center">
               {ar ? "سلامة الغذاء أولوية في سلسلة التوريد" : "Food Safety Across the Value Chain"}
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground">
@@ -880,7 +845,7 @@ export function FoodQualityTab({ ar }: FoodQualityTabProps) {
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-14">
             <SectionBadge title={ar ? "تداول المنتجات وحفظ الجودة" : "Product Handling"} />
-            <h2 className="font-head text-3xl sm:text-5xl font-bold tracking-tight text-foreground mt-3 mb-4">
+            <h2 className="font-head text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-foreground mt-3 mb-4 text-center">
               {ar ? "اختلاف متطلبات التعامل بحسب طبيعة المنتج" : "Tailored Handling by Product Classification"}
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground">
@@ -981,7 +946,7 @@ export function FoodQualityTab({ ar }: FoodQualityTabProps) {
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-16">
             <SectionBadge title={ar ? "المعايير والشهادات" : "Standards & Certifications"} />
-            <h2 className="font-head text-3xl sm:text-5xl font-bold tracking-tight text-foreground mt-3 mb-4">
+            <h2 className="font-head text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-foreground mt-3 mb-4 text-center">
               {ar ? "الأنظمة والمعايير الدولية المرجعية" : "International Standards & Reference Systems"}
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground">
@@ -1048,7 +1013,7 @@ export function FoodQualityTab({ ar }: FoodQualityTabProps) {
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-16">
             <SectionBadge title={ar ? "التتبع والتوثيق" : "Traceability & Documentation"} />
-            <h2 className="font-head text-3xl sm:text-5xl font-bold tracking-tight text-foreground mt-3 mb-4">
+            <h2 className="font-head text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-foreground mt-3 mb-4 text-center">
               {ar ? "حزمة المستندات الرسمية في التجارة الدولية" : "Statutory International Trade Documentation"}
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground">
@@ -1109,7 +1074,7 @@ export function FoodQualityTab({ ar }: FoodQualityTabProps) {
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-16">
             <SectionBadge title={ar ? "جودة الموردين والشركاء" : "Supplier & Partner Quality"} />
-            <h2 className="font-head text-3xl sm:text-5xl font-bold tracking-tight text-foreground mt-3 mb-4">
+            <h2 className="font-head text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-foreground mt-3 mb-4 text-center">
               {ar ? "إطار تقييم واعتماد الموردين" : "Supplier Evaluation & Onboarding Framework"}
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground">
@@ -1156,7 +1121,7 @@ export function FoodQualityTab({ ar }: FoodQualityTabProps) {
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-14">
             <SectionBadge title={ar ? "الامتثال لمتطلبات الأسواق" : "International Compliance"} />
-            <h2 className="font-head text-3xl sm:text-5xl font-bold tracking-tight text-foreground mt-3 mb-4">
+            <h2 className="font-head text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-foreground mt-3 mb-4 text-center">
               {ar ? "التوافق مع الاشتراطات التنظيمية العالمية" : "Compliance with Global Regulatory Regimes"}
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground">
@@ -1220,7 +1185,7 @@ export function FoodQualityTab({ ar }: FoodQualityTabProps) {
                 <span>{ar ? "التزامنا بالجودة" : "Our Quality Commitment"}</span>
               </span>
 
-              <h2 className="font-head text-3xl sm:text-5xl font-black text-foreground mb-6 leading-tight">
+              <h2 className="font-head text-xl sm:text-2xl lg:text-3xl font-bold text-foreground text-center mb-6 leading-tight">
                 {ar ? "الجودة مسؤولية في كل مرحلة" : "Quality as an Enduring Responsibility at Every Stage"}
               </h2>
 
