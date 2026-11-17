@@ -66,7 +66,7 @@ export function SustainabilityTargetMarkets({ ar = true }: SustainabilityTargetM
                 : "border-border/80 bg-secondary/80 text-foreground hover:border-brand-orange/50 hover:text-brand-orange"
             )}
           >
-            {ar ? `كافة الأسواق (${SUSTAINABILITY_TARGET_MARKETS.length})` : `All Markets (${SUSTAINABILITY_TARGET_MARKETS.length})`}
+            {ar ? "كافة الأسواق" : "All Markets"}
           </button>
           <button
             type="button"
@@ -78,7 +78,7 @@ export function SustainabilityTargetMarkets({ ar = true }: SustainabilityTargetM
                 : "border-border/80 bg-secondary/80 text-foreground hover:border-brand-orange/50 hover:text-brand-orange"
             )}
           >
-            {ar ? "الأسواق ذات الأولوية القصوى (Tier 1)" : "Priority Tier 1"}
+            {ar ? "الأسواق ذات الأولوية القصوى" : "Priority Tier 1"}
           </button>
           <button
             type="button"
@@ -90,7 +90,7 @@ export function SustainabilityTargetMarkets({ ar = true }: SustainabilityTargetM
                 : "border-border/80 bg-secondary/80 text-foreground hover:border-brand-orange/50 hover:text-brand-orange"
             )}
           >
-            {ar ? "الأسواق الواعدة والمستهدفة (Tier 2)" : "Priority Tier 2"}
+            {ar ? "الأسواق الواعدة والمستهدفة" : "Priority Tier 2"}
           </button>
         </div>
 
