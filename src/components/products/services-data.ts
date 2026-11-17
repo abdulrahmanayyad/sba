@@ -426,7 +426,7 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["المناطق والمجمعات الصناعية", "الموانئ والتطوير الساحلي", "مشروعات الطاقة المتجددة الكبرى", "المشروعات السياحية والعمرانية"],
     "capabilitiesEn": ["Certified environmental consulting house accreditation", "AERMOD / CALPUFF certified air dispersion modelers", "Bankable environmental reports approved by global DFIs"],
     "capabilitiesAr": ["بيت خبرة واستشارات بيئية معتمد رسميًا", "خبراء نمذجة انتشار الملوثات ببرامج AERMOD و CALPUFF", "تقارير معتمدة لدى بنوك ومؤسسات التمويل الدولية"],
-    "image": "/BG/Environment & Sustainability/Environmental Assessment.jpg"
+    "image": "/services/environmental/environmental-assessment.jpg"
   },
   {
     "id": "srv-env-carbon",
@@ -455,7 +455,7 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["المصانع والشركات المصدرة لأوروبا", "شركات الأسمدة والبتروكيماويات", "مصاهر الألومنيوم والحديد والصلب", "الشركات الكبرى وسلاسل الإمداد"],
     "capabilitiesEn": ["Certified GHG Protocol practitioners", "SimaPro / GaBi LCA modeling software licenses", "Direct European CBAM compliance alignment"],
     "capabilitiesAr": ["ممارسون معتمدون في بروتوكول غازات الاحتباس الحراري", "رخص نمذجة دورة الحياة ببرامج SimaPro و GaBi", "مواءمة مباشرة مع متطلبات ضريبة الكربون الأوروبية CBAM"],
-    "image": "/BG/Environment & Sustainability/Carbon Footprint & Greenhouse Gas Services.jpg"
+    "image": "/services/environmental/carbon-footprint-greenhouse-gas-services.jpg"
   },
   {
     "id": "srv-env-monitoring-lab",
@@ -484,7 +484,7 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["محطات توليد الكهرباء", "مصانع الأسمنت والأسمدة", "مصانع الغزل والنسيج والصباغة", "المجمعات الكيماوية"],
     "capabilitiesEn": ["Calibrated EPA-compliant sampling trains", "ISO/IEC 17025 accredited partner laboratory", "Official environmental record book documentation"],
     "capabilitiesAr": ["أجهزة قياس مداخن مطابقة لاشتراطات وكالة EPA الأمريكية", "شراكة مع معامل حاصلة على الاعتماد الدولي ISO/IEC 17025", "توثيق السجل البيئي الرسمي للمنشآت الصناعية"],
-    "image": "/BG/Environment & Sustainability/Environmental Measurements & Continuous Monitoring.jpg"
+    "image": "/services/environmental/environmental-measurements-continuous-monitoring.jpg"
   },
   {
     "id": "srv-env-waste-mgmt",
@@ -513,7 +513,7 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["أجهزة المدن والمحافظات", "المناطق الصناعية الحرة", "المنتجعات السياحية الكبرى", "الموانئ والمراكز اللوجستية"],
     "capabilitiesEn": ["Fleet routing optimization software", "Full compliance with Waste Law 202/2020", "Turnkey facility operational supervision"],
     "capabilitiesAr": ["برمجيات ذكية لتخطيط مسارات أساطيل النقل", "التزام تام باشتراطات قانون تنظيم إدارة المخلفات رقم 202 لسنة 2020", "إشراف تشغيلي متكامل على المصانع والمدافن"],
-    "image": "/BG/Environment & Sustainability/Comprehensive Waste Management Services.jpg"
+    "image": "/services/environmental/comprehensive-waste-management-services.jpg"
   },
   {
     "id": "srv-env-industrial-waste",
@@ -542,7 +542,7 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["مجمعات البتروكيماويات", "مصانع الأدوية والكيماويات", "مصانع تجميع السيارات والدهانات", "ورش ومصانع الجلفنة والطلاء الكهربائي"],
     "capabilitiesEn": ["Licensed hazardous waste transport fleet", "Coded HazMat safety engineers", "Certified hazardous landfill chain of custody"],
     "capabilitiesAr": ["أسطول سيارات مجهز ومرخص رسميًا لنقل المخلفات الخطرة", "مهندسو سلامة كيميائية معتمدون", "سلسلة حيازة موثقة حتى التسليم للمدافن الخطرة المعتمدة"],
-    "image": "/BG/Environment & Sustainability/Hazardous Waste Management.jpg"
+    "image": "/services/environmental/hazardous-waste-management.jpg"
   },
   {
     "id": "srv-env-solid-recycling",
@@ -571,7 +571,7 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["مصانع التعبئة والتغليف", "شركات الأغذية والمشروبات", "المؤسسات الزراعية الكبرى", "المجمعات الصناعية لتدوير المخلفات"],
     "capabilitiesEn": ["Circular economy engineering advisory", "High-throughput shredding and pelletizing engineering", "Closed-loop supply chain integration"],
     "capabilitiesAr": ["استشارات متقدمة في الاقتصاد الدائري وإعادة التدوير", "هندسة خطوط الجرش والتحبيب عالية الإنتاجية", "تكامل سلاسل الإمداد المغلقة لتقليل الفاقد"],
-    "image": "/BG/Environment & Sustainability/Solid Waste Recycling.jpg"
+    "image": "/services/environmental/solid-waste-recycling.jpg"
   },
   {
     "id": "srv-env-waste-to-energy",
@@ -600,7 +600,7 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["مصانع إنتاج الأسمنت", "أجهزة المدن والمحارق المركزية", "المجمعات الصناعية كثيفة استهلاك الطاقة", "مشروعات توليد الكهرباء المستقلة"],
     "capabilitiesEn": ["European RDF standard EN 15359 compliance", "Continuous emissions monitoring system (CEMS) integration", "High calorific density pellet formulation"],
     "capabilitiesAr": ["مطابقة الوقود البديل للمواصفات الأوروبية EN 15359", "تكامل أنظمة الرصد اللحظي المستمر للانبعاثات CEMS", "تركيبات وقود بديل عالية الكثافة الحرارية تفوق 4,000 ك.كالوري/كجم"],
-    "image": "/BG/Environment & Sustainability/Waste to Energy Services & Biogas Plants.jpg"
+    "image": "/services/environmental/waste-to-energy-services-biogas-plants.jpg"
   },
   {
     "id": "srv-env-biogas",
@@ -629,7 +629,7 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["مزارع الإنتاج الحيواني والدواجن الكبرى", "مصانع الأغذية والحلويات والسكر", "محطات معالجة الصرف الصحي (حمأة)", "المجمعات الزراعية الصناعية"],
     "capabilitiesEn": ["Patented biological desulfurization formulations", "High-efficiency anaerobic mixing systems", "Organic bio-fertilizer separation and packaging skids"],
     "capabilitiesAr": ["مركبات بيولوجية متطورة لإزالة كبريتيد الهيدروجين بكفاءة تفوق 99%", "أنظمة تقليب وخلط لاهوائية موفرة للطاقة", "وحدات فصل وتجفيف السماد العضوي السائل والصلب عالي الجودة"],
-    "image": "/BG/Environment & Sustainability/Biogas Project Development.jpg"
+    "image": "/services/environmental/biogas-project-development.jpg"
   },
   {
     "id": "srv-env-renewable-energy",
@@ -658,7 +658,7 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["المصانع والمنشآت الإنتاجية", "محطات ضخ مياه الري الزراعي بالطاقة الشمسية", "المستودعات اللوجستية", "المجمعات التجارية الكبرى"],
     "capabilitiesEn": ["Licensed renewable energy EPC contractor", "Real-time string telemetry and yield monitoring", "Bankable solar performance yield warranties"],
     "capabilitiesAr": ["مقاول معتمد لتنفيذ محطات الطاقة المتجددة", "أنظمة مراقبة لحظية للأداء عبر السحابة", "ضمانات إنتاجية طاقة معتمدة ومقبولة بنكيًا"],
-    "image": "/BG/Environment & Sustainability/Renewable Energy Sector.jpg"
+    "image": "/services/environmental/renewable-energy-sector.jpg"
   },
   {
     "id": "srv-env-economics-policy",
@@ -687,7 +687,7 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["الشركات القابضة والمتعددة الجنسيات", "الوزارات والهيئات التنموية", "شركات الطاقة والتعدين", "مستثمرو مشروعات البنية التحتية"],
     "capabilitiesEn": ["Senior environmental economists and legal scholars", "Proprietary macro-economic environmental models", "Defensible policy whitepapers for global bodies"],
     "capabilitiesAr": ["خبراء وأكاديميون متخصصون في الاقتصاد البيئي والتشريعات", "نماذج اقتصادية دقيقة للتنبؤ بتكاليف الامتثال البيئي", "أوراق سياسات ودراسات موثقة معتمدة أمام المنظمات الدولية"],
-    "image": "/BG/Environment & Sustainability/Environmental Economic Studies & Policy Advisory.jpg"
+    "image": "/services/environmental/environmental-economic-studies-policy-advisory.jpg"
   },
   {
     "id": "srv-env-sustainability",
@@ -716,7 +716,7 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["البنوك والمؤسسات المالية وشركات التأمين", "الشركات المدرجة بالبورصة", "المجموعات العائلية الكبرى", "شركات التطوير والاستثمار العقاري"],
     "capabilitiesEn": ["Certified GRI reporting professionals", "Deep knowledge of regional stock exchange ESG guidelines", "End-to-end stakeholder engagement facilitation"],
     "capabilitiesAr": ["خبراء معتمدون في إعداد تقارير GRI الدولية", "دراية كاملة بدليل الإفصاح عن الاستدامة الصادر عن البورصات الإقليمية", "إدارة وتيسير ورش العمل وجلسات الحوار مع أصحاب المصلحة"],
-    "image": "/BG/Environment & Sustainability/Management Consultations & ISO Qualification Projects.jpg"
+    "image": "/services/environmental/management-consultations-iso-qualification-projects.jpg"
   },
   {
     "id": "srv-env-sdgs",
@@ -745,7 +745,7 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["الهيئات والمنظمات التنموية", "الصناديق السيادية والاستثمارية", "المؤسسات الخيرية والتنموية للشركات", "المؤسسات التعليمية والجامعات"],
     "capabilitiesEn": ["UN Global Compact aligned methodology", "Empirical social return on investment (SROI) modeling", "Multi-stakeholder partnership orchestration"],
     "capabilitiesAr": ["منهجية متوافقة مع الميثاق العالمي للأمم المتحدة UNGC", "نمذجة العائد الاجتماعي على الاستثمار (SROI)", "تنسيق الشراكات المؤسسية الفعالة ذات الأثر المستدام"],
-    "image": "/BG/Environment & Sustainability/Sustainable Development Advisory & UN Global Goals.jpg"
+    "image": "/services/environmental/sustainable-development-advisory-un-global-goals.jpg"
   },
   {
     "id": "srv-env-iso-systems",
@@ -774,7 +774,7 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["المصانع والشركات الإنتاجية", "المنشآت كثيفة استهلاك الطاقة", "المستشفيات والمدن الطبية", "شركات المقاولات الكبرى"],
     "capabilitiesEn": ["IRCA-certified lead auditors for ISO 14001 & ISO 50001", "100% first-attempt certification success rate", "Tailored digital compliance documentation"],
     "capabilitiesAr": ["مراجعون رئيسيون معتمدون دوليًا من منظمة IRCA البريطانية", "نسبة نجاح 100% في اجتياز مراجعات المنح من أول تدقيق", "توثيق رقمي مرن لإجراءات النظام المؤسسي"],
-    "image": "/BG/Environment & Sustainability/Management Consultations & ISO Qualification Projects.jpg"
+    "image": "/services/environmental/management-consultations-iso-qualification-projects.jpg"
   },
   {
     "id": "srv-env-qhse",
@@ -803,7 +803,7 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["مواقع المقاولات والإنشاءات الكبرى", "مصافي البترول والغاز", "المصانع الثقيلة", "الموانئ والمستودعات البحرية"],
     "capabilitiesEn": ["NEBOSH / OSHA certified safety consultants", "Zero-incident behavioral safety coaching", "Mobile site safety inspection application"],
     "capabilitiesAr": ["استشاريو سلامة معتمدون من نيبوش NEBOSH والأوشا OSHA", "برامج تدريب تعديل السلوك المهني لتحقيق صفر حوادث", "تطبيقات رقمية للتفتيش الفوري على معايير السلامة بالموقع"],
-    "image": "/BG/Environment & Sustainability/Intelligent QHSE Application & Software Solutions.jpg"
+    "image": "/services/environmental/intelligent-qhse-application-software-solutions.jpg"
   },
   {
     "id": "srv-env-digital-ehs",
@@ -832,7 +832,7 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["المدن والمجمعات الصناعية", "المؤسسات والشركات الكبرى", "المدن الذكية والمستدامة", "شركات المقاولات متعددة المواقع"],
     "capabilitiesEn": ["Proprietary SaaS architecture (EHS-APP & IoT-ENV)", "End-to-end encrypted cloud data security", "Customized mobile apps for Android and iOS"],
     "capabilitiesAr": ["منظومات برمجية سحابية مملوكة للمجموعة (EHS-APP و IoT-ENV)", "حماية وتشفير متكامل للبيانات الصناعية على خوادم سحابية آمنة", "تطبيقات هواتف ذكية مخصصة لفرق العمل الميدانية"],
-    "image": "/BG/Environment & Sustainability/IoT Environmental Monitoring System.jpg"
+    "image": "/services/environmental/iot-environmental-monitoring-system.jpg"
   },
   {
     "id": "srv-env-biotech",
@@ -861,7 +861,7 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["مستودعات وحقول إنتاج النفط", "محطات معالجة مياه الصرف الصحي", "مصانع تدوير المخلفات العضوية والأغذية", "مدافن المخلفات البلدية"],
     "capabilitiesEn": ["Proprietary eco-friendly formulations (ET-POT-01 & ET-POR-01)", "100% non-pathogenic, non-toxic biological agents", "Rapid field application mobile units"],
     "capabilitiesAr": ["مركبات بيولوجية متطورة حصرية للمجموعة (ET-POT-01 و ET-POR-01)", "مستحضرات طبيعية 100% غير سامة وغير ضارة بالإنسان أو البيئة", "وحدات ميدانية متنقلة للرش والخلط والمعالجة الفورية بالموقع"],
-    "image": "/BG/Environment & Sustainability/Environmental Biotechnology Services.jpg"
+    "image": "/services/environmental/environmental-biotechnology-services.jpg"
   },
   {
     "id": "srv-env-rd",
@@ -890,7 +890,7 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["شركات الكيماويات والتعدين الكبرى", "التحالفات البحثية مع الجامعات", "حاضنات التكنولوجيا الخضراء", "هيئات البحث العلمي والابتكار الحكومية"],
     "capabilitiesEn": ["Equipped university-partnered microbiology and analytical laboratories", "Multi-disciplinary team of Ph.D. environmental chemists", "Proven track record bridging academic science with industrial market delivery"],
     "capabilitiesAr": ["معامل ميكروبيولوجية وتحليلية مجهزة بالشراكة مع الجامعات في مصر", "فريق بحثي يضم نخبة من حملة الدكتوراه في الكيمياء والبيولوجيا البيئية", "سجل ناجح في تحويل الأبحاث المعملية إلى منتجات وحلول صناعية تجارية"],
-    "image": "/BG/Environment & Sustainability/Research & Development & Environmental Software Solutions.jpg"
+    "image": "/services/environmental/research-development-environmental-software-solutions.jpg"
   },
 
   // --------------------------------------------------------------------------

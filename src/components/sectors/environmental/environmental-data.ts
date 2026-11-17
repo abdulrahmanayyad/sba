@@ -1,5 +1,5 @@
-const heroSustainable = "/BG/Environment & Sustainability/Sustainable Environmental Home Page.avif";
-const enviroImg = "/BG/Environment & Sustainability/Comprehensive Waste Management Services.jpg";
+const heroSustainable = "/services/environmental/sustainable-environmental-home-page.avif";
+const enviroImg = "/services/environmental/comprehensive-waste-management-services.jpg";
 
 export const environmentalHeroData = {
   image: heroSustainable,
@@ -247,7 +247,7 @@ export const environmentalSectorsData = {
     },
     {
       id: "renewable-energy",
-    image: "/BG/Environment & Sustainability/Renewable Energy Sector.jpg",
+    image: "/services/environmental/renewable-energy-sector.jpg",
       number: "04",
       nameEn: "Renewable Energy Sector",
       nameAr: "قطاع الطاقة المتجددة",
@@ -355,7 +355,7 @@ export const environmentalServicesData = {
   services: [
     {
       id: "waste-to-energy",
-    image: "/BG/Environment & Sustainability/Waste to Energy Services & Biogas Plants.jpg",
+    image: "/services/environmental/waste-to-energy-services-biogas-plants.jpg",
       number: "01",
       badgeEn: "Strategic Alliance · RENERGON International AG",
       badgeAr: "شراكة استراتيجية · رينرجون الدولية (RENERGON) السويسرية",
@@ -446,7 +446,7 @@ export const environmentalServicesData = {
     },
     {
       id: "measurements-monitoring",
-    image: "/BG/Environment & Sustainability/Environmental Measurements & Continuous Monitoring.jpg",
+    image: "/services/environmental/environmental-measurements-continuous-monitoring.jpg",
       number: "06",
       badgeEn: "Lab Testing & Field Inspection",
       badgeAr: "الفحص الميداني والتحاليل المعملية المعتمدة",
@@ -467,7 +467,7 @@ export const environmentalServicesData = {
     },
     {
       id: "waste-management",
-    image: "/BG/Environment & Sustainability/Comprehensive Waste Management Services.jpg",
+    image: "/services/environmental/comprehensive-waste-management-services.jpg",
       number: "07",
       badgeEn: "Circular Economy & Hierarchy",
       badgeAr: "الاقتصاد الدائري والتسلسل الهرمي للمخلفات",
@@ -594,7 +594,7 @@ export const environmentalServicesData = {
     },
     {
       id: "renewable-energy",
-    image: "/BG/Environment & Sustainability/Renewable Energy Sector.jpg",
+    image: "/services/environmental/renewable-energy-sector.jpg",
       number: "14",
       badgeEn: "Solar · Wind · Micro-Hydro · Biomass",
       badgeAr: "طاقة شمسية · رياح · هيدرو · كتلة حيوية",
@@ -669,7 +669,7 @@ export interface EnvironmentalServiceDetailed {
 export const detailedEnvironmentalServices: EnvironmentalServiceDetailed[] = [
   {
     id: "eia",
-    image: "/BG/Environment & Sustainability/Environmental Assessment.jpg",
+    image: "/services/environmental/environmental-assessment.jpg",
     number: "01",
     badgeEn: "EIA · Regulatory Permitting",
     badgeAr: "تقييم الأثر البيئي · التراخيص الرسمية",
@@ -699,7 +699,7 @@ export const detailedEnvironmentalServices: EnvironmentalServiceDetailed[] = [
   },
   {
     id: "esia",
-    image: "/BG/Environment & Sustainability/Environmental & Social Impact Assessments (ESIA).jpg",
+    image: "/services/environmental/environmental-social-impact-assessments-esia.jpg",
     number: "02",
     badgeEn: "ESIA · International Due Diligence",
     badgeAr: "التقييم البيئي والمجتمعي · التمويل الدولي",
@@ -729,7 +729,7 @@ export const detailedEnvironmentalServices: EnvironmentalServiceDetailed[] = [
   },
   {
     id: "carbon-footprint-assessment",
-    image: "/BG/Environment & Sustainability/Carbon Footprint & Greenhouse Gas Services.jpg",
+    image: "/services/environmental/carbon-footprint-greenhouse-gas-services.jpg",
     number: "03",
     badgeEn: "GHG Accounting · Scope 1, 2 & 3",
     badgeAr: "حساب الكربون · النطاق 1 و2 و3",
@@ -759,7 +759,7 @@ export const detailedEnvironmentalServices: EnvironmentalServiceDetailed[] = [
   },
   {
     id: "carbon-emissions-reporting",
-    image: "/BG/Environment & Sustainability/Carbon Footprint & Greenhouse Gas Services.jpg",
+    image: "/services/environmental/carbon-footprint-greenhouse-gas-services.jpg",
     number: "04",
     badgeEn: "Disclosure · ESG & CBAM Compliance",
     badgeAr: "الإفصاح المناخي · تقارير CBAM وESG",
@@ -789,7 +789,7 @@ export const detailedEnvironmentalServices: EnvironmentalServiceDetailed[] = [
   },
   {
     id: "measurements-monitoring",
-    image: "/BG/Environment & Sustainability/Environmental Measurements & Continuous Monitoring.jpg",
+    image: "/services/environmental/environmental-measurements-continuous-monitoring.jpg",
     number: "05",
     badgeEn: "Field Measurements · Calibrated Devices",
     badgeAr: "القياسات البيئية · أجهزة معايرة معتمدة",
@@ -819,7 +819,7 @@ export const detailedEnvironmentalServices: EnvironmentalServiceDetailed[] = [
   },
   {
     id: "waste-management",
-    image: "/BG/Environment & Sustainability/Comprehensive Waste Management Services.jpg",
+    image: "/services/environmental/comprehensive-waste-management-services.jpg",
     number: "06",
     badgeEn: "Circular Economy · Waste Hierarchy",
     badgeAr: "إدارة المخلفات · التسلسل الهرمي الدولي",
@@ -849,7 +849,7 @@ export const detailedEnvironmentalServices: EnvironmentalServiceDetailed[] = [
   },
   {
     id: "hazardous-waste-management",
-    image: "/BG/Environment & Sustainability/Hazardous Waste Management.jpg",
+    image: "/services/environmental/hazardous-waste-management.jpg",
     number: "07",
     badgeEn: "Hazardous Materials · Controlled Disposal",
     badgeAr: "المخلفات الخطرة · تصاريح وتخلص آمن",
@@ -879,7 +879,7 @@ export const detailedEnvironmentalServices: EnvironmentalServiceDetailed[] = [
   },
   {
     id: "solid-waste-recycling",
-    image: "/BG/Environment & Sustainability/Solid Waste Recycling.jpg",
+    image: "/services/environmental/solid-waste-recycling.jpg",
     number: "08",
     badgeEn: "Resource Recovery · Upcycling Plants",
     badgeAr: "تدوير المخلفات الصلبة · استرداد الموارد",
@@ -909,7 +909,7 @@ export const detailedEnvironmentalServices: EnvironmentalServiceDetailed[] = [
   },
   {
     id: "waste-to-energy",
-    image: "/BG/Environment & Sustainability/Waste to Energy Services & Biogas Plants.jpg",
+    image: "/services/environmental/waste-to-energy-services-biogas-plants.jpg",
     number: "09",
     badgeEn: "Strategic Alliance · RENERGON International AG",
     badgeAr: "شراكة دولية · رينرجون السويسرية (RENERGON)",
@@ -939,7 +939,7 @@ export const detailedEnvironmentalServices: EnvironmentalServiceDetailed[] = [
   },
   {
     id: "biogas-plants",
-    image: "/BG/Environment & Sustainability/Biogas Project Development.jpg",
+    image: "/services/environmental/biogas-project-development.jpg",
     number: "10",
     badgeEn: "Patented RSD Technology · Dry Fermentation",
     badgeAr: "تكنولوجيا RSD الحاصلة على براءة اختراع · تخمير جاف",
@@ -969,7 +969,7 @@ export const detailedEnvironmentalServices: EnvironmentalServiceDetailed[] = [
   },
   {
     id: "renewable-energy",
-    image: "/BG/Environment & Sustainability/Renewable Energy Sector.jpg",
+    image: "/services/environmental/renewable-energy-sector.jpg",
     number: "11",
     badgeEn: "Solar · Micro-Wind · Micro-Hydro",
     badgeAr: "طاقة شمسية · رياح مصغرة · هيدرو",
@@ -999,7 +999,7 @@ export const detailedEnvironmentalServices: EnvironmentalServiceDetailed[] = [
   },
   {
     id: "environmental-economic-studies",
-    image: "/BG/Environment & Sustainability/Environmental Economic Studies & Policy Advisory.jpg",
+    image: "/services/environmental/environmental-economic-studies-policy-advisory.jpg",
     number: "12",
     badgeEn: "Macro & Micro Economics · Policy Modeling",
     badgeAr: "الاقتصاد البيئي · الجدوى وسياسات التسعير",
@@ -1029,7 +1029,7 @@ export const detailedEnvironmentalServices: EnvironmentalServiceDetailed[] = [
   },
   {
     id: "sustainability-consulting",
-    image: "/BG/Environment & Sustainability/Sustainable Development Advisory & UN Global Goals.jpg",
+    image: "/services/environmental/sustainable-development-advisory-un-global-goals.jpg",
     number: "13",
     badgeEn: "Corporate Strategy · ESG Frameworks",
     badgeAr: "استراتيجيات الاستدامة · معايير ESG",
@@ -1059,7 +1059,7 @@ export const detailedEnvironmentalServices: EnvironmentalServiceDetailed[] = [
   },
   {
     id: "sdgs-consulting",
-    image: "/BG/Environment & Sustainability/Sustainable Development Advisory & UN Global Goals.jpg",
+    image: "/services/environmental/sustainable-development-advisory-un-global-goals.jpg",
     number: "14",
     badgeEn: "UN 2030 Agenda · Global Goals",
     badgeAr: "أجندة الأمم المتحدة 2030 · الأهداف العالمية",
@@ -1089,7 +1089,7 @@ export const detailedEnvironmentalServices: EnvironmentalServiceDetailed[] = [
   },
   {
     id: "iso-environmental-management",
-    image: "/BG/Environment & Sustainability/Management Consultations & ISO Qualification Projects.jpg",
+    image: "/services/environmental/management-consultations-iso-qualification-projects.jpg",
     number: "15",
     badgeEn: "ISO 14001:2015 · ISO 50001:2018",
     badgeAr: "أيزو 14001:2015 · أيزو 50001:2018",
@@ -1119,7 +1119,7 @@ export const detailedEnvironmentalServices: EnvironmentalServiceDetailed[] = [
   },
   {
     id: "qhse-solutions",
-    image: "/BG/Environment & Sustainability/Intelligent QHSE Application & Software Solutions.jpg",
+    image: "/services/environmental/intelligent-qhse-application-software-solutions.jpg",
     number: "16",
     badgeEn: "Quality, Health, Safety & Environment · Integration",
     badgeAr: "الجودة والسلامة والصحة والبيئة · أنظمة متكاملة",
@@ -1149,7 +1149,7 @@ export const detailedEnvironmentalServices: EnvironmentalServiceDetailed[] = [
   },
   {
     id: "ehs-digital-solutions",
-    image: "/BG/Environment & Sustainability/IoT Environmental Monitoring System.jpg",
+    image: "/services/environmental/iot-environmental-monitoring-system.jpg",
     number: "17",
     badgeEn: "Cloud Platform · Mobile Application",
     badgeAr: "منظومة سحابية · تطبيقات ذكية للهواتف",
@@ -1179,7 +1179,7 @@ export const detailedEnvironmentalServices: EnvironmentalServiceDetailed[] = [
   },
   {
     id: "environmental-biotechnology",
-    image: "/BG/Environment & Sustainability/Environmental Biotechnology Services.jpg",
+    image: "/services/environmental/environmental-biotechnology-services.jpg",
     number: "18",
     badgeEn: "Microbial Bioremediation · Eco-Friendly",
     badgeAr: "المعالجة البيولوجية الميكروبية · حلول حيوية",
@@ -1209,7 +1209,7 @@ export const detailedEnvironmentalServices: EnvironmentalServiceDetailed[] = [
   },
   {
     id: "research-development",
-    image: "/BG/Environment & Sustainability/Research & Development & Environmental Software Solutions.jpg",
+    image: "/services/environmental/research-development-environmental-software-solutions.jpg",
     number: "19",
     badgeEn: "Academic Partnerships · Applied Science",
     badgeAr: "شراكات أكاديمية · أبحاث تطبيقية",
@@ -1276,10 +1276,10 @@ export const detailedEnvironmentalProducts: EnvironmentalProductItem[] = [
     leadAr: "مستحضر ميكروبي حيوي عالي التركيز يحلل الزيوت والهيدروكربونات والانسكابات النفطية والرواسب الزيتية طبيعيًا.",
     overviewEn: "ET-POT-01 is a proprietary blend of naturally occurring, non-pathogenic microorganisms, bio-surfactants, and enzymes engineered specifically to remediate hydrocarbon contamination in soils, water bodies, and storage tanks without toxic chemical dispersants.",
     overviewAr: "يعد مستحضر ET-POT-01 تركيبة حيوية فريدة من الكائنات الدقيقة غير الممرضة والإنزيمات ومخفضات التوتر السطحي الحيوية، مصمم لمعالجة التلوث الهيدروكربوني والانسكابات النفطية في التربة والمياه والخزانات بكفاءة عالية وبدون كيماويات ضارة.",
-    image: "/BG/Environment & Sustainability/ET-POT-01 — Oil Terminator.jpg",
+    image: "/services/environmental/et-pot-01-oil-terminator.jpg",
     gallery: [
-      "/BG/Environment & Sustainability/ET-POT-01 — Oil Terminator.jpg",
-      "/BG/Environment & Sustainability/Environmental Biotechnology Services.jpg"
+      "/services/environmental/et-pot-01-oil-terminator.jpg",
+      "/services/environmental/environmental-biotechnology-services.jpg"
     ],
     specsEn: [
       { name: "Active Ingredients", value: "Synergistic consortium of 8 hydrocarbon-degrading bacterial strains" },
@@ -1345,10 +1345,10 @@ export const detailedEnvironmentalProducts: EnvironmentalProductItem[] = [
     leadAr: "مركب حيوي فوري يقضي على غاز كبريتيد الهيدروجين (H₂S) والميركابتان والأمونيا عند مصادر الانبعاث.",
     overviewEn: "ET-POR-01 neutralizes offensive industrial and municipal odors through catalytic biochemical bonding and microbial degradation rather than masking agents, permanently breaking down volatile organic sulfur and nitrogen molecules.",
     overviewAr: "يعمل مستحضر ET-POR-01 على تحييد الروائح الكريهة في محطات الصرف والمدافن الصحية عبر التفكيك الحفزي والتكسير البيولوجي لجزيئات الكبريت والنيتروجين المتطايرة نهائيًا دون مجرد تغطيتها بعطور مؤقتة.",
-    image: "/BG/Environment & Sustainability/ET-POR-01 — Odor Removal Solution.jpg",
+    image: "/services/environmental/et-por-01-odor-removal-solution.jpg",
     gallery: [
-      "/BG/Environment & Sustainability/ET-POR-01 — Odor Removal Solution.jpg",
-      "/BG/Environment & Sustainability/Comprehensive Waste Management Services.jpg"
+      "/services/environmental/et-por-01-odor-removal-solution.jpg",
+      "/services/environmental/comprehensive-waste-management-services.jpg"
     ],
     specsEn: [
       { name: "Mode of Action", value: "Catalytic oxidation & enzyme-driven biochemical bond cleavage" },
@@ -1410,10 +1410,10 @@ export const detailedEnvironmentalProducts: EnvironmentalProductItem[] = [
     leadAr: "محطة رصد ذكية متكاملة تعمل بالطاقة الشمسية لقياس الانبعاثات وجودة الهواء والضوضاء لحظيًا مع ربط سحابي.",
     overviewEn: "IoT-ENV is a ruggedized industrial telemetry station designed for 24/7 continuous monitoring of gaseous pollutants, particulate matter, noise intensity, and meteorological data, featuring automated alerts and direct regulatory API integration.",
     overviewAr: "محطة IoT-ENV هي منظومة رصد صناعية متطورة مصممة للعمل الشاق على مدار الساعة لمراقبة ملوثات الهواء والجسيمات العالقة والضوضاء وبيانات الطقس، مع لوحة تحكم ذكية وتنبيهات فورية عند تجاوز الحدود القانونية.",
-    image: "/BG/Environment & Sustainability/IoT Environmental Monitoring System.jpg",
+    image: "/services/environmental/iot-environmental-monitoring-system.jpg",
     gallery: [
-      "/BG/Environment & Sustainability/IoT Environmental Monitoring System.jpg",
-      "/BG/Environment & Sustainability/Sustainable Environmental Home Page.avif"
+      "/services/environmental/iot-environmental-monitoring-system.jpg",
+      "/services/environmental/sustainable-environmental-home-page.avif"
     ],
     specsEn: [
       { name: "Particulate Sensors", value: "Laser optical particle counter: PM1.0, PM2.5, PM10 (0 – 1,000 µg/m³)" },
@@ -1477,10 +1477,10 @@ export const detailedEnvironmentalProducts: EnvironmentalProductItem[] = [
     leadAr: "منصة وتطبيق رقمي ذكي باللغتين العربية والإنجليزية لأتمتة التدقيق الداخلي ورصد الحوادث وإدارة السجلات القانونية.",
     overviewEn: "EHS-APP replaces cumbersome spreadsheets and paper folders with an intuitive enterprise digital workflow, keeping legal compliance updated in real time, assigning corrective actions, and generating one-click inspection reports.",
     overviewAr: "يقضي تطبيق EHS-APP على السجلات الورقية المرهقة، موفرًا بيئة رقمية متكاملة لمديري السلامة والبيئة تتيح التحديث التلقائي للتشريعات، وتعيين ومتابعة المهام التصحيحية، وإصدار تقارير التفتيش بضغطة زر واحدة.",
-    image: "/BG/Environment & Sustainability/EHS Regulatory Compliance App.jpg",
+    image: "/services/environmental/ehs-regulatory-compliance-app.jpg",
     gallery: [
-      "/BG/Environment & Sustainability/EHS Regulatory Compliance App.jpg",
-      "/BG/Environment & Sustainability/Sustainable Environmental Home Page.avif"
+      "/services/environmental/ehs-regulatory-compliance-app.jpg",
+      "/services/environmental/sustainable-environmental-home-page.avif"
     ],
     specsEn: [
       { name: "Platform Architecture", value: "Cloud SaaS (AWS/Azure hosted in high-availability Tier III centers)" },
@@ -1589,7 +1589,7 @@ export const environmentalCaseStudies: EnvironmentalProjectCaseStudy[] = [
       "إنتاج 3,500 طن سنويًا من السماد العضوي عالي الجودة لتقليل استهلاك الأسمدة الكيماوية",
       "القضاء التام على انبعاثات الروائح والشكاوى البيئية للمجتمع المحيط"
     ],
-    image: "/BG/Environment & Sustainability/Sustainable Environmental Home Page.avif",
+    image: "/services/environmental/sustainable-environmental-home-page.avif",
     year: "2023 – 2024"
   },
   {
@@ -1620,7 +1620,7 @@ export const environmentalCaseStudies: EnvironmentalProjectCaseStudy[] = [
       "تسريع الاستجابة للحوادث وحل الإجراءات التصحيحية بنسبة 42%",
       "استيفاء المعايير البيئية اللازمة للاعتماد من الهيئة العامة للاعتماد والرقابة الصحية (GAHAR)"
     ],
-    image: "/BG/Environment & Sustainability/EHS Regulatory Compliance App.jpg",
+    image: "/services/environmental/ehs-regulatory-compliance-app.jpg",
     year: "2023"
   },
   {
@@ -1651,7 +1651,7 @@ export const environmentalCaseStudies: EnvironmentalProjectCaseStudy[] = [
       "اعتماد وتوثيق السجل البيئي رسميًا لدى لجان التفتيش البيئي",
       "توفير ما يقدر بـ 1.2 مليون جنيه من غرامات التجاوز المحتملة"
     ],
-    image: "/BG/Environment & Sustainability/IoT Environmental Monitoring System.jpg",
+    image: "/services/environmental/iot-environmental-monitoring-system.jpg",
     year: "2022 – 2023"
   },
   {
@@ -1682,7 +1682,7 @@ export const environmentalCaseStudies: EnvironmentalProjectCaseStudy[] = [
       "تسوية وحفظ كافة الشكاوى والقضايا البيئية المرفوعة من الجيران والمحليات",
       "الاستغناء الكامل عن عقود التعطير الكيميائي المؤقتة باهظة التكلفة"
     ],
-    image: "/BG/Environment & Sustainability/ET-POR-01 — Odor Removal Solution.jpg",
+    image: "/services/environmental/et-por-01-odor-removal-solution.jpg",
     year: "2023"
   },
   {
@@ -1713,7 +1713,7 @@ export const environmentalCaseStudies: EnvironmentalProjectCaseStudy[] = [
       "تجنب انبعاث أكثر من 280 طنًا من مكافئ ثاني أكسيد الكربون سنويًا",
       "فترة استرداد رأس المال المحققة بلغت 3.4 سنوات فقط"
     ],
-    image: "/BG/Environment & Sustainability/Sustainable Environmental Home Page.avif",
+    image: "/services/environmental/sustainable-environmental-home-page.avif",
     year: "2024"
   }
 ];

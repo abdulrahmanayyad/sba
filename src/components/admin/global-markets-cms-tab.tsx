@@ -309,12 +309,12 @@ export function GlobalMarketsCmsTab({ ar = true }: GlobalMarketsCmsTabProps) {
       <table className="w-full text-xs">
         <thead className="border-b border-slate-200 dark:border-white/10 text-slate-500">
           <tr>
-            <th className="py-3 px-3 text-start">{ar ? "العنوان والسوق" : "Title & Market"}</th>
-            <th className="py-3 px-3 text-start">{ar ? "القطاع" : "Sector"}</th>
-            <th className="py-3 px-3 text-start">{ar ? "الحالة" : "Status"}</th>
-            <th className="py-3 px-3 text-start">{ar ? "التوثيق" : "Documentation"}</th>
-            <th className="py-3 px-3 text-start">{ar ? "التحديث" : "Updated"}</th>
-            <th className="py-3 px-3 text-end">{ar ? "إجراءات" : "Actions"}</th>
+            <th className="py-3 px-3 text-center">{ar ? "العنوان والسوق" : "Title & Market"}</th>
+            <th className="py-3 px-3 text-center">{ar ? "القطاع" : "Sector"}</th>
+            <th className="py-3 px-3 text-center">{ar ? "الحالة" : "Status"}</th>
+            <th className="py-3 px-3 text-center">{ar ? "التوثيق" : "Documentation"}</th>
+            <th className="py-3 px-3 text-center">{ar ? "التحديث" : "Updated"}</th>
+            <th className="py-3 px-3 text-center">{ar ? "إجراءات" : "Actions"}</th>
           </tr>
         </thead>
         <tbody className="divide-y divide-slate-200/70 dark:divide-white/10">
@@ -334,30 +334,30 @@ export function GlobalMarketsCmsTab({ ar = true }: GlobalMarketsCmsTabProps) {
             const sectorId = study.sector || "garment";
             return (
               <tr key={study.id} className="hover:bg-slate-50/80 dark:hover:bg-white/5">
-                <td className="py-3 px-3">
+                <td className="py-3 px-3 text-center">
                   <div className="font-bold text-slate-900 dark:text-white">{ar ? titleAr : titleEn}</div>
                   <div className="text-[11px] text-slate-500">
                     {ar ? countryAr : countryEn} · v{version}
                   </div>
                 </td>
-                <td className="py-3 px-3 font-semibold text-slate-700 dark:text-slate-200">
+                <td className="py-3 px-3 font-semibold text-slate-700 dark:text-slate-200 text-center">
                   {sec ? (ar ? sec.nameAr : sec.nameEn) : sectorId}
                 </td>
-                <td className="py-3 px-3">
-                  <span className={cn("rounded-full border px-2.5 py-0.5 text-[10px] font-bold", st.badgeClass)}>
+                <td className="py-3 px-3 text-center">
+                  <span className={cn("inline-flex rounded-full border px-2.5 py-0.5 text-[10px] font-bold", st.badgeClass)}>
                     {ar ? st.ar : st.en}
                   </span>
                 </td>
-                <td className="py-3 px-3">
-                  <span className={cn("rounded-full border px-2.5 py-0.5 text-[10px] font-bold", appSt.badgeClass)}>
+                <td className="py-3 px-3 text-center">
+                  <span className={cn("inline-flex rounded-full border px-2.5 py-0.5 text-[10px] font-bold", appSt.badgeClass)}>
                     {ar ? appSt.ar : appSt.en}
                   </span>
                 </td>
-                <td className="py-3 px-3 font-mono text-slate-600 dark:text-slate-300">
+                <td className="py-3 px-3 font-mono text-slate-600 dark:text-slate-300 text-center">
                   {updated}
                 </td>
-                <td className="py-3 px-3">
-                  <div className="flex items-center justify-end gap-1.5">
+                <td className="py-3 px-3 text-center">
+                  <div className="flex items-center justify-center gap-1.5">
                     <Link
                       to="/global-markets/$sector/$slug"
                       params={{ sector: sectorId, slug: study.slug }}
