@@ -386,11 +386,6 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
                         <span className="text-[11px] text-foreground/60">{item.subtitle}</span>
                       </div>
                     </div>
-                    {item.isActive && (
-                      <span className="shrink-0 rounded-full bg-brand-orange text-white px-2 py-0.5 text-[10px] font-black">
-                        {isArabic ? "الصفحة الحالية" : "Current"}
-                      </span>
-                    )}
                   </div>
                 </Link>
               ))}
@@ -465,11 +460,6 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
                         <span className="text-[11px] text-foreground/60">{item.subtitle}</span>
                       </div>
                     </div>
-                    {item.isActive && (
-                      <span className="shrink-0 rounded-full bg-brand-orange text-white px-2 py-0.5 text-[10px] font-black">
-                        {isArabic ? "الصفحة الحالية" : "Current"}
-                      </span>
-                    )}
                   </div>
                 </Link>
               ))}
