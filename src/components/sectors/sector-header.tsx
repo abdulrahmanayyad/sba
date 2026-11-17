@@ -311,10 +311,10 @@ export function SectorHeader({
                 <Link
                   to="/sectors/$sector"
                   params={{ sector: "food" }}
-                  search={{ tab: "products" }}
-                  className={cn(navPill, activeTab === "products" && "!text-brand-orange bg-white/40 shadow-sm")}
+                  search={{ tab: "quality" }}
+                  className={cn(navPill, activeTab === "quality" && "!text-brand-orange bg-white/40 shadow-sm")}
                 >
-                  {ar ? "منتجاتنا" : "Our Products"}
+                  {ar ? "الجودة" : "Quality"}
                 </Link>
 
                 <Link
@@ -331,15 +331,6 @@ export function SectorHeader({
                   className={cn(navPill, "hover:!text-brand-orange")}
                 >
                   {ar ? "انضم إلينا" : "Join Us"}
-                </Link>
-
-                <Link
-                  to="/sectors/$sector"
-                  params={{ sector: "food" }}
-                  search={{ tab: "order-product" }}
-                  className={cn(navPill, "bg-brand-green text-white font-bold border border-brand-green hover:bg-brand-orange hover:border-brand-orange hover:text-white transition-all duration-300")}
-                >
-                  {ar ? "طلب عرض توريد" : "Request Quotation"}
                 </Link>
               </>
             ) : (
@@ -704,11 +695,11 @@ export function SectorHeader({
                     <Link
                       to="/sectors/$sector"
                       params={{ sector: "food" }}
-                      search={{ tab: "products" }}
+                      search={{ tab: "quality" }}
                       onClick={() => setMenuOpen(false)}
-                      className={cn(mobileLinkStyle, activeTab === "products" && "!text-brand-orange bg-white/40")}
+                      className={cn(mobileLinkStyle, activeTab === "quality" && "!text-brand-orange bg-white/40")}
                     >
-                      {ar ? "منتجاتنا" : "Our Products"}
+                      {ar ? "الجودة" : "Quality"}
                     </Link>
                     <Link
                       to="/sectors/$sector"

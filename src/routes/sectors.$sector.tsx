@@ -73,6 +73,7 @@ export const Route = createFileRoute("/sectors/$sector")({
       const foodTabTitles: Record<string, string> = {
         about: "About Us — Natural & Agri-Food Products",
         sectors: "Our Product Categories — Honey, Olives, Dates & Herbs",
+        quality: "Quality & International Standards — SBA Natural Products",
         products: "Our Products & Export Specifications",
         markets: "Our Global Markets & 2024 Trade Indicators",
         "order-product": "Request for Quotation (RFQ) — Order Natural Products",

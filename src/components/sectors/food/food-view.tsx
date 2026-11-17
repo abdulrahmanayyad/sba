@@ -75,8 +75,9 @@ import {
   type FoodProductDetail,
   type FoodSectorItem,
 } from "./food-data";
+import { FoodQualityTab } from "./food-quality-tab";
 
-export type FoodTab = "about" | "sectors" | "products" | "markets" | "order-product" | "join";
+export type FoodTab = "about" | "sectors" | "quality" | "products" | "markets" | "order-product" | "join";
 
 interface FoodViewProps {
   tab?: FoodTab;
@@ -115,6 +116,7 @@ export function FoodSectorView({ tab = "about" }: FoodViewProps) {
   const activeTab: FoodTab = [
     "about",
     "sectors",
+    "quality",
     "products",
     "markets",
     "order-product",
@@ -220,6 +222,7 @@ export function FoodSectorView({ tab = "about" }: FoodViewProps) {
         />
       )}
       {activeTab === "sectors" && <FoodSectorsTab ar={ar} />}
+      {activeTab === "quality" && <FoodQualityTab ar={ar} />}
       {activeTab === "products" && (
         <FoodProductsTab
           ar={ar}

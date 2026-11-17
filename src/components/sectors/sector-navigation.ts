@@ -29,7 +29,7 @@ export function getSectorNavigation(slug: SectorSlug, ar: boolean) {
     food: { about: [
       { label: copy.highlights, title: "Division Highlights" },
       { label: copy.cooperation, title: "Cooperation Opportunities" },
-    ], links: [{ label: copy.products, title: "Main Product Categories" }] },
+    ], links: [{ label: copy.quality ?? copy.products, title: "Quality & Standards" }] },
   };
   if (!(slug in configurations)) return null;
   return { ...configurations[slug as keyof typeof configurations], label: copy.about, joinUs: slug === "food" ? copy.joinUs : null };
