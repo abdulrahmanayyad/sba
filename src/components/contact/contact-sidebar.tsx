@@ -11,6 +11,7 @@ import {
   Phone,
 } from "lucide-react";
 import { WHATSAPP_URL } from "@/lib/process-steps";
+import { LocationMapCard } from "./location-map-card";
 
 export interface ContactDirectorySidebarProps {
   ar: boolean;
@@ -163,21 +164,9 @@ export function ContactDirectorySidebar({ ar }: ContactDirectorySidebarProps) {
           </div>
         </div>
 
-        {/* Google Maps Visual Interactive Locator */}
+        {/* Google Maps Visual Interactive Locator matching the exact verified layout */}
         <div className="pt-2">
-          <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden border border-border shadow-inner bg-secondary/80">
-            <iframe
-              title={ar ? "موقع مجموعة سامي بن عياد" : "Sami Bin Ayyad Group Location"}
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3451.6918816654273!2d31.60338787555627!3d30.103023474895692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145817c76899144d%3A0xe54d6faebdf98687!2sThe%20British%20University%20in%20Egypt%20(BUE)!5e0!3m2!1sen!2seg!4v1700000000000!5m2!1sen!2seg"
-              className="size-full border-0"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-            <div className="absolute bottom-2 start-2 bg-background/90 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold text-foreground border border-border shadow-sm flex items-center gap-1.5">
-              <MapPin className="size-3 text-brand-orange" />
-              <span>BUE Science & Innovation Park</span>
-            </div>
-          </div>
+          <LocationMapCard ar={ar} />
         </div>
       </div>
 
