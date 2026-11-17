@@ -591,9 +591,11 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
               const regionLabel = GEO_REGIONS_ORDER.find((r) => r.id === study.region);
 
               return (
-                <div
+                <Link
                   key={study.id}
-                  className="interactive-card glass-box-interactive flex flex-col justify-between rounded-3xl border border-slate-200/80 dark:border-white/15 bg-white/80 dark:bg-slate-900/70 p-6 backdrop-blur-2xl shadow-md space-y-4 text-start relative overflow-hidden"
+                  to="/global-markets/$sector/$slug"
+                  params={{ sector: study.sector, slug: study.slug }}
+                  className="interactive-card glass-box-interactive group flex flex-col justify-between rounded-3xl border border-slate-200/80 dark:border-white/15 bg-white/80 dark:bg-slate-900/70 p-6 backdrop-blur-2xl shadow-md space-y-4 text-start relative overflow-hidden cursor-pointer hover:border-brand-green/80 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 no-underline block"
                 >
                   <div className="space-y-3">
                     {/* Top Row: Subregion, Opportunity Score & Regional Rank */}
@@ -637,7 +639,7 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
                             loading="lazy"
                           />
                         )}
-                        <h3 className="font-head text-xl sm:text-2xl font-black text-slate-900 dark:text-white leading-snug">
+                        <h3 className="font-head text-xl sm:text-2xl font-black text-slate-900 dark:text-white leading-snug group-hover:text-brand-green-text transition-colors">
                           {ar ? study.countryNameAr : study.countryNameEn}
                         </h3>
                       </div>
@@ -743,17 +745,15 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
                   {/* Actions: View Study */}
                   <div className="space-y-2 pt-3 border-t border-slate-200/70 dark:border-white/10">
                     <div className="flex flex-wrap items-center gap-2">
-                      <Link
-                        to="/global-markets/$sector/$slug"
-                        params={{ sector: study.sector, slug: study.slug }}
-                        className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-xl bg-brand-green px-3 py-2 text-xs font-bold text-white hover:bg-brand-orange transition-all duration-300 shadow-xs cursor-pointer"
+                      <div
+                        className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-xl bg-brand-green px-3 py-2 text-xs font-bold text-white group-hover:bg-brand-orange transition-all duration-300 shadow-xs"
                       >
                         <span>{ar ? "عرض الدراسة الكاملة" : "View Full Study"}</span>
-                        {ar ? <ArrowLeft className="size-3.5" /> : <ArrowRight className="size-3.5" />}
-                      </Link>
+                        {ar ? <ArrowLeft className="size-3.5 rtl:rotate-0" /> : <ArrowRight className="size-3.5" />}
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               );
             })}
             </div>
