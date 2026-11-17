@@ -432,54 +432,46 @@ export function ProductsCataloguePage() {
                 {ar ? "اختر تصنيف المنتجات" : "Select Product Category"}
               </h3>
               <div className="mt-3 flex flex-wrap items-center gap-2.5">
-                {selectedProductDivision === "apparel" ? (
-                  <Button asChild size="sm" className="rounded-full !bg-brand-green !text-white hover:!bg-brand-orange text-xs font-bold shadow-xs cursor-pointer transition-all">
-                    <a
-                      href={ar ? "/downloads/SBA_Apparel_Product_Catalogue_AR.pdf" : "/downloads/SBA_Apparel_Product_Catalogue_EN.pdf"}
-                      download={ar ? "SBA_Apparel_Product_Catalogue_AR.pdf" : "SBA_Apparel_Product_Catalogue_EN.pdf"}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Download className="size-3.5 me-1.5" />
-                      <span>{ar ? "تحميل كتالوج الملابس والمنسوجات (PDF)" : "Download Apparel Catalogue (PDF)"}</span>
-                    </a>
-                  </Button>
-                ) : (
-                  <Button asChild size="sm" className="rounded-full !bg-brand-green !text-white hover:!bg-brand-orange text-xs font-bold shadow-xs cursor-pointer transition-all">
-                    <a
-                      href={ar ? "/downloads/SBA_Natural_Products_Catalogue_AR.pdf" : "/downloads/SBA_Natural_Products_Catalogue_EN.pdf"}
-                      download={ar ? "SBA_Natural_Products_Catalogue_AR.pdf" : "SBA_Natural_Products_Catalogue_EN.pdf"}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Download className="size-3.5 me-1.5" />
-                      <span>{ar ? "تحميل كتالوج المنتجات الطبيعية والغذائية (PDF)" : "Download Agri-Food Catalogue (PDF)"}</span>
-                    </a>
-                  </Button>
-                )}
-                {/* Secondary direct download button for the other sector catalogue */}
-                <Button asChild variant="outline" size="sm" className="rounded-full border-border bg-background/60 hover:bg-background text-xs font-semibold text-muted-foreground hover:text-foreground cursor-pointer transition-all">
-                  {selectedProductDivision === "apparel" ? (
-                    <a
-                      href={ar ? "/downloads/SBA_Natural_Products_Catalogue_AR.pdf" : "/downloads/SBA_Natural_Products_Catalogue_EN.pdf"}
-                      download={ar ? "SBA_Natural_Products_Catalogue_AR.pdf" : "SBA_Natural_Products_Catalogue_EN.pdf"}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Download className="size-3 me-1.5 text-brand-orange" />
-                      <span>{ar ? "كتالوج الأغذية والمنتجات الطبيعية" : "Agri-Food Catalogue"}</span>
-                    </a>
-                  ) : (
-                    <a
-                      href={ar ? "/downloads/SBA_Apparel_Product_Catalogue_AR.pdf" : "/downloads/SBA_Apparel_Product_Catalogue_EN.pdf"}
-                      download={ar ? "SBA_Apparel_Product_Catalogue_AR.pdf" : "SBA_Apparel_Product_Catalogue_EN.pdf"}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Download className="size-3 me-1.5 text-brand-orange" />
-                      <span>{ar ? "كتالوج الملابس والمنسوجات" : "Apparel Catalogue"}</span>
-                    </a>
+                <Button
+                  asChild
+                  size="sm"
+                  className={cn(
+                    "rounded-full text-xs font-bold shadow-xs cursor-pointer transition-all duration-300",
+                    selectedProductDivision === "apparel"
+                      ? "!bg-brand-green !text-white hover:!bg-brand-orange"
+                      : "border border-brand-green/40 bg-brand-green/5 text-brand-green-text hover:!bg-brand-orange hover:!text-white hover:border-brand-orange"
                   )}
+                >
+                  <a
+                    href={ar ? "/downloads/SBA_Apparel_Product_Catalogue_AR.pdf" : "/downloads/SBA_Apparel_Product_Catalogue_EN.pdf"}
+                    download={ar ? "SBA_Apparel_Product_Catalogue_AR.pdf" : "SBA_Apparel_Product_Catalogue_EN.pdf"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Download className="size-3.5 me-1.5 shrink-0" />
+                    <span>{ar ? "كتالوج الملابس الجاهزة" : "Ready-Made Garments Catalogue"}</span>
+                  </a>
+                </Button>
+
+                <Button
+                  asChild
+                  size="sm"
+                  className={cn(
+                    "rounded-full text-xs font-bold shadow-xs cursor-pointer transition-all duration-300",
+                    selectedProductDivision === "food"
+                      ? "!bg-brand-green !text-white hover:!bg-brand-orange"
+                      : "border border-brand-green/40 bg-brand-green/5 text-brand-green-text hover:!bg-brand-orange hover:!text-white hover:border-brand-orange"
+                  )}
+                >
+                  <a
+                    href={ar ? "/downloads/SBA_Natural_Products_Catalogue_AR.pdf" : "/downloads/SBA_Natural_Products_Catalogue_EN.pdf"}
+                    download={ar ? "SBA_Natural_Products_Catalogue_AR.pdf" : "SBA_Natural_Products_Catalogue_EN.pdf"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Download className="size-3.5 me-1.5 shrink-0" />
+                    <span>{ar ? "كتالوج المنتجات الطبيعية والأغذية" : "Natural & Food Products Catalogue"}</span>
+                  </a>
                 </Button>
               </div>
             </div>
