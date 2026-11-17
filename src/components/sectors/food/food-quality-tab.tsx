@@ -1242,11 +1242,11 @@ export function FoodQualityTab({ ar }: FoodQualityTabProps) {
                 <Link
                   to="/sectors/$sector"
                   params={{ sector: "food" }}
-                  search={{ tab: "order-product" }}
+                  search={{ tab: "request-supply" }}
                   className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-7 py-4 text-sm font-bold text-foreground backdrop-blur-md transition-all duration-300 hover:bg-secondary hover:scale-105"
                 >
                   <Package className="size-4 text-brand-orange" />
-                  <span>{ar ? "طلب عرض توريد تجاري" : "Request Commercial Quotation"}</span>
+                  <span>{ar ? "طلب توريد" : "Request Supply"}</span>
                 </Link>
               </div>
             </div>

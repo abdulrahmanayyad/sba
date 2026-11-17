@@ -3,18 +3,24 @@ import {
   Apple,
   ArrowRight,
   ArrowUpRight,
+  Building2,
   Check,
   CheckCircle2,
   ChevronRight,
   CircleDot,
+  ClipboardCheck,
+  Clock,
   Copy,
   Download,
   Droplets,
   FileCheck,
+  FileSpreadsheet,
   FileText,
   Filter,
   Flower,
   Globe,
+  Handshake,
+  HelpCircle,
   Info,
   Layers,
   Leaf,
@@ -77,7 +83,7 @@ import {
 } from "./food-data";
 import { FoodQualityTab } from "./food-quality-tab";
 
-export type FoodTab = "about" | "sectors" | "quality" | "products" | "markets" | "order-product" | "join";
+export type FoodTab = "about" | "sectors" | "quality" | "products" | "markets" | "order-product" | "request-supply" | "join";
 
 interface FoodViewProps {
   tab?: FoodTab;
@@ -120,6 +126,7 @@ export function FoodSectorView({ tab = "about" }: FoodViewProps) {
     "products",
     "markets",
     "order-product",
+    "request-supply",
     "join",
   ].includes(tab)
     ? tab
@@ -183,11 +190,11 @@ export function FoodSectorView({ tab = "about" }: FoodViewProps) {
                 <Link
                   to="/sectors/$sector"
                   params={{ sector: "food" }}
-                  search={{ tab: "order-product" }}
+                  search={{ tab: "request-supply" }}
                   className="inline-flex items-center gap-2 rounded-full bg-brand-orange px-8 py-3.5 text-sm font-bold text-white shadow-xl shadow-brand-orange/30 transition-all hover:bg-brand-green hover:scale-105 active:scale-95"
                 >
                   <Send className="size-4 rtl:rotate-180" />
-                  <span>{ar ? "طلب عرض سعر وتوريد" : "Request a Supply Quotation"}</span>
+                  <span>{ar ? "طلب توريد" : "Request Supply"}</span>
                 </Link>
                 <Link
                   to="/sectors/$sector"
@@ -230,8 +237,8 @@ export function FoodSectorView({ tab = "about" }: FoodViewProps) {
         />
       )}
       {activeTab === "markets" && <FoodMarketsTab ar={ar} />}
-      {activeTab === "order-product" && (
-        <FoodOrderProductTab
+      {(activeTab === "order-product" || activeTab === "request-supply") && (
+        <FoodSupplyRequestTab
           ar={ar}
           prefilledProduct={prefilledProduct}
         />
@@ -243,7 +250,7 @@ export function FoodSectorView({ tab = "about" }: FoodViewProps) {
       )}
 
       {/* Dedicated Sector Free Consultation CTA */}
-      {activeTab !== "order-product" && activeTab !== "join" && (
+      {activeTab !== "order-product" && activeTab !== "request-supply" && activeTab !== "join" && (
         <div className="site-container my-12">
           <SectorConsultationCta sector="food" ar={ar} />
         </div>
@@ -1517,9 +1524,11 @@ function FoodMarketsTab({ ar }: { ar: boolean }) {
 }
 
 // ============================================================================
-// 5. ORDER PRODUCT TAB (RFQ SUPPLY QUOTATION BUILDER)
+// 5. REQUEST SUPPLY TAB — FOOD & NATURAL PRODUCTS
+// Dedicated B2B action tab for structured supply and sourcing requests.
+// Matches the visual treatment of Environmental Request Consultation.
 // ============================================================================
-function FoodOrderProductTab({
+export function FoodSupplyRequestTab({
   ar,
   prefilledProduct,
 }: {
@@ -1529,60 +1538,284 @@ function FoodOrderProductTab({
   const [submitted, setSubmitted] = useState(false);
   const [quotationCode, setQuotationCode] = useState<string>("");
   const [copied, setCopied] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Form State
   const [formData, setFormData] = useState({
-    category: "honey",
+    // Company Info
+    companyName: "",
+    contactPerson: "",
+    email: "",
+    phone: "",
+    country: "",
+    website: "",
+
+    // Product Requirements
+    category: "agricultural",
     productName: prefilledProduct || "",
+    productDescription: "",
     specifications: "",
     quantityValue: "",
     quantityUnit: "tonnes",
     packagingType: "drums",
+    preferredOrigin: "",
+
+    // Commercial & Logistics
     destinationCountry: "",
     destinationPort: "",
+    deliverySchedule: "immediate",
+    supplyFrequency: "one-time",
     incoterms: "FOB",
-    deliverySchedule: "one-time",
-    sampleRequested: "no",
-    sampleAddress: "",
-    companyName: "",
-    contactPerson: "",
-    jobTitle: "",
-    email: "",
-    phone: "",
-    businessType: "importer",
+    targetPrice: "",
+
+    // Additional Info
     additionalNotes: "",
+    supportingDocs: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const categories = useMemo(() => [
+    {
+      id: "agricultural",
+      titleAr: "الحاصلات الزراعية",
+      titleEn: "Agricultural Products",
+      descAr: "الحاصلات الزراعية والسلع الحقلية والتعاقدات الزراعية المباشرة.",
+      descEn: "Fresh and dried agricultural commodities, field crops, and direct crop contracts.",
+      icon: Wheat,
+    },
+    {
+      id: "food",
+      titleAr: "المنتجات الغذائية",
+      titleEn: "Food Products",
+      descAr: "الأغذية التراثية، خلطات التوابل، الشوربات والمرقات، والسلع الغذائية المعلبة.",
+      descEn: "Traditional foods, culinary seasonings, packaged foods, and staple food lines.",
+      icon: Apple,
+    },
+    {
+      id: "natural",
+      titleAr: "المنتجات الطبيعية",
+      titleEn: "Natural Products",
+      descAr: "العسل الطبيعي، التمور الفاخرة، زيتون المائدة، والأعشاب الطبية والعطرية.",
+      descEn: "Raw natural honey, premium table olives, Saharan dates, and botanical herbs.",
+      icon: Flower,
+    },
+    {
+      id: "oils-extracts",
+      titleAr: "الزيوت والمستخلصات",
+      titleEn: "Oils & Extracts",
+      descAr: "زيت الزيتون البكر الممتاز، الزيوت النباتية المضغوطة، والمستخلصات الطبيعية.",
+      descEn: "Extra virgin olive oil, cold-pressed seed oils, and botanical liquid extracts.",
+      icon: Droplets,
+    },
+    {
+      id: "raw-materials",
+      titleAr: "المواد الخام",
+      titleEn: "Raw Materials",
+      descAr: "المدخلات الغذائية السائبة، الخامات الوسيطة لمصانع الأغذية، والمساحيق الطبيعية.",
+      descEn: "Bulk food processing ingredients, intermediate food inputs, and raw powders.",
+      icon: Layers,
+    },
+    {
+      id: "processed",
+      titleAr: "المنتجات الغذائية المصنعة",
+      titleEn: "Processed Food Products",
+      descAr: "الأغذية المعالجة والمحفوظة، المركزات، المخللات، والمنتجات المصنعة.",
+      descEn: "Processed & preserved foods, concentrates, brined products, and packaged goods.",
+      icon: Package,
+    },
+    {
+      id: "other",
+      titleAr: "منتجات أخرى",
+      titleEn: "Other Products",
+      descAr: "أي طلبات توريد لمنتجات أو أصناف نوعية أخرى يتم فحصها ومراجعتها.",
+      descEn: "Custom or specialty food & natural product inquiries assessed on request.",
+      icon: Sparkles,
+    },
+  ], []);
+
+  const supplyRequirementsList = useMemo(() => [
+    {
+      titleAr: "اسم المنتج ووصفه التفصيلي",
+      titleEn: "Product Name & Description",
+      descAr: "تحديد الصنف بدقة وتدرجه والاستخدام المستهدف.",
+      descEn: "Precise commercial identity, variety, and intended application.",
+      icon: FileText,
+    },
+    {
+      titleAr: "المواصفات الفنية ودرجة الجودة",
+      titleEn: "Specifications & Quality Grade",
+      descAr: "معايير الحموضة، الرطوبة، النقاوة، والتحاليل المطلوبة.",
+      descEn: "Acidity, moisture %, purity, calibration, and lab parameters.",
+      icon: ClipboardCheck,
+    },
+    {
+      titleAr: "الكمية المطلوبة ووحدة القياس",
+      titleEn: "Quantity & Unit of Measurement",
+      descAr: "الحجم المستهدف بالطن، الحاويات، أو الطبالي والكراتين.",
+      descEn: "Target volume by tonnes, containers (FCL), or pallets.",
+      icon: Scale,
+    },
+    {
+      titleAr: "نوع وحجم التعبئة والتغليف",
+      titleEn: "Packaging Type & Format",
+      descAr: "براميل سائبة، برطمانات زجاجية، دويباك، أو تعبئة خاصة.",
+      descEn: "Bulk drums, retail glass, vacuum pouches, or Private Label.",
+      icon: Package,
+    },
+    {
+      titleAr: "بلد المنشأ المفضل",
+      titleEn: "Preferred Country of Origin",
+      descAr: "مصر، أو تفضيلات جغرافية أخرى إن وجدت.",
+      descEn: "Egypt, or alternative geographical origin preferences.",
+      icon: Globe,
+    },
+    {
+      titleAr: "دولة وميناء الوصول المستهدف",
+      titleEn: "Destination & Discharge Port",
+      descAr: "الدولة المستوردة، والميناء البحري أو الجوي للتسليم.",
+      descEn: "Importing nation, seaport, airport, or inland logistics hub.",
+      icon: MapPin,
+    },
+    {
+      titleAr: "جدول ومواعيد الشحن والتسليم",
+      titleEn: "Required Delivery Schedule",
+      descAr: "شحنة فورية، أو جدول توريد شهري، أو عقد موسمي.",
+      descEn: "One-off immediate delivery, monthly rolling, or seasonal.",
+      icon: Clock,
+    },
+    {
+      titleAr: "اشتراطات المناولة والتخزين الخاصة",
+      titleEn: "Special Handling & Storage",
+      descAr: "حاويات مبردة (Reefer)، ضبط الرطوبة، أو شروط حساسة.",
+      descEn: "Reefer temperature control, moisture barriers, or handling.",
+      icon: Truck,
+    },
+  ], []);
+
+  const cooperationModels = useMemo(() => [
+    {
+      titleAr: "طلبات التوريد الكبرى (Bulk Supply)",
+      titleEn: "Bulk Supply Requests",
+      descAr: "شحن حاويات كاملة (FCL) وكميات ضخمة للمصانع والمنشآت التحويلية الكبرى.",
+      descEn: "Full container loads (FCL) and high-volume industrial raw inputs for major processors.",
+      badge: "B2B Bulk",
+    },
+    {
+      titleAr: "طلبات الشراء لتجار الجملة (Wholesale)",
+      titleEn: "Wholesale Purchasing Inquiries",
+      descAr: "تلبية احتياجات أسواق الجملة الإقليمية وشبكات الموزعين المعتمدين.",
+      descEn: "Supplying regional wholesale produce markets and accredited distribution hubs.",
+      badge: "Wholesale",
+    },
+    {
+      titleAr: "فرص الاستيراد والتصدير الدولي",
+      titleEn: "Import & Export Opportunities",
+      descAr: "شراكات التبادل التجاري عبر اتفاقيات التجارة الحرة والشهادات الجمركية الرسمية.",
+      descEn: "Cross-border trade partnerships leveraging free-trade pacts and certified export clearance.",
+      badge: "Trade Desk",
+    },
+    {
+      titleAr: "شراكات وعقود التوزيع والوكالات",
+      titleEn: "Distribution Partnerships",
+      descAr: "منح حقوق توزيع إقليمية للعلامات التجارية والمنتجات المعتمدة للمجموعة.",
+      descEn: "Regional territorial distribution rights and commercial agency partnerships.",
+      badge: "Partnership",
+    },
+    {
+      titleAr: "اتفاقيات التوريد الدورية وطويلة الأجل",
+      titleEn: "Long-Term Supply Arrangements",
+      descAr: "عقود سنوية وموسمية مجدولة تضمن استقرار التدفق السلعي والأسعار التعاقدية.",
+      descEn: "Annual scheduled contracts securing guaranteed supply continuity and hedged pricing.",
+      badge: "Contracts",
+    },
+    {
+      titleAr: "الشراء والتعبئة الخاصة (Private Label)",
+      titleEn: "Private Commercial Sourcing",
+      descAr: "خدمات الشراء والتعاقد لحساب الغير وتجهيز مواصفات التعبئة بعلامة العميل التجارية.",
+      descEn: "Tailored procurement on behalf of clients with custom Private Label packaging.",
+      badge: "OEM / PL",
+    },
+  ], []);
+
+  const steps = useMemo(() => [
+    {
+      num: 1,
+      titleAr: "إرسال الطلب",
+      titleEn: "Submit Your Request",
+      descAr: "يقوم المشتري بتقديم متطلبات المنتج والمواصفات الفنية والشروط التجارية عبر النموذج أدناه.",
+      descEn: "The buyer provides comprehensive product specifications, quantity targets, and commercial requirements.",
+    },
+    {
+      num: 2,
+      titleAr: "المراجعة الأولية",
+      titleEn: "Initial Review",
+      descAr: "يقوم فريق التوريد بمراجعة المنتجات المطلوبة والكميات وبلد الوجهة ونطاق التجارة.",
+      descEn: "The export and sourcing desk evaluates the requested items, volumes, destination market, and feasibility.",
+    },
+    {
+      num: 3,
+      titleAr: "دراسة المتطلبات",
+      titleEn: "Requirements Assessment",
+      descAr: "دراسة تفصيلية للمواصفات الفنية، شروط التعبئة، شهادات الفحص المخبري، والترتيبات اللوجستية.",
+      descEn: "Detailed assessment of product specifications, packaging parameters, certifications, and logistics routing.",
+    },
+    {
+      num: 4,
+      titleAr: "المناقشة التجارية",
+      titleEn: "Commercial Discussion",
+      descAr: "في حال إمكانية التلبية، يتواصل الفريق لمناقشة التفاصيل التجارية، شروط الدفع، وعروض الأسعار.",
+      descEn: "If feasible, our commercial specialists initiate structured discussions on pricing, terms, and delivery schedules.",
+    },
+    {
+      num: 5,
+      titleAr: "تأكيد التوريد",
+      titleEn: "Confirmation",
+      descAr: "يتم تأكيد أي ترتيبات توريد بعد الاتفاق التام على المواصفات والتوفر والأسعار والشروط التعاقدية.",
+      descEn: "Any supply arrangement is confirmed only after formal agreement on specifications, availability, pricing, and contract terms.",
+    },
+  ], []);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const randomCode = `FOOD-2026-${Math.floor(1000 + Math.random() * 9000)}`;
+    setIsSubmitting(true);
+    const refCode = `SPLY-2026-${Math.floor(1000 + Math.random() * 9000)}`;
 
-    submitCentralForm({
-      formType: "food_rfq",
-      name: formData.contactPerson,
-      company: formData.companyName || undefined,
-      email: formData.email,
-      phone: formData.phone,
-      country: formData.destinationCountry,
-      sector: "food",
-      serviceOrProduct: formData.productName || formData.category,
-      message: `[Natural Food Products RFQ / Quotation Request]\n\nCategory: ${formData.category}\nProduct Name: ${formData.productName}\nQuantity: ${formData.quantityValue} ${formData.quantityUnit}\nPackaging: ${formData.packagingType}\nDestination: ${formData.destinationCountry}${formData.destinationPort ? ` (Port: ${formData.destinationPort})` : ""}\nIncoterms: ${formData.incoterms}\nSchedule: ${formData.deliverySchedule}\nBusiness Type: ${formData.businessType}\nJob Title: ${formData.jobTitle}\nSample Requested: ${formData.sampleRequested}${formData.sampleAddress ? ` (${formData.sampleAddress})` : ""}\n\nSpecs & Notes:\n${formData.specifications}\n${formData.additionalNotes}`,
-      metadata: {
-        category: formData.category,
-        productName: formData.productName,
-        quantity: `${formData.quantityValue} ${formData.quantityUnit}`,
-        packagingType: formData.packagingType,
-        destinationCountry: formData.destinationCountry,
-        incoterms: formData.incoterms,
-        sampleRequested: formData.sampleRequested,
-      },
-    }).catch(console.error);
-
-    setQuotationCode(randomCode);
-    setSubmitted(true);
+    try {
+      await submitCentralForm({
+        formType: "food_rfq",
+        name: formData.contactPerson,
+        company: formData.companyName || undefined,
+        email: formData.email,
+        phone: formData.phone,
+        country: formData.country || formData.destinationCountry,
+        sector: "food",
+        serviceOrProduct: formData.productName || formData.category,
+        message: `[Food & Natural Products Supply Request]\n\nReference: ${refCode}\nCompany: ${formData.companyName}\nContact: ${formData.contactPerson}\nEmail: ${formData.email}\nPhone/WhatsApp: ${formData.phone}\nCountry: ${formData.country}\nWebsite: ${formData.website || "N/A"}\n\nProduct Category: ${formData.category}\nProduct Name: ${formData.productName}\nProduct Description: ${formData.productDescription}\nSpecifications: ${formData.specifications}\nQuantity: ${formData.quantityValue} ${formData.quantityUnit}\nPackaging: ${formData.packagingType}\nPreferred Origin: ${formData.preferredOrigin || "N/A"}\n\nDestination Country: ${formData.destinationCountry}\nDestination Port: ${formData.destinationPort || "N/A"}\nDelivery Schedule: ${formData.deliverySchedule}\nFrequency of Supply: ${formData.supplyFrequency}\nTrade Incoterms: ${formData.incoterms}\nTarget Price / Budget: ${formData.targetPrice || "N/A"}\n\nAdditional Notes:\n${formData.additionalNotes || "None"}\n\nSupporting Docs / Specs Link:\n${formData.supportingDocs || "None"}`,
+        metadata: {
+          referenceCode: refCode,
+          category: formData.category,
+          productName: formData.productName,
+          quantity: `${formData.quantityValue} ${formData.quantityUnit}`,
+          packagingType: formData.packagingType,
+          destinationCountry: formData.destinationCountry,
+          destinationPort: formData.destinationPort,
+          deliverySchedule: formData.deliverySchedule,
+          supplyFrequency: formData.supplyFrequency,
+          incoterms: formData.incoterms,
+          targetPrice: formData.targetPrice,
+          website: formData.website,
+        },
+      });
+    } catch (err) {
+      console.error("Central form submission error:", err);
+    } finally {
+      setIsSubmitting(false);
+      setQuotationCode(refCode);
+      setSubmitted(true);
+    }
   };
 
   const copyCode = () => {
+    if (!quotationCode) return;
     navigator.clipboard.writeText(quotationCode);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
@@ -1590,40 +1823,44 @@ function FoodOrderProductTab({
 
   if (submitted) {
     return (
-      <section className="site-container py-16 sm:py-24">
-        <div className="max-w-2xl mx-auto rounded-3xl border border-brand-green/30 bg-background/95 p-8 sm:p-12 shadow-2xl backdrop-blur-2xl text-center">
+      <section className="site-container pt-32 sm:pt-40 pb-24">
+        <div className="max-w-3xl mx-auto rounded-3xl border border-brand-green/30 bg-background/95 p-8 sm:p-14 shadow-2xl backdrop-blur-2xl text-center">
           <div className="flex size-16 items-center justify-center rounded-3xl bg-brand-green/20 text-brand-green-text mx-auto mb-6">
-            <Check className="size-8" />
+            <CheckCircle2 className="size-9 text-brand-green" />
           </div>
 
-          <h3 className="font-head text-2xl sm:text-3xl font-bold text-foreground mb-2">
-            {ar ? "تم تسجيل طلب التوريد بنجاح!" : "Sourcing Request Registered Successfully!"}
-          </h3>
-          <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed mb-6">
-            {ar
-              ? "تم إرسال طلب عرض السعر إلى المكتب التجاري لمجموعة سامي بن عياد. سيتم إعداد العرض الفني والتجاري والرد خلال 24 ساعة عمل."
-              : "Your request for quotation has been submitted to SAMI BIN AYYAD GROUP export desk. A formal proposal will be dispatched within 24 business hours."}
-          </p>
+          <h2 className="font-head text-2xl sm:text-3xl font-extrabold text-foreground mb-4">
+            {ar ? "تم استلام طلب التوريد بنجاح!" : "Supply Request Submitted Successfully!"}
+          </h2>
+
+          <div className="rounded-2xl border border-brand-green/30 bg-brand-green/10 p-5 mb-6 max-w-xl mx-auto">
+            <p className="text-xs sm:text-sm text-foreground font-semibold leading-relaxed">
+              {ar
+                ? "شكرًا لاهتمامكم بالتعاون مع SAMI BIN AYYAD GROUP. تم استلام طلب التوريد بنجاح، وسيتم مراجعته من قبل الفريق المختص."
+                : "Thank you for your interest in working with SAMI BIN AYYAD GROUP. Your supply request has been submitted successfully and will be reviewed by the relevant team."}
+            </p>
+          </div>
 
           {/* Reference Code Box */}
           <div className="rounded-2xl border border-brand-orange/40 bg-brand-orange/10 p-5 mb-8 max-w-md mx-auto">
             <span className="text-[11px] font-bold uppercase tracking-wider text-brand-orange block mb-1">
-              {ar ? "رقم المرجع التجاري للطلب (Quotation Reference)" : "Official Quotation Reference Code"}
+              {ar ? "الرقم المرجعي الرسمي لطلب التوريد" : "Official Supply Request Reference"}
             </span>
             <div className="flex items-center justify-center gap-3">
               <span className="font-mono text-2xl sm:text-3xl font-extrabold text-foreground tracking-wider">
                 {quotationCode}
               </span>
               <button
+                type="button"
                 onClick={copyCode}
-                className="flex size-8 items-center justify-center rounded-xl bg-background border border-border text-foreground hover:bg-brand-orange hover:text-white transition-all"
+                className="flex size-8 items-center justify-center rounded-xl bg-background border border-border text-foreground hover:bg-brand-orange hover:text-white transition-all cursor-pointer"
                 title={ar ? "نسخ الرقم المرجعي" : "Copy reference code"}
               >
                 {copied ? <Check className="size-4 text-emerald-500" /> : <Copy className="size-4" />}
               </button>
             </div>
             <p className="text-[11px] text-muted-foreground mt-2">
-              {ar ? "احتفظ بهذا الرقم لمتابعة حالة الشحنة أو الاستفسار المباشر." : "Save this reference code to track quotation status and order dispatch."}
+              {ar ? "يرجى الاحتفاظ بهذا الرمز لمتابعة تفاصيل الطلب مع المكتب التجاري." : "Please retain this code for all follow-up communications with our commercial desk."}
             </p>
           </div>
 
@@ -1632,8 +1869,8 @@ function FoodOrderProductTab({
             <a
               href={`${WHATSAPP_URL}&text=${encodeURIComponent(
                 ar
-                  ? `مرحبًا، أود متابعة طلب عرض الأسعار والتوريد رقم: ${quotationCode} لمنتج ${formData.productName || formData.category}`
-                  : `Hello, I would like to follow up on Food Sourcing RFQ Ref: ${quotationCode} for ${formData.productName || formData.category}`
+                  ? `مرحبًا، أود متابعة طلب التوريد رقم: ${quotationCode} لمنتج ${formData.productName || formData.category}`
+                  : `Hello, I would like to follow up on Supply Request Ref: ${quotationCode} for ${formData.productName || formData.category}`
               )}`}
               target="_blank"
               rel="noreferrer"
@@ -1643,12 +1880,23 @@ function FoodOrderProductTab({
               <span>{ar ? "متابعة الطلب عبر واتساب التجاري" : "Follow Up on WhatsApp Desk"}</span>
             </a>
 
+            <a
+              href={`mailto:info@sami-trade.com?subject=Supply Request [${quotationCode}] - ${encodeURIComponent(formData.companyName)}&body=Reference Code: ${quotationCode}%0ACompany: ${encodeURIComponent(formData.companyName)}%0AProduct: ${encodeURIComponent(formData.productName || formData.category)}%0AContact: ${encodeURIComponent(formData.contactPerson)} (${encodeURIComponent(formData.phone)})`}
+              className="inline-flex items-center gap-2 rounded-full bg-brand-green px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-brand-green/30 transition-all hover:bg-brand-orange hover:scale-105 active:scale-95"
+            >
+              <Send className="size-4 rtl:rotate-180" />
+              <span>{ar ? "مراسلة الإدارة بالبريد الرسمي" : "Email Commercial Desk"}</span>
+            </a>
+
             <button
               type="button"
-              onClick={() => setSubmitted(false)}
-              className="rounded-full border border-border bg-secondary px-7 py-3.5 text-sm font-bold text-foreground hover:bg-secondary/80 transition-all"
+              onClick={() => {
+                setSubmitted(false);
+                setQuotationCode("");
+              }}
+              className="rounded-full border border-border bg-secondary px-7 py-3.5 text-sm font-bold text-foreground hover:bg-secondary/80 transition-all cursor-pointer"
             >
-              {ar ? "إرسال طلب توريد آخر" : "Submit Another RFQ"}
+              {ar ? "إرسال طلب توريد آخر" : "Submit Another Supply Request"}
             </button>
           </div>
         </div>
@@ -1657,360 +1905,690 @@ function FoodOrderProductTab({
   }
 
   return (
-    <section className="site-container pt-28 sm:pt-36 pb-20">
-      <Reveal>
-        <div className="max-w-4xl mx-auto rounded-3xl border border-white/20 bg-background/90 p-8 sm:p-12 shadow-2xl backdrop-blur-2xl">
-          <div className="text-center mb-10">
-            <SectionBadge title={ar ? "طلب عروض الأسعار والتوريد" : "Request for Quotation (RFQ)"} />
-            <h2 className="font-head text-2xl sm:text-4xl font-bold text-foreground mt-3 mb-2">
-              {ar ? "نموذج طلب توريد المنتجات الطبيعية والغذائية" : "B2B Agri-Food Supply & Export Quotation"}
-            </h2>
-            <p className="text-xs sm:text-sm text-muted-foreground max-w-2xl mx-auto">
+    <div className="w-full">
+      {/* 1. Header & Intro */}
+      <section className="site-container pt-28 sm:pt-36 pb-12">
+        <Reveal>
+          <div className="max-w-4xl mx-auto text-center">
+            <SectionBadge title={ar ? "قطاع الأغذية والمنتجات الطبيعية · طلب توريد معتمد" : "Food & Natural Products · Certified Supply Request"} />
+            <h1 className="font-head text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight">
+              {ar ? "طلب توريد المنتجات الغذائية والطبيعية" : "Food & Natural Products Supply Request"}
+            </h1>
+            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-3xl mx-auto whitespace-pre-line">
               {ar
-                ? "يرجى تعبئة المواصفات الفنية والكمية وميناء الوصول ليقوم فريقنا التجاري بتجهيز عرض سعر مفصل مشتملًا على التحاليل المخبرية والشهادات والمستندات."
-                : "Please fill in product specifications, target volumes, destination port, and incoterms to receive a comprehensive commercial & technical dossier."}
+                ? "نرحب بطلبات التوريد والتعاون التجاري من الشركات والمستوردين والموزعين وتجار الجملة والأسواق التجارية.\n\nمن خلال هذه الصفحة، يمكنكم إرسال تفاصيل المنتجات الغذائية والطبيعية المطلوبة، والكميات المستهدفة، ومواصفات التعبئة والتغليف، ووجهة التوريد، لدراسة الطلب وتقييم إمكانية تلبية احتياجاتكم وفقًا لطبيعة المنتج ومتطلبات السوق."
+                : "We welcome supply inquiries and commercial cooperation requests from companies, importers, distributors, wholesalers, and retail businesses.\n\nUse this page to share your required food and natural products, target quantities, packaging specifications, and destination market. Our team will review your inquiry and assess the potential supply options based on product requirements and market conditions."}
+            </p>
+
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+              <a
+                href="#supply-form"
+                className="inline-flex items-center gap-2 rounded-full bg-brand-green px-7 py-3 text-sm font-bold text-white shadow-lg shadow-brand-green/20 hover:bg-brand-orange transition-all duration-300 hover:scale-105"
+              >
+                <Send className="size-4 rtl:rotate-180" />
+                <span>{ar ? "الانتقال المباشر لنموذج الطلب" : "Go Directly to Request Form"}</span>
+              </a>
+              <a
+                href="#supply-process"
+                className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-6 py-3 text-sm font-bold text-foreground hover:bg-secondary transition-all"
+              >
+                <ClipboardCheck className="size-4 text-brand-orange" />
+                <span>{ar ? "آلية دراسة الطلبات (5 خطوات)" : "Supply Assessment Process"}</span>
+              </a>
+            </div>
+          </div>
+        </Reveal>
+      </section>
+
+      {/* 2. Section A: Products of Interest | المنتجات محل الاهتمام */}
+      <section className="site-container py-12">
+        <Reveal>
+          <div className="max-w-6xl mx-auto">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+              <div>
+                <span className="text-xs font-bold uppercase tracking-wider text-brand-orange block mb-1">
+                  {ar ? "الفئات الاستطلاعية والاستعلامية" : "Inquiry Categories"}
+                </span>
+                <h2 className="font-head text-2xl sm:text-3xl font-bold text-foreground">
+                  {ar ? "المنتجات محل الاهتمام" : "Products of Interest"}
+                </h2>
+              </div>
+              <p className="text-xs text-muted-foreground max-w-md">
+                {ar
+                  ? "يمكنكم اختيار أي فئة لتحديدها تلقائيًا داخل نموذج التوريد."
+                  : "Select any category below to auto-select it in the supply inquiry form."}
+              </p>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {categories.map((cat) => {
+                const CatIcon = cat.icon;
+                const isSelected = formData.category === cat.id;
+                return (
+                  <button
+                    key={cat.id}
+                    type="button"
+                    onClick={() => {
+                      setFormData((p) => ({ ...p, category: cat.id }));
+                      const el = document.getElementById("supply-form");
+                      if (el) el.scrollIntoView({ behavior: "smooth" });
+                    }}
+                    className={cn(
+                      "p-6 rounded-2xl border text-start transition-all duration-300 flex flex-col justify-between cursor-pointer group hover:-translate-y-1 shadow-xs",
+                      isSelected
+                        ? "border-brand-green bg-brand-green/10 ring-2 ring-brand-green/30 shadow-md"
+                        : "border-border/70 bg-card/70 hover:border-brand-orange/60 hover:bg-card"
+                    )}
+                  >
+                    <div>
+                      <div className={cn(
+                        "size-12 rounded-2xl flex items-center justify-center mb-4 transition-colors",
+                        isSelected ? "bg-brand-green text-white" : "bg-secondary text-brand-orange group-hover:bg-brand-orange group-hover:text-white"
+                      )}>
+                        <CatIcon className="size-6" />
+                      </div>
+                      <h3 className="font-head text-base font-bold text-foreground mb-2 group-hover:text-brand-orange transition-colors">
+                        {ar ? cat.titleAr : cat.titleEn}
+                      </h3>
+                      <p className="text-xs text-muted-foreground leading-relaxed">
+                        {ar ? cat.descAr : cat.descEn}
+                      </p>
+                    </div>
+                    <div className="mt-4 pt-3 border-t border-border/40 flex items-center justify-between text-[11px] font-bold text-brand-green">
+                      <span>{ar ? "تحديد هذه الفئة" : "Select Category"}</span>
+                      <ArrowRight className="size-3 rtl:rotate-180 transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1" />
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Disclaimer Alert */}
+            <div className="mt-6 rounded-2xl border border-border/70 bg-secondary/40 p-4 sm:p-5 flex items-start gap-3">
+              <Info className="size-5 text-brand-orange shrink-0 mt-0.5" />
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                {ar
+                  ? "تنويه مهني: تُدرج هذه الفئات لأغراض استطلاع متطلبات التوريد وتلقي الاستفسارات التجارية. لا يُقصد من هذا الإدراج أن جميع الأصناف متوفرة فورياً للشحن في كل الأوقات؛ حيث تخضع إمكانية التوريد الفعلي لدراسة المواصفات الفنية، والكميات المطلوبة، والظروف الموسمية الزراعية، وتأكيد الفريق التجاري."
+                  : "Professional Notice: These categories are provided to receive and assess structured commercial supply inquiries. Listing does not imply that every single item is held in immediate ready-stock at all times; actual supply feasibility is determined through technical specification review, volume assessment, agricultural crop seasonality, and formal agreement."}
+              </p>
+            </div>
+          </div>
+        </Reveal>
+      </section>
+
+      {/* 3. Section B: Supply Requirements | متطلبات التوريد */}
+      <section className="site-container py-12">
+        <Reveal>
+          <div className="max-w-6xl mx-auto rounded-3xl border border-border/70 bg-secondary/30 p-8 sm:p-12">
+            <div className="max-w-2xl mb-8">
+              <span className="text-xs font-bold uppercase tracking-wider text-brand-orange block mb-1">
+                {ar ? "البيانات والمعايير المستهدفة" : "Inquiry Parameters"}
+              </span>
+              <h2 className="font-head text-2xl sm:text-3xl font-bold text-foreground">
+                {ar ? "متطلبات التوريد والمعايير الفنية" : "Supply Requirements & Specifications"}
+              </h2>
+              <p className="text-xs sm:text-sm text-muted-foreground mt-2 leading-relaxed">
+                {ar
+                  ? "لضمان سرعة دراسة طلب التوريد بدقة، يُفضل تضمين العناصر الأساسية التالية عند تقديم الطلب:"
+                  : "To ensure an accurate and swift feasibility assessment, buyers are encouraged to provide clear details on the following parameters:"}
+              </p>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {supplyRequirementsList.map((req, idx) => {
+                const ReqIcon = req.icon;
+                return (
+                  <div
+                    key={idx}
+                    className="p-5 rounded-2xl border border-border/70 bg-card/80 backdrop-blur-md shadow-xs flex flex-col justify-between"
+                  >
+                    <div>
+                      <div className="size-10 rounded-xl bg-brand-green/10 text-brand-green-text flex items-center justify-center mb-3">
+                        <ReqIcon className="size-5" />
+                      </div>
+                      <h3 className="font-head text-sm font-bold text-foreground mb-1">
+                        {ar ? req.titleAr : req.titleEn}
+                      </h3>
+                      <p className="text-xs text-muted-foreground leading-relaxed">
+                        {ar ? req.descAr : req.descEn}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </Reveal>
+      </section>
+
+      {/* 4. Section C: Commercial Cooperation | التعاون التجاري */}
+      <section className="site-container py-12">
+        <Reveal>
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center max-w-2xl mx-auto mb-10">
+              <span className="text-xs font-bold uppercase tracking-wider text-brand-orange block mb-1">
+                {ar ? "أطر الشراكة التجارية" : "Partnership Frameworks"}
+              </span>
+              <h2 className="font-head text-2xl sm:text-3xl font-bold text-foreground">
+                {ar ? "نماذج التعاون التجاري المحتملة" : "Commercial Cooperation Models"}
+              </h2>
+              <p className="text-xs sm:text-sm text-muted-foreground mt-2 leading-relaxed">
+                {ar
+                  ? "نرحب ببحث فرص التعاون مع الشركاء التجاريين عبر نماذج مرنة تخضع للدراسة والاتفاق المسبق:"
+                  : "We welcome commercial cooperation with global partners through flexible, structured models subject to mutual agreement:"}
+              </p>
+            </div>
+
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {cooperationModels.map((model, idx) => (
+                <div
+                  key={idx}
+                  className="p-6 rounded-3xl border border-border/70 bg-card/85 backdrop-blur-md shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="inline-flex rounded-full bg-brand-orange/15 px-3 py-1 font-mono text-[11px] font-bold text-brand-orange">
+                        {model.badge}
+                      </span>
+                      <Handshake className="size-5 text-muted-foreground/70" />
+                    </div>
+                    <h3 className="font-head text-base font-bold text-foreground mb-2">
+                      {ar ? model.titleAr : model.titleEn}
+                    </h3>
+                    <p className="text-xs text-muted-foreground leading-relaxed">
+                      {ar ? model.descAr : model.descEn}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <p className="text-center text-xs text-muted-foreground mt-6 italic">
+              {ar
+                ? "* تُطرح هذه النماذج كأطر تعاون محتملة تخضع للدراسة والتقييم المشترك والاتفاق المسبق، ولا تشكل التزامًا تعاقديًا إلا بعد توقيع الاتفاقيات الرسمية."
+                : "* These models represent potential cooperation frameworks subject to review, mutual evaluation, and prior agreement, with no binding commitment until definitive contracts are executed."}
             </p>
           </div>
+        </Reveal>
+      </section>
 
-          <form onSubmit={handleSubmit} className="space-y-8">
-            {/* Step 1: Product & Technical Specs */}
-            <div className="rounded-2xl border border-border/70 bg-secondary/30 p-5 sm:p-6 space-y-4">
-              <div className="flex items-center gap-2 border-b border-border/60 pb-3">
-                <span className="flex size-7 items-center justify-center rounded-xl bg-brand-orange text-white font-bold text-xs">
-                  1
-                </span>
-                <h3 className="font-head text-sm sm:text-base font-bold text-foreground">
-                  {ar ? "فئة المنتج والمواصفات الفنية المطلوبة" : "Product Category & Technical Specifications"}
-                </h3>
-              </div>
+      {/* 5. Section D: Supply Process | آلية دراسة طلب التوريد */}
+      <section id="supply-process" className="site-container py-12">
+        <Reveal>
+          <div className="max-w-6xl mx-auto rounded-3xl border border-border/70 bg-secondary/40 p-8 sm:p-12">
+            <div className="text-center max-w-2xl mx-auto mb-10">
+              <span className="text-xs font-bold uppercase tracking-wider text-brand-orange block mb-1">
+                {ar ? "منظومة الانضباط التجاري" : "Structured Protocol"}
+              </span>
+              <h2 className="font-head text-2xl sm:text-3xl font-bold text-foreground">
+                {ar ? "آلية دراسة طلب التوريد (5 خطوات)" : "Supply Request Assessment Process"}
+              </h2>
+              <p className="text-xs sm:text-sm text-muted-foreground mt-2 leading-relaxed">
+                {ar
+                  ? "تسير دراسة طلبات التوريد وفق آلية عمل متسلسلة لضمان الشفافية والمطابقة الفنية:"
+                  : "All inquiries are evaluated through a rigorous 5-stage workflow ensuring transparency and quality assurance:"}
+              </p>
+            </div>
 
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div>
-                  <label className="block text-xs font-bold text-foreground uppercase tracking-wider mb-2">
-                    {ar ? "فئة المنتج المطلوب *" : "Product Category *"}
-                  </label>
-                  <select
-                    required
-                    value={formData.category}
-                    onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                    className="w-full rounded-2xl border border-border bg-background px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-brand-orange"
-                  >
-                    <option value="honey">{ar ? "العسل الطبيعي ومنتجات النحل (Honey & Bee Products)" : "Honey & Bee Products"}</option>
-                    <option value="olives">{ar ? "الزيتون المصري بمختلف أشكاله (Table Olives)" : "Table Olives"}</option>
-                    <option value="olive-oil">{ar ? "زيت الزيتون وأنواعه (Olive Oil & EVOO)" : "Olive Oil & EVOO"}</option>
-                    <option value="dates">{ar ? "التمور ومنتجات النخيل (Dates & Derivatives)" : "Dates & Palm Derivatives"}</option>
-                    <option value="herbs">{ar ? "الأعشاب والنباتات الطبية (Aromatic Herbs)" : "Aromatic Herbs & Botanicals"}</option>
-                    <option value="beverage-powders">{ar ? "العصائر والمكونات المجففة (Beverage Powders)" : "Powdered Juices & Ingredients"}</option>
-                    <option value="spices">{ar ? "التوابل والبهارات المفردة والخلطات (Spices)" : "Single Spices & Blends"}</option>
-                    <option value="soups-broths">{ar ? "الشوربات والمرقات (Soups & Stocks)" : "Soups & Stocks"}</option>
-                    <option value="traditional-foods">{ar ? "الأكلات التراثية (Traditional Food Products)" : "Traditional Food Products"}</option>
-                    <option value="rice-blends">{ar ? "خلطات الأرز (Rice Seasoning Blends)" : "Rice Seasoning Blends"}</option>
-                    <option value="essential-spices">{ar ? "التوابل الأساسية (Essential Spices & Seasonings)" : "Essential Spices & Seasonings"}</option>
-                    <option value="asian-spices">{ar ? "التوابل والخلطات الآسيوية (Asian Spices & Blends)" : "Asian Spices & Blends"}</option>
-                    <option value="meat-poultry-seasonings">{ar ? "تتبيلات اللحوم والدجاج (Meat & Poultry Seasonings)" : "Meat & Poultry Seasonings"}</option>
-                    <option value="specialty-blends">{ar ? "المتفرقات والخلطات المتخصصة (Specialty Blends)" : "Specialty Blends & Other Products"}</option>
-                    <option value="other-agri">{ar ? "حاصلات زراعية أخرى (السمسم، البصل، الثوم)" : "Other Agricultural Commodities"}</option>
-                  </select>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+              {steps.map((st) => (
+                <div
+                  key={st.num}
+                  className="p-5 rounded-2xl border border-border/70 bg-card/90 backdrop-blur-md shadow-xs flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="flex size-9 items-center justify-center rounded-xl bg-brand-green text-white font-mono font-bold text-sm mb-3">
+                      {st.num}
+                    </div>
+                    <h3 className="font-head text-sm font-bold text-foreground mb-2">
+                      {ar ? st.titleAr : st.titleEn}
+                    </h3>
+                    <p className="text-[11px] text-muted-foreground leading-relaxed">
+                      {ar ? st.descAr : st.descEn}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-8 rounded-2xl border border-border/60 bg-background/60 p-4 text-center">
+              <p className="text-xs text-muted-foreground">
+                {ar
+                  ? "ملاحظة هامة: تخضع كافة الطلبات للتقييم الفني والمراجعة التجارية، ولا تشكل دراسة الطلب موافقة تلقائية أو التزامًا فوريًا بالتوفر أو أوقات تسليم محددة مسبقًا."
+                  : "Important Note: All requests undergo technical and commercial review. Inquiry evaluation does not constitute automatic acceptance, guaranteed availability, or fixed delivery schedules."}
+              </p>
+            </div>
+          </div>
+        </Reveal>
+      </section>
+
+      {/* 6. Section 5: The Supply Request Form | نموذج طلب التوريد */}
+      <section id="supply-form" className="site-container py-12 pb-24">
+        <Reveal>
+          <div className="max-w-4xl mx-auto rounded-3xl border border-white/20 bg-background/90 p-8 sm:p-12 shadow-2xl backdrop-blur-2xl">
+            <div className="text-center mb-10">
+              <SectionBadge title={ar ? "النموذج الرسمي المعتمد" : "Official B2B Inquiry Form"} />
+              <h2 className="font-head text-2xl sm:text-4xl font-bold text-foreground mt-3 mb-2">
+                {ar ? "نموذج طلب توريد المنتجات الغذائية والطبيعية" : "Food & Natural Products Supply Request Form"}
+              </h2>
+              <p className="text-xs sm:text-sm text-muted-foreground max-w-2xl mx-auto">
+                {ar
+                  ? "يرجى استكمال الحقول المطلوبة بالدقة الممكنة ليتمكن الفريق التجاري من مراجعة الطلب وتقييم إمكانات التوريد."
+                  : "Please complete all required fields accurately to enable our commercial team to evaluate product availability and feasibility."}
+              </p>
+            </div>
+
+            <form onSubmit={handleSubmit} className="space-y-8">
+              {/* Group 1: Company Information */}
+              <div className="rounded-2xl border border-border/70 bg-secondary/30 p-5 sm:p-6 space-y-4">
+                <div className="flex items-center gap-2 border-b border-border/60 pb-3">
+                  <span className="flex size-7 items-center justify-center rounded-xl bg-brand-orange text-white font-bold text-xs">
+                    1
+                  </span>
+                  <h3 className="font-head text-sm sm:text-base font-bold text-foreground">
+                    {ar ? "بيانات الشركة والمشتري التجاري" : "Company & Commercial Buyer Information"}
+                  </h3>
+                </div>
+
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div>
+                    <label className="block text-xs font-bold text-foreground uppercase tracking-wider mb-2">
+                      {ar ? "اسم الشركة / المؤسسة *" : "Company / Organization Name *"}
+                    </label>
+                    <input
+                      required
+                      type="text"
+                      placeholder={ar ? "اسم شركتك أو جهة الاستيراد" : "Company or Trading Name"}
+                      value={formData.companyName}
+                      onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
+                      className="w-full rounded-2xl border border-border bg-background px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-brand-orange"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold text-foreground uppercase tracking-wider mb-2">
+                      {ar ? "اسم المسؤول للتواصل *" : "Contact Person *"}
+                    </label>
+                    <input
+                      required
+                      type="text"
+                      placeholder={ar ? "الاسم الكريم" : "Full Name"}
+                      value={formData.contactPerson}
+                      onChange={(e) => setFormData({ ...formData, contactPerson: e.target.value })}
+                      className="w-full rounded-2xl border border-border bg-background px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-brand-orange"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid gap-4 sm:grid-cols-3">
+                  <div>
+                    <label className="block text-xs font-bold text-foreground uppercase tracking-wider mb-2">
+                      {ar ? "البريد الإلكتروني الرسمي *" : "Business Email *"}
+                    </label>
+                    <input
+                      required
+                      type="email"
+                      placeholder="procurement@company.com"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      className="w-full rounded-2xl border border-border bg-background px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-brand-orange"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold text-foreground uppercase tracking-wider mb-2">
+                      {ar ? "الهاتف / واتساب مع رمز الدولة *" : "Phone / WhatsApp *"}
+                    </label>
+                    <input
+                      required
+                      type="tel"
+                      placeholder="+966 5... / +49 17..."
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      className="w-full rounded-2xl border border-border bg-background px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-brand-orange"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold text-foreground uppercase tracking-wider mb-2">
+                      {ar ? "الدولة المستوردة *" : "Country *"}
+                    </label>
+                    <input
+                      required
+                      type="text"
+                      placeholder={ar ? "دولة تسجيل الشركة" : "Country of Operation"}
+                      value={formData.country}
+                      onChange={(e) => setFormData({ ...formData, country: e.target.value })}
+                      className="w-full rounded-2xl border border-border bg-background px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-brand-orange"
+                    />
+                  </div>
                 </div>
 
                 <div>
                   <label className="block text-xs font-bold text-foreground uppercase tracking-wider mb-2">
-                    {ar ? "اسم الصنف أو التدرج المطلوب *" : "Product / Variety Name *"}
+                    {ar ? "الموقع الإلكتروني للشركة (اختياري)" : "Company Website (Optional)"}
                   </label>
                   <input
-                    required
                     type="text"
-                    placeholder={ar ? "مثال: تمر مجدول جامبو، زيتون تفاحي، كركديه أسواني..." : "e.g. Jumbo Medjool Dates, EVOO, Hibiscus TBC..."}
-                    value={formData.productName}
-                    onChange={(e) => setFormData({ ...formData, productName: e.target.value })}
+                    placeholder="https://company.com"
+                    value={formData.website}
+                    onChange={(e) => setFormData({ ...formData, website: e.target.value })}
                     className="w-full rounded-2xl border border-border bg-background px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-brand-orange"
                   />
                 </div>
               </div>
 
-              <div>
-                <label className="block text-xs font-bold text-foreground uppercase tracking-wider mb-2">
-                  {ar ? "المواصفات الفنية الخاصة (الحموضة، الرطوبة، النقاء، العيار)" : "Required Technical Specifications (Acidity, Moisture %, Purity %, Sizing)"}
-                </label>
-                <textarea
-                  rows={2}
-                  placeholder={ar ? "مثال: زيت زيتون حموضة أقل من 0.5%، أو كركديه مجروش TBC للشاي، أو زيتون عيار 80/90..." : "e.g. Acidity < 0.5%, Moisture < 12%, Caliber 80/90 pieces/kg..."}
-                  value={formData.specifications}
-                  onChange={(e) => setFormData({ ...formData, specifications: e.target.value })}
-                  className="w-full rounded-2xl border border-border bg-background p-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-brand-orange"
-                />
-              </div>
-            </div>
+              {/* Group 2: Product Requirements */}
+              <div className="rounded-2xl border border-border/70 bg-secondary/30 p-5 sm:p-6 space-y-4">
+                <div className="flex items-center gap-2 border-b border-border/60 pb-3">
+                  <span className="flex size-7 items-center justify-center rounded-xl bg-brand-orange text-white font-bold text-xs">
+                    2
+                  </span>
+                  <h3 className="font-head text-sm sm:text-base font-bold text-foreground">
+                    {ar ? "متطلبات المنتج والمواصفات الفنية" : "Product Requirements & Specifications"}
+                  </h3>
+                </div>
 
-            {/* Step 2: Order Volume, Packaging & Logistics */}
-            <div className="rounded-2xl border border-border/70 bg-secondary/30 p-5 sm:p-6 space-y-4">
-              <div className="flex items-center gap-2 border-b border-border/60 pb-3">
-                <span className="flex size-7 items-center justify-center rounded-xl bg-brand-orange text-white font-bold text-xs">
-                  2
-                </span>
-                <h3 className="font-head text-sm sm:text-base font-bold text-foreground">
-                  {ar ? "الكمية، التعبئة ومواصفات الشحن والتسليم" : "Volume, Packaging & Logistics Destination"}
-                </h3>
-              </div>
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div>
+                    <label className="block text-xs font-bold text-foreground uppercase tracking-wider mb-2">
+                      {ar ? "فئة المنتج المطلوب *" : "Product Category *"}
+                    </label>
+                    <select
+                      required
+                      value={formData.category}
+                      onChange={(e) => setFormData({ ...formData, category: e.target.value })}
+                      className="w-full rounded-2xl border border-border bg-background px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-brand-orange"
+                    >
+                      {categories.map((c) => (
+                        <option key={c.id} value={c.id}>
+                          {ar ? c.titleAr : c.titleEn}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
 
-              <div className="grid gap-4 sm:grid-cols-3">
-                <div className="sm:col-span-2">
+                  <div>
+                    <label className="block text-xs font-bold text-foreground uppercase tracking-wider mb-2">
+                      {ar ? "اسم المنتج المطلوب *" : "Product Name *"}
+                    </label>
+                    <input
+                      required
+                      type="text"
+                      placeholder={ar ? "مثال: تمر مجدول جامبو، زيت زيتون بكر ممتاز، كركديه..." : "e.g. Jumbo Medjool Dates, EVOO, Hibiscus TBC..."}
+                      value={formData.productName}
+                      onChange={(e) => setFormData({ ...formData, productName: e.target.value })}
+                      className="w-full rounded-2xl border border-border bg-background px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-brand-orange"
+                    />
+                  </div>
+                </div>
+
+                <div>
                   <label className="block text-xs font-bold text-foreground uppercase tracking-wider mb-2">
-                    {ar ? "الكمية المطلوبة *" : "Required Quantity *"}
+                    {ar ? "وصف المنتج واحتياجات الاستخدام *" : "Product Description & Intended Use *"}
                   </label>
-                  <div className="flex gap-2">
+                  <textarea
+                    required
+                    rows={2}
+                    placeholder={ar ? "يرجى توضيح الصنف وطبيعة الاستخدام (تجزئة، تصنيع غذائي، تعبئة خاصة، توريد جملة)..." : "Specify the product type, application (retail, industrial processing, private label, wholesale)..."}
+                    value={formData.productDescription}
+                    onChange={(e) => setFormData({ ...formData, productDescription: e.target.value })}
+                    className="w-full rounded-2xl border border-border bg-background p-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-brand-orange"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold text-foreground uppercase tracking-wider mb-2">
+                    {ar ? "المواصفات الفنية ودرجة الجودة المطلوبة *" : "Required Specifications & Quality Grade *"}
+                  </label>
+                  <textarea
+                    required
+                    rows={2}
+                    placeholder={ar ? "معايير الحموضة، الرطوبة، النقاوة، درجة الفرز، العيار (Caliber)، التحاليل المخبرية المطلوبة..." : "Acidity parameters, moisture %, purity %, grading caliber, certifications, or specific lab thresholds..."}
+                    value={formData.specifications}
+                    onChange={(e) => setFormData({ ...formData, specifications: e.target.value })}
+                    className="w-full rounded-2xl border border-border bg-background p-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-brand-orange"
+                  />
+                </div>
+
+                <div className="grid gap-4 sm:grid-cols-3">
+                  <div>
+                    <label className="block text-xs font-bold text-foreground uppercase tracking-wider mb-2">
+                      {ar ? "الكمية المطلوبة *" : "Required Quantity *"}
+                    </label>
                     <input
                       required
                       type="number"
                       min="1"
-                      placeholder={ar ? "الكمية بالأرقام..." : "Numeric quantity..."}
+                      placeholder={ar ? "الكمية بالأرقام..." : "Numeric volume..."}
                       value={formData.quantityValue}
                       onChange={(e) => setFormData({ ...formData, quantityValue: e.target.value })}
-                      className="flex-1 rounded-2xl border border-border bg-background px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-brand-orange"
+                      className="w-full rounded-2xl border border-border bg-background px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-brand-orange"
                     />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold text-foreground uppercase tracking-wider mb-2">
+                      {ar ? "وحدة القياس *" : "Unit of Measurement *"}
+                    </label>
                     <select
                       value={formData.quantityUnit}
                       onChange={(e) => setFormData({ ...formData, quantityUnit: e.target.value })}
-                      className="w-40 rounded-2xl border border-border bg-background px-3 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-brand-orange"
+                      className="w-full rounded-2xl border border-border bg-background px-3 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-brand-orange"
                     >
-                      <option value="tonnes">{ar ? "طن متري (MT)" : "Metric Tonnes"}</option>
-                      <option value="containers-20ft">{ar ? "حاوية 20 قدم" : "20ft FCL Container"}</option>
-                      <option value="containers-40ft">{ar ? "حاوية 40 قدم" : "40ft FCL Container"}</option>
-                      <option value="pallets">{ar ? "طبلية تخزينية" : "Pallets"}</option>
-                      <option value="cartons">{ar ? "كرتونة" : "Cartons"}</option>
+                      <option value="tonnes">{ar ? "طن متري (Metric Tonnes)" : "Metric Tonnes (MT)"}</option>
+                      <option value="containers-20ft">{ar ? "حاوية 20 قدم (20ft FCL)" : "20ft FCL Container"}</option>
+                      <option value="containers-40ft">{ar ? "حاوية 40 قدم (40ft FCL)" : "40ft FCL Container"}</option>
+                      <option value="pallets">{ar ? "طبالي تخزينية (Pallets)" : "Storage Pallets"}</option>
+                      <option value="cartons">{ar ? "كراتين تصدير (Cartons)" : "Export Cartons"}</option>
+                      <option value="kg">{ar ? "كيلوجرام (KG)" : "Kilograms (KG)"}</option>
+                      <option value="liters">{ar ? "لتر (Liters)" : "Liters"}</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold text-foreground uppercase tracking-wider mb-2">
+                      {ar ? "مواصفات التعبئة والتغليف *" : "Packaging Format *"}
+                    </label>
+                    <select
+                      required
+                      value={formData.packagingType}
+                      onChange={(e) => setFormData({ ...formData, packagingType: e.target.value })}
+                      className="w-full rounded-2xl border border-border bg-background px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-brand-orange"
+                    >
+                      <option value="drums">{ar ? "براميل غذائية صناعية (Bulk Drums)" : "Industrial Bulk Drums"}</option>
+                      <option value="retail-jars">{ar ? "عبوات وبرطمانات زجاجية (Glass Jars)" : "Retail Glass Jars"}</option>
+                      <option value="pouches">{ar ? "أكياس دويباك مفرغة (Vacuum Pouches)" : "Vacuum Doypack Pouches"}</option>
+                      <option value="cartons">{ar ? "كراتين تصدير مقواة (Export Cartons)" : "Export Cartons"}</option>
+                      <option value="ibc">{ar ? "خزانات وسوائل IBC سعة 1,000 لتر" : "1,000L Bulk IBC Totes"}</option>
+                      <option value="private-label">{ar ? "تعبئة مخصصة بعلامة خاصة (Private Label)" : "Custom Private Label"}</option>
+                      <option value="other">{ar ? "تعبئة أخرى حسب الطلب" : "Other Customized Packaging"}</option>
                     </select>
                   </div>
                 </div>
 
                 <div>
                   <label className="block text-xs font-bold text-foreground uppercase tracking-wider mb-2">
-                    {ar ? "نوع التعبئة والتغليف *" : "Packaging Format *"}
+                    {ar ? "بلد المنشأ المفضل (اختياري)" : "Preferred Country of Origin (Optional)"}
                   </label>
-                  <select
-                    required
-                    value={formData.packagingType}
-                    onChange={(e) => setFormData({ ...formData, packagingType: e.target.value })}
+                  <input
+                    type="text"
+                    placeholder={ar ? "مصر، أو تفضيلات جغرافية أخرى..." : "e.g. Egypt, or other origin preferences..."}
+                    value={formData.preferredOrigin}
+                    onChange={(e) => setFormData({ ...formData, preferredOrigin: e.target.value })}
                     className="w-full rounded-2xl border border-border bg-background px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-brand-orange"
-                  >
-                    <option value="drums">{ar ? "براميل غذائية صناعية (Bulk Drums)" : "Industrial Bulk Drums"}</option>
-                    <option value="retail-jars">{ar ? "برطمانات زجاجية للتجزئة (Glass Jars)" : "Retail Glass Jars"}</option>
-                    <option value="pouches">{ar ? "أكياس دويباك مفرغة (Vacuum Pouches)" : "Vacuum Doypack Pouches"}</option>
-                    <option value="cartons">{ar ? "كراتين تصدير مقواة (Export Cartons)" : "Export Cartons"}</option>
-                    <option value="ibc">{ar ? "خزانات وسوائل IBC سعة 1,000 لتر" : "1,000L Bulk IBC Totes"}</option>
-                    <option value="private-label">{ar ? "تعبئة مخصصة بعلامة خاصة (Private Label)" : "Custom Private Label"}</option>
-                  </select>
+                  />
                 </div>
               </div>
 
-              <div className="grid gap-4 sm:grid-cols-3">
+              {/* Group 3: Commercial & Logistics */}
+              <div className="rounded-2xl border border-border/70 bg-secondary/30 p-5 sm:p-6 space-y-4">
+                <div className="flex items-center gap-2 border-b border-border/60 pb-3">
+                  <span className="flex size-7 items-center justify-center rounded-xl bg-brand-orange text-white font-bold text-xs">
+                    3
+                  </span>
+                  <h3 className="font-head text-sm sm:text-base font-bold text-foreground">
+                    {ar ? "البيانات التجارية واللوجستية ووجهة التوريد" : "Commercial & Logistics Destination"}
+                  </h3>
+                </div>
+
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div>
+                    <label className="block text-xs font-bold text-foreground uppercase tracking-wider mb-2">
+                      {ar ? "دولة الوجهة والتفريغ *" : "Destination Country *"}
+                    </label>
+                    <input
+                      required
+                      type="text"
+                      placeholder={ar ? "مثال: السعودية، الإمارات، ألمانيا، فرنسا..." : "e.g. Saudi Arabia, UAE, Germany, France..."}
+                      value={formData.destinationCountry}
+                      onChange={(e) => setFormData({ ...formData, destinationCountry: e.target.value })}
+                      className="w-full rounded-2xl border border-border bg-background px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-brand-orange"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold text-foreground uppercase tracking-wider mb-2">
+                      {ar ? "ميناء الوصول أو موقع التسليم (اختياري)" : "Destination Port / Discharge Location (Optional)"}
+                    </label>
+                    <input
+                      type="text"
+                      placeholder={ar ? "مثال: ميناء جدة الإسلامي، ميناء جبل علي، ميناء هامبورغ..." : "e.g. Jeddah Islamic Port, Jebel Ali, Hamburg..."}
+                      value={formData.destinationPort}
+                      onChange={(e) => setFormData({ ...formData, destinationPort: e.target.value })}
+                      className="w-full rounded-2xl border border-border bg-background px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-brand-orange"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div>
+                    <label className="block text-xs font-bold text-foreground uppercase tracking-wider mb-2">
+                      {ar ? "جدول التسليم المتوقع *" : "Expected Delivery Schedule *"}
+                    </label>
+                    <select
+                      value={formData.deliverySchedule}
+                      onChange={(e) => setFormData({ ...formData, deliverySchedule: e.target.value })}
+                      className="w-full rounded-2xl border border-border bg-background px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-brand-orange"
+                    >
+                      <option value="immediate">{ar ? "شحنة فورية لمرة واحدة (Immediate One-Time)" : "Immediate One-Time Shipment"}</option>
+                      <option value="monthly">{ar ? "شحنات شهرية منتظمة مجدولة (Monthly Scheduled)" : "Regular Monthly Scheduled Shipments"}</option>
+                      <option value="quarterly">{ar ? "شحنات ربع سنوية (Quarterly Shipments)" : "Quarterly Scheduled Shipments"}</option>
+                      <option value="seasonal">{ar ? "عقد توريد موسمي سنوي (Annual Seasonal Contract)" : "Annual Seasonal Supply Contract"}</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold text-foreground uppercase tracking-wider mb-2">
+                      {ar ? "دورية التوريد المستهدفة *" : "Frequency of Supply *"}
+                    </label>
+                    <select
+                      value={formData.supplyFrequency}
+                      onChange={(e) => setFormData({ ...formData, supplyFrequency: e.target.value })}
+                      className="w-full rounded-2xl border border-border bg-background px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-brand-orange"
+                    >
+                      <option value="one-time">{ar ? "شحنة لمرة واحدة (One-Time)" : "One-Time"}</option>
+                      <option value="monthly">{ar ? "شهري (Monthly)" : "Monthly"}</option>
+                      <option value="quarterly">{ar ? "ربع سنوي (Quarterly)" : "Quarterly"}</option>
+                      <option value="long-term">{ar ? "طويل الأجل / سنوي (Long-Term)" : "Long-Term / Multi-Year"}</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div>
+                    <label className="block text-xs font-bold text-foreground uppercase tracking-wider mb-2">
+                      {ar ? "شروط التجارة المفضلة (Incoterms) (اختياري)" : "Preferred Trade Terms (Incoterms) (Optional)"}
+                    </label>
+                    <select
+                      value={formData.incoterms}
+                      onChange={(e) => setFormData({ ...formData, incoterms: e.target.value })}
+                      className="w-full rounded-2xl border border-border bg-background px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-brand-orange"
+                    >
+                      <option value="FOB">FOB (Free on Board - Egyptian Ports)</option>
+                      <option value="CIF">CIF (Cost, Insurance & Freight to destination port)</option>
+                      <option value="CFR">CFR (Cost & Freight)</option>
+                      <option value="EXW">EXW (Ex-Works Factory / Warehouse)</option>
+                      <option value="DDP">DDP (Delivered Duty Paid - Select Destinations)</option>
+                      <option value="Other">{ar ? "شروط تجارية أخرى" : "Other Trade Terms"}</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold text-foreground uppercase tracking-wider mb-2">
+                      {ar ? "السعر المستهدف أو الميزانية التقديرية (اختياري)" : "Target Price or Budget (Optional)"}
+                    </label>
+                    <input
+                      type="text"
+                      placeholder={ar ? "مثال: USD/MT أو الميزانية الإجمالية التقديرية..." : "e.g. USD / Metric Tonne or target budget..."}
+                      value={formData.targetPrice}
+                      onChange={(e) => setFormData({ ...formData, targetPrice: e.target.value })}
+                      className="w-full rounded-2xl border border-border bg-background px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-brand-orange"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Group 4: Additional Information & Specs */}
+              <div className="rounded-2xl border border-border/70 bg-secondary/30 p-5 sm:p-6 space-y-4">
+                <div className="flex items-center gap-2 border-b border-border/60 pb-3">
+                  <span className="flex size-7 items-center justify-center rounded-xl bg-brand-orange text-white font-bold text-xs">
+                    4
+                  </span>
+                  <h3 className="font-head text-sm sm:text-base font-bold text-foreground">
+                    {ar ? "معلومات ومستندات واشتراطات إضافية" : "Additional Information & Specifications"}
+                  </h3>
+                </div>
+
                 <div>
                   <label className="block text-xs font-bold text-foreground uppercase tracking-wider mb-2">
-                    {ar ? "دولة الوجهة *" : "Destination Country *"}
+                    {ar ? "ملاحظات أو اشتراطات إضافية (اختياري)" : "Additional Requirements / Notes (Optional)"}
                   </label>
-                  <input
-                    required
-                    type="text"
-                    placeholder={ar ? "مثال: السعودية، ألمانيا، فرنسا..." : "e.g. Saudi Arabia, Germany, France..."}
-                    value={formData.destinationCountry}
-                    onChange={(e) => setFormData({ ...formData, destinationCountry: e.target.value })}
-                    className="w-full rounded-2xl border border-border bg-background px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-brand-orange"
+                  <textarea
+                    rows={2}
+                    placeholder={ar ? "أي شروط أو متطلبات فحص، فترات صلاحية، اشتراطات جمركية بالوجهة..." : "Any specific inspection requirements, shelf-life thresholds, custom documents..."}
+                    value={formData.additionalNotes}
+                    onChange={(e) => setFormData({ ...formData, additionalNotes: e.target.value })}
+                    className="w-full rounded-2xl border border-border bg-background p-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-brand-orange"
                   />
                 </div>
 
                 <div>
                   <label className="block text-xs font-bold text-foreground uppercase tracking-wider mb-2">
-                    {ar ? "ميناء الوصول المستهدف *" : "Destination Port *"}
+                    {ar ? "رابط أو بيانات المواصفات والمستندات الداعمة (اختياري)" : "Supporting Documents / Specs Link (Optional)"}
                   </label>
                   <input
-                    required
                     type="text"
-                    placeholder={ar ? "مثال: ميناء جدة، هامبورغ، مارسيليا..." : "e.g. Jeddah Port, Hamburg, Marseille..."}
-                    value={formData.destinationPort}
-                    onChange={(e) => setFormData({ ...formData, destinationPort: e.target.value })}
+                    placeholder={ar ? "رابط Google Drive / Dropbox أو ملخص المواصفات الداعمة..." : "Google Drive, Dropbox, or link to technical specs..."}
+                    value={formData.supportingDocs}
+                    onChange={(e) => setFormData({ ...formData, supportingDocs: e.target.value })}
                     className="w-full rounded-2xl border border-border bg-background px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-brand-orange"
                   />
                 </div>
-
-                <div>
-                  <label className="block text-xs font-bold text-foreground uppercase tracking-wider mb-2">
-                    {ar ? "شروط التجارة (Incoterms) *" : "Trade Incoterms *"}
-                  </label>
-                  <select
-                    required
-                    value={formData.incoterms}
-                    onChange={(e) => setFormData({ ...formData, incoterms: e.target.value })}
-                    className="w-full rounded-2xl border border-border bg-background px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-brand-orange"
-                  >
-                    <option value="FOB">FOB (Free on Board - Alexandria/Damietta/Sokhna)</option>
-                    <option value="CIF">CIF (Cost, Insurance & Freight to your port)</option>
-                    <option value="CFR">CFR (Cost & Freight)</option>
-                    <option value="EXW">EXW (Ex-Works Egypt Factory / Farm)</option>
-                    <option value="DDP">DDP (Delivered Duty Paid - Select Destinations)</option>
-                  </select>
-                </div>
               </div>
-            </div>
 
-            {/* Step 3: Sample Request & Additional Requirements */}
-            <div className="rounded-2xl border border-border/70 bg-secondary/30 p-5 sm:p-6 space-y-4">
-              <div className="flex items-center gap-2 border-b border-border/60 pb-3">
-                <span className="flex size-7 items-center justify-center rounded-xl bg-brand-orange text-white font-bold text-xs">
-                  3
+              <Button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full rounded-full bg-brand-green py-4 text-base font-bold text-white shadow-xl shadow-brand-green/30 hover:bg-brand-orange transition-all duration-300 hover:scale-[1.01] active:scale-95 cursor-pointer disabled:opacity-50"
+              >
+                <Send className="size-4 me-2 rtl:rotate-180" />
+                <span>
+                  {isSubmitting
+                    ? (ar ? "جاري إرسال الطلب..." : "Submitting Request...")
+                    : (ar ? "إرسال طلب التوريد" : "Submit Supply Request")}
                 </span>
-                <h3 className="font-head text-sm sm:text-base font-bold text-foreground">
-                  {ar ? "طلب عينات تجارية واشتراطات خاصة" : "Commercial Sample Request & Specific Requirements"}
-                </h3>
-              </div>
-
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div>
-                  <label className="block text-xs font-bold text-foreground uppercase tracking-wider mb-2">
-                    {ar ? "هل تطلب إرسال عينات قبل التعاقد؟" : "Do you require commercial sample testing?"}
-                  </label>
-                  <select
-                    value={formData.sampleRequested}
-                    onChange={(e) => setFormData({ ...formData, sampleRequested: e.target.value })}
-                    className="w-full rounded-2xl border border-border bg-background px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-brand-orange"
-                  >
-                    <option value="no">{ar ? "لا، نطلب عرض سعر مباشر ومواصفات" : "No, direct quotation & specs requested"}</option>
-                    <option value="yes">{ar ? "نعم، نطلب إرسال عينات بالبريد السريع (DHL/FedEx)" : "Yes, dispatch samples via courier (DHL/FedEx)"}</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block text-xs font-bold text-foreground uppercase tracking-wider mb-2">
-                    {ar ? "جدول الشحن والتسليم المفضل" : "Target Delivery Schedule"}
-                  </label>
-                  <select
-                    value={formData.deliverySchedule}
-                    onChange={(e) => setFormData({ ...formData, deliverySchedule: e.target.value })}
-                    className="w-full rounded-2xl border border-border bg-background px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-brand-orange"
-                  >
-                    <option value="one-time">{ar ? "شحنة فورية لمرة واحدة" : "Immediate One-Time Shipment"}</option>
-                    <option value="monthly">{ar ? "شحنات شهرية منتظمة مجدولة" : "Regular Monthly Scheduled Shipments"}</option>
-                    <option value="seasonal">{ar ? "عقد توريد موسمي سنوي" : "Annual Seasonal Supply Contract"}</option>
-                  </select>
-                </div>
-              </div>
-
-              {formData.sampleRequested === "yes" && (
-                <div>
-                  <label className="block text-xs font-bold text-foreground uppercase tracking-wider mb-2">
-                    {ar ? "عنوان شحن العينات ورقم حساب الشحن إن وجد" : "Sample Delivery Address & Courier Account No."}
-                  </label>
-                  <input
-                    type="text"
-                    placeholder={ar ? "المدينة، العنوان، الرمز البريدي، ورقم حساب DHL/FedEx..." : "City, Full Address, Postal Code, Courier Account..."}
-                    value={formData.sampleAddress}
-                    onChange={(e) => setFormData({ ...formData, sampleAddress: e.target.value })}
-                    className="w-full rounded-2xl border border-border bg-background px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-brand-orange"
-                  />
-                </div>
-              )}
-            </div>
-
-            {/* Step 4: Company Profile & Verification */}
-            <div className="rounded-2xl border border-border/70 bg-secondary/30 p-5 sm:p-6 space-y-4">
-              <div className="flex items-center gap-2 border-b border-border/60 pb-3">
-                <span className="flex size-7 items-center justify-center rounded-xl bg-brand-orange text-white font-bold text-xs">
-                  4
-                </span>
-                <h3 className="font-head text-sm sm:text-base font-bold text-foreground">
-                  {ar ? "بيانات الشركة وطالب عرض السعر" : "Company Profile & Requester Details"}
-                </h3>
-              </div>
-
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div>
-                  <label className="block text-xs font-bold text-foreground uppercase tracking-wider mb-2">
-                    {ar ? "اسم الشركة / المؤسسة المستوردة *" : "Company / Organization Name *"}
-                  </label>
-                  <input
-                    required
-                    type="text"
-                    placeholder={ar ? "اسم شركتك أو جهة الاستيراد" : "Company or Trading Name"}
-                    value={formData.companyName}
-                    onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
-                    className="w-full rounded-2xl border border-border bg-background px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-brand-orange"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-xs font-bold text-foreground uppercase tracking-wider mb-2">
-                    {ar ? "نشاط الشركة الرئيسي *" : "Business Activity *"}
-                  </label>
-                  <select
-                    value={formData.businessType}
-                    onChange={(e) => setFormData({ ...formData, businessType: e.target.value })}
-                    className="w-full rounded-2xl border border-border bg-background px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-brand-orange"
-                  >
-                    <option value="importer">{ar ? "مستورد مواد غذائية (Food Importer)" : "Food Importer"}</option>
-                    <option value="distributor">{ar ? "موزع / تاجر جملة (Distributor / Wholesaler)" : "Distributor / Wholesaler"}</option>
-                    <option value="manufacturer">{ar ? "مصنع أغذية / مصنع استخلاص (Processor)" : "Food Processor / Manufacturer"}</option>
-                    <option value="horeca">{ar ? "قطاع الضيافة والمطاعم (HoReCa Operator)" : "HoReCa / Hotel Chain"}</option>
-                    <option value="retailer">{ar ? "سلسلة سوبرماركت / تجزئة (Supermarket Chain)" : "Supermarket Chain / Retailer"}</option>
-                  </select>
-                </div>
-              </div>
-
-              <div className="grid gap-4 sm:grid-cols-3">
-                <div>
-                  <label className="block text-xs font-bold text-foreground uppercase tracking-wider mb-2">
-                    {ar ? "اسم المسؤول *" : "Contact Person *"}
-                  </label>
-                  <input
-                    required
-                    type="text"
-                    placeholder={ar ? "الاسم الكريم" : "Contact Person Name"}
-                    value={formData.contactPerson}
-                    onChange={(e) => setFormData({ ...formData, contactPerson: e.target.value })}
-                    className="w-full rounded-2xl border border-border bg-background px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-brand-orange"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-xs font-bold text-foreground uppercase tracking-wider mb-2">
-                    {ar ? "البريد الإلكتروني الرسمي *" : "Corporate Email *"}
-                  </label>
-                  <input
-                    required
-                    type="email"
-                    placeholder="purchasing@company.com"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full rounded-2xl border border-border bg-background px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-brand-orange"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-xs font-bold text-foreground uppercase tracking-wider mb-2">
-                    {ar ? "الهاتف / واتساب مع رمز الدولة *" : "Phone / WhatsApp with Country Code *"}
-                  </label>
-                  <input
-                    required
-                    type="tel"
-                    placeholder="+966 5... / +49 17..."
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full rounded-2xl border border-border bg-background px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-brand-orange"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <Button
-              type="submit"
-              className="w-full rounded-full bg-brand-green py-4 text-sm font-bold text-white shadow-xl shadow-brand-green/30 hover:bg-brand-orange transition-all duration-300 hover:scale-[1.01] active:scale-95"
-            >
-              <Send className="size-4 me-2 rtl:rotate-180" />
-              <span>{ar ? "تأكيد وإرسال طلب عرض التوريد (RFQ)" : "Confirm & Dispatch Supply Proposal (RFQ)"}</span>
-            </Button>
-          </form>
-        </div>
-      </Reveal>
-    </section>
+              </Button>
+            </form>
+          </div>
+        </Reveal>
+      </section>
+    </div>
   );
 }
+
+// Keep alias for backwards compatibility
+export const FoodOrderProductTab = FoodSupplyRequestTab;
 
 // ============================================================================
 // 6. PRODUCT DOSSIER MODAL DIALOG (12 COMPLETE REQUIRED FIELDS)

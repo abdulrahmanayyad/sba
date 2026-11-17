@@ -332,6 +332,20 @@ export function SectorHeader({
                 >
                   {ar ? "انضم إلينا" : "Join Us"}
                 </Link>
+
+                <Link
+                  to="/sectors/$sector"
+                  params={{ sector: "food" }}
+                  search={{ tab: "request-supply" }}
+                  className={cn(
+                    navPill,
+                    (activeTab === "request-supply" || activeTab === "order-product")
+                      ? "!bg-brand-orange !text-white !border-brand-orange"
+                      : "bg-brand-green text-white font-bold border border-brand-green hover:bg-brand-orange hover:border-brand-orange hover:text-white transition-all duration-300"
+                  )}
+                >
+                  {ar ? "طلب توريد" : "Request Supply"}
+                </Link>
               </>
             ) : (
               /* Other Sectors Navigation */
@@ -720,11 +734,11 @@ export function SectorHeader({
                     <Link
                       to="/sectors/$sector"
                       params={{ sector: "food" }}
-                      search={{ tab: "order-product" }}
+                      search={{ tab: "request-supply" }}
                       onClick={() => setMenuOpen(false)}
                       className={cn(mobileLinkStyle, "bg-brand-green !text-white font-bold hover:bg-brand-orange transition-colors")}
                     >
-                      {ar ? "طلب عرض توريد" : "Request Quotation"}
+                      {ar ? "طلب توريد" : "Request Supply"}
                     </Link>
                   </>
                 ) : (
@@ -825,11 +839,11 @@ export function SectorHeader({
                     <Link
                       to="/sectors/$sector"
                       params={{ sector: "food" }}
-                      search={{ tab: "order-product" }}
+                      search={{ tab: "request-supply" }}
                       onClick={() => setMenuOpen(false)}
                       className="group/cta flex-1 flex items-center justify-center gap-2 rounded-2xl bg-brand-green px-5 py-3 text-xs font-bold text-white transition-all duration-300 hover:bg-brand-orange shadow-md active:scale-95"
                     >
-                      <span>{ar ? "اطلب منتج" : "Order Product"}</span>
+                      <span>{ar ? "طلب توريد" : "Request Supply"}</span>
                       <ArrowUpRight className="size-3.5 rtl:rotate-90" />
                     </Link>
                   ) : (
