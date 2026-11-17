@@ -199,9 +199,9 @@ export function buildApparelAndFoodDocs() {
         ${glassTable(
           ['Division', 'Included Product Lines', 'Fabric Capabilities', 'Target MOQs'],
           [
-            ['Section 1: Kids & Newborn', 'Casual & Outdoor Wear, Underwear, Homewear, Sportswear & Newborn Wear', '100% Organic Combed Cotton, Interlock, Fleece', '400–1,000 pcs'],
+            ['Section 1: Kids & Newborn', 'Casual Wear, Underwear, Homewear, Sportswear & Newborn Wear', '100% Organic Combed Cotton, Interlock, Fleece', '400–1,000 pcs'],
             ['Section 2: Women’s Wear', 'Underwear, Homewear, Nightwear', 'Rayon, Linen, Viscose, Modal, Silk Satin', '400–800 pcs'],
-            ['Section 3: Men’s Wear', 'Casual & Outdoor Wear, Classic Wear, Homewear, Sportswear', 'High-Thread Poplin, Dobby, Pique, French Terry', '300–500 pcs']
+            ['Section 3: Men’s Wear', 'Casual Wear, Classic Wear, Homewear, Sportswear', 'High-Thread Poplin, Dobby, Pique, French Terry', '300–500 pcs']
           ],
           ['25%', '35%', '25%', '15%']
         )}
@@ -217,7 +217,7 @@ export function buildApparelAndFoodDocs() {
           ${modelCardHtml({
             code: 'SBA-PRD-KID-CAS01',
             badge: "Kids' Wear",
-            title: 'Kids Casual & Outdoor Wear',
+            title: 'Kids Casual Wear',
             tagline: 'Tees, denim & twill pants, shorts, button-down shirts, coordinated 2/3-piece sets, jackets, and fleece hoodies.',
             image: '/Summer/Casual/2-5/Summer - Casual - (2-5) (1).jpg',
             fabrics: '100% Cotton, Combed Cotton, Denim, French Terry',
@@ -333,7 +333,7 @@ export function buildApparelAndFoodDocs() {
             code: 'SBA-PRD-MEN-CAS01',
             badge: "Men's Wear",
             badgeColor: 'orange',
-            title: 'Men’s Casual & Outdoor Wear',
+            title: 'Men’s Casual Wear',
             tagline: 'Polo shirts (pique), basic & graphic tees, denim jeans, chino trousers, shorts, zip hoodies, and sweatshirts.',
             image: '/BG/Apparel Manufacturing/Specialized Production Lines.jpg',
             fabrics: '100% Combed Cotton, Pique, French Terry',
