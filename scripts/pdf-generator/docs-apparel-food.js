@@ -5,6 +5,7 @@ import {
   glassTable,
   policyBanner,
   contactConsultationCard,
+  modelCardHtml,
 } from './doc-helpers.js';
 
 export function buildApparelAndFoodDocs() {
@@ -170,60 +171,213 @@ export function buildApparelAndFoodDocs() {
   });
 
   // =========================================================================
-  // 2A & 2B: Apparel Product Catalogue (EN & AR) — 2 pages each
+  // 2A & 2B: Apparel Product Catalogue (EN & AR) — 5 pages each (Rich Model Photos)
   // =========================================================================
   docs.push({
     fileName: 'SBA_Apparel_Product_Catalogue_EN.pdf',
     language: 'EN',
     docCode: 'SBA-APPAREL-CAT-2026-EN',
     sectorLabel: 'Apparel · Product Lookbook & Specs',
-    title: 'Apparel Product Catalogue (11 Collections)',
+    title: 'Apparel Product Catalogue & Model Specifications',
     subtitle:
-      'Production Matrix Detailing Fabric Compositions, GSM Weights, International Size Curves & Standard Minimum Order Quantities (MOQs)',
-    edition: '2026 Buyer Specification Catalogue',
+      'Comprehensive Manufacturing Lookbook Covering 3 Core Divisions and 13 Certified Lines: Kids & Newborn Wear, Women’s Wear, and Men’s Wear',
+    edition: '2026 Verified Product Edition',
     heroImage: '/BG/Apparel Manufacturing/Product Development & Sampling.jpg',
     pages: [
       `
         ${sectionHeader(
-          'Catalogue Specifications · 11 Collections',
-          'Technical Fabrics, Weights (GSM), Size Grading & MOQs',
-          'Aligned with our +2,700 Style Library and Curated 150+ Sample Showroom (/models).'
+          'Apparel Product Architecture · 3 Core Divisions',
+          'Industrial Manufacturing Structure strictly aligned with Website (/products)',
+          'Complete coverage across 13 certified lines, +2,700 style library, and digital showroom.'
         )}
+        ${kpiGrid([
+          { value: '3', label: 'Core Divisions', sub: 'Kids, Women & Men' },
+          { value: '13', label: 'Manufacturing Lines', sub: 'Certified for Export' },
+          { value: '+2,700', label: 'Archived Silhouettes', sub: 'OEM & Private Label' },
+          { value: '45,000', label: 'Shirts Monthly', sub: '100-Machine Facility' },
+        ])}
         ${glassTable(
-          ['Collection Category', 'Primary Fabric Compositions', 'Weight Range', 'Size Curves', 'Standard MOQ'],
+          ['Division', 'Included Product Lines', 'Fabric Capabilities', 'Target MOQs'],
           [
-            ['01. Women’s Wear', 'Rayon, Linen, Viscose, Modal & Poly-Blends', '140–220 GSM', 'XS to 3XL', '500 pcs / color'],
-            ['02. Men’s Wear', 'Combed Cotton, Pique, Oxford & Chino Twill', '160–280 GSM', 'S to 4XL', '500 pcs / color'],
-            ['03. Kids & Baby Wear', '100% Organic Combed Cotton Interlock & Jersey', '160–200 GSM', '0–24M & 2–14Y', '600 pcs / style'],
-            ['04. Casual Wear', 'Heavyweight French Terry Fleece & Single Jersey', '240–380 GSM', 'S to 3XL', '500 pcs / color'],
-            ['05. Homewear & Loungewear', 'Soft Single Jersey, Cotton Spandex & Satin', '140–180 GSM', 'XS to 3XL', '500 pcs / color'],
-            ['06. Classic Formal Shirts', 'High-Thread Egyptian Poplin, Dobby & Twill', '110–145 GSM', '14.5"–18.5" Neck', '500 pcs / style'],
-            ['07. Sportswear & Activewear', 'Moisture-Wicking Dry-Fit Poly & Elastane', '150–220 GSM', 'XS to XXL', '500 pcs / color'],
-            ['08. Underwear & Basics', '100% Combed Egyptian Cotton & Fine Rib', '140–170 GSM', 'S to 3XL', '1,000 pcs / pack'],
-            ['09. Evening & Occasion', 'Crepe, Satin, Chiffon & Structured Lurex', '120–260 GSM', 'XS to XXL', '300 pcs / style'],
-            ['10. Abayas & Modest Wear', 'Premium Nida, Korean Crepe, Linen & Georgette', '140–210 GSM', 'Length 50–62', '300 pcs / color'],
-            ['11. Custom Fabric Supply', 'Single Jersey, Pique, Interlock, Fleece & Rib', 'Custom GSM', 'Tubular / Open Width', '1,000 kg / fabric']
+            ['Section 1: Kids & Newborn', 'Casual, Underwear, Homewear, Sportswear & Newborn', '100% Organic Combed Cotton, Interlock, Fleece', '400–1,000 pcs'],
+            ['Section 2: Women’s Wear', 'Underwear, Homewear & Pyjamas, Luxury Lingerie', 'Rayon, Linen, Viscose, Modal, Silk Satin', '400–800 pcs'],
+            ['Section 3: Men’s Wear', 'Casual, Classic, Formal Shirts, Homewear, Sportswear', 'High-Thread Poplin, Dobby, Pique, French Terry', '300–500 pcs']
           ],
-          ['20%', '30%', '14%', '18%', '18%']
+          ['25%', '35%', '25%', '15%']
         )}
+        ${policyBanner('Quality Standard', 'All manufacturing complies with OEKO-TEX Standard 100 and AQL 1.5/2.5 international export auditing.')}
       `,
       `
         ${sectionHeader(
-          'Online Showroom & Free Sampling Coordination',
-          'Browse Verified Models Live & Schedule Free Production Consultation',
-          'Digital catalogue available at www.sami-trade.com/models'
+          'Section 1: Kids & Newborn Wear (Part 1)',
+          'Certified Casual, Underwear, and Homewear Lines for Children',
+          'Crafted from gentle 100% Egyptian combed cotton with non-allergenic reactive dyes.'
         )}
-        ${glassCard({
-          title: 'Showroom Sample Highlights (JZRA & SBA Archive)',
-          badge: '150+ Curated Models Live',
-          lead: 'Featured silhouettes ready for private label customization and immediate buyer sampling.',
-          bullets: [
-            'Women & Modest: Wrap Maxi Dresses (SBA-WDR-1002), Tailored Sets (SBA-WST-1012), Classic Abayas (SBA-WAB-1015).',
-            'Men & Formal: Egyptian Poplin Classic Shirts (SBA-MSH-1062), Heavyweight Hoodies (SBA-MHD-1007), Slim Polos (SBA-MPL-1047).',
-            'Children & Infant: Girls Draped Dresses (SBA-CDR-1020), Kids Cotton Sets (SBA-CST-1049), Kids Hoodies (SBA-CHD-1121).'
-          ],
-          accent: true,
-        })}
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          ${modelCardHtml({
+            code: 'SBA-PRD-KID-CAS01',
+            badge: "Kids' Wear",
+            title: 'Kids Casual Wear',
+            tagline: 'Tees, denim & twill pants, shorts, button-down shirts, coordinated 2/3-piece sets, jackets, and fleece hoodies.',
+            image: '/Summer/Casual/2-5/Summer - Casual - (2-5) (1).jpg',
+            fabrics: '100% Cotton, Combed Cotton, Denim, French Terry',
+            gsm: '160 to 320 GSM',
+            sizes: '0-24M, 2-6Y, 6-12 Years',
+            moq: '400 pcs / style',
+            isAr: false,
+          })}
+          ${modelCardHtml({
+            code: 'SBA-PRD-KID-UND01',
+            badge: "Kids' Wear",
+            title: 'Kids Underwear & Basics',
+            tagline: 'Combed cotton undershirts, boys boxers, girls briefs/panties, matching sets, and gentle infant undergarments.',
+            image: '/Categories/Kids/001.jpg',
+            fabrics: '100% Combed Cotton, Flatlock Seams',
+            gsm: '140 to 180 GSM',
+            sizes: '0-24 Months, 2-14 Years',
+            moq: '1,000 pcs / style',
+            isAr: false,
+          })}
+          ${modelCardHtml({
+            code: 'SBA-PRD-KID-HOM01',
+            badge: "Kids' Wear",
+            title: 'Kids Homewear & Pyjamas',
+            tagline: 'Two-piece sleepwear sets, cotton pyjamas, loungewear robes, nightgowns, and cozy winter fleece sleepwear.',
+            image: '/Categories/Kids/1247 - 1248.jpg',
+            fabrics: 'Single Jersey, Cotton/Spandex, Fleece',
+            gsm: '160 to 240 GSM',
+            sizes: '6-24 Months, 2-14 Years',
+            moq: '500 pcs / style',
+            isAr: false,
+          })}
+        </div>
+      `,
+      `
+        ${sectionHeader(
+          'Section 1 (Cont.) & Section 2: Women’s Wear',
+          'Kids Sportswear & Newborn + Women’s Premium Underwear',
+          'Transitioning from active youth lines to adult intimate fashion.'
+        )}
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          ${modelCardHtml({
+            code: 'SBA-PRD-KID-SPO01',
+            badge: "Kids' Wear",
+            title: 'Kids Sportswear & Gym Sets',
+            tagline: 'Training tracksuits, PE uniform sets, athletic shorts, breathable Dry-Fit gym tees, and compression leggings.',
+            image: '/Winter/Casual/Boys/3-6/Winter - Casual - (3-6) (1).jpg',
+            fabrics: 'Moisture-Wicking Poly, Cotton Lycra',
+            gsm: '180 to 280 GSM',
+            sizes: '2 to 14 Years',
+            moq: '400 pcs / style',
+            isAr: false,
+          })}
+          ${modelCardHtml({
+            code: 'SBA-PRD-KID-NEW01',
+            badge: 'Newborn Line',
+            badgeColor: 'orange',
+            title: 'Newborn & Infant Essentials',
+            tagline: 'Bodysuits, footed rompers/sleepsuits, kimono baby grows, bibs, swaddle wraps, and hospital welcome sets.',
+            image: '/Summer/Casual/2-5/Summer - Casual - (2-5) (2).jpg',
+            fabrics: '100% Organic Cotton, Nickel-Free Snaps',
+            gsm: '160 to 200 GSM',
+            sizes: 'Preemie, 0-3M, 3-6M, 6-12M',
+            moq: '600 pcs / style',
+            isAr: false,
+          })}
+          ${modelCardHtml({
+            code: 'SBA-PRD-WOM-UND01',
+            badge: "Women's Wear",
+            title: 'Women’s Underwear & Intimates',
+            tagline: 'Cotton camisoles, briefs, seamless boyshorts, bralettes, shaping basics, and multi-pack sets with laser-cut edges.',
+            image: '/Categories/Lingerie/1001.jpeg',
+            fabrics: 'Egyptian Cotton, Modal, Soft Lace, Elastane',
+            gsm: '140 to 180 GSM',
+            sizes: 'XS to 3XL',
+            moq: '800 pcs / style',
+            isAr: false,
+          })}
+        </div>
+      `,
+      `
+        ${sectionHeader(
+          'Section 2 (Cont.) & Section 3: Men’s Wear',
+          'Women’s Loungewear & Lingerie + Men’s Casual & Classic Lines',
+          'Precision fit, trend-conscious designs, and verified private label execution.'
+        )}
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          ${modelCardHtml({
+            code: 'SBA-PRD-WOM-HOM01',
+            badge: "Women's Wear",
+            title: 'Women’s Homewear & Pyjamas',
+            tagline: 'Buttoned pyjama sets, nightgowns, loungewear robes, oversized lounge tees, and cozy modal sweat sets.',
+            image: '/Categories/Home Wear/2003 (1).jpg',
+            fabrics: 'Viscose, Modal, Cotton Lycra, Satin',
+            gsm: '140 to 200 GSM',
+            sizes: 'S to 3XL',
+            moq: '500 pcs / color',
+            isAr: false,
+          })}
+          ${modelCardHtml({
+            code: 'SBA-PRD-WOM-LNG01',
+            badge: "Women's Wear",
+            title: 'Women’s Luxury Lingerie',
+            tagline: 'Babydolls, silk satin slips, lace nighties, chemises, kimono robes, and luxury bridal honeymoon collections.',
+            image: '/Categories/Lingerie/1005.jpeg',
+            fabrics: 'Silk Satin, Fine Chiffon, Lined French Lace',
+            gsm: '90 to 150 GSM',
+            sizes: 'XS to XXL',
+            moq: '400 pcs / style',
+            isAr: false,
+          })}
+          ${modelCardHtml({
+            code: 'SBA-PRD-MEN-CAS01',
+            badge: "Men's Wear",
+            badgeColor: 'orange',
+            title: 'Men’s Casual Wear',
+            tagline: 'Polo shirts (pique), basic & graphic tees, denim jeans, chino trousers, shorts, zip hoodies, and sweatshirts.',
+            image: '/BG/Apparel Manufacturing/Specialized Production Lines.jpg',
+            fabrics: '100% Combed Cotton, Pique, French Terry',
+            gsm: '160 to 340 GSM',
+            sizes: 'S to 4XL',
+            moq: '500 pcs / color',
+            isAr: false,
+          })}
+        </div>
+      `,
+      `
+        ${sectionHeader(
+          'Section 3 (Cont.): Men’s Formal & Sportswear + Coordination',
+          'Men’s Classic Suits, Formal Poplin Shirts, and Active Sportswear',
+          'Single unified contract for full-package FOB export delivery at shipping ports.'
+        )}
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          ${modelCardHtml({
+            code: 'SBA-PRD-MEN-FSH01',
+            badge: "Men's Wear",
+            badgeColor: 'orange',
+            title: 'Men’s Formal & Dress Shirts',
+            tagline: 'Dedicated 100-machine facility producing 45,000 monthly dress shirts: Italian spread, button-down, and tuxedo collars.',
+            image: '/BG/Apparel Manufacturing/Product Development & Sampling.jpg',
+            fabrics: 'High-Thread Egyptian Cotton Poplin & Dobby',
+            gsm: '110 to 145 GSM',
+            sizes: '14.5" to 18.5" Collar',
+            moq: '500 pcs / style',
+            isAr: false,
+          })}
+          ${modelCardHtml({
+            code: 'SBA-PRD-MEN-SPO01',
+            badge: "Men's Wear",
+            badgeColor: 'orange',
+            title: 'Men’s Sportswear & Training Gear',
+            tagline: 'Gym tanks, moisture-wicking tees, athletic training shorts, running joggers, and zip-up track jackets.',
+            image: '/BG/Apparel Manufacturing/Production Volume & Scale.jpg',
+            fabrics: 'Dry-Fit Polyester, Spandex, Elastane',
+            gsm: '150 to 240 GSM',
+            sizes: 'S to 3XL',
+            moq: '500 pcs / color',
+            isAr: false,
+          })}
+        </div>
         ${contactConsultationCard(false)}
       `,
     ],
@@ -234,53 +388,206 @@ export function buildApparelAndFoodDocs() {
     language: 'AR',
     docCode: 'SBA-APPAREL-CAT-2026-AR',
     sectorLabel: 'الملابس · كتالوج الموديلات والمواصفات',
-    title: 'كتالوج منتجات ومواصفات تصنيع الملابس (11 فئة)',
+    title: 'كتالوج منتجات ومواصفات تصنيع الملابس المعتمد',
     subtitle:
-      'دليل المواصفات الفنية للأقمشة، الأوزان (GSM)، جداول المقاسات الدولية، والحد الأدنى للكميات (MOQ) عبر كافة المجموعات',
-    edition: 'كتالوج المشترين والمستوردين · 2026',
+      'دليل خطوط وموديلات التصنيع التعاقدي للملابس الجاهزة عبر الأقسام الثلاثة المعتمدة (الأطفال وحديثي الولادة، النسائي، الرجالي) متطابق تمامًا مع الويب سايت',
+    edition: 'كتالوج المشترين والمستوردين المعتمد · 2026',
     heroImage: '/BG/Apparel Manufacturing/Product Development & Sampling.jpg',
     pages: [
       `
         ${sectionHeader(
-          'مواصفات الكتالوج · 11 فئة ملابس معتمدة',
-          'تركيبات الأقمشة، الأوزان، المقاسات، والحد الأدنى للكميات (MOQ)',
-          'متطابق مع مكتبة +2,700 موديل ومعرض العينات الرقمي (/models).'
+          'هيكل كتالوج الملابس والأزياء المعتمد',
+          'ثلاثة أقسام تصنيعية رئيسية تغطي 13 خط إنتاج متكامل',
+          'تصميم ومواصفات مطابقة لمنظومة المنتجات والمعرض الرقمي على الموقع (/products).'
         )}
+        ${kpiGrid([
+          { value: '3', label: 'أقسام تصنيعية رئيسية', sub: 'أطفال، نسائي، رجالي' },
+          { value: '13', label: 'خط إنتاج معتمد', sub: 'تصدير دولي معتمد' },
+          { value: '+2,700', label: 'موديل في الأرشيف', sub: 'OEM وتصنيع FOB' },
+          { value: '45,000', label: 'قميص كلاسيكي / شهر', sub: 'مصنع 100 ماكينة مخصص' },
+        ])}
         ${glassTable(
-          ['الفئة الإنتاجية', 'خامات الأقمشة المعتمدة', 'نطاق الوزن GSM', 'المقاسات', 'الحد الأدنى MOQ'],
+          ['القسم الرئيسي', 'خطوط الإنتاج المشمولة', 'خامات الأقمشة المعتمدة', 'الحد الأدنى للطلب MOQ'],
           [
-            ['01. الملابس النسائية', 'رايون، كتان، فيسكوز، مودال وأقطان مخلوطة', '140–220 GSM', 'XS إلى 3XL', '500 قطعة / لون'],
-            ['02. الملابس الرجالية', 'قطن مصري ممشط، بيكيه، أوكسفورد وجبردين', '160–280 GSM', 'S إلى 4XL', '500 قطعة / لون'],
-            ['03. ملابس الأطفال والرضع', 'قطن عضوي 100% إنترلوك وسنجل جيرسي ناعم', '160–200 GSM', '0–24 شهر و2–14 سنة', '600 قطعة / موديل'],
-            ['04. الكاجوال والهوديز', 'ميلتون قطن ثقيل (French Terry) وجيرسي', '240–380 GSM', 'S إلى 3XL', '500 قطعة / لون'],
-            ['05. الملابس المنزلية', 'قطن ليكرا ناعم وسنجل جيرسي وساتان', '140–180 GSM', 'XS إلى 3XL', '500 قطعة / لون'],
-            ['06. القمصان الكلاسيكية', 'بوبلين مصري عالي الكثافة وتويل ودوبي', '110–145 GSM', 'ياقة 14.5–18.5 بوصة', '500 قطعة / موديل'],
-            ['07. الملابس الرياضية', 'بوليستر Dry-Fit طارد للرطوبة وإيلاستان', '150–220 GSM', 'XS إلى XXL', '500 قطعة / لون'],
-            ['08. الملابس الداخلية والأساسية', 'قطن مصري ممشط 100% وريب مرن', '140–170 GSM', 'S إلى 3XL', '1,000 قطعة / باكدج'],
-            ['09. ملابس السهرة والمناسبات', 'كريب، ساتان، شيفون وأقمشة مطرزة', '120–260 GSM', 'XS إلى XXL', '300 قطعة / موديل'],
-            ['10. العبايات والملابس المحتشمة', 'ندى، كريب كوري، كتان وجورجيت ناعم', '140–210 GSM', 'أطوال 50 إلى 62', '300 قطعة / لون'],
-            ['11. توريد الأقمشة الخام', 'سنجل جيرسي، بيكيه، ميلتون وريب مصبوغ', 'أوزان مخصصة', 'أتواب مفتوح / مقفول', '1,000 كجم / لون']
+            ['القسم الأول: ملابس الأطفال وحديثي الولادة', 'الكاجوال، الأندر وير، الهوم وير، الرياضي، وحديثو الولادة', 'قطن مصري عضوي 100%، إنترلوك، وسنجل جيرسي', '400–1,000 قطعة'],
+            ['القسم الثاني: الملابس النسائية', 'الأندر وير، الهوم وير والبيجامات، واللانجري الفاخر', 'رايون، كتان، فيسكوز، مودال، وساتان حريري', '400–800 قطعة'],
+            ['القسم الثالث: الملابس الرجالية', 'الكاجوال، الكلاسيك، القمصان الرسمي، الهوم وير، والرياضي', 'قطن مصري ممشط، بوبلين عالي الكثافة، ميلتون، وبيكيه', '300–500 قطعة']
           ],
-          ['20%', '30%', '14%', '18%', '18%']
+          ['25%', '35%', '25%', '15%']
         )}
+        ${policyBanner('معايير الجودة والرقابة', 'تخضع كافة الموديلات لفحص جودة صارم في 8 مراحل وفق معايير AQL 1.5/2.5 وشهادات OEKO-TEX Standard 100 الدولية.')}
       `,
       `
         ${sectionHeader(
-          'معرض الموديلات الرقمي والاستشارة المجانية',
-          'استعرض العينات المعتمدة أونلاين وتواصل لبدء الإنتاج التعاقدي',
-          'معرض العينات الموثق متاح على: www.sami-trade.com/models'
+          'القسم الأول: ملابس الأطفال وحديثي الولادة (الجزء 1)',
+          'خطوط إنتاج الكاجوال والأندر وير والهوم وير للأطفال',
+          'خامات قطنية آمنة 100% معتمدة ومضادة للحساسية مصممة لحركة الطفل واللعب اليومي.'
         )}
-        ${glassCard({
-          title: 'نماذج بارزة من الموديلات المعتمدة للعرض والتخصيص',
-          badge: '+150 موديل معروض بالصور',
-          lead: 'موديلات جاهزة للتعديل أو الإنتاج بالعلامة التجارية الخاصة للمشتري (Private Label).',
-          bullets: [
-            'النسائي والمحتشم: فساتين ماكسي (SBA-WDR-1002)، أطقم متناسقة (SBA-WST-1012)، عبايات كلاسيكية (SBA-WAB-1015).',
-            'الرجالي والرسمي: قمصان بوبلين كلاسيكية (SBA-MSH-1062)، هوديز ثقيلة (SBA-MHD-1007)، بولو سليم فت (SBA-MPL-1047).',
-            'الأطفال والرضع: فساتين أطفال قطنية (SBA-CDR-1020)، أطقم أطفال أساسية (SBA-CST-1049)، هوديز أطفال (SBA-CHD-1121).'
-          ],
-          accent: true,
-        })}
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          ${modelCardHtml({
+            code: 'SBA-PRD-KID-CAS01',
+            badge: 'أزياء أطفالي',
+            title: 'ملابس الكاجوال للأطفال',
+            tagline: 'تيشيرتات مطبوعة وسادة، بناطيل جينز وتويل مرنة، شورتات، قمصان كاجوال، أطقم يومية قطعتين وثلاث قطع، سترات وهوديز.',
+            image: '/Summer/Casual/2-5/Summer - Casual - (2-5) (1).jpg',
+            fabrics: 'قطن 100%، قطن ممشط، جينز، French Terry',
+            gsm: 'من 160 إلى 320 جم/م²',
+            sizes: '0–24 شهر، 2–6 سنوات، 6–12 سنة',
+            moq: '400 قطعة / تصميم',
+            isAr: true,
+          })}
+          ${modelCardHtml({
+            code: 'SBA-PRD-KID-UND01',
+            badge: 'أزياء أطفالي',
+            title: 'الملابس الداخلية للأطفال (الأندر وير)',
+            tagline: 'فانلات داخلية قطنية، بوكسرات أولاد مريحة، سراويل وفانلات داخلية بنات، أطقم داخلية قطنية، وملابس داخلية للرضع بحياكة مسطحة ناعمة.',
+            image: '/Categories/Kids/001.jpg',
+            fabrics: 'قطن مصري ممشط 100%، حياكة Flatlock ناعمة',
+            gsm: 'من 140 إلى 180 جم/م²',
+            sizes: '0–24 شهر، ومن 2 إلى 14 سنة',
+            moq: '1,000 قطعة / تصميم',
+            isAr: true,
+          })}
+          ${modelCardHtml({
+            code: 'SBA-PRD-KID-HOM01',
+            badge: 'أزياء أطفالي',
+            title: 'ملابس المنزل والبيجامات للأطفال (الهوم وير)',
+            tagline: 'بيجامات قطعتين، أطقم نوم قطنية مريحة، أرواب نوم منزلية، ملابس نوم شتوية مبطنة بوبرة ناعمة بألوان ورسومات جذابة.',
+            image: '/Categories/Kids/1247 - 1248.jpg',
+            fabrics: 'قطن سنجل جيرسي، قطن ليكرا، فليس شتوي',
+            gsm: 'من 160 إلى 240 جم/م²',
+            sizes: '6–24 شهر، ومن 2 إلى 14 سنة',
+            moq: '500 قطعة / تصميم',
+            isAr: true,
+          })}
+        </div>
+      `,
+      `
+        ${sectionHeader(
+          'استكمال ملابس الأطفال + القسم الثاني: الملابس النسائية',
+          'الرياضي وحديثي الولادة للأطفال · والأندر وير النسائي الفاخر',
+          'انتقال متناسق من خطوط الأطفال المتخصصة إلى أزياء المرأة العصرية.'
+        )}
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          ${modelCardHtml({
+            code: 'SBA-PRD-KID-SPO01',
+            badge: 'أزياء أطفالي',
+            title: 'الملابس الرياضية وأطقم التمارين للأطفال',
+            tagline: 'ترنجات رياضية كاملة، أطقم تمارين الأندية والمدارس، شورتات وتيشيرتات بوليستر طاردة للعرق Dry-Fit، وبنطلونات سويت بانتس مريحة.',
+            image: '/Winter/Casual/Boys/3-6/Winter - Casual - (3-6) (1).jpg',
+            fabrics: 'بوليستر تقني طارد للرطوبة، قطن ليكرا',
+            gsm: 'من 180 إلى 280 جم/م²',
+            sizes: 'من 2 إلى 14 سنة',
+            moq: '400 قطعة / تصميم',
+            isAr: true,
+          })}
+          ${modelCardHtml({
+            code: 'SBA-PRD-KID-NEW01',
+            badge: 'حديثو الولادة',
+            badgeColor: 'orange',
+            title: 'ملابس ومستلزمات حديثي الولادة (Newborn)',
+            tagline: 'سلوبتات نوم كاملة القدم، سالوبيتات كباسين بدون نيكل، أطقم استقبال المواليد، مرايل قطنية، وبطانيات لف ناعمة لا تسبب أي حساسية.',
+            image: '/Summer/Casual/2-5/Summer - Casual - (2-5) (2).jpg',
+            fabrics: 'قطن عضوي نقي 100%، كباسين خالية من النيكل',
+            gsm: 'من 160 إلى 200 جم/م²',
+            sizes: 'مبتسرين، 0–3، 3–6، 6–12 شهر',
+            moq: '600 قطعة / تصميم',
+            isAr: true,
+          })}
+          ${modelCardHtml({
+            code: 'SBA-PRD-WOM-UND01',
+            badge: 'أزياء نسائية',
+            title: 'الملابس الداخلية النسائية (الأندر وير)',
+            tagline: 'توبات داخلية قطنية ناعمة، بانتيز وبوكسرات نسائية مريحة، حمالات صدر يومية غير سلكية، وملابس تشكيل الجسم المريحة بدون خياطة بارزة.',
+            image: '/Categories/Lingerie/1001.jpeg',
+            fabrics: 'قطن مصري ممشط، مودال، دانتيل، وإيلاستان',
+            gsm: 'من 140 إلى 180 جم/م²',
+            sizes: 'XS إلى 3XL',
+            moq: '800 قطعة / تصميم',
+            isAr: true,
+          })}
+        </div>
+      `,
+      `
+        ${sectionHeader(
+          'استكمال الملابس النسائية + القسم الثالث: الملابس الرجالية',
+          'الهوم وير واللانجري النسائي · والكاجوال الرجالي',
+          'قصات راقية وموديلات حديثة تلبي متطلبات التصدير وسلاسل التجزئة الفاخرة.'
+        )}
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          ${modelCardHtml({
+            code: 'SBA-PRD-WOM-HOM01',
+            badge: 'أزياء نسائية',
+            title: 'الملابس المنزلية والبيجامات النسائية (الهوم وير)',
+            tagline: 'بيجامات قطن وفيسكوز ناعمة، أرواب منزلية مريحة، قمصان نوم قطنية واسعة، وأطقم منزلية كاجوال تجمع بين الراحة المطلقة والأناقة.',
+            image: '/Categories/Home Wear/2003 (1).jpg',
+            fabrics: 'فيسكوز، قطن ليكرا ناعم، مودال، وساتان',
+            gsm: 'من 140 إلى 200 جم/م²',
+            sizes: 'S إلى 3XL',
+            moq: '500 قطعة / لون',
+            isAr: true,
+          })}
+          ${modelCardHtml({
+            code: 'SBA-PRD-WOM-LNG01',
+            badge: 'أزياء نسائية',
+            title: 'ملابس اللانجري النسائي الفاخر',
+            tagline: 'قمصان نوم ساتان حريري، بيبي دول فاخر، أرواب دانتيل شفاف ومبطن، وأطقم لانجري للمناسبات والعرائس بتشطيبات وتطريزات راقية.',
+            image: '/Categories/Lingerie/1005.jpeg',
+            fabrics: 'ساتان حريري ناعم، شيفون، دانتيل أوروبي',
+            gsm: 'من 90 إلى 150 جم/م²',
+            sizes: 'XS إلى XXL',
+            moq: '400 قطعة / موديل',
+            isAr: true,
+          })}
+          ${modelCardHtml({
+            code: 'SBA-PRD-MEN-CAS01',
+            badge: 'أزياء رجالية',
+            badgeColor: 'orange',
+            title: 'الملابس الكاجوال الرجالية',
+            tagline: 'تيشيرتات قطن مصري 100%، قمصان بولو بيكيه فاخرة، بناطيل جينز وتشينو قطنية، شورتات كاجوال، هوديز وسويت شيرت ميلتون ثقيل.',
+            image: '/BG/Apparel Manufacturing/Specialized Production Lines.jpg',
+            fabrics: 'قطن مصري ممشط 100%، بيكيه، ميلتون ثقيل',
+            gsm: 'من 160 إلى 340 جم/م²',
+            sizes: 'S إلى 4XL',
+            moq: '500 قطعة / لون',
+            isAr: true,
+          })}
+        </div>
+      `,
+      `
+        ${sectionHeader(
+          'استكمال الأزياء الرجالية · والشروط التعاقدية والتصدير',
+          'القمصان الرسمية، الهوم وير، والملابس الرياضية الرجالية',
+          'طاقة تصنيع 45,000 قميص شهرياً وبرامج توريد FOB وCIF مرنة تشمل الشحن والتخليص.'
+        )}
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          ${modelCardHtml({
+            code: 'SBA-PRD-MEN-FSH01',
+            badge: 'أزياء رجالية',
+            badgeColor: 'orange',
+            title: 'القمصان الكلاسيكية والرسمية للرجال',
+            tagline: 'مصنع متخصص مجهز بأحدث ماكينات الحياكة الإيطالية ينتج 45,000 قميص شهريًا: ياقات كلاسيكية، وأزرار خشبية وصدفية، وتطريز دقيق.',
+            image: '/BG/Apparel Manufacturing/Product Development & Sampling.jpg',
+            fabrics: 'قطن مصري بوبلين وتويل ودوبي عالي الكثافة',
+            gsm: 'من 110 إلى 145 جم/م²',
+            sizes: 'مقاس الياقة 14.5 إلى 18.5 بوصة',
+            moq: '500 قطعة / تصميم',
+            isAr: true,
+          })}
+          ${modelCardHtml({
+            code: 'SBA-PRD-MEN-SPO01',
+            badge: 'أزياء رجالية',
+            badgeColor: 'orange',
+            title: 'الملابس الرياضية وملابس التمارين الرجالية',
+            tagline: 'تيشيرتات رياضية طاردة للعرق Dry-Fit، شورتات تمارين مرنة، ترنجات رياضية كاملة، وسويت بانتس مخصصة للنشاط البدني والجري.',
+            image: '/BG/Apparel Manufacturing/Production Volume & Scale.jpg',
+            fabrics: 'بوليستر تقني معالج، سباندكس مرن، وإيلاستان',
+            gsm: 'من 150 إلى 240 جم/م²',
+            sizes: 'S إلى 3XL',
+            moq: '500 قطعة / لون',
+            isAr: true,
+          })}
+        </div>
         ${contactConsultationCard(true)}
       `,
     ],

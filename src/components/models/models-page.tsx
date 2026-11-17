@@ -79,9 +79,9 @@ const categoriesConfig: CategoryConfig[] = [
   {
     key: "kids",
     labelEn: "Kids & Baby Wear",
-    labelAr: "ملابس الأطفال والرضع",
+    labelAr: "ملابس الأطفال وحديثي الولادة",
     descEn: "Extensive collections for children across all age ranges from toddlers to teens.",
-    descAr: "تشكيلات واسعة ومتنوعة لملابس الأطفال والرضع من سن المشي وحتى سن المراهقة.",
+    descAr: "تشكيلات واسعة ومتنوعة لملابس الأطفال وحديثي الولادة من سن المهد وحتى سن المراهقة.",
   },
   {
     key: "lingerie",
@@ -617,7 +617,7 @@ export function ModelsPage() {
                     <span className="font-body font-bold text-foreground">
                       {ar
                         ? activeItem.category === "kids"
-                          ? "ملابس الأطفال والرضع"
+                          ? "ملابس الأطفال وحديثي الولادة"
                           : activeItem.category === "homewear"
                           ? "ملابس الهوم وير والبيجامات"
                           : "ملابس الأندر وير واللانجيري"

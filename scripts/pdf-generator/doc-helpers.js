@@ -144,3 +144,42 @@ export function contactConsultationCard(isAr) {
     </div>
   `;
 }
+
+export function modelCardHtml({
+  code = '',
+  badge = '',
+  badgeColor = 'green',
+  title = '',
+  tagline = '',
+  image = '',
+  fabrics = '',
+  gsm = '',
+  sizes = '',
+  moq = '',
+  isAr = true,
+}) {
+  const encImg = image.split('/').map((s, i) => (i === 0 ? s : encodeURIComponent(s))).join('/');
+  return `
+    <div style="border-radius:16px; overflow:hidden; background:rgba(255,255,255,0.88); border:1px solid rgba(255,255,255,0.95); box-shadow:0 6px 18px -4px rgba(20,46,40,0.08); display:flex; gap:12px; padding:10px; align-items:stretch;">
+      <div style="width:115px; height:120px; border-radius:12px; overflow:hidden; flex-shrink:0; background:#f1f5f9; position:relative; border:1px solid rgba(20,46,40,0.08);">
+        <img src="${encImg}" alt="${esc(title)}" style="width:100%; height:100%; object-fit:cover; display:block;" />
+      </div>
+      <div style="flex:1; display:flex; flex-direction:column; justify-content:space-between; min-width:0;">
+        <div>
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:6px; margin-bottom:3px;">
+            <span style="font-family:monospace; font-size:7.5pt; font-weight:700; color:var(--brand-orange); background:rgba(232,93,4,0.08); padding:2px 8px; border-radius:999px;">${esc(code)}</span>
+            <span style="font-size:7pt; font-weight:700; color:${badgeColor === 'orange' ? 'var(--brand-orange)' : 'var(--brand-green-text)'}; background:${badgeColor === 'orange' ? 'rgba(232,93,4,0.1)' : 'rgba(22,135,108,0.1)'}; padding:2px 8px; border-radius:999px;">${esc(badge)}</span>
+          </div>
+          <h4 style="font-size:10pt; font-weight:800; color:var(--foreground); margin:0 0 3px 0; line-height:1.2;">${esc(title)}</h4>
+          <p style="font-size:7.5pt; color:var(--muted-foreground); margin:0 0 5px 0; line-height:1.35;">${esc(tagline)}</p>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:4px; font-size:7pt; background:rgba(22,135,108,0.04); padding:6px 8px; border-radius:8px; border:1px solid rgba(22,135,108,0.12);">
+          <div><strong style="color:var(--brand-green-text);">${isAr ? 'الخامات:' : 'Fabrics:'}</strong> ${esc(fabrics)}</div>
+          <div><strong style="color:var(--brand-green-text);">${isAr ? 'الوزن:' : 'GSM:'}</strong> ${esc(gsm)}</div>
+          <div><strong style="color:var(--brand-green-text);">${isAr ? 'المقاسات:' : 'Sizes:'}</strong> ${esc(sizes)}</div>
+          <div><strong style="color:var(--brand-orange);">${isAr ? 'الحد الأدنى MOQ:' : 'MOQ:'}</strong> ${esc(moq)}</div>
+        </div>
+      </div>
+    </div>
+  `;
+}

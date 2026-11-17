@@ -100,8 +100,8 @@ export function ProductsCataloguePage() {
     return [
       {
         key: "kids",
-        titleAr: "القسم الأول: ملابس الأطفال والرضع",
-        titleEn: "Section 1: Kids & Baby Wear",
+        titleAr: "القسم الأول: ملابس الأطفال وحديثي الولادة",
+        titleEn: "Section 1: Kids & Newborn Wear",
         subtitleAr: "5 تصنيفات معتمدة للتصنيع والتوريد (كاجوال، أندر وير، هوم وير، رياضي وأطقم تمارين، حديثي الولادة)",
         subtitleEn: "5 certified manufacturing lines (Casual, Underwear, Homewear, Sportswear, Newborn)",
         badgeAr: "أزياء أطفالي",
@@ -431,17 +431,55 @@ export function ProductsCataloguePage() {
               <h3 className="font-head text-2xl font-black text-foreground">
                 {ar ? "اختر تصنيف المنتجات" : "Select Product Category"}
               </h3>
-              <div className="mt-2 flex items-center gap-2">
-                <Button asChild size="sm" className="rounded-full !bg-brand-green !text-white hover:!bg-brand-orange text-xs font-bold shadow-xs cursor-pointer">
-                  <a
-                    href={ar ? "/downloads/SBA_Complete_Products_Portfolio_AR.pdf" : "/downloads/SBA_Complete_Products_Portfolio_EN.pdf"}
-                    download={ar ? "SBA_Complete_Products_Portfolio_AR.pdf" : "SBA_Complete_Products_Portfolio_EN.pdf"}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Download className="size-3.5 me-1.5" />
-                    <span>{ar ? "تحميل كتالوج المنتجات" : "Download Products Catalogue"}</span>
-                  </a>
+              <div className="mt-3 flex flex-wrap items-center gap-2.5">
+                {selectedProductDivision === "apparel" ? (
+                  <Button asChild size="sm" className="rounded-full !bg-brand-green !text-white hover:!bg-brand-orange text-xs font-bold shadow-xs cursor-pointer transition-all">
+                    <a
+                      href={ar ? "/downloads/SBA_Apparel_Product_Catalogue_AR.pdf" : "/downloads/SBA_Apparel_Product_Catalogue_EN.pdf"}
+                      download={ar ? "SBA_Apparel_Product_Catalogue_AR.pdf" : "SBA_Apparel_Product_Catalogue_EN.pdf"}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Download className="size-3.5 me-1.5" />
+                      <span>{ar ? "تحميل كتالوج الملابس والمنسوجات (PDF)" : "Download Apparel Catalogue (PDF)"}</span>
+                    </a>
+                  </Button>
+                ) : (
+                  <Button asChild size="sm" className="rounded-full !bg-brand-green !text-white hover:!bg-brand-orange text-xs font-bold shadow-xs cursor-pointer transition-all">
+                    <a
+                      href={ar ? "/downloads/SBA_Natural_Products_Catalogue_AR.pdf" : "/downloads/SBA_Natural_Products_Catalogue_EN.pdf"}
+                      download={ar ? "SBA_Natural_Products_Catalogue_AR.pdf" : "SBA_Natural_Products_Catalogue_EN.pdf"}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Download className="size-3.5 me-1.5" />
+                      <span>{ar ? "تحميل كتالوج المنتجات الطبيعية والغذائية (PDF)" : "Download Agri-Food Catalogue (PDF)"}</span>
+                    </a>
+                  </Button>
+                )}
+                {/* Secondary direct download button for the other sector catalogue */}
+                <Button asChild variant="outline" size="sm" className="rounded-full border-border bg-background/60 hover:bg-background text-xs font-semibold text-muted-foreground hover:text-foreground cursor-pointer transition-all">
+                  {selectedProductDivision === "apparel" ? (
+                    <a
+                      href={ar ? "/downloads/SBA_Natural_Products_Catalogue_AR.pdf" : "/downloads/SBA_Natural_Products_Catalogue_EN.pdf"}
+                      download={ar ? "SBA_Natural_Products_Catalogue_AR.pdf" : "SBA_Natural_Products_Catalogue_EN.pdf"}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Download className="size-3 me-1.5 text-brand-orange" />
+                      <span>{ar ? "كتالوج الأغذية والمنتجات الطبيعية" : "Agri-Food Catalogue"}</span>
+                    </a>
+                  ) : (
+                    <a
+                      href={ar ? "/downloads/SBA_Apparel_Product_Catalogue_AR.pdf" : "/downloads/SBA_Apparel_Product_Catalogue_EN.pdf"}
+                      download={ar ? "SBA_Apparel_Product_Catalogue_AR.pdf" : "SBA_Apparel_Product_Catalogue_EN.pdf"}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Download className="size-3 me-1.5 text-brand-orange" />
+                      <span>{ar ? "كتالوج الملابس والمنسوجات" : "Apparel Catalogue"}</span>
+                    </a>
+                  )}
                 </Button>
               </div>
             </div>
@@ -651,29 +689,41 @@ export function ProductsCataloguePage() {
                     id={`food-cat-${cat.key}`}
                     className="overflow-hidden rounded-3xl border border-white/20 bg-background/85 shadow-md backdrop-blur-xl transition-all duration-300 hover:shadow-[0_14px_32px_-8px_rgba(22,135,108,0.18)]"
                   >
-                    {/* Category Header with ONE Representative Image */}
-                    <div className="relative aspect-[16/7] sm:aspect-[21/8] w-full overflow-hidden bg-secondary">
+                    {/* Category Header with ONE Representative Image — CLICKABLE ANYWHERE */}
+                    <div
+                      onClick={() => toggleCategory(cat.key)}
+                      role="button"
+                      tabIndex={0}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                          e.preventDefault();
+                          toggleCategory(cat.key);
+                        }
+                      }}
+                      className="relative aspect-[16/7] sm:aspect-[21/8] w-full overflow-hidden bg-secondary cursor-pointer group select-none"
+                    >
                       <img
                         src={cat.image}
                         alt={ar ? cat.titleAr : cat.titleEn}
                         loading="lazy"
-                        className="size-full object-cover transition-transform duration-700 hover:scale-105"
+                        className="size-full object-cover transition-transform duration-700 group-hover:scale-105"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/15" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/15 group-hover:from-black/95 transition-colors" />
 
                       {/* Overlay Content */}
                       <div className="absolute inset-x-0 bottom-0 p-5 sm:p-7 flex flex-col sm:flex-row sm:items-end justify-between gap-4 text-white">
                         <div className="max-w-3xl">
-                          <div className="flex items-center gap-2 mb-2 flex-wrap">
-                            <span className="flex size-6 items-center justify-center rounded-full bg-brand-green text-white font-bold text-xs shrink-0">
-                              {catIdx + 1}
-                            </span>
-                            <span className="inline-flex items-center rounded-full bg-brand-green/90 px-3 py-0.5 text-xs font-bold text-white backdrop-blur-md shadow-xs">
-                              {ar ? cat.badgeAr : cat.badgeEn}
+                          {/* Number & Name combined in ONE unified circle/pill */}
+                          <div className="flex items-center gap-2 mb-2.5 flex-wrap">
+                            <span className="inline-flex items-center gap-2 rounded-full bg-brand-green px-3.5 py-1 text-xs font-bold text-white backdrop-blur-md shadow-xs border border-white/20">
+                              <span className="flex size-5 items-center justify-center rounded-full bg-white text-brand-green font-black text-[11px] shrink-0">
+                                {catIdx + 1}
+                              </span>
+                              <span>{ar ? cat.badgeAr : cat.badgeEn}</span>
                             </span>
                           </div>
 
-                          <h3 className="font-head text-xl sm:text-2xl md:text-3xl font-black text-white drop-shadow-sm leading-tight">
+                          <h3 className="font-head text-xl sm:text-2xl md:text-3xl font-black text-white drop-shadow-sm leading-tight group-hover:text-brand-orange transition-colors">
                             {ar ? cat.titleAr : cat.titleEn}
                           </h3>
 
@@ -684,9 +734,13 @@ export function ProductsCataloguePage() {
 
                         {/* Dropdown Toggle Button */}
                         <Button
-                          onClick={() => toggleCategory(cat.key)}
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            toggleCategory(cat.key);
+                          }}
                           className={cn(
-                            "shrink-0 rounded-2xl px-5 py-2.5 font-head text-xs sm:text-sm font-bold shadow-md transition-all gap-2 self-start sm:self-auto",
+                            "shrink-0 rounded-2xl px-5 py-2.5 font-head text-xs sm:text-sm font-bold shadow-md transition-all gap-2 self-start sm:self-auto cursor-pointer",
                             expanded
                               ? "bg-white text-foreground hover:bg-white/90"
                               : "bg-brand-orange text-white hover:bg-brand-orange/90"
