@@ -509,11 +509,6 @@ export function ApparelComparativePage({
                       2025 Baseline
                     </span>
                   </div>
-                  <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">
-                    {ar
-                      ? "مجموعة مستقلة للدول التي توفر لها إجمالي عام 2025 ضمن الحزمة."
-                      : "Isolated series for markets reporting 2025 totals in this source set."}
-                  </p>
                 </div>
 
                 <div className="space-y-3">

@@ -249,11 +249,18 @@ function EnvironmentalAboutView({ ar }: { ar: boolean }) {
                 <div>
                   <div className="relative aspect-[16/10] w-full overflow-hidden bg-secondary">
                     <img
-                      src={encodeURI(srv.image)}
+                      src={srv.image ? srv.image.split("/").map(p => encodeURIComponent(decodeURIComponent(p))).join("/") : "/placeholder.svg"}
                       alt={ar ? srv.titleAr : srv.titleEn}
                       loading="lazy"
                       onError={(e) => {
-                        (e.currentTarget as HTMLImageElement).src = "/placeholder.svg";
+                        const target = e.currentTarget as HTMLImageElement;
+                        const filename = srv.image?.split("/").pop();
+                        if (filename && !target.dataset.retried) {
+                          target.dataset.retried = "1";
+                          target.src = `/services/environmental/${encodeURIComponent(filename)}`;
+                          return;
+                        }
+                        target.src = "/placeholder.svg";
                       }}
                       className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />

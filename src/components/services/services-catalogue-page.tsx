@@ -33,6 +33,14 @@ import {
   type ServiceSector,
 } from "@/components/products/services-data";
 
+function getSafeImageUrl(path: string | undefined): string {
+  if (!path) return "/placeholder.svg";
+  return path
+    .split("/")
+    .map((segment) => encodeURIComponent(decodeURIComponent(segment)))
+    .join("/");
+}
+
 export function ServicesCataloguePage() {
   const { language } = useLanguage();
   const ar = language === "AR";
@@ -236,7 +244,7 @@ export function ServicesCataloguePage() {
                     {/* Service Image Banner */}
                     <div className="relative aspect-[16/10] w-full overflow-hidden bg-secondary">
                       <img
-                        src={encodeURI(service.image)}
+                        src={getSafeImageUrl(service.image)}
                         alt={ar ? service.nameAr : service.nameEn}
                         loading="lazy"
                         onError={(e) => {
@@ -245,7 +253,7 @@ export function ServicesCataloguePage() {
                             target.dataset.retried = "1";
                             const filename = service.image.split("/").pop();
                             if (filename) {
-                              target.src = encodeURI(`/services/environmental/${filename}`);
+                              target.src = getSafeImageUrl(`/services/environmental/${filename}`);
                               return;
                             }
                           }
@@ -363,7 +371,7 @@ export function ServicesCataloguePage() {
               {activeServiceDetail.image && (
                 <div className="relative aspect-video w-full overflow-hidden rounded-2xl bg-secondary my-4">
                   <img
-                    src={encodeURI(activeServiceDetail.image)}
+                    src={getSafeImageUrl(activeServiceDetail.image)}
                     alt={ar ? activeServiceDetail.nameAr : activeServiceDetail.nameEn}
                     className="size-full object-cover"
                     onError={(e) => {
@@ -371,7 +379,7 @@ export function ServicesCataloguePage() {
                       const filename = activeServiceDetail.image.split("/").pop();
                       if (filename && !target.dataset.retried) {
                         target.dataset.retried = "1";
-                        target.src = encodeURI(`/services/environmental/${filename}`);
+                        target.src = getSafeImageUrl(`/services/environmental/${filename}`);
                         return;
                       }
                       target.src = "/placeholder.svg";
