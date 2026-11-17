@@ -593,7 +593,7 @@ export function ApparelComparativePage({
             <table className="w-full text-xs text-start">
               <thead className="bg-slate-100/90 dark:bg-slate-800/80 text-slate-800 dark:text-slate-100">
                 <tr>
-                  <th className="px-2.5 py-3 font-extrabold text-center whitespace-nowrap w-[13%]">{ar ? "الدولة" : "Country"}</th>
+                  <th className="px-3 py-3 font-extrabold text-start whitespace-nowrap w-[13%]">{ar ? "الدولة" : "Country"}</th>
                   <th className="px-2 py-3 font-extrabold text-center whitespace-nowrap w-[10%]">{ar ? "الإقليم" : "Region"}</th>
                   <th className="px-1.5 py-3 font-extrabold text-center whitespace-nowrap w-[6%]">{ar ? "الأولوية" : "Priority"}</th>
                   <th className="px-2 py-3 font-extrabold text-center whitespace-nowrap w-[10%]">{ar ? "الدور السوقي" : "Market Role"}</th>
@@ -617,11 +617,11 @@ export function ApparelComparativePage({
 
                   return (
                     <tr key={s.id} className="hover:bg-slate-50/80 dark:hover:bg-white/5 align-middle">
-                      <td className="px-2.5 py-3 font-bold whitespace-nowrap text-center">
+                      <td className="px-3 py-3 font-bold whitespace-nowrap text-start">
                         <Link
                           to="/global-markets/$sector/$slug"
                           params={{ sector: s.sector || "garment", slug: s.slug }}
-                          className="inline-flex items-center justify-center gap-1.5 text-slate-900 dark:text-white hover:text-brand-green"
+                          className="inline-flex items-center justify-start gap-1.5 text-slate-900 dark:text-white hover:text-brand-green"
                         >
                           {s.countryCode && (
                             <img
