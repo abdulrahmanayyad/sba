@@ -165,13 +165,13 @@ export function FoodSectorView({ tab = "about" }: FoodViewProps) {
             </Reveal>
 
             <Reveal delay={0.1}>
-              <h1 className="font-head text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white mb-6 max-w-4xl leading-tight">
+              <h1 className="font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white mb-4 max-w-4xl leading-tight">
                 {ar ? foodHeroData.titleAr : foodHeroData.titleEn}
               </h1>
             </Reveal>
 
             <Reveal delay={0.15}>
-              <p className="text-lg sm:text-2xl text-white/90 max-w-3xl leading-relaxed mb-8">
+              <p className="text-sm sm:text-base text-white/90 max-w-3xl leading-relaxed mb-8">
                 {ar ? foodHeroData.subtitleAr : foodHeroData.subtitleEn}
               </p>
             </Reveal>

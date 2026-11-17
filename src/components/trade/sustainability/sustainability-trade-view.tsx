@@ -86,8 +86,8 @@ export function SustainabilityTradeView({ ar = true, hideHero = false }: Sustain
               <div>
                 <h2 className="text-2xl sm:text-3xl font-black text-foreground mt-0.5 leading-snug">
                   {ar
-                    ? "قطاع البيئة المستدامة — الشراكات والمشروعات الاستراتيجية"
-                    : "Sustainability Sector — Strategic Opportunities & Alliances"}
+                    ? "الشراكات والمشروعات الاستراتيجية"
+                    : "Strategic Opportunities & Alliances"}
                 </h2>
                 <p className="text-xs sm:text-sm text-muted-foreground mt-2 leading-relaxed max-w-4xl">
                   {ar

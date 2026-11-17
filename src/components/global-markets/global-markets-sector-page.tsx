@@ -633,22 +633,22 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
                             src={`https://flagcdn.com/w40/${study.countryCode.toLowerCase()}.png`}
                             srcSet={`https://flagcdn.com/w80/${study.countryCode.toLowerCase()}.png 2x`}
                             alt={ar ? study.countryNameAr : study.countryNameEn}
-                            className="h-4 w-6 rounded-[3px] object-cover border border-slate-300/60 dark:border-white/20 shrink-0 shadow-xs"
+                            className="h-4.5 w-7 rounded-[3px] object-cover border border-slate-300/60 dark:border-white/20 shrink-0 shadow-xs"
                             loading="lazy"
                           />
                         )}
-                        <h3 className="font-head text-lg font-extrabold text-slate-900 dark:text-white leading-snug">
+                        <h3 className="font-head text-xl sm:text-2xl font-black text-slate-900 dark:text-white leading-snug">
                           {ar ? study.countryNameAr : study.countryNameEn}
                         </h3>
                       </div>
 
                       {(study.sector === "garment" || study.sector === "environmental") ? (
-                        <h4 className="font-head text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200 mt-1">
+                        <h4 className="font-head text-sm sm:text-base font-bold text-slate-800 dark:text-slate-200 mt-1.5">
                           {ar ? "دراسة شاملة للسوق" : "Comprehensive Market Study"}
                         </h4>
                       ) : (
                         study.titleAr && (
-                          <h4 className="font-head text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200 mt-1">
+                          <h4 className="font-head text-sm sm:text-base font-bold text-slate-800 dark:text-slate-200 mt-1.5">
                             {ar ? study.titleAr : study.titleEn}
                           </h4>
                         )
@@ -657,23 +657,23 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
                       {/* Garment Specific: Trade Indicator Box & Integrated Strategic Analysis Box */}
                       {study.sector === "garment" ? (
                         <>
-                          <div className="mt-2 flex flex-wrap items-center gap-2">
+                          <div className="mt-2.5 flex flex-wrap items-center gap-2">
                             {/* خانة المؤشر التجاري */}
-                            <div className="inline-flex items-center gap-1.5 rounded-lg border border-brand-green/30 bg-brand-green/10 px-2.5 py-1 text-xs font-bold text-brand-green shadow-xs">
+                            <div className="inline-flex items-center gap-1.5 rounded-lg border border-brand-green/30 bg-brand-green/10 px-3 py-1.5 text-xs sm:text-sm font-bold text-brand-green shadow-xs">
                               <span className="text-slate-600 dark:text-slate-300 font-semibold">{ar ? "المؤشر التجاري:" : "Trade Indicator:"}</span>
                               <span className="font-mono font-extrabold">{study.tradeIndicatorDisplay || "—"}</span>
                               {study.tradeIndicatorYear && (
-                                <span className="text-[10px] text-slate-500 font-normal">({study.tradeIndicatorYear})</span>
+                                <span className="text-xs text-slate-500 font-normal">({study.tradeIndicatorYear})</span>
                               )}
                             </div>
 
                             {/* خانة تحليل استراتيجي متكامل */}
-                            <div className="inline-flex items-center gap-1.5 rounded-lg border border-brand-orange/30 bg-brand-orange/10 px-2.5 py-1 text-xs font-bold text-brand-orange shadow-xs">
+                            <div className="inline-flex items-center gap-1.5 rounded-lg border border-brand-orange/30 bg-brand-orange/10 px-3 py-1.5 text-xs sm:text-sm font-bold text-brand-orange shadow-xs">
                               <span>{ar ? "تحليل استراتيجي متكامل" : "Integrated Strategic Analysis"}</span>
                             </div>
                           </div>
 
-                          <p className="text-xs text-slate-600 dark:text-slate-300 mt-2 line-clamp-2 leading-relaxed">
+                          <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-200 mt-2.5 line-clamp-2 leading-relaxed">
                             {ar
                               ? study.subtitleAr.replace(/^تحليل استراتيجي متكامل:\s*/, "")
                               : study.subtitleEn.replace(/^Integrated Strategic Analysis:\s*/, "")}
@@ -683,9 +683,9 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
                         <>
                           {/* Opportunity Tier Badge */}
                           {study.opportunityTierAr && (
-                            <div className="mt-1.5 flex items-center gap-1.5 text-[11px] font-extrabold">
+                            <div className="mt-2 flex items-center gap-1.5 text-xs sm:text-sm font-extrabold">
                               <span className={cn(
-                                "rounded-lg px-2 py-0.5",
+                                "rounded-lg px-2.5 py-1",
                                 (study.opportunityScore ?? 0) >= 80
                                   ? "bg-brand-green/10 text-brand-green border border-brand-green/30"
                                   : (study.opportunityScore ?? 0) >= 65
@@ -699,14 +699,14 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
 
                           {/* Trade Indicator */}
                           {study.tradeIndicatorDisplay && (
-                            <p className="text-xs font-bold text-slate-700 dark:text-slate-200 mt-2 flex items-center gap-1.5">
+                            <p className="text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-200 mt-2.5 flex items-center gap-1.5">
                               <span className="text-slate-500 dark:text-slate-400">{ar ? "المؤشر التجاري:" : "Trade Indicator:"}</span>
                               <span className="text-brand-green font-mono font-extrabold">{study.tradeIndicatorDisplay}</span>
-                              <span className="text-[10px] text-slate-500">({study.tradeIndicatorYear})</span>
+                              <span className="text-xs text-slate-500">({study.tradeIndicatorYear})</span>
                             </p>
                           )}
 
-                          <p className="text-xs text-slate-600 dark:text-slate-300 mt-2 line-clamp-2 leading-relaxed">
+                          <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-200 mt-2.5 line-clamp-2 leading-relaxed">
                             {ar ? study.subtitleAr : study.subtitleEn}
                           </p>
                         </>
@@ -715,11 +715,11 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
 
                     {/* Prospective Target Accounts Note */}
                     {study.sections.potentialBuyers?.summaryAr && (
-                      <div className="rounded-xl border border-slate-200/80 dark:border-white/10 bg-slate-50/70 dark:bg-white/5 p-2.5 text-[11px] text-slate-600 dark:text-slate-300 space-y-1">
-                        <div className="font-extrabold text-slate-700 dark:text-slate-200 flex items-center justify-between">
+                      <div className="rounded-xl border border-slate-200/80 dark:border-white/10 bg-slate-50/70 dark:bg-white/5 p-3 text-xs sm:text-sm text-slate-700 dark:text-slate-200 space-y-1">
+                        <div className="font-extrabold text-slate-800 dark:text-slate-100 flex items-center justify-between">
                           <span>{ar ? "حسابات مستهدفة" : "Target Accounts"}</span>
                         </div>
-                        <p className="line-clamp-2 text-slate-600 dark:text-slate-400">
+                        <p className="line-clamp-2 text-slate-600 dark:text-slate-300 text-xs sm:text-[13px] leading-relaxed">
                           {ar
                             ? study.sections.potentialBuyers.summaryAr.replace(/^.*?:\s*/, "")
                             : study.sections.potentialBuyers.summaryEn.replace(/^.*?:\s*/, "")}
@@ -728,11 +728,11 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
                     )}
 
                     {/* Product Tags */}
-                    <div className="flex flex-wrap gap-1">
+                    <div className="flex flex-wrap gap-1.5">
                       {(ar ? study.productTagsAr : study.productTagsEn).slice(0, 4).map((tag, i) => (
                         <span
                           key={i}
-                          className="rounded-lg border border-slate-200/70 dark:border-white/10 bg-slate-50 dark:bg-white/5 px-2 py-0.5 text-[10px] font-semibold text-slate-600 dark:text-slate-300"
+                          className="rounded-lg border border-slate-200/70 dark:border-white/10 bg-slate-50 dark:bg-white/5 px-2.5 py-1 text-xs font-semibold text-slate-700 dark:text-slate-300"
                         >
                           {tag}
                         </span>
