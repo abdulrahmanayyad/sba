@@ -65,13 +65,13 @@ export function TradePage({ ar = true }: TradePageProps) {
   const sectorTabs = [
     {
       id: "real-estate" as const,
-      titleAr: "الفرص العقارية والاستثمارية",
-      titleEn: "Real Estate & Investments",
+      titleAr: "قطاع المقاولات",
+      titleEn: "Construction Sector",
     },
     {
       id: "sustainability" as const,
-      titleAr: "الفرص البيئية والاستدامة",
-      titleEn: "Sustainability & Environment",
+      titleAr: "قطاع البيئة والاستدامة",
+      titleEn: "Environment & Sustainability",
     },
     {
       id: "apparel" as const,
@@ -80,8 +80,8 @@ export function TradePage({ ar = true }: TradePageProps) {
     },
     {
       id: "food" as const,
-      titleAr: "قطاع الأغذية والسلع الزراعية",
-      titleEn: "Food & Agri-Commodities",
+      titleAr: "قطاع الأغذية والمنتجات الطبيعية",
+      titleEn: "Food & Natural Products",
     },
   ];
 
