@@ -5,13 +5,13 @@ import { useLanguage } from "@/i18n/language-context";
 export const Route = createFileRoute("/global-markets/")({
   head: () => ({
     meta: [
-      { title: "الأسواق العالمية | Global Markets — Sami Bin Ayyad Group" },
+      { title: "الأسواق العالمية — مجموعة سامي بن عياد" },
       {
         name: "description",
         content:
           "دراسات تحليلية متخصصة للأسواق المحلية والدولية، تكشف حجم الطلب والفرص التجارية والاستثمارية لقطاعات مجموعة سامي بن عياد.",
       },
-      { property: "og:title", content: "Global Markets | الأسواق العالمية — Sami Bin Ayyad Group" },
+      { property: "og:title", content: "الأسواق العالمية — مجموعة سامي بن عياد" },
       {
         property: "og:description",
         content:

@@ -64,8 +64,8 @@ export const Route = createFileRoute("/global-markets/$sector/$slug")({
       meta: [
         {
           title: cmp
-            ? `${cmp.titleAr} | الأسواق العالمية — Sami Bin Ayyad Group`
-            : `${params.slug} | الأسواق العالمية — Sami Bin Ayyad Group`,
+            ? `${cmp.titleAr} — الأسواق العالمية — مجموعة سامي بن عياد`
+            : `${params.slug} — الأسواق العالمية — مجموعة سامي بن عياد`,
         },
       ],
     };
@@ -78,11 +78,12 @@ function GlobalMarketsStudyRoute() {
   const { language } = useLanguage();
   const ar = language === "AR";
 
-  const cmp = sector === "garment" ? COMPARATIVE_SLUG_MAP[slug] : undefined;
+  const cmp = COMPARATIVE_SLUG_MAP[slug];
   if (cmp) {
     return (
       <ApparelComparativePage
         ar={ar}
+        initialSector={sector as GlobalMarketSectorId}
         initialSubRegion={cmp.initialSubRegion}
         isGccReport={Boolean(cmp.isGccReport)}
       />

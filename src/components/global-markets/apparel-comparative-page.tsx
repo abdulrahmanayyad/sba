@@ -13,7 +13,9 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
+  GLOBAL_MARKET_SECTORS,
   type ApparelSubRegionId,
+  type GlobalMarketSectorId,
   type GlobalMarketStudy,
   type MarketRoleCategory,
   type PriorityGrade,
@@ -29,6 +31,7 @@ import { MarketComparisonPanel } from "./market-comparison-panel";
 
 interface ApparelComparativePageProps {
   ar: boolean;
+  initialSector?: GlobalMarketSectorId | "all";
   initialSubRegion?: ApparelSubRegionId | "all";
   isGccReport?: boolean;
 }
@@ -73,13 +76,16 @@ const PRIORITY_BADGE_MAP: Record<PriorityGrade, string> = {
 
 export function ApparelComparativePage({
   ar,
+  initialSector = "all",
   initialSubRegion = "all",
   isGccReport = false,
 }: ApparelComparativePageProps) {
   const { studies } = useGlobalMarketsStudies();
-  const garmentStudies = useMemo(
-    () => studies.filter((s) => s.sector === "garment" && s.status !== "archived"),
-    [studies],
+  const [selectedSector, setSelectedSector] = useState<GlobalMarketSectorId | "all">(initialSector);
+
+  const sectorStudies = useMemo(
+    () => studies.filter((s) => s.status !== "archived" && (selectedSector === "all" || s.sector === selectedSector)),
+    [studies, selectedSector],
   );
 
   const [subRegionFilter, setSubRegionFilter] = useState<ApparelSubRegionId | "all">(initialSubRegion);
@@ -98,19 +104,21 @@ export function ApparelComparativePage({
 
   const filteredStudies = useMemo(() => {
     const q = searchQuery.trim().toLowerCase();
-    return garmentStudies.filter((s) => {
-      if (subRegionFilter !== "all" && s.apparelSubRegion !== subRegionFilter) {
-        if (subRegionFilter === "levant" && (s.countryCode === "JO" || s.countryCode === "LB" || s.countryCode === "SY")) {
-          // match Levant countries under Levant regional view
-        } else if (subRegionFilter === "north_africa" && (s.countryCode === "EG" || s.countryCode === "LY" || s.countryCode === "TN" || s.countryCode === "DZ" || s.countryCode === "MA" || s.countryCode === "SD")) {
-          // match North Africa countries under North Africa regional view
-        } else {
-          return false;
+    return sectorStudies.filter((s) => {
+      if (selectedSector === "garment" || selectedSector === "all") {
+        if (subRegionFilter !== "all" && s.apparelSubRegion && s.apparelSubRegion !== subRegionFilter) {
+          if (subRegionFilter === "levant" && (s.countryCode === "JO" || s.countryCode === "LB" || s.countryCode === "SY")) {
+            // match Levant countries under Levant regional view
+          } else if (subRegionFilter === "north_africa" && (s.countryCode === "EG" || s.countryCode === "LY" || s.countryCode === "TN" || s.countryCode === "DZ" || s.countryCode === "MA" || s.countryCode === "SD")) {
+            // match North Africa countries under North Africa regional view
+          } else {
+            return false;
+          }
         }
       }
-      if (priorityFilter !== "all" && s.priorityGrade !== priorityFilter) return false;
-      if (roleFilter !== "all" && s.marketRole !== roleFilter) return false;
-      if (basisFilter !== "all" && s.dataBasis !== basisFilter) return false;
+      if (priorityFilter !== "all" && s.priorityGrade && s.priorityGrade !== priorityFilter) return false;
+      if (roleFilter !== "all" && s.marketRole && s.marketRole !== roleFilter) return false;
+      if (basisFilter !== "all" && s.dataBasis && s.dataBasis !== basisFilter) return false;
       if (q) {
         const hay = [
           s.countryNameAr || "",
@@ -126,7 +134,7 @@ export function ApparelComparativePage({
       }
       return true;
     });
-  }, [garmentStudies, subRegionFilter, priorityFilter, roleFilter, basisFilter, searchQuery]);
+  }, [sectorStudies, selectedSector, subRegionFilter, priorityFilter, roleFilter, basisFilter, searchQuery]);
 
   // Like-for-like 2024 HS61+HS62 customs imports strictly (never mix 2025 or SITC 84 or Trade.gov estimates)
   const comparable2024HsStudies = useMemo(
@@ -161,35 +169,45 @@ export function ApparelComparativePage({
     ...comparable2024HsStudies.map((s) => s.tradeIndicatorNumericUsdB ?? 0),
   );
 
+  const currentSectorObj = selectedSector === "all" ? null : GLOBAL_MARKET_SECTORS.find((s) => s.id === selectedSector);
+
   const pageTitleAr = isGccReport
-    ? "التقرير المقارن لأسواق دول مجلس التعاون الخليجي — قطاع الملابس والمنسوجات"
+    ? "التقرير المقارن لأسواق دول مجلس التعاون الخليجي"
     : activeRegionMeta
     ? `المقارنة الإقليمية: ${activeRegionMeta.titleAr}`
-    : "لوحة المقارنة الشاملة للأسواق العالمية — قطاع الملابس والمنسوجات";
+    : currentSectorObj
+    ? `لوحة المقارنة الشاملة للأسواق العالمية — ${currentSectorObj.nameAr}`
+    : "لوحة المقارنة الشاملة للأسواق العالمية لكافة القطاعات";
 
   const pageTitleEn = isGccReport
-    ? "GCC Comparative Report — Apparel & Textiles Market Intelligence"
+    ? "GCC Comparative Report — Strategic Market Intelligence"
     : activeRegionMeta
     ? `Regional Comparative Analysis: ${activeRegionMeta.titleEn}`
-    : "Global Apparel Markets Comparative Dashboard";
+    : currentSectorObj
+    ? `Global Market Comparison Dashboard — ${currentSectorObj.nameEn}`
+    : "Comprehensive Global Markets Comparison Dashboard";
 
   return (
     <div className="w-full pb-24">
       {/* 1. Breadcrumb */}
       <div className="site-container pt-8 pb-3">
         <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-xs font-bold text-slate-500">
-          <Link to="/global-markets" className="hover:text-slate-900 dark:hover:text-white">
+          <Link to="/global-markets" className="hover:text-brand-green transition-colors">
             {ar ? "الأسواق العالمية" : "Global Markets"}
           </Link>
           <ChevronRight className="size-3.5 rtl:rotate-180" />
-          <Link
-            to="/global-markets/$sector"
-            params={{ sector: "garment" }}
-            className="hover:text-slate-900 dark:hover:text-white"
-          >
-            {ar ? "الملابس والمنسوجات" : "Apparel & Textiles"}
-          </Link>
-          <ChevronRight className="size-3.5 rtl:rotate-180" />
+          {selectedSector !== "all" && currentSectorObj ? (
+            <>
+              <Link
+                to="/global-markets/$sector"
+                params={{ sector: selectedSector }}
+                className="hover:text-brand-green transition-colors"
+              >
+                {ar ? currentSectorObj.nameAr : currentSectorObj.nameEn}
+              </Link>
+              <ChevronRight className="size-3.5 rtl:rotate-180" />
+            </>
+          ) : null}
           <span className="text-slate-900 dark:text-white">
             {isGccReport
               ? ar
@@ -210,7 +228,7 @@ export function ApparelComparativePage({
       <section className="site-container pb-6">
         <div className="rounded-3xl border border-white/50 bg-white/80 dark:bg-slate-900/75 p-6 sm:p-10 shadow-xl backdrop-blur-2xl space-y-6 text-start">
           <div className="flex flex-wrap items-center justify-between gap-3">
-            <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 dark:border-white/15 bg-slate-100 dark:bg-white/10 px-3.5 py-1 text-xs font-bold text-slate-800 dark:text-slate-100">
+            <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 dark:border-white/15 bg-slate-100 dark:bg-white/10 px-3.5 py-1 text-xs font-bold text-slate-800 dark:text-slate-100 shadow-xs">
               <Scale className="size-3.5 text-brand-green" />
               <span>
                 {ar
@@ -220,12 +238,20 @@ export function ApparelComparativePage({
             </span>
 
             <Link
-              to="/global-markets/$sector"
-              params={{ sector: "garment" }}
-              className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 dark:border-white/15 bg-white dark:bg-slate-800 px-4 py-1.5 text-xs font-bold text-slate-800 dark:text-white hover:border-brand-green"
+              to={selectedSector === "all" ? "/global-markets" : "/global-markets/$sector"}
+              params={selectedSector === "all" ? undefined : { sector: selectedSector }}
+              className="inline-flex items-center gap-1.5 rounded-full border border-brand-green/30 bg-brand-green/10 px-4 py-1.5 text-xs font-bold text-brand-green hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-all duration-300 shadow-xs cursor-pointer"
             >
               {ar ? <ArrowRight className="size-3.5" /> : <ArrowLeft className="size-3.5" />}
-              <span>{ar ? "العودة لدليل دول القطاع" : "Back to Apparel Directory"}</span>
+              <span>
+                {selectedSector === "all"
+                  ? ar
+                    ? "العودة للأسواق العالمية"
+                    : "Back to Global Markets"
+                  : ar
+                  ? "العودة لدليل دول القطاع"
+                  : "Back to Sector Directory"}
+              </span>
             </Link>
           </div>
 
@@ -235,48 +261,90 @@ export function ApparelComparativePage({
             </h1>
             <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-4xl leading-relaxed">
               {ar
-                ? "مقارنة منضبطة منهجيًا للأسواق الدولية المعتمدة حسب المناطق الجغرافية، ومستوى الأولوية، ودور السوق، وسنة البيانات، ونطاق القياس الجمركي، مع الفصل التام بين القيم الموثقة والحقول التي ما زالت قيد التحقق."
-                : "Methodologically disciplined comparison across all verified international markets by geographic region, priority rating, market role, latest reporting year, and measurement definition — explicitly separating verified HS61+HS62 figures from pending baselines."}
+                ? "مقارنة منضبطة منهجيًا للأسواق الدولية المعتمدة حسب القطاعات والمناطق الجغرافية، ومستوى الأولوية، ودور السوق، وسنة البيانات، مع الفصل التام بين القيم الموثقة والحقول التي ما زالت قيد التحقق."
+                : "Methodologically disciplined comparison across all verified international markets by sector, geographic region, priority rating, market role, and reporting year."}
             </p>
           </div>
 
-          {/* Regional Comparative Navigation Bar */}
-          <div className="flex flex-wrap gap-2 pt-2 border-t border-slate-200/70 dark:border-white/10">
-            <Link
-              to="/global-markets/$sector/$slug"
-              params={{ sector: "garment", slug: "compare" }}
-              onClick={() => setSubRegionFilter("all")}
-              className={cn(
-                "rounded-full border px-3.5 py-1.5 text-xs font-bold transition-colors",
-                subRegionFilter === "all" && !isGccReport
-                  ? "border-slate-900 bg-slate-900 text-white dark:border-white dark:bg-white dark:text-slate-900"
-                  : "border-slate-200 dark:border-white/15 bg-white/80 dark:bg-white/5 text-slate-700 dark:text-slate-200 hover:border-brand-green",
-              )}
-            >
-              {ar ? `جميع الأقاليم (${garmentStudies.length})` : `All Regions (${garmentStudies.length})`}
-            </Link>
-
-            {APPAREL_SUBREGIONS_META.map((reg) => {
-              const count = garmentStudies.filter((s) => s.apparelSubRegion === reg.id).length;
-              const isSelected = subRegionFilter === reg.id;
-              return (
-                <Link
-                  key={reg.id}
-                  to="/global-markets/$sector/$slug"
-                  params={{ sector: "garment", slug: reg.comparativeSlug }}
-                  onClick={() => setSubRegionFilter(reg.id)}
+          {/* Sector Selector Tabs (جميع القطاعات الاستراتيجية) */}
+          <div className="space-y-2 pt-2 border-t border-slate-200/70 dark:border-white/10">
+            <span className="text-[11px] font-bold text-slate-500 block">
+              {ar ? "اختيار القطاع للمقارنة:" : "Select Sector for Comparison:"}
+            </span>
+            <div className="flex flex-wrap gap-2">
+              <button
+                type="button"
+                onClick={() => {
+                  setSelectedSector("all");
+                  setSubRegionFilter("all");
+                }}
+                className={cn(
+                  "rounded-full px-4 py-1.5 text-xs font-bold border transition-all duration-300 cursor-pointer shadow-xs",
+                  selectedSector === "all"
+                    ? "border-brand-green bg-brand-green text-white hover:bg-brand-orange hover:border-brand-orange"
+                    : "border-slate-200 dark:border-white/15 bg-white dark:bg-white/5 text-slate-700 dark:text-slate-200 hover:bg-brand-orange hover:text-white hover:border-brand-orange",
+                )}
+              >
+                {ar ? "جميع القطاعات" : "All Sectors"}
+              </button>
+              {GLOBAL_MARKET_SECTORS.map((sec) => (
+                <button
+                  key={sec.id}
+                  type="button"
+                  onClick={() => {
+                    setSelectedSector(sec.id);
+                    setSubRegionFilter("all");
+                  }}
                   className={cn(
-                    "rounded-full border px-3.5 py-1.5 text-xs font-bold transition-colors",
-                    isSelected
-                      ? "border-brand-green bg-brand-green text-white"
-                      : "border-slate-200 dark:border-white/15 bg-white/80 dark:bg-white/5 text-slate-700 dark:text-slate-200 hover:border-brand-green",
+                    "rounded-full px-4 py-1.5 text-xs font-bold border transition-all duration-300 cursor-pointer shadow-xs",
+                    selectedSector === sec.id
+                      ? "border-brand-green bg-brand-green text-white hover:bg-brand-orange hover:border-brand-orange"
+                      : "border-slate-200 dark:border-white/15 bg-white dark:bg-white/5 text-slate-700 dark:text-slate-200 hover:bg-brand-orange hover:text-white hover:border-brand-orange",
                   )}
                 >
-                  {ar ? `${reg.titleAr} (${count})` : `${reg.titleEn} (${count})`}
-                </Link>
-              );
-            })}
+                  {ar ? sec.nameAr : sec.nameEn}
+                </button>
+              ))}
+            </div>
           </div>
+
+          {/* Regional Comparative Navigation Bar */}
+          {(selectedSector === "all" || selectedSector === "garment") && (
+            <div className="flex flex-wrap gap-2 pt-2 border-t border-slate-200/70 dark:border-white/10">
+              <button
+                type="button"
+                onClick={() => setSubRegionFilter("all")}
+                className={cn(
+                  "rounded-full border px-3.5 py-1.5 text-xs font-bold transition-all duration-300 cursor-pointer shadow-xs",
+                  subRegionFilter === "all" && !isGccReport
+                    ? "border-brand-green bg-brand-green text-white hover:bg-brand-orange hover:border-brand-orange"
+                    : "border-slate-200 dark:border-white/15 bg-white/80 dark:bg-white/5 text-slate-700 dark:text-slate-200 hover:bg-brand-orange hover:text-white hover:border-brand-orange",
+                )}
+              >
+                {ar ? `جميع الأقاليم (${sectorStudies.length})` : `All Regions (${sectorStudies.length})`}
+              </button>
+
+              {APPAREL_SUBREGIONS_META.map((reg) => {
+                const count = sectorStudies.filter((s) => s.apparelSubRegion === reg.id).length;
+                const isSelected = subRegionFilter === reg.id;
+                return (
+                  <button
+                    key={reg.id}
+                    type="button"
+                    onClick={() => setSubRegionFilter(reg.id)}
+                    className={cn(
+                      "rounded-full border px-3.5 py-1.5 text-xs font-bold transition-all duration-300 cursor-pointer shadow-xs",
+                      isSelected
+                        ? "border-brand-green bg-brand-green text-white hover:bg-brand-orange hover:border-brand-orange"
+                        : "border-slate-200 dark:border-white/15 bg-white/80 dark:bg-white/5 text-slate-700 dark:text-slate-200 hover:bg-brand-orange hover:text-white hover:border-brand-orange",
+                    )}
+                  >
+                    {ar ? `${reg.titleAr} (${count})` : `${reg.titleEn} (${count})`}
+                  </button>
+                );
+              })}
+            </div>
+          )}
         </div>
       </section>
 

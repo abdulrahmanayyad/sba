@@ -307,7 +307,7 @@ export function GlobalMarketsCmsTab({ ar = true }: GlobalMarketsCmsTabProps) {
       <div className="rounded-3xl border border-slate-200/80 dark:border-white/15 bg-white/80 dark:bg-slate-900/70 p-6 backdrop-blur-2xl shadow-md space-y-4">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <div className="size-10 rounded-2xl bg-slate-900 text-white dark:bg-white dark:text-slate-900 flex items-center justify-center shrink-0">
+            <div className="size-10 rounded-2xl bg-brand-green/10 text-brand-green border border-brand-green/20 flex items-center justify-center shrink-0 shadow-xs">
               <FolderCog className="size-5" />
             </div>
             <div>
@@ -321,7 +321,7 @@ export function GlobalMarketsCmsTab({ ar = true }: GlobalMarketsCmsTabProps) {
             <Button
               type="button"
               onClick={() => openEditor(createEmptyStudy())}
-              className="rounded-full !bg-brand-green hover:!bg-brand-orange !text-white text-xs font-bold gap-1.5 transition-colors cursor-pointer shadow-sm"
+              className="rounded-full !bg-brand-green hover:!bg-brand-orange !text-white text-xs font-bold gap-1.5 transition-all duration-300 cursor-pointer shadow-sm"
             >
               <Plus className="size-3.5" />
               <span>{ar ? "إضافة دراسة جديدة" : "New Study"}</span>
@@ -347,29 +347,28 @@ export function GlobalMarketsCmsTab({ ar = true }: GlobalMarketsCmsTabProps) {
             type="button"
             onClick={() => setSectorFilter("all")}
             className={cn(
-              "rounded-full px-3.5 py-1.5 text-xs font-bold border transition-colors cursor-pointer",
+              "rounded-full px-3.5 py-1.5 text-xs font-bold border transition-all duration-300 cursor-pointer shadow-xs",
               sectorFilter === "all"
-                ? "border-slate-900 bg-slate-900 text-white"
-                : "border-slate-200 bg-white text-slate-700 hover:bg-slate-100",
+                ? "border-brand-green bg-brand-green text-white hover:bg-brand-orange hover:border-brand-orange"
+                : "border-slate-200 dark:border-white/15 bg-white dark:bg-white/5 text-slate-700 dark:text-slate-200 hover:bg-brand-orange hover:text-white hover:border-brand-orange",
             )}
           >
-            {ar ? `الكل (${studies.length})` : `All (${studies.length})`}
+            {ar ? "جميع الدراسات" : "All Studies"}
           </button>
           {GLOBAL_MARKET_SECTORS.map((sec) => {
-            const count = studies.filter((s) => s.sector === sec.id).length;
             return (
               <button
                 key={sec.id}
                 type="button"
                 onClick={() => setSectorFilter(sec.id)}
                 className={cn(
-                  "rounded-full px-3.5 py-1.5 text-xs font-bold border transition-colors cursor-pointer",
+                  "rounded-full px-3.5 py-1.5 text-xs font-bold border transition-all duration-300 cursor-pointer shadow-xs",
                   sectorFilter === sec.id
-                    ? "border-slate-900 bg-slate-900 text-white"
-                    : "border-slate-200 bg-white text-slate-700 hover:bg-slate-100",
+                    ? "border-brand-green bg-brand-green text-white hover:bg-brand-orange hover:border-brand-orange"
+                    : "border-slate-200 dark:border-white/15 bg-white dark:bg-white/5 text-slate-700 dark:text-slate-200 hover:bg-brand-orange hover:text-white hover:border-brand-orange",
                 )}
               >
-                {ar ? `${sec.nameAr} (${count})` : `${sec.nameEn} (${count})`}
+                {ar ? sec.nameAr : sec.nameEn}
               </button>
             );
           })}
@@ -443,7 +442,7 @@ export function GlobalMarketsCmsTab({ ar = true }: GlobalMarketsCmsTabProps) {
                           <Link
                             to="/global-markets/$sector/$slug"
                             params={{ sector: sectorId, slug: study.slug }}
-                            className="rounded-lg border border-slate-200 p-1.5 text-slate-700 hover:bg-slate-100"
+                            className="rounded-lg border border-slate-200 dark:border-white/10 p-1.5 text-slate-700 dark:text-slate-300 hover:border-brand-green hover:text-brand-green hover:bg-brand-green/10 transition-colors"
                             title={ar ? "معاينة" : "Preview"}
                           >
                             <Eye className="size-3.5" />
@@ -451,7 +450,7 @@ export function GlobalMarketsCmsTab({ ar = true }: GlobalMarketsCmsTabProps) {
                           <button
                             type="button"
                             onClick={() => openEditor(study)}
-                            className="rounded-lg border border-slate-200 p-1.5 text-slate-700 hover:bg-slate-100 cursor-pointer"
+                            className="rounded-lg border border-slate-200 dark:border-white/10 p-1.5 text-slate-700 dark:text-slate-300 hover:border-brand-orange hover:text-brand-orange hover:bg-brand-orange/10 transition-colors cursor-pointer"
                             title={ar ? "تعديل" : "Edit"}
                           >
                             <Edit3 className="size-3.5" />

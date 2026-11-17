@@ -29,8 +29,8 @@ export const Route = createFileRoute("/global-markets/$sector/")({
     meta: [
       {
         title: loaderData
-          ? `${loaderData.nameAr} | ${loaderData.nameEn} — الأسواق العالمية`
-          : "الأسواق العالمية | Global Markets",
+          ? `${loaderData.nameAr} — الأسواق العالمية — مجموعة سامي بن عياد`
+          : "الأسواق العالمية — مجموعة سامي بن عياد",
       },
     ],
   }),

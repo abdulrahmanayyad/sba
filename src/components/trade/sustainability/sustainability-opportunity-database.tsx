@@ -93,10 +93,10 @@ export function SustainabilityOpportunityDatabase({ ar = true }: SustainabilityO
             className="rounded-xl border border-foreground/25 bg-background/95 px-3 py-2 text-xs font-semibold text-foreground shadow-sm hover:border-brand-orange focus:border-brand-orange focus:outline-none transition-all cursor-pointer"
           >
             <option value="all">{ar ? "كافة المراحل التعاقدية" : "All Project Stages"}</option>
-            <option value="Tender Open">{ar ? "طرح مناقصة عامة (Tender Open)" : "Tender Open"}</option>
-            <option value="Prequalification">{ar ? "تأهيل مسبق (Prequalification)" : "Prequalification"}</option>
-            <option value="Expression of Interest">{ar ? "إبداء رغبة (EOI)" : "Expression of Interest"}</option>
-            <option value="Announced">{ar ? "فرصة معلنة (Announced)" : "Announced"}</option>
+            <option value="Tender Open">{ar ? "طرح مناقصة عامة" : "Tender Open"}</option>
+            <option value="Prequalification">{ar ? "تأهيل مسبق" : "Prequalification"}</option>
+            <option value="Expression of Interest">{ar ? "إبداء رغبة" : "Expression of Interest"}</option>
+            <option value="Announced">{ar ? "فرصة معلنة" : "Announced"}</option>
             <option value="Under Implementation">{ar ? "قيد التنفيذ والتوسع" : "Under Implementation"}</option>
           </select>
         </div>

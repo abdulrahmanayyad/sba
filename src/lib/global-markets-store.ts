@@ -367,7 +367,7 @@ export function openApprovedStudyPdfReport(study: GlobalMarketStudy, ar: boolean
 <html lang="${ar ? "ar" : "en"}" dir="${dir}">
 <head>
   <meta charset="utf-8" />
-  <title>${escapeHtml(ar ? study.titleAr : study.titleEn)} — SAMI BIN AYYAD GROUP</title>
+  <title>${escapeHtml(ar ? study.titleAr : study.titleEn)} — ${ar ? "مجموعة سامي بن عياد" : "SAMI BIN AYYAD GROUP"}</title>
   <style>
     body { font-family: "IBM Plex Sans Arabic", "Nunito", Arial, sans-serif; color: #0f172a; margin: 28px; background: #fff; }
     @media print { body { margin: 14mm; } }
@@ -378,7 +378,7 @@ export function openApprovedStudyPdfReport(study: GlobalMarketStudy, ar: boolean
     <div>
       <img src="${logoSrc}" alt="SAMI BIN AYYAD GROUP" style="height:44px;width:auto;" />
       <div style="font-size:11px;font-weight:700;color:#475569;margin-top:6px;">
-        ${escapeHtml(ar ? "الأسواق العالمية | مركز الدراسات الاستراتيجية" : "Global Markets | Strategic Intelligence Center")}
+        ${escapeHtml(ar ? "الأسواق العالمية — مركز الدراسات الاستراتيجية" : "Global Markets — Strategic Intelligence Center")}
       </div>
     </div>
     <div style="text-align:${ar ? "left" : "right"};font-size:11px;color:#475569;">

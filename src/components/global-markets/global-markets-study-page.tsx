@@ -349,7 +349,7 @@ export function GlobalMarketsStudyPage({
           <div className="rounded-3xl border border-brand-green/25 bg-white/80 dark:bg-slate-900/70 p-6 sm:p-8 backdrop-blur-2xl shadow-md space-y-5 text-start">
             <div className="border-b border-slate-200/70 dark:border-white/10 pb-3">
               <h2 className="font-head text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white">
-                {ar ? "فرص المجموعة | Group Opportunities" : "Group Opportunities | فرص المجموعة"}
+                {ar ? "فرص المجموعة" : "Group Opportunities"}
               </h2>
               <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
                 {ar
@@ -437,7 +437,7 @@ export function GlobalMarketsStudyPage({
         <div className="rounded-3xl border border-slate-200/80 dark:border-white/15 bg-white/80 dark:bg-slate-900/65 p-6 sm:p-8 backdrop-blur-xl shadow-sm space-y-5 text-start">
           <div className="border-b border-slate-200/70 dark:border-white/10 pb-3">
             <h2 className="font-head text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white">
-              {ar ? "المصادر والبيانات | Sources & Data" : "Sources & Data | المصادر والبيانات"}
+              {ar ? "المصادر والبيانات المعتمدة" : "Verified Sources & Data"}
             </h2>
           </div>
 

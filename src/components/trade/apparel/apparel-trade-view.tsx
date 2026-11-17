@@ -31,7 +31,7 @@ export function ApparelTradeView({ ar = true, hideHero = false }: ApparelTradeVi
         <section className="relative w-full min-h-[calc(100svh-76px)] overflow-hidden text-white flex flex-col justify-center mb-12">
           <img
             src={encodeURI("/Background/Main Background - SAMI BIN AYYAD GROUP · Global Opportunities.jpg")}
-            alt={ar ? "الفرص العالمية | قطاع الملابس والمنسوجات - مجموعة سامي بن عياد" : "Global Apparel & Textile Opportunities - Sami Bin Ayyad Group"}
+            alt={ar ? "الفرص العالمية — قطاع الملابس والمنسوجات — مجموعة سامي بن عياد" : "Global Apparel & Textile Opportunities - Sami Bin Ayyad Group"}
             className="absolute inset-0 size-full object-cover object-center pointer-events-none select-none"
             fetchPriority="high"
           />
