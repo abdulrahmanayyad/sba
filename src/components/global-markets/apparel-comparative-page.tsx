@@ -447,14 +447,9 @@ export function ApparelComparativePage({
                 <div>
                   <h3 className="font-head text-sm sm:text-base font-extrabold text-slate-900 dark:text-white">
                     {ar
-                      ? "مقارنة جمركية متكافئة: واردات HS 61 + HS 62 لعام 2024 فقط (مليار دولار)"
-                      : "Like-for-Like Customs Comparison: 2024 HS61 + HS62 Imports Only (USD Billion)"}
+                      ? "مقارنة جمركية لعام 2024 (مليار دولار)"
+                      : "Customs Comparison 2024 (USD Billion)"}
                   </h3>
-                  <p className="text-[11px] text-slate-500 dark:text-slate-400">
-                    {ar
-                      ? "تُستبعد من هذا الرسم دول عام 2025 (السعودية والكويت)، وبلجيكا (SITC 84)، ولبنان، وتركيا، والدول قيد التحقق منعًا للخلط المنهجي."
-                      : "Excludes 2025 reporters (KSA, Kuwait), Belgium (SITC 84 EUR), Lebanon estimate, Türkiye aggregate, and pending countries."}
-                  </p>
                 </div>
                 <span className="rounded-full bg-slate-100 dark:bg-white/10 px-2.5 py-0.5 text-[10px] font-bold text-slate-600 dark:text-slate-300">
                   UN Comtrade-derived · 2024
@@ -512,7 +507,7 @@ export function ApparelComparativePage({
               <div className="space-y-4">
                 <div className="border-b border-slate-200/70 dark:border-white/10 pb-3">
                   <div className="flex items-center justify-between gap-2">
-                    <h3 className="font-head text-sm sm:text-base font-extrabold text-slate-900 dark:text-white">
+                    <h3 className="font-head text-sm sm:text-base font-extrabold text-brand-green">
                       {ar ? "بيانات HS61+HS62 لعام 2025" : "2025 HS61+HS62 Imports"}
                     </h3>
                     <span className="rounded-full bg-brand-green/10 px-2.5 py-0.5 text-[10px] font-bold text-brand-green">
