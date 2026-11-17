@@ -45,21 +45,7 @@ export function SustainabilityOpportunityDatabase({ ar = true }: SustainabilityO
     });
   }, [subsectorFilter, stageFilter, countryFilter, searchQuery]);
 
-  const getStageBadge = (stage: ProjectStage, stageAr: string) => {
-    switch (stage) {
-      case "Tender Open":
-        return "bg-brand-green/20 text-brand-green border-brand-green/40";
-      case "Prequalification":
-      case "Expression of Interest":
-        return "bg-amber-500/20 text-amber-500 border-amber-500/40";
-      case "Announced":
-        return "bg-sky-500/20 text-sky-500 border-sky-500/40";
-      case "Under Implementation":
-        return "bg-indigo-500/20 text-indigo-500 border-indigo-500/40";
-      default:
-        return "bg-secondary text-muted-foreground border-border";
-    }
-  };
+
 
   return (
     <div id="opportunities-database" className="interactive-card glass-box-interactive w-full rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl backdrop-blur-2xl transition-all duration-300">
@@ -202,15 +188,7 @@ export function SustainabilityOpportunityDatabase({ ar = true }: SustainabilityO
                     </p>
                   </div>
 
-                  {/* Stage Column */}
-                  <div className="flex flex-wrap sm:flex-col items-end gap-2 shrink-0">
-                    <span className={cn(
-                      "rounded-full px-3 py-1 text-[11px] font-bold border shadow-2xs",
-                      getStageBadge(opp.projectStage, opp.projectStageAr)
-                    )}>
-                      {ar ? opp.projectStageAr : opp.projectStage}
-                    </span>
-                  </div>
+
                 </div>
 
                 {/* Description */}
