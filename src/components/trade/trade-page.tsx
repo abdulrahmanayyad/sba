@@ -67,29 +67,21 @@ export function TradePage({ ar = true }: TradePageProps) {
       id: "real-estate" as const,
       titleAr: "الفرص العقارية والاستثمارية",
       titleEn: "Real Estate & Investments",
-      badgeAr: "أصول وفرص استثمارية",
-      badgeEn: "Assets & Investment Opportunities",
     },
     {
       id: "sustainability" as const,
       titleAr: "الفرص البيئية والاستدامة",
       titleEn: "Sustainability & Environment",
-      badgeAr: "13 سوقًا • 28 فرصة ومبادرة",
-      badgeEn: "13 Markets • 28 Opportunities",
     },
     {
       id: "apparel" as const,
       titleAr: "قطاع الملابس والمنسوجات",
       titleEn: "Apparel & Textiles",
-      badgeAr: "20 دولة • +150 مصنعًا",
-      badgeEn: "20 Markets • 150+ Factories",
     },
     {
       id: "food" as const,
       titleAr: "قطاع الأغذية والسلع الزراعية",
       titleEn: "Food & Agri-Commodities",
-      badgeAr: `${TRADE_STATS.totalCountries} دولة • ${TRADE_STATS.totalRecords} طلبًا`,
-      badgeEn: `${TRADE_STATS.totalCountries} Markets • ${TRADE_STATS.totalRecords} Inquiries`,
     },
   ];
 
@@ -170,13 +162,13 @@ export function TradePage({ ar = true }: TradePageProps) {
         </div>
       </section>
 
-      {/* 2. Global Opportunities Sector Selection Box (مربع عريض وكبير بعد الخلفية) */}
+      {/* 2. Global Opportunities Sector Selection Box */}
       <div className="site-container mb-12 sm:mb-16">
-        <div className="rounded-3xl border border-white/20 bg-background/85 p-6 sm:p-8 shadow-2xl backdrop-blur-2xl">
+        <div className="interactive-card glass-box-interactive w-full rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl backdrop-blur-2xl transition-all duration-300">
           {/* Box Header */}
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-b border-border/60 pb-5 mb-6">
-            <div className="inline-flex items-center gap-2 rounded-full border border-border/80 bg-secondary/85 px-4 py-2 text-xs sm:text-sm font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
-              <span className="size-2 rounded-full bg-brand-orange animate-pulse shrink-0" />
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-b border-border/60 pb-5">
+            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs sm:text-sm font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
+              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse shrink-0" />
               <span className="font-head">{ar ? "بوابة الفرص العالمية" : "Global Opportunities"}</span>
             </div>
             <p className="text-xs text-muted-foreground font-medium">
@@ -184,8 +176,8 @@ export function TradePage({ ar = true }: TradePageProps) {
             </p>
           </div>
 
-          {/* The Sectors Side-by-Side in Responsive Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+          {/* The Sectors Side-by-Side in Responsive Grid - Sized to Title */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
             {sectorTabs.map((tab) => {
               const isActive = activeSector === tab.id;
 
@@ -195,46 +187,18 @@ export function TradePage({ ar = true }: TradePageProps) {
                   type="button"
                   onClick={() => handleSectorChange(tab.id)}
                   className={cn(
-                    "group relative flex flex-col justify-between rounded-2xl sm:rounded-3xl p-5 sm:p-6 text-start transition-all duration-300 cursor-pointer border shadow-sm active:scale-98",
+                    "group relative flex items-center justify-center rounded-2xl px-4 py-3.5 sm:px-5 sm:py-4 text-center transition-all duration-300 cursor-pointer border shadow-sm active:scale-98",
                     isActive
-                      ? "!border-brand-green !bg-brand-green !text-white shadow-xl shadow-brand-green/25 hover:!bg-brand-orange hover:!border-brand-orange hover:!text-white hover:shadow-brand-orange/30 hover:-translate-y-1"
-                      : "border-border/80 bg-secondary/60 hover:bg-secondary/90 hover:border-brand-orange/50 hover:text-foreground hover:-translate-y-1 hover:shadow-md"
+                      ? "!border-brand-green !bg-brand-green !text-white shadow-md shadow-brand-green/20"
+                      : "border-border/80 bg-secondary/80 text-foreground hover:border-brand-orange/60 hover:text-brand-orange hover:bg-secondary/90 hover:-translate-y-0.5"
                   )}
                 >
-                  {/* Top row with active status badge */}
-                  <div className="flex items-center justify-end w-full mb-3">
-                    {isActive ? (
-                      <span className="inline-flex items-center gap-1 rounded-full bg-white/20 px-3 py-1 text-[11px] font-bold text-white shadow-xs">
-                        <span className="size-1.5 rounded-full bg-white animate-pulse" />
-                        <span>{ar ? "القطاع المعروض حاليًا" : "Active Sector"}</span>
-                      </span>
-                    ) : (
-                      <span className="text-[11px] font-medium text-muted-foreground group-hover:text-brand-orange transition-colors">
-                        {ar ? "انقر للتبديل" : "Click to view"}
-                      </span>
-                    )}
-                  </div>
-
-                  {/* Title */}
-                  <div className="space-y-1.5 my-2">
-                    <h3 className={cn("text-base sm:text-lg font-black leading-snug transition-colors", isActive ? "text-white" : "text-foreground group-hover:text-brand-orange")}>
-                      {ar ? tab.titleAr : tab.titleEn}
-                    </h3>
-                  </div>
-
-                  {/* Statistic Badge */}
-                  <div className="pt-3 mt-2 border-t border-white/10 w-full">
-                    <span
-                      className={cn(
-                        "inline-block rounded-xl px-3 py-1.5 text-xs font-mono font-bold transition-colors",
-                        isActive
-                          ? "bg-white/20 text-white"
-                          : "bg-background/90 border border-border/60 text-muted-foreground group-hover:border-brand-orange/40 group-hover:text-brand-orange"
-                      )}
-                    >
-                      {ar ? tab.badgeAr : tab.badgeEn}
-                    </span>
-                  </div>
+                  <span className={cn(
+                    "text-sm sm:text-base font-bold leading-snug transition-colors",
+                    isActive ? "text-white font-extrabold" : "text-foreground group-hover:text-brand-orange"
+                  )}>
+                    {ar ? tab.titleAr : tab.titleEn}
+                  </span>
                 </button>
               );
             })}
