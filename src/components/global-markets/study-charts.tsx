@@ -115,11 +115,11 @@ export function StudyChartCard({ chart, ar }: { chart: StudyChartDataset; ar: bo
       {chart.type === "comparison" && chart.secondarySeriesLabelAr && (
         <div className="flex flex-wrap items-center gap-4 text-[11px] font-semibold text-slate-600 dark:text-slate-300">
           <span className="inline-flex items-center gap-1.5">
-            <span className="size-2.5 rounded-sm bg-slate-800 dark:bg-slate-200" />
+            <span className="size-2.5 rounded-sm bg-brand-green" />
             <span>{ar ? chart.primarySeriesLabelAr : chart.primarySeriesLabelEn}</span>
           </span>
           <span className="inline-flex items-center gap-1.5">
-            <span className="size-2.5 rounded-sm bg-brand-green" />
+            <span className="size-2.5 rounded-sm bg-brand-orange" />
             <span>{ar ? chart.secondarySeriesLabelAr : chart.secondarySeriesLabelEn}</span>
           </span>
         </div>
@@ -146,9 +146,9 @@ export function StudyChartCard({ chart, ar }: { chart: StudyChartDataset; ar: bo
                   {ar ? item.labelAr : item.labelEn}
                 </span>
                 <span className="font-mono font-bold text-slate-900 dark:text-white">
-                  {item.value.toLocaleString(ar ? "ar-EG" : "en-US")} {chart.unit}
+                  <span className="text-brand-green font-extrabold">{item.value.toLocaleString(ar ? "ar-EG" : "en-US")}</span> {chart.unit}
                   {typeof item.secondaryValue === "number" && (
-                    <span className="text-brand-green ms-2">
+                    <span className="text-brand-orange ms-2">
                       / {item.secondaryValue.toLocaleString(ar ? "ar-EG" : "en-US")} {chart.unit}
                     </span>
                   )}
@@ -159,7 +159,7 @@ export function StudyChartCard({ chart, ar }: { chart: StudyChartDataset; ar: bo
                 <div
                   className={cn(
                     "h-full rounded-full transition-all duration-500",
-                    isHovered ? "bg-brand-green" : "bg-slate-800 dark:bg-slate-300",
+                    isHovered ? "bg-brand-orange" : "bg-brand-green",
                   )}
                   style={{ width: `${pct}%` }}
                 />
@@ -168,7 +168,10 @@ export function StudyChartCard({ chart, ar }: { chart: StudyChartDataset; ar: bo
               {secPct !== null && (
                 <div className="h-2 w-full overflow-hidden rounded-full bg-slate-200/60 dark:bg-slate-800">
                   <div
-                    className="h-full rounded-full bg-brand-green/85 transition-all duration-500"
+                    className={cn(
+                      "h-full rounded-full transition-all duration-500",
+                      isHovered ? "bg-brand-green" : "bg-brand-orange/85",
+                    )}
                     style={{ width: `${secPct}%` }}
                   />
                 </div>

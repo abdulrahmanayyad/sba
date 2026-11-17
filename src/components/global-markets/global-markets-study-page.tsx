@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import { Link } from "@tanstack/react-router";
+import { ExternalLink } from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
   GEO_REGIONS_ORDER,
@@ -396,15 +397,18 @@ export function GlobalMarketsStudyPage({
       {/* 8. Optional Link to Global Opportunities (/trade) — strictly only when enabled & approved */}
       {study.globalOpportunityLink?.enabled && study.globalOpportunityLink?.approved && (
         <section className="site-container pb-8">
-          <div className="rounded-3xl border border-slate-300/80 dark:border-white/20 bg-slate-900 text-white p-6 sm:p-8 shadow-xl flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-start">
-            <div className="space-y-1.5">
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1 text-[11px] font-bold text-emerald-300">
+          <div className="interactive-card glass-box-interactive group relative flex flex-col sm:flex-row sm:items-center justify-between gap-5 rounded-3xl border border-slate-200/80 dark:border-white/15 bg-white/80 dark:bg-slate-900/70 p-6 sm:p-8 backdrop-blur-2xl shadow-md hover:border-brand-green/80 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 text-start">
+            <div className="space-y-2">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-brand-green/30 bg-brand-green/10 px-3 py-1 text-xs font-bold text-brand-green">
+                <span className="size-2 rounded-full bg-brand-green animate-pulse" />
                 <span>{ar ? "ربط معتمد بقسم الفرص العالمية" : "Approved Global Opportunities Link"}</span>
               </span>
-              <h2 className="font-head text-lg sm:text-xl font-extrabold text-white">
-                {ar ? study.globalOpportunityLink.titleAr : study.globalOpportunityLink.titleEn}
+              <h2 className="font-head text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white transition-colors duration-300 group-hover:text-brand-green">
+                {ar
+                  ? (study.globalOpportunityLink.titleAr || "").replace(" — قطاع الملابس والمنسوجات", "")
+                  : study.globalOpportunityLink.titleEn}
               </h2>
-              <p className="text-xs sm:text-sm text-slate-300 max-w-3xl">
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 max-w-3xl leading-relaxed">
                 {ar
                   ? study.globalOpportunityLink.descriptionAr
                   : study.globalOpportunityLink.descriptionEn}
@@ -413,9 +417,10 @@ export function GlobalMarketsStudyPage({
             <Link
               to="/trade"
               search={{ sector: study.globalOpportunityLink.tradeSectorParam }}
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-xs font-extrabold text-slate-900 hover:bg-brand-green hover:text-white transition-colors shrink-0"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand-green px-6 py-3 text-xs sm:text-sm font-extrabold text-white hover:bg-brand-orange hover:border-brand-orange transition-all duration-300 shadow-xs shrink-0 cursor-pointer"
             >
               <span>{ar ? "فتح الفرصة في الفرص العالمية" : "View in Global Opportunities"}</span>
+              <ExternalLink className="size-4" />
             </Link>
           </div>
         </section>

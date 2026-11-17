@@ -948,8 +948,8 @@ export const STUDY_SAU_APPAREL_001: GlobalMarketStudy = {
     enabled: true,
     approved: true,
     tradeSectorParam: "apparel",
-    titleAr: "المملكة العربية السعودية ضمن شبكة الفرص العالمية — قطاع الملابس والمنسوجات",
-    titleEn: "Saudi Arabia in Global Opportunities — Apparel & Textiles Export Network",
+    titleAr: "المملكة العربية السعودية ضمن شبكة الفرص العالمية",
+    titleEn: "Saudi Arabia in Global Opportunities",
     descriptionAr:
       "تمثل المملكة العربية السعودية أحد الأسواق الموثقة في بوابة الفرص العالمية للمجموعة ضمن طلبات الملابس النسائية والأطفال والتريكو بشروط FOB وCIF.",
     descriptionEn:
