@@ -54,16 +54,16 @@ export function RealEstateTradeView({ ar = true, hideHero = false }: RealEstateT
                     <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
                     <span>
                       {ar
-                        ? "مجموعة سامي بن عياد · الفرص العقارية والاستثمارية الدولية"
-                        : "SAMI BIN AYYAD GROUP · Global Real Estate & Investment Opportunities"}
+                        ? "مجموعة سامي بن عياد · الفرص العالمية"
+                        : "SAMI BIN AYYAD GROUP · Global Opportunities"}
                     </span>
                   </div>
                 </div>
 
                 <h1 className="font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white leading-snug tracking-tight text-start drop-shadow-md max-w-4xl">
                   {ar
-                    ? "خبرات مهنية واستثمارية موثوقة في صناعة العقار وإدارة الأصول"
-                    : "Trusted Real Estate Advisory, Asset Management & Institutional Alliances"}
+                    ? "خبرات مهنية واستثمارية موثوقة"
+                    : "Trusted Professional & Investment Advisory"}
                 </h1>
 
                 <p className="mt-3.5 max-w-4xl text-sm sm:text-base leading-relaxed text-white/90 text-start drop-shadow-sm">

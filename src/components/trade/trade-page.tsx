@@ -88,37 +88,37 @@ export function TradePage({ ar = true }: TradePageProps) {
   const heroContent = {
     food: {
       bg: "/BG/Main Home Page.jpg",
-      badgeAr: "مجموعة سامي بن عياد · انتشارنا التجاري العالمي",
-      badgeEn: "SAMI BIN AYYAD GROUP · Global Trade Footprint",
+      badgeAr: "مجموعة سامي بن عياد · الفرص العالمية",
+      badgeEn: "SAMI BIN AYYAD GROUP · Global Opportunities",
       titleAr: "نربط الأسواق العالمية، ونصنع الفرص التجارية الموثوقة",
       titleEn: "Connecting Global Markets, Delivering Real Trade Opportunities",
-      descAr: `استعراض مهني موثق لشبكة الطلبات التجارية للأعوام 2023–2026، وقاعدة متطلبات المشترين للتمور والسلع الغذائية عبر ${TRADE_STATS.totalCountries} دولة حول العالم.`,
-      descEn: `A documented corporate showcase of our 2023–2026 commercial inquiry network, covering buyer demand for dates and food commodities across ${TRADE_STATS.totalCountries} countries.`
+      descAr: "استعراض مهني موثق لشبكة الطلبات التجارية وقاعدة متطلبات المشترين عبر 84 دولة حول العالم",
+      descEn: "A documented corporate showcase of our commercial inquiry network and buyer demand registry across 84 countries worldwide."
     },
     apparel: {
       bg: "/BG/Apparel & Fashion/Apparel & Fashion Home Page.jpg",
-      badgeAr: "مجموعة سامي بن عياد · الفرص العالمية | قطاع الملابس والمنسوجات",
-      badgeEn: "SAMI BIN AYYAD GROUP · Global Apparel & Textile Opportunities",
-      titleAr: "تصنيع تعاقدي، وتوريد مرن، وشراكات تصديرية موثوقة للأسواق العالمية",
-      titleEn: "Contract Manufacturing, Agile Sourcing & Trusted Global Export Partnerships",
+      badgeAr: "مجموعة سامي بن عياد · الفرص العالمية",
+      badgeEn: "SAMI BIN AYYAD GROUP · Global Opportunities",
+      titleAr: "تصنيع تعاقدي وتوريد مرن وشراكات موثوقة",
+      titleEn: "Contract Manufacturing, Agile Sourcing & Trusted Partnerships",
       descAr: "استعراض مهني موثق لشبكة التصنيع المصري، والفرص التصديرية، وسجل طلبات الشراء للملابس والمنسوجات عبر 20 سوقًا إقليميًا ودوليًا.",
       descEn: "A documented corporate showcase of our Egyptian manufacturing network, export opportunities, and verified buyer inquiry registry across 20 regional and global markets."
     },
     sustainability: {
       bg: "/BG/Environment & Sustainability/Sustainable Environmental Home Page.jpg",
-      badgeAr: "مجموعة سامي بن عياد · الفرص العالمية | قطاع البيئة المستدامة",
-      badgeEn: "SAMI BIN AYYAD GROUP · Global Sustainability Opportunities",
-      titleAr: "حلول بيئية متكاملة، واستشارات امتثال صناعي، وشراكات في الطاقة النظيفة والاقتصاد الدائري",
-      titleEn: "Integrated Environmental Solutions, Industrial Compliance & Clean Energy Alliances",
-      descAr: "بوابة استثمارية وشراكات تشغيلية تربط المبادرات الوطنية الكبرى والمصانع الإقليمية بأحدث التقنيات والحلول المستدامة، مع إفصاح كامل وموثق عن نطاق التنفيذ المباشر وعبر التحالفات الاستراتيجية المعتمدة.",
-      descEn: "A business gateway connecting national green mega-programs and industrial facilities with advanced sustainability solutions, featuring transparent disclosure of direct scope and certified consortium alliances."
+      badgeAr: "مجموعة سامي بن عياد · الفرص العالمية",
+      badgeEn: "SAMI BIN AYYAD GROUP · Global Opportunities",
+      titleAr: "حلول واستشارات بيئية متكاملة",
+      titleEn: "Integrated Environmental Solutions & Advisory",
+      descAr: "بوابة استثمارية وشراكات تشغيلية تربط الشركات الكبرى بأحدث التقنيات والحلول المستدامة",
+      descEn: "A business gateway connecting leading enterprises with advanced sustainability technologies and solutions."
     },
     "real-estate": {
       bg: "/Background/Trusted Real Estate Advisory, Asset Management & Institutional Alliances.jpg",
-      badgeAr: "مجموعة سامي بن عياد · الفرص العقارية والاستثمارية الدولية",
-      badgeEn: "SAMI BIN AYYAD GROUP · Global Real Estate & Investment Opportunities",
-      titleAr: "خبرات مهنية واستثمارية موثوقة في صناعة العقار وإدارة الأصول",
-      titleEn: "Trusted Real Estate Advisory, Asset Management & Institutional Alliances",
+      badgeAr: "مجموعة سامي بن عياد · الفرص العالمية",
+      badgeEn: "SAMI BIN AYYAD GROUP · Global Opportunities",
+      titleAr: "خبرات مهنية واستثمارية موثوقة",
+      titleEn: "Trusted Professional & Investment Advisory",
       descAr: "مسيرة متواصلة منذ عام 2018 في السوق المصري، تغطي أكثر من 400 مشروع عقاري، وشبكة علاقات مع 200 مطور عقاري",
       descEn: "A continuous track record since 2018 in the Egyptian market, covering 400+ real estate projects, and a relationship network with 200 real estate developers."
     }
@@ -213,59 +213,8 @@ export function TradePage({ ar = true }: TradePageProps) {
 
       {activeSector === "food" && (
         <div className="site-container space-y-20">
-          {/* Key Trade Statistics */}
-          <div className="grid grid-cols-2 gap-3.5 sm:grid-cols-4 w-full">
-              <div className="interactive-card glass-box-interactive group rounded-3xl p-5 sm:p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer text-center flex flex-col items-center justify-center">
-                <span className="font-head text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">
-                  {TRADE_STATS.totalCountries}
-                </span>
-                <p className="text-xs sm:text-sm font-bold text-foreground mt-1.5 text-center">
-                  {ar ? "دولة مسجلة في شبكة الطلبات" : "Documented Destination Markets"}
-                </p>
-                <span className="text-[11px] text-muted-foreground block mt-0.5 text-center">
-                  {ar ? "عبر 6 قارات حول العالم" : "Across 6 Global Continents"}
-                </span>
-              </div>
-
-              <div className="interactive-card glass-box-interactive group rounded-3xl p-5 sm:p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer text-center flex flex-col items-center justify-center">
-                <span className="font-head text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">
-                  {TRADE_STATS.totalRecords}
-                </span>
-                <p className="text-xs sm:text-sm font-bold text-foreground mt-1.5 text-center">
-                  {ar ? "طلب شراء تجاري معتمد" : "Recorded Purchase Inquiries"}
-                </p>
-                <span className="text-[11px] text-muted-foreground block mt-0.5 text-center">
-                  {ar ? "أرشيف الطلبات للأعوام 2024–2026" : "2024–2026 Verified Records"}
-                </span>
-              </div>
-
-              <div className="interactive-card glass-box-interactive group rounded-3xl p-5 sm:p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer text-center flex flex-col items-center justify-center">
-                <span className="font-head text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">
-                  {TRADE_STATS.records2025}
-                </span>
-                <p className="text-xs sm:text-sm font-bold text-foreground mt-1.5 text-center">
-                  {ar ? "طلبات شراء عام 2025 الموثقة" : "2025 Documented Inquiries"}
-                </p>
-                <span className="text-[11px] text-muted-foreground block mt-0.5 text-center">
-                  {ar ? "بيانات موثقة ومُثرية بالأصل" : "Curated & Enriched Records"}
-                </span>
-              </div>
-
-              <div className="interactive-card glass-box-interactive group rounded-3xl p-5 sm:p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer text-center flex flex-col items-center justify-center">
-                <span className="font-head text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">
-                  {TRADE_STATS.archiveTotalMessages}
-                </span>
-                <p className="text-xs sm:text-sm font-bold text-foreground mt-1.5 text-center">
-                  {ar ? "إجمالي رسائل الأرشيف التجاري" : "Total Commercial Archive Logs"}
-                </p>
-                <span className="text-[11px] text-muted-foreground block mt-0.5 text-center">
-                  {ar ? "627 طلب شراء • 347 تنبيه سوقي" : "627 Inquiries • 347 Market Alerts"}
-                </span>
-              </div>
-            </div>
-
-            {/* Section 1: Interactive World Map */}
-            <section id="world-map" className="scroll-mt-32 space-y-6">
+          {/* Section 1: Interactive World Map */}
+          <section id="world-map" className="scroll-mt-32 space-y-6">
               <TradeWorldMap ar={ar} onSelectCountry={handleCountrySelect} />
             </section>
 

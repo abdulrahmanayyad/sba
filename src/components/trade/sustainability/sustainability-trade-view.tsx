@@ -48,22 +48,22 @@ export function SustainabilityTradeView({ ar = true, hideHero = false }: Sustain
                     <span className="size-2 rounded-full bg-brand-green animate-pulse" />
                     <span>
                       {ar
-                        ? "مجموعة سامي بن عياد · الفرص العالمية | قطاع البيئة المستدامة"
-                        : "SAMI BIN AYYAD GROUP · Global Sustainability Opportunities"}
+                        ? "مجموعة سامي بن عياد · الفرص العالمية"
+                        : "SAMI BIN AYYAD GROUP · Global Opportunities"}
                     </span>
                   </div>
                 </div>
 
                 <h1 className="font-head text-2xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight tracking-tight text-start drop-shadow-md max-w-4xl">
                   {ar
-                    ? "حلول بيئية متكاملة، واستشارات امتثال صناعي، وشراكات في الطاقة النظيفة والاقتصاد الدائري"
-                    : "Integrated Environmental Solutions, Industrial Compliance, Clean Energy & Circular Economy Alliances"}
+                    ? "حلول واستشارات بيئية متكاملة"
+                    : "Integrated Environmental Solutions & Advisory"}
                 </h1>
 
                 <p className="mt-4 max-w-3xl text-sm sm:text-base text-slate-200 leading-relaxed font-sans text-start">
                   {ar
-                    ? "بوابة استثمارية وشراكات تشغيلية تربط المبادرات الوطنية الكبرى والمصانع الإقليمية بأحدث التقنيات والحلول المستدامة، مع إفصاح كامل وموثق عن نطاق التنفيذ المباشر وعبر التحالفات الاستراتيجية المعتمدة."
-                    : "A business gateway connecting national green mega-programs and industrial facilities with advanced sustainability solutions, featuring transparent disclosure of direct scope and certified consortium alliances."}
+                    ? "بوابة استثمارية وشراكات تشغيلية تربط الشركات الكبرى بأحدث التقنيات والحلول المستدامة"
+                    : "A business gateway connecting leading enterprises with advanced sustainability technologies and solutions."}
                 </p>
               </Reveal>
             </div>

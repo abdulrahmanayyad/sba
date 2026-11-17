@@ -46,8 +46,8 @@ export function ApparelTradeView({ ar = true, hideHero = false }: ApparelTradeVi
                     <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
                     <span>
                       {ar
-                        ? "مجموعة سامي بن عياد · الفرص العالمية | قطاع الملابس والمنسوجات"
-                        : "SAMI BIN AYYAD GROUP · Global Apparel & Textile Opportunities"}
+                        ? "مجموعة سامي بن عياد · الفرص العالمية"
+                        : "SAMI BIN AYYAD GROUP · Global Opportunities"}
                     </span>
                   </div>
                 </div>
@@ -55,8 +55,8 @@ export function ApparelTradeView({ ar = true, hideHero = false }: ApparelTradeVi
                 {/* Main Headline */}
                 <h1 className="font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white leading-snug tracking-tight text-start drop-shadow-md max-w-4xl">
                   {ar
-                    ? "تصنيع تعاقدي، وتوريد مرن، وشراكات تصديرية موثوقة للأسواق العالمية"
-                    : "Contract Manufacturing, Agile Sourcing & Trusted Global Export Partnerships"}
+                    ? "تصنيع تعاقدي وتوريد مرن وشراكات موثوقة"
+                    : "Contract Manufacturing, Agile Sourcing & Trusted Partnerships"}
                 </h1>
 
                 {/* Intro Paragraph */}
