@@ -158,7 +158,7 @@ export function SustainabilityFormsSection({ ar = true }: SustainabilityFormsSec
               : "border-border/80 bg-secondary/80 text-foreground hover:border-brand-orange/50 hover:text-brand-orange"
           )}
         >
-          {ar ? "1. تقديم مشروع أو فرصة استثمارية بيئية" : "1. Submit Project / Investment Opportunity"}
+          {ar ? "تقديم مشروع أو فرصة استثمارية بيئية" : "Submit Project / Investment Opportunity"}
         </button>
 
         <button
@@ -171,7 +171,7 @@ export function SustainabilityFormsSection({ ar = true }: SustainabilityFormsSec
               : "border-border/80 bg-secondary/80 text-foreground hover:border-brand-orange/50 hover:text-brand-orange"
           )}
         >
-          {ar ? "2. طلب خدمات وحلول بيئية للمصانع والمنشآت" : "2. Request Environmental Solutions & Services"}
+          {ar ? "طلب خدمات وحلول بيئية للمصانع والمنشآت" : "Request Environmental Solutions & Services"}
         </button>
       </div>
 
