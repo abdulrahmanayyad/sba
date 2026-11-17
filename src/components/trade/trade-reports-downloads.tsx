@@ -202,7 +202,8 @@ export function TradeReportsDownloads({ ar = true }: TradeReportsDownloadsProps)
 
           {/* Main Info */}
           <div className="lg:col-span-7 space-y-3 order-2">
-            <div className="inline-flex items-center gap-2 rounded-full border border-brand-orange/30 bg-brand-orange/10 px-3 py-1 text-xs font-bold text-brand-orange">
+            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
+              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
               <span>{ar ? "عطاءات ومناقصات دولية" : "International Tenders"}</span>
             </div>
             <h3 className="text-xl sm:text-2xl font-black text-foreground">

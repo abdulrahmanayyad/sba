@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from "react";
+import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { 
   COUNTRY_PROFILES, 
@@ -86,7 +87,7 @@ export function TradeWorldMap({ ar = true, onSelectCountry }: TradeWorldMapProps
   };
 
   return (
-    <div id="world-map" className="interactive-card glass-box-interactive w-full rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl backdrop-blur-2xl transition-all duration-300">
+    <div id="world-map" className="interactive-card glass-box-interactive !overflow-visible w-full rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl backdrop-blur-2xl transition-all duration-300">
       {/* Title & Description */}
       <div>
         <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md shadow-xs">
@@ -98,8 +99,8 @@ export function TradeWorldMap({ ar = true, onSelectCountry }: TradeWorldMapProps
         </h2>
         <p className="text-xs sm:text-sm text-muted-foreground mt-2.5 sm:mt-3 leading-relaxed max-w-4xl">
           {ar
-            ? "بيان للدول التي قامت بتسجيل طلبات شراء تجارية خلال عام 2025"
-            : "Overview of countries that recorded commercial purchase requests during 2025."}
+            ? "بيان للدول التي قامت بتسجيل طلبات شراء تجارية"
+            : "Overview of countries that recorded commercial purchase requests."}
         </p>
       </div>
 
@@ -142,9 +143,15 @@ export function TradeWorldMap({ ar = true, onSelectCountry }: TradeWorldMapProps
             <button
               type="button"
               onClick={() => setIsCategoryOpen(!isCategoryOpen)}
-              className="rounded-xl border border-foreground/25 bg-background/95 px-3.5 py-1.5 text-xs font-semibold text-foreground shadow-sm hover:border-brand-orange focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 cursor-pointer transition-all flex items-center justify-between gap-2 min-w-[125px]"
+              className="rounded-xl border border-foreground/25 bg-background/95 px-3.5 py-1.5 text-xs font-semibold text-foreground shadow-sm hover:border-brand-orange focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/30 cursor-pointer transition-all flex items-center justify-between gap-2 min-w-[130px]"
             >
               <span>{ar ? (categories.find((c) => c.id === selectedCategory)?.labelAr || "كافة القطاعات") : (categories.find((c) => c.id === selectedCategory)?.labelEn || "All Inquiries")}</span>
+              <ChevronDown
+                className={cn(
+                  "size-3.5 text-muted-foreground shrink-0 transition-transform duration-200",
+                  isCategoryOpen && "rotate-180 text-brand-orange"
+                )}
+              />
             </button>
 
             {isCategoryOpen && (
@@ -153,7 +160,7 @@ export function TradeWorldMap({ ar = true, onSelectCountry }: TradeWorldMapProps
                   className="fixed inset-0 z-40"
                   onClick={() => setIsCategoryOpen(false)}
                 />
-                <div className="absolute start-0 top-full mt-1.5 z-50 min-w-[170px] rounded-xl border border-border bg-background/95 p-1.5 shadow-xl backdrop-blur-xl animate-in fade-in zoom-in-95 duration-150">
+                <div className="absolute end-0 top-full mt-1.5 z-50 min-w-[170px] rounded-xl border border-border bg-background/95 p-1.5 shadow-xl backdrop-blur-xl animate-in fade-in zoom-in-95 duration-150">
                   {categories.map((cat) => (
                     <button
                       key={cat.id}

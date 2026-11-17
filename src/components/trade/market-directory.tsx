@@ -1,4 +1,5 @@
 import React, { useState, useMemo, useEffect } from "react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 import { COUNTRY_PROFILES, ALL_INQUIRIES, CountryTradeProfile } from "@/lib/trade-data";
 import {
   isValidInfo,
@@ -64,7 +65,19 @@ export function MarketDirectory({ ar = true, selectedCountryCode }: MarketDirect
   }, [search, continentFilter, categoryFilter]);
 
   const toggleExpand = (code: string) => {
-    setExpandedCountry((prev) => (prev === code ? null : code));
+    setExpandedCountry((prev) => {
+      const willClose = prev === code;
+      if (willClose) {
+        setTimeout(() => {
+          const el = document.getElementById(`country-card-${code}`);
+          if (el) {
+            el.scrollIntoView({ behavior: "smooth", block: "center" });
+          }
+        }, 50);
+        return null;
+      }
+      return code;
+    });
   };
 
   const visibleCountries = useMemo(() => {
@@ -162,16 +175,30 @@ export function MarketDirectory({ ar = true, selectedCountryCode }: MarketDirect
 
           return (
             <div
+              id={`country-card-${country.code}`}
               key={country.code}
+              onClick={() => {
+                if (!isExpanded) {
+                  toggleExpand(country.code);
+                }
+              }}
               className={`interactive-card glass-box-interactive group flex flex-col justify-between rounded-3xl border transition-all duration-300 ${
                 isExpanded
                   ? "border-brand-orange/60 bg-background/90 shadow-2xl ring-2 ring-brand-orange/20 md:col-span-2 lg:col-span-3"
-                  : "border-white/15 bg-background/60 hover:border-white/30 hover:bg-background/80 hover:-translate-y-1 hover:shadow-xl"
+                  : "border-white/15 bg-background/60 hover:border-brand-orange/50 hover:bg-background/80 hover:-translate-y-1 hover:shadow-xl cursor-pointer"
               } p-5 backdrop-blur-xl`}
             >
               {/* Card Header */}
               <div>
-                <div className="flex items-start justify-between gap-3">
+                <div
+                  className={`flex items-start justify-between gap-3 ${isExpanded ? "cursor-pointer" : ""}`}
+                  onClick={(e) => {
+                    if (isExpanded) {
+                      e.stopPropagation();
+                      toggleExpand(country.code);
+                    }
+                  }}
+                >
                   <div className="flex items-center gap-3">
                     <img
                       src={`https://flagcdn.com/w40/${country.code.toLowerCase()}.png`}
@@ -190,9 +217,16 @@ export function MarketDirectory({ ar = true, selectedCountryCode }: MarketDirect
                     </div>
                   </div>
 
-                  <span className="flex items-center rounded-full border border-brand-green bg-brand-green px-3 py-1 text-xs font-bold text-white shadow-xs">
-                    <span>{country.totalInquiries} {ar ? "طلب شراء" : "Inquiries"}</span>
-                  </span>
+                  <div className="flex items-center gap-2">
+                    <span className="flex items-center rounded-full border border-brand-green bg-brand-green px-3 py-1 text-xs font-bold text-white shadow-xs">
+                      <span>{country.totalInquiries} {ar ? "طلب شراء" : "Inquiries"}</span>
+                    </span>
+                    {isExpanded ? (
+                      <ChevronUp className="size-4 text-brand-orange shrink-0" />
+                    ) : (
+                      <ChevronDown className="size-4 text-muted-foreground group-hover:text-brand-orange transition-colors shrink-0" />
+                    )}
+                  </div>
                 </div>
 
                 {/* Badges breakdown */}
@@ -257,6 +291,7 @@ export function MarketDirectory({ ar = true, selectedCountryCode }: MarketDirect
                         return (
                           <div
                             key={inq.id || iIdx}
+                            onClick={(e) => e.stopPropagation()}
                             className="group/inq relative rounded-2xl border border-black/15 bg-white/80 dark:bg-white/70 backdrop-blur-xl p-4 text-xs space-y-3 shadow-md transition-all duration-300 hover:bg-white/95 hover:border-black/35 hover:shadow-xl hover:-translate-y-0.5 text-black font-sans"
                           >
                             <div className="flex items-center justify-between text-[11px] font-sans">
@@ -338,8 +373,11 @@ export function MarketDirectory({ ar = true, selectedCountryCode }: MarketDirect
               {/* Toggle Button */}
               <button
                 type="button"
-                onClick={() => toggleExpand(country.code)}
-                className="mt-4 flex w-full items-center justify-center gap-1.5 rounded-xl border border-white/10 bg-white/5 py-2 text-xs font-semibold text-foreground/80 transition-all hover:bg-white/10 hover:text-brand-orange"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  toggleExpand(country.code);
+                }}
+                className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 py-2.5 text-xs font-semibold text-foreground/80 transition-all hover:bg-white/10 hover:text-brand-orange cursor-pointer"
               >
                 <span>
                   {isExpanded
@@ -350,6 +388,11 @@ export function MarketDirectory({ ar = true, selectedCountryCode }: MarketDirect
                     ? `عرض كافة طلبات الشراء (${country.totalInquiries})`
                     : `View Full Purchase Requests (${country.totalInquiries})`}
                 </span>
+                {isExpanded ? (
+                  <ChevronUp className="size-3.5" />
+                ) : (
+                  <ChevronDown className="size-3.5" />
+                )}
               </button>
             </div>
           );
