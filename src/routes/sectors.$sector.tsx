@@ -10,7 +10,7 @@ import { FoodSectorView, type FoodTab } from "@/components/sectors/food/food-vie
 const validConstructionTabs: ConstructionTab[] = ["about", "sectors", "services", "projects", "join", "start-project", "verify-portal", "verification-admin"];
 const validGarmentTabs: GarmentTab[] = ["about", "services", "clients", "projects", "partners", "join", "start-project"];
 const validEnvironmentalTabs: EnvironmentalTab[] = ["about", "sectors", "services", "markets", "products", "join", "start-consultation"];
-const validFoodTabs: FoodTab[] = ["about", "sectors", "products", "markets", "order-product", "join"];
+const validFoodTabs: FoodTab[] = ["about", "sectors", "quality", "products", "markets", "order-product", "join"];
 
 export const Route = createFileRoute("/sectors/$sector")({
   validateSearch: (search: Record<string, unknown>): { tab?: string | undefined; service?: string | undefined; token?: string | undefined } => {
