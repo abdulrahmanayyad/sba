@@ -117,7 +117,17 @@ export function SustainabilityTargetMarkets({ ar = true }: SustainabilityTargetM
             <div>
               <div className="flex items-start justify-between gap-3 border-b border-white/10 pb-4">
                 <div className="flex items-center gap-3">
-                  <span className="text-3xl">{market.flag}</span>
+                  {market.countryCode ? (
+                    <img
+                      src={`https://flagcdn.com/w80/${market.countryCode.toLowerCase()}.png`}
+                      srcSet={`https://flagcdn.com/w160/${market.countryCode.toLowerCase()}.png 2x`}
+                      alt={ar ? market.countryAr : market.countryEn}
+                      className="h-7 w-10 sm:h-8 sm:w-11 rounded-md object-cover border border-white/20 shadow-sm shrink-0"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <span className="text-3xl">{market.flag}</span>
+                  )}
                   <div>
                     <h3 className="text-base sm:text-lg font-bold text-foreground">
                       {ar ? market.countryAr : market.countryEn}

@@ -169,7 +169,17 @@ export function SustainabilityOpportunityDatabase({ ar = true }: SustainabilityO
                         {opp.id}
                       </span>
                       <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-foreground">
-                        <span>{opp.flag}</span>
+                        {opp.countryCode ? (
+                          <img
+                            src={`https://flagcdn.com/w40/${opp.countryCode.toLowerCase()}.png`}
+                            srcSet={`https://flagcdn.com/w80/${opp.countryCode.toLowerCase()}.png 2x`}
+                            alt={ar ? opp.countryAr : opp.countryEn}
+                            className="h-3.5 w-5 rounded-[2px] object-cover border border-white/20 shadow-2xs shrink-0"
+                            loading="lazy"
+                          />
+                        ) : (
+                          <span>{opp.flag}</span>
+                        )}
                         <span>{ar ? opp.countryAr : opp.countryEn}</span>
                       </span>
                       <span className="text-muted-foreground text-[10px]">•</span>
