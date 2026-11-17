@@ -133,13 +133,6 @@ export function SustainabilityTargetMarkets({ ar = true }: SustainabilityTargetM
                       {ar ? market.countryAr : market.countryEn}
                     </h3>
                     <div className="flex items-center gap-2 mt-0.5">
-                      <span className={cn(
-                        "rounded-md px-2 py-0.5 text-[10px] font-bold",
-                        market.priority === "tier1" ? "bg-brand-green/20 text-brand-green border border-brand-green/30" : "bg-secondary text-muted-foreground border border-border"
-                      )}>
-                        {market.priority === "tier1" ? (ar ? "أولوية أولى (Tier 1)" : "Priority Tier 1") : (ar ? "أولوية ثانية (Tier 2)" : "Priority Tier 2")}
-                      </span>
-                      <span className="text-muted-foreground text-[10px]">•</span>
                       <span className="text-[11px] font-medium text-muted-foreground">
                         {ar ? market.classificationAr : market.classificationEn}
                       </span>
@@ -147,14 +140,23 @@ export function SustainabilityTargetMarkets({ ar = true }: SustainabilityTargetM
                   </div>
                 </div>
 
-                <a
-                  href={market.officialSourceUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 rounded-xl border border-white/10 bg-secondary/60 px-2.5 py-1 text-[11px] font-semibold text-brand-orange hover:bg-brand-orange hover:text-white transition-all shadow-2xs shrink-0"
-                >
-                  <span>{ar ? "المصدر الرسمي" : "Official Source"}</span>
-                </a>
+                <div className="flex flex-wrap items-center gap-2 shrink-0">
+                  <span className={cn(
+                    "rounded-xl px-2.5 py-1 text-[11px] font-bold border",
+                    market.priority === "tier1" ? "bg-brand-green/20 text-brand-green border-brand-green/30" : "bg-secondary text-muted-foreground border-border"
+                  )}>
+                    {market.priority === "tier1" ? (ar ? "أولوية أولى (Tier 1)" : "Priority Tier 1") : (ar ? "أولوية ثانية (Tier 2)" : "Priority Tier 2")}
+                  </span>
+
+                  <a
+                    href={market.officialSourceUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 rounded-xl border border-white/10 bg-secondary/60 px-2.5 py-1 text-[11px] font-semibold text-brand-orange hover:bg-brand-orange hover:text-white transition-all shadow-2xs"
+                  >
+                    <span>{ar ? "المصدر الرسمي" : "Official Source"}</span>
+                  </a>
+                </div>
               </div>
 
               {/* Summary */}
