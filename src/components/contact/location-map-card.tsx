@@ -9,8 +9,8 @@ export function LocationMapCard({ ar = true, className = "" }: LocationMapCardPr
   // Direct Google Maps location search URL for BUE Science & Innovation Park
   const MAPS_URL = "https://www.google.com/maps/search/?api=1&query=30.1030235,31.6033879+(The+British+University+in+Egypt+-+BUE+Science+%26+Innovation+Park)";
 
-  // Exact zoom scale (1d27613.5) framing Road 50, Madinaty, BUE, and All Seasons Park
-  const EMBED_SRC = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27613.535053323414!2d31.60338787555627!3d30.103023474895692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145817c76899144d%3A0xe54d6faebdf98687!2sThe%20British%20University%20in%20Egypt%20(BUE)!5e0!3m2!1sen!2seg!4v1700000000000!5m2!1sen!2seg";
+  // Exact zoom scale (1d55227.07 / zoom 12.1) zoomed out 1x to prominently feature BUE (The British University in Egypt), Road 50, Madinaty, and surrounding landmarks
+  const EMBED_SRC = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55227.07010664683!2d31.60338787555627!3d30.103023474895692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f12.1!3m3!1m2!1s0x145817c76899144d%3A0xe54d6faebdf98687!2sThe%20British%20University%20in%20Egypt%20(BUE)!5e0!3m2!1sen!2seg!4v1700000000000!5m2!1sen!2seg";
 
   return (
     <div
