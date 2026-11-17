@@ -39,7 +39,7 @@ export function RealEstateTradeView({ ar = true, hideHero = false }: RealEstateT
       {!hideHero && (
         <section className="relative w-full min-h-[calc(100svh-76px)] overflow-hidden text-white flex flex-col justify-center mb-12">
           <img
-            src="/Background/Trusted Real Estate Advisory, Asset Management & Institutional Alliances.jpg"
+            src="/Background/Main Background - SAMI BIN AYYAD GROUP · Global Opportunities.jpg"
             alt={ar ? "الفرص العقارية والاستثمارية الدولية - مجموعة سامي بن عياد" : "Global Real Estate & Investment Opportunities - Sami Bin Ayyad Group"}
             className="absolute inset-0 size-full object-cover object-center pointer-events-none select-none"
             fetchPriority="high"

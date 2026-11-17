@@ -85,9 +85,11 @@ export function TradePage({ ar = true }: TradePageProps) {
     },
   ];
 
+  const GLOBAL_OPPORTUNITIES_BG = "/Background/Main Background - SAMI BIN AYYAD GROUP · Global Opportunities.jpg";
+
   const heroContent = {
     food: {
-      bg: "/BG/Main Home Page.jpg",
+      bg: GLOBAL_OPPORTUNITIES_BG,
       badgeAr: "مجموعة سامي بن عياد · الفرص العالمية",
       badgeEn: "SAMI BIN AYYAD GROUP · Global Opportunities",
       titleAr: "نربط الأسواق العالمية، ونصنع الفرص التجارية الموثوقة",
@@ -96,7 +98,7 @@ export function TradePage({ ar = true }: TradePageProps) {
       descEn: "A documented corporate showcase of our commercial inquiry network and buyer demand registry across 84 countries worldwide."
     },
     apparel: {
-      bg: "/BG/Apparel & Fashion/Apparel & Fashion Home Page.jpg",
+      bg: GLOBAL_OPPORTUNITIES_BG,
       badgeAr: "مجموعة سامي بن عياد · الفرص العالمية",
       badgeEn: "SAMI BIN AYYAD GROUP · Global Opportunities",
       titleAr: "تصنيع تعاقدي وتوريد مرن وشراكات موثوقة",
@@ -105,7 +107,7 @@ export function TradePage({ ar = true }: TradePageProps) {
       descEn: "A documented corporate showcase of our Egyptian manufacturing network, export opportunities, and verified buyer inquiry registry for apparel and textiles."
     },
     sustainability: {
-      bg: "/BG/Environment & Sustainability/Sustainable Environmental Home Page.jpg",
+      bg: GLOBAL_OPPORTUNITIES_BG,
       badgeAr: "مجموعة سامي بن عياد · الفرص العالمية",
       badgeEn: "SAMI BIN AYYAD GROUP · Global Opportunities",
       titleAr: "حلول واستشارات بيئية متكاملة",
@@ -114,7 +116,7 @@ export function TradePage({ ar = true }: TradePageProps) {
       descEn: "A business gateway connecting leading enterprises with advanced sustainability technologies and solutions."
     },
     "real-estate": {
-      bg: "/Background/Trusted Real Estate Advisory, Asset Management & Institutional Alliances.jpg",
+      bg: GLOBAL_OPPORTUNITIES_BG,
       badgeAr: "مجموعة سامي بن عياد · الفرص العالمية",
       badgeEn: "SAMI BIN AYYAD GROUP · Global Opportunities",
       titleAr: "خبرات مهنية واستثمارية موثوقة",
