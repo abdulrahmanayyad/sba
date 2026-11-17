@@ -29,7 +29,7 @@ export function SustainabilityTradeView({ ar = true, hideHero = false }: Sustain
       {!hideHero && (
         <section className="relative w-full min-h-[calc(100svh-76px)] overflow-hidden text-white flex flex-col justify-center mb-12">
           <img
-            src="/Background/Main Background - SAMI BIN AYYAD GROUP · Global Opportunities.jpg"
+            src={encodeURI("/Background/Main Background - SAMI BIN AYYAD GROUP · Global Opportunities.jpg")}
             alt={
               ar
                 ? "الفرص العالمية | قطاع البيئة المستدامة - مجموعة سامي بن عياد"

@@ -85,7 +85,7 @@ export function TradePage({ ar = true }: TradePageProps) {
     },
   ];
 
-  const GLOBAL_OPPORTUNITIES_BG = "/Background/Main Background - SAMI BIN AYYAD GROUP · Global Opportunities.jpg";
+  const GLOBAL_OPPORTUNITIES_BG = encodeURI("/Background/Main Background - SAMI BIN AYYAD GROUP · Global Opportunities.jpg");
 
   const heroContent = {
     food: {
