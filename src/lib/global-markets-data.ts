@@ -374,7 +374,7 @@ export const GLOBAL_MARKET_SECTORS: GlobalMarketSectorConfig[] = [
   {
     id: "garment",
     order: 3,
-    nameAr: "قطاع الملابس والمنسوجات",
+    nameAr: "قطاع الملابس الجاهزة",
     nameEn: "Apparel & Textiles",
     shortDescAr:
       "تحليل أسواق التصدير والتصنيع التعاقدي للملابس والمنسوجات والأقمشة",
@@ -504,7 +504,7 @@ export const APPROVAL_STATUS_LABELS: Record<
     badgeClass: "border-amber-500/40 bg-amber-500/10 text-amber-700",
   },
   approved: {
-    ar: "معتمدة للنشر والتنزيل",
+    ar: "موثقة ومعتمدة",
     en: "Approved",
     badgeClass: "border-brand-green/40 bg-brand-green/10 text-brand-green",
   },

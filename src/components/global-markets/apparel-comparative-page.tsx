@@ -361,7 +361,7 @@ export function ApparelComparativePage({
               </h2>
             </div>
             <span className="text-xs font-bold text-slate-500">
-              {ar ? `المعروض: ${filteredStudies.length} من ${garmentStudies.length} دولة` : `Showing ${filteredStudies.length} of ${garmentStudies.length} markets`}
+              {ar ? `المعروض: ${filteredStudies.length} من ${sectorStudies.length} دولة` : `Showing ${filteredStudies.length} of ${sectorStudies.length} markets`}
             </span>
           </div>
 

@@ -1,19 +1,5 @@
 import { useMemo, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import {
-  Archive,
-  CheckCircle2,
-  Copy,
-  Download,
-  Edit3,
-  Eye,
-  FileJson,
-  FileUp,
-  FolderCog,
-  Plus,
-  Trash2,
-  Upload,
-} from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
@@ -326,7 +312,7 @@ export function GlobalMarketsCmsTab({ ar = true }: GlobalMarketsCmsTabProps) {
             <th className="py-3 px-3 text-start">{ar ? "العنوان والسوق" : "Title & Market"}</th>
             <th className="py-3 px-3 text-start">{ar ? "القطاع" : "Sector"}</th>
             <th className="py-3 px-3 text-start">{ar ? "الحالة" : "Status"}</th>
-            <th className="py-3 px-3 text-start">{ar ? "الاعتماد" : "Approval"}</th>
+            <th className="py-3 px-3 text-start">{ar ? "التوثيق" : "Documentation"}</th>
             <th className="py-3 px-3 text-start">{ar ? "التحديث" : "Updated"}</th>
             <th className="py-3 px-3 text-end">{ar ? "إجراءات" : "Actions"}</th>
           </tr>
@@ -375,35 +361,31 @@ export function GlobalMarketsCmsTab({ ar = true }: GlobalMarketsCmsTabProps) {
                     <Link
                       to="/global-markets/$sector/$slug"
                       params={{ sector: sectorId, slug: study.slug }}
-                      className="rounded-lg border border-slate-200 dark:border-white/10 p-1.5 text-slate-700 dark:text-slate-300 hover:border-brand-green hover:text-brand-green hover:bg-brand-green/10 transition-colors"
-                      title={ar ? "معاينة" : "Preview"}
+                      className="rounded-lg border border-slate-200 dark:border-white/10 px-2.5 py-1 text-xs font-semibold text-slate-700 dark:text-slate-300 hover:border-brand-green hover:text-brand-green hover:bg-brand-green/10 transition-colors"
                     >
-                      <Eye className="size-3.5" />
+                      {ar ? "معاينة" : "Preview"}
                     </Link>
                     <button
                       type="button"
                       onClick={() => openEditor(study)}
-                      className="rounded-lg border border-slate-200 dark:border-white/10 p-1.5 text-slate-700 dark:text-slate-300 hover:border-brand-orange hover:text-brand-orange hover:bg-brand-orange/10 transition-colors cursor-pointer"
-                      title={ar ? "تعديل" : "Edit"}
+                      className="rounded-lg border border-slate-200 dark:border-white/10 px-2.5 py-1 text-xs font-semibold text-slate-700 dark:text-slate-300 hover:border-brand-orange hover:text-brand-orange hover:bg-brand-orange/10 transition-colors cursor-pointer"
                     >
-                      <Edit3 className="size-3.5" />
+                      {ar ? "تعديل" : "Edit"}
                     </button>
                     <button
                       type="button"
                       onClick={() => handleArchiveStudy(study)}
-                      className="rounded-lg border border-slate-200 p-1.5 text-amber-600 hover:bg-amber-50 cursor-pointer"
-                      title={ar ? "أرشفة" : "Archive"}
+                      className="rounded-lg border border-slate-200 px-2.5 py-1 text-xs font-semibold text-amber-600 hover:bg-amber-50 cursor-pointer"
                     >
-                      <Archive className="size-3.5" />
+                      {ar ? "أرشفة" : "Archive"}
                     </button>
                     {study.isCustomStored && (
                       <button
                         type="button"
                         onClick={() => handleDeleteStudy(study.id)}
-                        className="rounded-lg border border-slate-200 p-1.5 text-red-600 hover:bg-red-50 cursor-pointer"
-                        title={ar ? "حذف" : "Delete"}
+                        className="rounded-lg border border-slate-200 px-2.5 py-1 text-xs font-semibold text-red-600 hover:bg-red-50 cursor-pointer"
                       >
-                        <Trash2 className="size-3.5" />
+                        {ar ? "حذف" : "Delete"}
                       </button>
                     )}
                   </div>
@@ -421,24 +403,18 @@ export function GlobalMarketsCmsTab({ ar = true }: GlobalMarketsCmsTabProps) {
       {/* Header Toolbar */}
       <div className="rounded-3xl border border-slate-200/80 dark:border-white/15 bg-white/80 dark:bg-slate-900/70 p-6 backdrop-blur-2xl shadow-md space-y-4">
         <div className="flex flex-wrap items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <div className="size-10 rounded-2xl bg-brand-green/10 text-brand-green border border-brand-green/20 flex items-center justify-center shrink-0 shadow-xs">
-              <FolderCog className="size-5" />
-            </div>
-            <div>
-              <h2 className="font-head text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white">
-                {ar ? "منظومة إدارة دراسات الأسواق العالمية" : "Global Markets Study Management System"}
-              </h2>
-            </div>
+          <div>
+            <h2 className="font-head text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white">
+              {ar ? "منظومة إدارة دراسات الأسواق العالمية" : "Global Markets Study Management System"}
+            </h2>
           </div>
 
           <div className="flex flex-wrap items-center gap-2">
             <Button
               type="button"
               onClick={() => openEditor(createEmptyStudy())}
-              className="rounded-full !bg-brand-green hover:!bg-brand-orange !text-white text-xs font-bold gap-1.5 transition-all duration-300 cursor-pointer shadow-sm"
+              className="rounded-full !bg-brand-green hover:!bg-brand-orange !text-white text-xs font-bold transition-all duration-300 cursor-pointer shadow-sm px-4 py-2"
             >
-              <Plus className="size-3.5" />
               <span>{ar ? "إضافة دراسة جديدة" : "New Study"}</span>
             </Button>
           </div>
@@ -446,10 +422,7 @@ export function GlobalMarketsCmsTab({ ar = true }: GlobalMarketsCmsTabProps) {
 
         {statusMessage && (
           <div className="flex items-center justify-between gap-2 rounded-2xl border border-brand-green/35 bg-brand-green/10 px-4 py-2.5 text-xs font-bold text-brand-green">
-            <span className="flex items-center gap-2">
-              <CheckCircle2 className="size-4" />
-              <span>{statusMessage}</span>
-            </span>
+            <span>{statusMessage}</span>
             <button type="button" onClick={() => setStatusMessage(null)} className="cursor-pointer">
               ×
             </button>
@@ -511,58 +484,33 @@ export function GlobalMarketsCmsTab({ ar = true }: GlobalMarketsCmsTabProps) {
             {garmentStudies.length > 0 && (
               <div className="space-y-4">
                 <div className="flex flex-wrap items-center justify-between gap-3 border-b-2 border-brand-green/30 pb-3">
-                  <div className="flex items-center gap-2.5">
-                    <div className="size-9 rounded-2xl bg-brand-green/15 text-brand-green border border-brand-green/30 flex items-center justify-center font-bold text-base shadow-xs">
-                      👕
-                    </div>
-                    <div>
-                      <h3 className="font-head text-base font-extrabold text-slate-900 dark:text-white">
-                        {ar ? "دراسات قطاع الملابس والمنسوجات" : "Apparel & Textiles Sector Studies"}
-                      </h3>
-                      <p className="text-[11px] text-slate-500">
-                        {ar ? `${garmentStudies.length} دراسة سوقية معتمدة دولياً` : `${garmentStudies.length} verified studies`}
-                      </p>
-                    </div>
+                  <div>
+                    <h3 className="font-head text-base font-extrabold text-slate-900 dark:text-white">
+                      {ar ? "دراسات قطاع الملابس الجاهزة" : "Ready-Made Garments Sector Studies"}
+                    </h3>
+                    <p className="text-[11px] text-slate-500">
+                      {ar ? `${garmentStudies.length} دراسة معتمدة` : `${garmentStudies.length} verified studies`}
+                    </p>
                   </div>
                   <span className="rounded-full bg-brand-green/10 border border-brand-green/30 px-3.5 py-1 text-xs font-bold text-brand-green">
-                    {ar ? "قطاع الملابس والمنسوجات" : "Garment Sector"}
+                    {ar ? "قطاع الملابس الجاهزة" : "Ready-Made Garments Sector"}
                   </span>
                 </div>
                 {renderStudiesTable(garmentStudies)}
               </div>
             )}
 
-            {/* 2. Visual Separator Between Sectors */}
-            {garmentStudies.length > 0 && environmentalStudies.length > 0 && (
-              <div className="relative my-8 py-3">
-                <div className="absolute inset-0 flex items-center" aria-hidden="true">
-                  <div className="w-full border-t-2 border-dashed border-brand-green/30 dark:border-brand-green/20" />
-                </div>
-                <div className="relative flex justify-center">
-                  <span className="inline-flex items-center gap-2 rounded-full border-2 border-brand-green bg-white dark:bg-slate-900 px-6 py-2 text-xs font-black text-brand-green shadow-md">
-                    <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
-                    <span>{ar ? "فاصل منظم بين القطاعات المعتمدة" : "Standardized Divider Between Sectors"}</span>
-                  </span>
-                </div>
-              </div>
-            )}
-
-            {/* 3. Environmental Sector Section */}
+            {/* 2. Environmental Sector Section */}
             {environmentalStudies.length > 0 && (
               <div className="space-y-4">
                 <div className="flex flex-wrap items-center justify-between gap-3 border-b-2 border-emerald-500/30 pb-3">
-                  <div className="flex items-center gap-2.5">
-                    <div className="size-9 rounded-2xl bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30 flex items-center justify-center font-bold text-base shadow-xs">
-                      🌱
-                    </div>
-                    <div>
-                      <h3 className="font-head text-base font-extrabold text-slate-900 dark:text-white">
-                        {ar ? "دراسات قطاع البيئة المستدامة" : "Sustainable Environment Sector Studies"}
-                      </h3>
-                      <p className="text-[11px] text-slate-500">
-                        {ar ? `${environmentalStudies.length} دراسة سوقية معتمدة دولياً` : `${environmentalStudies.length} verified studies`}
-                      </p>
-                    </div>
+                  <div>
+                    <h3 className="font-head text-base font-extrabold text-slate-900 dark:text-white">
+                      {ar ? "دراسات قطاع البيئة المستدامة" : "Sustainable Environment Sector Studies"}
+                    </h3>
+                    <p className="text-[11px] text-slate-500">
+                      {ar ? `${environmentalStudies.length} دراسة معتمدة` : `${environmentalStudies.length} verified studies`}
+                    </p>
                   </div>
                   <span className="rounded-full bg-emerald-500/10 border border-emerald-500/30 px-3.5 py-1 text-xs font-bold text-emerald-700 dark:text-emerald-300">
                     {ar ? "قطاع البيئة المستدامة" : "Environmental Sector"}
@@ -600,7 +548,6 @@ export function GlobalMarketsCmsTab({ ar = true }: GlobalMarketsCmsTabProps) {
 
           <div className="space-y-4">
             <label className="flex items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-slate-300 p-4 text-xs font-bold text-slate-700 hover:border-brand-green cursor-pointer">
-              <FileUp className="size-4 text-brand-green" />
               <span>{ar ? "اختر ملف JSON من جهازك" : "Choose .json file from device"}</span>
               <input type="file" accept=".json,application/json" onChange={handleJsonFileUpload} className="hidden" />
             </label>
@@ -833,7 +780,6 @@ export function GlobalMarketsCmsTab({ ar = true }: GlobalMarketsCmsTabProps) {
                     dir="ltr"
                   />
                   <label className="inline-flex items-center gap-1.5 rounded-xl border border-slate-300 bg-white px-3 py-2 font-bold cursor-pointer hover:bg-slate-100">
-                    <Upload className="size-3.5" />
                     <span>{ar ? "رفع PDF" : "Upload PDF"}</span>
                     <input type="file" accept="application/pdf" onChange={handlePdfUpload} className="hidden" />
                   </label>
