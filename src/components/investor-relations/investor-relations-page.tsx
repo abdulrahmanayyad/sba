@@ -123,18 +123,27 @@ export function InvestorRelationsPage() {
   return (
     <div className="w-full">
       {/* 1. HERO SECTION */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-background via-secondary/15 to-background pt-20 pb-16">
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(16,185,129,0.09),rgba(255,255,255,0))]" />
-        <div className="site-container">
+      <section className="relative w-full min-h-[calc(70svh-76px)] sm:min-h-[calc(75svh-76px)] overflow-hidden text-white flex flex-col justify-center mb-10">
+        <img
+          src={encodeURI("/Background/Homepage Investment & Partnerships Background.jpg")}
+          alt={ar ? "الشراكات والاستثمار — مجموعة سامي بن عياد" : "Investment & Partnerships — Sami Bin Ayyad Group"}
+          className="absolute inset-0 size-full object-cover object-center pointer-events-none select-none"
+          fetchPriority="high"
+        />
+        <div className="group-hero-overlay absolute inset-0 bg-slate-950/70 backdrop-blur-[1px] pointer-events-none" />
+
+        <div className="site-container relative z-10 flex min-h-[inherit] flex-col justify-center py-16 sm:py-20">
           <Reveal>
-            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-4">
-              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-              <span>{ar ? investmentOverviewData.hero.badgeAr : investmentOverviewData.hero.badgeEn}</span>
+            <div className="flex items-center justify-start mb-5">
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/50 px-4 py-1.5 text-xs font-bold tracking-wide text-white/95 backdrop-blur-md shadow-md">
+                <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+                <span>{ar ? investmentOverviewData.hero.badgeAr : investmentOverviewData.hero.badgeEn}</span>
+              </div>
             </div>
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-foreground font-head max-w-4xl leading-tight">
+            <h1 className="font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white leading-snug tracking-tight text-start drop-shadow-md max-w-4xl">
               {ar ? investmentOverviewData.hero.titleAr : investmentOverviewData.hero.titleEn}
             </h1>
-            <p className="mt-5 max-w-3xl text-sm sm:text-base lg:text-lg leading-relaxed text-muted-foreground">
+            <p className="mt-3.5 max-w-3xl text-sm sm:text-base lg:text-lg leading-relaxed text-white/90 text-start drop-shadow-sm">
               {ar ? investmentOverviewData.hero.subtitleAr : investmentOverviewData.hero.subtitleEn}
             </p>
 
@@ -147,14 +156,14 @@ export function InvestorRelationsPage() {
                 </a>
               </Button>
 
-              <Button asChild variant="outline" size="lg" className="rounded-full">
+              <Button asChild variant="outline" size="lg" className="rounded-full bg-white/10 hover:bg-white/20 border-white/25 text-white backdrop-blur-md">
                 <a href="#investor-inquiry">
                   <span>{ar ? "طلب اجتماع استثماري رسمي" : "Request Institutional Meeting"}</span>
                   <Handshake className="size-4" />
                 </a>
               </Button>
 
-              <Button asChild variant="ghost" size="lg" className="rounded-full text-brand-green">
+              <Button asChild variant="ghost" size="lg" className="rounded-full text-emerald-300 hover:text-emerald-200 hover:bg-white/10">
                 <a href="#investor-documents">
                   <span>{ar ? "تحميل ملفات المستثمرين" : "Investor Data Room"}</span>
                   <Download className="size-4" />
