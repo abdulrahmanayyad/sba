@@ -1,18 +1,18 @@
 import { Link } from "@tanstack/react-router";
-import { 
-  Building2, 
-  CheckCircle2, 
-  Factory, 
-  Globe2, 
-  Layers, 
-  Scissors, 
-  Sparkles, 
-  TrendingUp, 
-  Trophy, 
-  Users, 
-  Workflow, 
-  ShieldCheck, 
-  Shirt, 
+import {
+  Building2,
+  CheckCircle2,
+  Factory,
+  Globe2,
+  Layers,
+  Scissors,
+  Sparkles,
+  TrendingUp,
+  Trophy,
+  Users,
+  Workflow,
+  ShieldCheck,
+  Shirt,
   ArrowRight,
   ExternalLink,
   Cpu,
@@ -24,9 +24,9 @@ import {
 import { Reveal } from "@/components/home/reveal";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/i18n/language-context";
-import { 
-  garmentAboutData, 
-  garmentProductionCapacity, 
+import {
+  garmentAboutData,
+  garmentProductionCapacity,
   garmentIndustrialCapabilities,
   garmentProductCategories,
   garmentServicesExpanded,
@@ -371,7 +371,7 @@ export function GarmentAboutTab() {
                   <div>
                     <div className="flex items-center justify-between mb-2">
                       <span className="font-mono text-xs font-bold text-brand-green-text">{srv.number}</span>
-                      <span className="text-[11px] font-bold text-brand-orange">{srv.subtitleEn}</span>
+                      {!ar && <span className="text-[11px] font-bold text-brand-orange">{srv.subtitleEn}</span>}
                     </div>
                     <h4 className="font-head text-base font-bold text-foreground group-hover:text-brand-green transition-colors">
                       {ar ? srv.titleAr : srv.titleEn}

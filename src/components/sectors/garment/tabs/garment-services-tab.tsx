@@ -72,11 +72,13 @@ export function GarmentServicesTab() {
 
                     {/* Card Content */}
                     <div className="p-6">
-                      <div className="flex items-center justify-between mb-1">
-                        <span className="text-xs font-bold text-brand-orange">
-                          {service.subtitleEn}
-                        </span>
-                      </div>
+                      {!ar && (
+                        <div className="flex items-center justify-between mb-1">
+                          <span className="text-xs font-bold text-brand-orange">
+                            {service.subtitleEn}
+                          </span>
+                        </div>
+                      )}
 
                       <h3 className="font-head text-lg sm:text-xl font-bold text-foreground mt-1">
                         {ar ? service.titleAr : service.titleEn}
@@ -206,9 +208,11 @@ export function GarmentServicesTab() {
                   <span className="font-mono text-xs font-bold px-2 py-0.5 rounded-md bg-brand-orange/15 text-brand-orange">
                     {selectedService.number}
                   </span>
-                  <span className="text-xs font-semibold text-muted-foreground">
-                    {selectedService.subtitleEn}
-                  </span>
+                  {!ar && (
+                    <span className="text-xs font-semibold text-muted-foreground">
+                      {selectedService.subtitleEn}
+                    </span>
+                  )}
                 </div>
                 <DialogTitle className="font-head text-2xl font-bold text-foreground">
                   {ar ? selectedService.titleAr : selectedService.titleEn}
