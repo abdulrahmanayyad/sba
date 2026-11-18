@@ -262,13 +262,22 @@ export function MarketComparisonPanel({
                   type="button"
                   onClick={() => toggleStudy(s.id)}
                   className={cn(
-                    "inline-flex items-center gap-1.5 rounded-full border px-3.5 py-1.5 text-xs font-bold transition-all cursor-pointer",
+                    "inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-bold transition-all cursor-pointer",
                     active
                       ? "border-brand-green bg-brand-green text-white hover:bg-brand-orange shadow-sm"
                       : "border-slate-200 bg-white text-slate-700 hover:bg-brand-orange hover:text-white hover:border-brand-orange dark:border-white/15 dark:bg-slate-800/60 dark:text-slate-200",
                   )}
                 >
-                  {active && <Check className="size-3.5" />}
+                  {active && <Check className="size-3.5 shrink-0" />}
+                  {s.countryCode && (
+                    <img
+                      src={`https://flagcdn.com/w40/${s.countryCode.toLowerCase()}.png`}
+                      srcSet={`https://flagcdn.com/w80/${s.countryCode.toLowerCase()}.png 2x`}
+                      alt=""
+                      className="h-3 w-4.5 rounded-[2px] object-cover border border-slate-300/60 dark:border-white/20 shrink-0"
+                      loading="lazy"
+                    />
+                  )}
                   <span>
                     {isConstruction
                       ? (ar
@@ -298,9 +307,22 @@ export function MarketComparisonPanel({
                   </th>
                   {selectedStudies.map((s) => (
                     <th key={s.id} className="px-4 py-3 font-extrabold text-start min-w-[180px]">
-                      <div>{ar ? s.countryNameAr : s.countryNameEn}</div>
+                      <div className="flex items-center gap-2">
+                        {s.countryCode && (
+                          <img
+                            src={`https://flagcdn.com/w40/${s.countryCode.toLowerCase()}.png`}
+                            srcSet={`https://flagcdn.com/w80/${s.countryCode.toLowerCase()}.png 2x`}
+                            alt={ar ? s.countryNameAr : s.countryNameEn}
+                            className="h-4 w-6 rounded-[2px] object-cover border border-slate-300/60 dark:border-white/20 shrink-0 shadow-2xs"
+                            loading="lazy"
+                          />
+                        )}
+                        <span className="text-sm font-bold text-slate-900 dark:text-white">
+                          {ar ? s.countryNameAr : s.countryNameEn}
+                        </span>
+                      </div>
                       {isConstruction && (ar ? s.subRegionOrProjectAr : s.subRegionOrProjectEn) && (
-                        <div className="text-[10px] font-semibold text-slate-500">
+                        <div className="text-[10px] font-semibold text-slate-500 mt-1">
                           {ar ? s.subRegionOrProjectAr : s.subRegionOrProjectEn}
                         </div>
                       )}
