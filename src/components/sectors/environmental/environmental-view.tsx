@@ -86,10 +86,19 @@ export function EnvironmentalSectorView({ tab = "about" }: EnvironmentalViewProp
   const validTabs: EnvironmentalTab[] = ["about", "sectors", "services", "markets", "products", "start-consultation", "join"];
   const activeTab: EnvironmentalTab = validTabs.includes(tab) ? tab : "about";
 
+  useEffect(() => {
+    if (tab === "sectors") {
+      const el = document.getElementById("sectors");
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [tab]);
+
   return (
     <div className="w-full">
-      {/* Sector Hero — Only displayed on About Us tab, full first screen */}
-      {activeTab === "about" && (
+      {/* Sector Hero — Displayed on About and Sectors */}
+      {(activeTab === "about" || activeTab === "sectors") && (
         <section className="relative w-full overflow-hidden text-footer-foreground min-h-screen flex items-center">
           <img
             data-clip-reveal
@@ -128,8 +137,7 @@ export function EnvironmentalSectorView({ tab = "about" }: EnvironmentalViewProp
 
       {/* Render Active Tab View */}
       <div className="py-8 space-y-12">
-        {activeTab === "about" && <EnvironmentalAboutView ar={ar} />}
-        {activeTab === "sectors" && <EnvironmentalSectorsView ar={ar} />}
+        {(activeTab === "about" || activeTab === "sectors") && <EnvironmentalAboutView ar={ar} />}
         {activeTab === "services" && <EnvironmentalServicesView ar={ar} />}
         {activeTab === "markets" && <EnvironmentalMarketsTab ar={ar} />}
         {activeTab === "products" && <EnvironmentalProductsView ar={ar} />}
@@ -427,32 +435,54 @@ function EnvironmentalAboutView({ ar }: { ar: boolean }) {
         </Reveal>
       </section>
 
-      {/* 6. INDUSTRIES WE SERVE */}
-      <section className="site-container">
+      {/* 6. INDUSTRIES WE SERVE — FULL SECTORS ARCHITECTURE */}
+      <section id="sectors" className="site-container scroll-mt-24">
         <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
           <Reveal>
-            <div className="text-center max-w-3xl mx-auto mb-10">
+            <div className="max-w-3xl">
               <SectionBadge title={ar ? "القطاعات والصناعات" : "Industries We Serve"} />
-              <h2 className="section-title mt-3 text-center mx-auto">{ar ? "دعم بيئي متخصص عبر كافة القطاعات الحيوية" : "Cross-Industry Environmental Expertise"}</h2>
-              <p className="section-intro mt-3 text-center mx-auto">
-                {ar ? "استشارات وحلول مدركة للمتطلبات التشغيلية والتجارية لكل صناعة." : "Commercial and technical advisory tailored to specific industrial workflows."}
-              </p>
-            </div>
-
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {sectors.map((sec) => (
-                <div key={sec.id} className="rounded-2xl border border-border/70 bg-card/60 p-5 backdrop-blur-md hover:border-brand-green transition-colors">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="font-mono text-xs font-bold text-brand-orange-text">{sec.number}</span>
-                    <h4 className="font-head text-sm font-bold text-foreground">{ar ? sec.nameAr : sec.nameEn}</h4>
-                  </div>
-                  <p className="text-xs text-muted-foreground leading-relaxed line-clamp-3">
-                    {ar ? sec.descAr : sec.descEn}
-                  </p>
-                </div>
-              ))}
+              <h2 className="section-title mt-3">{ar ? environmentalSectorsData.titleAr : environmentalSectorsData.titleEn}</h2>
+              <p className="section-intro mt-4">{ar ? environmentalSectorsData.subtitleAr : environmentalSectorsData.subtitleEn}</p>
             </div>
           </Reveal>
+
+          <div className="mt-12 space-y-8">
+            {sectors.map((sec, idx) => (
+              <Reveal key={sec.id} delay={idx * 0.05}>
+                <div className="glass-card overflow-hidden rounded-3xl border border-border p-6 sm:p-10">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-border pb-6">
+                    <div>
+                      <span className="font-mono text-xs uppercase tracking-widest text-brand-orange-text">{sec.number}</span>
+                      <h3 className="mt-1 font-head text-xl font-bold sm:text-2xl text-foreground">{ar ? sec.nameAr : sec.nameEn}</h3>
+                      <p className="mt-1 text-sm font-medium text-brand-green-text">{ar ? sec.taglineAr : sec.taglineEn}</p>
+                    </div>
+                    <Button asChild size="sm" variant="outline" className="rounded-full self-start">
+                      <Link to="/sectors/$sector" params={{ sector: "environmental" }} search={{ tab: "start-consultation", sector: sec.id }}>
+                        <span>{ar ? "طلب استشارة للقطاع" : "Sector Consultation"}</span>
+                        <ChevronRight className="size-3.5 ms-1 rtl:rotate-180" />
+                      </Link>
+                    </Button>
+                  </div>
+
+                  <p className="mt-6 text-sm sm:text-base leading-relaxed text-muted-foreground">{ar ? sec.descAr : sec.descEn}</p>
+
+                  <div className="mt-6 border-t border-border/50 pt-5">
+                    <h4 className="font-head text-xs font-bold uppercase tracking-wider text-foreground mb-3">
+                      {ar ? "أبرز القدرات ونطاقات العمل لهذا القطاع:" : "Key Sector Capabilities & Scopes:"}
+                    </h4>
+                    <div className="grid gap-2.5 sm:grid-cols-2">
+                      {sec.keyCapabilities.map((cap, cIdx) => (
+                        <div key={cIdx} className="flex items-start gap-2 text-xs sm:text-sm text-muted-foreground">
+                          <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-brand-green" />
+                          <span>{ar ? cap.ar : cap.en}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
