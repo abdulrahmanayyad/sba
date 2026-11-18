@@ -191,7 +191,7 @@ export const whySbaData = {
   title: "Built on Trust, Delivered with Precision",
   titleAr: "شراكة تبدأ برؤية وتستمر بالثقة والالتزام",
   lead: "SAMI BIN AYYAD GROUP seeks to build professional partnerships that deliver long-term value through a clear vision and a structured approach to business development.",
-  leadAr: "تسعى مجموعة سامي بن عياد إلى بناء شراكات مهنية تحقق قيمة طويلة الأجل من خلال رؤية واضحة ونهج منظم في تطوير الأعمال.",
+  leadAr: "تسعى مجموعة سامي بن عياد إلى بناء شراكات مهنية تحقق قيمة مستدامة من خلال رؤية ونهج منظم في تطوير الأعمال",
   pillars: [
     {
       title: "Strategic Diversification",
@@ -298,7 +298,7 @@ export const governanceData = {
     },
   ],
   conclusion: "These principles aim to balance operational flexibility with management discipline and support a responsible business environment for sustainable growth.",
-  conclusionAr: "تهدف هذه المبادئ إلى تحقيق التوازن بين المرونة التشغيلية والانضباط الإداري، وتعزيز بيئة أعمال مسؤولة تدعم النمو المستدام.",
+  conclusionAr: "تهدف هذه المبادئ إلى تحقيق التوازن بين المرونة التشغيلية والانضباط الإداري، وتعزيز بيئة أعمال مسؤولة تدعم النمو المستدام",
 };
 
 export const policiesData = {
@@ -383,7 +383,7 @@ export const policiesData = {
     },
   ],
   disclaimer: "These policies provide a general framework of guiding principles. The formal adoption, detailed implementation, and review of individual policies remain subject to the approved procedures of the Group and the relevant entities.",
-  disclaimerAr: "تمثل هذه السياسات إطارًا عامًا للمبادئ التي تسترشد بها المجموعة، ويخضع اعتماد السياسات التفصيلية وتطبيقها ومراجعتها للإجراءات المعتمدة لدى المجموعة والكيانات المعنية.",
+  disclaimerAr: "تمثل هذه السياسات إطارًا عامًا للمبادئ التي تسترشد بها المجموعة، ويخضع اعتماد السياسات التفصيلية وتطبيقها ومراجعتها للإجراءات المعتمدة لدى المجموعة والكيانات المعنية",
 };
 
 

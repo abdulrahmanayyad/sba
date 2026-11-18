@@ -25,7 +25,7 @@ const socialLinks = [
 ] as const;
 
 const sectorKeys = ["construction", "environmental", "garment", "food"] as const;
-const aboutKeys = ["whoWeAre", "whatWeDo", "ourApproach", "ourValues", "whySba", "leadership", "governance", "policies"] as const;
+const aboutKeys = ["whoWeAre", "whatWeDo", "structure", "ourApproach", "ourValues", "whySba", "leadership", "governance", "policies"] as const;
 
 function NavDropdown({
   label,

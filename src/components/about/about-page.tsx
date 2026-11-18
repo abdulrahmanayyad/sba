@@ -176,13 +176,13 @@ export function AboutPage() {
       <section id="structure" className="site-container py-12 scroll-mt-24">
         <div className="overflow-hidden rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-8 sm:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.05)] backdrop-blur-3xl ring-1 ring-white/30">
           <Reveal className="mx-auto max-w-3xl text-center">
-            <SectionBadge title={ar ? "الهيكل المؤسسي والحوكمة" : "Corporate Structure & Architecture"} />
+            <SectionBadge title={ar ? "الهيكل المؤسسي" : "Corporate Structure"} />
             <h2 className="section-title mt-3 text-center mx-auto text-xl sm:text-2xl lg:text-3xl">
               {ar ? "الهيكل المؤسسي للمجموعة والقطاعات التابعة" : "Group Institutional Structure & Subsidiary Operating Units"}
             </h2>
             <p className="section-intro mx-auto mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
               {ar
-                ? "تعتمد مجموعة سامي بن عياد نموذجًا مؤسسيًا موحدًا يجمع بين حوكمة الشركة القابضة المركزية والكيانات التشغيلية المتخصصة عبر أربعة قطاعات أعمال استراتيجية لضمان كفاءة الإدارة وجودة الالتزامات."
+                ? "تعتمد مجموعة سامي بن عياد نموذجًا مؤسسيًا موحدًا يجمع بين حوكمة الشركة القابضة المركزية والكيانات التشغيلية المتخصصة عبر أربعة قطاعات أعمال استراتيجية"
                 : "Sami Bin Ayyad Group operates a cohesive corporate model integrating centralized corporate governance with specialized operating subsidiaries across four strategic sectors."}
             </p>
           </Reveal>
@@ -352,10 +352,10 @@ export function AboutPage() {
       {/* 5. Why Sami Bin Ayyad / لماذا سامي بن عياد */}
       <section id="whySba" className="site-container py-12 scroll-mt-24">
         <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-8 sm:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
-          <Reveal className="mx-auto max-w-3xl text-center">
+          <Reveal className="mx-auto max-w-5xl text-center">
             <SectionBadge title={ar ? "لماذا سامي بن عياد" : "Why Sami Bin Ayyad"} />
             <h2 className="section-title mt-3 text-center mx-auto">{ar ? whySbaData.titleAr : whySbaData.title}</h2>
-            <p className="section-intro mx-auto mt-4">{highlightBrand(ar ? whySbaData.leadAr : whySbaData.lead)}</p>
+            <p className="section-intro mx-auto mt-4 max-w-none lg:whitespace-nowrap">{highlightBrand(ar ? whySbaData.leadAr : whySbaData.lead)}</p>
           </Reveal>
 
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -406,7 +406,7 @@ export function AboutPage() {
             <h2 className="section-title mt-3 text-center mx-auto">{ar ? "قيادات تصنع الرؤية" : "The People Behind the Vision"}</h2>
             <p className="section-intro mx-auto mt-3">
               {ar
-                ? "تقود المجموعة نخبة من المؤسسين والقياديين بخبرات متراكمة في إدارة الاستثمارات والتصنيع والخدمات البيئية والتطوير الأكاديمي."
+                ? "تقود المجموعة نخبة من المؤسسين والقياديين بخبرات متراكمة في إدارات قطاعات المجموعة"
                 : "The group is led by experienced founders bringing decades of leadership across contracting, manufacturing, sustainability, and education."}
             </p>
           </Reveal>
@@ -465,7 +465,7 @@ export function AboutPage() {
       <section id="policies" className="site-container py-12 scroll-mt-24">
         <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-8 sm:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
           <Reveal className="mx-auto max-w-3xl text-center">
-            <SectionBadge title={ar ? "سياسات المجموعة" : "Group Policies"} />
+            <SectionBadge title={ar ? "السياسات" : "Policies"} />
             <h2 className="section-title mt-3 text-center mx-auto">{ar ? policiesData.titleAr : policiesData.title}</h2>
             <p className="section-intro mx-auto mt-4">{highlightBrand(ar ? policiesData.leadAr : policiesData.lead)}</p>
           </Reveal>
@@ -487,8 +487,8 @@ export function AboutPage() {
             ))}
           </div>
 
-          <Reveal delay={0.3} className="mx-auto mt-12 max-w-3xl">
-            <div className="rounded-2xl border border-dashed border-border/80 bg-background/40 p-5 text-center text-xs font-medium leading-relaxed text-muted-foreground sm:text-sm backdrop-blur-md font-sans">
+          <Reveal delay={0.3} className="mx-auto mt-12 max-w-5xl">
+            <div className="rounded-2xl border border-dashed border-border/80 bg-background/40 p-4 sm:p-5 text-center text-xs font-medium leading-relaxed text-muted-foreground sm:text-sm backdrop-blur-md font-sans xl:whitespace-nowrap">
               {ar ? policiesData.disclaimerAr : policiesData.disclaimer}
             </div>
           </Reveal>
