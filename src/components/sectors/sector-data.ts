@@ -155,7 +155,7 @@ export const sectors: Record<SectorSlug, SectorPageData> = {
       {
         title: "Who We Are",
         titleAr: "من نحن",
-        body: "Your partner in construction and development: operating across general contracting, construction, property development, and high-end finishing with a documented portfolio spanning decades, diverse contract values, and multidisciplinary capabilities.",
+        body: "Your partner in construction and development: operating across general contracting, construction, property development, and high-end finishing with a documented portfolio spanning decades, comprehensive project scopes, and multidisciplinary capabilities.",
         bodyAr: "شريكك في التنفيذ والتطوير: نعمل في المقاولات العامة والإنشاءات والتطوير العقاري والتشطيبات، مستندين إلى سجل مشروعات موثق يمتد لسنوات ويغطي أعمالًا مدنية ومعمارية وكهروميكانيكية متخصصة.",
       },
       {

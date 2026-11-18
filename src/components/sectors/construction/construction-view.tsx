@@ -192,9 +192,9 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
   const featuredProjects = useMemo(() => {
     return [...contractingProjectsList]
       .sort((a, b) => {
-        const valA = parseFloat((a.valueEn || "").replace(/[^0-9.]/g, "")) || 0;
-        const valB = parseFloat((b.valueEn || "").replace(/[^0-9.]/g, "")) || 0;
-        return valB - valA;
+        const yearA = parseInt(a.year, 10) || 0;
+        const yearB = parseInt(b.year, 10) || 0;
+        return yearB - yearA;
       })
       .slice(0, 3);
   }, []);
@@ -570,8 +570,8 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
                         {ar ? proj.clientAr : proj.clientEn}
                       </p>
                       <div className="mt-3 pt-3 border-t border-border flex items-center justify-between text-xs">
-                        <span className="text-muted-foreground">{ar ? "القيمة التعاقدية:" : "Value:"}</span>
-                        <span className="font-bold text-brand-orange">{ar ? proj.valueAr : proj.valueEn}</span>
+                        <span className="text-muted-foreground">{ar ? "الموقع الجغرافي:" : "Location:"}</span>
+                        <span className="font-bold text-brand-orange">{ar ? proj.locationAr : proj.locationEn}</span>
                       </div>
                     </div>
                   </div>
@@ -818,13 +818,12 @@ function ConstructionProjectsView({ ar }: { ar: boolean }) {
     { id: "commercial", titleEn: "Commercial & Administrative", titleAr: "المراكز التجارية والإدارية" },
   ];
 
-  const parseContractValue = (val: string) => {
-    const num = parseInt(val.replace(/[^0-9]/g, ""), 10);
-    return isNaN(num) ? 0 : num;
-  };
-
   const sortedProjects = useMemo(() => {
-    return [...contractingProjectsList].sort((a, b) => parseContractValue(b.valueEn) - parseContractValue(a.valueEn));
+    return [...contractingProjectsList].sort((a, b) => {
+      const yearDiff = (parseInt(b.year, 10) || 0) - (parseInt(a.year, 10) || 0);
+      if (yearDiff !== 0) return yearDiff;
+      return a.id - b.id;
+    });
   }, []);
 
   const filteredProjects = sortedProjects.filter((proj) => {
@@ -998,21 +997,14 @@ function ConstructionProjectsView({ ar }: { ar: boolean }) {
                     </div>
                   </div>
 
-                  {/* Card Footer: Date & Value & Verification CTA */}
+                  {/* Card Footer: Date & Verification CTA */}
                   <div className="border-t border-border/70 p-4 bg-muted/20 flex flex-col gap-2 text-xs">
                     <div className="flex items-center justify-between text-muted-foreground text-[11px]">
                       <span className="flex items-center gap-1">
                         <Calendar className="size-3 text-muted-foreground" />
-                        <span>{ar ? "تاريخ التعاقد: " : "Date: "}</span>
+                        <span>{ar ? "تاريخ التعاقد: " : "Contract Date: "}</span>
                       </span>
                       <span className="font-sans font-medium">{proj.contractDate}</span>
-                    </div>
-
-                    <div className="flex items-center justify-between pt-1 border-t border-border/40">
-                      <span className="font-semibold text-foreground">{ar ? "القيمة التعاقدية: " : "Contract Value: "}</span>
-                      <span className="font-head font-bold text-brand-orange drop-shadow-sm">
-                        {ar ? proj.valueAr : proj.valueEn}
-                      </span>
                     </div>
 
                     {/* Verification Action Button */}
@@ -1122,8 +1114,8 @@ function ConstructionProjectsView({ ar }: { ar: boolean }) {
                   <span className="font-sans font-semibold text-foreground text-sm">{activeProject.contractDate}</span>
                 </div>
                 <div>
-                  <span className="text-muted-foreground font-medium block">{ar ? "القيمة التعاقدية: " : "Contract Value: "}</span>
-                  <span className="font-head font-bold text-brand-orange text-sm">{ar ? activeProject.valueAr : activeProject.valueEn}</span>
+                  <span className="text-muted-foreground font-medium block">{ar ? "حالة المشروع: " : "Status: "}</span>
+                  <span className="font-semibold text-brand-green-text text-sm">{ar ? "مكتمل ومُسلَّم بالكامل" : "Completed & Handed Over"}</span>
                 </div>
               </div>
 

@@ -85,12 +85,12 @@ export function getProjectMeta(p: ContractingProject) {
 
   // Highlights
   const highlightsEn = [
-    `Contractual Value: ${p.valueEn}`,
-    `Certified client handover protocol completed on ${p.contractDate}`,
+    `Official project execution completed on ${p.contractDate}`,
+    `Certified client handover protocol signed and archived`,
     `Full architectural & MEP engineering compliance signed off`,
   ];
   const highlightsAr = [
-    `القيمة التعاقدية الموثقة: ${p.valueAr}`,
+    `تنفيذ المشروع بموجب عقود ومواصفات هندسية معتمدة`,
     `محضر تسليم واستلام رسمي معتمد بتاريخ ${p.contractDate}`,
     `مطابقة تامة للمواصفات المعمارية والهندسية ودفاتر الشروط`,
   ];
