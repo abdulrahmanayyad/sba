@@ -33,6 +33,7 @@ import {
 
 import { Reveal } from "@/components/home/reveal";
 import { Button } from "@/components/ui/button";
+import { SectionBadge } from "@/components/site/section-badge";
 import { useLanguage } from "@/i18n/language-context";
 import { CONTACT_EMAIL, WHATSAPP_URL } from "@/lib/process-steps";
 import { cn } from "@/lib/utils";
@@ -123,7 +124,7 @@ export function InvestorRelationsPage() {
   return (
     <div className="w-full">
       {/* 1. HERO SECTION */}
-      <section className="relative w-full min-h-[calc(60svh-76px)] sm:min-h-[calc(65svh-76px)] overflow-hidden text-white flex flex-col justify-center mb-8 sm:mb-10">
+      <section className="relative w-full min-h-[calc(70svh-76px)] sm:min-h-[calc(75svh-76px)] overflow-hidden text-white flex flex-col justify-center mb-10">
         <img
           src={encodeURI("/Background/Homepage Investment & Partnerships Background.jpg")}
           alt={ar ? "الشراكات والاستثمار — مجموعة سامي بن عياد" : "Investment & Partnerships — Sami Bin Ayyad Group"}
@@ -150,66 +151,11 @@ export function InvestorRelationsPage() {
         </div>
       </section>
 
-      {/* 1.5 Quick Navigation Section (مربع العناوين في خانتها داخل الصفحة تحت الصورة) */}
-      <section className="site-container mb-10">
-        <Reveal>
-          <div className="interactive-card glass-box-interactive rounded-2xl sm:rounded-3xl border border-slate-200/80 dark:border-white/15 bg-white/85 dark:bg-slate-900/75 p-5 sm:p-6 shadow-lg backdrop-blur-2xl">
-            <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2.5 sm:gap-3.5">
-              {[
-                {
-                  href: "#investment-pillars",
-                  labelAr: "أسس الشراكة الرأسمالية",
-                  labelEn: "Strategic Foundation",
-                },
-                {
-                  href: "#corporate-model",
-                  labelAr: "النموذج المؤسسي الموحد",
-                  labelEn: "Unified Corporate Model",
-                },
-                {
-                  href: "#investment-opportunities",
-                  labelAr: "فرص التوسع والاستثمار",
-                  labelEn: "Expansion & Investment Opportunities",
-                },
-                {
-                  href: "#partnership-models",
-                  labelAr: "نماذج وأطر الشراكة",
-                  labelEn: "Partnership Frameworks & Models",
-                },
-                {
-                  href: "#investor-documents",
-                  labelAr: "غرفة البيانات والملفات",
-                  labelEn: "Data Room & Files",
-                },
-                {
-                  href: "#investor-inquiry",
-                  labelAr: "طلب اجتماع واستفسار استثماري",
-                  labelEn: "Meeting Request & Inquiry",
-                },
-              ].map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className="group inline-flex items-center gap-2 rounded-full border border-slate-200 dark:border-white/15 bg-slate-100/80 dark:bg-white/10 px-4 py-2 text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-100 hover:border-brand-orange hover:bg-brand-orange/10 hover:text-brand-orange dark:hover:text-brand-orange transition-all duration-300 backdrop-blur-md shadow-xs cursor-pointer"
-                >
-                  <span className="size-2 rounded-full bg-brand-orange animate-pulse shrink-0" />
-                  <span className="transition-colors">
-                    {ar ? item.labelAr : item.labelEn}
-                  </span>
-                </a>
-              ))}
-            </div>
-          </div>
-        </Reveal>
-      </section>
-
       {/* 2. INVESTMENT PILLARS */}
       <section className="site-container py-12 border-t border-border/60 scroll-mt-24" id="investment-pillars">
         <Reveal>
           <div className="max-w-2xl mb-8">
-            <span className="text-xs font-bold uppercase tracking-wider text-brand-orange">
-              {ar ? "أسس الشراكة الرأسمالية" : "Strategic Foundation"}
-            </span>
+            <SectionBadge title={ar ? "أسس الشراكة الرأسمالية" : "Strategic Foundation"} className="mb-3" />
             <h2 className="text-2xl sm:text-3xl font-bold font-head text-foreground mt-1">
               {ar ? "مزايا الشراكة مع مجموعة سامي بن عياد" : "Advantages of Partnering with Sami Bin Ayyad Group"}
             </h2>
@@ -246,9 +192,7 @@ export function InvestorRelationsPage() {
           <Reveal>
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
               <div className="max-w-2xl">
-                <span className="text-xs font-bold uppercase tracking-wider text-brand-green">
-                  {ar ? "النموذج المؤسسي الموحد" : "Consolidated Portfolio"}
-                </span>
+                <SectionBadge title={ar ? "النموذج المؤسسي الموحد" : "Consolidated Portfolio"} className="mb-3" />
                 <h3 className="text-2xl sm:text-3xl font-bold font-head text-foreground mt-2">
                   {ar ? "أربعة قطاعات إنتاجية تدعم النمو المتوازن" : "Four Operating Divisions Anchoring Growth"}
                 </h3>
@@ -287,9 +231,7 @@ export function InvestorRelationsPage() {
         <Reveal>
           <div className="flex flex-wrap items-end justify-between gap-4 mb-8">
             <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-brand-orange">
-                {ar ? "فرص التوسع والاستثمار" : "Target Pipeline"}
-              </span>
+              <SectionBadge title={ar ? "فرص التوسع والاستثمار" : "Target Pipeline"} className="mb-3" />
               <h2 className="text-2xl sm:text-3xl font-bold font-head text-foreground mt-1">
                 {ar ? "الفرص الاستثمارية الحالية بحسب القطاع" : "Current Strategic Expansion Opportunities"}
               </h2>
@@ -373,9 +315,7 @@ export function InvestorRelationsPage() {
       <section className="site-container py-12 border-t border-border/60 scroll-mt-24" id="partnership-models">
         <Reveal>
           <div className="max-w-2xl mb-8">
-            <span className="text-xs font-bold uppercase tracking-wider text-brand-green">
-              {ar ? "نماذج وأطر الشراكة" : "Transaction Frameworks"}
-            </span>
+            <SectionBadge title={ar ? "نماذج وأطر الشراكة" : "Transaction Frameworks"} className="mb-3" />
             <h2 className="text-2xl sm:text-3xl font-bold font-head text-foreground mt-1">
               {ar ? "هياكل التعاون والاستثمار المؤسسي" : "Institutional Investment Models"}
             </h2>
@@ -432,9 +372,7 @@ export function InvestorRelationsPage() {
         <Reveal>
           <div className="flex flex-wrap items-end justify-between gap-4 mb-8">
             <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-brand-orange">
-                {ar ? "غرفة البيانات والملفات" : "Investor Data Room"}
-              </span>
+              <SectionBadge title={ar ? "غرفة البيانات والملفات" : "Investor Data Room"} className="mb-3" />
               <h2 className="text-2xl sm:text-3xl font-bold font-head text-foreground mt-1">
                 {ar ? "الملفات والوثائق المؤسسية المتاحة للتحميل" : "Corporate & Sector Dossiers"}
               </h2>
@@ -491,10 +429,7 @@ export function InvestorRelationsPage() {
         <div className="rounded-3xl border border-white/30 bg-background/90 p-8 sm:p-12 shadow-2xl backdrop-blur-2xl">
           <Reveal>
             <div className="max-w-3xl mx-auto text-center mb-10">
-              <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-3">
-                <Handshake className="size-4 text-brand-orange" />
-                <span>{ar ? "طلب اجتماع واستفسار استثماري" : "Confidential Institutional Inquiry"}</span>
-              </div>
+              <SectionBadge title={ar ? "طلب اجتماع واستفسار استثماري" : "Confidential Institutional Inquiry"} className="mb-3" />
               <h2 className="text-2xl sm:text-4xl font-extrabold font-head text-foreground">
                 {ar ? "ابدأ الحوار الاستثماري مع إدارة المجموعة" : "Initiate Strategic Investment Dialogue"}
               </h2>
