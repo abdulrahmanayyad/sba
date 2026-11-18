@@ -188,6 +188,9 @@ export function ModelsPage({ embedded = false }: ModelsPageProps) {
     setActiveCategory(cat);
     setSelectedSubcat("all");
     setSelectedAge("all");
+    if (cat !== "kids") {
+      setActiveSeason("all");
+    }
     setCurrentPage(1);
     if (embedded && containerRef.current) {
       containerRef.current.scrollIntoView({ behavior: "smooth", block: "nearest" });
@@ -297,41 +300,42 @@ export function ModelsPage({ embedded = false }: ModelsPageProps) {
               })}
             </div>
 
-            {/* Clear Visual Divider between Collections & Seasons */}
-            <div className="hidden lg:block h-8 w-px bg-border/80 mx-2 shrink-0" />
-            <div className="lg:hidden w-full border-t border-border/50 my-1" />
+            {/* 2. Season Selector Filter - Appears only when Kids category is active */}
+            {activeCategory === "kids" && (
+              <>
+                {/* Clear Visual Divider between Collections & Seasons */}
+                <div className="hidden lg:block h-8 w-px bg-border/80 mx-2 shrink-0" />
+                <div className="lg:hidden w-full border-t border-border/50 my-1" />
 
-            {/* 2. Season Selector Filter */}
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="text-xs font-body font-bold text-muted-foreground me-1 shrink-0">
-                {ar ? "الموسم:" : "Season:"}
-              </span>
-              {[
-                { key: "all", labelAr: "كافة المواسم", labelEn: "All Seasons" },
-                { key: "summer", labelAr: "المجموعة الصيفية", labelEn: "Summer Collection" },
-                { key: "winter", labelAr: "المجموعة الشتوية", labelEn: "Winter Collection" },
-              ].map((season) => {
-                const isActive = activeSeason === season.key;
-                return (
-                  <button
-                    key={season.key}
-                    type="button"
-                    onClick={() => {
-                      setActiveSeason(season.key as ProductSeason);
-                      setCurrentPage(1);
-                    }}
-                    className={cn(
-                      "rounded-2xl px-4 py-2 text-xs sm:text-sm font-body font-bold transition-all duration-300 cursor-pointer",
-                      isActive
-                        ? "bg-brand-green text-white shadow-md shadow-brand-green/25 scale-[1.02]"
-                        : "bg-secondary/60 text-foreground hover:bg-secondary hover:text-brand-orange border border-border/40 hover:border-brand-green/30"
-                    )}
-                  >
-                    <span>{ar ? season.labelAr : season.labelEn}</span>
-                  </button>
-                );
-              })}
-            </div>
+                <div className="flex flex-wrap items-center gap-2">
+                  {[
+                    { key: "all", labelAr: "كافة المواسم", labelEn: "All Seasons" },
+                    { key: "summer", labelAr: "المجموعة الصيفية", labelEn: "Summer Collection" },
+                    { key: "winter", labelAr: "المجموعة الشتوية", labelEn: "Winter Collection" },
+                  ].map((season) => {
+                    const isActive = activeSeason === season.key;
+                    return (
+                      <button
+                        key={season.key}
+                        type="button"
+                        onClick={() => {
+                          setActiveSeason(season.key as ProductSeason);
+                          setCurrentPage(1);
+                        }}
+                        className={cn(
+                          "rounded-2xl px-4 py-2 text-xs sm:text-sm font-body font-bold transition-all duration-300 cursor-pointer",
+                          isActive
+                            ? "bg-brand-green text-white shadow-md shadow-brand-green/25 scale-[1.02]"
+                            : "bg-secondary/60 text-foreground hover:bg-secondary hover:text-brand-orange border border-border/40 hover:border-brand-green/30"
+                        )}
+                      >
+                        <span>{ar ? season.labelAr : season.labelEn}</span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </>
+            )}
           </div>
         </div>
 
