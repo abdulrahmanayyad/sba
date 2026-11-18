@@ -78,22 +78,22 @@ const categoriesConfig: CategoryConfig[] = [
   },
   {
     key: "kids",
-    labelEn: "Kids & Baby Wear",
-    labelAr: "ملابس الأطفال وحديثي الولادة",
+    labelEn: "Kids Wear",
+    labelAr: "ملابس الأطفال",
     descEn: "Extensive collections for children across all age ranges from toddlers to teens.",
-    descAr: "تشكيلات واسعة ومتنوعة لملابس الأطفال وحديثي الولادة من سن المهد وحتى سن المراهقة.",
+    descAr: "تشكيلات واسعة ومتنوعة لملابس الأطفال من سن المهد وحتى سن المراهقة.",
   },
   {
     key: "lingerie",
-    labelEn: "Underwear & Lingerie",
-    labelAr: "ملابس الأندر وير واللانجيري",
+    labelEn: "Underwear",
+    labelAr: "ملابس الداخلية",
     descEn: "Fine fabrics, delicate lace, and premium private-label intimate wear.",
-    descAr: "خامات قطنية راقية، دانتيل ناعم، ومجموعات ملابس داخلية عالية الجودة للعلامات الخاصة.",
+    descAr: "خامات قطنية راقية ومجموعات ملابس داخلية عالية الجودة للعلامات الخاصة.",
   },
   {
     key: "homewear",
-    labelEn: "Homewear & Pyjamas",
-    labelAr: "ملابس الهوم وير والبيجامات",
+    labelEn: "Homewear",
+    labelAr: "ملابس المنزلية",
     descEn: "Comfortable, premium loungewear, sleepwear, and relaxed sets.",
     descAr: "ملابس منزل وبيجامات قطنية فاخرة بتصاميم عصرية مريحة لكافة الفئات.",
   },
@@ -285,23 +285,13 @@ export function ModelsPage({ embedded = false }: ModelsPageProps) {
                   type="button"
                   onClick={() => handleCategoryChange(cat.key)}
                   className={cn(
-                    "flex items-center gap-2 rounded-2xl px-4 py-2.5 text-xs sm:text-sm font-body font-bold transition-all duration-300 cursor-pointer",
+                    "flex items-center gap-2 rounded-2xl px-5 py-2.5 text-xs sm:text-sm font-body font-bold transition-all duration-300 cursor-pointer",
                     isActive
                       ? "bg-brand-green text-white shadow-md shadow-brand-green/25 scale-[1.02]"
                       : "bg-secondary/60 text-foreground hover:bg-secondary hover:text-brand-orange"
                   )}
                 >
                   <span>{ar ? cat.labelAr : cat.labelEn}</span>
-                  {!isAll && (
-                    <span
-                      className={cn(
-                        "rounded-full px-2 py-0.5 font-mono text-[11px]",
-                        isActive ? "bg-white/20 text-white font-bold" : "bg-black/5 text-muted-foreground"
-                      )}
-                    >
-                      {count.toLocaleString()}
-                    </span>
-                  )}
                 </button>
               );
             })}
@@ -663,10 +653,10 @@ export function ModelsPage({ embedded = false }: ModelsPageProps) {
                     <span className="font-body font-bold text-foreground">
                       {ar
                         ? activeItem.category === "kids"
-                          ? "ملابس الأطفال وحديثي الولادة"
+                          ? "ملابس الأطفال"
                           : activeItem.category === "homewear"
-                          ? "ملابس الهوم وير والبيجامات"
-                          : "ملابس الأندر وير واللانجيري"
+                          ? "ملابس المنزلية"
+                          : "ملابس الداخلية"
                         : activeItem.category}
                     </span>
                   </div>
