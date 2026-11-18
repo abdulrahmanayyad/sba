@@ -253,7 +253,7 @@ export interface FoodSectorItem {
 export const foodSectorsData: FoodSectorItem[] = [
   {
     id: "honey",
-    nameAr: "قطاع العسل ومنتجات النحل",
+    nameAr: "منتجات العسل ومشتقاته",
     nameEn: "Honey & Bee Products",
     descAr:
       "نوفر مجموعة مختارة من أنواع العسل الطبيعي ومنتجات النحل المختلفة، مع تنوع المصادر النباتية والخصائص الطبيعية، والاهتمام بتحديد المنشأ والمواصفات الخاصة بكل منتج.",
@@ -276,7 +276,7 @@ export const foodSectorsData: FoodSectorItem[] = [
   },
   {
     id: "olives",
-    nameAr: "قطاع الزيتون ومنتجاته",
+    nameAr: "منتجات الزيتون",
     nameEn: "Olives & Olive Products",
     descAr:
       "نقدم الزيتون بأصنافه المختلفة ودرجات تجهيزه المتنوعة، سواء للاستهلاك المباشر أو الاستخدام الصناعي، مع خيارات متعددة للتخليل والتعبئة والتجهيز التجاري.",
@@ -299,7 +299,7 @@ export const foodSectorsData: FoodSectorItem[] = [
   },
   {
     id: "olive-oil",
-    nameAr: "قطاع زيت الزيتون",
+    nameAr: "منتجات زيت الزيتون",
     nameEn: "Olive Oil",
     descAr:
       "نوفر أنواعًا متعددة من زيت الزيتون وفق درجات الجودة وطرق الاستخلاص المختلفة، مع الاهتمام بالمواصفات الفنية وبيانات المنشأ وخصائص المنتج.",
@@ -322,7 +322,7 @@ export const foodSectorsData: FoodSectorItem[] = [
   },
   {
     id: "dates",
-    nameAr: "قطاع التمور ومنتجات النخيل",
+    nameAr: "منتجات التمور ومشتقاته",
     nameEn: "Dates & Palm Products",
     descAr:
       "يشمل القطاع مجموعة من أصناف التمور المحلية والدولية، بالإضافة إلى المنتجات المصنعة من التمور مثل دبس التمر ومربى التمر ومعجون التمر.",
@@ -345,7 +345,7 @@ export const foodSectorsData: FoodSectorItem[] = [
   },
   {
     id: "herbs",
-    nameAr: "قطاع الأعشاب والنباتات الطبيعية",
+    nameAr: "منتجات الأعشاب والنباتات الطبيعية",
     nameEn: "Herbs & Natural Plants",
     descAr:
       "نقدم مجموعة من الأعشاب والنباتات الطبيعية المجففة المستخدمة في الصناعات الغذائية والمشروبات والخلطات العشبية، مع تنوع في الأصناف وطرق التجهيز والتعبئة.",
@@ -368,7 +368,7 @@ export const foodSectorsData: FoodSectorItem[] = [
   },
   {
     id: "spices",
-    nameAr: "قطاع التوابل والبهارات",
+    nameAr: "منتجات التوابل والبهارات",
     nameEn: "Spices & Seasonings",
     descAr:
       "نوفر التوابل المفردة والخلطات الغذائية المتنوعة، سواء كاملة أو مطحونة، لتلبية احتياجات الاستخدام المنزلي والتجاري والصناعي.",
@@ -391,7 +391,7 @@ export const foodSectorsData: FoodSectorItem[] = [
   },
   {
     id: "powdered-juices",
-    nameAr: "قطاع العصائر والمكونات الطبيعية المجففة",
+    nameAr: "منتجات العصائر البودر الطبيعية",
     nameEn: "Natural Powdered Juices & Ingredients",
     descAr:
       "يشمل القطاع مساحيق الفواكه والخضروات الطبيعية المستخدمة في تحضير المشروبات والمنتجات الغذائية، مع تنوع في النكهات والمكونات وطرق الاستخدام.",
@@ -1252,8 +1252,8 @@ export const foodSupplyCapabilities = {
       descriptionAr: "إجمالي القدرة التصديرية المشتركة للتمور والزيتون وزيت الزيتون والأعشاب الطبية والمحاصيل.",
     },
     {
-      titleEn: "Cold Storage & Climate Control",
-      titleAr: "سعات التخزين المبرد والمستودعات الجافة",
+      titleEn: "Cold Storage & Warehouses",
+      titleAr: "سعات التخزين المبرد والمستودعات",
       value: "8,000+",
       unitEn: "Pallet Positions",
       unitAr: "موقع طبلية تخزينية",
@@ -1261,8 +1261,8 @@ export const foodSupplyCapabilities = {
       descriptionAr: "مستودعات مبردة ومكيفة تحافظ على رطوبة التمور وقوام الزيتون ونقاء الزيوت العطرية في الأعشاب.",
     },
     {
-      titleEn: "Vetted Contracted Farmlands",
-      titleAr: "مساحات زراعية متعاقد عليها",
+      titleEn: "Agricultural Lands & Farmlands",
+      titleAr: "مساحات الأراضي الزراعية",
       value: "12,000+",
       unitEn: "Feddan (Acres)",
       unitAr: "فدان زراعي معتمد",
@@ -1944,10 +1944,10 @@ export const detailedFoodProductsCatalog: DetailedFoodProduct[] = [
   {
     id: "sidr-honey-dossier",
     category: "honey",
-    nameEn: "Pure Wild Sidr Honey",
-    nameAr: "عسل السدر البري النقي",
-    productOverviewEn: "Extracted exclusively from the nectar of wild Ziziphus spina-christi blossoms, prized globally for high therapeutic enzymes, complex amber viscosity, and non-sucrose sweetness.",
-    productOverviewAr: "مستخلص من رحيق أزهار أشجار السدر البرية النادرة، معروف عالميًا بخصائصه العلاجية الفريدة، لونه الكهرماني الجذاب، ومذاقه الغني العطري الخالي تمامًا من السكر المضاف.",
+    nameEn: "Pure Natural Honey & Bee Products",
+    nameAr: "عسل النحل الطبيعي النقي ومنتجات النحل",
+    productOverviewEn: "Extracted exclusively from the nectar of wild Sidr blossoms and natural floral flora, verified for high therapeutic enzymes, complex amber viscosity, and non-sucrose sweetness.",
+    productOverviewAr: "عسل السدر، البرسيم، حبة البركة، الغذاء الملكي وحبوب اللقاح المعتمدة مخبريًا، مستخلص من رحيق أزهار طبيعية بخصائص علاجية فريدة، ومذاق غني خالٍ تمامًا من السكر المضاف.",
     countryOfOriginEn: "Egypt / Arab Republic of Egypt",
     countryOfOriginAr: "مصر / جمهورية مصر العربية",
     productSpecificationsEn: [
@@ -1996,10 +1996,10 @@ export const detailedFoodProductsCatalog: DetailedFoodProduct[] = [
   {
     id: "tofahi-olives-dossier",
     category: "olives",
-    nameEn: "Egyptian Tofahi Jumbo Table Olives",
-    nameAr: "الزيتون التفاحي المصري الجامبو",
-    productOverviewEn: "Egypt's premier indigenous table olive cultivar, characterized by its colossal round apple shape, succulent fleshy ratio, crisp bite, and tender skin suitable for direct dining and luxury stuffing.",
-    productOverviewAr: "أشهر أصناف الزيتون المصري وأكبرها حجمًا، يتميز بثماره الكروية الشبيهة بالتفاح، سماكة اللحم نسبة للنواة، قرمشته الطبيعية، ومناسبته الفائقة لمائدة الطعام أو الحشو.",
+    nameEn: "Premium Table Olives & Varieties",
+    nameAr: "زيتون المائدة الفاخر وأصنافه",
+    productOverviewEn: "Egypt's premier indigenous table olive cultivars (Tofahi, Agizi, and Picual), characterized by colossal size, crisp succulent bite, and high pulp-to-pit ratio suitable for direct dining and luxury export.",
+    productOverviewAr: "أشهر أصناف الزيتون المصري (التفاحي، العجيزي، والبيكوال)، يتميز بحجمه الكبير وقرمشته الطبيعية وسماكة اللحم نسبة للنواة، مناسب لمائدة الطعام والتصدير الدولي.",
     countryOfOriginEn: "Egypt (Siwa Oasis & Matrouh Farmlands)",
     countryOfOriginAr: "مصر (واحة سيوة وبساتين مطروح والفيوم)",
     productSpecificationsEn: [
@@ -2046,8 +2046,8 @@ export const detailedFoodProductsCatalog: DetailedFoodProduct[] = [
   {
     id: "evoo-extra-virgin-dossier",
     category: "olive-oil",
-    nameEn: "Cold Extracted Extra Virgin Olive Oil (EVOO)",
-    nameAr: "زيت زيتون بكر ممتاز معصور على البارد (EVOO)",
+    nameEn: "Extra Virgin Cold-Pressed Olive Oil (EVOO)",
+    nameAr: "زيت الزيتون البكر الممتاز المعصور على البارد",
     productOverviewEn: "First cold mechanical extraction (< 27°C) of freshly harvested Egyptian and Mediterranean olives, characterized by free acidity strictly below 0.8%, balanced bitterness, fruity herbaceous aroma, and high polyphenol content.",
     productOverviewAr: "عصرة ميكانيكية أولى على البارد (أقل من 27 درجة مئوية) لثمار الزيتون الطازجة، بنسبة حموضة حرة أقل من 0.8%، ونكهة فاكهية متوازنة مع غنى فائق بمركبات البوليفينول ومضادات الأكسدة.",
     countryOfOriginEn: "Egypt / Mediterranean Basin Groves",
@@ -2098,10 +2098,10 @@ export const detailedFoodProductsCatalog: DetailedFoodProduct[] = [
   {
     id: "medjool-dates-dossier",
     category: "dates",
-    nameEn: "Egyptian Jumbo Medjool Dates",
-    nameAr: "تمر المجدول المصري الجامبو (ملك التمور)",
-    productOverviewEn: "The undisputed 'King of Dates', cultivated in Egypt's arid south and oasis soils. Remarkable for its colossal size, naturally translucent wrinkling, rich caramel sweetness, and soft succulent fiber.",
-    productOverviewAr: "المصنف كـ 'ملك التمور' بلا منازع، يزرع في الواحات وجنوب مصر بتربة خصبة ومناخ جاف مثالي. يتميز بحجمه العملاق، لونه الكهرماني المجعد الجذاب، ونكهة الكراميل الطبيعية الغنية بالسكريات الطبيعية.",
+    nameEn: "Premium Dates Varieties (Medjool & Siwi)",
+    nameAr: "التمور الفاخرة (المجدول والسكري والسيوية)",
+    productOverviewEn: "Finest Egyptian and oasis dates including premium Medjool, Sukkari, and Siwi, celebrated for large caliber, rich caramel sweetness, and soft succulent fiber.",
+    productOverviewAr: "أجود أصناف التمور من واحات مصر وجنوبها: المجدول الفاخر، السكري، والسيوي، بحجم كبير ونكهة كراميل طبيعية وقوام لحمي غني بمطابقة كاملة للاشتراطات التصديرية.",
     countryOfOriginEn: "Egypt (Toshka, New Valley, Siwa & Bahariya Oases)",
     countryOfOriginAr: "مصر (توشكى، الوادي الجديد، واحة سيوة، والواحات البحرية)",
     productSpecificationsEn: [
@@ -2148,10 +2148,10 @@ export const detailedFoodProductsCatalog: DetailedFoodProduct[] = [
   {
     id: "egyptian-hibiscus-dossier",
     category: "herbs",
-    nameEn: "Egyptian Hibiscus Flower Calyces (Karkadeh)",
-    nameAr: "زهور الكركديه الأسواني الطبيعي (كركديه)",
-    productOverviewEn: "Internationally renowned deep-ruby whole flower calyces harvested along Upper Egypt and Aswan. Celebrated for high anthocyanin antioxidant pigments, intense crimson infusion, and tart refreshing palate.",
-    productOverviewAr: "زهور الكركديه الحمراء القرمزية الشهيرة عالميًا المحصودة من صعيد مصر وأسوان، والمعروفة بغناها بصبغات الأنثوسيانين ومضادات الأكسدة، ولونها الياقوتي الفاقع ومذاقها الحامض المنعش.",
+    nameEn: "Organic Dried Herbs & Botanicals",
+    nameAr: "الأعشاب الطبية والعطرية المجففة",
+    productOverviewEn: "Internationally renowned botanicals harvested along Upper Egypt and the Nile Valley, including Aswan hibiscus calyces, chamomile, and peppermint, celebrated for high purity and rich volatile oils.",
+    productOverviewAr: "تشكيلة نقية من الأعشاب الطبية والعطرية المحصودة من صعيد مصر، تشمل الكركديه الأسواني، أزهار البابونج، والنعناع المجفف بنقاء فائق وزيوت طيارة غنية.",
     countryOfOriginEn: "Egypt (Aswan, Qena & Fayoum)",
     countryOfOriginAr: "مصر (أسوان، قنا، والفيوم)",
     productSpecificationsEn: [
@@ -2200,10 +2200,10 @@ export const detailedFoodProductsCatalog: DetailedFoodProduct[] = [
   {
     id: "spray-dried-hibiscus-powder-dossier",
     category: "beverage-powders",
-    nameEn: "Instant Spray-Dried Natural Hibiscus Powder",
-    nameAr: "مسحوق الكركديه الطبيعي سريع الذوبان المجفف بالرش",
-    productOverviewEn: "100% natural water-soluble botanical fruit extract engineered via gentle low-temperature spray drying. Dissolves instantaneously in cold or hot water with radiant clarity, zero synthetic colorants, and authentic sharp flavor.",
-    productOverviewAr: "مستخلص طبيعي 100% سريع الذوبان في الماء البارد والساخن، مصنع بتقنية التجفيف بالرش في درجات حرارة منخفضة، يمنح نقاءً ولونًا ياقوتيًا مبهرًا بدون أي صبغات صناعية أو مواد حافظة.",
+    nameEn: "Natural Spray-Dried Fruit Powders & Ingredients",
+    nameAr: "بودرة العصائر الطبيعية والمكونات الغذائية",
+    productOverviewEn: "100% natural water-soluble botanical fruit extracts engineered via gentle low-temperature spray drying, dissolving instantaneously with authentic flavor, zero synthetic colorants, and no chemical preservatives.",
+    productOverviewAr: "مستخلصات فواكه وعصائر طبيعية 100% سريعة الذوبان، مصنعة بتقنية التجفيف بالرش، تمنح نقاءً ومذاقًا فاكهيًا منعشًا بدون أي صبغات صناعية أو مواد حافظة.",
     countryOfOriginEn: "Egypt",
     countryOfOriginAr: "مصر",
     productSpecificationsEn: [
@@ -2252,10 +2252,10 @@ export const detailedFoodProductsCatalog: DetailedFoodProduct[] = [
   {
     id: "cumin-seeds-dossier",
     category: "spices",
-    nameEn: "Egyptian Whole Sun-Dried Cumin Seeds",
-    nameAr: "بذور الكمون البلدي المصري المجفف شمسيًا",
-    productOverviewEn: "Purity-machine cleaned whole Egyptian cumin seeds (≥ 99.0% verified purity) harvested from the Upper Nile basin. Celebrated for high volatile oil content, warm earthy aroma, and absence of weed seeds.",
-    productOverviewAr: "بذور كمون بلدي مصري كاملة ومفروزة آليًا بنقاء معتمد لا يقل عن 99.0% محصودة من صعيد مصر، تشتهر بارتفاع نسبة الزيوت العطرية، رائحتها الترابية الدافئة، وخلوها التام من بذور الحشائش والشوائب.",
+    nameEn: "Organic Spices & Natural Seasonings",
+    nameAr: "التوابل والبهارات العضوية",
+    productOverviewEn: "Purity-machine cleaned whole and ground Egyptian spices, including indigenous cumin and coriander, celebrated for high volatile oil content, intense aroma, and international food-grade standards.",
+    productOverviewAr: "أجود أصناف التوابل والبهارات الحصى والمطحونة، كالكمون البلدي والكزبرة، مفروزة آليًا بنقاء فائق ونكهة عطرية غنية تلبي أعلى معايير الجودة والتصنيع الغذائي.",
     countryOfOriginEn: "Egypt (Minya & Assiut)",
     countryOfOriginAr: "مصر (المنيا وأسيوط)",
     productSpecificationsEn: [
@@ -2302,10 +2302,10 @@ export const detailedFoodProductsCatalog: DetailedFoodProduct[] = [
   {
     id: "golden-sesame-dossier",
     category: "other-agri",
-    nameEn: "Egyptian Natural Golden & White Sesame Seeds",
-    nameAr: "السمسم المصري الذهبي والأبيض الطبيعي",
-    productOverviewEn: "Premium unhulled and mechanically cleaned sesame seeds cultivated in the fertile Nile Valley. Celebrated for high natural oil content (> 50%), sweet nutty taste, and excellent roasting stability for tahini and halva confectionery.",
-    productOverviewAr: "بذور سمسم مصري ذهبية وبيضاء طبيعية عالية الجودة محصودة من وادي النيل، تشتهر بارتفاع نسبة الزيت الطبيعي (> 50%)، مذاقها المكسراتي الغني، وثباتها العالي في تصنيع الطحينة والحلاوة الطحينية والمخبوزات.",
+    nameEn: "Natural Agricultural Commodities (Sesame Seeds)",
+    nameAr: "المحاصيل والمنتجات الزراعية الطبيعية (السمسم)",
+    productOverviewEn: "Premium unhulled and mechanically cleaned golden and white sesame seeds cultivated in the fertile Nile Valley, celebrated for high natural oil content (> 50%) and sweet nutty taste.",
+    productOverviewAr: "بذور سمسم مصري ذهبية وبيضاء ومحاصيل طبيعية عالية الجودة محصودة من وادي النيل، تشتهر بارتفاع نسبة الزيت الطبيعي (> 50%) وثباتها العالي في التصنيع الغذائي.",
     countryOfOriginEn: "Egypt (Upper Egypt & Sharkia)",
     countryOfOriginAr: "مصر (صعيد مصر والشرقية)",
     productSpecificationsEn: [

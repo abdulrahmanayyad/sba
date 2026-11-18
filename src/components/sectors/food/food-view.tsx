@@ -318,41 +318,41 @@ function FoodAboutTab({
           </Reveal>
         </div>
 
-        {/* Approach */}
+        {/* Approach & Values merged in one unified card */}
         <Reveal>
-          <div className="group rounded-3xl border border-white/20 bg-background/80 p-6 sm:p-8 lg:p-10 shadow-lg backdrop-blur-2xl mb-12 transition-all duration-500 hover:-translate-y-0.5 hover:shadow-2xl">
+          <div className="group rounded-3xl border border-white/20 bg-background/80 p-6 sm:p-8 lg:p-10 shadow-lg backdrop-blur-2xl mb-16 transition-all duration-500 hover:-translate-y-0.5 hover:shadow-2xl">
             <div className="mb-4">
               <SectionBadge title={ar ? "نهجنا" : "Our Approach"} />
             </div>
-            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-4xl">
+            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-4xl mb-8">
               {highlightBrand(ar ? approach.descAr : approach.descEn)}
             </p>
+
+            <div className="pt-6 border-t border-border/60">
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {values.map((v, idx) => (
+                  <div
+                    key={idx}
+                    className="rounded-2xl border border-white/20 bg-card/60 p-5 shadow-xs backdrop-blur-md transition-all duration-300 hover:scale-[1.02] hover:border-brand-green hover:shadow-md"
+                  >
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="flex size-8 items-center justify-center rounded-xl bg-brand-orange/15 text-brand-orange font-bold text-xs">
+                        0{idx + 1}
+                      </span>
+                      <CheckCircle2 className="size-4 text-brand-green-text" />
+                    </div>
+                    <h4 className="text-center font-head text-base font-bold text-foreground mb-1 group-hover:text-brand-orange transition-colors">
+                      {ar ? v.titleAr : v.titleEn}
+                    </h4>
+                    <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed text-center">
+                      {ar ? v.descAr : v.descEn}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </Reveal>
-
-        {/* Values */}
-        <div className="mb-16">
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {values.map((v, idx) => (
-              <Reveal key={idx} delay={idx * 0.04}>
-                <div className="group h-full rounded-3xl border border-white/20 bg-background/80 p-5 sm:p-6 shadow-sm backdrop-blur-2xl transition-all duration-300 hover:scale-[1.02] hover:border-brand-green hover:shadow-xl">
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="flex size-8 items-center justify-center rounded-xl bg-brand-orange/15 text-brand-orange font-bold text-xs">
-                      0{idx + 1}
-                    </span>
-                    <CheckCircle2 className="size-4 text-brand-green-text" />
-                  </div>
-                  <h4 className="text-center font-head text-base font-bold text-foreground mb-1 group-hover:text-brand-orange transition-colors">
-                    {ar ? v.titleAr : v.titleEn}
-                  </h4>
-                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed text-center">
-                    {ar ? v.descAr : v.descEn}
-                  </p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
       </section>
 
       {/* SECTION 2: Product Categories */}
@@ -366,15 +366,14 @@ function FoodAboutTab({
               </h2>
               <p className="text-sm sm:text-base text-muted-foreground">
                 {ar
-                  ? "تغطية شاملة لـ 7 فئات تصديرية أساسية تجمع بين أصالة المحاصيل المصرية ومصادر التوريد المعتمدة."
-                  : "Comprehensive coverage across 7 core export categories bridging authentic Egyptian origins and verified supply channels."}
+                  ? "تغطية شاملة لأغلب الفئات التصديرية الأساسية"
+                  : "Comprehensive coverage across key export categories bridging authentic Egyptian origins and verified supply channels."}
               </p>
             </div>
           </Reveal>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {foodSectorsData.map((sec, idx) => {
-              const IconComp = sectorIcons[sec.id] || Flower;
               return (
                 <Reveal key={sec.id} delay={idx * 0.05}>
                   <div className="group rounded-3xl border border-white/30 bg-background/90 p-6 shadow-md backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:border-brand-green flex flex-col justify-between">
@@ -386,15 +385,6 @@ function FoodAboutTab({
                           className="size-full object-cover transition-transform duration-700 group-hover:scale-105"
                           loading="lazy"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                        <div className="absolute bottom-3 start-3 end-3 flex items-center justify-between text-white">
-                          <span className="flex size-9 items-center justify-center rounded-xl bg-black/50 backdrop-blur-md">
-                            <IconComp className="size-5 text-brand-orange" />
-                          </span>
-                          <span className="text-[11px] font-bold px-2.5 py-1 rounded-full bg-brand-green/80 backdrop-blur-md">
-                            {ar ? "تصدير B2B" : "B2B Export"}
-                          </span>
-                        </div>
                       </div>
 
                       <h3 className="text-center font-head text-lg sm:text-xl font-bold text-foreground mb-2 group-hover:text-brand-orange transition-colors">
@@ -628,11 +618,11 @@ function FoodAboutTab({
             ))}
           </div>
 
-          <div className="mt-8 rounded-2xl border border-brand-orange/30 bg-brand-orange/5 p-4 text-center max-w-2xl mx-auto">
-            <p className="text-xs text-muted-foreground">
+          <div className="mt-8 rounded-2xl sm:rounded-full bg-brand-green px-6 py-3 text-center max-w-5xl mx-auto shadow-md">
+            <p className="text-xs sm:text-sm font-medium text-white md:whitespace-nowrap leading-relaxed">
               {ar
-                ? "تنويه مهني: تصدر جميع الشهادات الصحية وشهادات المنشأ والتحاليل المعملية رسميًا لكل شحنة من الهيئات الحكومية المعتمدة (الهيئة القومية لسلامة الغذاء، الحجر الزراعي، ومعامل ISO 17025)."
-                : "Professional Disclosure: All health certificates, certificates of origin, and lab assays are officially issued per shipment by accredited regulatory authorities (NFSA, Plant Quarantine, and ISO 17025 labs)."}
+                ? "تنويه مهني: تصدر جميع الشهادات الصحية وشهادات المنشأ والتحاليل المعملية رسميًا لكل شحنة من الهيئات الحكومية المعتمدة (الهيئة القومية لسلامة الغذاء، الحجر الزراعي، ومعامل ISO 17025)"
+                : "Professional Disclosure: All health certificates, certificates of origin, and lab assays are officially issued per shipment by accredited regulatory authorities (NFSA, Plant Quarantine, and ISO 17025 labs)"}
             </p>
           </div>
         </div>
@@ -909,15 +899,6 @@ function FoodAboutTab({
                         className="size-full object-cover transition-transform duration-700 group-hover:scale-105"
                         loading="lazy"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-                      <div className="absolute bottom-2.5 start-2.5 end-2.5 flex items-center justify-between text-white text-[11px]">
-                        <span className="rounded-full bg-black/60 px-2.5 py-0.5 backdrop-blur-md">
-                          {ar ? prod.countryOfOriginAr : prod.countryOfOriginEn}
-                        </span>
-                        <span className="font-bold text-brand-orange bg-black/60 px-2 py-0.5 rounded-full whitespace-nowrap">
-                          MOQ: {formatShortMoq(ar ? prod.minOrderQuantityAr : prod.minOrderQuantityEn)}
-                        </span>
-                      </div>
                     </div>
 
                     <h4 className="text-center font-head text-base font-bold text-foreground mb-1 group-hover:text-brand-orange transition-colors">
