@@ -1,5 +1,5 @@
 const apparel = "/BG/Apparel Manufacturing/Apparel Manufacturing Home Page.jpg";
-const construction = "/BG/Contracting & Real Estate Development/Contracting & Real Estate Development Home Page.jpg";
+const construction = "/services/construction/contracting-real-estate-development-home-page.jpg";
 const enviro = "/services/environmental/sustainable-environmental-home-page.avif";
 const food = "/BG/Natural & Agri-Food Products/Natural & Agri-Food Products Home Page.jpg";
 const research = "/services/environmental/research-development-environmental-software-solutions.jpg";

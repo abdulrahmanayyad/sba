@@ -47,10 +47,10 @@ const sectorImagesPool: Record<SectorSlug, string[]> = {
     "/services/environmental/ehs-consultations-regulatory-applications-for-healthcare.jpg",
   ],
   construction: [
-    "/BG/Contracting & Real Estate Development/Contracting & Real Estate Development Home Page.jpg",
-    "/BG/Contracting & Real Estate Development/Healthcare Facilities & Medical Fit-Out.jpg",
-    "/BG/Contracting & Real Estate Development/Infrastructure & Integrated Building Systems.jpg",
-    "/BG/Contracting & Real Estate Development/Residential & Commercial Property Development.jpg",
+    "/services/construction/contracting-real-estate-development-home-page.jpg",
+    "/services/construction/healthcare-facilities-medical-fit-out.jpg",
+    "/services/construction/infrastructure-integrated-building-systems.jpg",
+    "/services/construction/residential-commercial-property-development.jpg",
   ],
   garment: [
     "/BG/Apparel Manufacturing/Apparel Manufacturing Home Page.jpg",

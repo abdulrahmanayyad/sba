@@ -74,7 +74,7 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["المجمعات الحكومية", "المقرات الرئيسية للشركات", "المراكز التجارية الكبرى", "المجمعات الصناعية"],
     "capabilitiesEn": ["First-tier contracting classification", "In-house heavy equipment fleet", "Strict zero-defect quality delivery"],
     "capabilitiesAr": ["تصنيف مقاولات فئة أولى", "أسطول معدات ثقيلة وخلاطات مملوكة للشركة", "معايير تسليم هندسية خالية من الملاحظات"],
-    "image": "/BG/Contracting & Real Estate Development/Contracting & Real Estate Development Home Page.jpg"
+    "image": "/services/construction/contracting-real-estate-development-home-page.jpg"
   },
   {
     "id": "srv-cns-civil",
@@ -103,7 +103,7 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["الأبراج والمباني الشاهقة", "المراكز التجارية", "المستودعات اللوجستية", "محطات البنية التحتية"],
     "capabilitiesEn": ["Heavy hydraulic formwork systems", "Continuous mass-pour logistical capability", "Dedicated batching plant coordination"],
     "capabilitiesAr": ["شدات معدنية وهيدروليكية متطورة", "قدرة لوجستية لصبات الكتل الكبرى المستمرة", "تنسيق كامل مع محطات الخرسانة الجاهزة المعتمدة"],
-    "image": "/BG/Contracting & Real Estate Development/Residential & Commercial Property Development.jpg"
+    "image": "/services/construction/residential-commercial-property-development.jpg"
   },
   {
     "id": "srv-cns-structural",
@@ -132,7 +132,7 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["المصانع الثقيلة", "حظائر الطائرات", "الصالات الرياضية المغطاة", "المراكز اللوجستية والهايبرماركت"],
     "capabilitiesEn": ["Certified AWS / ASME coded welders", "Heavy crawler crane rigging fleet", "In-house ultrasonic and MPI weld inspection"],
     "capabilitiesAr": ["لحامون معتمدون دوليًا وفق معايير AWS و ASME", "أسطول أوناش رفع ثقيلة للحمولات الكبرى", "فحص الموجات فوق الصوتية والجسيمات المغناطيسية للحامات"],
-    "image": "/BG/Contracting & Real Estate Development/Supply, Installation & Maintenance.jpg"
+    "image": "/services/construction/supply-installation-maintenance.jpg"
   },
   {
     "id": "srv-cns-architectural",
@@ -161,7 +161,7 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["الأبراج الإدارية", "المجمعات متعددة الاستخدامات", "الكمبوندات السكنية الراقية", "المنشآت المؤسسية"],
     "capabilitiesEn": ["Senior BIM managers and Revit coordinators", "Clash detection automation", "Fast-track design-to-build workflows"],
     "capabilitiesAr": ["مهندسو تنسيق BIM معتمدون", "حل تعارضات المسارات آليًا قبل بدء التنفيذ", "منهجية تسريع الانتقال من التصميم للموقع"],
-    "image": "/BG/Contracting & Real Estate Development/Integrated Solutions, Multiple Disciplines.jpg"
+    "image": "/services/construction/integrated-solutions-multiple-disciplines.jpg"
   },
   {
     "id": "srv-cns-mep",
@@ -190,7 +190,7 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["مراكز البيانات", "المستشفيات", "الأبراج المالية", "المراكز التجارية الكبرى"],
     "capabilitiesEn": ["NFPA certified fire engineering specialists", "BMS automation integration team", "Factory certified commissioning protocol"],
     "capabilitiesAr": ["مهندسون معتمدون من NFPA لمكافحة الحريق", "فريق متخصص في برمجة وتكامل أنظمة BMS", "بروتوكولات فحص وتشغيل تجريبي معتمدة"],
-    "image": "/BG/Contracting & Real Estate Development/Electromechanical Systems (MEP).jpg"
+    "image": "/services/construction/electromechanical-systems.jpg"
   },
   {
     "id": "srv-cns-infrastructure",
@@ -219,7 +219,7 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["المجتمعات العمرانية الجديدة", "المناطق الصناعية", "المنتجعات السياحية", "الموانئ اللوجستية"],
     "capabilitiesEn": ["Heavy earthmoving and trench excavation machinery", "Electrofusion and butt-welding certified technicians", "Laser-guided GPS grade control equipment"],
     "capabilitiesAr": ["معدات حفر وتسوية ثقيلة متطورة", "فنيون معتمدون في لحام أنابيب HDPE بالتسخين الكهربائي", "أجهزة مساحة بنظام GPS لضبط المناسيب بالليزر"],
-    "image": "/BG/Contracting & Real Estate Development/Infrastructure & Integrated Building Systems.jpg"
+    "image": "/services/construction/infrastructure-integrated-building-systems.jpg"
   },
   {
     "id": "srv-cns-industrial",
@@ -248,7 +248,7 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["مصانع الأغذية والمشروبات", "مصانع الغزل والنسيج والملابس", "المنشآت الكيماوية", "مراكز توزيع السلع الاستهلاكية"],
     "capabilitiesEn": ["Fast-track industrial civil construction teams", "High-tolerance floor flatness (FM2 standards)", "Heavy machinery installation coordination"],
     "capabilitiesAr": ["فرق تنفيذ سريعة للمنشآت الصناعية", "تسوية فائقة للأرضيات بمعيار FM2 للمستودعات الذكية", "تنسيق هندسي دقيق لتركيب خطوط الإنتاج والماكينات"],
-    "image": "/BG/Contracting & Real Estate Development/Oil & Gas Industrial Civil Infrastructure.jpg"
+    "image": "/services/construction/oil-gas-industrial-civil-infrastructure.jpg"
   },
   {
     "id": "srv-cns-medical",
@@ -277,7 +277,7 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["المستشفيات العامة والتخصصية", "المراكز الجراحية الدقيقة", "أقسام الأشعة المقطعية والرنين", "المعامل الدوائية المعقمة"],
     "capabilitiesEn": ["HTM / NFPA 99 medical gas certified engineers", "Cleanroom validation instrumentation", "Hospital infection control compliance protocol"],
     "capabilitiesAr": ["مهندسون معتمدون في شبكات الغازات الطبية وفق معايير HTM و NFPA 99", "أجهزة قياس واختبار نظافة الهواء في غرف العمليات", "التزام صارم باشتراطات مكافحة العدوى والاعتماد الصحي"],
-    "image": "/BG/Contracting & Real Estate Development/Healthcare Facilities & Medical Fit-Out.jpg"
+    "image": "/services/construction/healthcare-facilities-medical-fit-out.jpg"
   },
   {
     "id": "srv-cns-oilgas",
@@ -306,7 +306,7 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["مصافي التكرير ومعالجة الغاز", "مستودعات تداول وتخزين الوقود", "محطات ضخ خطوط الأنابيب", "مجمعات البتروكيماويات"],
     "capabilitiesEn": ["Certified permits-to-work (PTW) safety crew", "ATEX compliant tools and diesel equipment", "Rigorous zero-incident HSE track record"],
     "capabilitiesAr": ["طواقم عمل مؤهلة بنظام تصاريح العمل البترولية PTW", "معدات وأدوات عمل مطابقة لمواصفات ATEX للأجواء الخطرة", "سجل موثق خالي من الحوادث في المنشآت الحيوية"],
-    "image": "/BG/Contracting & Real Estate Development/Oil & Gas Specialized Construction.jpg"
+    "image": "/services/construction/oil-gas-specialized-construction.jpg"
   },
   {
     "id": "srv-cns-commercial",
@@ -335,7 +335,7 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["المراكز والمولات التجارية", "المجمعات الإدارية ومقرات البنوك", "الأحياء المالية", "المشروعات متعددة الاستخدامات"],
     "capabilitiesEn": ["Turnkey execution from basement to roof", "LEED-certified construction protocols", "Comprehensive safety barrier and access staging"],
     "capabilitiesAr": ["تنفيذ متكامل من الحفر حتى التشغيل النهائي", "بروتوكولات بناء مطابقة لمعايير الاستدامة LEED", "أنظمة سقالات وسقوط آمنة للمباني المرتفعة"],
-    "image": "/BG/Contracting & Real Estate Development/Commercial & Administrative Development.jpg"
+    "image": "/services/construction/commercial-administrative-development.jpg"
   },
   {
     "id": "srv-cns-residential",
@@ -364,7 +364,7 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["الكمبوندات السكنية المغلقة", "الفيلات والقصور الخاصة", "مشروعات الإسكان والتوسع العمراني", "المنتجعات السكنية الساحلية"],
     "capabilitiesEn": ["Proven on-time delivery across multiple concurrent clusters", "Standardized high-quality procurement", "Comprehensive after-handover defect liability service"],
     "capabilitiesAr": ["التزام دقيق بمواعيد التسليم للمراحل السكنية المتزامنة", "توريد مركزي لمواد التشطيب المعتمدة لضمان الجودة", "خدمات صيانة وضمان ما بعد التسليم للعملاء"],
-    "image": "/BG/Contracting & Real Estate Development/Residential Development & Luxury Villas.jpg"
+    "image": "/services/construction/residential-development-luxury-villas.jpg"
   },
   {
     "id": "srv-cns-finishing",
@@ -393,7 +393,7 @@ export const professionalServices: ProfessionalService[] = [
     "applicationsAr": ["المقرات والمكاتب التنفيذية للشركات", "بهو الفنادق الفاخرة", "صالات كبار الزوار VIP", "المباني الدبلوماسية والسفارات"],
     "capabilitiesEn": ["In-house master fit-out craftsmen", "Precision laser-level alignment tools", "Zero-snag commercial delivery standards"],
     "capabilitiesAr": ["فريق حرفيين متخصص في أعمال التشطيبات الدقيقة", "أجهزة قياس ومحاذاة ليزرية متقدمة", "معايير تسليم هندسية خالية من الملاحظات"],
-    "image": "/BG/Contracting & Real Estate Development/Finishing & Interior Design.jpg"
+    "image": "/services/construction/finishing-interior-design.jpg"
   },
 
   // --------------------------------------------------------------------------
@@ -1194,7 +1194,7 @@ export const executedConstructionProjects: ExecutedProject[] = [
     "locationAr": "العاصمة الإدارية الجديدة، مصر",
     "scopeEn": "Full turnkey civil, structural, facade glazing, and MEP engineering across 45,000 m² built-up area.",
     "scopeAr": "تنفيذ متكامل للأعمال المدنية والخرسانية والواجهات الزجاجية وشبكات الكهروميكانيك بمسطح 45,000 م².",
-    "image": "/BG/Contracting & Real Estate Development/Commercial & Administrative Development.jpg",
+    "image": "/services/construction/commercial-administrative-development.jpg",
     "statusEn": "Completed & Handed Over",
     "statusAr": "تم التسليم"
   },
@@ -1206,7 +1206,7 @@ export const executedConstructionProjects: ExecutedProject[] = [
     "locationAr": "القاهرة الكبرى، مصر",
     "scopeEn": "Specialized hospital civil construction, hermetic operating theaters, and medical gas pipeline networks.",
     "scopeAr": "أعمال إنشائية تخصصية، تجهيز غرف العمليات المعقمة الكبسولية وتمديد شبكات الغازات الطبية المركزية.",
-    "image": "/BG/Contracting & Real Estate Development/Healthcare Facilities & Medical Fit-Out.jpg",
+    "image": "/services/construction/healthcare-facilities-medical-fit-out.jpg",
     "statusEn": "Operational",
     "statusAr": "قيد التشغيل"
   },
@@ -1218,7 +1218,7 @@ export const executedConstructionProjects: ExecutedProject[] = [
     "locationAr": "المنطقة الصناعية بالسويس، مصر",
     "scopeEn": "Reinforced deep pile foundations, pre-engineered steel frames (36m clear span), and laser-leveled industrial floors.",
     "scopeAr": "أساسات خوازيق عميقة، جمالونات فولاذية ببحور مفتوحة 36 مترًا، وأرضيات صناعية عالية التحمل ومسواة بالليزر.",
-    "image": "/BG/Contracting & Real Estate Development/Oil & Gas Industrial Civil Infrastructure.jpg",
+    "image": "/services/construction/oil-gas-industrial-civil-infrastructure.jpg",
     "statusEn": "Completed",
     "statusAr": "تم الإنجاز"
   },
@@ -1230,7 +1230,7 @@ export const executedConstructionProjects: ExecutedProject[] = [
     "locationAr": "القاهرة الجديدة، مصر",
     "scopeEn": "Civil skeleton, architectural finishing, road paving, utility infrastructure, and integrated community landscape.",
     "scopeAr": "الهياكل الخرسانية، التشطيبات المعمارية الفاخرة، رصف الطرق وشبكات المرافق المتكاملة واللاندسكيب.",
-    "image": "/BG/Contracting & Real Estate Development/Residential Development & Luxury Villas.jpg",
+    "image": "/services/construction/residential-development-luxury-villas.jpg",
     "statusEn": "Delivered",
     "statusAr": "تم التسليم"
   }

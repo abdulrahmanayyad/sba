@@ -41,7 +41,7 @@ function getSafeImageUrl(path: string | undefined): string {
     .join("/");
 }
 
-function getNormalizedEnvironmentalFallback(path: string | undefined): string {
+function getNormalizedFallback(path: string | undefined): string {
   if (!path) return "/placeholder.svg";
   const filename = path.split("/").pop();
   if (!filename) return "/placeholder.svg";
@@ -51,6 +51,10 @@ function getNormalizedEnvironmentalFallback(path: string | undefined): string {
     .replace(/&/g, "")
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
+  
+  if (/contracting|construction|real estate/i.test(path)) {
+    return `/services/construction/${clean}.jpg`;
+  }
   return `/services/environmental/${clean}.jpg`;
 }
 
@@ -264,7 +268,7 @@ export function ServicesCataloguePage() {
                           const target = e.currentTarget as HTMLImageElement;
                           if (!target.dataset.retried) {
                             target.dataset.retried = "1";
-                            target.src = getNormalizedEnvironmentalFallback(service.image);
+                            target.src = getNormalizedFallback(service.image);
                             return;
                           }
                           target.src = "/placeholder.svg";
@@ -388,7 +392,7 @@ export function ServicesCataloguePage() {
                       const target = e.currentTarget as HTMLImageElement;
                       if (!target.dataset.retried) {
                         target.dataset.retried = "1";
-                        target.src = getNormalizedEnvironmentalFallback(activeServiceDetail.image);
+                        target.src = getNormalizedFallback(activeServiceDetail.image);
                         return;
                       }
                       target.src = "/placeholder.svg";

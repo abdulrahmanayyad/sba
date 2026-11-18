@@ -58,7 +58,7 @@ export function NewsCmsTab() {
   const [newContentType, setNewContentType] = useState<NewsContentType>("corporate_news");
   const [newRefYear, setNewRefYear] = useState<number>(2026);
   const [newPublishDate, setNewPublishDate] = useState<string>(new Date().toISOString().slice(0, 10));
-  const [newImage, setNewImage] = useState("/BG/Contracting & Real Estate Development/General Contracting.jpg");
+  const [newImage, setNewImage] = useState("/services/construction/contracting-real-estate-development-home-page.jpg");
 
   // Filtering
   const filteredArticles = useMemo(() => {

@@ -1,17 +1,8 @@
 import React from "react";
 import { Link } from "@tanstack/react-router";
-import { 
-  Globe, 
-  TrendingUp, 
-  ArrowRight, 
-  Package, 
-  ShieldCheck, 
-  Sparkles, 
-  Layers,
-  MapPin
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { TRADE_STATS, COUNTRY_PROFILES } from "@/lib/trade-data";
+import { COUNTRY_PROFILES } from "@/lib/trade-data";
 
 interface HomeTradeSectionProps {
   ar?: boolean;
@@ -23,9 +14,9 @@ export function HomeTradeSection({ ar = true }: HomeTradeSectionProps) {
   return (
     <section className="site-container section-band">
       <div className="glass-box-interactive rounded-[36px] p-8 sm:p-12 cursor-pointer">
-        <div className="relative z-10 flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
-          {/* Left Column: Heading, Badges, CTA */}
-          <div className="max-w-2xl space-y-6 text-start">
+        <div className="relative z-10 flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+          {/* Main Content: Heading, Badges, CTA */}
+          <div className="max-w-3xl space-y-6 text-start">
             <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
               <span>{ar ? "انتشارنا العالمي" : "Our Global Reach"}</span>
@@ -37,8 +28,8 @@ export function HomeTradeSection({ ar = true }: HomeTradeSectionProps) {
               </h2>
               <p className="text-sm sm:text-base text-muted-foreground leading-relaxed font-medium">
                 {ar
-                  ? "شبكة تجارية عالمية ممتدة عبر 47 دولة حول العالم سجلت 179 طلبات شراء موثقة للمنتجات الغذائية لعام 2025."
-                  : "An international commercial network across 47 countries documenting 179 verified purchase orders and buyer requirements for food products in 2025."}
+                  ? "شبكة تجارية دولية ممتدة حول العالم متخصصة في سلاسل الإمداد وتلبية متطلبات التصدير والتوريد للأسواق العالمية."
+                  : "An international commercial network connecting markets and delivering global export and supply chain opportunities."}
               </p>
             </div>
 
@@ -78,53 +69,6 @@ export function HomeTradeSection({ ar = true }: HomeTradeSectionProps) {
               </Button>
             </div>
           </div>
-
-          {/* Right Column: 4 Key Metric Cards (Stacked Solid Green Rectangles) */}
-          <div className="flex flex-col gap-3 lg:w-[420px] shrink-0">
-            <div className="group flex items-center gap-4 rounded-2xl bg-brand-green p-3.5 sm:p-4 text-white shadow-md border border-brand-green/40 transition-all duration-300 hover:scale-[1.02] hover:bg-brand-green/95 hover:shadow-xl cursor-pointer">
-              <div className="flex h-11 min-w-[76px] sm:min-w-[84px] px-3 shrink-0 items-center justify-center rounded-xl bg-white/20 border border-white/30 backdrop-blur-sm shadow-xs">
-                <span className="font-head text-2xl sm:text-3xl font-black text-white tracking-tight">47</span>
-              </div>
-              <h4 className="text-xs sm:text-sm font-bold text-white leading-snug text-start flex-1">
-                {ar ? "دولة مسجلة لطلبات شراء" : "Documented Destination Markets"}
-              </h4>
-            </div>
-
-            <div className="group flex items-center gap-4 rounded-2xl bg-brand-green p-3.5 sm:p-4 text-white shadow-md border border-brand-green/40 transition-all duration-300 hover:scale-[1.02] hover:bg-brand-green/95 hover:shadow-xl cursor-pointer">
-              <div className="flex h-11 min-w-[76px] sm:min-w-[84px] px-3 shrink-0 items-center justify-center rounded-xl bg-white/20 border border-white/30 backdrop-blur-sm shadow-xs">
-                <span className="font-head text-2xl sm:text-3xl font-black text-white tracking-tight">179</span>
-              </div>
-              <h4 className="text-xs sm:text-sm font-bold text-white leading-snug text-start flex-1">
-                {ar ? "سجل طلبات شراء تجارية موثقة" : "Recorded Commercial Purchase Requests"}
-              </h4>
-            </div>
-
-            <div className="group flex items-center gap-4 rounded-2xl bg-brand-green p-3.5 sm:p-4 text-white shadow-md border border-brand-green/40 transition-all duration-300 hover:scale-[1.02] hover:bg-brand-green/95 hover:shadow-xl cursor-pointer">
-              <div className="flex h-11 min-w-[76px] sm:min-w-[84px] px-3 shrink-0 items-center justify-center rounded-xl bg-white/20 border border-white/30 backdrop-blur-sm shadow-xs">
-                <span className="font-head text-2xl sm:text-3xl font-black text-white tracking-tight">66</span>
-              </div>
-              <h4 className="text-xs sm:text-sm font-bold text-white leading-snug text-start flex-1">
-                {ar ? "طلبات التمور ومنتجاتها" : "Dates Purchase Requests"}
-              </h4>
-            </div>
-
-            <div className="group flex items-center gap-4 rounded-2xl bg-brand-green p-3.5 sm:p-4 text-white shadow-md border border-brand-green/40 transition-all duration-300 hover:scale-[1.02] hover:bg-brand-green/95 hover:shadow-xl cursor-pointer">
-              <div className="flex h-11 min-w-[76px] sm:min-w-[84px] px-3 shrink-0 items-center justify-center rounded-xl bg-white/20 border border-white/30 backdrop-blur-sm shadow-xs">
-                <span className="font-head text-2xl sm:text-3xl font-black text-white tracking-tight">113</span>
-              </div>
-              <h4 className="text-xs sm:text-sm font-bold text-white leading-snug text-start flex-1">
-                {ar ? "سلع ومحاصيل متنوعة" : "Diversified Food Commodities"}
-              </h4>
-            </div>
-          </div>
-        </div>
-
-        {/* Footer Disclaimer Strip */}
-        <div className="mt-8 pt-4 border-t border-border/40 text-start text-[11px] text-muted-foreground">
-          <span className="font-semibold text-brand-orange">{ar ? "تنويه توثيقي: " : "Notice: "}</span>
-          {ar
-            ? "تمثل هذه الأرقام طلبات شراء واردة ومسجلة ضمن متطلبات المشترين الدوليين، ولا تعني بالضرورة صدور أوامر شراء مؤكدة أو إبرام عقود تجارية أو إتمام عمليات توريد وشحن."
-            : TRADE_STATS.legalDisclaimerEn}
         </div>
       </div>
     </section>
