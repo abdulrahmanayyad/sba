@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Building2, ExternalLink, Globe2, Handshake, Mail, MessageCircle, Newspaper, ShieldCheck, Sparkles, TrendingUp } from "lucide-react";
 
-const heroBg = "/BG/Main Home Page.jpg";
+const heroBg = "/BG/Main Home Page.png";
 import { Button } from "@/components/ui/button";
 import { HomeMotion, HomeReveal as Reveal } from "@/components/home/home-motion";
 import { useLanguage } from "@/i18n/language-context";
