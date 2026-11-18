@@ -117,28 +117,20 @@ export function GarmentProjectsTab() {
   return (
     <div className="space-y-12 py-8">
       {/* Institutional Intellectual Property Notice Banner */}
-      <div className="rounded-2xl border border-border/80 bg-secondary/30 p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div className="flex items-center gap-3">
-          <div className="size-10 rounded-xl bg-brand-orange/10 flex items-center justify-center text-brand-orange shrink-0">
-            <Lock className="size-5" />
-          </div>
-          <div>
-            <span className="font-head text-xs font-bold text-foreground block">
-              {ar ? "حماية حقوق الملكية الفكرية وسرية التصاميم" : "Intellectual Property & Design Protection Notice"}
-            </span>
-            <p className="text-xs text-muted-foreground mt-0.5">
-              {ar
-                ? "حفاظًا على حقوق العلامات التجارية وشركائنا، يتم تسليم ملفات الباترونات الكاملة والـ Tech Packs وملفات الـ CAD عند توقيع اتفاقيات التصنيع التجارية واتفاقية عدم الإفصاح (NDA)."
-                : "To safeguard proprietary designs, master pattern files, grading rules, and full tech packs are shared under commercial supply agreements and non-disclosure agreements (NDA)."}
-            </p>
-          </div>
+      <div className="rounded-2xl border border-border/80 bg-secondary/30 p-4 sm:p-5 flex items-center gap-3">
+        <div className="size-10 rounded-xl bg-brand-orange/10 flex items-center justify-center text-brand-orange shrink-0">
+          <Lock className="size-5" />
         </div>
-        <Button asChild variant="outline" size="sm" className="rounded-full text-xs font-bold shrink-0">
-          <Link to="/models">
-            <span>{ar ? "تصفح كتالوج الموديلات" : "Explore Full Catalogue"}</span>
-            <ExternalLink className="size-3.5 ms-1.5" />
-          </Link>
-        </Button>
+        <div>
+          <span className="font-head text-xs sm:text-sm font-bold text-foreground block">
+            {ar ? "حماية حقوق الملكية الفكرية وسرية التصاميم" : "Intellectual Property & Design Protection Notice"}
+          </span>
+          <p className="text-xs text-muted-foreground mt-0.5 leading-relaxed">
+            {ar
+              ? "حفاظًا على حقوق العلامات التجارية وشركائنا، يتم تسليم ملفات الباترونات الكاملة والـ Tech Packs وملفات الـ CAD عند توقيع اتفاقيات التصنيع التجارية واتفاقية عدم الإفصاح (NDA)."
+              : "To safeguard proprietary designs, master pattern files, grading rules, and full tech packs are shared under commercial supply agreements and non-disclosure agreements (NDA)."}
+          </p>
+        </div>
       </div>
 
       <Reveal>
