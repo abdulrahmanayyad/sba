@@ -79,32 +79,40 @@ export function HomeTradeSection({ ar = true }: HomeTradeSectionProps) {
             </div>
           </div>
 
-          {/* Right Column: 4 Key Metric Cards */}
-          <div className="grid grid-cols-2 gap-3.5 sm:gap-4 lg:w-[420px] shrink-0">
-            <div className="rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-5 backdrop-blur-2xl text-start shadow-[0_8px_30px_rgba(0,0,0,0.04)] ring-1 ring-white/30 transition-all duration-300 hover:-translate-y-1 hover:bg-white/60 dark:hover:bg-white/20 hover:shadow-md cursor-pointer flex flex-col justify-center">
-              <span className="font-head text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">47</span>
-              <h4 className="text-xs font-bold text-foreground mt-1.5 leading-snug">
+          {/* Right Column: 4 Key Metric Cards (Stacked Solid Green Rectangles) */}
+          <div className="flex flex-col gap-3 lg:w-[420px] shrink-0">
+            <div className="group flex items-center gap-4 rounded-2xl bg-brand-green p-3.5 sm:p-4 text-white shadow-md border border-brand-green/40 transition-all duration-300 hover:scale-[1.02] hover:bg-brand-green/95 hover:shadow-xl cursor-pointer">
+              <div className="flex h-11 min-w-[76px] sm:min-w-[84px] px-3 shrink-0 items-center justify-center rounded-xl bg-white/20 border border-white/30 backdrop-blur-sm shadow-xs">
+                <span className="font-head text-2xl sm:text-3xl font-black text-white tracking-tight">47</span>
+              </div>
+              <h4 className="text-xs sm:text-sm font-bold text-white leading-snug text-start flex-1">
                 {ar ? "دولة مسجلة لطلبات شراء" : "Documented Destination Markets"}
               </h4>
             </div>
 
-            <div className="rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-5 backdrop-blur-2xl text-start shadow-[0_8px_30px_rgba(0,0,0,0.04)] ring-1 ring-white/30 transition-all duration-300 hover:-translate-y-1 hover:bg-white/60 dark:hover:bg-white/20 hover:shadow-md cursor-pointer flex flex-col justify-center">
-              <span className="font-head text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">179</span>
-              <h4 className="text-xs font-bold text-foreground mt-1.5 leading-snug">
+            <div className="group flex items-center gap-4 rounded-2xl bg-brand-green p-3.5 sm:p-4 text-white shadow-md border border-brand-green/40 transition-all duration-300 hover:scale-[1.02] hover:bg-brand-green/95 hover:shadow-xl cursor-pointer">
+              <div className="flex h-11 min-w-[76px] sm:min-w-[84px] px-3 shrink-0 items-center justify-center rounded-xl bg-white/20 border border-white/30 backdrop-blur-sm shadow-xs">
+                <span className="font-head text-2xl sm:text-3xl font-black text-white tracking-tight">179</span>
+              </div>
+              <h4 className="text-xs sm:text-sm font-bold text-white leading-snug text-start flex-1">
                 {ar ? "سجل طلبات شراء تجارية موثقة" : "Recorded Commercial Purchase Requests"}
               </h4>
             </div>
 
-            <div className="rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-5 backdrop-blur-2xl text-start shadow-[0_8px_30px_rgba(0,0,0,0.04)] ring-1 ring-white/30 transition-all duration-300 hover:-translate-y-1 hover:bg-white/60 dark:hover:bg-white/20 hover:shadow-md cursor-pointer flex flex-col justify-center">
-              <span className="font-head text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">66</span>
-              <h4 className="text-xs font-bold text-foreground mt-1.5 leading-snug">
+            <div className="group flex items-center gap-4 rounded-2xl bg-brand-green p-3.5 sm:p-4 text-white shadow-md border border-brand-green/40 transition-all duration-300 hover:scale-[1.02] hover:bg-brand-green/95 hover:shadow-xl cursor-pointer">
+              <div className="flex h-11 min-w-[76px] sm:min-w-[84px] px-3 shrink-0 items-center justify-center rounded-xl bg-white/20 border border-white/30 backdrop-blur-sm shadow-xs">
+                <span className="font-head text-2xl sm:text-3xl font-black text-white tracking-tight">66</span>
+              </div>
+              <h4 className="text-xs sm:text-sm font-bold text-white leading-snug text-start flex-1">
                 {ar ? "طلبات التمور ومنتجاتها" : "Dates Purchase Requests"}
               </h4>
             </div>
 
-            <div className="rounded-3xl border border-white/50 bg-white/40 dark:bg-white/10 p-5 backdrop-blur-2xl text-start shadow-[0_8px_30px_rgba(0,0,0,0.04)] ring-1 ring-white/30 transition-all duration-300 hover:-translate-y-1 hover:bg-white/60 dark:hover:bg-white/20 hover:shadow-md cursor-pointer flex flex-col justify-center">
-              <span className="font-head text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 drop-shadow-sm">113</span>
-              <h4 className="text-xs font-bold text-foreground mt-1.5 leading-snug">
+            <div className="group flex items-center gap-4 rounded-2xl bg-brand-green p-3.5 sm:p-4 text-white shadow-md border border-brand-green/40 transition-all duration-300 hover:scale-[1.02] hover:bg-brand-green/95 hover:shadow-xl cursor-pointer">
+              <div className="flex h-11 min-w-[76px] sm:min-w-[84px] px-3 shrink-0 items-center justify-center rounded-xl bg-white/20 border border-white/30 backdrop-blur-sm shadow-xs">
+                <span className="font-head text-2xl sm:text-3xl font-black text-white tracking-tight">113</span>
+              </div>
+              <h4 className="text-xs sm:text-sm font-bold text-white leading-snug text-start flex-1">
                 {ar ? "سلع ومحاصيل متنوعة" : "Diversified Food Commodities"}
               </h4>
             </div>
