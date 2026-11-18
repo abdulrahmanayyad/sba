@@ -33,17 +33,17 @@ export function GarmentServicesTab() {
     <div className="py-6 space-y-12">
       <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
         <Reveal>
-          <div className="max-w-3xl">
+          <div className="max-w-3xl mx-auto text-center flex flex-col items-center">
             <SectionBadge title={ar ? "حلول تصنيع وتطوير الأزياء" : "Manufacturing & Product Solutions"} />
-            <h2 className="section-title mt-3">
+            <h2 className="section-title mt-3 text-center">
               {ar
                 ? "حلول تصنيع الملابس وتطوير المنتجات"
                 : "Apparel Manufacturing & Product Development Solutions"}
             </h2>
-            <p className="section-intro mt-4">
+            <p className="section-intro mt-4 text-center leading-relaxed">
               {ar
-                ? "نقدم منظومة تصنيع متكاملة تضم 9 خدمات صناعية واستشارية متخصصة تبدأ من تطوير الغزول والأقمشة والتصميم الفني، مرورًا بالعينات والتشغيل الصناعي الكمي، وصولًا إلى استشارات إطلاق وتوسع العلامات التجارية."
-                : "An integrated manufacturing ecosystem offering 9 specialized industrial and advisory services—from yarn & fabric engineering and technical design, through sampling and bulk factory production, to fashion brand strategy and expansion advisory."}
+                ? "نقدم منظومة تصنيع متكاملة تضم جميع الخدمات الصناعية والاستشارية المتخصصة وتبدأ من تطوير الغزول والأقمشة والتصميم الفني، مرورًا بالعينات والتشغيل الصناعي الكمي، وصولًا إلى استشارات إطلاق وتوسع العلامات التجارية"
+                : "An integrated manufacturing ecosystem offering comprehensive industrial and advisory services—from yarn & fabric engineering and technical design, through sampling and bulk factory production, to fashion brand strategy and expansion advisory."}
             </p>
           </div>
 
