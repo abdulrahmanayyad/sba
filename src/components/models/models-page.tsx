@@ -256,7 +256,7 @@ export function ModelsPage({ embedded = false }: ModelsPageProps) {
                   </span>
                 </div>
                 <h3 className="font-head text-xl sm:text-2xl md:text-3xl font-black text-foreground">
-                  {ar ? "كتالوج الموديلات الجاهزة (+2,700 موديل وتصميم صناعي)" : "Ready-Made Models Catalogue (+2,700 Industrial Designs)"}
+                  {ar ? "كتالوج الموديلات الجاهزة" : "Ready-Made Models Catalogue"}
                 </h3>
                 <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed max-w-3xl">
                   {ar
@@ -266,7 +266,7 @@ export function ModelsPage({ embedded = false }: ModelsPageProps) {
               </div>
               <div className="shrink-0 flex items-center gap-2">
                 <span className="inline-flex items-center rounded-2xl bg-brand-green px-4 py-2 font-head text-xs font-bold text-white shadow-sm">
-                  {ar ? "+2,700 موديل معتمد" : "+2,700 Certified Models"}
+                  {ar ? "أكثر من 5000 موديل تم تطويره" : "Over 5,000 Developed Models"}
                 </span>
               </div>
             </div>
