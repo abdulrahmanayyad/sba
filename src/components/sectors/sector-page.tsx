@@ -23,10 +23,10 @@ function SectionBadge({ title }: { title: string }) {
 // Visual placeholders mapping for internal section richness
 const sectorImagesPool: Record<SectorSlug, string[]> = {
   environmental: [
-    "/BG/Environment & Sustainability/Sustainable Environmental Home Page.avif",
-    "/BG/Environment & Sustainability/Renewable Energy Solutions & Green Power.jpg",
-    "/BG/Environment & Sustainability/Comprehensive Waste Management Services.jpg",
-    "/BG/Environment & Sustainability/Environmental & Social Impact Assessments (ESIA).jpg",
+    "/services/environmental/sustainable-environmental-home-page.avif",
+    "/services/environmental/renewable-energy-solutions-green-power.jpg",
+    "/services/environmental/comprehensive-waste-management-services.jpg",
+    "/services/environmental/environmental-assessment.jpg",
   ],
   food: [
     "/BG/Natural & Agri-Food Products/Natural & Agri-Food Products Home Page.jpg",
@@ -35,16 +35,16 @@ const sectorImagesPool: Record<SectorSlug, string[]> = {
     "/BG/Natural & Agri-Food Products/Dates.jpg",
   ],
   research: [
-    "/BG/Environment & Sustainability/Research & Development & Environmental Software Solutions.jpg",
-    "/BG/Environment & Sustainability/Intelligent QHSE Application & Software Solutions.jpg",
-    "/BG/Environment & Sustainability/IoT Environmental Monitoring System.jpg",
-    "/BG/Environment & Sustainability/Environmental Biotechnology Services.jpg",
+    "/services/environmental/research-development-environmental-software-solutions.jpg",
+    "/services/environmental/intelligent-qhse-application-software-solutions.jpg",
+    "/services/environmental/iot-environmental-monitoring-system.jpg",
+    "/services/environmental/environmental-biotechnology-services.jpg",
   ],
   education: [
-    "/BG/Environment & Sustainability/Education & Healthcare Sector.jpg",
-    "/BG/Environment & Sustainability/Sustainable Development Advisory & UN Global Goals.jpg",
-    "/BG/Environment & Sustainability/Management Consultations & ISO Qualification Projects.jpg",
-    "/BG/Environment & Sustainability/EHS Consultations & Regulatory Applications for Healthcare.jpg",
+    "/services/environmental/education-healthcare-sector.jpg",
+    "/services/environmental/sustainable-development-advisory-un-global-goals.jpg",
+    "/services/environmental/management-consultations-iso-qualification-projects.jpg",
+    "/services/environmental/ehs-consultations-regulatory-applications-for-healthcare.jpg",
   ],
   construction: [
     "/BG/Contracting & Real Estate Development/Contracting & Real Estate Development Home Page.jpg",

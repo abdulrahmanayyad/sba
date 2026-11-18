@@ -1,9 +1,9 @@
 const apparel = "/BG/Apparel Manufacturing/Apparel Manufacturing Home Page.jpg";
 const construction = "/BG/Contracting & Real Estate Development/Contracting & Real Estate Development Home Page.jpg";
-const enviro = "/BG/Environment & Sustainability/Sustainable Environmental Home Page.avif";
+const enviro = "/services/environmental/sustainable-environmental-home-page.avif";
 const food = "/BG/Natural & Agri-Food Products/Natural & Agri-Food Products Home Page.jpg";
-const research = "/BG/Environment & Sustainability/Research & Development & Environmental Software Solutions.jpg";
-const education = "/BG/Environment & Sustainability/Education & Healthcare Sector.jpg";
+const research = "/services/environmental/research-development-environmental-software-solutions.jpg";
+const education = "/services/environmental/education-healthcare-sector.jpg";
 import jzraLogo from "@/assets/JZRA_Logo.svg.asset.json";
 
 export type SectorSlug = "garment" | "construction" | "environmental" | "research" | "education" | "food";
