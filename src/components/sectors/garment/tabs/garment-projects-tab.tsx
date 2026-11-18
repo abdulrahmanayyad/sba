@@ -153,8 +153,8 @@ export function GarmentProjectsTab() {
             </h2>
             <p className="mt-4 text-base text-muted-foreground leading-relaxed">
               {ar
-                ? "استكشف مئات الموديلات المصنعة لعلامات تجارية دولية ومحلية، مصنفة بوضوح بين نماذج جاهزة للتصنيع، منتجات تم توريدها، مشروعات عملاء خاصة، وعينات تطوير معتمدة."
-                : "Explore hundreds of styles engineered across our dedicated lines, classified transparently between Ready Manufacturing Models, Delivered Products, Client Projects, and R&D Samples."}
+                ? "استكشف مئات الموديلات المصنعة لعلامات تجارية دولية ومحلية."
+                : "Explore hundreds of styles engineered across our dedicated lines for international and regional brands."}
             </p>
           </div>
 
