@@ -63,44 +63,23 @@ export function PartnersPage() {
   return (
     <div className="w-full">
       {/* 1. Hero Section */}
-      <section className="site-container pt-16 pb-10 scroll-mt-24">
+      <section className="site-container pt-20 sm:pt-28 pb-8 scroll-mt-24">
         <Reveal>
-          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-4">
-            <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-            <span>{ar ? "التعاون التقني والتجاري" : "Technical and Commercial Cooperation"}</span>
-          </div>
-          <h1 className="section-title mt-2 text-2xl sm:text-3xl lg:text-4xl font-extrabold text-foreground">
-            {ar ? "التعاون التقني والتجاري" : "Technical and Commercial Cooperation"}
-          </h1>
-          <p className="section-intro mt-4 max-w-3xl leading-relaxed text-muted-foreground sm:text-lg">
-            {ar
-              ? "نعمل على تطوير علاقات تعاون تدعم احتياجات عملائنا في عدة قطاعات. ويُحدد نطاق كل علاقة بحسب الاتفاق القائم والمنتجات أو الخدمات المشمولة والأسواق المستهدفة."
-              : "We develop cooperation relationships that support our clients' needs across multiple sectors. The scope of each relationship depends on the existing agreement, participating entity, products or services covered, and target markets."}
-          </p>
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-4">
+              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+              <span>{ar ? "التحالفات والشراكات" : "Alliances & Partnerships"}</span>
+            </div>
 
-          <div className="mt-6 flex flex-wrap items-center gap-3">
-            <Button asChild size="default" className="rounded-full !bg-brand-green !text-white hover:!bg-brand-orange text-xs sm:text-sm font-bold shadow-md cursor-pointer">
-              <a
-                href={ar ? "/downloads/SBA_Corporate_Capabilities_AR.pdf" : "/downloads/SBA_Corporate_Capabilities_EN.pdf"}
-                download={ar ? "SBA_Corporate_Capabilities_AR.pdf" : "SBA_Corporate_Capabilities_EN.pdf"}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Download className="size-4 me-1.5" />
-                <span>{ar ? "تحميل بيان القدرات المؤسسية" : "Download Capabilities Statement"}</span>
-              </a>
-            </Button>
-            <Button asChild size="default" className="rounded-full !bg-brand-green !text-white hover:!bg-brand-orange text-xs sm:text-sm font-bold shadow-md cursor-pointer">
-              <a
-                href={ar ? "/downloads/SBA_Business_And_Partnership_Overview_AR.pdf" : "/downloads/SBA_Business_And_Partnership_Overview_EN.pdf"}
-                download={ar ? "SBA_Business_And_Partnership_Overview_AR.pdf" : "SBA_Business_And_Partnership_Overview_EN.pdf"}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Download className="size-4 me-1.5" />
-                <span>{ar ? "مذكرة الشراكات والاستثمار" : "Partnership Overview"}</span>
-              </a>
-            </Button>
+            <h1 className="font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold text-black dark:text-white text-center leading-tight tracking-tight">
+              {ar ? "التحالفات والشراكات" : "Alliances & Partnerships"}
+            </h1>
+
+            <p className="mt-4 max-w-3xl mx-auto text-base sm:text-lg text-muted-foreground leading-relaxed text-center">
+              {ar
+                ? "نعمل على تطوير علاقات تعاون تدعم احتياجات عملائنا في عدة قطاعات. ويُحدد نطاق كل علاقة بحسب الاتفاق القائم والمنتجات أو الخدمات المشمولة والأسواق المستهدفة."
+                : "We develop cooperation relationships that support our clients' needs across multiple sectors. The scope of each relationship depends on the existing agreement, participating entity, products or services covered, and target markets."}
+            </p>
           </div>
         </Reveal>
       </section>

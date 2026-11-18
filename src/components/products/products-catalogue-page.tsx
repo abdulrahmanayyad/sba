@@ -400,7 +400,7 @@ export function ProductsCataloguePage() {
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-4">
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-              <span>{ar ? "مكتبة الكتالوجات" : "Catalogue Library"}</span>
+              <span>{ar ? "مكتبة المنتجات" : "Products Library"}</span>
             </div>
 
             <h1 className="font-head text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-black dark:text-white leading-tight tracking-tight text-center mx-auto">

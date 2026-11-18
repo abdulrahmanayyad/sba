@@ -184,48 +184,28 @@ export function NewsPage() {
 
   return (
     <div className="w-full">
-      {/* 1. Newsroom & Archive Hero Header (Clean Full-width & Full-height Background like Home Page) */}
-      <section className="relative w-full min-h-[calc(100svh-76px)] overflow-hidden text-white flex flex-col justify-center mb-12">
-        {/* Full-width & Full-height background image & overlay */}
-        <img
-          src="/Background/Corporate Legacy, Historical Archive & Sector Insights.jpg"
-          alt={ar ? "أرشيف مجموعة سامي بن عياد" : "Sami Bin Ayyad Group Archive"}
-          className="absolute inset-0 size-full object-cover object-center pointer-events-none select-none"
-          fetchPriority="high"
-        />
-        <div className="group-hero-overlay absolute inset-0 bg-black/60 backdrop-blur-[1px] pointer-events-none" />
+      {/* 1. Newsroom & Archive Hero Header */}
+      <section className="site-container pt-20 sm:pt-28 pb-8 scroll-mt-24">
+        <Reveal>
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md mb-4">
+              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+              <span>{ar ? "أرشيف الأخبار" : "News Archive"}</span>
+            </div>
 
-        <div className="site-container relative z-10 flex min-h-[inherit] flex-col justify-between pt-16 sm:pt-24 pb-8 sm:pb-12">
-          <div className="my-auto">
-            <Reveal>
-              {/* A. Small Top Headline (Right in Arabic / RTL, Left in English / LTR) */}
-              <div className="flex items-center justify-start mb-6">
-                <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/50 px-4 py-1.5 text-xs font-bold tracking-wide text-white/95 backdrop-blur-md shadow-md">
-                  <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-                  <span>
-                    {ar
-                      ? "مجموعة سامي بن عياد · الأرشيف المؤسسي الشامل"
-                      : "Sami Bin Ayyad Group · Comprehensive Institutional Archive"}
-                  </span>
-                </div>
-              </div>
+            <h1 className="font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold text-black dark:text-white text-center leading-tight tracking-tight">
+              {ar
+                ? "الأرشيف التاريخي والأنشطة المؤسسية والتحليلات القطاعية"
+                : "Corporate Legacy, Historical Archive & Sector Insights"}
+            </h1>
 
-              {/* B. Main Headline (Refined and prominent) */}
-              <h1 className="font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white leading-snug tracking-tight text-start drop-shadow-md max-w-4xl">
-                {ar
-                  ? "الأرشيف التاريخي والأنشطة المؤسسية والتحليلات القطاعية"
-                  : "Corporate Legacy, Historical Archive & Sector Insights"}
-              </h1>
-
-              {/* C. Intro Paragraph (Aligned to start) */}
-              <p className="mt-3.5 max-w-4xl text-sm sm:text-base leading-relaxed text-white/90 text-start drop-shadow-sm">
-                {ar
-                  ? "منصة توثيقية متكاملة تستعرض الجذور التاريخية لأنشطة المجموعة منذ عام 1977، وتطور الكيانات المتخصصة في مصر والسعودية، والتحليلات القطاعية الموثقة (2010–2020)، وصولًا إلى التأسيس المؤسسي الجامع عام 2023 وأنشطة المجموعة الحديثة حتى 2026."
-                  : "A unified institutional platform documenting operational roots from 1977, cross-border entity growth in Egypt and Saudi Arabia, sector insights (2010–2020), and unified corporate activities following the 2023 institutional integration."}
-              </p>
-            </Reveal>
+            <p className="mt-4 max-w-3xl mx-auto text-base sm:text-lg text-muted-foreground leading-relaxed text-center">
+              {ar
+                ? "منصة توثيقية متكاملة تستعرض الجذور التاريخية لأنشطة المجموعة منذ عام 1977، وتطور الكيانات المتخصصة في مصر والسعودية، والتحليلات القطاعية الموثقة (2010–2020)، وصولًا إلى التأسيس المؤسسي الجامع عام 2023 وأنشطة المجموعة الحديثة حتى 2026."
+                : "A unified institutional platform documenting operational roots from 1977, cross-border entity growth in Egypt and Saudi Arabia, sector insights (2010–2020), and unified corporate activities following the 2023 institutional integration."}
+            </p>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* 2. Official Corporate Legacy & Timeline Section */}
