@@ -170,28 +170,25 @@ export function FoodSectorView({ tab = "about" }: FoodViewProps) {
             </Reveal>
 
             <Reveal delay={0.1}>
-              <h1 className="font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white mb-4 max-w-4xl leading-tight">
+              <h1 className="mt-2 max-w-4xl font-head text-[clamp(1.85rem,3.5vw,3rem)] font-extrabold leading-tight text-white drop-shadow-md">
                 {ar ? foodHeroData.titleAr : foodHeroData.titleEn}
               </h1>
             </Reveal>
 
             <Reveal delay={0.15}>
-              <p className="text-sm sm:text-base text-white/90 max-w-3xl leading-relaxed mb-8">
+              <p className="mt-4 max-w-2xl text-sm leading-relaxed text-white/85 sm:text-base">
                 {ar ? foodHeroData.subtitleAr : foodHeroData.subtitleEn}
               </p>
             </Reveal>
 
             <Reveal delay={0.2}>
-              <div className="flex flex-wrap items-center gap-4">
-                <Link
-                  to="/sectors/$sector"
-                  params={{ sector: "food" }}
-                  search={{ tab: "markets" }}
-                  className="inline-flex items-center gap-2 rounded-full bg-brand-orange px-8 py-3.5 text-sm font-bold text-white shadow-xl shadow-brand-orange/30 transition-all hover:bg-brand-green hover:scale-105 active:scale-95"
-                >
-                  <Globe className="size-4" />
-                  <span>{ar ? "استكشاف أسواقنا" : "Explore Our Markets"}</span>
-                </Link>
+              <div className="mt-8 flex flex-wrap items-center gap-3">
+                <Button asChild size="lg" className="rounded-full bg-brand-green text-white hover:bg-brand-orange transition-all duration-300 shadow-md font-bold px-8">
+                  <Link to="/sectors/$sector" params={{ sector: "food" }} search={{ tab: "markets" }}>
+                    <span>{ar ? "استكشاف أسواقنا" : "Explore Our Markets"}</span>
+                    <ArrowRight className="size-4 ms-2 rtl:rotate-180" />
+                  </Link>
+                </Button>
               </div>
             </Reveal>
           </div>
@@ -970,7 +967,7 @@ function FoodSectorsTab({ ar }: { ar: boolean }) {
       <Reveal>
         <div className="text-center max-w-3xl mx-auto mb-16">
           <SectionBadge title={ar ? "قطاعاتنا التخصصية" : "Our Specialized Sectors"} />
-          <h2 className="font-head text-3xl sm:text-5xl font-bold tracking-tight text-foreground mt-3 mb-4">
+          <h2 className="font-head text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-foreground mt-3 mb-4 text-center">
             {ar ? "قطاعات التوريد الطبيعي والزراعي المتكاملة" : "Integrated Natural & Agri-Food Sectors"}
           </h2>
           <p className="text-sm sm:text-base text-muted-foreground">
@@ -1124,7 +1121,7 @@ function FoodProductsTab({
       <Reveal>
         <div className="text-center max-w-3xl mx-auto mb-10">
           <SectionBadge title={ar ? "كتالوج التصدير والمواصفات" : "Export Catalog & Specs"} />
-          <h2 className="font-head text-3xl sm:text-5xl font-bold tracking-tight text-foreground mt-3 mb-4">
+          <h2 className="font-head text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-foreground mt-3 mb-4 text-center">
             {ar ? "كتالوج المنتجات الطبيعية والغذائية الكامل" : "Comprehensive Natural Products Portfolio"}
           </h2>
           <p className="text-sm sm:text-base text-muted-foreground">

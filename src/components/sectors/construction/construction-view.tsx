@@ -599,7 +599,7 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
                 <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
                 <span>{ar ? "ابدأ دراسة وتنفيذ مشروعك" : "Start Your Construction Project"}</span>
               </div>
-              <h2 className="text-2xl sm:text-4xl font-extrabold font-head text-foreground text-center mx-auto">
+              <h2 className="section-title mt-3 text-center mx-auto">
                 {ar ? "جاهزون لمناقشة ودراسة مشروعك القادم" : "Ready to Execute Your Next Milestone Project"}
               </h2>
               <p className="mt-3 text-xs sm:text-sm text-muted-foreground leading-relaxed text-center mx-auto">

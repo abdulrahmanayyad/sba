@@ -32,7 +32,7 @@ export function GarmentClientsTab() {
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
               <span>{ar ? "عملاؤنا" : "Our Clients"}</span>
             </div>
-            <h2 className="mt-2 font-head text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            <h2 className="section-title mt-2">
               {ar ? "نصنع لكبرى العلامات التجارية والشركات الرائدة" : "Manufacturing for Leading Global & Regional Fashion Labels"}
             </h2>
             <p className="mt-4 text-base text-muted-foreground leading-relaxed">

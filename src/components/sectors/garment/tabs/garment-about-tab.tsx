@@ -70,7 +70,7 @@ export function GarmentAboutTab() {
               <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
               <span>{ar ? "عن قطاع تصنيع الملابس الجاهزة" : "About Ready-Made Garments"}</span>
             </div>
-            <h2 className="font-head text-xl sm:text-3xl font-extrabold text-foreground mt-2 text-center mx-auto w-full">
+            <h2 className="section-title mt-2 text-center mx-auto">
               {ar ? whoWeAre.headingAr : whoWeAre.heading}
             </h2>
             <div className="section-intro mx-auto mt-6 leading-relaxed max-w-3xl space-y-4 text-start">
@@ -564,7 +564,7 @@ export function GarmentAboutTab() {
               <div className="mb-3">
                 <SectionBadge title={ar ? "تصنيع تعاقدي وتصدير دولي" : "Contract Manufacturing & Export Orders"} />
               </div>
-              <h2 className="text-2xl sm:text-4xl font-extrabold font-head text-foreground text-center mx-auto">
+              <h2 className="section-title mt-3 text-center mx-auto">
                 {ar ? "جاهزون للبدء بأعلى معايير الجودة" : "Ready to Manufacture with the Highest Quality Standards"}
               </h2>
               <p className="mt-3 text-xs sm:text-sm text-muted-foreground leading-relaxed text-center mx-auto">

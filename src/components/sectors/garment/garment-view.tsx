@@ -115,7 +115,7 @@ export function GarmentSectorView({ tab = "about" }: GarmentViewProps) {
                 <span>{ar ? garmentHeroData.companyAr : garmentHeroData.company}</span>
               </div>
 
-              <h1 className="mt-2 max-w-4xl font-head text-[clamp(1.75rem,3.5vw,2.75rem)] font-extrabold leading-tight text-white drop-shadow-md">
+              <h1 className="mt-2 max-w-4xl font-head text-[clamp(1.85rem,3.5vw,3rem)] font-extrabold leading-tight text-white drop-shadow-md">
                 {ar ? garmentHeroData.titleAr : garmentHeroData.title}
               </h1>
 

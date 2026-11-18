@@ -616,7 +616,7 @@ function EnvironmentalAboutView({ ar }: { ar: boolean }) {
                 <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
                 <span>{ar ? "استشارات بيئية موثوقة" : "Certified Environmental Consultation"}</span>
               </div>
-              <h2 className="text-2xl sm:text-4xl font-extrabold font-head text-foreground text-center mx-auto">
+              <h2 className="section-title mt-3 text-center mx-auto">
                 {ar ? "جاهزون لتقييم وتطوير المتطلبات البيئية لمنشأتك" : "Ready to Engineer Your Sustainable Future"}
               </h2>
               <p className="mt-3 text-xs sm:text-sm text-muted-foreground leading-relaxed text-center mx-auto">
@@ -757,7 +757,7 @@ function EnvironmentalServicesView({ ar }: { ar: boolean }) {
             <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
               <div className="flex-1 min-w-0">
                 <SectionBadge title={ar ? "خدماتنا وتخصصاتنا" : "Specialized Services"} />
-                <h2 className="mt-3 font-head text-xl sm:text-2xl lg:text-[1.7rem] font-bold tracking-tight text-foreground md:whitespace-nowrap">
+                <h2 className="section-title mt-3">
                   {ar ? "منظومة الخدمات البيئية والاستشارية والحلول التكنولوجية" : "Comprehensive Environmental & Engineering Services"}
                 </h2>
                 <p className="section-intro mt-2">
