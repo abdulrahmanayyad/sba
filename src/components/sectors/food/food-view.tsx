@@ -39,7 +39,7 @@ import {
   Wheat,
   X,
 } from "lucide-react";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import { Reveal } from "@/components/home/reveal";
 import { Button } from "@/components/ui/button";
@@ -137,6 +137,15 @@ export function FoodSectorView({ tab = "about" }: FoodViewProps) {
   // Pre-fill state when clicking "Request Quotation" from product dialog
   const [prefilledProduct, setPrefilledProduct] = useState<string | null>(null);
 
+  useEffect(() => {
+    if (tab === "sectors") {
+      const el = document.getElementById("sectors");
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [tab]);
+
   const handleRequestQuotationForProduct = (product: DetailedFoodProduct) => {
     setSelectedProduct(null);
     setPrefilledProduct(ar ? product.nameAr : product.nameEn);
@@ -145,8 +154,8 @@ export function FoodSectorView({ tab = "about" }: FoodViewProps) {
 
   return (
     <div className="w-full">
-      {/* Sector Hero — Displayed on About tab */}
-      {activeTab === "about" && (
+      {/* Sector Hero — Displayed on About and Sectors */}
+      {(activeTab === "about" || activeTab === "sectors") && (
         <section className="relative w-full overflow-hidden text-footer-foreground min-h-screen flex items-center">
           <img
             data-clip-reveal
@@ -196,13 +205,12 @@ export function FoodSectorView({ tab = "about" }: FoodViewProps) {
       )}
 
       {/* Render Sub Tabs */}
-      {activeTab === "about" && (
+      {(activeTab === "about" || activeTab === "sectors") && (
         <FoodAboutTab
           ar={ar}
           onOpenProductDossier={(prod) => setSelectedProduct(prod)}
         />
       )}
-      {activeTab === "sectors" && <FoodSectorsTab ar={ar} />}
       {activeTab === "quality" && <FoodQualityTab ar={ar} />}
       {activeTab === "products" && (
         <FoodProductsTab
@@ -420,6 +428,9 @@ function FoodAboutTab({
           </div>
         </div>
       </section>
+
+      {/* DETAILED SPECIALIZED SECTORS (Transferred from ?tab=sectors) */}
+      <FoodSectorsTab ar={ar} />
 
       {/* SECTION 3: Our Supply Capabilities */}
       <section className="site-container py-16 sm:py-24">
@@ -944,7 +955,7 @@ function FoodAboutTab({
 // ============================================================================
 function FoodSectorsTab({ ar }: { ar: boolean }) {
   return (
-    <section className="site-container pt-28 sm:pt-36 pb-20">
+    <section id="sectors" className="site-container py-16 sm:py-24 scroll-mt-24">
       <Reveal>
         <div className="text-center max-w-3xl mx-auto mb-16">
           <SectionBadge title={ar ? "قطاعاتنا التخصصية" : "Our Specialized Sectors"} />
@@ -1018,11 +1029,11 @@ function FoodSectorsTab({ ar }: { ar: boolean }) {
                       <Link
                         to="/sectors/$sector"
                         params={{ sector: "food" }}
-                        search={{ tab: "order-product" }}
+                        search={{ tab: "request-supply" }}
                         className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary px-5 py-2.5 text-xs font-bold text-foreground hover:bg-secondary/70 transition-all"
                       >
                         <Send className="size-3.5 rtl:rotate-180" />
-                        <span>{ar ? "طلب توريد" : "Request RFQ"}</span>
+                        <span>{ar ? "طلب توريد" : "Request Supply"}</span>
                       </Link>
                     </div>
                   </div>
@@ -1035,7 +1046,6 @@ function FoodSectorsTab({ ar }: { ar: boolean }) {
                         className="size-full object-cover transition-transform duration-700 hover:scale-105"
                         loading="lazy"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
                     </div>
                   </div>
                 </div>
@@ -1043,10 +1053,6 @@ function FoodSectorsTab({ ar }: { ar: boolean }) {
             </Reveal>
           );
         })}
-      </div>
-
-      <div className="mt-16">
-        <SectorContactSection ar={ar} sector="food" />
       </div>
     </section>
   );

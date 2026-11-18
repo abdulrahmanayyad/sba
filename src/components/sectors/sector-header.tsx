@@ -302,7 +302,7 @@ export function SectorHeader({
                 <Link
                   to="/sectors/$sector"
                   params={{ sector: "food" }}
-                  search={{ tab: "sectors" }}
+                  search={{ tab: "about" }}
                   className={cn(navPill, (activeTab === "sectors" || activeTab === "about") && "!text-brand-orange bg-white/40 shadow-sm")}
                 >
                   {ar ? "نظرة عامة" : "Overview"}
@@ -700,7 +700,7 @@ export function SectorHeader({
                     <Link
                       to="/sectors/$sector"
                       params={{ sector: "food" }}
-                      search={{ tab: "sectors" }}
+                      search={{ tab: "about" }}
                       onClick={() => setMenuOpen(false)}
                       className={cn(mobileLinkStyle, (activeTab === "sectors" || activeTab === "about") && "!text-brand-orange bg-white/40")}
                     >
