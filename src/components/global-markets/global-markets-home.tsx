@@ -116,7 +116,7 @@ export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
   return (
     <div className="w-full pb-24">
       {/* 1. Institutional Hero Section (خلفية صفحة الأسواق العالمية) */}
-      <section className="relative w-full min-h-[calc(75svh-76px)] overflow-hidden text-white flex flex-col justify-center mb-10">
+      <section className="relative w-full min-h-[calc(60svh-76px)] sm:min-h-[calc(65svh-76px)] overflow-hidden text-white flex flex-col justify-center mb-8 sm:mb-12">
         {/* Full-width background image & overlay */}
         <img
           src={encodeURI("/Background/Homepage Global Markets Background.jpg")}
@@ -124,7 +124,7 @@ export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
           className="absolute inset-0 size-full object-cover object-center pointer-events-none select-none"
           fetchPriority="high"
         />
-        <div className="group-hero-overlay absolute inset-0 bg-slate-950/75 backdrop-blur-[1px] pointer-events-none" />
+        <div className="group-hero-overlay absolute inset-0 bg-slate-950/70 backdrop-blur-[1px] pointer-events-none" />
 
         <div className="site-container relative z-10 flex min-h-[inherit] flex-col justify-center py-16 sm:py-20">
           <Reveal>
@@ -152,23 +152,29 @@ export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
                   : "Comprehensive market research and strategic intelligence covering local and international markets, identifying demand, trade opportunities, and investment potential through verified data and in-depth analysis."}
               </p>
             </div>
+          </Reveal>
+        </div>
+      </section>
 
-            {/* The Two Dedicated Action Boxes Under the Title */}
-            <div className="grid gap-5 sm:grid-cols-2 pt-8">
+      {/* 2. Action Boxes & Readiness Directly Under the Image */}
+      <section className="site-container mb-12">
+        <Reveal>
+          <div className="space-y-6">
+            <div className="grid gap-5 sm:grid-cols-2">
               {/* Box 1: لوحة مقارنة الأسواق الدولية */}
-              <div className="interactive-card glass-box-interactive group/card flex flex-col justify-between overflow-hidden rounded-3xl border border-white/15 bg-black/45 p-6 sm:p-7 shadow-xl backdrop-blur-xl hover:border-brand-green/50 hover:-translate-y-1 transition-all">
+              <div className="interactive-card glass-box-interactive group/card flex flex-col justify-between overflow-hidden rounded-3xl border border-slate-200/80 dark:border-white/15 bg-white/85 dark:bg-slate-900/75 p-6 sm:p-7 shadow-lg backdrop-blur-2xl hover:border-brand-green/50 hover:-translate-y-1 transition-all">
                 <div className="space-y-4 text-start">
                   <div className="flex items-center justify-between">
-                    <span className="inline-flex items-center gap-1 rounded-full bg-brand-green/20 px-3 py-1 text-[11px] font-extrabold text-emerald-300 border border-emerald-400/30 backdrop-blur-md">
+                    <span className="inline-flex items-center gap-1 rounded-full bg-brand-green/10 px-3 py-1 text-[11px] font-extrabold text-brand-green border border-brand-green/20">
                       {ar ? "مقارنات تفاعلية معتمدة" : "Verified Benchmarks"}
                     </span>
                   </div>
 
                   <div className="space-y-2">
-                    <h3 className="font-head text-lg sm:text-xl font-extrabold text-white group-hover/card:text-emerald-300 transition-colors">
+                    <h3 className="font-head text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white group-hover/card:text-brand-green-text transition-colors">
                       {ar ? "لوحة مقارنة الأسواق الدولية" : "Global Markets Comparative Dashboard"}
                     </h3>
-                    <p className="text-xs sm:text-sm text-white/80 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                       {ar
                         ? "مقارنة تفاعلية شاملة بين الأسواق والفرص الاستثمارية ومؤشرات الطلب والتجارة وسلاسل الإمداد عبر الرسوم البيانية والجداول التحليلية المعتمدة."
                         : "Interactive comprehensive comparison across international markets, trade indicators, and investment opportunities through verified analytical tables."}
@@ -176,7 +182,7 @@ export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
                   </div>
                 </div>
 
-                <div className="pt-5 mt-4 border-t border-white/15">
+                <div className="pt-5 mt-4 border-t border-slate-200/70 dark:border-white/10">
                   <Link
                     to="/global-markets/$sector/$slug"
                     params={{ sector: "garment", slug: "compare" }}
@@ -188,19 +194,19 @@ export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
               </div>
 
               {/* Box 2: إدارة الدراسات والتحديثات */}
-              <div className="interactive-card glass-box-interactive group/card flex flex-col justify-between overflow-hidden rounded-3xl border border-white/15 bg-black/45 p-6 sm:p-7 shadow-xl backdrop-blur-xl hover:border-brand-green/50 hover:-translate-y-1 transition-all">
+              <div className="interactive-card glass-box-interactive group/card flex flex-col justify-between overflow-hidden rounded-3xl border border-slate-200/80 dark:border-white/15 bg-white/85 dark:bg-slate-900/75 p-6 sm:p-7 shadow-lg backdrop-blur-2xl hover:border-brand-green/50 hover:-translate-y-1 transition-all">
                 <div className="space-y-4 text-start">
                   <div className="flex items-center justify-between">
-                    <span className="inline-flex items-center gap-1 rounded-full bg-brand-green/20 px-3 py-1 text-[11px] font-extrabold text-emerald-300 border border-emerald-400/30 backdrop-blur-md">
+                    <span className="inline-flex items-center gap-1 rounded-full bg-brand-green/10 px-3 py-1 text-[11px] font-extrabold text-brand-green border border-brand-green/20">
                       {ar ? "منظومة التحكم المركزي" : "Central CMS Hub"}
                     </span>
                   </div>
 
                   <div className="space-y-2">
-                    <h3 className="font-head text-lg sm:text-xl font-extrabold text-white group-hover/card:text-emerald-300 transition-colors">
+                    <h3 className="font-head text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white group-hover/card:text-brand-green-text transition-colors">
                       {ar ? "إدارة الدراسات والتحديثات" : "Studies Registry & CMS"}
                     </h3>
-                    <p className="text-xs sm:text-sm text-white/80 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                       {ar
                         ? "لوحة التحكم لإدارة سجل الدراسات السوقية، ومتابعة تواريخ التحديث، والتحقق من المعايير، واستيراد أو نشر وتحديث بيانات القطاعات."
                         : "Administrative dashboard to manage market studies registry, monitor update cycles, verify compliance, and import or publish sector intelligence."}
@@ -208,7 +214,7 @@ export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
                   </div>
                 </div>
 
-                <div className="pt-5 mt-4 border-t border-white/15">
+                <div className="pt-5 mt-4 border-t border-slate-200/70 dark:border-white/10">
                   <Link
                     to="/global-markets/manage"
                     className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-brand-green px-5 py-3 text-xs sm:text-sm font-bold text-white hover:bg-brand-orange transition-all duration-300 shadow-sm cursor-pointer"
@@ -220,21 +226,21 @@ export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
             </div>
 
             {/* Verified Readiness Summary Bar */}
-            <div className="pt-6 mt-6 border-t border-white/15 grid gap-3 sm:grid-cols-3 text-xs">
-              <div className="rounded-2xl border border-white/15 bg-white/10 p-4 text-start backdrop-blur-md">
-                <span className="text-white/70 block font-semibold">
+            <div className="pt-4 border-t border-slate-200/70 dark:border-white/10 grid gap-3 sm:grid-cols-3 text-xs">
+              <div className="rounded-2xl border border-slate-200/70 dark:border-white/10 bg-slate-50/80 dark:bg-white/5 px-4 py-3 text-start">
+                <span className="text-slate-500 dark:text-slate-400 block font-semibold">
                   {ar ? "القطاعات الاستراتيجية" : "Core Strategic Sectors"}
                 </span>
-                <span className="font-head text-base font-extrabold text-white mt-0.5 block">
+                <span className="font-head text-base font-extrabold text-slate-900 dark:text-white mt-0.5 block">
                   {ar ? "4 قطاعات" : "4 Sectors"}
                 </span>
               </div>
 
-              <div className="rounded-2xl border border-white/15 bg-white/10 p-4 text-start backdrop-blur-md">
-                <span className="text-white/70 block font-semibold">
+              <div className="rounded-2xl border border-slate-200/70 dark:border-white/10 bg-slate-50/80 dark:bg-white/5 px-4 py-3 text-start">
+                <span className="text-slate-500 dark:text-slate-400 block font-semibold">
                   {ar ? "الدراسات المنشورة" : "Published Studies Count"}
                 </span>
-                <span className="font-head text-base font-extrabold text-white mt-0.5 block">
+                <span className="font-head text-base font-extrabold text-slate-900 dark:text-white mt-0.5 block">
                   {activeStudies.length > 0
                     ? ar
                       ? `${activeStudies.length} دراسة موثقة`
@@ -245,17 +251,17 @@ export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
                 </span>
               </div>
 
-              <div className="rounded-2xl border border-white/15 bg-white/10 p-4 text-start backdrop-blur-md">
-                <span className="text-white/70 block font-semibold">
+              <div className="rounded-2xl border border-slate-200/70 dark:border-white/10 bg-slate-50/80 dark:bg-white/5 px-4 py-3 text-start">
+                <span className="text-slate-500 dark:text-slate-400 block font-semibold">
                   {ar ? "منهجية التوثيق" : "Verification Standard"}
                 </span>
-                <span className="font-head text-base font-extrabold text-emerald-300 mt-0.5 block">
+                <span className="font-head text-base font-extrabold text-brand-green mt-0.5 block">
                   {ar ? "18 محور تحليلي · مصادر موثقة" : "18 Analytical Axes · Cited Sources"}
                 </span>
               </div>
             </div>
-          </Reveal>
-        </div>
+          </div>
+        </Reveal>
       </section>
 
       {/* 2. Sectors Container — 4 Core Strategic Sectors */}

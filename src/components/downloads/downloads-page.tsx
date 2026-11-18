@@ -127,31 +127,31 @@ export function DownloadsPage() {
   return (
     <div className="w-full pb-24">
       {/* 1. Hero Section (Apple-inspired Glassmorphism) */}
-      <section className="relative w-full min-h-[calc(80svh-76px)] overflow-hidden text-white flex flex-col justify-center mb-12">
+      <section className="relative w-full min-h-[calc(75svh-76px)] overflow-hidden text-white flex flex-col justify-center mb-12">
         <img
-          src="/BG/Main Home Page.jpg"
+          src={encodeURI("/Background/Homepage Documentation Center Background.jpg")}
           alt={ar ? "غرفة البيانات المؤسسية والاستثمارية — مجموعة سامي بن عياد" : "Investor & Corporate Data Room — Sami Bin Ayyad Group"}
           className="absolute inset-0 size-full object-cover object-center pointer-events-none select-none"
           fetchPriority="high"
         />
-        <div className="group-hero-overlay absolute inset-0 bg-black/75 backdrop-blur-[2px] pointer-events-none" />
+        <div className="group-hero-overlay absolute inset-0 bg-slate-950/70 backdrop-blur-[1px] pointer-events-none" />
 
         <div className="site-container relative z-10 flex min-h-[inherit] flex-col justify-center py-16 sm:py-24">
           <Reveal>
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-brand-green/30 bg-black/60 px-4 py-1.5 text-xs font-bold tracking-wide text-white backdrop-blur-md shadow-lg">
-              <span className="size-2 rounded-full bg-brand-green animate-pulse" />
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/50 px-4 py-1.5 text-xs font-bold tracking-wide text-white/95 backdrop-blur-md shadow-md">
+              <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
               <span>
                 {ar ? "مجموعة سامي بن عياد · مركز الوثائق" : "SAMI BIN AYYAD GROUP · Documentation Center"}
               </span>
             </div>
 
-            <h1 className="mt-2 max-w-4xl font-head text-xl sm:text-2xl lg:text-3xl font-extrabold leading-tight tracking-tight text-white drop-shadow-md">
+            <h1 className="mt-2 max-w-4xl font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-tight tracking-tight text-white drop-shadow-md">
               {ar
                 ? "غرفة البيانات المؤسسية والاستثمارية المعتمدة"
                 : "Investor & Corporate Data Room"}
             </h1>
 
-            <p className="mt-3 max-w-3xl text-xs sm:text-sm font-normal leading-relaxed text-slate-200 drop-shadow-sm">
+            <p className="mt-3.5 max-w-3xl text-sm sm:text-base leading-relaxed text-white/90 drop-shadow-sm">
               {ar
                 ? "منظومة موثقة لإتاحة الوثائق المؤسسية، التقارير المالية، مواصفات القدرات التشغيلية للقطاعات، شهادات الامتثال، ومذكرات الاستثمار المشترك للمستثمرين والشركاء الدوليين وفق مستويات تصريح محكمة."
                 : "A certified governance repository providing corporate documents, financial indicators, sector capabilities, compliance records, and joint venture proposals under four secure, role-based access levels."}
