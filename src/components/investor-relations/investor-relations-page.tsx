@@ -123,7 +123,7 @@ export function InvestorRelationsPage() {
   return (
     <div className="w-full">
       {/* 1. HERO SECTION */}
-      <section className="relative w-full min-h-[calc(70svh-76px)] sm:min-h-[calc(75svh-76px)] overflow-hidden text-white flex flex-col justify-center mb-10">
+      <section className="relative w-full min-h-[calc(60svh-76px)] sm:min-h-[calc(65svh-76px)] overflow-hidden text-white flex flex-col justify-center mb-8 sm:mb-10">
         <img
           src={encodeURI("/Background/Homepage Investment & Partnerships Background.jpg")}
           alt={ar ? "الشراكات والاستثمار — مجموعة سامي بن عياد" : "Investment & Partnerships — Sami Bin Ayyad Group"}
@@ -146,57 +146,61 @@ export function InvestorRelationsPage() {
             <p className="mt-3.5 max-w-3xl text-sm sm:text-base lg:text-lg leading-relaxed text-white/90 text-start drop-shadow-sm">
               {ar ? investmentOverviewData.hero.subtitleAr : investmentOverviewData.hero.subtitleEn}
             </p>
-
-            {/* Hero Quick Navigation Box */}
-            <div className="mt-8 rounded-2xl sm:rounded-3xl border border-white/20 bg-black/45 p-4 sm:p-5 backdrop-blur-xl shadow-xl max-w-4xl">
-              <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
-                {[
-                  {
-                    href: "#investment-pillars",
-                    labelAr: "أسس الشراكة الرأسمالية",
-                    labelEn: "Strategic Foundation",
-                  },
-                  {
-                    href: "#corporate-model",
-                    labelAr: "النموذج المؤسسي الموحد",
-                    labelEn: "Unified Corporate Model",
-                  },
-                  {
-                    href: "#investment-opportunities",
-                    labelAr: "فرص التوسع والاستثمار",
-                    labelEn: "Expansion & Investment Opportunities",
-                  },
-                  {
-                    href: "#partnership-models",
-                    labelAr: "نماذج وأطر الشراكة",
-                    labelEn: "Partnership Frameworks & Models",
-                  },
-                  {
-                    href: "#investor-documents",
-                    labelAr: "غرفة البيانات والملفات",
-                    labelEn: "Data Room & Files",
-                  },
-                  {
-                    href: "#investor-inquiry",
-                    labelAr: "طلب اجتماع واستفسار استثماري",
-                    labelEn: "Meeting Request & Inquiry",
-                  },
-                ].map((item) => (
-                  <a
-                    key={item.href}
-                    href={item.href}
-                    className="group inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3.5 sm:px-4 py-2 text-xs sm:text-sm font-bold text-white hover:border-brand-orange hover:bg-white/20 transition-all duration-300 backdrop-blur-md shadow-xs cursor-pointer"
-                  >
-                    <span className="size-2 rounded-full bg-brand-orange animate-pulse shrink-0" />
-                    <span className="group-hover:text-brand-orange transition-colors">
-                      {ar ? item.labelAr : item.labelEn}
-                    </span>
-                  </a>
-                ))}
-              </div>
-            </div>
           </Reveal>
         </div>
+      </section>
+
+      {/* 1.5 Quick Navigation Section (مربع العناوين في خانتها داخل الصفحة تحت الصورة) */}
+      <section className="site-container mb-10">
+        <Reveal>
+          <div className="interactive-card glass-box-interactive rounded-2xl sm:rounded-3xl border border-slate-200/80 dark:border-white/15 bg-white/85 dark:bg-slate-900/75 p-5 sm:p-6 shadow-lg backdrop-blur-2xl">
+            <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2.5 sm:gap-3.5">
+              {[
+                {
+                  href: "#investment-pillars",
+                  labelAr: "أسس الشراكة الرأسمالية",
+                  labelEn: "Strategic Foundation",
+                },
+                {
+                  href: "#corporate-model",
+                  labelAr: "النموذج المؤسسي الموحد",
+                  labelEn: "Unified Corporate Model",
+                },
+                {
+                  href: "#investment-opportunities",
+                  labelAr: "فرص التوسع والاستثمار",
+                  labelEn: "Expansion & Investment Opportunities",
+                },
+                {
+                  href: "#partnership-models",
+                  labelAr: "نماذج وأطر الشراكة",
+                  labelEn: "Partnership Frameworks & Models",
+                },
+                {
+                  href: "#investor-documents",
+                  labelAr: "غرفة البيانات والملفات",
+                  labelEn: "Data Room & Files",
+                },
+                {
+                  href: "#investor-inquiry",
+                  labelAr: "طلب اجتماع واستفسار استثماري",
+                  labelEn: "Meeting Request & Inquiry",
+                },
+              ].map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="group inline-flex items-center gap-2 rounded-full border border-slate-200 dark:border-white/15 bg-slate-100/80 dark:bg-white/10 px-4 py-2 text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-100 hover:border-brand-orange hover:bg-brand-orange/10 hover:text-brand-orange dark:hover:text-brand-orange transition-all duration-300 backdrop-blur-md shadow-xs cursor-pointer"
+                >
+                  <span className="size-2 rounded-full bg-brand-orange animate-pulse shrink-0" />
+                  <span className="transition-colors">
+                    {ar ? item.labelAr : item.labelEn}
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </Reveal>
       </section>
 
       {/* 2. INVESTMENT PILLARS */}
