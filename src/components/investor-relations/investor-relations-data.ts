@@ -43,8 +43,8 @@ export interface InvestorDocument {
 
 export const investmentOverviewData = {
   hero: {
-    badgeEn: "Investor Relations & Capital Alliances",
-    badgeAr: "علاقات المستثمرين والتحالفات الرأسمالية",
+    badgeEn: "SAMI BIN AYYAD GROUP · Investment & Partnerships",
+    badgeAr: "مجموعة سامي بن عياد · الشراكات والاستثمار",
     titleEn: "Institutional Partnerships Driving Sustainable Industrial & Real Asset Growth",
     titleAr: "شراكات مؤسسية استراتيجية تقود النمو الصناعي والأصول المستدامة",
     subtitleEn: "Sami Bin Ayyad Group collaborates with family offices, private equity funds, sovereign institutions, and international industrial operators to scale high-impact real asset projects across Egypt, the MENA region, and global supply chains.",

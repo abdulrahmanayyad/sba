@@ -140,49 +140,74 @@ export function InvestorRelationsPage() {
                 <span>{ar ? investmentOverviewData.hero.badgeAr : investmentOverviewData.hero.badgeEn}</span>
               </div>
             </div>
-            <h1 className="font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white leading-snug tracking-tight text-start drop-shadow-md max-w-4xl">
+            <h1 className="font-head text-xl sm:text-2xl lg:text-3xl font-bold text-white leading-snug tracking-normal text-start drop-shadow-sm max-w-3xl">
               {ar ? investmentOverviewData.hero.titleAr : investmentOverviewData.hero.titleEn}
             </h1>
             <p className="mt-3.5 max-w-3xl text-sm sm:text-base lg:text-lg leading-relaxed text-white/90 text-start drop-shadow-sm">
               {ar ? investmentOverviewData.hero.subtitleAr : investmentOverviewData.hero.subtitleEn}
             </p>
 
-            {/* Hero Quick Navigation CTAs */}
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              <Button asChild variant="primary" size="lg" className="rounded-full shadow-lg">
-                <a href="#investment-opportunities">
-                  <span>{ar ? "استعراض الفرص الاستثمارية" : "Explore Opportunities"}</span>
-                  <ArrowRight className="size-4 rtl:rotate-180" />
-                </a>
-              </Button>
-
-              <Button asChild variant="outline" size="lg" className="rounded-full bg-white/10 hover:bg-white/20 border-white/25 text-white backdrop-blur-md">
-                <a href="#investor-inquiry">
-                  <span>{ar ? "طلب اجتماع استثماري رسمي" : "Request Institutional Meeting"}</span>
-                  <Handshake className="size-4" />
-                </a>
-              </Button>
-
-              <Button asChild variant="ghost" size="lg" className="rounded-full text-emerald-300 hover:text-emerald-200 hover:bg-white/10">
-                <a href="#investor-documents">
-                  <span>{ar ? "تحميل ملفات المستثمرين" : "Investor Data Room"}</span>
-                  <Download className="size-4" />
-                </a>
-              </Button>
+            {/* Hero Quick Navigation Box */}
+            <div className="mt-8 rounded-2xl sm:rounded-3xl border border-white/20 bg-black/45 p-4 sm:p-5 backdrop-blur-xl shadow-xl max-w-4xl">
+              <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
+                {[
+                  {
+                    href: "#investment-pillars",
+                    labelAr: "أسس الشراكة الرأسمالية",
+                    labelEn: "Strategic Foundation",
+                  },
+                  {
+                    href: "#corporate-model",
+                    labelAr: "النموذج المؤسسي الموحد",
+                    labelEn: "Unified Corporate Model",
+                  },
+                  {
+                    href: "#investment-opportunities",
+                    labelAr: "فرص التوسع والاستثمار",
+                    labelEn: "Expansion & Investment Opportunities",
+                  },
+                  {
+                    href: "#partnership-models",
+                    labelAr: "نماذج وأطر الشراكة",
+                    labelEn: "Partnership Frameworks & Models",
+                  },
+                  {
+                    href: "#investor-documents",
+                    labelAr: "غرفة البيانات والملفات",
+                    labelEn: "Data Room & Files",
+                  },
+                  {
+                    href: "#investor-inquiry",
+                    labelAr: "طلب اجتماع واستفسار استثماري",
+                    labelEn: "Meeting Request & Inquiry",
+                  },
+                ].map((item) => (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    className="group inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3.5 sm:px-4 py-2 text-xs sm:text-sm font-bold text-white hover:border-brand-orange hover:bg-white/20 transition-all duration-300 backdrop-blur-md shadow-xs cursor-pointer"
+                  >
+                    <span className="size-2 rounded-full bg-brand-orange animate-pulse shrink-0" />
+                    <span className="group-hover:text-brand-orange transition-colors">
+                      {ar ? item.labelAr : item.labelEn}
+                    </span>
+                  </a>
+                ))}
+              </div>
             </div>
           </Reveal>
         </div>
       </section>
 
       {/* 2. INVESTMENT PILLARS */}
-      <section className="site-container py-12 border-t border-border/60">
+      <section className="site-container py-12 border-t border-border/60 scroll-mt-24" id="investment-pillars">
         <Reveal>
           <div className="max-w-2xl mb-8">
             <span className="text-xs font-bold uppercase tracking-wider text-brand-orange">
               {ar ? "أسس الشراكة الرأسمالية" : "Strategic Foundation"}
             </span>
             <h2 className="text-2xl sm:text-3xl font-bold font-head text-foreground mt-1">
-              {ar ? "لماذا الشراكة مع مجموعة سامي بن عياد؟" : "Why Institutional Capital Partners With SBA"}
+              {ar ? "مزايا الشراكة مع مجموعة سامي بن عياد" : "Advantages of Partnering with Sami Bin Ayyad Group"}
             </h2>
           </div>
         </Reveal>
@@ -212,7 +237,7 @@ export function InvestorRelationsPage() {
       </section>
 
       {/* 3. VERIFIED OPERATING ASSETS OVERVIEW */}
-      <section className="site-container py-12">
+      <section className="site-container py-12 scroll-mt-24" id="corporate-model">
         <div className="rounded-3xl border border-border bg-secondary/30 p-8 sm:p-10 backdrop-blur-md">
           <Reveal>
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
@@ -254,7 +279,7 @@ export function InvestorRelationsPage() {
       </section>
 
       {/* 4. INVESTMENT OPPORTUNITIES BY SECTOR */}
-      <section className="site-container py-12 scroll-mt-20" id="investment-opportunities">
+      <section className="site-container py-12 scroll-mt-24" id="investment-opportunities">
         <Reveal>
           <div className="flex flex-wrap items-end justify-between gap-4 mb-8">
             <div>
@@ -341,7 +366,7 @@ export function InvestorRelationsPage() {
       </section>
 
       {/* 5. INVESTMENT MODELS */}
-      <section className="site-container py-12 border-t border-border/60">
+      <section className="site-container py-12 border-t border-border/60 scroll-mt-24" id="partnership-models">
         <Reveal>
           <div className="max-w-2xl mb-8">
             <span className="text-xs font-bold uppercase tracking-wider text-brand-green">
@@ -399,7 +424,7 @@ export function InvestorRelationsPage() {
       </section>
 
       {/* 6. INVESTOR DOCUMENTS & DATA ROOM */}
-      <section className="site-container py-12 scroll-mt-20" id="investor-documents">
+      <section className="site-container py-12 scroll-mt-24" id="investor-documents">
         <Reveal>
           <div className="flex flex-wrap items-end justify-between gap-4 mb-8">
             <div>
@@ -458,7 +483,7 @@ export function InvestorRelationsPage() {
       </section>
 
       {/* 7. INVESTOR INQUIRY & MEETING REQUEST FORM */}
-      <section className="site-container py-14 scroll-mt-20" id="investor-inquiry">
+      <section className="site-container py-14 scroll-mt-24" id="investor-inquiry">
         <div className="rounded-3xl border border-white/30 bg-background/90 p-8 sm:p-12 shadow-2xl backdrop-blur-2xl">
           <Reveal>
             <div className="max-w-3xl mx-auto text-center mb-10">
