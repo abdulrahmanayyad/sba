@@ -803,8 +803,12 @@ export interface GarmentManufacturingService {
   number: string;
   badgeEn: string;
   badgeAr: string;
+  subtitleEn?: string;
+  subtitleAr?: string;
   titleEn: string;
   titleAr: string;
+  headlineEn?: string;
+  headlineAr?: string;
   leadEn: string;
   leadAr: string;
   descEn: string;
@@ -813,223 +817,460 @@ export interface GarmentManufacturingService {
   capabilitiesAr: string[];
   deliverablesEn: string[];
   deliverablesAr: string[];
+  primaryMetricEn?: string;
+  primaryMetricAr?: string;
   image: string;
+  ctaTextEn?: string;
+  ctaTextAr?: string;
+  ctaUrl?: string;
 }
 
 export const garmentServicesExpanded: GarmentManufacturingService[] = [
   {
     id: "oem-manufacturing",
     number: "01",
-    badgeEn: "Contract Production · Customer Specifications",
-    badgeAr: "تصنيع تعاقدي · مواصفات العميل",
+    badgeEn: "OEM Manufacturing · Customer-Owned Designs & Specifications",
+    badgeAr: "تصنيع تعاقدي · مواصفات وتصميمات العميل",
+    subtitleEn: "OEM Manufacturing · Customer-Owned Designs & Specifications",
+    subtitleAr: "التصنيع التعاقدي للمعدات الأصلية (OEM)",
     titleEn: "OEM Manufacturing",
-    titleAr: "التصنيع كشريك للمعدات الأصلية (OEM)",
-    leadEn: "Flawless bulk manufacturing adhering strictly to the client's provided patterns, tech packs, and fabric requirements.",
-    leadAr: "تصنيع كمي متطابق تمامًا مع الباترونات وملفات المواصفات الفنية والخامات المعتمدة من العميل.",
-    descEn: "Our OEM contract manufacturing service takes your fully developed designs, approved samples, and bills of materials to execute bulk production with disciplined cycle times and international quality compliance.",
-    descAr: "نقدم خدمة التصنيع التعاقدي للملابس الجاهزة وفق تصميماتك وعيناتك المعتمدة، مع الالتزام التام بالجداول الزمنية، والمواصفات الفنية، ومعايير الجودة العالمية.",
-    capabilitiesEn: ["Strict tech-pack conformance", "Flexible order scaling", "In-line milestone audits", "Client-supplied fabric handling"],
-    capabilitiesAr: ["مطابقة تامة لملف المواصفات الفنية", "مرونة في استيعاب أحجام الطلبيات", "مراجعات جودة في كل مرحلة إنتاج", "إمكانية التشغيل بخامات يوردها العميل"],
-    deliverablesEn: ["Pre-production approval sample", "Bulk production conforming to AQL 2.5", "Inspection certificate"],
-    deliverablesAr: ["عينة اعتماد ما قبل الإنتاج (PP Sample)", "إنتاج كمي مطابق لمعايير AQL 2.5", "شهادة الفحص ومطابقة الجودة"],
-    image: "/services/apparel/collab-media-t26cTnB0V1k-unsplash.jpg"
+    titleAr: "التصنيع بنظام OEM",
+    leadEn: "Precision contract manufacturing turning client-owned designs, patterns, and Tech Packs into production-ready collections.",
+    leadAr: "تصنيع تعاقدي متكامل ينفذ تصميمات وباترونات ومواصفات العميل بأعلى معايير الانضباط والجودة العالمية.",
+    descEn: "We provide contract manufacturing services for ready-made garments based on client-approved designs, patterns, samples, and technical specification files (Tech Packs), transforming your requirements into production-ready collections adhering to agreed quality and delivery milestones.\n\nWe act as a dedicated manufacturing partner for brands that own their proprietary designs and technical specifications, seeking an industrial partner capable of executing their collections with precision and consistency.",
+    descAr: "نقدم خدمات التصنيع التعاقدي للملابس الجاهزة وفق التصميمات والباترونات والعينات وملفات المواصفات الفنية المعتمدة من العميل، مع تحويل متطلباته إلى منتجات جاهزة للإنتاج الكمي وفق معايير الجودة والمواعيد المتفق عليها.\n\nنعمل كشريك تصنيع للعلامات التجارية التي تمتلك تصميماتها ومواصفاتها الخاصة، وتبحث عن جهة صناعية قادرة على تنفيذ منتجاتها بدقة واتساق.",
+    capabilitiesEn: [
+      "Execution of designs strictly conforming to approved Tech Packs.",
+      "Adherence to customer-specified patterns, measurement tables, and fabrics.",
+      "Capability to manufacture with customer-supplied materials or via agreed sourcing channels.",
+      "Comprehensive sample and specification review prior to mass production.",
+      "Multi-stage quality control enforcement across all manufacturing phases.",
+      "Production scheduling optimized according to product complexity and volume."
+    ],
+    capabilitiesAr: [
+      "تنفيذ التصميمات وفق ملفات المواصفات الفنية (Tech Packs) المعتمدة.",
+      "الالتزام بالباترونات وجداول القياسات والخامات التي يحددها العميل.",
+      "إمكانية التصنيع بخامات ومستلزمات يوردها العميل أو وفق ترتيبات التوريد المتفق عليها.",
+      "مراجعة العينات والمواصفات قبل بدء الإنتاج الكمي.",
+      "تطبيق إجراءات مراقبة الجودة خلال مراحل التصنيع.",
+      "تخطيط الطلبيات وفق طبيعة المنتج والكميات المطلوبة."
+    ],
+    deliverablesEn: [
+      "Pre-Production Approval Sample (PP Sample).",
+      "Bulk production conforming to approved specifications and samples.",
+      "Quality inspection sign-off reports according to agreed audit plans.",
+      "Custom retail packaging and packing meeting brand identity standards."
+    ],
+    deliverablesAr: [
+      "عينة ما قبل الإنتاج (Pre-Production Sample).",
+      "إنتاج كمي مطابق للمواصفات والعينة المعتمدة.",
+      "تقارير فحص الجودة وفق خطة الفحص المتفق عليها.",
+      "التعبئة والتجهيز وفق متطلبات العلامة التجارية."
+    ],
+    image: "/services/apparel/collab-media-t26cTnB0V1k-unsplash.jpg",
+    ctaTextEn: "Request a Quote",
+    ctaTextAr: "اطلب عرض سعر لهذه الخدمة"
   },
   {
-    id: "odm-development",
+    id: "odm-manufacturing",
     number: "02",
-    badgeEn: "Concept to Production · In-House Library",
-    badgeAr: "من الفكرة للإنتاج · كتالوج الموديلات",
-    titleEn: "ODM Development",
-    titleAr: "تصميم وتطوير الموديلات",
-    leadEn: "Complete concept creation where brands select and customize designs from our 2,700+ style library for private branding.",
-    leadAr: "خدمة تطوير وتصميم متكاملة تتيح للعلامات التجارية اختيار وتخصيص موديلات من محفظتنا التي تضم أكثر من 2,700 تصميم.",
-    descEn: "We provide comprehensive fashion development for brands needing fresh seasonal collections without maintaining internal design teams. Choose from our proven silhouette library, customize colors and trims, and launch under your own brand.",
-    descAr: "نوفر حلًا متكاملًا للعلامات التجارية التي ترغب في إطلاق مجموعات أزياء جديدة دون الحاجة لفرق تصميم داخلية، عبر تعديل وتخصيص تصميماتنا الجاهزة بعلامتك التجارية.",
-    capabilitiesEn: ["Trend-driven fashion design", "Silhouettes engineered for fit", "Rapid custom graphic application", "Commercial price-point engineering"],
-    capabilitiesAr: ["تصميمات متوافقة مع أحدث خطوط الموضة", "قصات مجربة ومثبتة في الأسواق", "تخصيص سريع للألوان والطباعات", "هندسة تكلفة تناسب السعر المستهدف"],
-    deliverablesEn: ["Trend capsule collection proposals", "Fabric & color swatch cards", "Branded prototype approvals"],
-    deliverablesAr: ["مقترحات كبسولات أزياء موسمية", "بطاقات خامات وعينات ألوان معتمدة", "عينات أولية معتمدة بهوية علامتك"],
-    image: "/services/apparel/shanjir-h-photo4life-au-hnYQUpNtBws-unsplash.jpg"
-  },
-  {
-    id: "private-label",
-    number: "03",
-    badgeEn: "Turnkey Brand Identity · Full Packaging",
-    badgeAr: "هوية علامة كاملة · تغليف احترافي",
-    titleEn: "Private Label Manufacturing",
-    titleAr: "التصنيع للعلامات التجارية الخاصة (Private Label)",
-    leadEn: "End-to-end execution of apparel collections bearing your bespoke labels, hangtags, barcodes, and custom retail packaging.",
-    leadAr: "تصنيع متكامل لمجموعات أزياء كاملة تحمل علامتك التجارية، والملصقات، والباركود، والتغليف التجاري الجاهز للبيع.",
-    descEn: "Turnkey private label manufacturing transforming your brand identity into retail-ready garments, from custom woven damask labels and heat-transfer tags to embossed hangtags, branded polybags, and retail master cartons.",
-    descAr: "خدمة متكاملة تشمل تصنيع الملابس وتجهيز كافة مستلزمات هوية العلامة التجارية من ليبل منسوج، وبطاقات عناية، وتغليف كرتوني مخصص للعرض في المتاجر مباشرة.",
-    capabilitiesEn: ["Woven & printed label sourcing", "Custom barcode & RFID hangtag integration", "Retail-ready individual folding & bagging", "Anti-counterfeit security tags"],
-    capabilitiesAr: ["توريد الليبل المنسوج والحراري المخصص", "دمج بطاقات الأسعار والباركود وRFID", "تغليف فردي جاهز للعرض بالمتاجر", "ملصقات وعلامات أمان مخصصة للعلامة"],
-    deliverablesEn: ["Complete branded collection ready for retail shelves", "Barcode compliance report", "Master export cartons"],
-    deliverablesAr: ["مجموعة ملابس متكاملة جاهزة للأرفف والمتاجر", "تقرير مطابقة الباركود وسلاسل التوريد", "كراتين تصدير مطبوعة بهوية البراند"],
-    image: "/services/apparel/winx-U6VKGLgsxz0-unsplash.jpg"
+    badgeEn: "ODM Manufacturing · Design to Production",
+    badgeAr: "تصميم وتطوير الموديلات · من الفكرة للإنتاج",
+    subtitleEn: "ODM Manufacturing · Design to Production",
+    subtitleAr: "تصميم وتطوير الموديلات (ODM)",
+    titleEn: "ODM Manufacturing",
+    titleAr: "التصنيع بنظام ODM",
+    leadEn: "Fresh seasonal apparel collections developed from our ready-made styles and tailored to your brand identity.",
+    leadAr: "تطوير مجموعات أزياء جديدة بالاعتماد على تصميمات المجموعة مع تخصيص الألوان والخامات وهوية علامتك.",
+    descEn: "We deliver ODM manufacturing solutions for brands seeking to develop new apparel collections by leveraging the group's proprietary designs and styles.\n\nClients select from our available design portfolio and specify required custom adaptations matching brand identity, target demographic, and retail price points.\n\nThis service empowers fashion brands to benefit from full product development expertise without maintaining an internal design team.",
+    descAr: "نوفر حلول التصنيع بنظام ODM للعلامات التجارية التي ترغب في تطوير مجموعات أزياء جديدة بالاعتماد على التصميمات والموديلات التي تطورها المجموعة.\n\nيمكن للعميل الاختيار من محفظة التصميمات المتاحة، ثم تحديد التعديلات المطلوبة على الموديل بما يتناسب مع هوية علامته التجارية والسوق المستهدف والفئة السعرية.\n\nتتيح هذه الخدمة للعلامات التجارية الاستفادة من خبرات تطوير المنتجات دون الحاجة إلى إنشاء فريق تصميم داخلي متكامل.",
+    capabilitiesEn: [
+      "Curated selection from our developed design and silhouette portfolio.",
+      "Customization of color palettes, fabrications, graphic prints, and styling details.",
+      "Style development tailored to target demographic and consumer market trends.",
+      "Adapting designs to grading tables and production assembly line efficiency.",
+      "Cost-of-goods engineering aligned with target price points and specifications.",
+      "Private Label production bearing the client's own brand identity and trims."
+    ],
+    capabilitiesAr: [
+      "إتاحة الاختيار من محفظة التصميمات والموديلات المطورة.",
+      "تخصيص الألوان والخامات والطباعات والتفاصيل التصميمية.",
+      "تطوير الموديلات وفق الفئة المستهدفة واتجاهات السوق.",
+      "تكييف التصميمات مع متطلبات المقاسات والتشغيل الصناعي.",
+      "دراسة تكلفة التصنيع بما يتناسب مع المواصفات والسعر المستهدف.",
+      "إمكانية إنتاج المنتجات تحت العلامة التجارية الخاصة بالعميل (Private Label)."
+    ],
+    deliverablesEn: [
+      "Seasonal style proposals and scalable capsule collection concepts.",
+      "Technical specification sheets for selected garment styles.",
+      "Initial evaluation and approval prototypes.",
+      "Finished garments manufactured to customized brand specifications."
+    ],
+    deliverablesAr: [
+      "مقترحات موديلات ومجموعات أزياء قابلة للتطوير.",
+      "مواصفات فنية للموديلات المختارة.",
+      "عينات أولية للتقييم والاعتماد.",
+      "منتجات مصنعة وفق التعديلات وهوية العلامة التجارية المتفق عليها."
+    ],
+    image: "/services/apparel/shanjir-h-photo4life-au-hnYQUpNtBws-unsplash.jpg",
+    ctaTextEn: "Request a Quote",
+    ctaTextAr: "اطلب عرض سعر لهذه الخدمة"
   },
   {
     id: "fob-manufacturing",
-    number: "04",
-    badgeEn: "Full Package · Raw Material to Export Port",
-    badgeAr: "تصنيع شامل FOB · من الغزل حتى الميناء",
-    titleEn: "FOB Manufacturing Programs",
+    number: "03",
+    badgeEn: "FOB Manufacturing · Full Package Production",
+    badgeAr: "تصنيع وتوريد شامل · تسليم على ظهر السفينة (FOB)",
+    subtitleEn: "FOB Manufacturing · Full Package Production",
+    subtitleAr: "التصنيع المتكامل بنظام FOB",
+    titleEn: "FOB Manufacturing",
     titleAr: "التصنيع بنظام FOB",
-    leadEn: "Turnkey coordination from raw fabric yarn and trims to finished packed garments delivered directly to the export shipping port.",
-    leadAr: "إدارة صناعية شاملة تتولى توفير الأقمشة والإكسسوارات والتصنيع والتعبئة والشحن حتى ميناء التصدير (FOB).",
-    descEn: "Our FOB (Free on Board) programs give international buyers full cost transparency and risk mitigation. We handle yarn spinning, knitting, dyeing, cutting, sewing, finishing, quality auditing, and export customs clearance under a single unified contract.",
-    descAr: "توفر برامج FOB للمستوردين والشركات الدولية شفافية كاملة في التكلفة وإدارة المخاطر، حيث نتولى الغزل والنسيج والصباغة والقص والخياطة والجمارك حتى التسليم على ظهر السفينة.",
-    capabilitiesEn: ["Raw material procurement & financial underwriting", "Internal dyeing lab color approvals", "Customs export clearance and shipping coordination", "Single fixed price per garment with zero hidden costs"],
-    capabilitiesAr: ["تمويل وتوريد كافة الخامات ومستلزمات الإنتاج", "ضبط ومطابقة ألوان الصباغة معمليًا", "التخليص الجمركي وتجهيز مستندات الشحن والتصدير", "سعر تعاقدي ثابت ومحدد للقطعة دون تكاليف خفية"],
-    deliverablesEn: ["Export-cleared container at shipping port", "Bill of Lading & Commercial Invoice", "Certificate of Origin & EUR-1 Form"],
-    deliverablesAr: ["حاوية بضائع مخلصة جمركيًا بميناء التصدير", "بوليصة الشحن والفاتورة التجارية المعتمدة", "شهادة المنشأ المصرية ونموذج EUR-1 التصديري"],
-    image: "/services/apparel/declan-sun-cQr2x2ALizA-unsplash.jpg"
+    leadEn: "Complete full-package manufacturing from fabric sourcing to port export clearance and loading on board.",
+    leadAr: "إدارة متكاملة تبدأ من توريد الخامات والتصنيع والتعبئة وحتى استكمال التخليص الجمركي والتسليم على ظهر السفينة.",
+    descEn: "We provide FOB manufacturing programs where SBA Group manages the operational chain from fabric and trim procurement, through precision cutting, sewing, and inspection, to export customs clearance and delivery on board the nominated vessel at the agreed port of shipment.\n\nThis turnkey package gives international importers and fashion brands a single accountable partner to coordinate manufacturing, supply, and export logistics according to contract terms and commercial schedules.",
+    descAr: "نوفر برامج تصنيع وتوريد بنظام FOB، تتولى فيها المجموعة إدارة سلسلة من العمليات بدءًا من تنسيق توريد الخامات ومستلزمات الإنتاج، مرورًا بالتصنيع والتعبئة والفحص، وصولًا إلى استكمال إجراءات التصدير وتسليم البضاعة على ظهر السفينة في ميناء الشحن المتفق عليه، وفق شروط التعاقد.\n\nيتيح هذا النموذج للمستوردين والعلامات التجارية الدولية التعامل مع جهة واحدة لإدارة متطلبات التصنيع والتوريد والتصدير، وفق مواصفات المنتج والجدول التجاري المتفق عليه.",
+    capabilitiesEn: [
+      "Coordinated sourcing of fabrics, trims, accessories, and packaging materials.",
+      "Full management of cutting, stitching, finishing, and packaging workflows.",
+      "Quality tracking against approved color lab-dips, weights, and specifications.",
+      "Final pre-shipment inspection and container loading coordination.",
+      "Export documentation, seller-side customs clearance, and port formalities.",
+      "Delivery on board vessel in strict accordance with Incoterms FOB rules.",
+      "Private Label brand integration including custom care labels and barcodes."
+    ],
+    capabilitiesAr: [
+      "تنسيق توريد الأقمشة والخامات والإكسسوارات ومستلزمات الإنتاج.",
+      "إدارة عمليات القص والخياطة والتشطيب والتعبئة.",
+      "متابعة مطابقة الخامات والألوان والمواصفات المعتمدة.",
+      "تنسيق الفحص النهائي وتجهيز الشحنات.",
+      "استكمال مستندات وإجراءات التصدير والتخليص الجمركي من جانب البائع.",
+      "تنظيم التسليم وفق شروط FOB وميناء الشحن المحدد في العقد.",
+      "إمكانية تجهيز المنتجات بعلامة العميل التجارية وملصقاته وتغليفها الخاص (Private Label)."
+    ],
+    deliverablesEn: [
+      "Finished garments fully inspected and meeting contractual specifications.",
+      "Export-ready shipment packed and prepared for sea transport.",
+      "Detailed Packing List, Commercial Invoice, and export declarations.",
+      "Official Certificate of Origin and bilateral trade documents upon qualification.",
+      "Bill of Lading documentation per carrier and export procedures."
+    ],
+    deliverablesAr: [
+      "منتجات تامة الصنع ومطابقة للمواصفات المتفق عليها.",
+      "شحنة مجهزة للتصدير وفق شروط التعاقد.",
+      "قائمة التعبئة والفاتورة التجارية ومستندات التصدير ذات الصلة.",
+      "شهادة المنشأ والمستندات الإضافية عند استيفاء شروط إصدارها.",
+      "مستند الشحن وفق إجراءات الناقل والشحنة."
+    ],
+    image: "/services/apparel/declan-sun-cQr2x2ALizA-unsplash.jpg",
+    ctaTextEn: "Request a Quote",
+    ctaTextAr: "اطلب عرض سعر لهذه الخدمة"
   },
   {
     id: "cm-manufacturing",
-    number: "05",
-    badgeEn: "Cut & Make (CM) · Client-Supplied Materials",
-    badgeAr: "تصنيع بنظام CM · قص وتشغيل",
-    titleEn: "CM Manufacturing – Cut & Make",
-    titleAr: "التصنيع بنظام CM (Cut & Make)",
-    leadEn: "Full in-house cut, make, assembly, and finishing operations utilizing client-supplied fabrics, trims, and technical specifications.",
-    leadAr: "تنفيذ العمليات التصنيعية المتكاملة بدءًا من القص والخياطة وحتى التشطيب والفحص بخامات ومستلزمات إنتاج يوردها العميل.",
-    descEn: "We provide dedicated Cut & Make (CM) apparel manufacturing. The client supplies the fabrics, materials, and trims, while our factory executes fabric inspection, CAD spreading, precision cutting, sewing assembly, finishing, and final quality control adhering to approved samples.",
-    descAr: "نقدم خدمات تصنيع الملابس بنظام CM، حيث يتولى العميل توفير الأقمشة والخامات والإكسسوارات اللازمة للإنتاج، بينما نتولى تنفيذ العمليات التصنيعية داخل المصنع، بدءًا من القص وتجهيز المكونات، مرورًا بالخياطة والتجميع، وصولًا إلى التشطيب ومراقبة الجودة، وفق العينات والمواصفات الفنية المعتمدة.",
+    number: "04",
+    badgeEn: "CM Manufacturing · Cut & Make",
+    badgeAr: "تشغيل صناعي · قص وتجميع وخياطة (CM)",
+    subtitleEn: "CM Manufacturing · Cut & Make",
+    subtitleAr: "التشغيل الصناعي بنظام CM",
+    titleEn: "CM Manufacturing",
+    titleAr: "التصنيع بنظام CM",
+    leadEn: "In-house cut, make, assembly, and packaging using customer-supplied fabrics and accessories.",
+    leadAr: "تنفيذ العمليات الصناعية داخل المصنع بدءًا من القص والخياطة وحتى التشطيب بخامات يوردها العميل.",
+    descEn: "We provide dedicated Cut & Make (CM) contract manufacturing services. The client supplies the fabrics and production accessories, while our facility executes in-house industrial operations—from fabric inspection and CAD cutting to sewing assembly, pressing, inspection, and packaging.\n\nThis model is ideal for brands and importers that control their own fabric supply chains and seek our production capacities and craftsmanship.",
+    descAr: "نقدم خدمات التصنيع بنظام CM، حيث يتولى العميل توفير الأقمشة والخامات والإكسسوارات اللازمة للإنتاج، بينما تتولى المجموعة تنفيذ العمليات الصناعية داخل المصنع، بدءًا من تجهيز الخامات والقص، مرورًا بالخياطة والتجميع، وصولًا إلى التشطيب والفحص والتعبئة وفق المواصفات المعتمدة.\n\nيمثل هذا النموذج خيارًا مناسبًا للعلامات التجارية والمستوردين الذين يرغبون في إدارة توريد خاماتهم بأنفسهم، مع الاستفادة من قدراتنا التشغيلية في التصنيع.",
     capabilitiesEn: [
-      "Receiving and inspecting client-supplied fabrics and accessories",
-      "Fabric spreading, CAD marker nesting, and high-precision cutting",
-      "Garment sewing and assembly strictly conforming to approved designs",
-      "Finishing, measurement audits, and final AQL quality packaging",
-      "Pricing based on product type and complexity, excluding fabric costs"
+      "Receiving and inspecting client-supplied fabrics and accessories.",
+      "Fabric spreading, pattern preparation, and precision cutting operations.",
+      "Sewing assembly executed strictly according to approved samples.",
+      "Finishing, measurement audits, and final quality packaging.",
+      "Packaging and boxing according to client shipping instructions.",
+      "CM pricing based on garment complexity and volume, excluding client fabric cost."
     ],
     capabilitiesAr: [
-      "استلام الأقمشة والخامات ومراجعة مطابقتها للمواصفات الفنية",
-      "فرد الأقمشة وإعداد الباترونات وتجهيز عمليات القص الآلي الدقيق",
-      "تنفيذ عمليات الخياطة والتجميع وفق التصميمات والعينات المعتمدة",
-      "التشطيب ومراجعة المقاسات والفحص النهائي والتعبئة وفق متطلبات العميل",
-      "احتساب تكلفة التصنيع وفق نوع المنتج وتعقيد الموديل والكميات دون تكلفة الخامات"
+      "استلام الخامات ومراجعة حالتها ومطابقتها للمواصفات المتفق عليها.",
+      "فرد الأقمشة وتجهيز الباترونات وعمليات القص.",
+      "تنفيذ الخياطة والتجميع وفق العينات والتصميمات المعتمدة.",
+      "التشطيب ومراجعة المقاسات والفحص النهائي.",
+      "التعبئة والتجهيز وفق تعليمات العميل.",
+      "احتساب تكلفة التصنيع وفق نوع المنتج وتعقيد الموديل والعمليات المطلوبة والكميات، دون احتساب تكلفة الخامات التي يوفرها العميل."
     ],
     deliverablesEn: [
-      "Finished garments packed to client specifications",
-      "Detailed fabric consumption and cutting yield report",
-      "AQL final quality inspection sign-off certificate"
+      "Finished garments manufactured to approved specifications and samples.",
+      "Fabric consumption and cutting yield report, upon agreement.",
+      "Final quality inspection reports.",
+      "Packaged merchandise prepared for dispatch."
     ],
     deliverablesAr: [
-      "ملابس تامة الصنع ومعبأة وفق متطلبات ومواصفات العميل",
-      "تقرير مراجعة استهلاك الأقمشة ونسب كفاءة القص والهادر",
-      "شهادة الفحص النهائي ومطابقة الجودة بمقاييس AQL المعتمدة"
+      "ملابس تامة التصنيع وفق المواصفات والعينة المعتمدة.",
+      "تقرير استهلاك الخامات وكفاءة القص والفاقد، عند الاتفاق على تقديمه.",
+      "تقارير الفحص النهائي للجودة.",
+      "منتجات معبأة وفق متطلبات العميل."
     ],
-    image: "/services/apparel/agto-nugroho-1mnXGDl3iRY-unsplash.jpg"
-  },
-  {
-    id: "product-development",
-    number: "06",
-    badgeEn: "Engineering & Tech Packs · Pattern Optimization",
-    badgeAr: "الهندسة الفنية · ملفات Tech Pack",
-    titleEn: "Product Development",
-    titleAr: "تطوير المنتجات وهندسة الأزياء",
-    leadEn: "Translating designer sketches, physical garments, or mood references into mass-producible technical engineering packs.",
-    leadAr: "تحويل الرسومات والتصميمات والمراجع الإبداعية إلى ملفات هندسية فنية (Tech Packs) قابلة للتصنيع الكمي التجاري.",
-    descEn: "We bridge the gap between creative fashion design and industrial production. Our technical design team constructs digital patterns, defines tolerance charts, calculates fabric shrinkage allowances, and specifies stitch constructions.",
-    descAr: "نربط بين الإبداع الفني والتنفيذ الصناعي الدقيق، من خلال إعداد جداول القياسات وتسامح الدرزات، واحتساب نسب انكماش الأقمشة وتحديد أنواع الخيوط والماكينات المناسبة.",
-    capabilitiesEn: ["Complete Tech Pack authoring", "Fabric consumption calculations", "Grading rule formulation across sizes", "Production feasibility analysis"],
-    capabilitiesAr: ["إعداد ملفات المواصفات الفنية الكاملة (Tech Packs)", "حسابات استهلاك القماش الدقيقة لكل مقاس", "وضع قواعد تدريج المقاسات لمختلف الأسواق", "تحليل الجدوى التشغيلية وتكاليف الإنتاج الكمي"],
-    deliverablesEn: ["Production-ready Tech Pack Dossier", "Graded digital pattern files (DXF/AAMA)", "Stitch and construction specifications sheet"],
-    deliverablesAr: ["ملف Tech Pack فني متكامل جاهز للمصانع", "ملفات الباترون الرقمية المدرجة بجميع المقاسات", "جدول مواصفات الغرز وتقنيات الحياكة المعتمدة"],
-    image: "/services/apparel/adrien-olichon-1eQKDWNiIUs-unsplash.jpg"
+    image: "/services/apparel/agto-nugroho-1mnXGDl3iRY-unsplash.jpg",
+    ctaTextEn: "Request a Quote",
+    ctaTextAr: "اطلب عرض سعر لهذه الخدمة"
   },
   {
     id: "sampling-prototyping",
-    number: "07",
-    badgeEn: "Rapid Sample Room · Fast Turnaround",
-    badgeAr: "غرفة عينات سريعة · اعتماد مسبق",
+    number: "05",
+    badgeEn: "Sampling & Prototyping · From Concept to Sample",
+    badgeAr: "تصنيع العينات والنماذج الأولية · من الفكرة للنموذج",
+    subtitleEn: "Sampling & Prototyping · From Concept to Sample",
+    subtitleAr: "العينات والنماذج الأولية",
     titleEn: "Sampling & Prototyping",
-    titleAr: "صناعة العينات والنماذج الأولية",
-    leadEn: "High-speed sample room turning initial prototypes into production-approved fit samples in record time.",
-    leadAr: "غرفة عينات مستقلة تضم نخبة من الفنيين لإنجاز عينات القياس والاعتماد في أوقات قياسية.",
-    descEn: "Before committing to bulk fabric cutting, our sampling line builds first prototypes, size sets, and counter samples to ensure absolute fit perfection, drape balance, and aesthetic appeal.",
-    descAr: "قبل بدء القص للإنتاج الكمي، تقوم وحدة العينات بإنتاج عينات المقاسات الأولى وعينات المطابقة للتحقق من دقة المقاسات وجماليات المظهر وجودة التنفيذ.",
-    capabilitiesEn: ["Proto-samples in 5–7 business days", "Size set sample production (XS to 3XL)", "Salesman Samples (SMS) for buyer showrooms", "Fit evaluation reports and alteration adjustments"],
-    capabilitiesAr: ["إنهاء العينات الأولى خلال 5 إلى 7 أيام عمل", "تنفيذ مجموعات المقاسات الكاملة (Size Sets)", "عينات معارض المبيعات للعملاء والمشترين (SMS)", "تقارير تقييم القياسات وتعديلات الباترون الفورية"],
-    deliverablesEn: ["Physical approved fit sample", "Sample measurement audit sheet", "Pre-production (PP) sign-off protocol"],
-    deliverablesAr: ["عينة فيت معتمدة ومطابقة للمواصفات", "جدول فحص وتدقيق قياسات العينة الفعلي", "محضر اعتماد عينة ما قبل الإنتاج (PP Sign-Off)"],
-    image: "/services/apparel/lidya-nada-grQh_x_vZKM-unsplash.jpg"
+    titleAr: "تصنيع العينات والنماذج الأولية",
+    leadEn: "Rapid prototype construction and size-set sample development for physical fit evaluation before bulk production.",
+    leadAr: "إعداد العينات والنماذج الأولية لمساعدة العلامات التجارية والمصممين على تقييم المنتجات قبل الإنتاج الكمي.",
+    descEn: "We provide prototype and sample development services to assist brands, designers, and buyers in evaluating physical garments before committing to bulk production.\n\nThe process begins with design analysis, followed by pattern drafting, fabric sourcing, and prototype execution, leading to fit evaluation and technical adjustments based on client feedback.",
+    descAr: "نوفر خدمات إعداد العينات والنماذج الأولية لمساعدة العلامات التجارية والمصممين والمشترين على تقييم المنتجات قبل الانتقال إلى الإنتاج الكمي.\n\nتبدأ العملية من دراسة التصميم أو المرجع المقدم، ثم إعداد الباترون وتجهيز الخامات وتنفيذ العينة، وصولًا إلى مراجعة المقاسات والتفاصيل الفنية وإجراء التعديلات اللازمة وفق ملاحظات العميل.",
+    capabilitiesEn: [
+      "Initial prototype execution from sketches, reference garments, or Tech Packs.",
+      "Fit Samples to evaluate drape, proportions, and ergonomics.",
+      "Size Set Samples across complete measurement ranges.",
+      "Pre-Production Samples (PP Samples) for final mass-production sign-off.",
+      "Salesman Samples (SMS) for buyer presentations and showrooms.",
+      "Construction review, tolerance analysis, and stitch evaluation.",
+      "Iterative pattern adjustments prior to final sign-off."
+    ],
+    capabilitiesAr: [
+      "تنفيذ العينات الأولية وفق الرسومات أو المراجع أو ملفات المواصفات الفنية.",
+      "إعداد عينات القياس (Fit Samples).",
+      "تطوير عينات المقاسات (Size Set Samples).",
+      "تنفيذ عينات ما قبل الإنتاج (Pre-Production Samples).",
+      "تجهيز عينات العروض والمبيعات (Salesman Samples) وفق متطلبات المشروع.",
+      "مراجعة المقاسات والتفاصيل الإنشائية وجودة التنفيذ.",
+      "إجراء التعديلات اللازمة قبل اعتماد النموذج النهائي."
+    ],
+    deliverablesEn: [
+      "Initial physical product prototype.",
+      "Fit sample ready for client review and alteration notes.",
+      "Pre-production sample for formal approval.",
+      "Technical pattern revision notes, upon agreement.",
+      "Master approved sample for bulk line replication."
+    ],
+    deliverablesAr: [
+      "نموذج أولي للمنتج (Prototype).",
+      "عينة قياس قابلة للمراجعة والتعديل.",
+      "عينة ما قبل الإنتاج للاعتماد.",
+      "ملاحظات فنية وتعديلات الباترون عند الاتفاق عليها.",
+      "عينة نهائية معتمدة تمهيدًا للإنتاج الكمي."
+    ],
+    image: "/services/apparel/lidya-nada-grQh_x_vZKM-unsplash.jpg",
+    ctaTextEn: "Request a Quote",
+    ctaTextAr: "اطلب عرض سعر لهذه الخدمة"
   },
   {
-    id: "bulk-production",
+    id: "fashion-design-development",
+    number: "06",
+    badgeEn: "Fashion Design & Product Development · Concept to Collection",
+    badgeAr: "تصميم الأزياء وتطوير المنتجات · من المفهوم للمجموعة",
+    subtitleEn: "Fashion Design & Product Development · Concept to Collection",
+    subtitleAr: "تصميم وتطوير المنتجات ومجموعات الأزياء",
+    titleEn: "Fashion Design & Product Development",
+    titleAr: "تصميم الأزياء وتطوير المنتجات",
+    leadEn: "Bridging creative fashion design with industrial manufacturing feasibility to build scalable collections.",
+    leadAr: "نجمع بين الرؤية التصميمية والمتطلبات الفنية والتشغيلية لتطوير منتجات ومجموعات أزياء قابلة للتصنيع التجاري.",
+    descEn: "We bridge creative design vision with industrial feasibility to develop commercially viable fashion products and collections.\n\nOur service spans concept exploration, mood board development, silhouette design, fabric selection, and technical construction detailing, culminating in complete Tech Packs and patterns.\n\nWe provide technical support for brands launching new collections or upgrading existing lines to enhance market competitiveness.",
+    descAr: "نجمع بين الرؤية التصميمية والمتطلبات الفنية والتشغيلية لتطوير منتجات ومجموعات أزياء قابلة للتصنيع التجاري.\n\nتبدأ الخدمة من دراسة الفكرة والهوية البصرية للعلامة التجارية، ثم تطوير التصميمات واختيار الخامات وتحديد التفاصيل الفنية، وصولًا إلى إعداد ملفات المواصفات والباترونات والعينات اللازمة لبدء الإنتاج.\n\nكما نوفر الدعم الفني للعلامات التجارية الراغبة في تأسيس مجموعات جديدة أو تطوير منتجاتها الحالية وتحسين ملاءمتها للأسواق المستهدفة.",
+    capabilitiesEn: [
+      "Garment design and silhouette development aligned with brand identity.",
+      "Translating creative sketches and mood boards into production-ready designs.",
+      "Comprehensive Tech Pack generation.",
+      "Measurement chart formulation and precision size grading.",
+      "Specification of fabrics, trims, accessories, and stitch types.",
+      "Fabric yield calculations and cost-of-goods engineering.",
+      "Seasonal collection planning and product assortment architecture.",
+      "Design-for-manufacturing (DFM) review to optimize factory efficiency."
+    ],
+    capabilitiesAr: [
+      "تصميم وتطوير موديلات الملابس وفق هوية العلامة التجارية.",
+      "تحويل الرسومات والمراجع الإبداعية إلى تصميمات قابلة للتنفيذ.",
+      "إعداد ملفات المواصفات الفنية (Tech Packs).",
+      "إعداد جداول القياسات وتدرج المقاسات (Size Grading).",
+      "تحديد الخامات والإكسسوارات والتفاصيل التصنيعية.",
+      "دراسة استهلاك الأقمشة وتكلفة المنتج.",
+      "تطوير المجموعات الموسمية وتخطيط تشكيلات المنتجات.",
+      "مراجعة قابلية التصميم للتصنيع وتحسين كفاءة التنفيذ."
+    ],
+    deliverablesEn: [
+      "Design sketches and collection proposals.",
+      "Complete digital Tech Packs.",
+      "Graded pattern files according to agreed scope.",
+      "Fabric, color palette, and trim recommendation cards.",
+      "Initial development prototypes for review.",
+      "Technical specification report and manufacturing cost estimates."
+    ],
+    deliverablesAr: [
+      "تصميمات ومقترحات موديلات.",
+      "ملفات المواصفات الفنية (Tech Packs).",
+      "ملفات الباترونات وتدرج المقاسات وفق نطاق الخدمة.",
+      "مقترحات الخامات والألوان والإكسسوارات.",
+      "عينات أولية للمراجعة والاعتماد.",
+      "تصور فني وتكلفة تقديرية للتصنيع عند توافر البيانات اللازمة."
+    ],
+    image: "/services/apparel/adrien-olichon-1eQKDWNiIUs-unsplash.jpg",
+    ctaTextEn: "Request a Quote",
+    ctaTextAr: "اطلب عرض سعر لهذه الخدمة"
+  },
+  {
+    id: "bulk-production-contracts",
+    number: "07",
+    badgeEn: "Bulk Production Contracts · Scalable Manufacturing",
+    badgeAr: "التعاقدات الكمية · طاقة إنتاجية كبرى قابلة للتوسع",
+    subtitleEn: "Bulk Production Contracts · Scalable Manufacturing",
+    subtitleAr: "عقود الإنتاج الصناعي والكميات الكبرى",
+    titleEn: "Bulk Production Contracts",
+    titleAr: "التعاقدات الكمية",
+    leadEn: "Scalable industrial manufacturing solutions for volume apparel orders and recurring commercial supply programs.",
+    leadAr: "حلول الإنتاج الصناعي الكمي للعلامات التجارية والمستوردين وتجار الجملة مع ضبط الجودة والانضباط الزمني.",
+    descEn: "We deliver scalable industrial manufacturing solutions for fashion brands, international importers, and volume distributors requiring large orders or recurring supply contracts.\n\nWe synchronize line capacities, stage production milestones, and oversee quality compliance and export packaging, ensuring finished goods replicate approved samples and meet delivery deadlines.",
+    descAr: "نوفر حلول الإنتاج الصناعي الكمي للعلامات التجارية والمستوردين وتجار الجملة الذين يحتاجون إلى تنفيذ طلبيات كبيرة أو تنظيم برامج توريد دورية.\n\nنعمل على تخطيط الطاقات التشغيلية وتوزيع مراحل الإنتاج ومتابعة الجودة والتعبئة، بما يضمن اتساق المنتجات مع العينات والمواصفات المعتمدة، وإدارة الطلبيات وفق الجداول والكميات المتفق عليها.",
+    capabilitiesEn: [
+      "Execution of bulk production orders matching contracted quantities.",
+      "Production line balancing tailored to garment construction.",
+      "Output scheduling by colorways, size runs, and production batches.",
+      "Milestone throughput tracking and progress reporting.",
+      "Quality control audits enforced across all manufacturing stages.",
+      "Export packaging organized to client retail and logistic requirements.",
+      "Structured recurring supply agreements for seasonal demand."
+    ],
+    capabilitiesAr: [
+      "تخطيط وتنفيذ الطلبيات الإنتاجية وفق الكميات المتعاقد عليها.",
+      "تنظيم خطوط الإنتاج وتوزيع العمليات وفق طبيعة كل موديل.",
+      "تخطيط الإنتاج حسب الألوان والمقاسات ودفعات التشغيل.",
+      "متابعة معدلات الإنتاج ومراحل التنفيذ.",
+      "تطبيق إجراءات فحص الجودة خلال مراحل التصنيع.",
+      "تنظيم التعبئة والتجهيز وفق متطلبات العميل والأسواق المستهدفة.",
+      "إمكانية وضع برامج توريد دورية وفق اتفاقيات التعاقد."
+    ],
+    deliverablesEn: [
+      "Bulk production orders strictly conforming to approved samples.",
+      "Agreed production milestones and delivery schedule.",
+      "Quality inspection sign-offs per contract scope.",
+      "Comprehensive carton packing lists and manifests.",
+      "Delivery and shipping documentation per agreed trade model."
+    ],
+    deliverablesAr: [
+      "طلبيات إنتاج كمية وفق المواصفات والعينات المعتمدة.",
+      "جدول إنتاج وتسليم متفق عليه.",
+      "تقارير متابعة الإنتاج والفحص وفق نطاق التعاقد.",
+      "قوائم التعبئة وتفاصيل الكراتين.",
+      "مستندات التسليم والتصدير بحسب نموذج التعاقد."
+    ],
+    image: "/services/apparel/winx-U6VKGLgsxz0-unsplash.jpg",
+    ctaTextEn: "Request a Quote",
+    ctaTextAr: "اطلب عرض سعر لهذه الخدمة"
+  },
+  {
+    id: "fabric-yarn-development",
     number: "08",
-    badgeEn: "Volume Scalability · High Throughput",
-    badgeAr: "إنتاج كمي ضخم · دقة وانضباط",
-    titleEn: "Bulk Production",
-    titleAr: "الإنتاج الصناعي الكمي (Bulk Production)",
-    leadEn: "High-volume, repeatable garment manufacturing operating under rigorous lead-time schedules and synchronized lines.",
-    leadAr: "تنفيذ طلبيات الملابس بأحجام إنتاجية ضخمة مع التزام صارم بالمواعيد وتوحيد معايير الجودة عبر كافة القطع.",
-    descEn: "With 15 active lines and 250+ machines, we manage large-scale contract orders with zero compromise on quality. Parallel line synchronization ensures that whether you order 2,000 or 50,000 pieces, every piece matches the master sample.",
-    descAr: "بفضل خطوطنا الـ 15 وأسطول ماكيناتنا المتطور، ندير طلبيات التوريد الكبرى بكفاءة عالية، مما يضمن أن كل قطعة في طلبية الـ 50,000 تتطابق تمامًا مع عينة الاعتماد.",
-    capabilitiesEn: ["Capacity scaling from 1,000 to 100,000+ pieces", "Line balancing to eliminate bottlenecks", "Real-time production tracking dashboards", "Synchronized color-batch production"],
-    capabilitiesAr: ["مرونة إنتاجية تبدأ من 1,000 وحتى أكثر من 100,000 قطعة", "توازن خطوط الإنتاج للقضاء على نقاط الاختناق", "متابعة رقمية لحظية لمعدلات الإنتاج اليومي", "تنظيم الإنتاج بحسب دفعات الصباغة والألوان (Lots)"],
-    deliverablesEn: ["Complete inspected order ready on schedule", "Final AQL 2.5 quality inspection certificate", "Carton packing list and shipping manifest"],
-    deliverablesAr: ["الطلبية الكاملة مفحوصة وجاهزة في الموعد المحدد", "شهادة الفحص النهائي للجودة بمعيار AQL 2.5", "كشف التعبئة التفصيلي (Packing List) وجدول الكراتين"],
-    image: "/services/apparel/collab-media-t26cTnB0V1k-unsplash.jpg"
+    badgeEn: "Fabric Manufacturing & Yarn Development · Yarn to Fabric",
+    badgeAr: "تصنيع الأقمشة وتطوير الغزول · من الغزل حتى النسيج",
+    subtitleEn: "Fabric Manufacturing & Yarn Development · Yarn to Fabric",
+    subtitleAr: "تصنيع وتطوير الأقمشة والغزول المتخصصة",
+    titleEn: "Fabric Manufacturing & Yarn Development",
+    titleAr: "تصنيع الأقمشة وتطوير الغزول",
+    leadEn: "Technical development, Lab-Dip color matching, and supply coordination for specialized knit and woven fabrics.",
+    leadAr: "تطوير وتوريد الأقمشة والغزول التخصصية ومطابقة الألوان معمليًا وفحص الخصائص النسيجية قبل الإنتاج.",
+    descEn: "We provide specialized fabric and yarn development solutions tailored to product specifications, coordinating technical parameters with specialized textile mills within our supply network.\n\nOur service covers knit construction, weight (GSM), width, hand-feel, and color matching, overseeing technical lab testing and sample approvals before releasing fabric to cutting lines.",
+    descAr: "نوفر حلولًا لتطوير وتوريد الأقمشة والغزول وفق متطلبات المنتجات والبرامج التصنيعية، من خلال تنسيق الاحتياجات الفنية مع الجهات ومصانع النسيج المتخصصة ضمن شبكة التوريد والتصنيع المتاحة للمجموعة.\n\nتشمل الخدمة تحديد مواصفات القماش المطلوبة، مثل التركيب النسيجي والوزن والعرض والملمس ودرجات اللون، ومتابعة العينات الفنية والاختبارات اللازمة قبل اعتماد الخامات للإنتاج.",
+    capabilitiesEn: [
+      "Knit and woven fabric specification engineered to garment needs.",
+      "Sourcing diverse structures: Single Jersey, Piqué, Rib, Interlock.",
+      "Target weight (GSM), usable width, and residual shrinkage control.",
+      "Color matching against Pantone references and Lab Dip samples.",
+      "Functional finish evaluation based on end-use requirements.",
+      "Coordinated physical testing (tensile strength, color fastness, pilling).",
+      "Yarn count and composition development for customized performance."
+    ],
+    capabilitiesAr: [
+      "تطوير مواصفات أقمشة التريكو والمنسوجات وفق احتياجات المنتج.",
+      "تنسيق توريد تراكيب نسيجية متنوعة مثل Single Jersey وPiqué وRib وInterlock بحسب التوافر.",
+      "تحديد الأوزان المستهدفة للأقمشة (GSM) والعروض ونسب الانكماش.",
+      "تنسيق مطابقة الألوان وفق مرجعيات Pantone وعينات Lab Dip عند توافر الخدمة.",
+      "دراسة الخامات والتشطيبات المطلوبة وفق الاستخدام النهائي.",
+      "تنسيق اختبارات خواص الأقمشة مثل قوة الشد وثبات اللون والانكماش، من خلال الجهات المختصة بحسب نطاق المشروع.",
+      "تطوير مواصفات الغزول والخامات بما يتناسب مع متطلبات المنتج النهائي."
+    ],
+    deliverablesEn: [
+      "Fabric swatch headers for client review and approval.",
+      "Lab Dip color approvals matching Pantone references.",
+      "Fabric Technical Data Sheet (weight, width, composition, shrinkage).",
+      "Physical laboratory test reports from accredited institutions.",
+      "Delivery of approved bulk fabric rolls to production floors."
+    ],
+    deliverablesAr: [
+      "عينات أقمشة للمراجعة والاعتماد.",
+      "عينات مطابقة الألوان (Lab Dips) عند طلبها وتوافر الخدمة.",
+      "بطاقة المواصفات الفنية للقماش، وتشمل الوزن والعرض والتركيب ونسب الانكماش بحسب البيانات المتاحة.",
+      "تقارير الاختبارات الفنية عند تنفيذها من جهة مختصة.",
+      "توريد الخامات والأقمشة المعتمدة وفق الكميات والجدول المتفق عليه."
+    ],
+    image: "/services/apparel/th-o-ph-m-b5ivLh4eD0A-unsplash.jpg",
+    ctaTextEn: "Request a Quote",
+    ctaTextAr: "اطلب عرض سعر لهذه الخدمة"
   },
   {
-    id: "fabric-development-sourcing",
-    number: "09",
-    badgeEn: "Yarn to Fabric · Laboratory Color Matching",
-    badgeAr: "تطوير الأنسجة · مطابقة الألوان معمليًا",
-    titleEn: "Fabric Development & Sourcing",
-    titleAr: "تطوير وتوريد الأقمشة والغزول التخصصية",
-    leadEn: "Custom knitting, weaving, and laboratory lab-dip dyeing tailored to the exact GSM, hand-feel, and color requirements of your collection.",
-    leadAr: "تصنيع وتطوير أقمشة تريكو ومنسوجات مخصصة مع مطابقة ألوان الصباغة معمليًا لتحقيق الملمس والوزن المستهدف.",
-    descEn: "Leveraging our integrated textile capabilities and strong domestic and imported yarn supply chains, we develop custom fabric weights (GSM), specialized knit structures, and lab-dip color formulations matching Pantone codes.",
-    descAr: "بالاعتماد على مصانع الأقمشة التابعة للمجموعة، نطور تراكيب نسيجية مخصصة، ونوفر مختلف أوزان الأقمشة (GSM)، مع مطابقة درجات ألوان بانتون (Pantone) معمليًا.",
-    capabilitiesEn: ["Custom yarn spinning and knitting (Jersey, Pique, Rib, Interlock)", "Pantone-matched lab dips within 4 business days", "Specialty chemical finishes (Peach skin, anti-pilling, enzyme wash)", "Certified physical testing (Tensile, tear, colorfastness to washing/rubbing)"],
-    capabilitiesAr: ["غزل ونسيج أقمشة مخصصة (سنجل جيرسي، بيكيه، ريب، إنترلوك)", "مطابقة درجات ألوان بانتون عبر Lab Dips خلال 4 أيام عمل", "تشطيبات كيميائية ملمس الخوخ ومقاومة الوبرية ومقاومة البكتيريا", "فحوصات معملية لقوة الشد وثبات الألوان ضد الغسيل والاحتكاك"],
-    deliverablesEn: ["Approved Lab-Dip Color Swatches", "Fabric Technical Spec Sheet (Weight, Width, Shrinkage)", "Bulk Fabric Mill Roll Delivery"],
-    deliverablesAr: ["عينات ألوان الصباغة المعتمدة (Lab Dips)", "بطاقة المواصفات الفنية للقماش (الوزن، العرض، نسبة الانكماش)", "توريد أثواب الأقمشة المعتمدة لصالة القص"],
-    image: "/services/apparel/th-o-ph-m-b5ivLh4eD0A-unsplash.jpg"
-  },
-  {
-    id: "brand-advisory",
+    id: "fashion-brand-strategy",
     number: "09",
     badgeEn: "Brand Strategy · 400+ Consultations Delivered",
     badgeAr: "استراتيجية العلامات · أكثر من 400 استشارة معتمدة",
-    titleEn: "Fashion Brand Development & Manufacturing Advisory",
+    subtitleEn: "Brand Strategy · 400+ Consultations Delivered",
+    subtitleAr: "استشارات تأسيس وتطوير العلامات التجارية للأزياء",
+    titleEn: "Fashion Brand Strategy & Development",
     titleAr: "استشارات تأسيس وتطوير العلامات التجارية للأزياء",
-    leadEn: "Specialized strategic and operational roadmap transforming fashion concepts into market-ready commercial collections.",
-    leadAr: "خارطة طريق استراتيجية وتنفيذية شاملة لتحويل الأفكار وتصاميم الأزياء إلى علامات تجارية ناجحة قابلة للتصنيع والنمو.",
-    descEn: "With over 400+ consultations delivered for emerging and established fashion labels, our advisory arm guides founders through product-market fit, collection architecture, costing, fabric selection, prototype refinement, and partner factory allocation.",
-    descAr: "انطلاقًا من مسيرة مهنية قدمت فيها المجموعة أكثر من 400 استشارة للعلامات التجارية الناشئة والقائمة، نوفر الدعم المتكامل في بناء هوية المنتج، تسعير تكاليف الإنتاج، اختيار الخامات المناسبة، هندسة المجموعات الموسمية، وتخصيص خطوط التصنيع الأكثر كفاءة وجودة.",
+    headlineEn: "From concept to a scalable, production-ready brand.",
+    headlineAr: "من الفكرة إلى علامة تجارية قابلة للتصنيع والنمو.",
+    leadEn: "Specialized strategic and operational roadmap transforming fashion concepts into market-ready commercial brands.",
+    leadAr: "خارطة طريق استراتيجية وتنفيذية شاملة لتحويل الأفكار إلى علامات تجارية واضحة الهوية ومدروسة تصنيعيًا وتسويقيًا.",
+    descEn: "We provide specialized strategic advisory services for fashion founders, emerging entrepreneurs, and established labels, turning creative ideas into clear, commercially viable, and production-ready fashion businesses.\n\nWe build strategic and operational roadmaps covering product positioning, collection architecture, fabric curation, costing, and manufacturing model selection (OEM, ODM, FOB, CM) to empower brands to launch and scale efficiently.",
+    descAr: "نقدم خدمات استشارية متخصصة لمؤسسي العلامات التجارية للأزياء ورواد الأعمال والعلامات القائمة، بهدف تحويل الأفكار والرؤى التجارية إلى مشروعات أزياء واضحة الهوية، ومدروسة من الناحية التسويقية والفنية والتصنيعية.\n\nنعمل على بناء خارطة طريق استراتيجية وتنفيذية تشمل تحديد هوية المنتج وتموضع العلامة التجارية، وتخطيط المجموعات الموسمية، واختيار الخامات المناسبة، وهندسة تكاليف الإنتاج، وتحديد نموذج التصنيع الأنسب، بما يساعد العلامة التجارية على الانطلاق والتوسع بكفاءة.",
     capabilitiesEn: [
-      "Brand positioning & target market segment feasibility",
-      "Collection merchandising architecture (SKU planning, size runs)",
-      "Tech-pack readiness & bill-of-materials cost engineering",
-      "Strategic partner factory matching across 150+ verified manufacturers",
-      "Pre-launch quality assurance & packaging standardization",
-      "Over 400+ advisory sessions delivered for fashion entrepreneurs"
+      "Brand positioning, audience definition, and competitive differentiation.",
+      "Initial commercial viability and feasibility assessment.",
+      "Product identity formulation and seasonal collection aesthetics.",
+      "Merchandising architecture, SKU planning, and size run structuring.",
+      "Tech Pack readiness audit for factory manufacturing.",
+      "Unit cost engineering, fabric viability, and production planning.",
+      "Manufacturing model selection: OEM, ODM, FOB, or CM.",
+      "Matching with specialized manufacturing facilities within our network.",
+      "Guidance on retail packaging, quality standards, and launch readiness."
     ],
     capabilitiesAr: [
-      "دراسة تموضع العلامة التجارية والجدوى التسويقية لشريحة الجمهور المستهدف",
-      "هيكلة المجموعات الموسمية وتخطيط وحدات SKU وجداول المقاسات",
-      "تدقيق ملفات المواصفات الفنية (Tech Packs) وهندسة تكلفة القطعة",
-      "الربط بالمصانع المتخصصة الأنسب من شبكة تضم أكثر من 150 مصنعًا شريكًا",
-      "معايير ضبط الجودة والتعبئة والتغليف الاحترافي قبل الطرح بالأسواق",
-      "سجل استشاري حافل يضم تقديم أكثر من 400 استشارة لرواد أعمال ومؤسسي علامات الأزياء"
+      "دراسة تموضع العلامة التجارية وتحديد الفئة المستهدفة والميزة التنافسية.",
+      "تقييم الفكرة والجدوى التجارية الأولية لمشروع الأزياء.",
+      "بناء هوية المنتج وتحديد توجهات التصميم والمجموعات.",
+      "تخطيط المجموعات الموسمية وهيكلة المنتجات ووحدات SKU وجداول المقاسات.",
+      "مراجعة ملفات المواصفات الفنية (Tech Packs) وتقييم الجاهزية للتصنيع.",
+      "هندسة تكلفة القطعة ودراسة الخامات والعمليات التصنيعية المناسبة.",
+      "تحديد نموذج التصنيع الأنسب: OEM أو ODM أو FOB أو CM.",
+      "الربط بالمصانع والجهات التصنيعية المتخصصة المناسبة من شبكة الشركاء المتاحة للمجموعة.",
+      "تقديم التوجيه بشأن معايير الجودة والتعبئة والتغليف والاستعداد للطرح التجاري."
     ],
     deliverablesEn: [
-      "Comprehensive Brand Launch & Manufacturing Roadmap",
-      "Detailed Product Development Tech Pack Feasibility Report",
-      "Factory Matching & Production Cost Matrix",
-      "Free 30-Minute Initial Strategy Consultation"
+      "Strategic brand launch or growth roadmap.",
+      "Commercial and technical feasibility assessment.",
+      "Preliminary product identity and collection framework.",
+      "Tech Pack review report, when provided.",
+      "Production costing, fabric guidelines, and model recommendation.",
+      "Action plan transitioning from concept to production and market entry.",
+      "Complimentary initial consultation session to scope project requirements."
     ],
     deliverablesAr: [
-      "خارطة طريق متكاملة لتأسيس وتصنيع العلامة التجارية",
-      "تقرير تدقيق الجاهزية الفنية وملفات المواصفات (Tech Packs)",
-      "جدول تسعير تكلفة الإنتاج وتوزيع المصانع الشريكة",
-      "جلسة استشارة أولية مجانية لبحث متطلبات المشروع"
+      "خارطة طريق استراتيجية لتأسيس العلامة التجارية أو تطويرها.",
+      "تقرير تقييم الفكرة والجاهزية التجارية والفنية للمشروع.",
+      "تصور أولي لهوية المنتج وهيكلة المجموعة.",
+      "تقرير مراجعة ملفات المواصفات الفنية (Tech Packs)، عند توافرها.",
+      "تصور لتكلفة الإنتاج والخامات ونموذج التصنيع المقترح.",
+      "خطة تنفيذية مبدئية للانتقال من مرحلة الفكرة إلى الإنتاج والطرح في السوق.",
+      "جلسة استشارة أولية مجانية لمناقشة متطلبات المشروع وتحديد نطاق الدعم المناسب."
     ],
-    image: "/services/apparel/towel-studio-h7NX26Sh3uA-unsplash.jpg"
+    primaryMetricEn: "400+ consultations delivered to emerging and established fashion brands",
+    primaryMetricAr: "تقديم أكثر من 400 استشارة للعلامات التجارية الناشئة والقائمة",
+    image: "/services/apparel/towel-studio-h7NX26Sh3uA-unsplash.jpg",
+    ctaTextEn: "Request a Free Consultation",
+    ctaTextAr: "طلب استشارة مجانية",
+    ctaUrl: "/contact"
   }
 ];
 

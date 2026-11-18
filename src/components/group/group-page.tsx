@@ -264,7 +264,7 @@ export function GroupPage() {
           </div>
 
           <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
-            {strategicPartners.map((p) => {
+            {strategicPartners.slice(0, 2).map((p) => {
               const url = p.websiteUrl || "https://www.sami-trade.com/partners";
               return (
                 <div

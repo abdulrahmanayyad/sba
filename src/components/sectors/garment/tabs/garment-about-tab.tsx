@@ -346,34 +346,34 @@ export function GarmentAboutTab() {
         </div>
       </section>
 
-      {/* 4. MANUFACTURING SERVICES (8 B2B SERVICES) */}
+      {/* 4. MANUFACTURING SERVICES (9 SPECIALIZED B2B SERVICES) */}
       <section id="manufacturing-services" className="scroll-mt-36">
         <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
           <Reveal>
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
               <div>
-                <SectionBadge title={ar ? "خدمات التصنيع التعاقدي" : "Manufacturing Services"} />
+                <SectionBadge title={ar ? "خدمات التصنيع والحلول" : "Manufacturing Solutions"} />
                 <h2 className="section-title mt-3">
-                  {ar ? "برامج تصنيع وتوريد مرنة تناسب كبرى العلامات التجارية" : "8 Turnkey B2B Manufacturing Services"}
+                  {ar ? "9 خدمات وحلول صناعية واستشارية متخصصة" : "9 Turnkey Manufacturing & Advisory Services"}
                 </h2>
               </div>
               <Button asChild size="default" className="rounded-full bg-brand-green text-white hover:bg-brand-orange shrink-0">
                 <Link to="/sectors/$sector" params={{ sector: "garment" }} search={{ tab: "services" }}>
-                  <span>{ar ? "عرض كافة الخدمات (8 خدمات)" : "View All 8 Services"}</span>
+                  <span>{ar ? "عرض كافة الخدمات (9 خدمات)" : "View All 9 Services"}</span>
                   <ArrowRight className="size-4 ms-2 rtl:rotate-180" />
                 </Link>
               </Button>
             </div>
 
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {services.slice(0, 4).map((srv) => (
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {services.map((srv) => (
                 <div key={srv.id} className="group rounded-2xl border border-border bg-card/60 p-5 backdrop-blur-md flex flex-col justify-between hover:border-brand-green transition">
                   <div>
                     <div className="flex items-center justify-between mb-2">
                       <span className="font-mono text-xs font-bold text-brand-green-text">{srv.number}</span>
-                      <span className="text-[11px] font-bold text-brand-orange">{srv.id.toUpperCase()}</span>
+                      <span className="text-[11px] font-bold text-brand-orange">{srv.subtitleEn}</span>
                     </div>
-                    <h4 className="text-center font-head text-base font-bold text-foreground group-hover:text-brand-green transition-colors">
+                    <h4 className="font-head text-base font-bold text-foreground group-hover:text-brand-green transition-colors">
                       {ar ? srv.titleAr : srv.titleEn}
                     </h4>
                     <p className="mt-2 text-xs text-muted-foreground leading-relaxed line-clamp-3">

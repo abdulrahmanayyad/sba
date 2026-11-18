@@ -272,14 +272,12 @@ function EnvironmentalAboutView({ ar }: { ar: boolean }) {
                       }}
                       className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute top-2.5 start-2.5">
-                      <span className="font-mono text-xs font-bold text-white bg-black/60 px-2 py-0.5 rounded-full backdrop-blur-md">
-                        {srv.number}
-                      </span>
-                    </div>
                   </div>
                   <div className="p-5">
                     <div className="flex items-center justify-between mb-2">
+                      <span className="font-mono text-xs font-bold text-brand-green bg-brand-green/10 border border-brand-green/20 px-2 py-0.5 rounded-full">
+                        {srv.number}
+                      </span>
                       <span className="text-[11px] font-semibold text-brand-orange">
                         {ar ? srv.categoryAr : srv.categoryEn}
                       </span>
@@ -857,18 +855,17 @@ function EnvironmentalServicesView({ ar }: { ar: boolean }) {
                         }}
                         className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity" />
-                      <div className="absolute top-3 start-3 end-3 flex items-center justify-between">
-                        <span className="font-mono text-xs font-bold text-white bg-black/60 px-2.5 py-0.5 rounded-full backdrop-blur-md">
-                          {service.number}
-                        </span>
-                        <span className="text-[11px] font-semibold text-white bg-black/60 px-2.5 py-0.5 rounded-full backdrop-blur-md line-clamp-1 max-w-[180px]">
-                          {ar ? service.badgeAr : service.badgeEn}
-                        </span>
-                      </div>
                     </div>
 
                     <div className="p-6">
+                      <div className="flex items-center justify-between gap-2 mb-2.5">
+                        <span className="font-mono text-xs font-bold text-brand-green bg-brand-green/10 border border-brand-green/20 px-2.5 py-0.5 rounded-full">
+                          {service.number}
+                        </span>
+                        <span className="text-[11px] font-semibold text-brand-orange bg-brand-orange/10 border border-brand-orange/20 px-2.5 py-0.5 rounded-full line-clamp-1 max-w-[200px]">
+                          {ar ? service.badgeAr : service.badgeEn}
+                        </span>
+                      </div>
                       <h3 className="font-head text-base sm:text-lg font-bold text-foreground group-hover:text-brand-green transition-colors">
                         {ar ? service.titleAr : service.titleEn}
                       </h3>

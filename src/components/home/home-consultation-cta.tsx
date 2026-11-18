@@ -50,9 +50,6 @@ export const HomeConsultationCta: React.FC<HomeConsultationCtaProps> = ({ ar }) 
                     <span>{ar ? "سرية تامة للبيانات (NDA)" : "Full Corporate Confidentiality"}</span>
                   </div>
                 </div>
-                <p className="text-xs text-muted-foreground font-medium pt-1">
-                  {ar ? "خدمة مخصصة للشركات والمستثمرين والمصانع" : "Dedicated desk for corporations, funds & developers"}
-                </p>
               </div>
 
               <div className="shrink-0 w-full md:w-auto">
