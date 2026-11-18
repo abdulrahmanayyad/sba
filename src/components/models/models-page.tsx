@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef } from "react";
 import { Link } from "@tanstack/react-router";
 import { 
   ArrowLeft, 
@@ -99,9 +99,14 @@ const categoriesConfig: CategoryConfig[] = [
   },
 ];
 
-export function ModelsPage() {
+export interface ModelsPageProps {
+  embedded?: boolean;
+}
+
+export function ModelsPage({ embedded = false }: ModelsPageProps) {
   const { language } = useLanguage();
   const ar = language === "AR";
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const [activeCategory, setActiveCategory] = useState<ProductCategory>("all");
   const [activeSeason, setActiveSeason] = useState<ProductSeason>("all");
@@ -184,48 +189,89 @@ export function ModelsPage() {
     setSelectedSubcat("all");
     setSelectedAge("all");
     setCurrentPage(1);
+    if (embedded && containerRef.current) {
+      containerRef.current.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
   };
 
   const handlePageChange = (newPage: number) => {
     setCurrentPage(newPage);
-    window.scrollTo({ top: 380, behavior: "smooth" });
+    if (embedded && containerRef.current) {
+      containerRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      window.scrollTo({ top: 380, behavior: "smooth" });
+    }
   };
 
   const currentConfig = categoriesConfig.find((c) => c.key === activeCategory) ?? categoriesConfig[0]!;
+  const ContentWrapper = embedded ? "div" : "main";
 
   return (
     <div className="w-full">
-      {/* 1. Hero Section matching website aesthetic with matched BG */}
-      <section className="relative w-full overflow-hidden text-footer-foreground min-h-[420px] md:min-h-[480px] flex items-center">
-        <img
-          data-clip-reveal
-          src="/BG/Apparel Manufacturing/Apparel Manufacturing Home Page.jpg"
-          alt={ar ? "كتالوج الملابس الجاهزة" : "Ready-Made Garments Catalogue"}
-          className="absolute inset-0 size-full object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-footer via-footer/85 to-footer/65" />
-        <div className="site-container relative w-full py-16 md:py-24 z-10">
-          <Reveal>
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
-              <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-              <span>{ar ? "كتالوج الملابس الجاهزة" : "Ready-Made Garments Catalogue"}</span>
-            </div>
+      {/* 1. Hero Section matching website aesthetic with matched BG (Standalone view only) */}
+      {!embedded && (
+        <section className="relative w-full overflow-hidden text-footer-foreground min-h-[420px] md:min-h-[480px] flex items-center">
+          <img
+            data-clip-reveal
+            src="/BG/Apparel Manufacturing/Apparel Manufacturing Home Page.jpg"
+            alt={ar ? "كتالوج الملابس الجاهزة" : "Ready-Made Garments Catalogue"}
+            className="absolute inset-0 size-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-footer via-footer/85 to-footer/65" />
+          <div className="site-container relative w-full py-16 md:py-24 z-10">
+            <Reveal>
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3.5 py-1 text-xs font-bold tracking-wide text-foreground backdrop-blur-md">
+                <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
+                <span>{ar ? "كتالوج الملابس الجاهزة" : "Ready-Made Garments Catalogue"}</span>
+              </div>
 
-            <h1 className="mt-2 max-w-4xl font-head text-[clamp(1.85rem,3.5vw,3rem)] font-extrabold leading-tight text-white drop-shadow-md">
-              {ar ? "كتالوج الملابس الجاهزة" : "Ready-Made Garments Catalogue"}
-            </h1>
+              <h1 className="mt-2 max-w-4xl font-head text-[clamp(1.85rem,3.5vw,3rem)] font-extrabold leading-tight text-white drop-shadow-md">
+                {ar ? "كتالوج الملابس الجاهزة" : "Ready-Made Garments Catalogue"}
+              </h1>
 
-            <p className={cn("mt-4 max-w-3xl font-head text-base sm:text-lg font-bold leading-relaxed text-footer-foreground/90", ar && "font-body")}>
-              {ar
-                ? "تصفح الموديلات بحسب الفئة والموسم والفئة العمرية، واختر التصاميم المناسبة لطلب التصنيع. تُراجع الخامات والمقاسات والكميات والألوان ومواعيد التسليم قبل تأكيد الطلب."
-                : "Browse styles by collection, garment category, season, and age range. Select the designs you would like to discuss, then confirm materials, sizes, colours, quantities and delivery requirements with our manufacturing team."}
-            </p>
-          </Reveal>
-        </div>
-      </section>
+              <p className={cn("mt-4 max-w-3xl font-head text-base sm:text-lg font-bold leading-relaxed text-footer-foreground/90", ar && "font-body")}>
+                {ar
+                  ? "تصفح الموديلات بحسب الفئة والموسم والفئة العمرية، واختر التصاميم المناسبة لطلب التصنيع. تُراجع الخامات والمقاسات والكميات والألوان ومواعيد التسليم قبل تأكيد الطلب."
+                  : "Browse styles by collection, garment category, season, and age range. Select the designs you would like to discuss, then confirm materials, sizes, colours, quantities and delivery requirements with our manufacturing team."}
+              </p>
+            </Reveal>
+          </div>
+        </section>
+      )}
 
       {/* 2. Main Content & Explorer */}
-      <main className="site-container py-10 md:py-16 space-y-10">
+      <ContentWrapper
+        ref={containerRef}
+        className={cn(embedded ? "w-full space-y-8" : "site-container py-10 md:py-16 space-y-10")}
+      >
+        {/* Embedded Title Header */}
+        {embedded && (
+          <div className="rounded-3xl border border-white/25 bg-background/85 p-6 sm:p-8 shadow-xl backdrop-blur-xl">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div className="space-y-2">
+                <div className="flex items-center gap-2">
+                  <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
+                  <span className="font-mono text-xs font-bold text-brand-orange uppercase tracking-wider">
+                    {ar ? "مكتبة الموديلات والتصاميم الجاهزة" : "READY-MADE MODELS & DESIGNS"}
+                  </span>
+                </div>
+                <h3 className="font-head text-xl sm:text-2xl md:text-3xl font-black text-foreground">
+                  {ar ? "كتالوج الموديلات الجاهزة (+2,700 موديل وتصميم صناعي)" : "Ready-Made Models Catalogue (+2,700 Industrial Designs)"}
+                </h3>
+                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed max-w-3xl">
+                  {ar
+                    ? "تصفح الموديلات الصناعية بحسب الفئة والموسم والفئة العمرية مع إمكانية الفحص والتكبير وطلب التصنيع المباشر."
+                    : "Browse ready-made styles by collection, garment category, season, and age range with instant preview and custom quotation."}
+                </p>
+              </div>
+              <div className="shrink-0 flex items-center gap-2">
+                <span className="inline-flex items-center rounded-2xl bg-brand-green px-4 py-2 font-head text-xs font-bold text-white shadow-sm">
+                  {ar ? "+2,700 موديل معتمد" : "+2,700 Certified Models"}
+                </span>
+              </div>
+            </div>
+          </div>
+        )}
         {/* Category Navigation Pills */}
         <div className="rounded-3xl border border-white/30 bg-background/80 p-4 shadow-lg backdrop-blur-2xl space-y-3">
           <div className="flex flex-wrap gap-2">
@@ -573,7 +619,7 @@ export function ModelsPage() {
             </Button>
           </div>
         )}
-      </main>
+      </ContentWrapper>
 
       {/* 5. Full Image Detail & Direct Quotation Modal */}
       <Dialog open={!!activeItem} onOpenChange={(open) => !open && setActiveItem(null)}>

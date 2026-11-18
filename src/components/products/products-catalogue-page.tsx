@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 
 import { Reveal } from "@/components/home/reveal";
+import { ModelsPage } from "@/components/models/models-page";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -586,12 +587,21 @@ export function ProductsCataloguePage() {
               <div className="flex flex-wrap items-center gap-3 shrink-0">
                 <Button
                   asChild
-                  className="rounded-full bg-brand-green hover:bg-brand-orange text-white font-bold text-xs shadow-lg transition-all duration-300"
+                  className="rounded-full bg-brand-green hover:bg-brand-orange text-white font-bold text-xs shadow-lg transition-all duration-300 cursor-pointer"
                 >
-                  <Link to="/models">
-                    <span>{ar ? "كتالوج الموديلات الجاهزة" : "Ready Models Catalogue"}</span>
+                  <a
+                    href="#models-catalogue"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const el = document.getElementById("models-catalogue");
+                      if (el) {
+                        el.scrollIntoView({ behavior: "smooth" });
+                      }
+                    }}
+                  >
+                    <span>{ar ? "كتالوج الموديلات الجاهزة (+2,700 موديل)" : "Ready Models Catalogue (+2,700 Models)"}</span>
                     <ArrowRight className="size-3.5 ms-2 rtl:rotate-180" />
-                  </Link>
+                  </a>
                 </Button>
               </div>
             </div>
@@ -658,12 +668,28 @@ export function ProductsCataloguePage() {
                   <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                     {sec.products.map(renderProductCard)}
                   </div>
+
+                  {/* Integrated Models Catalogue under Men's Wear (Section 3) */}
+                  {sec.key === "men" && (
+                    <div id="models-catalogue" className="pt-10">
+                      <ModelsPage embedded />
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
           ) : filteredProducts.length > 0 ? (
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {filteredProducts.map(renderProductCard)}
+            <div className="space-y-12">
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {filteredProducts.map(renderProductCard)}
+              </div>
+
+              {/* Also render models catalogue if filtered to Men's Wear */}
+              {selectedProductCategory === "men" && (
+                <div id="models-catalogue" className="pt-10">
+                  <ModelsPage embedded />
+                </div>
+              )}
             </div>
           ) : (
             <div className="py-20 text-center rounded-3xl border border-dashed border-border bg-secondary/30">
