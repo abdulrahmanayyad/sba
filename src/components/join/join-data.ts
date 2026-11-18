@@ -1,6 +1,6 @@
 const groupHero = "/BG/Join Us Background.jpg";
 const constructionImg = "/BG/Contracting & Real Estate Development/Contracting & Real Estate Development Home Page.jpg";
-const sustainableImg = "/BG/Environment & Sustainability/Sustainable Environmental Home Page.avif";
+const sustainableImg = "/services/environmental/sustainable-environmental-home-page.avif";
 const garmentImg = "/BG/Apparel Manufacturing/Apparel Manufacturing Home Page.jpg";
 const foodImg = "/BG/Natural & Agri-Food Products/Natural & Agri-Food Products Home Page.jpg";
 

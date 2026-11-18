@@ -41,6 +41,19 @@ function getSafeImageUrl(path: string | undefined): string {
     .join("/");
 }
 
+function getNormalizedEnvironmentalFallback(path: string | undefined): string {
+  if (!path) return "/placeholder.svg";
+  const filename = path.split("/").pop();
+  if (!filename) return "/placeholder.svg";
+  const clean = filename
+    .toLowerCase()
+    .replace(/\.[^/.]+$/, "")
+    .replace(/&/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+  return `/services/environmental/${clean}.jpg`;
+}
+
 export function ServicesCataloguePage() {
   const { language } = useLanguage();
   const ar = language === "AR";
@@ -251,11 +264,8 @@ export function ServicesCataloguePage() {
                           const target = e.currentTarget as HTMLImageElement;
                           if (!target.dataset.retried) {
                             target.dataset.retried = "1";
-                            const filename = service.image.split("/").pop();
-                            if (filename) {
-                              target.src = getSafeImageUrl(`/services/environmental/${filename}`);
-                              return;
-                            }
+                            target.src = getNormalizedEnvironmentalFallback(service.image);
+                            return;
                           }
                           target.src = "/placeholder.svg";
                         }}
@@ -376,10 +386,9 @@ export function ServicesCataloguePage() {
                     className="size-full object-cover"
                     onError={(e) => {
                       const target = e.currentTarget as HTMLImageElement;
-                      const filename = activeServiceDetail.image.split("/").pop();
-                      if (filename && !target.dataset.retried) {
+                      if (!target.dataset.retried) {
                         target.dataset.retried = "1";
-                        target.src = getSafeImageUrl(`/services/environmental/${filename}`);
+                        target.src = getNormalizedEnvironmentalFallback(activeServiceDetail.image);
                         return;
                       }
                       target.src = "/placeholder.svg";
