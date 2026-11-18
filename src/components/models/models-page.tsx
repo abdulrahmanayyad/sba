@@ -272,61 +272,66 @@ export function ModelsPage({ embedded = false }: ModelsPageProps) {
             </div>
           </div>
         )}
-        {/* Category Navigation Pills */}
-        <div className="rounded-3xl border border-white/30 bg-background/80 p-4 shadow-lg backdrop-blur-2xl space-y-3">
-          <div className="flex flex-wrap gap-2">
-            {categoriesConfig.map((cat) => {
-              const count = categoryCounts[cat.key] || 0;
-              const isActive = activeCategory === cat.key;
-              const isAll = cat.key === "all";
-              return (
-                <button
-                  key={cat.key}
-                  type="button"
-                  onClick={() => handleCategoryChange(cat.key)}
-                  className={cn(
-                    "flex items-center gap-2 rounded-2xl px-5 py-2.5 text-xs sm:text-sm font-body font-bold transition-all duration-300 cursor-pointer",
-                    isActive
-                      ? "bg-brand-green text-white shadow-md shadow-brand-green/25 scale-[1.02]"
-                      : "bg-secondary/60 text-foreground hover:bg-secondary hover:text-brand-orange"
-                  )}
-                >
-                  <span>{ar ? cat.labelAr : cat.labelEn}</span>
-                </button>
-              );
-            })}
-          </div>
+        {/* Category & Season Navigation Pills */}
+        <div className="rounded-3xl border border-white/30 bg-background/80 p-4 shadow-lg backdrop-blur-2xl">
+          <div className="flex flex-wrap items-center gap-3">
+            {/* 1. Collections Group */}
+            <div className="flex flex-wrap items-center gap-2">
+              {categoriesConfig.map((cat) => {
+                const isActive = activeCategory === cat.key;
+                return (
+                  <button
+                    key={cat.key}
+                    type="button"
+                    onClick={() => handleCategoryChange(cat.key)}
+                    className={cn(
+                      "rounded-2xl px-4 py-2 text-xs sm:text-sm font-body font-bold transition-all duration-300 cursor-pointer",
+                      isActive
+                        ? "bg-brand-green text-white shadow-md shadow-brand-green/25 scale-[1.02]"
+                        : "bg-secondary/60 text-foreground hover:bg-secondary hover:text-brand-orange border border-border/40 hover:border-brand-green/30"
+                    )}
+                  >
+                    <span>{ar ? cat.labelAr : cat.labelEn}</span>
+                  </button>
+                );
+              })}
+            </div>
 
-          {/* Season Selector Filter inside Categories */}
-          <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-border/50">
-            <span className="text-xs font-body font-bold text-muted-foreground me-1">
-              {ar ? "الموسم:" : "Season:"}
-            </span>
-            {[
-              { key: "all", labelAr: "كافة المواسم", labelEn: "All Seasons" },
-              { key: "summer", labelAr: "المجموعة الصيفية", labelEn: "Summer Collection" },
-              { key: "winter", labelAr: "المجموعة الشتوية", labelEn: "Winter Collection" },
-            ].map((season) => {
-              const isActive = activeSeason === season.key;
-              return (
-                <button
-                  key={season.key}
-                  type="button"
-                  onClick={() => {
-                    setActiveSeason(season.key as ProductSeason);
-                    setCurrentPage(1);
-                  }}
-                  className={cn(
-                    "rounded-full px-3.5 py-1 text-xs font-body font-bold transition-all duration-300 cursor-pointer",
-                    isActive
-                      ? "bg-brand-orange text-white shadow-xs"
-                      : "border border-border/80 bg-background/80 text-foreground hover:bg-secondary hover:border-brand-orange/40"
-                  )}
-                >
-                  {ar ? season.labelAr : season.labelEn}
-                </button>
-              );
-            })}
+            {/* Clear Visual Divider between Collections & Seasons */}
+            <div className="hidden lg:block h-8 w-px bg-border/80 mx-2 shrink-0" />
+            <div className="lg:hidden w-full border-t border-border/50 my-1" />
+
+            {/* 2. Season Selector Filter */}
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="text-xs font-body font-bold text-muted-foreground me-1 shrink-0">
+                {ar ? "الموسم:" : "Season:"}
+              </span>
+              {[
+                { key: "all", labelAr: "كافة المواسم", labelEn: "All Seasons" },
+                { key: "summer", labelAr: "المجموعة الصيفية", labelEn: "Summer Collection" },
+                { key: "winter", labelAr: "المجموعة الشتوية", labelEn: "Winter Collection" },
+              ].map((season) => {
+                const isActive = activeSeason === season.key;
+                return (
+                  <button
+                    key={season.key}
+                    type="button"
+                    onClick={() => {
+                      setActiveSeason(season.key as ProductSeason);
+                      setCurrentPage(1);
+                    }}
+                    className={cn(
+                      "rounded-2xl px-4 py-2 text-xs sm:text-sm font-body font-bold transition-all duration-300 cursor-pointer",
+                      isActive
+                        ? "bg-brand-green text-white shadow-md shadow-brand-green/25 scale-[1.02]"
+                        : "bg-secondary/60 text-foreground hover:bg-secondary hover:text-brand-orange border border-border/40 hover:border-brand-green/30"
+                    )}
+                  >
+                    <span>{ar ? season.labelAr : season.labelEn}</span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
         </div>
 
