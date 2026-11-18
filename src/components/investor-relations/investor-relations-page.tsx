@@ -203,22 +203,14 @@ export function InvestorRelationsPage() {
                 </p>
               </div>
 
-              <div className="grid grid-cols-2 gap-4 sm:gap-6 shrink-0">
-                <div className="text-center p-4 rounded-2xl bg-background/80 border border-border">
-                  <div className="text-2xl sm:text-3xl font-black text-brand-orange">+45 {ar ? "عامًا" : "Yrs"}</div>
-                  <div className="text-[11px] font-bold text-muted-foreground mt-1">{ar ? "تاريخ وخبرة متراكمة" : "Operating Heritage"}</div>
-                </div>
-                <div className="text-center p-4 rounded-2xl bg-background/80 border border-border">
-                  <div className="text-2xl sm:text-3xl font-black text-brand-green">+100</div>
-                  <div className="text-[11px] font-bold text-muted-foreground mt-1">{ar ? "مشروعًا منجزًا" : "Completed Projects"}</div>
-                </div>
-                <div className="text-center p-4 rounded-2xl bg-background/80 border border-border">
-                  <div className="text-2xl sm:text-3xl font-black text-brand-orange">4</div>
-                  <div className="text-[11px] font-bold text-muted-foreground mt-1">{ar ? "تحالفات دولية معتمدة" : "Global Strategic Alliances"}</div>
-                </div>
-                <div className="text-center p-4 rounded-2xl bg-background/80 border border-border">
-                  <div className="text-2xl sm:text-3xl font-black text-brand-green">+2,700</div>
-                  <div className="text-[11px] font-bold text-muted-foreground mt-1">{ar ? "موديل وتصميم صناعي" : "Apparel Models"}</div>
+              <div className="shrink-0">
+                <div className="text-center px-8 sm:px-10 py-6 sm:py-8 rounded-3xl bg-brand-green text-white shadow-xl border border-brand-green/30 flex flex-col items-center justify-center min-w-[220px]">
+                  <div className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white">
+                    +45 {ar ? "عامًا" : "Yrs"}
+                  </div>
+                  <div className="text-xs sm:text-sm font-bold text-white/95 mt-2">
+                    {ar ? "تاريخ وخبرة متراكمة" : "Operating Heritage"}
+                  </div>
                 </div>
               </div>
             </div>
