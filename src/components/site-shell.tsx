@@ -229,7 +229,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
           construction: "قطاع المقاولات",
           environmental: "قطاع البيئة",
           garment: "قطاع الملابس",
-          food: "قطاع الأغذية والمنتجات الطبيعية",
+          food: "قطاع المنتجات الطبيعية والأغذية",
           research: "البحث العلمي",
           education: "التعليم",
         };

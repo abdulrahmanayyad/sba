@@ -998,7 +998,7 @@ export function FoodQualityTab({ ar }: FoodQualityTabProps) {
               </strong>
               <p className="leading-relaxed text-muted-foreground">
                 {ar
-                  ? "هذه قائمة بالمعايير والأنظمة الدولية المرجعية ذات الصلة بقطاع الأغذية والمنتجات الطبيعية والتجارة الدولية. لا تمثل هذه القائمة ادعاءً بحصول المجموعة المباشر على جميع هذه الشهادات، بل توضح المعايير والشهادات المعتمدة التي نتحقق من توفرها لدى شركائنا ومصادر توريدنا وفقاً للاشتراطات الفنية والقانونية لكل شحنة وسوق مستهدف."
+                  ? "هذه قائمة بالمعايير والأنظمة الدولية المرجعية ذات الصلة بقطاع المنتجات الطبيعية والأغذية والتجارة الدولية. لا تمثل هذه القائمة ادعاءً بحصول المجموعة المباشر على جميع هذه الشهادات، بل توضح المعايير والشهادات المعتمدة التي نتحقق من توفرها لدى شركائنا ومصادر توريدنا وفقاً للاشتراطات الفنية والقانونية لكل شحنة وسوق مستهدف."
                   : "This roster details internationally recognized standards and reference systems pertinent to the agri-food and natural commodity sectors. It serves as an informative benchmark of frameworks audited across our vetted suppliers and trade partners, rather than an assertion of direct institutional certification ownership by SAMI BIN AYYAD GROUP."}
               </p>
             </div>

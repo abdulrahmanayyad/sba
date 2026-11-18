@@ -396,8 +396,8 @@ export const GLOBAL_MARKET_SECTORS: GlobalMarketSectorConfig[] = [
   {
     id: "food",
     order: 4,
-    nameAr: "قطاع الأغذية والمنتجات الطبيعية",
-    nameEn: "Food & Natural Products",
+    nameAr: "قطاع المنتجات الطبيعية والأغذية",
+    nameEn: "Natural Products & Food",
     shortDescAr: "",
     shortDescEn:
       "Global food trade intelligence analyzing import demand, pricing, food safety regulations, and distribution for honey, olive oil, dates, and herbs.",

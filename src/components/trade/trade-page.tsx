@@ -80,8 +80,8 @@ export function TradePage({ ar = true }: TradePageProps) {
     },
     {
       id: "food" as const,
-      titleAr: "قطاع الأغذية والمنتجات الطبيعية",
-      titleEn: "Food & Natural Products",
+      titleAr: "قطاع المنتجات الطبيعية والأغذية",
+      titleEn: "Natural Products & Food",
     },
   ];
 

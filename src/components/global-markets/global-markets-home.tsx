@@ -134,8 +134,8 @@ export function GlobalMarketsHome({ ar }: GlobalMarketsHomeProps) {
                 <span className="size-2 rounded-full bg-brand-orange animate-pulse" />
                 <span>
                   {ar
-                    ? "مجموعة سامي بن عياد · مركز الأبحاث والدراسات السوقية"
-                    : "SAMI BIN AYYAD GROUP · Market Research & Intelligence Center"}
+                    ? "مجموعة سامي بن عياد · الأسواق العالمية"
+                    : "SAMI BIN AYYAD GROUP · Global Markets"}
                 </span>
               </div>
             </div>

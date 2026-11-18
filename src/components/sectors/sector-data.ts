@@ -341,7 +341,7 @@ export const sectors: Record<SectorSlug, SectorPageData> = {
     tagline: "From Nature’s Finest to Global Markets",
     taglineAr: "من خيرات الطبيعة إلى الأسواق العالمية",
     intro: "The Food & Natural Products Division is a business unit of SAMI BIN AYYAD GROUP, specializing in the sourcing and marketing of a diverse range of natural food products, including honey, olives and olive oil, dates and date-based products, herbs, spices, and natural powdered juice products. The division aims to build a flexible commercial network connecting product sources with target markets.",
-    introAr: "يمثل قطاع الأغذية والمنتجات الطبيعية أحد قطاعات مجموعة سامي بن عياد، ويختص بتوفير وتسويق مجموعة متنوعة من المنتجات الغذائية الطبيعية، تشمل عسل النحل، والزيتون وزيت الزيتون، والتمور، ومنتجات التمر، والأعشاب والتوابل، ومشروبات العصائر البودر الطبيعية، عبر منظومة تجارية مرنة تربط بين مصادر المنتجات والأسواق المستهدفة.",
+    introAr: "يمثل قطاع المنتجات الطبيعية والأغذية أحد قطاعات مجموعة سامي بن عياد، ويختص بتوفير وتسويق مجموعة متنوعة من المنتجات الغذائية الطبيعية، تشمل عسل النحل، والزيتون وزيت الزيتون، والتمور، ومنتجات التمر، والأعشاب والتوابل، ومشروبات العصائر البودر الطبيعية، عبر منظومة تجارية مرنة تربط بين مصادر المنتجات والأسواق المستهدفة.",
     sections: [
       {
         title: "About the Division",

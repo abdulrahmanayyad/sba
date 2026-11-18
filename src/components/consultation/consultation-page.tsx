@@ -828,7 +828,7 @@ export function ConsultationPage() {
                     <div className="p-6 rounded-2xl bg-secondary/40 border border-border space-y-4">
                       <div className="flex items-center gap-2 text-sm font-bold text-brand-green">
                         <Wheat className="size-4" />
-                        <span>{ar ? "متطلبات قطاع الأغذية والمنتجات الطبيعية" : "Food & Natural Products Requirements"}</span>
+                        <span>{ar ? "متطلبات قطاع المنتجات الطبيعية والأغذية" : "Natural Products & Food Requirements"}</span>
                       </div>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
                         <div>
