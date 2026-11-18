@@ -568,45 +568,7 @@ export function ProductsCataloguePage() {
           )}
         </div>
 
-        {/* Special Garment Catalogue Launcher (When in Apparel Division) */}
-        {selectedProductDivision === "apparel" && (
-          <div className="mb-10 overflow-hidden rounded-3xl border border-border/80 bg-background/80 p-6 sm:p-8 shadow-xl backdrop-blur-2xl transition-all duration-500 hover:-translate-y-0.5 hover:shadow-2xl">
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
-              <div className="max-w-2xl">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/80 px-3 py-1 text-xs font-bold text-foreground backdrop-blur-md">
-                    <span className="size-1.5 rounded-full bg-brand-orange animate-pulse" />
-                    <span>{ar ? "مكتبة الموديلات الجاهزة" : "Ready Models Library"}</span>
-                  </span>
-                </div>
-                <h3 className="font-head text-xl sm:text-2xl font-black text-foreground">
-                  {ar ? "تصفح الموديلات الجاهزة" : "Browse Ready Models"}
-                </h3>
-              </div>
 
-              <div className="flex flex-wrap items-center gap-3 shrink-0">
-                <Button
-                  asChild
-                  className="rounded-full bg-brand-green hover:bg-brand-orange text-white font-bold text-xs shadow-lg transition-all duration-300 cursor-pointer"
-                >
-                  <a
-                    href="#models-catalogue"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      const el = document.getElementById("models-catalogue");
-                      if (el) {
-                        el.scrollIntoView({ behavior: "smooth" });
-                      }
-                    }}
-                  >
-                    <span>{ar ? "كتالوج الموديلات الجاهزة (+2,700 موديل)" : "Ready Models Catalogue (+2,700 Models)"}</span>
-                    <ArrowRight className="size-3.5 ms-2 rtl:rotate-180" />
-                  </a>
-                </Button>
-              </div>
-            </div>
-          </div>
-        )}
 
         {/* Products Grid Controls */}
         <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
