@@ -109,69 +109,6 @@ export const physicalProducts: PhysicalProduct[] = [
     ]
   },
   {
-    id: "prod-gar-kid-underwear",
-    code: "SBA-PRD-KID-UND01",
-    sector: "apparel",
-    categoryKey: "kids-wear",
-    categoryKeys: ["kids-wear", "underwear"],
-    categoryEn: "Kids & Baby Wear",
-    categoryAr: "ملابس الأطفال وحديثي الولادة",
-    mainDepartmentEn: "Kids & Baby Wear",
-    mainDepartmentAr: "ملابس الأطفال وحديثي الولادة",
-    nameEn: "Underwear",
-    nameAr: "الملابس الداخلية",
-    taglineEn: "Combed cotton undershirts, boys boxers, girls panties, daily cotton sets, and infant base layers.",
-    taglineAr: "فانلات داخلية، بوكسرات أولاد، ملابس داخلية بنات، أطقم داخلية قطنية، وملابس داخلية للرضع.",
-    descriptionEn: "Precision manufacturing of children's intimates: pure combed cotton undershirts, comfortable boys' boxer briefs, girls' briefs and camisoles, matching sets, and gentle infant undergarments produced with skin-friendly flatlock seams and non-irritating waistbands.",
-    descriptionAr: "مجموعة تصنيع متخصصة في الملابس الداخلية للأطفال والرضع، تشمل فانلات داخلية قطنية، بوكسرات أولاد مريحة، سراويل وفانلات داخلية بنات، أطقم داخلية قطنية متناسقة، وملابس داخلية للأطفال الرضع بحياكة مسطحة ناعمة لا تسبب أي احتكاك أو حساسية للبشرة.",
-    image: "/products/apparel/kids-underwear.jpg",
-    originEn: "Egypt",
-    originAr: "جمهورية مصر العربية",
-    originFlag: "🇪🇬",
-    moqEn: "1,000 pcs / style",
-    moqAr: "1,000 قطعة / تصميم",
-    packagingEn: "Multi-pack box (2-3 pcs) or hygienic sealed polybags in export master cartons.",
-    packagingAr: "عبوات متعددة (2-3 قطع) أو أكياس معقمة محكمة الإغلاق داخل كراتين التصدير.",
-    specifications: [
-      {
-        labelEn: "Included Products",
-        labelAr: "المنتجات المشمولة",
-        valueEn: "Undershirts, boys boxers, girls underwear/panties, cotton matching sets, infant base layers",
-        valueAr: "فانلات داخلية، بوكسرات أولاد، ملابس داخلية بنات، أطقم داخلية قطنية، ملابس داخلية للرضع"
-      },
-      {
-        labelEn: "Fabric Composition",
-        labelAr: "الخامات وتركيب الأقمشة",
-        valueEn: "100% Combed Cotton, Cotton with Elastane, ultra-soft daily fabrics",
-        valueAr: "قطن ممشط 100%، قطن مع إيلاستين، أقمشة ناعمة ومريحة للاستخدام اليومي"
-      },
-      {
-        labelEn: "Fabric Weights (GSM)",
-        labelAr: "أوزان الأقمشة",
-        valueEn: "140 to 180 GSM fine single jersey",
-        valueAr: "من 140 إلى 180 جم/م² سنجل جيرسيه فائق النعومة والتهوية"
-      },
-      {
-        labelEn: "Age Groups",
-        labelAr: "الفئات العمرية",
-        valueEn: "0-24 Months, 2-6 Years, 6-12 Years",
-        valueAr: "حديثو الولادة حتى 24 شهرًا، من 2 إلى 6 سنوات، من 6 إلى 12 سنة"
-      },
-      {
-        labelEn: "Finishing & Comfort",
-        labelAr: "التشطيب ومعايير الراحة",
-        valueEn: "Tagless heat-transfer labels, gentle elastic bands, flatlock anti-chafing seams",
-        valueAr: "ملصقات رقبة مطبوعة حراريًا (Tagless)، أستك ناعم مبطن، وحياكة مسطحة مانعة للاحتكاك"
-      },
-      {
-        labelEn: "Private Label",
-        labelAr: "التخصيص والعلامات الخاصة",
-        valueEn: "Custom multi-pack packaging, custom elastic jacquard with brand logo",
-        valueAr: "تغليف مخصص متعدد القطع، وإمكانية إضافة شعار العميل على أستك الخصر"
-      }
-    ]
-  },
-  {
     id: "prod-gar-kid-homewear",
     code: "SBA-PRD-KID-HMW01",
     sector: "apparel",
