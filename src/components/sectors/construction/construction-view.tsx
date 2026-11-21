@@ -68,6 +68,15 @@ export function ConstructionSectorView({ tab = "about", token }: ConstructionVie
   ];
   const activeTab: ConstructionTab = validTabs.includes(tab) ? tab : "about";
 
+  useEffect(() => {
+    if (tab === "sectors") {
+      const el = document.getElementById("sectors");
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [tab]);
+
   const tabLabels: Record<ConstructionTab, { en: string; ar: string; descEn: string; descAr: string }> = {
     about: {
       en: "About Us",
@@ -121,8 +130,8 @@ export function ConstructionSectorView({ tab = "about", token }: ConstructionVie
 
   return (
     <div className="w-full">
-      {/* Sector Hero — Only displayed on About Us tab, full first screen, matching Home hero font size */}
-      {activeTab === "about" && (
+      {/* Sector Hero — Displayed on About and Sectors tabs, full first screen */}
+      {(activeTab === "about" || activeTab === "sectors") && (
         <section className="relative w-full overflow-hidden text-footer-foreground min-h-screen flex items-center">
           <img
             data-clip-reveal
@@ -163,8 +172,7 @@ export function ConstructionSectorView({ tab = "about", token }: ConstructionVie
 
       {/* Render Active Page Content */}
       <div className="py-8 space-y-12">
-        {activeTab === "about" && <ConstructionAboutView ar={ar} />}
-        {activeTab === "sectors" && <ConstructionSectorsView ar={ar} />}
+        {(activeTab === "about" || activeTab === "sectors") && <ConstructionAboutView ar={ar} />}
         {activeTab === "services" && <ConstructionServicesView ar={ar} />}
         {activeTab === "projects" && <ConstructionProjectsView ar={ar} />}
         {activeTab === "start-project" && <ConstructionStartProjectView ar={ar} />}
@@ -172,8 +180,8 @@ export function ConstructionSectorView({ tab = "about", token }: ConstructionVie
         {activeTab === "verify-portal" && <VerificationPortal token={token || ""} />}
         {activeTab === "verification-admin" && <ProjectVerificationAdminDashboard />}
 
-        {/* Dedicated Sector Free Consultation CTA — Rendered only on About and Projects tabs */}
-        {(activeTab === "about" || activeTab === "projects") && (
+        {/* Dedicated Sector Free Consultation CTA — Rendered on About, Sectors and Projects tabs */}
+        {(activeTab === "about" || activeTab === "sectors" || activeTab === "projects") && (
           <div className="site-container">
             <SectorConsultationCta sector="construction" ar={ar} />
           </div>
@@ -365,63 +373,114 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
         </Reveal>
       </section>
 
-      {/* 5. INDUSTRIES WE SERVE */}
-      <section className="site-container">
-        <Reveal>
-          <div className="text-center max-w-3xl mx-auto mb-10">
-            <SectionBadge title={ar ? "القطاعات المخدومة" : "Industries We Serve"} />
-            <h2 className="section-title mt-3 text-center mx-auto">
-              {ar ? "ريادة تنفيذية موثقة عبر كبرى القطاعات" : "Proven Track Record Across Key Industries"}
-            </h2>
-            <p className="section-intro mt-3 text-center mx-auto">
-              {ar
-                ? "خبرات هندسية متخصصة تلبي أعلى متطلبات المستشفيات، منشآت الطاقة، المشروعات السكنية، والتجارية."
-                : "Engineering expertise tailored to demanding medical cleanrooms, oil & gas regulator stations, luxury compounds, and commercial centers."}
-            </p>
+      {/* 5. SPECIALIZED SECTORS WE SERVE — Merged from ?tab=sectors */}
+      <section id="sectors" className="site-container scroll-mt-24">
+        <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
+          <Reveal>
+            <div className="text-center max-w-3xl mx-auto mb-10">
+              <SectionBadge title={ar ? "قطاعاتنا المتخصصة" : "Our Specialized Sectors"} />
+              <h2 className="section-title mt-3 text-center mx-auto">
+                {ar ? constructionSectorsData.titleAr : constructionSectorsData.title}
+              </h2>
+              <p className="section-intro mt-4 text-center mx-auto">
+                {ar ? constructionSectorsData.subtitleAr : constructionSectorsData.subtitle}
+              </p>
+            </div>
+          </Reveal>
+
+          {/* Quick 5-Sector Navigation / Overview Cards */}
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5 mb-12">
+            {constructionSectorsData.sectors.map((sec, idx) => {
+              const icons = [Building, Layers, Trophy, HardHat, Cpu];
+              const IconComp = icons[idx % icons.length];
+              return (
+                <a
+                  key={sec.id}
+                  href={`#sector-${sec.id}`}
+                  className="group rounded-2xl border border-border/70 bg-secondary/30 p-4 shadow-sm backdrop-blur-md transition-all duration-300 hover:border-brand-green/60 hover:bg-secondary/60 hover:shadow-md hover:-translate-y-0.5 text-center flex flex-col items-center justify-between"
+                >
+                  <div className="size-10 rounded-xl bg-brand-green/10 flex items-center justify-center text-brand-green mb-2 group-hover:scale-110 transition-transform">
+                    <IconComp className="size-5" />
+                  </div>
+                  <span className="font-mono text-[11px] font-bold text-brand-orange-text">{sec.number}</span>
+                  <h3 className="font-head text-xs font-bold text-foreground mt-1 text-center line-clamp-2">
+                    {ar ? sec.titleAr : sec.title}
+                  </h3>
+                  <span className="mt-2 text-[11px] font-semibold text-brand-green-text flex items-center gap-1 group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5 transition-transform">
+                    {ar ? "تفاصيل القطاع" : "View Details"}
+                    <ChevronRight className="size-3 rtl:rotate-180" />
+                  </span>
+                </a>
+              );
+            })}
           </div>
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            <div className="rounded-3xl border border-white/30 bg-background/80 p-6 shadow-md backdrop-blur-xl text-center">
-              <div className="mx-auto size-12 rounded-2xl bg-brand-green/10 flex items-center justify-center text-brand-green mb-3">
-                <Building className="size-6" />
-              </div>
-              <h3 className="font-head text-base font-bold text-foreground text-center mx-auto">{ar ? "القطاع الطبي والرعاية الصحية" : "Healthcare & Medical Facilities"}</h3>
-              <p className="mt-2 text-xs text-muted-foreground leading-relaxed text-center mx-auto">
-                {ar ? "غرف العمليات، الأشعة والتعقيم، شبكات الغازات الطبية، والمصاعد المتخصصة." : "Operating theatres, imaging rooms, medical gas networks, and bed elevators."}
-              </p>
-            </div>
+          {/* Detailed Sector Showcase Cards */}
+          <div className="space-y-12">
+            {constructionSectorsData.sectors.map((sector, index) => {
+              const sectorImages = [
+                constructionHeroData.image,
+                heroSustainable,
+                constructionHeroData.image,
+                heroSustainable,
+                constructionHeroData.image,
+              ];
+              const cardImg = ("image" in sector && sector.image) ? (sector.image as string) : sectorImages[index % sectorImages.length];
+              return (
+                <Reveal key={sector.id} delay={index * 0.05}>
+                  <div id={`sector-${sector.id}`} className="glass-card overflow-hidden rounded-3xl border border-border p-6 sm:p-10 scroll-mt-28">
+                    <div className="grid gap-6 md:grid-cols-12 md:items-center border-b border-border pb-6">
+                      <div className="md:col-span-8">
+                        <span className="font-mono text-xs uppercase tracking-widest text-brand-orange-text">{sector.number}</span>
+                        <h3 className="mt-1 font-head text-xl font-bold sm:text-2xl text-foreground">{ar ? sector.titleAr : sector.title}</h3>
+                        <p className="mt-1 text-sm font-medium text-brand-green-text">{ar ? sector.taglineAr : sector.tagline}</p>
+                        <p className="mt-4 text-sm sm:text-base leading-7 text-foreground/90">{ar ? sector.bodyAr : sector.body}</p>
+                      </div>
+                      <div className="md:col-span-4 overflow-hidden rounded-2xl border border-border shadow-md">
+                        <img
+                          src={cardImg}
+                          alt={ar ? sector.titleAr : sector.title}
+                          loading="lazy"
+                          className="aspect-[16/10] w-full object-cover transition-transform duration-500 hover:scale-105"
+                        />
+                      </div>
+                    </div>
 
-            <div className="rounded-3xl border border-white/30 bg-background/80 p-6 shadow-md backdrop-blur-xl text-center">
-              <div className="mx-auto size-12 rounded-2xl bg-brand-orange/10 flex items-center justify-center text-brand-orange mb-3">
-                <HardHat className="size-6" />
-              </div>
-              <h3 className="font-head text-base font-bold text-foreground text-center mx-auto">{ar ? "مشروعات البترول والغاز" : "Oil & Gas Infrastructure"}</h3>
-              <p className="mt-2 text-xs text-muted-foreground leading-relaxed text-center mx-auto">
-                {ar ? "حماية خطوط الغاز القومية، غرف محولات الضغط، ومحطات تموين الوقود." : "High-pressure gas pipeline protection, regulator rooms, and fuel stations."}
-              </p>
-            </div>
+                    <div className="mt-8 grid gap-8 lg:grid-cols-2">
+                      <div>
+                        <h4 className="flex items-center gap-2 font-head text-sm font-semibold text-foreground">
+                          <Layers className="size-4 text-brand-green-text" /> {ar ? "نطاق الأعمال والقدرات" : "Scope & Capabilities"}
+                        </h4>
+                        <ul className="mt-4 space-y-2.5">
+                          {sector.scopeList.map((item, idx) => (
+                            <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-muted-foreground">
+                              <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-brand-green-text" />
+                              <span>{ar ? item.ar : item.en}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
 
-            <div className="rounded-3xl border border-white/30 bg-background/80 p-6 shadow-md backdrop-blur-xl text-center">
-              <div className="mx-auto size-12 rounded-2xl bg-brand-green/10 flex items-center justify-center text-brand-green mb-3">
-                <Layers className="size-6" />
-              </div>
-              <h3 className="font-head text-base font-bold text-foreground text-center mx-auto">{ar ? "التطوير السكني والفلل الفاخرة" : "Residential & Luxury Estates"}</h3>
-              <p className="mt-2 text-xs text-muted-foreground leading-relaxed text-center mx-auto">
-                {ar ? "منتجع فيدالا الجلالة، وفلل التجمع الخامس وماونتن فيو وقطامية ديونز." : "Vidala El-Galala resort blocks, Katameya Dunes, and Fifth Settlement villas."}
-              </p>
-            </div>
-
-            <div className="rounded-3xl border border-white/30 bg-background/80 p-6 shadow-md backdrop-blur-xl text-center">
-              <div className="mx-auto size-12 rounded-2xl bg-brand-orange/10 flex items-center justify-center text-brand-orange mb-3">
-                <Trophy className="size-6" />
-              </div>
-              <h3 className="font-head text-base font-bold text-foreground text-center mx-auto">{ar ? "المباني التجارية والإدارية" : "Commercial & Headquarters"}</h3>
-              <p className="mt-2 text-xs text-muted-foreground leading-relaxed text-center mx-auto">
-                {ar ? "مجمعات التسوق، مقرات الشركات، والمشروعات التعليمية والمدارس الدولية." : "Corporate headquarters, retail shopping complexes, and international schools."}
-              </p>
-            </div>
+                      <div>
+                        <h4 className="flex items-center gap-2 font-head text-sm font-semibold text-foreground">
+                          <Trophy className="size-4 text-brand-orange-text" /> {ar ? "أبرز المشروعات في هذا القطاع" : "Selected Sector Projects"}
+                        </h4>
+                        <div className="mt-4 space-y-3">
+                          {sector.featuredProjects.map((proj, pIdx) => (
+                            <div key={pIdx} className="rounded-xl border border-border/70 bg-secondary/40 p-3.5">
+                              <p className="font-head text-xs sm:text-sm font-bold text-foreground">{ar ? proj.nameAr : proj.nameEn}</p>
+                              <p className="mt-1 text-xs text-muted-foreground">{ar ? proj.noteAr : proj.noteEn}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </Reveal>
+              );
+            })}
           </div>
-        </Reveal>
+        </div>
       </section>
 
       {/* 6. COMPETITIVE ADVANTAGES */}
