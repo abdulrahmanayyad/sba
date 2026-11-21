@@ -1,3 +1,4 @@
+import { useState, useMemo } from "react";
 import { Link } from "@tanstack/react-router";
 import {
   Building2,
@@ -24,11 +25,11 @@ import {
 import { Reveal } from "@/components/home/reveal";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/i18n/language-context";
+import { physicalProducts } from "@/components/products/products-data";
 import {
   garmentAboutData,
   garmentProductionCapacity,
   garmentIndustrialCapabilities,
-  garmentProductCategories,
   garmentProcessSteps,
   garmentClassicShirtFacility,
   garmentPortfolioTypes
@@ -53,8 +54,60 @@ export function GarmentAboutTab() {
   const { whoWeAre, whyChooseUs, infrastructure, markets } = garmentAboutData;
   const capacity = garmentProductionCapacity;
   const capabilities = garmentIndustrialCapabilities;
-  const categories = garmentProductCategories;
   const shirtFacility = garmentClassicShirtFacility;
+
+  const [selectedProductCategory, setSelectedProductCategory] = useState<string>("all");
+
+  const categoryFilters = [
+    { key: "all", labelEn: "All Products", labelAr: "كافة المنتجات" },
+    { key: "kids-wear", labelEn: "Kids' Wear", labelAr: "أطفالي" },
+    { key: "womens-wear", labelEn: "Women's Wear", labelAr: "حريمي" },
+    { key: "mens-wear", labelEn: "Men's Wear", labelAr: "رجالي" },
+  ];
+
+  const apparelSections = useMemo(() => {
+    const apparelProducts = physicalProducts.filter((p) => p.sector === "apparel");
+    return [
+      {
+        key: "kids-wear",
+        sectionNumber: "1",
+        titleAr: "القسم الأول: ملابس الأطفال وحديثي الولادة",
+        titleEn: "Section 1: Kids & Newborn Wear",
+        subtitleAr: "5 تصنيفات معتمدة للتصنيع والتوريد (ملابس الخروج، الملابس الداخلية، الملابس المنزلية، الملابس الرياضية، ملابس حديثي الولادة)",
+        subtitleEn: "5 certified manufacturing lines (Casual Wear, Underwear, Homewear, Sportswear, Newborn Wear)",
+        badgeAr: "أزياء أطفالي",
+        badgeEn: "Kids' Wear",
+        products: apparelProducts.filter((p) => p.mainDepartmentEn === "Kids & Baby Wear"),
+      },
+      {
+        key: "womens-wear",
+        sectionNumber: "2",
+        titleAr: "القسم الثاني: الملابس النسائية",
+        titleEn: "Section 2: Women’s Wear",
+        subtitleAr: "3 تصنيفات معتمدة ومخصصة (الملابس الداخلية، الملابس المنزلية، ملابس النوم)",
+        subtitleEn: "3 certified lines (Underwear, Homewear, Nightwear)",
+        badgeAr: "أزياء نسائية",
+        badgeEn: "Women's Wear",
+        products: apparelProducts.filter((p) => p.mainDepartmentEn === "Women's Wear"),
+      },
+      {
+        key: "mens-wear",
+        sectionNumber: "3",
+        titleAr: "القسم الثالث: الملابس الرجالية",
+        titleEn: "Section 3: Men’s Wear",
+        subtitleAr: "4 تصنيفات متكاملة (ملابس الخروج، الملابس الكلاسيك، الملابس المنزلية، الملابس الرياضية)",
+        subtitleEn: "4 comprehensive categories (Casual Wear, Classic Wear, Homewear, Sportswear)",
+        badgeAr: "أزياء رجالية",
+        badgeEn: "Men's Wear",
+        products: apparelProducts.filter((p) => p.mainDepartmentEn === "Men's Wear"),
+      },
+    ];
+  }, []);
+
+  const visibleApparelSections = useMemo(() => {
+    if (selectedProductCategory === "all") return apparelSections;
+    return apparelSections.filter((s) => s.key === selectedProductCategory);
+  }, [apparelSections, selectedProductCategory]);
 
   return (
     <div className="space-y-16 py-6">
@@ -344,10 +397,10 @@ export function GarmentAboutTab() {
         </div>
       </section>
 
-      {/* 4. PRODUCT CATEGORIES (11 CATEGORIES) */}
+      {/* 4. PRODUCT CATEGORIES & DIVISIONS */}
       <section id="product-categories" className="scroll-mt-36">
         <Reveal>
-          <div className="text-center max-w-3xl mx-auto mb-10">
+          <div className="text-center max-w-3xl mx-auto mb-8">
             <SectionBadge title={ar ? "التصنيفات والمنتجات" : "Product Categories"} />
             <h2 className="section-title mt-3 text-center mx-auto">
               {ar ? "تنوع صناعي شامل" : "Comprehensive Apparel Diversity"}
@@ -357,47 +410,140 @@ export function GarmentAboutTab() {
             </p>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {categories.map((cat) => (
-              <div key={cat.id} className="group rounded-2xl border border-white/20 bg-background/80 overflow-hidden shadow-sm backdrop-blur-xl transition hover:border-brand-orange hover:shadow-lg flex flex-col justify-between">
-                <div>
-                  {cat.image && (
-                    <div className="relative aspect-[16/10] w-full overflow-hidden bg-secondary">
-                      <img
-                        src={encodeURI(cat.image)}
-                        alt={ar ? cat.nameAr : cat.nameEn}
-                        loading="lazy"
-                        onError={(e) => {
-                          (e.currentTarget as HTMLImageElement).src = "/placeholder.svg";
-                        }}
-                        className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                    </div>
+          {/* Department Filter Tabs: كافة المنتجات / أطفالي / حريمي / رجالي */}
+          <div className="flex flex-wrap items-center justify-center gap-2 mb-10">
+            {categoryFilters.map((cat) => {
+              const isActive = selectedProductCategory === cat.key;
+              return (
+                <button
+                  key={cat.key}
+                  type="button"
+                  onClick={() => setSelectedProductCategory(cat.key)}
+                  className={cn(
+                    "rounded-full px-5 py-2 text-xs sm:text-sm font-bold transition-all duration-300 cursor-pointer shadow-xs",
+                    isActive
+                      ? "bg-brand-green text-white shadow-md ring-2 ring-brand-green/30 scale-105"
+                      : "border border-border/80 bg-background/80 text-foreground hover:bg-secondary hover:border-brand-green/40 backdrop-blur-md"
                   )}
-                  <div className="p-5">
-                    <h4 className="text-center font-head text-sm font-bold text-foreground group-hover:text-brand-orange transition-colors">
-                      {ar ? cat.nameAr : cat.nameEn}
-                    </h4>
-                    <p className="mt-1.5 text-xs text-muted-foreground leading-relaxed line-clamp-2">
-                      {ar ? cat.descriptionAr : cat.descriptionEn}
-                    </p>
-                    <div className="mt-3 pt-2.5 border-t border-border/40 flex flex-wrap gap-1">
-                      {(ar ? cat.itemsAr : cat.itemsEn).slice(0, 2).map((item, idx) => (
-                        <span key={idx} className="bg-secondary/60 text-[10px] font-medium px-2 py-0.5 rounded-md text-foreground">
-                          {item}
-                        </span>
-                      ))}
+                >
+                  {ar ? cat.labelAr : cat.labelEn}
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Sections List */}
+          <div className="space-y-12">
+            {visibleApparelSections.map((sec) => (
+              <div key={sec.key} className="space-y-6">
+                {/* Section Header Card */}
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 rounded-2xl border border-white/30 bg-background/80 p-5 sm:p-6 backdrop-blur-xl shadow-sm">
+                  <div className="flex items-center gap-3.5">
+                    <span className="flex size-9 items-center justify-center rounded-xl bg-brand-green/15 text-brand-green border border-brand-green/30 font-bold text-sm shrink-0">
+                      {sec.sectionNumber}
+                    </span>
+                    <div>
+                      <h3 className="font-head text-base sm:text-lg md:text-xl font-bold text-foreground">
+                        {ar ? sec.titleAr : sec.titleEn}
+                      </h3>
+                      <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
+                        {ar ? sec.subtitleAr : sec.subtitleEn}
+                      </p>
                     </div>
                   </div>
+                  <span className="inline-flex items-center self-start sm:self-auto rounded-full bg-secondary/80 px-3 py-1 text-xs font-bold text-foreground border border-border">
+                    {ar ? `${sec.products.length} تصنيفات` : `${sec.products.length} Categories`}
+                  </span>
+                </div>
+
+                {/* Categories Grid for this section */}
+                <div
+                  className={cn(
+                    "grid gap-5",
+                    sec.products.length === 5
+                      ? "sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5"
+                      : sec.products.length === 4
+                        ? "sm:grid-cols-2 lg:grid-cols-4"
+                        : "sm:grid-cols-2 lg:grid-cols-3"
+                  )}
+                >
+                  {sec.products.map((prod) => {
+                    const includedItems = prod.specifications?.[0]?.valueAr
+                      ? (ar ? prod.specifications[0].valueAr : prod.specifications[0].valueEn)
+                          .split(ar ? "،" : ",")
+                          .map((s) => s.trim())
+                          .filter(Boolean)
+                      : [];
+                    return (
+                      <div
+                        key={prod.id}
+                        className="group rounded-2xl border border-white/30 bg-background/80 overflow-hidden shadow-sm backdrop-blur-xl transition-all duration-300 hover:border-brand-green/60 hover:shadow-lg hover:-translate-y-1 flex flex-col justify-between"
+                      >
+                        <div>
+                          <div className="relative aspect-[16/10] w-full overflow-hidden bg-secondary">
+                            <img
+                              src={encodeURI(prod.image)}
+                              alt={ar ? prod.nameAr : prod.nameEn}
+                              loading="lazy"
+                              onError={(e) => {
+                                (e.currentTarget as HTMLImageElement).src = "/placeholder.svg";
+                              }}
+                              className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            />
+                            <span className="absolute top-2.5 start-2.5 rounded-full bg-black/60 px-2.5 py-0.5 text-[10px] font-bold text-white backdrop-blur-md">
+                              {ar ? sec.badgeAr : sec.badgeEn}
+                            </span>
+                          </div>
+
+                          <div className="p-4 sm:p-5">
+                            <h4 className="font-head text-base font-bold text-foreground group-hover:text-brand-green transition-colors">
+                              {ar ? prod.nameAr : prod.nameEn}
+                            </h4>
+                            <p className="mt-1.5 text-xs text-muted-foreground leading-relaxed line-clamp-2">
+                              {ar ? prod.taglineAr : prod.taglineEn}
+                            </p>
+
+                            {includedItems.length > 0 && (
+                              <div className="mt-3 pt-2.5 border-t border-border/40 flex flex-wrap gap-1">
+                                {includedItems.slice(0, 2).map((item, idx) => (
+                                  <span key={idx} className="bg-secondary/70 text-[10px] font-medium px-2 py-0.5 rounded-md text-foreground">
+                                    {item}
+                                  </span>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        </div>
+
+                        <div className="p-4 sm:p-5 pt-0">
+                          <Link
+                            to="/products"
+                            search={{}}
+                            className="text-xs font-bold text-brand-green hover:text-brand-orange transition-colors flex items-center justify-between pt-2.5 border-t border-border/40"
+                          >
+                            <span>{ar ? "عرض بالكتالوج" : "View in Catalogue"}</span>
+                            <ArrowRight className="size-3 rtl:rotate-180" />
+                          </Link>
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="mt-8 text-center">
-            <Button asChild size="default" className="rounded-full bg-brand-green text-white hover:bg-brand-orange shadow-md">
+          {/* Action CTAs */}
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+            <Button asChild size="default" className="rounded-full bg-brand-green text-white hover:bg-brand-orange shadow-md font-bold px-6">
+              <Link to="/products" search={{}}>
+                <span>{ar ? "استعراض كتالوج المنتجات الشامل" : "Browse Full Products Catalogue"}</span>
+                <ArrowRight className="size-4 ms-2 rtl:rotate-180" />
+              </Link>
+            </Button>
+            <Button asChild variant="outline" size="default" className="rounded-full border-brand-green/40 text-foreground hover:bg-brand-green/10 shadow-sm font-bold px-6">
               <Link to="/models">
-                <span>{ar ? "استعراض كتالوج الموديلات" : "Browse Models Catalogue"}</span>
+                <span>{ar ? "استعراض كتالوج الموديلات الجاهزة" : "Browse Ready-Made Models"}</span>
                 <ExternalLink className="size-4 ms-2" />
               </Link>
             </Button>
