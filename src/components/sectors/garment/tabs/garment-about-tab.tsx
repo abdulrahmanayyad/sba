@@ -337,7 +337,7 @@ export function GarmentAboutTab() {
         <div className="overflow-hidden rounded-3xl border border-white/40 bg-background/80 p-6 md:p-12 shadow-[0_16px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl ring-1 ring-black/5">
           <Reveal>
             <div className="max-w-3xl mb-10">
-              <SectionBadge title={ar ? "القدرات الصناعية المتكاملة" : "10 Industrial Capabilities"} />
+              <SectionBadge title={ar ? "القدرات الصناعية المتكاملة" : "Industrial Capabilities"} />
               <h2 className="section-title mt-3">
                 {ar ? "منظومة تصنيع متطورة من الخيط وحتى التعبئة للتصدير" : "End-to-End Industrial Capabilities"}
               </h2>

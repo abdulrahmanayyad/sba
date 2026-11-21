@@ -508,50 +508,8 @@ export const garmentIndustrialCapabilities: IndustrialCapabilityItem[] = [
     image: "/BG/Apparel Manufacturing/Apparel Manufacturing Home Page.jpg"
   },
   {
-    id: "pattern-making",
-    number: "03",
-    titleEn: "CAD / CAM Pattern Making & Grading",
-    titleAr: "هندسة الباترون وتدريج المقاسات بالكمبيوتر",
-    leadEn: "State-of-the-art Gerber & Lectra digital pattern systems executing exact fit grading from XS to 5XL.",
-    leadAr: "أنظمة باترونات متطورة لتدريج المقاسات بدقة متناهية",
-    specsEn: [
-      "Digital marker optimization yielding maximum fabric utilization (>88%)",
-      "Precision size grading for European, American, and Gulf body proportions",
-      "Full 3D digital fit prototyping reducing physical sample rounds",
-      "Standard DXF/AAMA export compatibility for international tech packs"
-    ],
-    specsAr: [
-      "تعشيق آلي للماركر الرقمي يحقق أقصى استغلال للمساحة (>88%)",
-      "تدريج مقاسات مطابق للجداول القياسية الأوروبية والأمريكية والخليجية",
-      "محاكاة القياسات ثلاثية الأبعاد (3D Fit) لتقليل دورات العينات",
-      "تصدير واستيراد الباترونات بصيغ DXF وAAMA المتوافقة عالميًا"
-    ],
-    image: "/BG/Apparel Manufacturing/Product Development & Sampling.jpg"
-  },
-  {
-    id: "sample-development",
-    number: "04",
-    titleEn: "Sample Development & Rapid Prototyping",
-    titleAr: "تطوير العينات والنماذج الأولية السريعة",
-    leadEn: "Specialized sampling department transforming patterns and references into approved samples.",
-    leadAr: "غرفة عينات تخصصية لتحويل الباترونات والمراجع إلى عينات معتمدة",
-    specsEn: [
-      "Proto-sample, fit-sample, and pre-production (PP) sample development",
-      "On-site master tailor and pattern engineer collaboration",
-      "Comprehensive size set and salesman sample (SMS) runs",
-      "Detailed bill of materials (BOM) and tech pack generation"
-    ],
-    specsAr: [
-      "إنهاء العينات الأولية (Proto) وعينات القياس وعينات ما قبل الإنتاج (PP)",
-      "تعاون مباشر بين مصممي الباترون والخبراء الفنيين للتطريز والتشطيب",
-      "تنفيذ عينات المقاسات الكاملة (Size Sets) وعينات ممثلي المبيعات (SMS)",
-      "إعداد ملف المواصفات الفنية الكامل (Tech Pack) وجداول المواد الخام (BOM)"
-    ],
-    image: "/BG/Apparel Manufacturing/Product Development & Sampling.jpg"
-  },
-  {
     id: "fabric-sourcing",
-    number: "05",
+    number: "03",
     titleEn: "Fabric Sourcing & Raw Materials Supply",
     titleAr: "توريد وتطوير الأقمشة والغزول",
     leadEn: "Direct integration with major fabric mills providing all fabric types and raw materials.",
@@ -572,7 +530,7 @@ export const garmentIndustrialCapabilities: IndustrialCapabilityItem[] = [
   },
   {
     id: "printing-embroidery",
-    number: "06",
+    number: "04",
     titleEn: "Garment Printing & Embroidery",
     titleAr: "تقنيات الطباعة والتطريز الصناعي",
     leadEn: "All apparel printing types with embroidery services via specialized factories and trusted partners.",
@@ -593,7 +551,7 @@ export const garmentIndustrialCapabilities: IndustrialCapabilityItem[] = [
   },
   {
     id: "packaging-export",
-    number: "07",
+    number: "05",
     titleEn: "Packaging & Export Logistics Preparation",
     titleAr: "التعبئة والتغليف وتجهيز الشحن للتصدير",
     leadEn: "Custom retail-ready packaging, barcode tagging, moisture-barrier polybagging, and export container stuffing.",
