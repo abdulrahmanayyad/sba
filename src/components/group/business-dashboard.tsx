@@ -1,7 +1,9 @@
-import { CheckCircle2 } from "lucide-react";
+import { Link } from "@tanstack/react-router";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 import { HomeReveal as Reveal } from "@/components/home/home-motion";
 import { AnimatedStatistic } from "@/components/site/animated-statistic";
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { activities, dashboardSectors, type SectorId } from "./dashboard-data";
 
@@ -146,7 +148,7 @@ export function WhatWeOfferSection({ ar }: { ar: boolean }) {
               className="glass-box-interactive rounded-3xl p-6 sm:p-8 cursor-pointer"
             >
               <div className="relative z-10">
-                <div className="w-full text-start border-b border-border/60 pb-5 mb-6">
+                <div className="w-full text-start border-b border-border/60 pb-5 mb-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                   <div>
                     <h4 className="text-start font-head text-lg sm:text-xl font-bold text-foreground">
                       {t(s.name)}
@@ -155,20 +157,29 @@ export function WhatWeOfferSection({ ar }: { ar: boolean }) {
                       {data.items.length} {ar ? "خدمات ومشروعات رئيسية" : "Specialized Capabilities"}
                     </span>
                   </div>
+                  <Button asChild variant="ghost" size="sm" className="rounded-full text-xs font-bold text-brand-green hover:text-brand-orange hover:bg-transparent p-0 h-auto gap-1 self-start sm:self-auto cursor-pointer">
+                    <Link to="/sectors/$sector" params={{ sector: s.id }} search={{ tab: "services" }}>
+                      <span>{ar ? "استكشف كافة خدمات القطاع" : "Explore Sector Services"}</span>
+                      <ArrowRight className="size-3.5 rtl:rotate-180" />
+                    </Link>
+                  </Button>
                 </div>
 
                 {/* Horizontal Flex Wrap of Services in Curved Glass Boxes */}
                 <div className="flex flex-wrap gap-3">
                   {data.items.map((item) => (
-                    <div
+                    <Link
                       key={item.en}
-                      className="group flex items-center gap-2.5 rounded-2xl border border-white/50 bg-white/50 dark:bg-white/15 px-4 py-2.5 shadow-sm backdrop-blur-md transition-all duration-300 hover:border-white/80 hover:bg-white/80 hover:scale-105 active:scale-95 cursor-pointer"
+                      to="/sectors/$sector"
+                      params={{ sector: s.id }}
+                      search={{ tab: "services" }}
+                      className="group flex items-center gap-2.5 rounded-2xl border border-white/50 bg-white/50 dark:bg-white/15 px-4 py-2.5 shadow-sm backdrop-blur-md transition-all duration-300 hover:border-brand-green/60 hover:bg-white/80 hover:scale-105 active:scale-95 cursor-pointer"
                     >
                       <CheckCircle2 className="size-4 shrink-0 text-brand-green-text transition-transform group-hover:scale-110" />
                       <span className="text-xs sm:text-sm font-semibold text-foreground/90 leading-snug">
                         {t(item)}
                       </span>
-                    </div>
+                    </Link>
                   ))}
                 </div>
               </div>

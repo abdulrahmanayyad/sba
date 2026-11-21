@@ -894,19 +894,19 @@ export const professionalServices: ProfessionalService[] = [
   },
 
   // --------------------------------------------------------------------------
-  // DIVISION 3: APPAREL & TEXTILE MANUFACTURING SERVICES (8 Programs)
+  // DIVISION 3: APPAREL & TEXTILE MANUFACTURING SERVICES (9 Disciplines)
   // --------------------------------------------------------------------------
   {
     "id": "srv-app-oem",
     "code": "SBA-SRV-APP01",
     "sector": "apparel-services",
     "categoryKey": "oem-manufacturing",
-    "categoryEn": "OEM Contract Manufacturing",
-    "categoryAr": "التصنيع الأصلي OEM",
-    "nameEn": "OEM Contract Manufacturing",
-    "nameAr": "التصنيع الأصلي OEM",
-    "descriptionEn": "Providing industrial production line capacity for global retail brands and corporate buyers. Offers pure Cut-Make-Trim (CMT) or partial-supply contract models.",
-    "descriptionAr": "توفير طاقات خطوط الإنتاج الصناعية للعلامات التجارية العالمية وتجار التجزئة، مع خيارات التشغيل بنظام القص والخياطة (CMT) أو التصنيع الشامل.",
+    "categoryEn": "OEM Manufacturing",
+    "categoryAr": "التصنيع بنظام OEM",
+    "nameEn": "OEM Manufacturing",
+    "nameAr": "التصنيع بنظام OEM",
+    "descriptionEn": "Providing industrial production line capacity for global retail brands and corporate buyers based on approved Tech Packs, patterns, and client specifications.",
+    "descriptionAr": "تصنيع تعاقدي متكامل ينفذ تصميمات وباترونات ومواصفات العميل الفنية (Tech Packs) بأعلى معايير الانضباط والجودة والمواعيد المحددة.",
     "scopeOfWorkEn": [
       "Automated Gerber CNC spreading and precision multi-ply fabric cutting",
       "Dedicated modular assembly lines matching buyer construction specifications",
@@ -929,13 +929,13 @@ export const professionalServices: ProfessionalService[] = [
     "id": "srv-app-odm",
     "code": "SBA-SRV-APP02",
     "sector": "apparel-services",
-    "categoryKey": "odm-development",
-    "categoryEn": "ODM Design & Co-Development",
-    "categoryAr": "تصميم وتطوير الموديلات",
-    "nameEn": "ODM Design & Co-Development",
-    "nameAr": "تصميم وتطوير الموديلات",
-    "descriptionEn": "End-to-end design development allowing fashion labels to select and customize garments from our verified 2,700+ design library without internal design overhead.",
-    "descriptionAr": "خدمة تطوير وتصميم متكاملة تتيح للماركات التجارية اختيار وتخصيص موديلات من محفظتنا المعتمدة التي تضم أكثر من 2,700 تصميم جاهز للإنتاج الفوري.",
+    "categoryKey": "odm-manufacturing",
+    "categoryEn": "ODM Manufacturing",
+    "categoryAr": "التصنيع بنظام ODM",
+    "nameEn": "ODM Manufacturing",
+    "nameAr": "التصنيع بنظام ODM",
+    "descriptionEn": "Developing new apparel collections by leveraging the group's proprietary styles with customized color palettes, fabrications, and brand identity trims.",
+    "descriptionAr": "تطوير مجموعات أزياء جديدة بالاعتماد على تصميمات المجموعة مع تخصيص الألوان والخامات وهوية علامتك التجارية وملاءمة الفئات السعرية المستهدفة.",
     "scopeOfWorkEn": [
       "Access to extensive season-ready silhouette catalogs across women's, men's, and children's",
       "Custom colorways, graphic artwork adaptation, and brand labeling insertion",
@@ -955,49 +955,20 @@ export const professionalServices: ProfessionalService[] = [
     "image": "/services/apparel/shanjir-h-photo4life-au-hnYQUpNtBws-unsplash.jpg"
   },
   {
-    "id": "srv-app-private-label",
+    "id": "srv-app-fob",
     "code": "SBA-SRV-APP03",
     "sector": "apparel-services",
-    "categoryKey": "private-label",
-    "categoryEn": "Private Label Manufacturing",
-    "categoryAr": "التصنيع للعلامات التجارية الخاصة",
-    "nameEn": "Private Label Manufacturing",
-    "nameAr": "التصنيع للعلامات التجارية الخاصة",
-    "descriptionEn": "Complete contract manufacturing tailored to brand identity, including custom jacquard woven neck labels, engraved metal hardware, hangtags, and presentation gift boxes.",
-    "descriptionAr": "تصنيع متكامل وحصري للعلامات التجارية يشمل حياكة البطاقات المنسوجة الفاخرة، الإكسسوارات المعدنية المنقوشة، كروت الأسعار، والتغليف التصديري الفاخر.",
-    "scopeOfWorkEn": [
-      "Bespoke label weaving, printed satin care tags, and security QR-code hangtags",
-      "Custom branded polybags, tissue wrap, silica gel insertion, and barcode stickering",
-      "Master export shipping cartons matching international retail warehouse logistics",
-      "Confidentiality agreement protecting proprietary brand silhouettes and artwork"
-    ],
-    "scopeOfWorkAr": [
-      "تصنيع بطاقات الهوية المنسوجة، بطاقات إرشادات الغسيل وبطاقات الأسعار الذكية QR",
-      "أكياس تغليف مطبوعة بهوية الماركة، ورق تغليف داخلي، وممتصات الرطوبة",
-      "كراتين شحن تصديرية متينة مطابقة لاشتراطات المستودعات اللوجستية العالمية",
-      "اتفاقيات سرية وحماية كاملة للتصميمات والباترونات الحصرية الخاصة بالعميل"
-    ],
-    "applicationsEn": ["Luxury Fashion Houses", "Department Store Own-Brands", "Influencer & Celebrity Brands", "Sportswear Labels"],
-    "applicationsAr": ["دور الأزياء الفاخرة", "العلامات الخاصة بسلاسل المتاجر الكبرى", "ماركات المشاهير والمؤثرين", "علامات الملابس الرياضية المتخصصة"],
-    "capabilitiesEn": ["End-to-end branding packaging line", "Full IP and design protection", "Flexible multi-SKU minimum order quantities"],
-    "capabilitiesAr": ["خطوط تعبئة وتغليف بهوية العلامة التجارية", "حماية كاملة للملكية الفكرية والتصميمات", "مرونة في الحد الأدنى للطلب وتعدد الموديلات"],
-    "image": "/services/apparel/winx-U6VKGLgsxz0-unsplash.jpg"
-  },
-  {
-    "id": "srv-app-fob",
-    "code": "SBA-SRV-APP04",
-    "sector": "apparel-services",
     "categoryKey": "fob-manufacturing",
-    "categoryEn": "FOB Full Package Programs",
+    "categoryEn": "FOB Manufacturing",
     "categoryAr": "التصنيع بنظام FOB",
-    "nameEn": "FOB Full Package Programs",
+    "nameEn": "FOB Manufacturing",
     "nameAr": "التصنيع بنظام FOB",
-    "descriptionEn": "All-inclusive manufacturing coordinating raw cotton fiber, knitting, piece dyeing, bulk production, and port customs export clearance under standard international Incoterms.",
-    "descriptionAr": "برامج تصنيع شاملة تتولى شراء الأقمشة والغزول، الصباغة، التصنيع الكامل، الفحص المخبري، وإنهاء الإجراءات الجمركية وشحن الحاويات بموانئ الإسكندرية ودمياط.",
+    "descriptionEn": "End-to-end full package management from fabric and trim procurement, through precision cutting and sewing, to export customs clearance and on-board vessel delivery.",
+    "descriptionAr": "إدارة متكاملة تبدأ من توريد الخامات ومستلزمات الإنتاج والتصنيع والتعبئة وحتى استكمال التخليص الجمركي والتسليم على ظهر السفينة بميناء الشحن.",
     "scopeOfWorkEn": [
       "Raw materials procurement and complete bill of materials (BOM) management",
       "Continuous inline factory quality audits conforming to approved master golden samples",
-      "Export documentation: Phytosanitary certificates, EUR.1, Certificate of Origin, Form A",
+      "Export documentation: EUR.1, Certificate of Origin, Form A, and commercial invoices",
       "Port delivery, container stuffing, fumigation, and shipping line freight coordination"
     ],
     "scopeOfWorkAr": [
@@ -1014,15 +985,15 @@ export const professionalServices: ProfessionalService[] = [
   },
   {
     "id": "srv-app-cm",
-    "code": "SBA-SRV-APP05",
+    "code": "SBA-SRV-APP04",
     "sector": "apparel-services",
     "categoryKey": "cm-manufacturing",
-    "categoryEn": "CM Manufacturing (Cut & Make)",
+    "categoryEn": "CM Manufacturing",
     "categoryAr": "التصنيع بنظام CM",
-    "nameEn": "CM Manufacturing (Cut & Make)",
+    "nameEn": "CM Manufacturing",
     "nameAr": "التصنيع بنظام CM",
-    "descriptionEn": "Providing specialized Cut & Make (CM) apparel manufacturing services where the client supplies all fabrics, trims, and accessories, while our factory executes fabric spreading, precision cutting, sewing, assembly, finishing, and strict quality control conforming to approved technical specifications.",
-    "descriptionAr": "نقدم خدمات تصنيع الملابس بنظام CM، حيث يتولى العميل توفير الأقمشة والخامات والإكسسوارات اللازمة للإنتاج، بينما نتولى تنفيذ العمليات التصنيعية داخل المصنع، بدءًا من القص وتجهيز المكونات، مرورًا بالخياطة والتجميع، وصولًا إلى التشطيب ومراقبة الجودة، وفق العينات والمواصفات الفنية المعتمدة.",
+    "descriptionEn": "Dedicated Cut & Make manufacturing where the client supplies fabrics and trims while our facilities execute spreading, precision cutting, sewing assembly, finishing, and quality inspection.",
+    "descriptionAr": "خدمات التصنيع بنظام CM بخامات وإكسسوارات يوردها العميل، مع تنفيذ كافة العمليات الصناعية من القص والخياطة وحتى التشطيب والفحص والتعبئة داخل المصنع.",
     "scopeOfWorkEn": [
       "Receiving and inspecting client-supplied fabrics, materials, and accessories against specifications",
       "Fabric spreading, CAD pattern preparation, and precision cutting",
@@ -1037,72 +1008,23 @@ export const professionalServices: ProfessionalService[] = [
       "التشطيب ومراجعة المقاسات وجودة التنفيذ",
       "الفحص النهائي والتعبئة وفق متطلبات العميل"
     ],
-    "applicationsEn": [
-      "Fashion Brands & Apparel Retailers",
-      "Clothing Importers & Distribution Companies",
-      "Businesses & Designers with In-House Material Sourcing",
-      "Companies Seeking Dedicated Technical Manufacturing Capacity"
-    ],
-    "applicationsAr": [
-      "العلامات التجارية وتجار الملابس",
-      "شركات الاستيراد والتوزيع التي تمتلك الخامات ومستلزمات الإنتاج",
-      "الشركات والمصممون الباحثون عن طاقة تصنيعية متخصصة لتنفيذ طلبياتهم",
-      "سلاسل التجزئة التي تدير توريد الأقمشة والإكسسوارات داخليًا"
-    ],
-    "capabilitiesEn": [
-      "Pricing based on product type, style complexity, and volume, excluding fabric costs",
-      "Flexible adaptation to client-provided reference samples, technical specs, and size charts",
-      "Precision automated spreading and cutting reducing fabric waste to a minimum",
-      "Multi-stage in-line quality audits ensuring zero-defect assembly"
-    ],
-    "capabilitiesAr": [
-      "احتساب تكلفة التصنيع وفق نوع المنتج، وتعقيد الموديل، وحجم الكميات، دون تكلفة الخامات",
-      "جاهزية لاستقبال الأقمشة والخامات والإكسسوارات، والعينات المرجعية وجداول المقاسات المعتمدة",
-      "خطوط فرد وقص آلية دقيقة تضمن أعلى كفاءة استغلال للأقمشة وتقليل الهادر",
-      "رقابة جودة متعددة المراحل وفحص نهائي يضمن مطابقة تامة لمواصفات العميل"
-    ],
+    "applicationsEn": ["Fashion Brands & Apparel Retailers", "Clothing Importers & Distribution Companies", "Designers with In-House Material Sourcing", "Retail Chains Managing Fabric In-House"],
+    "applicationsAr": ["العلامات التجارية وتجار الملابس", "شركات الاستيراد والتوزيع التي تمتلك الخامات ومستلزمات الإنتاج", "الشركات والمصممون الباحثون عن طاقة تصنيعية متخصصة", "سلاسل التجزئة التي تدير توريد الأقمشة والإكسسوارات داخليًا"],
+    "capabilitiesEn": ["Pricing based on product type and volume, excluding fabric costs", "Automated spreading and CNC cutting reducing fabric waste", "Multi-stage in-line quality audits ensuring zero-defect assembly"],
+    "capabilitiesAr": ["احتساب تكلفة التصنيع وفق نوع المنتج وحجم الكميات دون تكلفة الخامات", "خطوط فرد وقص آلية دقيقة تضمن أعلى كفاءة استغلال للأقمشة", "رقابة جودة متعددة المراحل وفحص نهائي يضمن مطابقة تامة"],
     "image": "/services/apparel/agto-nugroho-1mnXGDl3iRY-unsplash.jpg"
   },
   {
-    "id": "srv-app-product-dev",
-    "code": "SBA-SRV-APP06",
-    "sector": "apparel-services",
-    "categoryKey": "product-development",
-    "categoryEn": "CAD Pattern Engineering",
-    "categoryAr": "هندسة الباترون وتطوير المنتجات",
-    "nameEn": "CAD Pattern Engineering",
-    "nameAr": "هندسة الباترون وتطوير المنتجات",
-    "descriptionEn": "Precision computerized pattern development using leading CAD systems, accurate multi-size grading, fabric consumption optimization, and comprehensive tech packs.",
-    "descriptionAr": "تطوير الباترونات الرقمية الدقيقة على أنظمة CAD المتطورة، تدريج المقاسات الأوروبية والأمريكية والخليجية، وحساب استهلاك القماش الأمثل لتوفير التكلفة.",
-    "scopeOfWorkEn": [
-      "Digitizing sketch concepts into production-ready 2D and 3D CAD pattern files",
-      "Size grading across XS to 5XL conforming to international anatomical sizing standards",
-      "Computerized nesting and marker making maximizing fabric cutting yield",
-      "Full Tech Pack generation: construction details, seam types, SPI, and tolerance specs"
-    ],
-    "scopeOfWorkAr": [
-      "تحويل الرسومات الأولية إلى باترونات رقمية جاهزة للإنتاج ثنائية وثلاثية الأبعاد",
-      "تدريج المقاسات من XS حتى 5XL وفق جداول القياسات القياسية المعتمدة",
-      "التعشيق الآلي للباترونات لتقليل هادر الأقمشة إلى أدنى نسبة ممكنة",
-      "إعداد الملف الفني الشامل (Tech Pack): تفاصيل الخياطة، عدد الغرز، ونسب التفاوت"
-    ],
-    "applicationsEn": ["Fashion Brands", "Independent Apparel Designers", "Uniform Contracting Entities", "Garment Factories"],
-    "applicationsAr": ["ماركات الأزياء العالمية والمحلية", "مصممو الأزياء المستقلون", "مؤسسات توريد الزي الموحد", "مصانع الملابس الجاهزة"],
-    "capabilitiesEn": ["Gerber AccuMark & Lectra CAD software platforms", "Automated digital pattern plotters", "Senior master patternmakers with 20+ years experience"],
-    "capabilitiesAr": ["برمجيات Gerber AccuMark و Lectra العالمية", "طابعات بلوتر رقمية عريضة لرسم الباترونات الصناعية", "خبراء باترون أول بخبرة تفوق 20 عامًا في القصات العالمية"],
-    "image": "/services/apparel/adrien-olichon-1eQKDWNiIUs-unsplash.jpg"
-  },
-  {
     "id": "srv-app-sampling",
-    "code": "SBA-SRV-APP07",
+    "code": "SBA-SRV-APP05",
     "sector": "apparel-services",
-    "categoryKey": "rapid-sampling",
-    "categoryEn": "Rapid Sampling & Prototyping",
-    "categoryAr": "صناعة العينات والنماذج الأولية",
-    "nameEn": "Rapid Sampling & Prototyping",
-    "nameAr": "صناعة العينات والنماذج الأولية",
-    "descriptionEn": "Dedicated sample room operating independent lines to cut, sew, finish, and deliver proto samples, fit samples, and sales representative samples under fast turnarounds.",
-    "descriptionAr": "معمل عينات متكامل يعمل بخطوط مستقلة لقص وخياطة وتشطيب العينات الأولية وعينات الملاءمة وعينات مندوبي المبيعات قبل الإنتاج الكمي في أوقات قياسية.",
+    "categoryKey": "sampling-prototyping",
+    "categoryEn": "Sampling & Prototyping",
+    "categoryAr": "تصنيع العينات والنماذج الأولية",
+    "nameEn": "Sampling & Prototyping",
+    "nameAr": "تصنيع العينات والنماذج الأولية",
+    "descriptionEn": "Dedicated prototyping and sample workshop constructing Proto Samples, Fit Samples, Size Sets, and Pre-Production (PP) golden samples prior to bulk production.",
+    "descriptionAr": "إعداد العينات والنماذج الأولية وعينات القياس (Fit Samples) وعينات ما قبل الإنتاج (PP Samples) لمراجعة القياسات والتفاصيل الفنية قبل الإنتاج الكمي.",
     "scopeOfWorkEn": [
       "First proto sample creation from customer reference images or technical tech packs",
       "Fit sample review on live fit models and dimensional audit against spec sheets",
@@ -1122,16 +1044,74 @@ export const professionalServices: ProfessionalService[] = [
     "image": "/services/apparel/lidya-nada-grQh_x_vZKM-unsplash.jpg"
   },
   {
-    "id": "srv-app-fabric-qc",
+    "id": "srv-app-design-dev",
+    "code": "SBA-SRV-APP06",
+    "sector": "apparel-services",
+    "categoryKey": "fashion-design-development",
+    "categoryEn": "Fashion Design & Product Development",
+    "categoryAr": "تصميم الأزياء وتطوير المنتجات",
+    "nameEn": "Fashion Design & Product Development",
+    "nameAr": "تصميم الأزياء وتطوير المنتجات",
+    "descriptionEn": "Bridging creative fashion design with industrial manufacturing feasibility, generating digital Tech Packs, CAD pattern grading, and commercially scalable collection architectures.",
+    "descriptionAr": "الجمع بين الرؤية التصميمية والمتطلبات الفنية والتشغيلية لتطوير منتجات ومجموعات أزياء قابلة للتصنيع التجاري، شاملة ملفات المواصفات والباترونات الرقمية.",
+    "scopeOfWorkEn": [
+      "Digitizing sketch concepts into production-ready 2D and 3D CAD pattern files",
+      "Size grading across XS to 5XL conforming to international anatomical sizing standards",
+      "Computerized nesting and marker making maximizing fabric cutting yield",
+      "Full Tech Pack generation: construction details, seam types, SPI, and tolerance specs"
+    ],
+    "scopeOfWorkAr": [
+      "تحويل الرسومات الأولية إلى باترونات رقمية جاهزة للإنتاج ثنائية وثلاثية الأبعاد",
+      "تدريج المقاسات من XS حتى 5XL وفق جداول القياسات القياسية المعتمدة",
+      "التعشيق الآلي للباترونات لتقليل هادر الأقمشة إلى أدنى نسبة ممكنة",
+      "إعداد الملف الفني الشامل (Tech Pack): تفاصيل الخياطة، عدد الغرز، ونسب التفاوت"
+    ],
+    "applicationsEn": ["Fashion Brands", "Independent Apparel Designers", "Uniform Contracting Entities", "Garment Factories"],
+    "applicationsAr": ["ماركات الأزياء العالمية والمحلية", "مصممو الأزياء المستقلون", "مؤسسات توريد الزي الموحد", "مصانع الملابس الجاهزة"],
+    "capabilitiesEn": ["Gerber AccuMark & Lectra CAD software platforms", "Automated digital pattern plotters", "Senior master patternmakers with 20+ years experience"],
+    "capabilitiesAr": ["برمجيات Gerber AccuMark و Lectra العالمية", "طابعات بلوتر رقمية عريضة لرسم الباترونات الصناعية", "خبراء باترون أول بخبرة تفوق 20 عامًا في القصات العالمية"],
+    "image": "/services/apparel/adrien-olichon-1eQKDWNiIUs-unsplash.jpg"
+  },
+  {
+    "id": "srv-app-bulk",
+    "code": "SBA-SRV-APP07",
+    "sector": "apparel-services",
+    "categoryKey": "bulk-production-contracts",
+    "categoryEn": "Bulk Production Contracts",
+    "categoryAr": "التعاقدات الكمية",
+    "nameEn": "Bulk Production Contracts",
+    "nameAr": "التعاقدات الكمية",
+    "descriptionEn": "Scalable industrial manufacturing solutions for volume apparel orders, recurring supply agreements, and export programs with rigorous line balancing and milestone delivery.",
+    "descriptionAr": "حلول الإنتاج الصناعي الكمي للعلامات التجارية والمستوردين وتجار الجملة لتنفيذ طلبيات كبرى وبرامج توريد دورية مع ضبط الجودة والانضباط الزمني.",
+    "scopeOfWorkEn": [
+      "Execution of bulk production orders matching contracted quantities",
+      "Production line balancing tailored to garment construction and style complexity",
+      "Output scheduling by colorways, size runs, and production batches",
+      "Quality control audits enforced across all manufacturing and export packaging stages"
+    ],
+    "scopeOfWorkAr": [
+      "تخطيط وتنفيذ الطلبيات الإنتاجية وفق الكميات المتعاقد عليها",
+      "تنظيم خطوط الإنتاج وتوزيع العمليات وفق طبيعة كل موديل",
+      "تخطيط الإنتاج حسب الألوان والمقاسات ودفعات التشغيل ومتابعة المعدلات",
+      "تطبيق إجراءات فحص الجودة والتعبئة والتجهيز للشحن والتصدير"
+    ],
+    "applicationsEn": ["International Fashion Retailers", "Wholesale Distributors", "Large E-Commerce Platforms", "Government & Institutional Uniform Buyers"],
+    "applicationsAr": ["سلاسل التجزئة الدولية", "تجار الجملة والموزعون الكبار", "منصات التجارة الإلكترونية الكبرى", "المؤسسات والهيئات المتعاقدة على توريدات كبرى"],
+    "capabilitiesEn": ["High-capacity modular production floors", "Advanced bottleneck monitoring", "Standardized container loading manifests"],
+    "capabilitiesAr": ["طاقات تشغيلية كبرى وخطوط إنتاج نمطية مرنة", "متابعة دقيقة لمعدلات الإنجاز ومراحل التنفيذ", "قوائم تعبئة وتغليف تصديرية احترافية"],
+    "image": "/services/apparel/winx-U6VKGLgsxz0-unsplash.jpg"
+  },
+  {
+    "id": "srv-app-fabric-dev",
     "code": "SBA-SRV-APP08",
     "sector": "apparel-services",
-    "categoryKey": "fabric-quality",
-    "categoryEn": "Fabric Sourcing & AQL Quality",
-    "categoryAr": "توريد الخامات والأقمشة",
-    "nameEn": "Fabric Sourcing & AQL Quality",
-    "nameAr": "توريد الخامات والأقمشة",
-    "descriptionEn": "Integrated textile fabric sourcing, laboratory spectrophotometer computerized dyeing, shrinkage control, and rigorous 4-point fabric and AQL 1.5 finished garment auditing.",
-    "descriptionAr": "توريد وتطوير الأقمشة القطنية الفاخرة، الصباغة الآلية بأصباغ معتمدة من OEKO-TEX، ضبط الانكماش وثبات الألوان.",
+    "categoryKey": "fabric-yarn-development",
+    "categoryEn": "Fabric Manufacturing & Yarn Development",
+    "categoryAr": "تصنيع الأقمشة وتطوير الغزول",
+    "nameEn": "Fabric Manufacturing & Yarn Development",
+    "nameAr": "تصنيع الأقمشة وتطوير الغزول",
+    "descriptionEn": "Technical engineering and supply coordination for specialized knit and woven fabrics, spectrophotometer Lab-Dip color matching, shrinkage control, and physical property testing.",
+    "descriptionAr": "تطوير وتوريد الأقمشة والغزول التخصصية (Single Jersey, Piqué, Rib, Interlock)، ومطابقة الألوان معمليًا (Lab Dips)، واختبار الخواص النسيجية وضبط الانكماش.",
     "scopeOfWorkEn": [
       "Circular and flat knitting coordination for Single Jersey, Rib, Interlock, and French Terry",
       "Low-liquor computerized dyeing matching Pantone references with spectrophotometer verification",
@@ -1154,10 +1134,10 @@ export const professionalServices: ProfessionalService[] = [
     "id": "srv-app-brand-advisory",
     "code": "SBA-SRV-APP09",
     "sector": "apparel-services",
-    "categoryKey": "brand-advisory",
-    "categoryEn": "Fashion Brand Advisory",
-    "categoryAr": "استشارات تأسيس وتطوير العلامات التجارية",
-    "nameEn": "Fashion Brand Development & Manufacturing Advisory",
+    "categoryKey": "fashion-brand-strategy",
+    "categoryEn": "Fashion Brand Strategy & Development",
+    "categoryAr": "استشارات تأسيس وتطوير العلامات التجارية للأزياء",
+    "nameEn": "Fashion Brand Strategy & Development",
     "nameAr": "استشارات تأسيس وتطوير العلامات التجارية للأزياء",
     "descriptionEn": "Comprehensive strategic, design feasibility, and manufacturing execution advisory for emerging and established fashion brands, with over 400+ consultations delivered.",
     "descriptionAr": "خدمات استشارية استراتيجية وتنفيذية متكاملة لرواد الأعمال ومؤسسي علامات الأزياء، مدعومة بسجل حافل تجاوز 400 استشارة ناجحة لتطوير المجموعات وربطها بالمصانع المناسبة.",
@@ -1178,10 +1158,10 @@ export const professionalServices: ProfessionalService[] = [
       "سجل استشاري حافل يضم تقديم أكثر من 400 استشارة لرواد أعمال ومؤسسي علامات الأزياء"
     ],
     "applicationsEn": ["Emerging Fashion Labels", "Established Retail Brands", "E-commerce Apparel Startups", "Designers Transitioning to Bulk Production"],
-    "applicationsAr": ["العلامات التجارية الناشئة للأزياء", "سلاسل ومتاجر التجزئة القائمة", "متاجر الأزياء الإلكترونية", "المصممون المستقلون الراغبون في التوسع الصناعي"],
-    "capabilitiesEn": ["400+ Consultations Delivered", "Direct access to 150+ partner factories", "End-to-end technical tech-pack auditing"],
-    "capabilitiesAr": ["تقديم أكثر من 400 استشارة متخصصة", "ربط مباشر بشبكة تضم أكثر من 150 مصنعًا شريكًا", "تدقيق فني شامل للعينات وملفات المواصفات"],
-    "image": "/services/apparel/towel-studio-h7NX26Sh3uA-unsplash.jpg"
+    "applicationsAr": ["علامات الأزياء الصاعدة", "الماركات التجارية القائمة", "الشركات الناشئة في تجارة الملابس الإلكترونية", "المصممون المنتقلون لمرحلة الإنتاج الكمي"],
+    "capabilitiesEn": ["400+ fashion brand consultations delivered", "Proprietary network of 150+ audited manufacturing facilities in Egypt", "Holistic business-model to production engineering integration"],
+    "capabilitiesAr": ["تقديم أكثر من 400 استشارة معتمدة لمؤسسي علامات الأزياء", "شبكة علاقات صناعية تضم أكثر من 150 مصنعًا معتمدًا في مصر", "تكامل كامل بين دراسة الجدوى وتخطيط الإنتاج الصناعي"],
+    "image": "/services/apparel/th-o-ph-m-b5ivLh4eD0A-unsplash.jpg"
   }
 ];
 
@@ -1289,20 +1269,20 @@ export const serviceDivisionsConfig = [
   {
     division: "apparel-services" as const,
     labelEn: "Apparel Manufacturing Services",
-    labelAr: "خدمات تصنيع الملابس الجاهزة",
-    descEn: "Private label programs, OEM/FOB manufacturing, CAD sampling, fabric dyeing, and certified quality control.",
-    descAr: "تصنيع لحساب الغير، حلول OEM و FOB، تطوير العينات والباترون، الصباغة المعملية، وضبط الجودة بمقاييس AQL.",
+    labelAr: "خدمات تصنيع وتطوير الملابس",
+    descEn: "OEM, ODM, FOB, and CM manufacturing, sampling & prototyping, design development, bulk production, fabric engineering, and brand advisory.",
+    descAr: "حلول التصنيع بأنظمة OEM و ODM و FOB و CM، تصنيع العينات والنماذج الأولية، تصميم الأزياء وتطوير المنتجات، التعاقدات الكمية، تصنيع الأقمشة والغزول، واستشارات العلامات التجارية.",
     categories: [
       { key: "all", labelEn: "All Services", labelAr: "كافة الخدمات" },
-      { key: "oem-manufacturing", labelEn: "OEM Contract Manufacturing", labelAr: "التصنيع الأصلي OEM" },
-      { key: "odm-development", labelEn: "ODM Design & Co-Development", labelAr: "تصميم وتطوير الموديلات" },
-      { key: "private-label", labelEn: "Private Label Manufacturing", labelAr: "التصنيع للعلامات التجارية الخاصة" },
-      { key: "fob-manufacturing", labelEn: "FOB Full Package Programs", labelAr: "التصنيع بنظام FOB" },
-      { key: "cm-manufacturing", labelEn: "CM Manufacturing (Cut & Make)", labelAr: "التصنيع بنظام CM" },
-      { key: "product-development", labelEn: "CAD Pattern Engineering", labelAr: "هندسة الباترون وتطوير المنتجات" },
-      { key: "rapid-sampling", labelEn: "Rapid Sampling & Prototyping", labelAr: "صناعة العينات والنماذج الأولية" },
-      { key: "fabric-quality", labelEn: "Fabric Sourcing & AQL Quality", labelAr: "توريد الخامات والأقمشة" },
-      { key: "brand-advisory", labelEn: "Brand Development Advisory", labelAr: "استشارات تأسيس وتطوير العلامات" }
+      { key: "oem-manufacturing", labelEn: "OEM Manufacturing", labelAr: "التصنيع بنظام OEM" },
+      { key: "odm-manufacturing", labelEn: "ODM Manufacturing", labelAr: "التصنيع بنظام ODM" },
+      { key: "fob-manufacturing", labelEn: "FOB Manufacturing", labelAr: "التصنيع بنظام FOB" },
+      { key: "cm-manufacturing", labelEn: "CM Manufacturing", labelAr: "التصنيع بنظام CM" },
+      { key: "sampling-prototyping", labelEn: "Sampling & Prototyping", labelAr: "تصنيع العينات والنماذج الأولية" },
+      { key: "fashion-design-development", labelEn: "Fashion Design & Product Development", labelAr: "تصميم الأزياء وتطوير المنتجات" },
+      { key: "bulk-production-contracts", labelEn: "Bulk Production Contracts", labelAr: "التعاقدات الكمية" },
+      { key: "fabric-yarn-development", labelEn: "Fabric Manufacturing & Yarn Development", labelAr: "تصنيع الأقمشة وتطوير الغزول" },
+      { key: "fashion-brand-strategy", labelEn: "Fashion Brand Strategy & Development", labelAr: "استشارات تأسيس وتطوير العلامات التجارية للأزياء" }
     ]
   }
 ];
