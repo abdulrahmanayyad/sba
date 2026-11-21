@@ -1,5 +1,5 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { ArrowRight, Award, Briefcase, Building, Calendar, CheckCircle2, ChevronRight, Clock, Cpu, FileCheck, FileText, HardHat, Layers, MapPin, MessageCircle, Phone, Search, ShieldAlert, ShieldCheck, Sparkles, Trophy, Truck, Users, Wrench, ZoomIn } from "lucide-react";
+import { ArrowRight, Award, Briefcase, Building, Calendar, CheckCircle2, ChevronRight, Clock, Cpu, Download, FileCheck, FileText, HardHat, Layers, MapPin, MessageCircle, Phone, Search, ShieldAlert, ShieldCheck, Sparkles, Trophy, Truck, Users, Wrench, ZoomIn } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 
 import { Reveal } from "@/components/home/reveal";
@@ -239,6 +239,68 @@ function ConstructionAboutView({ ar }: { ar: boolean }) {
                   <span>{ar ? "ابدأ مشروعك معنا" : "Start Your Project"}</span>
                 </Link>
               </Button>
+            </div>
+          </div>
+        </Reveal>
+      </section>
+
+      {/* EAST CAIRO MARKET INTELLIGENCE FEATURE DOSSIER */}
+      <section className="site-container">
+        <Reveal>
+          <div className="relative overflow-hidden rounded-3xl border border-[#0F8B7A]/30 bg-gradient-to-r from-[#0F8B7A]/10 via-[#0F8B7A]/5 to-transparent p-6 sm:p-8 md:p-10 shadow-lg backdrop-blur-xl">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+              <div className="space-y-3 max-w-2xl">
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-[#0F8B7A] px-3.5 py-1 text-xs font-bold text-white shadow-sm">
+                    <Sparkles className="size-3.5 text-[#F28C00]" />
+                    {ar ? "أحدث إصدار بحثي معتمد 2026" : "Latest Flagship Research 2026"}
+                  </span>
+                  <span className="text-xs text-muted-foreground font-mono">
+                    {ar ? "تاريخ القطع: 21 نوفمبر 2026" : "Cut-off: 21 Nov 2026"}
+                  </span>
+                </div>
+                <h3 className="font-head text-2xl md:text-3xl font-black text-foreground">
+                  {ar
+                    ? "دراسة سوق التطوير العقاري والاستثمار – شرق القاهرة"
+                    : "East Cairo Real Estate Development & Investment Intelligence"}
+                </h3>
+                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                  {ar
+                    ? "رصد شامل لمبيعات شرق القاهرة البالغة 499.6 مليار جنيه (37.1% من السوق)، وتحليل تفصيلي لـ 10 مدن ومجتمعات عمرانية، والمخزون السكني والإداري والتجاري والطبي، مع حاسبة جدوى تفاعلية ومصفوفة تقييم الـ 100 نقطة."
+                    : "Comprehensive analysis of East Cairo's EGP 499.6bn sales (37.1% share), 10 city profiles, residential/office/retail/medical stocks, interactive feasibility engine and 100-point land attractiveness scorecard."}
+                </p>
+                <div className="flex flex-wrap items-center gap-4 text-xs font-bold text-foreground/80 pt-1">
+                  <span className="flex items-center gap-1.5 text-[#0F8B7A]">
+                    <CheckCircle2 className="size-4" />
+                    {ar ? "مبيعات 499.6B ج.م" : "EGP 499.6B Sales"}
+                  </span>
+                  <span className="flex items-center gap-1.5 text-[#0F8B7A]">
+                    <CheckCircle2 className="size-4" />
+                    {ar ? "10 مدن ومجتمعات" : "10 Cities & Communities"}
+                  </span>
+                  <span className="flex items-center gap-1.5 text-[#0F8B7A]">
+                    <CheckCircle2 className="size-4" />
+                    {ar ? "حاسبة جدوى مالية" : "Interactive Feasibility Engine"}
+                  </span>
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row md:flex-col gap-3 shrink-0">
+                <Button asChild size="lg" className="rounded-full bg-[#0F8B7A] text-white hover:bg-[#0a6357] shadow-lg shadow-[#0F8B7A]/25">
+                  <Link to="/global-markets/$sector/$slug" params={{ sector: "construction", slug: "east-cairo" }}>
+                    <span>{ar ? "استعراض الدراسة التفاعلية كاملة" : "Explore Interactive Study"}</span>
+                    <ArrowRight className="size-4 ms-2 rtl:rotate-180" />
+                  </Link>
+                </Button>
+                <a
+                  href="/studies/east-cairo/SBA_East_Cairo_Real_Estate_Study_AR.docx"
+                  download
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-background/80 px-5 py-2.5 text-xs font-bold text-foreground hover:bg-secondary transition-colors"
+                >
+                  <Download className="size-4 text-[#0F8B7A]" />
+                  <span>{ar ? "تحميل التقرير (DOCX)" : "Download Report (DOCX)"}</span>
+                </a>
+              </div>
             </div>
           </div>
         </Reveal>

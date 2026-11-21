@@ -13,6 +13,7 @@ import {
 } from "@/lib/global-markets-store";
 import { ApparelScenarioCalculator } from "./apparel-scenario-calculator";
 import { APPAREL_SUBREGIONS_META } from "@/lib/studies/apparel-master-studies";
+import { EastCairoStudyView } from "@/components/studies/east-cairo/east-cairo-study-view";
 import { StudyChartCard, StudyKpiGrid, StudyTableCard } from "./study-charts";
 
 interface GlobalMarketsStudyPageProps {
@@ -39,6 +40,10 @@ export function GlobalMarketsStudyPage({
       ),
     [studies, sector.id, slug],
   );
+
+  if (study?.id === "SBA-GM-CON-EGY-001" || slug === "east-cairo" || slug === "east-cairo-real-estate-study") {
+    return <EastCairoStudyView ar={ar} />;
+  }
 
   if (!study) {
     return (

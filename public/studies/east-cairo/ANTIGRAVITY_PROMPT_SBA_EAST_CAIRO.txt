@@ -1,0 +1,85 @@
+ANTIGRAVITY IMPLEMENTATION PROMPT
+SBA GROUP — EAST CAIRO REAL ESTATE DEVELOPMENT & INVESTMENT INTELLIGENCE
+
+ROLE
+Act as a senior product engineer, data journalist, GIS-aware real-estate research publisher, and front-end architect. Implement the attached Arabic research report as a premium, public-facing research section within the existing SBA Group website. The attached report is the authoritative content source for this implementation.
+
+CRITICAL CONTENT INTEGRITY
+1. Do not invent, estimate, interpolate, or AI-generate missing market figures.
+2. Do not convert planned/target population into current residents.
+3. Do not present asking prices, developer price lists, or advertised prices as completed transaction prices.
+4. Preserve each figure's date, geography, unit, source, and caveat.
+5. Distinguish official planning data, brokerage/developer market data, third-party research, and analytical hypotheses.
+6. Where the report identifies a data gap, display “Data not publicly verified / requires field validation” rather than filling it.
+7. Never publish illustrative or synthetic charts as factual. Use only charts whose data are present in the report or its accompanying structured data.
+8. Keep the report's citations adjacent to the claims they support and provide a complete sources panel with working links.
+
+SITE PLACEMENT
+Add this research under the existing SBA Group Construction / Real Estate Development or Global Markets research architecture, following the site's current navigation, typography, spacing, responsive behavior, SEO conventions, and design system. Do not create a duplicate navigation system or replace existing pages. Do not delete or overwrite unrelated market studies.
+
+TITLE
+Arabic: دراسة سوق التطوير العقاري والاستثمار – شرق القاهرة
+English: East Cairo Real Estate Development & Investment Intelligence
+Publisher: SBA Group
+Research cut-off: 21 November 2026
+Status: Desk-researched edition; site-specific investment decisions require further due diligence.
+
+GEOGRAPHIC STRUCTURE
+Create a regional overview and individual city profiles:
+1. Obour City (Old Obour)
+2. New Obour City
+3. New Cairo (district-level segmentation: First, Third, Fifth and Sixth Settlements, plus separately identified extensions and submarkets)
+4. El Shorouk
+5. Badr
+6. New Heliopolis
+7. Mostakbal City
+8. New Administrative Capital
+9. Capital Gardens
+10. Madinaty and Al Rehab as separate master-planned communities, not administrative districts of New Cairo.
+Maintain the distinction between official city boundaries, planning extensions, private compounds, and functional market catchments.
+
+REQUIRED PAGE MODULES
+A. Executive dashboard: verified headline indicators, source date, confidence label, methodology note.
+B. Regional demand overview: East Cairo's reported EGP 499.6bn estimated contracted sales and 37.1% share for Jan–Sep 2026, sourced to KW Egypt × Gateway Financials; label as report-estimated sales, not land transactions or total market turnover.
+C. City selector and district navigation.
+D. City profile: location, official planning area, administrative/urban footprint where available, boundaries, major roads, transport access, land-use structure, official source.
+E. Population: current actual population, target population, household formation and occupancy only where separately sourced. If current counts are unavailable, show the gap clearly.
+F. Residential analysis: stock, launches, handovers, sales/rent indicators, affordability, absorption and vacancy where available.
+G. Commercial analysis: retail stock, new supply, vacancy, rents, catchment and competition.
+H. Administrative analysis: office stock, Grade A/prime rents, vacancy, pipeline and occupier demand.
+I. Medical analysis: hospitals, clinics, beds, specialties and service gaps only from verified data. If absent, show as unverified research gap.
+J. Development pipeline: projects, developers, phases, units/GLA, completion status, handover and source.
+K. Land intelligence: official land offerings, use, plot area, allocation terms, permitted FAR/height/setbacks only when official documents support them.
+L. Price intelligence: separate land, residential, retail, office and clinic prices; distinguish primary/developer asking prices, resale asking prices, and verified transactions. Display sample size and observation date.
+M. Investment scorecard: transparent scoring dimensions and weights from the report; do not fabricate city scores.
+N. Feasibility toolkit: editable assumptions for land price, construction cost, professional fees, infrastructure, finance, marketing, taxes, revenue, phasing, occupancy, discount rate; calculate GDV, TDC, margin, NPV, IRR, equity multiple, peak funding and break-even. Label user-entered assumptions clearly.
+O. Risk register and due diligence checklist.
+P. Sources, definitions, data dictionary and update log.
+
+CHARTS
+Implement charts using only the report's supported values:
+1. East Cairo vs other reported areas: estimated contracted sales Jan–Sep 2026 (EGP bn): East Cairo 499.6; North Coast 439.4; West Cairo 114.4; Ain Sokhna 86.7; New Capital 40.9; Other/unallocated 167.1.
+2. City planning area comparison only for figures that have compatible definitions, with a warning that planning area is not developed or occupied area: New Cairo approx. 89,000 feddans; New Obour approx. 59,000; Old Obour approx. 16,000 total area (urban mass approx. 12,500); El Shorouk planning boundary approx. 52,991.83; New Heliopolis approx. 5,400 (company-published); Capital Gardens approx. 29,435; New Capital approx. 170,000. Do not chart Badr if no compatible official area figure is included.
+3. Cairo residential, office and retail stock indicators, clearly showing units differ: residential approx. 362,600 units; offices approx. 3.1m sqm; retail approx. 3.6m sqm. Do not put these on one shared quantitative axis without explicit unit warning.
+4. Office vacancy 9.4%; retail super-regional mall vacancy 4.1% Q3 2026. Do not imply these are comparable universes.
+5. Residential annual rent growth New Cairo 15.5% vs sale price growth 3.6% (Q3 2026, JLL).
+6. Office rents: Prime +2.7%, Grade A +5.5% YoY; retail super-regional +7.0%, prime +7.9% YoY. Label category and period.
+
+DESIGN
+Use SBA brand colors based on the supplied logo: deep teal green #0F8B7A, white, restrained orange accent #F28C00, dark neutral typography. Premium institutional investment-research aesthetic, data-dense but readable, editorial layouts, responsive charts, accessible contrast, clear footnotes. Avoid decorative fake metrics, generic AI imagery, excessive gradients, and stock cards that make the page look like a sales landing page.
+
+MAPS
+Use real geographic boundaries/coordinates from authoritative geospatial sources only. Do not approximate city borders or place pins from guessed coordinates. If boundary data is unavailable, show a clearly labeled schematic locator map and disclose that it is not a cadastral/official boundary map. Map overlays should distinguish roads, city limits, projects and facilities with separate legends.
+
+SEO / DISCLOSURES
+Add structured metadata and bilingual title/description if the existing site supports Arabic and English. Add a prominent methodology and limitations disclosure. Add a “last reviewed” date and source update dates. No investment recommendation should be framed as guaranteed returns.
+
+DELIVERABLES
+1. Publish the regional landing page and city subpages.
+2. Preserve the attached report's facts, source links, caveats and terminology.
+3. Provide a QA report listing pages created, data fields missing, charts and their source data, links checked, mobile checks, accessibility checks, and any unresolved issues.
+4. Do not claim completion until the content, links, chart data and responsive layouts have been tested.
+5. Do not create additional fictional research or fake city-level prices/population/absorption figures to make the pages look complete.
+
+ATTACHED SOURCE
+Use the accompanying file “SBA_East_Cairo_Real_Estate_Study_AR.docx” as the content baseline. Where a future verified data supplement is provided, add it with a source, date, definition, and methodology, preserving the audit trail.

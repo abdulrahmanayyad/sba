@@ -1,6 +1,7 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { GlobalMarketsStudyPage } from "@/components/global-markets/global-markets-study-page";
 import { ApparelComparativePage } from "@/components/global-markets/apparel-comparative-page";
+import { EastCairoStudyView } from "@/components/studies/east-cairo/east-cairo-study-view";
 import { useLanguage } from "@/i18n/language-context";
 import {
   GLOBAL_MARKET_SECTORS,
@@ -51,6 +52,9 @@ const COMPARATIVE_SLUG_MAP: Record<
 };
 
 export const Route = createFileRoute("/global-markets/$sector/$slug")({
+  validateSearch: (search: Record<string, unknown>) => ({
+    city: typeof search.city === "string" ? search.city : undefined,
+  }),
   loader: ({ params }) => {
     const sector = GLOBAL_MARKET_SECTORS.find((s) => s.id === params.sector);
     if (!sector) {
@@ -60,6 +64,25 @@ export const Route = createFileRoute("/global-markets/$sector/$slug")({
   },
   head: ({ params }) => {
     const cmp = COMPARATIVE_SLUG_MAP[params.slug];
+    const isEastCairo =
+      params.sector === "construction" &&
+      (params.slug === "east-cairo" || params.slug === "east-cairo-real-estate-study");
+
+    if (isEastCairo) {
+      return {
+        meta: [
+          {
+            title: "دراسة سوق التطوير العقاري والاستثمار – شرق القاهرة — مجموعة سامي بن عياد",
+          },
+          {
+            name: "description",
+            content:
+              "دراسة سوق التطوير العقاري والاستثمار بشرق القاهرة (نوفمبر 2026): مؤشرات الطلب الكلية، مبيعات 499.6 مليار جنيه، ملفات 10 مدن، وتحليلات السكني والتجاري والإداري والطبي.",
+          },
+        ],
+      };
+    }
+
     return {
       meta: [
         {
@@ -75,8 +98,17 @@ export const Route = createFileRoute("/global-markets/$sector/$slug")({
 
 function GlobalMarketsStudyRoute() {
   const { sector, slug } = Route.useParams();
+  const search = Route.useSearch();
   const { language } = useLanguage();
   const ar = language === "AR";
+
+  const isEastCairo =
+    sector === "construction" &&
+    (slug === "east-cairo" || slug === "east-cairo-real-estate-study");
+
+  if (isEastCairo) {
+    return <EastCairoStudyView ar={ar} initialCityId={search?.city} />;
+  }
 
   const cmp = COMPARATIVE_SLUG_MAP[slug];
   if (cmp) {
