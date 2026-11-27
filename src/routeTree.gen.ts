@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as AdminRouteImport } from './routes/admin'
 import { Route as ApparelRouteImport } from './routes/apparel'
 import { Route as BrandsRouteImport } from './routes/brands'
 import { Route as ComplaintsRouteImport } from './routes/complaints'
@@ -29,7 +30,9 @@ import { Route as SectorsRouteImport } from './routes/sectors'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as SubmitOpportunityRouteImport } from './routes/submit-opportunity'
 import { Route as TradeRouteImport } from './routes/trade'
+import { Route as AdminIndexRouteImport } from './routes/admin.index'
 import { Route as AdminInquiriesRouteImport } from './routes/admin.inquiries'
+import { Route as AdminLoginRouteImport } from './routes/admin.login'
 import { Route as ContactIndexRouteImport } from './routes/contact.index'
 import { Route as ContactComplaintsRouteImport } from './routes/contact.complaints'
 import { Route as ContactOpportunitiesRouteImport } from './routes/contact.opportunities'
@@ -59,6 +62,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApparelRoute = ApparelRouteImport.update({
@@ -151,10 +159,20 @@ const TradeRoute = TradeRouteImport.update({
   path: '/trade',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminIndexRoute = AdminIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AdminRoute,
+} as any)
 const AdminInquiriesRoute = AdminInquiriesRouteImport.update({
-  id: '/admin/inquiries',
-  path: '/admin/inquiries',
-  getParentRoute: () => rootRouteImport,
+  id: '/inquiries',
+  path: '/inquiries',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminLoginRoute = AdminLoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => AdminRoute,
 } as any)
 const ContactIndexRoute = ContactIndexRouteImport.update({
   id: '/',
@@ -261,6 +279,7 @@ const GlobalMarketsSectorSlugRoute = GlobalMarketsSectorSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/admin': typeof AdminRouteWithChildren
   '/apparel': typeof ApparelRoute
   '/brands': typeof BrandsRoute
   '/complaints': typeof ComplaintsRoute
@@ -280,6 +299,7 @@ export interface FileRoutesByFullPath {
   '/submit-opportunity': typeof SubmitOpportunityRoute
   '/trade': typeof TradeRoute
   '/admin/inquiries': typeof AdminInquiriesRoute
+  '/admin/login': typeof AdminLoginRoute
   '/contact/complaints': typeof ContactComplaintsRoute
   '/contact/opportunities': typeof ContactOpportunitiesRoute
   '/global-markets/$sector': typeof GlobalMarketsSectorRouteWithChildren
@@ -292,6 +312,7 @@ export interface FileRoutesByFullPath {
   '/models/$code': typeof ModelsCodeRoute
   '/news/$slug': typeof NewsSlugRoute
   '/sectors/$sector': typeof SectorsSectorRoute
+  '/admin/': typeof AdminIndexRoute
   '/contact/': typeof ContactIndexRoute
   '/global-markets/': typeof GlobalMarketsIndexRoute
   '/join/': typeof JoinIndexRoute
@@ -317,6 +338,7 @@ export interface FileRoutesByTo {
   '/submit-opportunity': typeof SubmitOpportunityRoute
   '/trade': typeof TradeRoute
   '/admin/inquiries': typeof AdminInquiriesRoute
+  '/admin/login': typeof AdminLoginRoute
   '/contact/complaints': typeof ContactComplaintsRoute
   '/contact/opportunities': typeof ContactOpportunitiesRoute
   '/global-markets/compare': typeof GlobalMarketsCompareRoute
@@ -328,6 +350,7 @@ export interface FileRoutesByTo {
   '/models/$code': typeof ModelsCodeRoute
   '/news/$slug': typeof NewsSlugRoute
   '/sectors/$sector': typeof SectorsSectorRoute
+  '/admin': typeof AdminIndexRoute
   '/contact': typeof ContactIndexRoute
   '/global-markets': typeof GlobalMarketsIndexRoute
   '/join': typeof JoinIndexRoute
@@ -341,6 +364,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/admin': typeof AdminRouteWithChildren
   '/apparel': typeof ApparelRoute
   '/brands': typeof BrandsRoute
   '/complaints': typeof ComplaintsRoute
@@ -360,6 +384,7 @@ export interface FileRoutesById {
   '/submit-opportunity': typeof SubmitOpportunityRoute
   '/trade': typeof TradeRoute
   '/admin/inquiries': typeof AdminInquiriesRoute
+  '/admin/login': typeof AdminLoginRoute
   '/contact/complaints': typeof ContactComplaintsRoute
   '/contact/opportunities': typeof ContactOpportunitiesRoute
   '/global-markets/$sector': typeof GlobalMarketsSectorRouteWithChildren
@@ -372,6 +397,7 @@ export interface FileRoutesById {
   '/models/$code': typeof ModelsCodeRoute
   '/news/$slug': typeof NewsSlugRoute
   '/sectors/$sector': typeof SectorsSectorRoute
+  '/admin/': typeof AdminIndexRoute
   '/contact/': typeof ContactIndexRoute
   '/global-markets/': typeof GlobalMarketsIndexRoute
   '/join/': typeof JoinIndexRoute
@@ -386,6 +412,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/admin'
     | '/apparel'
     | '/brands'
     | '/complaints'
@@ -405,6 +432,7 @@ export interface FileRouteTypes {
     | '/submit-opportunity'
     | '/trade'
     | '/admin/inquiries'
+    | '/admin/login'
     | '/contact/complaints'
     | '/contact/opportunities'
     | '/global-markets/$sector'
@@ -417,6 +445,7 @@ export interface FileRouteTypes {
     | '/models/$code'
     | '/news/$slug'
     | '/sectors/$sector'
+    | '/admin/'
     | '/contact/'
     | '/global-markets/'
     | '/join/'
@@ -442,6 +471,7 @@ export interface FileRouteTypes {
     | '/submit-opportunity'
     | '/trade'
     | '/admin/inquiries'
+    | '/admin/login'
     | '/contact/complaints'
     | '/contact/opportunities'
     | '/global-markets/compare'
@@ -453,6 +483,7 @@ export interface FileRouteTypes {
     | '/models/$code'
     | '/news/$slug'
     | '/sectors/$sector'
+    | '/admin'
     | '/contact'
     | '/global-markets'
     | '/join'
@@ -465,6 +496,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/admin'
     | '/apparel'
     | '/brands'
     | '/complaints'
@@ -484,6 +516,7 @@ export interface FileRouteTypes {
     | '/submit-opportunity'
     | '/trade'
     | '/admin/inquiries'
+    | '/admin/login'
     | '/contact/complaints'
     | '/contact/opportunities'
     | '/global-markets/$sector'
@@ -496,6 +529,7 @@ export interface FileRouteTypes {
     | '/models/$code'
     | '/news/$slug'
     | '/sectors/$sector'
+    | '/admin/'
     | '/contact/'
     | '/global-markets/'
     | '/join/'
@@ -509,6 +543,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AdminRoute: typeof AdminRouteWithChildren
   ApparelRoute: typeof ApparelRoute
   BrandsRoute: typeof BrandsRoute
   ComplaintsRoute: typeof ComplaintsRoute
@@ -527,7 +562,6 @@ export interface RootRouteChildren {
   ServicesRoute: typeof ServicesRoute
   SubmitOpportunityRoute: typeof SubmitOpportunityRoute
   TradeRoute: typeof TradeRoute
-  AdminInquiriesRoute: typeof AdminInquiriesRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -544,6 +578,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/apparel': {
@@ -672,12 +713,26 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TradeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/': {
+      id: '/admin/'
+      path: '/'
+      fullPath: '/admin/'
+      preLoaderRoute: typeof AdminIndexRouteImport
+      parentRoute: typeof AdminRoute
+    }
     '/admin/inquiries': {
       id: '/admin/inquiries'
-      path: '/admin/inquiries'
+      path: '/inquiries'
       fullPath: '/admin/inquiries'
       preLoaderRoute: typeof AdminInquiriesRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/login': {
+      id: '/admin/login'
+      path: '/login'
+      fullPath: '/admin/login'
+      preLoaderRoute: typeof AdminLoginRouteImport
+      parentRoute: typeof AdminRoute
     }
     '/contact/': {
       id: '/contact/'
@@ -822,6 +877,20 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface AdminRouteChildren {
+  AdminInquiriesRoute: typeof AdminInquiriesRoute
+  AdminLoginRoute: typeof AdminLoginRoute
+  AdminIndexRoute: typeof AdminIndexRoute
+}
+
+const AdminRouteChildren: AdminRouteChildren = {
+  AdminInquiriesRoute: AdminInquiriesRoute,
+  AdminLoginRoute: AdminLoginRoute,
+  AdminIndexRoute: AdminIndexRoute,
+}
+
+const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
+
 interface ContactRouteChildren {
   ContactComplaintsRoute: typeof ContactComplaintsRoute
   ContactOpportunitiesRoute: typeof ContactOpportunitiesRoute
@@ -927,6 +996,7 @@ const SectorsRouteWithChildren =
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AdminRoute: AdminRouteWithChildren,
   ApparelRoute: ApparelRoute,
   BrandsRoute: BrandsRoute,
   ComplaintsRoute: ComplaintsRoute,
@@ -945,7 +1015,6 @@ const rootRouteChildren: RootRouteChildren = {
   ServicesRoute: ServicesRoute,
   SubmitOpportunityRoute: SubmitOpportunityRoute,
   TradeRoute: TradeRoute,
-  AdminInquiriesRoute: AdminInquiriesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

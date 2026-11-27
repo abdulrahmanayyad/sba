@@ -19,7 +19,6 @@ export function getSectorNavigation(slug: SectorSlug, ar: boolean) {
     ] },
     environmental: { about: standardAbout, links: [
       { label: copy.services, title: "Our Services" },
-      { label: copy.markets, title: "Our Markets" },
       { label: copy.sectors, title: "Sectors We Serve" },
     ] },
     garment: { about: standardAbout, links: [
@@ -29,7 +28,7 @@ export function getSectorNavigation(slug: SectorSlug, ar: boolean) {
     food: { about: [
       { label: copy.highlights, title: "Division Highlights" },
       { label: copy.cooperation, title: "Cooperation Opportunities" },
-    ], links: [{ label: copy.quality ?? copy.products, title: "Quality & Standards" }] },
+    ], links: [{ label: copy.products ?? copy.quality, title: "Main Product Categories" }] },
   };
   if (!(slug in configurations)) return null;
   return { ...configurations[slug as keyof typeof configurations], label: copy.about, joinUs: slug === "food" ? copy.joinUs : null };

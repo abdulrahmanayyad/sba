@@ -6,6 +6,7 @@ import { WHATSAPP_URL } from "./process-steps";
 export type CentralFormType =
   | "free_consultation"
   | "quote_request_model"
+  | "rfq_model"
   | "general_contact"
   | "complaint"
   | "opportunity_proposal"
@@ -17,6 +18,8 @@ export type CentralFormType =
   | "food_rfq"
   | "partnership_application"
   | "trade_supplier_bid";
+
+export type FormType = CentralFormType;
 
 export type CentralSubmissionStatus =
   | "new"
@@ -65,6 +68,17 @@ export interface CentralFormSubmission {
   status: CentralSubmissionStatus;
   assignedSpecialist?: string;
   internalNotes?: string[];
+
+  // Convenience flat fields for backward compatibility and admin views
+  name?: string;
+  company?: string;
+  email?: string;
+  phone?: string;
+  country?: string;
+  serviceOrProduct?: string;
+  timestamp?: string | number;
+  metadata?: Record<string, any>;
+  message?: string;
 }
 
 const STORAGE_KEY_CENTRAL_SUBMISSIONS = "sba_central_submissions_v1";
@@ -170,14 +184,29 @@ https://sami-trade.com/admin/inquiries?ref=${referenceCode}`;
   return { subject, body, mailtoUrl };
 }
 
-export function buildOwnerWhatsAppFollowupUrl(submission: CentralFormSubmission, ar = true): string {
-  const { referenceCode, formTitleAr, formTitleEn, applicant, modelMeta } = submission;
-  const title = ar ? formTitleAr : formTitleEn;
-  const modelInfo = modelMeta ? ` (موديل: ${modelMeta.code})` : "";
-  const text = ar
-    ? `مرحبًا إدارة مجموعة سامي بن عياد، أود متابعة الطلب المقدم برقم مرجعي [${referenceCode}] بخصوص ${title}${modelInfo}.\nالاسم: ${applicant.fullName} - ${applicant.company || ""}`
-    : `Hello SBA Management, following up on submission [${referenceCode}] regarding ${formTitleEn}${modelMeta ? ` (Model ${modelMeta.code})` : ""}.\nName: ${applicant.fullName} - ${applicant.company || ""}`;
-  return `${WHATSAPP_URL}?text=${encodeURIComponent(text)}`;
+export function buildOwnerWhatsAppFollowupUrl(
+  submissionOrRef: CentralFormSubmission | string,
+  arOrFormType?: boolean | string,
+  name?: string,
+  company?: string
+): string {
+  if (typeof submissionOrRef === "object" && submissionOrRef !== null) {
+    const s = submissionOrRef;
+    const ar = arOrFormType !== false;
+    const title = ar ? s.formTitleAr : s.formTitleEn;
+    const modelInfo = s.modelMeta ? ` (موديل: ${s.modelMeta.code})` : "";
+    const applicantName = s.applicant?.fullName || s.name || "";
+    const applicantCompany = s.applicant?.company || s.company || "";
+    const text = ar
+      ? `مرحبًا إدارة مجموعة سامي بن عياد، أود متابعة الطلب المقدم برقم مرجعي [${s.referenceCode}] بخصوص ${title}${modelInfo}.\nالاسم: ${applicantName} - ${applicantCompany}`
+      : `Hello SBA Management, following up on submission [${s.referenceCode}] regarding ${s.formTitleEn}${modelInfo}.\nName: ${applicantName} - ${applicantCompany}`;
+    return `${WHATSAPP_URL}?text=${encodeURIComponent(text)}`;
+  } else {
+    const ref = String(submissionOrRef);
+    const formType = typeof arOrFormType === "string" ? arOrFormType : "Inquiry";
+    const text = `مرحبًا إدارة مجموعة سامي بن عياد، أود متابعة الطلب المقدم برقم مرجعي [${ref}] بخصوص ${formType}.\nالاسم: ${name || ""} ${company ? `(${company})` : ""}`;
+    return `${WHATSAPP_URL}?text=${encodeURIComponent(text)}`;
+  }
 }
 
 export function buildApplicantConfirmationEmail(submission: CentralFormSubmission, ar = true): {
@@ -235,12 +264,43 @@ export async function submitCentralForm(
   const now = new Date().toISOString();
   const id = `sub-${Date.now()}-${Math.floor(Math.random() * 1000)}`;
 
+  const applicantName = input.applicant?.fullName || (input as any).name || "Visitor";
+  const applicantEmail = input.applicant?.email || (input as any).email || "inquiry@sami-trade.com";
+  const applicantPhone = input.applicant?.phone || (input as any).phone || "";
+  const applicantCompany = input.applicant?.company || (input as any).company || undefined;
+  const applicantCountry = input.applicant?.country || (input as any).country || undefined;
+
   const submission: CentralFormSubmission = {
     id,
     referenceCode,
     createdAt: now,
     status: "new",
+    name: applicantName,
+    company: applicantCompany,
+    email: applicantEmail,
+    phone: applicantPhone,
+    country: applicantCountry,
+    serviceOrProduct: (input as any).serviceOrProduct || input.modelMeta?.code || input.formTitleEn,
+    timestamp: now,
+    message: typeof input.details?.message === "string" ? input.details.message : ((input as any).message || input.details?.description || input.formTitleEn),
+    metadata: {
+      ...(input.details || {}),
+      ...(input as any).metadata,
+      modelCode: input.modelMeta?.code || (input as any).metadata?.modelCode,
+      modelPhoto: input.modelMeta?.image || (input as any).metadata?.modelPhoto,
+    },
     ...input,
+    applicant: {
+      fullName: applicantName,
+      email: applicantEmail,
+      phone: applicantPhone,
+      company: applicantCompany,
+      country: applicantCountry,
+      city: input.applicant?.city,
+      jobTitle: input.applicant?.jobTitle,
+      website: input.applicant?.website,
+      linkedin: input.applicant?.linkedin,
+    },
   };
 
   // 1. Save to Central Submissions store
@@ -316,26 +376,44 @@ export async function submitCentralForm(
     console.warn("CRM system sync notice:", err);
   }
 
-  // 4. Cloud Database write attempt
+  // 4. Cloud Database write attempt to public.central_submissions
   try {
-    await supabase.from("inquiries").insert([
-      {
-        contact_name: input.applicant.fullName,
-        email: input.applicant.email,
-        phone: input.applicant.phone,
-        company: input.applicant.company || "—",
-        country: input.applicant.country || "—",
-        product_type: input.formTitleEn,
-        model_code: input.modelMeta?.code || referenceCode,
-        message: JSON.stringify({
-          referenceCode,
-          formType: input.formType,
-          sector: input.sector,
-          details: input.details,
-          modelMeta: input.modelMeta,
-        }),
+    const mapSectorToEnum = (s: string): "corporate" | "apparel" | "environmental" | "construction" | "food" => {
+      switch (s) {
+        case "garment": return "apparel";
+        case "construction": return "construction";
+        case "environmental": return "environmental";
+        case "food": return "food";
+        default: return "corporate";
+      }
+    };
+
+    const payloadRow: any = {
+      reference_number: referenceCode,
+      form_type: input.formType,
+      sector: mapSectorToEnum(input.sector),
+      status: "new",
+      sender_name: applicantName,
+      sender_email: applicantEmail,
+      sender_phone: applicantPhone || null,
+      sender_organization: applicantCompany || null,
+      sender_country: applicantCountry || null,
+      subject: `${input.formTitleEn || input.formType} [${referenceCode}]`,
+      message: typeof input.details?.message === "string" ? input.details.message : ((input as any).message || input.details?.description || input.formTitleEn || input.formType),
+      form_payload: {
+        form_title_ar: input.formTitleAr,
+        form_title_en: input.formTitleEn,
+        original_sector: input.sector,
+        applicant: input.applicant,
+        details: input.details,
+        model_meta: input.modelMeta || null,
       },
-    ]);
+    };
+
+    const { error: centralErr } = await supabase.from("central_submissions" as any).insert(payloadRow);
+    if (centralErr) {
+      console.warn("[CentralFormDispatch] Supabase central_submissions notice:", centralErr.message);
+    }
   } catch (err) {
     // Graceful fallback: local persistent storage & direct mail dispatch guarantee delivery
     console.info("Cloud storage logged locally with direct email transmission dispatch.");

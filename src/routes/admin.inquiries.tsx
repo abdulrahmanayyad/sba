@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { AdminGuard } from "@/components/admin/admin-guard";
 import { CrmDashboard } from "@/components/admin/crm-dashboard";
 
 export const Route = createFileRoute("/admin/inquiries")({
@@ -8,6 +9,13 @@ export const Route = createFileRoute("/admin/inquiries")({
       { name: "robots", content: "noindex, nofollow" },
     ],
   }),
-  component: CrmDashboard,
+  component: AdminInquiriesPage,
 });
 
+function AdminInquiriesPage() {
+  return (
+    <AdminGuard>
+      <CrmDashboard />
+    </AdminGuard>
+  );
+}

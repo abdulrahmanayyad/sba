@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "@tanstack/react-router";
 import {
   Building2,
@@ -49,6 +49,9 @@ import {
   REGIONAL_SALES_COMPARISON_CHART,
   CITY_AREAS_COMPARISON_CHART,
   CAIRO_STOCK_INDICATORS_CHART,
+  EAST_CAIRO_4_CITIES_PRICE_CHART,
+  DATA_DISCREPANCIES_REGISTER,
+  CONFIDENCE_TAGS,
   PRICE_INTELLIGENCE_RECORDS,
   JLL_RENT_PRICE_DYNAMICS,
   CORE_RISKS_REGISTER,
@@ -57,6 +60,7 @@ import {
 import { FeasibilityCalculator } from "./feasibility-calculator";
 import { ScorecardCalculator } from "./scorecard-calculator";
 import { CityProfilesBrowser } from "./city-profiles-browser";
+import { InterCityComparator } from "./inter-city-comparator";
 import { DataGapsRegisterView } from "./data-gaps-register-view";
 import { DevelopersPipelineView } from "./developers-pipeline-view";
 import { Button } from "@/components/ui/button";
@@ -64,13 +68,38 @@ import { Button } from "@/components/ui/button";
 interface EastCairoStudyViewProps {
   ar: boolean;
   initialCityId?: string;
+  initialTab?: "all_cities_comparison" | "dedicated_city_studies";
 }
 
 export function EastCairoStudyView({
   ar,
   initialCityId = "new-cairo",
+  initialTab = "all_cities_comparison",
 }: EastCairoStudyViewProps) {
   const [checkedDueDiligence, setCheckedDueDiligence] = useState<Record<number, boolean>>({});
+  const [cityViewMode, setCityViewMode] = useState<"all_cities_comparison" | "dedicated_city_studies">(initialTab);
+  const [activeCityId, setActiveCityId] = useState<string>(initialCityId);
+
+  useEffect(() => {
+    if (initialCityId) {
+      setActiveCityId(initialCityId);
+    }
+  }, [initialCityId]);
+
+  useEffect(() => {
+    if (initialTab) {
+      setCityViewMode(initialTab);
+    }
+  }, [initialTab]);
+
+  const handleSelectCityFromComparator = (cityId: string) => {
+    setActiveCityId(cityId);
+    setCityViewMode("dedicated_city_studies");
+    const el = document.getElementById("city-profiles");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   const toggleCheck = (idx: number) => {
     setCheckedDueDiligence((prev) => ({ ...prev, [idx]: !prev[idx] }));
@@ -235,6 +264,20 @@ export function EastCairoStudyView({
             className="shrink-0 px-3 py-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200"
           >
             {ar ? "المؤشرات الكلية" : "Macro Indicators"}
+          </button>
+          <button
+            type="button"
+            onClick={() => scrollToSection("four-cities-benchmark")}
+            className="shrink-0 px-3 py-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-[#0F8B7A] font-extrabold border border-[#0F8B7A]/30 bg-[#0F8B7A]/5"
+          >
+            {ar ? "مقارنة المدن الأربع" : "4-City Benchmark"}
+          </button>
+          <button
+            type="button"
+            onClick={() => scrollToSection("discrepancies-register")}
+            className="shrink-0 px-3 py-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-rose-600 dark:text-rose-400 font-extrabold border border-rose-500/30 bg-rose-500/5"
+          >
+            {ar ? "سجل التضاربات" : "Discrepancies Register"}
           </button>
           <button
             type="button"
@@ -489,8 +532,281 @@ export function EastCairoStudyView({
           </p>
         </div>
 
-        {/* City Profiles Interactive Browser */}
-        <CityProfilesBrowser ar={ar} initialCityId={initialCityId} />
+        {/* Two-Tier Study Architecture Mode Switcher */}
+        <div className="mb-6 flex flex-wrap items-center gap-3 border-b border-slate-200 dark:border-white/10 pb-4">
+          <button
+            type="button"
+            onClick={() => setCityViewMode("all_cities_comparison")}
+            className={`rounded-xl px-5 py-2.5 text-xs md:text-sm font-bold transition-all flex items-center gap-2 ${
+              cityViewMode === "all_cities_comparison"
+                ? "bg-[#0F8B7A] text-white shadow-md shadow-[#0F8B7A]/20 scale-[1.02]"
+                : "bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700/60 border border-slate-200 dark:border-white/10"
+            }`}
+          >
+            <BarChart3 className="size-4" />
+            <span>{ar ? "المقارنة الشاملة بين مدن شرق القاهرة (12 مدينة)" : "All East Cairo Cities Comparison (12 Cities)"}</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setCityViewMode("dedicated_city_studies")}
+            className={`rounded-xl px-5 py-2.5 text-xs md:text-sm font-bold transition-all flex items-center gap-2 ${
+              cityViewMode === "dedicated_city_studies"
+                ? "bg-[#0F8B7A] text-white shadow-md shadow-[#0F8B7A]/20 scale-[1.02]"
+                : "bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700/60 border border-slate-200 dark:border-white/10"
+            }`}
+          >
+            <Building2 className="size-4" />
+            <span>{ar ? "الدراسات المستقلة للمدن ومقارنة الأحياء الداخلية" : "Dedicated Standalone City Studies & Districts"}</span>
+          </button>
+        </div>
+
+        {/* View 1: Comprehensive Inter-City Comparison */}
+        {cityViewMode === "all_cities_comparison" && (
+          <div className="space-y-8">
+            <InterCityComparator
+              ar={ar}
+              onSelectCity={handleSelectCityFromComparator}
+            />
+
+            {/* 4-City Residential Benchmark Chart (Nov 22, 2026 Study) */}
+            <div id="four-cities-benchmark" className="mt-8 rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-900 p-6 md:p-8 shadow-sm">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-slate-200 dark:border-white/10">
+                <div>
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded text-[11px] font-bold border border-teal-500/30 bg-teal-500/10 text-teal-700 dark:text-teal-300">
+                      {ar ? "تحديث 22 نوفمبر 2026 — الجزء الأول" : "22 Nov 2026 Update — Part 1"}
+                    </span>
+                    <span className="text-xs text-slate-500 font-medium">
+                      {ar ? "بيانات مجمعة من Aqarmap وMasrawy" : "Composite Data (Aqarmap & Masrawy)"}
+                    </span>
+                  </div>
+                  <h3 className="font-head text-lg md:text-xl font-bold text-slate-900 dark:text-white">
+                    {ar ? EAST_CAIRO_4_CITIES_PRICE_CHART.titleAr : EAST_CAIRO_4_CITIES_PRICE_CHART.titleEn}
+                  </h3>
+                  <p className="text-xs text-slate-500 mt-1 max-w-3xl">
+                    {ar
+                      ? "مقارنة متوسط سعر المتر المربع للوحدات السكنية (شقق) بين المدن الأربع المكتملة بالجزء الأول: التجمع الخامس، هليوبوليس الجديدة، العبور القديمة، وبدر."
+                      : "Apartment price benchmark across the 4 completed cities in Part 1: 5th Settlement, New Heliopolis, Old Obour, and Badr City."}
+                  </p>
+                </div>
+                <div className="shrink-0">
+                  <span className="text-xs font-bold text-[#0F8B7A] bg-[#0F8B7A]/10 px-3 py-1.5 rounded-xl border border-[#0F8B7A]/30">
+                    {ar ? "متوسط المتر: 11.8k – 72k جنيه" : "Range: 11.8k – 72k EGP/sqm"}
+                  </span>
+                </div>
+              </div>
+
+              {/* Horizontal Bar Chart matching attached visual */}
+              <div className="mt-6 h-72 w-full" dir="ltr">
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart
+                    data={EAST_CAIRO_4_CITIES_PRICE_CHART.items}
+                    layout="vertical"
+                    margin={{ top: 10, right: 40, left: 100, bottom: 10 }}
+                  >
+                    <CartesianGrid strokeDasharray="3 3" opacity={0.15} />
+                    <XAxis
+                      type="number"
+                      tick={{ fontSize: 11, fill: "#64748b" }}
+                      unit=" EGP"
+                    />
+                    <YAxis
+                      type="category"
+                      dataKey={ar ? "labelAr" : "labelEn"}
+                      tick={{ fontSize: 12, fill: "#1e293b", fontWeight: 700 }}
+                      width={150}
+                    />
+                    <Tooltip
+                      formatter={(value: any, name: any, item: any) => [
+                        `${new Intl.NumberFormat().format(value)} ${ar ? "جنيه/م²" : "EGP/sqm"} (${item.payload.noteAr || ""})`,
+                        ar ? "متوسط سعر المتر السكني" : "Avg Flat Price",
+                      ]}
+                      contentStyle={{
+                        backgroundColor: "rgba(15, 23, 42, 0.95)",
+                        borderColor: "rgba(255, 255, 255, 0.1)",
+                        borderRadius: "12px",
+                        color: "#fff",
+                        fontSize: "12px",
+                      }}
+                    />
+                    <Bar dataKey="value" radius={[0, 8, 8, 0]}>
+                      {EAST_CAIRO_4_CITIES_PRICE_CHART.items.map((entry, index) => (
+                        <Cell
+                          key={`cell-${index}`}
+                          fill={
+                            entry.value >= 70000
+                              ? "#2563eb"
+                              : entry.value >= 30000
+                              ? "#3b82f6"
+                              : entry.value >= 20000
+                              ? "#60a5fa"
+                              : "#93c5fd"
+                          }
+                        />
+                      ))}
+                    </Bar>
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+
+              {/* Analysis & Explicit Methodology Disclaimer */}
+              <div className="mt-5 space-y-3">
+                <div className="rounded-xl border border-amber-300 dark:border-amber-700/50 bg-amber-500/10 p-4 text-xs text-amber-950 dark:text-amber-100 leading-relaxed flex items-start gap-2.5">
+                  <ShieldAlert className="size-4 text-amber-600 shrink-0 mt-0.5" />
+                  <div>
+                    <strong className="font-bold text-amber-900 dark:text-amber-200 block mb-0.5">
+                      {ar ? "تحفظ منهجي جوهري حول المقارنة السعرية:" : "Methodological Disclaimer on Comparative Pricing:"}
+                    </strong>
+                    <span>
+                      {ar
+                        ? "التجمع الخامس أغلى المدن الأربع بفارق كبير (72,000 ج.م/م²)، يليه هليوبوليس الجديدة والعبور القديمة بمستوى متقارب، بينما تظل بدر الأقل سعرًا بوضوح لارتباطها بالطلب الحكومي وقلة المطورين الخاصين. تنبيه: الأرقام غير متزامنة المصدر والتاريخ تمامًا بين المدن (Aqarmap مقابل Masrawy، وتواريخ رصد متباينة بين أواخر 2025 وأواخر 2026)، فهي للدلالة على الفجوة السعرية النسبية وليست للمقارنة الدقيقة بالنقطة."
+                        : "The 5th Settlement commands the highest benchmark (72,000 EGP/sqm), followed by New Heliopolis and Old Obour at comparable levels, with Badr City recording the lowest entry pricing. Note: Data is sourced from un-synchronized timestamps and methodologies (Aqarmap vs. Masrawy between late 2025 and late 2026); numbers reflect relative pricing tiers rather than synchronized points."}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="rounded-xl border border-teal-200/80 dark:border-white/10 bg-teal-50/50 dark:bg-slate-800/60 p-3.5 text-xs text-slate-700 dark:text-slate-300 flex items-center justify-between">
+                  <span className="font-semibold">
+                    {ar
+                      ? "ملاحظة التغطية التوسعية: سيتبع هذا الجزء ملف منفصل يغطي بنفس المنهجية والعمق: مدينة الشروق، العاصمة الإدارية الجديدة، مدينتي، والمستقبل سيتي، مع جدول مقارنة نهائي يشمل كافة المدن الثماني معًا."
+                      : "Upcoming Scope Notice: A subsequent comprehensive dossier will cover El Shorouk, New Administrative Capital, Madinaty, and Mostakbal City using the identical methodology, culminating in an 8-city unified comparison matrix."}
+                  </span>
+                  <span className="text-[11px] font-bold text-[#0F8B7A] shrink-0 ms-2">
+                    {ar ? "الإصدار 2.0 المتكامل" : "Comprehensive v2.0"}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* View 2: Dedicated Standalone City Studies & Intra-City District Comparator */}
+        {cityViewMode === "dedicated_city_studies" && (
+          <div className="space-y-6">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-teal-500/10 border border-teal-500/20 rounded-2xl p-4 text-xs text-teal-900 dark:text-teal-200 shadow-xs">
+              <div className="flex items-center gap-2">
+                <Building2 className="size-4 text-[#0F8B7A]" />
+                <span className="font-medium">
+                  {ar
+                    ? "أنت تستعرض الآن الملف التفصيلي المستقل للمدينة والمقارنة التحليلية الشاملة للأحياء بداخلها."
+                    : "You are currently viewing the dedicated standalone city dossier and granular intra-city district breakdown."}
+                </span>
+              </div>
+              <button
+                type="button"
+                onClick={() => setCityViewMode("all_cities_comparison")}
+                className="font-bold underline text-[#0F8B7A] hover:text-[#0F8B7A]/80 shrink-0 self-start sm:self-auto"
+              >
+                {ar ? "← العودة لجدول المقارنة الشاملة بين كافة المدن" : "← Back to All Cities Comparison"}
+              </button>
+            </div>
+
+            <CityProfilesBrowser ar={ar} initialCityId={activeCityId} />
+          </div>
+        )}
+
+        {/* DATA DISCREPANCIES & METHODOLOGICAL CAVEATS REGISTER */}
+        <div id="discrepancies-register" className="mt-8 rounded-2xl border border-rose-200 dark:border-rose-900/40 bg-white dark:bg-slate-900 p-6 md:p-8 shadow-sm">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-rose-100 dark:border-white/10">
+            <div>
+              <div className="flex items-center gap-2 mb-1">
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-[11px] font-bold border border-rose-500/30 bg-rose-500/10 text-rose-700 dark:text-rose-300">
+                  <ShieldAlert className="size-3.5" />
+                  {ar ? "سجل التضاربات والتحفظات المنهجية" : "Data Discrepancies & Audit Caveats Register"}
+                </span>
+                <span className="text-xs text-slate-500 font-medium">
+                  {ar ? "6 تضاربات جوهرية مرصودة ومصححة" : "6 Key Discrepancies Disclosed & Audited"}
+                </span>
+              </div>
+              <h3 className="font-head text-lg md:text-xl font-bold text-slate-900 dark:text-white">
+                {ar ? "الشفافية المؤسسية: إبراز التضاربات بدلاً من إخفائها أو تسويتها تعسفيًا" : "Institutional Transparency: Disclosing Discrepancies vs Arbitrary Smoothing"}
+              </h3>
+              <p className="text-xs text-slate-500 mt-1 max-w-3xl">
+                {ar
+                  ? "تطبيقًا لقواعد الحوكمة الاستثمارية لمجموعة سامي بن عياد، تم حصر وتوثيق التضاربات بين المصادر الرسمية ومنصات التسعير، مع تحليل أسباب التفاوت وتحديد الإجراء الاستثماري الواجب اتخاذه."
+                  : "Per SBA Group governance, discrepancies between official records and market portals are transparently logged with root-cause analysis and mandated investor due diligence actions."}
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-6 space-y-4">
+            {DATA_DISCREPANCIES_REGISTER.map((item) => {
+              const confA = CONFIDENCE_TAGS[item.confidenceA];
+              const confB = CONFIDENCE_TAGS[item.confidenceB];
+
+              return (
+                <div
+                  key={item.id}
+                  className="rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50/60 dark:bg-slate-800/40 p-4 md:p-5 space-y-3 hover:border-rose-300 dark:hover:border-rose-800/60 transition-colors"
+                >
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200/60 dark:border-white/5 pb-2.5">
+                    <div className="flex items-center gap-2">
+                      <span className="rounded bg-rose-100 dark:bg-rose-950/60 text-rose-700 dark:text-rose-300 px-2 py-0.5 text-xs font-black">
+                        {item.id}
+                      </span>
+                      <h4 className="font-head text-sm md:text-base font-bold text-slate-900 dark:text-white">
+                        {ar ? item.entityNameAr : item.entityNameEn} — <span className="text-[#0F8B7A]">{ar ? item.metricAr : item.metricEn}</span>
+                      </h4>
+                    </div>
+                    <span className="text-xs font-bold text-rose-600 dark:text-rose-400 bg-rose-50 dark:bg-rose-950/40 px-2.5 py-1 rounded-md border border-rose-200 dark:border-rose-900/40">
+                      {ar ? item.discrepancyRatioAr : item.discrepancyRatioEn}
+                    </span>
+                  </div>
+
+                  {/* Two Competing Sources Grid */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1">
+                    {/* Source A */}
+                    <div className="rounded-lg bg-white dark:bg-slate-900 p-3 border border-slate-200/80 dark:border-white/5 space-y-1">
+                      <div className="flex items-center justify-between">
+                        <span className="text-[11px] font-bold text-slate-500">{ar ? "المصدر (أ):" : "Source (A):"}</span>
+                        <span className={`text-[10px] px-1.5 py-0.5 rounded border ${confA.badgeClass}`}>
+                          {ar ? confA.tagAr : confA.tagEn}
+                        </span>
+                      </div>
+                      <p className="text-xs text-slate-600 dark:text-slate-400 font-medium">{ar ? item.sourceAAr : item.sourceAEn}</p>
+                      <strong className="text-sm font-extrabold text-slate-900 dark:text-white block pt-1">{ar ? item.valueAAr : item.valueAEn}</strong>
+                    </div>
+
+                    {/* Source B */}
+                    <div className="rounded-lg bg-white dark:bg-slate-900 p-3 border border-slate-200/80 dark:border-white/5 space-y-1">
+                      <div className="flex items-center justify-between">
+                        <span className="text-[11px] font-bold text-slate-500">{ar ? "المصدر (ب):" : "Source (B):"}</span>
+                        <span className={`text-[10px] px-1.5 py-0.5 rounded border ${confB.badgeClass}`}>
+                          {ar ? confB.tagAr : confB.tagEn}
+                        </span>
+                      </div>
+                      <p className="text-xs text-slate-600 dark:text-slate-400 font-medium">{ar ? item.sourceBAr : item.sourceBEn}</p>
+                      <strong className="text-sm font-extrabold text-slate-900 dark:text-white block pt-1">{ar ? item.valueBAr : item.valueBEn}</strong>
+                    </div>
+                  </div>
+
+                  {/* Root Cause & Investor Action */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs pt-1">
+                    <div className="rounded-lg bg-amber-50/50 dark:bg-amber-950/20 p-2.5 border border-amber-200/50 dark:border-amber-900/30">
+                      <strong className="font-bold text-amber-900 dark:text-amber-200 block mb-0.5">
+                        {ar ? "تحليل سبب التضارب الجوهري:" : "Root Cause Analysis:"}
+                      </strong>
+                      <span className="text-amber-950/90 dark:text-amber-300/90 leading-relaxed">
+                        {ar ? item.rootCauseAnalysisAr : item.rootCauseAnalysisEn}
+                      </span>
+                    </div>
+
+                    <div className="rounded-lg bg-emerald-50/50 dark:bg-emerald-950/20 p-2.5 border border-emerald-200/50 dark:border-emerald-900/30">
+                      <strong className="font-bold text-emerald-900 dark:text-emerald-200 block mb-0.5">
+                        {ar ? "الإجراء والتحقق الاستثماري الإلزامي:" : "Mandatory Due Diligence Action:"}
+                      </strong>
+                      <span className="text-emerald-950/90 dark:text-emerald-300/90 leading-relaxed">
+                        {ar ? item.investmentActionAr : item.investmentActionEn}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
 
         {/* Planning Area Comparison Chart Box */}
         <div className="mt-8 rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-900 p-6 md:p-8 shadow-sm">

@@ -28,11 +28,13 @@ import { ProjectVerificationModal } from "./verification/project-verification-mo
 import { VerificationPortal } from "./verification/verification-portal";
 import { ProjectVerificationAdminDashboard } from "./verification/project-verification-admin-dashboard";
 import { SectorConsultationCta } from "@/components/site/sector-consultation-cta";
+import { ConstructionMarketsTab } from "./tabs/construction-markets-tab";
 
 export type ConstructionTab =
   | "about"
   | "sectors"
   | "services"
+  | "markets"
   | "projects"
   | "start-project"
   | "join"
@@ -60,6 +62,7 @@ export function ConstructionSectorView({ tab = "about", token }: ConstructionVie
     "about",
     "sectors",
     "services",
+    "markets",
     "projects",
     "start-project",
     "join",
@@ -95,6 +98,12 @@ export function ConstructionSectorView({ tab = "about", token }: ConstructionVie
       ar: "خدماتنا",
       descEn: "General contracting, MEP, fit-out, healthcare systems & maintenance",
       descAr: "المقاولات العامة، التشطيبات، الأنظمة الكهروميكانيكية، وتجهيز المنشآت",
+    },
+    markets: {
+      en: "Our Markets",
+      ar: "دراسات الأسواق",
+      descEn: "12 Egyptian anchor cities, 45+ submarkets, pricing & yield intelligence",
+      descAr: "12 مدينة مدروسة في مصر، 45+ حياً ومنطقة، وتحليلات الأسعار والعوائد والجدوى",
     },
     projects: {
       en: "Our Projects",
@@ -174,6 +183,7 @@ export function ConstructionSectorView({ tab = "about", token }: ConstructionVie
       <div className="py-8 space-y-12">
         {(activeTab === "about" || activeTab === "sectors") && <ConstructionAboutView ar={ar} />}
         {activeTab === "services" && <ConstructionServicesView ar={ar} />}
+        {activeTab === "markets" && <ConstructionMarketsTab ar={ar} />}
         {activeTab === "projects" && <ConstructionProjectsView ar={ar} />}
         {activeTab === "start-project" && <ConstructionStartProjectView ar={ar} />}
         {activeTab === "join" && <JoinPage trackId="construction" />}

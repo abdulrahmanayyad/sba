@@ -25,6 +25,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { supabase } from "@/integrations/supabase/client";
 import {
   getCentralSubmissions,
   buildOwnerWhatsAppFollowupUrl,
@@ -39,8 +40,61 @@ export function CentralSubmissionsTab({ ar }: { ar: boolean }) {
   const [selectedSubmission, setSelectedSubmission] = useState<CentralFormSubmission | null>(null);
   const [copiedCode, setCopiedCode] = useState<string | null>(null);
 
-  const loadSubmissions = () => {
-    setSubmissions(getCentralSubmissions());
+  const loadSubmissions = async () => {
+    const local = getCentralSubmissions();
+    setSubmissions(local);
+
+    try {
+      const { data, error } = await supabase
+        .from("central_submissions" as any)
+        .select("*")
+        .order("created_at", { ascending: false });
+
+      if (!error && data && data.length > 0) {
+        const dbSubmissions: CentralFormSubmission[] = data.map((row: any) => ({
+          id: row.id,
+          referenceCode: row.reference_number,
+          formType: row.form_type as any,
+          formTitleEn: row.form_payload?.form_title_en || row.subject || row.form_type,
+          formTitleAr: row.form_payload?.form_title_ar || row.subject || row.form_type,
+          sector: row.sector === "apparel" ? "garment" : row.sector,
+          createdAt: row.created_at,
+          status: row.status,
+          name: row.sender_name,
+          company: row.sender_organization || undefined,
+          email: row.sender_email,
+          phone: row.sender_phone || "",
+          country: row.sender_country || undefined,
+          serviceOrProduct: row.form_payload?.model_meta?.code || row.subject,
+          timestamp: row.created_at,
+          message: row.message || row.form_payload?.details?.message || row.subject,
+          metadata: {
+            ...(row.form_payload?.details || {}),
+            modelCode: row.form_payload?.model_meta?.code,
+            modelPhoto: row.form_payload?.model_meta?.image,
+          },
+          applicant: {
+            fullName: row.sender_name,
+            email: row.sender_email,
+            phone: row.sender_phone || "",
+            company: row.sender_organization || undefined,
+            country: row.sender_country || undefined,
+            city: row.form_payload?.applicant?.city,
+            jobTitle: row.form_payload?.applicant?.jobTitle,
+          },
+          details: row.form_payload?.details || row.form_payload || {},
+          modelMeta: row.form_payload?.model_meta,
+          assignedSpecialist: row.assigned_to,
+        }));
+
+        const mergedMap = new Map<string, CentralFormSubmission>();
+        local.forEach((s) => mergedMap.set(s.referenceCode, s));
+        dbSubmissions.forEach((s) => mergedMap.set(s.referenceCode, s));
+        setSubmissions(Array.from(mergedMap.values()));
+      }
+    } catch {
+      // Graceful offline fallback
+    }
   };
 
   useEffect(() => {

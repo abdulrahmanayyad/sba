@@ -8,6 +8,7 @@ import {
   type ApparelSubRegionId,
   type GlobalMarketSectorId,
 } from "@/lib/global-markets-data";
+import { EAST_CAIRO_CITIES } from "@/lib/studies/east-cairo-master-study";
 
 const COMPARATIVE_SLUG_MAP: Record<
   string,
@@ -77,10 +78,27 @@ export const Route = createFileRoute("/global-markets/$sector/$slug")({
           {
             name: "description",
             content:
-              "دراسة سوق التطوير العقاري والاستثمار بشرق القاهرة (نوفمبر 2026): مؤشرات الطلب الكلية، مبيعات 499.6 مليار جنيه، ملفات 10 مدن، وتحليلات السكني والتجاري والإداري والطبي.",
+              "دراسة سوق التطوير العقاري والاستثمار بشرق القاهرة (نوفمبر 2026): مؤشرات الطلب الكلية، مبيعات 499.6 مليار جنيه، ملفات 12 مدينة، وتحليلات السكني والتجاري والإداري والطبي.",
           },
         ],
       };
+    }
+
+    if (params.sector === "construction") {
+      const city = EAST_CAIRO_CITIES.find((c) => c.id === params.slug);
+      if (city) {
+        return {
+          meta: [
+            {
+              title: `دراسة سوق التطوير العقاري — ${city.nameAr} | مجموعة سامي بن عياد`,
+            },
+            {
+              name: "description",
+              content: city.descriptionAr,
+            },
+          ],
+        };
+      }
     }
 
     return {
@@ -102,12 +120,27 @@ function GlobalMarketsStudyRoute() {
   const { language } = useLanguage();
   const ar = language === "AR";
 
-  const isEastCairo =
-    sector === "construction" &&
-    (slug === "east-cairo" || slug === "east-cairo-real-estate-study");
+  if (sector === "construction") {
+    if (slug === "east-cairo" || slug === "east-cairo-real-estate-study") {
+      return (
+        <EastCairoStudyView
+          ar={ar}
+          initialCityId={search?.city}
+          initialTab={search?.city ? "dedicated_city_studies" : "all_cities_comparison"}
+        />
+      );
+    }
 
-  if (isEastCairo) {
-    return <EastCairoStudyView ar={ar} initialCityId={search?.city} />;
+    const matchedCity = EAST_CAIRO_CITIES.find((c) => c.id === slug);
+    if (matchedCity) {
+      return (
+        <EastCairoStudyView
+          ar={ar}
+          initialCityId={matchedCity.id}
+          initialTab="dedicated_city_studies"
+        />
+      );
+    }
   }
 
   const cmp = COMPARATIVE_SLUG_MAP[slug];

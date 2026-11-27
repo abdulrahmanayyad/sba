@@ -47,6 +47,24 @@ const CLASSIFICATION_TABS = [
   { id: "other", labelAr: "بقية الدول", labelEn: "Rest of Countries" },
 ] as const;
 
+export const CONSTRUCTION_CITY_TABS = [
+  { id: "all", labelAr: "كافة مدن مصر (12 مدينة)", labelEn: "All Egyptian Cities (12)" },
+  { id: "established", labelAr: "مدن ناضجة وقائمة", labelEn: "Mature & Established Cities" },
+  { id: "capital", labelAr: "العاصمة والمدن الذكية", labelEn: "Capital & Smart Cities" },
+  { id: "private", labelAr: "مجتمعات خاصة ومخططة", labelEn: "Private Planned Communities" },
+  { id: "extension", labelAr: "امتدادات عمرانية واعدة", labelEn: "Urban Growth Corridors" },
+  { id: "industrial", labelAr: "القطب الصناعي واللوجستي", labelEn: "Industrial Logistic Hubs" },
+] as const;
+
+export function getConstructionCityCategory(slug: string): string {
+  if (slug === "new-capital" || slug === "capital-gardens") return "capital";
+  if (slug === "new-cairo" || slug === "obour-old" || slug === "el-shorouk") return "established";
+  if (slug === "mostakbal-city" || slug === "madinaty" || slug === "al-rehab") return "private";
+  if (slug === "obour-new" || slug === "badr" || slug === "new-heliopolis") return "extension";
+  if (slug === "tenth-of-ramadan") return "industrial";
+  return "all";
+}
+
 function getStudyOrderNumber(study: GlobalMarketStudy): number {
   if (typeof study.regionalRank === "number" && study.regionalRank > 0) {
     return study.regionalRank;
@@ -150,6 +168,23 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
   }, [sectorStudies]);
 
   const categoryCounts = useMemo(() => {
+    if (sector.id === "construction" || sector.scope === "egypt_only") {
+      const counts: Record<string, number> = {
+        all: sectorStudies.length,
+        established: 0,
+        capital: 0,
+        private: 0,
+        extension: 0,
+        industrial: 0,
+      };
+      sectorStudies.forEach((s) => {
+        const cat = getConstructionCityCategory(s.slug);
+        if (counts[cat] !== undefined) {
+          counts[cat] = (counts[cat] || 0) + 1;
+        }
+      });
+      return counts;
+    }
     const counts: Record<string, number> = {
       all: sectorStudies.length,
       gcc: 0,
@@ -163,12 +198,18 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
       counts[cat] = (counts[cat] || 0) + 1;
     });
     return counts;
-  }, [sectorStudies]);
+  }, [sectorStudies, sector.id, sector.scope]);
 
   const filteredStudies = useMemo(() => {
     const q = searchQuery.trim().toLowerCase();
     const result = sectorStudies.filter((s) => {
-      if (regionCategory !== "all" && getStudyRegionCategory(s) !== regionCategory) return false;
+      if (regionCategory !== "all") {
+        if (sector.id === "construction" || sector.scope === "egypt_only") {
+          if (getConstructionCityCategory(s.slug) !== regionCategory) return false;
+        } else {
+          if (getStudyRegionCategory(s) !== regionCategory) return false;
+        }
+      }
       if (regionFilter !== "all" && s.region !== regionFilter) return false;
       if (subRegionFilter !== "all" && s.apparelSubRegion !== subRegionFilter) return false;
       if (priorityFilter !== "all" && s.priorityGrade !== priorityFilter) return false;
@@ -441,35 +482,46 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
             </select>
           </div>
 
-          {sectorStudies.length > 0 && !isEgyptOnly && (
+          {sectorStudies.length > 0 && (
             <div className="pt-4 border-t border-slate-200/70 dark:border-white/10 space-y-3">
               <div className="flex flex-wrap items-center justify-between gap-2">
                 <div className="flex flex-wrap items-center gap-1.5">
-                  {CLASSIFICATION_TABS.filter(
-                    (tab) => tab.id === "all" || (categoryCounts[tab.id] ?? 0) > 0,
-                  ).map((tab) => {
-                    const count = categoryCounts[tab.id] ?? 0;
-                    const active = regionCategory === tab.id;
-                    return (
-                      <button
-                        key={tab.id}
-                        type="button"
-                        onClick={() => {
-                          setRegionCategory(tab.id);
-                          setSubRegionFilter("all");
-                        }}
-                        className={cn(
-                          "rounded-full border px-3 py-1 text-[11px] font-bold transition-all duration-300 cursor-pointer shadow-xs",
-                          active
-                            ? "border-brand-green bg-brand-green text-white hover:bg-brand-orange"
-                            : "border-slate-200 dark:border-white/15 bg-white dark:bg-white/5 text-slate-700 dark:text-slate-200 hover:bg-brand-orange hover:text-white hover:border-brand-orange",
-                        )}
-                      >
-                        {ar ? `${tab.labelAr} (${count})` : `${tab.labelEn} (${count})`}
-                      </button>
-                    );
-                  })}
+                  {(isEgyptOnly ? CONSTRUCTION_CITY_TABS : CLASSIFICATION_TABS)
+                    .filter((tab) => tab.id === "all" || (categoryCounts[tab.id] ?? 0) > 0)
+                    .map((tab) => {
+                      const count = categoryCounts[tab.id] ?? 0;
+                      const active = regionCategory === tab.id;
+                      return (
+                        <button
+                          key={tab.id}
+                          type="button"
+                          onClick={() => {
+                            setRegionCategory(tab.id);
+                            setSubRegionFilter("all");
+                          }}
+                          className={cn(
+                            "rounded-full border px-3 py-1 text-[11px] font-bold transition-all duration-300 cursor-pointer shadow-xs",
+                            active
+                              ? "border-brand-green bg-brand-green text-white hover:bg-brand-orange"
+                              : "border-slate-200 dark:border-white/15 bg-white dark:bg-white/5 text-slate-700 dark:text-slate-200 hover:bg-brand-orange hover:text-white hover:border-brand-orange",
+                          )}
+                        >
+                          {ar ? `${tab.labelAr} (${count})` : `${tab.labelEn} (${count})`}
+                        </button>
+                      );
+                    })}
                 </div>
+
+                {sector.id === "construction" && (
+                  <Link
+                    to="/global-markets/$sector/$slug"
+                    params={{ sector: "construction", slug: "east-cairo-real-estate-study" }}
+                    className="inline-flex items-center gap-1.5 rounded-xl bg-brand-green px-4 py-2 text-xs font-extrabold text-white hover:bg-brand-orange transition-all duration-300 shadow-xs cursor-pointer"
+                  >
+                    <Building2 className="size-3.5" />
+                    <span>{ar ? "دراسة شرق القاهرة الشاملة (لوحة مقارنة 12 مدينة و45 حياً)" : "East Cairo Regional Study (All 12 Cities & 45 Submarkets)"}</span>
+                  </Link>
+                )}
 
                 {sector.id === "garment" && (
                   <select
@@ -630,8 +682,48 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
                         )
                       )}
 
-                      {/* Garment Specific: Trade Indicator Box & Integrated Strategic Analysis Box */}
-                      {study.sector === "garment" ? (
+                      {study.sector === "construction" ? (
+                        <>
+                          <div className="mt-2.5 flex flex-wrap items-center gap-2">
+                            {study.opportunityTierAr && (
+                              <span className="rounded-lg border border-brand-green/30 bg-brand-green/10 px-2.5 py-1 text-xs font-bold text-brand-green shadow-xs">
+                                {ar ? study.opportunityTierAr : study.opportunityTier}
+                              </span>
+                            )}
+                            <span className="rounded-lg border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:text-slate-300">
+                              {ar ? study.subRegionOrProjectAr : study.subRegionOrProjectEn}
+                            </span>
+                          </div>
+
+                          <div className="mt-3 grid grid-cols-2 gap-2 text-start">
+                            <div className="rounded-xl border border-slate-200/80 dark:border-white/10 bg-slate-50/80 dark:bg-white/5 p-2.5">
+                              <span className="text-[11px] font-semibold text-slate-500 dark:text-slate-400 block">
+                                {ar ? "متوسط سعر الشقق" : "Avg Flat Price"}
+                              </span>
+                              <span className="text-sm font-black font-mono text-brand-green">
+                                {study.tradeIndicatorDisplay || "—"}
+                              </span>
+                            </div>
+                            <div className="rounded-xl border border-slate-200/80 dark:border-white/10 bg-slate-50/80 dark:bg-white/5 p-2.5">
+                              <span className="text-[11px] font-semibold text-slate-500 dark:text-slate-400 block">
+                                {ar ? "العائد الإيجاري السنوي" : "Expected Rental Yield"}
+                              </span>
+                              <span className="text-sm font-black font-mono text-brand-orange">
+                                {study.kpis.find((k) => k.id === "rental-yield")?.valueDisplay ?? "8.5%"}
+                              </span>
+                            </div>
+                          </div>
+
+                          <div className="mt-2.5 rounded-xl border border-slate-200/80 dark:border-white/10 bg-slate-50/60 dark:bg-white/5 p-2.5 text-xs text-slate-700 dark:text-slate-200">
+                            <span className="font-bold text-brand-green block mb-1">
+                              {ar ? study.dataCompletenessAr : study.dataCompletenessEn}
+                            </span>
+                            <p className="line-clamp-2 leading-relaxed text-slate-600 dark:text-slate-300 text-[11px]">
+                              {ar ? study.subtitleAr : study.subtitleEn}
+                            </p>
+                          </div>
+                        </>
+                      ) : study.sector === "garment" ? (
                         <>
                           <div className="mt-2.5 flex flex-wrap items-center gap-2">
                             {/* خانة المؤشر التجاري */}
@@ -722,7 +814,11 @@ export function GlobalMarketsSectorPage({ sectorId, ar }: GlobalMarketsSectorPag
                       <div
                         className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-xl bg-brand-green px-3 py-2 text-xs font-bold text-white group-hover:bg-brand-orange transition-all duration-300 shadow-xs"
                       >
-                        <span>{ar ? "عرض الدراسة الكاملة" : "View Full Study"}</span>
+                        <span>
+                          {study.sector === "construction"
+                            ? (ar ? "عرض دراسة المدينة والأحياء" : "View City & Districts Study")
+                            : (ar ? "عرض الدراسة الكاملة" : "View Full Study")}
+                        </span>
                         {ar ? <ArrowLeft className="size-3.5 rtl:rotate-0" /> : <ArrowRight className="size-3.5" />}
                       </div>
                     </div>

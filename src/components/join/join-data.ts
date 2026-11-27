@@ -43,7 +43,7 @@ export const joinTracks: Record<JoinTrackId, JoinTrackConfig> = {
     titleAr: "فرص العمل والتعاون",
     eyebrowEn: "SAMI BIN AYYAD GROUP · Careers & Strategic Cooperation",
     eyebrowAr: "مجموعة سامي بن عياد · فرص العمل والتعاون",
-    headlineEn: "Careers and business opportunities",
+    headlineEn: "Build the Future With Us",
     headlineAr: "فرص العمل والتعاون",
     descriptionEn:
       "We welcome enquiries from professionals, suppliers and organisations interested in working with the Group. Select the purpose of your application and the relevant sector, then provide the information needed to assess your proposal.",

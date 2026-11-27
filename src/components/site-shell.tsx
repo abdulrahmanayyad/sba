@@ -472,6 +472,16 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
 
   const currentLogo = isArabic ? SBA_LOGO_AR : SBA_LOGO_EN;
 
+  if (pathname.startsWith("/admin")) {
+    return (
+      <LanguageProvider value={{ language, setLanguage: selectLanguage }}>
+        <div className="min-h-screen bg-slate-950 text-slate-100 font-sans" dir={isArabic ? "rtl" : "ltr"}>
+          {children}
+        </div>
+      </LanguageProvider>
+    );
+  }
+
   return (
     <LanguageProvider value={{ language, setLanguage: selectLanguage }}>
     <div className="flex min-h-screen flex-col bg-background text-foreground">

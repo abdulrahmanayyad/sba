@@ -4,7 +4,7 @@ import sectorApparelImg from "@/assets/sector-apparel.jpg";
 import sectorFoodImg from "@/assets/sector-food.jpg";
 import { APPAREL_55_MASTER_STUDIES } from "./studies/apparel-master-studies";
 import { ENVIRONMENTAL_66_MASTER_STUDIES } from "./studies/environmental-master-studies";
-import { EAST_CAIRO_MASTER_STUDY } from "./studies/east-cairo-master-study";
+import { EAST_CAIRO_MASTER_STUDY, CONSTRUCTION_12_CITY_STUDIES } from "./studies/east-cairo-master-study";
 
 export type GlobalMarketSectorId =
   | "construction"
@@ -573,6 +573,7 @@ export const SECTOR_ALLOWED_REGIONS: Record<GlobalMarketSectorId, GeoRegionId[]>
  * NEVER add placeholder or fabricated statistics here.
  */
 export const PUBLISHED_GLOBAL_STUDIES: GlobalMarketStudy[] = [
+  ...CONSTRUCTION_12_CITY_STUDIES,
   EAST_CAIRO_MASTER_STUDY,
   ...APPAREL_55_MASTER_STUDIES,
   ...ENVIRONMENTAL_66_MASTER_STUDIES,

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Building2,
   MapPin,
@@ -18,8 +18,10 @@ import {
 import {
   EAST_CAIRO_CITIES,
   DATA_QUALITY_TIERS,
+  CONFIDENCE_TAGS,
   type EastCairoCityProfile,
 } from "@/lib/studies/east-cairo-master-study";
+import { IntraCityDistrictComparator } from "./intra-city-district-comparator";
 
 interface CityProfilesBrowserProps {
   ar: boolean;
@@ -32,6 +34,12 @@ export function CityProfilesBrowser({
 }: CityProfilesBrowserProps) {
   const [selectedCityId, setSelectedCityId] = useState<string>(initialCityId);
   const [selectedSubmarketId, setSelectedSubmarketId] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (initialCityId) {
+      setSelectedCityId(initialCityId);
+    }
+  }, [initialCityId]);
 
   const selectedCity =
     EAST_CAIRO_CITIES.find((c) => c.id === selectedCityId) ??
@@ -119,6 +127,12 @@ export function CityProfilesBrowser({
                   {ar ? cityTier.labelAr : cityTier.labelEn}
                 </span>
 
+                {selectedCity.confidenceGrade && (
+                  <span className={`inline-flex items-center px-2 py-0.5 rounded text-[11px] border ${CONFIDENCE_TAGS[selectedCity.confidenceGrade].badgeClass}`}>
+                    {ar ? CONFIDENCE_TAGS[selectedCity.confidenceGrade].tagAr : CONFIDENCE_TAGS[selectedCity.confidenceGrade].tagEn} {ar ? CONFIDENCE_TAGS[selectedCity.confidenceGrade].labelAr.split("—")[0] : CONFIDENCE_TAGS[selectedCity.confidenceGrade].labelEn.split("—")[0]}
+                  </span>
+                )}
+
                 <span className="text-xs text-slate-500 font-medium">
                   {ar ? selectedCity.establishmentLawAr : selectedCity.establishmentLawEn}
                 </span>
@@ -190,69 +204,91 @@ export function CityProfilesBrowser({
 
         {/* Detailed Sections & Submarkets */}
         <div className="p-6 md:p-8 space-y-6">
-          {/* Submarkets / District Breakdown if present */}
-          {selectedCity.submarkets && selectedCity.submarkets.length > 0 && (
-            <div className="space-y-3">
-              <div className="flex items-center justify-between">
-                <h4 className="text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-white flex items-center gap-1.5">
-                  <Layers className="size-4 text-[#0F8B7A]" />
-                  <span>{ar ? `الأحياء والمناطق التفصيلية لـ ${selectedCity.nameAr}` : `Submarkets & Districts of ${selectedCity.nameEn}`}</span>
-                </h4>
-                <span className="text-xs text-slate-500">
-                  {selectedCity.submarkets.length} {ar ? "أحياء مرصودة" : "Submarkets"}
+          {/* Discrepancy Highlight Callout if present */}
+          {selectedCity.discrepancyHighlightAr && (
+            <div className="rounded-xl border border-rose-300/60 dark:border-rose-900/40 bg-rose-50/60 dark:bg-rose-950/20 p-4 text-xs text-rose-900 dark:text-rose-200 flex items-start gap-2.5 shadow-xs">
+              <AlertTriangle className="size-4 text-rose-600 shrink-0 mt-0.5" />
+              <div>
+                <strong className="font-bold block mb-0.5 text-rose-700 dark:text-rose-300 text-xs md:text-sm">
+                  {ar ? "تحفظ منهجي وتضارب مرصود في البيانات (نوفمبر 2026):" : "Methodological Caveat & Observed Data Discrepancy (Nov 2026):"}
+                </strong>
+                <span className="leading-relaxed">
+                  {ar ? selectedCity.discrepancyHighlightAr : selectedCity.discrepancyHighlightEn}
                 </span>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
-                {selectedCity.submarkets.map((sub) => {
-                  const subTier = DATA_QUALITY_TIERS[sub.dataQualityTier];
-
-                  return (
-                    <div
-                      key={sub.id}
-                      className="rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50/70 dark:bg-slate-800/40 p-4 space-y-2 hover:border-[#0F8B7A]/40 transition-colors"
-                    >
-                      <div className="flex items-start justify-between gap-2 border-b border-slate-200/60 dark:border-white/5 pb-2">
-                        <div>
-                          <h5 className="font-head text-sm font-bold text-slate-900 dark:text-white">
-                            {ar ? sub.nameAr : sub.nameEn}
-                          </h5>
-                          <span className="text-[11px] text-[#0F8B7A] font-medium block">
-                            {ar ? sub.typologyAr : sub.typologyEn}
-                          </span>
-                        </div>
-                        <span className={`inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold border shrink-0 ${subTier.badgeClass}`}>
-                          {sub.dataQualityTier}
-                        </span>
-                      </div>
-
-                      <div className="grid grid-cols-2 gap-2 text-[11px] pt-1">
-                        <div>
-                          <span className="text-slate-400 block">{ar ? "كثافة الإشغال:" : "Density / Occupancy:"}</span>
-                          <span className="font-semibold text-slate-700 dark:text-slate-300">{ar ? sub.densityLevelAr : sub.densityLevelEn}</span>
-                        </div>
-                        <div>
-                          <span className="text-slate-400 block">{ar ? "النشاط الغالب:" : "Dominant Use:"}</span>
-                          <span className="font-semibold text-slate-700 dark:text-slate-300">{ar ? sub.dominantLandUseAr : sub.dominantLandUseEn}</span>
-                        </div>
-                      </div>
-
-                      <div className="rounded-lg bg-white dark:bg-slate-900 p-2 border border-slate-100 dark:border-white/5 text-xs">
-                        <span className="text-[10px] text-slate-400 block">{ar ? "نطاق الأسعار المنشورة:" : "Reported Pricing:"}</span>
-                        <strong className="text-xs text-[#0F8B7A] font-bold block mt-0.5">
-                          {ar ? sub.priceRangeEgpSqmAr : sub.priceRangeEgpSqmEn}
-                        </strong>
-                      </div>
-
-                      <p className="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed pt-1">
-                        {ar ? sub.notesAr : sub.notesEn}
-                      </p>
-                    </div>
-                  );
-                })}
               </div>
             </div>
           )}
+
+          {/* Detailed Sector Prices Table if present */}
+          {selectedCity.detailedSectorPricesAr && selectedCity.detailedSectorPricesAr.length > 0 && (
+            <div className="rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50/70 dark:bg-slate-800/40 p-4 md:p-5 space-y-3">
+              <div className="flex items-center justify-between">
+                <h4 className="text-xs md:text-sm font-bold uppercase tracking-wider text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
+                  <Building2 className="size-4 text-[#0F8B7A]" />
+                  <span>{ar ? `متوسطات أسعار المتر المربع المنشورة بالقطاعات — ${selectedCity.nameAr} (نوفمبر 2026)` : `Published Sector Price Benchmarks — ${selectedCity.nameEn} (Nov 2026)`}</span>
+                </h4>
+                <span className="text-[11px] text-slate-500 font-medium">Aqarmap / NUCA / Reports</span>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2.5 pt-1">
+                {selectedCity.detailedSectorPricesAr.map((sp, sIdx) => (
+                  <div key={sIdx} className="rounded-xl bg-white dark:bg-slate-900 p-3 border border-slate-200/80 dark:border-white/5 shadow-xs">
+                    <span className="text-[11px] font-semibold text-slate-500 dark:text-slate-400 block truncate">{ar ? sp.sectorAr : sp.sectorEn}</span>
+                    <strong className="text-sm md:text-base font-extrabold text-[#0F8B7A] block mt-1">
+                      {new Intl.NumberFormat().format(sp.priceEgpSqm)} <span className="text-[11px] font-normal">{ar ? "ج.م/م²" : "EGP/m²"}</span>
+                    </strong>
+                    {sp.changeAr && (
+                      <span className="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 block mt-0.5">{sp.changeAr}</span>
+                    )}
+                    {sp.noteAr && (
+                      <span className="text-[10px] text-slate-400 block mt-0.5 truncate">{sp.noteAr}</span>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Under Construction & Key Private Developers if present */}
+          {(selectedCity.underConstructionHighlightsAr || selectedCity.keyPrivateDevelopersAr) && (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {selectedCity.underConstructionHighlightsAr && (
+                <div className="rounded-xl border border-blue-500/20 bg-blue-50/40 dark:bg-blue-950/20 p-4 space-y-2.5">
+                  <h4 className="text-xs md:text-sm font-bold text-blue-900 dark:text-blue-300 flex items-center gap-1.5 border-b border-blue-200/50 dark:border-blue-800/30 pb-2">
+                    <Layers className="size-4 text-blue-600" />
+                    <span>{ar ? "المشروعات والمنشآت قيد التنفيذ (رصد 2025–2026):" : "Under Construction Highlights (2025–2026):"}</span>
+                  </h4>
+                  <ul className="space-y-1.5 text-xs text-slate-700 dark:text-slate-300">
+                    {(ar ? selectedCity.underConstructionHighlightsAr : selectedCity.underConstructionHighlightsEn || selectedCity.underConstructionHighlightsAr).map((item, idx) => (
+                      <li key={idx} className="flex items-start gap-1.5">
+                        <span className="text-blue-600 font-bold shrink-0 mt-0.5">•</span>
+                        <span className="leading-relaxed">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {selectedCity.keyPrivateDevelopersAr && (
+                <div className="rounded-xl border border-purple-500/20 bg-purple-50/40 dark:bg-purple-950/20 p-4 space-y-2.5">
+                  <h4 className="text-xs md:text-sm font-bold text-purple-900 dark:text-purple-300 flex items-center gap-1.5 border-b border-purple-200/50 dark:border-purple-800/30 pb-2">
+                    <Briefcase className="size-4 text-purple-600" />
+                    <span>{ar ? "أبرز المطورين الخاصين والمشروعات الاستثمارية:" : "Key Private Developers & Projects:"}</span>
+                  </h4>
+                  <ul className="space-y-1.5 text-xs text-slate-700 dark:text-slate-300">
+                    {(ar ? selectedCity.keyPrivateDevelopersAr : selectedCity.keyPrivateDevelopersEn || selectedCity.keyPrivateDevelopersAr).map((item, idx) => (
+                      <li key={idx} className="flex items-start gap-1.5">
+                        <span className="text-purple-600 font-bold shrink-0 mt-0.5">•</span>
+                        <span className="leading-relaxed">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Granular Intra-City District Analysis & Head-to-Head Comparator */}
+          <IntraCityDistrictComparator ar={ar} city={selectedCity} />
 
           {/* Population Reality Alert Box */}
           <div className="rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-slate-800/50 p-4 flex items-start gap-3">
