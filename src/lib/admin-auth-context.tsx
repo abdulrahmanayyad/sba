@@ -263,26 +263,10 @@ export function AdminAuthProvider({ children }: { children: React.ReactNode }) {
   };
 
   const hasRole = (roleId: string): boolean => {
-    if (
-      roleId === "super_admin" &&
-      (user?.email?.toLowerCase() === "abdulrahman@sami-trade.com" || user?.app_metadata?.role === "super_admin")
-    ) {
-      return true;
-    }
     return roles.some((r) => r.id === roleId);
   };
 
-  const isSuperAdmin =
-    hasRole("super_admin") ||
-    user?.email?.toLowerCase() === "abdulrahman@sami-trade.com" ||
-    user?.app_metadata?.role === "super_admin";
-
-  const effectiveRoles: AdminRole[] =
-    roles.length > 0
-      ? roles
-      : isSuperAdmin
-      ? [{ id: "super_admin", name_en: "Super Admin", name_ar: "مدير النظام الأعلى" }]
-      : [];
+  const isSuperAdmin = hasRole("super_admin");
 
   const hasPermission = (permissionId: string): boolean => {
     if (isSuperAdmin) return true;
@@ -337,7 +321,7 @@ export function AdminAuthProvider({ children }: { children: React.ReactNode }) {
         user,
         session,
         profile,
-        roles: effectiveRoles,
+        roles,
         permissions,
         isLoading,
         isAuthorizedStaff,
